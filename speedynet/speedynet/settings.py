@@ -25,7 +25,7 @@ SECRET_KEY = '7@kn+@3ze*#je60s+x+#@79e5(#p935v3*72&(r&$_z^l)xtn)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['speedy2000.net', 'www.speedy2000.net', '*.speedy2000.net', '178.22.68.57']
 
 
 # Application definition
@@ -118,8 +118,6 @@ MEDIA_URL = '/media/'
 
 # Email settings
 FROM_EMAIL = 'sample@mail.com'
-
-
 
 
 # Django registration settings
