@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['speedy2000.net', 'www.speedy2000.net', '*.speedy2000.net', '178.22.68.57']
 
 
 # Application definition
@@ -115,8 +115,6 @@ MEDIA_URL = '/media/'
 
 # Email settings
 FROM_EMAIL = 'sample@mail.com'
-
-
 
 
 # Django registration settings

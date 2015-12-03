@@ -50,13 +50,13 @@ class UserProfile(models.Model):
     )
 
     # user diet choices
-    EAT_ALL = 1
+    VEGAN = 1
     VEGETERIAN = 2
-    VEGAN = 3
+    CARNIST = 3
     DIET_CHOICES = (
-        (EAT_ALL, 'Eat all'),
+        (VEGAN, 'Vegan'),
         (VEGETERIAN, 'Vegeterian'),
-        (VEGAN, 'Vegan')
+        (CARNIST, 'Carnist'),
     )
 
     FIRST = 1
@@ -70,9 +70,9 @@ class UserProfile(models.Model):
 
 
     user = models.OneToOneField(User)
-    date_of_birth = models.DateTimeField(default=datetime(year=1909, month=2, day=13))
-    gender = models.SmallIntegerField(choices=GENDER_CHOICES, default=OTHER)
-    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=EAT_ALL)
+    date_of_birth = models.DateTimeField(default=None)
+    gender = models.SmallIntegerField(choices=GENDER_CHOICES, default=None)
+    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=None)
     profile_picture = models.ImageField(upload_to='user_pictures/', blank=True, default='default_profile_pic.png')
     security_question = models.SmallIntegerField(choices=SECURITY_QUESTIONS, default=FIRST)
     security_answer = models.CharField(max_length=128, blank=True, default='')
