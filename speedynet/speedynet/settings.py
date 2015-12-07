@@ -114,7 +114,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Email settings
-FROM_EMAIL = 'sample@mail.com'
+FROM_EMAIL = "webmaster@speedy.net"
 
 
 # Django registration settings
