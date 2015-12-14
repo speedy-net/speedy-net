@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %} {{ profile.user.username }} profile {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s8 offset-s2 m8 offset-m2 l8 offset-l2">
+            <h3>Your profile!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6 l6 center">
+            <a href="{% url 'base:add_email' %}" class="waves-effect waves-light btn">Add Email</a>
+        </div>
+        <div class="col s6 m6 l6 center">
+            <a href="{% url 'base:password_reset_confirm' %}" class="waves-effect waves-light btn">Reset password</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6 l6">
+            Username: {{ profile.identity.username }}
+        </div>
+        <div class="col s6 m6 l6">
+            Email: {{ profile.user.email }}
+        </div>
+        <div class="col s6 m6 l6">
+            Name: {{ profile.user.first_name }} {{ profile.user.last_name }}
+        </div>
+        <div class="col s6 m6 l6">
+            <img src="{{ profile.profile_picture.url }}"/>
+        </div>
+        <div class="col s6 m6 l6">
+            DOB: {{ profile.date_of_birth }}
+        </div>
+        <div class="col s6 m6 l6">
+            gender: {{ profile.get_gender_display }}
+        </div>
+        <div class="col s6 m6 l6">
+            diet: {{ profile.get_diet_display }}
+        </div>
+    </div>
+</div>
+{% endblock %}

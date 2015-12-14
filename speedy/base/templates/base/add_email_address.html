@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Speedy - Expired token{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if messages %}
+        <div class="col s12 m12 l12 text-red center">
+            <ul>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="col s12 l12 m12 center">
+            <h4>Add another email address.</h4>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/account/add_email/" method="post">
+            {% csrf_token %}
+            <div class="col input-field s12 m10 l6 push-m1 push-l3">
+                <input type="email" name="email" placeholder="Email">
+                <label for="email">Email:</label>
+            </div>
+            <div class="col s12 m12 l12 center">
+                <button class="waves-effect waves-light btn-flat" type="submit">Add email</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

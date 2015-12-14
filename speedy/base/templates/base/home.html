@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Home page{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if messages %}
+        <div class="col s12 m12 l12 text-red">
+            <ul>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="col s12 l12 m12 center">
+            <h4>Welcome home, {{ username }}!</h4>
+        </div>
+        <!-- TODO: change this to a navbar -->
+        <div class="col s6 m6 l6 center">
+        {% if not logged_in %}
+            <a class="waves-effect waves-light btn" href="/account/login/">Login</a>
+        {% else %}
+            <a class="waves-effect waves-light btn" href="/account/logout/">Logout</a>
+        {% endif %}
+        </div>
+        <div class="col s6 m6 l6 center">
+            {% if not logged_in %}
+            <a class="waves-effect waves-light btn" href="{% url 'base:register' %}">Register</a>
+            {% else %}
+            <a class="waves-effect waves-light btn" href="{% url 'base:user_profile' %}">Go to profile</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
