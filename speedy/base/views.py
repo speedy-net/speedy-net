@@ -105,6 +105,7 @@ class Login(View):
 
         if user:
             if user.is_active:
+                user.backend = 'django.contrib.auth.backends.ModelBackend'
                 login(request, user)
                 return redirect('/')
             else:
