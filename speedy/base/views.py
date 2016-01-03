@@ -173,7 +173,7 @@ class Register(View):
 
             # TODO: fix this
             gender = data.get('gender') if data.get('gender', None) else UserProfile.OTHER
-            diet = data.get('diet') if data.get('diet', None) else UserProfile.EAT_ALL
+            diet = data.get('diet') if data.get('diet', None) else UserProfile.CARNIST
             date_of_birth = data.get('date_of_birth') if data.get('date_of_birth', None) else UserProfile.DEFAULT_REG_DOB
 
             profile = UserProfile(
