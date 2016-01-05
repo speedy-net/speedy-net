@@ -122,20 +122,20 @@ class UserProfile(ManagedEntity):
     )
 
     # user diet choices
-    VEGAN      = 1
+    CARNIST    = 1
     VEGETERIAN = 2
-    CARNIST    = 3
+    VEGAN      = 3
     DIET_CHOICES = (
-        (VEGAN, 'Vegan')
+        (CARNIST, 'Eat all'),
         (VEGETERIAN, 'Vegeterian'),
-        (CARNIST, 'Carnist'),
+        (VEGAN, 'Vegan')
     )
 
 
     user = models.OneToOneField(User, null=True, blank=True) # so we can have multiple users registering while confirming
     date_of_birth = models.DateField(default=DEFAULT_REG_DOB, blank=True, null=True)
-    gender = models.SmallIntegerField(choices=GENDER_CHOICES, default=None, null=True)
-    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=None, null=True)
+    gender = models.SmallIntegerField(choices=GENDER_CHOICES, default=OTHER)
+    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=CARNIST)
     profile_picture = models.ImageField(upload_to='user_pictures/', blank=True, default=DEFAULT_PIC)
     password_reset_token = models.ForeignKey(Token, null=True, blank=True, related_name='password_reset_user', on_delete=models.SET_NULL)
 
