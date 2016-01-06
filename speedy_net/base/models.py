@@ -122,13 +122,13 @@ class UserProfile(ManagedEntity):
     )
 
     # user diet choices
-    CARNIST    = 1
+    VEGAN      = 1
     VEGETERIAN = 2
-    VEGAN      = 3
+    CARNIST    = 3
     DIET_CHOICES = (
-        (CARNIST, 'Eat all'),
+        (VEGAN, 'Vegan'),
         (VEGETERIAN, 'Vegeterian'),
-        (VEGAN, 'Vegan')
+        (CARNIST, 'Carnist')
     )
 
 
