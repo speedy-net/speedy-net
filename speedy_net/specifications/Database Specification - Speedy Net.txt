@@ -1,0 +1,224 @@
+﻿Hi,
+
+Here is the Database Specification for Speedy Net.
+
+Database: MySQL with the InnoDB storage engine. We will use foreign keys in the database (if the database becomes bigger, this can be changed). We should build the database tables to be able to handle many users, such as hundreds of millions of users.
+
+- We need a table "usernames". A username can be assigned to a user, page, group or cause or alias. Also some usernames will be reserved by us. A username will be unique, and the limit on number of usernames per user will be 5 or 10 (as I explained in the specification).
+
+- I want to combine tables "pages", "groups" and "causes" to one table ("pages"). Remember a page, group or cause may or may not have a username. Also, a page, group or cause may be in more than one language, but there will always be a default language for every page, group or cause. If the page, group or cause does not have a username, it will have a URL within the user who created it. For example "www.speedy.net/urievenchen/page1" "www.speedy.net/urievenchen/group2" "www.speedy.net/urievenchen/cause3". If the page, group or cause has a username, it will be redirected to the URL with the username (if user enters URL without username), for example "www.speedy.net/username".
+
+- Remember a user can have a firstname, lastname and gender in more than one language. Every user will have to supply these fields in English, but in addition he or she can supply the firstname, lastname and gender in other languages.
+
+- I want interests, favorite music, movies, TV shows, books etc. To be very similar to Facebook, so that a user will add for example "Madonna" and the page of Madonna will be added to his or her favorite music. The user will be able to sort interests, favorite music, movies, TV shows, books etc.
+
+- Every language will have a username too, which will be the language's name in English in lowercase letters. For example "english", "spanish" etc.
+
+- Please create another table "aliases". A page or group or cause or user can have an alias, which is another username assigned for this page/group/cause or user. Alias will have a default language, for example if my username is urievenchen then I can have urievenjen as an alias in Spanish. The limit of usernames per user will still remain here.
+
+- Remember a user can create unlimited number of pages, groups or causes without a username, only the number of usernames will be limited.
+
+- Each user's profile will contain the following elements:
+	Basic Information:
+		Current City: [write text]
+		Hometown: [write text]
+		Sex:
+			- Female
+			- Male
+			(user must select either Male or Female).
+		Birthday: [day] (1-31) [month] (January - December) [year] (1850-today)
+		Interested In: (checkbox: can select none or both)
+			- Women
+			- Men
+		Languages: (select languages and sort them)
+		About Me: (user will enter text)
+	Profile Picture: (same as in Facebook)
+	Featured People:
+		Relationship Status:
+			- Single
+			- In a relationship [with <write one or more names>]
+			- Engaged [to <write one or more names>]
+			- Married [to <write one or more names>] [select anniversary date]
+			- It's complicated [with <write one or more names>]
+			- In an open relationship [with <write one or more names>]
+			- Widowed
+			- Separated
+			- Divorced
+		Family: Add family members and sort them.
+			For each family member - Select Relation:
+				- Daughter
+				- Son
+				- Mother
+				- Father
+				- Sister
+				- Brother
+				- Uncle
+				- Aunt
+				- Niece
+				- Nephew
+				- Cousin (male)
+				- Cousin (female)
+				- Grandson
+				- Granddaughter
+				- Grandfather
+				- Grandmother
+		Friends: [add or remove friends]
+	Education and Work:
+		Employer: [select one or more employers]
+		College/University: [select one or more]
+		High School: [select one or more]
+		Middle School: [select one or more]
+		Elementary School: [select one or more]
+	Philosophy:
+		Religion: [enter text]
+		Political Views: [enter text]
+		People Who Inspire You: [select and sort people]
+		Favorite Quotations: [enter text]
+	Arts and Entertainment:
+		Music: [select and sort music]
+		Books: [select and sort books]
+		Movies: [select and sort movies]
+		Television: [select and sort television]
+		Games: [select and sort games]
+	Sports:
+		Sports You Play: [select and sort sports]
+		Favorite Teams: [select and sort sports teams]
+		Favorite Athletes: [select and sort athletes]
+	Activities and Interests:
+		Activities: [select and sort activities]
+		Interests: [select and sort interests]
+		Pages You Like: [select and sort pages] (including URLs on other websites, for example www.gmail.com)
+		Groups: [select and sort groups]
+		Causes: [select and sort causes]
+	Contact Information:
+		Email Address: [select one or more]
+		Facebook: [select one or more]
+		Twitter: [select one or more]
+		Skype: [select one or more]
+		Google Talk: [select one or more]
+		Yahoo! Messenger: [select one or more]
+		Windows Live Messenger: [select one or more]
+		ICQ: [select one or more]
+		Mobile Phone: [select one or more]
+		Home Phone: [select one or more]
+		Work Phone: [select one or more]
+		Address: [write text]
+		City/Town: [write text]
+		Zip: [write text]
+		Neighborhood: [write text]
+		Website: [select one or more URL]
+		
+- The user's time zone will also be saved to the database.
+		
+- When viewing a profile, only non-empty fields will be visible. When editing a profile, all fields will be visible to edit.
+
+- The user can select his relatives (if they are on Speedy Net they will have to confirm).
+
+- Friends will also have to confirm (if they are on Speedy Net). Users will be able to add relatives and friends not on Speedy Net, in this case they can enter their email address to invite them to join.
+
+- When tagging pictures, the person's relatives and friends will all be options, and also new people can be tagged - even if they are not on Speedy Net.
+
+- A maximum of 800 friends and relatives will exist.
+
+- Each user will have the following tabs:
+	Wall
+	Info
+	Photos
+	Notes
+	Friends
+	
+- The main website will have the following options:
+	News Feed
+	Messages
+	Events
+	Friends
+	Pages
+	Groups
+	Causes
+	Photos
+	Notes
+	Links
+
+- A page, group or cause will have the following tabs:
+	Wall
+	Info
+		Basic Information:
+			Address: [write text]
+			City/Town: [write text]
+			Zip: [write text]
+			Founded: [write text]
+			About: [write text]
+		Detailed Information:
+			Overview: [write text]
+			Mission: [write text]
+			Description: [write text]
+			Products: [write text]
+			Awards: [write text]
+		Contact Information:
+			Email Address: [select one or more]
+			Phone: [select one or more]
+			Website: [select one or more URL]
+	Photos
+		Photo Albums (like in a user's profile)
+	Discussions
+	[User defined tabs]
+
+- People will "Like" a page, "Join" a group or "Support" a cause (also "Unlike", "Leave Group" or "Leave Cause" to cancel). Except this - pages, groups and causes will be the same.
+
+- The number of people who like a page, join a group or support a cause will be unlimited.
+
+- An event will have the following fields:
+	When? [Date, Time and Time Zone] [optional ending date and time]
+	What are you planning? [text]
+	Where? [text]
+	More info? [text]
+	Who's invited?
+		Select Guests [from friends and relatives]
+		Public event [checkbox - default is checked]
+		Show the guest list on the event page [checkbox - default is checked]
+		
+- The URL of an event will be www.speedy.net/events/[event number], where event number will be a random number of 15 decimal digits.
+
+- Each user will be able to set the following options for an event:
+	- Attending
+	- Maybe Attending
+	- Not Attending
+	
+- A user ID, page ID, group ID, cause ID, event ID, album ID or photo ID will also be random with 15 decimal digits.
+
+- Here is how a user ID, page ID, group ID, cause ID, event ID, album ID or photo ID will be created:
+	1. A random number between 100,000,000,000,000 and 999,999,999,999,999 will be selected.
+	2. Table `speedynet_ids` will be queried to see if this ID exists.
+	3. If it exists, return back to step 1 and calculate a new random number.
+	4. Add the new ID to table `speedynet_ids` (with `type` and with `creation_date`=NOW()).
+	5. Add the user, page, group, cause, event, album or photo to the table with the new ID.
+	(MySQL auto increment will not be used).
+
+- All the English text in the website will be saved to table `language_texts`, so if we want to enable more languages in the future, we will not have to change the source code.
+
+- Right to left languages such as Hebrew and Arabic will be supported.
+
+- A user must have at least one username (on table `users`). To check how many usernames a user has (to enforce limits), query tables `users`, `pages` and `aliases` and count the records with `user_id`=this_user_id (table `users`) or `owner_id`=this_user_id (tables `pages` and `aliases`). In all tables, count only the records where `username` is not NULL.
+
+- If a page, group or cause don't have a username and page_name, their URL will be "www.speedy.net/pages/[page ID]" (for pages), "www.speedy.net/groups/[group ID]" (for groups) or "www.speedy.net/causes/[cause ID]" (for causes).
+
+- Pages created by editing the user's profile will have `owner_id`=NULL.
+
+- An album will have the following fields:
+	- Album Name: (text)
+	- Location: (text)
+	- Description: (text)
+	- Caption: (text)
+	- Privacy: "everyone" or "friends only"
+
+- A photo will have the following fields:
+	- Caption: (text)
+	- Tags: sorted from left to right. (multiple tags for one photo are permitted).
+	- One photo per album will be the album cover.
+	
+- In tags, the same person can't be tagged in the same picture more than once (if they are on Speedy Net). But two tags with the same name are allowed (if two people have the same name).
+
+Best Regards,
+Uri Even-Chen
+E-mail: uri@speedy.net
+Website: http://www.speedysoftware.com/uri/en/
