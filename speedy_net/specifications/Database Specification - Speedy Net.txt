@@ -6,15 +6,13 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 
 - We need a table "usernames". A username can be assigned to a user, page, group or cause or alias. Also some usernames will be reserved by us. A username will be unique, and the limit on number of usernames per user will be 5 or 10 (as I explained in the specification).
 
-- I want to combine tables "pages", "groups" and "causes" to one table ("pages"). Remember a page, group or cause may or may not have a username. Also, a page, group or cause may be in more than one language, but there will always be a default language for every page, group or cause. If the page, group or cause does not have a username, it will have a URL within the user who created it. For example "www.speedy.net/urievenchen/page1" "www.speedy.net/urievenchen/group2" "www.speedy.net/urievenchen/cause3". If the page, group or cause has a username, it will be redirected to the URL with the username (if user enters URL without username), for example "www.speedy.net/username".
+- I want to combine tables "pages", "groups" and "causes" to one table ("pages"). Remember a page, group or cause may or may not have a username. Also, a page, group or cause may be in more than one language, but there will always be a default language for every page, group or cause. If the page, group or cause does not have a username, it will have a slug with it's unique ID (15 digits). If the page, group or cause has a username, it will be redirected to the URL with the username (if user enters URL without username), for example "en.speedy.net/username/".
 
-- Remember a user can have a firstname, lastname and gender in more than one language. Every user will have to supply these fields in English, but in addition he or she can supply the firstname, lastname and gender in other languages.
+- Remember a user can have a firstname and lastname in more than one language. Every user will have to supply these fields in English, but in addition he or she can supply the firstname and lastname in other languages.
 
 - I want interests, favorite music, movies, TV shows, books etc. To be very similar to Facebook, so that a user will add for example "Madonna" and the page of Madonna will be added to his or her favorite music. The user will be able to sort interests, favorite music, movies, TV shows, books etc.
 
 - Every language will have a username too, which will be the language's name in English in lowercase letters. For example "english", "spanish" etc.
-
-- Please create another table "aliases". A page or group or cause or user can have an alias, which is another username assigned for this page/group/cause or user. Alias will have a default language, for example if my username is urievenchen then I can have urievenjen as an alias in Spanish. The limit of usernames per user will still remain here.
 
 - Remember a user can create unlimited number of pages, groups or causes without a username, only the number of usernames will be limited.
 
@@ -177,16 +175,18 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 		Public event [checkbox - default is checked]
 		Show the guest list on the event page [checkbox - default is checked]
 		
-- The URL of an event will be www.speedy.net/events/[event number], where event number will be a random number of 15 decimal digits.
+- The URL of an event will be en.speedy.net/events/[event number], where event number will be a random number of 15 decimal digits. We may change it to use slugs later.
 
 - Each user will be able to set the following options for an event:
 	- Attending
 	- Maybe Attending
 	- Not Attending
 	
-- A user ID, page ID, group ID, cause ID, event ID, album ID or photo ID will also be random with 15 decimal digits.
+- A user ID, page ID, group ID, cause ID or event ID will also be random with 15 decimal digits.
 
-- Here is how a user ID, page ID, group ID, cause ID, event ID, album ID or photo ID will be created:
+- An album ID or photo ID will be random with 20 decimal digits.
+
+- Here is how a user ID, page ID, group ID, cause ID or event ID will be created:
 	1. A random number between 100,000,000,000,000 and 999,999,999,999,999 will be selected.
 	2. Table `speedynet_ids` will be queried to see if this ID exists.
 	3. If it exists, return back to step 1 and calculate a new random number.
@@ -194,13 +194,15 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 	5. Add the user, page, group, cause, event, album or photo to the table with the new ID.
 	(MySQL auto increment will not be used).
 
+- And the same for album ID or photo ID - 20 digits (with a different table).
+
 - All the English text in the website will be saved to table `language_texts`, so if we want to enable more languages in the future, we will not have to change the source code.
 
 - Right to left languages such as Hebrew and Arabic will be supported.
 
 - A user must have at least one username (on table `users`). To check how many usernames a user has (to enforce limits), query tables `users`, `pages` and `aliases` and count the records with `user_id`=this_user_id (table `users`) or `owner_id`=this_user_id (tables `pages` and `aliases`). In all tables, count only the records where `username` is not NULL.
 
-- If a page, group or cause don't have a username and page_name, their URL will be "www.speedy.net/pages/[page ID]" (for pages), "www.speedy.net/groups/[group ID]" (for groups) or "www.speedy.net/causes/[cause ID]" (for causes).
+- If a page, group or cause don't have a username and page_name, their URL will be "en.speedy.net/pages/[page ID]" (for pages), "en.speedy.net/groups/[group ID]" (for groups) or "en.speedy.net/causes/[cause ID]" (for causes). We may also support slugs that start with the ID.
 
 - Pages created by editing the user's profile will have `owner_id`=NULL.
 
