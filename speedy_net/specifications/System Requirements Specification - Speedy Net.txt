@@ -1,4 +1,52 @@
-﻿Hi,
+﻿﻿Hi,
+
+ - Speedy Net / Speedy Match Specification 0.3 -
+
+Speedy Net is a new social network which will have apps, such as Speedy Match (under construction) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
+
+ - Requirements for alpha step 1 - Speedy Net: -
+
+* support English and Hebrew
+* registration
+* activating profile by validating email address
+* login (with username or email, and password)
+* profile picture
+* public profile / profile for friends
+* first name/last name must be language-specific
+* friendship requests
+* approving friendship requests (up to 800 friends per person)
+* password reset
+* Sending/receiving private messages
+* Any email address, phone and link (Facebook, Twitter, blog etc.) - visible to anyone/friends/only me
+* website must be mobile- and desktop-friendly
+* import all users from PHP/MySQL
+* Users of PHP/MySQL Speedy Net will be able to login with their current username or email, and password
+
+ - Requirements for alpha step 1 - Speedy Match: -
+
+* support English and Hebrew
+* registration to Speedy Net
+* profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
+* Looking for men, women or both
+* Writing some text about yourself - who you are, what you prefer etc.
+* Which personal attributes are valid (from 0 to 5. 0 - invalid. 5 - 5 stars match)
+* Searching for matching people (who use Speedy Match in the same language)
+* Sending/receiving private messages (Speedy Net)
+* friendship requests (Speedy Net)
+* website must be mobile- and desktop-friendly
+* Everything you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
+
+
+ - Requirements for alpha step 2 - Speedy Net: -
+
+* Uploading albums and photos.
+* Creating pages, groups and causes (with or without a username)
+* Liking posts, photos, albums etc.
+
+ - Requirements for alpha step 2 - Speedy Match: -
+
+* Search for matches by geographic location (optional)
+
 
  - Speedy Net Specification 0.2 -
 
@@ -48,7 +96,7 @@ User requirements:
     * /login - user login.
     * /logout - user logout.
     * /register - user registration form.
-    * /profile - user profile.
+    * /me - user profile.
     * /activate_email - activate email with token.
     * /add_email - add new email.
     * /password_reset_confirm - enter email to reset password to.
@@ -56,15 +104,17 @@ User requirements:
 
 * /[slug] - redirects to correct page for the slug. (currently - only users)
 
+ - Speedy Net Specification 0.1 -
+
 Here are the System Requirements Specification for Speedy Net.
 
 This website will operate on http://www.speedy.net/ .
 
-Programming language: Python 3.5 / 3.4.
+Programming language: Python 3.5.
 
 Database: PostgreSQL. We will use foreign keys in the database (if the database becomes bigger, this can be changed). We should build the database tables to be able to handle many users, such as hundreds of millions of users.
 
-Frameworks: Django 1.9.2, jQuery.
+Frameworks: Django 1.9, jQuery.
 
 Speedy Net is a social network website, an alternative to Facebook. Registration will be open to any person without limitation (all ages from 0 to 150 will be accepted). People will be able to connect to their family relatives and friends, send messages, create pages, groups, causes and events, write on the walls of their friends and relatives (pages, groups and causes will have a wall too), create photo albums and share with their friends, like pages or join groups and causes, tag photos, and each time a user likes a page or joins a group or cause or adds new photos or tags a photo, a message/notification will be sent to the friends and relatives involved. People will also be able to create pages for pets, such as dogs and cats.
 
@@ -72,7 +122,7 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
  - Main app (Speedy Net) specification -
 
-1. When a person will register or create a page, the first thing the website will ask is to upload pictures. If a user didn't upload a picture to his profile, this message will show every time he logs into the website. Every person will have a username and a URL such as en.speedy.net/urievenchen (his username), also subcategories such as en.speedy.net/urievenchen/wall , en.speedy.net/urievenchen/info , en.speedy.net/urievenchen/photos , en.speedy.net/urievenchen/friends , en.speedy.net/urievenchen/pages etc. A page (groups and causes and pets will be sort of pages) created by user urievenchen will either be located at en.speedy.net/urievenchen/pagename , or en.speedy.net/pagename - whatever the user prefers. Users will have a limit of up to 10 pages (or groups etc.) under en.speedy.net/pagename , and unlimited pages under en.speedy.net/urievenchen/pagename . Photo albums will be uploaded to en.speedy.net/urievenchen/albumname . In the future we will let users upload videos and music, provided that it is legal to share these files with their friends.
+1. When a person will register or create a page, the first thing the website will ask is to upload pictures. If a user didn't upload a picture to his profile, this message will show every time he logs into the website. Every person will have a username and a URL such as en.speedy.net/urievenchen (his username), also subcategories such as en.speedy.net/urievenchen/wall , en.speedy.net/urievenchen/info , en.speedy.net/urievenchen/photos , en.speedy.net/urievenchen/friends , en.speedy.net/urievenchen/pages etc. A page (groups and causes will be sort of pages) created by user urievenchen will either be located at en.speedy.net/urievenchen/pagename , or en.speedy.net/pagename - whatever the user prefers. Users will have a limit of up to 10 pages (or groups etc.) under en.speedy.net/pagename , and unlimited pages under en.speedy.net/urievenchen/pagename . Photo albums will be uploaded to en.speedy.net/urievenchen/albumname . In the future we will let users upload videos and music, provided that it is legal to share these files with their friends.
 
 2. The limit on the number of friends and relatives will be 800. If people will have 800 friends, they will not be able to add new friends, unless they remove friends.
 
@@ -80,11 +130,11 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
 4. Character encoding for the whole website and database will be unicode (UTF-8). Language will be English, but project will be built to support more languages in the future, including right-to-left languages such as Hebrew and Arabic. And of course French, Spanish, Portugese, Italian, German, Chinese and Japanese.
 
-5. When registering a new person, the user will have to enter First Name, Last Name, Email, Password, Sex / Gender, Date of birth and select a new username (default username will be first name + last name). Usernames with dots, dashes and underlines (".","-","_") will ignore the dots, dashes and underlines (uri.even.chen will be same as urievenchen). But the user's default slug will be what he entered in his username field, such as uri-even-chen (slugs can contains only letters, digits, dashes, dots and underlines). All urls with other slugs which reflect the same username will be redirected to the default slug, for example en.speedy.net/urievenchen and n.speedy.net/uri-even-chen/ will be redirected to en.speedy.net/uri-even-chen/ (ending with a slash).
+5. When registering a new person, the user will have to enter First Name, Last Name, Email, Password, Sex / Gender, Date of birth and select a new username (default username will be first name + last name). Usernames with dots, dashes and underlines (".","-","_") will ignore the dots, dashes and underlines (uri.even.chen will be same as urievenchen). But the user's default slug will be what he entered in his username field, such as uri-even-chen (slugs can contains only letters, digits, dashes, dots and underlines). All urls with other slugs which reflect the same username will be redirected to the default slug, for example en.speedy.net/urievenchen and en.speedy.net/uri-even-chen/ will be redirected to en.speedy.net/uri-even-chen/ (ending with a slash).
 
 6. Password will not be saved, only SHA-256 hash of it to prevent cracking (with using 256 random bits of salt). The salt and the hashed password will be saved in the database. If a user forgets his password, a new password will be generated (after a user confirms by email).
 
-7. Login will be with username or email, and password. Usernames will be alphanumeric, always starting with a letter (not a digit). The username should be between 6-20 characters. Slugs may be longer as long as the username is not longer than 20 characters. Usernames should always be lowercase. Uppercase usernames will be converted to lowercase. URLs will be lowercase too, all uppercase letters will be converted to lowercase. Usernames must contain at least 4 letters [a-z], and if they contain numbers - the numbers must be after the letters. After the numbers there should not be any letter. For example come2us will not be a valid username. star2000 will be a valid username. ubuntu will be a valid username. star will not be a valid username (too short). A user will not be able to change usernames of his user or pages. In the future we might allow changing it once (or once a year).
+7. Login will be with username or email, and password. Usernames will be alphanumeric, always starting with a letter (not a digit). The username should be between 6-20 characters. Slugs may be longer as long as the username is not longer than 20 characters. Usernames should always be lowercase. Uppercase usernames will be converted to lowercase. URLs will be lowercase too, all uppercase letters will be converted to lowercase. Usernames must contain at least 4 letters [a-z], and if they contain numbers - the numbers must be after the letters. After the numbers there should not be any letter. For example come2us will not be a valid username. star2000 will be a valid username. ubuntu will be a valid username. star will not be a valid username (too short), but we may allow shorter usernames later. A user will not be able to change usernames of his user or pages. In the future we might allow changing it once (or once a year).
 
 8. Email addresses will also be lowercase. Passwords will be case sensitive. Passwords should also be between 6-20 characters. Passwords will be alphanumeric (a-z;A-Z;0-9).
 
@@ -100,7 +150,7 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
 14. All urls should end with a slash, for example en.speedy.net/friends/ and not en.speedy.net/friends . We will always prefer short URLs so users will be able to remember them.
 
-15. The user's profile URL will be public by default, and at least the name and profile picture will always be public. I think maybe everything will be public - the user's albums, pages, likes, music, books, movies and interests should all be public. Each user will get a URL, such as en.speedy.net/urievenchen/ , which he will be able to share with his friends. This URL should appear on the search results of search engines such as Google, when searching for the person's name.
+15. The user's profile URL will be public by default, and at least the name and profile picture will always be public. Each user will get a URL, such as en.speedy.net/urievenchen/ , which he will be able to share with his friends. This URL should appear on the search results of search engines such as Google, when searching for the person's name.
 
 16. People will be able to set the default homepage language (default will be English), and additional languages. For example, he.speedy.net/urievenchen/ will be the user's homepage in Hebrew, and en.speedy.net/urievenchen/ will be the homepage in English. The user's name (first and last name) will be saved in the database with it's language, so a user will be able to set different spellings in different languages.
 
