@@ -1,13 +1,13 @@
-import uuid
+# import uuid
 import hashlib
 import os
+import random
 from django.core import validators
 
-INITIAL_MAX_ID = 1000000000000000
 
-def generate_id(number_limit=INITIAL_MAX_ID):
+def generate_id():
     """ generate unique UUID, convert to number and limit """
-    return uuid.uuid4().int % number_limit
+    return "{}".format(random.randint(100000000000000, 999999999999999))
 
 
 def generate_token():
