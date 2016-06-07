@@ -1,0 +1,38 @@
+<!doctype html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ settings.SITE_NAME }}</title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
+        {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}"> #}
+    {% endblock %}
+</head>
+<body>
+
+    <nav class="navbar {% block navbar_class %}{% endblock %}">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ settings.SITE_NAME }}</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'success' %}info{% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
