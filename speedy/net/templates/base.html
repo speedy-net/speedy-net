@@ -1,6 +1,7 @@
 <!doctype html>
 
 {% load staticfiles %}
+{% load i18n %}
 
 <html lang="en">
 <head>
@@ -8,31 +9,58 @@
     <title>{{ settings.SITE_NAME }}</title>
     {% block css %}
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}">
         {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}"> #}
     {% endblock %}
 </head>
 <body>
 
-    <nav class="navbar {% block navbar_class %}{% endblock %}">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">{{ settings.SITE_NAME }}</a>
-            </div>
-        </div>
-    </nav>
-
+<nav class="navbar {% block navbar_class %}{% endblock %}">
     <div class="container">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{% if message.tags == 'success' %}info{% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-        {% block content %}
-        {% endblock %}
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">{{ settings.SITE_NAME }}</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+                <li><span class="navbar-text"><i class="fa fa-user"></i> {{ request.user }}</span></li>
+                <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
+            {% else %}
+                <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
+                <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
+            {% endif %}
+        </ul>
+
     </div>
+</nav>
+
+<div class="container">
+    {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'success' %}info
+
+
+
+            {% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible"
+             role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span></button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
+        <div class="alert alert-danger">
+            {% trans "You haven't confirmed your email address. Please check your inbox." %}
+        </div>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block js %}
+    <script src="{% static 'vendor/jquery/jquery-2.2.4.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
+    <script src="{% static 'vendor/evil-blocks/evil-blocks.js' %}"></script>
+    <script src="{% static 'speedy-net/js/main.js' %}"></script>
+{% endblock %}
 
 </body>
 </html>

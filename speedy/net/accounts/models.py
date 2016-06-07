@@ -1,10 +1,13 @@
+from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.models import TimeStampedModel
-from speedy.net.accounts.utils import generate_id
-from speedy.net.accounts.validators import identity_id_validator
+from .managers import UserManager
+from .utils import generate_id
+from .validators import identity_id_validator
 
 USER_PRIVATE_FIELD = 1
 USER_FRIENDS_FIELD = 2
@@ -20,7 +23,6 @@ DEFAULT_USER_FIELD_PRIVACY = {
 
 
 class Entity(TimeStampedModel):
-
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entity')
@@ -51,22 +53,52 @@ class User(Entity, AbstractBaseUser):
         (GENDER_FEMALE, _('Female')),
         (GENDER_OTHER, _('Other')),
     )
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'slug'
 
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
+        swappable = 'AUTH_USER_MODEL'
 
-    email = models.EmailField(verbose_name=_('email'), unique=True)
+    # email = models.EmailField(verbose_name=_('email'), unique=True)
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
     gender = models.SmallIntegerField(verbose_name=_('gender'), choices=GENDER_CHOICES)
-    profile_picture = models.ImageField(verbose_name=_('profile picture'), upload_to='accounts/user/profile_picture/', blank=True)
-    is_active = models.BooleanField(default=False)
+    profile_picture = models.ImageField(verbose_name=_('profile picture'), upload_to='accounts/user/profile_picture/',
+                                        blank=True)
+    is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
+    objects = UserManager()
+
+    def get_full_name(self):
+        return '{} {}'.format(self.first_name, self.last_name)
+
+    def has_confirmed_email(self):
+        return self.email_addresses.filter(is_confirmed=True).exists()
+
+    def get_absolute_url(self):
+        return reverse('accounts:user_profile', kwargs={'slug': self.slug})
 
     def __str__(self):
-        return self.slug
+        return self.get_full_name()
 
+
+class UserEmailAddress(TimeStampedModel):
+    class Meta:
+        verbose_name = _('email address')
+        verbose_name_plural = _('email addresses')
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name='email_addresses')
+    email = models.EmailField(verbose_name=_('email'), unique=True)
+    is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
+    is_primary = models.BooleanField(verbose_name=_('is primary'), default=True)
+
+    def make_primary(self):
+        self.user.email_addresses.update(is_primary=False)
+        self.is_primary = True
+        self.save(update_fields={'is_primary'})
+
+    def __str__(self):
+        return self.email

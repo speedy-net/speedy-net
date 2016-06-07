@@ -102,6 +102,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'accounts.User'
 
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = '/me/'
+
+UNAVAILABLE_USERNAMES = [
+    'admin', 'root', 'register', 'login', 'logout', 'me',
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 

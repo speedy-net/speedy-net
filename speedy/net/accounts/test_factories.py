@@ -1,9 +1,8 @@
 import factory
 
-from .models import User
+from .models import User, UserEmailAddress
 
 class UserFactory(factory.DjangoModelFactory):
-    email = factory.Sequence(lambda n: 'user{0}@example.com'.format(n))
     first_name = 'User'
     last_name = factory.Sequence(lambda n: '#{0}'.format(n))
     gender = User.GENDER_OTHER
@@ -12,3 +11,11 @@ class UserFactory(factory.DjangoModelFactory):
 
     class Meta:
         model = User
+
+
+class UserEmailAddressFactory(factory.DjangoModelFactory):
+    user = factory.SubFactory(UserFactory)
+    email = factory.Sequence(lambda n: 'email{0}@example.com'.format(n))
+
+    class Meta:
+        model = UserEmailAddress
