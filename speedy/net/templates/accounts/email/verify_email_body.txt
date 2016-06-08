@@ -1,0 +1,5 @@
+{% extends base_template %}
+
+{% block content %}Use this link to activate your email:
+
+{{ SITE_URL }}{% url 'accounts:verify_email' token=email_address.confirmation_token %}{% endblock %}

@@ -20,9 +20,14 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/">{{ settings.SITE_NAME }}</a>
         </div>
+        <ul class="nav navbar-nav navbar-left">
+            {% if request.user.is_authenticated %}
+                <li><a href="{{ self.request.user.get_absolute_url }}"><i class="fa fa-user"></i> {{ request.user }}</a></li>
+            {% endif %}
+        </ul>
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
-                <li><span class="navbar-text"><i class="fa fa-user"></i> {{ request.user }}</span></li>
+                <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
                 <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
             {% else %}
                 <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
@@ -36,6 +41,7 @@
 <div class="container">
     {% for message in messages %}
         <div class="alert alert-{% if message.tags == 'success' %}info
+
 
 
 

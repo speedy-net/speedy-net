@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'rules.apps.AutodiscoverRulesConfig',
     'speedy.net.accounts',
 ]
 
@@ -100,6 +101,11 @@ AUTH_PASSWORD_VALIDATORS = [
     # },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'rules.permissions.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 AUTH_USER_MODEL = 'accounts.User'
 
 LOGIN_URL = '/login/'
@@ -107,7 +113,8 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/me/'
 
 UNAVAILABLE_USERNAMES = [
-    'admin', 'root', 'register', 'login', 'logout', 'me',
+    'admin', 'root',
+    'register', 'login', 'logout', 'me', 'edit-profile',
 ]
 
 # Internationalization

@@ -5,10 +5,20 @@ from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 
+from speedy.core.forms import ModelFormWithDefaults
 from .models import User, UserEmailAddress
 
 
-class RegistrationForm(UserCreationForm):
+class CleanEmailMixin(object):
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        email = User.objects.normalize_email(email)
+        if UserEmailAddress.objects.filter(email=email).exists():
+            raise forms.ValidationError('This email is already in use.')
+        return email
+
+
+class RegistrationForm(CleanEmailMixin, UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'slug', 'password1', 'password2', 'gender', 'date_of_birth')
@@ -24,8 +34,10 @@ class RegistrationForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=commit)
         if commit:
-            user.email_addresses.create(
+            email_address = user.email_addresses.create(
                 email=self.cleaned_data['email'],
+                is_confirmed=False,
+                is_primary=True,
             )
         return user
 
@@ -35,13 +47,6 @@ class RegistrationForm(UserCreationForm):
             raise forms.ValidationError('This username is unavailable.')
         return slug
 
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        email = User.objects.normalize_email(email)
-        if UserEmailAddress.objects.filter(email=email).exists():
-            raise forms.ValidationError('This email is already in use.')
-        return email
-
 
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -49,3 +54,15 @@ class LoginForm(AuthenticationForm):
         self.fields['username'].label = _('Username or email')
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Login')))
+
+
+class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):
+    class Meta:
+        model = UserEmailAddress
+        fields = ('email',)
+
+    @property
+    def helper(self):
+        helper = FormHelper()
+        helper.add_input(Submit('submit', _('Add')))
+        return helper

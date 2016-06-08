@@ -1,9 +1,13 @@
+import uuid
+
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from speedy.core.mail import send_mail
 from speedy.core.models import TimeStampedModel
 from .managers import UserManager
 from .utils import generate_id
@@ -44,7 +48,7 @@ class Entity(TimeStampedModel):
         return '<Entity {}>'.format(self.id)
 
 
-class User(Entity, AbstractBaseUser):
+class User(Entity, PermissionsMixin, AbstractBaseUser):
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
@@ -93,7 +97,32 @@ class UserEmailAddress(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
-    is_primary = models.BooleanField(verbose_name=_('is primary'), default=True)
+    is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
+    confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.confirmation_token:
+            self.confirmation_token = self._generate_confirmation_token()
+        return super().save(*args, **kwargs)
+
+    @staticmethod
+    def _generate_confirmation_token():
+        return uuid.uuid4().hex
+
+    def mail(self, template_name_prefix, context=None):
+        context = context or {}
+        context.update({
+            'email_address': self,
+            'user': self.user,
+        })
+        return send_mail([self.email], template_name_prefix, context)
+
+    def send_confirmation_email(self):
+        return self.mail('accounts/email/verify_email')
+
+    def verify(self):
+        self.is_confirmed = True
+        self.save(update_fields={'is_confirmed'})
 
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)

@@ -2,9 +2,10 @@ import factory
 
 from .models import User, UserEmailAddress
 
+
 class UserFactory(factory.DjangoModelFactory):
-    first_name = 'User'
-    last_name = factory.Sequence(lambda n: '#{0}'.format(n))
+    first_name = factory.Faker('first_name')
+    last_name = factory.Faker('last_name')
     gender = User.GENDER_OTHER
 
     password = factory.PostGenerationMethodCall('set_password', '111')
@@ -15,7 +16,7 @@ class UserFactory(factory.DjangoModelFactory):
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
-    email = factory.Sequence(lambda n: 'email{0}@example.com'.format(n))
+    email = factory.Faker('email')
 
     class Meta:
         model = UserEmailAddress

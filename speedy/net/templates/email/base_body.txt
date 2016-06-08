@@ -1,0 +1,5 @@
+{% block content %}{% endblock %}
+
+--
+{{ SITE_NAME }}
+{{ SITE_URL }}/

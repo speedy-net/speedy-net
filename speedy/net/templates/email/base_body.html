@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ subject }}</title>
+</head>
+<body>
+    {% block content %}
+        {{ plain_content|linebreaks|urlizetrunc:64 }}
+    {% endblock %}
+</body>
+</html>
