@@ -7,7 +7,7 @@ First make sure that you're using Python 3.4 or later.
     pip install -r requirements.txt
     cp env.ini.example env.ini
     
-You may want to edit **env.ini** to specify database settings, secret keys for third party services or other stuff.
+You may want to edit [**env.ini**](#envini) to specify database settings, secret keys for third party services or other stuff.
 
 Then you can run migrations:
   
@@ -65,7 +65,7 @@ Copy **env.ini.example** to **env.ini**:
 
     cp env.ini.example env.ini
     
-Change **env.ini** appropriately. Refer to [**env.ini** section](https://github.com/urievenchen/speedy-net#env.ini) of this document. `DATABASE_URL` should be like `postgres://speedy_net@127.0.0.1:5432/speedy_net`
+Change **env.ini** appropriately. Refer to [**env.ini** section](#envini) of this document. `DATABASE_URL` should be like `postgres://speedy_net@127.0.0.1:5432/speedy_net`
 
 Run migrations and collect static:
 
