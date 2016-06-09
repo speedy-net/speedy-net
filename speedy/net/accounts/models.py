@@ -64,7 +64,6 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         verbose_name_plural = _('users')
         swappable = 'AUTH_USER_MODEL'
 
-    # email = models.EmailField(verbose_name=_('email'), unique=True)
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
@@ -75,6 +74,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
 
     objects = UserManager()
+
+    @property
+    def email(self):
+        return self.email_addresses.get(is_primary=True).email
 
     def get_full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)

@@ -114,7 +114,7 @@ LOGIN_REDIRECT_URL = '/me/'
 
 UNAVAILABLE_USERNAMES = [
     'admin', 'root',
-    'register', 'login', 'logout', 'me', 'edit-profile',
+    'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
 ]
 
 # Internationalization
