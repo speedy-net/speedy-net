@@ -1,5 +1,5 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Div, HTML
+from crispy_forms.layout import Submit, Div, HTML, Row, Hidden
 from django import forms
 from django.conf import settings
 from django.contrib.auth import forms as auth_forms
@@ -9,6 +9,22 @@ from django.utils.translation import ugettext_lazy as _
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
 from .models import User, UserEmailAddress
+
+DATE_FIELD_FORMATS = [
+    '%Y-%m-%d',  # '2006-10-25'
+    '%m/%d/%Y',  # '10/25/2006'
+    '%m/%d/%y',  # '10/25/06'
+    '%b %d %Y',  # 'Oct 25 2006'
+    '%b %d, %Y',  # 'Oct 25, 2006'
+    '%d %b %Y',  # '25 Oct 2006'
+    '%d %b, %Y',  # '25 Oct, 2006'
+    '%B %d %Y',  # 'October 25 2006'
+    '%B %d, %Y',  # 'October 25, 2006'
+    '%d %B %Y',  # '25 October 2006'
+    '%d %B, %Y',  # '25 October, 2006'
+]
+
+DEFAULT_DATE_FIELD_FORMAT = '%B %d, %Y'
 
 
 class CleanEmailMixin(object):
@@ -30,6 +46,7 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = _('Username')
+        self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Create an account')))
 
@@ -48,6 +65,28 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
         if slug in settings.UNAVAILABLE_USERNAMES:
             raise forms.ValidationError(_('This username is unavailable.'))
         return slug
+
+
+class EditAccountForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name_en', 'last_name_en', 'first_name_he', 'last_name_he', 'date_of_birth', 'profile_picture')
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
+        self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
+        self.helper = FormHelper()
+        self.helper.add_input(Hidden('_form', 'account'))
+        # split into two columns
+        field_names = list(self.fields.keys())
+        self.helper.add_layout(Div(*[
+            Row(*[
+                Div(field, css_class='col-md-6')
+                for field in pair])
+            for pair in zip(field_names[::2], field_names[1::2])
+            ]))
+        self.helper.add_input(Submit('submit', _('Save Changes')))
 
 
 class LoginForm(auth_forms.AuthenticationForm):
@@ -89,6 +128,15 @@ class SetPasswordForm(auth_forms.SetPasswordForm):
         helper = FormHelper()
         helper.add_input(Submit('submit', _('Submit')))
         return helper
+
+
+class PasswordChangeForm(auth_forms.PasswordChangeForm):
+    def __init__(self, **kwargs):
+        user = kwargs.pop('user')
+        super().__init__(user, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Hidden('_form', 'password'))
+        self.helper.add_input(Submit('submit', _('Change')))
 
 
 class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):

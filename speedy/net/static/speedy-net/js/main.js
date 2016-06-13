@@ -1,3 +1,10 @@
+var datepickerOptions = {
+    dateFormat: 'MM d, yy',
+    changeMonth: true,
+    changeYear: true,
+};
+
+
 evil.block('@@RegistrationForm', {
 
     _generateSlug: function () {
@@ -10,6 +17,7 @@ evil.block('@@RegistrationForm', {
         this.slugField = this.$('#id_slug');
         this.emailField = this.$('#id_email');
         this.slugChanged = (this.slugField.val() != this._generateSlug());
+        this.$("#id_date_of_birth").datepicker(datepickerOptions);
     },
 
     'change on #id_slug': function () {
@@ -22,6 +30,15 @@ evil.block('@@RegistrationForm', {
                 this._generateSlug()
             );
         }
+    }
+
+});
+
+
+evil.block('@@AccountForm', {
+
+    'init': function () {
+        this.$("#id_account-date_of_birth").datepicker(datepickerOptions);
     }
 
 });

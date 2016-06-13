@@ -10,7 +10,8 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm
+from speedy.core.views import MultiUpdateView
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, PasswordChangeForm, EditAccountForm
 from .models import User, UserEmailAddress
 
 
@@ -61,8 +62,21 @@ def login(request, template_name='accounts/login.html',
     return response
 
 
-class EditProfileView(LoginRequiredMixin, generic.TemplateView):
+class EditProfileView(LoginRequiredMixin, MultiUpdateView):
     template_name = 'accounts/edit_profile.html'
+    success_url = reverse_lazy('accounts:edit_profile')
+    form_classes = {
+        'password': PasswordChangeForm,
+        'account': EditAccountForm,
+    }
+
+    def get_form_kwargs_password(self):
+        return {
+            'user': self.request.user,
+        }
+
+    def get_object_account(self):
+        return self.request.user
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):
