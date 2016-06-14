@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<div class="panel panel-default" data-block="AccountForm">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans 'Account Details' %}</h3>
+    </div>
+    <div class="panel-body">
+        {% crispy account_form %}
+    </div>
+</div>

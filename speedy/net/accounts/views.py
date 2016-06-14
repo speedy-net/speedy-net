@@ -11,7 +11,8 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.views import MultiUpdateView
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, PasswordChangeForm, EditAccountForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, PasswordChangeForm, EditAccountForm, \
+    AccountPrivacyForm
 from .models import User, UserEmailAddress
 
 
@@ -68,6 +69,7 @@ class EditProfileView(LoginRequiredMixin, MultiUpdateView):
     form_classes = {
         'password': PasswordChangeForm,
         'account': EditAccountForm,
+        'privacy': AccountPrivacyForm,
     }
 
     def get_form_kwargs_password(self):
@@ -77,6 +79,9 @@ class EditProfileView(LoginRequiredMixin, MultiUpdateView):
 
     def get_object_account(self):
         return self.request.user
+
+    def get_object_privacy(self):
+        return self.request.user.profile
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):

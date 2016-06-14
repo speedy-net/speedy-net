@@ -1,5 +1,6 @@
 import uuid
 
+from django.apps import apps
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -13,17 +14,25 @@ from .managers import UserManager
 from .utils import generate_id
 from .validators import identity_id_validator
 
-USER_PRIVATE_FIELD = 1
-USER_FRIENDS_FIELD = 2
-USER_PUBLIC_FIELD = 3
-DEFAULT_USER_FIELD_PRIVACY = {
-    'first_name': USER_PRIVATE_FIELD,
-    'last_name': USER_PRIVATE_FIELD,
-    'gender': USER_PRIVATE_FIELD,
-    'diet': USER_PRIVATE_FIELD,
-    'email': USER_PRIVATE_FIELD,
-    'date_of_birth': USER_PRIVATE_FIELD
-}
+ACCESS_ME = 1
+ACCESS_FRIENDS = 2
+ACCESS_FRIENDS_2 = 3
+ACCESS_ANYONE = 4
+
+ACCESS_CHOICES = (
+    (ACCESS_ME, _('Only me')),
+    (ACCESS_FRIENDS, _('Me and my friends')),
+    (ACCESS_FRIENDS_2, _('Me, my friends and friends of my friends')),
+    (ACCESS_ANYONE, _('Anyone')),
+)
+
+
+class AccessField(models.PositiveIntegerField):
+    def __init__(self, **kwargs):
+        kwargs.update({
+            'choices': ACCESS_CHOICES,
+        })
+        super().__init__(**kwargs)
 
 
 class Entity(TimeStampedModel):
@@ -88,6 +97,13 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def get_absolute_url(self):
         return reverse('accounts:user_profile', kwargs={'slug': self.slug})
 
+    @property
+    def profile(self):
+        if not hasattr(self, '_profile'):
+            model = apps.get_model(*settings.AUTH_PROFILE_MODEL.split('.'))
+            self._profile = model.objects.get_or_create(user=self)[0]
+        return self._profile
+
     def __str__(self):
         return self.get_full_name()
 
@@ -134,3 +150,34 @@ class UserEmailAddress(TimeStampedModel):
 
     def __str__(self):
         return self.email
+
+
+class BaseSiteProfile(TimeStampedModel):
+    """
+    SiteProfile contains site-specific user settings.
+    """
+
+    class Meta:
+        abstract = True
+
+    user = models.OneToOneField(User, primary_key=True, related_name='+')
+    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to Speedy Net'),
+                                    default=False)
+
+    def __str__(self):
+        return '{} @ {}'.format(self.user, settings.SITE_NAME)
+
+    def activate(self):
+        self.is_active = True
+        self.save(update_fields={'is_active'})
+
+
+class SiteProfile(BaseSiteProfile):
+    class Meta:
+        verbose_name = 'Speedy Net Profile'
+        verbose_name_plural = 'Speedy Net Profiles'
+
+    access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
+    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
+                                     limit_choices_to={'is_confirmed': True}, on_delete=models.SET_NULL,
+                                     related_name='+')

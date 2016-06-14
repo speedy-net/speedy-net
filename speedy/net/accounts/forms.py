@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import User, UserEmailAddress
+from .models import User, UserEmailAddress, SiteProfile
 
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
@@ -87,6 +87,19 @@ class EditAccountForm(forms.ModelForm):
             for pair in zip(field_names[::2], field_names[1::2])
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
+
+
+class AccountPrivacyForm(forms.ModelForm):
+    class Meta:
+        model = SiteProfile
+        fields = ('access_account', 'public_email')
+
+    @property
+    def helper(self):
+        helper = FormHelper()
+        helper.add_input(Hidden('_form', 'privacy'))
+        helper.add_input(Submit('submit', _('Save Changes')))
+        return helper
 
 
 class LoginForm(auth_forms.AuthenticationForm):

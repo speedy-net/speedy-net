@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans 'Account Privacy' %}</h3>
+    </div>
+    <div class="panel-body">
+        {% crispy privacy_form %}
+    </div>
+</div>

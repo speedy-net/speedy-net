@@ -25,6 +25,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITES = [
+    ('Speedy Net', env('SPEEDY_NET_URL')),
+    ('Speedy Match', env('SPEEDY_MATCH_URL')),
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,9 +54,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'speedy.net.accounts.middleware.SiteProfileMiddleware',
 ]
-
-ROOT_URLCONF = 'speedy.net.urls'
 
 TEMPLATES = [
     {
