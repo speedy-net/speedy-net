@@ -162,8 +162,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         r = self.client.get('/edit-profile/emails/verify/{}/'.format(token))
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['You\'ve already confirmed this email address.'])
+        self.assertIn('You\'ve already confirmed this email address.', map(str, r.context['messages']))
 
     def test_unconfirmed_email_link_confirms_email(self):
         self.client.login(username=self.user.slug, password='111')
@@ -171,8 +170,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         r = self.client.get('/edit-profile/emails/verify/{}/'.format(token))
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['You\'ve confirmed your email address.'])
+        self.assertIn('You\'ve confirmed your email address.', map(str, r.context['messages']))
         self.assertTrue(UserEmailAddress.objects.get(id=self.unconfirmed_address.id).is_confirmed)
 
 
@@ -204,8 +202,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
         })
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['A confirmation was sent to email@example.com'])
+        self.assertIn('A confirmation was sent to email@example.com', map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
         self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on Speedy Net')
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
@@ -236,8 +233,8 @@ class SendConfirmationEmailViewTestCase(TestCase):
         r = self.client.post(self.unconfirmed_address_url)
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['A confirmation was sent to {}'.format(self.unconfirmed_address.email)])
+        self.assertIn('A confirmation was sent to {}'.format(self.unconfirmed_address.email),
+                                 map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
         self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on Speedy Net')
         self.assertIn(UserEmailAddress.objects.get(email=self.unconfirmed_address.email).confirmation_token,
@@ -273,8 +270,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         r = self.client.post(self.confirmed_address_url)
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['The email address was deleted.'])
+        self.assertIn('The email address was deleted.', map(str, r.context['messages']))
         self.assertEqual(self.user.email_addresses.count(), 1)
 
 
@@ -311,8 +307,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         r = self.client.post(self.confirmed_address_url)
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertSequenceEqual(list(map(str, r.context['messages'])),
-                                 ['You have changed your primary email address.'])
+        self.assertIn('You have changed your primary email address.', map(str, r.context['messages']))
         self.assertEqual(self.user.email_addresses.count(), 3)
         self.assertEqual(self.user.email_addresses.filter(is_confirmed=True).count(), 2)
         self.assertEqual(self.user.email_addresses.get(is_primary=True), self.confirmed_address)
