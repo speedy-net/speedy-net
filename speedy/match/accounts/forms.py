@@ -1,4 +1,4 @@
-from speedy.net.accounts.forms import AccountPrivacyForm as NetAccountPrivacyForm
+from speedy.net.accounts.forms import ProfilePrivacyForm as NetAccountPrivacyForm
 
 from .models import SiteProfile
 

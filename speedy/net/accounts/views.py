@@ -10,9 +10,8 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from speedy.core.views import MultiUpdateView
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, PasswordChangeForm, EditAccountForm, \
-    AccountPrivacyForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, \
+    PasswordChangeForm
 from .models import User, UserEmailAddress
 
 
@@ -63,25 +62,56 @@ def login(request, template_name='accounts/login.html',
     return response
 
 
-class EditProfileView(LoginRequiredMixin, MultiUpdateView):
-    template_name = 'accounts/edit_profile.html'
+# class EditProfileView(LoginRequiredMixin, MultiUpdateView):
+#     template_name = 'accounts/edit_profile.html'
+#     success_url = reverse_lazy('accounts:edit_profile')
+#     form_classes = {
+#         'password': PasswordChangeForm,
+#         'account': EditAccountForm,
+#         'privacy': AccountPrivacyForm,
+#     }
+#
+#     def get_form_kwargs_password(self):
+#         return {
+#             'user': self.request.user,
+#         }
+#
+#     def get_object_account(self):
+#         return self.request.user
+#
+#     def get_object_privacy(self):
+#         return self.request.user.profile
+
+
+class EditProfileView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'accounts/edit_profile/account.html'
     success_url = reverse_lazy('accounts:edit_profile')
-    form_classes = {
-        'password': PasswordChangeForm,
-        'account': EditAccountForm,
-        'privacy': AccountPrivacyForm,
-    }
+    form_class = ProfileForm
 
-    def get_form_kwargs_password(self):
-        return {
-            'user': self.request.user,
-        }
-
-    def get_object_account(self):
+    def get_object(self, queryset=None):
         return self.request.user
 
-    def get_object_privacy(self):
+
+class EditProfilePrivacyView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'accounts/edit_profile/privacy.html'
+    success_url = reverse_lazy('accounts:edit_profile_privacy')
+    form_class = ProfilePrivacyForm
+
+    def get_object(self, queryset=None):
         return self.request.user.profile
+
+
+class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
+    template_name = 'accounts/edit_profile/credentials.html'
+    success_url = reverse_lazy('accounts:edit_profile_credentials')
+    form_class = PasswordChangeForm
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'user': self.request.user,
+        })
+        return kwargs
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):

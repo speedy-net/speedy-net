@@ -67,7 +67,7 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
         return slug
 
 
-class EditAccountForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name_en', 'last_name_en', 'first_name_he', 'last_name_he', 'date_of_birth', 'profile_picture')
@@ -89,7 +89,7 @@ class EditAccountForm(forms.ModelForm):
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
 
-class AccountPrivacyForm(forms.ModelForm):
+class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
         model = SiteProfile
         fields = ('access_account', 'public_email')
@@ -97,6 +97,7 @@ class AccountPrivacyForm(forms.ModelForm):
     @property
     def helper(self):
         helper = FormHelper()
+        helper.form_class = 'form-horizontal'
         helper.add_input(Hidden('_form', 'privacy'))
         helper.add_input(Submit('submit', _('Save Changes')))
         return helper
@@ -148,6 +149,7 @@ class PasswordChangeForm(auth_forms.PasswordChangeForm):
         user = kwargs.pop('user')
         super().__init__(user, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_class = 'form-horizontal'
         self.helper.add_input(Hidden('_form', 'password'))
         self.helper.add_input(Submit('submit', _('Change')))
 
