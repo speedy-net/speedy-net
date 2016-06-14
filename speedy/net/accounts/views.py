@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME
+from django.contrib.auth import login as auth_login, logout as auth_logout, REDIRECT_FIELD_NAME
 from django.contrib.auth import views as auth_views
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
@@ -11,7 +11,7 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, \
-    PasswordChangeForm
+    PasswordChangeForm, DeactivationForm
 from .models import User, UserEmailAddress
 
 
@@ -62,27 +62,6 @@ def login(request, template_name='accounts/login.html',
     return response
 
 
-# class EditProfileView(LoginRequiredMixin, MultiUpdateView):
-#     template_name = 'accounts/edit_profile.html'
-#     success_url = reverse_lazy('accounts:edit_profile')
-#     form_classes = {
-#         'password': PasswordChangeForm,
-#         'account': EditAccountForm,
-#         'privacy': AccountPrivacyForm,
-#     }
-#
-#     def get_form_kwargs_password(self):
-#         return {
-#             'user': self.request.user,
-#         }
-#
-#     def get_object_account(self):
-#         return self.request.user
-#
-#     def get_object_privacy(self):
-#         return self.request.user.profile
-
-
 class EditProfileView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'accounts/edit_profile/account.html'
     success_url = reverse_lazy('accounts:edit_profile')
@@ -112,6 +91,27 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
             'user': self.request.user,
         })
         return kwargs
+
+
+class DeactivateAccountView(LoginRequiredMixin, generic.FormView):
+    template_name = 'accounts/edit_profile/deactivate.html'
+    form_class = DeactivationForm
+    success_url = '/'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'user': self.request.user,
+        })
+        return kwargs
+
+    def form_valid(self, form):
+        user = self.request.user
+        user.is_active = False
+        user.save(update_fields={'is_active'})
+        auth_logout(self.request)
+        messages.error(self.request, _('Your account has been deactivated.'))
+        return super().form_valid(form)
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):

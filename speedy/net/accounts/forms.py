@@ -77,7 +77,6 @@ class ProfileForm(forms.ModelForm):
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
         self.helper = FormHelper()
-        self.helper.add_input(Hidden('_form', 'account'))
         # split into two columns
         field_names = list(self.fields.keys())
         self.helper.add_layout(Div(*[
@@ -97,8 +96,6 @@ class ProfilePrivacyForm(forms.ModelForm):
     @property
     def helper(self):
         helper = FormHelper()
-        helper.form_class = 'form-horizontal'
-        helper.add_input(Hidden('_form', 'privacy'))
         helper.add_input(Submit('submit', _('Save Changes')))
         return helper
 
@@ -149,9 +146,24 @@ class PasswordChangeForm(auth_forms.PasswordChangeForm):
         user = kwargs.pop('user')
         super().__init__(user, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_class = 'form-horizontal'
         self.helper.add_input(Hidden('_form', 'password'))
         self.helper.add_input(Submit('submit', _('Change')))
+
+
+class DeactivationForm(forms.Form):
+    password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput)
+
+    def __init__(self, **kwargs):
+        self.user = kwargs.pop('user')
+        super().__init__(**kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', _('Deactivate your account'), css_class='btn-danger'))
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        if not self.user.check_password(password):
+            raise forms.ValidationError(_('Invalid password'))
+        return password
 
 
 class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):

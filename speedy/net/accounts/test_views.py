@@ -142,7 +142,7 @@ class EditProfileViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get('/edit-profile/')
         self.assertEqual(r.status_code, 200)
-        self.assertTemplateUsed(r, 'accounts/edit_profile.html')
+        self.assertTemplateUsed(r, 'accounts/edit_profile/account.html')
 
 
 class VerifyUserEmailAddressViewTestCase(TestCase):

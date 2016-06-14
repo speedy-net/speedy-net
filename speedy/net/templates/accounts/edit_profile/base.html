@@ -15,6 +15,8 @@
                         href="{% url 'accounts:edit_profile_privacy' %}">{% trans 'Privacy Settings' %}</a></li>
                 <li class="{% block credentials_tab_class %}{% endblock %}"><a
                         href="{% url 'accounts:edit_profile_credentials' %}">{% trans 'Emails & Password' %}</a></li>
+                <li class="{% block deactivate_tab_class %}{% endblock %}"><a
+                        href="{% url 'accounts:deactivate' %}">{% trans 'Deactivate Account' %}</a></li>
             </ul>
         </div>
         <div class="col-md-9">
