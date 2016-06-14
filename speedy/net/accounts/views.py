@@ -57,8 +57,8 @@ def login(request, template_name='accounts/login.html',
                                 redirect_field_name=redirect_field_name,
                                 authentication_form=authentication_form,
                                 extra_context=extra_context)
-    if response.status_code == 302:
-        messages.success(request, _('Welcome back.'))
+    # if response.status_code == 302:
+    #     messages.success(request, _('Welcome back.'))
     return response
 
 
