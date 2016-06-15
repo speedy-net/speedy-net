@@ -92,6 +92,13 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
         })
         return kwargs
 
+    def form_valid(self, form):
+        form.save()
+        user = self.request.user
+        user.backend = 'django.contrib.auth.backends.ModelBackend'
+        auth_login(self.request, user)
+        return super().form_valid(form)
+
 
 class DeactivateAccountView(LoginRequiredMixin, generic.FormView):
     template_name = 'accounts/edit_profile/deactivate.html'

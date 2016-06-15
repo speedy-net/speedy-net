@@ -1,3 +1,6 @@
+from datetime import date
+
+from django.conf import settings
 from django.core import mail
 from django.test import TestCase
 
@@ -86,7 +89,7 @@ class RegistrationViewTestCase(TestCase):
     def test_user_gets_email_after_registration(self):
         r = self.client.post('/register/', data=self.data)
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on Speedy Net')
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
 
@@ -130,20 +133,126 @@ class LogoutViewTestCase(TestCase):
 
 
 class EditProfileViewTestCase(TestCase):
+    page_url = '/edit-profile/'
+
     def setUp(self):
         self.user = UserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.get('/edit-profile/')
-        self.assertRedirects(r, '/login/?next=/edit-profile/')
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
 
     def test_user_can_open_the_page(self):
-        r = self.client.get('/edit-profile/')
+        r = self.client.get(self.page_url)
         self.assertEqual(r.status_code, 200)
         self.assertTemplateUsed(r, 'accounts/edit_profile/account.html')
 
+    def test_user_can_save_his_settings(self):
+        data = {
+            'first_name_en': 'Johnny',
+            'last_name_en': 'English',
+            'first_name_he': 'Not Johnny',
+            'last_name_he': 'Not English',
+            'date_of_birth': 'June 3, 1976',
+        }
+        r = self.client.post(self.page_url, data)
+        self.assertRedirects(r, self.page_url)
+        user = User.objects.get(id=self.user.id)
+        for (key, value) in data.items():
+            if key == 'date_of_birth':
+                continue
+            self.assertEqual(getattr(user, key), value)
+        self.assertEqual(user.date_of_birth, date(1976, 6, 3))
+
+
+class EditProfilePrivacyViewTestCase(TestCase):
+    page_url = '/edit-profile/privacy/'
+
+    def setUp(self):
+        self.user = UserFactory()
+        self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.client.login(username=self.user.slug, password='111')
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/edit_profile/privacy.html')
+
+    def test_user_can_save_his_settings(self):
+        self.assertEqual(self.user.profile.access_account, 4)
+        self.assertEqual(self.user.profile.public_email, None)
+        data = {
+            'access_account': '1',
+            'public_email': self.email.id,
+        }
+        r = self.client.post(self.page_url, data)
+        self.assertRedirects(r, self.page_url)
+        user = User.objects.get(id=self.user.id)
+        self.assertEqual(user.profile.access_account, 1)
+        self.assertEqual(user.profile.public_email_id, self.email.id)
+
+
+class EditProfileCredentialsViewTestCase(TestCase):
+    page_url = '/edit-profile/credentials/'
+
+    def setUp(self):
+        self.user = UserFactory()
+        self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.client.login(username=self.user.slug, password='111')
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/edit_profile/credentials.html')
+
+    def test_user_can_change_password(self):
+        r = self.client.post(self.page_url, {
+            'old_password': '111',
+            'new_password1': '222',
+            'new_password2': '222',
+        })
+        self.assertRedirects(r, self.page_url)
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(user.check_password('222'))
+
+
+class DeactivateAccountViewTestCase(TestCase):
+    page_url = '/edit-profile/deactivate/'
+
+    def setUp(self):
+        self.user = UserFactory()
+        self.client.login(username=self.user.slug, password='111')
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/edit_profile/deactivate.html')
+
+    def test_user_can_deactivate_his_account(self):
+        self.assertTrue(self.user.is_active)
+        r = self.client.post(self.page_url, {
+            'password': '111',
+        })
+        self.assertRedirects(r, '/', target_status_code=302)
+        user = User.objects.get(id=self.user.id)
+        self.assertFalse(user.is_active)
 
 class VerifyUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
@@ -204,7 +313,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
         r = self.client.get('/edit-profile/')
         self.assertIn('A confirmation was sent to email@example.com', map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on Speedy Net')
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
 
@@ -234,9 +343,9 @@ class SendConfirmationEmailViewTestCase(TestCase):
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn('A confirmation was sent to {}'.format(self.unconfirmed_address.email),
-                                 map(str, r.context['messages']))
+                      map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on Speedy Net')
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
         self.assertIn(UserEmailAddress.objects.get(email=self.unconfirmed_address.email).confirmation_token,
                       mail.outbox[0].body)
 
@@ -311,3 +420,21 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(self.user.email_addresses.count(), 3)
         self.assertEqual(self.user.email_addresses.filter(is_confirmed=True).count(), 2)
         self.assertEqual(self.user.email_addresses.get(is_primary=True), self.confirmed_address)
+
+
+class PasswordResetViewTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+
+    def test_visitor_can_open_the_page(self):
+        r = self.client.get('/reset-password/')
+        self.assertEqual(r.status_code, 200)
+
+    def test_visitor_can_reset_password(self):
+        r = self.client.post('/reset-password/', {
+            'email': self.email.email,
+        })
+        self.assertRedirects(r, '/reset-password/done/')
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Password Reset on {}'.format(settings.SITE_NAME))

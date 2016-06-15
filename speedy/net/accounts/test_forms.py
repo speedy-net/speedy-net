@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from speedy.net.accounts.test_factories import UserFactory
-from .forms import RegistrationForm
+from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
+from .forms import RegistrationForm, PasswordResetForm, DeactivationForm
 
 
 class RegistrationFormTestCase(TestCase):
@@ -42,3 +42,39 @@ class RegistrationFormTestCase(TestCase):
         form = RegistrationForm(data)
         form.full_clean()
         self.assertEqual(form.errors['password2'][0], 'The two password fields didn\'t match.')
+
+
+class PasswordResetFormTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+        self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)
+        self.form = PasswordResetForm()
+
+    def test_can_reset_using_primary_email(self):
+        self.assertSetEqual(self.form.get_users(self.primary_email.email), {self.user})
+
+    def test_can_reset_using_confirmed_email(self):
+        self.assertSetEqual(self.form.get_users(self.confirmed_email.email), {self.user})
+
+    def test_cannot_reset_using_unconfirmed_email(self):
+        self.assertSetEqual(self.form.get_users(self.unconfirmed_email.email), set())
+
+
+class DeactivationFormTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+    def test_incorrect_password(self):
+        form = DeactivationForm(user=self.user, data={
+            'password': 'wrong password',
+        })
+        self.assertFalse(form.is_valid())
+
+    def test_correct_password(self):
+        form = DeactivationForm(user=self.user, data={
+            'password': '111',
+        })
+        self.assertTrue(form.is_valid())
