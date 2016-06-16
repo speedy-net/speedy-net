@@ -99,6 +99,7 @@ class LoginViewTestCase(TestCase):
         self.user = UserFactory()
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
+        self.inactive_user = UserFactory(is_active=False)
 
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
@@ -110,14 +111,21 @@ class LoginViewTestCase(TestCase):
             'username': self.user.slug,
             'password': '111',
         })
-        self.assertEqual(r.status_code, 302)
+        self.assertRedirects(r, '/me/', target_status_code=302)
 
     def test_visitor_can_login_using_email(self):
         r = self.client.post('/login/', data={
             'username': self.user_email.email,
             'password': '111',
         })
-        self.assertEqual(r.status_code, 302)
+        self.assertRedirects(r, '/me/', target_status_code=302)
+
+    def test_visitor_still_can_login_if_he_is_not_active_user(self):
+        r = self.client.post('/login/', data={
+            'username': self.inactive_user.slug,
+            'password': '111',
+        })
+        self.assertRedirects(r, '/me/', target_status_code=302)
 
 
 class LogoutViewTestCase(TestCase):
@@ -253,6 +261,39 @@ class DeactivateAccountViewTestCase(TestCase):
         self.assertRedirects(r, '/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
         self.assertFalse(user.is_active)
+
+
+class ActivateAccountViewTestCase(TestCase):
+    page_url = '/activate/'
+
+    def setUp(self):
+        self.active_user = UserFactory(is_active=True)
+        self.user = UserFactory(is_active=True)
+        UserEmailAddressFactory(user=self.user, is_primary=True, is_confirmed=True)
+        self.client.login(username=self.user.slug, password='111')
+        # django test client don't authenticate inactive users
+        self.user.deactivate()
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_inactive_user_has_no_access_to_other_pages(self):
+        r = self.client.get('/other-page/')
+        self.assertRedirects(r, self.page_url)
+
+    def test_inactive_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/activate/form.html')
+
+    def test_inactive_user_can_request_activation(self):
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/activate/done/')
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Account Activation on {}'.format(settings.SITE_NAME))
+
 
 class VerifyUserEmailAddressViewTestCase(TestCase):
     def setUp(self):

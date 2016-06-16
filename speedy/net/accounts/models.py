@@ -97,6 +97,14 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def get_absolute_url(self):
         return reverse('accounts:user_profile', kwargs={'slug': self.slug})
 
+    def activate(self):
+        self.is_active = True
+        self.save(update_fields={'is_active'})
+
+    def deactivate(self):
+        self.is_active = False
+        self.save(update_fields={'is_active'})
+
     @property
     def profile(self):
         if not hasattr(self, '_profile'):

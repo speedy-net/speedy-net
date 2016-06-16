@@ -1,8 +1,15 @@
+from functools import partial
+
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, logout as auth_logout, REDIRECT_FIELD_NAME
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.tokens import default_token_generator
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response, redirect
+from django.utils.encoding import force_text
+from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from django.views.decorators.cache import never_cache
@@ -11,7 +18,7 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, \
-    PasswordChangeForm, DeactivationForm
+    PasswordChangeForm, DeactivationForm, ActivationForm
 from .models import User, UserEmailAddress
 
 
@@ -57,8 +64,6 @@ def login(request, template_name='accounts/login.html',
                                 redirect_field_name=redirect_field_name,
                                 authentication_form=authentication_form,
                                 extra_context=extra_context)
-    # if response.status_code == 302:
-    #     messages.success(request, _('Welcome back.'))
     return response
 
 
@@ -114,11 +119,38 @@ class DeactivateAccountView(LoginRequiredMixin, generic.FormView):
 
     def form_valid(self, form):
         user = self.request.user
-        user.is_active = False
-        user.save(update_fields={'is_active'})
+        user.deactivate()
         auth_logout(self.request)
         messages.error(self.request, _('Your account has been deactivated.'))
         return super().form_valid(form)
+
+
+@login_required
+def activate(request):
+    return auth_views.password_reset(
+        request,
+        post_reset_redirect='accounts:activate_done',
+        template_name='accounts/activate/form.html',
+        password_reset_form=partial(ActivationForm, request.user),
+    )
+
+
+@never_cache
+def activate_confirm(request, uidb64=None, token=None):
+    assert uidb64 is not None and token is not None  # checked by URLconf
+    try:
+        # urlsafe_base64_decode() decodes to bytestring on Python 3
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User._default_manager.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.activate()
+        messages.success(request, _('Your account is now activated. Welcome back!'))
+        return redirect('/')
+    else:
+        return render_to_response('accounts/activate/confirm.html')
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):

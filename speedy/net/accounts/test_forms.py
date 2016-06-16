@@ -60,8 +60,8 @@ class PasswordResetFormTestCase(TestCase):
     def test_can_reset_using_confirmed_email(self):
         self.assertSetEqual(self.form.get_users(self.confirmed_email.email), {self.user})
 
-    def test_cannot_reset_using_unconfirmed_email(self):
-        self.assertSetEqual(self.form.get_users(self.unconfirmed_email.email), set())
+    def test_can_reset_using_unconfirmed_email(self):
+        self.assertSetEqual(self.form.get_users(self.unconfirmed_email.email), {self.user})
 
 
 class DeactivationFormTestCase(TestCase):

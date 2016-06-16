@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'speedy.net.accounts.middleware.InactiveUserMiddleware',
     'speedy.net.accounts.middleware.SiteProfileMiddleware',
 ]
 
@@ -119,6 +120,11 @@ LOGIN_REDIRECT_URL = '/me/'
 UNAVAILABLE_USERNAMES = [
     'admin', 'root',
     'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
+]
+
+DONT_REDIRECT_INACTIVE_USER = [
+    '/logout/',
+    '/activate/',
 ]
 
 # Internationalization

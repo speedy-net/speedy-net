@@ -115,6 +115,9 @@ class LoginForm(auth_forms.AuthenticationForm):
             )),
         ))
 
+    def confirm_login_allowed(self, user):
+        return None
+
 
 class PasswordResetForm(auth_forms.PasswordResetForm):
     @property
@@ -125,7 +128,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
 
     def get_users(self, email):
         email_addresses = UserEmailAddress.objects.select_related('user') \
-            .filter(email__iexact=email, is_confirmed=True)
+            .filter(email__iexact=email, user__is_active=True)
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email,
@@ -164,6 +167,31 @@ class DeactivationForm(forms.Form):
         if not self.user.check_password(password):
             raise forms.ValidationError(_('Invalid password'))
         return password
+
+
+class ActivationForm(auth_forms.PasswordResetForm):
+    @property
+    def helper(self):
+        helper = FormHelper()
+        helper.add_input(Submit('submit', _('Send Activation Email')))
+        return helper
+
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super().__init__(*args, **kwargs)
+        del self.fields['email']
+
+    def get_users(self, email):
+        if self.user.is_active:
+            return set()
+        return {self.user}
+
+    def _post_clean(self):
+        self.cleaned_data['email'] = ''
+
+    def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email,
+                  html_email_template_name=None):
+        send_mail([to_email], 'accounts/email/activate', context)
 
 
 class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):
