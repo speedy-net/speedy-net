@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
-from .forms import RegistrationForm, PasswordResetForm, DeactivationForm
+from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm
 
 
 class RegistrationFormTestCase(TestCase):
@@ -44,6 +44,25 @@ class RegistrationFormTestCase(TestCase):
         self.assertEqual(form.errors['password2'][0], 'The two password fields didn\'t match.')
 
 
+class ProfilePrivacyFormTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+        self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)
+
+    def test_user_cannot_see_other_users_email(self):
+        form = ProfilePrivacyForm(instance=self.user.profile)
+        choices_ids = [c[0] for c in form.fields['public_email'].choices]
+        self.assertEqual(len(choices_ids), 3)
+        self.assertIn(self.primary_email.id, choices_ids)
+        self.assertIn(self.confirmed_email.id, choices_ids)
+        self.assertNotIn(self.unconfirmed_email.id, choices_ids)
+        self.assertNotIn(self.other_user_email.id, choices_ids)
+
+
 class PasswordResetFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -67,6 +86,7 @@ class PasswordResetFormTestCase(TestCase):
 class DeactivationFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
+
     def test_incorrect_password(self):
         form = DeactivationForm(user=self.user, data={
             'password': 'wrong password',

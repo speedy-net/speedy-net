@@ -187,5 +187,4 @@ class SiteProfile(BaseSiteProfile):
 
     access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
     public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
-                                     limit_choices_to={'is_confirmed': True}, on_delete=models.SET_NULL,
-                                     related_name='+')
+                                     on_delete=models.SET_NULL, related_name='+')

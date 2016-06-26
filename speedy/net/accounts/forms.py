@@ -93,11 +93,11 @@ class ProfilePrivacyForm(forms.ModelForm):
         model = SiteProfile
         fields = ('access_account', 'public_email')
 
-    @property
-    def helper(self):
-        helper = FormHelper()
-        helper.add_input(Submit('submit', _('Save Changes')))
-        return helper
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True, user=self.instance.user)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', _('Save Changes')))
 
 
 class LoginForm(auth_forms.AuthenticationForm):
