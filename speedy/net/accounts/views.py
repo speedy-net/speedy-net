@@ -25,19 +25,9 @@ from .models import User, UserEmailAddress
 class IndexView(generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         if self.request.user.is_authenticated():
-            return reverse('accounts:me')
+            return reverse('profiles:me')
         else:
             return reverse('accounts:registration')
-
-
-class MeView(LoginRequiredMixin, generic.RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        return self.request.user.get_absolute_url()
-
-
-class UserProfileView(generic.DetailView):
-    template_name = 'accounts/user_profile.html'
-    model = User
 
 
 class RegistrationView(generic.CreateView):

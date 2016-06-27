@@ -8,3 +8,6 @@ class UserManager(BaseUserManager):
     def get_by_natural_key(self, username):
         return self.distinct().get(Q(**{self.model.USERNAME_FIELD: username}) |
                                    Q(email_addresses__email=username))
+
+    def active(self):
+        return self.filter(is_active=True)

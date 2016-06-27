@@ -8,7 +8,6 @@ from . import views
 urlpatterns = [
 
     url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^me/$', views.MeView.as_view(), name='me'),
 
     url(r'^register/$', views.RegistrationView.as_view(), name='registration'),
     url(r'^login/$', views.login, name='login'),
@@ -48,5 +47,4 @@ urlpatterns = [
     url(r'^edit-profile/emails/(?P<pk>\d+)/set-primary/$', views.SetPrimaryUserEmailAddressView.as_view(),
         name='set_primary_email'),
 
-    url(r'^(?P<slug>[-\w]+)/', views.UserProfileView.as_view(), name='user_profile'),
 ]

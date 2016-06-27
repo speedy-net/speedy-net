@@ -1,5 +1,6 @@
 {% extends 'base_site.html' %}
 
+{% load core_tags %}
 {% load i18n %}
 
 {% block content %}
@@ -9,13 +10,13 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="{% block account_tab_class %}{% endblock %}"><a
+                <li class="{% active_class 'accounts:edit_profile' %}"><a
                         href="{% url 'accounts:edit_profile' %}">{% trans 'Profile Info' %}</a></li>
-                <li class="{% block privacy_tab_class %}{% endblock %}"><a
+                <li class="{% active_class 'accounts:edit_profile_privacy' %}"><a
                         href="{% url 'accounts:edit_profile_privacy' %}">{% trans 'Privacy Settings' %}</a></li>
-                <li class="{% block credentials_tab_class %}{% endblock %}"><a
+                <li class="{% active_class 'accounts:edit_profile_credentials' %}"><a
                         href="{% url 'accounts:edit_profile_credentials' %}">{% trans 'Emails & Password' %}</a></li>
-                <li class="{% block deactivate_tab_class %}{% endblock %}"><a
+                <li class="{% active_class 'accounts:deactivate' %}"><a
                         href="{% url 'accounts:deactivate' %}">{% trans 'Deactivate Account' %}</a></li>
             </ul>
         </div>

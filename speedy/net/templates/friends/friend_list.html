@@ -1,0 +1,28 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load friendshiptags %}
+{% load i18n %}
+{% load rules %}
+
+{% block user_content %}
+
+    {% has_perm 'friends:view_requests' user as can_view_requests %}
+
+    {% if can_view_requests %}
+        <h2>{% trans 'Requests' %}</h2>
+        {% for friend_request in request_list %}
+            {% include 'profiles/user_list_item.html' with user=friend_request.from_user  %}
+        {% endfor %}
+
+        <h2>{% trans 'Friends' %}</h2>
+    {% endif %}
+
+    {% for friend in friend_list %}
+        {% include 'profiles/user_list_item.html' with user=friend %}
+    {% empty %}
+        <div class="alert alert-warning">
+            This user has no friends yet.
+        </div>
+    {% endfor %}
+
+{% endblock %}

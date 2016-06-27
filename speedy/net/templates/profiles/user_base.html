@@ -1,0 +1,40 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags %}
+{% load i18n %}
+{% load rules %}
+
+{% block content %}
+    {% has_perm 'friends.request' request.user user as can_friend_request %}
+
+    <div class="page-header">
+        <h1>
+            <div class="pull-right">
+                {% if request.user == user %}
+                    <small>{% trans "It's you!" %}</small>
+                {% elif can_friend_request %}
+                    <form action="{% url 'friends:request' user.slug %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-user-plus"></i>
+                            {% trans 'Add to Friends' %}
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+            {{ user }}
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="{% active_class 'profiles:user' %}"><a href="{{ user.get_absolute_url }}">{% trans 'Profile' %}</a></li>
+                <li class="{% active_class 'friends:list' %}"><a href="{% url 'friends:list' user.slug %}">{% trans 'Friends' %}</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            {% block user_content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

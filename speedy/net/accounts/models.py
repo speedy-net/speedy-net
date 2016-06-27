@@ -95,7 +95,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return self.email_addresses.filter(is_confirmed=True).exists()
 
     def get_absolute_url(self):
-        return reverse('accounts:user_profile', kwargs={'slug': self.slug})
+        return reverse('profiles:user', kwargs={'username': self.slug})
 
     def activate(self):
         self.is_active = True

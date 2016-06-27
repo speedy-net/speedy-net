@@ -35,7 +35,7 @@
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_active %}
-                    <li><a href="{% url 'accounts:me' %}"><i class="fa fa-user"></i> {{ request.user }}</a></li>
+                    <li><a href="{% url 'profiles:me' %}"><i class="fa fa-user"></i> {{ request.user }}</a></li>
                     <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
                 {% endif %}
                 <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>

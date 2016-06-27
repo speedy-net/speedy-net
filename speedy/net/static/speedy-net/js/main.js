@@ -8,14 +8,19 @@ var datepickerOptions = {
 evil.block('@@RegistrationForm', {
 
     _generateSlug: function () {
-        var slug = this.emailField.val().split('@')[0];
-        slug = slug.replace('.', '_');
+        var components = [this.firstNameField.val(), this.lastNameField.val()];
+        components = components.filter(function(i) {return i});
+        var slug = components.join('_');
+        slug = slug.toLowerCase();
+        slug = slug.replace(' ', '_');
+        slug = slug.replace(/[^\x00-\x7F]/g, '');
         return slug;
     },
 
     'init': function () {
         this.slugField = this.$('#id_slug');
-        this.emailField = this.$('#id_email');
+        this.firstNameField = this.$('#id_first_name');
+        this.lastNameField = this.$('#id_last_name');
         this.slugChanged = (this.slugField.val() != this._generateSlug());
         this.$("#id_date_of_birth").datepicker(datepickerOptions);
     },
@@ -24,7 +29,7 @@ evil.block('@@RegistrationForm', {
         this.slugChanged = true;
     },
 
-    'keyup on #id_email': function () {
+    'keyup on #id_first_name, #id_last_name': function () {
         if (!this.slugChanged) {
             this.slugField.val(
                 this._generateSlug()
@@ -38,7 +43,7 @@ evil.block('@@RegistrationForm', {
 evil.block('@@AccountForm', {
 
     'init': function () {
-        this.$("#id_account-date_of_birth").datepicker(datepickerOptions);
+        this.$("#id_date_of_birth").datepicker(datepickerOptions);
     }
 
 });

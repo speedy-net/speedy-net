@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'friendship',
     'rules.apps.AutodiscoverRulesConfig',
+    'speedy.core',
     'speedy.net.accounts',
+    'speedy.net.profiles',
+    'speedy.net.friends',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -71,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'speedy.core.context_processors.active_url_name',
                 'speedy.core.context_processors.settings',
             ],
         },
@@ -120,6 +125,7 @@ LOGIN_REDIRECT_URL = '/me/'
 UNAVAILABLE_USERNAMES = [
     'admin', 'root',
     'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
+    'friends',
 ]
 
 DONT_REDIRECT_INACTIVE_USER = [
