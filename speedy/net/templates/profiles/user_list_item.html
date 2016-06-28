@@ -1,14 +1,29 @@
-<a href="{{ user.get_absolute_url }}">
-    <div class="media">
-        <div class="media-left">
-            {% comment %}
-        <a href="#">
-            <img class="media-object" src="..." alt="...">
-        </a>
-        {% endcomment %}
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">{{ user }}</h4>
-        </div>
+{% load i18n %}
+{% load thumbnail %}
+
+<div class="media">
+    <div class="media-left">
+        {% thumbnail user.profile_picture '64x64' crop='center' as im %}
+            <a href="{{ user.get_absolute_url }}">
+                <img class="media-object" src="{{ im.url }}" alt="{{ user }}">
+            </a>
+        {% endthumbnail %}
     </div>
-</a>
+    <div class="media-body">
+        <h4 class="media-heading">
+            <a href="{{ user.get_absolute_url }}">
+                {{ user }}
+            </a>
+        </h4>
+        {% if friend_request %}
+            <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-success">{% trans 'Accept' %}</button>
+            </form>
+            <form action="{% url 'friends:reject_request' request.user.slug friend_request.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-danger">{% trans 'Reject' %}</button>
+            </form>
+        {% endif %}
+    </div>
+</div>

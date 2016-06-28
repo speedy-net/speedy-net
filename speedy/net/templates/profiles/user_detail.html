@@ -1,5 +1,18 @@
 {% extends 'profiles/user_base.html' %}
 
+{% load thumbnail %}
+
 {% block user_content %}
-    User profile.
+    <div class="row">
+        <div class="col-lg-8">
+
+        </div>
+        <div class="col-lg-4">
+            {% thumbnail user.profile_picture "300" as im %}
+                <img src="{{ im.url }}" class="img-responsive" alt="{{ user }}">
+            {% empty %}
+                <p>No image</p>
+            {% endthumbnail %}
+        </div>
+    </div>
 {% endblock %}

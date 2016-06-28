@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.conf.urls import url, include
 
 # from django.contrib import admin
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
@@ -10,3 +12,6 @@ urlpatterns = [
     url(r'^(?P<slug>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
+
+if settings.DEBUG:
+    urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + urlpatterns

@@ -17,3 +17,15 @@ class CanFriendRequestTestCase(TestCase):
 
     def test_user_cannot_send_second_request(self):
         Friend.objects.add_friend(self.user, self.other_user)
+
+
+class ViewRequestsTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+
+    def test_user_cannot_view_incoming_requests_for_other_user(self):
+        self.assertFalse(self.user.has_perm('friends.view_requests', self.other_user))
+
+    def test_user_can_view_incoming_requests(self):
+        self.assertTrue(self.user.has_perm('friends.view_requests', self.user))

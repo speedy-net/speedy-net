@@ -7,3 +7,4 @@ django-modeltranslation==0.11
 factory-boy==2.7.0
 pillow==3.2.0
 rules==1.1.1
+sorl-thumbnail==12.4a1

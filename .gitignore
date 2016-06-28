@@ -2,6 +2,7 @@ env.ini
 *.sqlite
 .idea/
 .venv
+media/
 
 ### Python template
 # Byte-compiled / optimized / DLL files

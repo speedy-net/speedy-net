@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'crispy_forms',
     'friendship',
     'rules.apps.AutodiscoverRulesConfig',
+    'sorl.thumbnail',
+
     'speedy.core',
     'speedy.net.accounts',
     'speedy.net.profiles',
@@ -165,3 +168,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = str(ROOT_DIR / 'media')
+
+THUMBNAIL_DEBUG = True
+
+THUMBNAIL_DUMMY = True
