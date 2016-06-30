@@ -6,6 +6,7 @@
 
 {% block content %}
     {% has_perm 'friends.request' request.user user as can_friend_request %}
+    {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
 
     <div class="page-header">
         <h1>
@@ -43,8 +44,27 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="{% active_class 'profiles:user' %}"><a href="{{ user.get_absolute_url }}">{% trans 'Profile' %}</a></li>
-                <li class="{% active_class 'friends:list' %}"><a href="{% url 'friends:list' user.slug %}">{% trans 'Friends' %}</a></li>
+
+                <li class="{% active_class 'profiles:user' %}">
+                    <a href="{{ user.get_absolute_url }}">
+                        {% trans 'Profile' %}
+                    </a>
+                </li>
+
+                <li class="{% active_class 'friends:list' %}">
+                    <a href="{% url 'friends:list' user.slug %}">
+                        {% trans 'Friends' %}
+                        {% with user.friendship_requests_received.count as frequests_count %}
+                            {% if can_view_requests and frequests_count %}
+{#                                <span class="badge">{% blocktrans %}{{ frequests_count }} new{% endblocktrans %}</span>#}
+                                <span class="badge">+{{ frequests_count }}</span>
+                            {% else %}
+                                <span class="badge">{{ user.friends.count }}</span>
+                            {% endif %}
+                        {% endwith %}
+                    </a>
+                </li>
+
             </ul>
         </div>
         <div class="col-sm-9">

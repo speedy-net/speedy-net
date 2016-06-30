@@ -1,12 +1,12 @@
 from datetime import date
 
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.core import mail
 from django.test import TestCase
 
 from .models import Entity, User, UserEmailAddress
 from .test_factories import UserFactory, UserEmailAddressFactory
-
 
 class IndexViewTestCase(TestCase):
     def setUp(self):
@@ -89,7 +89,8 @@ class RegistrationViewTestCase(TestCase):
     def test_user_gets_email_after_registration(self):
         r = self.client.post('/register/', data=self.data)
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
 
@@ -292,7 +293,8 @@ class ActivateAccountViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(r, '/activate/done/')
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Account Activation on {}'.format(settings.SITE_NAME))
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, 'Account Activation on {}'.format(site.name))
 
 
 class VerifyUserEmailAddressViewTestCase(TestCase):
@@ -354,7 +356,8 @@ class AddUserEmailAddressViewTestCase(TestCase):
         r = self.client.get('/edit-profile/')
         self.assertIn('A confirmation was sent to email@example.com', map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
 
@@ -386,7 +389,8 @@ class SendConfirmationEmailViewTestCase(TestCase):
         self.assertIn('A confirmation was sent to {}'.format(self.unconfirmed_address.email),
                       map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(settings.SITE_NAME))
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn(UserEmailAddress.objects.get(email=self.unconfirmed_address.email).confirmation_token,
                       mail.outbox[0].body)
 
@@ -478,4 +482,5 @@ class PasswordResetViewTestCase(TestCase):
         })
         self.assertRedirects(r, '/reset-password/done/')
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Password Reset on {}'.format(settings.SITE_NAME))
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, 'Password Reset on {}'.format(site.name))

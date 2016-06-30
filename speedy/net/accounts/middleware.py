@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.sites.models import Site
 from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 
@@ -20,4 +21,5 @@ class SiteProfileMiddleware(object):
         profile = request.user.profile
         if not profile.is_active:
             profile.activate()
-            messages.success(request, _('Welcome! This is the first time you visit {}!'.format(settings.SITE_NAME)))
+            site = Site.objects.get_current()
+            messages.success(request, _('Welcome! This is the first time you visit {}!'.format(site.name)))

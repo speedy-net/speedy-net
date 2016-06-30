@@ -1,6 +1,7 @@
 from collections import namedtuple
 
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.core.mail import EmailMultiAlternatives
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import render_to_string
@@ -17,9 +18,10 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     html_base_template_name = '{}_body.html'.format(base_template_name_prefix)
 
     context = context or {}
+    site = Site.objects.get_current()
     context.update({
-        'SITE_URL': settings.SITE_URL,
-        'SITE_NAME': settings.SITE_NAME,
+        'SITE_URL': 'http{}://{}'.format('s' if settings.USE_SSL else '', site.domain),
+        'SITE_NAME': site.name,
     })
 
     # render subject

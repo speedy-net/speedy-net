@@ -4,6 +4,7 @@ from django.apps import apps
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -173,7 +174,8 @@ class BaseSiteProfile(TimeStampedModel):
                                     default=False)
 
     def __str__(self):
-        return '{} @ {}'.format(self.user, settings.SITE_NAME)
+        site = Site.objects.get_current()
+        return '{} @ {}'.format(self.user, site.name)
 
     def activate(self):
         self.is_active = True

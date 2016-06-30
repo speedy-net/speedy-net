@@ -11,14 +11,6 @@ from speedy.net.profiles.views import UserMixin
 class UserFriendListView(UserMixin, generic.TemplateView):
     template_name = 'friends/friend_list.html'
 
-    def get_context_data(self, **kwargs):
-        cd = super().get_context_data(**kwargs)
-        cd.update({
-            'friend_list': Friend.objects.friends(self.user),
-            'request_list': Friend.objects.requests(self.user),
-        })
-        return cd
-
 
 class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
     permission_required = 'friends.request'

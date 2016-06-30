@@ -1,4 +1,5 @@
 from django.conf import settings as dj_settings
+from django.contrib.sites.models import Site
 
 
 def active_url_name(request):
@@ -18,3 +19,9 @@ def settings(request):
         'settings': dj_settings,
     }
 
+
+def sites(request):
+    return {
+        'site': request.site,
+        'sites': Site.objects.all(),
+    }

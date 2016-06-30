@@ -25,10 +25,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITES = [
-    ('Speedy Net', env('SPEEDY_NET_URL')),
-    ('Speedy Match', env('SPEEDY_MATCH_URL')),
-]
+USE_SSL = False
 
 # Application definition
 
@@ -38,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
@@ -48,6 +46,7 @@ INSTALLED_APPS = [
 
     'speedy.core',
     'speedy.net.accounts',
+    'speedy.net.im',
     'speedy.net.profiles',
     'speedy.net.friends',
 ]
@@ -60,6 +59,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'speedy.net.accounts.middleware.InactiveUserMiddleware',
     'speedy.net.accounts.middleware.SiteProfileMiddleware',
@@ -80,6 +80,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'speedy.core.context_processors.active_url_name',
                 'speedy.core.context_processors.settings',
+                'speedy.core.context_processors.sites',
             ],
         },
     },

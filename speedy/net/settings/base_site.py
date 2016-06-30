@@ -1,8 +1,6 @@
 from .base import *
 
-SITE_NAME = 'Speedy Net'
-
-SITE_URL = env('SPEEDY_NET_URL')
+SITE_ID = env('SPEEDY_NET_SITE_ID')
 
 ROOT_URLCONF = 'speedy.net.urls'
 
