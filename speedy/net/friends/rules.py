@@ -19,3 +19,4 @@ def users_are_friends(user, other):
 
 add_perm('friends.request', is_authenticated & ~user_is_self & ~friend_request_sent & ~users_are_friends)
 add_perm('friends.view_requests', user_is_self)
+add_perm('friends.remove', is_authenticated & users_are_friends)

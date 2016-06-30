@@ -95,3 +95,30 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug))
         self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
         self.assertIsNotNone(self.other_user.friendship_requests_received.all()[0].rejected)
+
+
+class RemoveFriendViewTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        Friend.objects.add_friend(self.user, self.other_user).accept()
+        self.page_url = '/{}/friends/remove/'.format(self.other_user.slug)
+        self.opposite_url = '/{}/friends/remove/'.format(self.user.slug)
+
+    def test_visitor_has_no_access(self):
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_remove_other_user(self):
+        self.assertEqual(Friend.objects.count(), 1 * 2)
+        self.client.login(username=self.user.slug, password='111')
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, self.other_user.get_absolute_url())
+        self.assertEqual(Friend.objects.count(), 0)
+
+    def test_other_user_can_remove_first_user(self):
+        self.assertEqual(Friend.objects.count(), 1 * 2)
+        self.client.login(username=self.other_user.slug, password='111')
+        r = self.client.post(self.opposite_url)
+        self.assertRedirects(r, self.user.get_absolute_url())
+        self.assertEqual(Friend.objects.count(), 0)

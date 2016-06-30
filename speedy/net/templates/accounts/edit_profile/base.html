@@ -8,7 +8,7 @@
         <h1>{% trans 'Edit Profile' %}</h1>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
                 <li class="{% active_class 'accounts:edit_profile' %}"><a
                         href="{% url 'accounts:edit_profile' %}">{% trans 'Profile Info' %}</a></li>
@@ -20,7 +20,7 @@
                         href="{% url 'accounts:deactivate' %}">{% trans 'Deactivate Account' %}</a></li>
             </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-sm-9">
             {% block tab_content %}{% endblock %}
         </div>
     </div>

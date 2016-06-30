@@ -16,11 +16,13 @@
             </a>
         </h4>
         {% if friend_request %}
-            <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post">
+            <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post"
+                  class="pull-left">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-sm btn-success">{% trans 'Accept' %}</button>
             </form>
-            <form action="{% url 'friends:reject_request' request.user.slug friend_request.id %}" method="post">
+            <form action="{% url 'friends:reject_request' request.user.slug friend_request.id %}" method="post"
+                  class="pull-left">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-sm btn-danger">{% trans 'Reject' %}</button>
             </form>

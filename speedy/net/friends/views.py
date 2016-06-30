@@ -24,12 +24,12 @@ class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
     permission_required = 'friends.request'
 
     def get(self, request, *args, **kwargs):
-        return self.user.get_absolute_url()
+        return redirect(self.user)
 
     def post(self, request, *args, **kwargs):
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
-        return redirect(self.user.get_absolute_url())
+        return redirect(self.user)
 
 
 class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, generic.View):
@@ -55,3 +55,15 @@ class AcceptFriendRequestView(AcceptRejectFriendRequestViewBase):
 class RejectFriendRequestView(AcceptRejectFriendRequestViewBase):
     action = 'reject'
     message = _('Friend request rejected.')
+
+
+class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
+    permission_required = 'friends.remove'
+
+    def get(self, request, *args, **kwargs):
+        return redirect(self.user)
+
+    def post(self, request, *args, **kwargs):
+        Friend.objects.remove_friend(self.request.user, self.user)
+        messages.success(request, _('You have removed this user from friends.'))
+        return redirect(self.user)
