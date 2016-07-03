@@ -4,7 +4,7 @@ from friendship.models import Friend
 from speedy.net.accounts.test_factories import UserFactory
 
 
-class CanFriendRequestTestCase(TestCase):
+class RequestTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
         self.other_user = UserFactory()

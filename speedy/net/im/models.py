@@ -6,7 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.models import TimeStampedModel
 from speedy.net.accounts.models import Entity
-
 from .managers import ChatManager, MessageManager
 
 
@@ -17,13 +16,40 @@ class Chat(TimeStampedModel):
         ordering = ('-date_updated',)
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    site = models.ForeignKey(verbose_name=_('site'), to=Site, on_delete=models.SET_NULL, null=True)
-    participants = models.ManyToManyField(verbose_name=_('participants'), to=Entity)
+    site = models.ForeignKey(verbose_name=_('site'), to=Site)
+    ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, null=True, blank=True, related_name='+')
+    ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, null=True, blank=True, related_name='+')
+    group = models.ManyToManyField(verbose_name=_('participants'), to=Entity)
+    is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
 
-    objects = ChatManager()
+    objects = models.Manager()
+    on_site = ChatManager()
 
     def __str__(self):
-        return ', '.join(str(ent.user) for ent in self.participants.order_by('-date_created'))
+        return ', '.join(str(ent.user) for ent in self.participants)
+
+    def save(self, *args, **kwargs):
+        if self.is_private:
+            assert self.ent1
+            assert self.ent2
+            assert self.group.count() == 0
+        self.site = Site.objects.get_current()
+        return super().save(*args, **kwargs)
+
+    @property
+    def is_private(self):
+        return not self.is_group
+
+    @property
+    def participants(self):
+        if self.is_private:
+            return (self.ent1, self.ent2)
+        else:
+            return self.participants.order_by('date_created')
+
+    @property
+    def participants_count(self):
+        return len(self.participants)
 
 
 class Message(TimeStampedModel):

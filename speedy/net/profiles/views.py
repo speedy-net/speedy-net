@@ -3,7 +3,7 @@ from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.net.accounts.models import User
-from speedy.net.friends.rules import friend_request_sent, users_are_friends
+from speedy.net.friends.rules import friend_request_sent, is_friend
 
 
 class UserMixin(object):
@@ -27,7 +27,7 @@ class UserMixin(object):
         })
         if self.request.user.is_authenticated():
             cd.update({
-                'user_is_friend': users_are_friends(self.request.user, self.user),
+                'user_is_friend': is_friend(self.request.user, self.user),
                 'friend_request_sent': friend_request_sent(self.request.user, self.user),
             })
         return cd

@@ -10,6 +10,7 @@ urlpatterns = [
 
     # always at the bottom
     url(r'^(?P<slug>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
+    url(r'^(?P<username>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
 

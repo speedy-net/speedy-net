@@ -36,6 +36,8 @@
             {% if request.user.is_authenticated %}
                 {% if request.user.is_active %}
                     <li><a href="{% url 'profiles:me' %}"><i class="fa fa-user"></i> {{ request.user }}</a></li>
+                    <li><a href="{% url 'friends:list' request.user.slug %}"><i class="fa fa-users"></i></a></li>
+                    <li><a href="{% url 'im:list' request.user.slug %}"><i class="fa fa-envelope"></i></a></li>
                     <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
                 {% endif %}
                 <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>

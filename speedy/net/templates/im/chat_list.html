@@ -1,0 +1,26 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load im_tags %}
+
+{% block user_content %}
+
+
+    {% if chat_list %}
+        <div class="list-group">
+            {% for chat in chat_list %}
+                <a href="#" class="list-group-item">
+                {% if chat.is_private %}
+                    {% get_other_participant chat request.user as entity %}
+                    <h4 class="list-group-item-heading">{{ entity.user }}</h4>
+                    {% comment %}<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+                        eget
+                        risus varius blandit.</p>{% endcomment %}
+                {% else %}
+                    Group chats are not supported yet.
+                {% endif %}
+            {% endfor %}
+            </a>
+        </div>
+    {% else %}
+    {% endif %}
+{% endblock %}

@@ -129,7 +129,7 @@ LOGIN_REDIRECT_URL = '/me/'
 UNAVAILABLE_USERNAMES = [
     'admin', 'root',
     'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
-    'friends',
+    'friends', 'messages',
 ]
 
 DONT_REDIRECT_INACTIVE_USER = [

@@ -56,14 +56,23 @@
                         {% trans 'Friends' %}
                         {% with user.friendship_requests_received.count as frequests_count %}
                             {% if can_view_requests and frequests_count %}
-{#                                <span class="badge">{% blocktrans %}{{ frequests_count }} new{% endblocktrans %}</span>#}
-                                <span class="badge">+{{ frequests_count }}</span>
+                                <span class="badge">{% blocktrans %}{{ frequests_count }} new{% endblocktrans %}</span>
                             {% else %}
                                 <span class="badge">{{ user.friends.count }}</span>
                             {% endif %}
                         {% endwith %}
                     </a>
                 </li>
+
+                {% has_perm 'im.view_chats' request.user user as can_view_chats %}
+
+                {% if can_view_chats %}
+                    <li class="{% active_class 'im:list' %}">
+                        <a href="{% url 'im:list' user.slug %}">
+                            {% trans 'Messages' %}
+                        </a>
+                    </li>
+                {% endif %}
 
             </ul>
         </div>
