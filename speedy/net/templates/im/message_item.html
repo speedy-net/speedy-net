@@ -1,0 +1,21 @@
+{% load thumbnail %}
+
+<div class="media well">
+    <div class="media-left">
+        {% thumbnail message.sender.user.profile_picture '42x42' crop='center' as im %}
+            {% if not link_to_chat %}<a href="{{ message.sender.user.get_absolute_url }}">{% endif %}
+                <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% if not link_to_chat %}</a>{% endif %}
+        {% endthumbnail %}
+    </div>
+    <div class="media-body">
+        {% if link_to_chat %}
+            {{ message.sender.user }}
+        {% else %}
+            <a href="{{ message.sender.user.get_absolute_url }}">{{ message.sender.user }}</a>
+        {% endif %}
+        <small class="text-muted">{{ message.date_created }}</small>
+        <br>
+        {{ message.text|linebreaksbr }}
+    </div>
+</div>

@@ -21,6 +21,8 @@ class Chat(TimeStampedModel):
     ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, null=True, blank=True, related_name='+')
     group = models.ManyToManyField(verbose_name=_('participants'), to=Entity)
     is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
+    last_message = models.ForeignKey(verbose_name=_('last message'), to='Message', blank=True, null=True,
+                                     related_name='+')
 
     objects = models.Manager()
     on_site = ChatManager()

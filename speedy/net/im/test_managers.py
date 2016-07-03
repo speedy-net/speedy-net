@@ -43,7 +43,7 @@ class MessageManagerTestCase(TestCase):
         self.user1 = UserFactory()
         self.user2 = UserFactory()
         self.assertEqual(Chat.objects.count(), 0)
-        message = Message.objects.send_private(self.user1, self.user2, 'Hello')
+        message = Message.objects.send_message(from_entity=self.user1, to_entity=self.user2, text='Hello')
         self.assertEqual(Chat.objects.count(), 1)
         self.assertEqual(message.chat.participants_count, 2)
         self.assertTrue(message.chat.is_private)
@@ -54,3 +54,13 @@ class MessageManagerTestCase(TestCase):
         self.assertSetEqual(entities_ids, {self.user1.id, self.user2.id})
         self.assertEqual(message.sender_id, self.user1.id)
         self.assertEqual(message.text, 'Hello')
+
+    def test_sending_message_to_exising_chat(self):
+        self.user1 = UserFactory()
+        self.chat = ChatFactory(ent1=self.user1)
+        self.assertEqual(Chat.objects.count(), 1)
+        message = Message.objects.send_message(from_entity=self.user1, chat=self.chat, text='Hello2')
+        self.assertEqual(Chat.objects.count(), 1)
+        self.assertEqual(message.chat, self.chat)
+        self.assertEqual(message.sender_id, self.user1.id)
+        self.assertEqual(message.text, 'Hello2')

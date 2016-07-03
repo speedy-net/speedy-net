@@ -1,14 +1,87 @@
+from django.core.urlresolvers import reverse
+from django.http import Http404
+from django.shortcuts import redirect
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
-
+from .forms import MessageForm
 from .models import Chat
 
 
-class ChatListView(UserMixin, PermissionRequiredMixin, generic.ListView):
+class UserChatsMixin(UserMixin, PermissionRequiredMixin):
+    def get_chat_queryset(self):
+        return Chat.on_site.chats(self.get_user()).select_related('ent1', 'ent2')
 
-    permission_required = 'im.view_chats'
+    def has_permission(self):
+        return self.request.user.has_perm('im.view_chats', self.user)
+
+
+class UserSingleChatMixin(UserChatsMixin):
+    def dispatch(self, request, *args, **kwargs):
+        self.chat = self.get_chat()
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_chat(self):
+        try:
+            return self.get_chat_queryset().get(id=self.kwargs['chat_pk'])
+        except Chat.DoesNotExist:
+            raise Http404()
+
+    def get_messages_queryset(self):
+        return self.get_chat().message_set.all()
+
+    def has_permission(self):
+        return super().has_permission() and \
+               self.request.user.has_perm('im.read_chat', self.chat)
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'chat': self.chat,
+        })
+        return cd
+
+
+class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
+    def get_queryset(self):
+        return self.get_chat_queryset()
+
+
+class ChatDetailView(UserSingleChatMixin, generic.ListView):
+    template_name = 'im/chat_detail.html'
+
+    def get_form(self):
+        return MessageForm(**{
+            'from_entity': self.user,
+            'chat': self.chat,
+        })
 
     def get_queryset(self):
-        return Chat.on_site.chats(self.user).select_related('ent1', 'ent2')
+        return self.get_messages_queryset()
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'form': self.get_form(),
+        })
+        return cd
+
+
+class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
+    template_name = 'im/chat_detail.html'
+    form_class = MessageForm
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'from_entity': self.user,
+            'chat': self.chat,
+        })
+        return kwargs
+
+    def get(self, request, *args, **kwargs):
+        return redirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse('im:chat', kwargs={'username': self.user.slug, 'chat_pk': self.get_chat().id})

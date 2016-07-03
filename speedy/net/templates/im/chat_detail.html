@@ -1,0 +1,17 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load im_tags %}
+
+{% block user_content %}
+    {% get_other_participant chat user as other %}
+    <div class="well">
+        <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
+        {% crispy form %}
+    </div>
+    {% for message in message_list %}
+        {% include 'im/message_item.html' %}
+    {% endfor %}
+
+{% endblock %}

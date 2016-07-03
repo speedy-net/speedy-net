@@ -3,15 +3,16 @@
 {% load im_tags %}
 
 {% block user_content %}
-
-
     {% if chat_list %}
         <div class="list-group">
             {% for chat in chat_list %}
-                <a href="#" class="list-group-item">
+                <a href="{% url 'im:chat' user.slug chat.id %}" class="list-group-item">
                 {% if chat.is_private %}
-                    {% get_other_participant chat request.user as entity %}
+                    {% get_other_participant chat user as entity %}
                     <h4 class="list-group-item-heading">{{ entity.user }}</h4>
+                    {% if chat.last_message %}
+                        {% include 'im/message_item.html' with message=chat.last_message link_to_chat=True %}
+                    {% endif %}
                     {% comment %}<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
                         eget
                         risus varius blandit.</p>{% endcomment %}

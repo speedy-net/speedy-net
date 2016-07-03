@@ -67,7 +67,7 @@
                 {% has_perm 'im.view_chats' request.user user as can_view_chats %}
 
                 {% if can_view_chats %}
-                    <li class="{% active_class 'im:list' %}">
+                    <li class="{% active_class 'im:list' 'im:chat' %}">
                         <a href="{% url 'im:list' user.slug %}">
                             {% trans 'Messages' %}
                         </a>

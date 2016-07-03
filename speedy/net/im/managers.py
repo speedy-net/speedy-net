@@ -27,7 +27,13 @@ class ChatManager(models.Manager):
 
 
 class MessageManager(models.Manager):
-    def send_private(self, from_entity, to_entity, text):
-        from speedy.net.im.models import Chat
-        chat = Chat.on_site.chat_with(from_entity, to_entity)
-        return self.create(chat=chat, sender=from_entity, text=text)
+    def send_message(self, from_entity, to_entity=None, chat=None, text=None):
+        from .models import Chat
+        assert bool(from_entity and to_entity) != bool(from_entity and chat)
+        assert text
+        if not chat:
+            chat = Chat.on_site.chat_with(from_entity, to_entity)
+        chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
+        chat.date_updated = chat.last_message.date_created
+        chat.save(update_fields={'last_message', 'date_updated'})
+        return chat.last_message

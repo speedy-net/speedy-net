@@ -11,10 +11,13 @@ class UserMixin(object):
         self.user = self.get_user()
         return super().dispatch(request, *args, **kwargs)
 
+    def get_user_queryset(self):
+        return User.objects.active()
+
     def get_user(self):
         try:
-            return User.objects.active().get(slug__iexact=self.kwargs.get('username'))
-        except:
+            return self.get_user_queryset().get(slug__iexact=self.kwargs['username'])
+        except User.DoesNotExist:
             raise Http404()
 
     def get_permission_object(self):
