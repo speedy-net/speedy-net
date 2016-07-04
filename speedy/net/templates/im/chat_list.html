@@ -4,18 +4,16 @@
 
 {% block user_content %}
     {% if chat_list %}
+        {% annotate_chats_with_read_marks chat_list user %}
         <div class="list-group">
             {% for chat in chat_list %}
-                <a href="{% url 'im:chat' user.slug chat.id %}" class="list-group-item">
+                <a href="{% url 'im:chat' user.slug chat.id %}" class="list-group-item {% if chat.is_unread %}list-group-item-success{% endif %}">
                 {% if chat.is_private %}
                     {% get_other_participant chat user as entity %}
-                    <h4 class="list-group-item-heading">{{ entity.user }}</h4>
+                    <span>{{ entity.user }}</span>
                     {% if chat.last_message %}
-                        {% include 'im/message_item.html' with message=chat.last_message link_to_chat=True %}
+{#                        {% include 'im/message_item.html' with message=chat.last_message link_to_chat=True %}#}
                     {% endif %}
-                    {% comment %}<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-                        eget
-                        risus varius blandit.</p>{% endcomment %}
                 {% else %}
                     Group chats are not supported yet.
                 {% endif %}

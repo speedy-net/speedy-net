@@ -11,7 +11,7 @@ from .models import Chat
 
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
     def get_chat_queryset(self):
-        return Chat.on_site.chats(self.get_user()).select_related('ent1', 'ent2')
+        return Chat.on_site.chats(self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
 
     def has_permission(self):
         return self.request.user.has_perm('im.view_chats', self.user)
@@ -29,7 +29,7 @@ class UserSingleChatMixin(UserChatsMixin):
             raise Http404()
 
     def get_messages_queryset(self):
-        return self.get_chat().message_set.all()
+        return self.get_chat().message_set.select_related('sender__user')
 
     def has_permission(self):
         return super().has_permission() and \

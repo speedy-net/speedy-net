@@ -11,6 +11,7 @@ class ChatFactory(factory.DjangoModelFactory):
     @factory.post_generation
     def group(self, create, extracted, **kwargs):
         if extracted:
+            self.is_group = True
             for entity in extracted:
                 self.group.add(entity)
 

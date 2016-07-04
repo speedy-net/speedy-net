@@ -36,4 +36,14 @@ class MessageManager(models.Manager):
         chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
         chat.date_updated = chat.last_message.date_created
         chat.save(update_fields={'last_message', 'date_updated'})
+        chat.mark_read(from_entity)
         return chat.last_message
+
+
+class ReadMarkManager(models.Manager):
+
+    def mark(self, chat, entity):
+        rmark, created = self.get_or_create(chat=chat, entity=entity)
+        if not created:
+            rmark.save(update_fields={'date_updated'})
+        return rmark

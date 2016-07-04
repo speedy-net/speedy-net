@@ -40,6 +40,9 @@ class ChatDetailViewTestCase(TestCase):
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_2_3 = ChatFactory(ent1=self.user2, ent2=self.user3)
         self.chat_3_1 = ChatFactory(ent1=self.user3, ent2=self.user1)
+        Message.objects.send_message(from_entity=self.user1, chat=self.chat_1_2, text='My message')
+        Message.objects.send_message(from_entity=self.user2, chat=self.chat_1_2, text='First unread message')
+        Message.objects.send_message(from_entity=self.user2, chat=self.chat_1_2, text='Second unread message')
         self.page_url = '/{}/messages/{}/'.format(self.user1.slug, self.chat_1_2.id)
 
     def test_visitor_has_no_access(self):
@@ -51,6 +54,8 @@ class ChatDetailViewTestCase(TestCase):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
         self.assertEqual(r.status_code, 200)
+        messages = r.context['message_list']
+        self.assertEqual(len(messages), 3)
 
     def test_user_cannot_read_a_chat_he_has_not_access_to(self):
         self.client.login(username=self.user3.slug, password='111')

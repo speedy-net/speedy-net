@@ -6,14 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.models import TimeStampedModel
 from speedy.net.accounts.models import Entity
-from .managers import ChatManager, MessageManager
+from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):
     class Meta:
         verbose_name = _('chat')
         verbose_name_plural = _('chat')
-        ordering = ('-date_updated',)
+        ordering = ('-last_message__date_created', '-date_updated')
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     site = models.ForeignKey(verbose_name=_('site'), to=Site)
@@ -34,6 +34,7 @@ class Chat(TimeStampedModel):
         if self.is_private:
             assert self.ent1
             assert self.ent2
+            assert self.ent1 != self.ent2
             assert self.group.count() == 0
         self.site = Site.objects.get_current()
         return super().save(*args, **kwargs)
@@ -53,6 +54,9 @@ class Chat(TimeStampedModel):
     def participants_count(self):
         return len(self.participants)
 
+    def mark_read(self, entity):
+        return ReadMark.objects.mark(self, entity)
+
 
 class Message(TimeStampedModel):
     class Meta:
@@ -70,3 +74,15 @@ class Message(TimeStampedModel):
 
     def __str__(self):
         return '{}: {}'.format(self.sender.user, self.text[:140])
+
+
+class ReadMark(TimeStampedModel):
+    class Meta:
+        verbose_name = _('read mark')
+        verbose_name_plural = _('read marks')
+        get_latest_by = 'date_created'
+
+    entity = models.ForeignKey(verbose_name=_('entity'), to=Entity, related_name='+')
+    chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, related_name='+')
+
+    objects = ReadMarkManager()
