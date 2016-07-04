@@ -84,4 +84,23 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'username': self.user.slug, 'chat_pk': self.get_chat().id})
+        return reverse('im:chat', kwargs={'username': self.user.slug,
+                                          'chat_pk': self.chat.id})
+
+
+class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):
+    permission_required = 'im.send_message'
+    template_name = 'im/message_form.html'
+    form_class = MessageForm
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'from_entity': self.request.user,
+            'to_entity': self.user,
+        })
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('im:chat', kwargs={'username': self.request.user.slug,
+                                          'chat_pk': self.object.chat.id})

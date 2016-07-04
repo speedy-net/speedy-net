@@ -1,0 +1,9 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block user_content %}
+    <h2>{% blocktrans %}Send a message to {{ user }}{% endblocktrans %}</h2>
+    {% crispy form %}
+{% endblock %}

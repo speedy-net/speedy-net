@@ -59,6 +59,7 @@ class Message(TimeStampedModel):
         verbose_name = _('message')
         verbose_name_plural = _('messages')
         ordering = ('-date_created',)
+        get_latest_by = 'date_created'
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, on_delete=models.SET_NULL, null=True)

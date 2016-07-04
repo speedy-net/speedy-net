@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
+from .models import Message
 from .test_factories import ChatFactory
 
 
@@ -100,3 +101,48 @@ class SendMessageToChatViewTestCase(TestCase):
         self.client.login(username=self.user2.slug, password='111')
         r = self.client.post(self.page_url, self.data)
         self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+
+class SendMessageToUserViewTestCase(TestCase):
+    def setUp(self):
+        self.user1 = UserFactory()
+        self.user2 = UserFactory()
+        self.page_url = '/{}/messages/compose/'.format(self.user2.slug)
+        self.data = {
+            'text': 'Hi Hi Hi',
+        }
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        r = self.client.post(self.page_url, self.data)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_cannot_send_message_to_self(self):
+        self.client.login(username=self.user2.slug, password='111')
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        r = self.client.post(self.page_url, self.data)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_see_a_form(self):
+        self.client.login(username=self.user1.slug, password='111')
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'im/message_form.html')
+
+    def test_user_can_submit_the_form(self):
+        self.client.login(username=self.user1.slug, password='111')
+        self.assertEqual(Message.objects.count(), 0)
+        r = self.client.post(self.page_url, self.data)
+        self.assertEqual(Message.objects.count(), 1)
+        message = Message.objects.latest()
+        chat = message.chat
+        self.assertRedirects(r, '/{}/messages/{}/'.format(self.user1.slug, chat.id))
+        self.assertEqual(message.text, 'Hi Hi Hi')
+        self.assertEqual(message.sender.id, self.user1.id)
+        self.assertEqual(chat.last_message, message)
+        self.assertEqual(chat.ent1.id, self.user1.id)
+        self.assertEqual(chat.ent2.id, self.user2.id)
+        self.assertTrue(chat.is_private)
