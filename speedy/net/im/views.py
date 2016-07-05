@@ -44,12 +44,15 @@ class UserSingleChatMixin(UserChatsMixin):
 
 
 class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
+    paginate_by = 25
+
     def get_queryset(self):
         return self.get_chat_queryset()
 
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
     template_name = 'im/chat_detail.html'
+    paginate_by = 25
 
     def get_form(self):
         return MessageForm(**{

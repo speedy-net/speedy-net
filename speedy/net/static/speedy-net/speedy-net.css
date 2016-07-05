@@ -1,3 +1,11 @@
 .page-header h1 form {
     display: inline-block;
 }
+
+.well.bg-success {
+    background-color: #dff0d8;
+}
+
+.text-default {
+    color: #000000;
+}

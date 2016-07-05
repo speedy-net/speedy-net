@@ -1,0 +1,11 @@
+{% load thumbnail %}
+
+{% if with_link %}
+    <a href="{{ user.get_absolute_url }}">
+{% endif %}
+{% thumbnail user.profile_picture geometry crop='center' as im %}
+    <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+{% if with_link %}
+    </a>
+{% endif %}

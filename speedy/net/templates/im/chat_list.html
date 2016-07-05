@@ -1,25 +1,50 @@
 {% extends 'profiles/user_base.html' %}
 
+{% load core_tags %}
+{% load i18n %}
 {% load im_tags %}
+{% load user_tags %}
 
 {% block user_content %}
+
     {% if chat_list %}
         {% annotate_chats_with_read_marks chat_list user %}
-        <div class="list-group">
-            {% for chat in chat_list %}
-                <a href="{% url 'im:chat' user.slug chat.id %}" class="list-group-item {% if chat.is_unread %}list-group-item-success{% endif %}">
-                {% if chat.is_private %}
-                    {% get_other_participant chat user as entity %}
-                    <span>{{ entity.user }}</span>
-                    {% if chat.last_message %}
-{#                        {% include 'im/message_item.html' with message=chat.last_message link_to_chat=True %}#}
-                    {% endif %}
-                {% else %}
-                    Group chats are not supported yet.
-                {% endif %}
-            {% endfor %}
+        {% for chat in chat_list %}
+            {% get_other_participant chat user as entity %}
+            <a href="{% url 'im:chat' user.slug chat.id %}">
+                <div class="media well well-sm {% if chat.is_unread %}bg-success{% endif %}">
+                    <div class="media-left">
+                        {% profile_picture entity.user '42x42' with_link=False %}
+                    </div>
+                    <div class="media-body">
+                        <div>
+                            {{ entity.user }}
+                            <small class="text-muted">
+                                {{ chat.last_message.date_created }}
+                            </small>
+                            {% if chat.is_unread %}
+                                <span class="pull-right label label-success">{% trans 'Unread' %}</span>
+                            {% endif %}
+                        </div>
+                        <div class="text-default">
+                            {% if user.id == chat.last_message.sender_id %}
+                                <span class="text-muted">{% trans 'You:' %}</span>
+                            {% else %}
+                                {# <i class="fa fa-angle-right text-muted"></i> #}
+                            {% endif %}
+                            {{ chat.last_message.text|truncatechars:42 }}
+                        </div>
+                    </div>
+                </div>
             </a>
-        </div>
+        {% endfor %}
+
+        {% pagination %}
+
     {% else %}
+        <div class="alert alert-warning">
+            {% trans 'You have no messages yet.' %}
+        </div>
     {% endif %}
+
 {% endblock %}

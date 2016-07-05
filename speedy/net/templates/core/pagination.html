@@ -1,0 +1,42 @@
+{% load core_tags %}
+{% load i18n %}
+
+{% if is_paginated %}
+    <div class="text-center">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li>
+                    <a href="?{% set_request_param page=page_obj.previous_page_number %}">&larr;&nbsp;{% trans "Previous" %}</a>
+                </li>
+            {% else %}
+                {% comment %}
+                <li class="disabled">
+                    <span>&larr;&nbsp;{% trans "Previous" %}</span>
+                </li>
+                {% endcomment %}
+            {% endif %}
+            {% for page in sliced_page_range %}
+                {% if not page %}
+                    <li>
+                        <span>…</span>
+                    </li>
+                {% else %}
+                    <li {% if page == page_obj.number %}class="active"{% endif %}>
+                        <a href="?{% set_request_param page=page %}">{{ page }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li>
+                    <a href="?{% set_request_param page=page_obj.next_page_number %}">{% trans "Next" %}&nbsp;&rarr;</a>
+                </li>
+            {% else %}
+                {% comment %}
+                <li class="disabled">
+                    <span>{% trans "Next" %}&nbsp;&rarr;</span>
+                </li>
+                {% endcomment %}
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

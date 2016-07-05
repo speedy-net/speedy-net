@@ -1,9 +1,11 @@
 {% extends 'profiles/user_base.html' %}
 
 {% load crispy_forms_tags %}
+{% load core_tags %}
 {% load i18n %}
 {% load im_tags %}
 {% load thumbnail %}
+{% load user_tags %}
 
 {% block user_content %}
     {% get_other_participant chat user as other %}
@@ -15,11 +17,7 @@
     {% for message in message_list %}
         <div class="media well-sm {% if message.is_unread %}bg-success{% endif %}">
             <div class="media-left">
-                {% thumbnail message.sender.user.profile_picture '42x42' crop='center' as im %}
-                    {% if not link_to_chat %}<a href="{{ message.sender.user.get_absolute_url }}">{% endif %}
-                        <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}">
-                    {% if not link_to_chat %}</a>{% endif %}
-                {% endthumbnail %}
+                {% profile_picture user '42x42' %}
             </div>
             <div class="media-body">
                 <div>
@@ -27,12 +25,17 @@
                     <small class="text-muted">
                         {{ message.date_created }}
                     </small>
+                    {% if message.is_unread %}
+                        <span class="pull-right label label-success">{% trans 'New' %}</span>
+                    {% endif %}
                 </div>
                 <div>
-                    {{ message.text|linebreaksbr }}
+                    {{ message.text|linebreaksbr|urlizetrunc:50 }}
                 </div>
             </div>
         </div>
     {% endfor %}
+
+    {% pagination %}
 
 {% endblock %}

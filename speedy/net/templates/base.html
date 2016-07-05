@@ -1,5 +1,6 @@
 <!doctype html>
 
+{% load im_tags %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -36,10 +37,23 @@
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_active %}
-                    <li><a href="{% url 'profiles:me' %}"><i class="fa fa-user"></i> {{ request.user }}</a></li>
-                    <li><a href="{% url 'friends:list' request.user.slug %}"><i class="fa fa-users"></i></a></li>
-                    <li><a href="{% url 'im:list' request.user.slug %}"><i class="fa fa-comments"></i></a></li>
-                    <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
+                    <li><a href="{% url 'profiles:me' %}">
+                        <i class="fa fa-user"></i>
+                        {{ request.user }}
+                    </a></li>
+                    <li><a href="{% url 'friends:list' request.user.slug %}">
+                        <i class="fa fa-users"></i>
+                    </a></li>
+                    <li><a href="{% url 'im:list' request.user.slug %}">
+                        <i class="fa fa-comments"></i>
+                        {% unread_chats_count request.user as unread_chats %}
+                        {% if unread_chats %}
+                            <span class="badge">{{ unread_chats }}</span>
+                        {% endif %}
+                    </a></li>
+                    <li><a href="{% url 'accounts:edit_profile' %}">
+                        {% trans 'Edit Profile' %}
+                    </a></li>
                 {% endif %}
                 <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
             {% else %}

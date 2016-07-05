@@ -48,6 +48,7 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
         self.assertFalse(chats[3].is_unread)
         self.assertTrue(chats[4].is_unread)
 
+
 class AnnotateMessagesWithReadMarksTestCase(TestCase):
     def test_tag(self):
         user1 = UserFactory()
@@ -71,3 +72,31 @@ class AnnotateMessagesWithReadMarksTestCase(TestCase):
         self.assertFalse(messages[0].is_unread)
         self.assertFalse(messages[1].is_unread)
         self.assertFalse(messages[2].is_unread)
+
+
+class UnreadChatsCount(TestCase):
+    def test_tag(self):
+        user1 = UserFactory()
+        user2 = UserFactory()
+        user3 = UserFactory()
+
+        chats = [
+            ChatFactory(ent1=user1, ent2=user2),
+            ChatFactory(ent1=user3, ent2=user1),
+            ChatFactory(ent1=user2, ent2=user3),
+        ]
+
+        Message.objects.send_message(from_entity=user1, chat=chats[0], text='text')
+        Message.objects.send_message(from_entity=user2, chat=chats[0], text='text')
+        Message.objects.send_message(from_entity=user2, chat=chats[0], text='text')
+
+        Message.objects.send_message(from_entity=user3, chat=chats[1], text='text')
+        Message.objects.send_message(from_entity=user1, chat=chats[1], text='text')
+        Message.objects.send_message(from_entity=user3, chat=chats[1], text='text')
+
+        Message.objects.send_message(from_entity=user2, chat=chats[2], text='text')
+        Message.objects.send_message(from_entity=user3, chat=chats[2], text='text')
+
+        self.assertEqual(im_tags.unread_chats_count(user1), 1 + 1 + 0)
+        self.assertEqual(im_tags.unread_chats_count(user2), 0 + 0 + 1)
+        self.assertEqual(im_tags.unread_chats_count(user3), 0 + 0 + 0)

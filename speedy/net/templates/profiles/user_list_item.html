@@ -1,13 +1,10 @@
 {% load i18n %}
 {% load thumbnail %}
+{% load user_tags %}
 
 <div class="media">
     <div class="media-left">
-        {% thumbnail user.profile_picture '64x64' crop='center' as im %}
-            <a href="{{ user.get_absolute_url }}">
-                <img class="media-object" src="{{ im.url }}" alt="{{ user }}">
-            </a>
-        {% endthumbnail %}
+        {% profile_picture user '64x64' %}
     </div>
     <div class="media-body">
         <h4 class="media-heading">

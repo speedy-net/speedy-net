@@ -1,9 +1,8 @@
 from django import template
-from django.utils.timezone import datetime
 
 register = template.Library()
 
-from ..models import ReadMark
+from ..models import ReadMark, Chat
 
 
 @register.simple_tag
@@ -17,13 +16,14 @@ def get_other_participant(chat, user):
         if entity.id != user.id:
             return entity
 
+
 @register.simple_tag
-def annotate_chats_with_read_marks(chat_list, user):
+def annotate_chats_with_read_marks(chat_list, entity):
     """
     :type chat_list: [speedy.net.im.models.Chat]
-    :type user: speedy.net.accounts.models.User
+    :type entity: speedy.net.accounts.models.Entity
     """
-    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=user)}
+    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
     for chat in chat_list:
         rmark = rmarks.get(chat.id)
         if chat.last_message is None:
@@ -36,13 +36,13 @@ def annotate_chats_with_read_marks(chat_list, user):
 
 
 @register.simple_tag
-def annotate_messages_with_read_marks(message_list, user):
+def annotate_messages_with_read_marks(message_list, entity):
     """
     :type message_list: [speedy.net.im.models.Message]
-    :type user: speedy.net.accounts.models.User
+    :type entity: speedy.net.accounts.models.Entity
     """
     chats = set(message.chat for message in message_list)
-    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chats, entity=user)}
+    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chats, entity=entity)}
     for message in message_list:
         rmark = rmarks.get(message.chat_id)
         if rmark is None:
@@ -50,3 +50,10 @@ def annotate_messages_with_read_marks(message_list, user):
         else:
             message.is_unread = message.date_created > rmark.date_updated
     return ''
+
+
+@register.simple_tag
+def unread_chats_count(entity):
+    chat_list = Chat.on_site.chats(entity)
+    annotate_chats_with_read_marks(chat_list, entity)
+    return len([c for c in chat_list if c.is_unread])
