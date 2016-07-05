@@ -107,3 +107,17 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
     def get_success_url(self):
         return reverse('im:chat', kwargs={'username': self.request.user.slug,
                                           'chat_pk': self.object.chat.id})
+
+
+class MarkChatAsReadView(UserSingleChatMixin, generic.View):
+
+    def get(self, request, *args, **kwargs):
+        return redirect(self.get_success_url())
+
+    def post(self, request, *args, **kwargs):
+        self.get_chat().mark_read(self.get_user())
+        return redirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse('im:chat', kwargs={'username': self.user.slug,
+                                          'chat_pk': self.chat.id})

@@ -1,7 +1,9 @@
+from time import sleep
+
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
-from .models import Message
+from .models import Message, ReadMark
 from .test_factories import ChatFactory
 
 
@@ -151,3 +153,26 @@ class SendMessageToUserViewTestCase(TestCase):
         self.assertEqual(chat.ent1.id, self.user1.id)
         self.assertEqual(chat.ent2.id, self.user2.id)
         self.assertTrue(chat.is_private)
+
+
+class MarkChatAsReadViewTestCase(TestCase):
+    def setUp(self):
+        self.user1 = UserFactory()
+        self.chat = ChatFactory(ent1=self.user1)
+        self.messages = []
+        self.messages.append(Message.objects.send_message(from_entity=self.chat.ent1, chat=self.chat, text='text'))
+        self.messages.append(Message.objects.send_message(from_entity=self.chat.ent2, chat=self.chat, text='text'))
+        self.chat_url = '/{}/messages/{}/'.format(self.user1.slug, self.chat.id)
+        self.page_url = '/{}/messages/{}/mark-read/'.format(self.user1.slug, self.chat.id)
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_mark_chat_as_read(self):
+        self.client.login(username=self.user1.slug, password='111')
+        self.assertLess(ReadMark.objects.get(entity_id=self.user1.id).date_updated, self.messages[1].date_created)
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, self.chat_url)
+        self.assertGreater(ReadMark.objects.get(entity_id=self.user1.id).date_updated, self.messages[1].date_created)

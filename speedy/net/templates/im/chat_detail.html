@@ -14,6 +14,10 @@
         <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
         {% crispy form %}
     </div>
+    <form action="{% url 'im:mark_read' user.slug chat.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' %}</button>
+    </form>
     {% for message in message_list %}
         <div class="media well-sm {% if message.is_unread %}bg-success{% endif %}">
             <div class="media-left">
