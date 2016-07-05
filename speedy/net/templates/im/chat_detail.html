@@ -17,7 +17,7 @@
     {% for message in message_list %}
         <div class="media well-sm {% if message.is_unread %}bg-success{% endif %}">
             <div class="media-left">
-                {% profile_picture user '42x42' %}
+                {% profile_picture message.sender.user '42x42' %}
             </div>
             <div class="media-body">
                 <div>

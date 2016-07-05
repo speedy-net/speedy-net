@@ -2,6 +2,7 @@
 
 {% load core_tags %}
 {% load i18n %}
+{% load im_tags %}
 {% load rules %}
 
 {% block content %}
@@ -77,6 +78,10 @@
                     <li class="{% active_class 'im:list' 'im:chat' %}">
                         <a href="{% url 'im:list' user.slug %}">
                             {% trans 'Messages' %}
+                            {% unread_chats_count user as unread_chats %}
+                            {% if unread_chats %}
+                                <span class="badge">{{ unread_chats }}</span>
+                            {% endif %}
                         </a>
                     </li>
                 {% endif %}
