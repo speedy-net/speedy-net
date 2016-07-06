@@ -1,0 +1,54 @@
+{% load i18n %}
+
+<div class="col-sm-8 col-sm-pull-0">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% trans 'Information' %}</h3>
+        </div>
+        <table class="table">
+            <tbody>
+
+            <tr>
+                <th>{% trans 'Full Name' %}</th>
+                <td>{{ entity }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Username' %}</th>
+                <td>
+                    <a href="{{ entity.get_absolute_url }}">
+                        {{ entity.slug }}
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Gender' %}</th>
+                <td>{{ entity.get_gender_display }}</td>
+            </tr>
+
+
+            {% if entity.date_of_birth %}
+                <tr>
+                    <th>{% trans 'Birthday' %}</th>
+                    <td>{{ entity.date_of_birth }}</td>
+                </tr>
+            {% endif %}
+
+            <tr>
+                <th>{% trans 'Email' %}</th>
+                {% if entity.profile.public_email %}
+                    <td>
+                        <a href="mailto:{{ entity.profile.public_email }}">
+                            {{ entity.profile.public_email }}
+                        </a>
+                    </td>
+                {% else %}
+                    <td><span class="text-muted">{% trans '(hidden)' %}</span></td>
+                {% endif %}
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

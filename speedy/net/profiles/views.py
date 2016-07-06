@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.http import Http404
+from django.utils.module_loading import import_string
 from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 
@@ -47,3 +49,22 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
 
 class UserDetailView(UserMixin, generic.TemplateView):
     template_name = 'profiles/user_detail.html'
+
+    def get_widget_kwargs(self):
+        return {
+            'entity': self.user,
+        }
+
+    def get_widgets(self):
+        widgets = []
+        for widget_path in settings.USER_PROFILE_WIDGETS:
+            widget_class = import_string(widget_path)
+            widgets.append(widget_class(**self.get_widget_kwargs()))
+        return widgets
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'widgets': self.get_widgets(),
+        })
+        return cd

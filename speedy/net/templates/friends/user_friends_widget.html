@@ -1,0 +1,30 @@
+{% load i18n %}
+
+{% load user_tags %}
+
+
+{% if friends|length %}
+    <div class="col-sm-8 col-sm-pull-0">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="{% url 'friends:list' entity.slug %}">
+                    <span class="pull-right">
+                        {% trans 'See All' %}
+                    </span>
+                    <h3 class="panel-title">
+                        {% trans 'Friends' %}
+                    </h3>
+                </a>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for friendship in friends %}
+                        <div class="col-xs-2">
+                            {% profile_picture friendship.from_user '128x128' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

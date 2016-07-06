@@ -86,6 +86,12 @@ TEMPLATES = [
     },
 ]
 
+USER_PROFILE_WIDGETS = [
+    'speedy.net.profiles.widgets.UserPhotoWidget',
+    'speedy.net.profiles.widgets.UserInfoWidget',
+    'speedy.net.friends.widgets.UserFriendsWidget',
+]
+
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 WSGI_APPLICATION = 'speedy.net.wsgi.application'

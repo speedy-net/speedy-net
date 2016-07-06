@@ -1,0 +1,7 @@
+{% load thumbnail %}
+
+<div class="col-sm-4">
+    {% thumbnail entity.profile_picture "390" as im %}
+        <img src="{{ im.url }}" class="thumbnail img-responsive center-block" alt="{{ entity}}">
+    {% endthumbnail %}
+</div>
