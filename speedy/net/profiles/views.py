@@ -1,8 +1,9 @@
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.http import Http404
 from django.utils.module_loading import import_string
 from django.views import generic
-from rules.contrib.views import LoginRequiredMixin
+from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.net.accounts.models import User
 from speedy.net.friends.rules import friend_request_sent, is_friend
@@ -47,7 +48,9 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
         return url
 
 
-class UserDetailView(UserMixin, generic.TemplateView):
+class UserDetailView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    permission_required = 'accounts.view_profile'
+    raise_exception = True
     template_name = 'profiles/user_detail.html'
 
     def get_widget_kwargs(self):

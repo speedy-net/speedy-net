@@ -23,7 +23,7 @@ ACCESS_ANYONE = 4
 ACCESS_CHOICES = (
     (ACCESS_ME, _('Only me')),
     (ACCESS_FRIENDS, _('Me and my friends')),
-    (ACCESS_FRIENDS_2, _('Me, my friends and friends of my friends')),
+    # (ACCESS_FRIENDS_2, _('Me, my friends and friends of my friends')),
     (ACCESS_ANYONE, _('Anyone')),
 )
 

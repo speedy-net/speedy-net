@@ -1,11 +1,17 @@
-{% extends 'profiles/user_base.html' %}
+{% extends 'base_site.html' %}
 
 {% load core_tags %}
 {% load i18n %}
 {% load im_tags %}
 {% load user_tags %}
 
-{% block user_content %}
+{% block title %}{% trans 'Messages' %} / {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h1>{% trans 'Messages' %}</h1>
+    </div>
 
     {% if chat_list %}
         {% annotate_chats_with_read_marks chat_list user %}

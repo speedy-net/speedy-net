@@ -1,6 +1,9 @@
 {% extends 'profiles/user_base.html' %}
 
+{% load i18n %}
 {% load thumbnail %}
+
+{% block title %}{{ user }} / {{ block.super }}{% endblock %}
 
 {% block user_content %}
     <div class="row">

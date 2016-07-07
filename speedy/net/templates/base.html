@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ site.name }}</title>
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
     {% block css %}
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
         <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}">

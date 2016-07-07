@@ -1,5 +1,9 @@
 {% extends 'base_site.html' %}
 
+{% load i18n %}
+
+{% block title %}{% trans 'Logged Out' %} / {{ block.super }}{% endblock %}
+
 {% block content %}
     <div class="alert alert-success">
         {{ title }}

@@ -3,6 +3,8 @@
 {% load core_tags %}
 {% load i18n %}
 
+{% block title %}{% trans 'Edit Profile' %} / {{ block.super }}{% endblock %}
+
 {% block content %}
     <div class="page-header">
         <h1>{% trans 'Edit Profile' %}</h1>

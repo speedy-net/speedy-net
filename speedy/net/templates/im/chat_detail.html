@@ -1,4 +1,4 @@
-{% extends 'profiles/user_base.html' %}
+{% extends 'base_site.html' %}
 
 {% load crispy_forms_tags %}
 {% load core_tags %}
@@ -7,9 +7,15 @@
 {% load thumbnail %}
 {% load user_tags %}
 
-{% block user_content %}
+
+{% block title %}{% get_other_participant chat user as other %}{{ other.user }} / {% trans 'Messages' %} / {{ block.super }}{% endblock %}
+
+{% block content %}
     {% get_other_participant chat user as other %}
     {% annotate_messages_with_read_marks message_list user %}
+    <div class="page-header">
+        <h1>{% blocktrans with username=other.user %}Chat with {{ username }}{% endblocktrans %}</h1>
+    </div>
     <div class="well well-sm">
         <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
         {% crispy form %}
