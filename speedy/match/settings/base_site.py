@@ -16,4 +16,4 @@ INSTALLED_APPS += [
     'speedy.match.accounts',
 ]
 
-AUTH_PROFILE_MODEL = 'match_accounts.SiteProfile'
+AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'

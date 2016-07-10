@@ -20,7 +20,7 @@
                 <div class="row">
                     {% for friendship in friends %}
                         <div class="col-xs-2">
-                            {% profile_picture friendship.from_user '128x128' %}
+                            {% profile_picture friendship.from_user '128x128' html_class="img-responsive" %}
                         </div>
                     {% endfor %}
                 </div>

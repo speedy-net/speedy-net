@@ -2,10 +2,12 @@ import uuid
 
 from django.contrib.sites.models import Site
 from django.db import models
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
+from speedy.core.mail import send_mail
 from speedy.core.models import TimeStampedModel
-from speedy.net.accounts.models import Entity
+from speedy.net.accounts.models import Entity, SiteProfileBase
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
@@ -54,6 +56,9 @@ class Chat(TimeStampedModel):
     def participants_count(self):
         return len(self.participants)
 
+    def get_other_participants(self, entity):
+        return [p for p in self.participants if p.id != entity.id]
+
     def mark_read(self, entity):
         return ReadMark.objects.mark(self, entity)
 
@@ -86,3 +91,15 @@ class ReadMark(TimeStampedModel):
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, related_name='+')
 
     objects = ReadMarkManager()
+
+
+@receiver(models.signals.post_save, sender=Message)
+def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
+    if not created:
+        return
+    other_participants = instance.chat.get_other_participants(instance.sender)
+    for entity in other_participants:
+        if entity.user.profile.notify_on_message == SiteProfileBase.NOTIFICATIONS_ON:
+            entity.user.mail_user('im/email/new_message', {
+                'message': instance,
+            })

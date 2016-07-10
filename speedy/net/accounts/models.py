@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 from speedy.core.mail import send_mail
 from speedy.core.models import TimeStampedModel
 from .managers import UserManager
-from .utils import generate_id
+from .utils import generate_id, get_site_profile_model
 from .validators import identity_id_validator
 
 ACCESS_ME = 1
@@ -89,6 +89,15 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def email(self):
         return self.email_addresses.get(is_primary=True).email
 
+    def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
+        addresses = self.email_addresses.filter(is_primary=True)
+        if not send_to_unconfirmed:
+            addresses = addresses.filter(is_confirmed=True)
+        addresses = list(addresses)
+        if addresses:
+            return addresses[0].mail(template_name_prefix, context)
+        return False
+
     def get_full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
@@ -109,7 +118,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     @property
     def profile(self):
         if not hasattr(self, '_profile'):
-            model = apps.get_model(*settings.AUTH_PROFILE_MODEL.split('.'))
+            model = get_site_profile_model()
             self._profile = model.objects.get_or_create(user=self)[0]
         return self._profile
 
@@ -161,16 +170,24 @@ class UserEmailAddress(TimeStampedModel):
         return self.email
 
 
-class BaseSiteProfile(TimeStampedModel):
+class SiteProfileBase(TimeStampedModel):
     """
     SiteProfile contains site-specific user settings.
     """
+
+    NOTIFICATIONS_OFF = 0
+    NOTIFICATIONS_ON = 1
+
+    NOTIFICATIONS_CHOICES = (
+        (NOTIFICATIONS_ON, _('Notify')),
+        (NOTIFICATIONS_OFF, _('Don\'t notify')),
+    )
 
     class Meta:
         abstract = True
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')
-    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to Speedy Net'),
+    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'),
                                     default=False)
 
     def __str__(self):
@@ -182,7 +199,7 @@ class BaseSiteProfile(TimeStampedModel):
         self.save(update_fields={'is_active'})
 
 
-class SiteProfile(BaseSiteProfile):
+class SiteProfile(SiteProfileBase):
     class Meta:
         verbose_name = 'Speedy Net Profile'
         verbose_name_plural = 'Speedy Net Profiles'
@@ -190,3 +207,6 @@ class SiteProfile(BaseSiteProfile):
     access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
     public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
                                      on_delete=models.SET_NULL, related_name='+')
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
+                                                    choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
+                                                    default=SiteProfileBase.NOTIFICATIONS_ON)

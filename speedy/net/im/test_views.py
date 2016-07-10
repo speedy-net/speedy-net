@@ -1,9 +1,7 @@
-from time import sleep
-
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
-from .models import Message, ReadMark
+from .models import Message, ReadMark, Chat
 from .test_factories import ChatFactory
 
 
@@ -138,6 +136,12 @@ class SendMessageToUserViewTestCase(TestCase):
         r = self.client.get(self.page_url)
         self.assertEqual(r.status_code, 200)
         self.assertTemplateUsed(r, 'im/message_form.html')
+
+    def test_user_gets_redirected_to_existing_chat(self):
+        chat = Chat.on_site.chat_with(self.user1, self.user2)
+        self.client.login(username=self.user1.slug, password='111')
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/{}/messages/{}/'.format(self.user1.slug, chat.id))
 
     def test_user_can_submit_the_form(self):
         self.client.login(username=self.user1.slug, password='111')

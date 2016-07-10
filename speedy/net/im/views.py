@@ -96,6 +96,13 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
     template_name = 'im/message_form.html'
     form_class = MessageForm
 
+    def get(self, request, *args, **kwargs):
+        existing_chat = Chat.on_site.chat_with(self.request.user, self.user, create=False)
+        if existing_chat is not None:
+            return redirect('im:chat', **{'username': self.request.user.slug,
+                                          'chat_pk': existing_chat.id})
+        return super().get(request, *args, **kwargs)
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({

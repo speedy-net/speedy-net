@@ -8,7 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import User, UserEmailAddress, SiteProfile
+from .models import User, UserEmailAddress
+from .utils import get_site_profile_model
 
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
@@ -90,14 +91,34 @@ class ProfileForm(forms.ModelForm):
 
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
-        model = SiteProfile
+        model = get_site_profile_model()
         fields = ('access_account', 'public_email')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True, user=self.instance.user)
+        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True,
+                                                                               user=self.instance.user)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Save Changes')))
+
+
+class ProfileNotificationsForm(forms.ModelForm):
+    class Meta:
+        model = get_site_profile_model()
+        fields = ()
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        for field in self._meta.model._meta.fields:
+            if field.name.startswith('notify_'):
+                self.fields[field.name] = field.formfield()
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', _('Save Changes')))
+
+    def save(self, commit=True):
+        for field_name in self.fields.keys():
+            setattr(self.instance, field_name, self.cleaned_data[field_name])
+        return super().save(commit=commit)
 
 
 class LoginForm(auth_forms.AuthenticationForm):

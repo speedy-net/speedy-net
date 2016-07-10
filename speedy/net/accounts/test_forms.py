@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
-from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm
+from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
 
 
 class RegistrationFormTestCase(TestCase):
@@ -61,6 +61,17 @@ class ProfilePrivacyFormTestCase(TestCase):
         self.assertIn(self.confirmed_email.id, choices_ids)
         self.assertNotIn(self.unconfirmed_email.id, choices_ids)
         self.assertNotIn(self.other_user_email.id, choices_ids)
+
+
+class ProfileNotificationsFormTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+
+    def test_has_correct_fields(self):
+        form = ProfileNotificationsForm(instance=self.user.profile)
+        self.assertListEqual(list(form.fields.keys()), [
+            'notify_on_message',
+        ])
 
 
 class PasswordResetFormTestCase(TestCase):

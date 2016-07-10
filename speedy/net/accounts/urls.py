@@ -33,6 +33,7 @@ urlpatterns = [
 
     url(r'^edit-profile/$', views.EditProfileView.as_view(), name='edit_profile'),
     url(r'^edit-profile/privacy/$', views.EditProfilePrivacyView.as_view(), name='edit_profile_privacy'),
+    url(r'^edit-profile/notifications/$', views.EditProfileNotificationsView.as_view(), name='edit_profile_notifications'),
     url(r'^edit-profile/credentials/$', views.EditProfileCredentialsView.as_view(), name='edit_profile_credentials'),
     url(r'^edit-profile/deactivate/$', views.DeactivateAccountView.as_view(), name='deactivate'),
     url(r'^edit-profile/emails/$', generic.RedirectView.as_view(pattern_name='accounts:edit_profile_credentials'),

@@ -12,12 +12,15 @@ class ChatManager(models.Manager):
                            | Q(ent1_id=entity.id)
                            | Q(ent2_id=entity.id))
 
-    def chat_with(self, ent1, ent2):
+    def chat_with(self, ent1, ent2, create=True):
         try:
             return self.get(Q(ent1=ent1, ent2=ent2)
                             | Q(ent1=ent2, ent2=ent1))
         except self.model.DoesNotExist:
-            return self.create(ent1=ent1, ent2=ent2)
+            if create:
+                return self.create(ent1=ent1, ent2=ent2)
+            else:
+                return None
 
     def group_chat_with(self, *entities):
         chat = self.create(is_group=True)

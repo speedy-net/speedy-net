@@ -20,7 +20,7 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     context = context or {}
     site = Site.objects.get_current()
     context.update({
-        'SITE_URL': 'http{}://{}'.format('s' if settings.USE_SSL else '', site.domain),
+        'SITE_URL': '{}://{}'.format('https' if settings.USE_SSL else 'http', site.domain),
         'SITE_NAME': site.name,
     })
 

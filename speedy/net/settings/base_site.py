@@ -6,4 +6,4 @@ ROOT_URLCONF = 'speedy.net.urls'
 
 STATIC_ROOT = str(APP_DIR / 'static_serve')
 
-AUTH_PROFILE_MODEL = 'accounts.SiteProfile'
+AUTH_SITE_PROFILE_MODEL = 'accounts.SiteProfile'

@@ -1,12 +1,12 @@
 from datetime import date
 
-from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core import mail
 from django.test import TestCase
 
-from .models import Entity, User, UserEmailAddress
+from .models import Entity, User, UserEmailAddress, SiteProfileBase
 from .test_factories import UserFactory, UserEmailAddressFactory
+
 
 class IndexViewTestCase(TestCase):
     def setUp(self):
@@ -206,6 +206,34 @@ class EditProfilePrivacyViewTestCase(TestCase):
         user = User.objects.get(id=self.user.id)
         self.assertEqual(user.profile.access_account, 1)
         self.assertEqual(user.profile.public_email_id, self.email.id)
+
+
+class EditProfileNotificationsViewTestCase(TestCase):
+    page_url = '/edit-profile/notifications/'
+
+    def setUp(self):
+        self.user = UserFactory()
+        self.client.login(username=self.user.slug, password='111')
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/edit_profile/notifications.html')
+
+    def test_user_can_save_his_settings(self):
+        self.assertEqual(self.user.profile.notify_on_message, SiteProfileBase.NOTIFICATIONS_ON)
+        data = {
+            'notify_on_message': SiteProfileBase.NOTIFICATIONS_OFF,
+        }
+        r = self.client.post(self.page_url, data)
+        self.assertRedirects(r, self.page_url)
+        user = User.objects.get(id=self.user.id)
+        self.assertEqual(user.profile.notify_on_message, SiteProfileBase.NOTIFICATIONS_OFF)
 
 
 class EditProfileCredentialsViewTestCase(TestCase):

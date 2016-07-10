@@ -1,10 +1,13 @@
 {% load thumbnail %}
+{% load staticfiles %}
 
 {% if with_link %}
     <a href="{{ user.get_absolute_url }}">
 {% endif %}
 {% thumbnail user.profile_picture geometry crop='center' as im %}
-    <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}" class="img-responsive">
+    <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}" class="{{ html_class }}">
+{% empty %}
+    <img src="{% static 'speedy-net/img/user.svg' %}" alt="" width="{{ width }}" height="{{ width }}" class="{{ html_class }}">
 {% endthumbnail %}
 {% if with_link %}
     </a>

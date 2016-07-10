@@ -1,0 +1,4 @@
+{{ message.sender.user }} has sent you a message.
+
+Read it:
+{{ SITE_URL }}{% url 'im:chat' user.slug message.chat_id %}

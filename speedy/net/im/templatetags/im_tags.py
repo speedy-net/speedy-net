@@ -12,9 +12,7 @@ def get_other_participant(chat, user):
     :type user: speedy.net.accounts.models.User
     """
     assert chat.is_private
-    for entity in chat.participants:
-        if entity.id != user.id:
-            return entity
+    return chat.get_other_participants(user)[0]
 
 
 @register.simple_tag

@@ -18,7 +18,7 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, \
-    PasswordChangeForm, DeactivationForm, ActivationForm
+    PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm
 from .models import User, UserEmailAddress
 
 
@@ -70,6 +70,15 @@ class EditProfilePrivacyView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'accounts/edit_profile/privacy.html'
     success_url = reverse_lazy('accounts:edit_profile_privacy')
     form_class = ProfilePrivacyForm
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
+
+class EditProfileNotificationsView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'accounts/edit_profile/notifications.html'
+    success_url = reverse_lazy('accounts:edit_profile_notifications')
+    form_class = ProfileNotificationsForm
 
     def get_object(self, queryset=None):
         return self.request.user.profile
