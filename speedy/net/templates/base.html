@@ -43,7 +43,7 @@
                     </a></li>
                     <li><a href="{% url 'friends:list' request.user.slug %}">
                         <i class="fa fa-users"></i>
-                        {% with user.friendship_requests_received.count as frequests_count %}
+                        {% with request.user.friendship_requests_received.count as frequests_count %}
                             {% if frequests_count %}
                                 <span class="badge">{{ frequests_count }}</span>
                             {% endif %}

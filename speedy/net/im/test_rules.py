@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
+from speedy.net.blocks.models import Block
 from .test_factories import ChatFactory
 
 
@@ -12,8 +13,13 @@ class SendMessageTestCase(TestCase):
     def test_cannot_send_message_to_self(self):
         self.assertFalse(self.user1.has_perm('im.send_message', self.user1))
 
-    def test_can_send_message_to_ther_user(self):
+    def test_can_send_message_to_other_user(self):
         self.assertTrue(self.user1.has_perm('im.send_message', self.user2))
+
+    def test_cannot_send_message_to_other_user_if_blocked(self):
+        Block.objects.block(self.user2, self.user1)
+        self.assertFalse(self.user1.has_perm('im.send_message', self.user2))
+        self.assertTrue(self.user2.has_perm('im.send_message', self.user1))
 
 
 class ViewChatsTestCase(TestCase):

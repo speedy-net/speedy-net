@@ -2,6 +2,7 @@ from django.test import TestCase
 from friendship.models import Friend
 
 from speedy.net.accounts.test_factories import UserFactory
+from speedy.net.blocks.models import Block
 
 
 class RequestTestCase(TestCase):
@@ -11,6 +12,11 @@ class RequestTestCase(TestCase):
 
     def test_user_can_send_request_to_other_user(self):
         self.assertTrue(self.user.has_perm('friends.request', self.other_user))
+
+    def test_user_cannot_send_request_to_other_user_if_blocked(self):
+        Block.objects.block(blocker=self.other_user, blockee=self.user)
+        self.assertFalse(self.user.has_perm('friends.request', self.other_user))
+        self.assertFalse(self.other_user.has_perm('friends.request', self.user))
 
     def test_user_cannot_send_request_to_himself(self):
         self.assertFalse(self.user.has_perm('friends.request', self.user))

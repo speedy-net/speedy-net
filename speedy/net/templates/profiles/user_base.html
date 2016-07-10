@@ -9,6 +9,8 @@
     {% has_perm 'friends.request' request.user user as can_friend_request %}
     {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
     {% has_perm 'im.send_message' request.user user as can_send_message %}
+    {% has_perm 'blocks.block' request.user user as can_block %}
+    {% has_perm 'blocks.unblock' request.user user as can_unblock %}
 
     <div class="page-header">
         <h1>
@@ -44,6 +46,23 @@
                             <button type="submit" class="btn btn-default" data-role="button" data-default-text="{% trans 'Your Friend' %}" data-hover-text="{% trans 'Remove' %}">{% trans 'Your Friend' %}</button>
                         </form>
                     {% endif %}
+                {% endif %}
+                {% if can_block %}
+                    <form action="{% url 'blocks:block' user.slug %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-default" type="submit">
+                            <i class="fa fa-ban"></i>
+                            {% trans 'Block User' %}
+                        </button>
+                    </form>
+                {% elif can_unblock %}
+                    <form action="{% url 'blocks:unblock' user.slug %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-default" type="submit">
+                            <i class="fa fa-ban"></i>
+                            {% trans 'Unblock User' %}
+                        </button>
+                    </form>
                 {% endif %}
             </div>
             {{ user }}

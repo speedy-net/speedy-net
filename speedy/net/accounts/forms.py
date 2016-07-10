@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import User, UserEmailAddress
+from .models import User, UserEmailAddress, SiteProfile
 from .utils import get_site_profile_model
 
 DATE_FIELD_FORMATS = [
@@ -91,7 +91,7 @@ class ProfileForm(forms.ModelForm):
 
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
-        model = get_site_profile_model()
+        model = SiteProfile
         fields = ('access_account', 'public_email')
 
     def __init__(self, **kwargs):

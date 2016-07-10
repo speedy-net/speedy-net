@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'speedy.net.im',
     'speedy.net.profiles',
     'speedy.net.friends',
+    'speedy.net.blocks',
 ]
 
 MIDDLEWARE_CLASSES = [

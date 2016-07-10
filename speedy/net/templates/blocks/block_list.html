@@ -1,0 +1,14 @@
+{% extends 'accounts/edit_profile/base.html' %}
+
+{% load i18n %}
+
+{% block tab_content %}
+    {% for block in block_list %}
+        {% include 'profiles/user_list_item.html' with user=block.blockee.user %}
+    {% empty %}
+        <div class="alert alert-warning">
+            {% trans "You're blocking nobody." %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
