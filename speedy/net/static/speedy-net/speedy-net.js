@@ -9,7 +9,9 @@ evil.block('@@RegistrationForm', {
 
     _generateSlug: function () {
         var components = [this.firstNameField.val(), this.lastNameField.val()];
-        components = components.filter(function(i) {return i});
+        components = components.filter(function (i) {
+            return i
+        });
         var slug = components.join('_');
         slug = slug.toLowerCase();
         slug = slug.replace(' ', '_');
@@ -57,7 +59,7 @@ evil.block('@@RemoveFromFriendsForm', {
         this.button.text(this.button.data(flag ? 'hover-text' : 'default-text'));
     },
 
-    init: function() {
+    init: function () {
         this.switchState(false);
         this.button.width(this.button.width());
     },
@@ -68,6 +70,96 @@ evil.block('@@RemoveFromFriendsForm', {
 
     'mouseout on @button': function () {
         this.switchState(false);
+    }
+
+});
+
+
+evil.block('@@Uploader', {
+
+    blankState: function () {
+        this.progress.hide();
+        this.filename.hide();
+        this.browseButton.show();
+    },
+
+    boundState: function () {
+        this.blankState();
+        this.filename.show();
+    },
+
+    progressState: function () {
+        this.progress.show();
+        this.progressBar.width(0);
+        this.filename.hide();
+        this.browseButton.hide();
+    },
+
+    startUpload: function (file) {
+        var this_ = this;
+        this.progressState();
+        var data = new FormData();
+        data.append('file', file);
+        $.ajax({
+            url: this.block.data('action'),
+            type: 'POST',
+            data: data,
+            processData: false,
+            contentType: false,
+            xhr: function () {
+                var xhr = $.ajaxSettings.xhr();
+                if (xhr.upload) {
+                    xhr.upload.addEventListener('progress', function (evt) {
+                        var percent = Math.round(evt.loaded / evt.total * 100);
+                        this_.progressBar.css('width', percent + '%');
+                        if (percent == 100) {
+                            this_.progressBar.addClass('active');
+                            this_.progress.addClass('progress-striped');
+                        } else {
+                            this_.progressBar.removeClass('active');
+                            this_.progress.removeClass('progress-striped');
+                        }
+                    }, false);
+                }
+                return xhr;
+            }
+        }).done(function(data, textStatus, jqXHR) {
+            this_.boundState();
+            this_.filename.text(data.files[0].name);
+            this_.realInput.val(data.files[0].uuid);
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            var data = jqXHR.responseJSON;
+            for (var errorField in data) {
+                if (!data.hasOwnProperty(errorField)) {
+                    continue;
+                }
+                alert(data[errorField]);
+                this_.blankState();
+                break;
+            }
+        });
+    },
+
+    init: function () {
+        if (this.realInput.val()) {
+            this.boundState();
+        } else {
+            this.blankState();
+        }
+    },
+
+    'click on @browseButton': function (event) {
+        event.preventDefault();
+        this.fileInput.trigger('click');
+    },
+
+    'change on @fileInput': function (event) {
+        event.preventDefault();
+        files = this.fileInput[0].files;
+        if (!files.length) {
+            return;
+        }
+        this.startUpload(files[0]);
     }
 
 });

@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^(?P<username>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
     url(r'^(?P<username>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
     url(r'^(?P<username>[-\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
-    url(r'^(?P<username>[-\w]+)/uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
+    url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
 

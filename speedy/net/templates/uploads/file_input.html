@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<p class="form-control-static" data-block="Uploader" data-action="{% url 'uploads:upload' %}">
+    <span href="#" class="btn btn-xs btn-success" data-role="browseButton">
+        <i class="fa fa-folder-open"></i>
+        {% trans 'Browse...' %}
+    </span>
+    <span data-role="filename">{{ file.basename }}</span>
+    <span class="progress" data-role="progress" style="display: block">
+        <span class="progress-bar" data-role="progressBar"></span>
+    </span>
+    <span class="hidden">
+        <input type="file" data-role="fileInput">
+        {{ real_input }}
+    </span>
+</p>

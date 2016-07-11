@@ -7,7 +7,7 @@ class ModelFormWithDefaults(forms.ModelForm):
         super().__init__(**kwargs)
 
     def save(self, commit=True):
-        instance = super().save(False)
+        instance = super().save(commit=False)
         for field, value in self.defaults.items():
             setattr(instance, field, value)
         if commit:

@@ -5,7 +5,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.models import TimeStampedModel
-from speedy.net.accounts.models import Entity
 
 
 def uuid_dir(instance, filename):
@@ -24,7 +23,7 @@ class File(TimeStampedModel):
         verbose_name_plural = _('uploaded files')
 
     id = models.UUIDField(primary_key=True, editable=False)
-    owner = models.ForeignKey(verbose_name=_('owner'), to=Entity, on_delete=models.SET_NULL, null=True)
+    owner = models.ForeignKey(verbose_name=_('owner'), to='accounts.Entity', on_delete=models.SET_NULL, null=True)
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file_size'), default=0)

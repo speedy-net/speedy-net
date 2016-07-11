@@ -20,7 +20,7 @@ class UploadViewTestCase(TestCase):
             'file': SimpleUploadedFile(upload_file.name, upload_file.read())
         }
         self.upload_file = upload_file
-        self.page_url = '/{}/uploads/'.format(self.user.slug)
+        self.page_url = '/uploads/upload/'
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -42,8 +42,3 @@ class UploadViewTestCase(TestCase):
         self.assertEqual(image.basename, json_response['files'][0]['name'])
         self.assertEqual(image.size, 14)
         self.assertEqual(image.owner_id, self.user.id)
-
-    def test_other_user_cannot_upload_file_not_for_himself(self):
-        self.client.login(username=self.other_user.slug, password='111')
-        r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))

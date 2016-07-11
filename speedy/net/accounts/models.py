@@ -1,6 +1,5 @@
 import uuid
 
-from django.apps import apps
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -11,6 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
 from speedy.core.models import TimeStampedModel
+from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import generate_id, get_site_profile_model
 from .validators import identity_id_validator
@@ -44,6 +44,7 @@ class Entity(TimeStampedModel):
     id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True,
                           unique=True)
     slug = models.SlugField(unique=True)
+    photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -78,8 +79,6 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
     gender = models.SmallIntegerField(verbose_name=_('gender'), choices=GENDER_CHOICES)
-    profile_picture = models.ImageField(verbose_name=_('profile picture'), upload_to='accounts/user/profile_picture/',
-                                        blank=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 

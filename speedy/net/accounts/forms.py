@@ -71,7 +71,7 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name_en', 'last_name_en', 'first_name_he', 'last_name_he', 'date_of_birth', 'profile_picture')
+        fields = ('first_name_en', 'last_name_en', 'first_name_he', 'last_name_he', 'date_of_birth', 'photo')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
