@@ -24,9 +24,22 @@ class Feedback(TimeStampedModel):
                                on_delete=models.SET_NULL, null=True, blank=True)
     sender_name = models.CharField(verbose_name=_('your name'), max_length=255, blank=True)
     sender_email = models.EmailField(verbose_name=_('your email'), blank=True)
-    type = models.PositiveIntegerField(verbose_name=_('type'))
+    type = models.PositiveIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
     text = models.TextField(verbose_name=_('your message'))
     report_entity = models.ForeignKey(verbose_name=_('reported entity'), to='accounts.Entity',
                                       on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
     report_file = models.ForeignKey(verbose_name=_('reported photo'), to='uploads.File',
                                     on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
+
+    def __str__(self):
+        if self.type == self.TYPE_REPORT_ENTITY:
+            on = ' on {}'.format(self.report_entity)
+        elif self.type == self.TYPE_REPORT_FILE:
+            on = ' on {}'.format(self.report_file)
+        else:
+            on = ''
+        if self.sender:
+            by = str(self.sender)
+        else:
+            by = self.sender_name
+        return '{}{} by {}'.format(self.get_type_display(), on, by)

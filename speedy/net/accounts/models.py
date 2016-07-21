@@ -80,7 +80,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
     gender = models.SmallIntegerField(verbose_name=_('gender'), choices=GENDER_CHOICES)
     is_active = models.BooleanField(default=True)
-    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
 
@@ -98,7 +98,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return False
 
     def get_full_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
+
+    def get_short_name(self):
+        return self.get_full_name()
 
     def has_confirmed_email(self):
         return self.email_addresses.filter(is_confirmed=True).exists()

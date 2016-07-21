@@ -1,12 +1,12 @@
 from django.conf import settings
 from django.conf.urls import url, include
 
-# from django.contrib import admin
+from django.contrib import admin
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
-    # url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
 
     # always at the bottom
     url(r'^(?P<username>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
