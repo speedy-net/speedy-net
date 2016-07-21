@@ -15,55 +15,12 @@
     <div class="page-header">
         <h1>
             <div class="pull-right">
-                {% if request.user.is_authenticated %}
-                    {% if can_send_message %}
-                        <a href="{% url 'im:user_send' user.slug %}" class="btn btn-primary">
-                            <i class="fa fa-envelope"></i>
-                            {% trans 'Send Message' %}
-                        </a>
-                    {% endif %}
-                    {% if request.user == user %}
-                        <a href="{% url 'accounts:edit_profile' %}" class="btn btn-default">
-                            <i class="fa fa-pencil"></i>
-                            {% trans 'Edit Profile' %}
-                        </a>
-                    {% elif can_friend_request %}
-                        <form action="{% url 'friends:request' user.slug %}" method="post">
-                            {% csrf_token %}
-                            <button class="btn btn-success" type="submit">
-                                <i class="fa fa-user-plus"></i>
-                                {% trans 'Add to Friends' %}
-                            </button>
-                        </form>
-                    {% elif friend_request_sent %}
-                        <button disabled class="btn btn-default">
-                            <i class="fa fa-user-plus"></i>
-                            {% trans 'Friend Request Sent' %}
-                        </button>
-                    {% elif user_is_friend %}
-                        <form action="{% url 'friends:remove' user.slug %}" method="post" data-block="RemoveFromFriendsForm">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-default" data-role="button" data-default-text="{% trans 'Your Friend' %}" data-hover-text="{% trans 'Remove' %}">{% trans 'Your Friend' %}</button>
-                        </form>
-                    {% endif %}
-                {% endif %}
-                {% if can_block %}
-                    <form action="{% url 'blocks:block' user.slug %}" method="post">
-                        {% csrf_token %}
-                        <button class="btn btn-default" type="submit">
-                            <i class="fa fa-ban"></i>
-                            {% trans 'Block User' %}
-                        </button>
-                    </form>
-                {% elif can_unblock %}
-                    <form action="{% url 'blocks:unblock' user.slug %}" method="post">
-                        {% csrf_token %}
-                        <button class="btn btn-default" type="submit">
-                            <i class="fa fa-ban"></i>
-                            {% trans 'Unblock User' %}
-                        </button>
-                    </form>
-                {% endif %}
+                {% include 'profiles/tools/send_message.html' %}
+                {% include 'profiles/tools/edit_profile.html' %}
+                {% include 'profiles/tools/add_to_friends.html' %}
+                {% include 'profiles/tools/friend_request_sent.html' %}
+                {% include 'profiles/tools/your_friend.html' %}
+                {% include 'profiles/tools/block_user.html' %}
             </div>
             {{ user }}
         </h1>

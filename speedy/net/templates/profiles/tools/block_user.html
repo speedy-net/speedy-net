@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load rules %}
+
+{% has_perm 'blocks.block' request.user user as can_block %}
+{% has_perm 'blocks.unblock' request.user user as can_unblock %}
+
+{% if can_block %}
+    <form action="{% url 'blocks:block' user.slug %}" method="post">
+        {% csrf_token %}
+        <div class="btn-group">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-ban"></i>
+                {% trans 'Block User' %}
+            </button>
+            {% include 'profiles/tools/report_menu.html' %}
+        </div>
+    </form>
+{% elif can_unblock %}
+    <form action="{% url 'blocks:unblock' user.slug %}" method="post">
+        {% csrf_token %}
+        <div class="btn-group">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-ban"></i>
+                {% trans 'Unblock User' %}
+            </button>
+            {% include 'profiles/tools/report_menu.html' %}
+        </div>
+    </form>
+{% endif %}

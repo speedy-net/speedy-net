@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load rules %}
+
+{% has_perm 'friends.request' request.user user as can_friend_request %}
+
+{% if can_friend_request %}
+    <form action="{% url 'friends:request' user.slug %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-success" type="submit">
+            <i class="fa fa-user-plus"></i>
+            {% trans 'Add to Friends' %}
+        </button>
+    </form>
+{% endif %}

@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
+</button>
+<ul class="dropdown-menu">
+    <li><a href="{% url 'feedback:report_entity' user.slug %}">{% trans 'Report User' %}</a></li>
+    {% if user.photo %}
+        <li><a href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report Photo' %}</a></li>
+    {% endif %}
+</ul>

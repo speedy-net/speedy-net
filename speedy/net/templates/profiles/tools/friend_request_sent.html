@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load rules %}
+
+{% if friend_request_sent %}
+    <button disabled class="btn btn-default">
+        <i class="fa fa-user-plus"></i>
+        {% trans 'Friend Request Sent' %}
+    </button>
+{% endif %}

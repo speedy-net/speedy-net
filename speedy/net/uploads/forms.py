@@ -1,5 +1,3 @@
-from django import forms
-
 from speedy.core.forms import ModelFormWithDefaults
 from .models import File, Image
 
@@ -13,4 +11,3 @@ class FileUploadForm(ModelFormWithDefaults):
 class ImageUploadForm(FileUploadForm):
     class Meta(FileUploadForm.Meta):
         model = Image
-

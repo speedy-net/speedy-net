@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^(?P<username>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
     url(r'^(?P<username>[-\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
+    url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
 

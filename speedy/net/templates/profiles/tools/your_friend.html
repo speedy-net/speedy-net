@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load rules %}
+
+{% if user_is_friend %}
+    <form action="{% url 'friends:remove' user.slug %}" method="post"
+          data-block="RemoveFromFriendsForm">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-default" data-role="button"
+                data-default-text="{% trans 'Your Friend' %}"
+                data-hover-text="{% trans 'Remove' %}">{% trans 'Your Friend' %}</button>
+    </form>
+{% endif %}

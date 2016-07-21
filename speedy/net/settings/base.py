@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'speedy.net.friends',
     'speedy.net.blocks',
     'speedy.net.uploads',
+    'speedy.net.feedback',
 ]
 
 MIDDLEWARE_CLASSES = [

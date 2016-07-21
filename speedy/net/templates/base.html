@@ -77,6 +77,7 @@
 
 
 
+
             {% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible"
              role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
@@ -92,6 +93,15 @@
     {% block content %}
     {% endblock %}
 </div>
+<hr>
+<footer class="footer">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="disabled"><a href="/">{{ site.name }}, {% now 'Y' %}</a></li>
+            <li><a href="{% url 'feedback:feedback' %}">{% trans 'Contact Us' %}</a></li>
+        </ul>
+    </div>
+</footer>
 
 {% block js %}
     <script src="{% static 'vendor/jquery/jquery-2.2.4.js' %}"></script>
