@@ -12,7 +12,7 @@
 
 {% block content %}
     {% get_other_participant chat user as other %}
-    {% annotate_messages_with_read_marks message_list user %}
+
     <div class="page-header">
         <h1>{% blocktrans with username=other.user %}Chat with {{ username }}{% endblocktrans %}</h1>
     </div>
@@ -24,27 +24,11 @@
         {% csrf_token %}
         <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' %}</button>
     </form>
-    {% for message in message_list %}
-        <div class="media well-sm {% if message.is_unread %}bg-success{% endif %}">
-            <div class="media-left">
-                {% profile_picture message.sender '42x42' %}
-            </div>
-            <div class="media-body">
-                <div>
-                    <a href="{{ message.sender.user.get_absolute_url }}">{{ message.sender.user }}</a>
-                    <small class="text-muted">
-                        {{ message.date_created }}
-                    </small>
-                    {% if message.is_unread %}
-                        <span class="pull-right label label-success">{% trans 'New' %}</span>
-                    {% endif %}
-                </div>
-                <div>
-                    {{ message.text|linebreaksbr|urlizetrunc:50 }}
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+
+
+    <div data-block="MessageList" data-poll-url="{% url 'im:chat_poll' user.slug chat.id %}">
+        {% include 'im/message_list_poll.html' %}
+    </div>
 
     {% pagination %}
 

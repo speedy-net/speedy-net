@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import redirect
@@ -71,6 +73,15 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         return cd
 
 
+class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
+    template_name = 'im/message_list_poll.html'
+
+    def get_queryset(self):
+        since = float(self.request.GET.get('since', 0))
+        since += 0.0001
+        return self.get_messages_queryset().filter(date_created__gt=datetime.fromtimestamp(since))
+
+
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     template_name = 'im/chat_detail.html'
     form_class = MessageForm
@@ -117,7 +128,6 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
 
 
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
-
     def get(self, request, *args, **kwargs):
         return redirect(self.get_success_url())
 

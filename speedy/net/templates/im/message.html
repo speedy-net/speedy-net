@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load user_tags %}
+
+<div class="media well-sm {% if message.is_unread %}bg-success{% endif %}" data-role="message" data-timestamp="{{ message.date_created|date:"U.u" }}">
+    <div class="media-left">
+        {% profile_picture message.sender '42x42' %}
+    </div>
+    <div class="media-body">
+        <div>
+            <a href="{{ message.sender.user.get_absolute_url }}">{{ message.sender.user }}</a>
+            <small class="text-muted">
+                {{ message.date_created }}
+            </small>
+            {% if message.is_unread %}
+                <span class="pull-right label label-success">{% trans 'New' %}</span>
+            {% endif %}
+        </div>
+        <div>
+            {{ message.text|linebreaksbr|urlizetrunc:50 }}
+        </div>
+    </div>
+</div>

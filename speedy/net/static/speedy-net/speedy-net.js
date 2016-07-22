@@ -75,6 +75,26 @@ evil.block('@@RemoveFromFriendsForm', {
 });
 
 
+evil.block('@@MessageList', {
+    init: function () {
+        var this_ = this;
+        window.setInterval(function () {
+            this_.poll();
+        }, 5000);
+    },
+
+    poll: function () {
+        var this_ = this;
+        var url = this.block.data('poll-url');
+        var since = this.$('@message').first().data('timestamp');
+        url += '?since=' + since;
+        $.get(url, function (data) {
+            $(data).prependTo(this_.block);
+        });
+    }
+});
+
+
 evil.block('@@Uploader', {
 
     blankState: function () {
