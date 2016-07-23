@@ -62,6 +62,13 @@ class EditProfileView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('accounts:edit_profile')
     form_class = ProfileForm
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'language': 'he',
+        })
+        return kwargs
+
     def get_object(self, queryset=None):
         return self.request.user
 

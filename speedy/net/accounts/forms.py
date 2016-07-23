@@ -71,10 +71,17 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name_en', 'last_name_en', 'first_name_he', 'last_name_he', 'date_of_birth', 'photo')
+        fields = ('first_name_en', 'last_name_en', 'date_of_birth', 'photo')
 
     def __init__(self, **kwargs):
+        self.language = kwargs.pop('language', 'en')
         super().__init__(**kwargs)
+        if self.language != 'en':
+            lang_fields = ('first_name', 'last_name')
+            for lang_field in reversed(lang_fields):
+                lang_field += '_' + self.language
+                self.fields[lang_field] = User._meta.get_field(lang_field).formfield()
+                self.fields.move_to_end(lang_field, last=False)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
         self.helper = FormHelper()
