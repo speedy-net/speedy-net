@@ -63,6 +63,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'speedy.net.accounts.middleware.InactiveUserMiddleware',
     'speedy.net.accounts.middleware.SiteProfileMiddleware',
@@ -81,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
                 'speedy.core.context_processors.active_url_name',
                 'speedy.core.context_processors.settings',
                 'speedy.core.context_processors.sites',
@@ -138,7 +140,7 @@ LOGIN_REDIRECT_URL = '/me/'
 UNAVAILABLE_USERNAMES = [
     'admin', 'root',
     'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
-    'friends', 'messages', 'feedback', 'contact', 'about',
+    'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
 ]
 
 DONT_REDIRECT_INACTIVE_USER = [
@@ -149,11 +151,15 @@ DONT_REDIRECT_INACTIVE_USER = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', _('English')),
     ('he', _('Hebrew')),
+]
+
+LOCALE_PATHS = [
+    str(APP_DIR / 'locale'),
 ]
 
 TIME_ZONE = 'UTC'

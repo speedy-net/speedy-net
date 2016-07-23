@@ -9,3 +9,16 @@
 .text-default {
     color: #000000;
 }
+
+.nav-pills .btn {
+    font-weight: 300;
+}
+
+body.bidi-rtl .pull-left {
+    float: right !important;
+}
+
+body.bidi-rtl .pull-right,
+body.bidi-rtl .navbar-right {
+    float: left !important;
+}

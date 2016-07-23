@@ -4,7 +4,10 @@
 {% load staticfiles %}
 {% load i18n %}
 
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{{ site.name }}{% endblock %}</title>
@@ -12,11 +15,13 @@
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
         <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}">
         <link rel="stylesheet" href="{% static 'vendor/jquery-ui-custom/jquery-ui.css' %}">
-        {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}"> #}
+        {% if LANGUAGE_BIDI %}
+            <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}">
+        {% endif %}
         <link rel="stylesheet" href="{% static 'speedy-net/speedy-net.css' %}">
     {% endblock %}
 </head>
-<body>
+<body class="bidi-{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">
 
 <nav class="navbar {% block navbar_class %}{% endblock %}">
     <div class="container">
@@ -78,6 +83,10 @@
 
 
 
+
+
+
+
             {% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible"
              role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
@@ -99,9 +108,33 @@
         <ul class="nav nav-pills">
             <li class="disabled"><a href="/">{{ site.name }}, {% now 'Y' %}</a></li>
             <li><a href="{% url 'feedback:feedback' %}">{% trans 'Contact Us' %}</a></li>
+            <li data-block="LanguageSwitcher">
+                <div class="dropup">
+                    <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">
+                        {% trans 'Language' %}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <li><a href="/" data-role="link" data-code="{{ language.code }}">{{ language.name_local }}
+                                ({{ language.code }})</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <form action="{% url 'set_language' %}" method="post" data-role="form" class="hidden">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}"/>
+                    <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}" data-role="input">
+                </form>
+            </li>
         </ul>
     </div>
 </footer>
+
+
 
 {% block js %}
     <script src="{% static 'vendor/jquery/jquery-2.2.4.js' %}"></script>

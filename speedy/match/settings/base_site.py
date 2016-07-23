@@ -10,6 +10,8 @@ STATIC_ROOT = str(APP_DIR / 'static_serve')
 
 TEMPLATES[0]['DIRS'].insert(0, str(APP_DIR / 'templates'))
 
+LOCALE_PATHS.append(str(APP_DIR / 'locale'))
+
 STATICFILES_DIRS.insert(0, str(APP_DIR / 'static'))
 
 INSTALLED_APPS += [
