@@ -48,9 +48,7 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
         return url
 
 
-class UserDetailView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
-    permission_required = 'accounts.view_profile'
-    raise_exception = True
+class UserDetailView(UserMixin, generic.TemplateView):
     template_name = 'profiles/user_detail.html'
 
     def get_widget_kwargs(self):

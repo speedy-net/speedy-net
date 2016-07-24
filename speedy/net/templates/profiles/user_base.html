@@ -6,6 +6,7 @@
 {% load rules %}
 
 {% block content %}
+    {% has_perm 'accounts.view_profile' request.user user as can_view_profile %}
     {% has_perm 'friends.request' request.user user as can_friend_request %}
     {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
     {% has_perm 'im.send_message' request.user user as can_send_message %}
@@ -25,6 +26,12 @@
             {{ user }}
         </h1>
     </div>
-    {% block user_content %}
-    {% endblock %}
+    {% if can_view_profile %}
+        {% block user_content %}
+        {% endblock %}
+    {% else %}
+        <div class="alert alert-danger">
+            {% trans 'This page is private.' %}
+        </div>
+    {% endif %}
 {% endblock %}

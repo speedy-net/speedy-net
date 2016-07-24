@@ -18,7 +18,7 @@ class Widget(object):
 
     def render(self):
         return mark_safe(render_to_string(self.get_template_name(),
-                                self.get_context_data()))
+                                          self.get_context_data()))
 
     @property
     def html(self):
@@ -27,6 +27,7 @@ class Widget(object):
 
 class UserPhotoWidget(Widget):
     template_name = 'profiles/user_photo_widget.html'
+
 
 class UserInfoWidget(Widget):
     template_name = 'profiles/user_info_widget.html'

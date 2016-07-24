@@ -90,6 +90,10 @@ class RegistrationViewTestCase(TestCase):
         r = self.client.post('/register/', data=self.data)
         self.assertEqual(len(mail.outbox), 1)
         site = Site.objects.get_current()
+        user = User.objects.first()
+        email = user.email_addresses.first()
+        self.assertFalse(email.is_confirmed)
+        self.assertEqual(email.confirmation_sent, 1)
         self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
@@ -162,8 +166,6 @@ class EditProfileViewTestCase(TestCase):
         data = {
             'first_name_en': 'Johnny',
             'last_name_en': 'English',
-            'first_name_he': 'Not Johnny',
-            'last_name_he': 'Not English',
             'date_of_birth': 'June 3, 1976',
         }
         r = self.client.post(self.page_url, data)

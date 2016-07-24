@@ -138,6 +138,7 @@ class UserEmailAddress(TimeStampedModel):
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
+    confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
 
     def save(self, *args, **kwargs):
         if not self.confirmation_token:
@@ -157,7 +158,10 @@ class UserEmailAddress(TimeStampedModel):
         return send_mail([self.email], template_name_prefix, context)
 
     def send_confirmation_email(self):
-        return self.mail('accounts/email/verify_email')
+        msg_count = self.mail('accounts/email/verify_email')
+        self.confirmation_sent += 1
+        self.save(update_fields={'confirmation_sent'})
+        return msg_count
 
     def verify(self):
         self.is_confirmed = True

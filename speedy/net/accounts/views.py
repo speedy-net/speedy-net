@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 from django.views import generic
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
@@ -65,7 +65,7 @@ class EditProfileView(LoginRequiredMixin, generic.UpdateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
-            'language': 'he',
+            'language': get_language(),
         })
         return kwargs
 

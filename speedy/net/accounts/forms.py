@@ -71,19 +71,23 @@ class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name_en', 'last_name_en', 'date_of_birth', 'photo')
+        fields = ('first_name_en', 'last_name_en', 'date_of_birth', 'photo', 'slug')
+
+    def get_localized_fields(self):
+        loc_fields = ('first_name', 'last_name')
+        if self.language == 'en':
+            return []
+        return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
 
     def __init__(self, **kwargs):
         self.language = kwargs.pop('language', 'en')
         super().__init__(**kwargs)
-        if self.language != 'en':
-            lang_fields = ('first_name', 'last_name')
-            for lang_field in reversed(lang_fields):
-                lang_field += '_' + self.language
-                self.fields[lang_field] = User._meta.get_field(lang_field).formfield()
-                self.fields.move_to_end(lang_field, last=False)
+        for loc_field in reversed(self.get_localized_fields()):
+            self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
+            self.fields.move_to_end(loc_field, last=False)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
+        self.fields['slug'].label = _('Username')
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())
@@ -94,6 +98,14 @@ class ProfileForm(forms.ModelForm):
             for pair in zip(field_names[::2], field_names[1::2])
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
+
+        def save(self, commit=True):
+            instance = super().save(commit=False)
+            for loc_field in self.get_localized_fields():
+                setattr(instance, loc_field, self.cleaned_data[loc_field])
+            if commit:
+                instance.save()
+            return instance
 
 
 class ProfilePrivacyForm(forms.ModelForm):
