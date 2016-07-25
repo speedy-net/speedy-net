@@ -41,32 +41,6 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
-                {% if request.user.is_active %}
-                    {% block user_menu %}
-                        <li><a href="{% url 'profiles:me' %}">
-                            <i class="fa fa-user"></i>
-                            {{ request.user }}
-                        </a></li>
-                        <li><a href="{% url 'friends:list' request.user.slug %}">
-                            <i class="fa fa-users"></i>
-                            {% with request.user.friendship_requests_received.count as frequests_count %}
-                                {% if frequests_count %}
-                                    <span class="badge">{{ frequests_count }}</span>
-                                {% endif %}
-                            {% endwith %}
-                        </a></li>
-                        <li><a href="{% url 'im:list' request.user.slug %}">
-                            <i class="fa fa-comments"></i>
-                            {% unread_chats_count request.user as unread_chats %}
-                            {% if unread_chats %}
-                                <span class="badge">{{ unread_chats }}</span>
-                            {% endif %}
-                        </a></li>
-                    {% endblock %}
-                    <li><a href="{% url 'accounts:edit_profile' %}">
-                        {% trans 'Edit Profile' %}
-                    </a></li>
-                {% endif %}
                 <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
             {% else %}
                 <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
@@ -79,16 +53,6 @@
 <div class="container">
     {% for message in messages %}
         <div class="alert alert-{% if message.tags == 'success' %}info
-
-
-
-
-
-
-
-
-
-
             {% else %}{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissible"
              role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
@@ -101,8 +65,51 @@
             {% trans "You haven't confirmed your email address. Please check your inbox." %}
         </div>
     {% endif %}
-    {% block content %}
-    {% endblock %}
+
+    {% if request.user.is_authenticated and request.user.is_active %}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="page-header">
+                    <h1>&nbsp;</h1>
+                </div>
+                <ul class="nav nav-pills nav-stacked">
+                    {% block user_menu %}
+                        <li><a href="{% url 'profiles:me' %}">
+                            <i class="fa fa-fw fa-user"></i>
+                            {{ request.user }}
+                        </a></li>
+                        <li><a href="{% url 'friends:list' request.user.slug %}">
+                            <i class="fa fa-fw fa-users"></i>
+                            {% trans 'Friends' %}
+                            {% with request.user.friendship_requests_received.count as frequests_count %}
+                                {% if frequests_count %}
+                                    <span class="badge">{{ frequests_count }}</span>
+                                {% endif %}
+                            {% endwith %}
+                        </a></li>
+                        <li><a href="{% url 'im:list' request.user.slug %}">
+                            <i class="fa fa-fw fa-comments"></i>
+                            {% trans 'Messages' %}
+                            {% unread_chats_count request.user as unread_chats %}
+                            {% if unread_chats %}
+                                <span class="badge">{{ unread_chats }}</span>
+                            {% endif %}
+                        </a></li>
+                    {% endblock %}
+                    <li><a href="{% url 'accounts:edit_profile' %}">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        {% trans 'Edit Profile' %}
+                    </a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+    {% endif %}
+                {% block content %}
+                {% endblock %}
+    {% if request.user.is_authenticated %}
+            </div>
+        </div>
+    {% endif %}
 </div>
 <hr>
 <footer class="footer">

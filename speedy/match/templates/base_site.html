@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
+{% load i18n %}
+
 {% block navbar_class %}navbar-default{% endblock %}
 
 {% block user_menu %}
     {{ block.super }}
     <li><a href="{% url 'likes:list' request.user.slug %}">
-        <i class="fa fa-heart"></i>
+        <i class="fa fa-fw fa-heart"></i>
+        {% trans 'Likes' %}
     </a></li>
 {% endblock %}
