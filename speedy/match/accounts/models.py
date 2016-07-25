@@ -16,3 +16,6 @@ class SiteProfile(SiteProfileBase):
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
                                                     choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
                                                     default=SiteProfileBase.NOTIFICATIONS_ON)
+    notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'),
+                                                 choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
+                                                 default=SiteProfileBase.NOTIFICATIONS_ON)

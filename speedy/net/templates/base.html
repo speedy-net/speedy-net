@@ -42,25 +42,27 @@
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_active %}
-                    <li><a href="{% url 'profiles:me' %}">
-                        <i class="fa fa-user"></i>
-                        {{ request.user }}
-                    </a></li>
-                    <li><a href="{% url 'friends:list' request.user.slug %}">
-                        <i class="fa fa-users"></i>
-                        {% with request.user.friendship_requests_received.count as frequests_count %}
-                            {% if frequests_count %}
-                                <span class="badge">{{ frequests_count }}</span>
+                    {% block user_menu %}
+                        <li><a href="{% url 'profiles:me' %}">
+                            <i class="fa fa-user"></i>
+                            {{ request.user }}
+                        </a></li>
+                        <li><a href="{% url 'friends:list' request.user.slug %}">
+                            <i class="fa fa-users"></i>
+                            {% with request.user.friendship_requests_received.count as frequests_count %}
+                                {% if frequests_count %}
+                                    <span class="badge">{{ frequests_count }}</span>
+                                {% endif %}
+                            {% endwith %}
+                        </a></li>
+                        <li><a href="{% url 'im:list' request.user.slug %}">
+                            <i class="fa fa-comments"></i>
+                            {% unread_chats_count request.user as unread_chats %}
+                            {% if unread_chats %}
+                                <span class="badge">{{ unread_chats }}</span>
                             {% endif %}
-                        {% endwith %}
-                    </a></li>
-                    <li><a href="{% url 'im:list' request.user.slug %}">
-                        <i class="fa fa-comments"></i>
-                        {% unread_chats_count request.user as unread_chats %}
-                        {% if unread_chats %}
-                            <span class="badge">{{ unread_chats }}</span>
-                        {% endif %}
-                    </a></li>
+                        </a></li>
+                    {% endblock %}
                     <li><a href="{% url 'accounts:edit_profile' %}">
                         {% trans 'Edit Profile' %}
                     </a></li>

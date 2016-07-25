@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load rules %}
+
+{% has_perm 'likes.like' request.user user as can_like %}
+{% has_perm 'likes.unlike' request.user user as can_unlike %}
+
+
+{% if can_like %}
+    <form action="{% url 'likes:like' user.slug %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">
+            <i class="fa fa-heart"></i>
+            {% trans 'Like' %}
+        </button>
+    </form>
+{% elif can_unlike %}
+    <form action="{% url 'likes:unlike' user.slug %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-default" type="submit">
+            <i class="fa fa-heart"></i>
+            {% trans 'Unlike' %}
+        </button>
+    </form>
+{% endif %}
+

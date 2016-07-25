@@ -167,6 +167,7 @@ class EditProfileViewTestCase(TestCase):
             'first_name_en': 'Johnny',
             'last_name_en': 'English',
             'date_of_birth': 'June 3, 1976',
+            'slug': 'slugslug',
         }
         r = self.client.post(self.page_url, data)
         self.assertRedirects(r, self.page_url)

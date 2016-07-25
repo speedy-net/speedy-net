@@ -16,6 +16,7 @@ STATICFILES_DIRS.insert(0, str(APP_DIR / 'static'))
 
 INSTALLED_APPS += [
     'speedy.match.accounts',
+    'speedy.match.likes',
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'
