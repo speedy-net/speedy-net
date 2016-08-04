@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 14:17+0000\n"
+"POT-Creation-Date: 2016-08-04 11:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,3 +25,54 @@ msgstr "Hebrew"
 #: accounts/models.py:16
 msgid "on new messages"
 msgstr "Hebrew"
+
+#: accounts/models.py:19
+#, fuzzy
+#| msgid "on new messages"
+msgid "on new likes"
+msgstr "Hebrew"
+
+#: likes/models.py:12
+msgid "like"
+msgstr ""
+
+#: likes/models.py:13
+msgid "entity likes"
+msgstr ""
+
+#: likes/models.py:16
+msgid "from user"
+msgstr ""
+
+#: likes/models.py:17
+msgid "to entity"
+msgstr ""
+
+#: templates/base_site.html:11 templates/likes/like_list.html:6
+#: templates/likes/like_list.html:10
+msgid "Likes"
+msgstr ""
+
+#: templates/likes/like_list.html:14
+msgid "People I Like"
+msgstr ""
+
+#: templates/likes/like_list.html:16
+msgid "People Who Likes Me"
+msgstr ""
+
+#: templates/likes/like_list.html:18
+msgid "Mutual Likes"
+msgstr ""
+
+#: templates/likes/like_list.html:28
+msgid "You have no likes here."
+msgstr ""
+
+#: templates/profiles/tools/like.html:13
+msgid "Like"
+msgstr ""
+
+#: templates/profiles/tools/like.html:21
+msgid "Unlike"
+msgstr ""

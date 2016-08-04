@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 14:16+0000\n"
+"POT-Creation-Date: 2016-08-04 10:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,8 @@ msgstr ""
 msgid "Email"
 msgstr "Hebrew"
 
-#: accounts/forms.py:49 templates/profiles/user_info_widget.html:17
+#: accounts/forms.py:49 accounts/forms.py:90
+#: templates/profiles/user_info_widget.html:17
 msgid "Username"
 msgstr "Hebrew"
 
@@ -34,48 +35,48 @@ msgstr "Hebrew"
 msgid "This username is unavailable."
 msgstr "Hebrew"
 
-#: accounts/forms.py:89 accounts/forms.py:102 accounts/forms.py:116
+#: accounts/forms.py:100 accounts/forms.py:121 accounts/forms.py:135
 msgid "Save Changes"
 msgstr "Hebrew"
 
-#: accounts/forms.py:127
+#: accounts/forms.py:146
 msgid "Username or email"
 msgstr "Hebrew"
 
-#: accounts/forms.py:132 templates/accounts/login.html:6
-#: templates/accounts/login.html:12 templates/base.html:66
+#: accounts/forms.py:151 templates/accounts/login.html:6
+#: templates/accounts/login.html:12 templates/base.html:47
 msgid "Login"
 msgstr "Hebrew"
 
-#: accounts/forms.py:135
+#: accounts/forms.py:154
 msgid "Forgot password?"
 msgstr "Hebrew"
 
-#: accounts/forms.py:147 accounts/forms.py:164
+#: accounts/forms.py:166 accounts/forms.py:183
 msgid "Submit"
 msgstr "Hebrew"
 
-#: accounts/forms.py:174
+#: accounts/forms.py:193
 msgid "Change"
 msgstr "Hebrew"
 
-#: accounts/forms.py:178
+#: accounts/forms.py:197
 msgid "Your password"
 msgstr "Hebrew"
 
-#: accounts/forms.py:184
+#: accounts/forms.py:203
 msgid "Deactivate your account"
 msgstr "Hebrew"
 
-#: accounts/forms.py:189
+#: accounts/forms.py:208
 msgid "Invalid password"
 msgstr "Hebrew"
 
-#: accounts/forms.py:197
+#: accounts/forms.py:216
 msgid "Send Activation Email"
 msgstr "Hebrew"
 
-#: accounts/forms.py:226
+#: accounts/forms.py:245
 msgid "Add"
 msgstr "Hebrew"
 
@@ -163,27 +164,33 @@ msgstr "Hebrew"
 msgid "confirmation token"
 msgstr "Hebrew"
 
-#: accounts/models.py:184
+#: accounts/models.py:141
+#, fuzzy
+#| msgid "confirmation token"
+msgid "confirmation sent"
+msgstr "Hebrew"
+
+#: accounts/models.py:188
 msgid "Notify"
 msgstr "Hebrew"
 
-#: accounts/models.py:185
+#: accounts/models.py:189
 msgid "Don't notify"
 msgstr "Hebrew"
 
-#: accounts/models.py:192
+#: accounts/models.py:196
 msgid "indicates if a user has ever logged in to the site"
 msgstr "Hebrew"
 
-#: accounts/models.py:209
+#: accounts/models.py:213
 msgid "who can view my account"
 msgstr "Hebrew"
 
-#: accounts/models.py:210
+#: accounts/models.py:214
 msgid "public email"
 msgstr "Hebrew"
 
-#: accounts/models.py:212
+#: accounts/models.py:216
 msgid "on new messages"
 msgstr "Hebrew"
 
@@ -199,19 +206,19 @@ msgstr "Hebrew"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "Hebrew"
 
-#: accounts/views.py:123
+#: accounts/views.py:130
 msgid "Your account has been deactivated."
 msgstr "Hebrew"
 
-#: accounts/views.py:149
+#: accounts/views.py:156
 msgid "Your account is now activated. Welcome back!"
 msgstr "Hebrew"
 
-#: accounts/views.py:164
+#: accounts/views.py:171
 msgid "You've already confirmed this email address."
 msgstr "Hebrew"
 
-#: accounts/views.py:167
+#: accounts/views.py:174
 msgid "You've confirmed your email address."
 msgstr "Hebrew"
 
@@ -349,11 +356,11 @@ msgstr "Hebrew"
 msgid "read marks"
 msgstr "Hebrew"
 
-#: settings/base.py:155
+#: settings/base.py:157
 msgid "English"
 msgstr "Hebrew"
 
-#: settings/base.py:156
+#: settings/base.py:158
 msgid "Hebrew"
 msgstr "Hebrew"
 
@@ -361,7 +368,7 @@ msgstr "Hebrew"
 msgid "Permission Denied"
 msgstr "Hebrew"
 
-#: templates/403.html:12
+#: templates/403.html:12 templates/profiles/user_base.html:24
 msgid "This page is private."
 msgstr "Hebrew"
 
@@ -387,32 +394,32 @@ msgid "Press this button to activate your account:"
 msgstr "Hebrew"
 
 #: templates/accounts/edit_profile/base.html:6
-#: templates/accounts/edit_profile/base.html:10 templates/base.html:60
+#: templates/accounts/edit_profile/base.html:10 templates/base.html:101
 #: templates/profiles/tools/edit_profile.html:6
 msgid "Edit Profile"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:16
+#: templates/accounts/edit_profile/base.html:15
 msgid "Profile Info"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:18
+#: templates/accounts/edit_profile/base.html:17
 msgid "Privacy Settings"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:20
+#: templates/accounts/edit_profile/base.html:19
 msgid "Notifications"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:22
+#: templates/accounts/edit_profile/base.html:21
 msgid "Emails & Password"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:24
+#: templates/accounts/edit_profile/base.html:23
 msgid "Blocked Users"
 msgstr "Hebrew"
 
-#: templates/accounts/edit_profile/base.html:26
+#: templates/accounts/edit_profile/base.html:25
 msgid "Deactivate Account"
 msgstr "Hebrew"
 
@@ -496,23 +503,34 @@ msgstr "Hebrew"
 msgid "Email with password reset instructions has been sent."
 msgstr "Hebrew"
 
-#: templates/base.html:63
+#: templates/base.html:44
 msgid "Logout"
 msgstr "Hebrew"
 
-#: templates/base.html:65
+#: templates/base.html:46
 msgid "Register"
 msgstr "Hebrew"
 
-#: templates/base.html:91
+#: templates/base.html:65
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr "Hebrew"
 
-#: templates/base.html:102
+#: templates/base.html:83 templates/friends/friend_list.html:7
+#: templates/friends/friend_list.html:19
+#: templates/friends/user_friends_widget.html:15
+msgid "Friends"
+msgstr "Hebrew"
+
+#: templates/base.html:92 templates/im/chat_detail.html:11
+#: templates/im/chat_list.html:8 templates/im/chat_list.html:13
+msgid "Messages"
+msgstr "Hebrew"
+
+#: templates/base.html:119
 msgid "Contact Us"
 msgstr "Hebrew"
 
-#: templates/base.html:106
+#: templates/base.html:123
 msgid "Language"
 msgstr "Hebrew"
 
@@ -544,11 +562,6 @@ msgstr "Hebrew"
 msgid "Your feedback was sent to administrators."
 msgstr "Hebrew"
 
-#: templates/friends/friend_list.html:7 templates/friends/friend_list.html:19
-#: templates/friends/user_friends_widget.html:15
-msgid "Friends"
-msgstr "Hebrew"
-
 #: templates/friends/friend_list.html:15
 msgid "Incoming Requests"
 msgstr "Hebrew"
@@ -559,11 +572,6 @@ msgstr "Hebrew"
 
 #: templates/friends/user_friends_widget.html:12
 msgid "See All"
-msgstr "Hebrew"
-
-#: templates/im/chat_detail.html:11 templates/im/chat_list.html:8
-#: templates/im/chat_list.html:13
-msgid "Messages"
 msgstr "Hebrew"
 
 #: templates/im/chat_detail.html:17

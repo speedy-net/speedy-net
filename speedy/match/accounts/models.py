@@ -6,8 +6,8 @@ from speedy.net.accounts.models import SiteProfileBase, UserEmailAddress, ACCESS
 
 class SiteProfile(SiteProfileBase):
     class Meta:
-        verbose_name = 'Speedy Net Profile'
-        verbose_name_plural = 'Speedy Net Profiles'
+        verbose_name = 'Speedy Match Profile'
+        verbose_name_plural = 'Speedy Match Profiles'
 
     access_account = ACCESS_FRIENDS
     public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
