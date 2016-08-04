@@ -45,7 +45,7 @@ class Entity(TimeStampedModel):
 
     id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True,
                           unique=True)
-    username = models.CharField(max_length=20, validators=[username_validator], unique=True)
+    username = models.CharField(max_length=100, validators=[username_validator], unique=True)
     slug = models.SlugField(unique=True)
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
