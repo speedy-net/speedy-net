@@ -1,4 +1,5 @@
 import uuid
+import re
 
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -7,13 +8,14 @@ from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
 
 from speedy.core.mail import send_mail
 from speedy.core.models import TimeStampedModel
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import generate_id, get_site_profile_model
-from .validators import identity_id_validator
+from .validators import identity_id_validator, username_validator
 
 ACCESS_ME = 1
 ACCESS_FRIENDS = 2
@@ -43,6 +45,7 @@ class Entity(TimeStampedModel):
 
     id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True,
                           unique=True)
+    username = models.CharField(max_length=20, validators=[username_validator], unique=True)
     slug = models.SlugField(unique=True)
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
@@ -53,6 +56,13 @@ class Entity(TimeStampedModel):
                 self.id = generate_id()
         if not self.slug:
             self.slug = self.id
+        self.slug = re.sub('[-]{1,}', '-', self.slug)
+        self.slug = re.sub('^-', '', self.slug)
+        self.slug = re.sub('-$', '', self.slug)
+        if not self.username:
+            self.username = re.sub('[-]', '', self.slug)
+        if re.sub('[-]', '', self.slug) != self.username:
+            raise ValidationError('slug does not parse to username.')
         return super().save(*args, **kwargs)
 
     def __str__(self):
