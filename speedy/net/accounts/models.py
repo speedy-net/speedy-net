@@ -39,12 +39,14 @@ class AccessField(models.PositiveIntegerField):
 
 
 class Entity(TimeStampedModel):
+    MIN_USERNAME_LENGTH = 6
+    MAX_USERNAME_LENGTH = 100
+
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entity')
 
-    id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True,
-                          unique=True)
+    id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
     username = models.CharField(max_length=100, validators=[username_validator], unique=True)
     slug = models.SlugField(unique=True)
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
@@ -54,31 +56,44 @@ class Entity(TimeStampedModel):
             self.id = generate_id()
             while Entity.objects.filter(id=self.id).exists():
                 self.id = generate_id()
+        self.validate_slug()
+        self.validate_username()
+        return super().save(*args, **kwargs)
+
+    def validate_username(self):
+        if not self.username:
+            self.username = re.sub('[-]', '', self.slug)
+        if (len(self.username) < self.MIN_USERNAME_LENGTH):
+            raise ValidationError('username is too short.')
+        if (len(self.username) > self.MAX_USERNAME_LENGTH):
+            raise ValidationError('username is too long.')
+
+    def validate_slug(self):
         if not self.slug:
             self.slug = self.id
         self.slug = re.sub('[-]{1,}', '-', self.slug)
         self.slug = re.sub('^-', '', self.slug)
         self.slug = re.sub('-$', '', self.slug)
-        if not self.username:
-            self.username = re.sub('[-]', '', self.slug)
-        if re.sub('[-]', '', self.slug) != self.username:
-            raise ValidationError('slug does not parse to username.')
-        return super().save(*args, **kwargs)
+        if self.username:
+            if (not(re.sub('[-]', '', self.slug) == self.username)):
+                raise ValidationError('slug does not parse to username.')
 
     def __str__(self):
         return '<Entity {}>'.format(self.id)
 
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
+    MIN_USERNAME_LENGTH = 6
+    MAX_USERNAME_LENGTH = 20
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
     GENDER_CHOICES = (
-        (GENDER_MALE, _('Male')),
         (GENDER_FEMALE, _('Female')),
+        (GENDER_MALE, _('Male')),
         (GENDER_OTHER, _('Other')),
     )
-    USERNAME_FIELD = 'slug'
+    USERNAME_FIELD = 'username'
 
     class Meta:
         verbose_name = _('user')
@@ -97,6 +112,15 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     @property
     def email(self):
         return self.email_addresses.get(is_primary=True).email
+
+    def save(self, *args, **kwargs):
+        return super().save(*args, **kwargs)
+
+    def validate_username(self):
+        super().validate_username()
+        pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
+        if (not(pattern.match(self.username))):
+            raise ValidationError('username must start with 4 or more letters, after which can be any number of digits.')
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
