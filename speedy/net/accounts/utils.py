@@ -5,10 +5,10 @@ from django.apps import apps
 from django.conf import settings
 
 
-def generate_id():
-    chars = string.digits
-    chars_without_zero = chars[1:]
-    return ''.join(random.choice(chars if i > 0 else chars_without_zero) for i in range(15))
+def generate_id(id_length):
+    digits = string.digits
+    digits_without_zero = digits[1:]
+    return ''.join(random.choice(digits if i > 0 else digits_without_zero) for i in range(id_length))
 
 
 def get_site_profile_model():

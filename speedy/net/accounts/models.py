@@ -39,25 +39,28 @@ class AccessField(models.PositiveIntegerField):
 
 
 class Entity(TimeStampedModel):
+    ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 100
+    MAX_USERNAME_LENGTH = 120
 
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entity')
 
-    id = models.CharField(max_length=15, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
-    username = models.CharField(max_length=100, validators=[username_validator], unique=True)
+    id = models.CharField(max_length=ID_LENGTH, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
+    username = models.CharField(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
     slug = models.SlugField(unique=True)
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.id = generate_id()
-            while Entity.objects.filter(id=self.id).exists():
-                self.id = generate_id()
+            generate_new_id = True
+            while generate_new_id:
+                self.id = generate_id(id_length=self.ID_LENGTH)
+                generate_new_id = Entity.objects.filter(id=self.id).exists()
         self.validate_slug()
         self.validate_username()
+        self.validate_username_for_slug()
         return super().save(*args, **kwargs)
 
     def validate_username(self):
@@ -74,9 +77,10 @@ class Entity(TimeStampedModel):
         self.slug = re.sub('[-]{1,}', '-', self.slug)
         self.slug = re.sub('^-', '', self.slug)
         self.slug = re.sub('-$', '', self.slug)
-        if self.username:
-            if (not(re.sub('[-]', '', self.slug) == self.username)):
-                raise ValidationError('slug does not parse to username.')
+
+    def validate_username_for_slug(self):
+        if (not(re.sub('[-]', '', self.slug) == self.username)):
+            raise ValidationError('slug does not parse to username.')
 
     def __str__(self):
         return '<Entity {}>'.format(self.id)
