@@ -170,8 +170,15 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
             .filter(email__iexact=email, user__is_active=True)
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
-    def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email,
-                  html_email_template_name=None):
+    def send_mail(
+        self,
+        subject_template_name,
+        email_template_name,
+        context,
+        from_email,
+        to_email,
+        html_email_template_name=None,
+    ):
         send_mail([to_email], 'accounts/email/password_reset', context)
 
 
