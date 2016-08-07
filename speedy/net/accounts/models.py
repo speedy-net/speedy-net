@@ -67,9 +67,9 @@ class Entity(TimeStampedModel):
         if not self.username:
             self.username = re.sub('[-]', '', self.slug)
         if (len(self.username) < self.MIN_USERNAME_LENGTH):
-            raise ValidationError('username is too short.')
+            raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
-            raise ValidationError('username is too long.')
+            raise ValidationError('Username is too long.')
 
     def validate_slug(self):
         if not self.slug:
@@ -80,7 +80,7 @@ class Entity(TimeStampedModel):
 
     def validate_username_for_slug(self):
         if (not(re.sub('[-]', '', self.slug) == self.username)):
-            raise ValidationError('slug does not parse to username.')
+            raise ValidationError('Slug does not parse to username.')
 
     def __str__(self):
         return '<Entity {}>'.format(self.id)
@@ -124,7 +124,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         super().validate_username()
         pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
         if (not(pattern.match(self.username))):
-            raise ValidationError('username must start with 4 or more letters, after which can be any number of digits.')
+            raise ValidationError('Username must start with 4 or more letters, after which can be any number of digits.')
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
