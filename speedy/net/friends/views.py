@@ -6,6 +6,7 @@ from friendship.models import Friend
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
+from constants import MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED
 
 
 class UserFriendListView(UserMixin, generic.TemplateView):
@@ -19,6 +20,11 @@ class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
         return redirect(self.user)
 
     def post(self, request, *args, **kwargs):
+        # Check if the requesting user has less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
+        user_number_of_friends = int(Friend.objects.friends(request.user).count())
+        if (user_number_of_friends >= MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+            messages.error(request, _("You already have {0}. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+            return redirect(self.user)
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
         return redirect(self.user)
@@ -31,9 +37,21 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
         return self.user.get_absolute_url()
 
     def post(self, request, *args, **kwargs):
+        if (self.action == "accept"):
+            # Check if both users have less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
+            user_number_of_friends = int(Friend.objects.friends(request.user).count())
+            if (user_number_of_friends >= MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+                messages.error(request, _("You already have {0}. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+                return redirect('friends:list', username=request.user.slug)
+            other_user_number_of_friends = int(Friend.objects.friends(self.user).count())
+            if (other_user_number_of_friends >= MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+                messages.error(request, _("This user already has {0}. They can't have more than {0} friends on Speedy Net. Please ask them to remove friends before you proceed.".format(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+                return redirect('friends:list', username=request.user.slug)
+
         frequest = get_object_or_404(
             self.user.friendship_requests_received,
-            id=kwargs.get('friendship_request_id'))
+            id=kwargs.get('friendship_request_id'),
+        )
         getattr(frequest, self.action)()
         messages.success(request, self.message)
         return redirect('friends:list', username=request.user.slug)
