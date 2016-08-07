@@ -34,8 +34,7 @@ class UserSingleChatMixin(UserChatsMixin):
         return self.get_chat().message_set.select_related('sender__user')
 
     def has_permission(self):
-        return super().has_permission() and \
-               self.request.user.has_perm('im.read_chat', self.chat)
+        return super().has_permission() and self.request.user.has_perm('im.read_chat', self.chat)
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)

@@ -8,10 +8,11 @@ from ...models import UserEmailAddress
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        emails = UserEmailAddress.objects.filter(is_confirmed=False,
-                                                 date_created__lte=(now() - timedelta(days=5)),
-                                                 confirmation_sent__lte=1) \
-            .exclude(confirmation_token='')
+        emails = UserEmailAddress.objects.filter(
+            is_confirmed=False,
+            date_created__lte=(now() - timedelta(days=5)),
+            confirmation_sent__lte=1,
+        ).exclude(confirmation_token='')
         for email in emails:
             if not email.user.profile.is_active:
                 continue
