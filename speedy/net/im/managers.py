@@ -44,7 +44,6 @@ class MessageManager(models.Manager):
 
 
 class ReadMarkManager(models.Manager):
-
     def mark(self, chat, entity):
         rmark, created = self.get_or_create(chat=chat, entity=entity)
         if not created:
