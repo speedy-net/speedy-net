@@ -8,14 +8,11 @@ class ChatManager(models.Manager):
         return super().get_queryset().filter(site=Site.objects.get_current())
 
     def chats(self, entity):
-        return self.filter(Q(group__in=[entity])
-                           | Q(ent1_id=entity.id)
-                           | Q(ent2_id=entity.id))
+        return self.filter(Q(group__in=[entity]) | Q(ent1_id=entity.id) | Q(ent2_id=entity.id))
 
     def chat_with(self, ent1, ent2, create=True):
         try:
-            return self.get(Q(ent1=ent1, ent2=ent2)
-                            | Q(ent1=ent2, ent2=ent1))
+            return self.get(Q(ent1=ent1, ent2=ent2) | Q(ent1=ent2, ent2=ent1))
         except self.model.DoesNotExist:
             if create:
                 return self.create(ent1=ent1, ent2=ent2)
