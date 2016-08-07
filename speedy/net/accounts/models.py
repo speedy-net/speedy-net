@@ -15,7 +15,7 @@ from speedy.core.models import TimeStampedModel
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import generate_id, get_site_profile_model
-from .validators import identity_id_validator, username_validator
+from .validators import identity_id_validator, username_validator, slug_validator
 
 ACCESS_ME = 1
 ACCESS_FRIENDS = 2
@@ -49,7 +49,7 @@ class Entity(TimeStampedModel):
 
     id = models.CharField(max_length=ID_LENGTH, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
     username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, validators=[slug_validator])
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     def save(self, *args, **kwargs):
@@ -77,9 +77,12 @@ class Entity(TimeStampedModel):
     def validate_slug(self):
         if not self.slug:
             self.slug = self.id
-        self.slug = re.sub('[-]{1,}', '-', self.slug)
+        self.slug = re.sub('[-\._]{1,}', '-', self.slug)
         self.slug = re.sub('^-', '', self.slug)
         self.slug = re.sub('-$', '', self.slug)
+        pattern = re.compile("^([a-z0-9\-]{0,})$")
+        if (not(pattern.match(self.username))):
+            raise ValidationError('Slug may contain letters, digits and dashes only.')
 
     def validate_username_for_slug(self):
         if (not(re.sub('[-]', '', self.slug) == self.username)):
