@@ -20,16 +20,13 @@ class Feedback(TimeStampedModel):
         verbose_name_plural = _('feedbacks')
         ordering = ('-date_created',)
 
-    sender = models.ForeignKey(verbose_name=_('sender'), to=settings.AUTH_USER_MODEL,
-                               on_delete=models.SET_NULL, null=True, blank=True)
+    sender = models.ForeignKey(verbose_name=_('sender'), to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     sender_name = models.CharField(verbose_name=_('your name'), max_length=255, blank=True)
     sender_email = models.EmailField(verbose_name=_('your email'), blank=True)
     type = models.PositiveIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
     text = models.TextField(verbose_name=_('your message'))
-    report_entity = models.ForeignKey(verbose_name=_('reported entity'), to='accounts.Entity',
-                                      on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
-    report_file = models.ForeignKey(verbose_name=_('reported photo'), to='uploads.File',
-                                    on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
+    report_entity = models.ForeignKey(verbose_name=_('reported entity'), to='accounts.Entity', on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
+    report_file = models.ForeignKey(verbose_name=_('reported photo'), to='uploads.File', on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
 
     def __str__(self):
         if self.type == self.TYPE_REPORT_ENTITY:
