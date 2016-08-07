@@ -17,8 +17,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, \
-    PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm
 from .models import User, UserEmailAddress
 
 

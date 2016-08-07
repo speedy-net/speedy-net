@@ -6,7 +6,7 @@ from friendship.models import Friend
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
-from constants import MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED
+from .constants import MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED
 
 
 class UserFriendListView(UserMixin, generic.TemplateView):
