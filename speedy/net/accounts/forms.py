@@ -115,8 +115,7 @@ class ProfilePrivacyForm(forms.ModelForm):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True,
-                                                                               user=self.instance.user)
+        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True, user=self.instance.user)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
@@ -229,8 +228,15 @@ class ActivationForm(auth_forms.PasswordResetForm):
     def _post_clean(self):
         self.cleaned_data['email'] = ''
 
-    def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email,
-                  html_email_template_name=None):
+    def send_mail(
+        self,
+        subject_template_name,
+        email_template_name,
+        context,
+        from_email,
+        to_email,
+        html_email_template_name=None,
+    ):
         send_mail([to_email], 'accounts/email/activate', context)
 
 
