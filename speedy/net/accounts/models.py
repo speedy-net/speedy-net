@@ -70,6 +70,9 @@ class Entity(TimeStampedModel):
             raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
             raise ValidationError('Username is too long.')
+        pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
+        if (not(pattern.match(self.username))):
+            raise ValidationError('Username must start with 4 or more letters.')
 
     def validate_slug(self):
         if not self.slug:
