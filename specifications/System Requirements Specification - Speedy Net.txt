@@ -1,5 +1,10 @@
 ﻿﻿Hi,
 
+ - Speedy Net / Speedy Match Specification 0.4 -
+
+* In addition to the previous specifications (below), a user who is watching a page of a user he blocked or blocked him, will see only the name and gender of the other user, and there he will be able to block or unblock him. A user can also block a user who blocked him. Sending messages to blocked users will not be possible, but viewing messages already sent (before the block) will be possible. A link to view such messages will also be visible from the blocked user's page, if there are any messages sent between them. The information whether the user blocked the current user will also be visible to the user watching the page.
+
+
  - Speedy Net / Speedy Match Specification 0.3 -
 
 Speedy Net is a new social network which will have apps, such as Speedy Match (under construction) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
