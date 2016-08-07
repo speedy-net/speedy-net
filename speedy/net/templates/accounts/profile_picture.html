@@ -7,7 +7,7 @@
 {% thumbnail user.photo.file geometry crop='center' as im %}
     <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}" class="{{ html_class }}">
 {% empty %}
-    <img src="{% static 'speedy-net/img/user.svg' %}" alt="" width="{{ width }}" height="{{ width }}" class="{{ html_class }}">
+    <img src="{% static 'speedy-net/images/user.svg' %}" alt="" width="{{ width }}" height="{{ width }}" class="{{ html_class }}">
 {% endthumbnail %}
 {% if with_link %}
     </a>
