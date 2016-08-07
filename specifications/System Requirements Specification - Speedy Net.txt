@@ -4,6 +4,23 @@
 
 * In addition to the previous specifications (below), a user who is watching a page of a user he blocked or blocked him, will see only the name and gender of the other user, and there he will be able to block or unblock him. A user can also block a user who blocked him. Sending messages to blocked users will not be possible, but viewing messages already sent (before the block) will be possible. A link to view such messages will also be visible from the blocked user's page, if there are any messages sent between them. The information whether the user blocked the current user will also be visible to the user watching the page.
 
+* speedy.net will have 3 URLs (the domain part):
+    - he.speedy.net - Hebrew
+    - en.speedy.net - English
+    - www.speedy.net - Main page - this is the default. Any other URL will be redirected to this URL.
+
+* speedymatch.com will have 3 URLs (the domain part):
+    - he.speedymatch.com - Hebrew
+    - en.speedymatch.com - English
+    - www.speedymatch.com - Main page - this is the default. Any other URL will be redirected to this URL.
+
+Currently www.speedy.net and www.speedymatch.com will only have one page - the main page. Any other HTTP request will be redirected to the main page. For example www.speedy.net/me will be redirected to www.speedy.net .
+
+Each website (Speedy Net and Speedy Match) will remember for each user which language is active. For example if a user only used en.speedy.net, only English will be active. If he used he.speedy.net, Hebrew will be active. If he used both - both will be active. This will be used especially in Speedy Match to show matching people who are using the same language as the user searching the website. Searching in a different language will show different results. Also first name, last name and all the text in Speedy Match will be per-language. Users will be able to enter different values in each language.
+
+Activate/Deactivate - will be per website but not per language. If a user deactivates himself on Speedy Net, he will be deactivated in all Speedy websites (Speedy Net, Speedy Match and Speedy Composer). If a user deactivates himself on Speedy Match, it will not affect Speedy Net. This user will only be deactivated on Speedy Match.
+
+Sending messages will not be per language, a message sent in English will also be visible on the Hebrew website. But it will be linked to the user's profile in English.
 
  - Speedy Net / Speedy Match Specification 0.3 -
 
