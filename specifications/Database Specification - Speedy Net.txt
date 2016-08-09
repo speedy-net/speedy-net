@@ -1,4 +1,7 @@
-﻿Hi,
+﻿2016-08-10: Please notice, this specification is not up to date. Please don't use it.
+-------------------------------------------------------------------------------------
+
+Hi,
 
 Here is the Database Specification for Speedy Net.
 
