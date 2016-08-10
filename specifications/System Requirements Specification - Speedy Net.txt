@@ -22,6 +22,8 @@ Activate/Deactivate - will be per website but not per language. If a user deacti
 
 Sending messages will not be per language, a message sent in English will also be visible on the Hebrew website. But it will be linked to the user's profile in English.
 
+Please notice that all the URLs contains slugs and not usernames, a username is a specific case of a slug. When entering a URL, the slug will be stripped from dots, dashes and underlines and then compared with a username. If this username belongs to a user, the user's page (or any specific page) will be displayed if the slug is exactly the same as the user's slug. If not, the page will be redirected to the user's slug. For example, if my slug is uri-even-chen, en.speedy.net/urievenchen/ and en.speedy.net/uri.even.chen/ will be redirected to en.speedy.net/uri-even-chen/ , which will display my profile.
+
  - Speedy Net / Speedy Match Specification 0.3 -
 
 Speedy Net is a new social network which will have apps, such as Speedy Match (under construction) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
