@@ -5,8 +5,6 @@ from __future__ import unicode_literals
 import random
 import string
 
-import re
-
 import django.core.validators
 from django.db import migrations, models
 
