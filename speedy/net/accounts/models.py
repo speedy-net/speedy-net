@@ -113,8 +113,8 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
-    date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
-    gender = models.SmallIntegerField(verbose_name=_('gender'), choices=GENDER_CHOICES)
+    date_of_birth = models.DateField(verbose_name=_('date of birth'))
+    gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 

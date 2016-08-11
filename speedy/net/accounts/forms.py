@@ -32,28 +32,37 @@ class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
         email = User.objects.normalize_email(email)
+        email = email.lower()
         if UserEmailAddress.objects.filter(email=email).exists():
-            raise forms.ValidationError('This email is already in use.')
+            # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
+            UserEmailAddress.objects.filter(email=email, is_confirmed=False).delete()
+            # If this email address is confirmed, raise an exception.
+            if UserEmailAddress.objects.filter(email=email).exists():
+                raise forms.ValidationError('This email is already in use.')
         return email
 
 
-class RegistrationForm(CleanEmailMixin, auth_forms.UserCreationForm):
+class RegistrationForm(CleanEmailMixin, forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'slug', 'password1', 'password2', 'gender', 'date_of_birth')
+        fields = ('first_name', 'last_name', 'email', 'slug', 'password', 'gender', 'date_of_birth')
 
-    email = forms.EmailField(label=_('Email'))
+    email = forms.EmailField(label=_('Your email'))
+    password = forms.CharField(label=_("Password"), strip=False, widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['slug'].label = _('Username')
+        self.fields['slug'].label = _('New username')
+        self.fields['password'].label = _('New password')
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Create an account')))
 
     def save(self, commit=True):
-        user = super().save(commit=commit)
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password"])
         if commit:
+            user.save()
             email_address = user.email_addresses.create(
                 email=self.cleaned_data['email'],
                 is_confirmed=False,
