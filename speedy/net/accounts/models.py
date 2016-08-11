@@ -82,7 +82,7 @@ class Entity(TimeStampedModel):
         self.slug = re.sub('-$', '', self.slug)
         pattern = re.compile("^([a-z0-9\-]{0,})$")
         if (not(pattern.match(self.slug))):
-            raise ValidationError('Slug may contain letters, digits and dashes only.')
+            raise ValidationError('Slug may contain letters (lowercase), digits and dashes only.')
 
     def validate_username_for_slug(self):
         if (not(re.sub('[-]', '', self.slug) == self.username)):
