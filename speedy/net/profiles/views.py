@@ -1,3 +1,5 @@
+import re
+
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import Http404
@@ -19,9 +21,18 @@ class UserMixin(object):
 
     def get_user(self):
         try:
-            return self.get_user_queryset().get(slug__iexact=self.kwargs['username'])
+            return self.get_user_queryset().get(slug__exact=self.kwargs['slug'])
         except User.DoesNotExist:
-            raise Http404()
+            try:
+                slug = self.kwargs['slug']
+                slug = slug.lower()
+                username = re.sub('[-\._]', '', slug)
+                user = self.get_user_queryset().get(username__exact=username)
+                url = self.request.url
+                url = url.replace("/{}/".format(self.kwargs['slug']), "/{}/".format(user.slug))
+                return self.redirect(url=url)
+            except User.DoesNotExist:
+                raise Http404()
 
     def get_permission_object(self):
         return self.get_user()

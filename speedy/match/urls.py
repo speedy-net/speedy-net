@@ -10,10 +10,10 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # always at the bottom
-    url(r'^(?P<username>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
-    url(r'^(?P<username>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
-    url(r'^(?P<username>[-\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
-    url(r'^(?P<username>[-\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
+    url(r'^(?P<slug>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
+    url(r'^(?P<slug>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
+    url(r'^(?P<slug>[-\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
+    url(r'^(?P<slug>[-\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
     url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
