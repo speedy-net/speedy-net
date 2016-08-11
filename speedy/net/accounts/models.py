@@ -43,17 +43,14 @@ class Entity(TimeStampedModel):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
 
-    id = models.CharField(max_length=ID_LENGTH, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
-    username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
-    slug = models.SlugField(unique=True, validators=[slug_validator])
-    photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
-
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entity')
 
-    def __str__(self):
-        return '<Entity {}>'.format(self.id)
+    id = models.CharField(max_length=ID_LENGTH, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
+    username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
+    slug = models.SlugField(unique=True, validators=[slug_validator])
+    photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -61,15 +58,10 @@ class Entity(TimeStampedModel):
             while generate_new_id:
                 self.id = generate_id(id_length=self.ID_LENGTH)
                 generate_new_id = Entity.objects.filter(id=self.id).exists()
-        self.validate_id()
         self.validate_slug()
         self.validate_username()
         self.validate_username_for_slug()
         return super().save(*args, **kwargs)
-
-    def validate_id(self):
-        if (not(len(self.id) == self.ID_LENGTH)):
-            raise ValidationError('ID is invalid.')
 
     def validate_username(self):
         if not self.username:
@@ -78,32 +70,31 @@ class Entity(TimeStampedModel):
             raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
             raise ValidationError('Username is too long.')
-        if (not(self.username == self.id)):
-            pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
-            if (not(pattern.match(self.username))):
-                raise ValidationError('Username must start with 4 or more letters.')
+        pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
+        if (not(pattern.match(self.username))):
+            raise ValidationError('Username must start with 4 or more letters.')
 
     def validate_slug(self):
         if not self.slug:
             self.slug = self.id
-        self.slug = self.slug.lower()
         self.slug = re.sub('[-\._]{1,}', '-', self.slug)
         self.slug = re.sub('^-', '', self.slug)
         self.slug = re.sub('-$', '', self.slug)
         pattern = re.compile("^([a-z0-9\-]{0,})$")
         if (not(pattern.match(self.slug))):
-            raise ValidationError('Slug may contain letters (lowercase), digits and dashes only.')
+            raise ValidationError('Slug may contain letters, digits and dashes only.')
 
     def validate_username_for_slug(self):
         if (not(re.sub('[-]', '', self.slug) == self.username)):
             raise ValidationError('Slug does not parse to username.')
 
+    def __str__(self):
+        return '<Entity {}>'.format(self.id)
+
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 20
-    MIN_PASSWORD_LENGTH = 8
-    MAX_PASSWORD_LENGTH = 120
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
@@ -114,32 +105,26 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     )
     USERNAME_FIELD = 'username'
 
-    first_name = models.CharField(verbose_name=_('first name'), max_length=75)
-    last_name = models.CharField(verbose_name=_('last name'), max_length=75)
-    date_of_birth = models.DateField(verbose_name=_('date of birth'))
-    gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    objects = UserManager()
-
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
         swappable = 'AUTH_USER_MODEL'
 
-    def __str__(self):
-        return self.get_full_name()
+    first_name = models.CharField(verbose_name=_('first name'), max_length=75)
+    last_name = models.CharField(verbose_name=_('last name'), max_length=75)
+    date_of_birth = models.DateField(verbose_name=_('date of birth'), blank=True, null=True)
+    gender = models.SmallIntegerField(verbose_name=_('gender'), choices=GENDER_CHOICES)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
-    def save(self, *args, **kwargs):
-        return super().save(*args, **kwargs)
-
-    def get_absolute_url(self):
-        return reverse('profiles:user', kwargs={'username': self.slug})
+    objects = UserManager()
 
     @property
     def email(self):
         return self.email_addresses.get(is_primary=True).email
+
+    def save(self, *args, **kwargs):
+        return super().save(*args, **kwargs)
 
     def validate_username(self):
         super().validate_username()
@@ -165,6 +150,9 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def has_confirmed_email(self):
         return self.email_addresses.filter(is_confirmed=True).exists()
 
+    def get_absolute_url(self):
+        return reverse('profiles:user', kwargs={'username': self.slug})
+
     def activate(self):
         self.is_active = True
         self.save(update_fields={'is_active'})
@@ -180,21 +168,21 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
             self._profile = model.objects.get_or_create(user=self)[0]
         return self._profile
 
+    def __str__(self):
+        return self.get_full_name()
+
 
 class UserEmailAddress(TimeStampedModel):
+    class Meta:
+        verbose_name = _('email address')
+        verbose_name_plural = _('email addresses')
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
-
-    class Meta:
-        verbose_name = _('email address')
-        verbose_name_plural = _('email addresses')
-
-    def __str__(self):
-        return self.email
 
     def save(self, *args, **kwargs):
         if not self.confirmation_token:
@@ -228,6 +216,9 @@ class UserEmailAddress(TimeStampedModel):
         self.is_primary = True
         self.save(update_fields={'is_primary'})
 
+    def __str__(self):
+        return self.email
+
 
 class SiteProfileBase(TimeStampedModel):
     """
@@ -242,11 +233,12 @@ class SiteProfileBase(TimeStampedModel):
         (NOTIFICATIONS_OFF, _('Don\'t notify')),
     )
 
-    user = models.OneToOneField(User, primary_key=True, related_name='+')
-    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
-
     class Meta:
         abstract = True
+
+    user = models.OneToOneField(User, primary_key=True, related_name='+')
+    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'),
+                                    default=False)
 
     def __str__(self):
         site = Site.objects.get_current()
@@ -263,5 +255,8 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = 'Speedy Net Profiles'
 
     access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
-    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
+    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
+                                     on_delete=models.SET_NULL, related_name='+')
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
+                                                    choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
+                                                    default=SiteProfileBase.NOTIFICATIONS_ON)
