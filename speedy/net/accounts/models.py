@@ -77,6 +77,7 @@ class Entity(TimeStampedModel):
     def validate_slug(self):
         if not self.slug:
             self.slug = self.id
+        self.slug = self.slug.lower()
         self.slug = re.sub('[-\._]{1,}', '-', self.slug)
         self.slug = re.sub('^-', '', self.slug)
         self.slug = re.sub('-$', '', self.slug)
