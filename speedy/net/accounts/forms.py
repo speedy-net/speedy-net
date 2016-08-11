@@ -101,8 +101,9 @@ class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernam
         if (len(username) > User.MAX_USERNAME_LENGTH):
             raise forms.ValidationError('Username is too long.')
         pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
-        if (not(pattern.match(username))):
-            raise forms.ValidationError('Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
+        if (not (pattern.match(username))):
+            raise forms.ValidationError(
+                'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
         if ((Entity.objects.filter(username=username).exists()) or (username in settings.UNAVAILABLE_USERNAMES)):
             raise forms.ValidationError(_('This username is already taken.'))
         return slug
@@ -149,7 +150,7 @@ class ProfileForm(GetSlugAndUsernameMixin, forms.ModelForm):
 
     def clean_slug(self):
         slug, username = self.get_slug_and_username()
-        if (not(username == self.instance.username)):
+        if (not (username == self.instance.username)):
             raise forms.ValidationError(_("You can't change your username."))
         return slug
 
@@ -161,7 +162,8 @@ class ProfilePrivacyForm(forms.ModelForm):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True, user=self.instance.user)
+        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True,
+                                                                               user=self.instance.user)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
@@ -212,17 +214,18 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return helper
 
     def get_users(self, email):
-        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email, user__is_active=True)
+        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email,
+                                                                                 user__is_active=True)
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
     def send_mail(
-        self,
-        subject_template_name,
-        email_template_name,
-        context,
-        from_email,
-        to_email,
-        html_email_template_name=None,
+            self,
+            subject_template_name,
+            email_template_name,
+            context,
+            from_email,
+            to_email,
+            html_email_template_name=None,
     ):
         send_mail([to_email], 'accounts/email/password_reset', context)
 
@@ -281,13 +284,13 @@ class ActivationForm(auth_forms.PasswordResetForm):
         self.cleaned_data['email'] = ''
 
     def send_mail(
-        self,
-        subject_template_name,
-        email_template_name,
-        context,
-        from_email,
-        to_email,
-        html_email_template_name=None,
+            self,
+            subject_template_name,
+            email_template_name,
+            context,
+            from_email,
+            to_email,
+            html_email_template_name=None,
     ):
         send_mail([to_email], 'accounts/email/activate', context)
 
