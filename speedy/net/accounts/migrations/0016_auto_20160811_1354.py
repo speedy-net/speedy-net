@@ -15,14 +15,6 @@ def create_random_username():
     return ''.join(random.choice(string.ascii_lowercase) for i in range(8))
 
 
-def slug_to_username(apps, schema_editor):
-    Entity = apps.get_model('accounts', 'Entity')
-    db_alias = schema_editor.connection.alias
-    for ent in Entity.objects.using(db_alias):
-        ent.username = re.sub('[-]', '', ent.slug)
-        ent.save(using=db_alias)
-
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -50,8 +42,5 @@ class Migration(migrations.Migration):
             model_name='user',
             name='gender',
             field=models.SmallIntegerField(choices=[(1, 'Female'), (2, 'Male'), (3, 'Other')], verbose_name='gender'),
-        ),
-        migrations.RunPython(
-            code=slug_to_username,
         ),
     ]
