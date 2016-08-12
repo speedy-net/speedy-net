@@ -42,7 +42,7 @@ class Entity(TimeStampedModel):
     ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
-    MIN_PASSWORD_LENGTH = 6
+    MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
 
     class Meta:
