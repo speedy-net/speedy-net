@@ -1,3 +1,5 @@
+import re
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden
 from django import forms
@@ -96,7 +98,7 @@ class ProfileForm(forms.ModelForm):
             self.fields.move_to_end(loc_field, last=False)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
-        self.fields['slug'].label = _('Username')
+        self.fields['slug'].label = _('Username (slug)')
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())
@@ -108,13 +110,21 @@ class ProfileForm(forms.ModelForm):
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
-        def save(self, commit=True):
-            instance = super().save(commit=False)
-            for loc_field in self.get_localized_fields():
-                setattr(instance, loc_field, self.cleaned_data[loc_field])
-            if commit:
-                instance.save()
-            return instance
+    def clean_slug(self):
+        slug = self.cleaned_data['slug']
+        slug = slug.lower()
+        username = re.sub('[-\._]', '', slug)
+        if (not(username == self.instance.username)):
+            raise forms.ValidationError(_("You can't change your username."))
+        return slug
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        for loc_field in self.get_localized_fields():
+            setattr(instance, loc_field, self.cleaned_data[loc_field])
+        if commit:
+            instance.save()
+        return instance
 
 
 class ProfilePrivacyForm(forms.ModelForm):
