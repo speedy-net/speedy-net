@@ -4,7 +4,7 @@ var datepickerOptions = {
     changeYear: true,
     minDate: '-180y',
     maxDate: '+0d',
-    yearRange: '-180:+0',
+    yearRange: '-180:+0'
 };
 
 
