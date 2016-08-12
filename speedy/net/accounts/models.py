@@ -42,6 +42,8 @@ class Entity(TimeStampedModel):
     ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
+    MIN_PASSWORD_LENGTH = 6
+    MAX_PASSWORD_LENGTH = 120
 
     class Meta:
         verbose_name = _('entity')
@@ -58,10 +60,15 @@ class Entity(TimeStampedModel):
             while generate_new_id:
                 self.id = generate_id(id_length=self.ID_LENGTH)
                 generate_new_id = Entity.objects.filter(id=self.id).exists()
+        self.validate_id()
         self.validate_slug()
         self.validate_username()
         self.validate_username_for_slug()
         return super().save(*args, **kwargs)
+
+    def validate_id(self):
+        if (not(len(self.id) == self.ID_LENGTH)):
+            raise ValidationError('ID is invalid.')
 
     def validate_username(self):
         if not self.username:
@@ -70,9 +77,10 @@ class Entity(TimeStampedModel):
             raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
             raise ValidationError('Username is too long.')
-        pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
-        if (not(pattern.match(self.username))):
-            raise ValidationError('Username must start with 4 or more letters.')
+        if (not(self.username == self.id)):
+            pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
+            if (not(pattern.match(self.username))):
+                raise ValidationError('Username must start with 4 or more letters.')
 
     def validate_slug(self):
         if not self.slug:
