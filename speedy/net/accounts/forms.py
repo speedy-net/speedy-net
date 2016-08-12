@@ -10,7 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import User, UserEmailAddress, SiteProfile
+from .models import Entity, User, UserEmailAddress, SiteProfile
 from .utils import get_site_profile_model
 
 DATE_FIELD_FORMATS = [
@@ -40,29 +40,50 @@ class CleanEmailMixin(object):
             UserEmailAddress.objects.filter(email=email, is_confirmed=False).delete()
             # If this email address is confirmed, raise an exception.
             if UserEmailAddress.objects.filter(email=email).exists():
-                raise forms.ValidationError('This email is already in use.')
+                raise forms.ValidationError(_('This email is already in use.'))
         return email
 
 
-class RegistrationForm(CleanEmailMixin, forms.ModelForm):
+class CleanNewPasswordMixin(object):
+    def clean_new_password1(self):
+        password = self.cleaned_data['new_password1']
+        if len(password) < Entity.MIN_PASSWORD_LENGTH:
+            raise forms.ValidationError(_('Password too short.'))
+        if len(password) > Entity.MAX_PASSWORD_LENGTH:
+            raise forms.ValidationError(_('Password too long.'))
+        return password
+
+
+class GetSlugAndUsernameMixin(object):
+    def get_slug_and_username(self):
+        # ~~~~ TODO: Same code here and in the model, combine to one code!
+        slug = self.cleaned_data['slug']
+        slug = slug.lower()
+        slug = re.sub('[-\._]{1,}', '-', slug)
+        slug = re.sub('^-', '', slug)
+        slug = re.sub('-$', '', slug)
+        username = re.sub('[-]', '', slug)
+        return (slug, username)
+
+
+class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernameMixin, forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'slug', 'password', 'gender', 'date_of_birth')
+        fields = ('first_name', 'last_name', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth')
 
     email = forms.EmailField(label=_('Your email'))
-    password = forms.CharField(label=_("Password"), strip=False, widget=forms.PasswordInput)
+    new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = _('New username')
-        self.fields['password'].label = _('New password')
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Create an account')))
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password"])
+        user.set_password(self.cleaned_data["new_password1"])
         if commit:
             user.save()
             email_address = user.email_addresses.create(
@@ -73,13 +94,21 @@ class RegistrationForm(CleanEmailMixin, forms.ModelForm):
         return user
 
     def clean_slug(self):
-        slug = self.cleaned_data['slug']
-        if slug in settings.UNAVAILABLE_USERNAMES:
-            raise forms.ValidationError(_('This username is unavailable.'))
+        slug, username = self.get_slug_and_username()
+        # ~~~~ TODO: Same code here and in the model, combine to one code!
+        if (len(username) < User.MIN_USERNAME_LENGTH):
+            raise forms.ValidationError('Username is too short.')
+        if (len(username) > User.MAX_USERNAME_LENGTH):
+            raise forms.ValidationError('Username is too long.')
+        pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
+        if (not(pattern.match(username))):
+            raise forms.ValidationError('Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
+        if ((Entity.objects.filter(username=username).exists()) or (username in settings.UNAVAILABLE_USERNAMES)):
+            raise forms.ValidationError(_('This username is already taken.'))
         return slug
 
 
-class ProfileForm(forms.ModelForm):
+class ProfileForm(GetSlugAndUsernameMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name_en', 'last_name_en', 'date_of_birth', 'photo', 'slug')
@@ -111,9 +140,7 @@ class ProfileForm(forms.ModelForm):
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
     def clean_slug(self):
-        slug = self.cleaned_data['slug']
-        slug = slug.lower()
-        username = re.sub('[-\._]', '', slug)
+        slug, username = self.get_slug_and_username()
         if (not(username == self.instance.username)):
             raise forms.ValidationError(_("You can't change your username."))
         return slug
@@ -200,7 +227,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         send_mail([to_email], 'accounts/email/password_reset', context)
 
 
-class SetPasswordForm(auth_forms.SetPasswordForm):
+class SetPasswordForm(CleanNewPasswordMixin, auth_forms.SetPasswordForm):
     @property
     def helper(self):
         helper = FormHelper()
@@ -208,7 +235,7 @@ class SetPasswordForm(auth_forms.SetPasswordForm):
         return helper
 
 
-class PasswordChangeForm(auth_forms.PasswordChangeForm):
+class PasswordChangeForm(CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
     def __init__(self, **kwargs):
         user = kwargs.pop('user')
         super().__init__(user, **kwargs)

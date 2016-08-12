@@ -138,8 +138,8 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/me/'
 
 UNAVAILABLE_USERNAMES = [
-    'admin', 'root',
-    'register', 'login', 'logout', 'me', 'edit-profile', 'reset-password',
+    'admin', 'root', 'webmaster', 'uri', 'speedy',
+    'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
     'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
 ]
 
