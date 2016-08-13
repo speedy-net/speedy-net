@@ -4,6 +4,14 @@
 
 First make sure that you're using Python 3.4 or later.
 
+Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
+
+    python -m venv .venv
+    .venv\Scripts\activate.bat  # Windows
+    source .venv/bin/activate   # *.nix
+
+Next:
+
     pip install -r requirements.txt
     cp env.ini.example env.ini
     
