@@ -21,6 +21,7 @@ class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         # Check if the requesting user has less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
+        # ~~~~ TODO: this code appears twice, combine to one place.
         user_number_of_friends = len(Friend.objects.friends(request.user))
         if (user_number_of_friends >= MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
             messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
@@ -39,6 +40,7 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
     def post(self, request, *args, **kwargs):
         if (self.action == "accept"):
             # Check if both users have less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
+            # ~~~~ TODO: this code appears twice, combine to one place.
             user_number_of_friends = len(Friend.objects.friends(request.user))
             if (user_number_of_friends >= MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
                 messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
