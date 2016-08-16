@@ -1,5 +1,7 @@
 # Speedy Net / Speedy Match
 
+[![Build Status](https://travis-ci.org/urievenchen/speedy-net.svg?branch=master)](https://travis-ci.org/urievenchen/speedy-net)
+
 ## How to setup the project and run locally
 
 First make sure that you're using Python 3.4 or later.
