@@ -6,4 +6,7 @@ install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
 script:
+  - cd speedy/net
   - ./manage.py test
+#  - cd ../match
+#  - ./manage.py test
