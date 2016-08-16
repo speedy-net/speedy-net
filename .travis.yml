@@ -8,5 +8,5 @@ install:
 script:
   - cd speedy/net
   - ./manage.py test
-#  - cd ../match
-#  - ./manage.py test
+  - cd ../match
+  - ./manage.py test
