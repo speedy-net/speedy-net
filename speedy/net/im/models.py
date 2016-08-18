@@ -12,11 +12,6 @@ from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):
-    class Meta:
-        verbose_name = _('chat')
-        verbose_name_plural = _('chat')
-        ordering = ('-last_message__date_created', '-date_updated')
-
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     site = models.ForeignKey(verbose_name=_('site'), to=Site)
     ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, null=True, blank=True, related_name='+')
@@ -27,6 +22,11 @@ class Chat(TimeStampedModel):
 
     objects = models.Manager()
     on_site = ChatManager()
+
+    class Meta:
+        verbose_name = _('chat')
+        verbose_name_plural = _('chat')
+        ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
         return ', '.join(str(ent.user) for ent in self.participants)
@@ -63,12 +63,6 @@ class Chat(TimeStampedModel):
 
 
 class Message(TimeStampedModel):
-    class Meta:
-        verbose_name = _('message')
-        verbose_name_plural = _('messages')
-        ordering = ('-date_created',)
-        get_latest_by = 'date_created'
-
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, on_delete=models.SET_NULL, null=True)
     sender = models.ForeignKey(verbose_name=_('sender'), to=Entity, on_delete=models.SET_NULL, null=True)
@@ -76,20 +70,26 @@ class Message(TimeStampedModel):
 
     objects = MessageManager()
 
+    class Meta:
+        verbose_name = _('message')
+        verbose_name_plural = _('messages')
+        ordering = ('-date_created',)
+        get_latest_by = 'date_created'
+
     def __str__(self):
         return '{}: {}'.format(self.sender.user, self.text[:140])
 
 
 class ReadMark(TimeStampedModel):
-    class Meta:
-        verbose_name = _('read mark')
-        verbose_name_plural = _('read marks')
-        get_latest_by = 'date_created'
-
     entity = models.ForeignKey(verbose_name=_('entity'), to=Entity, related_name='+')
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, related_name='+')
 
     objects = ReadMarkManager()
+
+    class Meta:
+        verbose_name = _('read mark')
+        verbose_name_plural = _('read marks')
+        get_latest_by = 'date_created'
 
 
 @receiver(models.signals.post_save, sender=Message)

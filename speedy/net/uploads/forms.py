@@ -11,3 +11,4 @@ class FileUploadForm(ModelFormWithDefaults):
 class ImageUploadForm(FileUploadForm):
     class Meta(FileUploadForm.Meta):
         model = Image
+

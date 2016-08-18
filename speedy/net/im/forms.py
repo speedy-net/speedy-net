@@ -32,7 +32,4 @@ class MessageForm(forms.ModelForm):
 
     def save(self, commit=True):
         assert commit
-        return Message.objects.send_message(from_entity=self.from_entity,
-                                            to_entity=self.to_entity,
-                                            chat=self.chat,
-                                            text=self.cleaned_data['text'])
+        return Message.objects.send_message(from_entity=self.from_entity, to_entity=self.to_entity, chat=self.chat, text=self.cleaned_data['text'])

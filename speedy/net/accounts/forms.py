@@ -67,12 +67,12 @@ class GetSlugAndUsernameMixin(object):
 
 
 class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernameMixin, forms.ModelForm):
+    email = forms.EmailField(label=_('Your email'))
+    new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
+
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth')
-
-    email = forms.EmailField(label=_('Your email'))
-    new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -113,12 +113,6 @@ class ProfileForm(GetSlugAndUsernameMixin, forms.ModelForm):
         model = User
         fields = ('first_name_en', 'last_name_en', 'date_of_birth', 'photo', 'slug')
 
-    def get_localized_fields(self):
-        loc_fields = ('first_name', 'last_name')
-        if self.language == 'en':
-            return []
-        return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
-
     def __init__(self, **kwargs):
         self.language = kwargs.pop('language', 'en')
         super().__init__(**kwargs)
@@ -139,12 +133,6 @@ class ProfileForm(GetSlugAndUsernameMixin, forms.ModelForm):
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
-    def clean_slug(self):
-        slug, username = self.get_slug_and_username()
-        if (not(username == self.instance.username)):
-            raise forms.ValidationError(_("You can't change your username."))
-        return slug
-
     def save(self, commit=True):
         instance = super().save(commit=False)
         for loc_field in self.get_localized_fields():
@@ -152,6 +140,18 @@ class ProfileForm(GetSlugAndUsernameMixin, forms.ModelForm):
         if commit:
             instance.save()
         return instance
+
+    def get_localized_fields(self):
+        loc_fields = ('first_name', 'last_name')
+        if self.language == 'en':
+            return []
+        return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
+
+    def clean_slug(self):
+        slug, username = self.get_slug_and_username()
+        if (not(username == self.instance.username)):
+            raise forms.ValidationError(_("You can't change your username."))
+        return slug
 
 
 class ProfilePrivacyForm(forms.ModelForm):

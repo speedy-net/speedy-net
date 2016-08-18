@@ -8,6 +8,9 @@ class ChatFactory(factory.DjangoModelFactory):
     ent1 = factory.SubFactory(UserFactory)
     ent2 = factory.SubFactory(UserFactory)
 
+    class Meta:
+        model = Chat
+
     @factory.post_generation
     def group(self, create, extracted, **kwargs):
         if extracted:
@@ -15,5 +18,3 @@ class ChatFactory(factory.DjangoModelFactory):
             for entity in extracted:
                 self.group.add(entity)
 
-    class Meta:
-        model = Chat
