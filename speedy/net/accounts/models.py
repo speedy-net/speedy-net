@@ -42,8 +42,6 @@ class Entity(TimeStampedModel):
     ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
-    MIN_PASSWORD_LENGTH = 8
-    MAX_PASSWORD_LENGTH = 120
 
     class Meta:
         verbose_name = _('entity')
@@ -104,6 +102,8 @@ class Entity(TimeStampedModel):
 class User(Entity, PermissionsMixin, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 20
+    MIN_PASSWORD_LENGTH = 8
+    MAX_PASSWORD_LENGTH = 120
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3

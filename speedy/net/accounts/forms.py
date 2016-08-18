@@ -47,9 +47,9 @@ class CleanEmailMixin(object):
 class CleanNewPasswordMixin(object):
     def clean_new_password1(self):
         password = self.cleaned_data['new_password1']
-        if len(password) < Entity.MIN_PASSWORD_LENGTH:
+        if len(password) < User.MIN_PASSWORD_LENGTH:
             raise forms.ValidationError(_('Password too short.'))
-        if len(password) > Entity.MAX_PASSWORD_LENGTH:
+        if len(password) > User.MAX_PASSWORD_LENGTH:
             raise forms.ValidationError(_('Password too long.'))
         return password
 
