@@ -1,7 +1,7 @@
 language: python
 python:
   - "3.4"
-  - "nightly"
+  - "3.5"
 install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
