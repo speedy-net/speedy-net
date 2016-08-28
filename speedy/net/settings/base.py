@@ -188,3 +188,7 @@ MEDIA_ROOT = str(ROOT_DIR / 'media')
 THUMBNAIL_DEBUG = True
 
 THUMBNAIL_DUMMY = True
+
+# Tests
+
+TEST_RUNNER = 'speedy.core.test.SiteDiscoverRunner'

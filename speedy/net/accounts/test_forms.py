@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.models import UserEmailAddress
 from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
 from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
@@ -69,6 +70,7 @@ class ProfileNotificationsFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
 
+    @exclude_on_speedy_match
     def test_has_correct_fields(self):
         form = ProfileNotificationsForm(instance=self.user.profile)
         self.assertListEqual(list(form.fields.keys()), [

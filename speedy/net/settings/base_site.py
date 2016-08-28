@@ -1,6 +1,6 @@
 from .base import *
 
-SITE_ID = env('SPEEDY_NET_SITE_ID')
+SITE_ID = int(env('SPEEDY_NET_SITE_ID'))
 
 ROOT_URLCONF = 'speedy.net.urls'
 

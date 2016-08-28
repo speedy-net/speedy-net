@@ -1,6 +1,7 @@
 from django.test import TestCase
 from friendship.models import Friend
 
+from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.test_factories import UserFactory
 
 
@@ -10,6 +11,7 @@ class UserFriendListViewTestCase(TestCase):
         self.other_user = UserFactory()
         self.client.login(username=self.user.slug, password='111')
 
+    @exclude_on_speedy_match
     def test_visitor_can_open_the_page(self):
         self.client.logout()
         r = self.client.get('/{}/friends/'.format(self.user.slug))

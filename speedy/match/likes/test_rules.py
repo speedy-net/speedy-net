@@ -1,9 +1,9 @@
 from django.contrib.auth.models import AnonymousUser
 from django.test import TestCase
 
+from speedy.match.likes.models import EntityLike
 from speedy.net.accounts.test_factories import UserFactory
 from speedy.net.blocks.models import Block
-from .models import EntityLike
 
 
 class LikeTestCase(TestCase):

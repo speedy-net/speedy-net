@@ -4,6 +4,7 @@ from django.contrib.sites.models import Site
 from django.core import mail
 from django.test import TestCase
 
+from speedy.core.test import exclude_on_speedy_match
 from .models import Entity, User, UserEmailAddress, SiteProfileBase
 from .test_factories import UserFactory, UserEmailAddressFactory
 
@@ -42,10 +43,11 @@ class RegistrationViewTestCase(TestCase):
             'first_name': 'First',
             'last_name': 'Last',
             'email': 'email@example.com',
-            'slug': 'user',
+            'slug': 'user1234',
+            'date_of_birth': 'August 28, 1980',
             'gender': 1,
-            'password1': 'password',
-            'password2': 'password',
+            'new_password1': 'password',
+            # 'password2': 'password',
         }
 
     def test_visitor_can_see_registration_page(self):
@@ -73,7 +75,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertEqual(user.first_name_en, 'First')
         self.assertEqual(user.last_name, 'Last')
         self.assertEqual(user.last_name_en, 'Last')
-        self.assertEqual(user.slug, 'user')
+        self.assertEqual(user.slug, 'user1234')
         self.assertEqual(user.email_addresses.count(), 1)
         self.assertEqual(user.email_addresses.all()[0].email, 'email@example.com')
         self.assertFalse(user.email_addresses.all()[0].is_confirmed)
@@ -84,7 +86,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertRedirects(r, '/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertTrue(r.context['user'].is_authenticated())
-        self.assertTrue(r.context['user'].slug, 'user')
+        self.assertTrue(r.context['user'].slug, 'user1234')
 
     def test_user_gets_email_after_registration(self):
         r = self.client.post('/register/', data=self.data)
@@ -197,6 +199,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
         self.assertEqual(r.status_code, 200)
         self.assertTemplateUsed(r, 'accounts/edit_profile/privacy.html')
 
+    @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
         self.assertEqual(self.user.profile.access_account, 4)
         self.assertEqual(self.user.profile.public_email, None)
@@ -228,6 +231,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
         self.assertEqual(r.status_code, 200)
         self.assertTemplateUsed(r, 'accounts/edit_profile/notifications.html')
 
+    @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
         self.assertEqual(self.user.profile.notify_on_message, SiteProfileBase.NOTIFICATIONS_ON)
         data = {

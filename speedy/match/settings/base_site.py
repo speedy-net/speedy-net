@@ -2,7 +2,7 @@ from speedy.net.settings.base import *
 
 from .utils import APP_DIR
 
-SITE_ID = env('SPEEDY_MATCH_SITE_ID')
+SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
 
 ROOT_URLCONF = 'speedy.match.urls'
 
