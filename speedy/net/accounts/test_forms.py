@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+from speedy.net.accounts.models import UserEmailAddress
 from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
 from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
 
@@ -12,8 +13,8 @@ class RegistrationFormTestCase(TestCase):
             'email': 'email@example.com',
             'slug': 'user',
             'gender': 1,
-            'password1': 'password',
-            'password2': 'password',
+            'new_password1': 'password',
+            # 'new_password2': 'password',
         }
 
     def test_required_fields(self):
@@ -24,24 +25,25 @@ class RegistrationFormTestCase(TestCase):
         for field in required_fields:
             self.assertEqual('This field is required.', form.errors[field][0])
 
-    def test_non_unique_primary_email(self):
+    def test_non_unique_primary_confirmed_email(self):
         existing_user = UserFactory()
-        existing_user.email_addresses.create(email='email@example.com')
+        existing_user.email_addresses.create(email='email@example.com', is_confirmed=True)
         form = RegistrationForm(self.valid_data)
         self.assertEqual(form.errors['email'][0], 'This email is already in use.')
+        self.assertEqual(existing_user.email_addresses.count(), 1)
 
     def test_unavailable_slug(self):
         data = self.valid_data.copy()
-        data['slug'] = 'admin'
+        data['slug'] = 'editprofile'
         form = RegistrationForm(data)
-        self.assertEqual(form.errors['slug'][0], 'This username is unavailable.')
+        self.assertEqual(form.errors['slug'][0], 'This username is already taken.')
 
-    def test_passwords_mismatch(self):
-        data = self.valid_data.copy()
-        data['password2'] = 'haha'
-        form = RegistrationForm(data)
-        form.full_clean()
-        self.assertEqual(form.errors['password2'][0], 'The two password fields didn\'t match.')
+    # def test_passwords_mismatch(self):
+    #     data = self.valid_data.copy()
+    #     data['new_password2'] = 'haha'
+    #     form = RegistrationForm(data)
+    #     form.full_clean()
+    #     self.assertEqual(form.errors['new_password2'][0], 'The two password fields didn\'t match.')
 
 
 class ProfilePrivacyFormTestCase(TestCase):

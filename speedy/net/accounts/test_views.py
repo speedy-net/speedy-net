@@ -24,7 +24,7 @@ class IndexViewTestCase(TestCase):
 
 class MeViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory(slug='mark')
+        self.user = UserFactory(slug='markmark')
 
     def test_visitor_has_no_access(self):
         r = self.client.get('/me/')
@@ -33,7 +33,7 @@ class MeViewTestCase(TestCase):
     def test_uset_gets_redirected_to_his_profile(self):
         self.client.login(username=self.user.slug, password='111')
         r = self.client.get('/me/')
-        self.assertRedirects(r, '/mark/')
+        self.assertRedirects(r, '/markmark/')
 
 
 class RegistrationViewTestCase(TestCase):
@@ -54,7 +54,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertTemplateUsed(r, 'accounts/registration.html')
 
     def test_non_unique_email_address(self):
-        UserEmailAddressFactory(email=self.data['email'])
+        UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
         r = self.client.post('/register/', data=self.data)
         self.assertFormError(r, 'form', 'email', 'This email is already in use.')
 
@@ -167,7 +167,7 @@ class EditProfileViewTestCase(TestCase):
             'first_name_en': 'Johnny',
             'last_name_en': 'English',
             'date_of_birth': 'June 3, 1976',
-            'slug': 'slugslug',
+            'slug': self.user.slug,
         }
         r = self.client.post(self.page_url, data)
         self.assertRedirects(r, self.page_url)
@@ -260,12 +260,12 @@ class EditProfileCredentialsViewTestCase(TestCase):
     def test_user_can_change_password(self):
         r = self.client.post(self.page_url, {
             'old_password': '111',
-            'new_password1': '222',
-            'new_password2': '222',
+            'new_password1': '88888888',
+            'new_password2': '88888888',
         })
         self.assertRedirects(r, self.page_url)
         user = User.objects.get(id=self.user.id)
-        self.assertTrue(user.check_password('222'))
+        self.assertTrue(user.check_password('88888888'))
 
 
 class DeactivateAccountViewTestCase(TestCase):
