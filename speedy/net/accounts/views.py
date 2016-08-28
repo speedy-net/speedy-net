@@ -42,6 +42,13 @@ class RegistrationView(generic.CreateView):
         auth_login(self.request, user)
         return HttpResponseRedirect('/')
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'language': get_language(),
+        })
+        return kwargs
+
 
 @sensitive_post_parameters()
 @never_cache

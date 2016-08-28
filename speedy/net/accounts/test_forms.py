@@ -9,8 +9,8 @@ from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, Profil
 class RegistrationFormTestCase(TestCase):
     def setUp(self):
         self.valid_data = {
-            'first_name': 'First',
-            'last_name': 'Last',
+            'first_name_en': 'First',
+            'last_name_en': 'Last',
             'email': 'email@example.com',
             'slug': 'user',
             'gender': 1,

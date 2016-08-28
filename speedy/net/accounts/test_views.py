@@ -40,8 +40,8 @@ class MeViewTestCase(TestCase):
 class RegistrationViewTestCase(TestCase):
     def setUp(self):
         self.data = {
-            'first_name': 'First',
-            'last_name': 'Last',
+            'first_name_en': 'First',
+            'last_name_en': 'Last',
             'email': 'email@example.com',
             'slug': 'user1234',
             'date_of_birth': 'August 28, 1980',
