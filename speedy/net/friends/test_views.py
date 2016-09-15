@@ -101,7 +101,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
         r = self.client.get('/{}/friends/'.format(self.other_user.slug))
-        self.assertIn("This user already has 1 friends. They can't have more than 1 friends on Speedy Net. Please ask"
+        self.assertIn("This user already has 1 friends. They can't have more than 1 friends on Speedy Net. Please ask "
                       "them to remove friends before you proceed.", map(str, r.context['messages']))
         self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
 
@@ -129,7 +129,8 @@ class RejectFriendRequestViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug))
         self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
-        self.assertIsNotNone(self.other_user.friendship_requests_received.all()[0].rejected)
+        # self.assertIsNotNone(self.other_user.friendship_requests_received.all()[0].rejected)
+        self.assertEqual(self.other_user.friendship_requests_received.count(), 0)
 
 
 class RemoveFriendViewTestCase(TestCase):
