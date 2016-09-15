@@ -24,7 +24,8 @@ class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
         # ~~~~ TODO: this code appears twice, combine to one place.
         user_number_of_friends = len(Friend.objects.friends(request.user))
         if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-            messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+            messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy "
+                                      "Net. Please remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
             return redirect(self.user)
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
@@ -43,11 +44,13 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
             # ~~~~ TODO: this code appears twice, combine to one place.
             user_number_of_friends = len(Friend.objects.friends(request.user))
             if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-                messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy Net. Please remove friends before you proceed.".format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+                messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy "
+                                          "Net. Please remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
                 return redirect('friends:list', username=request.user.slug)
-            other_user_number_of_friends = len(Friend.objects.friends(self.user)) # ~~~~ TODO: This doesn't work, fix! other_user_number_of_friends must be equal to the number of friends of the other user.
+            other_user_number_of_friends = len(Friend.objects.friends(self.user))
             if (other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-                messages.error(request, _("This user already has {0} friends. They can't have more than {0} friends on Speedy Net. Please ask them to remove friends before you proceed.".format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)))
+                messages.error(request, _("This user already has {0} friends. They can't have more than {0} friends on "
+                                          "Speedy Net. Please ask them to remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
                 return redirect('friends:list', username=request.user.slug)
 
         frequest = get_object_or_404(

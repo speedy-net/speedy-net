@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.test import override_settings
 from friendship.models import Friend
 
 from speedy.core.test import exclude_on_speedy_match
@@ -47,6 +48,16 @@ class UserFriendRequestViewTestCase(TestCase):
         self.assertEqual(frequest.from_user, self.user)
         self.assertEqual(frequest.to_user, self.other_user)
 
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
+    def test_user_cannot_send_friend_request_if_maximum(self):
+        Friend.objects.add_friend(self.user, UserFactory()).accept()
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, self.other_user.get_absolute_url(), fetch_redirect_response=False)
+        r = self.client.get(self.other_user.get_absolute_url())
+        self.assertIn("You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove "
+                      "friends before you proceed.", map(str, r.context['messages']))
+
+
 
 class AcceptFriendRequestViewTestCase(TestCase):
     def setUp(self):
@@ -71,6 +82,28 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug))
         self.assertTrue(Friend.objects.are_friends(self.user, self.other_user))
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
+    def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
+        Friend.objects.add_friend(self.other_user, UserFactory()).accept()
+        self.client.login(username=self.other_user.slug, password='111')
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
+        r = self.client.get('/{}/friends/'.format(self.other_user.slug))
+        self.assertIn("You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove "
+                      "friends before you proceed.", map(str, r.context['messages']))
+        self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
+    def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
+        Friend.objects.add_friend(self.user, UserFactory()).accept()
+        self.client.login(username=self.other_user.slug, password='111')
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
+        r = self.client.get('/{}/friends/'.format(self.other_user.slug))
+        self.assertIn("This user already has 1 friends. They can't have more than 1 friends on Speedy Net. Please ask"
+                      "them to remove friends before you proceed.", map(str, r.context['messages']))
+        self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
 
 
 class RejectFriendRequestViewTestCase(TestCase):
