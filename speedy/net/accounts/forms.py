@@ -135,7 +135,7 @@ class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernam
 class ProfileForm(GetSlugAndUsernameMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     class Meta:
         model = User
-        fields = ('date_of_birth', 'photo', 'slug')
+        fields = ('date_of_birth', 'photo', 'slug', 'gender')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
