@@ -13,7 +13,7 @@ class FileInput(forms.TextInput):
         real_input = super().render(name, value, attrs)
         try:
             file = File.objects.get(id=value)
-        except File.DoesNotExist:
+        except (File.DoesNotExist, ValueError):
             file = None
         return render_to_string('uploads/file_input.html', {
             'real_input': real_input,
