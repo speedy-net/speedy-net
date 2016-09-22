@@ -97,7 +97,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'username': self.user.slug,
+        return reverse('im:chat', kwargs={'slug': self.user.slug,
                                           'chat_pk': self.chat.id})
 
 
@@ -109,7 +109,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
     def get(self, request, *args, **kwargs):
         existing_chat = Chat.on_site.chat_with(self.request.user, self.user, create=False)
         if existing_chat is not None:
-            return redirect('im:chat', **{'username': self.request.user.slug, 'chat_pk': existing_chat.id})
+            return redirect('im:chat', **{'slug': self.request.user.slug, 'chat_pk': existing_chat.id})
         return super().get(request, *args, **kwargs)
 
     def get_form_kwargs(self):
@@ -121,7 +121,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
         return kwargs
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'username': self.request.user.slug, 'chat_pk': self.object.chat.id})
+        return reverse('im:chat', kwargs={'slug': self.request.user.slug, 'chat_pk': self.object.chat.id})
 
 
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
@@ -133,4 +133,4 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'username': self.user.slug, 'chat_pk': self.chat.id})
+        return reverse('im:chat', kwargs={'slug': self.user.slug, 'chat_pk': self.chat.id})

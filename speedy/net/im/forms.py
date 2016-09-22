@@ -22,7 +22,7 @@ class MessageForm(forms.ModelForm):
         self.helper = FormHelper()
         if self.chat:
             self.helper.form_action = reverse('im:chat_send',
-                                              kwargs={'username': self.from_entity.slug,
+                                              kwargs={'slug': self.from_entity.slug,
                                                       'chat_pk': self.chat.id})
         self.helper.form_class = 'form-vertical'
         self.helper.layout = Layout(

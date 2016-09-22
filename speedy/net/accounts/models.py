@@ -38,6 +38,20 @@ class AccessField(models.PositiveIntegerField):
         super().__init__(**kwargs)
 
 
+def normalize_slug(slug):
+    slug = slug.lower()
+    slug = re.sub('[-\._]{1,}', '-', slug)
+    slug = re.sub('^-', '', slug)
+    slug = re.sub('-$', '', slug)
+    return slug
+
+
+def normalize_username(slug):
+    slug = normalize_slug(slug)
+    username = re.sub('[-]', '', slug)
+    return username
+
+
 class Entity(TimeStampedModel):
     ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
@@ -73,7 +87,7 @@ class Entity(TimeStampedModel):
 
     def validate_username(self):
         if not self.username:
-            self.username = re.sub('[-]', '', self.slug)
+            self.username = normalize_username(self.slug)
         if (len(self.username) < self.MIN_USERNAME_LENGTH):
             raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
@@ -86,16 +100,13 @@ class Entity(TimeStampedModel):
     def validate_slug(self):
         if not self.slug:
             self.slug = self.id
-        self.slug = self.slug.lower()
-        self.slug = re.sub('[-\._]{1,}', '-', self.slug)
-        self.slug = re.sub('^-', '', self.slug)
-        self.slug = re.sub('-$', '', self.slug)
+        self.slug = normalize_slug(self.slug)
         pattern = re.compile("^([a-z0-9\-]{0,})$")
         if (not(pattern.match(self.slug))):
             raise ValidationError('Slug may contain letters (lowercase), digits and dashes only.')
 
     def validate_username_for_slug(self):
-        if (not(re.sub('[-]', '', self.slug) == self.username)):
+        if normalize_username(self.slug) != self.username:
             raise ValidationError('Slug does not parse to username.')
 
 
@@ -135,7 +146,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('profiles:user', kwargs={'username': self.slug})
+        return reverse('profiles:user', kwargs={'slug': self.slug})
 
     @property
     def email(self):

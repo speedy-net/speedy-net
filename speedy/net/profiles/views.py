@@ -1,17 +1,24 @@
 from django.conf import settings
-from django.contrib.sites.models import Site
+from django.db.models import Q
 from django.http import Http404
+from django.shortcuts import redirect
 from django.utils.module_loading import import_string
 from django.views import generic
-from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
+from rules.contrib.views import LoginRequiredMixin
 
-from speedy.net.accounts.models import User
+from speedy.net.accounts.models import User, normalize_username
 from speedy.net.friends.rules import friend_request_sent, is_friend
 
 
 class UserMixin(object):
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
+        if self.user.slug != kwargs['slug']:
+            kwargs['slug'] = self.user.slug
+            components = []
+            components.extend(request.resolver_match.namespaces)
+            components.append(request.resolver_match.url_name)
+            return redirect(':'.join(components), *args, **kwargs)
         return super().dispatch(request, *args, **kwargs)
 
     def get_user_queryset(self):
@@ -19,7 +26,10 @@ class UserMixin(object):
 
     def get_user(self):
         try:
-            return self.get_user_queryset().get(slug__iexact=self.kwargs['username'])
+            slug = self.kwargs['slug']
+            user = self.get_user_queryset().get(Q(slug=slug) |
+                                                Q(username=normalize_username(slug)))
+            return user
         except User.DoesNotExist:
             raise Http404()
 

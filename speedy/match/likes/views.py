@@ -9,7 +9,7 @@ from .models import EntityLike
 
 class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('likes:list_to', kwargs={'username': self.user.slug})
+        return reverse('likes:list_to', kwargs={'slug': self.user.slug})
 
 
 class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):

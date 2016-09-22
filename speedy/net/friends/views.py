@@ -38,7 +38,7 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
     permission_required = 'friends.view_requests'
 
     def get_redirect_url(self):
-        return reverse('friends:list', kwargs={'username': self.request.user.slug})
+        return reverse('friends:list', kwargs={'slug': self.request.user.slug})
 
     def get(self, request, *args, **kwargs):
         return redirect(self.get_redirect_url())
