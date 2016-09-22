@@ -4,7 +4,7 @@ from datetime import date
 import factory
 import factory.fuzzy
 
-from .models import User, UserEmailAddress
+from .models import normalize_username, User, UserEmailAddress
 
 
 class UserFactory(factory.DjangoModelFactory):
@@ -13,7 +13,7 @@ class UserFactory(factory.DjangoModelFactory):
     date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(1900, 1, 1))
     gender = User.GENDER_OTHER
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
-    username = factory.LazyAttribute(lambda o: o.slug)
+    username = factory.LazyAttribute(lambda o: normalize_username(o.slug))
 
     password = factory.PostGenerationMethodCall('set_password', '111')
 

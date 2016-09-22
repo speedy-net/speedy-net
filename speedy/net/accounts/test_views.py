@@ -103,7 +103,7 @@ class RegistrationViewTestCase(TestCase):
 
 class LoginViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = UserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
         self.inactive_user = UserFactory(is_active=False)
@@ -114,8 +114,17 @@ class LoginViewTestCase(TestCase):
         self.assertTemplateUsed(r, 'accounts/login.html')
 
     def test_visitor_can_login_using_slug(self):
+        self.assertEqual(self.user.slug, 'slug-with-dots')
         r = self.client.post('/login/', data={
-            'username': self.user.slug,
+            'username': 'slug-with-dots',
+            'password': '111',
+        })
+        self.assertRedirects(r, '/me/', target_status_code=302)
+
+    def test_visitor_can_login_using_slug_modified(self):
+        self.assertEqual(self.user.slug, 'slug-with-dots')
+        r = self.client.post('/login/', data={
+            'username': 'slug____with.....dots---',
             'password': '111',
         })
         self.assertRedirects(r, '/me/', target_status_code=302)

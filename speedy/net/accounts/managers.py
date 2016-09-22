@@ -6,7 +6,8 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def get_by_natural_key(self, username):
-        return self.distinct().get(Q(**{self.model.USERNAME_FIELD: username}) |
+        from .models import normalize_username
+        return self.distinct().get(Q(username=normalize_username(username)) |
                                    Q(email_addresses__email=username))
 
     def active(self):

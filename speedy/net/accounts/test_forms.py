@@ -26,6 +26,11 @@ class RegistrationFormTestCase(TestCase):
         for field in required_fields:
             self.assertEqual('This field is required.', form.errors[field][0])
 
+    def test_dots_in_slug_are_allowed(self):
+        form = RegistrationForm({'slug': 'user.rrrrr'})
+        form.full_clean()
+        self.assertNotIn('slug', form.errors)
+
     def test_non_unique_primary_confirmed_email(self):
         existing_user = UserFactory()
         existing_user.email_addresses.create(email='email@example.com', is_confirmed=True)
