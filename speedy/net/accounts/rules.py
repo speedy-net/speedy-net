@@ -10,11 +10,12 @@ def has_access_perm(user, other):
     access = other.profile.access_account
     if access == ACCESS_ME:
         return user == other
-    if access == ACCESS_FRIENDS:
-        return (user == other) or Friend.objects.are_friends(user, other)
-    if access == ACCESS_FRIENDS_2:
-        return (user == other) or Friend.objects.are_friends(user, other)
-    return True
+    if user.is_authenticated():
+        if access == ACCESS_FRIENDS:
+            return (user == other) or Friend.objects.are_friends(user, other)
+        if access == ACCESS_FRIENDS_2:
+            return (user == other) or Friend.objects.are_friends(user, other)
+    return False
 
 
 @predicate
