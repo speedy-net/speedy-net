@@ -2,15 +2,17 @@ from friendship.models import Friend
 from rules import predicate, add_perm
 
 from speedy.net.blocks.rules import is_blocked, is_self
-from .models import ACCESS_ME, ACCESS_FRIENDS, ACCESS_FRIENDS_2
+from .models import ACCESS_ANYONE, ACCESS_ME, ACCESS_FRIENDS, ACCESS_FRIENDS_2
 
 
 @predicate
 def has_access_perm(user, other):
     access = other.profile.access_account
-    if access == ACCESS_ME:
-        return user == other
+    if access == ACCESS_ANYONE:
+        return True
     if user.is_authenticated():
+        if access == ACCESS_ME:
+            return user == other
         if access == ACCESS_FRIENDS:
             return (user == other) or Friend.objects.are_friends(user, other)
         if access == ACCESS_FRIENDS_2:
