@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'speedy.net.feedback',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,9 +126,11 @@ AUTH_PASSWORD_VALIDATORS = [
     # },
 ]
 
+DEFAULT_AUTHENTICATION_BACKEND = 'django.contrib.auth.backends.AllowAllUsersModelBackend'
+
 AUTHENTICATION_BACKENDS = (
     'rules.permissions.ObjectPermissionBackend',
-    'django.contrib.auth.backends.ModelBackend',
+    DEFAULT_AUTHENTICATION_BACKEND,
 )
 
 AUTH_USER_MODEL = 'accounts.User'

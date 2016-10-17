@@ -1,7 +1,9 @@
 from functools import partial
 
+from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, logout as auth_logout, REDIRECT_FIELD_NAME
+from django.contrib.auth import login as auth_login, logout as auth_logout, REDIRECT_FIELD_NAME, \
+    update_session_auth_hash
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
@@ -38,7 +40,7 @@ class RegistrationView(generic.CreateView):
         messages.success(self.request, _('Registration complete. Don\'t forget to confirm your email.'))
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
-        user.backend = 'django.contrib.auth.backends.ModelBackend'
+        user.backend = settings.DEFAULT_AUTHENTICATION_BACKEND
         auth_login(self.request, user)
         return HttpResponseRedirect('/')
 
@@ -116,7 +118,8 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
         form.save()
         user = self.request.user
         user.backend = 'django.contrib.auth.backends.ModelBackend'
-        auth_login(self.request, user)
+        update_session_auth_hash(self.request, user)
+        messages.success(self.request, _('Your new password has been saved.'))
         return super().form_valid(form)
 
 
