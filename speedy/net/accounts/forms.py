@@ -196,7 +196,8 @@ class LoginForm(auth_forms.AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data = self.data.copy()
-        self.data['username'] = self.data['username'].lower()
+        if 'username' in self.data:
+            self.data['username'] = self.data['username'].lower()
         self.fields['username'].label = _('Username or email')
         self.helper = FormHelper()
         self.helper.add_layout(Div(
