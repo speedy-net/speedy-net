@@ -74,6 +74,7 @@ class LocalizedFirstLastNameMixin(object):
             self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
             self.fields[loc_field].required = True
             self.fields.move_to_end(loc_field, last=False)
+            self.initial[loc_field] = getattr(self.instance, loc_field, '')
 
     def save(self, commit=True):
         instance = super().save(commit=False)
