@@ -69,7 +69,7 @@ class RegistrationViewTestCase(TestCase):
         user = User.objects.all()[0]
         self.assertEqual(user, entity.user)
         self.assertEqual(user.id, entity.id)
-        self.assertEqual(15, len(entity.id))
+        self.assertEqual(20, len(entity.id))
         self.assertTrue(user.check_password('password'))
         self.assertEqual(user.first_name, 'First')
         self.assertEqual(user.first_name_en, 'First')

@@ -1,24 +1,22 @@
-import uuid
-
 from django.contrib.sites.models import Site
 from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel
+from speedy.core.models import TimeStampedModel, UDIDField
 from speedy.net.accounts.models import Entity, SiteProfileBase
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = UDIDField()
     site = models.ForeignKey(verbose_name=_('site'), to=Site)
     ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, null=True, blank=True, related_name='+')
     ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, null=True, blank=True, related_name='+')
     group = models.ManyToManyField(verbose_name=_('participants'), to=Entity)
     is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
-    last_message = models.ForeignKey(verbose_name=_('last message'), to='Message', blank=True, null=True, related_name='+')
+    last_message = models.ForeignKey(verbose_name=_('last message'), to='Message', blank=True, null=True,
+                                     related_name='+')
 
     objects = models.Manager()
     on_site = ChatManager()
@@ -63,7 +61,7 @@ class Chat(TimeStampedModel):
 
 
 class Message(TimeStampedModel):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = UDIDField()
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, on_delete=models.SET_NULL, null=True)
     sender = models.ForeignKey(verbose_name=_('sender'), to=Entity, on_delete=models.SET_NULL, null=True)
     text = models.TextField(verbose_name=_('message'))

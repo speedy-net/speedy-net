@@ -1,21 +1,21 @@
-import uuid
 import re
+import uuid
 
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.sites.models import Site
+from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.core.exceptions import ValidationError
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel
+from speedy.core.models import TimeStampedModel, UDIDField
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
-from .utils import generate_id, get_site_profile_model
-from .validators import identity_id_validator, username_validator, slug_validator
+from .utils import get_site_profile_model
+from .validators import username_validator, slug_validator
 
 ACCESS_ME = 1
 ACCESS_FRIENDS = 2
@@ -53,11 +53,10 @@ def normalize_username(slug):
 
 
 class Entity(TimeStampedModel):
-    ID_LENGTH = 15
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
 
-    id = models.CharField(max_length=ID_LENGTH, validators=[identity_id_validator], primary_key=True, db_index=True, unique=True)
+    id = UDIDField()
     username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
     slug = models.CharField(unique=True, max_length=MAX_USERNAME_LENGTH, validators=[slug_validator])
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
@@ -70,20 +69,10 @@ class Entity(TimeStampedModel):
         return '<Entity {}>'.format(self.id)
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            generate_new_id = True
-            while generate_new_id:
-                self.id = generate_id(id_length=self.ID_LENGTH)
-                generate_new_id = Entity.objects.filter(id=self.id).exists()
-        self.validate_id()
         self.validate_slug()
         self.validate_username()
         self.validate_username_for_slug()
         return super().save(*args, **kwargs)
-
-    def validate_id(self):
-        if (not(len(self.id) == self.ID_LENGTH)):
-            raise ValidationError('ID is invalid.')
 
     def validate_username(self):
         if not self.username:
@@ -92,17 +81,15 @@ class Entity(TimeStampedModel):
             raise ValidationError('Username is too short.')
         if (len(self.username) > self.MAX_USERNAME_LENGTH):
             raise ValidationError('Username is too long.')
-        if (not(self.username == self.id)):
+        if (not (self.username == self.id)):
             pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
-            if (not(pattern.match(self.username))):
+            if (not (pattern.match(self.username))):
                 raise ValidationError('Username must start with 4 or more letters.')
 
     def validate_slug(self):
-        if not self.slug:
-            self.slug = self.id
         self.slug = normalize_slug(self.slug)
         pattern = re.compile("^([a-z0-9\-]{0,})$")
-        if (not(pattern.match(self.slug))):
+        if (not (pattern.match(self.slug))):
             raise ValidationError('Slug may contain letters (lowercase), digits and dashes only.')
 
     def validate_username_for_slug(self):
@@ -155,8 +142,9 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def validate_username(self):
         super().validate_username()
         pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
-        if (not(pattern.match(self.username))):
-            raise ValidationError('Username must start with 4 or more letters, after which can be any number of digits.')
+        if (not (pattern.match(self.username))):
+            raise ValidationError(
+                'Username must start with 4 or more letters, after which can be any number of digits.')
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
@@ -274,5 +262,8 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = 'Speedy Net Profiles'
 
     access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
-    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
+    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
+                                     on_delete=models.SET_NULL, related_name='+')
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
+                                                    choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
+                                                    default=SiteProfileBase.NOTIFICATIONS_ON)
