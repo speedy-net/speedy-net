@@ -2,7 +2,7 @@ from datetime import date
 
 from django.contrib.sites.models import Site
 from django.core import mail
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.core.test import exclude_on_speedy_match
 from .models import Entity, User, UserEmailAddress, SiteProfileBase

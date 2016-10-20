@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from .models import normalize_slug, normalize_username, Entity
 from .test_factories import UserFactory, UserEmailAddressFactory

@@ -23,31 +23,34 @@
 </head>
 <body class="bidi-{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">
 
+{% block body %}
+
 <nav class="navbar {% block navbar_class %}{% endblock %}">
     <div class="container">
-        <ul class="nav navbar-nav navbar-left" style="position: relative">
-            <li class="dropdown" style="position: absolute; right: 0">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false"><i class="fa fa-th"></i></a>
-                <ul class="dropdown-menu">
-                    {% for other_site in sites %}
-                        <li><a href="//{{ other_site.domain }}">{{ other_site.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-        </ul>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">{{ site.name }}</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            {% if request.user.is_authenticated %}
-                <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
-            {% else %}
-                <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
-                <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
-            {% endif %}
-        </ul>
-
+        {% block navbar %}
+            <ul class="nav navbar-nav navbar-left" style="position: relative">
+                <li class="dropdown" style="position: absolute; right: 0">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><i class="fa fa-th"></i></a>
+                    <ul class="dropdown-menu">
+                        {% for other_site in sites %}
+                            <li><a href="//{{ other_site.domain }}">{{ other_site.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ site.name }}</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
+                    <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
+                {% endif %}
+            </ul>
+        {% endblock %}
     </div>
 </nav>
 <div class="container">
@@ -65,84 +68,90 @@
         </div>
     {% endif %}
 
-    {% if request.user.is_authenticated and request.user.is_active %}
-        <div class="row">
-            <div class="col-md-3">
-                <div class="page-header">
-                    <h1>&nbsp;</h1>
-                </div>
-                <ul class="nav nav-pills nav-stacked">
-                    {% block user_menu %}
-                        <li><a href="{% url 'profiles:me' %}">
-                            <i class="fa fa-fw fa-user"></i>
-                            {{ request.user }}
-                        </a></li>
-                        <li><a href="{% url 'friends:list' request.user.slug %}">
-                            <i class="fa fa-fw fa-users"></i>
-                            {% trans 'Friends' %}
-                            {% with request.user.friendship_requests_received.count as frequests_count %}
-                                {% if frequests_count %}
-                                    <span class="badge">{{ frequests_count }}</span>
+    {% block full_content %}
+
+        {% if request.user.is_authenticated and request.user.is_active %}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="page-header">
+                        <h1>&nbsp;</h1>
+                    </div>
+                    <ul class="nav nav-pills nav-stacked">
+                        {% block user_menu %}
+                            <li><a href="{% url 'profiles:me' %}">
+                                <i class="fa fa-fw fa-user"></i>
+                                {{ request.user }}
+                            </a></li>
+                            <li><a href="{% url 'friends:list' request.user.slug %}">
+                                <i class="fa fa-fw fa-users"></i>
+                                {% trans 'Friends' %}
+                                {% with request.user.friendship_requests_received.count as frequests_count %}
+                                    {% if frequests_count %}
+                                        <span class="badge">{{ frequests_count }}</span>
+                                    {% endif %}
+                                {% endwith %}
+                            </a></li>
+                            <li><a href="{% url 'im:list' request.user.slug %}">
+                                <i class="fa fa-fw fa-comments"></i>
+                                {% trans 'Messages' %}
+                                {% unread_chats_count request.user as unread_chats %}
+                                {% if unread_chats %}
+                                    <span class="badge">{{ unread_chats }}</span>
                                 {% endif %}
-                            {% endwith %}
+                            </a></li>
+                        {% endblock %}
+                        <li><a href="{% url 'accounts:edit_profile' %}">
+                            <i class="fa fa-fw fa-pencil"></i>
+                            {% trans 'Edit Profile' %}
                         </a></li>
-                        <li><a href="{% url 'im:list' request.user.slug %}">
-                            <i class="fa fa-fw fa-comments"></i>
-                            {% trans 'Messages' %}
-                            {% unread_chats_count request.user as unread_chats %}
-                            {% if unread_chats %}
-                                <span class="badge">{{ unread_chats }}</span>
-                            {% endif %}
-                        </a></li>
-                    {% endblock %}
-                    <li><a href="{% url 'accounts:edit_profile' %}">
-                        <i class="fa fa-fw fa-pencil"></i>
-                        {% trans 'Edit Profile' %}
-                    </a></li>
-                </ul>
-            </div>
-            <div class="col-md-9">
-    {% endif %}
-                {% block content %}
-                {% endblock %}
-    {% if request.user.is_authenticated %}
-            </div>
-        </div>
-    {% endif %}
-</div>
-<hr>
-<footer class="footer">
-    <div class="container">
-        <ul class="nav nav-pills">
-            <li class="disabled"><a href="/">{{ site.name }}, {% now 'Y' %}</a></li>
-            <li><a href="{% url 'feedback:feedback' %}">{% trans 'Contact Us' %}</a></li>
-            <li data-block="LanguageSwitcher">
-                <div class="dropup">
-                    <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">
-                        {% trans 'Language' %}
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                            <li><a href="/" data-role="link" data-code="{{ language.code }}">{{ language.name_local }}
-                                ({{ language.code }})</a></li>
-                        {% endfor %}
                     </ul>
                 </div>
-                <form action="{% url 'set_language' %}" method="post" data-role="form" class="hidden">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ request.get_full_path }}"/>
-                    <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}" data-role="input">
-                </form>
-            </li>
-        </ul>
-    </div>
-</footer>
+                <div class="col-md-9">
+        {% endif %}
+                    {% block content %}
+                    {% endblock %}
+        {% if request.user.is_authenticated %}
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}
+</div>
 
+{% block footer_wrap %}
+    <hr>
 
+    <footer class="footer">
+        <div class="container">
+            {% block footer %}
+                <ul class="nav nav-pills">
+                    <li class="disabled"><a href="/">{{ site.name }}, {% now 'Y' %}</a></li>
+                    <li><a href="{% url 'feedback:feedback' %}">{% trans 'Contact Us' %}</a></li>
+                    <li>
+                        <div class="dropup">
+                            <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">
+                                {% trans 'Language' %}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <li>
+                                        <a href="//{{ language.code }}.{{ site.domain }}{{ request.path }}">
+                                            {{ language.name_local }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            {% endblock %}
+        </div>
+    </footer>
+{% endblock %}
+
+{% endblock %}
 
 {% block js %}
     <script src="{% static 'vendor/jquery/jquery-2.2.4.js' %}"></script>

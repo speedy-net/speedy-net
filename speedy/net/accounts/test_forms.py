@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.models import UserEmailAddress

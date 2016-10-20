@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 from friendship.models import Friend
 
 from speedy.core.test import exclude_on_speedy_match

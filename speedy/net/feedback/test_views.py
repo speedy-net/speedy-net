@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
 from speedy.net.uploads.test_factories import FileFactory

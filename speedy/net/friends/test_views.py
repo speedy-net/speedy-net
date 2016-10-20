@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 from django.test import override_settings
 from friendship.models import Friend
 

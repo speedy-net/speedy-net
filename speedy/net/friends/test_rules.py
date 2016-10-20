@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 from friendship.models import Friend
 
 from speedy.net.accounts.test_factories import UserFactory

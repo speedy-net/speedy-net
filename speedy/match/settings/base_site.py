@@ -4,6 +4,8 @@ from .utils import APP_DIR
 
 SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
 
+SESSION_COOKIE_NAME = SESSION_COOKIE_NAME_TEMPLATE.format(site_id=SITE_ID)
+
 ROOT_URLCONF = 'speedy.match.urls'
 
 STATIC_ROOT = str(APP_DIR / 'static_serve')

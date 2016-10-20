@@ -8,18 +8,6 @@ var datepickerOptions = {
 };
 
 
-evil.block('@@LanguageSwitcher', {
-
-    'click on @link': function (event) {
-        event.preventDefault();
-        var code = event.el.data('code');
-        this.input.val(code);
-        this.form.submit();
-    }
-
-});
-
-
 evil.block('@@RegistrationForm', {
 
     _generateSlug: function () {

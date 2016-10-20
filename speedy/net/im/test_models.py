@@ -1,4 +1,4 @@
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
 from .test_factories import ChatFactory

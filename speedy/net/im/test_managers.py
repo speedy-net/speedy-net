@@ -1,6 +1,6 @@
 from time import sleep
 
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
 from .models import Chat, Message, ReadMark

@@ -56,7 +56,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'speedy.core.middleware.SharedSessionMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'speedy.core.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'speedy.net.accounts.middleware.InactiveUserMiddleware',
     'speedy.net.accounts.middleware.SiteProfileMiddleware',
@@ -132,6 +134,8 @@ AUTHENTICATION_BACKENDS = (
     'rules.permissions.ObjectPermissionBackend',
     DEFAULT_AUTHENTICATION_BACKEND,
 )
+
+SESSION_COOKIE_NAME_TEMPLATE = 'sessionid{site_id}'
 
 AUTH_USER_MODEL = 'accounts.User'
 

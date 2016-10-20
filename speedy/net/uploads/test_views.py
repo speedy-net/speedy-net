@@ -3,7 +3,7 @@ import os
 import tempfile
 
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
+from speedy.core.test import TestCase
 
 from speedy.net.accounts.test_factories import UserFactory
 from .models import Image
