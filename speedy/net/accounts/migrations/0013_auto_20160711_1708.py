@@ -14,9 +14,4 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='entity',
-            name='photo',
-            field=speedy.net.uploads.fields.PhotoField(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='uploads.Image', verbose_name='photo'),
-        ),
     ]

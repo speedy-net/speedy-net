@@ -13,7 +13,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('accounts', '0013_auto_20160711_1708'),
-        ('uploads', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -29,7 +28,6 @@ class Migration(migrations.Migration):
                 ('type', models.PositiveIntegerField(verbose_name='type')),
                 ('text', models.TextField(verbose_name='text')),
                 ('report_entity', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='complaints', to='accounts.Entity', verbose_name='reported entity')),
-                ('report_file', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='complaints', to='uploads.File', verbose_name='reported photo')),
                 ('sender', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='sender')),
             ],
             options={
