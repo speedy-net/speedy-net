@@ -39,7 +39,7 @@ class SharedSessionMiddleware(SessionMiddleware):
             for site in Site.objects.all():
                 response.set_cookie(
                     key=settings.SESSION_COOKIE_NAME_TEMPLATE.format(site_id=site.id),
-                    value=cookie.value,
+                    value=getattr(cookie, 'value', ''),
                     max_age=cookie.get('max-age', None),
                     expires=cookie.get('expires', None),
                     path=cookie.get('path', '/'),
