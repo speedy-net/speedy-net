@@ -10,9 +10,9 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # always at the bottom
-    url(r'^(?P<slug>[-\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
-    url(r'^(?P<slug>[-\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
-    url(r'^(?P<slug>[-\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
+    url(r'^(?P<slug>[-\._\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
+    url(r'^(?P<slug>[-\._\w]+)/messages/', include('speedy.net.im.urls', namespace='im')),
+    url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
     url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),

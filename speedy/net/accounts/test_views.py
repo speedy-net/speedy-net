@@ -114,15 +114,18 @@ class LoginViewTestCase(TestCase):
         self.assertTemplateUsed(r, 'accounts/login.html')
 
     def test_visitor_can_login_using_slug(self):
-        self.assertEqual(self.user.slug, 'slug-with-dots')
+        # self.assertEqual(self.user.slug, 'slug-with-dots')
+        self.assertEqual(self.user.slug, 'slug.with.dots')
         r = self.client.post('/login/', data={
-            'username': 'slug-with-dots',
+            # 'username': 'slug-with-dots',
+            'username': 'slug.with.dots',
             'password': '111',
         })
         self.assertRedirects(r, '/me/', target_status_code=302)
 
     def test_visitor_can_login_using_slug_modified(self):
-        self.assertEqual(self.user.slug, 'slug-with-dots')
+        # self.assertEqual(self.user.slug, 'slug-with-dots')
+        self.assertEqual(self.user.slug, 'slug.with.dots')
         r = self.client.post('/login/', data={
             'username': 'slug____with.....dots---',
             'password': '111',

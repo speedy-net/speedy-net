@@ -1,7 +1,6 @@
 from speedy.core.test import TestCase
 
 from speedy.core.test import exclude_on_speedy_match
-from speedy.net.accounts.models import UserEmailAddress
 from speedy.net.accounts.test_factories import UserFactory, UserEmailAddressFactory
 from .forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
 
@@ -16,6 +15,7 @@ class RegistrationFormTestCase(TestCase):
             'gender': 1,
             'new_password1': 'password',
             # 'new_password2': 'password',
+            'date_of_birth': '1980-01-01',
         }
 
     def test_required_fields(self):
@@ -38,11 +38,46 @@ class RegistrationFormTestCase(TestCase):
         self.assertEqual(form.errors['email'][0], 'This email is already in use.')
         self.assertEqual(existing_user.email_addresses.count(), 1)
 
-    def test_unavailable_slug(self):
+    def test_slug_validation_reserved(self):
         data = self.valid_data.copy()
         data['slug'] = 'editprofile'
         form = RegistrationForm(data)
         self.assertEqual(form.errors['slug'][0], 'This username is already taken.')
+
+    def test_slug_validation_already_taken(self):
+        UserFactory(slug='validslug')
+        data = self.valid_data.copy()
+        data['slug'] = 'validslug'
+        form = RegistrationForm(data)
+        self.assertEqual(form.errors['slug'][0], 'This username is already taken.')
+
+    def test_slug_validation_too_short(self):
+        data = self.valid_data.copy()
+        data['slug'] = 'a' * 5
+        form = RegistrationForm(data)
+        self.assertEqual(form.errors['slug'][0], 'Ensure this value has at least 6 characters (it has 5).')
+
+    def test_slug_validation_too_long(self):
+        data = self.valid_data.copy()
+        data['slug'] = 'a' * 200
+        form = RegistrationForm(data)
+        self.assertEqual(form.errors['slug'][0], 'Ensure this value has at most 120 characters (it has 200).')
+
+    def test_slug_validation_regex(self):
+        data = self.valid_data.copy()
+        data['slug'] = '1234567890digits'
+        form = RegistrationForm(data)
+        self.assertEqual(form.errors['slug'][0], 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
+
+    def test_slug_gets_converted_to_username(self):
+        data = self.valid_data.copy()
+        data['slug'] = 'this----is_a.slug'
+        form = RegistrationForm(data)
+        form.full_clean()
+        user = form.save()
+        self.assertEqual(user.slug, 'this----is_a.slug')
+        self.assertEqual(user.username, 'thisisaslug')
+
 
     # def test_passwords_mismatch(self):
     #     data = self.valid_data.copy()

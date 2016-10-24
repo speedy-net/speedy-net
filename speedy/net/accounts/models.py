@@ -15,7 +15,7 @@ from speedy.core.models import TimeStampedModel, UDIDField
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
-from .validators import username_validator, slug_validator
+from .validators import slug_validators, MAX_USERNAME_LENGTH, username_validators
 
 ACCESS_ME = 1
 ACCESS_FRIENDS = 2
@@ -39,26 +39,25 @@ class AccessField(models.PositiveIntegerField):
 
 
 def normalize_slug(slug):
-    slug = slug.lower()
-    slug = re.sub('[-\._]{1,}', '-', slug)
-    slug = re.sub('^-', '', slug)
-    slug = re.sub('-$', '', slug)
+    # slug = slug.lower()
+    # slug = re.sub('[-\._]{1,}', '-', slug)
+    # slug = re.sub('^-', '', slug)
+    # slug = re.sub('-$', '', slug)
     return slug
 
 
 def normalize_username(slug):
     slug = normalize_slug(slug)
-    username = re.sub('[-]', '', slug)
+    username = re.sub('[-\._]', '', slug)
     return username
 
 
 class Entity(TimeStampedModel):
-    MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 120
-
     id = UDIDField()
-    username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=[username_validator], unique=True)
-    slug = models.CharField(unique=True, max_length=MAX_USERNAME_LENGTH, validators=[slug_validator])
+    username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=username_validators, unique=True,
+                                error_messages={'unique': _('This username is already taken.')})
+    slug = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=slug_validators, unique=True,
+                            error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     class Meta:
@@ -69,37 +68,16 @@ class Entity(TimeStampedModel):
         return '<Entity {}>'.format(self.id)
 
     def save(self, *args, **kwargs):
-        self.validate_slug()
-        self.validate_username()
-        self.validate_username_for_slug()
-        return super().save(*args, **kwargs)
-
-    def validate_username(self):
-        if not self.username:
-            self.username = normalize_username(self.slug)
-        if (len(self.username) < self.MIN_USERNAME_LENGTH):
-            raise ValidationError('Username is too short.')
-        if (len(self.username) > self.MAX_USERNAME_LENGTH):
-            raise ValidationError('Username is too long.')
-        if (not (self.username == self.id)):
-            pattern = re.compile("^([a-z]{4,}[a-z0-9]{0,})$")
-            if (not (pattern.match(self.username))):
-                raise ValidationError('Username must start with 4 or more letters.')
-
-    def validate_slug(self):
         self.slug = normalize_slug(self.slug)
-        pattern = re.compile("^([a-z0-9\-]{0,})$")
-        if (not (pattern.match(self.slug))):
-            raise ValidationError('Slug may contain letters (lowercase), digits and dashes only.')
+        self.username = normalize_username(self.slug)
+        return super().save(*args, **kwargs)
 
     def validate_username_for_slug(self):
         if normalize_username(self.slug) != self.username:
-            raise ValidationError('Slug does not parse to username.')
+            raise ValidationError(_('Slug does not parse to username.'))
 
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
-    MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 20
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
     GENDER_FEMALE = 1
@@ -129,22 +107,12 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def __str__(self):
         return self.get_full_name()
 
-    def save(self, *args, **kwargs):
-        return super().save(*args, **kwargs)
-
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
 
     @property
     def email(self):
         return self.email_addresses.get(is_primary=True).email
-
-    def validate_username(self):
-        super().validate_username()
-        pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
-        if (not (pattern.match(self.username))):
-            raise ValidationError(
-                'Username must start with 4 or more letters, after which can be any number of digits.')
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)

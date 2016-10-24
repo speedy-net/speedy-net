@@ -58,7 +58,6 @@ class UserFriendRequestViewTestCase(TestCase):
                       "friends before you proceed.", map(str, r.context['messages']))
 
 
-
 class AcceptFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

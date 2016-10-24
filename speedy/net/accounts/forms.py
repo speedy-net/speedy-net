@@ -54,18 +54,6 @@ class CleanNewPasswordMixin(object):
         return password
 
 
-class GetSlugAndUsernameMixin(object):
-    def get_slug_and_username(self):
-        # ~~~~ TODO: Same code here and in the model, combine to one code!
-        slug = self.cleaned_data['slug']
-        slug = slug.lower()
-        slug = re.sub('[-\._]{1,}', '-', slug)
-        slug = re.sub('^-', '', slug)
-        slug = re.sub('-$', '', slug)
-        username = re.sub('[-]', '', slug)
-        return (slug, username)
-
-
 class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
         self.language = kwargs.pop('language', 'en')
@@ -89,8 +77,7 @@ class LocalizedFirstLastNameMixin(object):
         return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
 
 
-class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernameMixin, LocalizedFirstLastNameMixin,
-                       forms.ModelForm):
+class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     email = forms.EmailField(label=_('Your email'))
     new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
 
@@ -117,23 +104,8 @@ class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, GetSlugAndUsernam
             )
         return user
 
-    def clean_slug(self):
-        slug, username = self.get_slug_and_username()
-        # ~~~~ TODO: Same code here and in the model, combine to one code!
-        if (len(username) < User.MIN_USERNAME_LENGTH):
-            raise forms.ValidationError('Username is too short.')
-        if (len(username) > User.MAX_USERNAME_LENGTH):
-            raise forms.ValidationError('Username is too long.')
-        pattern = re.compile("^([a-z]{4,}[0-9]{0,})$")
-        if (not (pattern.match(username))):
-            raise forms.ValidationError(
-                'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
-        if ((Entity.objects.filter(username=username).exists()) or (username in settings.UNAVAILABLE_USERNAMES)):
-            raise forms.ValidationError(_('This username is already taken.'))
-        return slug
 
-
-class ProfileForm(GetSlugAndUsernameMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('date_of_birth', 'photo', 'slug', 'gender')
@@ -143,6 +115,7 @@ class ProfileForm(GetSlugAndUsernameMixin, LocalizedFirstLastNameMixin, forms.Mo
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
         self.fields['slug'].label = _('Username (slug)')
+        self.fields['slug'].disabled = True
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())
@@ -153,12 +126,6 @@ class ProfileForm(GetSlugAndUsernameMixin, LocalizedFirstLastNameMixin, forms.Mo
             for pair in zip(field_names[::2], field_names[1::2])
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
-
-    def clean_slug(self):
-        slug, username = self.get_slug_and_username()
-        if (not (username == self.instance.username)):
-            raise forms.ValidationError(_("You can't change your username."))
-        return slug
 
 
 class ProfilePrivacyForm(forms.ModelForm):

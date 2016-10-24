@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
@@ -15,19 +15,35 @@ class UserFriendListView(UserMixin, generic.TemplateView):
     template_name = 'friends/friend_list.html'
 
 
-class FriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
+class LimitMaxFriendsMixin(object):
+    def check_own_friends(self):
+        user_number_of_friends = len(Friend.objects.friends(self.request.user))
+        if user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
+            raise ValidationError(_("You already have {0} friends. You can't have more than {1} friends on "
+                                    "Speedy Net. Please remove friends before you proceed.").format(
+                user_number_of_friends,
+                settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
+
+    def check_other_user_friends(self, user):
+        other_user_number_of_friends = len(Friend.objects.friends(user))
+        if other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
+            raise ValidationError(_("This user already has {0} friends. They can't have more than {1} friends on "
+                                    "Speedy Net. Please ask them to remove friends before you proceed.").format(
+                other_user_number_of_friends,
+                settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
+
+
+class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin, generic.View):
     permission_required = 'friends.request'
 
     def get(self, request, *args, **kwargs):
         return redirect(self.user)
 
     def post(self, request, *args, **kwargs):
-        # Check if the requesting user has less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
-        # ~~~~ TODO: this code appears twice, combine to one place.
-        user_number_of_friends = len(Friend.objects.friends(request.user))
-        if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-            messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy "
-                                      "Net. Please remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
+        try:
+            self.check_own_friends()
+        except ValidationError as e:
+            messages.error(self.request, e.message)
             return redirect(self.user)
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
@@ -40,37 +56,37 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
     def get_redirect_url(self):
         return reverse('friends:list', kwargs={'slug': self.request.user.slug})
 
+    def get_friend_request(self):
+        if not hasattr(self, '_friend_request'):
+            self._friend_request = get_object_or_404(
+                self.user.friendship_requests_received,
+                id=self.kwargs.get('friendship_request_id'),
+            )
+        return self._friend_request
+
     def get(self, request, *args, **kwargs):
         return redirect(self.get_redirect_url())
 
     def post(self, request, *args, **kwargs):
-        frequest = get_object_or_404(
-            self.user.friendship_requests_received,
-            id=kwargs.get('friendship_request_id'),
-        )
-
-        if (self.action == "accept"):
-            # Check if both users have less than MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends?
-            # ~~~~ TODO: this code appears twice, combine to one place.
-            user_number_of_friends = len(Friend.objects.friends(request.user))
-            if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-                messages.error(request, _("You already have {0} friends. You can't have more than {0} friends on Speedy "
-                                          "Net. Please remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
-                return redirect(self.get_redirect_url())
-            other_user_number_of_friends = len(Friend.objects.friends(frequest.from_user))
-            if (other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-                messages.error(request, _("This user already has {0} friends. They can't have more than {0} friends on "
-                                          "Speedy Net. Please ask them to remove friends before you proceed.").format(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
-                return redirect(self.get_redirect_url())
-
+        frequest = self.get_friend_request()
         getattr(frequest, self.action)()
         messages.success(request, self.message)
         return redirect(self.get_redirect_url())
 
 
-class AcceptFriendRequestView(AcceptRejectFriendRequestViewBase):
+class AcceptFriendRequestView(LimitMaxFriendsMixin, AcceptRejectFriendRequestViewBase):
     action = 'accept'
     message = _('Friend request accepted.')
+
+    def post(self, request, *args, **kwargs):
+        frequest = self.get_friend_request()
+        try:
+            self.check_own_friends()
+            self.check_other_user_friends(frequest.from_user)
+        except ValidationError as e:
+            messages.error(self.request, e.message)
+            return redirect(self.get_redirect_url())
+        return super().post(request, *args, **kwargs)
 
 
 class RejectFriendRequestView(AcceptRejectFriendRequestViewBase):
