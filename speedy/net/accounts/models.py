@@ -15,7 +15,7 @@ from speedy.core.models import TimeStampedModel, UDIDField
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
-from .validators import slug_validators, MAX_USERNAME_LENGTH, username_validators
+from .validators import get_username_validators, get_slug_validators
 
 ACCESS_ME = 1
 ACCESS_FRIENDS = 2
@@ -54,11 +54,14 @@ def normalize_username(slug):
 
 class Entity(TimeStampedModel):
     id = UDIDField()
-    username = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=username_validators, unique=True,
+    username = models.CharField(max_length=255, unique=True,
                                 error_messages={'unique': _('This username is already taken.')})
-    slug = models.CharField(max_length=MAX_USERNAME_LENGTH, validators=slug_validators, unique=True,
+    slug = models.CharField(max_length=255, unique=True,
                             error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
+
+    validators = {'username': get_username_validators(6, 120),
+                  'slug': get_slug_validators(6, 120)}
 
     class Meta:
         verbose_name = _('entity')
@@ -76,10 +79,38 @@ class Entity(TimeStampedModel):
         if normalize_username(self.slug) != self.username:
             raise ValidationError(_('Slug does not parse to username.'))
 
+    def clean_fields(self, exclude=None):
+        """
+        Allows to have different slug and username validators for Entity and User.
+        """
+        try:
+            super(Entity, self).clean_fields(exclude=exclude)
+        except ValidationError as e:
+            errors = e.error_dict
+        else:
+            errors = {}
+
+        for field_name, validators in self.validators.items():
+            f = self._meta.get_field(field_name)
+            if field_name in exclude:
+                continue
+            raw_value = getattr(self, f.attname)
+            if f.blank and raw_value in f.empty_values:
+                continue
+            for v in validators:
+                try:
+                    v(raw_value)
+                except ValidationError as e:
+                    errors[f.name] = [e.error_list[0].messages[0]]
+        if errors:
+            raise ValidationError(errors)
+
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
+
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
+
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
@@ -98,6 +129,8 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
+    validators = {'username': get_username_validators(6, 20),
+                  'slug': get_slug_validators(6, 20)}
 
     class Meta:
         verbose_name = _('user')

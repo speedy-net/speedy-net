@@ -1,6 +1,7 @@
-from speedy.core.test import TestCase
+from django.core.exceptions import ValidationError
 
-from .models import normalize_slug, normalize_username, Entity
+from speedy.core.test import TestCase
+from .models import normalize_slug, normalize_username, Entity, User
 from .test_factories import UserFactory, UserEmailAddressFactory
 
 
@@ -37,13 +38,46 @@ class NormalizeUsernameTestCase(TestCase):
 
 
 class EntityTestCase(TestCase):
+    # def setUp(self):
+    #     User()  # check that User.__init__ does not mutate Entity
+
     def test_automatic_creation_of_id(self):
         entity = Entity(slug='zzzzzz')
         entity.save()
         self.assertEqual(20, len(entity.id))
 
+    def test_slug_and_username_min_length_fail(self):
+        entity = Entity(slug='a' * 5, username='z' * 5)
+        self.assertRaisesRegex(ValidationError,
+                               "'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]",
+                               entity.full_clean)
+        self.assertRaisesRegex(ValidationError,
+                               "'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]",
+                               entity.full_clean)
+
+    def test_slug_and_username_min_length_ok(self):
+        entity = Entity(slug='a' * 6, username='z' * 6)
+        self.assertIsNone(entity.full_clean())
+
+    def test_slug_and_username_max_length_fail(self):
+        entity = Entity(slug='a' * 121, username='z' * 121)
+        self.assertRaisesRegex(ValidationError,
+                               "'slug': \['Ensure this value has at most 120 characters \(it has 121\).'\]",
+                               entity.full_clean)
+        self.assertRaisesRegex(ValidationError,
+                               "'username': \['Ensure this value has at most 120 characters \(it has 121\).'\]",
+                               entity.full_clean)
+
+    def test_slug_and_username_max_length_ok(self):
+        entity = Entity(slug='a' * 120, username='z' * 120)
+        self.assertIsNone(entity.full_clean())
+
 
 class UserTestCase(TestCase):
+
+    # def setUp(self):
+    #     Entity()  # check that Entity.__init__ does not mutate User
+
     def test_has_no_confirmed_email(self):
         user = UserFactory()
         UserEmailAddressFactory(user=user, is_confirmed=False)
@@ -55,3 +89,29 @@ class UserTestCase(TestCase):
         UserEmailAddressFactory(user=user, is_confirmed=False)
         UserEmailAddressFactory(user=user, is_confirmed=True)
         self.assertTrue(user.has_confirmed_email())
+
+    def test_slug_and_username_min_length_fail(self):
+        user = UserFactory(slug='a' * 5, username='z' * 5)
+        self.assertRaisesRegex(ValidationError,
+                               "'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]",
+                               user.full_clean)
+        self.assertRaisesRegex(ValidationError,
+                               "'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]",
+                               user.full_clean)
+
+    def test_slug_and_username_min_length_ok(self):
+        user = UserFactory(slug='a' * 6, username='z' * 6)
+        self.assertIsNone(user.full_clean())
+
+    def test_slug_and_username_max_length_fail(self):
+        user = UserFactory(slug='a' * 21, username='z' * 21)
+        self.assertRaisesRegex(ValidationError,
+                               "'slug': \['Ensure this value has at most 20 characters \(it has 21\).'\]",
+                               user.full_clean)
+        self.assertRaisesRegex(ValidationError,
+                               "'username': \['Ensure this value has at most 20 characters \(it has 21\).'\]",
+                               user.full_clean)
+
+    def test_slug_and_username_max_length_ok(self):
+        user = UserFactory(slug='a' * 20, username='z' * 20)
+        self.assertIsNone(user.full_clean())
