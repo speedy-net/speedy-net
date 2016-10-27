@@ -60,8 +60,8 @@ class Entity(TimeStampedModel):
                             error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
-    validators = {'username': get_username_validators(6, 120),
-                  'slug': get_slug_validators(6, 120)}
+    validators = {'username': get_username_validators(6, 120, True),
+                  'slug': get_slug_validators(6, 120, True)}
 
     class Meta:
         verbose_name = _('entity')
@@ -129,8 +129,8 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
-    validators = {'username': get_username_validators(6, 20),
-                  'slug': get_slug_validators(6, 20)}
+    validators = {'username': get_username_validators(6, 20, False),
+                  'slug': get_slug_validators(6, 20, False)}
 
     class Meta:
         verbose_name = _('user')

@@ -13,18 +13,28 @@ def reserved_username_validator(value):
         raise ValidationError(_('This username is already taken.'))
 
 
-def get_slug_validators(min_length, max_length):
+def generate_regex_validator(allow_dashes=False, allow_letters_after_digits=False):
+    letters = r'a-z'
+    digits = r'0-9'
+    symbols = r'\-' if allow_dashes else r''
+    regex = r'[' + letters + symbols + ']{4,}[' + digits + symbols + ']*'
+    if allow_letters_after_digits:
+        regex += r'[' + letters + digits + symbols + ']*'
+    return validators.RegexValidator(regex=r'^(' + regex + ')$', message=invalid_regex_message)
+
+
+def get_slug_validators(min_length, max_length, allow_letters_after_digits):
     return [
-        validators.RegexValidator(regex=r'^([a-z]{4,}[0-9]{0,})$', message=invalid_regex_message),
+        generate_regex_validator(True, allow_letters_after_digits),
         reserved_username_validator,
         validators.MinLengthValidator(min_length),
         validators.MaxLengthValidator(max_length),
     ]
 
 
-def get_username_validators(min_length, max_length):
+def get_username_validators(min_length, max_length, allow_letters_after_digits):
     return [
-        validators.RegexValidator(regex=r'^([a-z\-\._]{4,}[0-9\-\._]{0,})$', message=invalid_regex_message),
+        generate_regex_validator(False, allow_letters_after_digits),
         reserved_username_validator,
         validators.MinLengthValidator(min_length),
         validators.MaxLengthValidator(max_length),
