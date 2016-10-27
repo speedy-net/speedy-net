@@ -75,7 +75,7 @@ class RegistrationFormTestCase(TestCase):
         form = RegistrationForm(data)
         form.full_clean()
         user = form.save()
-        self.assertEqual(user.slug, 'this----is_a.slug')
+        self.assertEqual(user.slug, 'this-is-a-slug')
         self.assertEqual(user.username, 'thisisaslug')
 
 

@@ -1,12 +1,10 @@
 from django.conf import settings
 from django.core import validators
 from django.core.exceptions import ValidationError
-from django.utils.deconstruct import deconstructible
 from django.utils.translation import ugettext_lazy as _
 
 MIN_USERNAME_LENGTH = 6
 MAX_USERNAME_LENGTH = 120
-
 
 
 def reserved_username_validator(value):
