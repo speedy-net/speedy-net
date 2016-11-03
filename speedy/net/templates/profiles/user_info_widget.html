@@ -34,9 +34,21 @@
 
 
             {% if can_view_profile and entity.date_of_birth %}
+                {% has_perm 'accounts.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
+                {% has_perm 'accounts.view_profile_dob_year' viewer entity as can_view_dob_year %}
                 <tr>
                     <th>{% trans 'Birthday' %}</th>
-                    <td>{{ entity.date_of_birth }}</td>
+                    <td>
+                        {% if can_view_dob_day_month and can_view_dob_year %}
+                            {{ entity.date_of_birth }}
+                        {% elif can_view_dob_day_month %}
+                            {{ entity.date_of_birth|date:'N j' }}
+                        {% elif can_view_dob_year %}
+                            {{ entity.date_of_birth|date:'Y' }}
+                        {% else %}
+                            <span class="text-muted">{% trans '(hidden)' %}</span>
+                        {% endif %}
+                    </td>
                 </tr>
             {% endif %}
 

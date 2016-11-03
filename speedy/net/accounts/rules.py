@@ -24,6 +24,16 @@ def has_access_perm(user, other):
 
 
 @predicate
+def has_access_perm_for_dob_day_month(user, other):
+    return _has_access_perm_for_obj(user, other, other.profile.access_dob_day_month)
+
+
+@predicate
+def has_access_perm_for_dob_year(user, other):
+    return _has_access_perm_for_obj(user, other, other.profile.access_dob_year)
+
+
+@predicate
 def is_email_address_owner(user, email_address):
     return user.id == email_address.user_id
 
@@ -45,6 +55,8 @@ def has_access_perm_for_email_address(user, email_address):
 
 add_perm('accounts.view_profile', has_access_perm & ~is_blocked)
 add_perm('accounts.view_profile_info', has_access_perm)
+add_perm('accounts.view_profile_dob_day_month', has_access_perm_for_dob_day_month)
+add_perm('accounts.view_profile_dob_year', has_access_perm_for_dob_year)
 add_perm('accounts.edit_profile', is_self)
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
