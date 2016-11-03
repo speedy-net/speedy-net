@@ -130,7 +130,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     objects = UserManager()
     validators = {'username': get_username_validators(6, 20, False),
-                  'slug': get_slug_validators(6, 20, False)}
+                  'slug': get_slug_validators(6, 120, False)}
 
     class Meta:
         verbose_name = _('user')
@@ -244,7 +244,6 @@ class SiteProfileBase(TimeStampedModel):
     )
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')
-    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
 
     class Meta:
         abstract = True
@@ -252,10 +251,6 @@ class SiteProfileBase(TimeStampedModel):
     def __str__(self):
         site = Site.objects.get_current()
         return '{} @ {}'.format(self.user, site.name)
-
-    def activate(self):
-        self.is_active = True
-        self.save(update_fields={'is_active'})
 
 
 class SiteProfile(SiteProfileBase):
@@ -269,3 +264,11 @@ class SiteProfile(SiteProfileBase):
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
                                                     choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
                                                     default=SiteProfileBase.NOTIFICATIONS_ON)
+    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
+
+    def activate(self, language_code):
+        self.is_active = True
+        self.save(update_fields={'is_active'})
+
+    def is_active_for_language(self, language_code):
+        return self.is_active

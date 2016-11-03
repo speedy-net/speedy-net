@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 
 
 class InactiveUserMiddleware(MiddlewareMixin):
@@ -20,7 +20,8 @@ class SiteProfileMiddleware(MiddlewareMixin):
         if not request.user.is_authenticated() or not request.user.is_active:
             return
         profile = request.user.profile
-        if not profile.is_active:
-            profile.activate()
+        language_code = get_language()
+        if not profile.is_active_for_language(language_code):
+            profile.activate(language_code)
             site = Site.objects.get_current()
             messages.success(request, _('Welcome! This is the first time you visit {}!'.format(site.name)))

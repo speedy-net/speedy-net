@@ -91,7 +91,7 @@ class UserTestCase(TestCase):
         self.assertTrue(user.has_confirmed_email())
 
     def test_slug_and_username_min_length_fail(self):
-        user = UserFactory(slug='a' * 5, username='z' * 5)
+        user = UserFactory(slug='a' * 5)
         self.assertRaisesRegex(ValidationError,
                                "'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]",
                                user.full_clean)
@@ -100,18 +100,18 @@ class UserTestCase(TestCase):
                                user.full_clean)
 
     def test_slug_and_username_min_length_ok(self):
-        user = UserFactory(slug='a' * 6, username='z' * 6)
+        user = UserFactory(slug='a' * 6)
         self.assertIsNone(user.full_clean())
 
     def test_slug_and_username_max_length_fail(self):
-        user = UserFactory(slug='a' * 21, username='z' * 21)
+        user = UserFactory(slug='a' * 121)
         self.assertRaisesRegex(ValidationError,
-                               "'slug': \['Ensure this value has at most 20 characters \(it has 21\).'\]",
+                               "'slug': \['Ensure this value has at most 120 characters \(it has 121\).'\]",
                                user.full_clean)
         self.assertRaisesRegex(ValidationError,
-                               "'username': \['Ensure this value has at most 20 characters \(it has 21\).'\]",
+                               "'username': \['Ensure this value has at most 20 characters \(it has 121\).'\]",
                                user.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
-        user = UserFactory(slug='a' * 20, username='z' * 20)
+        user = UserFactory(slug='a' * 20)
         self.assertIsNone(user.full_clean())

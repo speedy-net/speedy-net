@@ -213,10 +213,8 @@ class EditProfilePrivacyViewTestCase(TestCase):
     @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
         self.assertEqual(self.user.profile.access_account, 4)
-        self.assertEqual(self.user.profile.public_email, None)
         data = {
             'access_account': '1',
-            'public_email': self.email.id,
         }
         r = self.client.post(self.page_url, data)
         self.assertRedirects(r, self.page_url)
