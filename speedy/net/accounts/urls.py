@@ -33,5 +33,5 @@ urlpatterns = [
     url(r'^edit-profile/emails/(?P<pk>\d+)/confirm/$', views.ResendConfirmationEmailView.as_view(), name='confirm_email'),
     url(r'^edit-profile/emails/(?P<pk>\d+)/delete/$', views.DeleteUserEmailAddressView.as_view(), name='delete_email'),
     url(r'^edit-profile/emails/(?P<pk>\d+)/set-primary/$', views.SetPrimaryUserEmailAddressView.as_view(), name='set_primary_email'),
-
+    url(r'^edit-profile/emails/(?P<pk>\d+)/privacy/$', views.ChangeUserEmailAddressPrivacyView.as_view(), name='change_email_privacy'),
 ]

@@ -19,7 +19,8 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm, \
+    UserEmailAddressPrivacyForm
 from .models import User, UserEmailAddress
 
 
@@ -113,6 +114,16 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
             'user': self.request.user,
         })
         return kwargs
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        email_addresses = list(self.request.user.email_addresses.all())
+        for address in email_addresses:
+            address.privacy_form = UserEmailAddressPrivacyForm(instance=address)
+        cd.update({
+            'email_addresses': email_addresses,
+        })
+        return cd
 
     def form_valid(self, form):
         form.save()
@@ -249,4 +260,14 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
         email_address = self.get_object()
         email_address.make_primary()
         messages.success(self.request, 'You have changed your primary email address.')
+        return HttpResponseRedirect(self.success_url)
+
+
+class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateView):
+    model = UserEmailAddress
+    form_class = UserEmailAddressPrivacyForm
+    permission_required = 'accounts.change_useremailaddress'
+    success_url = reverse_lazy('accounts:edit_profile_emails')
+
+    def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)

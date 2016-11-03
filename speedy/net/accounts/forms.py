@@ -1,7 +1,8 @@
 import re
 
+from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Div, HTML, Row, Hidden
+from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
 from django.conf import settings
 from django.contrib.auth import forms as auth_forms
@@ -131,12 +132,10 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
         model = SiteProfile
-        fields = ('access_account', 'public_email')
+        fields = ('access_account', 'access_dob_day_month', 'access_dob_year')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.fields['public_email'].queryset = UserEmailAddress.objects.filter(is_confirmed=True,
-                                                                               user=self.instance.user)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Save Changes')))
 
@@ -280,4 +279,21 @@ class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):
     def helper(self):
         helper = FormHelper()
         helper.add_input(Submit('submit', _('Add')))
+        return helper
+
+
+class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
+    class Meta:
+        model = UserEmailAddress
+        fields = ('access',)
+
+    @property
+    def helper(self):
+        helper = FormHelper()
+        helper.form_class = 'form-inline'
+        helper.form_action = reverse('accounts:change_email_privacy', kwargs={'pk': self.instance.id})
+        helper.field_template = 'bootstrap3/layout/inline_field.html'
+        helper.layout = Layout(
+            InlineField('access', css_class='input-sm'),
+        )
         return helper

@@ -78,6 +78,13 @@ evil.block('@@RemoveFromFriendsForm', {
 });
 
 
+evil.block('@@AutoForm', {
+    'change on select': function () {
+        this.$('form').submit();
+    }
+});
+
+
 evil.block('@@MessageList', {
     init: function () {
         var this_ = this;

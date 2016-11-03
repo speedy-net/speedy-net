@@ -1,7 +1,17 @@
 {% extends 'accounts/edit_profile/base.html' %}
 
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block tab_content %}
+    <br>
+    <div class="alert alert-info">
+        {% blocktrans with site_name=site.name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
+    </div>
     {% crispy form %}
+    <p>
+        <a href="{% url 'accounts:edit_profile_credentials' %}">
+            {% trans 'Change emails which are visible on your page.' %}
+        </a>
+    </p>
 {% endblock %}

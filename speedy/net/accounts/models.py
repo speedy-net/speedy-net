@@ -188,6 +188,7 @@ class UserEmailAddress(TimeStampedModel):
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
+    access = AccessField(verbose_name=_('who can see this email'), default=ACCESS_ME)
 
     class Meta:
         verbose_name = _('email address')
@@ -263,8 +264,8 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = 'Speedy Net Profiles'
 
     access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
-    public_email = models.ForeignKey(UserEmailAddress, verbose_name=_('public email'), blank=True, null=True,
-                                     on_delete=models.SET_NULL, related_name='+')
+    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ANYONE)
+    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ANYONE)
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
                                                     choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
                                                     default=SiteProfileBase.NOTIFICATIONS_ON)

@@ -64,6 +64,7 @@ class UserDetailView(UserMixin, generic.TemplateView):
     def get_widget_kwargs(self):
         return {
             'entity': self.user,
+            'viewer': self.request.user,
         }
 
     def get_widgets(self):

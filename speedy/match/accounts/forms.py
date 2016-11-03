@@ -6,4 +6,4 @@ from .models import SiteProfile
 class AccountPrivacyForm(NetAccountPrivacyForm):
     class Meta(NetAccountPrivacyForm.Meta):
         model = SiteProfile
-        fields = ('public_email',)
+        fields = ()

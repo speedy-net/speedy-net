@@ -5,9 +5,7 @@ from speedy.net.blocks.rules import is_blocked, is_self
 from .models import ACCESS_ANYONE, ACCESS_ME, ACCESS_FRIENDS, ACCESS_FRIENDS_2
 
 
-@predicate
-def has_access_perm(user, other):
-    access = other.profile.access_account
+def _has_access_perm_for_obj(user, other, access):
     if access == ACCESS_ANYONE:
         return True
     if user.is_authenticated():
@@ -18,6 +16,11 @@ def has_access_perm(user, other):
         if access == ACCESS_FRIENDS_2:
             return (user == other) or Friend.objects.are_friends(user, other)
     return False
+
+
+@predicate
+def has_access_perm(user, other):
+    return _has_access_perm_for_obj(user, other, other.profile.access_account)
 
 
 @predicate
@@ -35,8 +38,16 @@ def email_address_is_primary(user, email_address):
     return email_address.is_primary
 
 
+@predicate
+def has_access_perm_for_email_address(user, email_address):
+    return _has_access_perm_for_obj(user, email_address.user, email_address.access)
+
+
 add_perm('accounts.view_profile', has_access_perm & ~is_blocked)
+add_perm('accounts.view_profile_info', has_access_perm)
 add_perm('accounts.edit_profile', is_self)
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
+add_perm('accounts.change_useremailaddress', is_email_address_owner)
+add_perm('accounts.view_useremailaddress', email_address_is_confirmed & has_access_perm_for_email_address)
