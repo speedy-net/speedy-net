@@ -97,8 +97,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertFalse(email.is_confirmed)
         self.assertEqual(email.confirmation_sent, 1)
         self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
-        self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
-                      mail.outbox[0].body)
+        self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token, mail.outbox[0].body)
 
 
 class LoginViewTestCase(TestCase):
