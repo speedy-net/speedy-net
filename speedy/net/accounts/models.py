@@ -59,8 +59,8 @@ class Entity(TimeStampedModel):
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {
-        'username': get_username_validators(6, 120, True),
-        'slug': get_slug_validators(6, 120, True),
+        'username': get_username_validators(min_length=6, max_length=120, allow_letters_after_digits=True),
+        'slug': get_slug_validators(min_length=6, max_length=200, allow_letters_after_digits=True),
     }
 
     class Meta:
@@ -84,7 +84,7 @@ class Entity(TimeStampedModel):
         Allows to have different slug and username validators for Entity and User.
         """
         try:
-            super(Entity, self).clean_fields(exclude=exclude)
+            super().clean_fields(exclude=exclude)
         except ValidationError as e:
             errors = e.error_dict
         else:
@@ -129,8 +129,11 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
-    validators = {'username': get_username_validators(6, 20, False),
-                  'slug': get_slug_validators(6, 120, False)}
+
+    validators = {
+        'username': get_username_validators(min_length=6, max_length=20, allow_letters_after_digits=False),
+        'slug': get_slug_validators(min_length=6, max_length=200, allow_letters_after_digits=False),
+    }
 
     class Meta:
         verbose_name = _('user')

@@ -25,7 +25,7 @@ def generate_regex_validator(allow_dashes=False, allow_letters_after_digits=Fals
 
 def get_slug_validators(min_length, max_length, allow_letters_after_digits):
     return [
-        generate_regex_validator(True, allow_letters_after_digits),
+        generate_regex_validator(allow_dashes=True, allow_letters_after_digits=allow_letters_after_digits),
         reserved_username_validator,
         validators.MinLengthValidator(min_length),
         validators.MaxLengthValidator(max_length),
@@ -34,7 +34,7 @@ def get_slug_validators(min_length, max_length, allow_letters_after_digits):
 
 def get_username_validators(min_length, max_length, allow_letters_after_digits):
     return [
-        generate_regex_validator(False, allow_letters_after_digits),
+        generate_regex_validator(allow_dashes=False, allow_letters_after_digits=allow_letters_after_digits),
         reserved_username_validator,
         validators.MinLengthValidator(min_length),
         validators.MaxLengthValidator(max_length),
