@@ -50,6 +50,7 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
     def post(self, request, *args, **kwargs):
         try:
             self.check_own_friends()
+            self.check_other_user_friends(self.user)
         except ValidationError as e:
             messages.error(self.request, e.message)
             return redirect(self.user)
