@@ -43,7 +43,11 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
         if request.user.is_authenticated:
-            if friend_request_sent(request.user, self.user) or Friend.objects.are_friends(request.user, self.user):
+            if friend_request_sent(request.user, self.user):
+                messages.warning(request, _('You already requested friendship from this user.'))
+                return redirect(self.user)
+            if Friend.objects.are_friends(request.user, self.user):
+                messages.warning(request, _('You already are friends with this user.'))
                 return redirect(self.user)
         return super().dispatch(request, *args, **kwargs)
 
