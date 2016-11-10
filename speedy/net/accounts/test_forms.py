@@ -59,9 +59,9 @@ class RegistrationFormTestCase(TestCase):
 
     def test_slug_validation_too_long(self):
         data = self.valid_data.copy()
-        data['slug'] = 'a' * 200
+        data['slug'] = 'a' * 201
         form = RegistrationForm(data)
-        self.assertEqual(form.errors['slug'][0], 'Ensure this value has at most 120 characters (it has 200).')
+        self.assertEqual(form.errors['slug'][0], 'Ensure this value has at most 200 characters (it has 201).')
 
     def test_slug_validation_regex(self):
         data = self.valid_data.copy()

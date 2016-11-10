@@ -56,12 +56,12 @@ class EntityTestCase(TestCase):
         self.assertIsNone(entity.full_clean())
 
     def test_slug_and_username_max_length_fail(self):
-        entity = Entity(slug='a' * 121, username='z' * 121)
-        self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 120 characters \(it has 121\).'\]", entity.full_clean)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 120 characters \(it has 121\).'\]", entity.full_clean)
+        entity = Entity(slug='a' * 201, username='z' * 201)
+        self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", entity.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]", entity.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
-        entity = Entity(slug='a' * 120, username='z' * 120)
+        entity = Entity(slug='a' * 200, username='z' * 200)
         self.assertIsNone(entity.full_clean())
 
 
@@ -92,9 +92,9 @@ class UserTestCase(TestCase):
         self.assertIsNone(user.full_clean())
 
     def test_slug_and_username_max_length_fail(self):
-        user = UserFactory(slug='a' * 121)
-        self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 120 characters \(it has 121\).'\]", user.full_clean)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 20 characters \(it has 121\).'\]", user.full_clean)
+        user = UserFactory(slug='a' * 201)
+        self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 20 characters \(it has 201\).'\]", user.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
         user = UserFactory(slug='a' * 20)
