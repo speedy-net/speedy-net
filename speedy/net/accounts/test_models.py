@@ -48,12 +48,12 @@ class EntityTestCase(TestCase):
         self.assertEqual(20, len(entity.id))
 
     def test_slug_and_username_min_length_fail(self):
-        entity = Entity(slug='a' * 5, username='z' * 5)
+        entity = Entity(slug='a' * 5, username='a' * 5)
         self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]", entity.full_clean)
         self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]", entity.full_clean)
 
     def test_slug_and_username_min_length_ok(self):
-        entity = Entity(slug='a' * 6, username='z' * 6)
+        entity = Entity(slug='a' * 6, username='a' * 6)
         self.assertIsNone(entity.full_clean())
 
     def test_slug_and_username_max_length_fail(self):
@@ -62,7 +62,7 @@ class EntityTestCase(TestCase):
         self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]", entity.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
-        entity = Entity(slug='a' * 200, username='z' * 120)
+        entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
         self.assertIsNone(entity.full_clean())
 
 
