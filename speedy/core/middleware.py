@@ -43,7 +43,7 @@ class SharedSessionMiddleware(SessionMiddleware):
                     max_age=cookie.get('max-age', None),
                     expires=cookie.get('expires', None),
                     path=cookie.get('path', '/'),
-                    domain=cookie.get('domain', None),
+                    domain=site.domain,
                     secure=cookie.get('secure', False),
                     httponly=cookie.get('httponly', False)
                 )
