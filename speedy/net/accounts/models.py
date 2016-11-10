@@ -100,6 +100,8 @@ class Entity(TimeStampedModel):
             for v in validators:
                 try:
                     v(raw_value)
+                    if field_name == 'slug':
+                        self.validate_username_for_slug()
                 except ValidationError as e:
                     errors[f.name] = [e.error_list[0].messages[0]]
         if errors:
