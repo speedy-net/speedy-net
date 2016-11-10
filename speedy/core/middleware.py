@@ -30,20 +30,23 @@ class LocaleDomainMiddleware(object):
 class SharedSessionMiddleware(SessionMiddleware):
     """
     A session that is shared across multiple domains.
+    Temporary disabled.
     """
 
     def process_response(self, request, response):
         response = super().process_response(request, response)
         if settings.SESSION_COOKIE_NAME in response.cookies:
             cookie = response.cookies[settings.SESSION_COOKIE_NAME].copy()
-            for site in Site.objects.all():
+            sites = [{'domain': '.' + site.domain, 'id': site.id} for site in Site.objects.all()]
+            sites.append({'domain': None, 'id': Site.objects.get_current().id})
+            for site in sites:
                 response.set_cookie(
-                    key=settings.SESSION_COOKIE_NAME_TEMPLATE.format(site_id=site.id),
+                    key=settings.SESSION_COOKIE_NAME_TEMPLATE.format(site_id=site['id']),
                     value=getattr(cookie, 'value', ''),
                     max_age=cookie.get('max-age', None),
                     expires=cookie.get('expires', None),
                     path=cookie.get('path', '/'),
-                    domain=site.domain,
+                    domain=site['domain'],
                     secure=cookie.get('secure', False),
                     httponly=cookie.get('httponly', False)
                 )
