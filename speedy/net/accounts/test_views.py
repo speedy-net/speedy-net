@@ -49,6 +49,9 @@ class RegistrationViewTestCase(TestCase):
             'new_password1': 'password',
             # 'password2': 'password',
         }
+        site = Site.objects.get_current()
+        site.domain = 'localhost'
+        site.save()
 
     def test_visitor_can_see_registration_page(self):
         r = self.client.get('/register/')
@@ -88,7 +91,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertTrue(r.context['user'].is_authenticated())
         self.assertTrue(r.context['user'].slug, 'user1234')
 
-    def test_user_gets_email_after_registration(self):
+    def test_user_gets_email_after_registration_in_english(self):
         r = self.client.post('/register/', data=self.data)
         self.assertEqual(len(mail.outbox), 1)
         site = Site.objects.get_current()
@@ -98,6 +101,15 @@ class RegistrationViewTestCase(TestCase):
         self.assertEqual(email.confirmation_sent, 1)
         self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token, mail.outbox[0].body)
+        self.assertIn('http://en.localhost/', mail.outbox[0].body)
+
+    def test_user_gets_email_after_registration_in_hebrew(self):
+        self.data['first_name_he'] = 'First HE'
+        self.data['last_name_he'] = 'Last HE'
+        r = self.client.post('/register/', data=self.data, HTTP_HOST='he.localhost')
+        # site = Site.objects.get_current()
+        # self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
+        self.assertIn('http://he.localhost/', mail.outbox[0].body)
 
 
 class LoginViewTestCase(TestCase):

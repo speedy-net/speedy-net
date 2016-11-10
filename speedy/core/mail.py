@@ -5,6 +5,7 @@ from django.contrib.sites.models import Site
 from django.core.mail import EmailMultiAlternatives
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import render_to_string
+from django.utils import translation
 
 RenderedMail = namedtuple('RenderedMail', 'subject body_plain body_html')
 
@@ -19,8 +20,14 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
 
     context = context or {}
     site = Site.objects.get_current()
+    params = {
+        'protocol': 'https' if settings.USE_SSL else 'http',
+        'language': translation.get_language(),
+        'domain': site.domain,
+    }
     context.update({
-        'SITE_URL': '{}://{}'.format('https' if settings.USE_SSL else 'http', site.domain),
+        'SITE_URL': '{protocol}://{language}.{domain}'.format(**params),
+        'SITE_MAIN_URL': '{protocol}://www.{domain}'.format(**params),
         'SITE_NAME': site.name,
     })
 

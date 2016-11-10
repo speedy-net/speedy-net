@@ -1,3 +1,4 @@
+from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 
 from speedy.core.test import TestCase
@@ -61,7 +62,7 @@ class EntityTestCase(TestCase):
         self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]", entity.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
-        entity = Entity(slug='a' * 200, username='z' * 200)
+        entity = Entity(slug='a' * 200, username='z' * 120)
         self.assertIsNone(entity.full_clean())
 
 
