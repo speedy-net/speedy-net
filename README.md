@@ -16,11 +16,11 @@ Next:
 
     pip install -r requirements.txt
     cp env.ini.example env.ini
-    
+
 You may want to edit [**env.ini**](#envini) to specify database settings, secret keys for third party services or other stuff.
 
 Then you can run migrations:
-  
+
     ./manage.py migrate
     ./manage.py loaddata ../../default_sites.json
 
@@ -34,17 +34,28 @@ To run Speedy Match server:
     cd speedy/match
     ./manage.py runserver
 
+To run Speedy Net tests:
+
+     cd speedy/net
+    ./manage.py test
+
+To run Speedy Match tests:
+
+     cd speedy/match
+    ./manage.py test
+
+
 ## How to setup a server (Ubuntu 16.04)
 
 Install all dependencies using **apt-get**:
- 
+
     sudo apt-get install python3 python3-pip python3-venv  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-plugin-python3 postfix
-    
-    
+
+
 Clone the project, create a venv, activate it and install required modules using **pip**:
-    
+
     git clone https://github.com/urievenchen/speedy-net.git
     cd speedy-net/
     python3 -m venv env
@@ -59,7 +70,7 @@ Setup a database:
     createuser speedy_net
     createdb -O speedy_net speedy_net
     exit
-    
+
 In **/etc/postgresql/9.5/main/pg_hba.conf** change the line:
 
     host    all             all             127.0.0.1/32            md5
@@ -75,7 +86,7 @@ Restart **postgresql**:
 Copy **env.ini.example** to **env.ini**:
 
     cp env.ini.example env.ini
-    
+
 Change **env.ini** appropriately. Refer to [**env.ini** section](#envini) of this document. `DATABASE_URL` should be like `postgres://speedy_net@127.0.0.1:5432/speedy_net`
 
 Run migrations and collect static:
@@ -88,11 +99,11 @@ Run migrations and collect static:
     ./manage.py collectstatic
 
 Copy sample **nginx** and **uwsgi** configs:
- 
+
     cd ~/speedy-net/
     sudo cp contrib/uwsgi/*.ini /etc/uwsgi/apps-enabled/
     sudo cp contrib/nginx/*.conf /etc/nginx/sites-enabled/
-    
+
 Review and edit these config files, restart servers:
 
     sudo service uwsgi restart
