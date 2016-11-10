@@ -48,6 +48,12 @@ class UserFriendRequestViewTestCase(TestCase):
         self.assertEqual(frequest.from_user, self.user)
         self.assertEqual(frequest.to_user, self.other_user)
 
+    def test_user_cannot_send_friend_request_twice(self):
+        r1 = self.client.post(self.page_url)
+        r2 = self.client.post(self.page_url)
+        self.assertRedirects(r2, self.other_user.get_absolute_url())
+        self.assertEqual(self.other_user.friendship_requests_received.count(), 1)
+
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_cannot_send_friend_request_if_maximum(self):
         Friend.objects.add_friend(self.user, UserFactory()).accept()

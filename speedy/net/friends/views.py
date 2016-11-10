@@ -9,6 +9,7 @@ from friendship.models import Friend
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
+from .rules import friend_request_sent
 
 
 class UserFriendListView(UserMixin, generic.TemplateView):
@@ -38,6 +39,13 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
 
     def get(self, request, *args, **kwargs):
         return redirect(self.user)
+
+    def dispatch(self, request, *args, **kwargs):
+        self.user = self.get_user()
+        if request.user.is_authenticated:
+            if friend_request_sent(request.user, self.user) or Friend.objects.are_friends(request.user, self.user):
+                return redirect(self.user)
+        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         try:
