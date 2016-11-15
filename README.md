@@ -13,7 +13,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
     source .venv/bin/activate   # *.nix
 
 Next:
-
+    python -m pip install -U pip
     pip install -r requirements.txt
     cp env.ini.example env.ini
 
@@ -21,8 +21,11 @@ You may want to edit [**env.ini**](#envini) to specify database settings, secret
 
 Then you can run migrations:
 
+    ./manage.py loaddata default_sites.json
+    cd speedy/net
     ./manage.py migrate
-    ./manage.py loaddata ../../default_sites.json
+    cd speedy/match
+    ./manage.py migrate
 
 To run Speedy Net server:
 
