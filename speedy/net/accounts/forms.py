@@ -131,7 +131,7 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
         model = SiteProfile
-        fields = ('access_account', 'access_dob_day_month', 'access_dob_year')
+        fields = ('access_dob_day_month', 'access_dob_year')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

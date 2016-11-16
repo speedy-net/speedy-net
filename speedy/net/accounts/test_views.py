@@ -225,14 +225,12 @@ class EditProfilePrivacyViewTestCase(TestCase):
     def test_user_can_save_his_settings(self):
         self.assertEqual(self.user.profile.access_account, 4)
         data = {
-            'access_account': '1',
             'access_dob_day_month': '2',
             'access_dob_year': '4',
         }
         r = self.client.post(self.page_url, data)
         self.assertRedirects(r, self.page_url)
         user = User.objects.get(id=self.user.id)
-        self.assertEqual(user.profile.access_account, 1)
         self.assertEqual(user.profile.access_dob_day_month, 2)
         self.assertEqual(user.profile.access_dob_year, 4)
 

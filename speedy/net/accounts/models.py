@@ -263,7 +263,7 @@ class SiteProfile(SiteProfileBase):
         verbose_name = 'Speedy Net Profile'
         verbose_name_plural = 'Speedy Net Profiles'
 
-    access_account = AccessField(verbose_name=_('who can view my account'), default=ACCESS_ANYONE)
+    access_account = ACCESS_ANYONE
     access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ANYONE)
     access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ANYONE)
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
