@@ -4,11 +4,12 @@
 {% load i18n %}
 
 {% block tab_content %}
-    <br>
-    <div class="alert alert-info">
-        {% blocktrans with site_name=site.name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
-    </div>
-    {% crispy form %}
+    {% if form.fields %}
+        <div class="alert alert-warning">
+            {% blocktrans with site_name=site.name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
+        </div>
+        {% crispy form %}
+    {% endif %}
     <p>
         <a href="{% url 'accounts:edit_profile_credentials' %}">
             {% trans 'Change emails which are visible on your page.' %}

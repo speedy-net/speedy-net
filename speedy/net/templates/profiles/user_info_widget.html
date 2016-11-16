@@ -41,6 +41,9 @@
                     <td>
                         {% if can_view_dob_day_month and can_view_dob_year %}
                             {{ entity.date_of_birth }}
+                            <span class="text-muted">
+                                ({{ entity.date_of_birth|timesince }})
+                            </span>
                         {% elif can_view_dob_day_month %}
                             {{ entity.date_of_birth|date:'N j' }}
                         {% elif can_view_dob_year %}

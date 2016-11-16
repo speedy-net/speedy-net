@@ -1,5 +1,6 @@
 import re
 import uuid
+from datetime import datetime, date
 
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -8,6 +9,7 @@ from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
@@ -264,8 +266,8 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = 'Speedy Net Profiles'
 
     access_account = ACCESS_ANYONE
-    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ANYONE)
-    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ANYONE)
+    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ME)
+    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ME)
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
                                                     choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
                                                     default=SiteProfileBase.NOTIFICATIONS_ON)

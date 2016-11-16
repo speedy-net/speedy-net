@@ -1,13 +1,13 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.net.accounts.models import SiteProfileBase, UserEmailAddress, ACCESS_FRIENDS, ACCESS_ANYONE, AccessField
+from speedy.net.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
 
 
 class SiteProfile(SiteProfileBase):
     access_account = ACCESS_FRIENDS
-    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ANYONE)
-    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ANYONE)
+    access_dob_day_month = ACCESS_ANYONE
+    access_dob_year = ACCESS_ANYONE
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
