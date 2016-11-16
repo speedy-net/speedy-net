@@ -1,12 +1,24 @@
 from django.conf import settings
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.sites.models import Site
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import translation
 
 
+def redirect_to_www(request):
+    site = Site.objects.get_current()
+    url = '//www.{domain}{path}'.format(
+        domain=site.domain,
+        path=request.path,
+    )
+    return HttpResponseRedirect(url)
+
+
 def language_selector(request):
-    return render(request, 'language.html')
+    translation.activate('en')
+    request.LANGUAGE_CODE = translation.get_language()
+    return render(request, 'welcome.html')
 
 
 class LocaleDomainMiddleware(object):
@@ -22,8 +34,9 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request)
 
-        translation.activate('en')
-        request.LANGUAGE_CODE = translation.get_language()
+        if not domain.startswith('www.'):
+            return redirect_to_www(request)
+
         return language_selector(request)
 
 
