@@ -115,7 +115,6 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
         super().__init__(**kwargs)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
-        self.fields['slug'].label = _('Slug')
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())

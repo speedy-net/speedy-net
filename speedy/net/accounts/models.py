@@ -57,7 +57,7 @@ def normalize_username(slug):
 class Entity(TimeStampedModel):
     id = UDIDField()
     username = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
-    slug = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
+    slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {
