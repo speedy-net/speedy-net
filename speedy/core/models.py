@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 UDID_LENGTH = 15
 BIG_UDID_LENGTH = 20
 
-udid_validator = validators.RegexValidator(regex=r'[0-9]', message="id contains illegal characters")
+udid_validator = validators.RegexValidator(regex=r'^[1-9][0-9]{14,19}$', message="id contains illegal characters")
 big_udid_validator = udid_validator
 
 
