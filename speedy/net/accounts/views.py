@@ -10,7 +10,6 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
-from django.utils import translation
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import ugettext_lazy as _, get_language

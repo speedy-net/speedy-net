@@ -57,7 +57,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'speedy.core.middleware.SharedSessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,8 +135,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 30  # ~ 30 years
-
-SESSION_COOKIE_NAME_TEMPLATE = 'sessionid{site_id}'
 
 AUTH_USER_MODEL = 'accounts.User'
 
