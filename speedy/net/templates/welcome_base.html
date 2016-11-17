@@ -3,6 +3,58 @@
 {% load i18n %}
 {% load staticfiles %}
 
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-net/css/welcome.css' %}" />
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+{% block body %}
+<center>
+    <div id="top-gradient"></div>
+    <a href="//{{ site.domain }}" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
+    <br />
+    <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
+        <tr>
+            <td dir="ltr">
+                <a class="wiki-link" href="//en.{{ site.domain }}/" title="English [alpha]" target="_top">English<span> [alpha]</span></a>
+            </td>
+            <td dir="rtl">
+                <a class="wiki-link" href="//he.{{ site.domain }}/" title="עברית [אלפא]" target="_top">עברית <span> [אלפא]</span></a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <img class="main-image" src="{% block splash_src %}{% endblock %}" alt="{{ site.name }}" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Facebook Badge START -->
+    <a class="speedy-bottom-badge-link" href="http://www.facebook.com/speedyevenchen" target="_top" title="Speedy">Speedy</a>
+    <br>
+    <a href="http://www.facebook.com/speedyevenchen" target="_top" title="Speedy">
+        <img class="fb-badge" src="http://badge.facebook.com/badge/110275029046282.1598.135831057.png" style="border: 0px;">
+    </a>
+    <br>
+    <!-- Facebook Badge END -->
+    <br />
+</center>
+
+{% endblock %}
+
+
+{% comment %}
+
+
+
+
+{% load i18n %}
+{% load staticfiles %}
+
 {% block title %}{% trans 'Choose your language' %} / {{ block.super }}{% endblock %}
 
 {% block body %}
@@ -37,3 +89,7 @@
         </div>
     </div>
 {% endblock %}
+
+
+
+{% endcomment %}

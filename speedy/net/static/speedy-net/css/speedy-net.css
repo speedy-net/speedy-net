@@ -22,22 +22,3 @@ body.bidi-rtl .pull-right,
 body.bidi-rtl .navbar-right {
     float: left !important;
 }
-
-.welcome {
-    background: linear-gradient(to bottom, rgba(182,205,250,1) 0%, rgba(255,255,255,0) 70px);
-    text-align: center;
-}
-
-.welcome-logo {
-    margin: 100px 0 50px;
-}
-
-.welcome-language {
-    font-size: 39px;
-    font-weight: 400;
-    margin-bottom: 50px;
-}
-
-.welcome-splash {
-    margin-bottom: 50px;
-}

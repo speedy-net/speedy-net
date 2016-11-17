@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    background: white;
+    color: black;
+}
+
+#top-gradient {
+    height: 80px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABGCAYAAAANSP5dAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABClpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjREMjI5OTVFNzYxNkU1MTFBNDJBQUY0MTk0ODQxRUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjE2QTBFRjA0QTRGNDExRTY4MkFFOUU0Mjc0NURFMzA1IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE2QTBFRjAzQTRGNDExRTY4MkFFOUU0Mjc0NURFMzA1IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wOkNyZWF0ZURhdGU9IjIwMTYtMTEtMTZUMTI6MjM6MTUrMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE2LTExLTE3VDE0OjExOjM0KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE2LTExLTE3VDE0OjExOjM0KzAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkVENkQ5ODJBMjU4MDExRTVBMDFBODg2QkYwMDEyNzlBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkVENkQ5ODJCMjU4MDExRTVBMDFBODg2QkYwMDEyNzlBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+fh2o4QAAAEhJREFUGFdj2nTq1ycmBgYGXhDxB0T8BRH/4MRfwsQfVL1/SCF+w4m/qNzfWNT9wSKLTR1OvfjFsLn+LyoLJ4EcYL6mrGDjGQAx5UaKEKNPlQAAAABJRU5ErkJggg==');
+    margin-bottom: 15px;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
+    color: #146cc0;
+    background-color: transparent;
+    font-family: 'Arial';
+}
+
+a > span {
+    color: black;
+}
+
+a:hover > span {
+    color: #FF0000;
+}
+
+a:visited {
+    text-decoration: underline;
+    color: #0000CC;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #FF0000;
+    background-color: transparent;
+}
+
+a:active {
+    color: #990099;
+    background-color: transparent;
+}
+
+td {
+    padding: 0px 40px;
+}
+
+.wiki-link {
+    font-size: 40px;
+}
+
+img.main-image {
+    max-width: 100%;
+}
+
+.speedy-bottom-badge-link {
+    font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    color: #3B5998;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1080px) {
+    img.fb-badge {
+        width: 30%;
+        height: auto;
+    }
+    img.main-logo {
+        width: 65%;
+        height: auto;
+    }
+    .wiki-link {
+        font-size: 60px;
+    }
+    .speedy-bottom-badge-link {
+        font-size: 40px;
+    }
+}
