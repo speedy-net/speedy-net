@@ -1,0 +1,10 @@
+{% extends base_template %}
+
+{% block content %}From: {% if feedback.sender %}{{ SITE_URL }}{{ feedback.sender.get_absolute_url }}{% else %}{{ feedback.sender_name }} <{{ feedback.sender_email }}>{% endif %}
+Type: {{ feedback.get_type_display }}
+{% if feedback.report_entity %}Report on: {{ SITE_URL }}{{ feedback.report_entity.user.get_absolute_url }}{% endif %}
+{% if feedback.report_file %}Report on: {{ SITE_URL }}{{ feedback.report_file.file.url }}{% endif %}
+
+{{ feedback.text }}
+
+{% endblock %}

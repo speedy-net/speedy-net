@@ -25,6 +25,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = MANAGERS = (
+    ('Admin', 'admin@example.com'),
+)
+
 USE_SSL = False
 
 # Application definition

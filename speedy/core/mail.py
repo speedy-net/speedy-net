@@ -68,3 +68,7 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
     )
     msg.attach_alternative(rendered.body_html, 'text/html')
     return msg.send()
+
+
+def mail_managers(template_name_prefix, context=None, **kwargs):
+    return send_mail([a[1] for a in settings.MANAGERS], template_name_prefix, context, **kwargs)

@@ -1,7 +1,9 @@
 from django.conf import settings
 from django.db import models
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
+from speedy.core.mail import mail_managers
 from speedy.core.models import TimeStampedModel
 
 
@@ -30,7 +32,7 @@ class Feedback(TimeStampedModel):
 
     def __str__(self):
         if self.type == self.TYPE_REPORT_ENTITY:
-            on = ' on {}'.format(self.report_entity)
+            on = ' on {}'.format(self.report_entity.user)
         elif self.type == self.TYPE_REPORT_FILE:
             on = ' on {}'.format(self.report_file)
         else:
@@ -40,3 +42,11 @@ class Feedback(TimeStampedModel):
         else:
             by = self.sender_name
         return '{}{} by {}'.format(self.get_type_display(), on, by)
+
+
+@receiver(models.signals.post_save, sender=Feedback)
+def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
+    if created:
+        mail_managers('feedback/email/admin_feedback',
+                      {'feedback': instance},
+                      headers={'Reply-To': instance.sender_email or instance.sender.email})

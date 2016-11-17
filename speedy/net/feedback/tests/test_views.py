@@ -1,3 +1,6 @@
+from django.contrib.sites.models import Site
+from django.core import mail
+
 from speedy.core.test import TestCase
 
 from speedy.net.accounts.tests.test_factories import UserFactory
@@ -53,6 +56,9 @@ class FeedbackViewBaseMixin(object):
         self.assertRedirects(r, '/feedback/thank-you/')
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
+        self.assertEqual(len(mail.outbox), 1)
+        site = Site.objects.get_current()
+        self.assertEqual(mail.outbox[0].subject, '{}: {}'.format(site.name, str(feedback)))
 
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
