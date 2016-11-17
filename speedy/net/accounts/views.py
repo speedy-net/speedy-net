@@ -1,4 +1,6 @@
 from functools import partial
+from importlib import import_module
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import messages
@@ -7,7 +9,9 @@ from django.contrib.auth import login as auth_login, logout as auth_logout, REDI
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse_lazy, reverse
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
 from django.utils.encoding import force_text
@@ -15,6 +19,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.views import generic
 from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
@@ -22,6 +27,32 @@ from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm, \
     UserEmailAddressPrivacyForm
 from .models import User, UserEmailAddress
+
+
+@csrf_exempt
+def set_session(request):
+    """
+    Cross-domain authentication.
+    """
+    response = HttpResponse('')
+    origin = request.META.get('HTTP_ORIGIN')
+    netloc = urlparse(origin).netloc
+    valid_origin = any(netloc.endswith('.' + site.domain) for site in Site.objects.all())
+    if not valid_origin:
+        return response
+    if request.method == 'POST':
+        session_key = request.POST.get('key')
+        SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
+        if session_key and SessionStore().exists(session_key):
+            # Set session cookie
+            request.session = SessionStore(session_key)
+            request.session.modified = True
+        else:
+            # Delete session cookie
+            request.session.flush()
+    response['Access-Control-Allow-Origin'] = origin
+    response['Access-Control-Allow-Credentials'] = 'true'
+    return response
 
 
 class IndexView(generic.RedirectView):

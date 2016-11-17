@@ -182,6 +182,14 @@
     <script src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
     <script src="{% static 'vendor/evil-blocks/evil-blocks.js' %}"></script>
     <script src="{% static 'speedy-net/js/speedy-net.js' %}"></script>
+    <script>
+        {# Cross-domain auth. #}
+        {% for other_site in sites %}
+            {% if other_site.id != site.id %}
+                speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
+            {% endif %}
+        {% endfor %}
+    </script>
 {% endblock %}
 
 </body>
