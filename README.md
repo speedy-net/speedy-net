@@ -21,11 +21,12 @@ You may want to edit [**env.ini**](#envini) to specify database settings, secret
 
 Then you can run migrations:
 
-    ./manage.py loaddata default_sites.json
     cd speedy/net
     ./manage.py migrate
     cd speedy/match
     ./manage.py migrate
+    cd speedy/net
+    ./manage.py loaddata ../../default_sites_local.json
 
 To run Speedy Net server:
 

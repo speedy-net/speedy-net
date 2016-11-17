@@ -6,11 +6,10 @@ from django.shortcuts import render
 from django.utils import translation
 
 
-def redirect_to_www(request):
-    site = Site.objects.get_current()
+def redirect_to_www(request, site):
     url = '//www.{domain}{path}'.format(
         domain=site.domain,
-        path=request.path,
+        path="/",
     )
     return HttpResponseRedirect(url)
 
@@ -32,12 +31,13 @@ class LocaleDomainMiddleware(object):
             if domain.startswith(code + '.'):
                 translation.activate(code)
                 request.LANGUAGE_CODE = translation.get_language()
-                return self.get_response(request)
+                return self.get_response(request=request)
 
-        if not domain.startswith('www.'):
-            return redirect_to_www(request)
+        site = Site.objects.get_current()
+        if (not(domain + request.path == "www.{domain}{path}".format(domain=site.domain, path="/"))):
+            return redirect_to_www(request=request, site=site)
 
-        return language_selector(request)
+        return language_selector(request=request)
 
 
 class SharedSessionMiddleware(SessionMiddleware):
