@@ -21,5 +21,7 @@ def is_friend(user, other):
 
 add_perm('friends.request',
          is_authenticated & ~is_self & ~friend_request_sent & ~is_friend & ~is_blocked & ~has_blocked)
+add_perm('friends.cancel_request', is_authenticated & friend_request_sent)
 add_perm('friends.view_requests', is_self)
 add_perm('friends.remove', is_authenticated & is_friend)
+

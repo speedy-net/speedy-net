@@ -2,8 +2,11 @@
 {% load rules %}
 
 {% if friend_request_sent %}
-    <button disabled class="btn btn-default">
-        <i class="fa fa-user-plus"></i>
-        {% trans 'Friend Request Sent' %}
-    </button>
+    <form action="{% url 'friends:cancel_request' user.slug %}" method="post"
+          data-block="RemoveFromFriendsForm">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-default" data-role="button"
+                data-default-text="{% trans 'Friend Request Sent' %}"
+                data-hover-text="{% trans 'Cancel Request' %}">{% trans 'Friend Request Sent' %}</button>
+    </form>
 {% endif %}

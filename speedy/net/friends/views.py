@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import redirect, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
-from friendship.models import Friend
+from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
@@ -60,6 +60,20 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
             return redirect(self.user)
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
+        return redirect(self.user)
+
+
+class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
+    permission_required = 'friends.cancel_request'
+
+    def post(self, request, *args, **kwargs):
+        try:
+            frequest = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
+        except FriendshipRequest.DoesNotExist:
+            messages.error(request, _('No friend request.'))
+            return redirect(self.user)
+        frequest.cancel()
+        messages.success(request, _("You've cancelled your friend request."))
         return redirect(self.user)
 
 

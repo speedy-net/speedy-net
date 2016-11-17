@@ -1,6 +1,6 @@
 from speedy.core.test import TestCase
 from django.test import override_settings
-from friendship.models import Friend
+from friendship.models import Friend, FriendshipRequest
 
 from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.tests.test_factories import UserFactory
@@ -62,6 +62,27 @@ class UserFriendRequestViewTestCase(TestCase):
         r = self.client.get(self.other_user.get_absolute_url())
         self.assertIn("You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove "
                       "friends before you proceed.", map(str, r.context['messages']))
+
+
+class CancelFriendRequestViewTestCase(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
+        self.client.login(username=self.user.slug, password='111')
+
+    def test_visitor_cannot_cancel_friend_request(self):
+        self.client.logout()
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_cancel_friend_request(self):
+        Friend.objects.add_friend(self.user, self.other_user)
+        self.assertEqual(FriendshipRequest.objects.count(), 1)
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, self.other_user.get_absolute_url(), fetch_redirect_response=False)
+        r = self.client.get(self.other_user.get_absolute_url())
+        self.assertIn("You've cancelled your friend request.", map(str, r.context['messages']))
 
 
 class AcceptFriendRequestViewTestCase(TestCase):
