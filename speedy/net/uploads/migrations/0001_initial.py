@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_id, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
+                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
                 ('file', models.FileField(upload_to=speedy.net.uploads.models.uuid_dir, verbose_name='file')),
                 ('is_stored', models.BooleanField(default=False, verbose_name='is stored')),
                 ('size', models.PositiveIntegerField(default=0, verbose_name='file_size')),

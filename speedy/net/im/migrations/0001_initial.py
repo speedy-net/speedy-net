@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_id, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
+                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
                 ('is_group', models.BooleanField(default=False, verbose_name='is group chat')),
                 ('ent1', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='+', to='accounts.Entity', verbose_name='participant 1')),
                 ('ent2', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='+', to='accounts.Entity', verbose_name='participant 2')),
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_id, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
+                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
                 ('text', models.TextField(verbose_name='message')),
                 ('chat', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='im.Chat', verbose_name='chat')),
                 ('sender', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='accounts.Entity', verbose_name='sender')),

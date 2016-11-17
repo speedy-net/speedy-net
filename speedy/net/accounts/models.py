@@ -13,7 +13,7 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel, UDIDField, generate_confirmation_token
+from speedy.core.models import TimeStampedModel, BigUDIDField, generate_confirmation_token
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -55,6 +55,7 @@ def normalize_username(slug):
 
 
 class Entity(TimeStampedModel):
+<<<<<<< d02759b17497cd938f0870ae8a1d694a202fded1
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
     MIN_SLUG_LENGTH = 6
@@ -62,6 +63,11 @@ class Entity(TimeStampedModel):
     id = UDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
+=======
+    id = BigUDIDField()
+    username = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
+    slug = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
+>>>>>>> 119593453 Entity ID length is 15 digits, other models can be 20.
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {

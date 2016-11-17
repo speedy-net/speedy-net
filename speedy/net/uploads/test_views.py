@@ -32,7 +32,7 @@ class UploadViewTestCase(TestCase):
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(r.status_code, 200)
         json_response = json.loads(r.content.decode())
-        self.assertEqual(len(json_response['files'][0]['uuid']), 20)
+        self.assertEqual(len(json_response['files'][0]['uuid']), 15)
         self.assertEqual(json_response['files'][0]['name'], os.path.basename(self.upload_file.name))
         self.assertEqual(json_response['files'][0]['type'], 'image')
         self.assertEqual(Image.objects.count(), 1)

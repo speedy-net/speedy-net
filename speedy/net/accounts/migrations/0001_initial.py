@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_id, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
+                ('id', speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID')),
                 ('username', models.CharField(max_length=120, unique=True, validators=[django.core.validators.RegexValidator(message='Username contains illegal characters.', regex='[a-z0-9]')])),
                 ('slug', models.CharField(max_length=120, unique=True, validators=[django.core.validators.RegexValidator(message='Slug contains illegal characters.', regex='[a-z0-9\\-]')])),
             ],
