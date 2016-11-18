@@ -27,8 +27,7 @@ class UserMixin(object):
     def get_user(self):
         try:
             slug = self.kwargs['slug']
-            user = self.get_user_queryset().get(Q(slug=slug) |
-                                                Q(username=normalize_username(slug)))
+            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug)))
             return user
         except User.DoesNotExist:
             raise Http404()
