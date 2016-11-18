@@ -22,5 +22,13 @@
       "name": "Speedy Composer",
       "domain": "speedy.composer.localhost:10000"
     }
+  },
+  {
+    "model": "sites.site",
+    "pk": 4,
+    "fields": {
+      "name": "Speedy Mail Software",
+      "domain": "speedy.mail.software.localhost:11000"
+    }
   }
 ]

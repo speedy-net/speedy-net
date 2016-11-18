@@ -22,5 +22,13 @@
       "name": "Speedy Composer",
       "domain": "speedycomposer.com"
     }
+  },
+  {
+    "model": "sites.site",
+    "pk": 4,
+    "fields": {
+      "name": "Speedy Mail Software",
+      "domain": "speedy-mail-software.com"
+    }
   }
 ]
