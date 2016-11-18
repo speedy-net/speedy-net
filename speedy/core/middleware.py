@@ -26,14 +26,14 @@ class LocaleDomainMiddleware(object):
 
     def __call__(self, request):
         domain = request.META.get('HTTP_HOST', '')
+        site = Site.objects.get_current()
 
-        for code, name in settings.LANGUAGES:
-            if domain.startswith(code + '.'):
-                translation.activate(code)
+        for lang_code, lang_name in settings.LANGUAGES:
+            if (domain == "{lang_code}.{domain}".format(lang_code=lang_code, domain=site.domain)):
+                translation.activate(lang_code)
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
-        site = Site.objects.get_current()
         if (not(domain + request.path == "www.{domain}{path}".format(domain=site.domain, path="/"))):
             return redirect_to_www(request=request, site=site)
 
