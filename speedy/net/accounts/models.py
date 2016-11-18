@@ -55,14 +55,18 @@ def normalize_username(slug):
 
 
 class Entity(TimeStampedModel):
+    MIN_USERNAME_LENGTH = 6
+    MAX_USERNAME_LENGTH = 120
+    MIN_SLUG_LENGTH = 6
+    MAX_SLUG_LENGTH = 200
     id = UDIDField()
-    username = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
+    username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {
-        'username': get_username_validators(min_length=6, max_length=120, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_length=6, max_length=200, allow_letters_after_digits=True),
+        'username': get_username_validators(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+        'slug': get_slug_validators(min_length=MIN_SLUG_LENGTH, max_length=MAX_SLUG_LENGTH, allow_letters_after_digits=True),
     }
 
     class Meta:
@@ -85,6 +89,7 @@ class Entity(TimeStampedModel):
         """
         Allows to have different slug and username validators for Entity and User.
         """
+        # ~~~~ TODO: run normalize_slug and normalize_username on slug and username before validating them.
         try:
             super().clean_fields(exclude=exclude)
         except ValidationError as e:
@@ -111,7 +116,10 @@ class Entity(TimeStampedModel):
 
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
-
+    MIN_USERNAME_LENGTH = 6
+    MAX_USERNAME_LENGTH = 50
+    MIN_SLUG_LENGTH = 6
+    MAX_SLUG_LENGTH = 200
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
 
@@ -135,8 +143,8 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     objects = UserManager()
 
     validators = {
-        'username': get_username_validators(min_length=6, max_length=20, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_length=6, max_length=200, allow_letters_after_digits=False),
+        'username': get_username_validators(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+        'slug': get_slug_validators(min_length=MIN_SLUG_LENGTH, max_length=MAX_SLUG_LENGTH, allow_letters_after_digits=False),
     }
 
     class Meta:
@@ -268,9 +276,7 @@ class SiteProfile(SiteProfileBase):
     access_account = ACCESS_ANYONE
     access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ME)
     access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ME)
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'),
-                                                    choices=SiteProfileBase.NOTIFICATIONS_CHOICES,
-                                                    default=SiteProfileBase.NOTIFICATIONS_ON)
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
 
     def activate(self, language_code):
