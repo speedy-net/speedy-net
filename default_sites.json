@@ -14,5 +14,13 @@
       "name": "Speedy Match",
       "domain": "speedymatch.com"
     }
+  },
+  {
+    "model": "sites.site",
+    "pk": 3,
+    "fields": {
+      "name": "Speedy Composer",
+      "domain": "speedycomposer.com"
+    }
   }
 ]
