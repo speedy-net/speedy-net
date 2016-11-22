@@ -13,7 +13,7 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel, UDIDField
+from speedy.core.models import TimeStampedModel, UDIDField, generate_confirmation_token
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -219,7 +219,7 @@ class UserEmailAddress(TimeStampedModel):
 
     @staticmethod
     def _generate_confirmation_token():
-        return uuid.uuid4().hex
+        return generate_confirmation_token()
 
     def mail(self, template_name_prefix, context=None):
         context = context or {}

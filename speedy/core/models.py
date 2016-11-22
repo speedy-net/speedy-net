@@ -16,6 +16,10 @@ def generate_id():
     return ''.join(random.choice(digits if i > 0 else digits_without_zero) for i in range(ID_LENGTH))
 
 
+# Export generate_id as generate_confirmation_token.
+generate_confirmation_token = generate_id
+
+
 class TimeStampedModel(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, db_index=True)
     date_updated = models.DateTimeField(auto_now=True, db_index=True)
