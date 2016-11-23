@@ -42,7 +42,7 @@ class AccessField(models.PositiveIntegerField):
 
 def normalize_slug(slug):
     slug = slug.lower()
-    slug = re.sub('[-\._]{1,}', '-', slug)
+    slug = re.sub('[^a-zA-Z0-9]{1,}', '-', slug)
     slug = re.sub('^-', '', slug)
     slug = re.sub('-$', '', slug)
     return slug
