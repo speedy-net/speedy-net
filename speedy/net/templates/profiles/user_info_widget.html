@@ -2,6 +2,8 @@
 {% load rules %}
 
 {% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
+{% has_perm 'accounts.view_profile_username' viewer entity as can_view_username %}
+
 
 <div class="col-sm-8 col-sm-pull-0">
     <div class="panel panel-default">
@@ -16,7 +18,7 @@
                 <td>{{ entity }}</td>
             </tr>
 
-            {% if can_view_profile %}
+            {% if can_view_username %}
             <tr>
                 <th>{% trans 'Username' %}</th>
                 <td>
