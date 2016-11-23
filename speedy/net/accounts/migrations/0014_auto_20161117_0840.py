@@ -24,6 +24,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='entity',
             name='id',
-            field=speedy.core.models.BigUDIDField(db_index=True, default=speedy.core.models.generate_big_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
+            field=speedy.core.models.RegularUDIDField(db_index=True, default=speedy.core.models.generate_regular_udid, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
         ),
     ]

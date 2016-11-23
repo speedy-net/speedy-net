@@ -4,7 +4,7 @@ import uuid
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel, UDIDField, generate_udid
+from speedy.core.models import TimeStampedModel, RegularUDIDField, generate_regular_udid
 
 
 def uuid_dir(instance, filename):
@@ -18,7 +18,7 @@ def uuid_dir(instance, filename):
 
 
 class File(TimeStampedModel):
-    id = UDIDField()
+    id = RegularUDIDField()
     owner = models.ForeignKey(verbose_name=_('owner'), to='accounts.Entity', on_delete=models.SET_NULL, null=True)
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
@@ -30,7 +30,7 @@ class File(TimeStampedModel):
 
     def __init__(self, *args, **kwargs):
         if not kwargs.get('id'):
-            kwargs['id'] = generate_udid()
+            kwargs['id'] = generate_regular_udid()
         super().__init__(*args, **kwargs)
 
     def __str__(self):

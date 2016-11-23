@@ -17,11 +17,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='chat',
             name='id',
-            field=speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
+            field=speedy.core.models.SmallUDIDField(db_index=True, default=speedy.core.models.generate_small_udid, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
         ),
         migrations.AlterField(
             model_name='message',
             name='id',
-            field=speedy.core.models.UDIDField(db_index=True, default=speedy.core.models.generate_udid, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
+            field=speedy.core.models.SmallUDIDField(db_index=True, default=speedy.core.models.generate_small_udid, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters', regex='[0-9]')], verbose_name='ID'),
         ),
     ]

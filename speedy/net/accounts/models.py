@@ -13,7 +13,7 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel, BigUDIDField, generate_confirmation_token
+from speedy.core.models import TimeStampedModel, SmallUDIDField, generate_confirmation_token
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -59,7 +59,7 @@ class Entity(TimeStampedModel):
     MAX_USERNAME_LENGTH = 120
     MIN_SLUG_LENGTH = 6
     MAX_SLUG_LENGTH = 200
-    id = BigUDIDField()
+    id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)

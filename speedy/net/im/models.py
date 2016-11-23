@@ -3,13 +3,13 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel, UDIDField
+from speedy.core.models import TimeStampedModel, RegularUDIDField
 from speedy.net.accounts.models import Entity, SiteProfileBase
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):
-    id = UDIDField()
+    id = RegularUDIDField()
     site = models.ForeignKey(verbose_name=_('site'), to=Site)
     ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, null=True, blank=True, related_name='+')
     ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, null=True, blank=True, related_name='+')
@@ -61,7 +61,7 @@ class Chat(TimeStampedModel):
 
 
 class Message(TimeStampedModel):
-    id = UDIDField()
+    id = RegularUDIDField()
     chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, on_delete=models.SET_NULL, null=True)
     sender = models.ForeignKey(verbose_name=_('sender'), to=Entity, on_delete=models.SET_NULL, null=True)
     text = models.TextField(verbose_name=_('message'))
