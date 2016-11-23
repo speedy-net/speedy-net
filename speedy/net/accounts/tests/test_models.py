@@ -95,7 +95,7 @@ class UserTestCase(TestCase):
     def test_slug_and_username_max_length_fail(self):
         user = UserFactory(slug='a' * 201)
         self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", user.full_clean)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 20 characters \(it has 201\).'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 50 characters \(it has 201\).'\]", user.full_clean)
 
     def test_slug_and_username_max_length_ok(self):
         user = UserFactory(slug='a' * 20)

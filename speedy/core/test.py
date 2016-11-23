@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
 
@@ -31,6 +32,7 @@ class TestCase(DjangoTestCase):
     def _pre_setup(self):
         super()._pre_setup()
         self.client = self.client_class(HTTP_HOST=self.client_host)
+        Site.objects.update(domain='localhost')
 
 
 exclude_on_site = lambda site_id: conditional_test(lambda: int(settings.SITE_ID) != int(site_id))

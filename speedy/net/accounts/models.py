@@ -160,7 +160,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     @property
     def email(self):
-        return self.email_addresses.get(is_primary=True).email
+        try:
+            return self.email_addresses.get(is_primary=True).email
+        except UserEmailAddress.DoesNotExist:
+            return None
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
