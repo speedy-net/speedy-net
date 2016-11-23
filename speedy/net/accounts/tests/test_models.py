@@ -54,7 +54,7 @@ class EntityTestCase(TestCase):
 
     def test_slug_and_username_min_length_ok(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
-        self.assertIsNone(entity.full_clean())
+        self.assertIsNone(entity.full_clean(exclude={'id'}))
 
     def test_slug_and_username_max_length_fail(self):
         entity = Entity(slug='a' * 201, username='z' * 201)
@@ -63,7 +63,7 @@ class EntityTestCase(TestCase):
 
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
-        self.assertIsNone(entity.full_clean())
+        self.assertIsNone(entity.full_clean(exclude={'id'}))
 
 
 class UserTestCase(TestCase):
