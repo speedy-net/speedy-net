@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.sites.models import Site
-from django.http import HttpResponseRedirect
+from django.http import HttpResponsePermanentRedirect
 from django.shortcuts import render
 from django.utils import translation
 
@@ -11,7 +10,7 @@ def redirect_to_www(request, site):
         domain=site.domain,
         path="/",
     )
-    return HttpResponseRedirect(url)
+    return HttpResponsePermanentRedirect(url)
 
 
 def language_selector(request):
@@ -34,6 +33,6 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
-        if (not(domain + request.path == "www.{domain}{path}".format(domain=site.domain, path="/"))):
+        if (not (domain + request.path == "www.{domain}{path}".format(domain=site.domain, path="/"))):
             return redirect_to_www(request=request, site=site)
         return language_selector(request=request)
