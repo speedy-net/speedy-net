@@ -111,6 +111,12 @@ class RegistrationViewTestCase(TestCase):
         # self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn('http://he.localhost/', mail.outbox[0].body)
 
+    def test_cannot_register_taken_username(self):
+        existing_user = UserFactory(username='username', slug='user-name')
+        self.data['slug'] = 'us-er-na-me'
+        r = self.client.post('/register/', data=self.data)
+        self.assertFormError(r, 'form', 'slug', 'This username is already taken.')
+
 
 class LoginViewTestCase(TestCase):
     def setUp(self):

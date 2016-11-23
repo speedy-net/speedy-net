@@ -97,6 +97,14 @@ class Entity(TimeStampedModel):
         else:
             errors = {}
 
+        self.slug = normalize_slug(self.slug)
+        self.username = normalize_username(self.slug)
+
+        username_exists = Entity.objects.filter(username=self.username).exclude(id=self.id).exists()
+        if username_exists:
+            errors['slug'] = [self._meta.get_field('slug').error_messages['unique']]
+            # errors['username'] = [self._meta.get_field('username').error_messages['unique']]
+
         for field_name, validators in self.validators.items():
             f = self._meta.get_field(field_name)
             if field_name in exclude:

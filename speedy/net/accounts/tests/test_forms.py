@@ -47,7 +47,7 @@ class RegistrationFormTestCase(TestCase):
     def test_slug_validation_already_taken(self):
         UserFactory(slug='validslug')
         data = self.valid_data.copy()
-        data['slug'] = 'validslug'
+        data['slug'] = 'valid-slug'
         form = RegistrationForm(data)
         self.assertEqual(form.errors['slug'][0], 'This username is already taken.')
 
