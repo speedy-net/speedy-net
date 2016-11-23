@@ -55,19 +55,13 @@ def normalize_username(slug):
 
 
 class Entity(TimeStampedModel):
-<<<<<<< d02759b17497cd938f0870ae8a1d694a202fded1
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
     MIN_SLUG_LENGTH = 6
     MAX_SLUG_LENGTH = 200
-    id = UDIDField()
+    id = BigUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
-=======
-    id = BigUDIDField()
-    username = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
-    slug = models.CharField(max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
->>>>>>> 119593453 Entity ID length is 15 digits, other models can be 20.
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {

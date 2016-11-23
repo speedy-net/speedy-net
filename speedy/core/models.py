@@ -23,7 +23,7 @@ def generate_big_udid():
 
 
 # Export generate_id as generate_confirmation_token.
-generate_confirmation_token = generate_id
+generate_confirmation_token = generate_big_udid
 
 
 class TimeStampedModel(models.Model):
