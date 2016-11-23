@@ -12,18 +12,18 @@ regular_udid_validator = validators.RegexValidator(regex=r'^[1-9][0-9]{19}$', me
 small_udid_validator = validators.RegexValidator(regex=r'^[1-9][0-9]{14}$', message="id contains illegal characters")
 
 
-def generate_udid(length):
+def _generate_udid(length):
     digits = string.digits
     digits_without_zero = digits[1:]
     return ''.join(random.choice(digits if i > 0 else digits_without_zero) for i in range(length))
 
 
 def generate_regular_udid():
-    return generate_udid(length=REGULAR_UDID_LENGTH)
+    return _generate_udid(length=REGULAR_UDID_LENGTH)
 
 
 def generate_small_udid():
-    return generate_udid(length=SMALL_UDID_LENGTH)
+    return _generate_udid(length=SMALL_UDID_LENGTH)
 
 
 # Export generate_regular_udid as generate_confirmation_token.
