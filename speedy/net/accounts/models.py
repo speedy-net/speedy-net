@@ -72,6 +72,7 @@ class Entity(TimeStampedModel):
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entity')
+        ordering = ('id',)
 
     def __str__(self):
         return '<Entity {}>'.format(self.id)
@@ -158,6 +159,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
+        ordering = ('-last_login', 'id')
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
