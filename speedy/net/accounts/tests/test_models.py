@@ -39,8 +39,6 @@ class NormalizeUsernameTestCase(TestCase):
 
 
 class EntityTestCase(TestCase):
-    # def setUp(self):
-    #     User()  # check that User.__init__ does not mutate Entity
 
     def test_automatic_creation_of_id(self):
         entity = Entity(slug='zzzzzz')
@@ -65,11 +63,16 @@ class EntityTestCase(TestCase):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
         self.assertIsNone(entity.full_clean(exclude={'id'}))
 
+    def test_star2000_is_valid_username(self):
+        entity = Entity(slug='star2000', username='star2000')
+        self.assertIsNone(entity.full_clean(exclude={'id'}))
+
+    def test_come2us_is_valid_username(self):
+        entity = Entity(slug='come2us', username='come2us')
+        self.assertIsNone(entity.full_clean(exclude={'id'}))
+
 
 class UserTestCase(TestCase):
-
-    # def setUp(self):
-    #     Entity()  # check that Entity.__init__ does not mutate User
 
     def test_has_no_confirmed_email(self):
         user = UserFactory()
@@ -100,3 +103,12 @@ class UserTestCase(TestCase):
     def test_slug_and_username_max_length_ok(self):
         user = UserFactory(slug='a' * 20)
         self.assertIsNone(user.full_clean())
+
+    def test_star2000_is_valid_username(self):
+        user = UserFactory(slug='star2000', username='star2000')
+        self.assertIsNone(user.full_clean(exclude={'id'}))
+
+    def test_come2us_is_invalid_username(self):
+        user = User(slug='come2us', username='come2us')
+        self.assertRaisesRegex(ValidationError, "'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", user.full_clean)
