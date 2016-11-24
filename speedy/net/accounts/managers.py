@@ -3,7 +3,6 @@ from django.db.models import Q
 
 
 class UserManager(BaseUserManager):
-    use_in_migrations = True
 
     def get_by_natural_key(self, username):
         from .models import normalize_username
