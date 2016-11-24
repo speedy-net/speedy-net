@@ -1,12 +1,13 @@
 from datetime import date
 
+from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core import mail
 from speedy.core.test import TestCase
 
 from speedy.core.test import exclude_on_speedy_match
 from ..models import Entity, User, UserEmailAddress, SiteProfileBase
-from .test_factories import UserFactory, UserEmailAddressFactory
+from .test_factories import UserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 class IndexViewTestCase(TestCase):
@@ -87,7 +88,13 @@ class RegistrationViewTestCase(TestCase):
     def test_user_is_logged_in_after_registration(self):
         r = self.client.post('/register/', data=self.data)
         self.assertRedirects(r, '/', target_status_code=302)
-        r = self.client.get('/edit-profile/')
+        r = self.client.get('/')
+        if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
+            self.assertRedirects(r, '/me/', target_status_code=302)
+            r = self.client.get('/{}/'.format(self.data['slug']))
+        else:
+            self.assertRedirects(r, '/welcome/')
+            r = self.client.get('/welcome/')
         self.assertTrue(r.context['user'].is_authenticated())
         self.assertTrue(r.context['user'].slug, 'user1234')
 
@@ -299,7 +306,36 @@ class EditProfileCredentialsViewTestCase(TestCase):
         self.assertTrue(user.check_password('88888888'))
 
 
-class DeactivateAccountViewTestCase(TestCase):
+class ActivateSiteProfileViewTestCase(TestCase):
+    page_url = '/welcome/'
+
+    def setUp(self):
+        self.user = InactiveUserFactory()
+        self.client.login(username=self.user.slug, password='111')
+        self.assertFalse(self.user.profile.is_active)
+
+    def test_visitor_has_no_access(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next=' + self.page_url)
+
+    def test_inactive_user_has_no_access_to_other_pages(self):
+        r = self.client.get('/other-page/')
+        self.assertRedirects(r, self.page_url)
+
+    def test_inactive_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/edit_profile/activate.html')
+
+    def test_inactive_user_can_request_activation(self):
+        r = self.client.post(self.page_url)
+        self.assertRedirects(r, '/', target_status_code=302)
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(user.profile.is_active)
+
+
+class DeactivateSiteProfileViewTestCase(TestCase):
     page_url = '/edit-profile/deactivate/'
 
     def setUp(self):
@@ -323,40 +359,8 @@ class DeactivateAccountViewTestCase(TestCase):
         })
         self.assertRedirects(r, '/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
-        self.assertFalse(user.is_active)
-
-
-class ActivateAccountViewTestCase(TestCase):
-    page_url = '/activate/'
-
-    def setUp(self):
-        self.active_user = UserFactory(is_active=True)
-        self.user = UserFactory(is_active=True)
-        UserEmailAddressFactory(user=self.user, is_primary=True, is_confirmed=True)
-        self.client.login(username=self.user.slug, password='111')
-        # django test client don't authenticate inactive users
-        self.user.deactivate()
-
-    def test_visitor_has_no_access(self):
-        self.client.logout()
-        r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next=' + self.page_url)
-
-    def test_inactive_user_has_no_access_to_other_pages(self):
-        r = self.client.get('/other-page/')
-        self.assertRedirects(r, self.page_url)
-
-    def test_inactive_user_can_open_the_page(self):
-        r = self.client.get(self.page_url)
-        self.assertEqual(r.status_code, 200)
-        self.assertTemplateUsed(r, 'accounts/activate/form.html')
-
-    def test_inactive_user_can_request_activation(self):
-        r = self.client.post(self.page_url)
-        self.assertRedirects(r, '/activate/done/')
-        self.assertEqual(len(mail.outbox), 1)
-        site = Site.objects.get_current()
-        self.assertEqual(mail.outbox[0].subject, 'Account Activation on {}'.format(site.name))
+        self.assertTrue(user.is_active)
+        self.assertFalse(user.profile.is_active)
 
 
 class VerifyUserEmailAddressViewTestCase(TestCase):

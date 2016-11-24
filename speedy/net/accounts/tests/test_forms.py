@@ -2,7 +2,7 @@ from speedy.core.test import TestCase
 
 from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.tests.test_factories import UserFactory, UserEmailAddressFactory
-from ..forms import RegistrationForm, PasswordResetForm, DeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
+from ..forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
 
 
 class RegistrationFormTestCase(TestCase):
@@ -134,13 +134,13 @@ class DeactivationFormTestCase(TestCase):
         self.user = UserFactory()
 
     def test_incorrect_password(self):
-        form = DeactivationForm(user=self.user, data={
+        form = SiteProfileDeactivationForm(user=self.user, data={
             'password': 'wrong password',
         })
         self.assertFalse(form.is_valid())
 
     def test_correct_password(self):
-        form = DeactivationForm(user=self.user, data={
+        form = SiteProfileDeactivationForm(user=self.user, data={
             'password': '111',
         })
         self.assertTrue(form.is_valid())

@@ -21,8 +21,8 @@
                 href="{% url 'accounts:edit_profile_credentials' %}">{% trans 'Emails & Password' %}</a></li>
         <li class="{% active_class 'blocks:list' %}"><a
                 href="{% url 'blocks:list' request.user.slug %}">{% trans 'Blocked Users' %}</a></li>
-        <li class="{% active_class 'accounts:deactivate' %}"><a
-                href="{% url 'accounts:deactivate' %}">{% trans 'Deactivate Account' %}</a></li>
+        <li class="{% active_class 'accounts:deactivate_profile' %}"><a
+                href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' %}</a></li>
     </ul>
     <br>
     {% block tab_content %}{% endblock %}

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
+from django.utils import translation
 from django.utils.module_loading import import_string
 from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
@@ -28,6 +29,8 @@ class UserMixin(object):
         try:
             slug = self.kwargs['slug']
             user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug)))
+            if not user.profile.is_active:
+                raise Http404('This user is not active on this site.')
             return user
         except User.DoesNotExist:
             raise Http404()

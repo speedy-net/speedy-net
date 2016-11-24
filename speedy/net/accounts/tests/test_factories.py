@@ -7,7 +7,7 @@ import factory.fuzzy
 from ..models import normalize_username, User, UserEmailAddress
 
 
-class UserFactory(factory.DjangoModelFactory):
+class InactiveUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
     date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(1900, 1, 1))
@@ -19,6 +19,13 @@ class UserFactory(factory.DjangoModelFactory):
 
     class Meta:
         model = User
+
+class UserFactory(InactiveUserFactory):
+
+    @factory.post_generation
+    def activate_profile(self, create, extracted, **kwargs):
+        self.profile.activate()
+
 
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):

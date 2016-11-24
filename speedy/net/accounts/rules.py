@@ -1,3 +1,4 @@
+from django.utils import translation
 from friendship.models import Friend
 from rules import predicate, add_perm
 

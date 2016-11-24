@@ -195,10 +195,6 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         self.is_active = True
         self.save(update_fields={'is_active'})
 
-    def deactivate(self):
-        self.is_active = False
-        self.save(update_fields={'is_active'})
-
     @property
     def profile(self):
         if not hasattr(self, '_profile'):
@@ -270,6 +266,7 @@ class SiteProfileBase(TimeStampedModel):
     )
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')
+    is_active = True
 
     class Meta:
         abstract = True
@@ -277,6 +274,12 @@ class SiteProfileBase(TimeStampedModel):
     def __str__(self):
         site = Site.objects.get_current()
         return '{} @ {}'.format(self.user, site.name)
+
+    def activate(self):
+        raise NotImplementedError()
+
+    def deactivate(self):
+        raise NotImplementedError()
 
 
 class SiteProfile(SiteProfileBase):
@@ -290,9 +293,10 @@ class SiteProfile(SiteProfileBase):
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
 
-    def activate(self, language_code):
+    def activate(self):
         self.is_active = True
         self.save(update_fields={'is_active'})
 
-    def is_active_for_language(self, language_code):
-        return self.is_active
+    def deactivate(self):
+        self.is_active = False
+        self.save(update_fields={'is_active'})

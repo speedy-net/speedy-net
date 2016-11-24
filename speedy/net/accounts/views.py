@@ -24,7 +24,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, DeactivationForm, ActivationForm, ProfileNotificationsForm, \
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, \
     UserEmailAddressPrivacyForm
 from .models import User, UserEmailAddress
 
@@ -69,6 +69,8 @@ class RegistrationView(generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
+        if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
+            self.object.profile.activate()
         messages.success(self.request, _('Registration complete. Don\'t forget to confirm your email.'))
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
@@ -165,9 +167,27 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
         return super().form_valid(form)
 
 
-class DeactivateAccountView(LoginRequiredMixin, generic.FormView):
+class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'accounts/edit_profile/activate.html'
+    form_class = SiteProfileActivationForm
+    success_url = '/'
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated and request.user.profile.is_active:
+            return redirect(self.success_url)
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
+        return super().form_valid(form=form)
+
+
+class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
     template_name = 'accounts/edit_profile/deactivate.html'
-    form_class = DeactivationForm
+    form_class = SiteProfileDeactivationForm
     success_url = '/'
 
     def get_form_kwargs(self):
@@ -179,38 +199,13 @@ class DeactivateAccountView(LoginRequiredMixin, generic.FormView):
 
     def form_valid(self, form):
         user = self.request.user
-        user.deactivate()
-        auth_logout(self.request)
-        messages.error(self.request, _('Your account has been deactivated.'))
-        return super().form_valid(form)
-
-
-@login_required
-def activate(request):
-    return auth_views.password_reset(
-        request,
-        post_reset_redirect='accounts:activate_done',
-        template_name='accounts/activate/form.html',
-        password_reset_form=partial(ActivationForm, request.user),
-    )
-
-
-@never_cache
-def activate_confirm(request, uidb64=None, token=None):
-    assert uidb64 is not None and token is not None  # checked by URLconf
-    try:
-        # urlsafe_base64_decode() decodes to bytestring on Python 3
-        uid = force_text(urlsafe_base64_decode(uidb64))
-        user = User._default_manager.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-
-    if user is not None and default_token_generator.check_token(user, token):
-        user.activate()
-        messages.success(request, _('Your account is now activated. Welcome back!'))
-        return redirect('/')
-    else:
-        return render_to_response('accounts/activate/confirm.html')
+        user.profile.deactivate()
+        current_site = Site.objects.get_current()
+        messages.success(self.request, _('Your {} account has been deactivated. You can reactivate it any time. Your {} accounts (if any) remain intact.').format(
+            current_site.name,
+            ', '.join(Site.objects.exclude(id=current_site.id).values_list('name', flat=True)),
+        ))
+        return super().form_valid(form=form)
 
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):

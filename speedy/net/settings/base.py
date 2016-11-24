@@ -70,8 +70,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'speedy.core.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'speedy.net.accounts.middleware.InactiveUserMiddleware',
-    'speedy.net.accounts.middleware.SiteProfileMiddleware',
+    'speedy.net.accounts.middleware.InactiveSiteProfileMiddleware',
 ]
 
 TEMPLATES = [
@@ -150,12 +149,15 @@ UNAVAILABLE_USERNAMES = [
     'admin', 'root', 'webmaster', 'uri', 'speedy',
     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
     'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
+    'welcome',
 ]
 
 DONT_REDIRECT_INACTIVE_USER = [
     '/logout/',
-    '/activate/',
+    '/welcome/',
 ]
+
+ACTIVATE_PROFILE_AFTER_REGISTRATION = True
 
 # MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 800 ~~~~ TODO: uncomment this line!
 MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 2 # For testing when there are close to MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends. ~~~~ TODO: remove this line!

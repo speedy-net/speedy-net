@@ -1,17 +1,15 @@
-import re
-
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
-from django.conf import settings
 from django.contrib.auth import forms as auth_forms
+from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import Entity, User, UserEmailAddress, SiteProfile
+from .models import User, UserEmailAddress, SiteProfile
 from .utils import get_site_profile_model
 
 DATE_FIELD_FORMATS = [
@@ -192,13 +190,13 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
     def send_mail(
-            self,
-            subject_template_name,
-            email_template_name,
-            context,
-            from_email,
-            to_email,
-            html_email_template_name=None,
+        self,
+        subject_template_name,
+        email_template_name,
+        context,
+        from_email,
+        to_email,
+        html_email_template_name=None,
     ):
         send_mail([to_email], 'accounts/email/password_reset', context)
 
@@ -220,52 +218,38 @@ class PasswordChangeForm(CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
         self.helper.add_input(Submit('submit', _('Change')))
 
 
-class DeactivationForm(forms.Form):
+class SiteProfileActivationForm(forms.ModelForm):
+    class Meta:
+        model = get_site_profile_model()
+        fields = ()
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        site = Site.objects.get_current()
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', _('Activate my {} account').format(site.name)))
+
+    def save(self, commit=True):
+        if commit:
+            self.instance.activate()
+        return super().save(commit=commit)
+
+
+class SiteProfileDeactivationForm(forms.Form):
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput)
 
     def __init__(self, **kwargs):
         self.user = kwargs.pop('user')
         super().__init__(**kwargs)
+        site = Site.objects.get_current()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Deactivate your account'), css_class='btn-danger'))
+        self.helper.add_input(Submit('submit', _('Deactivate your {} account').format(site.name), css_class='btn-danger'))
 
     def clean_password(self):
         password = self.cleaned_data['password']
         if not self.user.check_password(password):
             raise forms.ValidationError(_('Invalid password'))
         return password
-
-
-class ActivationForm(auth_forms.PasswordResetForm):
-    @property
-    def helper(self):
-        helper = FormHelper()
-        helper.add_input(Submit('submit', _('Send Activation Email')))
-        return helper
-
-    def __init__(self, user, *args, **kwargs):
-        self.user = user
-        super().__init__(*args, **kwargs)
-        del self.fields['email']
-
-    def get_users(self, email):
-        if self.user.is_active:
-            return set()
-        return {self.user}
-
-    def _post_clean(self):
-        self.cleaned_data['email'] = ''
-
-    def send_mail(
-            self,
-            subject_template_name,
-            email_template_name,
-            context,
-            from_email,
-            to_email,
-            html_email_template_name=None,
-    ):
-        send_mail([to_email], 'accounts/email/activate', context)
 
 
 class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):

@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 
 from speedy.net.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
 
@@ -22,11 +22,16 @@ class SiteProfile(SiteProfileBase):
     def set_active_languages(self, languages):
         self.active_languages = ','.join(set(languages))
 
-    def activate(self, language_code):
+    def activate(self):
         languages = self.get_active_languages()
-        languages.append(language_code)
+        languages.append(get_language())
         self.set_active_languages(languages)
         self.save(update_fields={'active_languages'})
 
-    def is_active_for_language(self, language_code):
-        return language_code in self.get_active_languages()
+    @property
+    def is_active(self):
+        return get_language() in self.get_active_languages()
+
+    def deactivate(self):
+        self.set_active_languages([])
+        self.save(update_fields={'active_languages'})

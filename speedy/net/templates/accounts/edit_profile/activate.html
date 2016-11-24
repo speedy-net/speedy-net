@@ -1,0 +1,17 @@
+{% extends 'base_site.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Welcome' %} / {{ block.super }}{% endblock %}
+
+{% block full_content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="page-header">
+                <h1>{% trans 'Welcome to' %} {{ site.name }}</h1>
+            </div>
+            {% crispy form %}
+        </div>
+    </div>
+{% endblock %}
