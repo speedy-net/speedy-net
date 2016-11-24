@@ -14,9 +14,10 @@ class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
 
-    def test_visitor_gets_redirected_to_registration(self):
+    def test_visitor_gets_registration_page(self):
         r = self.client.get('/')
-        self.assertRedirects(r, '/register/')
+        self.assertEqual(r.status_code, 200)
+        self.assertTemplateUsed(r, 'accounts/registration.html')
 
     def test_user_gets_redirected_to_his_profile(self):
         self.client.login(username=self.user.slug, password='111')
@@ -55,17 +56,17 @@ class RegistrationViewTestCase(TestCase):
         site.save()
 
     def test_visitor_can_see_registration_page(self):
-        r = self.client.get('/register/')
+        r = self.client.get('/')
         self.assertEqual(r.status_code, 200)
         self.assertTemplateUsed(r, 'accounts/registration.html')
 
     def test_non_unique_email_address(self):
         UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
-        r = self.client.post('/register/', data=self.data)
+        r = self.client.post('/', data=self.data)
         self.assertFormError(r, 'form', 'email', 'This email is already in use.')
 
     def test_visitor_can_register(self):
-        r = self.client.post('/register/', data=self.data)
+        r = self.client.post('/', data=self.data)
         self.assertRedirects(r, '/', target_status_code=302)
         self.assertEqual(1, Entity.objects.count())
         self.assertEqual(1, User.objects.count())
@@ -86,7 +87,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertTrue(user.email_addresses.all()[0].is_primary)
 
     def test_user_is_logged_in_after_registration(self):
-        r = self.client.post('/register/', data=self.data)
+        r = self.client.post('/', data=self.data)
         self.assertRedirects(r, '/', target_status_code=302)
         r = self.client.get('/')
         if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
@@ -99,7 +100,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertTrue(r.context['user'].slug, 'user1234')
 
     def test_user_gets_email_after_registration_in_english(self):
-        r = self.client.post('/register/', data=self.data)
+        r = self.client.post('/', data=self.data)
         self.assertEqual(len(mail.outbox), 1)
         site = Site.objects.get_current()
         user = User.objects.first()
@@ -113,7 +114,7 @@ class RegistrationViewTestCase(TestCase):
     def test_user_gets_email_after_registration_in_hebrew(self):
         self.data['first_name_he'] = 'First HE'
         self.data['last_name_he'] = 'Last HE'
-        r = self.client.post('/register/', data=self.data, HTTP_HOST='he.localhost')
+        r = self.client.post('/', data=self.data, HTTP_HOST='he.localhost')
         # site = Site.objects.get_current()
         # self.assertEqual(mail.outbox[0].subject, 'Confirm your email address on {}'.format(site.name))
         self.assertIn('http://he.localhost/', mail.outbox[0].body)
@@ -121,7 +122,7 @@ class RegistrationViewTestCase(TestCase):
     def test_cannot_register_taken_username(self):
         existing_user = UserFactory(username='username', slug='user-name')
         self.data['slug'] = 'us-er-na-me'
-        r = self.client.post('/register/', data=self.data)
+        r = self.client.post('/', data=self.data)
         self.assertFormError(r, 'form', 'slug', 'This username is already taken.')
 
 
@@ -177,7 +178,7 @@ class LogoutViewTestCase(TestCase):
     def test_user_can_logout(self):
         r = self.client.get('/logout/')
         self.assertEqual(r.status_code, 200)
-        r = self.client.get('/register/')
+        r = self.client.get('/')
         self.assertFalse(r.context['user'].is_authenticated())
 
 

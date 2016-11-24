@@ -1,21 +1,16 @@
-from functools import partial
 from importlib import import_module
 from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, logout as auth_logout, REDIRECT_FIELD_NAME, \
+from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME, \
     update_session_auth_hash
 from django.contrib.auth import views as auth_views
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse_lazy, reverse
+from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, redirect
-from django.utils.encoding import force_text
-from django.utils.http import urlsafe_base64_decode
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.views import generic
 from django.views.decorators.cache import never_cache
@@ -26,7 +21,7 @@ from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, \
     UserEmailAddressPrivacyForm
-from .models import User, UserEmailAddress
+from .models import UserEmailAddress
 
 
 @csrf_exempt
@@ -55,12 +50,12 @@ def set_session(request):
     return response
 
 
-class IndexView(generic.RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
+class IndexView(generic.View):
+    def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated():
-            return reverse('profiles:me')
+            return redirect('profiles:me')
         else:
-            return reverse('accounts:registration')
+            return RegistrationView.as_view()(request, *args, **kwargs)
 
 
 class RegistrationView(generic.CreateView):

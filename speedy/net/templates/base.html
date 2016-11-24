@@ -69,7 +69,7 @@
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
                 {% else %}
-                    <li><a href="{% url 'accounts:registration' %}">{% trans 'Register' %}</a></li>
+                    <li><a href="{% url 'accounts:index' %}">{% trans 'Register' %}</a></li>
                     <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
                 {% endif %}
             </ul>

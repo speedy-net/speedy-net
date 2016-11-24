@@ -11,7 +11,6 @@ urlpatterns = [
 
     url(r'^$', views.IndexView.as_view(), name='index'),
 
-    url(r'^register/$', views.RegistrationView.as_view(), name='registration'),
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout', kwargs={'template_name': 'accounts/logged_out.html'}),
 
