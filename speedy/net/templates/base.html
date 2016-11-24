@@ -10,7 +10,7 @@
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <title>{% block title %}{% block site_title %}{{ site.name }}{% endblock %}{% endblock %}</title>
     {% block css %}
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
         <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}">
