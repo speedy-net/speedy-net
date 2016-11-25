@@ -175,6 +175,7 @@ class MarkChatAsReadViewTestCase(TestCase):
         self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
 
     def test_user_can_mark_chat_as_read(self):
+        # ~~~~ TODO: this test fails locally sometimes.
         self.client.login(username=self.user1.slug, password='111')
         self.assertLess(ReadMark.objects.get(entity_id=self.user1.id).date_updated, self.messages[1].date_created)
         r = self.client.post(self.page_url)
