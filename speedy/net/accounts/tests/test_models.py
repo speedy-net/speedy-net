@@ -141,13 +141,11 @@ class UserTestCase(TestCase):
         self.assertRaisesRegex(ValidationError, "'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", user.full_clean)
 
     def test_slug_and_username_dont_match_but_valid(self):
-        # ~~~~ TODO: this test should test an exception because the slug and the username don't match.
-        # _('Slug does not parse to username.')
         user = UserFactory(slug='star2001', username='star2000')
-        self.assertIsNone(user.full_clean(exclude={'id'})) # should fail
+        self.assertRaisesRegex(ValidationError, "'slug': \['Slug does not parse to username.'\]", user.full_clean)
 
     def test_slug_and_username_dont_match_and_invalid(self):
         user = UserFactory(slug='0-test-2', username='0test1')
-        self.assertRaisesRegex(ValidationError, "'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'slug': \['Slug does not parse to username.'\]", user.full_clean)
         self.assertRaisesRegex(ValidationError, "'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", user.full_clean)
 
