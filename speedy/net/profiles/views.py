@@ -28,7 +28,7 @@ class UserMixin(object):
     def get_user(self):
         try:
             slug = self.kwargs['slug']
-            if self.request.user.is_authenticated and slug == 'me':
+            if hasattr(self.request, 'user') and self.request.user.is_authenticated and slug == 'me':
                 return self.request.user
             user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug)))
             if not user.profile.is_active:

@@ -43,7 +43,7 @@ class EntityTestCase(TestCase):
     def test_automatic_creation_of_id(self):
         entity = Entity(slug='zzzzzz')
         entity.save()
-        self.assertEqual(20, len(entity.id))
+        self.assertEqual(15, len(entity.id))
 
     def test_slug_and_username_min_length_fail(self):
         entity = Entity(slug='a' * 5, username='a' * 5)
