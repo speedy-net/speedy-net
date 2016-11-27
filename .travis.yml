@@ -7,10 +7,10 @@ install:
   - pip install -r requirements.txt
 script:
   - cd speedy/net
-  - ./manage.py test
+  - python manage.py test
   - cd ../match
-  - ./manage.py test
+  - python manage.py test
   - cd ../composer
-  - ./manage.py test
+  - python manage.py test
   - cd ../mail
-  - ./manage.py test
+  - python manage.py test
