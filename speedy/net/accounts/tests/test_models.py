@@ -107,18 +107,18 @@ class UserTestCase(TestCase):
     def test_slug_max_length_fail(self):
         user = UserFactory(slug='a' * 201)
         self.assertRaisesRegex(ValidationError, "'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", user.full_clean)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 50 characters \(it has 201\).'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 40 characters \(it has 201\).'\]", user.full_clean)
 
     def test_slug_max_length_ok(self):
         user = UserFactory(slug='b' * 200)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 50 characters \(it has 200\).'\]", user.full_clean)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 40 characters \(it has 200\).'\]", user.full_clean)
 
     def test_username_max_length_fail(self):
-        user = UserFactory(slug='a' * 51)
-        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 50 characters \(it has 51\).'\]", user.full_clean)
+        user = UserFactory(slug='a' * 41)
+        self.assertRaisesRegex(ValidationError, "'username': \['Ensure this value has at most 40 characters \(it has 41\).'\]", user.full_clean)
 
     def test_username_max_length_ok(self):
-        user = UserFactory(slug='a' * 50)
+        user = UserFactory(slug='a' * 40)
         self.assertIsNone(user.full_clean())
 
     def test_star2000_is_valid_username(self):

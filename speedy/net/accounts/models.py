@@ -128,7 +128,7 @@ class Entity(TimeStampedModel):
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 50
+    MAX_USERNAME_LENGTH = 40
     MIN_SLUG_LENGTH = 6
     MAX_SLUG_LENGTH = 200
     MIN_PASSWORD_LENGTH = 8
