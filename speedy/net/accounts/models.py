@@ -111,17 +111,19 @@ class Entity(TimeStampedModel):
         for field_name, validators in self.validators.items():
             f = self._meta.get_field(field_name)
             if field_name in exclude:
-                continue
-            raw_value = getattr(self, f.attname)
-            if f.blank and raw_value in f.empty_values:
-                continue
-            for v in validators:
-                try:
-                    v(raw_value)
-                    if field_name == 'slug' and self.username:
-                        self.validate_username_for_slug()
-                except ValidationError as e:
-                    errors[f.name] = [e.error_list[0].messages[0]]
+                pass
+            else:
+                raw_value = getattr(self, f.attname)
+                if f.blank and raw_value in f.empty_values:
+                    pass
+                else:
+                    for v in validators:
+                        try:
+                            v(raw_value)
+                            if field_name == 'slug' and self.username:
+                                self.validate_username_for_slug()
+                        except ValidationError as e:
+                            errors[f.name] = [e.error_list[0].messages[0]]
         if errors:
             raise ValidationError(errors)
 

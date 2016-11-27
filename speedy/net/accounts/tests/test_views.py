@@ -212,8 +212,9 @@ class EditProfileViewTestCase(TestCase):
         user = User.objects.get(id=self.user.id)
         for (key, value) in data.items():
             if key == 'date_of_birth':
-                continue
-            self.assertEqual(getattr(user, key), value)
+                pass
+            else:
+                self.assertEqual(getattr(user, key), value)
         self.assertEqual(user.date_of_birth, date(1976, 6, 3))
 
 

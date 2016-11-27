@@ -160,12 +160,11 @@ evil.block('@@Uploader', {
         }).fail(function(jqXHR, textStatus, errorThrown) {
             var data = jqXHR.responseJSON;
             for (var errorField in data) {
-                if (!data.hasOwnProperty(errorField)) {
-                    continue;
+                if (data.hasOwnProperty(errorField)) {
+                    alert(data[errorField]);
+                    this_.blankState();
+                    break;
                 }
-                alert(data[errorField]);
-                this_.blankState();
-                break;
             }
         });
     },
