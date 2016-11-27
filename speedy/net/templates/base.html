@@ -101,11 +101,11 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked">
                         {% block user_menu %}
-                            <li><a href="{% url 'profiles:me' %}">
+                            <li><a href="{% url 'profiles:user' slug=request.user.slug %}">
                                 <i class="fa fa-fw fa-user"></i>
                                 {{ request.user }}
                             </a></li>
-                            <li><a href="{% url 'friends:list' request.user.slug %}">
+                            <li><a href="{% url 'friends:list' slug=request.user.slug %}">
                                 <i class="fa fa-fw fa-users"></i>
                                 {% trans 'Friends' %}
                                 {% with request.user.friendship_requests_received.count as frequests_count %}
@@ -114,7 +114,7 @@
                                     {% endif %}
                                 {% endwith %}
                             </a></li>
-                            <li><a href="{% url 'im:list' request.user.slug %}">
+                            <li><a href="{% url 'im:list' slug=request.user.slug %}">
                                 <i class="fa fa-fw fa-comments"></i>
                                 {% trans 'Messages' %}
                                 {% unread_chats_count request.user as unread_chats %}
