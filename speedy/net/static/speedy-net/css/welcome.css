@@ -12,7 +12,7 @@ html, body {
     width: 100%;
 }
 
-a:link {
+a {
     text-decoration: none;
     color: #146cc0;
     background-color: transparent;
@@ -25,12 +25,6 @@ a > span {
 
 a:hover > span {
     color: #FF0000;
-}
-
-a:visited {
-    text-decoration: underline;
-    color: #0000CC;
-    background-color: transparent;
 }
 
 a:hover {
