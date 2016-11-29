@@ -3,8 +3,7 @@ from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME, \
-    update_session_auth_hash
+from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME, update_session_auth_hash
 from django.contrib.auth import views as auth_views
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse_lazy
@@ -19,8 +18,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, \
-    UserEmailAddressPrivacyForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, ProfilePrivacyForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm
 from .models import UserEmailAddress
 
 
