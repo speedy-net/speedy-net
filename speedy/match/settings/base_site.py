@@ -1,8 +1,12 @@
+from django.utils.translation import ugettext_lazy
+
 from speedy.net.settings.base import *
 
 from .utils import APP_DIR
 
 SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
+
+SITE_TITLE = ugettext_lazy('Speedy Match [alpha]')
 
 ROOT_URLCONF = 'speedy.match.urls'
 

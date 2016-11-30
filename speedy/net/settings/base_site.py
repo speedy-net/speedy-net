@@ -1,6 +1,10 @@
+from django.utils.translation import ugettext_lazy
+
 from .base import *
 
 SITE_ID = int(env('SPEEDY_NET_SITE_ID'))
+
+SITE_TITLE = ugettext_lazy('Speedy Net [alpha]')
 
 ROOT_URLCONF = 'speedy.net.urls'
 
