@@ -1,0 +1,163 @@
+<!doctype html>
+
+{% load im_tags %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% block site_title %}{{ site.name }}{% endblock %}{% endblock %}</title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/jquery-ui-custom/jquery-ui.css' %}">
+        {% if LANGUAGE_BIDI %}
+            <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}">
+        {% endif %}
+        <link rel="stylesheet" href="{% static 'speedy-net/css/speedy-net.css' %}">
+    {% endblock %}
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'icons/apple-touch-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'icons/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'icons/apple-touch-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'icons/apple-touch-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'icons/apple-touch-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'icons/apple-touch-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'icons/apple-touch-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon-194x194.png' %}" sizes="194x194">
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon-96x96.png' %}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{% static 'icons/android-chrome-192x192.png' %}" sizes="192x192">
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon-16x16.png' %}" sizes="16x16">
+    <link rel="manifest" href="{% static 'icons/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'icons/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="{% static 'icons/mstile-144x144.png' %}">
+    <meta name="theme-color" content="#b2cafa">
+    <script type="text/javascript">
+        if (top != self) {
+            top.location = self.location;
+        }
+    </script>
+</head>
+<body class="bidi-{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">
+
+{% block body %}
+
+<nav class="navbar {% block navbar_class %}{% endblock %}">
+    <div class="container">
+        {% block navbar %}
+            <ul class="nav navbar-nav navbar-left" style="position: relative">
+                <li class="dropdown" style="position: absolute; right: 0">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><i class="fa fa-th"></i></a>
+                    <ul class="dropdown-menu">
+                        {% for other_site in sites %}
+                            <li><a href="//{{ other_site.domain }}">{{ other_site.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ site.name }}</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        {% endblock %}
+    </div>
+</nav>
+<div class="container">
+    {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible"
+             role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span></button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
+        <div class="alert alert-danger">
+            {% trans "You haven't confirmed your email address. Please check your inbox." %}
+        </div>
+    {% endif %}
+
+    {% block full_content %}
+
+        {% if request.user.is_authenticated and request.user.is_active %}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="page-header">
+                        <h1>&nbsp;</h1>
+                    </div>
+                    <ul class="nav nav-pills nav-stacked">
+                    </ul>
+                </div>
+                <div class="col-md-9">
+        {% endif %}
+                    {% block content %}
+                    {% endblock %}
+        {% if request.user.is_authenticated %}
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}
+</div>
+
+{% block footer_wrap %}
+    <hr>
+
+    <footer class="footer">
+        <div class="container">
+            {% block footer %}
+                <ul class="nav nav-pills">
+                    <li class="disabled"><a href="/">{{ site.name }}, {% now 'Y' %}</a></li>
+                    <li><a href="{% url 'feedback:feedback' %}">{% trans 'Contact Us' %}</a></li>
+                    <li>
+                        <div class="dropup">
+                            <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">
+                                {% trans 'Language' %}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <li>
+                                        <a href="//{{ language.code }}.{{ site.domain }}{{ request.path }}">
+                                            {{ language.name_local }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            {% endblock %}
+        </div>
+    </footer>
+{% endblock %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'vendor/jquery/jquery-2.2.4.js' %}"></script>
+    <script src="{% static 'vendor/jquery-ui-custom/jquery-ui.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
+    <script src="{% static 'vendor/evil-blocks/evil-blocks.js' %}"></script>
+    <script src="{% static 'speedy-net/js/speedy-net.js' %}"></script>
+    <script>
+        {# Cross-domain auth. #}
+        {% for other_site in sites %}
+            {% if other_site.id != site.id %}
+                speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
+            {% endif %}
+        {% endfor %}
+    </script>
+{% endblock %}
+
+</body>
+</html>
