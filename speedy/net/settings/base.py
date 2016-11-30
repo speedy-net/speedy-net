@@ -70,7 +70,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'speedy.core.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'speedy.net.accounts.middleware.InactiveSiteProfileMiddleware',
+    'speedy.net.accounts.middleware.SiteProfileMiddleware',
 ]
 
 TEMPLATES = [

@@ -272,6 +272,7 @@ class SiteProfileBase(TimeStampedModel):
     )
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')
+    last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 
     class Meta:
@@ -280,6 +281,10 @@ class SiteProfileBase(TimeStampedModel):
     def __str__(self):
         site = Site.objects.get_current()
         return '{} @ {}'.format(self.user, site.name)
+
+    def update_last_visit(self):
+        self.last_visit = now()
+        self.save(update_fields={'last_visit'})
 
     def activate(self):
         raise NotImplementedError()

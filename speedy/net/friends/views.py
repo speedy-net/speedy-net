@@ -8,12 +8,34 @@ from django.views import generic
 from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import PermissionRequiredMixin
 
+from speedy.net.accounts.utils import get_site_profile_model
 from speedy.net.profiles.views import UserMixin
 from .rules import friend_request_sent
 
 
 class UserFriendListView(UserMixin, generic.TemplateView):
     template_name = 'friends/friend_list.html'
+
+    def get_friends(self):
+        SiteProfile = get_site_profile_model()
+        table_name = SiteProfile._meta.db_table
+        qs = self.user.friends.all().extra(
+            select={
+                'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name)
+            },
+        ).order_by('-last_visit')
+        return qs
+
+    def get_friendship_requests_received(self):
+        return self.user.friendship_requests_received.all()
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'friends': self.get_friends(),
+            'friendship_requests_received': self.get_friendship_requests_received(),
+        })
+        return cd
 
 
 class LimitMaxFriendsMixin(object):
