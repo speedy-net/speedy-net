@@ -66,12 +66,7 @@
                 <a class="navbar-brand" href="/">{{ site.name }}</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
-                {% else %}
-                    <li><a href="{% url 'accounts:index' %}">{% trans 'Register' %}</a></li>
-                    <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
-                {% endif %}
+                {% block login_logout_register %}{% endblock %}
             </ul>
         {% endblock %}
     </div>
@@ -100,33 +95,7 @@
                         <h1>&nbsp;</h1>
                     </div>
                     <ul class="nav nav-pills nav-stacked">
-                        {% block user_menu %}
-                            <li><a href="{% url 'profiles:user' slug=request.user.slug %}">
-                                <i class="fa fa-fw fa-user"></i>
-                                {{ request.user }}
-                            </a></li>
-                            <li><a href="{% url 'friends:list' slug=request.user.slug %}">
-                                <i class="fa fa-fw fa-users"></i>
-                                {% trans 'Friends' %}
-                                {% with request.user.friendship_requests_received.count as frequests_count %}
-                                    {% if frequests_count %}
-                                        <span class="badge">{{ frequests_count }}</span>
-                                    {% endif %}
-                                {% endwith %}
-                            </a></li>
-                            <li><a href="{% url 'im:list' slug=request.user.slug %}">
-                                <i class="fa fa-fw fa-comments"></i>
-                                {% trans 'Messages' %}
-                                {% unread_chats_count request.user as unread_chats %}
-                                {% if unread_chats %}
-                                    <span class="badge">{{ unread_chats }}</span>
-                                {% endif %}
-                            </a></li>
-                        {% endblock %}
-                        <li><a href="{% url 'accounts:edit_profile' %}">
-                            <i class="fa fa-fw fa-pencil"></i>
-                            {% trans 'Edit Profile' %}
-                        </a></li>
+                        {% block user_menu_and_edit_profile %}{% endblock %}
                     </ul>
                 </div>
                 <div class="col-md-9">
