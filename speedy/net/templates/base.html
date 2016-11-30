@@ -154,9 +154,7 @@
     <script>
         {# Cross-domain auth. #}
         {% for other_site in sites %}
-            {% if other_site.id != site.id %}
-                speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
-            {% endif %}
+            speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
         {% endfor %}
     </script>
 {% endblock %}

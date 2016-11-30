@@ -197,7 +197,7 @@ window.speedy = {};
 
 window.speedy.setSession = function (domain, key) {
     $.ajax({
-        url: '//en.' + domain + '/set-session/',
+        url: '//' + domain + '/set-session/',
         method: 'post',
         data: {
             key: key

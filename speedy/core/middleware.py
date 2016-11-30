@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import HttpResponsePermanentRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.utils import translation
 
 
@@ -33,12 +34,27 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
-        if domain != "www.{domain}".format(domain=site.domain, path="/"):
-            for other_site in Site.objects.exclude(id=1):
-                # "Speedy Mail Software" → "mail"
-                other_site_part = other_site.name.split()[1].lower()
-                if other_site_part in domain:
-                    return redirect_to_www(request=request, site=other_site)
+        if request.path == reverse('accounts:set_session'):
+            return self.get_response(request=request)
+
+        if domain != 'www.' + site.domain:
             return redirect_to_www(request=request, site=site)
 
         return language_selector(request=request)
+
+
+class SessionCookieDomainMiddleware(object):
+    """
+    Cross-domain auth.
+    Overrides SESSION_COOKIE_DOMAIN setting with Site.objects.get_current().domain.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        site = Site.objects.get_current()
+        response = self.get_response(request=request)
+        if settings.SESSION_COOKIE_NAME in response.cookies:
+            response.cookies[settings.SESSION_COOKIE_NAME]['domain'] = '.' + site.domain.split(':')[0]
+        return response

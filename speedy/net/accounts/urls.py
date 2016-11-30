@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
 
-    url(r'^set-session/$', views.set_session),
+    url(r'^set-session/$', views.set_session, name='set_session'),
 
     url(r'^$', views.IndexView.as_view(), name='index'),
 
