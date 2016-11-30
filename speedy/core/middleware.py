@@ -33,6 +33,12 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
-        if (not (domain + request.path == "www.{domain}{path}".format(domain=site.domain, path="/"))):
+        if domain != "www.{domain}".format(domain=site.domain, path="/"):
+            for other_site in Site.objects.exclude(id=1):
+                # "Speedy Mail Software" → "mail"
+                other_site_part = other_site.name.split()[1].lower()
+                if other_site_part in domain:
+                    return redirect_to_www(request=request, site=other_site)
             return redirect_to_www(request=request, site=site)
+
         return language_selector(request=request)
