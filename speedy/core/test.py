@@ -1,3 +1,5 @@
+import inspect
+
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.test import TestCase as DjangoTestCase
@@ -14,14 +16,22 @@ class SiteDiscoverRunner(DiscoverRunner):
 
 
 def conditional_test(test_func):
-    def wrapper(method):
-        def inner(self):
+    def wrapper(method_or_class):
+        if inspect.isclass(method_or_class):
+            # Decorate class
             if test_func():
-                return method(self)
+                return method_or_class
             else:
                 return
+        else:
+            # Decorate method
+            def inner(*args, **kwargs):
+                if test_func():
+                    return method_or_class(*args, **kwargs)
+                else:
+                    return
 
-        return inner
+            return inner
 
     return wrapper
 
