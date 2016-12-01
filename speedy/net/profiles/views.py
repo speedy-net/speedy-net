@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.utils import translation
 from django.utils.module_loading import import_string
 from django.views import generic
+from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.net.accounts.models import User, normalize_username
@@ -46,9 +47,14 @@ class UserMixin(object):
             'user': self.user,
         })
         if self.request.user.is_authenticated():
+            try:
+                friend_request_received = FriendshipRequest.objects.get(from_user=self.user, to_user=self.request.user)
+            except FriendshipRequest.DoesNotExist:
+                friend_request_received = False
             cd.update({
                 'user_is_friend': is_friend(self.request.user, self.user),
                 'friend_request_sent': friend_request_sent(self.request.user, self.user),
+                'friend_request_received': friend_request_received,
             })
         return cd
 
