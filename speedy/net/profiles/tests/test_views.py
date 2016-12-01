@@ -1,4 +1,4 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from django.test.client import RequestFactory
 from django.views import generic
 
@@ -11,6 +11,8 @@ class UserMixinTestView(UserMixin, generic.View):
         return self
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UserMixinTextCase(TestCase):
     def setUp(self):
         self.factory = RequestFactory()

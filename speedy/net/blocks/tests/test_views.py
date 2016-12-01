@@ -1,9 +1,11 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from ..models import Block
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class BlockListViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -28,6 +30,8 @@ class BlockListViewTestCase(TestCase):
         self.assertTemplateUsed(r, 'blocks/block_list.html')
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class BlockViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -55,6 +59,8 @@ class BlockViewTestCase(TestCase):
         self.assertRedirects(r, '/{}/'.format(self.other_user.slug))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UnblockViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

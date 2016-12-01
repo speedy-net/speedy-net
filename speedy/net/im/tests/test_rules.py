@@ -1,10 +1,12 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from speedy.net.blocks.models import Block
 from .test_factories import ChatFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class SendMessageTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -22,6 +24,8 @@ class SendMessageTestCase(TestCase):
         self.assertTrue(self.user2.has_perm('im.send_message', self.user1))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ViewChatsTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -34,6 +38,8 @@ class ViewChatsTestCase(TestCase):
         self.assertFalse(self.user1.has_perm('im.view_chats', self.user2))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ReadChatTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()

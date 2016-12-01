@@ -1,10 +1,12 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from friendship.models import Friend
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from speedy.net.blocks.models import Block
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RequestTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -26,6 +28,8 @@ class RequestTestCase(TestCase):
         self.assertFalse(self.user.has_perm('friends.request', self.other_user))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ViewRequestsTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -38,6 +42,8 @@ class ViewRequestsTestCase(TestCase):
         self.assertTrue(self.user.has_perm('friends.view_requests', self.user))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RemoveTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

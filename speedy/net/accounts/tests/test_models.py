@@ -1,7 +1,7 @@
 from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..models import normalize_slug, normalize_username, Entity, User
 from .test_factories import UserFactory, UserEmailAddressFactory
 
@@ -72,6 +72,8 @@ class EntityTestCase(TestCase):
         self.assertIsNone(entity.full_clean(exclude={'id'}))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UserTestCase(TestCase):
 
     def test_has_no_confirmed_email(self):

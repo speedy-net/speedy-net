@@ -14,4 +14,8 @@ LOCALE_PATHS.append(str(APP_DIR / 'locale'))
 
 STATICFILES_DIRS.insert(0, str(APP_DIR / 'static'))
 
+INSTALLED_APPS += [
+    'speedy.mail.accounts',
+]
+
 AUTH_SITE_PROFILE_MODEL = 'mail_accounts.SiteProfile'

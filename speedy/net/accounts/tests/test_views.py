@@ -3,13 +3,15 @@ from datetime import date
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core import mail
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.core.test import exclude_on_speedy_match
 from ..models import Entity, User, UserEmailAddress, SiteProfileBase
 from .test_factories import UserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -25,6 +27,8 @@ class IndexViewTestCase(TestCase):
         self.assertRedirects(r, '/me/', target_status_code=302)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class MeViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory(slug='markmark')
@@ -39,6 +43,8 @@ class MeViewTestCase(TestCase):
         self.assertRedirects(r, '/markmark/')
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RegistrationViewTestCase(TestCase):
     def setUp(self):
         self.data = {
@@ -126,6 +132,8 @@ class RegistrationViewTestCase(TestCase):
         self.assertFormError(r, 'form', 'slug', 'This username is already taken.')
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class LoginViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory(slug='slug.with.dots')
@@ -170,6 +178,8 @@ class LoginViewTestCase(TestCase):
         self.assertRedirects(r, '/me/', target_status_code=302)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class LogoutViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -182,6 +192,8 @@ class LogoutViewTestCase(TestCase):
         self.assertFalse(r.context['user'].is_authenticated())
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class EditProfileViewTestCase(TestCase):
     page_url = '/edit-profile/'
 
@@ -218,6 +230,8 @@ class EditProfileViewTestCase(TestCase):
         self.assertEqual(user.date_of_birth, date(1976, 6, 3))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class EditProfilePrivacyViewTestCase(TestCase):
     page_url = '/edit-profile/privacy/'
 
@@ -250,6 +264,8 @@ class EditProfilePrivacyViewTestCase(TestCase):
         self.assertEqual(user.profile.access_dob_year, 4)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class EditProfileNotificationsViewTestCase(TestCase):
     page_url = '/edit-profile/notifications/'
 
@@ -279,6 +295,8 @@ class EditProfileNotificationsViewTestCase(TestCase):
         self.assertEqual(user.profile.notify_on_message, SiteProfileBase.NOTIFICATIONS_OFF)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class EditProfileCredentialsViewTestCase(TestCase):
     page_url = '/edit-profile/credentials/'
 
@@ -308,6 +326,8 @@ class EditProfileCredentialsViewTestCase(TestCase):
         self.assertTrue(user.check_password('88888888'))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ActivateSiteProfileViewTestCase(TestCase):
     page_url = '/welcome/'
 
@@ -337,6 +357,8 @@ class ActivateSiteProfileViewTestCase(TestCase):
         self.assertTrue(user.profile.is_active)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class DeactivateSiteProfileViewTestCase(TestCase):
     page_url = '/edit-profile/deactivate/'
 
@@ -365,6 +387,8 @@ class DeactivateSiteProfileViewTestCase(TestCase):
         self.assertFalse(user.profile.is_active)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class VerifyUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -394,6 +418,8 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.assertTrue(UserEmailAddress.objects.get(id=self.unconfirmed_address.id).is_confirmed)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class AddUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -430,6 +456,8 @@ class AddUserEmailAddressViewTestCase(TestCase):
                       mail.outbox[0].body)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class SendConfirmationEmailViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -463,6 +491,8 @@ class SendConfirmationEmailViewTestCase(TestCase):
                       mail.outbox[0].body)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class DeleteUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -496,6 +526,8 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(self.user.email_addresses.count(), 1)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class SetPrimaryUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -535,6 +567,8 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(self.user.email_addresses.get(is_primary=True), self.confirmed_address)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class PasswordResetViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

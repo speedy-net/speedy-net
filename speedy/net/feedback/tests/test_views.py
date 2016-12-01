@@ -1,7 +1,7 @@
 from django.contrib.sites.models import Site
 from django.core import mail
 
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from speedy.net.uploads.tests.test_factories import FileFactory
@@ -39,6 +39,8 @@ class FeedbackViewBaseMixin(object):
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
 
+    @exclude_on_speedy_composer
+    @exclude_on_speedy_mail_software
     def test_user_can_see_feedback_form(self):
         self.client.login(username=self.user.slug, password='111')
         r = self.client.get(self.page_url)
@@ -47,6 +49,8 @@ class FeedbackViewBaseMixin(object):
         self.assertNotContains(r, 'id_sender_name')
         self.assertNotContains(r, 'id_sender_email')
 
+    @exclude_on_speedy_composer
+    @exclude_on_speedy_mail_software
     def test_user_can_submit_form(self):
         self.client.login(username=self.user.slug, password='111')
         self.assertEqual(Feedback.objects.count(), 0)
@@ -69,6 +73,8 @@ class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(feedback.type, Feedback.TYPE_FEEDBACK)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
     def get_page_url(self):
         return '/feedback/entity/{}/'.format(self.other_user.slug)
@@ -82,6 +88,8 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(r.status_code, 404)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
     def get_page_url(self):
         return '/feedback/file/{}/'.format(self.file.id)

@@ -3,12 +3,14 @@ import os
 import tempfile
 
 from django.core.files.uploadedfile import SimpleUploadedFile
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from ..models import Image
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UploadViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

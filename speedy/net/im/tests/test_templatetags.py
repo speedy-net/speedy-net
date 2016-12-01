@@ -1,4 +1,4 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from speedy.net.im.models import Message, ReadMark
@@ -6,6 +6,8 @@ from ..templatetags import im_tags
 from .test_factories import ChatFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class GetOtherParticipantTestCase(TestCase):
     def test_tag(self):
         user1 = UserFactory()
@@ -15,6 +17,8 @@ class GetOtherParticipantTestCase(TestCase):
         self.assertEqual(im_tags.get_other_participant(chat, user2).id, user1.id)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class AnnotateChatsWithReadMarksTestCase(TestCase):
     def test_tag(self):
         user1 = UserFactory()
@@ -49,6 +53,8 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
         self.assertTrue(chats[4].is_unread)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class AnnotateMessagesWithReadMarksTestCase(TestCase):
     def test_tag(self):
         user1 = UserFactory()
@@ -74,6 +80,8 @@ class AnnotateMessagesWithReadMarksTestCase(TestCase):
         self.assertFalse(messages[2].is_unread)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UnreadChatsCount(TestCase):
     def test_tag(self):
         user1 = UserFactory()

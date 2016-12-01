@@ -1,10 +1,12 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.tests.test_factories import UserFactory, UserEmailAddressFactory
 from ..forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RegistrationFormTestCase(TestCase):
     def setUp(self):
         self.valid_data = {
@@ -87,6 +89,8 @@ class RegistrationFormTestCase(TestCase):
     #     self.assertEqual(form.errors['new_password2'][0], 'The two password fields didn\'t match.')
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ProfilePrivacyFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -97,6 +101,8 @@ class ProfilePrivacyFormTestCase(TestCase):
         self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ProfileNotificationsFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -109,6 +115,8 @@ class ProfileNotificationsFormTestCase(TestCase):
         ])
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class PasswordResetFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -129,6 +137,8 @@ class PasswordResetFormTestCase(TestCase):
         self.assertSetEqual(self.form.get_users(self.unconfirmed_email.email), {self.user})
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class DeactivationFormTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

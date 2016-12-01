@@ -1,10 +1,12 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from ..models import Feedback
 from ..forms import FeedbackForm
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class FeedbackFormTestCase(TestCase):
     def test_feedback_form_for_visitor_displays_name_and_email(self):
         form = FeedbackForm(

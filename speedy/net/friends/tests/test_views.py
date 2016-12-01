@@ -1,4 +1,4 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
@@ -6,6 +6,8 @@ from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.tests.test_factories import UserFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UserFriendListViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -27,6 +29,8 @@ class UserFriendListViewTestCase(TestCase):
         self.assertEqual(r.status_code, 200)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UserFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -64,6 +68,8 @@ class UserFriendRequestViewTestCase(TestCase):
                       "friends before you proceed.", map(str, r.context['messages']))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class CancelFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -85,6 +91,8 @@ class CancelFriendRequestViewTestCase(TestCase):
         self.assertIn("You've cancelled your friend request.", map(str, r.context['messages']))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class AcceptFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -132,6 +140,8 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertFalse(Friend.objects.are_friends(self.user, self.other_user))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RejectFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
@@ -159,6 +169,8 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.assertEqual(self.other_user.friendship_requests_received.count(), 0)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RemoveFriendViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

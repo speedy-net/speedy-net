@@ -1,10 +1,12 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
 from ..models import Message, ReadMark, Chat
 from .test_factories import ChatFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ChatListViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -32,6 +34,8 @@ class ChatListViewTestCase(TestCase):
         self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ChatDetailViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -68,6 +72,8 @@ class ChatDetailViewTestCase(TestCase):
         self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class SendMessageToChatViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -108,6 +114,8 @@ class SendMessageToChatViewTestCase(TestCase):
         self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class SendMessageToUserViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
@@ -159,6 +167,8 @@ class SendMessageToUserViewTestCase(TestCase):
         self.assertTrue(chat.is_private)
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class MarkChatAsReadViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()

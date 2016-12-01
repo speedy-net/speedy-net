@@ -1,4 +1,4 @@
-from speedy.core.test import TestCase
+from speedy.core.test import TestCase, exclude_on_speedy_mail_software, exclude_on_speedy_composer
 from friendship.models import Friend
 
 from speedy.core.test import exclude_on_speedy_match
@@ -7,6 +7,8 @@ from speedy.net.blocks.models import Block
 from .test_factories import UserFactory
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class ViewProfileTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
