@@ -396,7 +396,8 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
 
     def test_wrong_link_gives_404(self):
-        token = UserEmailAddress._generate_confirmation_token()
+        user_email_address = UserEmailAddress()
+        token = user_email_address._generate_confirmation_token()
         r = self.client.get('/edit-profile/emails/verify/{}/'.format(token))
         self.assertEqual(r.status_code, 404)
 

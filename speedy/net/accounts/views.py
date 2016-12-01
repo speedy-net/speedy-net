@@ -81,10 +81,7 @@ class RegistrationView(generic.CreateView):
 
 @sensitive_post_parameters()
 @never_cache
-def login(request, template_name='accounts/login.html',
-          redirect_field_name=REDIRECT_FIELD_NAME,
-          authentication_form=LoginForm,
-          extra_context=None):
+def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None):
     response = auth_views.login(
         request,
         template_name=template_name,

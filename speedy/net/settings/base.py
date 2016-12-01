@@ -159,7 +159,10 @@ UNAVAILABLE_USERNAMES = [
     'admin', 'root', 'webmaster', 'uri', 'speedy',
     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
     'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
-    'welcome',
+    'welcome', 'setsession', 'static', 'images', 'css', 'js',
+    'javascript', 'python',
+    'speedynet', 'speedymatch', 'speedycomposer', 'speedymail', 'speedymailsoftware',
+    'postmaster', 'mail', 'domain', 'locale',
 ]
 
 DONT_REDIRECT_INACTIVE_USER = [
