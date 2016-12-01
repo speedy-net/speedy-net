@@ -2,5 +2,10 @@
 
 {% load staticfiles %}
 
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-composer/css/welcome-site.css' %}" />
+{% endblock %}
+
 {% block logo_src %}{% static 'speedy-composer/images/logo.png' %}{% endblock %}
 {% block splash_src %}{% static 'speedy-composer/images/splash.png' %}{% endblock %}
