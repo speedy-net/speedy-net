@@ -146,6 +146,11 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/me/'
 
+XD_AUTH_SITES = [
+    int(env('SPEEDY_NET_SITE_ID')),
+    int(env('SPEEDY_MATCH_SITE_ID')),
+]
+
 UNAVAILABLE_USERNAMES = [
     'admin', 'root', 'webmaster', 'uri', 'speedy',
     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',

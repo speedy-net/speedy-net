@@ -153,9 +153,13 @@
     <script src="{% static 'speedy-net/js/speedy-net.js' %}"></script>
     <script>
         {# Cross-domain auth. #}
-        {% for other_site in sites %}
-            speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
-        {% endfor %}
+        {% if site.id in settings.XD_AUTH_SITES %}
+            {% for other_site in sites %}
+                {% if other_site.id in settings.XD_AUTH_SITES %}
+                    speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </script>
 {% endblock %}
 

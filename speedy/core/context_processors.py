@@ -28,5 +28,5 @@ def sites(request):
     return {
         'site': site,
         'site_title': site_title,
-        'sites': Site.objects.all(),
+        'sites': Site.objects.all().order_by('id'),
     }

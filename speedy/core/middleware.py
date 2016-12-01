@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import HttpResponsePermanentRedirect
 from django.shortcuts import render
+from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
 
@@ -34,8 +35,11 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
-        if request.path == reverse('accounts:set_session'):
-            return self.get_response(request=request)
+        try:
+            if request.path == reverse('accounts:set_session'):
+                return self.get_response(request=request)
+        except NoReverseMatch:
+            pass
 
         if domain != 'www.' + site.domain:
             return redirect_to_www(request=request, site=site)
