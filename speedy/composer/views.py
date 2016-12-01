@@ -1,6 +1,6 @@
-from django.views import generic
+from speedy.core.views import MainPageBaseView
 
 
-class MainPageView(generic.TemplateView):
+class MainPageView(MainPageBaseView):
     template_name = 'main_page.html'
 
