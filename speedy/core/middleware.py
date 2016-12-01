@@ -43,6 +43,8 @@ class LocaleDomainMiddleware(object):
 
         if domain != 'www.' + site.domain:
             return redirect_to_www(request=request, site=site)
+        elif request.path != '/':
+            return redirect_to_www(request=request, site=site)
 
         return language_selector(request=request)
 
