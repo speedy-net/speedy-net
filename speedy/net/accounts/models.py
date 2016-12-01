@@ -13,7 +13,7 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel, SmallUDIDField, generate_confirmation_token
+from speedy.core.models import TimeStampedModel, SmallUDIDField, generate_confirmation_token, RegularUDIDField
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -210,6 +210,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
 
 class UserEmailAddress(TimeStampedModel):
+    id = RegularUDIDField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'), related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)

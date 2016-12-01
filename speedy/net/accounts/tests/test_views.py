@@ -402,16 +402,18 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
 
     def test_confirmed_email_link_redirects_to_edit_profile(self):
         self.client.login(username=self.user.slug, password='111')
+        email_id = self.confirmed_address.id
         token = self.confirmed_address.confirmation_token
-        r = self.client.get('/edit-profile/emails/verify/{}/'.format(token))
+        r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn('You\'ve already confirmed this email address.', map(str, r.context['messages']))
 
     def test_unconfirmed_email_link_confirms_email(self):
         self.client.login(username=self.user.slug, password='111')
+        email_id = self.unconfirmed_address.id
         token = self.unconfirmed_address.confirmation_token
-        r = self.client.get('/edit-profile/emails/verify/{}/'.format(token))
+        r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn('You\'ve confirmed your email address.', map(str, r.context['messages']))
@@ -447,6 +449,8 @@ class AddUserEmailAddressViewTestCase(TestCase):
             'email': 'email@example.com',
         })
         self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
+        email_address = UserEmailAddress.objects.get(email='email@example.com')
+        self.assertFalse(email_address.is_primary)
         r = self.client.get('/edit-profile/')
         self.assertIn('A confirmation was sent to email@example.com', map(str, r.context['messages']))
         self.assertEqual(len(mail.outbox), 1)
@@ -455,6 +459,14 @@ class AddUserEmailAddressViewTestCase(TestCase):
         self.assertIn(UserEmailAddress.objects.get(email='email@example.com').confirmation_token,
                       mail.outbox[0].body)
 
+    def test_first_email_is_primary(self):
+        self.confirmed_address.delete()
+        r = self.client.post('/edit-profile/emails/add/', data={
+            'email': 'email@example.com',
+        })
+        self.assertRedirects(r, '/edit-profile/emails/', target_status_code=302)
+        email_address = UserEmailAddress.objects.get(email='email@example.com')
+        self.assertTrue(email_address.is_primary)
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software

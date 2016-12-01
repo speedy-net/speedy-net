@@ -203,14 +203,15 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
 
 class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):
     model = UserEmailAddress
-    slug_field = 'confirmation_token'
-    slug_url_kwarg = 'token'
     success_url = reverse_lazy('accounts:edit_profile_emails')
 
     def get(self, request, *args, **kwargs):
         email_address = self.get_object()
+        token = self.kwargs.get('token')
         if email_address.is_confirmed:
             messages.warning(self.request, _('You\'ve already confirmed this email address.'))
+        elif email_address.confirmation_token != token:
+            messages.error(self.request, _('Invalid confirmation link.'))
         else:
             email_address.verify()
             messages.success(self.request, _('You\'ve confirmed your email address.'))
@@ -233,8 +234,11 @@ class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        self.object.send_confirmation_email()
-        messages.success(self.request, 'A confirmation was sent to {}'.format(self.object.email))
+        email_address = self.object
+        email_address.send_confirmation_email()
+        if email_address.user.email_addresses.filter(is_primary=True).count() == 0:
+            email_address.make_primary()
+        messages.success(self.request, 'A confirmation was sent to {}'.format(email_address.email))
         return response
 
 

@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^edit-profile/credentials/$', views.EditProfileCredentialsView.as_view(), name='edit_profile_credentials'),
     url(r'^edit-profile/deactivate/$', views.DeactivateSiteProfileView.as_view(), name='deactivate_profile'),
     url(r'^edit-profile/emails/$', generic.RedirectView.as_view(pattern_name='accounts:edit_profile_credentials'), name='edit_profile_emails'),
-    url(r'^edit-profile/emails/verify/(?P<token>\w+)/$', views.VerifyUserEmailAddressView.as_view(), name='verify_email'),
+    url(r'^edit-profile/emails/(?P<pk>\d+)/verify/(?P<token>\w+)/$', views.VerifyUserEmailAddressView.as_view(), name='verify_email'),
     url(r'^edit-profile/emails/add/$', views.AddUserEmailAddressView.as_view(), name='add_email'),
     url(r'^edit-profile/emails/(?P<pk>\d+)/confirm/$', views.ResendConfirmationEmailView.as_view(), name='confirm_email'),
     url(r'^edit-profile/emails/(?P<pk>\d+)/delete/$', views.DeleteUserEmailAddressView.as_view(), name='delete_email'),
