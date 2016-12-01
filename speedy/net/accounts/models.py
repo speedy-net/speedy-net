@@ -222,6 +222,7 @@ class UserEmailAddress(TimeStampedModel):
     class Meta:
         verbose_name = _('email address')
         verbose_name_plural = _('email addresses')
+        ordering = ('date_created', 'id', )
 
     def __str__(self):
         return self.email
@@ -231,8 +232,7 @@ class UserEmailAddress(TimeStampedModel):
             self.confirmation_token = self._generate_confirmation_token()
         return super().save(*args, **kwargs)
 
-    @staticmethod
-    def _generate_confirmation_token():
+    def _generate_confirmation_token(self):
         return generate_confirmation_token()
 
     def mail(self, template_name_prefix, context=None):

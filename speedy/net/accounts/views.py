@@ -210,11 +210,12 @@ class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):
         token = self.kwargs.get('token')
         if email_address.is_confirmed:
             messages.warning(self.request, _('You\'ve already confirmed this email address.'))
-        elif email_address.confirmation_token != token:
-            messages.error(self.request, _('Invalid confirmation link.'))
         else:
-            email_address.verify()
-            messages.success(self.request, _('You\'ve confirmed your email address.'))
+            if email_address.confirmation_token == token:
+                email_address.verify()
+                messages.success(self.request, _('You\'ve confirmed your email address.'))
+            else:
+                messages.error(self.request, _('Invalid confirmation link.'))
         return HttpResponseRedirect(self.success_url)
 
 
