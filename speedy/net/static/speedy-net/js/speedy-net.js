@@ -153,11 +153,11 @@ evil.block('@@Uploader', {
                 }
                 return xhr;
             }
-        }).done(function(data, textStatus, jqXHR) {
+        }).done(function (data, textStatus, jqXHR) {
             this_.boundState();
             this_.filename.text(data.files[0].name);
             this_.realInput.val(data.files[0].uuid);
-        }).fail(function(jqXHR, textStatus, errorThrown) {
+        }).fail(function (jqXHR, textStatus, errorThrown) {
             var data = jqXHR.responseJSON;
             for (var errorField in data) {
                 if (data.hasOwnProperty(errorField)) {

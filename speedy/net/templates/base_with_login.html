@@ -43,3 +43,16 @@
     </a></li>
 {% endblock %}
 
+{% block domain_cookie_login %}
+    <script>
+        {# Cross-domain auth. #}
+        {% if site.id in settings.XD_AUTH_SITES %}
+            {% for other_site in sites %}
+                {% if other_site.id in settings.XD_AUTH_SITES %}
+                    speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </script>
+{% endblock %}
+
