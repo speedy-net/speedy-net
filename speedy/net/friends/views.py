@@ -26,16 +26,22 @@ class UserFriendListView(UserMixin, generic.TemplateView):
         ).order_by('-last_visit')
         return qs
 
-    def get_friendship_requests_received(self):
-        return self.user.friendship_requests_received.all()
-
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
             'friends': self.get_friends(),
-            'friendship_requests_received': self.get_friendship_requests_received(),
         })
         return cd
+
+
+class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    template_name = 'friends/received_requests.html'
+    permission_required = 'friends.view_requests'
+
+
+class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    template_name = 'friends/sent_requests.html'
+    permission_required = 'friends.view_requests'
 
 
 class LimitMaxFriendsMixin(object):

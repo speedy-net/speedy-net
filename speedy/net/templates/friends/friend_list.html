@@ -1,25 +1,8 @@
-{% extends 'profiles/user_base.html' %}
+{% extends 'friends/base.html' %}
 
-{% load friendshiptags %}
 {% load i18n %}
-{% load rules %}
 
-{% block title %}{% trans 'Friends' %} / {{ block.super }}{% endblock %}
-
-{% block user_content %}
-
-    {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
-
-    {% if can_view_requests %}
-        {% if friendship_requests_received|length %}
-            <h2>{% trans 'Incoming Requests' %}</h2>
-            {% for friend_request in friendship_requests_received %}
-                {% include 'profiles/user_list_item.html' with user=friend_request.from_user %}
-            {% endfor %}
-            <h2>{% trans 'Friends' %}</h2>
-        {% endif %}
-    {% endif %}
-
+{% block tab_content %}
     {% for friendship in friends %}
         {% include 'profiles/user_list_item.html' with user=friendship.from_user %}
     {% empty %}
@@ -27,5 +10,4 @@
             {% trans 'This user has no friends yet.' %}
         </div>
     {% endfor %}
-
 {% endblock %}

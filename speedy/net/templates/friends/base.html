@@ -1,0 +1,33 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load core_tags %}
+{% load i18n %}
+{% load rules %}
+
+{% block title %}{% trans 'Friends' %} / {{ block.super }}{% endblock %}
+
+{% block user_content %}
+    {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
+
+    {% if can_view_requests %}
+        <ul class="nav nav-tabs">
+            <li class="{% active_class 'friends:list' %}"><a
+                    href="{% url 'friends:list' user.slug %}">{% trans 'Your Friends' %}</a></li>
+            <li class="{% active_class 'friends:received_requests' %}"><a
+                    href="{% url 'friends:received_requests' user.slug %}">
+                {% trans 'Received Requests' %}
+                <span class="badge">{{ user.friendship_requests_received.count }}</span>
+            </a></li>
+            <li class="{% active_class 'friends:sent_requests' %}"><a
+                    href="{% url 'friends:sent_requests' user.slug %}">
+                {% trans 'Sent Requests' %}
+                <span class="badge">{{ user.friendship_requests_sent.count }}</span>
+            </a></li>
+
+        </ul>
+        <br>
+    {% endif %}
+
+    {% block tab_content %}{% endblock %}
+
+{% endblock %}

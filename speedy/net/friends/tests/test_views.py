@@ -31,6 +31,56 @@ class UserFriendListViewTestCase(TestCase):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
+class ReceivedFriendshipRequestsListView(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        self.client.login(username=self.user.slug, password='111')
+        self.page_url = '/{}/friends/received-requests/'.format(self.user.slug)
+        self.other_page_url = '/{}/friends/received-requests/'.format(self.other_user.slug)
+
+    @exclude_on_speedy_match
+    def test_visitor_cannot_open_the_page(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+
+    def test_user_cannot_open_other_users_requests_page(self):
+        r = self.client.get(self.other_page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.other_page_url))
+
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
+class SentFriendshipRequestsListView(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.other_user = UserFactory()
+        self.client.login(username=self.user.slug, password='111')
+        self.page_url = '/{}/friends/sent-requests/'.format(self.user.slug)
+        self.other_page_url = '/{}/friends/sent-requests/'.format(self.other_user.slug)
+
+    @exclude_on_speedy_match
+    def test_visitor_cannot_open_the_page(self):
+        self.client.logout()
+        r = self.client.get(self.page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+
+    def test_user_can_open_the_page(self):
+        r = self.client.get(self.page_url)
+        self.assertEqual(r.status_code, 200)
+
+    def test_user_cannot_open_other_users_requests_page(self):
+        r = self.client.get(self.other_page_url)
+        self.assertRedirects(r, '/login/?next={}'.format(self.other_page_url))
+
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class UserFriendRequestViewTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()

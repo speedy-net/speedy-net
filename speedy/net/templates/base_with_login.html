@@ -19,15 +19,15 @@
         <i class="fa fa-fw fa-user"></i>
         {{ request.user }}
     </a></li>
-    <li><a href="{% url 'friends:list' slug=request.user.slug %}">
-        <i class="fa fa-fw fa-users"></i>
-        {% trans 'Friends' %}
-        {% with request.user.friendship_requests_received.count as frequests_count %}
-        {% if frequests_count %}
-        <span class="badge">{{ frequests_count }}</span>
-        {% endif %}
-        {% endwith %}
-    </a></li>
+    {% with request.user.friendship_requests_received.count as frequests_count %}
+        <li><a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">
+            <i class="fa fa-fw fa-users"></i>
+            {% trans 'Friends' %}
+            {% if frequests_count %}
+            <span class="badge">{{ frequests_count }}</span>
+            {% endif %}
+        </a></li>
+    {% endwith %}
     <li><a href="{% url 'im:list' slug=request.user.slug %}">
         <i class="fa fa-fw fa-comments"></i>
         {% trans 'Messages' %}
