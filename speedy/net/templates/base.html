@@ -57,7 +57,7 @@
                        aria-expanded="false"><i class="fa fa-th"></i></a>
                     <ul class="dropdown-menu">
                         {% for other_site in sites %}
-                            <li><a href="//{{ other_site.domain }}">{{ other_site.name }}</a></li>
+                            <li><a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{{ other_site.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
