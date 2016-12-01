@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.forms import ModelFormWithDefaults
 from speedy.core.mail import send_mail
-from .models import User, UserEmailAddress, SiteProfile
+from .models import User, UserEmailAddress, SiteProfile, normalize_username
 from .utils import get_site_profile_model
 
 DATE_FIELD_FORMATS = [
@@ -123,6 +123,13 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
             for pair in zip(field_names[::2], field_names[1::2])
             ]))
         self.helper.add_input(Submit('submit', _('Save Changes')))
+
+    def clean_slug(self):
+        slug = self.cleaned_data.get('slug')
+        username = self.instance.username
+        if normalize_username(slug) != username:
+            raise forms.ValidationError(_('You can\'t change your username'))
+        return slug
 
 
 class ProfilePrivacyForm(forms.ModelForm):
