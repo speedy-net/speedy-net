@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 16:59+0200\n"
+"POT-Creation-Date: 2016-12-01 18:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\models.py:12
+msgid "indicates if a user has ever logged in to the site"
+msgstr ""
 
 #: .\templates\main_page.html:11
 msgid "Welcome to Speedy Mail Software!"
@@ -71,5 +75,5 @@ msgid "Founder and director of Speedy Net and Speedy Mail,"
 msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
 
 #: .\templates\main_page.html:22
-msgid "Speedy Paz Technologies Limited."
+msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
