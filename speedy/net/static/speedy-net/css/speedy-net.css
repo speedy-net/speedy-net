@@ -22,3 +22,12 @@ body.bidi-rtl .pull-right,
 body.bidi-rtl .navbar-right {
     float: left !important;
 }
+
+.navbar-speedy-net {
+    background-color: #b2cafa;
+}
+
+.navbar-speedy-net a {
+    color: #000000;
+}
+
