@@ -21,8 +21,8 @@ class UserMixinTextCase(TestCase):
 
     def test_find_user_by_exact_slug(self):
         view = UserMixinTestView.as_view()(self.factory.get('/look-at-me/some-page/'), slug='look-at-me')
-        self.assertEqual(view.get_user().id, self.user.id)
+        self.assertEqual(first=view.get_user().id, second=self.user.id)
 
     def test_find_user_by_username(self):
         r = self.client.get('/l-o-o-k_a_t_m-e/')
-        self.assertRedirects(r, '/look-at-me/')
+        self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)

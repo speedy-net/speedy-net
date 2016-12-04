@@ -12,30 +12,30 @@ class BlockManagerTestCase(TestCase):
         self.other_user = UserFactory()
 
     def test_block(self):
-        self.assertEqual(Block.objects.count(), 0)
+        self.assertEqual(first=Block.objects.count(), second=0)
         block = Block.objects.block(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 1)
-        self.assertEqual(block.blocker_id, self.user.id)
-        self.assertEqual(block.blockee_id, self.other_user.id)
+        self.assertEqual(first=Block.objects.count(), second=1)
+        self.assertEqual(first=block.blocker_id, second=self.user.id)
+        self.assertEqual(first=block.blockee_id, second=self.other_user.id)
 
     def test_existing_block(self):
         block = Block.objects.block(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 1)
+        self.assertEqual(first=Block.objects.count(), second=1)
         block2 = Block.objects.block(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 1)
-        self.assertEqual(block, block2)
+        self.assertEqual(first=Block.objects.count(), second=1)
+        self.assertEqual(first=block, second=block2)
 
     def test_unblock(self):
         Block.objects.block(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 1)
+        self.assertEqual(first=Block.objects.count(), second=1)
         Block.objects.unblock(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 0)
+        self.assertEqual(first=Block.objects.count(), second=0)
         Block.objects.unblock(self.user, self.other_user)
-        self.assertEqual(Block.objects.count(), 0)
+        self.assertEqual(first=Block.objects.count(), second=0)
 
     def test_has_blocked_true(self):
         Block.objects.block(self.user, self.other_user)
-        self.assertTrue(Block.objects.has_blocked(self.user, self.other_user))
+        self.assertTrue(expr=Block.objects.has_blocked(self.user, self.other_user))
 
     def test_has_blocked_false(self):
-        self.assertFalse(Block.objects.has_blocked(self.user, self.other_user))
+        self.assertFalse(expr=Block.objects.has_blocked(self.user, self.other_user))

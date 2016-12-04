@@ -20,18 +20,18 @@ class ChatListViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_see_a_list_of_his_chats(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertEqual(r.status_code, 200)
-        self.assertListEqual(list(r.context['chat_list']), [self.chat_3_1, self.chat_1_2])
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertListEqual(list1=list(r.context['chat_list']), list2=[self.chat_3_1, self.chat_1_2])
 
     def test_user_cannot_see_a_list_of_chats_of_other_user(self):
         self.client.login(username=self.user2.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
 
 @exclude_on_speedy_composer
@@ -52,24 +52,24 @@ class ChatDetailViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_read_a_chat_he_has_access_to(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertEqual(r.status_code, 200)
+        self.assertEqual(first=r.status_code, second=200)
         messages = r.context['message_list']
-        self.assertEqual(len(messages), 3)
+        self.assertEqual(first=len(messages), second=3)
 
     def test_user_cannot_read_a_chat_he_has_not_access_to(self):
         self.client.login(username=self.user3.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_read_a_chat_he_has_access_to_but_he_logged_in_as_another_user(self):
         self.client.login(username=self.user2.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
 
 @exclude_on_speedy_composer
@@ -91,27 +91,27 @@ class SendMessageToChatViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_get_redirects_to_chat_page(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, self.chat_url)
+        self.assertRedirects(response=r, expected_url=self.chat_url)
 
     def test_user_can_write_to_a_chat_he_has_access_to(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, self.chat_url)
+        self.assertRedirects(response=r, expected_url=self.chat_url)
 
     def test_user_cannot_write_to_a_chat_he_has_not_access_to(self):
         self.client.login(username=self.user3.slug, password='111')
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_write_to_a_chat_he_has_access_to_but_he_logged_in_as_another_user(self):
         self.client.login(username=self.user2.slug, password='111')
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
 
 @exclude_on_speedy_composer
@@ -128,43 +128,43 @@ class SendMessageToUserViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_send_message_to_self(self):
         self.client.login(username=self.user2.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_see_a_form(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertEqual(r.status_code, 200)
-        self.assertTemplateUsed(r, 'im/message_form.html')
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertTemplateUsed(response=r, template_name='im/message_form.html')
 
     def test_user_gets_redirected_to_existing_chat(self):
         chat = Chat.on_site.chat_with(self.user1, self.user2)
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
-        self.assertRedirects(r, '/{}/messages/{}/'.format(self.user1.slug, chat.id))
+        self.assertRedirects(response=r, expected_url='/{}/messages/{}/'.format(self.user1.slug, chat.id))
 
     def test_user_can_submit_the_form(self):
         self.client.login(username=self.user1.slug, password='111')
-        self.assertEqual(Message.objects.count(), 0)
+        self.assertEqual(first=Message.objects.count(), second=0)
         r = self.client.post(self.page_url, self.data)
-        self.assertEqual(Message.objects.count(), 1)
+        self.assertEqual(first=Message.objects.count(), second=1)
         message = Message.objects.latest()
         chat = message.chat
-        self.assertRedirects(r, '/{}/messages/{}/'.format(self.user1.slug, chat.id))
-        self.assertEqual(message.text, 'Hi Hi Hi')
-        self.assertEqual(message.sender.id, self.user1.id)
-        self.assertEqual(chat.last_message, message)
-        self.assertEqual(chat.ent1.id, self.user1.id)
-        self.assertEqual(chat.ent2.id, self.user2.id)
-        self.assertTrue(chat.is_private)
+        self.assertRedirects(response=r, expected_url='/{}/messages/{}/'.format(self.user1.slug, chat.id))
+        self.assertEqual(first=message.text, second='Hi Hi Hi')
+        self.assertEqual(first=message.sender.id, second=self.user1.id)
+        self.assertEqual(first=chat.last_message, second=message)
+        self.assertEqual(first=chat.ent1.id, second=self.user1.id)
+        self.assertEqual(first=chat.ent2.id, second=self.user2.id)
+        self.assertTrue(expr=chat.is_private)
 
 
 @exclude_on_speedy_composer
@@ -182,12 +182,12 @@ class MarkChatAsReadViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.post(self.page_url)
-        self.assertRedirects(r, '/login/?next={}'.format(self.page_url))
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_mark_chat_as_read(self):
         # ~~~~ TODO: this test fails locally sometimes.
         self.client.login(username=self.user1.slug, password='111')
-        self.assertLess(ReadMark.objects.get(entity_id=self.user1.id).date_updated, self.messages[1].date_created)
+        self.assertLess(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
         r = self.client.post(self.page_url)
-        self.assertRedirects(r, self.chat_url)
-        self.assertGreater(ReadMark.objects.get(entity_id=self.user1.id).date_updated, self.messages[1].date_created)
+        self.assertRedirects(response=r, expected_url=self.chat_url)
+        self.assertGreater(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)

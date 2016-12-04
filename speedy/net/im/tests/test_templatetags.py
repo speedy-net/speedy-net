@@ -13,8 +13,8 @@ class GetOtherParticipantTestCase(TestCase):
         user1 = UserFactory()
         user2 = UserFactory()
         chat = ChatFactory(ent1=user1, ent2=user2)
-        self.assertEqual(im_tags.get_other_participant(chat, user1).id, user2.id)
-        self.assertEqual(im_tags.get_other_participant(chat, user2).id, user1.id)
+        self.assertEqual(first=im_tags.get_other_participant(chat, user1).id, second=user2.id)
+        self.assertEqual(first=im_tags.get_other_participant(chat, user2).id, second=user1.id)
 
 
 @exclude_on_speedy_composer
@@ -45,12 +45,12 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
         _message(4)
 
         output = im_tags.annotate_chats_with_read_marks(chats, user1)
-        self.assertEqual(output, '')
-        self.assertFalse(chats[0].is_unread)
-        self.assertFalse(chats[1].is_unread)
-        self.assertTrue(chats[2].is_unread)
-        self.assertFalse(chats[3].is_unread)
-        self.assertTrue(chats[4].is_unread)
+        self.assertEqual(first=output, second='')
+        self.assertFalse(expr=chats[0].is_unread)
+        self.assertFalse(expr=chats[1].is_unread)
+        self.assertTrue(expr=chats[2].is_unread)
+        self.assertFalse(expr=chats[3].is_unread)
+        self.assertTrue(expr=chats[4].is_unread)
 
 
 @exclude_on_speedy_composer
@@ -65,19 +65,19 @@ class AnnotateMessagesWithReadMarksTestCase(TestCase):
             Message.objects.send_message(from_entity=user1, chat=chat, text='User 1 Message'),
             Message.objects.send_message(from_entity=user2, chat=chat, text='User 2 Second Message'),
         ]
-        self.assertEqual(ReadMark.objects.count(), 2)
+        self.assertEqual(first=ReadMark.objects.count(), second=2)
 
         output = im_tags.annotate_messages_with_read_marks(messages, user1)
-        self.assertEqual(output, '')
-        self.assertFalse(messages[0].is_unread)
-        self.assertFalse(messages[1].is_unread)
-        self.assertTrue(messages[2].is_unread)
+        self.assertEqual(first=output, second='')
+        self.assertFalse(expr=messages[0].is_unread)
+        self.assertFalse(expr=messages[1].is_unread)
+        self.assertTrue(expr=messages[2].is_unread)
 
         output = im_tags.annotate_messages_with_read_marks(messages, user2)
-        self.assertEqual(output, '')
-        self.assertFalse(messages[0].is_unread)
-        self.assertFalse(messages[1].is_unread)
-        self.assertFalse(messages[2].is_unread)
+        self.assertEqual(first=output, second='')
+        self.assertFalse(expr=messages[0].is_unread)
+        self.assertFalse(expr=messages[1].is_unread)
+        self.assertFalse(expr=messages[2].is_unread)
 
 
 @exclude_on_speedy_composer
@@ -105,6 +105,6 @@ class UnreadChatsCount(TestCase):
         Message.objects.send_message(from_entity=user2, chat=chats[2], text='text')
         Message.objects.send_message(from_entity=user3, chat=chats[2], text='text')
 
-        self.assertEqual(im_tags.unread_chats_count(user1), 1 + 1 + 0)
-        self.assertEqual(im_tags.unread_chats_count(user2), 0 + 0 + 1)
-        self.assertEqual(im_tags.unread_chats_count(user3), 0 + 0 + 0)
+        self.assertEqual(first=im_tags.unread_chats_count(user1), second=1 + 1 + 0)
+        self.assertEqual(first=im_tags.unread_chats_count(user2), second=0 + 0 + 1)
+        self.assertEqual(first=im_tags.unread_chats_count(user3), second=0 + 0 + 0)

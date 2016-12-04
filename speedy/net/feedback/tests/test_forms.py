@@ -14,9 +14,9 @@ class FeedbackFormTestCase(TestCase):
                 'type': Feedback.TYPE_FEEDBACK,
             }
         )
-        self.assertListEqual(list(form.fields.keys()), ['sender_name', 'sender_email', 'text'])
-        self.assertTrue(form.fields['sender_name'].required)
-        self.assertTrue(form.fields['sender_email'].required)
+        self.assertListEqual(list1=list(form.fields.keys()), list2=['sender_name', 'sender_email', 'text'])
+        self.assertTrue(expr=form.fields['sender_name'].required)
+        self.assertTrue(expr=form.fields['sender_email'].required)
 
     def test_feedback_form_for_user_doesnt_require_name_and_email(self):
         user = UserFactory()
@@ -26,7 +26,7 @@ class FeedbackFormTestCase(TestCase):
                 'sender': user,
             }
         )
-        self.assertListEqual(list(form.fields.keys()), ['text'])
+        self.assertListEqual(list1=list(form.fields.keys()), list2=['text'])
 
     def test_form_save_for_abuse_report_as_user(self):
         user = UserFactory()
@@ -41,11 +41,11 @@ class FeedbackFormTestCase(TestCase):
                 'report_entity': other_user,
             }
         )
-        self.assertTrue(form.is_valid())
+        self.assertTrue(expr=form.is_valid())
         feedback = form.save()
-        self.assertEqual(feedback.sender, user)
-        self.assertEqual(feedback.sender_name, '')
-        self.assertEqual(feedback.sender_email, '')
-        self.assertEqual(feedback.type, Feedback.TYPE_REPORT_ENTITY)
-        self.assertEqual(feedback.report_entity_id, other_user.id)
-        self.assertEqual(feedback.report_file, None)
+        self.assertEqual(first=feedback.sender, second=user)
+        self.assertEqual(first=feedback.sender_name, second='')
+        self.assertEqual(first=feedback.sender_email, second='')
+        self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_ENTITY)
+        self.assertEqual(first=feedback.report_entity_id, second=other_user.id)
+        self.assertEqual(first=feedback.report_file, second=None)
