@@ -40,3 +40,7 @@ class UserMixinTextCase(TestCase):
         r = self.client.get('/look-at-me')
         self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)
 
+    def test_user_slug_doesnt_exist_returns_404(self):
+        r = self.client.get('/l-o-o-k_a_t_m-e-1/')
+        self.assertEqual(first=r.status_code, second=404)
+
