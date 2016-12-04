@@ -20,7 +20,7 @@ class UserMixin(object):
             components = []
             components.extend(request.resolver_match.namespaces)
             components.append(request.resolver_match.url_name)
-            return redirect(':'.join(components), *args, **kwargs)
+            return redirect(to=':'.join(components), permanent=True, *args, **kwargs)
         return super().dispatch(request, *args, **kwargs)
 
     def get_user_queryset(self):

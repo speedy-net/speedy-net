@@ -16,8 +16,7 @@ class UserMixinTestView(UserMixin, generic.View):
 class UserMixinTextCase(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
-        self.user = UserFactory(slug='look-at-me',
-                                username='lookatme')
+        self.user = UserFactory(slug='look-at-me', username='lookatme')
         self.other_user = UserFactory()
 
     def test_find_user_by_exact_slug(self):

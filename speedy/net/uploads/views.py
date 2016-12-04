@@ -25,7 +25,7 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
         return kwargs
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.request.user)
+        return redirect(to=self.request.user)
 
     def form_valid(self, form):
         self.object = form.save()

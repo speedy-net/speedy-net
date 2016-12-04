@@ -51,7 +51,7 @@ def set_session(request):
 class IndexView(generic.View):
     def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated():
-            return redirect('profiles:me')
+            return redirect(to='profiles:me')
         else:
             return RegistrationView.as_view()(request, *args, **kwargs)
 
@@ -167,7 +167,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user.profile.is_active:
-            return redirect(self.success_url)
+            return redirect(to=self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):

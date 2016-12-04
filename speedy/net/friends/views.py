@@ -66,17 +66,17 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
     permission_required = 'friends.request'
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.user)
+        return redirect(to=self.user)
 
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
         if request.user.is_authenticated:
             if friend_request_sent(request.user, self.user):
                 messages.warning(request, _('You already requested friendship from this user.'))
-                return redirect(self.user)
+                return redirect(to=self.user)
             if Friend.objects.are_friends(request.user, self.user):
                 messages.warning(request, _('You already are friends with this user.'))
-                return redirect(self.user)
+                return redirect(to=self.user)
         return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -85,10 +85,10 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
             self.check_other_user_friends(self.user)
         except ValidationError as e:
             messages.error(self.request, e.message)
-            return redirect(self.user)
+            return redirect(to=self.user)
         Friend.objects.add_friend(request.user, self.user)
         messages.success(request, _('Friend request sent.'))
-        return redirect(self.user)
+        return redirect(to=self.user)
 
 
 class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
@@ -99,10 +99,10 @@ class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
             frequest = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
         except FriendshipRequest.DoesNotExist:
             messages.error(request, _('No friend request.'))
-            return redirect(self.user)
+            return redirect(to=self.user)
         frequest.cancel()
         messages.success(request, _("You've cancelled your friend request."))
-        return redirect(self.user)
+        return redirect(to=self.user)
 
 
 class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, generic.View):
@@ -120,13 +120,13 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
         return self._friend_request
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.get_redirect_url())
+        return redirect(to=self.get_redirect_url())
 
     def post(self, request, *args, **kwargs):
         frequest = self.get_friend_request()
         getattr(frequest, self.action)()
         messages.success(request, self.message)
-        return redirect(self.get_redirect_url())
+        return redirect(to=self.get_redirect_url())
 
 
 class AcceptFriendRequestView(LimitMaxFriendsMixin, AcceptRejectFriendRequestViewBase):
@@ -140,7 +140,7 @@ class AcceptFriendRequestView(LimitMaxFriendsMixin, AcceptRejectFriendRequestVie
             self.check_other_user_friends(frequest.from_user)
         except ValidationError as e:
             messages.error(self.request, e.message)
-            return redirect(self.get_redirect_url())
+            return redirect(to=self.get_redirect_url())
         return super().post(request, *args, **kwargs)
 
 
@@ -153,9 +153,9 @@ class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
     permission_required = 'friends.remove'
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.user)
+        return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
         Friend.objects.remove_friend(self.request.user, self.user)
         messages.success(request, _('You have removed this user from friends.'))
-        return redirect(self.user)
+        return redirect(to=self.user)

@@ -11,4 +11,4 @@ class SiteProfileMiddleware(MiddlewareMixin):
                 for url in settings.DONT_REDIRECT_INACTIVE_USER:
                     if request.path.startswith(url):
                         return
-                return redirect('accounts:activate')
+                return redirect(to='accounts:activate')

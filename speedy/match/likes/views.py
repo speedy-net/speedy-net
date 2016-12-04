@@ -53,12 +53,12 @@ class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.user)
+        return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
         EntityLike.objects.create(from_user=self.request.user, to_entity=self.user)
         # messages.success(request, _('You like this user.'))
-        return redirect(self.user)
+        return redirect(to=self.user)
 
 
 class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
@@ -66,9 +66,9 @@ class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return redirect(self.user)
+        return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
         EntityLike.objects.filter(from_user=self.request.user, to_entity=self.user).delete()
         # messages.success(request, _('You don\'t like this user.'))
-        return redirect(self.user)
+        return redirect(to=self.user)
