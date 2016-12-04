@@ -36,3 +36,7 @@ class UserMixinTextCase(TestCase):
         r = self.client.get('/LOOK-AT-ME/')
         self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)
 
+    def test_add_trailing_slash(self):
+        r = self.client.get('/look-at-me')
+        self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)
+
