@@ -1,5 +1,53 @@
 # Speedy Net / Speedy Match
 
+Speedy Net is a new social network which will have apps, such as Speedy Match (a dating/matching app for singles) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
+
+ - Requirements for alpha step 1 - Speedy Net: -
+
+* support English and Hebrew
+* registration
+* activating profile by validating email address
+* login (with username or email, and password)
+* profile picture
+* public profile / profile for friends
+* first name/last name must be language-specific
+* friendship requests
+* approving friendship requests (up to 800 friends per person)
+* password reset
+* Sending/receiving private messages
+* Any email address, phone and link (Facebook, Twitter, blog etc.) - visible to anyone/friends/only me
+* website must be mobile- and desktop-friendly
+* import all users from PHP/MySQL
+* Users of PHP/MySQL Speedy Net will be able to login with their current username or email, and password
+
+ - Requirements for alpha step 1 - Speedy Match: -
+
+* support English and Hebrew
+* registration to Speedy Net
+* profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
+* Looking for men, women or both
+* Writing some text about yourself - who you are, what you prefer etc.
+* Which personal attributes are valid (from 0 to 5. 0 - invalid (no match). 5 - 5 stars match)
+* Searching for matching people (who use Speedy Match in the same language)
+* Sending/receiving private messages (Speedy Net)
+* friendship requests (Speedy Net)
+* website must be mobile- and desktop-friendly
+* Every text you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
+
+
+ - Requirements for alpha step 2 - Speedy Net: -
+
+* Uploading albums and photos.
+* Creating pages, groups and causes (with or without a username)
+* Liking posts, photos, albums etc.
+
+ - Requirements for alpha step 2 - Speedy Match: -
+
+* Search for matches by geographic location (optional)
+
+
+You can find more details in the specifications.
+
 [![Build Status](https://travis-ci.org/urievenchen/speedy-net.svg?branch=master)](https://travis-ci.org/urievenchen/speedy-net)
 
 ## How to setup the project and run locally

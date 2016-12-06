@@ -28,7 +28,7 @@ Coding Style - https://docs.djangoproject.com/en/dev/internals/contributing/writ
 
  - Speedy Net / Speedy Match Specification 0.3 -
 
-Speedy Net is a new social network which will have apps, such as Speedy Match (under construction) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
+Speedy Net is a new social network which will have apps, such as Speedy Match (a dating/matching app for singles) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
 
  - Requirements for alpha step 1 - Speedy Net: -
 
@@ -55,12 +55,12 @@ Speedy Net is a new social network which will have apps, such as Speedy Match (u
 * profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
 * Looking for men, women or both
 * Writing some text about yourself - who you are, what you prefer etc.
-* Which personal attributes are valid (from 0 to 5. 0 - invalid. 5 - 5 stars match)
+* Which personal attributes are valid (from 0 to 5. 0 - invalid (no match). 5 - 5 stars match)
 * Searching for matching people (who use Speedy Match in the same language)
 * Sending/receiving private messages (Speedy Net)
 * friendship requests (Speedy Net)
 * website must be mobile- and desktop-friendly
-* Everything you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
+* Every text you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
 
 
  - Requirements for alpha step 2 - Speedy Net: -
