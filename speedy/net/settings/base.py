@@ -25,8 +25,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
+
 ADMINS = MANAGERS = (
-    ('Admin', 'admin@example.com'),
+    ('Uri Even-Chen', 'webmaster@speedy.net'),
 )
 
 USE_SSL = False
