@@ -9,3 +9,5 @@ MIDDLEWARE = [
 INSTALLED_APPS += [
     'debug_toolbar',
 ]
+
+ALLOWED_HOSTS = [".localhost"]
