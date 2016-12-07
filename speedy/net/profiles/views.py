@@ -1,11 +1,12 @@
 from django.conf import settings
+from django.contrib.auth.views import redirect_to_login
+from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
-from django.utils import translation
 from django.utils.module_loading import import_string
 from django.views import generic
-from friendship.models import Friend, FriendshipRequest
+from friendship.models import FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.net.accounts.models import User, normalize_username
@@ -13,10 +14,15 @@ from speedy.net.friends.rules import friend_request_sent, is_friend
 
 
 class UserMixin(object):
+    user_slug_kwarg = 'slug'
+
+    def use_request_user(self):
+        return self.user_slug_kwarg not in self.kwargs
+
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
-        if self.user.slug != kwargs['slug']:
-            kwargs['slug'] = self.user.slug
+        if not self.use_request_user() and self.user.slug != kwargs[self.user_slug_kwarg]:
+            kwargs[self.user_slug_kwarg] = self.user.slug
             components = []
             components.extend(request.resolver_match.namespaces)
             components.append(request.resolver_match.url_name)
@@ -28,9 +34,12 @@ class UserMixin(object):
 
     def get_user(self):
         try:
-            slug = self.kwargs['slug']
-            if hasattr(self.request, 'user') and self.request.user.is_authenticated and slug == 'me':
-                return self.request.user
+            slug = self.kwargs.get(self.user_slug_kwarg)
+            if self.use_request_user() or slug == 'me':
+                if self.request.user.is_authenticated:
+                    return self.request.user
+                else:
+                    raise PermissionDenied()
             user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug)))
             if not user.profile.is_active:
                 raise Http404('This user is not active on this site.')

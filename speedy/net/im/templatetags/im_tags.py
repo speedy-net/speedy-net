@@ -50,6 +50,16 @@ def annotate_messages_with_read_marks(message_list, entity):
     return ''
 
 
+@register.filter
+def get_chat_slug(chat, current_user):
+    """
+    :type chat: speedy.net.im.models.Chat
+    :type current_user: speedy.net.accounts.models.Entity
+    :return: str
+    """
+    return chat.get_slug(current_user=current_user)
+
+
 @register.simple_tag
 def unread_chats_count(entity):
     chat_list = Chat.on_site.chats(entity)

@@ -17,7 +17,7 @@
         {% annotate_chats_with_read_marks chat_list user %}
         {% for chat in chat_list %}
             {% get_other_participant chat user as entity %}
-            <a href="{% url 'im:chat' user.slug chat.id %}">
+            <a href="{% url 'im:chat' chat_slug=chat|get_chat_slug:user %}">
                 <div class="media well well-sm {% if chat.is_unread %}bg-success{% endif %}">
                     <div class="media-left">
                         {% profile_picture entity '42x42' with_link=False %}

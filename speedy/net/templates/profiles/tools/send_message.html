@@ -6,7 +6,7 @@
 
 {% if request.user.is_authenticated %}
     {% if can_send_message %}
-        <a href="{% url 'im:user_send' user.slug %}" class="btn btn-primary">
+        <a href="{% url 'im_entity:user_send' user.slug %}" class="btn btn-primary">
             <i class="fa fa-envelope"></i>
             {% trans 'Send Message' %}
         </a>

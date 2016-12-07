@@ -25,13 +25,13 @@
         <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
         {% crispy form %}
     </div>
-    <form action="{% url 'im:mark_read' user.slug chat.id %}" method="post">
+    <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
         {% csrf_token %}
         <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' %}</button>
     </form>
 
 
-    <div data-block="MessageList" data-poll-url="{% url 'im:chat_poll' user.slug chat.id %}">
+    <div data-block="MessageList" data-poll-url="{% url 'im:chat_poll' chat_slug=chat|get_chat_slug:user %}">
         {% include 'im/message_list_poll.html' %}
     </div>
 

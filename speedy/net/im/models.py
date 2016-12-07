@@ -41,6 +41,14 @@ class Chat(TimeStampedModel):
     def is_private(self):
         return not self.is_group
 
+    def get_slug(self, current_user: Entity):
+        if self.is_private:
+            if self.ent1_id == current_user.id:
+                return self.ent2.slug
+            elif self.ent2_id == current_user.id:
+                return self.ent1.slug
+        return self.id
+
     @property
     def participants(self):
         if self.is_private:

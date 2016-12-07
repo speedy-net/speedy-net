@@ -28,7 +28,7 @@
             {% endif %}
         </a></li>
     {% endwith %}
-    <li><a href="{% url 'im:list' slug=request.user.slug %}">
+    <li><a href="{% url 'im:list' %}">
         <i class="fa fa-fw fa-comments"></i>
         {% trans 'Messages' %}
         {% unread_chats_count request.user as unread_chats %}

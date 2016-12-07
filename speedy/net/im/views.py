@@ -1,6 +1,8 @@
 from datetime import datetime
 
+from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
 from django.views import generic
@@ -12,6 +14,12 @@ from .models import Chat
 
 
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            return super().dispatch(request, *args, **kwargs)
+        except PermissionDenied:
+            return self.handle_no_permission()
+
     def get_chat_queryset(self):
         return Chat.on_site.chats(self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
 
@@ -21,13 +29,21 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
 
 class UserSingleChatMixin(UserChatsMixin):
     def dispatch(self, request, *args, **kwargs):
-        self.chat = self.get_chat()
-        return super().dispatch(request, *args, **kwargs)
+        try:
+            self.chat = self.get_chat()
+            return super().dispatch(request, *args, **kwargs)
+        except PermissionDenied:
+            return self.handle_no_permission()
 
     def get_chat(self):
+        slug = self.kwargs['chat_slug']
+        user = self.get_user()
         try:
-            return self.get_chat_queryset().get(id=self.kwargs['chat_pk'])
-        except Chat.DoesNotExist:
+            q_id = Q(id=slug)
+            q_slug_1 = Q(ent1__slug=slug, ent2_id=user.id)
+            q_slug_2 = Q(ent1_id=user.id, ent2__slug=slug)
+            return self.get_chat_queryset().filter(q_id | q_slug_1 | q_slug_2)[0]
+        except (IndexError, Chat.DoesNotExist):
             raise Http404()
 
     def get_messages_queryset(self):
@@ -97,8 +113,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'slug': self.user.slug,
-                                          'chat_pk': self.chat.id})
+        return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
 
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):
@@ -109,7 +124,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
     def get(self, request, *args, **kwargs):
         existing_chat = Chat.on_site.chat_with(self.request.user, self.user, create=False)
         if existing_chat is not None:
-            return redirect(to='im:chat', **{'slug': self.request.user.slug, 'chat_pk': existing_chat.id})
+            return redirect(to='im:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
         return super().get(request, *args, **kwargs)
 
     def get_form_kwargs(self):
@@ -121,7 +136,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
         return kwargs
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'slug': self.request.user.slug, 'chat_pk': self.object.chat.id})
+        return reverse('im:chat', kwargs={'chat_slug': self.object.chat.get_slug(current_user=self.request.user)})
 
 
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
@@ -133,4 +148,4 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'slug': self.user.slug, 'chat_pk': self.chat.id})
+        return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
