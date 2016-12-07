@@ -1,6 +1,5 @@
 from .base_site import *
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+from speedy.net.settings.development_base import *
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -10,4 +9,3 @@ INSTALLED_APPS += [
     'debug_toolbar',
 ]
 
-ALLOWED_HOSTS = [".localhost"]
