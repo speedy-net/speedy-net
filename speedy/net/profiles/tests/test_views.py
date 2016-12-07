@@ -28,7 +28,6 @@ class UserMixinTextCase(TestCase):
         self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)
 
     def test_redirect_with_extra_slashes(self):
-        # ~~~~ TODO: this test fails with 404, although the website redirects urls with extra slashes.
         r = self.client.get('///__l-o-o-k_a_t_m-e...///')
         self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301)
 
