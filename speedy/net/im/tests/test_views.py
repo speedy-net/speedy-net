@@ -1,6 +1,7 @@
 from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
+from speedy.net.blocks.models import Block
 from ..models import Message, ReadMark, Chat
 from .test_factories import ChatFactory
 
@@ -56,6 +57,13 @@ class ChatDetailViewTestCase(TestCase):
         messages = r.context['message_list']
         self.assertEqual(first=len(messages), second=3)
 
+    def test_user_can_read_chat_with_a_blocker(self):
+        self.client.login(username=self.user1.slug, password='111')
+        Block.objects.block(blocker=self.user2, blockee=self.user1)
+        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        r = self.client.get(self.page_url)
+        self.assertEqual(first=r.status_code, second=200)
+
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
@@ -76,7 +84,7 @@ class SendMessageToChatViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         self.client.logout()
         r = self.client.post(self.page_url, self.data)
-        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertEqual(first=r.status_code, second=403)
 
     def test_get_redirects_to_chat_page(self):
         self.client.login(username=self.user1.slug, password='111')
@@ -87,6 +95,18 @@ class SendMessageToChatViewTestCase(TestCase):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.post(self.page_url, self.data)
         self.assertRedirects(response=r, expected_url=self.chat_url)
+
+    def test_cannot_write_to_a_blocker(self):
+        self.client.login(username=self.user1.slug, password='111')
+        Block.objects.block(blocker=self.user2, blockee=self.user1)
+        r = self.client.post(self.page_url, self.data)
+        self.assertEqual(first=r.status_code, second=403)
+
+    def test_cannot_write_to_a_blockee(self):
+        self.client.login(username=self.user1.slug, password='111')
+        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        r = self.client.post(self.page_url, self.data)
+        self.assertEqual(first=r.status_code, second=403)
 
 
 @exclude_on_speedy_composer

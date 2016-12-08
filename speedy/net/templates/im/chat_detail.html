@@ -6,12 +6,15 @@
 {% load im_tags %}
 {% load thumbnail %}
 {% load user_tags %}
+{% load rules %}
 
 
 {% block title %}{% get_other_participant chat user as other %}{{ other.user }} / {% trans 'Messages' %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     {% get_other_participant chat user as other %}
+    {% has_perm 'im.send_message' user other as can_send_message %}
+
 
     <div class="page-header">
         <h1>
@@ -21,10 +24,18 @@
             {% endblocktrans %}
         </h1>
     </div>
-    <div class="well well-sm">
-        <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
-        {% crispy form %}
-    </div>
+
+    {% if can_send_message %}
+        <div class="well well-sm">
+            <p>{% blocktrans with username=other.user %}Send a message to {{ username }}{% endblocktrans %}</p>
+            {% crispy form %}
+        </div>
+    {% else %}
+        <div class="alert alert-danger">
+            {% trans 'You can’t send messages to this user.' %}
+        </div>
+    {% endif %}
+
     <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
         {% csrf_token %}
         <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' %}</button>

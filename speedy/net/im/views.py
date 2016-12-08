@@ -100,6 +100,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     template_name = 'im/chat_detail.html'
     form_class = MessageForm
+    raise_exception = True
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -114,6 +115,11 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
 
     def get_success_url(self):
         return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+
+    def has_permission(self):
+        if self.chat.participants_count != 2:
+            return super().has_permission()
+        return self.user.has_perm('im.send_message', self.chat.get_other_participants(entity=self.user)[0])
 
 
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):

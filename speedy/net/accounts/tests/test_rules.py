@@ -44,4 +44,4 @@ class ViewProfileTestCase(TestCase):
     def test_has_no_access_if_blocked(self):
         Block.objects.block(blocker=self.other_user, blockee=self.user)
         self.assertFalse(expr=self.user.has_perm('accounts.view_profile', self.other_user))
-        self.assertTrue(expr=self.other_user.has_perm('accounts.view_profile', self.user))
+        self.assertFalse(expr=self.other_user.has_perm('accounts.view_profile', self.user))
