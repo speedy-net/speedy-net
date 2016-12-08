@@ -1,3 +1,5 @@
+from time import sleep
+
 from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
@@ -170,7 +172,9 @@ class MarkChatAsReadViewTestCase(TestCase):
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []
         self.messages.append(Message.objects.send_message(from_entity=self.chat.ent1, chat=self.chat, text='text'))
+        sleep(0.1)
         self.messages.append(Message.objects.send_message(from_entity=self.chat.ent2, chat=self.chat, text='text'))
+        sleep(0.1)
         self.chat_url = '/messages/{}/'.format(self.chat.get_slug(current_user=self.user1))
         self.page_url = '/messages/{}/mark-read/'.format(self.chat.id)
 

@@ -1,3 +1,5 @@
+from time import sleep
+
 from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.net.accounts.tests.test_factories import UserFactory
@@ -32,9 +34,11 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
 
         def _message(index):
             Message.objects.send_message(from_entity=chats[index].ent2, chat=chats[index], text='text')
+            sleep(0.1)
 
         def _mark(index):
             chats[index].mark_read(user1)
+            sleep(0.1)
 
         _message(2)
         _message(3)
@@ -95,15 +99,23 @@ class UnreadChatsCount(TestCase):
         ]
 
         Message.objects.send_message(from_entity=user1, chat=chats[0], text='text')
+        sleep(0.1)
         Message.objects.send_message(from_entity=user2, chat=chats[0], text='text')
+        sleep(0.1)
         Message.objects.send_message(from_entity=user2, chat=chats[0], text='text')
+        sleep(0.1)
 
         Message.objects.send_message(from_entity=user3, chat=chats[1], text='text')
+        sleep(0.1)
         Message.objects.send_message(from_entity=user1, chat=chats[1], text='text')
+        sleep(0.1)
         Message.objects.send_message(from_entity=user3, chat=chats[1], text='text')
+        sleep(0.1)
 
         Message.objects.send_message(from_entity=user2, chat=chats[2], text='text')
+        sleep(0.1)
         Message.objects.send_message(from_entity=user3, chat=chats[2], text='text')
+        sleep(0.1)
 
         self.assertEqual(first=im_tags.unread_chats_count(user1), second=1 + 1 + 0)
         self.assertEqual(first=im_tags.unread_chats_count(user2), second=0 + 0 + 1)
