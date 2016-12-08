@@ -1,18 +1,12 @@
-from speedy.net.settings.base import *
-
+from speedy.core.settings.base import *
+from speedy.core.settings.base_site import update_site_paths
 from .utils import APP_DIR
+
+update_site_paths(settings=globals())
 
 SITE_ID = int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
 
 ROOT_URLCONF = 'speedy.mail.urls'
-
-STATIC_ROOT = str(APP_DIR / 'static_serve')
-
-TEMPLATES[0]['DIRS'].insert(0, str(APP_DIR / 'templates'))
-
-LOCALE_PATHS.append(str(APP_DIR / 'locale'))
-
-STATICFILES_DIRS.insert(0, str(APP_DIR / 'static'))
 
 INSTALLED_APPS += [
     'speedy.mail.accounts',

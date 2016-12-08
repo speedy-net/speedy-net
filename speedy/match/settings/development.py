@@ -1,11 +1,4 @@
 from .base_site import *
-from speedy.net.settings.development_base import *
+from speedy.core.settings.development import activate_development
 
-MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-] + MIDDLEWARE
-
-INSTALLED_APPS += [
-    'debug_toolbar',
-]
-
+activate_development(settings=globals())
