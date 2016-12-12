@@ -147,13 +147,13 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     DIET_UNKNOWNN   = 0
     DIET_VEGAN      = 1
-    DIET_VEGETERIAN = 2
+    DIET_VEGETARIAN = 2
     DIET_CARNIST    = 3
     DIET_CHOICES = (
         (DIET_UNKNOWNN, _('Please select...')),
-        (DIET_VEGAN, _('Vegan')),
-        (DIET_VEGETERIAN, _('Vegeterian')),
-        (DIET_CARNIST, _('Carnist'))
+        (DIET_VEGAN, _('Vegan (eats only plants and fungi)')),
+        (DIET_VEGETARIAN, _('Vegetarian (doesn\'t eat fish and meat)')),
+        (DIET_CARNIST, _('Carnist (eats animals)'))
     )
 
     USERNAME_FIELD = 'username'
