@@ -135,6 +135,9 @@ class NamedEntity(Entity):
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
+    class Meta:
+        abstract = True
+
     def __str__(self):
         return '<NamedEntity {} - {}>'.format(self.id, self.name)
 
