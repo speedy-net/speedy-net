@@ -10,6 +10,7 @@ ROOT_URLCONF = 'speedy.composer.urls'
 
 INSTALLED_APPS += [
     'speedy.composer.accounts',
+    'speedy.composer.compose',
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'composer_accounts.SiteProfile'
