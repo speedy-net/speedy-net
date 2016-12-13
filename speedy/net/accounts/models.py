@@ -59,6 +59,7 @@ class Entity(TimeStampedModel):
     MAX_USERNAME_LENGTH = 120
     MIN_SLUG_LENGTH = 6
     MAX_SLUG_LENGTH = 200
+
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -126,6 +127,16 @@ class Entity(TimeStampedModel):
                             errors[f.name] = [e.error_list[0].messages[0]]
         if errors:
             raise ValidationError(errors)
+
+
+class NamedEntity(Entity):
+    MIN_NAME_LENGTH = 1
+    MAX_NAME_LENGTH = 200
+
+    name = models.CharField(verbose_name=_('name'), max_length=255)
+
+    def __str__(self):
+        return '<NamedEntity {} - {}>'.format(self.id, self.name)
 
 
 class User(Entity, PermissionsMixin, AbstractBaseUser):
