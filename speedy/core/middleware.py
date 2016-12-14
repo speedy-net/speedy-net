@@ -1,13 +1,19 @@
+import re
+
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render
+from django.http import HttpRequest
+from django.http import HttpResponsePermanentRedirect
+from django.http.response import HttpResponseBase
+from django.shortcuts import render
 from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
 from speedy.core.settings.utils import env
 
 
-def redirect_to_www(site):
+def redirect_to_www(request: HttpRequest, site: Site) -> HttpResponseBase:
     url = '//www.{domain}{path}'.format(
         domain=site.domain,
         path="/",
@@ -15,7 +21,7 @@ def redirect_to_www(site):
     return redirect(to=url, permanent=True)
 
 
-def language_selector(request):
+def language_selector(request: HttpRequest) -> HttpResponseBase:
     translation.activate('en')
     request.LANGUAGE_CODE = translation.get_language()
     return render(request, 'www/welcome.html')
@@ -25,7 +31,7 @@ class LocaleDomainMiddleware(object):
     def __init__(self, get_response):
         self.get_response = get_response
 
-    def __call__(self, request):
+    def __call__(self, request: HttpRequest) -> HttpResponseBase:
         domain = request.META.get('HTTP_HOST', '').lower()
         site = Site.objects.get_current()
 
@@ -71,9 +77,29 @@ class SessionCookieDomainMiddleware(object):
     def __init__(self, get_response):
         self.get_response = get_response
 
-    def __call__(self, request):
+    def __call__(self, request: HttpRequest) -> HttpResponseBase:
         site = Site.objects.get_current()
         response = self.get_response(request=request)
         if settings.SESSION_COOKIE_NAME in response.cookies:
             response.cookies[settings.SESSION_COOKIE_NAME]['domain'] = '.' + site.domain.split(':')[0]
         return response
+
+
+class RemoveExtraSlashesMiddleware(object):
+    """
+    Remove extra slashes from URLs.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    @staticmethod
+    def normalize_path(path: str) -> str:
+        return re.sub(pattern=r'(/{2,})', repl='/', string=path)
+
+    def __call__(self, request: HttpRequest) -> HttpResponseBase:
+        normalized_path = self.normalize_path(path=request.path)
+        if normalized_path != request.path:
+            request.path = normalized_path
+            return HttpResponsePermanentRedirect(redirect_to=request.get_full_path())
+        return self.get_response(request=request)
