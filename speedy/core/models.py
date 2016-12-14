@@ -1,34 +1,8 @@
-import random
-import string
-
-from django.core import validators
 from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
-REGULAR_UDID_LENGTH = 20
-SMALL_UDID_LENGTH = 15
-
-regular_udid_validator = validators.RegexValidator(regex=r'^[1-9][0-9]{19}$', message="id contains illegal characters")
-small_udid_validator = validators.RegexValidator(regex=r'^[1-9][0-9]{14}$', message="id contains illegal characters")
-
-
-def _generate_udid(length):
-    digits = string.digits
-    digits_without_zero = digits[1:]
-    return ''.join(random.choice(digits if i > 0 else digits_without_zero) for i in range(length))
-
-
-def generate_regular_udid():
-    return _generate_udid(length=REGULAR_UDID_LENGTH)
-
-
-def generate_small_udid():
-    return _generate_udid(length=SMALL_UDID_LENGTH)
-
-
-# Export generate_regular_udid as generate_confirmation_token.
-generate_confirmation_token = generate_regular_udid
+from .utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid, generate_small_udid
+from .validators import regular_udid_validator, small_udid_validator
 
 
 class BaseModel(models.Model):

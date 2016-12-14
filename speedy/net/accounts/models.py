@@ -1,7 +1,3 @@
-import re
-import uuid
-from datetime import datetime, date
-
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -13,7 +9,8 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.mail import send_mail
-from speedy.core.models import TimeStampedModel, SmallUDIDField, generate_confirmation_token, RegularUDIDField
+from speedy.core.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
+from speedy.core.utils import generate_confirmation_token, normalize_slug, normalize_username
 from speedy.net.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -38,20 +35,6 @@ class AccessField(models.PositiveIntegerField):
             'choices': ACCESS_CHOICES,
         })
         super().__init__(**kwargs)
-
-
-def normalize_slug(slug):
-    slug = slug.lower()
-    slug = re.sub('[^a-zA-Z0-9]{1,}', '-', slug)
-    slug = re.sub('^-', '', slug)
-    slug = re.sub('-$', '', slug)
-    return slug
-
-
-def normalize_username(slug):
-    slug = normalize_slug(slug=slug)
-    username = re.sub('[-\._]', '', slug)
-    return username
 
 
 class Entity(TimeStampedModel):

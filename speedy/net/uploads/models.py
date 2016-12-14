@@ -3,17 +3,9 @@ import os
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel, RegularUDIDField, generate_regular_udid
-
-
-def uuid_dir(instance, filename):
-    str_id = str(instance.id)
-    return '/'.join([
-        str_id[:1],
-        str_id[:2],
-        str_id[:4],
-        filename,
-    ])
+from speedy.core.models import TimeStampedModel, RegularUDIDField
+from speedy.core.utils import generate_regular_udid
+from .utils import uuid_dir
 
 
 class File(TimeStampedModel):
