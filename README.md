@@ -181,6 +181,7 @@ Available settings:
 * `ENVIRONMENT` defines which of settings files should be used. They are located in `speedy/net/settings` and `speedy/match/settings`. *Example*: `staging`
 * `SECRET_KEY` is a random string. [More on Django docs](https://docs.djangoproject.com/en/1.9/ref/settings/#secret-key). *Example*: `s3cr37k3Y***`
 * `DATABASE_URL` contains the settings for default database. *Examples*: look [dj-database-url docs](https://github.com/kennethreitz/dj-database-url#url-schema)
-* `SPEEDY_NET_SITE_ID` and `SPEEDY_MATCH_SITE_ID` — just leave these as its.
+* `CACHE_URL` contains the settings for default caching backend. *Examples*: look [django-cache-url docs](https://github.com/ghickman/django-cache-url#supported-caches)
+* `SPEEDY_*_SITE_ID` — just leave these as its.
 
 Refer to [django-environ documentation](https://django-environ.readthedocs.io/en/latest/) for more information.
