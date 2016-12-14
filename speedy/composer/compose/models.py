@@ -28,7 +28,6 @@ class Folder(SpeedyComposerNamedEntity):
 
 
 class Composition(SpeedyComposerNamedEntity):
-    user = models.ForeignKey(verbose_name=_('user'), to=settings.AUTH_USER_MODEL, related_name='+')
     folder = models.ForeignKey(verbose_name=_('folder'), to=Folder, related_name='+')
     chords_template = models.ForeignKey(verbose_name=_('chords template'), to=ChordsTemplate, related_name='+')
     accompaniment = models.ForeignKey(verbose_name=_('accompaniment'), to=Accompaniment, related_name='+')
