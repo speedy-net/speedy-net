@@ -103,7 +103,7 @@ Install all dependencies using **apt-get**:
 
     sudo apt-get install python3 python3-pip python3-venv  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-plugin-python3 postfix
+    sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-plugin-python3 postfix memcached
 
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
@@ -149,12 +149,22 @@ Run migrations and collect static:
     cd ../match
     ./manage.py migrate
     ./manage.py collectstatic
+    cd ../composer
+    ./manage.py migrate
+    ./manage.py collectstatic
+    cd ../mail
+    ./manage.py migrate
+    ./manage.py collectstatic
 
 Copy sample **nginx** and **uwsgi** configs:
 
     cd ~/speedy-net/
     sudo cp contrib/uwsgi/*.ini /etc/uwsgi/apps-enabled/
     sudo cp contrib/nginx/*.conf /etc/nginx/sites-enabled/
+
+Remove default **nginx** config:
+ 
+     sudo rm /etc/nginx/sites-enabled/default
 
 Review and edit these config files, restart servers:
 
