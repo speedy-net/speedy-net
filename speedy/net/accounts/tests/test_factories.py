@@ -13,7 +13,7 @@ class InactiveUserFactory(factory.DjangoModelFactory):
     date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(1900, 1, 1))
     gender = User.GENDER_OTHER
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
-    username = factory.LazyAttribute(lambda o: normalize_username(o.slug))
+    username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
 
     password = factory.PostGenerationMethodCall('set_password', '111')
 

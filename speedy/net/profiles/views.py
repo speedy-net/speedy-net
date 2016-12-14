@@ -40,7 +40,7 @@ class UserMixin(object):
                     return self.request.user
                 else:
                     raise PermissionDenied()
-            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug)))
+            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug=slug)))
             if not user.profile.is_active:
                 raise Http404('This user is not active on this site.')
             return user

@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 def reserved_username_validator(value):
     from .models import normalize_username
-    if normalize_username(value) in [normalize_username(reserved) for reserved in settings.UNAVAILABLE_USERNAMES]:
+    if normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in settings.UNAVAILABLE_USERNAMES]:
         raise ValidationError(_('This username is already taken.'))
 
 

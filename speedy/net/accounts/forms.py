@@ -127,7 +127,7 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
-        if normalize_username(slug) != username:
+        if normalize_username(slug=slug) != username:
             raise forms.ValidationError(_('You can\'t change your username'))
         return slug
 

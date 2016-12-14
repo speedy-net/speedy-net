@@ -1,4 +1,5 @@
 import re
+import string
 import uuid
 from datetime import datetime, date
 
@@ -49,9 +50,16 @@ def normalize_slug(slug):
 
 
 def normalize_username(slug):
-    slug = normalize_slug(slug)
+    slug = normalize_slug(slug=slug)
     username = re.sub('[-\._]', '', slug)
     return username
+
+
+def get_slug_from_name(name):
+    chars_allowed = string.ascii_lowercase + string.ascii_uppercase + string.digits
+    slug = "".join([c if (c in chars_allowed) else "-" for c in name])
+    slug = normalize_slug(slug=slug)
+    return slug
 
 
 class Entity(TimeStampedModel):
@@ -79,12 +87,12 @@ class Entity(TimeStampedModel):
         return '<Entity {}>'.format(self.id)
 
     def save(self, *args, **kwargs):
-        self.slug = normalize_slug(self.slug)
-        self.username = normalize_username(self.username)
+        self.slug = normalize_slug(slug=self.slug)
+        self.username = normalize_username(slug=self.username)
         return super().save(*args, **kwargs)
 
     def validate_username_for_slug(self):
-        if normalize_username(self.slug) != self.username:
+        if normalize_username(slug=self.slug) != self.username:
             raise ValidationError(_('Slug does not parse to username.'))
 
     def clean_fields(self, exclude=None):
@@ -98,11 +106,11 @@ class Entity(TimeStampedModel):
         else:
             errors = {}
 
-        self.slug = normalize_slug(self.slug)
+        self.slug = normalize_slug(slug=self.slug)
         if self.username:
-            self.username = normalize_username(self.username)
+            self.username = normalize_username(slug=self.username)
         else:
-            self.username = normalize_username(self.slug)
+            self.username = normalize_username(slug=self.slug)
 
         username_exists = Entity.objects.filter(username=self.username).exclude(id=self.id).exists()
         if username_exists:
