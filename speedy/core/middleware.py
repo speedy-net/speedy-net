@@ -26,7 +26,7 @@ class LocaleDomainMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        domain = request.META.get('HTTP_HOST', '')
+        domain = request.META.get('HTTP_HOST', '').lower()
         site = Site.objects.get_current()
 
         for lang_code, lang_name in settings.LANGUAGES:
@@ -42,11 +42,19 @@ class LocaleDomainMiddleware(object):
             pass
 
         if domain != "www.{domain}".format(domain=site.domain, path="/"):
-            for other_site in Site.objects.exclude(id=1):
-                # "Speedy Mail Software" → "mail"
-                other_site_part = other_site.name.split()[1].lower()
-                if other_site_part in domain:
-                    return redirect_to_www(request=request, site=other_site)
+            domain_parts = reversed(domain.split(sep='.'))
+            other_sites_tokens = {s.name.split()[1].lower(): s for s in Site.objects.exclude(id=1)}
+            # other_sites_tokens = {'composer': <Site: speedy.composer.localhost:10000>, 'match': <Site: speedy.match.localhost:9000>, 'mail': <Site: speedy.mail.software.localhost:11000>}
+            for domain_part in domain_parts:
+                first_match_index = len(domain_part)
+                first_match_site = None
+                for token, other_site in other_sites_tokens.items():
+                    pos = domain_part.find(token, 0, first_match_index)
+                    if pos >= 0:
+                        first_match_index = pos
+                        first_match_site = other_site
+                if first_match_site:
+                    return redirect_to_www(request=request, site=first_match_site)
             return redirect_to_www(request=request, site=site)
         elif request.path != '/':
             return redirect_to_www(request=request, site=site)
