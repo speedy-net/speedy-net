@@ -7,4 +7,5 @@ def activate_staging(settings):
         'DEFAULT_FROM_EMAIL': 'webmaster@speedy2000.net',
         'ADMINS': admins,
         'MANAGERS': admins,
+        'DEBUG': True,
     })
