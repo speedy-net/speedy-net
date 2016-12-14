@@ -1,12 +1,10 @@
 from django.conf import settings
 from django.conf.urls import url, include
-
-from . import views
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
-    url(r'^', views.MainPageView.as_view(), name='main_page_view'),
+    url(r'^', include('speedy.mail.main.urls', namespace='main')),
 ]
 
 if settings.DEBUG:

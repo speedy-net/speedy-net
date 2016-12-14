@@ -18,7 +18,7 @@ def redirect_to_www(request, site):
 def language_selector(request):
     translation.activate('en')
     request.LANGUAGE_CODE = translation.get_language()
-    return render(request, 'welcome.html')
+    return render(request, 'www/welcome.html')
 
 
 class LocaleDomainMiddleware(object):
