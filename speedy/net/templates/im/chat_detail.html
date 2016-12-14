@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 {% load core_tags %}
 {% load i18n %}
+{% load blocks_tags %}
 {% load im_tags %}
 {% load thumbnail %}
 {% load user_tags %}
@@ -14,7 +15,6 @@
 {% block content %}
     {% get_other_participant chat user as other %}
     {% has_perm 'im.send_message' user other as can_send_message %}
-
 
     <div class="page-header">
         <h1>
@@ -31,8 +31,16 @@
             {% crispy form %}
         </div>
     {% else %}
+        {% has_blocked blocker=other.user blockee=user as other_user_blocked_you %}
+        {% has_blocked blocker=user blockee=other.user as you_blocked_other_user %}
         <div class="alert alert-danger">
-            {% trans 'You can’t send messages to this user.' %}
+            {% if other_user_blocked_you %}
+                {% trans 'This user blocked you.' %}
+            {% elif you_blocked_other_user %}
+                {% trans 'You blocked this user.' %}
+            {% else %}
+                {% trans 'You can’t send messages to this user.' %}
+            {% endif %}
         </div>
     {% endif %}
 
