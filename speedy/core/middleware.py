@@ -1,18 +1,18 @@
 from django.conf import settings
 from django.contrib.sites.models import Site
-from django.http import HttpResponsePermanentRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
+from speedy.core.settings.utils import env
 
 
-def redirect_to_www(request, site):
+def redirect_to_www(site):
     url = '//www.{domain}{path}'.format(
         domain=site.domain,
         path="/",
     )
-    return HttpResponsePermanentRedirect(url)
+    return redirect(to=url, permanent=True)
 
 
 def language_selector(request):
@@ -41,23 +41,23 @@ class LocaleDomainMiddleware(object):
         except NoReverseMatch:
             pass
 
-        if domain != "www.{domain}".format(domain=site.domain, path="/"):
-            domain_parts = reversed(domain.split(sep='.'))
-            other_sites_tokens = {s.name.split()[1].lower(): s for s in Site.objects.exclude(id=1)}
-            # other_sites_tokens = {'composer': <Site: speedy.composer.localhost:10000>, 'match': <Site: speedy.match.localhost:9000>, 'mail': <Site: speedy.mail.software.localhost:11000>}
-            for domain_part in domain_parts:
-                first_match_index = len(domain_part)
-                first_match_site = None
-                for token, other_site in other_sites_tokens.items():
-                    pos = domain_part.find(token, 0, first_match_index)
-                    if pos >= 0:
-                        first_match_index = pos
-                        first_match_site = other_site
-                if first_match_site:
-                    return redirect_to_www(request=request, site=first_match_site)
-            return redirect_to_www(request=request, site=site)
-        elif request.path != '/':
-            return redirect_to_www(request=request, site=site)
+        if (not(domain == "www.{domain}".format(domain=site.domain))):
+            for other_site in Site.objects.all().order_by("pk"):
+                if (other_site.domain in domain):
+                    return redirect_to_www(site=other_site)
+            if ("match" in domain):
+                other_site = Site.objects.get(pk=int(env('SPEEDY_MATCH_SITE_ID')))
+                return redirect_to_www(site=other_site)
+            if ("composer" in domain):
+                other_site = Site.objects.get(pk=int(env('SPEEDY_COMPOSER_SITE_ID')))
+                return redirect_to_www(site=other_site)
+            if ("mail" in domain):
+                other_site = Site.objects.get(pk=int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID')))
+                return redirect_to_www(site=other_site)
+            other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
+            return redirect_to_www(site=other_site)
+        elif (not(request.path == '/')):
+            return redirect_to_www(site=site)
 
         return language_selector(request=request)
 

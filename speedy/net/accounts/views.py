@@ -31,7 +31,7 @@ def set_session(request):
     response = HttpResponse('')
     origin = request.META.get('HTTP_ORIGIN')
     netloc = urlparse(origin).netloc
-    valid_origin = any(netloc.endswith('.' + site.domain) for site in Site.objects.all())
+    valid_origin = any(netloc.endswith('.' + site.domain) for site in Site.objects.all().order_by("pk"))
     if not valid_origin:
         return response
     if request.method == 'POST':
