@@ -1,5 +1,4 @@
 import re
-import string
 import uuid
 from datetime import datetime, date
 
@@ -53,13 +52,6 @@ def normalize_username(slug):
     slug = normalize_slug(slug=slug)
     username = re.sub('[-\._]', '', slug)
     return username
-
-
-def get_slug_from_name(name):
-    chars_allowed = string.ascii_lowercase + string.ascii_uppercase + string.digits
-    slug = "".join([c if (c in chars_allowed) else "-" for c in name])
-    slug = normalize_slug(slug=slug)
-    return slug
 
 
 class Entity(TimeStampedModel):
