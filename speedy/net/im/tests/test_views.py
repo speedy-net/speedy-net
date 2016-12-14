@@ -117,7 +117,7 @@ class SendMessageToUserViewTestCase(TestCase):
     def setUp(self):
         self.user1 = UserFactory()
         self.user2 = UserFactory()
-        self.page_url = '/{}/messages/compose/'.format(self.user2.slug)
+        self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
         self.data = {
             'text': 'Hi Hi Hi',
         }

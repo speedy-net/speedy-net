@@ -12,7 +12,7 @@ urlpatterns = [
     # always at the bottom
     url(r'^(?P<slug>[-\._\w/]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
     url(r'^messages/', include('speedy.net.im.urls_private', namespace='im')),
-    url(r'^(?P<slug>[-\._\w/]+)/messages/', include('speedy.net.im.urls_public', namespace='im_entity')),
+    url(r'^messages/(?P<slug>[-\._\w]+)/', include('speedy.net.im.urls_public', namespace='im_entity')),
     url(r'^(?P<slug>[-\._\w/]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
     url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
