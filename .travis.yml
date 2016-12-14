@@ -10,7 +10,7 @@ script:
   - python manage.py test
   - cd ../match
   - python manage.py test
-  - cd ../composer
-  - python manage.py test
+#  - cd ../composer
+#  - python manage.py test
   - cd ../mail
   - python manage.py test
