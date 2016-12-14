@@ -2,5 +2,5 @@ from speedy.core.views import StaticMainPageBaseView
 
 
 class MainPageView(StaticMainPageBaseView):
-    template_name = 'main_page.html'
+    template_name = 'main/main_page.html'
 
