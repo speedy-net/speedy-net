@@ -172,6 +172,21 @@ Review and edit these config files, restart servers:
     sudo service nginx restart
 
 
+## How to create an admin user
+
+    from speedy.net.accounts.models import User
+    from django.utils.timezone import now
+    u = User()
+    u.username = 'admin'
+    u.slug = 'admin'
+    u.date_of_birth = now()
+    u.gender = User.GENDER_OTHER
+    u.is_staff = True
+    u.is_superuser = True
+    u.set_password('admin')
+    u.save()
+
+
 ## env.ini
 
 **env.ini** file is where you should store all your credentials and secret keys. It must not to be checked into VCS.
