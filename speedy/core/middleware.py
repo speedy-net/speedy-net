@@ -32,7 +32,15 @@ class LocaleDomainMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        domain = request.META.get('HTTP_HOST', '').lower()
+        domain = request.META.get('HTTP_HOST', '')
+
+        if (not(domain == domain.lower())):
+            url = '//{domain}{path}'.format(
+                domain=domain.lower(),
+                path=request.get_full_path(),
+            )
+            return redirect(to=url, permanent=True)
+
         site = Site.objects.get_current()
 
         for lang_code, lang_name in settings.LANGUAGES:
@@ -62,7 +70,8 @@ class LocaleDomainMiddleware(object):
                 return redirect_to_www(site=other_site)
             other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
             return redirect_to_www(site=other_site)
-        elif (not(request.path == '/')):
+
+        if (not(request.get_full_path() == '/')):
             return redirect_to_www(site=site)
 
         return language_selector(request=request)
