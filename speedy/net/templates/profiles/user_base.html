@@ -21,13 +21,13 @@
         {% block user_content %}
         {% endblock %}
     {% else %}
-        <div class="alert alert-danger">
-            {% if can_view_profile_info %}
-                {% trans 'You or this user has restricted access to the profile.' %}
-            {% else %}
+        {% if can_view_profile_info %}
+            {% include 'profiles/block_warning.html' with user=request.user other=user %}
+        {% else %}
+            <div class="alert alert-danger">
                 {% trans 'This page is private.' %}
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
     {% endif %}
     {% block user_content_info %}
     {% endblock %}

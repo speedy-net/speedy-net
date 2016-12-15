@@ -1,0 +1,13 @@
+{% load blocks_tags %}
+{% load i18n %}
+
+{% has_blocked blocker=other.user blockee=user as other_user_blocked_you %}
+{% has_blocked blocker=user blockee=other.user as you_blocked_other_user %}
+
+<div class="alert alert-danger">
+    {% if you_blocked_other_user %}
+        {% trans 'You blocked this user.' %}
+    {% elif other_user_blocked_you  %}
+        {% trans 'This user blocked you.' %}
+    {% endif %}
+</div>

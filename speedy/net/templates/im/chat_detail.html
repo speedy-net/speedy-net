@@ -31,17 +31,7 @@
             {% crispy form %}
         </div>
     {% else %}
-        {% has_blocked blocker=other.user blockee=user as other_user_blocked_you %}
-        {% has_blocked blocker=user blockee=other.user as you_blocked_other_user %}
-        <div class="alert alert-danger">
-            {% if other_user_blocked_you %}
-                {% trans 'This user blocked you.' %}
-            {% elif you_blocked_other_user %}
-                {% trans 'You blocked this user.' %}
-            {% else %}
-                {% trans 'You can’t send messages to this user.' %}
-            {% endif %}
-        </div>
+        {% include 'profiles/block_warning.html' with user=user other=other %}
     {% endif %}
 
     <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
