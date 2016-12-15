@@ -1,0 +1,7 @@
+{% extends 'base_site.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% if view.get_report_entity %}{% trans 'Report Profile' %}{% elif view.get_report_file %}{% trans 'Report File' %}{% else %}{% trans 'Contact Us' %}{% endif %} / {{ block.super }}{% endblock %}
+
