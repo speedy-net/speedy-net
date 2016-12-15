@@ -171,6 +171,7 @@ UNAVAILABLE_USERNAMES = [
 DONT_REDIRECT_INACTIVE_USER = [
     '/logout/',
     '/welcome/',
+    '/contact/',
 ]
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True
