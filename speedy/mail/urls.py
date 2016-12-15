@@ -3,7 +3,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
+    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.mail.main.urls', namespace='main')),
 ]
 

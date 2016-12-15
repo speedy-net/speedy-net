@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Feedback' %} / {{ block.super }}{% endblock %}
+{% block title %}{% if view.get_report_entity %}{% trans 'Report Profile' %}{% elif view.get_report_file %}{% trans 'Report File' %}{% else %}{% trans 'Contact Us' %}{% endif %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="page-header">
@@ -13,7 +13,7 @@
             {% elif view.get_report_file %}
                 {% trans 'Report File' %}
             {% else %}
-                {% trans 'Feedback' %}
+                {% trans 'Contact Us' %}
             {% endif %}
         </h1>
     </div>

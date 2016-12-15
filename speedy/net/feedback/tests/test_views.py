@@ -35,7 +35,7 @@ class FeedbackViewBaseMixin(object):
             'sender_email': 'mike@example.com',
             'text': 'Hello',
         })
-        self.assertRedirects(response=r, expected_url='/feedback/thank-you/')
+        self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
 
@@ -57,7 +57,7 @@ class FeedbackViewBaseMixin(object):
         r = self.client.post(self.page_url, data={
             'text': 'Hello',
         })
-        self.assertRedirects(response=r, expected_url='/feedback/thank-you/')
+        self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
         self.assertEqual(first=len(mail.outbox), second=1)
@@ -67,7 +67,7 @@ class FeedbackViewBaseMixin(object):
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
     def get_page_url(self):
-        return '/feedback/'
+        return '/contact/'
 
     def check_feedback(self, feedback):
         self.assertEqual(first=feedback.type, second=Feedback.TYPE_FEEDBACK)
@@ -77,14 +77,14 @@ class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
 @exclude_on_speedy_mail_software
 class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
     def get_page_url(self):
-        return '/feedback/entity/{}/'.format(self.other_user.slug)
+        return '/contact/report/entity/{}/'.format(self.other_user.slug)
 
     def check_feedback(self, feedback):
         self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_ENTITY)
         self.assertEqual(first=feedback.report_entity_id, second=self.other_user.id)
 
     def test_404(self):
-        r = self.client.get('/feedback/entity/abrakadabra/')
+        r = self.client.get('/contact/report/entity/abrakadabra/')
         self.assertEqual(first=r.status_code, second=404)
 
 
@@ -92,12 +92,12 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
 @exclude_on_speedy_mail_software
 class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
     def get_page_url(self):
-        return '/feedback/file/{}/'.format(self.file.id)
+        return '/contact/report/file/{}/'.format(self.file.id)
 
     def check_feedback(self, feedback):
         self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_FILE)
         self.assertEqual(first=feedback.report_file_id, second=self.file.id)
 
     def test_404(self):
-        r = self.client.get('/feedback/file/abrakadabra/')
+        r = self.client.get('/contact/report/file/abrakadabra/')
         self.assertEqual(first=r.status_code, second=404)

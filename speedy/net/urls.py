@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^messages/(?P<slug>[-\._\w]+)/', include('speedy.net.im.urls_public', namespace='im_entity')),
     url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
-    url(r'^feedback/', include('speedy.net.feedback.urls', namespace='feedback')),
+    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
 
