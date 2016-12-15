@@ -13,7 +13,7 @@ from django.utils import translation
 from speedy.core.settings.utils import env
 
 
-def redirect_to_www(request: HttpRequest, site: Site) -> HttpResponseBase:
+def redirect_to_www(site: Site) -> HttpResponseBase:
     url = '//www.{domain}{path}'.format(
         domain=site.domain,
         path="/",
