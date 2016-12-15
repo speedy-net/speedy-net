@@ -26,7 +26,7 @@
             {% csrf_token %}
             <div class="form-group">
                 <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                <input name="username" type="text" class="form-control" placeholder="{% trans 'Username' %}">
+                <input name="username" type="text" class="form-control" placeholder="{% trans 'Email or Username' %}">
                 <input name="password" type="password" class="form-control" placeholder="{% trans 'Password' %}">
             </div>
             <button type="submit" class="btn btn-default btn-sm">{% trans 'Login' %}</button>
