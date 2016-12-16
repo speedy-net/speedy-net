@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 14:44+0200\n"
+"POT-Creation-Date: 2016-12-16 14:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -817,11 +817,11 @@ msgstr "שם מלא"
 
 #: .\templates\profiles\user_info_widget.html:23
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש/ת"
 
 #: .\templates\profiles\user_info_widget.html:33
 msgid "Gender"
-msgstr ""
+msgstr "מין"
 
 #: .\templates\profiles\user_info_widget.html:42
 msgid "Birthday"
@@ -837,15 +837,15 @@ msgstr "דואר אלקטרוני"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr ""
+msgstr "עיון..."
 
 #: .\uploads\models.py:13
 msgid "owner"
-msgstr ""
+msgstr "בעלים"
 
 #: .\uploads\models.py:14 .\uploads\models.py:19
 msgid "file"
-msgstr ""
+msgstr "קובץ"
 
 #: .\uploads\models.py:15
 msgid "is stored"
@@ -861,7 +861,7 @@ msgstr ""
 
 #: .\uploads\models.py:45
 msgid "images"
-msgstr ""
+msgstr "תמונות"
 
 #: .\uploads\models.py:46
 msgid "uploaded images"
