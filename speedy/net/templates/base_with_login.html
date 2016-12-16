@@ -19,7 +19,7 @@
         </p>
     {% else %}
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot Password?' %}</a></li>
+            <li><a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a></li>
             <li><a href="{% url 'accounts:index' %}">{% trans 'Register' %}</a></li>
         </ul>
         <form class="navbar-form navbar-right" method="post" action="{% url 'accounts:login' %}">
