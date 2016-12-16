@@ -64,8 +64,8 @@ msgid "Login"
 msgstr ""
 
 #: .\accounts\forms.py:179
-msgid "Forgot password?"
-msgstr ""
+msgid "Forgot your password?"
+msgstr "שכחת את הסיסמה שלך?"
 
 #: .\accounts\forms.py:191 .\accounts\forms.py:215
 msgid "Submit"
@@ -97,43 +97,43 @@ msgstr ""
 
 #: .\accounts\models.py:25
 msgid "Only me"
-msgstr ""
+msgstr "רק אני"
 
 #: .\accounts\models.py:26
 msgid "Me and my friends"
-msgstr ""
+msgstr "אני והחברים שלי"
 
 #: .\accounts\models.py:28
 msgid "Anyone"
-msgstr ""
+msgstr "כל אחד/ת"
 
 #: .\accounts\models.py:47
 msgid "username"
-msgstr ""
+msgstr "שם משתמש/ת"
 
 #: .\accounts\models.py:47 .\accounts\models.py:48 .\accounts\validators.py:10
 msgid "This username is already taken."
-msgstr ""
+msgstr "שם המשתמש/ת הזה כבר תפוס"
 
 #: .\accounts\models.py:48
 msgid "username (slug)"
-msgstr ""
+msgstr "שם משתמש/ת (slug)"
 
 #: .\accounts\models.py:49
 msgid "photo"
-msgstr ""
+msgstr "תמונה"
 
 #: .\accounts\models.py:57 .\accounts\models.py:58 .\im\models.py:89
 msgid "entity"
-msgstr ""
+msgstr "ישות"
 
 #: .\accounts\models.py:71
 msgid "Slug does not parse to username."
-msgstr ""
+msgstr "slug לא מתאים לשם המשתמש/ת."
 
 #: .\accounts\models.py:119
 msgid "name"
-msgstr ""
+msgstr "שם"
 
 #: .\accounts\models.py:140
 msgid "Female"

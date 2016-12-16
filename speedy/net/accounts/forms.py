@@ -176,7 +176,7 @@ class LoginForm(auth_forms.AuthenticationForm):
             Submit('submit', _('Login')),
             HTML('<a class="btn btn-link" href="{link}">{text}</a>'.format(
                 link=reverse('accounts:password_reset'),
-                text=_('Forgot password?'),
+                text=_('Forgot your password?'),
             )),
         ))
 
