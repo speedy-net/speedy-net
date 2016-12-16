@@ -137,63 +137,63 @@ msgstr ""
 
 #: .\accounts\models.py:140
 msgid "Female"
-msgstr ""
+msgstr "נקבה"
 
 #: .\accounts\models.py:141
 msgid "Male"
-msgstr ""
+msgstr "זכר"
 
 #: .\accounts\models.py:142
 msgid "Other"
-msgstr ""
+msgstr "אחר/ת"
 
 #: .\accounts\models.py:150
 msgid "Please select..."
-msgstr ""
+msgstr "בחר/י בבקשה..."
 
 #: .\accounts\models.py:151
 msgid "Vegan (eats only plants and fungi)"
-msgstr ""
+msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
 #: .\accounts\models.py:152
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
+msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
 #: .\accounts\models.py:153
 msgid "Carnist (eats animals)"
-msgstr ""
+msgstr "קרניסט/ית (אוכל/ת חיות)"
 
 #: .\accounts\models.py:158
 msgid "first name"
-msgstr ""
+msgstr "שם פרטי"
 
 #: .\accounts\models.py:159
 msgid "last name"
-msgstr ""
+msgstr "שם משפחה"
 
 #: .\accounts\models.py:160
 msgid "date of birth"
-msgstr ""
+msgstr "תאריך לידה"
 
 #: .\accounts\models.py:161
 msgid "I am"
-msgstr ""
+msgstr "אני"
 
 #: .\accounts\models.py:162
 msgid "diet"
-msgstr ""
+msgstr "תזונה"
 
 #: .\accounts\models.py:174 .\accounts\models.py:224 .\blocks\models.py:10
 msgid "user"
-msgstr ""
+msgstr "משתמש/ת"
 
 #: .\accounts\models.py:175
 msgid "users"
-msgstr ""
+msgstr "משתמשים"
 
 #: .\accounts\models.py:225
 msgid "email"
-msgstr ""
+msgstr "דואר אלקטרוני"
 
 #: .\accounts\models.py:226
 msgid "is confirmed"
@@ -217,35 +217,35 @@ msgstr ""
 
 #: .\accounts\models.py:233
 msgid "email address"
-msgstr ""
+msgstr "כתובת דואר אלקטרוני"
 
 #: .\accounts\models.py:234
 msgid "email addresses"
-msgstr ""
+msgstr "כתובות דואר אלקטרוני"
 
 #: .\accounts\models.py:281
 msgid "Notify"
-msgstr ""
+msgstr "מקבל הודעות"
 
 #: .\accounts\models.py:282
 msgid "Don't notify"
-msgstr ""
+msgstr "לא מקבל הודעות"
 
 #: .\accounts\models.py:286
 msgid "last visit"
-msgstr ""
+msgstr "ביקור אחרון"
 
 #: .\accounts\models.py:313
 msgid "who can view my birth month and day"
-msgstr ""
+msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
 #: .\accounts\models.py:314
 msgid "who can view my birth year"
-msgstr ""
+msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
 #: .\accounts\models.py:315
 msgid "on new messages"
-msgstr ""
+msgstr "כאשר יש הודעות חדשות"
 
 #: .\accounts\models.py:316
 msgid "indicates if a user has ever logged in to the site"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: .\accounts\views.py:175
 msgid "Welcome to {}!"
-msgstr ""
+msgstr "ברוכ/ה הבא/ה ל{}!"
 
 #: .\accounts\views.py:195
 msgid ""
@@ -307,11 +307,11 @@ msgstr ""
 
 #: .\blocks\views.py:26
 msgid "You have blocked this user."
-msgstr ""
+msgstr ".חסמת את המשתמש/ת הזה"
 
 #: .\blocks\views.py:38
 msgid "You have unblocked this user."
-msgstr ""
+msgstr ".ביטלת את חסימת המשתמש/ת הזה"
 
 #: .\feedback\forms.py:27 .\im\forms.py:29
 msgid "Send"
@@ -500,7 +500,7 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:23
 msgid "Blocked Users"
-msgstr ""
+msgstr "משתמשים חסומים"
 
 #: .\templates\accounts\edit_profile\base.html:25
 msgid "Deactivate Account"
@@ -585,11 +585,11 @@ msgstr ""
 #: .\templates\accounts\password_reset\form.html:6
 #: .\templates\accounts\password_reset\form.html:12
 msgid "Reset Password"
-msgstr ""
+msgstr "איפוס סיסמה"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr ""
+msgstr "סיסמה אופסה בהצלחה."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
@@ -749,42 +749,42 @@ msgstr ""
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked this user."
-msgstr ""
+msgstr ".חסמת את המשתמש/ת הזה"
 
 #: .\templates\profiles\block_warning.html:11
 msgid "This user blocked you."
-msgstr ""
+msgstr "המשתמש/ת הזה חסמ/ה אותך."
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:19
 msgid "Accept"
-msgstr ""
+msgstr "קבל/י"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:24
 msgid "Reject"
-msgstr ""
+msgstr "דחה/י"
 
 #: .\templates\profiles\tools\add_to_friends.html:28
 msgid "Add to Friends"
-msgstr ""
+msgstr "הוסף/י לחברים"
 
 #: .\templates\profiles\tools\block_user.html:13
 msgid "Block User"
-msgstr ""
+msgstr "חסום/י משתמש/ת"
 
 #: .\templates\profiles\tools\block_user.html:24
 msgid "Unblock User"
-msgstr ""
+msgstr "בטל/י חסימת משתמש/ת"
 
 #: .\templates\profiles\tools\friend_request_sent.html:9
 #: .\templates\profiles\tools\friend_request_sent.html:10
 msgid "Friend Request Sent"
-msgstr ""
+msgstr "בקשת חברות נשלחה"
 
 #: .\templates\profiles\tools\friend_request_sent.html:10
 msgid "Cancel Request"
-msgstr ""
+msgstr "בטל/י בקשת חברות"
 
 #: .\templates\profiles\tools\report_menu.html:6
 msgid "Toggle Dropdown"
@@ -792,32 +792,32 @@ msgstr ""
 
 #: .\templates\profiles\tools\report_menu.html:9
 msgid "Report User"
-msgstr ""
+msgstr "דווח/י על משתמש/ת זה"
 
 #: .\templates\profiles\tools\report_menu.html:11
 msgid "Report Photo"
-msgstr ""
+msgstr "דווח/י על תמונה זו"
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
-msgstr ""
+msgstr "שלח/י הודעה"
 
 #: .\templates\profiles\tools\your_friend.html:9
 #: .\templates\profiles\tools\your_friend.html:10
 msgid "Your Friend"
-msgstr ""
+msgstr "חבר/ה שלך"
 
 #: .\templates\profiles\tools\your_friend.html:10
 msgid "Remove"
-msgstr ""
+msgstr "הסר/י"
 
 #: .\templates\profiles\user_info_widget.html:11
 msgid "Information"
-msgstr ""
+msgstr "מידע"
 
 #: .\templates\profiles\user_info_widget.html:17
 msgid "Full Name"
-msgstr ""
+msgstr "שם מלא"
 
 #: .\templates\profiles\user_info_widget.html:23
 msgid "Username"
@@ -829,15 +829,15 @@ msgstr ""
 
 #: .\templates\profiles\user_info_widget.html:42
 msgid "Birthday"
-msgstr ""
+msgstr "תאריך לידה"
 
 #: .\templates\profiles\user_info_widget.html:54
 msgid "(hidden)"
-msgstr ""
+msgstr "(מוסתר)"
 
 #: .\templates\profiles\user_info_widget.html:64
 msgid "Email"
-msgstr ""
+msgstr "דואר אלקטרוני"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
