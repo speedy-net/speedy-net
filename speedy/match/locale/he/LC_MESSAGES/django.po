@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-16 11:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\models.py:11
+msgid "on new messages"
+msgstr ""
+
+#: .\accounts\models.py:12
+msgid "on new likes"
+msgstr ""
+
+#: .\accounts\models.py:13
+msgid "active languages"
+msgstr ""
+
+#: .\likes\models.py:11
+msgid "from user"
+msgstr ""
+
+#: .\likes\models.py:12
+msgid "to entity"
+msgstr ""
+
+#: .\likes\models.py:15
+msgid "like"
+msgstr ""
+
+#: .\likes\models.py:16
+msgid "entity likes"
+msgstr ""
+
+#: .\settings\base_site.py:10
+msgid "Speedy Match [alpha]"
+msgstr "ספידי מץ' [אלפא]"
+
+#: .\templates\base_site.html:11 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:10
+msgid "Likes"
+msgstr ""
+
+#: .\templates\likes\like_list.html:14
+msgid "People I Like"
+msgstr ""
+
+#: .\templates\likes\like_list.html:16
+msgid "People Who Likes Me"
+msgstr ""
+
+#: .\templates\likes\like_list.html:18
+msgid "Mutual Likes"
+msgstr ""
+
+#: .\templates\likes\like_list.html:28
+msgid "You have no likes here."
+msgstr ""
+
+#: .\templates\profiles\tools\like.html:13
+msgid "Like"
+msgstr ""
+
+#: .\templates\profiles\tools\like.html:21
+msgid "Unlike"
+msgstr ""

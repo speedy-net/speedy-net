@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 16:55+0200\n"
+"POT-Creation-Date: 2016-12-16 11:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\main_page.html:11
+#: .\accounts\models.py:31
+msgid "indicates if a user has ever logged in to the site"
+msgstr ""
+
+#: .\compose\models.py:11 .\compose\models.py:32
+msgid "chords template"
+msgstr ""
+
+#: .\compose\models.py:12
+msgid "chords templates"
+msgstr ""
+
+#: .\compose\models.py:18 .\compose\models.py:33
+msgid "accompaniment"
+msgstr ""
+
+#: .\compose\models.py:19
+msgid "accompaniments"
+msgstr ""
+
+#: .\compose\models.py:23
+msgid "user"
+msgstr ""
+
+#: .\compose\models.py:26 .\compose\models.py:31
+msgid "folder"
+msgstr ""
+
+#: .\compose\models.py:27
+msgid "folders"
+msgstr ""
+
+#: .\compose\models.py:34
+msgid "tempo"
+msgstr ""
+
+#: .\compose\models.py:35
+msgid "public"
+msgstr ""
+
+#: .\compose\models.py:38
+msgid "composition"
+msgstr ""
+
+#: .\compose\models.py:39
+msgid "compositions"
+msgstr ""
+
+#: .\templates\main\main_page.html:11
 msgid "Welcome to Speedy Composer!"
 msgstr "ברוכים הבאים לספידי קומפוזר!"
 
-#: .\templates\main_page.html:15
+#: .\templates\main\main_page.html:15
 msgid ""
 "Thank you for your interest in Speedy Composer. Speedy Composer is an "
 "automated application for composing melodies for Speedy Net members. We "
@@ -42,7 +90,7 @@ msgstr ""
 "כל המנגינות שהולחנו על-ידי ספידי קומפוזר, וכשהאתר ייפתח מחדש נעלה אותן לאתר "
 "החדש."
 
-#: .\templates\main_page.html:17
+#: .\templates\main\main_page.html:17
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "
@@ -53,18 +101,18 @@ msgstr ""
 "כיום מתנדבים שיעזרו לנו להמיר את ספידי קומפוזר לשפת Python. אם אתם מעוניינים "
 "להתנדב, צרו איתי קשר בדואר אלקטרוני."
 
-#: .\templates\main_page.html:19
+#: .\templates\main\main_page.html:19
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: .\templates\main_page.html:20
+#: .\templates\main\main_page.html:20
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: .\templates\main_page.html:21
+#: .\templates\main\main_page.html:21
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
 msgstr "מייסד ומנהל ספידי נט וספידי קומפוזר,"
 
-#: .\templates\main_page.html:22
+#: .\templates\main\main_page.html:22
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."

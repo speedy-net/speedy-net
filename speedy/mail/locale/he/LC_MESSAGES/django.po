@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-01 18:34+0200\n"
+"POT-Creation-Date: 2016-12-16 11:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
 
-#: .\templates\main_page.html:11
+#: .\templates\main\main_page.html:11
 msgid "Welcome to Speedy Mail Software!"
 msgstr "ברוכים הבאים לתוכנת דואר ספידי!"
 
-#: .\templates\main_page.html:15
+#: .\templates\main\main_page.html:15
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based e-mail such as Gmail. We want the "
@@ -53,7 +53,7 @@ msgstr ""
 "דואר ספידי וגם נאפשר לכל חברה או ארגון אחר להפעיל דואר אלקטרוני דומה באתר "
 "שלהם."
 
-#: .\templates\main_page.html:17
+#: .\templates\main\main_page.html:17
 msgid ""
 "Speedy Mail Software will use the Python and JavaScript languages. Speedy "
 "Net is also free software and open source. If you are interested in "
@@ -62,18 +62,18 @@ msgstr ""
 "תוכנת דואר ספידי תשתמש בשפות Python ו-JavaScript. ספידי נט היא גם תוכנה "
 "חופשית בקוד פתוח. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני."
 
-#: .\templates\main_page.html:19
+#: .\templates\main\main_page.html:19
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: .\templates\main_page.html:20
+#: .\templates\main\main_page.html:20
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: .\templates\main_page.html:21
+#: .\templates\main\main_page.html:21
 msgid "Founder and director of Speedy Net and Speedy Mail,"
 msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
 
-#: .\templates\main_page.html:22
+#: .\templates\main\main_page.html:22
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
