@@ -809,7 +809,7 @@ msgstr "הסר/י"
 
 #: .\templates\profiles\user_info_widget.html:11
 msgid "Information"
-msgstr "מידע"
+msgstr "פרטים"
 
 #: .\templates\profiles\user_info_widget.html:17
 msgid "Full Name"
