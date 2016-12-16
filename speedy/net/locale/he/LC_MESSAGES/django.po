@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 12:05+0200\n"
+"POT-Creation-Date: 2016-12-16 14:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,48 +20,48 @@ msgstr ""
 
 #: .\accounts\forms.py:42
 msgid "This email is already in use."
-msgstr ""
+msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
 #: .\accounts\forms.py:50
 msgid "Password too short."
-msgstr ""
+msgstr "הסיסמה קצרה מדי."
 
 #: .\accounts\forms.py:52
 msgid "Password too long."
-msgstr ""
+msgstr "הסיסמה ארוכה מדי."
 
 #: .\accounts\forms.py:80
 msgid "Your email"
-msgstr ""
+msgstr "הדואר האלקטרוני שלך"
 
 #: .\accounts\forms.py:81
 msgid "New password"
-msgstr ""
+msgstr "סיסמה חדשה"
 
 #: .\accounts\forms.py:89
 msgid "New username"
-msgstr ""
+msgstr "שם משתמש/ת חדש"
 
 #: .\accounts\forms.py:92
 msgid "Create an account"
-msgstr ""
+msgstr "צור/י חשבון"
 
 #: .\accounts\forms.py:125 .\accounts\forms.py:143 .\accounts\forms.py:157
 msgid "Save Changes"
-msgstr ""
+msgstr "שמור/י את השינויים"
 
 #: .\accounts\forms.py:131
-msgid "You can't change your username"
-msgstr ""
+msgid "You can't change your username."
+msgstr ".לא ניתן לשנות שם משתמש/ת"
 
-#: .\accounts\forms.py:171
-msgid "Username or email"
-msgstr ""
+#: .\accounts\forms.py:171 .\templates\base_with_login.html:29
+msgid "Email or Username"
+msgstr "דואר אלקטרוני או שם משתמש/ת"
 
 #: .\accounts\forms.py:176 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:32
 msgid "Login"
-msgstr ""
+msgstr "כניסה"
 
 #: .\accounts\forms.py:179
 msgid "Forgot your password?"
@@ -77,23 +77,23 @@ msgstr ""
 
 #: .\accounts\forms.py:237
 msgid "Activate my {} account"
-msgstr ""
+msgstr "הפעל/י את החשבון שלי ב{}"
 
 #: .\accounts\forms.py:246
 msgid "Your password"
-msgstr ""
+msgstr "הסיסמה שלך"
 
 #: .\accounts\forms.py:253
 msgid "Deactivate your {} account"
-msgstr ""
+msgstr "הפסק/י את פעילות החשבון שלי ב{}"
 
 #: .\accounts\forms.py:258
-msgid "Invalid password"
-msgstr ""
+msgid "Invalid password."
+msgstr "הסיסמה לא תקינה."
 
 #: .\accounts\forms.py:270
 msgid "Add"
-msgstr ""
+msgstr "הוסף/י"
 
 #: .\accounts\models.py:25
 msgid "Only me"
@@ -197,11 +197,11 @@ msgstr "דואר אלקטרוני"
 
 #: .\accounts\models.py:226
 msgid "is confirmed"
-msgstr ""
+msgstr "מאומת"
 
 #: .\accounts\models.py:227
 msgid "is primary"
-msgstr ""
+msgstr "ראשי"
 
 #: .\accounts\models.py:228
 msgid "confirmation token"
@@ -339,7 +339,7 @@ msgstr ""
 
 #: .\feedback\models.py:22
 msgid "your email"
-msgstr ""
+msgstr "הדואר האלקטרוני שלך"
 
 #: .\feedback\models.py:23
 msgid "type"
@@ -635,10 +635,6 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: .\templates\base_with_login.html:29
-msgid "Email or Username"
-msgstr ""
-
 #: .\templates\base_with_login.html:30
 msgid "Password"
 msgstr ""
@@ -871,14 +867,14 @@ msgstr ""
 msgid "uploaded images"
 msgstr ""
 
-msgid "Speedy Net"
-msgstr "ספידי נט"
+#~ msgid "Speedy Net"
+#~ msgstr "ספידי נט"
 
-msgid "Speedy Match"
-msgstr "ספידי מץ'"
+#~ msgid "Speedy Match"
+#~ msgstr "ספידי מץ'"
 
-msgid "Speedy Composer"
-msgstr "ספידי קומפוזר"
+#~ msgid "Speedy Composer"
+#~ msgstr "ספידי קומפוזר"
 
-msgid "Speedy Mail Software"
-msgstr "תוכנת דואר ספידי"
+#~ msgid "Speedy Mail Software"
+#~ msgstr "תוכנת דואר ספידי"

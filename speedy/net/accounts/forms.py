@@ -128,7 +128,7 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if normalize_username(slug=slug) != username:
-            raise forms.ValidationError(_('You can\'t change your username'))
+            raise forms.ValidationError(_('You can\'t change your username.'))
         return slug
 
 
@@ -168,7 +168,7 @@ class LoginForm(auth_forms.AuthenticationForm):
         self.data = self.data.copy()
         if 'username' in self.data:
             self.data['username'] = self.data['username'].lower()
-        self.fields['username'].label = _('Username or email')
+        self.fields['username'].label = _('Email or Username')
         self.helper = FormHelper()
         self.helper.add_layout(Div(
             'username',
@@ -255,7 +255,7 @@ class SiteProfileDeactivationForm(forms.Form):
     def clean_password(self):
         password = self.cleaned_data['password']
         if not self.user.check_password(password):
-            raise forms.ValidationError(_('Invalid password'))
+            raise forms.ValidationError(_('Invalid password.'))
         return password
 
 
