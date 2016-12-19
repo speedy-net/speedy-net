@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 12:26+0200\n"
+"POT-Creation-Date: 2016-12-19 13:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -639,8 +639,8 @@ msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
 #: .\templates\base.html:195
-msgid "Speedy Sale"
-msgstr "ספידי סייל"
+msgid "Speedy Net Blog"
+msgstr "ספידי נט בלוג"
 
 #: .\templates\base.html:201
 msgid "Speedy Net's Shop"
@@ -658,7 +658,19 @@ msgstr "החנות של ספידי קומפוזר"
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:251 .\templates\base.html:253
+#: .\templates\base.html:213
+msgid "Speedy Software"
+msgstr "ספידי תוכנה"
+
+#: .\templates\base.html:215
+msgid "Speedy Sale"
+msgstr "ספידי סייל"
+
+#: .\templates\base.html:217
+msgid "Free Online Dating"
+msgstr "הכרויות און-ליין בחינם"
+
+#: .\templates\base.html:255 .\templates\base.html:257
 msgid "Speedy"
 msgstr "ספידי"
 
