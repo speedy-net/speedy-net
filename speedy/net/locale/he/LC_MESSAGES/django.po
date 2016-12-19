@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 15:40+0200\n"
+"POT-Creation-Date: 2016-12-19 11:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -593,15 +593,16 @@ msgstr "סיסמה אופסה בהצלחה."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr ""
+msgstr "איפוס סיסמה נכשל. קישור לא תקין."
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
-msgstr ""
+msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
 
 #: .\templates\base.html:83
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
+"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
 #: .\templates\base.html:118 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
@@ -612,7 +613,7 @@ msgstr "צרו קשר"
 msgid "Language"
 msgstr "שפה"
 
-#: .\templates\base.html:151 .\templates\base.html:153
+#: .\templates\base.html:150 .\templates\base.html:152
 msgid "Speedy"
 msgstr "ספידי"
 
