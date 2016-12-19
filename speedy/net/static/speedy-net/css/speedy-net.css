@@ -68,6 +68,14 @@ body.bidi-rtl .navbar-right {
     text-decoration: underline;
 }
 
+.footer a.black,
+.footer a.black:visited,
+.footer a.black:link,
+.footer a.black:active {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
 .footer .links_table {
     padding-top: 10px;
 }
