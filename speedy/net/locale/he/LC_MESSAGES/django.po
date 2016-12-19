@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 13:34+0200\n"
+"POT-Creation-Date: 2016-12-19 20:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -335,7 +335,7 @@ msgstr ""
 
 #: .\feedback\models.py:21
 msgid "your name"
-msgstr ""
+msgstr "השם שלך"
 
 #: .\feedback\models.py:22
 msgid "your email"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: .\feedback\models.py:24
 msgid "your message"
-msgstr ""
+msgstr "ההודעה שלך"
 
 #: .\feedback\models.py:25
 msgid "reported entity"
