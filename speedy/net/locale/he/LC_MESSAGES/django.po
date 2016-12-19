@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 11:26+0200\n"
+"POT-Creation-Date: 2016-12-19 12:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -519,8 +519,9 @@ msgid "Added"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:14
+#: .\templates\base.html:177
 msgid "Privacy"
-msgstr ""
+msgstr "פרטיות"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
@@ -604,16 +605,60 @@ msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:118 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:175
+msgid "About"
+msgstr "אודות"
+
+#: .\templates\base.html:179
+msgid "Terms of Service"
+msgstr "תנאי שימוש"
+
+#: .\templates\base.html:179
+msgid "Terms"
+msgstr "תנאים"
+
+#: .\templates\base.html:181 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:122
-msgid "Language"
-msgstr "שפה"
+#: .\templates\base.html:187
+msgid "Speedy Net"
+msgstr "ספידי נט"
 
-#: .\templates\base.html:150 .\templates\base.html:152
+#: .\templates\base.html:189
+msgid "Speedy Match"
+msgstr "ספידי מץ'"
+
+#: .\templates\base.html:191
+msgid "Speedy Composer"
+msgstr "ספידי קומפוזר"
+
+#: .\templates\base.html:193
+msgid "Speedy Mail Software"
+msgstr "תוכנת דואר ספידי"
+
+#: .\templates\base.html:195
+msgid "Speedy Sale"
+msgstr "ספידי סייל"
+
+#: .\templates\base.html:201
+msgid "Speedy Net's Shop"
+msgstr "החנות של ספידי נט"
+
+#: .\templates\base.html:203
+msgid "Speedy Match's Shop"
+msgstr "החנות של ספידי מץ'"
+
+#: .\templates\base.html:205
+msgid "Speedy Composer's Shop"
+msgstr "החנות של ספידי קומפוזר"
+
+#: .\templates\base.html:207
+msgid "Speedy S-logo Shop"
+msgstr "החנות של ספידי S-לוגו"
+
+#: .\templates\base.html:251 .\templates\base.html:253
 msgid "Speedy"
 msgstr "ספידי"
 
@@ -868,14 +913,5 @@ msgstr "תמונות"
 msgid "uploaded images"
 msgstr ""
 
-#~ msgid "Speedy Net"
-#~ msgstr "ספידי נט"
-
-#~ msgid "Speedy Match"
-#~ msgstr "ספידי מץ'"
-
-#~ msgid "Speedy Composer"
-#~ msgstr "ספידי קומפוזר"
-
-#~ msgid "Speedy Mail Software"
-#~ msgstr "תוכנת דואר ספידי"
+#~ msgid "Language"
+#~ msgstr "שפה"

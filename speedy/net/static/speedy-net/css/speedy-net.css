@@ -31,3 +31,44 @@ body.bidi-rtl .navbar-right {
     color: #000000;
 }
 
+.footer {
+    text-align: center;
+    /* border-top: 1px solid #B2CAFA; */
+    clear: both;
+    font-size: 13px;
+    line-height: 1;
+    position: relative;
+}
+
+.footer table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 13px;
+    color: #3D70A3 !important;
+}
+
+.footer a:visited {
+    color: #3D70A3 !important;
+}
+
+.footer a:link {
+    color: #3D70A3 !important;
+}
+
+.footer a:active {
+    color: #3D70A3 !important;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .links_table {
+    padding-top: 10px;
+}
+
