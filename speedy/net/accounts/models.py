@@ -195,7 +195,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
             addresses = addresses.filter(is_confirmed=True)
         addresses = list(addresses)
         if addresses:
-            return addresses[0].mail(template_name_prefix, context)
+            return addresses[0].mail(template_name_prefix=template_name_prefix, context=context)
         return False
 
     def get_full_name(self):

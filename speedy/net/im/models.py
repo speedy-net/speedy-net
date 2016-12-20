@@ -104,6 +104,6 @@ def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
     other_participants = instance.chat.get_other_participants(instance.sender)
     for entity in other_participants:
         if entity.user.profile.notify_on_message == SiteProfileBase.NOTIFICATIONS_ON:
-            entity.user.mail_user('im/email/new_message', {
+            entity.user.mail_user(template_name_prefix='im/email/new_message', context={
                 'message': instance,
             })
