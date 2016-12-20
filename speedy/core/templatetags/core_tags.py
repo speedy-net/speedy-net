@@ -40,3 +40,11 @@ def pagination(context):
 
     context['sliced_page_range'] = sliced_page_range
     return context
+
+
+# ~~~~ TODO: This filter is only because we use "1." domains in production. remove this filter!
+@register.filter
+def remove_1_prefix_from_domain(value):
+    return value.replace("1.", "")
+
+
