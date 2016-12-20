@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _, get_language
 
 from speedy.net.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
 class SiteProfile(SiteProfileBase):
@@ -27,10 +28,13 @@ class SiteProfile(SiteProfileBase):
         languages.append(get_language())
         self.set_active_languages(languages)
         self.save(update_fields={'active_languages'})
+        speedy_net_profile = self.user.get_profile(model=SpeedyNetSiteProfile)
+        speedy_net_profile.activate()
 
     @property
     def is_active(self):
-        return get_language() in self.get_active_languages()
+        speedy_net_profile = self.user.get_profile(model=SpeedyNetSiteProfile)
+        return speedy_net_profile.is_active and get_language() in self.get_active_languages()
 
     def deactivate(self):
         self.set_active_languages([])

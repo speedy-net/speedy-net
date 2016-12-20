@@ -192,10 +192,11 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         user = self.request.user
         user.profile.deactivate()
         current_site = Site.objects.get_current()
-        messages.success(self.request, _('Your {} account has been deactivated. You can reactivate it any time. Your {} accounts (if any) remain intact.').format(
-            current_site.name,
-            ', '.join(Site.objects.exclude(id=current_site.id).values_list('name', flat=True)),
-        ))
+        if settings.SITE_ID == 1:
+            message = _('Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.')
+        else:
+            message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remain intact.')
+        messages.success(request=self.request, message=message)
         return super().form_valid(form=form)
 
 

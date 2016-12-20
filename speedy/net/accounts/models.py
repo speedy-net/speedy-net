@@ -214,9 +214,13 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     @property
     def profile(self):
         if not hasattr(self, '_profile'):
-            model = get_site_profile_model()
-            self._profile = model.objects.get_or_create(user=self)[0]
+            self._profile = self.get_profile()
         return self._profile
+
+    def get_profile(self, model=None) -> 'SiteProfileBase':
+        if model is None:
+            model = get_site_profile_model()
+        return model.objects.get_or_create(user=self)[0]
 
 
 class UserEmailAddress(TimeStampedModel):
@@ -232,7 +236,7 @@ class UserEmailAddress(TimeStampedModel):
     class Meta:
         verbose_name = _('email address')
         verbose_name_plural = _('email addresses')
-        ordering = ('date_created', 'id', )
+        ordering = ('date_created', 'id',)
 
     def __str__(self):
         return self.email
