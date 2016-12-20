@@ -42,6 +42,14 @@ def pagination(context):
     return context
 
 
+@register.filter
+def convert_en_to_www(value):
+    if (value == "en"):
+        return "www"
+    else:
+        return value
+
+
 # ~~~~ TODO: This filter is only because we use "1." domains in production. remove this filter!
 @register.filter
 def remove_1_prefix_from_domain(value):

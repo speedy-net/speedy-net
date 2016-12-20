@@ -1,6 +1,6 @@
 <!doctype html>
 
-{% load core_tags %}
+{% load core_tags_and_filters %}
 {% load im_tags %}
 {% load staticfiles %}
 {% load i18n %}
@@ -212,9 +212,9 @@
             <tr align="center" valign="top"><td><table cellpadding="0" cellspacing="0" border="0" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><tr align="center" valign="bottom">
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://www.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
-            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_BIDI|yesno:'he,www' }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a></td>
+            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
-            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_BIDI|yesno:'he,www' }}.free-online-dating.net/" title="{% trans "Free Online Dating" %}">{% trans "Free Online Dating" %}</a></td>
+            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.net/" title="{% trans "Free Online Dating" %}">{% trans "Free Online Dating" %}</a></td>
             </tr></table></td></tr>
 
             <tr align="center" valign="top"><td>&nbsp;</td></tr>
