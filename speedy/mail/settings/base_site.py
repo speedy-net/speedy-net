@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from speedy.core.settings.base import *
 from speedy.core.settings.base_site import update_site_paths
 from .utils import APP_DIR
@@ -5,6 +6,8 @@ from .utils import APP_DIR
 update_site_paths(settings=globals())
 
 SITE_ID = int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
+
+SITE_TITLE = _('Speedy Mail Software [alpha]')
 
 ROOT_URLCONF = 'speedy.mail.urls'
 
