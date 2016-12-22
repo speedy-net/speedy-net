@@ -142,12 +142,12 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         (GENDER_OTHER, _('Other')),
     )
 
-    DIET_UNKNOWNN   = 0
+    DIET_UNKNOWN   = 0
     DIET_VEGAN      = 1
     DIET_VEGETARIAN = 2
     DIET_CARNIST    = 3
     DIET_CHOICES = (
-        (DIET_UNKNOWNN, _('Please select...')),
+        (DIET_UNKNOWN, _('Please select...')),
         (DIET_VEGAN, _('Vegan (eats only plants and fungi)')),
         (DIET_VEGETARIAN, _('Vegetarian (doesn\'t eat fish and meat)')),
         (DIET_CARNIST, _('Carnist (eats animals)'))
@@ -159,7 +159,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
-    diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES, default=DIET_UNKNOWNN)
+    diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES, default=DIET_UNKNOWN)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 

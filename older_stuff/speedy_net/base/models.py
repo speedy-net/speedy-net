@@ -167,14 +167,14 @@ class User(AbstractBaseUser, ManagedEntity):
     )
 
     # user diet choices
-    UNKNOWNN   = 0
+    UNKNOWN   = 0
     VEGAN      = 1
-    VEGETERIAN = 2
+    VEGETARIAN = 2
     CARNIST    = 3
     DIET_CHOICES = (
-        (UNKNOWNN, 'Please select...'),
+        (UNKNOWN, 'Please select...'),
         (VEGAN, 'Vegan'),
-        (VEGETERIAN, 'Vegeterian'),
+        (VEGETARIAN, 'Vegeterian'),
         (CARNIST, 'Carnist')
     )
 
@@ -187,7 +187,7 @@ class User(AbstractBaseUser, ManagedEntity):
     )
     first_name = models.CharField(max_length=75)
     last_name = models.CharField(max_length=75)
-    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=UNKNOWNN)
+    diet = models.SmallIntegerField(choices=DIET_CHOICES, default=UNKNOWN)
     profile_picture = models.ImageField(upload_to='user_pictures/', blank=True, default=DEFAULT_PIC)
     password_reset_token = models.ForeignKey(Token, null=True, blank=True, related_name='password_reset_user', on_delete=models.SET_NULL)
     is_active = models.BooleanField(default=False)
