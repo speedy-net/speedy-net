@@ -162,7 +162,7 @@ UNAVAILABLE_USERNAMES = [
     'admin', 'root', 'webmaster', 'uri', 'speedy',
     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
     'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
-    'welcome', 'setsession', 'static', 'images', 'css', 'js',
+    'welcome', 'setsession', 'static', 'images', 'icons', 'css', 'js',
     'javascript', 'python',
     'speedynet', 'speedymatch', 'speedycomposer', 'speedymail', 'speedymailsoftware',
     'postmaster', 'mail', 'domain', 'locale',
