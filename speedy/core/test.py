@@ -12,7 +12,7 @@ class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if not test_labels:
             test_labels = [label for label in settings.INSTALLED_APPS if label.startswith('speedy.')]
-        return super().build_suite(test_labels, extra_tests, **kwargs)
+        return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
 def conditional_test(test_func):
