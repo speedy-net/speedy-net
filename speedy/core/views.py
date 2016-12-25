@@ -4,12 +4,42 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 
-class StaticMainPageBaseView(generic.TemplateView):
+class StaticBaseView(generic.TemplateView):
+    # canonical_full_path must be defined in classes inherited from this class.
+
     def get(self, request, *args, **kwargs):
-        if (request.get_full_path() == "/"):
+        if (request.get_full_path() == self.canonical_full_path):
             return super().get(request=request, *args, **kwargs)
         else:
-            return redirect(to="/", permanent=True)
+            return redirect(to=self.canonical_full_path, permanent=True)
+
+    class Meta:
+        abstract = True
+
+
+class StaticMainPageBaseView(StaticBaseView):
+    canonical_full_path = "/"
+
+    class Meta:
+        abstract = True
+
+
+class StaticAboutBaseView(StaticBaseView):
+    canonical_full_path = "/about/"
+
+    class Meta:
+        abstract = True
+
+
+class StaticPrivacyPolicyBaseView(StaticBaseView):
+    canonical_full_path = "/privacy/"
+
+    class Meta:
+        abstract = True
+
+
+class StaticTermsOfServiceBaseView(StaticBaseView):
+    canonical_full_path = "/terms/"
 
     class Meta:
         abstract = True

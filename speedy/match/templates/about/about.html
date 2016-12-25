@@ -1,0 +1,35 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block content %}
+<div class="page-header">
+    <h2>
+        {% blocktrans with site_name=site.name %}About Speedy Match{% endblocktrans %}
+    </h2>
+</div>
+<div>
+    {% blocktrans with site_name=site.name %}<a href="http://en.speedymatch.com/" title="Speedy Match">Speedy Match</a> is a new dating/matching app for singles who are members of Speedy Net. With Speedy Match you can find matching people for dating and communicate with them online. You can add people as friends on Speedy Net, like people and send them messages. Speedy Match is open to free registration for people from all countries and ages (no age limit!). It is currently available in two languages - English and Hebrew.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}The founders of Speedy Match are vegan, support animal rights and object to experiments on animals. Speedy Match is a dating app friendly for vegan and vegetarian people and animals.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Only people who match your requirements will be able to see your profile and contact you. We don't allow anonymous searches and profiles are visible to matching partners only. You can select who will be able to see your profile and which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find matching partners, it only takes a few minutes. <a href="/" title="Join Speedy Net">Click here</a> to join.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Match is a free software & open source project. If you want to help developing and improving Speedy Match, please contact me by e-mail.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Match is named after <a href="https://www.facebook.com/speedyevenchen" title="Speedy">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Match is currently in alpha. It was launched on 2017.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Thank you and good luck,{% endblocktrans %}<br />
+    <a href="http://www.speedysoftware.com/uri/en/">{% blocktrans with site_name=site.name %}Uri Even-Chen{% endblocktrans %}</a><br />
+    {% blocktrans with site_name=site.name %}Founder and director of Speedy Net and Speedy Match,{% endblocktrans %}<br />
+    {% blocktrans with site_name=site.name %}Speedy Paz Technologies Ltd.{% endblocktrans %}<br />
+    <a href="mailto:uri@speedy.net">uri@speedy.net</a><br />
+</div>
+{% endblock %}
