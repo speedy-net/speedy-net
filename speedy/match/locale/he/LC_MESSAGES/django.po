@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 13:34+0200\n"
+"POT-Creation-Date: 2016-12-26 12:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,6 +49,102 @@ msgstr ""
 #: .\settings\base_site.py:10
 msgid "Speedy Match [alpha]"
 msgstr "ספידי מץ' [אלפא]"
+
+#: .\templates\about\about.html:8
+msgid "About"
+msgstr "אודות"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Match"
+msgstr "אודות ספידי מץ'"
+
+#: .\templates\about\about.html:17
+msgid ""
+"<a href=\"http://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"a> is a new dating/matching app for singles who are members of Speedy Net. "
+"With Speedy Match you can find matching people for dating and communicate "
+"with them online. You can add people as friends on Speedy Net, like people "
+"and send them messages. Speedy Match is open to free registration for people "
+"from all countries and ages (no age limit!). It is currently available in "
+"two languages - English and Hebrew."
+msgstr ""
+"ספידי מץ' היא אפליקציית הכרויות/התאמות לפנויות/פנויים חברי ספידי נט. עם "
+"ספידי מץ' אתם יכולים למצוא בנות זוג ובני זוג מתאימים ולתקשר איתם און-ליין. "
+"אתם יכולים להוסיף אנשים כחברים בספידי נט, לאהוב (like) אנשים ולשלוח להם "
+"הודעות. ספידי מץ' פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין "
+"הגבלת גיל!). כיום האתר זמין בשתי שפות - עברית ואנגלית."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Match are vegan, support animal rights and object to "
+"experiments on animals. Speedy Match is a dating app friendly for vegan and "
+"vegetarian people and animals."
+msgstr ""
+"המייסדים של ספידי מץ' הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים "
+"לניסויים בבעלי חיים. ספידי מץ' היא אפליקציית הכרויות ידידותית לאנשים "
+"טבעוניים וצמחוניים ולבעלי חיים."
+
+#: .\templates\about\about.html:21
+msgid ""
+"Only people who match your requirements will be able to see your profile and "
+"contact you. We don't allow anonymous searches and Speedy Match profiles are "
+"visible to matching partners only. You can select who will be able to see "
+"your profile and which details will appear on your profile as public, which "
+"details only to friends and which details will be private. Private details "
+"will appear only to you."
+msgstr ""
+"רק אנשים שמתאימים לדרישות שלכם יוכלו לראות את הפרופיל שלכם וליצור איתכם קשר. "
+"אנחנו לא נאפשר חיפושים אנונימיים ופרופילים בספידי מץ' גלויים לבני זוג "
+"מתאימים בלבד. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם כציבוריים, "
+"אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו רק לכם."
+
+#: .\templates\about\about.html:23
+msgid ""
+"Speedy Net and Speedy Match are free of charge. Join Speedy Net today to "
+"find matching partners, it only takes a few minutes. <a href=\"/\" title="
+"\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"ספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט למצוא בני זוג "
+"מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו "
+"כאן</a> כדי להצטרף."
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Match is a free software & open source project. If you want to help "
+"developing and improving Speedy Match, please contact me by e-mail."
+msgstr ""
+"ספידי מץ' היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח "
+"ושיפור ספידי מץ', אנא צרו איתי קשר באמצעות דואר אלקטרוני."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Match is named after <a href=\"https://www.facebook.com/speedyevenchen"
+"\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"ספידי מץ' נקראת על שם <a href=\"https://www.facebook.com/speedyevenchen\" "
+"title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
+"המליטה 7 גורים בשנת 1988."
+
+#: .\templates\about\about.html:29
+msgid "Speedy Match is currently in alpha. It was launched on 2017."
+msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה ב-2017."
+
+#: .\templates\about\about.html:31
+msgid "Thank you and good luck,"
+msgstr "תודה ובהצלחה,"
+
+#: .\templates\about\about.html:32
+msgid "Uri Even-Chen"
+msgstr "אורי אבן-חן"
+
+#: .\templates\about\about.html:33
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
+
+#: .\templates\about\about.html:34
+msgid "Speedy Paz Technologies Ltd."
+msgstr "ספידי פז טכנולוגיות בע\"מ."
 
 #: .\templates\base_site.html:11 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:10

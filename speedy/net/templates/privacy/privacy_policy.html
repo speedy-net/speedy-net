@@ -1,0 +1,19 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block title %}{{ block.super }} - {% trans 'Privacy Policy' %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>
+        {% blocktrans with site_name=site.name %}Privacy Policy{% endblocktrans %}
+    </h2>
+</div>
+<div>
+    {% blocktrans with site_name=site.name %}We respect your privacy. We will not sell or share your personal details, including your name, your date of birth, your e-mail address and your password. Messages you send to people on Speedy Net are personal and will not be shared with other people or websites. Your password is saved encrypted on our database.{% endblocktrans %}<br />
+</div>
+{% endblock %}

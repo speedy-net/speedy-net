@@ -1,0 +1,39 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block title %}{{ block.super }} - {% trans 'About' %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>
+        {% blocktrans with site_name=site.name %}About Speedy Net{% endblocktrans %}
+    </h2>
+</div>
+<div>
+    {% blocktrans with site_name=site.name %}<a href="http://en.speedy.net/" title="Speedy Net">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). It is currently available in two languages - English and Hebrew.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}The founders of Speedy Net are vegan, support animal rights and object to experiments on animals. Speedy Net is a social network friendly for vegan and vegetarian people and animals.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}We decided to limit the number of friends on Speedy Net to 800. We encourage you to add as friends only people you know personally. You can select which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}You can use our new app, <a href="http://en.speedymatch.com/" title="Speedy Match">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find matching partners, it only takes a few minutes. <a href="/" title="Join Speedy Net">Click here</a> to join.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Net is a free software & open source project. If you want to help developing and improving Speedy Net, please contact me by e-mail.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Net is named after <a href="https://www.facebook.com/speedyevenchen" title="Speedy">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Speedy Net is currently in alpha. It was launched on 13th June 2012.{% endblocktrans %}<br />
+    <br />
+    {% blocktrans with site_name=site.name %}Thank you and good luck,{% endblocktrans %}<br />
+    <a href="http://www.speedysoftware.com/uri/en/">{% blocktrans with site_name=site.name %}Uri Even-Chen{% endblocktrans %}</a><br />
+    {% blocktrans with site_name=site.name %}Founder and director of Speedy Net and Speedy Match,{% endblocktrans %}<br />
+    {% blocktrans with site_name=site.name %}Speedy Paz Technologies Ltd.{% endblocktrans %}<br />
+    <a href="mailto:uri@speedy.net">uri@speedy.net</a><br />
+</div>
+{% endblock %}

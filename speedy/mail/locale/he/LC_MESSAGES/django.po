@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 13:35+0200\n"
+"POT-Creation-Date: 2016-12-26 12:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,77 @@ msgstr ""
 #: .\accounts\models.py:12
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
+
+#: .\templates\about\about.html:8
+msgid "About"
+msgstr "אודות"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Mail Software"
+msgstr "אודות תוכנת דואר ספידי"
+
+#: .\templates\about\about.html:17
+msgid ""
+"Speedy Mail Software will be a free software and open source web-based e-"
+"mail such as Gmail. We want the mail to be as similar as possible to the "
+"excellent e-mail of Google, Gmail. When we develop such a mail software, we "
+"intend to run a free e-mail service to all members of Speedy Net, so that "
+"the username of each person at Speedy Net + the speedy.net domain name will "
+"be the email address of the user. In the past we operated an e-mail like "
+"this, but unfortunately we had to close it because it was a lot worse than "
+"Gmail, in terms of features and storage, and also because we were not able "
+"to control the problem of spam (\"junk mail\") sent to our clients. But if "
+"we can recruit volunteers to create a good e-mail program, we will "
+"reactivate Speedy Mail and will allow any company or organization to operate "
+"a similar web-based e-mail on their site."
+msgstr ""
+"תוכנת דואר ספידי תהיה תוכנה חופשית בקוד פתוח לדואר אלקטרוני מבוסס web כמו "
+"Gmail. אנחנו רוצים שהדואר יהיה דומה ככל האפשר לדואר האלקטרוני המצויין של "
+"חברת גוגל, Gmail. כאשר נפתח תוכנת דואר כזאת, בכוונתנו להפעיל שירות דואר "
+"אלקטרוני בחינם לכל חברי ספידי נט, כך ששם המשתמש של כל אדם בספידי נט + שם "
+"הדומיין speedy.net יהווה את כתובת הדואר האלקטרוני של המשתמש. בעבר הפעלנו "
+"דואר אלקטרוני כזה, אך לצערי נאלצנו לסגור אותו מכיוון שהוא היה הרבה פחות טוב "
+"מ-Gmail, מבחינת פיצ'רים וגם נפח אחסון, וגם מכיוון שלא הצלחנו להשתלט על בעיית "
+"הספאם (\"דואר זבל\") שנשלח ללקוחותינו. אך אם נצליח לגייס מתנדבים שייבנו "
+"תוכנת דואר אלקטרוני טובה, נפעיל מחדש את דואר ספידי וגם נאפשר לכל חברה או "
+"ארגון אחר להפעיל דואר אלקטרוני דומה באתר שלהם."
+
+#: .\templates\about\about.html:19
+msgid ""
+"Speedy Mail Software will be available in two languages - English and "
+"Hebrew, and will be free of charge. Speedy Net and Speedy Mail Software are "
+"free software & open source projects. If you want to help developing Speedy "
+"Mail Software, please contact me by e-mail."
+msgstr ""
+"תוכנת דואר ספידי תהיה זמינה בשתי שפות - עברית ואנגלית, ותהיה ללא תשלום. "
+"ספידי נט ותוכנת דואר ספידי הם פרויקטים של תוכנה חופשית וקוד פתוח. אם אתם "
+"רוצים לעזור בפיתוח תוכנת דואר ספידי, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
+
+#: .\templates\about\about.html:21
+msgid ""
+"Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
+"speedyevenchen\" title=\"Speedy\">Speedy</a>, a female dog that was with us "
+"for many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"תוכנת דואר ספידי נקראת על שם <a href=\"https://www.facebook.com/"
+"speedyevenchen\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה "
+"בשנת 2003. ספידי המליטה 7 גורים בשנת 1988."
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:19
+msgid "Thank you and good luck,"
+msgstr "תודה ובהצלחה,"
+
+#: .\templates\about\about.html:24 .\templates\main\main_page.html:20
+msgid "Uri Even-Chen"
+msgstr "אורי אבן-חן"
+
+#: .\templates\about\about.html:25 .\templates\main\main_page.html:21
+msgid "Founder and director of Speedy Net and Speedy Mail,"
+msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
+
+#: .\templates\about\about.html:26 .\templates\main\main_page.html:22
+msgid "Speedy Paz Technologies Ltd."
+msgstr "ספידי פז טכנולוגיות בע\"מ."
 
 #: .\templates\main\main_page.html:11
 msgid "Welcome to Speedy Mail Software!"
@@ -61,19 +132,3 @@ msgid ""
 msgstr ""
 "תוכנת דואר ספידי תשתמש בשפות Python ו-JavaScript. ספידי נט היא גם תוכנה "
 "חופשית בקוד פתוח. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני."
-
-#: .\templates\main\main_page.html:19
-msgid "Thank you and good luck,"
-msgstr "תודה ובהצלחה,"
-
-#: .\templates\main\main_page.html:20
-msgid "Uri Even-Chen"
-msgstr "אורי אבן-חן"
-
-#: .\templates\main\main_page.html:21
-msgid "Founder and director of Speedy Net and Speedy Mail,"
-msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
-
-#: .\templates\main\main_page.html:22
-msgid "Speedy Paz Technologies Ltd."
-msgstr "ספידי פז טכנולוגיות בע\"מ."

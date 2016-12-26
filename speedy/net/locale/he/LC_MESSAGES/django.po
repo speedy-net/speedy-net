@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 20:46+0200\n"
+"POT-Creation-Date: 2016-12-26 12:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -467,6 +467,107 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
+#: .\templates\about\about.html:8 .\templates\base.html:176
+msgid "About"
+msgstr "אודות"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Net"
+msgstr "אודות ספידי נט"
+
+#: .\templates\about\about.html:17
+msgid ""
+"<a href=\"http://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
+"new social network. With Speedy Net you can communicate with your friends. "
+"Speedy Net is open to free registration for people from all countries and "
+"ages (no age limit!). It is currently available in two languages - English "
+"and Hebrew."
+msgstr ""
+"<a href=\"http://he.speedy.net/\" title=\"ספידי נט\">ספידי נט</a> היא רשת "
+"חברתית חדשה. עם ספידי נט אתם יכולים ליצור קשר עם החברים שלכם. ספידי נט פתוחה "
+"להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר זמין כרגע "
+"בשתי שפות - עברית ואנגלית."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
+msgstr ""
+"המייסדים של ספידי נט הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים לניסויים "
+"בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים "
+"ולבעלי חיים."
+
+#: .\templates\about\about.html:21
+msgid ""
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
+msgstr ""
+"החלטנו להגביל את מספר החברים בספידי נט ל-800. אנחנו מעודדים אתכם לצרף כחברים "
+"רק אנשים שאתם מכירים אישית. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם "
+"כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו "
+"רק לכם."
+
+#: .\templates\about\about.html:23
+msgid ""
+"You can use our new app, <a href=\"http://en.speedymatch.com/\" title="
+"\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
+"Speedy Match is open to singles of all ages."
+msgstr ""
+"אתם מוזמנים להשתמש באפליקציה החדשה שלנו, <a href=\"http://he.speedymatch.com/"
+"\" title=\"ספידי מץ'\">ספידי מץ'</a>, להכיר בני-זוג או בנות-זוג מתאימים. "
+"ספידי מץ' פתוחה לפנויות/פנויים מכל הגילים."
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Net and Speedy Match are free of charge. Join Speedy Net today to "
+"find matching partners, it only takes a few minutes. <a href=\"/\" title="
+"\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"ספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט למצוא בני זוג "
+"מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו "
+"כאן</a> כדי להצטרף."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by e-mail."
+msgstr ""
+"ספידי נט היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח "
+"ושיפור ספידי נט, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedyevenchen"
+"\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"ספידי נט נקראת על שם <a href=\"https://www.facebook.com/speedyevenchen\" "
+"title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
+"המליטה 7 גורים בשנת 1988."
+
+#: .\templates\about\about.html:31
+msgid "Speedy Net is currently in alpha. It was launched on 13th June 2012."
+msgstr "ספידי נט היא כרגע באלפא. היא הושקה ב-13 ביוני 2012."
+
+#: .\templates\about\about.html:33
+msgid "Thank you and good luck,"
+msgstr "תודה ובהצלחה,"
+
+#: .\templates\about\about.html:34
+msgid "Uri Even-Chen"
+msgstr "אורי אבן-חן"
+
+#: .\templates\about\about.html:35
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
+
+#: .\templates\about\about.html:36
+msgid "Speedy Paz Technologies Ltd."
+msgstr "ספידי פז טכנולוגיות בע\"מ."
+
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
 msgstr ""
@@ -519,7 +620,7 @@ msgid "Added"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:14
-#: .\templates\base.html:177
+#: .\templates\base.html:178
 msgid "Privacy"
 msgstr "פרטיות"
 
@@ -600,77 +701,79 @@ msgstr "איפוס סיסמה נכשל. קישור לא תקין."
 msgid "Email with password reset instructions has been sent."
 msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
 
-#: .\templates\base.html:83
+#: .\templates\base.html:84
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:175
-msgid "About"
-msgstr "אודות"
+#: .\templates\base.html:178 .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:13
+msgid "Privacy Policy"
+msgstr "מדיניות פרטיות"
 
-#: .\templates\base.html:179
+#: .\templates\base.html:180 .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base.html:179
+#: .\templates\base.html:180
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base.html:181 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:182 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:187
+#: .\templates\base.html:188
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:189
+#: .\templates\base.html:190
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:191
+#: .\templates\base.html:192
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:193
+#: .\templates\base.html:194
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:195
+#: .\templates\base.html:196
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:201
+#: .\templates\base.html:202
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:203
+#: .\templates\base.html:204
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:205
+#: .\templates\base.html:206
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:207
+#: .\templates\base.html:208
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:213
+#: .\templates\base.html:214
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:215
+#: .\templates\base.html:216
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:217
+#: .\templates\base.html:218
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: .\templates\base.html:255 .\templates\base.html:257
+#: .\templates\base.html:256 .\templates\base.html:258
 msgid "Speedy"
 msgstr "ספידי"
 
@@ -801,6 +904,19 @@ msgstr ""
 msgid "Send a message to %(user)s"
 msgstr ""
 
+#: .\templates\privacy\privacy_policy.html:17
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your e-mail address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים שלכם, "
+"כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה שלכם. "
+"הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים או אתרים "
+"אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
+
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked this user."
 msgstr ".חסמת את המשתמש/ת הזה"
@@ -892,6 +1008,16 @@ msgstr "(מוסתר)"
 #: .\templates\profiles\user_info_widget.html:64
 msgid "Email"
 msgstr "דואר אלקטרוני"
+
+#: .\templates\terms\terms_of_service.html:17
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam."
+msgstr ""
+"אתם יכולים להשתמש בספידי נט למטרות חוקיות בלבד. אין להעלות לאתר תכנים "
+"הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
+"בספידי נט בשביל לשלוח הודעות ספאם."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."

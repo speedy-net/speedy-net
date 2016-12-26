@@ -54,7 +54,7 @@ class IndexView(generic.View):
         if self.request.user.is_authenticated():
             return redirect(to='profiles:me')
         else:
-            return RegistrationView.as_view()(request, *args, **kwargs)
+            return RegistrationView.as_view()(request=request, *args, **kwargs)
 
 
 class RegistrationView(FormValidMessageMixin, generic.CreateView):

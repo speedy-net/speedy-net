@@ -8,6 +8,10 @@ urlpatterns = [
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^about/', include('speedy.net.about.urls', namespace='about')),
+    url(r'^privacy/', include('speedy.net.privacy.urls', namespace='privacy')),
+    url(r'^terms/', include('speedy.net.terms.urls', namespace='terms')),
+    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
 
     # always at the bottom
     url(r'^(?P<slug>[-\._\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
@@ -16,7 +20,6 @@ urlpatterns = [
     url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
     url(r'^(?P<slug>[-\._\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
     url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
-    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
 ]
 

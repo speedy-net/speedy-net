@@ -3,6 +3,9 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^about/', include('speedy.net.about.urls', namespace='about')),
+    url(r'^privacy/', include('speedy.net.privacy.urls', namespace='privacy')),
+    url(r'^terms/', include('speedy.net.terms.urls', namespace='terms')),
     url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.composer.main.urls', namespace='main')),
 ]

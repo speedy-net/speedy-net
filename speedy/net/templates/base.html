@@ -172,11 +172,11 @@
             <tr align="center" valign="top"><td><table cellspacing="0" cellpadding="0" border="0" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><tbody><tr align="center" valign="bottom">
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="//www.{{ site.domain }}/" class="black">{{ site.name }}, {% now 'Y' %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
-            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_CODE }}.speedy.net/about/" title="{% trans "About" %}">{% trans "About" %}</a></td>
+            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
-            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_CODE }}.speedy.net/privacy/" title="{% trans "Privacy" %}">{% trans "Privacy" %}</a></td>
+            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
-            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="http://{{ LANGUAGE_CODE }}.speedy.net/terms/" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a></td>
+            <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a></td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">&nbsp;·&nbsp;</td>
             <td nowrap="nowrap" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}"><a href="{% url 'feedback:feedback' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a></td>
             </tr></tbody></table></td></tr>
