@@ -3,6 +3,9 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% block description %}
+    <meta name="description" content="{{ site.name }} - Select your language: English or Hebrew (עברית)." />
+{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'speedy-net/css/welcome-base.css' %}" />
