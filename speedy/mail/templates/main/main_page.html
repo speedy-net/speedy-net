@@ -5,6 +5,10 @@
 {% load im_tags %}
 {% load rules %}
 
+{% block description %}
+    <meta name="description" content="{% blocktrans with site_name=site.name %}We are looking for volunteers to help us develop Speedy Mail Software, a free software and open source web-based e-mail such as Gmail.{% endblocktrans %}" />
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
     <h2>
