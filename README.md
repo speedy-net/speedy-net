@@ -88,12 +88,12 @@ To run Speedy Match server:
 
 To run Speedy Net tests:
 
-     cd speedy/net
+    cd speedy/net
     ./manage.py test
 
 To run Speedy Match tests:
 
-     cd speedy/match
+    cd speedy/match
     ./manage.py test
 
 
