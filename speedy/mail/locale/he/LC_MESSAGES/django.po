@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-29 08:42+0000\n"
+"POT-Creation-Date: 2017-01-03 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accounts/models.py:12
+#: .\accounts\models.py:12
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
 
-#: settings/base_site.py:10
-#, fuzzy
-#| msgid "About Speedy Mail Software"
-msgid "Speedy Mail Software [alpha]"
-msgstr "אודות תוכנת דואר ספידי"
+#: .\settings\base_site.py:10
+msgid "Speedy Mail Software"
+msgstr "תוכנת דואר ספידי"
 
-#: templates/about/about.html:11
+#: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"
 msgstr "אודות תוכנת דואר ספידי"
 
-#: templates/about/about.html:15
+#: .\templates\about\about.html:15
 msgid ""
 "Speedy Mail Software will be a free software and open source web-based e-"
 "mail such as Gmail. We want the mail to be as similar as possible to the "
@@ -58,7 +56,7 @@ msgstr ""
 "תוכנת דואר אלקטרוני טובה, נפעיל מחדש את דואר ספידי וגם נאפשר לכל חברה או "
 "ארגון אחר להפעיל דואר אלקטרוני דומה באתר שלהם."
 
-#: templates/about/about.html:17
+#: .\templates\about\about.html:17
 msgid ""
 "Speedy Mail Software will be available in two languages - English and "
 "Hebrew, and will be free of charge. Speedy Net and Speedy Mail Software are "
@@ -69,7 +67,7 @@ msgstr ""
 "ספידי נט ותוכנת דואר ספידי הם פרויקטים של תוכנה חופשית וקוד פתוח. אם אתם "
 "רוצים לעזור בפיתוח תוכנת דואר ספידי, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
 
-#: templates/about/about.html:19
+#: .\templates\about\about.html:19
 msgid ""
 "Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
 "speedyevenchen\" title=\"Speedy\">Speedy</a>, a female dog that was with us "
@@ -79,23 +77,23 @@ msgstr ""
 "speedyevenchen\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה "
 "בשנת 2003. ספידי המליטה 7 גורים בשנת 1988."
 
-#: templates/about/about.html:21 templates/main/main_page.html:23
+#: .\templates\about\about.html:21 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: templates/about/about.html:22 templates/main/main_page.html:24
+#: .\templates\about\about.html:22 .\templates\main\main_page.html:24
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: templates/about/about.html:23 templates/main/main_page.html:25
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"
 msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
 
-#: templates/about/about.html:24 templates/main/main_page.html:26
+#: .\templates\about\about.html:24 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
 
-#: templates/main/main_page.html:9
+#: .\templates\main\main_page.html:9
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based e-mail such as Gmail."
@@ -103,11 +101,11 @@ msgstr ""
 "אנחנו מחפשים מתנדבים שיעזרו לנו לפתח את תוכנת דואר ספידי, תוכנה חופשית בקוד "
 "פתוח לדואר אלקטרוני מבוסס web כמו Gmail."
 
-#: templates/main/main_page.html:15
+#: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Mail Software!"
 msgstr "ברוכים הבאים לתוכנת דואר ספידי!"
 
-#: templates/main/main_page.html:19
+#: .\templates\main\main_page.html:19
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based e-mail such as Gmail. We want the "
@@ -134,7 +132,7 @@ msgstr ""
 "דואר ספידי וגם נאפשר לכל חברה או ארגון אחר להפעיל דואר אלקטרוני דומה באתר "
 "שלהם."
 
-#: templates/main/main_page.html:21
+#: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Mail Software will use the Python and JavaScript languages. Speedy "
 "Net is also free software and open source. If you are interested in "
