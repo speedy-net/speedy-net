@@ -19,7 +19,7 @@ class LikeViewTestCase(TestCase):
         self.assertEqual(first=EntityLike.objects.count(), second=1)
         like = EntityLike.objects.first()
         self.assertEqual(first=like.from_user.id, second=self.user.id)
-        self.assertEqual(first=like.to_entity.id, second=self.other_user.id)
+        self.assertEqual(first=like.to_user.id, second=self.other_user.id)
 
 
 class UnlikeViewTestCase(TestCase):
@@ -30,7 +30,7 @@ class UnlikeViewTestCase(TestCase):
 
     def test_can_like(self):
         self.client.login(username=self.user.slug, password='111')
-        EntityLike.objects.create(from_user=self.user, to_entity=self.other_user)
+        EntityLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertEqual(first=EntityLike.objects.count(), second=1)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
@@ -51,13 +51,13 @@ class LikeListViewsTestCase(TestCase):
             EntityLikeFactory(from_user=self.user),
         }
         self.mutual_likes = {
-            EntityLikeFactory(from_user=self.user, to_entity=self.other_user),
+            EntityLikeFactory(from_user=self.user, to_user=self.other_user),
         }
         self.to_likes |= self.mutual_likes
         self.from_likes = {
-            EntityLikeFactory(to_entity=self.user),
-            EntityLikeFactory(to_entity=self.user),
-            EntityLikeFactory(to_entity=self.user, from_user=self.other_user),
+            EntityLikeFactory(to_user=self.user),
+            EntityLikeFactory(to_user=self.user),
+            EntityLikeFactory(to_user=self.user, from_user=self.other_user),
         }
         self.client.login(username=self.user.slug, password='111')
 

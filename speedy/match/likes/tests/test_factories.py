@@ -6,7 +6,7 @@ from ..models import EntityLike
 
 class EntityLikeFactory(factory.django.DjangoModelFactory):
     from_user = factory.SubFactory(UserFactory)
-    to_entity = factory.SubFactory(UserFactory)
+    to_user = factory.SubFactory(UserFactory)
 
     class Meta:
         model = EntityLike

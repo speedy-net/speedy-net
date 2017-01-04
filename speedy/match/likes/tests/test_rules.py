@@ -26,7 +26,7 @@ class LikeTestCase(TestCase):
         self.assertFalse(expr=self.user.has_perm('likes.like', self.other_user))
 
     def test_user_cannot_like_twice(self):
-        EntityLike.objects.create(from_user=self.user, to_entity=self.other_user)
+        EntityLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertFalse(expr=self.user.has_perm('likes.like', self.other_user))
 
 
@@ -46,7 +46,7 @@ class UnlikeTestCase(TestCase):
         self.assertFalse(expr=self.user.has_perm('likes.unlike', self.other_user))
 
     def test_user_can_unlike_if_likes(self):
-        EntityLike.objects.create(from_user=self.user, to_entity=self.other_user)
+        EntityLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertTrue(expr=self.user.has_perm('likes.unlike', self.other_user))
 
 

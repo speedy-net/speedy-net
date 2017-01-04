@@ -12,7 +12,7 @@ def is_self(user, other):
 
 @predicate
 def already_likes(user, other):
-    return EntityLike.objects.filter(from_user=user, to_entity=other).exists()
+    return EntityLike.objects.filter(from_user=user, to_user=other).exists()
 
 @predicate
 def both_are_users(user, other):
