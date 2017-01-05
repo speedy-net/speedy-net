@@ -7,8 +7,6 @@ update_site_paths(settings=globals())
 
 SITE_ID = int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
 
-SITE_TITLE = _('Speedy Mail Software') # ~~~~ TODO: remove this line! SITE_TITLE default is site.name translated.
-
 ROOT_URLCONF = 'speedy.mail.urls'
 
 INSTALLED_APPS += [

@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from django.conf import settings as dj_settings
 from django.contrib.sites.models import Site
 
@@ -22,9 +23,10 @@ def settings(request):
 
 def sites(request):
     site = Site.objects.get_current()
-    site_title = site.name
     if hasattr(dj_settings, 'SITE_TITLE'):
         site_title = dj_settings.SITE_TITLE
+    else:
+        site_title = _(site.name)
     return {
         'site': site,
         'site_title': site_title,

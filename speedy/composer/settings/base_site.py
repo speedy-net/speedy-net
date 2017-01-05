@@ -7,8 +7,6 @@ update_site_paths(settings=globals())
 
 SITE_ID = int(env('SPEEDY_COMPOSER_SITE_ID'))
 
-SITE_TITLE = _('Speedy Composer') # ~~~~ TODO: remove this line! SITE_TITLE default is site.name translated.
-
 ROOT_URLCONF = 'speedy.composer.urls'
 
 INSTALLED_APPS += [
