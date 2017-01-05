@@ -31,6 +31,29 @@ body.bidi-rtl .navbar-right {
     color: #000000;
 }
 
+.navbar-speedy-net .userbarbox, .navbar-inverse .userbarbox {
+    float: left;
+}
+
+.navbar-speedy-net .username-area, .navbar-inverse .username-area{
+    float: left;
+    margin-right: 20px;
+}
+
+.navbar-speedy-net .password-area, .navbar-inverse .password-area{
+    float: left;
+}
+
+.navbar-speedy-net .password-area .text-input-div, .navbar-inverse .password-area .text-input-div{
+    float: left;
+    margin-right: 20px;
+}
+
+.navbar-speedy-net .password-area .submit-button-div, .navbar-inverse .password-area .submit-button-div{
+    float: left;
+}
+
+
 .footer {
     text-align: center;
     /* border-top: 1px solid #B2CAFA; */
