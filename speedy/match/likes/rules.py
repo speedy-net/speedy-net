@@ -2,7 +2,7 @@ from rules import predicate, add_perm, is_authenticated
 
 from speedy.net.accounts.models import User
 from speedy.net.blocks.rules import is_blocked
-from .models import EntityLike
+from .models import UserLike
 
 
 @predicate
@@ -12,7 +12,7 @@ def is_self(user, other):
 
 @predicate
 def already_likes(user, other):
-    return EntityLike.objects.filter(from_user=user, to_user=other).exists()
+    return UserLike.objects.filter(from_user=user, to_user=other).exists()
 
 @predicate
 def both_are_users(user, other):

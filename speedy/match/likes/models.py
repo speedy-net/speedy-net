@@ -7,10 +7,10 @@ from speedy.core.models import TimeStampedModel
 from speedy.net.accounts.models import Entity, SiteProfileBase
 
 
-class EntityLike(TimeStampedModel):
+class UserLike(TimeStampedModel):
     from_user = models.ForeignKey(verbose_name=_('from user'), to=settings.AUTH_USER_MODEL, related_name='+')
-    # to_entity = models.ForeignKey(verbose_name=_('to entity'), to=Entity, related_name='+', null=True) #obsolete field, should be removed after migrating to to_user field
     to_user = models.ForeignKey(verbose_name=('to user'), to=settings.AUTH_USER_MODEL)
+
     class Meta:
         verbose_name = _('like')
         verbose_name_plural = _('entity likes')
@@ -20,8 +20,8 @@ class EntityLike(TimeStampedModel):
         return '{} to {}'.format(self.from_user, self.to_user)
 
 
-@receiver(models.signals.post_save, sender=EntityLike)
-def mail_user_on_new_message(sender, instance: EntityLike, created, **kwargs):
+@receiver(models.signals.post_save, sender=UserLike)
+def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
     if not created:
         return
     user = instance.to_user

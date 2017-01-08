@@ -1,8 +1,8 @@
 from speedy.core.test import TestCase
 
 from speedy.net.accounts.tests.test_factories import UserFactory
-from ..models import EntityLike
-from .test_factories import EntityLikeFactory
+from ..models import UserLike
+from .test_factories import UserLikeFactory
 
 
 class LikeViewTestCase(TestCase):
@@ -13,11 +13,11 @@ class LikeViewTestCase(TestCase):
 
     def test_can_like(self):
         self.client.login(username=self.user.slug, password='111')
-        self.assertEqual(first=EntityLike.objects.count(), second=0)
+        self.assertEqual(first=UserLike.objects.count(), second=0)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
-        self.assertEqual(first=EntityLike.objects.count(), second=1)
-        like = EntityLike.objects.first()
+        self.assertEqual(first=UserLike.objects.count(), second=1)
+        like = UserLike.objects.first()
         self.assertEqual(first=like.from_user.id, second=self.user.id)
         self.assertEqual(first=like.to_user.id, second=self.other_user.id)
 
@@ -30,11 +30,11 @@ class UnlikeViewTestCase(TestCase):
 
     def test_can_like(self):
         self.client.login(username=self.user.slug, password='111')
-        EntityLike.objects.create(from_user=self.user, to_user=self.other_user)
-        self.assertEqual(first=EntityLike.objects.count(), second=1)
+        UserLike.objects.create(from_user=self.user, to_user=self.other_user)
+        self.assertEqual(first=UserLike.objects.count(), second=1)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
-        self.assertEqual(first=EntityLike.objects.count(), second=0)
+        self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
 class LikeListViewsTestCase(TestCase):
@@ -46,18 +46,18 @@ class LikeListViewsTestCase(TestCase):
         self.from_url = '/{}/likes/from/'.format(self.user.slug)
         self.mutual_url = '/{}/likes/mutual/'.format(self.user.slug)
         self.to_likes = {
-            EntityLikeFactory(from_user=self.user),
-            EntityLikeFactory(from_user=self.user),
-            EntityLikeFactory(from_user=self.user),
+            UserLikeFactory(from_user=self.user),
+            UserLikeFactory(from_user=self.user),
+            UserLikeFactory(from_user=self.user),
         }
         self.mutual_likes = {
-            EntityLikeFactory(from_user=self.user, to_user=self.other_user),
+            UserLikeFactory(from_user=self.user, to_user=self.other_user),
         }
         self.to_likes |= self.mutual_likes
         self.from_likes = {
-            EntityLikeFactory(to_user=self.user),
-            EntityLikeFactory(to_user=self.user),
-            EntityLikeFactory(to_user=self.user, from_user=self.other_user),
+            UserLikeFactory(to_user=self.user),
+            UserLikeFactory(to_user=self.user),
+            UserLikeFactory(to_user=self.user, from_user=self.other_user),
         }
         self.client.login(username=self.user.slug, password='111')
 

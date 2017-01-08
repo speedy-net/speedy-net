@@ -4,7 +4,7 @@ from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.net.profiles.views import UserMixin
-from .models import EntityLike
+from .models import UserLike
 
 
 class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
@@ -29,22 +29,22 @@ class LikeListToView(LikeListViewBase):
     display = 'to'
 
     def get_queryset(self):
-        return EntityLike.objects.filter(from_user=self.user)
+        return UserLike.objects.filter(from_user=self.user)
 
 
 class LikeListFromView(LikeListViewBase):
     display = 'from'
 
     def get_queryset(self):
-        return EntityLike.objects.filter(to_user=self.user)
+        return UserLike.objects.filter(to_user=self.user)
 
 
 class LikeListMutualView(LikeListViewBase):
     display = 'to'
 
     def get_queryset(self):
-        who_likes_me = EntityLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True)
-        return EntityLike.objects.filter(from_user=self.user,
+        who_likes_me = UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True)
+        return UserLike.objects.filter(from_user=self.user,
                                          to_user_id__in=who_likes_me)
 
 
@@ -56,7 +56,7 @@ class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
         return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
-        EntityLike.objects.create(from_user=self.request.user, to_user=self.user)
+        UserLike.objects.create(from_user=self.request.user, to_user=self.user)
         # messages.success(request, _('You like this user.'))
         return redirect(to=self.user)
 
@@ -69,6 +69,6 @@ class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
         return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
-        EntityLike.objects.filter(from_user=self.request.user, to_user=self.user).delete()
+        UserLike.objects.filter(from_user=self.request.user, to_user=self.user).delete()
         # messages.success(request, _('You don\'t like this user.'))
         return redirect(to=self.user)
