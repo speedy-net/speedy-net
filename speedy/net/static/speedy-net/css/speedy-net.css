@@ -46,11 +46,14 @@ body.bidi-rtl .navbar-right {
 
 .navbar-speedy-net .password-area .text-input-div, .navbar-inverse .password-area .text-input-div{
     float: left;
-    margin-right: 20px;
+}
+.navbar-inverse .password-area .forgot-password-div a {
+    color: black;
 }
 
-.navbar-speedy-net .password-area .submit-button-div, .navbar-inverse .password-area .submit-button-div{
+.navbar-speedy-net .submit-button-div, .navbar-inverse .submit-button-div{
     float: left;
+    margin: 22px 0 0 20px;
 }
 
 
