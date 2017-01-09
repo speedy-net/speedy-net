@@ -12,8 +12,8 @@ class UserLike(TimeStampedModel):
     to_user = models.ForeignKey(verbose_name=('to user'), to=settings.AUTH_USER_MODEL)
 
     class Meta:
-        verbose_name = _('like')
-        verbose_name_plural = _('entity likes')
+        verbose_name = _('user like')
+        verbose_name_plural = _('user likes')
         unique_together = ('from_user', 'to_user')
 
     def __str__(self):
