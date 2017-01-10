@@ -284,7 +284,7 @@ msgstr ""
 #: .\accounts\views.py:198
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
-"Speedy Net account remain intact."
+"Speedy Net account remains intact."
 msgstr ""
 
 #: .\accounts\views.py:211
