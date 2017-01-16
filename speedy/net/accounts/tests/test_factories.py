@@ -4,7 +4,7 @@ from datetime import date
 import factory
 import factory.fuzzy
 
-from ..models import normalize_username, User, UserEmailAddress
+from speedy.core.accounts_core.models import normalize_username, User, UserEmailAddress
 
 
 class InactiveUserFactory(factory.DjangoModelFactory):

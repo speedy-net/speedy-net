@@ -1,3 +1,5 @@
+from .base import *
+
 def activate_development(settings):
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',

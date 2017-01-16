@@ -1,0 +1,34 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block content %}
+    {% has_perm 'accounts_core.view_profile' request.user user as can_view_profile %}
+    {% has_perm 'accounts_core.view_profile_info' request.user user as can_view_profile_info %}
+
+    <div class="page-header">
+        <h1>
+            <div class="pull-right">
+                {% include 'profiles/tools/tools.html' %}
+            </div>
+            {{ user }}
+        </h1>
+    </div>
+    {% if can_view_profile %}
+        {% block user_content %}
+        {% endblock %}
+    {% else %}
+        {% if can_view_profile_info %}
+            {% include 'profiles/block_warning.html' with user=request.user other=user %}
+        {% else %}
+            <div class="alert alert-danger">
+                {% trans 'This page is private.' %}
+            </div>
+        {% endif %}
+    {% endif %}
+    {% block user_content_info %}
+    {% endblock %}
+{% endblock %}

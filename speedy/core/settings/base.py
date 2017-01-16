@@ -16,7 +16,6 @@ from .utils import env, APP_DIR, ROOT_DIR
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
@@ -51,18 +50,19 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'speedy.core',
+    'speedy.core.accounts_core',
+    'speedy.core.im',
+    'speedy.core.profiles',
+    'speedy.core.friends',
+    'speedy.core.blocks',
+    'speedy.core.uploads',
+    'speedy.core.feedback',
     'speedy.net.accounts',
-    'speedy.net.im',
-    'speedy.net.profiles',
-    'speedy.net.friends',
-    'speedy.net.blocks',
-    'speedy.net.uploads',
-    'speedy.net.feedback',
 ]
 
 MIDDLEWARE = [
-    'speedy.core.middleware.SessionCookieDomainMiddleware',
-    'speedy.core.middleware.RemoveExtraSlashesMiddleware',
+    'speedy.core.middlewares.middleware.SessionCookieDomainMiddleware',
+    'speedy.core.middlewares.middleware.RemoveExtraSlashesMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,9 +72,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'speedy.core.middleware.LocaleDomainMiddleware',
+    'speedy.core.middlewares.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'speedy.net.accounts.middleware.SiteProfileMiddleware',
+    'speedy.core.accounts_core.middleware.SiteProfileMiddleware',
 ]
 
 TEMPLATES = [
@@ -100,9 +100,9 @@ TEMPLATES = [
 ]
 
 USER_PROFILE_WIDGETS = [
-    'speedy.net.profiles.widgets.UserPhotoWidget',
-    'speedy.net.profiles.widgets.UserInfoWidget',
-    'speedy.net.friends.widgets.UserFriendsWidget',
+    'speedy.core.profiles.widgets.UserPhotoWidget',
+    'speedy.core.profiles.widgets.UserInfoWidget',
+    'speedy.core.friends.widgets.UserFriendsWidget',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -147,7 +147,7 @@ AUTHENTICATION_BACKENDS = (
 
 SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'accounts_core.User'
 
 LOGIN_URL = '/login/'
 

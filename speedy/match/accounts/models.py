@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _, get_language
 
-from speedy.net.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
+from speedy.core.accounts_core.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 

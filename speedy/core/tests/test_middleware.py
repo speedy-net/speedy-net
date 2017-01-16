@@ -1,6 +1,5 @@
+from speedy.core.middlewares.middleware import RemoveExtraSlashesMiddleware
 from speedy.core.test import TestCase
-
-from ..middleware import RemoveExtraSlashesMiddleware
 
 
 class RemoveExtraSlashesMiddlewareTestCase(TestCase):
