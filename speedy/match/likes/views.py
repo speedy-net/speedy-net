@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
-from speedy.net.profiles.views import UserMixin
+from speedy.core.profiles.views import UserMixin
 from .models import UserLike
 
 

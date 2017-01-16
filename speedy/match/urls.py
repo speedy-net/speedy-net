@@ -11,16 +11,16 @@ urlpatterns = [
     url(r'^about/', include('speedy.net.about.urls', namespace='about')),
     url(r'^privacy/', include('speedy.net.privacy.urls', namespace='privacy')),
     url(r'^terms/', include('speedy.net.terms.urls', namespace='terms')),
-    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
+    url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
 
     # always at the bottom
-    url(r'^(?P<slug>[-\._\w]+)/friends/', include('speedy.net.friends.urls', namespace='friends')),
-    url(r'^messages/', include('speedy.net.im.urls_private', namespace='im')),
-    url(r'^messages/(?P<slug>[-\._\w]+)/', include('speedy.net.im.urls_public', namespace='im_entity')),
-    url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.net.blocks.urls', namespace='blocks')),
+    url(r'^(?P<slug>[-\._\w]+)/friends/', include('speedy.core.friends.urls', namespace='friends')),
+    url(r'^messages/', include('speedy.core.im.urls_private', namespace='im')),
+    url(r'^messages/(?P<slug>[-\._\w]+)/', include('speedy.core.im.urls_public', namespace='im_entity')),
+    url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.core.blocks.urls', namespace='blocks')),
     url(r'^(?P<slug>[-\._\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
-    url(r'^uploads/', include('speedy.net.uploads.urls', namespace='uploads')),
-    url(r'^', include('speedy.net.profiles.urls', namespace='profiles')),
+    url(r'^uploads/', include('speedy.core.uploads.urls', namespace='uploads')),
+    url(r'^', include('speedy.core.profiles.urls', namespace='profiles')),
 ]
 
 if settings.DEBUG:

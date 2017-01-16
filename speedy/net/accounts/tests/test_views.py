@@ -6,7 +6,7 @@ from django.core import mail
 from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 
 from speedy.core.test import exclude_on_speedy_match
-from ..models import Entity, User, UserEmailAddress, SiteProfileBase
+from speedy.core.accounts_core.models import Entity, User, UserEmailAddress, SiteProfileBase
 from .test_factories import UserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
@@ -19,7 +19,7 @@ class IndexViewTestCase(TestCase):
     def test_visitor_gets_registration_page(self):
         r = self.client.get('/')
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/registration.html')
 
     def test_user_gets_redirected_to_his_profile(self):
         self.client.login(username=self.user.slug, password='111')
@@ -64,7 +64,7 @@ class RegistrationViewTestCase(TestCase):
     def test_visitor_can_see_registration_page(self):
         r = self.client.get('/')
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/registration.html')
 
     def test_non_unique_email_address(self):
         UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
@@ -144,7 +144,7 @@ class LoginViewTestCase(TestCase):
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/login.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/login.html')
 
     def test_visitor_can_login_using_slug(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
@@ -209,7 +209,7 @@ class EditProfileViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/account.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/account.html')
 
     def test_user_can_save_his_settings(self):
         data = {
@@ -248,7 +248,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/privacy.html')
 
     @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
@@ -281,7 +281,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/notifications.html')
 
     @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
@@ -313,7 +313,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/credentials.html')
 
     def test_user_can_change_password(self):
         r = self.client.post(self.page_url, {
@@ -348,7 +348,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
     def test_inactive_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/activate.html')
 
     def test_inactive_user_can_request_activation(self):
         r = self.client.post(self.page_url)
@@ -374,7 +374,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/edit_profile/deactivate.html')
 
     def test_user_can_deactivate_his_account(self):
         self.assertTrue(expr=self.user.is_active)
@@ -437,7 +437,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
     def test_user_can_open_the_page(self):
         r = self.client.get('/edit-profile/emails/add/')
         self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
+        self.assertTemplateUsed(response=r, template_name='accounts_core/email_address_form.html')
 
     def test_non_unique_email_address(self):
         r = self.client.post('/edit-profile/emails/add/', data={

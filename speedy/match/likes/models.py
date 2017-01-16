@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.models import TimeStampedModel
-from speedy.net.accounts.models import Entity, SiteProfileBase
+from speedy.net.accounts.models import SiteProfileBase
 
 
 class UserLike(TimeStampedModel):

@@ -2,7 +2,8 @@ from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_sp
 
 from speedy.core.test import exclude_on_speedy_match
 from speedy.net.accounts.tests.test_factories import UserFactory, UserEmailAddressFactory
-from ..forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfilePrivacyForm, ProfileNotificationsForm
+from speedy.core.accounts_core.forms import  RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
+from ..forms import ProfilePrivacyForm
 
 
 @exclude_on_speedy_composer

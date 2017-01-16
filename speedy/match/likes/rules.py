@@ -1,7 +1,7 @@
 from rules import predicate, add_perm, is_authenticated
 
-from speedy.net.accounts.models import User
-from speedy.net.blocks.rules import is_blocked
+from speedy.core.blocks.rules import is_blocked
+from speedy.core.accounts_core.models import User
 from .models import UserLike
 
 

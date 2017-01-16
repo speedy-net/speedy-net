@@ -12,4 +12,4 @@ class SiteProfileTestCase(TestCase):
     def test_set_active_languages(self):
         p = SiteProfile()
         p.set_active_languages(['en', 'he'])
-        self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en' , 'he'})
+        self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})

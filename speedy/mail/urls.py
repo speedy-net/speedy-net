@@ -6,7 +6,7 @@ urlpatterns = [
     url(r'^about/', include('speedy.net.about.urls', namespace='about')),
     url(r'^privacy/', include('speedy.net.privacy.urls', namespace='privacy')),
     url(r'^terms/', include('speedy.net.terms.urls', namespace='terms')),
-    url(r'^contact/', include('speedy.net.feedback.urls', namespace='feedback')),
+    url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
     url(r'^', include('speedy.mail.main.urls', namespace='main')),
 ]
 
