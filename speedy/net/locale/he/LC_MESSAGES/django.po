@@ -277,7 +277,7 @@ msgstr "ברוכ/ה הבא/ה ל{}!"
 
 #: .\accounts\views.py:196
 msgid ""
-"Your Speedy Net and Speedy Match accounts_core has been deactivated. You can "
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 

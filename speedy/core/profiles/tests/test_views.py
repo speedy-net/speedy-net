@@ -1,7 +1,7 @@
-from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from django.test.client import RequestFactory
 from django.views import generic
 
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.net.accounts.tests.test_factories import UserFactory
 from ..views import UserMixin
 

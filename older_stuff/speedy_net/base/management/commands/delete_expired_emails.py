@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.conf import settings
 
 class Command(BaseCommand):
-    help = 'Removes expired user accounts_core and emails'
+    help = 'Removes expired user accounts and emails'
 
     def handle(self, *args, **options):
         expired_time = timezone.now() + timedelta(days=settings.EMAIL_TOKEN_EXPIRY)

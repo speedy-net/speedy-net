@@ -2,10 +2,9 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel
-
-from speedy.core.accounts_core.models import SiteProfileBase
-from speedy.core.accounts_core.models import ACCESS_ANYONE, AccessField, ACCESS_ME
+from speedy.core.accounts.models import ACCESS_ANYONE, AccessField, ACCESS_ME
+from speedy.core.accounts.models import SiteProfileBase
+from speedy.core.base.models import TimeStampedModel
 
 
 class SiteProfile(SiteProfileBase):

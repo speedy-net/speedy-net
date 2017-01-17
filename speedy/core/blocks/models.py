@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel
-from speedy.core.accounts_core.models import Entity
+from speedy.core.accounts.models import Entity
+from speedy.core.base.models import TimeStampedModel
 from .managers import BlockManager
 
 

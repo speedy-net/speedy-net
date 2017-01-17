@@ -9,7 +9,7 @@ from ..models import ReadMark, Chat
 def get_other_participant(chat, user):
     """
     :type chat: speedy.net.im.models.Chat
-    :type user: speedy.net.accounts_core.models.User
+    :type user: speedy.net.accounts.models.User
     """
     assert chat.is_private
     return chat.get_other_participants(user)[0]
@@ -19,7 +19,7 @@ def get_other_participant(chat, user):
 def annotate_chats_with_read_marks(chat_list, entity):
     """
     :type chat_list: [speedy.net.im.models.Chat]
-    :type entity: speedy.net.accounts_core.models.Entity
+    :type entity: speedy.net.accounts.models.Entity
     """
     rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
     for chat in chat_list:
@@ -37,7 +37,7 @@ def annotate_chats_with_read_marks(chat_list, entity):
 def annotate_messages_with_read_marks(message_list, entity):
     """
     :type message_list: [speedy.net.im.models.Message]
-    :type entity: speedy.net.accounts_core.models.Entity
+    :type entity: speedy.net.accounts.models.Entity
     """
     chats = set(message.chat for message in message_list)
     rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chats, entity=entity)}
@@ -54,7 +54,7 @@ def annotate_messages_with_read_marks(message_list, entity):
 def get_chat_slug(chat, current_user):
     """
     :type chat: speedy.net.im.models.Chat
-    :type current_user: speedy.net.accounts_core.models.Entity
+    :type current_user: speedy.net.accounts.models.Entity
     :return: str
     """
     return chat.get_slug(current_user=current_user)

@@ -8,9 +8,10 @@ urlpatterns = [
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^about/', include('speedy.net.about.urls', namespace='about')),
-    url(r'^privacy/', include('speedy.net.privacy.urls', namespace='privacy')),
-    url(r'^terms/', include('speedy.net.terms.urls', namespace='terms')),
+
+    url(r'^about/', include('speedy.core.about.urls', namespace='about')),
+    url(r'^privacy/', include('speedy.core.privacy.urls', namespace='privacy')),
+    url(r'^terms/', include('speedy.core.terms.urls', namespace='terms')),
     url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
 
     # always at the bottom

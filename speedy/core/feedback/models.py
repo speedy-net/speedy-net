@@ -3,8 +3,8 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.mail import mail_managers
-from speedy.core.models import TimeStampedModel
+from speedy.core.base.mail import mail_managers
+from speedy.core.base.models import TimeStampedModel
 
 
 class Feedback(TimeStampedModel):
@@ -22,7 +22,7 @@ class Feedback(TimeStampedModel):
     sender_email = models.EmailField(verbose_name=_('your email'), blank=True)
     type = models.PositiveIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
     text = models.TextField(verbose_name=_('your message'))
-    report_entity = models.ForeignKey(verbose_name=_('reported entity'), to='accounts_core.Entity', on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
+    report_entity = models.ForeignKey(verbose_name=_('reported entity'), to='accounts.Entity', on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
     report_file = models.ForeignKey(verbose_name=_('reported photo'), to='uploads.File', on_delete=models.SET_NULL, null=True, blank=True, related_name='complaints')
 
     class Meta:

@@ -6,8 +6,8 @@
 {% load rules %}
 
 {% block content %}
-    {% has_perm 'accounts_core.view_profile' request.user user as can_view_profile %}
-    {% has_perm 'accounts_core.view_profile_info' request.user user as can_view_profile_info %}
+    {% has_perm 'accounts.view_profile' request.user user as can_view_profile %}
+    {% has_perm 'accounts.view_profile_info' request.user user as can_view_profile_info %}
 
     <div class="page-header">
         <h1>

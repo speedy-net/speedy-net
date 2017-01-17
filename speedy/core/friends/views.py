@@ -8,7 +8,7 @@ from django.views import generic
 from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import PermissionRequiredMixin
 
-from speedy.core.accounts_core.utils import get_site_profile_model
+from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.profiles.views import UserMixin
 from .rules import friend_request_sent
 

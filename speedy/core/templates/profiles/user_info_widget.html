@@ -1,8 +1,8 @@
 {% load i18n %}
 {% load rules %}
 
-{% has_perm 'accounts_core.view_profile' viewer entity as can_view_profile %}
-{% has_perm 'accounts_core.view_profile_username' viewer entity as can_view_username %}
+{% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
+{% has_perm 'accounts.view_profile_username' viewer entity as can_view_username %}
 
 
 <div class="col-sm-8 col-sm-pull-0">
@@ -36,8 +36,8 @@
 
 
             {% if can_view_profile and entity.date_of_birth %}
-                {% has_perm 'accounts_core.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
-                {% has_perm 'accounts_core.view_profile_dob_year' viewer entity as can_view_dob_year %}
+                {% has_perm 'accounts.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
+                {% has_perm 'accounts.view_profile_dob_year' viewer entity as can_view_dob_year %}
                 <tr>
                     <th>{% trans 'Birthday' %}</th>
                     <td>
@@ -58,7 +58,7 @@
             {% endif %}
 
             {% for address in entity.email_addresses.all %}
-                {% has_perm 'accounts_core.view_useremailaddress' viewer address as can_view_address %}
+                {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
                 {% if can_view_profile and can_view_address %}
                 <tr>
                     <th>{% trans 'Email' %}</th>

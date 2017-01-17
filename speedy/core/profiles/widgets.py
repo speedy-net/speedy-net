@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 class Widget(object):
     template_name = None
-    permission_required = 'accounts_core.view_profile'
+    permission_required = 'accounts.view_profile'
 
     def __init__(self, entity, viewer):
         self.entity = entity
@@ -35,9 +35,9 @@ class Widget(object):
 
 class UserPhotoWidget(Widget):
     template_name = 'profiles/user_photo_widget.html'
-    permission_required = 'accounts_core.view_profile_info'
+    permission_required = 'accounts.view_profile_info'
 
 
 class UserInfoWidget(Widget):
     template_name = 'profiles/user_info_widget.html'
-    permission_required = 'accounts_core.view_profile_info'
+    permission_required = 'accounts.view_profile_info'
