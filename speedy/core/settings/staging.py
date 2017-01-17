@@ -1,3 +1,6 @@
+from .base_site import *
+
+
 def activate_staging(settings):
     admins = (
         ('Uri Even-Chen', 'webmaster@speedy.net'),
@@ -9,3 +12,6 @@ def activate_staging(settings):
         'MANAGERS': admins,
         'DEBUG': True,
     })
+
+activate_staging(settings=globals())
+

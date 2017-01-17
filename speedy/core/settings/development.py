@@ -1,4 +1,5 @@
-from .base import *
+from .base_site import *
+
 
 def activate_development(settings):
     settings.update({
@@ -7,3 +8,5 @@ def activate_development(settings):
         'INSTALLED_APPS': settings['INSTALLED_APPS'] + ['debug_toolbar'],
         'DEBUG': True,
     })
+
+activate_development(settings=globals())
