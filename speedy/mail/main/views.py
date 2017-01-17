@@ -1,4 +1,4 @@
-from speedy.core.views import StaticMainPageBaseView
+from speedy.core.base.views import StaticMainPageBaseView
 
 
 class MainPageView(StaticMainPageBaseView):

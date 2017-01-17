@@ -3,8 +3,8 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel, RegularUDIDField
-from speedy.core.accounts_core.models import Entity, SiteProfileBase
+from speedy.core.accounts.models import Entity, SiteProfileBase
+from speedy.core.base.models import TimeStampedModel, RegularUDIDField
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
 

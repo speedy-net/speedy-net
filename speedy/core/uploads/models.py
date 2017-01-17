@@ -3,14 +3,14 @@ import os
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.models import TimeStampedModel, RegularUDIDField
-from speedy.core.utils import generate_regular_udid
+from speedy.core.base.models import TimeStampedModel, RegularUDIDField
+from speedy.core.base.utils import generate_regular_udid
 from .utils import uuid_dir
 
 
 class File(TimeStampedModel):
     id = RegularUDIDField()
-    owner = models.ForeignKey(verbose_name=_('owner'), to='accounts_core.Entity', on_delete=models.SET_NULL, null=True)
+    owner = models.ForeignKey(verbose_name=_('owner'), to='accounts.Entity', on_delete=models.SET_NULL, null=True)
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file_size'), default=0)

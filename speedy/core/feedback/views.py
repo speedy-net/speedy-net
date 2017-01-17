@@ -3,7 +3,7 @@ from django.http import Http404
 from django.views import generic
 
 from speedy.core.uploads.models import File
-from speedy.core.accounts_core.models import Entity
+from speedy.core.accounts.models import Entity
 from .forms import FeedbackForm
 from .models import Feedback
 

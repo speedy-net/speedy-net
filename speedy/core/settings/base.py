@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'rules.apps.AutodiscoverRulesConfig',
     'sorl.thumbnail',
 
-    'speedy.core',
-    'speedy.core.accounts_core',
+    'speedy.core.base',
+    'speedy.core.accounts',
     'speedy.core.im',
     'speedy.core.profiles',
     'speedy.core.friends',
@@ -61,8 +61,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'speedy.core.middlewares.middleware.SessionCookieDomainMiddleware',
-    'speedy.core.middlewares.middleware.RemoveExtraSlashesMiddleware',
+    'speedy.core.base.middleware.SessionCookieDomainMiddleware',
+    'speedy.core.base.middleware.RemoveExtraSlashesMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,9 +72,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'speedy.core.middlewares.middleware.LocaleDomainMiddleware',
+    'speedy.core.base.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'speedy.core.accounts_core.middleware.SiteProfileMiddleware',
+    'speedy.core.accounts.middleware.SiteProfileMiddleware',
 ]
 
 TEMPLATES = [
@@ -82,6 +82,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             str(APP_DIR / 'templates'),
+            str(ROOT_DIR / 'speedy/core/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -91,9 +92,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
-                'speedy.core.context_processors.active_url_name',
-                'speedy.core.context_processors.settings',
-                'speedy.core.context_processors.sites',
+                'speedy.core.base.context_processors.active_url_name',
+                'speedy.core.base.context_processors.settings',
+                'speedy.core.base.context_processors.sites',
             ],
         },
     },
@@ -147,7 +148,7 @@ AUTHENTICATION_BACKENDS = (
 
 SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 
-AUTH_USER_MODEL = 'accounts_core.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 LOGIN_URL = '/login/'
 
@@ -208,6 +209,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     str(APP_DIR / 'static'),
+    str(ROOT_DIR / 'speedy/core/static')
 ]
 
 # Media files (user uploads)
@@ -222,4 +224,4 @@ THUMBNAIL_DUMMY = True
 
 # Tests
 
-TEST_RUNNER = 'speedy.core.test.SiteDiscoverRunner'
+TEST_RUNNER = 'speedy.core.base.test.SiteDiscoverRunner'

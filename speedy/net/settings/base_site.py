@@ -16,4 +16,4 @@ INSTALLED_APPS += [
     'speedy.net.causes',
 ]
 
-AUTH_SITE_PROFILE_MODEL = 'accounts.SiteProfile'
+AUTH_SITE_PROFILE_MODEL = 'net_accounts.SiteProfile'

@@ -1,8 +1,7 @@
-from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.net.accounts.tests.test_factories import UserFactory
-from ..forms import MessageForm
 from .test_factories import ChatFactory
+from ..forms import MessageForm
 
 
 @exclude_on_speedy_composer

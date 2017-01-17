@@ -2,7 +2,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, Row
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.accounts_core.forms import ModelFormWithDefaults
+from speedy.core.accounts.forms import ModelFormWithDefaults
 from .models import Feedback
 
 

@@ -9,7 +9,7 @@ from .models import Block
 
 
 class BlockListView(UserMixin, PermissionRequiredMixin, generic.ListView):
-    permission_required = 'accounts_core.edit_profile'
+    permission_required = 'accounts.edit_profile'
 
     def get_queryset(self):
         return Block.objects.filter(blocker=self.user)

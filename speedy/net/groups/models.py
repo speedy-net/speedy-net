@@ -1,4 +1,4 @@
-from speedy.core.accounts_core.models import NamedEntity
+from speedy.core.accounts.models import NamedEntity
 
 
 class Group(NamedEntity):

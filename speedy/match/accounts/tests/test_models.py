@@ -1,4 +1,4 @@
-from speedy.core.test import TestCase
+from speedy.core.base.test import TestCase
 from ..models import SiteProfile
 
 

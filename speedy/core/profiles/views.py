@@ -9,7 +9,7 @@ from friendship.models import FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.core.friends.rules import friend_request_sent, is_friend
-from speedy.core.accounts_core.models import User, normalize_username
+from speedy.core.accounts.models import User, normalize_username
 
 
 class UserMixin(object):

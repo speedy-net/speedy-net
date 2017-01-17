@@ -1,8 +1,7 @@
-from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 
-from speedy.core.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.accounts_core.models import normalize_slug, normalize_username, Entity, User
+from speedy.core.accounts.models import normalize_slug, normalize_username, Entity
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from .test_factories import UserFactory, UserEmailAddressFactory
 
 

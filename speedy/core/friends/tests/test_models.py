@@ -1,7 +1,7 @@
 from friendship.models import Friend
 
+from speedy.core.base.test import TestCase
 from speedy.core.blocks.models import Block
-from speedy.core.test import TestCase
 from speedy.net.accounts.tests.test_factories import UserFactory
 
 
