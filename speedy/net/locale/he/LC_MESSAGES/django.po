@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-03 22:27+0200\n"
+"POT-Creation-Date: 2017-01-25 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,466 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\forms.py:42
-msgid "This email is already in use."
-msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
-
-#: .\accounts\forms.py:50
-msgid "Password too short."
-msgstr "הסיסמה קצרה מדי."
-
-#: .\accounts\forms.py:52
-msgid "Password too long."
-msgstr "הסיסמה ארוכה מדי."
-
-#: .\accounts\forms.py:80
-msgid "Your email"
-msgstr "הדואר האלקטרוני שלך"
-
-#: .\accounts\forms.py:81
-msgid "New password"
-msgstr "סיסמה חדשה"
-
-#: .\accounts\forms.py:89
-msgid "New username"
-msgstr "שם משתמש/ת חדש"
-
-#: .\accounts\forms.py:92
-msgid "Create an account"
-msgstr "צור/י חשבון"
-
-#: .\accounts\forms.py:125 .\accounts\forms.py:143 .\accounts\forms.py:157
+#: accounts/forms.py:18
 msgid "Save Changes"
 msgstr "שמור/י את השינויים"
 
-#: .\accounts\forms.py:131
-msgid "You can't change your username."
-msgstr ".לא ניתן לשנות שם משתמש/ת"
-
-#: .\accounts\forms.py:171 .\templates\base_with_login.html:29
-msgid "Email or Username"
-msgstr "דואר אלקטרוני או שם משתמש/ת"
-
-#: .\accounts\forms.py:176 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:32
-msgid "Login"
-msgstr "כניסה"
-
-#: .\accounts\forms.py:179 .\templates\base_with_login.html:22
-msgid "Forgot your password?"
-msgstr "שכחת את הסיסמה שלך?"
-
-#: .\accounts\forms.py:191 .\accounts\forms.py:215
-msgid "Submit"
-msgstr ""
-
-#: .\accounts\forms.py:225
-msgid "Change"
-msgstr ""
-
-#: .\accounts\forms.py:237
-msgid "Activate my {} account"
-msgstr "הפעל/י את החשבון שלי ב{}"
-
-#: .\accounts\forms.py:246
-msgid "Your password"
-msgstr "הסיסמה שלך"
-
-#: .\accounts\forms.py:253
-msgid "Deactivate your {} account"
-msgstr "הפסק/י את פעילות החשבון שלי ב{}"
-
-#: .\accounts\forms.py:258
-msgid "Invalid password."
-msgstr "הסיסמה לא תקינה."
-
-#: .\accounts\forms.py:270
-msgid "Add"
-msgstr "הוסף/י"
-
-#: .\accounts\models.py:25
-msgid "Only me"
-msgstr "רק אני"
-
-#: .\accounts\models.py:26
-msgid "Me and my friends"
-msgstr "אני והחברים שלי"
-
-#: .\accounts\models.py:28
-msgid "Anyone"
-msgstr "כל אחד/ת"
-
-#: .\accounts\models.py:47
-msgid "username"
-msgstr "שם משתמש/ת"
-
-#: .\accounts\models.py:47 .\accounts\models.py:48 .\accounts\validators.py:10
-msgid "This username is already taken."
-msgstr "שם המשתמש/ת הזה כבר תפוס"
-
-#: .\accounts\models.py:48
-msgid "username (slug)"
-msgstr "שם משתמש/ת (slug)"
-
-#: .\accounts\models.py:49
-msgid "photo"
-msgstr "תמונה"
-
-#: .\accounts\models.py:57 .\accounts\models.py:58 .\im\models.py:89
-msgid "entity"
-msgstr "ישות"
-
-#: .\accounts\models.py:71
-msgid "Slug does not parse to username."
-msgstr "slug לא מתאים לשם המשתמש/ת."
-
-#: .\accounts\models.py:119
-msgid "name"
-msgstr "שם"
-
-#: .\accounts\models.py:140
-msgid "Female"
-msgstr "נקבה"
-
-#: .\accounts\models.py:141
-msgid "Male"
-msgstr "זכר"
-
-#: .\accounts\models.py:142
-msgid "Other"
-msgstr "אחר/ת"
-
-#: .\accounts\models.py:150
-msgid "Please select..."
-msgstr "בחר/י בבקשה..."
-
-#: .\accounts\models.py:151
-msgid "Vegan (eats only plants and fungi)"
-msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
-
-#: .\accounts\models.py:152
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
-
-#: .\accounts\models.py:153
-msgid "Carnist (eats animals)"
-msgstr "קרניסט/ית (אוכל/ת חיות)"
-
-#: .\accounts\models.py:158
-msgid "first name"
-msgstr "שם פרטי"
-
-#: .\accounts\models.py:159
-msgid "last name"
-msgstr "שם משפחה"
-
-#: .\accounts\models.py:160
-msgid "date of birth"
-msgstr "תאריך לידה"
-
-#: .\accounts\models.py:161
-msgid "I am"
-msgstr "אני"
-
-#: .\accounts\models.py:162
-msgid "diet"
-msgstr "תזונה"
-
-#: .\accounts\models.py:174 .\accounts\models.py:228 .\blocks\models.py:10
-msgid "user"
-msgstr "משתמש/ת"
-
-#: .\accounts\models.py:175
-msgid "users"
-msgstr "משתמשים"
-
-#: .\accounts\models.py:229
-msgid "email"
-msgstr "דואר אלקטרוני"
-
-#: .\accounts\models.py:230
-msgid "is confirmed"
-msgstr "מאומת"
-
-#: .\accounts\models.py:231
-msgid "is primary"
-msgstr "ראשי"
-
-#: .\accounts\models.py:232
-msgid "confirmation token"
-msgstr ""
-
-#: .\accounts\models.py:233
-msgid "confirmation sent"
-msgstr ""
-
-#: .\accounts\models.py:234
-msgid "who can see this email"
-msgstr ""
-
-#: .\accounts\models.py:237
-msgid "email address"
-msgstr "כתובת דואר אלקטרוני"
-
-#: .\accounts\models.py:238
-msgid "email addresses"
-msgstr "כתובות דואר אלקטרוני"
-
-#: .\accounts\models.py:285
-msgid "Notify"
-msgstr "מקבל הודעות"
-
-#: .\accounts\models.py:286
-msgid "Don't notify"
-msgstr "לא מקבל הודעות"
-
-#: .\accounts\models.py:290
-msgid "last visit"
-msgstr "ביקור אחרון"
-
-#: .\accounts\models.py:317
+#: accounts/models.py:16
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:318
+#: accounts/models.py:17
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:319
+#: accounts/models.py:18
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:320
+#: accounts/models.py:19
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
 
-#: .\accounts\validators.py:21
-msgid ""
-"Username must start with 4 or more letters, and may contain letters, digits "
-"or dashes."
-msgstr ""
-
-#: .\accounts\validators.py:23
-msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
-msgstr ""
-
-#: .\accounts\views.py:63
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr ""
-
-#: .\accounts\views.py:157
-msgid "Your new password has been saved."
-msgstr ""
-
-#: .\accounts\views.py:175
-msgid "Welcome to {}!"
-msgstr "ברוכ/ה הבא/ה ל{}!"
-
-#: .\accounts\views.py:196
-msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate it any time."
-msgstr ""
-
-#: .\accounts\views.py:198
-msgid ""
-"Your {} account has been deactivated. You can reactivate it any time. Your "
-"Speedy Net account remains intact."
-msgstr ""
-
-#: .\accounts\views.py:211
-msgid "You've already confirmed this email address."
-msgstr ""
-
-#: .\accounts\views.py:215
-msgid "You've confirmed your email address."
-msgstr ""
-
-#: .\accounts\views.py:217
-msgid "Invalid confirmation link."
-msgstr ""
-
-#: .\blocks\models.py:11
-msgid "blocked user"
-msgstr ""
-
-#: .\blocks\models.py:16
-msgid "block"
-msgstr ""
-
-#: .\blocks\models.py:17
-msgid "user blocks"
-msgstr ""
-
-#: .\blocks\views.py:26
-msgid "You have blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
-
-#: .\blocks\views.py:38
-msgid "You have unblocked this user."
-msgstr ".ביטלת את חסימת המשתמש/ת הזה"
-
-#: .\feedback\forms.py:27 .\im\forms.py:29
-msgid "Send"
-msgstr ""
-
-#: .\feedback\models.py:15
-msgid "Feedback"
-msgstr ""
-
-#: .\feedback\models.py:16
-msgid "Abuse (User)"
-msgstr ""
-
-#: .\feedback\models.py:17
-msgid "Abuse (Photo)"
-msgstr ""
-
-#: .\feedback\models.py:20 .\im\models.py:73
-msgid "sender"
-msgstr ""
-
-#: .\feedback\models.py:21
-msgid "your name"
-msgstr "השם שלך"
-
-#: .\feedback\models.py:22
-msgid "your email"
-msgstr "הדואר האלקטרוני שלך"
-
-#: .\feedback\models.py:23
-msgid "type"
-msgstr ""
-
-#: .\feedback\models.py:24
-msgid "your message"
-msgstr "ההודעה שלך"
-
-#: .\feedback\models.py:25
-msgid "reported entity"
-msgstr ""
-
-#: .\feedback\models.py:26
-msgid "reported photo"
-msgstr ""
-
-#: .\feedback\models.py:29
-msgid "feedback"
-msgstr ""
-
-#: .\feedback\models.py:30
-msgid "feedbacks"
-msgstr ""
-
-#: .\friends\views.py:51
-#, python-brace-format
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-
-#: .\friends\views.py:59
-#, python-brace-format
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-
-#: .\friends\views.py:75
-msgid "You already requested friendship from this user."
-msgstr ""
-
-#: .\friends\views.py:78
-msgid "You already are friends with this user."
-msgstr ""
-
-#: .\friends\views.py:90
-msgid "Friend request sent."
-msgstr ""
-
-#: .\friends\views.py:101
-msgid "No friend request."
-msgstr ""
-
-#: .\friends\views.py:104
-msgid "You've cancelled your friend request."
-msgstr ""
-
-#: .\friends\views.py:134
-msgid "Friend request accepted."
-msgstr ""
-
-#: .\friends\views.py:149
-msgid "Friend request rejected."
-msgstr ""
-
-#: .\friends\views.py:160
-msgid "You have removed this user from friends."
-msgstr ""
-
-#: .\im\models.py:13
-msgid "site"
-msgstr ""
-
-#: .\im\models.py:14
-msgid "participant 1"
-msgstr ""
-
-#: .\im\models.py:15
-msgid "participant 2"
-msgstr ""
-
-#: .\im\models.py:16
-msgid "participants"
-msgstr ""
-
-#: .\im\models.py:17
-msgid "is group chat"
-msgstr ""
-
-#: .\im\models.py:18
-msgid "last message"
-msgstr ""
-
-#: .\im\models.py:24 .\im\models.py:25 .\im\models.py:72 .\im\models.py:90
-msgid "chat"
-msgstr ""
-
-#: .\im\models.py:74 .\im\models.py:79
-msgid "message"
-msgstr ""
-
-#: .\im\models.py:80
-msgid "messages"
-msgstr ""
-
-#: .\im\models.py:95
-msgid "read mark"
-msgstr ""
-
-#: .\im\models.py:96
-msgid "read marks"
-msgstr ""
-
-#: .\settings\base_site.py:9
+#: settings/base_site.py:10
 msgid "Speedy Net [alpha]"
 msgstr "ספידי נט [אלפא]"
 
-#: .\templates\403.html:9
-msgid "Permission Denied"
-msgstr ""
-
-#: .\templates\403.html:12 .\templates\profiles\user_base.html:28
-msgid "This page is private."
-msgstr ""
-
-#: .\templates\about\about.html:11
+#: templates/about/about.html:11
 msgid "About Speedy Net"
 msgstr "אודות ספידי נט"
 
-#: .\templates\about\about.html:15
+#: templates/about/about.html:15
 msgid ""
 "<a href=\"http://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
 "new social network. With Speedy Net you can communicate with your friends. "
@@ -490,7 +59,7 @@ msgstr ""
 "להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר זמין כרגע "
 "בשתי שפות - עברית ואנגלית."
 
-#: .\templates\about\about.html:17
+#: templates/about/about.html:17
 msgid ""
 "The founders of Speedy Net are vegan, support animal rights and object to "
 "experiments on animals. Speedy Net is a social network friendly for vegan "
@@ -500,7 +69,7 @@ msgstr ""
 "בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים "
 "ולבעלי חיים."
 
-#: .\templates\about\about.html:19
+#: templates/about/about.html:19
 msgid ""
 "We decided to limit the number of friends on Speedy Net to 800. We encourage "
 "you to add as friends only people you know personally. You can select which "
@@ -512,7 +81,7 @@ msgstr ""
 "כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו "
 "רק לכם."
 
-#: .\templates\about\about.html:21
+#: templates/about/about.html:21
 msgid ""
 "You can use our new app, <a href=\"http://en.speedymatch.com/\" title="
 "\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
@@ -522,7 +91,7 @@ msgstr ""
 "\" title=\"ספידי מץ'\">ספידי מץ'</a>, להכיר בני-זוג או בנות-זוג מתאימים. "
 "ספידי מץ' פתוחה לפנויות/פנויים מכל הגילים."
 
-#: .\templates\about\about.html:23
+#: templates/about/about.html:23
 msgid ""
 "Speedy Net and Speedy Match are free of charge. Join Speedy Net today to "
 "find matching partners, it only takes a few minutes. <a href=\"/\" title="
@@ -532,7 +101,7 @@ msgstr ""
 "מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו "
 "כאן</a> כדי להצטרף."
 
-#: .\templates\about\about.html:25
+#: templates/about/about.html:25
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by e-mail."
@@ -540,7 +109,7 @@ msgstr ""
 "ספידי נט היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח "
 "ושיפור ספידי נט, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
 
-#: .\templates\about\about.html:27
+#: templates/about/about.html:27
 msgid ""
 "Speedy Net is named after <a href=\"https://www.facebook.com/speedyevenchen"
 "\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
@@ -550,512 +119,360 @@ msgstr ""
 "title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
 "המליטה 7 גורים בשנת 1988."
 
-#: .\templates\about\about.html:29
+#: templates/about/about.html:29
 msgid "Speedy Net is currently in alpha. It was launched on 13th June 2012."
 msgstr "ספידי נט היא כרגע באלפא. היא הושקה ב-13 ביוני 2012."
 
-#: .\templates\about\about.html:31
+#: templates/about/about.html:31
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: .\templates\about\about.html:32
+#: templates/about/about.html:32
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: .\templates\about\about.html:33
+#: templates/about/about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
 msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
 
-#: .\templates\about\about.html:34
+#: templates/about/about.html:34
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:177
-msgid "About"
-msgstr "אודות"
-
-#: .\templates\accounts\edit_profile\activate.html:6
-msgid "Welcome"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\activate.html:12
-msgid "Welcome to"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:6
-#: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:10 .\templates\base_with_login.html:63
-#: .\templates\profiles\tools\edit_profile.html:6
-msgid "Edit Profile"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:15
-msgid "Profile Info"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:17
-msgid "Privacy Settings"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:19
-msgid "Notifications"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:21
-msgid "Emails & Password"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:23
-msgid "Blocked Users"
-msgstr "משתמשים חסומים"
-
-#: .\templates\accounts\edit_profile\base.html:25
-msgid "Deactivate Account"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:7
-msgid "Email Addresses"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:12
-msgid "Address"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:13
-msgid "Added"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:14
-#: .\templates\base.html:179
-msgid "Privacy"
-msgstr "פרטיות"
-
-#: .\templates\accounts\edit_profile\credentials.html:15
-msgid "Actions"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:23
-msgid "Unconfirmed"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:25
-msgid "Primary"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:46
-msgid "Resend a confirmation email"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:57
-msgid "Make this email address primary"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:66
-msgid "Are you sure you want to delete this email address?"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:68
-msgid "Delete this email address"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:85
-msgid "Add Another"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\credentials.html:92
-msgid "Change Password"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\privacy.html:9
-#, python-format
-msgid "These settings are specific for %(site_name)s."
-msgstr ""
-
-#: .\templates\accounts\edit_profile\privacy.html:15
-msgid "Change emails which are visible on your page."
-msgstr ""
-
-#: .\templates\accounts\email_address_form.html:6
-#: .\templates\accounts\email_address_form.html:12
-msgid "Add Email"
-msgstr ""
-
-#: .\templates\accounts\logged_out.html:5
-msgid "Logged Out"
-msgstr ""
-
-#: .\templates\accounts\password_reset\complete.html:5
-#: .\templates\accounts\password_reset\complete.html:11
-#: .\templates\accounts\password_reset\confirm.html:6
-#: .\templates\accounts\password_reset\confirm.html:12
-#: .\templates\accounts\password_reset\done.html:5
-#: .\templates\accounts\password_reset\done.html:11
-#: .\templates\accounts\password_reset\form.html:6
-#: .\templates\accounts\password_reset\form.html:12
-msgid "Reset Password"
-msgstr "איפוס סיסמה"
-
-#: .\templates\accounts\password_reset\complete.html:14
-msgid "Password reset successfully."
-msgstr "סיסמה אופסה בהצלחה."
-
-#: .\templates\accounts\password_reset\confirm.html:18
-msgid "Password reset failed. Invalid link."
-msgstr "איפוס סיסמה נכשל. קישור לא תקין."
-
-#: .\templates\accounts\password_reset\done.html:14
-msgid "Email with password reset instructions has been sent."
-msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
-
-#: .\templates\base.html:85
-msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr ""
-"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
-
-#: .\templates\base.html:179 .\templates\privacy\privacy_policy.html:8
-#: .\templates\privacy\privacy_policy.html:13
-msgid "Privacy Policy"
-msgstr "מדיניות פרטיות"
-
-#: .\templates\base.html:181 .\templates\terms\terms_of_service.html:8
-#: .\templates\terms\terms_of_service.html:13
-msgid "Terms of Service"
-msgstr "תנאי שימוש"
-
-#: .\templates\base.html:181
-msgid "Terms"
-msgstr "תנאים"
-
-#: .\templates\base.html:183 .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:14
-msgid "Contact Us"
-msgstr "צרו קשר"
-
-#: .\templates\base.html:189
-msgid "Speedy Net"
-msgstr "ספידי נט"
-
-#: .\templates\base.html:191
-msgid "Speedy Match"
-msgstr "ספידי מץ'"
-
-#: .\templates\base.html:193
-msgid "Speedy Composer"
-msgstr "ספידי קומפוזר"
-
-#: .\templates\base.html:195
-msgid "Speedy Mail Software"
-msgstr "תוכנת דואר ספידי"
-
-#: .\templates\base.html:197
-msgid "Speedy Net Blog"
-msgstr "ספידי נט בלוג"
-
-#: .\templates\base.html:203
-msgid "Speedy Net's Shop"
-msgstr "החנות של ספידי נט"
-
-#: .\templates\base.html:205
-msgid "Speedy Match's Shop"
-msgstr "החנות של ספידי מץ'"
-
-#: .\templates\base.html:207
-msgid "Speedy Composer's Shop"
-msgstr "החנות של ספידי קומפוזר"
-
-#: .\templates\base.html:209
-msgid "Speedy S-logo Shop"
-msgstr "החנות של ספידי S-לוגו"
-
-#: .\templates\base.html:215
-msgid "Speedy Software"
-msgstr "ספידי תוכנה"
-
-#: .\templates\base.html:217
-msgid "Speedy Sale"
-msgstr "ספידי סייל"
-
-#: .\templates\base.html:219
-msgid "Free Online Dating"
-msgstr "הכרויות און-ליין בחינם"
-
-#: .\templates\base.html:257 .\templates\base.html:259
-msgid "Speedy"
-msgstr "ספידי"
-
-#: .\templates\base_with_login.html:11
-msgid "Logout"
-msgstr ""
-
-#: .\templates\base_with_login.html:14
-#, python-format
-msgid ""
-"\n"
-"                Hi\n"
-"                <a href=\"%(user_link)s\" class=\"navbar-link\">"
-"%(user_name)s</a>,\n"
-"                welcome back to %(site_name)s!\n"
-"            "
-msgstr ""
-
-#: .\templates\base_with_login.html:23
-msgid "Register"
-msgstr ""
-
-#: .\templates\base_with_login.html:30
-msgid "Password"
-msgstr ""
-
-#: .\templates\base_with_login.html:46 .\templates\friends\base.html:7
-#: .\templates\friends\user_friends_widget.html:15
-msgid "Friends"
-msgstr ""
-
-#: .\templates\base_with_login.html:54 .\templates\im\chat_detail.html:13
-#: .\templates\im\chat_list.html:8 .\templates\im\chat_list.html:13
-msgid "Messages"
-msgstr ""
-
-#: .\templates\blocks\block_list.html:10
-msgid "You're blocking nobody."
-msgstr ""
-
-#: .\templates\core\pagination.html:9
-msgid "Previous"
-msgstr ""
-
-#: .\templates\core\pagination.html:32
-msgid "Next"
-msgstr ""
-
-#: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:10
-msgid "Report Profile"
-msgstr ""
-
-#: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:12
-msgid "Report File"
-msgstr ""
-
-#: .\templates\feedback\feedback_success.html:8
-msgid "Thank You"
-msgstr ""
-
-#: .\templates\feedback\feedback_success.html:11
-msgid "Your feedback was sent to administrators."
-msgstr ""
-
-#: .\templates\friends\base.html:15
-msgid "Your Friends"
-msgstr ""
-
-#: .\templates\friends\base.html:18
-msgid "Received Requests"
-msgstr ""
-
-#: .\templates\friends\base.html:23
-msgid "Sent Requests"
-msgstr ""
-
-#: .\templates\friends\friend_list.html:10
-msgid "This user has no friends yet."
-msgstr ""
-
-#: .\templates\friends\received_requests.html:10
-#: .\templates\friends\sent_requests.html:10
-msgid "There are no pending friendship requests."
-msgstr ""
-
-#: .\templates\friends\user_friends_widget.html:12
-msgid "See All"
-msgstr ""
-
-#: .\templates\im\chat_detail.html:21
-#, python-format
-msgid ""
-"\n"
-"                Chat with\n"
-"                <a href=\"%(link)s\">%(username)s</a>\n"
-"            "
-msgstr ""
-
-#: .\templates\im\chat_detail.html:30
-#, python-format
-msgid "Send a message to %(username)s"
-msgstr ""
-
-#: .\templates\im\chat_detail.html:39
-msgid "Mark All as Read"
-msgstr ""
-
-#: .\templates\im\chat_list.html:32
-msgid "Unread"
-msgstr ""
-
-#: .\templates\im\chat_list.html:37
-msgid "You:"
-msgstr ""
-
-#: .\templates\im\chat_list.html:52
-msgid "You have no messages yet."
-msgstr ""
-
-#: .\templates\im\message.html:15
-msgid "New"
-msgstr ""
-
-#: .\templates\im\message_form.html:7
-#, python-format
-msgid "Send a message to %(user)s"
-msgstr ""
-
-#: .\templates\privacy\privacy_policy.html:17
-msgid ""
-"We respect your privacy. We will not sell or share your personal details, "
-"including your name, your date of birth, your e-mail address and your "
-"password. Messages you send to people on Speedy Net are personal and will "
-"not be shared with other people or websites. Your password is saved "
-"encrypted on our database."
-msgstr ""
-"אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים שלכם, "
-"כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה שלכם. "
-"הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים או אתרים "
-"אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
-
-#: .\templates\profiles\block_warning.html:9
-msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
-
-#: .\templates\profiles\block_warning.html:11
-msgid "This user blocked you."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
-
-#: .\templates\profiles\tools\add_to_friends.html:12
-#: .\templates\profiles\user_list_item.html:19
-msgid "Accept"
-msgstr "קבל/י"
-
-#: .\templates\profiles\tools\add_to_friends.html:19
-#: .\templates\profiles\user_list_item.html:24
-msgid "Reject"
-msgstr "דחה/י"
-
-#: .\templates\profiles\tools\add_to_friends.html:28
-msgid "Add to Friends"
-msgstr "הוסף/י לחברים"
-
-#: .\templates\profiles\tools\block_user.html:13
-msgid "Block User"
-msgstr "חסום/י משתמש/ת"
-
-#: .\templates\profiles\tools\block_user.html:24
-msgid "Unblock User"
-msgstr "בטל/י חסימת משתמש/ת"
-
-#: .\templates\profiles\tools\friend_request_sent.html:9
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Friend Request Sent"
-msgstr "בקשת חברות נשלחה"
-
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Cancel Request"
-msgstr "בטל/י בקשת חברות"
-
-#: .\templates\profiles\tools\report_menu.html:6
-msgid "Toggle Dropdown"
-msgstr ""
-
-#: .\templates\profiles\tools\report_menu.html:9
-msgid "Report User"
-msgstr "דווח/י על משתמש/ת זה"
-
-#: .\templates\profiles\tools\report_menu.html:11
-msgid "Report Photo"
-msgstr "דווח/י על תמונה זו"
-
-#: .\templates\profiles\tools\send_message.html:11
-msgid "Send Message"
-msgstr "שלח/י הודעה"
-
-#: .\templates\profiles\tools\your_friend.html:9
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Your Friend"
-msgstr "חבר/ה שלך"
-
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Remove"
-msgstr "הסר/י"
-
-#: .\templates\profiles\user_info_widget.html:11
-msgid "Information"
-msgstr "פרטים"
-
-#: .\templates\profiles\user_info_widget.html:17
-msgid "Full Name"
-msgstr "שם מלא"
-
-#: .\templates\profiles\user_info_widget.html:23
-msgid "Username"
-msgstr "שם משתמש/ת"
-
-#: .\templates\profiles\user_info_widget.html:33
-msgid "Gender"
-msgstr "מין"
-
-#: .\templates\profiles\user_info_widget.html:42
-msgid "Birthday"
-msgstr "תאריך לידה"
-
-#: .\templates\profiles\user_info_widget.html:54
-msgid "(hidden)"
-msgstr "(מוסתר)"
-
-#: .\templates\profiles\user_info_widget.html:64
-msgid "Email"
-msgstr "דואר אלקטרוני"
-
-#: .\templates\terms\terms_of_service.html:17
-msgid ""
-"You can use Speedy Net for legal purposes only. You are not allowed to "
-"upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam."
-msgstr ""
-"אתם יכולים להשתמש בספידי נט למטרות חוקיות בלבד. אין להעלות לאתר תכנים "
-"הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
-"בספידי נט בשביל לשלוח הודעות ספאם."
-
-#: .\templates\uploads\file_input.html:6
-msgid "Browse..."
-msgstr "עיון..."
-
-#: .\uploads\models.py:13
-msgid "owner"
-msgstr "בעלים"
-
-#: .\uploads\models.py:14 .\uploads\models.py:19
-msgid "file"
-msgstr "קובץ"
-
-#: .\uploads\models.py:15
-msgid "is stored"
-msgstr ""
-
-#: .\uploads\models.py:16
-msgid "file_size"
-msgstr ""
-
-#: .\uploads\models.py:20
-msgid "uploaded files"
-msgstr ""
-
-#: .\uploads\models.py:45
-msgid "images"
-msgstr "תמונות"
-
-#: .\uploads\models.py:46
-msgid "uploaded images"
-msgstr ""
+#~ msgid "This email is already in use."
+#~ msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
+
+#~ msgid "Password too short."
+#~ msgstr "הסיסמה קצרה מדי."
+
+#~ msgid "Password too long."
+#~ msgstr "הסיסמה ארוכה מדי."
+
+#~ msgid "Your email"
+#~ msgstr "הדואר האלקטרוני שלך"
+
+#~ msgid "New password"
+#~ msgstr "סיסמה חדשה"
+
+#~ msgid "New username"
+#~ msgstr "שם משתמש/ת חדש"
+
+#~ msgid "Create an account"
+#~ msgstr "צור/י חשבון"
+
+#~ msgid "You can't change your username."
+#~ msgstr ".לא ניתן לשנות שם משתמש/ת"
+
+#~ msgid "Email or Username"
+#~ msgstr "דואר אלקטרוני או שם משתמש/ת"
+
+#~ msgid "Login"
+#~ msgstr "כניסה"
+
+#~ msgid "Forgot your password?"
+#~ msgstr "שכחת את הסיסמה שלך?"
+
+#~ msgid "Activate my {} account"
+#~ msgstr "הפעל/י את החשבון שלי ב{}"
+
+#~ msgid "Your password"
+#~ msgstr "הסיסמה שלך"
+
+#~ msgid "Deactivate your {} account"
+#~ msgstr "הפסק/י את פעילות החשבון שלי ב{}"
+
+#~ msgid "Invalid password."
+#~ msgstr "הסיסמה לא תקינה."
+
+#~ msgid "Add"
+#~ msgstr "הוסף/י"
+
+#~ msgid "Only me"
+#~ msgstr "רק אני"
+
+#~ msgid "Me and my friends"
+#~ msgstr "אני והחברים שלי"
+
+#~ msgid "Anyone"
+#~ msgstr "כל אחד/ת"
+
+#~ msgid "username"
+#~ msgstr "שם משתמש/ת"
+
+#~ msgid "This username is already taken."
+#~ msgstr "שם המשתמש/ת הזה כבר תפוס"
+
+#~ msgid "username (slug)"
+#~ msgstr "שם משתמש/ת (slug)"
+
+#~ msgid "photo"
+#~ msgstr "תמונה"
+
+#~ msgid "entity"
+#~ msgstr "ישות"
+
+#~ msgid "Slug does not parse to username."
+#~ msgstr "slug לא מתאים לשם המשתמש/ת."
+
+#~ msgid "name"
+#~ msgstr "שם"
+
+#~ msgid "Female"
+#~ msgstr "נקבה"
+
+#~ msgid "Male"
+#~ msgstr "זכר"
+
+#~ msgid "Other"
+#~ msgstr "אחר/ת"
+
+#~ msgid "Please select..."
+#~ msgstr "בחר/י בבקשה..."
+
+#~ msgid "Vegan (eats only plants and fungi)"
+#~ msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+
+#~ msgid "Vegetarian (doesn't eat fish and meat)"
+#~ msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+
+#~ msgid "Carnist (eats animals)"
+#~ msgstr "קרניסט/ית (אוכל/ת חיות)"
+
+#~ msgid "first name"
+#~ msgstr "שם פרטי"
+
+#~ msgid "last name"
+#~ msgstr "שם משפחה"
+
+#~ msgid "date of birth"
+#~ msgstr "תאריך לידה"
+
+#~ msgid "I am"
+#~ msgstr "אני"
+
+#~ msgid "diet"
+#~ msgstr "תזונה"
+
+#~ msgid "user"
+#~ msgstr "משתמש/ת"
+
+#~ msgid "users"
+#~ msgstr "משתמשים"
+
+#~ msgid "email"
+#~ msgstr "דואר אלקטרוני"
+
+#~ msgid "is confirmed"
+#~ msgstr "מאומת"
+
+#~ msgid "is primary"
+#~ msgstr "ראשי"
+
+#~ msgid "email address"
+#~ msgstr "כתובת דואר אלקטרוני"
+
+#~ msgid "email addresses"
+#~ msgstr "כתובות דואר אלקטרוני"
+
+#~ msgid "Notify"
+#~ msgstr "מקבל הודעות"
+
+#~ msgid "Don't notify"
+#~ msgstr "לא מקבל הודעות"
+
+#~ msgid "last visit"
+#~ msgstr "ביקור אחרון"
+
+#~ msgid "Welcome to {}!"
+#~ msgstr "ברוכ/ה הבא/ה ל{}!"
+
+#~ msgid "You have blocked this user."
+#~ msgstr ".חסמת את המשתמש/ת הזה"
+
+#~ msgid "You have unblocked this user."
+#~ msgstr ".ביטלת את חסימת המשתמש/ת הזה"
+
+#~ msgid "your name"
+#~ msgstr "השם שלך"
+
+#~ msgid "your email"
+#~ msgstr "הדואר האלקטרוני שלך"
+
+#~ msgid "your message"
+#~ msgstr "ההודעה שלך"
+
+#~ msgid "About"
+#~ msgstr "אודות"
+
+#~ msgid "Blocked Users"
+#~ msgstr "משתמשים חסומים"
+
+#~ msgid "Privacy"
+#~ msgstr "פרטיות"
+
+#~ msgid "Reset Password"
+#~ msgstr "איפוס סיסמה"
+
+#~ msgid "Password reset successfully."
+#~ msgstr "סיסמה אופסה בהצלחה."
+
+#~ msgid "Password reset failed. Invalid link."
+#~ msgstr "איפוס סיסמה נכשל. קישור לא תקין."
+
+#~ msgid "Email with password reset instructions has been sent."
+#~ msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
+
+#~ msgid "You haven't confirmed your email address. Please check your inbox."
+#~ msgstr ""
+#~ "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס "
+#~ "שלך."
+
+#~ msgid "Privacy Policy"
+#~ msgstr "מדיניות פרטיות"
+
+#~ msgid "Terms of Service"
+#~ msgstr "תנאי שימוש"
+
+#~ msgid "Terms"
+#~ msgstr "תנאים"
+
+#~ msgid "Contact Us"
+#~ msgstr "צרו קשר"
+
+#~ msgid "Speedy Net"
+#~ msgstr "ספידי נט"
+
+#~ msgid "Speedy Match"
+#~ msgstr "ספידי מץ'"
+
+#~ msgid "Speedy Composer"
+#~ msgstr "ספידי קומפוזר"
+
+#~ msgid "Speedy Mail Software"
+#~ msgstr "תוכנת דואר ספידי"
+
+#~ msgid "Speedy Net Blog"
+#~ msgstr "ספידי נט בלוג"
+
+#~ msgid "Speedy Net's Shop"
+#~ msgstr "החנות של ספידי נט"
+
+#~ msgid "Speedy Match's Shop"
+#~ msgstr "החנות של ספידי מץ'"
+
+#~ msgid "Speedy Composer's Shop"
+#~ msgstr "החנות של ספידי קומפוזר"
+
+#~ msgid "Speedy S-logo Shop"
+#~ msgstr "החנות של ספידי S-לוגו"
+
+#~ msgid "Speedy Software"
+#~ msgstr "ספידי תוכנה"
+
+#~ msgid "Speedy Sale"
+#~ msgstr "ספידי סייל"
+
+#~ msgid "Free Online Dating"
+#~ msgstr "הכרויות און-ליין בחינם"
+
+#~ msgid "Speedy"
+#~ msgstr "ספידי"
+
+#~ msgid ""
+#~ "We respect your privacy. We will not sell or share your personal details, "
+#~ "including your name, your date of birth, your e-mail address and your "
+#~ "password. Messages you send to people on Speedy Net are personal and will "
+#~ "not be shared with other people or websites. Your password is saved "
+#~ "encrypted on our database."
+#~ msgstr ""
+#~ "אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים "
+#~ "שלכם, כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה "
+#~ "שלכם. הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים "
+#~ "או אתרים אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
+
+#~ msgid "You blocked this user."
+#~ msgstr ".חסמת את המשתמש/ת הזה"
+
+#~ msgid "This user blocked you."
+#~ msgstr "המשתמש/ת הזה חסמ/ה אותך."
+
+#~ msgid "Accept"
+#~ msgstr "קבל/י"
+
+#~ msgid "Reject"
+#~ msgstr "דחה/י"
+
+#~ msgid "Add to Friends"
+#~ msgstr "הוסף/י לחברים"
+
+#~ msgid "Block User"
+#~ msgstr "חסום/י משתמש/ת"
+
+#~ msgid "Unblock User"
+#~ msgstr "בטל/י חסימת משתמש/ת"
+
+#~ msgid "Friend Request Sent"
+#~ msgstr "בקשת חברות נשלחה"
+
+#~ msgid "Cancel Request"
+#~ msgstr "בטל/י בקשת חברות"
+
+#~ msgid "Report User"
+#~ msgstr "דווח/י על משתמש/ת זה"
+
+#~ msgid "Report Photo"
+#~ msgstr "דווח/י על תמונה זו"
+
+#~ msgid "Send Message"
+#~ msgstr "שלח/י הודעה"
+
+#~ msgid "Your Friend"
+#~ msgstr "חבר/ה שלך"
+
+#~ msgid "Remove"
+#~ msgstr "הסר/י"
+
+#~ msgid "Information"
+#~ msgstr "פרטים"
+
+#~ msgid "Full Name"
+#~ msgstr "שם מלא"
+
+#~ msgid "Username"
+#~ msgstr "שם משתמש/ת"
+
+#~ msgid "Gender"
+#~ msgstr "מין"
+
+#~ msgid "Birthday"
+#~ msgstr "תאריך לידה"
+
+#~ msgid "(hidden)"
+#~ msgstr "(מוסתר)"
+
+#~ msgid "Email"
+#~ msgstr "דואר אלקטרוני"
+
+#~ msgid ""
+#~ "You can use Speedy Net for legal purposes only. You are not allowed to "
+#~ "upload contents related to hate, violence, animal abuse, nudity or "
+#~ "pornography. You are not allowed to use Speedy Net to send spam."
+#~ msgstr ""
+#~ "אתם יכולים להשתמש בספידי נט למטרות חוקיות בלבד. אין להעלות לאתר תכנים "
+#~ "הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
+#~ "בספידי נט בשביל לשלוח הודעות ספאם."
+
+#~ msgid "Browse..."
+#~ msgstr "עיון..."
+
+#~ msgid "owner"
+#~ msgstr "בעלים"
+
+#~ msgid "file"
+#~ msgstr "קובץ"
+
+#~ msgid "images"
+#~ msgstr "תמונות"
 
 #~ msgid "Language"
 #~ msgstr "שפה"
