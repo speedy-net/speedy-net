@@ -107,8 +107,8 @@ class RemoveExtraSlashesMiddleware(object):
         return re.sub(pattern=r'(/{2,})', repl='/', string=path)
 
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        normalized_path = self.normalize_path(path=request.path_info)
-        if normalized_path != request.path_info:
+        normalized_path = self.normalize_path(path=request.path)
+        if normalized_path != request.path:
             request.path = normalized_path
             return HttpResponsePermanentRedirect(redirect_to=request.get_full_path())
         return self.get_response(request=request)

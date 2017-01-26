@@ -28,8 +28,6 @@ class SiteProfile(SiteProfileBase):
         languages.append(get_language())
         self.set_active_languages(languages)
         self.save(update_fields={'active_languages'})
-        speedy_net_profile = self.user.get_profile(model=SpeedyNetSiteProfile)
-        speedy_net_profile.activate()
 
     @property
     def is_active(self):

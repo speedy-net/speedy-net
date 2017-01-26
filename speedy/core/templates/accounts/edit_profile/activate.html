@@ -11,7 +11,11 @@
             <div class="page-header">
                 <h1>{% trans 'Welcome to' %} {{ site.name }}</h1>
             </div>
-            {% crispy form %}
+            {% if form %}
+                {% crispy form %}
+            {% else %}
+                <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' %}</a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

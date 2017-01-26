@@ -9,7 +9,7 @@ from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.views import generic
 from django.views.decorators.cache import never_cache
@@ -19,6 +19,9 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
+from speedy.match.settings.base_site import SITE_ID as MATCH_SITE_ID
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm
 from .models import UserEmailAddress
 
@@ -161,6 +164,13 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         if request.user.is_authenticated and request.user.profile.is_active:
             return redirect(to=self.success_url)
         return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        site = Site.objects.get_current()
+        if site.pk == MATCH_SITE_ID and not request.user.get_profile(model=SpeedyNetSiteProfile).is_active:
+            from speedy.net.settings.base_site import SITE_ID as NET_SITE_ID
+            return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=NET_SITE_ID).domain})
+        return super().get(self.request, *args, **kwargs)
 
     def form_valid(self, form):
         messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))

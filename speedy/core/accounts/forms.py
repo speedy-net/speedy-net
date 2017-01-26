@@ -1,6 +1,6 @@
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
+from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout, ButtonHolder
 from django import forms
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
@@ -10,6 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 from .models import User, UserEmailAddress
 
 DATE_FIELD_FORMATS = [
