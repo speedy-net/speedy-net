@@ -167,6 +167,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         site = Site.objects.get_current()
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        # ~~~~ TODO: Generalize this to any app and not only Speedy Match (all the apps are deactivated when deactivating Speedy Net).
         if site.pk == SPEEDY_MATCH_SITE_ID and not request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active:
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         return super().get(self.request, *args, **kwargs)
