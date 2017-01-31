@@ -1,5 +1,5 @@
+from speedy.core.accounts.tests.test_factories import UserFactory
 from speedy.core.base.test import TestCase
-from speedy.net.accounts.tests.test_factories import UserFactory
 from .test_factories import UserLikeFactory
 from ..models import UserLike
 

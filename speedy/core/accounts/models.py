@@ -217,9 +217,9 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
             self._profile = self.get_profile()
         return self._profile
 
-    def get_profile(self, model=None) -> 'SiteProfileBase':
+    def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
         if model is None:
-            model = get_site_profile_model()
+            model = get_site_profile_model(profile_model=profile_model)
         return model.objects.get_or_create(user=self)[0]
 
 

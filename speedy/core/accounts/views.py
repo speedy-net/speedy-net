@@ -19,8 +19,6 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
-from speedy.match.settings.base_site import SITE_ID as MATCH_SITE_ID
-from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm
 from .models import UserEmailAddress
@@ -167,8 +165,9 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
 
     def get(self, request, *args, **kwargs):
         site = Site.objects.get_current()
-        if site.pk == MATCH_SITE_ID and not request.user.get_profile(model=SpeedyNetSiteProfile).is_active:
-            from speedy.net.settings.base_site import SITE_ID as NET_SITE_ID
+        MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        if site.pk == MATCH_SITE_ID and not request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active:
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=NET_SITE_ID).domain})
         return super().get(self.request, *args, **kwargs)
 

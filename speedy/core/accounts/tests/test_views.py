@@ -46,6 +46,7 @@ class MeViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RegistrationViewTestCase(TestCase):
+
     def setUp(self):
         self.data = {
             'first_name_en': 'First',
@@ -329,6 +330,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ActivateSiteProfileViewTestCase(TestCase):
+
     page_url = '/welcome/'
 
     def setUp(self):

@@ -149,7 +149,7 @@ class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
 
 class ProfileNotificationsForm(forms.ModelForm):
     class Meta:
-        model = get_site_profile_model()
+        model = get_site_profile_model(profile_model=None)
         fields = ()
 
     def __init__(self, **kwargs):
@@ -233,7 +233,7 @@ class PasswordChangeForm(CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
 
 class SiteProfileActivationForm(forms.ModelForm):
     class Meta:
-        model = get_site_profile_model()
+        model = get_site_profile_model(profile_model=None)
         fields = ()
 
     def __init__(self, **kwargs):

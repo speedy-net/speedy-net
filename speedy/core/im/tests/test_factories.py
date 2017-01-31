@@ -1,6 +1,6 @@
 import factory
 
-from speedy.net.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import UserFactory
 from ..models import Chat
 
 

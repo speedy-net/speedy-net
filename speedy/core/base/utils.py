@@ -35,7 +35,7 @@ def normalize_slug(slug):
 
 def normalize_username(slug):
     slug = normalize_slug(slug=slug)
-    username = re.sub('[-\._]', '', slug)
+    username = re.sub('[-\/._]', '', slug)
     return username
 
 

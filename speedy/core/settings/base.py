@@ -226,3 +226,14 @@ THUMBNAIL_DUMMY = True
 # Tests
 
 TEST_RUNNER = 'speedy.core.base.test.SiteDiscoverRunner'
+
+SITE_PROFILES = {
+    'net': {
+        'site_profile_model': 'net_accounts.SiteProfile',
+        'site_id': int(env('SPEEDY_NET_SITE_ID'))
+    },
+    'match': {
+        'site_profile_model': 'match_accounts.SiteProfile',
+        'site_id': int(env('SPEEDY_MATCH_SITE_ID'))
+    }
+}

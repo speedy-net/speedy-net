@@ -1,9 +1,9 @@
 from django.contrib.sites.models import Site
 from django.core import mail
 
+from speedy.core.accounts.tests.test_factories import UserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.uploads.tests.test_factories import FileFactory
-from speedy.net.accounts.tests.test_factories import UserFactory
 from ..models import Feedback
 
 

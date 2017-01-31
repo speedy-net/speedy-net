@@ -20,12 +20,12 @@ class InactiveUserFactory(factory.DjangoModelFactory):
     class Meta:
         model = User
 
+
 class UserFactory(InactiveUserFactory):
 
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         self.profile.activate()
-
 
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):
