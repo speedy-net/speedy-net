@@ -165,10 +165,10 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
 
     def get(self, request, *args, **kwargs):
         site = Site.objects.get_current()
-        MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
-        NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
-        if site.pk == MATCH_SITE_ID and not request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active:
-            return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=NET_SITE_ID).domain})
+        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        if site.pk == SPEEDY_MATCH_SITE_ID and not request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active:
+            return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         return super().get(self.request, *args, **kwargs)
 
     def form_valid(self, form):
