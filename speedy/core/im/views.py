@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import resolve, reverse
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
@@ -11,6 +11,7 @@ from rules.contrib.views import PermissionRequiredMixin
 from speedy.core.profiles.views import UserMixin
 from .forms import MessageForm
 from .models import Chat
+from ..base.utils import normalize_username
 
 
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
@@ -70,6 +71,13 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
     template_name = 'im/chat_detail.html'
     paginate_by = 25
+
+    def dispatch(self, request, *args, **kwargs):
+        visited_user = self.get_user_queryset().filter(
+            username=normalize_username(slug=self.kwargs['chat_slug'])).first()
+        if visited_user and visited_user.slug != self.kwargs['chat_slug']:
+            return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}), permanent=True)
+        return super().dispatch(request, *args, **kwargs)
 
     def get_form(self):
         return MessageForm(**{
