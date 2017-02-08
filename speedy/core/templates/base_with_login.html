@@ -28,7 +28,7 @@
                     </div>
                     <div class="text-input-div">
                         <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                        <input name="username" type="text" class="form-control">
+                        <input name="username" type="text" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                         <label>{% trans 'Password' %}</label>
                     </div>
                     <div class="text-input-div">
-                        <input name="password" type="password" class="form-control">
+                        <input name="password" type="password" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                     </div>
                     <div class="forgot-password-div">
                         <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>

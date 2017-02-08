@@ -22,7 +22,7 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     site = Site.objects.get_current()
     params = {
         'protocol': 'https' if settings.USE_SSL else 'http',
-        'language': translation.get_language(),
+        'language': translation.get_language() or 'en', # TODO find solution in order find language in management commands (None is this case)
         'domain': site.domain,
     }
     context.update({

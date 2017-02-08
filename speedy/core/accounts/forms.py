@@ -91,7 +91,18 @@ class LocalizedFirstLastNameMixin(object):
         return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
 
 
-class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+class AddAttributesToFieldsMixin(object):
+
+    attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if field_name in self.attribute_fields:
+                field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize' : 'off', 'spellcheck': 'false'})
+
+
+class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     email = forms.EmailField(label=_('Your email'))
     new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
 
@@ -119,7 +130,7 @@ class RegistrationForm(CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLas
         return user
 
 
-class ProfileForm(LocalizedFirstLastNameMixin, forms.ModelForm):
+class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('date_of_birth', 'photo', 'slug', 'gender')
@@ -166,7 +177,7 @@ class ProfileNotificationsForm(forms.ModelForm):
         return super().save(commit=commit)
 
 
-class LoginForm(auth_forms.AuthenticationForm):
+class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data = self.data.copy()
@@ -212,9 +223,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         send_mail([to_email], 'accounts/email/password_reset', context)
 
 
-
-
-class SetPasswordForm(CleanNewPasswordMixin, auth_forms.SetPasswordForm):
+class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.SetPasswordForm):
     @property
     def helper(self):
         helper = FormHelper()
@@ -222,7 +231,7 @@ class SetPasswordForm(CleanNewPasswordMixin, auth_forms.SetPasswordForm):
         return helper
 
 
-class PasswordChangeForm(CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
+class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
     def __init__(self, **kwargs):
         user = kwargs.pop('user')
         super().__init__(user, **kwargs)
@@ -248,7 +257,7 @@ class SiteProfileActivationForm(forms.ModelForm):
         return super().save(commit=commit)
 
 
-class SiteProfileDeactivationForm(forms.Form):
+class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput)
 
     def __init__(self, **kwargs):
@@ -265,7 +274,7 @@ class SiteProfileDeactivationForm(forms.Form):
         return password
 
 
-class UserEmailAddressForm(CleanEmailMixin, ModelFormWithDefaults):
+class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFormWithDefaults):
     class Meta:
         model = UserEmailAddress
         fields = ('email',)
