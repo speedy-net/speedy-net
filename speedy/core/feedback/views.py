@@ -1,4 +1,7 @@
+from urllib import parse
+
 from django.core.urlresolvers import reverse_lazy
+from django.urls import resolve, Resolver404
 from django.http import Http404
 from django.views import generic
 
@@ -21,6 +24,7 @@ class FeedbackView(generic.CreateView):
         if self.get_type() != Feedback.TYPE_REPORT_ENTITY:
             return None
         try:
+            self.report_entity = True
             return Entity.objects.get(slug=slug)
         except Entity.DoesNotExist:
             raise Http404()
@@ -30,6 +34,7 @@ class FeedbackView(generic.CreateView):
         if self.get_type() != Feedback.TYPE_REPORT_FILE:
             return None
         try:
+            self.report_file = True
             return File.objects.get(id=id)
         except (File.DoesNotExist, ValueError):
             raise Http404()
@@ -46,6 +51,15 @@ class FeedbackView(generic.CreateView):
         return kwargs
 
 
-
 class FeedbackSuccessView(generic.TemplateView):
     template_name = 'feedback/feedback_success.html'
+
+    def get(self, request, *args, **kwargs):
+        redirect_from_path = parse.urlparse(self.request.META.get('HTTP_REFERER')).path
+        try:
+            redirect_from_view = resolve(redirect_from_path)
+            self.report_file = redirect_from_view.kwargs.get('report_file_id')
+            self.report_entity = redirect_from_view.kwargs.get('report_entity_slug')
+        except Resolver404:
+            pass
+        return super(FeedbackSuccessView, self).get(request, *args, **kwargs)
