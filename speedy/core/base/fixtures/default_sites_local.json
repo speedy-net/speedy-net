@@ -1,0 +1,34 @@
+[
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "name": "Speedy Net",
+      "domain": "speedy.net.localhost:8000"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 2,
+    "fields": {
+      "name": "Speedy Match",
+      "domain": "speedy.match.localhost:9000"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 3,
+    "fields": {
+      "name": "Speedy Composer",
+      "domain": "speedy.composer.localhost:10000"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 4,
+    "fields": {
+      "name": "Speedy Mail Software",
+      "domain": "speedy.mail.software.localhost:11000"
+    }
+  }
+]
