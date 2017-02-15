@@ -4,6 +4,9 @@ from datetime import date
 import factory
 import factory.fuzzy
 
+from django.contrib.sites.models import Site
+from django.conf import settings
+
 from speedy.core.accounts.models import normalize_username, User, UserEmailAddress
 
 
@@ -26,6 +29,11 @@ class UserFactory(InactiveUserFactory):
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         self.profile.activate()
+        site = Site.objects.get_current()
+        speedy_match_site_id = settings.SITE_PROFILES.get('match').get('site_id')
+        if site.id == speedy_match_site_id:
+            net_profile = self.get_profile(model=None, profile_model=settings.SITE_PROFILES.get('net').get('site_profile_model'))
+            net_profile.activate()
 
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):

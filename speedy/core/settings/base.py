@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'speedy.core.uploads',
     'speedy.core.feedback',
     'speedy.net.accounts',
+    'speedy.match.accounts'
 ]
 
 MIDDLEWARE = [
@@ -237,3 +238,7 @@ SITE_PROFILES = {
         'site_id': int(env('SPEEDY_MATCH_SITE_ID'))
     }
 }
+
+FIXTURE_DIRS = [
+    str(ROOT_DIR / 'speedy/core/base/fixtures')
+]

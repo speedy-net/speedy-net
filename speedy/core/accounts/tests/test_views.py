@@ -6,7 +6,7 @@ from django.core import mail
 
 from speedy.core.accounts.models import Entity, User, UserEmailAddress, SiteProfileBase
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.base.test import exclude_on_speedy_match
+from speedy.core.base.test import exclude_on_speedy_match, exclude_on_speedy_net
 from .test_factories import UserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
@@ -352,11 +352,19 @@ class ActivateSiteProfileViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
 
+    @exclude_on_speedy_match
     def test_inactive_user_can_request_activation(self):
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.profile.is_active)
+
+    @exclude_on_speedy_net
+    def test_inactive_match_profile_inactive_net_profile_cannot_activate(self):
+        r = self.client.post(self.page_url)
+        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        user = User.objects.get(id=self.user.id)
+        self.assertFalse(expr=user.profile.is_active)
 
 
 @exclude_on_speedy_composer
