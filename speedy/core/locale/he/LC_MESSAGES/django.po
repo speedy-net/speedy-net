@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 09:43+0000\n"
+"POT-Creation-Date: 2017-02-16 16:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,220 +18,220 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accounts/forms.py:56
+#: accounts/forms.py:57
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: accounts/forms.py:64
+#: accounts/forms.py:65
 msgid "Password too short."
 msgstr "הסיסמה קצרה מדי."
 
-#: accounts/forms.py:66
+#: accounts/forms.py:67
 msgid "Password too long."
 msgstr "הסיסמה ארוכה מדי."
 
-#: accounts/forms.py:94
+#: accounts/forms.py:106
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: accounts/forms.py:95
+#: accounts/forms.py:107
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: accounts/forms.py:103
+#: accounts/forms.py:115
 msgid "New username"
 msgstr "הדואר האלקטרוני שלך"
 
-#: accounts/forms.py:106
+#: accounts/forms.py:118
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: accounts/forms.py:139 accounts/forms.py:160
+#: accounts/forms.py:151 accounts/forms.py:172
 msgid "Save Changes"
 msgstr ".לא ניתן לשנות שם משתמש/ת"
 
-#: accounts/forms.py:145
+#: accounts/forms.py:157
 msgid "You can't change your username."
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: accounts/forms.py:174 templates/base_with_login.html:27
+#: accounts/forms.py:186 templates/base_with_login.html:27
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: accounts/forms.py:179 templates/accounts/login.html:6
+#: accounts/forms.py:191 templates/accounts/login.html:6
 #: templates/accounts/login.html:12 templates/base_with_login.html:47
 msgid "Login"
 msgstr "כניסה"
 
-#: accounts/forms.py:182 templates/base_with_login.html:43
+#: accounts/forms.py:194 templates/base_with_login.html:43
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: accounts/forms.py:194 accounts/forms.py:220
+#: accounts/forms.py:206 accounts/forms.py:230
 msgid "Submit"
 msgstr ""
 
-#: accounts/forms.py:230
+#: accounts/forms.py:240
 msgid "Change"
 msgstr ""
 
-#: accounts/forms.py:242
+#: accounts/forms.py:252
 msgid "Activate my {} account"
 msgstr "הפעל/י את החשבון שלי ב{}"
 
-#: accounts/forms.py:251
+#: accounts/forms.py:261
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: accounts/forms.py:258
+#: accounts/forms.py:268
 msgid "Deactivate your {} account"
 msgstr "הפסק/י את פעילות החשבון שלי ב{}"
 
-#: accounts/forms.py:263
+#: accounts/forms.py:273
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: accounts/forms.py:275
+#: accounts/forms.py:285
 msgid "Add"
 msgstr "הוסף/י"
 
-#: accounts/models.py:25
+#: accounts/models.py:28
 msgid "Only me"
 msgstr "רק אני"
 
-#: accounts/models.py:26
+#: accounts/models.py:29
 msgid "Me and my friends"
 msgstr "אני והחברים שלי"
 
-#: accounts/models.py:28
+#: accounts/models.py:31
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: accounts/models.py:47
+#: accounts/models.py:50
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: accounts/models.py:47 accounts/models.py:48 accounts/validators.py:11
+#: accounts/models.py:50 accounts/models.py:51 accounts/validators.py:11
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס"
 
-#: accounts/models.py:48
+#: accounts/models.py:51
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: accounts/models.py:49
+#: accounts/models.py:52
 msgid "photo"
 msgstr "תמונה"
 
-#: accounts/models.py:57 accounts/models.py:58 im/models.py:89
+#: accounts/models.py:60 accounts/models.py:61 im/models.py:89
 msgid "entity"
 msgstr "ישות"
 
-#: accounts/models.py:71
+#: accounts/models.py:74
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: accounts/models.py:119
+#: accounts/models.py:122
 msgid "name"
 msgstr "שם"
 
-#: accounts/models.py:140
+#: accounts/models.py:143
 msgid "Female"
 msgstr "נקבה"
 
-#: accounts/models.py:141
+#: accounts/models.py:144
 msgid "Male"
 msgstr "זכר"
 
-#: accounts/models.py:142
+#: accounts/models.py:145
 msgid "Other"
 msgstr "אחר/ת"
 
-#: accounts/models.py:150
+#: accounts/models.py:153
 msgid "Please select..."
 msgstr "בחר/י בבקשה..."
 
-#: accounts/models.py:151
+#: accounts/models.py:154
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: accounts/models.py:152
+#: accounts/models.py:155
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: accounts/models.py:153
+#: accounts/models.py:156
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: accounts/models.py:158
+#: accounts/models.py:161
 msgid "first name"
 msgstr "שם פרטי"
 
-#: accounts/models.py:159
+#: accounts/models.py:162
 msgid "last name"
 msgstr "שם משפחה"
 
-#: accounts/models.py:160
+#: accounts/models.py:163
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: accounts/models.py:161
+#: accounts/models.py:164
 msgid "I am"
 msgstr "אני"
 
-#: accounts/models.py:162
+#: accounts/models.py:165
 msgid "diet"
 msgstr "תזונה"
 
-#: accounts/models.py:174 accounts/models.py:228 blocks/models.py:10
+#: accounts/models.py:177 accounts/models.py:235 blocks/models.py:10
 msgid "user"
 msgstr "משתמש/ת"
 
-#: accounts/models.py:175
+#: accounts/models.py:178
 msgid "users"
 msgstr "משתמשים"
 
-#: accounts/models.py:229
+#: accounts/models.py:236
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: accounts/models.py:230
+#: accounts/models.py:237
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: accounts/models.py:231
+#: accounts/models.py:238
 msgid "is primary"
 msgstr "ראשי"
 
-#: accounts/models.py:232
+#: accounts/models.py:239
 msgid "confirmation token"
 msgstr ""
 
-#: accounts/models.py:233
+#: accounts/models.py:240
 msgid "confirmation sent"
 msgstr ""
 
-#: accounts/models.py:234
+#: accounts/models.py:241
 msgid "who can see this email"
 msgstr ""
 
-#: accounts/models.py:237
+#: accounts/models.py:244
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: accounts/models.py:238
+#: accounts/models.py:245
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: accounts/models.py:285
+#: accounts/models.py:292
 msgid "Notify"
 msgstr "מקבל הודעות"
 
-#: accounts/models.py:286
+#: accounts/models.py:293
 msgid "Don't notify"
 msgstr "לא מקבל הודעות"
 
-#: accounts/models.py:290
+#: accounts/models.py:297
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -247,39 +247,39 @@ msgid ""
 "digits. You can add dashes between words."
 msgstr ""
 
-#: accounts/views.py:63
+#: accounts/views.py:64
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: accounts/views.py:148
+#: accounts/views.py:149
 msgid "Your new password has been saved."
 msgstr ""
 
-#: accounts/views.py:166
+#: accounts/views.py:182
 msgid "Welcome to {}!"
 msgstr "ברוכ/ה הבא/ה ל{}!"
 
-#: accounts/views.py:187
+#: accounts/views.py:203
 msgid ""
 "Your Speedy Net and Speedy Match account has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 
-#: accounts/views.py:189
+#: accounts/views.py:205
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
 "Speedy Net account remains intact."
 msgstr ""
 
-#: accounts/views.py:202
+#: accounts/views.py:218
 msgid "You've already confirmed this email address."
 msgstr ""
 
-#: accounts/views.py:206
+#: accounts/views.py:222
 msgid "You've confirmed your email address."
 msgstr ""
 
-#: accounts/views.py:208
+#: accounts/views.py:224
 msgid "Invalid confirmation link."
 msgstr ""
 
@@ -453,11 +453,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: settings/base.py:189
+#: settings/base.py:191
 msgid "English"
 msgstr ""
 
-#: settings/base.py:190
+#: settings/base.py:192
 msgid "Hebrew"
 msgstr ""
 
@@ -481,9 +481,17 @@ msgstr ""
 msgid "Welcome to"
 msgstr ""
 
+#: templates/accounts/edit_profile/activate.html:16
+msgid "Please validate your email address"
+msgstr ""
+
+#: templates/accounts/edit_profile/activate.html:21
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+
 #: templates/accounts/edit_profile/base.html:6
 #: templates/accounts/edit_profile/base.html:10
-#: templates/base_with_login.html:10 templates/base_with_login.html:94
+#: templates/base_with_login.html:10 templates/base_with_login.html:96
 #: templates/profiles/tools/edit_profile.html:6
 msgid "Edit Profile"
 msgstr ""
@@ -504,11 +512,11 @@ msgstr ""
 msgid "Emails & Password"
 msgstr ""
 
-#: templates/accounts/edit_profile/base.html:23
+#: templates/accounts/edit_profile/base.html:24
 msgid "Blocked Users"
 msgstr "משתמשים חסומים"
 
-#: templates/accounts/edit_profile/base.html:25
+#: templates/accounts/edit_profile/base.html:27
 msgid "Deactivate Account"
 msgstr ""
 
@@ -700,12 +708,12 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: templates/base_with_login.html:77 templates/friends/base.html:7
+#: templates/base_with_login.html:78 templates/friends/base.html:7
 #: templates/friends/user_friends_widget.html:15
 msgid "Friends"
 msgstr ""
 
-#: templates/base_with_login.html:85 templates/im/chat_detail.html:13
+#: templates/base_with_login.html:86 templates/im/chat_detail.html:13
 #: templates/im/chat_list.html:8 templates/im/chat_list.html:13
 msgid "Messages"
 msgstr ""
