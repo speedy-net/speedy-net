@@ -5,13 +5,17 @@
 
 {% block title %}{% trans 'Welcome' %} / {{ block.super }}{% endblock %}
 
-{% block full_content %}
+{% block content %}
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10">
             <div class="page-header">
                 <h1>{% trans 'Welcome to' %} {{ site.name }}</h1>
             </div>
-            {% if form %}
+            {% if not request.user.has_verified_email %}
+                <div class="alert alert-danger">
+                    {% trans 'Please validate your email address' %}
+                </div>
+            {% elif form %}
                 {% crispy form %}
             {% else %}
                 <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' %}</a>

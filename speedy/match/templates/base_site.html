@@ -6,8 +6,11 @@
 
 {% block user_menu %}
     {{ block.super }}
-    <li><a href="{% url 'likes:list' request.user.slug %}">
-        <i class="fa fa-fw fa-heart"></i>
-        {% trans 'Likes' %}
-    </a></li>
+    {% if request.user.profile.is_active %}
+        <li>
+            <a href="{% url 'likes:list' request.user.slug %}">
+                <i class="fa fa-fw fa-heart"></i>{% trans 'Likes' %}
+            </a>
+        </li>
+    {% endif %}
 {% endblock %}

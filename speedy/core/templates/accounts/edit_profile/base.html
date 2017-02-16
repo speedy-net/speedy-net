@@ -19,10 +19,14 @@
                 href="{% url 'accounts:edit_profile_notifications' %}">{% trans 'Notifications' %}</a></li>
         <li class="{% active_class 'accounts:edit_profile_credentials' %}"><a
                 href="{% url 'accounts:edit_profile_credentials' %}">{% trans 'Emails & Password' %}</a></li>
-        <li class="{% active_class 'blocks:list' %}"><a
-                href="{% url 'blocks:list' request.user.slug %}">{% trans 'Blocked Users' %}</a></li>
-        <li class="{% active_class 'accounts:deactivate_profile' %}"><a
-                href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' %}</a></li>
+        {% if request.user.profile.is_active %}
+            <li class="{% active_class 'blocks:list' %}">
+                <a href="{% url 'blocks:list' request.user.slug %}">{% trans 'Blocked Users' %}</a>
+            </li>
+            <li class="{% active_class 'accounts:deactivate_profile' %}">
+                <a href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' %}</a>
+            </li>
+        {% endif %}
     </ul>
     <br>
     {% block tab_content %}{% endblock %}

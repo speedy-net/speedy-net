@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -6,6 +8,7 @@ from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.timezone import now
+from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.accounts.validators import get_username_validators, get_slug_validators
@@ -206,6 +209,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     def has_confirmed_email(self):
         return self.email_addresses.filter(is_confirmed=True).exists()
+
+    @cached_property
+    def has_verified_email(self):
+        return self.has_confirmed_email() or self.date_created > now() - timedelta(hours=2)
 
     def activate(self):
         self.is_active = True

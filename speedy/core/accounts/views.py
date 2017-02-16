@@ -172,6 +172,12 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         return super().get(self.request, *args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        if request.user.has_verified_email:
+            return super().post(request, *args, **kwargs)
+        else:
+            return redirect(to=reverse_lazy('accounts:activate'))
+
     def form_valid(self, form):
         messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
         return super().form_valid(form=form)
