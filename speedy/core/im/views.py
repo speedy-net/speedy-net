@@ -73,20 +73,41 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
     paginate_by = 25
 
     def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return self.handle_no_permission()
         visited_user = self.get_user_queryset().filter(
             username=normalize_username(slug=self.kwargs['chat_slug'])).first()
         if visited_user and visited_user.slug != self.kwargs['chat_slug']:
-            return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}), permanent=True)
+            return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}))
+        if visited_user and visited_user != request.user and not Chat.on_site.chat_with(self.request.user, visited_user, create=False):
+            self.user = visited_user
+            self.chat = None
+            return self.get(request, *args, **kwargs)
         return super().dispatch(request, *args, **kwargs)
 
     def get_form(self):
-        return MessageForm(**{
-            'from_entity': self.user,
-            'chat': self.chat,
-        })
+        if self.chat:
+            return MessageForm(**{
+                'from_entity': self.request.user,
+                'chat': self.chat,
+            })
+        else:
+            return MessageForm(**{
+                'from_entity': self.request.user,
+                'to_entity': self.user,
+            })
 
     def get_queryset(self):
-        return self.get_messages_queryset()
+        if self.chat:
+            return self.get_messages_queryset()
+        else:
+            return []
+
+    def get_template_names(self):
+        if self.chat:
+            return 'im/chat_detail.html'
+        else:
+            return 'im/message_form.html'
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)

@@ -23,6 +23,8 @@ class MessageForm(forms.ModelForm):
         if self.chat:
             self.helper.form_action = reverse('im:chat_send',
                                               kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
+        else:
+            self.helper.form_action = reverse('im_entity:user_send', kwargs={'slug': self.to_entity.slug})
         self.helper.form_class = 'form-vertical'
         self.helper.layout = Layout(
             InlineField('text', style="height: 55px"),
