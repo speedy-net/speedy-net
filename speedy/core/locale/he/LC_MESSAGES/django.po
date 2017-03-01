@@ -40,7 +40,7 @@ msgstr "סיסמה חדשה"
 
 #: accounts/forms.py:115
 msgid "New username"
-msgstr "הדואר האלקטרוני שלך"
+msgstr "שם משתמש/ת חדש"
 
 #: accounts/forms.py:118
 msgid "Create an account"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-26 21:02+0000\n"
+"POT-Creation-Date: 2017-03-01 19:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accounts/models.py:12
+#: .\accounts\models.py:12
 msgid "on new messages"
 msgstr ""
 
-#: accounts/models.py:13
+#: .\accounts\models.py:13
 msgid "on new likes"
 msgstr ""
 
-#: accounts/models.py:14
+#: .\accounts\models.py:14
 msgid "active languages"
 msgstr ""
 
-#: likes/models.py:11
+#: .\likes\models.py:11
 msgid "from user"
 msgstr ""
 
-#: likes/models.py:15
+#: .\likes\models.py:15
 msgid "user like"
 msgstr ""
 
-#: likes/models.py:16
+#: .\likes\models.py:16
 msgid "user likes"
 msgstr ""
 
-#: settings/base_site.py:10
+#: .\settings\base_site.py:10
 msgid "Speedy Match [alpha]"
 msgstr "ספידי מץ' [אלפא]"
 
-#: templates/about/about.html:11
+#: .\templates\about\about.html:11
 msgid "About Speedy Match"
 msgstr "אודות ספידי מץ'"
 
-#: templates/about/about.html:15
+#: .\templates\about\about.html:15
 msgid ""
 "<a href=\"http://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching app for singles who are members of Speedy Net. "
@@ -66,7 +66,7 @@ msgstr ""
 "הודעות. ספידי מץ' פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין "
 "הגבלת גיל!). כיום האתר זמין בשתי שפות - עברית ואנגלית."
 
-#: templates/about/about.html:17
+#: .\templates\about\about.html:17
 msgid ""
 "The founders of Speedy Match are vegan, support animal rights and object to "
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
@@ -76,7 +76,7 @@ msgstr ""
 "לניסויים בבעלי חיים. ספידי מץ' היא אפליקציית הכרויות ידידותית לאנשים "
 "טבעוניים וצמחוניים ולבעלי חיים."
 
-#: templates/about/about.html:19
+#: .\templates\about\about.html:19
 msgid ""
 "Only people who match your requirements will be able to see your profile and "
 "contact you. We don't allow anonymous searches and Speedy Match profiles are "
@@ -90,7 +90,7 @@ msgstr ""
 "מתאימים בלבד. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם כציבוריים, "
 "אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו רק לכם."
 
-#: templates/about/about.html:21
+#: .\templates\about\about.html:21
 msgid ""
 "Speedy Net and Speedy Match are free of charge. Join Speedy Net today to "
 "find matching partners, it only takes a few minutes. <a href=\"/\" title="
@@ -100,7 +100,7 @@ msgstr ""
 "מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו "
 "כאן</a> כדי להצטרף."
 
-#: templates/about/about.html:23
+#: .\templates\about\about.html:23
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by e-mail."
@@ -108,7 +108,7 @@ msgstr ""
 "ספידי מץ' היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח "
 "ושיפור ספידי מץ', אנא צרו איתי קשר באמצעות דואר אלקטרוני."
 
-#: templates/about/about.html:25
+#: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is named after <a href=\"https://www.facebook.com/speedyevenchen"
 "\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
@@ -118,52 +118,52 @@ msgstr ""
 "title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
 "המליטה 7 גורים בשנת 1988."
 
-#: templates/about/about.html:27
+#: .\templates\about\about.html:27
 msgid "Speedy Match is currently in alpha. It was launched on 2017."
 msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה ב-2017."
 
-#: templates/about/about.html:29
+#: .\templates\about\about.html:29
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: templates/about/about.html:30
+#: .\templates\about\about.html:30
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: templates/about/about.html:31
+#: .\templates\about\about.html:31
 msgid "Founder and director of Speedy Net and Speedy Match,"
 msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
 
-#: templates/about/about.html:32
+#: .\templates\about\about.html:32
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
 
-#: templates/base_site.html:11 templates/likes/like_list.html:6
-#: templates/likes/like_list.html:10
+#: .\templates\base_site.html:12 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:10
 msgid "Likes"
 msgstr ""
 
-#: templates/likes/like_list.html:14
+#: .\templates\likes\like_list.html:14
 msgid "People I Like"
 msgstr ""
 
-#: templates/likes/like_list.html:16
+#: .\templates\likes\like_list.html:16
 msgid "People Who Likes Me"
 msgstr ""
 
-#: templates/likes/like_list.html:18
+#: .\templates\likes\like_list.html:18
 msgid "Mutual Likes"
 msgstr ""
 
-#: templates/likes/like_list.html:28
+#: .\templates\likes\like_list.html:28
 msgid "You have no likes here."
 msgstr ""
 
-#: templates/profiles/tools/like.html:13
+#: .\templates\profiles\tools\like.html:13
 msgid "Like"
 msgstr ""
 
-#: templates/profiles/tools/like.html:21
+#: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
 msgstr ""
 
