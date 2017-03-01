@@ -52,7 +52,7 @@ msgstr ".לא ניתן לשנות שם משתמש/ת"
 
 #: accounts/forms.py:157
 msgid "You can't change your username."
-msgstr "דואר אלקטרוני או שם משתמש/ת"
+msgstr ".לא ניתן לשנות שם משתמש/ת"
 
 #: accounts/forms.py:186 templates/base_with_login.html:27
 msgid "Email or Username"
