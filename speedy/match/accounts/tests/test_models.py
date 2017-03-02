@@ -2,6 +2,7 @@ from datetime import datetime
 
 from speedy.core.base.test import TestCase
 from ..models import SiteProfile
+from speedy.core.base.test import exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_net
 from speedy.core.accounts.tests.test_factories import UserFactory, User
 
 
@@ -18,6 +19,9 @@ class SiteProfileTestCase(TestCase):
         self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})
 
 
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
+@exclude_on_speedy_net
 class SiteProfileMatchTestCase(TestCase):
 
     def test_gender_doesnt_match_profile(self):
