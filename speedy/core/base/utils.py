@@ -2,6 +2,7 @@ import re
 import random
 import string
 import datetime
+from dateutil.relativedelta import relativedelta
 
 
 REGULAR_UDID_LENGTH = 20
@@ -41,5 +42,12 @@ def normalize_username(slug):
 
 
 def get_age(date_birth):
-    today = datetime.datetime.today()
+    today = datetime.date.today()
     return today.year - date_birth.year - int((today.month, today.day) < (date_birth.month, date_birth.day))
+
+
+def get_age_ranges_match(min_age, max_age):
+    current = datetime.date.today()
+    min_date = current - relativedelta(years=min_age)
+    max_date = current - relativedelta(years=max_age + 1) + relativedelta(days=1)
+    return max_date, min_date

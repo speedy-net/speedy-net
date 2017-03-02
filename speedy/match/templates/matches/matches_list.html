@@ -1,0 +1,21 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>
+            {% trans 'Your matches' %}
+        </h1>
+    </div>
+    {% for match in matches %}
+        {% include 'profiles/user_list_item.html' with user=match %}
+    {% empty %}
+        <div class="alert alert-warning">
+            {% trans 'This user has no matches yet.' %}
+        </div>
+    {% endfor %}
+{% endblock %}

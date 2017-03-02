@@ -64,8 +64,8 @@ class SiteProfile(SiteProfileBase):
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
     height = models.SmallIntegerField(verbose_name=_('height'), null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('minial age to match'), null=True, default=0)
-    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), null=True, default=180)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minial age to match'), default=0)
+    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=180)
     smoking = models.SmallIntegerField(verbose_name=_('smoking'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
     city = models.CharField(verbose_name=_('city'), max_length=255, null=True)
     marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
@@ -108,6 +108,7 @@ class SiteProfile(SiteProfileBase):
         if second_call:
             other_user_rank = other_profile.matching_function(other_profile=self, second_call=False)
             rank = other_user_rank and rank
+        other_profile.rank = rank
         return rank
 
     @property

@@ -9,7 +9,14 @@
     {% if request.user.profile.is_active %}
         <li>
             <a href="{% url 'likes:list' request.user.slug %}">
-                <i class="fa fa-fw fa-heart"></i>{% trans 'Likes' %}
+                <i class="fa fa-fw fa-heart"></i>
+                {% trans 'Likes' %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'matches:list' %}">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span>{% trans 'Matches' %}</span>
             </a>
         </li>
     {% endif %}

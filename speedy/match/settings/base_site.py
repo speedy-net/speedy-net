@@ -13,6 +13,7 @@ ROOT_URLCONF = 'speedy.match.urls'
 
 INSTALLED_APPS += [
     'speedy.match.likes',
+    'speedy.match.matches'
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'

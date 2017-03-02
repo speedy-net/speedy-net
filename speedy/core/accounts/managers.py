@@ -8,8 +8,8 @@ class UserManager(BaseUserManager):
         from .models import normalize_username
         return self.distinct().get(Q(username=normalize_username(slug=username)) | Q(email_addresses__email=username))
 
-    def active(self):
-        return self.filter(is_active=True)
+    def active(self, *args, **kwargs):
+        return self.filter(is_active=True, *args, **kwargs)
 
     def _create_user(self, slug, password, **extra_fields):
         """
