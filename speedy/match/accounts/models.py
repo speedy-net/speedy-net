@@ -10,12 +10,12 @@ from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 class SiteProfile(SiteProfileBase):
 
     SMOKING_UNKNOWN = 0
-    SMOKING_YES = 1
-    SMOKING_NO = 2
+    SMOKING_NO = 1
+    SMOKING_YES = 2
     SMOKING_SOMETIMES = 3
     SMOKING_CHOICES = (
-        (SMOKING_YES, _('Yes')),
         (SMOKING_NO, _('No')),
+        (SMOKING_YES, _('Yes')),
         (SMOKING_SOMETIMES, _('Sometimes'))
     )
 
@@ -35,7 +35,7 @@ class SiteProfile(SiteProfileBase):
         (MARITAL_STATUS_WIDOWED, _('Widowed')),
         (MARITAL_STATUS_IN_RELATIONSHIP, _('In a relatioship')),
         (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _('In an open relationship')),
-        (MARITAL_STATUS_COMPLICATED, _('Complicated')),
+        (MARITAL_STATUS_COMPLICATED, _('It\'s complicated')),
         (MARITAL_STATUS_SEPARATED, _('Separated')),
         (MARITAL_STATUS_MARRIED, _('Married'))
     )
