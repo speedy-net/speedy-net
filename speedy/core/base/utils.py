@@ -1,6 +1,7 @@
 import re
 import random
 import string
+import datetime
 
 
 REGULAR_UDID_LENGTH = 20
@@ -39,3 +40,6 @@ def normalize_username(slug):
     return username
 
 
+def get_age(date_birth):
+    today = datetime.datetime.today()
+    return today.year - date_birth.year - int((today.month, today.day) < (date_birth.month, date_birth.day))

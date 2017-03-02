@@ -1,37 +1,33 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import ugettext_lazy as _, get_language
 
-from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE
+from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE, User
+from speedy.core.base.utils import get_age
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
 class SiteProfile(SiteProfileBase):
 
-    DIET_VEGAN = 1
-    DIET_VEGETARIAN = 2
-    DIET_CARNIST = 3
-    DIET_CHOICES = (
-        (DIET_VEGAN, _('Vegan (eats only plants and fungi)')),
-        (DIET_VEGETARIAN, _('Vegetarian (doesn\'t eat fish and meat)')),
-        (DIET_CARNIST, _('Carnist (eats animals)'))
-    )
-
-    SMOKING_YES = 0
-    SMOKING_NO = 1
-    SMOKING_SOMETIMES = 2
+    SMOKING_UNKNOWN = 0
+    SMOKING_YES = 1
+    SMOKING_NO = 2
+    SMOKING_SOMETIMES = 3
     SMOKING_CHOICES = (
         (SMOKING_YES, _('Yes')),
         (SMOKING_NO, _('No')),
         (SMOKING_SOMETIMES, _('Sometimes'))
     )
-    MARITAL_STATUS_SINGLE = 0
-    MARITAL_STATUS_DIVORCED = 1
-    MARITAL_STATUS_WIDOWED = 2
-    MARITAL_STATUS_IN_RELATIONSHIP = 3
-    MARITAL_STATUS_IN_OPEN_RELATIONSHIP = 4
-    MARITAL_STATUS_COMPLICATED = 5
-    MARITAL_STATUS_SEPARATED = 6
-    MARITAL_STATUS_MARRIED= 7
+
+    MARITAL_STATUS_UNKNOWN = 0
+    MARITAL_STATUS_SINGLE = 1
+    MARITAL_STATUS_DIVORCED = 2
+    MARITAL_STATUS_WIDOWED = 3
+    MARITAL_STATUS_IN_RELATIONSHIP = 4
+    MARITAL_STATUS_IN_OPEN_RELATIONSHIP = 5
+    MARITAL_STATUS_COMPLICATED = 6
+    MARITAL_STATUS_SEPARATED = 7
+    MARITAL_STATUS_MARRIED = 8
 
     MARITAL_STATUS_CHOICES = (
         (MARITAL_STATUS_SINGLE, _('Single')),
@@ -67,34 +63,21 @@ class SiteProfile(SiteProfileBase):
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
-    men_to_match = models.NullBooleanField(verbose_name=_('Interested in men'), null=True)
-    women_to_match = models.NullBooleanField(verbose_name=_('Interested in women'), default=True)
-    other_to_match = models.NullBooleanField(verbose_name=_('Interested in others'), default=True)
-    height = models.SmallIntegerField(verbose_name=_('Height'), null=True)
-    diet = models.SmallIntegerField(verbose_name=_('Diet'), choices=DIET_CHOICES, null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('Minial age to match'), null=True)
-    max_age_match = models.SmallIntegerField(verbose_name=_('Minial age to match'), null=True)
-    smoking = models.SmallIntegerField(verbose_name=_('Smoking'), choices=SMOKING_CHOICES, null=True)
-    city = models.CharField(verbose_name=_('City'), max_length=255, null=True)
-    marital_status = models.SmallIntegerField(verbose_name=_('Marital status'), choices=MARITAL_STATUS_CHOICES, null=True)
-    children = models.TextField(verbose_name=_('Do you have children?'), null=True)
-    more_children = models.TextField(verbose_name=_('Do you want (more) children?'), null=True)
-    profile_desription = models.TextField(verbose_name=_('About myself'), null=True)
+    height = models.SmallIntegerField(verbose_name=_('height'), null=True)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minial age to match'), null=True, default=0)
+    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), null=True, default=180)
+    smoking = models.SmallIntegerField(verbose_name=_('smoking'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
+    city = models.CharField(verbose_name=_('city'), max_length=255, null=True)
+    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
+    children = models.TextField(verbose_name=_('do you have children?'), null=True)
+    more_children = models.TextField(verbose_name=_('do you want (more) children?'), null=True)
+    profile_desription = models.TextField(verbose_name=_('about myself'), null=True)
 
-    diet_vegan_match = models.SmallIntegerField(verbose_name=_('Vegan match'), choices=RANK_CHOICES, default=RANK_5)
-    diet_vegetarian_match = models.SmallIntegerField(verbose_name=_('Vegetarian match'), choices=RANK_CHOICES, default=RANK_5)
-    diet_carnist_match = models.SmallIntegerField(verbose_name=_('Carnist match'), choices=RANK_CHOICES, default=RANK_5)
-    smoking_yes_match = models.SmallIntegerField(verbose_name=_('Smoking match'), choices=RANK_CHOICES, default=RANK_5)
-    smoking_no_match = models.SmallIntegerField(verbose_name=_('No smoking match'), choices=RANK_CHOICES, default=RANK_5)
-    smoking_sometimes_match = models.SmallIntegerField(verbose_name=_('Sometimes smoking match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_single_match = models.SmallIntegerField(verbose_name=_('Singles match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_divorced_match = models.SmallIntegerField(verbose_name=_('Divorced match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_widowed_match = models.SmallIntegerField(verbose_name=_('Widowed match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_relationship_match = models.SmallIntegerField(verbose_name=_('I an relationship match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_open_relationship_match = models.SmallIntegerField(verbose_name=_('I an open relationship match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_complicated_match = models.SmallIntegerField(verbose_name=_('I an complicated relationship match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_separated_match = models.SmallIntegerField(verbose_name=_('Separated match'), choices=RANK_CHOICES, default=RANK_5)
-    marital_married_match = models.SmallIntegerField(verbose_name=_('Married match'), choices=RANK_CHOICES, default=RANK_5)
+    gender_to_match = ArrayField(models.SmallIntegerField(), size=3, default=[User.GENDER_FEMALE, User.GENDER_MALE, User.GENDER_OTHER])
+
+    diet_match = JSONField(verbose_name=('diet match'), default={})
+    smoking_match = JSONField(verbose_name=('smoking match'), default={})
+    marital_match = JSONField(verbose_name=_('marital match'), default={})
 
     class Meta:
         verbose_name = 'Speedy Match Profile'
@@ -111,6 +94,21 @@ class SiteProfile(SiteProfileBase):
         languages.append(get_language())
         self.set_active_languages(languages)
         self.save(update_fields={'active_languages'})
+
+    def matching_function(self, other_profile, second_call=True) -> int:
+        other_user_age = get_age(other_profile.user.date_of_birth)
+        if not self.min_age_match <= other_user_age <= self.max_age_match:
+            return 0
+        if other_profile.user.gender not in self.gender_to_match:
+            return 0
+        diet_rank = self.diet_match.get(other_profile.user.diet, 5)
+        smoking_rank = self.smoking_match.get(other_profile.smoking, 5)
+        marital_rank = self.marital_match.get(other_profile.marital_status, 5)
+        rank = min([diet_rank, smoking_rank, marital_rank])
+        if second_call:
+            other_user_rank = other_profile.matching_function(other_profile=self, second_call=False)
+            rank = other_user_rank and rank
+        return rank
 
     @property
     def is_active(self):
