@@ -49,7 +49,7 @@
 
     {% else %}
         <div class="alert alert-warning">
-            {% trans 'You have no messages yet.' %}
+            {% trans 'You have no messages yet.' context user.get_gender %}
         </div>
     {% endif %}
 

@@ -10,7 +10,7 @@
         <div class="btn-group">
             <button class="btn btn-default" type="submit">
                 <i class="fa fa-ban"></i>
-                {% trans 'Block User' %}
+                {% trans 'Block User' context user.get_gender %}
             </button>
             {% include 'profiles/tools/report_menu.html' %}
         </div>
@@ -21,7 +21,7 @@
         <div class="btn-group">
             <button class="btn btn-default" type="submit">
                 <i class="fa fa-ban"></i>
-                {% trans 'Unblock User' %}
+                {% trans 'Unblock User' context user.get_gender %}
             </button>
             {% include 'profiles/tools/report_menu.html' %}
         </div>

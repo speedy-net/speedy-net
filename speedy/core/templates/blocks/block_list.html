@@ -7,7 +7,7 @@
         {% include 'profiles/user_list_item.html' with user=block.blockee.user %}
     {% empty %}
         <div class="alert alert-warning">
-            {% trans "You're blocking nobody." %}
+            {% trans "You're blocking nobody." context user.get_gender %}
         </div>
     {% endfor %}
 

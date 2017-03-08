@@ -229,6 +229,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
             model = get_site_profile_model(profile_model=profile_model)
         return model.objects.get_or_create(user=self)[0]
 
+    def get_gender(self):
+        genders = {1: 'female', 2: 'male', 'other': 3}
+        return genders.get(self.gender)
+
 
 class UserEmailAddress(TimeStampedModel):
     id = RegularUDIDField()

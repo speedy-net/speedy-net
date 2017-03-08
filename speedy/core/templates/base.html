@@ -82,7 +82,7 @@
     {% endfor %}
     {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
         <div class="alert alert-danger">
-            {% trans "You haven't confirmed your email address. Please check your inbox." %}
+            {% trans "You haven't confirmed your email address. Please check your inbox." context user.get_gender %}
         </div>
     {% endif %}
 

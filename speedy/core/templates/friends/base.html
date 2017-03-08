@@ -12,7 +12,7 @@
     {% if can_view_requests %}
         <ul class="nav nav-tabs">
             <li class="{% active_class 'friends:list' %}"><a
-                    href="{% url 'friends:list' user.slug %}">{% trans 'Your Friends' %}</a></li>
+                    href="{% url 'friends:list' user.slug %}">{% trans 'Your Friends' context user.gender %}</a></li>
             <li class="{% active_class 'friends:received_requests' %}"><a
                     href="{% url 'friends:received_requests' user.slug %}">
                 {% trans 'Received Requests' %}

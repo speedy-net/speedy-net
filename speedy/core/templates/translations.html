@@ -1,0 +1,71 @@
+{% load i18n %}
+
+{#core/templates/base.html 85#}
+{% trans "You haven't confirmed your email address. Please check your inbox." context 'male' %}
+{% trans "You haven't confirmed your email address. Please check your inbox." context 'female' %}
+{% trans "You haven't confirmed your email address. Please check your inbox." context 'other' %}
+
+{#core/templates/profiles/block_warning.html 9#}
+{% trans 'You blocked this user.' context 'male' %}
+{% trans 'You blocked this user.' context 'female' %}
+{% trans 'You blocked this user.' context 'other' %}
+
+{#core/templates/profiles/block_warning.html 11#}
+{% trans 'This user blocked you.' 'male' %}
+{% trans 'This user blocked you.' 'female' %}
+{% trans 'This user blocked you.' 'other' %}
+
+{#core/templates/profiles/tools/your_friend.html 9#}
+{% trans 'Your Friend' context 'male' %}
+{% trans 'Your Friend' context 'female' %}
+{% trans 'Your Friend' context 'other' %}
+
+{#core/templates/profiles/tools/block_user.html 13#}
+{% trans 'Block User' context 'male' %}
+{% trans 'Block User' context 'female' %}
+{% trans 'Block User' context 'other' %}
+
+{#core/templates/profiles/tools/block_user.html 24#}
+{% trans 'Unblock User' context 'male' %}
+{% trans 'Unblock User' context 'female' %}
+{% trans 'Unblock User' context 'other' %}
+
+{#core/templates/im/message_form.html 7#}
+{% blocktrans context 'male' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'female' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'other' %}Send a message to {{ user }}{% endblocktrans %}
+
+{#core/templates/im/chat_list.html 52#}
+{% trans 'You have no messages yet.' context 'male' %}
+{% trans 'You have no messages yet.' context 'female' %}
+{% trans 'You have no messages yet.' context 'other' %}
+
+{#core/templates/friends/base.html 15#}
+{% trans 'Your Friends' context 'male' %}
+{% trans 'Your Friends' context 'female' %}
+{% trans 'Your Friends' context 'other' %}
+
+{#core/templates/feedback/feedback_success.html 11#}
+{% trans 'Your feedback was sent to administrators.' context 'male' %}
+{% trans 'Your feedback was sent to administrators.' context 'female' %}
+{% trans 'Your feedback was sent to administrators.' context 'other' %}
+
+{#core/templates/blocks/block_list.html 10#}
+{% trans "You're blocking nobody." context 'male' %}
+{% trans "You're blocking nobody." context 'female' %}
+{% trans "You're blocking nobody." context 'other' %}
+
+{#core/templates/accounts/edit_profile/privacy.html 15#}
+{% trans 'Change emails which are visible on your page.' context 'male' %}
+{% trans 'Change emails which are visible on your page.' context 'female' %}
+{% trans 'Change emails which are visible on your page.' context 'other' %}
+
+{#core/templates/accounts/edit_profile/credentials.html 66#}
+{% trans 'Are you sure you want to delete this email address?' context 'male' %}
+{% trans 'Are you sure you want to delete this email address?' context 'female' %}
+{% trans 'Are you sure you want to delete this email address?' context 'other' %}
+
+{#core/templates/accounts/edit_profile/base.html# 16}
+{% trans 'Please validate your email address' context 'male' %}
+{% trans 'Please validate your email address' context 'female' %}
+{% trans 'Please validate your email address' context 'other' %}
