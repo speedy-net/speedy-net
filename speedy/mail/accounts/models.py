@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.net.accounts.models import SiteProfileBase
+from speedy.core.accounts.models import SiteProfileBase
 
 
 class SiteProfile(SiteProfileBase):

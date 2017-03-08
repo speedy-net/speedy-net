@@ -3,6 +3,17 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+sudo: required
+dist: trusty
+addons:
+  postgresql: "9.6"
+services:
+  - postgresql
+before_script:
+  - psql --version
+  - psql -c 'create user pguser;' -U postgres
+  - psql -c 'alter user pguser createdb; ' -U postgres
+  - psql -c 'alter user pguser createdb; ' -U postgres
 install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt

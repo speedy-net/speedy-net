@@ -66,7 +66,7 @@ class SiteProfileMatchTestCase(TestCase):
 
         user2 = UserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12),
                             gender=User.GENDER_MALE, diet=User.DIET_VEGETARIAN)
-        user2.profile.smoking = 1
+        user2.profile.smoking = SiteProfile.SMOKING_YES
         user2.diet = User.DIET_VEGAN
         rank = user1.profile.matching_function(user2.profile)
         self.assertEqual(rank, 3)
