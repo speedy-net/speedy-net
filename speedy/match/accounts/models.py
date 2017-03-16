@@ -56,7 +56,7 @@ class SiteProfile(SiteProfileBase):
         (RANK_5, _('5 stars'))
     )
 
-    access_account = ACCESS_FRIENDS
+    access_account = ACCESS_ANYONE
     access_dob_day_month = ACCESS_ANYONE
     access_dob_year = ACCESS_ANYONE
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)

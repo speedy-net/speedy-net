@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import redirect
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
@@ -23,7 +23,7 @@ class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         Block.objects.block(request.user, self.user)
-        messages.success(request, _('You have blocked this user.'))
+        messages.success(request, pgettext_lazy(self.user.get_gender(), 'You have blocked this user.'))
         return redirect(to=self.user)
 
 
@@ -35,5 +35,5 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         Block.objects.unblock(request.user, self.user)
-        messages.success(request, _('You have unblocked this user.'))
+        messages.success(request, pgettext_lazy(self.user.get_gender(), 'You have unblocked this user.'))
         return redirect(to=self.user)

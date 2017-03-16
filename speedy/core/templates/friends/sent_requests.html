@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block tab_content %}
-    {% for frequest in user.friendship_requests_sent.all %}
+    {% for frequest in sent_requests %}
         {% include 'profiles/user_list_item.html' with user=frequest.to_user %}
     {% empty %}
         <div class="alert alert-warning">

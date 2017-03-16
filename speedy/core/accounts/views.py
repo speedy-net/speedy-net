@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
-from django.utils.translation import ugettext_lazy as _, get_language
+from django.utils.translation import ugettext_lazy as _, get_language, pgettext_lazy
 from django.views import generic
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt
@@ -146,7 +146,7 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
         user = self.request.user
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         update_session_auth_hash(self.request, user)
-        messages.success(self.request, _('Your new password has been saved.'))
+        messages.success(self.request, pgettext_lazy(self.request.user.get_gender(), 'Your new password has been saved.'))
         return super().form_valid(form)
 
 
@@ -207,7 +207,7 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         return super().form_valid(form=form)
 
 
-class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):
+class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.View):
     model = UserEmailAddress
     success_url = reverse_lazy('accounts:edit_profile_emails')
 
@@ -215,11 +215,11 @@ class VerifyUserEmailAddressView(SingleObjectMixin, generic.View):
         email_address = self.get_object()
         token = self.kwargs.get('token')
         if email_address.is_confirmed:
-            messages.warning(self.request, _('You\'ve already confirmed this email address.'))
+            messages.warning(self.request, pgettext_lazy(self.request.user.get_gender(), 'You\'ve already confirmed this email address.'))
         else:
             if email_address.confirmation_token == token:
                 email_address.verify()
-                messages.success(self.request, _('You\'ve confirmed your email address.'))
+                messages.success(self.request, pgettext_lazy(self.request.user.get_gender(), 'You\'ve confirmed your email address.'))
             else:
                 messages.error(self.request, _('Invalid confirmation link.'))
         return HttpResponseRedirect(self.success_url)

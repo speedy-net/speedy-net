@@ -1,29 +1,75 @@
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from django.views import generic
 from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.core.accounts.utils import get_site_profile_model
+from speedy.core.accounts.models import User
 from speedy.core.profiles.views import UserMixin
 from .rules import friend_request_sent
 
 
-class UserFriendListView(UserMixin, generic.TemplateView):
+class FriendsMixin(object):
+
+    def get_friendship_requests(self):
+        site = Site.objects.get_current()
+        qs = self.user.friendship_requests_received.all()
+        if site.id == settings.SITE_PROFILES.get('net').get('site_id'):
+            return qs
+        qs = [u for u in qs if
+              self.user.profile.matching_function(other_profile=u.from_user.profile)]
+        return qs
+
+    def get_sent_friendship_request(self):
+        site = Site.objects.get_current()
+        qs = self.user.friendship_requests_sent.all()
+        if site.id == settings.SITE_PROFILES.get('net').get('site_id'):
+            return qs
+        qs = [u for u in qs if
+              self.user.profile.matching_function(other_profile=u.to_user.profile)]
+        return qs
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'received_requests': self.get_friendship_requests(),
+            'sent_requests': self.get_sent_friendship_request()
+        })
+        return cd
+
+
+class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
     template_name = 'friends/friend_list.html'
 
     def get_friends(self):
+        site = Site.objects.get_current()
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
-        qs = self.user.friends.all().extra(
-            select={
-                'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name)
-            },
-        ).order_by('-last_visit')
+        if site.id == settings.SITE_PROFILES.get('net').get('site_id'):
+            qs = self.user.friends.all().extra(select={
+                'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(
+                    table_name),
+            }, ).order_by('-last_visit')
+            return qs
+
+        qs = self.user.friends.all().extra(select={
+            'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
+            'like_exists': 'SELECT COUNT(1) FROM likes_userlike '
+                           'WHERE from_user_id = friendship_friend.from_user_id OR to_user_id=friendship_friend.from_user_id',
+
+            'messages_exists': 'SELECT COUNT(1) FROM im_chat '
+                               'WHERE ent1_id=friendship_friend.from_user_id OR ent2_id=friendship_friend.from_user_id'
+        }, ).order_by('-last_visit')
+
+        qs = [u for u in qs if
+              self.user.profile.matching_function(other_profile=u.from_user.profile) or u.like_exists or u.messages_exists]
         return qs
 
     def get_context_data(self, **kwargs):
@@ -34,12 +80,12 @@ class UserFriendListView(UserMixin, generic.TemplateView):
         return cd
 
 
-class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
+class ReceivedFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
     template_name = 'friends/received_requests.html'
     permission_required = 'friends.view_requests'
 
 
-class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, generic.TemplateView):
+class SentFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
     template_name = 'friends/sent_requests.html'
     permission_required = 'friends.view_requests'
 
@@ -48,7 +94,7 @@ class LimitMaxFriendsMixin(object):
     def check_own_friends(self):
         user_number_of_friends = len(Friend.objects.friends(self.request.user))
         if user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
-            raise ValidationError(_("You already have {0} friends. You can't have more than {1} friends on "
+            raise ValidationError(pgettext_lazy(self.request.user.get_gender(), "You already have {0} friends. You can't have more than {1} friends on "
                                     "Speedy Net. Please remove friends before you proceed.").format(
                 user_number_of_friends,
                 settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
@@ -56,7 +102,7 @@ class LimitMaxFriendsMixin(object):
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user))
         if other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
-            raise ValidationError(_("This user already has {0} friends. They can't have more than {1} friends on "
+            raise ValidationError(pgettext_lazy(user.get_gender(), "This user already has {0} friends. They can't have more than {1} friends on "
                                     "Speedy Net. Please ask them to remove friends before you proceed.").format(
                 other_user_number_of_friends,
                 settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
@@ -72,10 +118,10 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
         self.user = self.get_user()
         if request.user.is_authenticated:
             if friend_request_sent(request.user, self.user):
-                messages.warning(request, _('You already requested friendship from this user.'))
+                messages.warning(request, pgettext_lazy(request.user.get_gender(), 'You already requested friendship from this user.'))
                 return redirect(to=self.user)
             if Friend.objects.are_friends(request.user, self.user):
-                messages.warning(request, _('You already are friends with this user.'))
+                messages.warning(request, pgettext_lazy(request.user.get_gender(), 'You already are friends with this user.'))
                 return redirect(to=self.user)
         return super().dispatch(request, *args, **kwargs)
 
@@ -101,7 +147,7 @@ class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
             messages.error(request, _('No friend request.'))
             return redirect(to=self.user)
         frequest.cancel()
-        messages.success(request, _("You've cancelled your friend request."))
+        messages.success(request, pgettext_lazy(request.user.get_gender(), "You've cancelled your friend request."))
         return redirect(to=self.user)
 
 
@@ -157,5 +203,5 @@ class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         Friend.objects.remove_friend(self.request.user, self.user)
-        messages.success(request, _('You have removed this user from friends.'))
+        messages.success(request, pgettext_lazy(request.user.get_gender(), 'You have removed this user from friends.'))
         return redirect(to=self.user)

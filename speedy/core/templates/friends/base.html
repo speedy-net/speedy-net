@@ -16,12 +16,12 @@
             <li class="{% active_class 'friends:received_requests' %}"><a
                     href="{% url 'friends:received_requests' user.slug %}">
                 {% trans 'Received Requests' %}
-                <span class="badge">{{ user.friendship_requests_received.count }}</span>
+                <span class="badge">{{ received_requests|length }}</span>
             </a></li>
             <li class="{% active_class 'friends:sent_requests' %}"><a
                     href="{% url 'friends:sent_requests' user.slug %}">
                 {% trans 'Sent Requests' %}
-                <span class="badge">{{ user.friendship_requests_sent.count }}</span>
+                <span class="badge">{{ sent_requests|length }}</span>
             </a></li>
 
         </ul>

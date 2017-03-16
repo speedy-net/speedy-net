@@ -5,7 +5,7 @@ from django import forms
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
@@ -154,7 +154,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if normalize_username(slug=slug) != username:
-            raise forms.ValidationError(_('You can\'t change your username.'))
+            raise forms.ValidationError(pgettext_lazy(self.instance.get_gender(), 'You can\'t change your username.'))
         return slug
 
 

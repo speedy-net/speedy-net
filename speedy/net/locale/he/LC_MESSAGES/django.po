@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-01 19:21+0200\n"
+"POT-Creation-Date: 2017-03-16 13:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\forms.py:18
+#: accounts/forms.py:18
 msgid "Save Changes"
 msgstr "שמור/י את השינויים"
 
-#: .\accounts\models.py:16
+#: accounts/models.py:16
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:17
+#: accounts/models.py:17
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:18
+#: accounts/models.py:18
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:19
+#: accounts/models.py:19
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
 
-#: .\settings\base_site.py:10
+#: settings/base_site.py:10
 msgid "Speedy Net [alpha]"
 msgstr "ספידי נט [אלפא]"
 
-#: .\templates\about\about.html:11
+#: templates/about/about.html:11
 msgid "About Speedy Net"
 msgstr "אודות ספידי נט"
 
-#: .\templates\about\about.html:15
+#: templates/about/about.html:15
 msgid ""
 "<a href=\"http://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
 "new social network. With Speedy Net you can communicate with your friends. "
@@ -59,7 +59,7 @@ msgstr ""
 "להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר זמין כרגע "
 "בשתי שפות - עברית ואנגלית."
 
-#: .\templates\about\about.html:17
+#: templates/about/about.html:17
 msgid ""
 "The founders of Speedy Net are vegan, support animal rights and object to "
 "experiments on animals. Speedy Net is a social network friendly for vegan "
@@ -69,7 +69,7 @@ msgstr ""
 "בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים "
 "ולבעלי חיים."
 
-#: .\templates\about\about.html:19
+#: templates/about/about.html:19
 msgid ""
 "We decided to limit the number of friends on Speedy Net to 800. We encourage "
 "you to add as friends only people you know personally. You can select which "
@@ -81,7 +81,7 @@ msgstr ""
 "כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו "
 "רק לכם."
 
-#: .\templates\about\about.html:21
+#: templates/about/about.html:21
 msgid ""
 "You can use our new app, <a href=\"http://en.speedymatch.com/\" title="
 "\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
@@ -91,7 +91,7 @@ msgstr ""
 "\" title=\"ספידי מץ'\">ספידי מץ'</a>, להכיר בני-זוג או בנות-זוג מתאימים. "
 "ספידי מץ' פתוחה לפנויות/פנויים מכל הגילים."
 
-#: .\templates\about\about.html:23
+#: templates/about/about.html:23
 msgid ""
 "Speedy Net and Speedy Match are free of charge. Join Speedy Net today to "
 "find matching partners, it only takes a few minutes. <a href=\"/\" title="
@@ -101,7 +101,7 @@ msgstr ""
 "מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו "
 "כאן</a> כדי להצטרף."
 
-#: .\templates\about\about.html:25
+#: templates/about/about.html:25
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by e-mail."
@@ -109,7 +109,7 @@ msgstr ""
 "ספידי נט היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח "
 "ושיפור ספידי נט, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
 
-#: .\templates\about\about.html:27
+#: templates/about/about.html:27
 msgid ""
 "Speedy Net is named after <a href=\"https://www.facebook.com/speedyevenchen"
 "\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
@@ -119,23 +119,23 @@ msgstr ""
 "title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
 "המליטה 7 גורים בשנת 1988."
 
-#: .\templates\about\about.html:29
+#: templates/about/about.html:29
 msgid "Speedy Net is currently in alpha. It was launched on 13th June 2012."
 msgstr "ספידי נט היא כרגע באלפא. היא הושקה ב-13 ביוני 2012."
 
-#: .\templates\about\about.html:31
+#: templates/about/about.html:31
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: .\templates\about\about.html:32
+#: templates/about/about.html:32
 msgid "Uri Even-Chen"
 msgstr "אורי אבן-חן"
 
-#: .\templates\about\about.html:33
+#: templates/about/about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
 msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
 
-#: .\templates\about\about.html:34
+#: templates/about/about.html:34
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
 
