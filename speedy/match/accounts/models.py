@@ -107,7 +107,8 @@ class SiteProfile(SiteProfileBase):
         rank = min([diet_rank, smoking_rank, marital_rank])
         if second_call:
             other_user_rank = other_profile.matching_function(other_profile=self, second_call=False)
-            rank = other_user_rank and rank
+            if (other_user_rank == 0):
+                rank = 0
         other_profile.rank = rank
         return rank
 
