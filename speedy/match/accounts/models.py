@@ -101,11 +101,11 @@ class SiteProfile(SiteProfileBase):
             return 0
         if other_profile.user.gender not in self.gender_to_match:
             return 0
-        diet_rank = self.diet_match.get(other_profile.user.diet, 5)
-        smoking_rank = self.smoking_match.get(other_profile.smoking, 5)
-        marital_rank = self.marital_match.get(other_profile.marital_status, 5)
+        diet_rank = self.diet_match.get(other_profile.user.diet, self.RANK_5)
+        smoking_rank = self.smoking_match.get(other_profile.smoking, self.RANK_5)
+        marital_rank = self.marital_match.get(other_profile.marital_status, self.RANK_5)
         rank = min([diet_rank, smoking_rank, marital_rank])
-        if second_call:
+        if ((rank > 0) and (second_call)):
             other_user_rank = other_profile.matching_function(other_profile=self, second_call=False)
             if (other_user_rank == 0):
                 rank = 0
