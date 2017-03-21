@@ -43,7 +43,10 @@ def normalize_username(slug):
 
 def get_age(date_birth):
     today = datetime.date.today()
-    return today.year - date_birth.year - int((today.month, today.day) < (date_birth.month, date_birth.day))
+    age = today.year - date_birth.year
+    if ((today.month, today.day) < (date_birth.month, date_birth.day)):
+        age -= 1
+    return age
 
 
 def get_age_ranges_match(min_age, max_age):
