@@ -12,6 +12,7 @@ SITE_TITLE = _('Speedy Match [alpha]')
 ROOT_URLCONF = 'speedy.match.urls'
 
 INSTALLED_APPS += [
+    'speedy.match.accounts',
     'speedy.match.likes',
     'speedy.match.matches'
 ]

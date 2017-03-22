@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-16 13:26+0000\n"
+"POT-Creation-Date: 2017-03-22 15:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -339,19 +339,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: friends/views.py:90
+#: friends/views.py:136
 msgid "Friend request sent."
 msgstr ""
 
-#: friends/views.py:101
+#: friends/views.py:147
 msgid "No friend request."
 msgstr ""
 
-#: friends/views.py:134
+#: friends/views.py:180
 msgid "Friend request accepted."
 msgstr ""
 
-#: friends/views.py:149
+#: friends/views.py:195
 msgid "Friend request rejected."
 msgstr ""
 
@@ -399,11 +399,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: settings/base.py:191
+#: settings/base.py:190
 msgid "English"
 msgstr ""
 
-#: settings/base.py:192
+#: settings/base.py:191
 msgid "Hebrew"
 msgstr ""
 
@@ -1393,6 +1393,24 @@ msgstr ".ביטלת את חסימת המשתמש/ת הזה"
 msgctxt "other"
 msgid "You have no likes here."
 msgstr ".ביטלת את חסימת המשתמש/ת הזה"
+
+#: templates/translations.html:171
+msgctxt "female"
+msgid ""
+"This user doesn't match your profile but you can visit her Speedy Net profile"
+msgstr ""
+
+#: templates/translations.html:172
+msgctxt "male"
+msgid ""
+"This user doesn't match your profile but you can visit his Speedy Net profile"
+msgstr ""
+
+#: templates/translations.html:173
+msgctxt "other"
+msgid ""
+"This user doesn't match your profile but you can visit his Speedy Net profile"
+msgstr ""
 
 #: templates/uploads/file_input.html:6
 msgid "Browse..."

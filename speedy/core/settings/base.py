@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'speedy.core.uploads',
     'speedy.core.feedback',
     'speedy.net.accounts',
-    'speedy.match.accounts',
 ]
 
 MIDDLEWARE = [
