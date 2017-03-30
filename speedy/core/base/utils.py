@@ -54,3 +54,11 @@ def get_age_ranges_match(min_age, max_age):
     min_date = current - relativedelta(years=min_age)
     max_date = current - relativedelta(years=max_age + 1) + relativedelta(days=1)
     return max_date, min_date
+
+
+def reflection_import(name):
+    components = name.rsplit('.', maxsplit=2)
+    mod = __import__(components[0], fromlist=[components[-2]])
+    mod = getattr(mod, components[-2])
+    klass = getattr(mod, components[-1])
+    return klass

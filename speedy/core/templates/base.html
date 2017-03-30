@@ -21,6 +21,8 @@
         {% endif %}
         <link rel="stylesheet" href="{% static 'speedy-core/css/speedy-core.css' %}" />
     {% endblock %}
+    {% block extracss %}
+    {% endblock %}
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png" />
@@ -271,6 +273,8 @@
     <script src="{% static 'vendor/evil-blocks/evil-blocks.js' %}"></script>
     <script src="{% static 'speedy-core/js/speedy-core.js' %}"></script>
     {% block domain_cookie_login %}{% endblock %}
+{% endblock %}
+{% block extrajs %}
 {% endblock %}
 
 </body>

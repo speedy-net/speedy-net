@@ -14,7 +14,7 @@ from django.utils.translation import ugettext_lazy as _
 from speedy.core.accounts.validators import get_username_validators, get_slug_validators
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_username, normalize_slug, generate_confirmation_token
+from speedy.core.base.utils import normalize_username, normalize_slug, generate_confirmation_token, get_age
 from speedy.core.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
@@ -230,8 +230,19 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return model.objects.get_or_create(user=self)[0]
 
     def get_gender(self):
-        genders = {1: 'female', 2: 'male', 'other': 3}
+        genders = {1: 'female', 2: 'male', 3: 'other'}
         return genders.get(self.gender)
+
+    def get_gender_translated(self):
+        genders = {1: _('female'), 2: _('male'), 3: _('other')}
+        return genders.get(self.gender)
+
+    def get_diet(self):
+        diets = {1: _('Vegan'), 2: _('Vegetarian'), 3: _('Carnist')}
+        return diets.get(self.diet)
+
+    def get_age(self):
+        return get_age(date_birth=self.date_of_birth)
 
 
 class UserEmailAddress(TimeStampedModel):

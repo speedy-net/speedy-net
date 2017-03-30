@@ -1,0 +1,146 @@
+.activation-step-wrapper {
+    display: inline-block;
+}
+
+.activation-steps {
+    text-align: center;
+    /*padding: 0;*/
+}
+
+.activation-step {
+    font-size: 30px;
+    border-radius: 100%;
+    border: 1px solid #FF7B01;
+    width: 44px;
+    color: #FF7B01;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.activation-step.active {
+    background-color: #FF7B01;
+    color: white;
+}
+
+.activation-step.passed {
+    background-color: #FFBF7F;
+    color: white;
+    border-color: #FFBF7F;
+}
+
+.activation-form-header {
+    margin-top: 40px;
+    color: red;
+}
+
+.user-profile {
+    float: left;
+    padding-right: 50px;
+}
+
+.user-profile-image {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    background-color: #CCCCCC;
+    border-radius: 6px;
+}
+
+.user-profile-image .fa-camera {
+    font-size: 75px;
+    top: 30px;
+    position: absolute;
+    right: 50%;
+    margin-right: -40px;
+}
+
+.user-profile-general-info {
+    font-weight: bold;
+}
+
+.activation-form #id_photo {
+    display: none;
+}
+
+.activation-form {
+    margin: 20px 0;
+}
+
+.activation-form-field textarea, .activation-form-field input {
+    border-radius: 6px;
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+}
+
+.activation-form-field input[type=radio], .activation-form-field input[type=checkbox] {
+    width: auto;
+}
+
+.activation-form-field ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activation-form-field ul label{
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.activation-form-field input {
+    width: 125px;
+}
+
+.activation-form label {
+    font-size: 15px;
+    font-weight: bold;
+}
+.activation-form label[for=id_photo] {
+    margin-bottom: 15px;
+}
+
+.image-click-zone {
+    width: 325px;
+    height: 215px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    background-position: center center;
+    background-size: 100%;
+}
+
+.image-click-zone.uploaded .fa-camera {
+    display: none;
+}
+
+.image-click-zone .fa-camera {
+    font-size: 150px;
+    top: 35px;
+    left: 50%;
+    margin-left: -80px;
+    position: absolute;
+}
+
+.activation-form-actions {
+    margin-top: 30px;
+}
+
+.activation-form-button {
+    border-radius: 6px;
+    /*border-top-left-radius: 6px;*/
+    /*border-bottom-left-radius: 6px;*/
+    color: white;
+    background-color: #FF1C32;
+    font-size: 15px;
+    /*position: relative;*/
+}
+
+/*.activation-form-button:after {*/
+    /*content: '';*/
+  /*position: absolute;*/
+  /*background-color: inherit;*/
+    /*width:  2em;*/
+  /*height: 2em;*/
+  /*border-top-right-radius: 30%;*/
+    /*transform: rotate(-30deg) skewX(-30deg) scale(1,.866);*/
+/*}*/

@@ -20,3 +20,16 @@ INSTALLED_APPS += [
 AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = False
+
+SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileActivationForm'
+
+SITE_PROFILE_FORM_FIELDS = [
+    ['photo'],
+    ['profile_description', 'city', 'height'],
+    ['children', 'more_children'],
+    ['diet', 'smoking'],
+    ['marital_status'],
+    ['gender_to_match', 'match_description', 'min_age_match', 'max_age_match'],
+    ['diet_match', 'smoking_match'],
+    ['marital_match']
+]

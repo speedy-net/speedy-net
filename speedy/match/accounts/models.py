@@ -68,16 +68,17 @@ class SiteProfile(SiteProfileBase):
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=180)
     smoking = models.SmallIntegerField(verbose_name=_('smoking'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
     city = models.CharField(verbose_name=_('city'), max_length=255, null=True)
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
+    marital_status = models.SmallIntegerField(verbose_name=_('Marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
     children = models.TextField(verbose_name=_('do you have children?'), null=True)
     more_children = models.TextField(verbose_name=_('do you want (more) children?'), null=True)
-    profile_desription = models.TextField(verbose_name=_('about myself'), null=True)
-
-    gender_to_match = ArrayField(models.SmallIntegerField(), size=3, default=[User.GENDER_FEMALE, User.GENDER_MALE, User.GENDER_OTHER])
+    profile_description = models.TextField(verbose_name=_('Few words about me'), null=True)
+    match_description = models.TextField(verbose_name=_('My ideal match'), null=True)
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[User.GENDER_FEMALE, User.GENDER_MALE, User.GENDER_OTHER])
 
     diet_match = JSONField(verbose_name=('diet match'), default={})
     smoking_match = JSONField(verbose_name=('smoking match'), default={})
     marital_match = JSONField(verbose_name=_('marital match'), default={})
+    activation_step = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         verbose_name = 'Speedy Match Profile'

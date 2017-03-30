@@ -4,6 +4,7 @@ from django.template.loader import render_to_string
 
 from .models import File
 
+
 class FileInput(forms.TextInput):
     def render(self, name, value, attrs=None):
         if attrs is None:

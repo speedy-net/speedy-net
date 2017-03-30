@@ -19,7 +19,7 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
-
+from speedy.core.base.utils import reflection_import
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm
 from .models import UserEmailAddress
 
@@ -152,16 +152,30 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
 
 class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'accounts/edit_profile/activate.html'
-    form_class = SiteProfileActivationForm
     success_url = '/'
 
     def get_object(self, queryset=None):
         return self.request.user.profile
 
+    def get_form_class(self):
+        return reflection_import(settings.SITE_PROFILE_ACTIVATION_FORM)
+
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user.profile.is_active:
             return redirect(to=self.success_url)
         return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        cd.update({'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
+        return cd
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        if 'gender_to_match' in self.request.POST:
+            kwargs['data']['gender_to_match'] = ','.join(self.request.POST.getlist('gender_to_match'))
+        return kwargs
 
     def get(self, request, *args, **kwargs):
         site = Site.objects.get_current()
@@ -170,6 +184,10 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         # ~~~~ TODO: Generalize this to any app and not only Speedy Match (all the apps are deactivated when deactivating Speedy Net).
         if site.pk == SPEEDY_MATCH_SITE_ID and not request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active:
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
+        if site.pk == SPEEDY_MATCH_SITE_ID and 'back' in request.GET:
+            if request.user.profile.activation_step >= 1:
+                request.user.profile.activation_step -= 1
+                request.user.profile.save()
         return super().get(self.request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -179,8 +197,12 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return redirect(to=reverse_lazy('accounts:activate'))
 
     def form_valid(self, form):
-        messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
+        if self.object.is_active:
+            messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
+        else:
+            self.success_url = reverse_lazy('accounts:activate')
         return super().form_valid(form=form)
+        # return redirect(to=reverse_lazy('accounts:activate')) # Check if can use Super
 
 
 class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):

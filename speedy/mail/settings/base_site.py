@@ -14,3 +14,14 @@ INSTALLED_APPS += [
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'mail_accounts.SiteProfile'
+
+
+SITE_PROFILE_FORM_FIELDS = [
+    ['profile_description', 'city', 'height'],
+    ['children', 'more_children'],
+    ['diet', 'smoking'],
+    ['marital_status'],
+    ['gender_to_match', 'min_age_match', 'max_age_match'],
+    ['diet_match', 'smoking_match'],
+    ['marital_match']
+]
