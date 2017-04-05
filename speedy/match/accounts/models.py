@@ -120,4 +120,5 @@ class SiteProfile(SiteProfileBase):
 
     def deactivate(self):
         self.set_active_languages([])
-        self.save(update_fields={'active_languages'})
+        self.activation_step = 0
+        self.save(update_fields={'active_languages', 'activation_step'})

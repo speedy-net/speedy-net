@@ -1,0 +1,20 @@
+{% load core_tags_and_filters %}
+
+<div class="widget-json">
+    {% for choice in choices %}
+        <div class="widget-group" data-value="{{ choice.0 }}">
+            <input type="checkbox" class="widget-checkbox" {% if value|keyvalue:choice.0  %} checked="checked"}{% endif %}>
+            <span>{{ choice.1 }}</span>
+            <span class="pull-right flip">
+                <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="1"></i>
+                <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="2"></i>
+                <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="3"></i>
+                <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="4"></i>
+                <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="5"></i>
+            </span>
+            <div class="clearfix"></div>
+        </div>
+    {% endfor %}
+    <input type="hidden" value="{{ value|jsonify }}" name="{{ name }}" class="widget-input">
+</div>
+

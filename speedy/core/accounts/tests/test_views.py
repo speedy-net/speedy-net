@@ -360,6 +360,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
         self.assertTrue(expr=user.profile.is_active)
 
     @exclude_on_speedy_net
+    @exclude_on_speedy_match
     def test_inactive_match_profile_inactive_net_profile_cannot_activate(self):
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)

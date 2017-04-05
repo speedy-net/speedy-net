@@ -1,3 +1,5 @@
+import json
+
 from django import forms
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -29,6 +31,12 @@ class CustomCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
         return data.get(name)
 
 
+class CustomJsonWidget(CustomCheckboxSelectMultiple):
+
+    def render(self, name, value, attrs=None):
+        return render_to_string('accounts/edit_profile/activation_form/json_widget.html', {'choices': self.choices, 'name': name,'value': json.loads(value)})
+
+
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
 
     diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect())
@@ -46,7 +54,10 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'smoking': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
             'match_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            'gender_to_match': CustomCheckboxSelectMultiple(choices=User.GENDER_CHOICES)
+            'gender_to_match': CustomCheckboxSelectMultiple(choices=User.GENDER_CHOICES),
+            'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES[1:]),
+            'smoking_match': CustomJsonWidget(choices=SiteProfile.SMOKING_CHOICES),
+            'marital_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
         }
         labels = {
             'diet': _('My diet')
@@ -84,11 +95,9 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.instance.user.diet = self.cleaned_data['diet']
             self.instance.user.save()
         if commit:
-            site_profile_fields = settings.SITE_PROFILE_FORM_FIELDS
-            site_profile_fields = [item for sublist in site_profile_fields for item in sublist]
-            profile_complete = all([getattr(self.instance, f, None) for f in site_profile_fields if hasattr(self.instance, f)])
-            if profile_complete:
+            if self.instance.activation_step + 1 == len(settings.SITE_PROFILE_FORM_FIELDS):
                 self.instance.activate()
-        self.instance.activation_step += 1
+            else:
+                self.instance.activation_step += 1
         super().save(commit=commit)
         return self.instance

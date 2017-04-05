@@ -23,8 +23,8 @@
             {% elif form %}
                 <div class="activation-step-wrapper">
                     <div class="activation-steps">
-                        <span class="activation-step passed">1</span>
-                        <span class="activation-step active">2</span>
+                        <span class="activation-step">1</span>
+                        <span class="activation-step">2</span>
                         <span class="activation-step">3</span>
                         <span class="activation-step">4</span>
                         <span class="activation-step">5</span>
@@ -72,7 +72,7 @@
 
 {% block extrajs %}
     <script>
-        var profile_step = {{ request.user.profile.activation_step }};
+        var profile_activation_step = {{ request.user.profile.activation_step }};
     </script>
     <script src="{% static 'speedy-match/js/activation_form.js' %}"></script>
 {% endblock %}

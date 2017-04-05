@@ -197,11 +197,13 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return redirect(to=reverse_lazy('accounts:activate'))
 
     def form_valid(self, form):
+        # print(self.object.is_active)
+        response = super().form_valid(form=form)
         if self.object.is_active:
             messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
         else:
-            self.success_url = reverse_lazy('accounts:activate')
-        return super().form_valid(form=form)
+            return redirect(reverse_lazy('accounts:activate'))
+        return response
         # return redirect(to=reverse_lazy('accounts:activate')) # Check if can use Super
 
 

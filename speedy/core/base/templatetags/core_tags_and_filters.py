@@ -1,3 +1,4 @@
+import json
 from django import template
 
 register = template.Library()
@@ -56,3 +57,11 @@ def remove_1_prefix_from_domain(value):
     return value.replace("1.", "")
 
 
+@register.filter
+def jsonify(object):
+    return json.dumps(object)
+
+
+@register.filter
+def keyvalue(dictionary, key):
+    return dictionary.get(str(key))
