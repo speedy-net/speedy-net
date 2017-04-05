@@ -75,9 +75,18 @@ class SiteProfile(SiteProfileBase):
     match_description = models.TextField(verbose_name=_('My ideal match'), null=True)
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[User.GENDER_FEMALE, User.GENDER_MALE, User.GENDER_OTHER])
 
-    diet_match = JSONField(verbose_name=('diet match'), default={})
-    smoking_match = JSONField(verbose_name=('smoking match'), default={})
-    marital_match = JSONField(verbose_name=_('marital match'), default={})
+    diet_match = JSONField(verbose_name=('diet match'), default={User.DIET_VEGAN: RANK_5, User.DIET_VEGETARIAN: RANK_5, User.DIET_CARNIST: RANK_5})
+    smoking_match = JSONField(verbose_name=('smoking match'), default={SMOKING_NO: RANK_5, SMOKING_YES: RANK_5, SMOKING_SOMETIMES: RANK_5})
+    marital_match = JSONField(verbose_name=_('marital match'), default={
+        MARITAL_STATUS_SINGLE: RANK_5,
+        MARITAL_STATUS_DIVORCED: RANK_5,
+        MARITAL_STATUS_WIDOWED: RANK_5,
+        MARITAL_STATUS_IN_RELATIONSHIP: RANK_5,
+        MARITAL_STATUS_IN_OPEN_RELATIONSHIP: RANK_5,
+        MARITAL_STATUS_COMPLICATED: RANK_5,
+        MARITAL_STATUS_SEPARATED: RANK_5,
+        MARITAL_STATUS_MARRIED: RANK_5
+    })
     activation_step = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
