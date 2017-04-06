@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.timezone import now
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from speedy.core.accounts.validators import get_username_validators, get_slug_validators
 from speedy.core.base.mail import send_mail
@@ -243,6 +243,14 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
 
     def get_age(self):
         return get_age(date_birth=self.date_of_birth)
+
+    def get_diet_choices(self):
+        print('herere')
+        return (
+            (self.__class__.DIET_VEGAN, pgettext_lazy(context=self.get_gender(), message='Vegan (eats only plants and fungi)')),
+            (self.__class__.DIET_VEGETARIAN, pgettext_lazy(context=self.get_gender(), message='Vegetarian (doesn\'t eat fish and meat)')),
+            (self.__class__.DIET_CARNIST, pgettext_lazy(context=self.get_gender(), message='Carnist (eats animals)'))
+        )
 
 
 class UserEmailAddress(TimeStampedModel):

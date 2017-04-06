@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'FbDriveIn';
+    src: url('/static/speedy-match/fonts/FbDriveIn-Regular.otf')
+}
+
+body.bidi-rtl .user-profile {
+    padding-right: 0;
+}
+
 .activation-step-wrapper {
     display: inline-block;
 }
 
 .activation-steps {
     text-align: center;
-    /*padding: 0;*/
+    font-family: 'FbDriveIn';
 }
 
 .activation-step {
