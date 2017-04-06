@@ -39,7 +39,7 @@ class CustomJsonWidget(CustomCheckboxSelectMultiple):
 
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
 
-    diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect())
+    diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect(), label=_('My diet'))
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
@@ -59,15 +59,11 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'smoking_match': CustomJsonWidget(choices=SiteProfile.SMOKING_CHOICES),
             'marital_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
         }
-        labels = {
-            'diet': _('My diet')
-        }
 
     def get_fields(self):
         return settings.SITE_PROFILE_FORM_FIELDS[self.instance.activation_step]
 
     def __init__(self, *args, **kwargs):
-        # fields = kwargs.pop('fields', None)
         super().__init__(*args, **kwargs)
         fields = self.get_fields()
         fields_for_deletion = set(self.fields.keys()) - set(fields)
@@ -77,10 +73,13 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
 
         if 'diet' in self.fields:
+            self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
             if self.instance.user.diet != User.DIET_UNKNOWN:
                 self.fields['diet'].initial = self.instance.user.diet
             else:
                 self.fields['diet'].initial = User.DIET_VEGAN
+        if 'diet_match' in self.fields:
+            self.fields['diet_match'].widget.choices = self.instance.user.get_diet_choices()
 
     def save(self, commit=True):
         if commit and 'photo' in self.fields:

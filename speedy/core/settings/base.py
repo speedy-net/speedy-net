@@ -244,3 +244,5 @@ FIXTURE_DIRS = [
 ]
 
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
+
+MODELTRANSLATION_ENABLE_FALLBACKS = False
