@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-22 15:27+0000\n"
+"POT-Creation-Date: 2017-04-06 17:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,7 +179,7 @@ msgstr "אני"
 msgid "diet"
 msgstr "תזונה"
 
-#: accounts/models.py:177 accounts/models.py:239 blocks/models.py:10
+#: accounts/models.py:177 accounts/models.py:258 blocks/models.py:10
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -187,47 +187,77 @@ msgstr "משתמש/ת"
 msgid "users"
 msgstr "משתמשים"
 
-#: accounts/models.py:240
+#: accounts/models.py:237
+#, fuzzy
+#| msgid "Female"
+msgid "female"
+msgstr "נקבה"
+
+#: accounts/models.py:237
+#, fuzzy
+#| msgid "Female"
+msgid "male"
+msgstr "נקבה"
+
+#: accounts/models.py:237
+#, fuzzy
+#| msgid "Other"
+msgid "other"
+msgstr "אחר/ת"
+
+#: accounts/models.py:241
+msgid "Vegan"
+msgstr ""
+
+#: accounts/models.py:241
+msgid "Vegetarian"
+msgstr ""
+
+#: accounts/models.py:241
+msgid "Carnist"
+msgstr ""
+
+#: accounts/models.py:259
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: accounts/models.py:241
+#: accounts/models.py:260
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: accounts/models.py:242
+#: accounts/models.py:261
 msgid "is primary"
 msgstr "ראשי"
 
-#: accounts/models.py:243
+#: accounts/models.py:262
 msgid "confirmation token"
 msgstr ""
 
-#: accounts/models.py:244
+#: accounts/models.py:263
 msgid "confirmation sent"
 msgstr ""
 
-#: accounts/models.py:245
+#: accounts/models.py:264
 msgid "who can see this email"
 msgstr ""
 
-#: accounts/models.py:248
+#: accounts/models.py:267
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: accounts/models.py:249
+#: accounts/models.py:268
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: accounts/models.py:296
+#: accounts/models.py:315
 msgid "Notify"
 msgstr "מקבל הודעות"
 
-#: accounts/models.py:297
+#: accounts/models.py:316
 msgid "Don't notify"
 msgstr "לא מקבל הודעות"
 
-#: accounts/models.py:301
+#: accounts/models.py:320
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -247,23 +277,23 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: accounts/views.py:182
+#: accounts/views.py:203
 msgid "Welcome to {}!"
 msgstr "ברוכ/ה הבא/ה ל{}!"
 
-#: accounts/views.py:203
+#: accounts/views.py:227
 msgid ""
 "Your Speedy Net and Speedy Match account has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 
-#: accounts/views.py:205
+#: accounts/views.py:229
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
 "Speedy Net account remains intact."
 msgstr ""
 
-#: accounts/views.py:224
+#: accounts/views.py:248
 msgid "Invalid confirmation link."
 msgstr ""
 
@@ -415,7 +445,7 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
-#: templates/about/about_base.html:5 templates/base.html:177
+#: templates/about/about_base.html:5 templates/base.html:179
 msgid "About"
 msgstr "אודות"
 
@@ -478,7 +508,7 @@ msgstr ""
 msgid "Added"
 msgstr ""
 
-#: templates/accounts/edit_profile/credentials.html:14 templates/base.html:179
+#: templates/accounts/edit_profile/credentials.html:14 templates/base.html:181
 msgid "Privacy"
 msgstr "פרטיות"
 
@@ -581,7 +611,7 @@ msgid ""
 "                "
 msgstr ""
 
-#: templates/base.html:85
+#: templates/base.html:87
 #, fuzzy
 #| msgctxt "male"
 #| msgid "You haven't confirmed your email address. Please check your inbox."
@@ -589,74 +619,74 @@ msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: templates/base.html:179 templates/privacy/privacy_policy.html:8
+#: templates/base.html:181 templates/privacy/privacy_policy.html:8
 #: templates/privacy/privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: templates/base.html:181 templates/terms/terms_of_service.html:8
+#: templates/base.html:183 templates/terms/terms_of_service.html:8
 #: templates/terms/terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: templates/base.html:181
+#: templates/base.html:183
 msgid "Terms"
 msgstr "תנאים"
 
-#: templates/base.html:183 templates/feedback/feedback_base.html:6
+#: templates/base.html:185 templates/feedback/feedback_base.html:6
 #: templates/feedback/feedback_form.html:14
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: templates/base.html:189
+#: templates/base.html:191
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: templates/base.html:191
+#: templates/base.html:193
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: templates/base.html:193
+#: templates/base.html:195
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: templates/base.html:195
+#: templates/base.html:197
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: templates/base.html:197
+#: templates/base.html:199
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: templates/base.html:203
+#: templates/base.html:205
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: templates/base.html:205
+#: templates/base.html:207
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: templates/base.html:207
+#: templates/base.html:209
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: templates/base.html:209
+#: templates/base.html:211
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: templates/base.html:215
+#: templates/base.html:217
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: templates/base.html:217
+#: templates/base.html:219
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: templates/base.html:219
+#: templates/base.html:221
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: templates/base.html:257 templates/base.html:259
+#: templates/base.html:259 templates/base.html:261
 msgid "Speedy"
 msgstr "ספידי"
 
@@ -1411,6 +1441,55 @@ msgctxt "other"
 msgid ""
 "This user doesn't match your profile but you can visit his Speedy Net profile"
 msgstr ""
+
+#: templates/translations.html:176
+#, fuzzy
+#| msgid "Vegan (eats only plants and fungi)"
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+
+#: templates/translations.html:177
+#, fuzzy
+#| msgid "Vegan (eats only plants and fungi)"
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+
+#: templates/translations.html:178
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+
+#: templates/translations.html:181
+msgctxt "female"
+msgid "Vegetarian (doesn\\'t eat fish and meat)"
+msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+
+#: templates/translations.html:182
+msgctxt "male"
+msgid "Vegetarian (doesn\\'t eat fish and meat)"
+msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+
+#: templates/translations.html:183
+msgctxt "other"
+msgid "Vegetarian (doesn\\'t eat fish and meat)"
+msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+
+#: templates/translations.html:186
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "קרניסט/ית (אוכל/ת חיות)"
+
+#: templates/translations.html:187
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "קרניסט/ית (אוכל/ת חיות)"
+
+#: templates/translations.html:188
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "קרניסט/ית (אוכל/ת חיות)"
 
 #: templates/uploads/file_input.html:6
 msgid "Browse..."
