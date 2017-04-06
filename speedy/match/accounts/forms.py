@@ -95,6 +95,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.instance.user.save()
         if commit:
             if self.instance.activation_step + 1 == len(settings.SITE_PROFILE_FORM_FIELDS):
+                self.instance.activation_step = 0
                 self.instance.activate()
             else:
                 self.instance.activation_step += 1
