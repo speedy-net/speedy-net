@@ -240,7 +240,7 @@ SITE_PROFILES = {
 }
 
 FIXTURE_DIRS = [
-    str(ROOT_DIR / 'speedy/core/base/fixtures')
+    str(ROOT_DIR / 'speedy/core/fixtures')
 ]
 
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
