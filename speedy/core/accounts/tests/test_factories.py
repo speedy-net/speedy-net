@@ -10,7 +10,7 @@ from django.conf import settings
 from speedy.core.accounts.models import normalize_username, User, UserEmailAddress
 
 
-class InactiveUserFactory(factory.DjangoModelFactory):
+class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
     date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(1900, 1, 1))
@@ -24,8 +24,17 @@ class InactiveUserFactory(factory.DjangoModelFactory):
         model = User
 
 
-class UserFactory(InactiveUserFactory):
+class InactiveUserFactory(DefaultUserFactory):
+    @factory.post_generation
+    def deactivate_profile(self, create, extracted, **kwargs):
+        # Deactivate only on speedy.net, speedy.match default is inactive.
+        site = Site.objects.get_current()
+        speedy_net_site_id = settings.SITE_PROFILES.get('net').get('site_id')
+        if site.id == speedy_net_site_id:
+            self.profile.deactivate()
 
+
+class UserFactory(DefaultUserFactory):
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         self.profile.activate()
