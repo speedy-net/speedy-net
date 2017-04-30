@@ -26,7 +26,7 @@ class DefaultUserFactory(factory.DjangoModelFactory):
 
 class InactiveUserFactory(DefaultUserFactory):
     @factory.post_generation
-    def deactivate_profile(self, create, extracted, **kwargs):
+    def deactivate_speedy_net_profile(self, create, extracted, **kwargs):
         # Deactivate only on speedy.net, speedy.match default is inactive.
         site = Site.objects.get_current()
         speedy_net_site_id = settings.SITE_PROFILES.get('net').get('site_id')
