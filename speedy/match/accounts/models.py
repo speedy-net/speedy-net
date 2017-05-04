@@ -73,7 +73,7 @@ class SiteProfile(SiteProfileBase):
     more_children = models.TextField(verbose_name=_('do you want (more) children?'), null=True)
     profile_description = models.TextField(verbose_name=_('Few words about me'), null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), null=True)
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[User.GENDER_FEMALE, User.GENDER_MALE, User.GENDER_OTHER])
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[])
 
     diet_match = JSONField(verbose_name=('diet match'), default={User.DIET_VEGAN: RANK_5, User.DIET_VEGETARIAN: RANK_5, User.DIET_CARNIST: RANK_5})
     smoking_match = JSONField(verbose_name=('smoking match'), default={SMOKING_NO: RANK_5, SMOKING_YES: RANK_5, SMOKING_SOMETIMES: RANK_5})
@@ -110,6 +110,12 @@ class SiteProfile(SiteProfileBase):
         if other_profile.user.gender not in self.gender_to_match:
             return self.RANK_0
         if not self.min_age_match <= other_user_age <= self.max_age_match:
+            return self.RANK_0
+        if (other_profile.user.diet == User.DIET_UNKNOWN):
+            return self.RANK_0
+        if (other_profile.smoking == self.__class__.SMOKING_UNKNOWN):
+            return self.RANK_0
+        if (other_profile.marital_status == self.__class__.MARITAL_STATUS_UNKNOWN):
             return self.RANK_0
         diet_rank = self.diet_match.get(other_profile.user.diet, self.RANK_5)
         smoking_rank = self.smoking_match.get(other_profile.smoking, self.RANK_5)
