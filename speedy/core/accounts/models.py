@@ -204,8 +204,11 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def get_full_name(self):
         return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
 
+    def get_first_name(self):
+        return '{}'.format(self.first_name).strip() or self.slug
+
     def get_short_name(self):
-        return self.get_full_name()
+        return self.get_first_name()
 
     def has_confirmed_email(self):
         return self.email_addresses.filter(is_confirmed=True).exists()
@@ -336,3 +339,7 @@ class SiteProfileBase(TimeStampedModel):
 
     def deactivate(self):
         raise NotImplementedError()
+
+    def get_name(self):
+        raise NotImplementedError()
+

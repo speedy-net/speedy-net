@@ -131,3 +131,8 @@ class SiteProfile(SiteProfileBase):
         self.set_active_languages([])
         self.activation_step = 0
         self.save(update_fields={'active_languages', 'activation_step'})
+
+    def get_name(self):
+        # Speedy Match name is user's first name.
+        return self.user.get_first_name()
+
