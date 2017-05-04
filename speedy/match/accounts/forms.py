@@ -38,7 +38,7 @@ class CustomJsonWidget(CustomCheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
-
+    # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking and marital status.
     diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect(), label=_('My diet'))
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
@@ -71,14 +71,11 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             del self.fields[field_for_deletion]
         if 'photo' in self.fields:
             self.fields['photo'].widget.attrs['user'] = self.instance.user
-
         if 'diet' in self.fields:
             self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
-            if self.instance.user.diet != User.DIET_UNKNOWN:
-                self.fields['diet'].initial = self.instance.user.diet
-            else:
-                self.fields['diet'].initial = User.DIET_VEGAN
+            self.fields['diet'].initial = self.instance.user.diet
         if 'diet_match' in self.fields:
+            # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking and marital status.
             self.fields['diet_match'].widget.choices = self.instance.user.get_diet_choices()
 
     def save(self, commit=True):
