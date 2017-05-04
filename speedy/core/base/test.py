@@ -42,7 +42,7 @@ class TestCase(DjangoTestCase):
 
     def _pre_setup(self):
         super()._pre_setup()
-        call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_local.json')
+        call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_local.json', verbosity=0)
         site = Site.objects.get_current()
         site.domain = 'localhost'
         site.save()
