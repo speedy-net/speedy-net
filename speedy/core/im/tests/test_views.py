@@ -86,28 +86,33 @@ class SendMessageToChatViewTestCase(TestCase):
         self.client.logout()
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=403)
+        self.assertEqual(first=Message.objects.count(), second=0)
 
     def test_get_redirects_to_chat_page(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.get(self.page_url)
         self.assertRedirects(response=r, expected_url=self.chat_url)
+        self.assertEqual(first=Message.objects.count(), second=0)
 
     def test_user_can_write_to_a_chat_he_has_access_to(self):
         self.client.login(username=self.user1.slug, password='111')
         r = self.client.post(self.page_url, self.data)
         self.assertRedirects(response=r, expected_url=self.chat_url)
+        self.assertEqual(first=Message.objects.count(), second=1)
 
     def test_cannot_write_to_a_blocker(self):
         self.client.login(username=self.user1.slug, password='111')
         Block.objects.block(blocker=self.user2, blockee=self.user1)
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=403)
+        self.assertEqual(first=Message.objects.count(), second=0)
 
     def test_cannot_write_to_a_blockee(self):
         self.client.login(username=self.user1.slug, password='111')
         Block.objects.block(blocker=self.user1, blockee=self.user2)
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=403)
+        self.assertEqual(first=Message.objects.count(), second=0)
 
 
 @exclude_on_speedy_composer

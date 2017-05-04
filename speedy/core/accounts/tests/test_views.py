@@ -500,6 +500,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
     def test_user_has_no_access_to_other_users_address(self):
         r = self.client.post(self.other_users_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_users_address_url))
+        self.assertEqual(first=len(mail.outbox), second=0)
 
     def test_user_can_resend_confirmation(self):
         r = self.client.post(self.unconfirmed_address_url)
@@ -529,14 +530,18 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         self.client.logout()
         r = self.client.post(self.confirmed_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_address_url))
+        self.assertEqual(first=UserEmailAddress.objects.filter(id=self.confirmed_address.id).count(), second=1)
 
     def test_user_has_no_access_to_other_users_address(self):
         r = self.client.post(self.other_users_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_users_address_url))
+        self.assertEqual(first=UserEmailAddress.objects.filter(id=self.other_users_address.id).count(), second=1)
 
     def test_user_cannot_delete_primary_email_address(self):
         r = self.client.post(self.primary_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url))
+        self.assertEqual(first=UserEmailAddress.objects.filter(id=self.primary_address.id).count(), second=1)
+
 
     def test_user_can_delete_email_address(self):
         self.assertEqual(first=self.user.email_addresses.count(), second=2)

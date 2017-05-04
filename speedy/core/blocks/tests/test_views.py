@@ -41,11 +41,13 @@ class BlockViewTestCase(TestCase):
         self.client.logout()
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertEqual(first=Block.objects.count(), second=0)
 
     def test_user_cannot_block_self(self):
         self.client.login(username=self.other_user.slug, password='111')
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertEqual(first=Block.objects.count(), second=0)
 
     def test_user_can_block_other_user(self):
         self.client.login(username=self.user.slug, password='111')
