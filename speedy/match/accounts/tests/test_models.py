@@ -96,7 +96,7 @@ class SiteProfileMatchTestCase(TestCase):
         user_1.profile.save()
         user_2 = self.get_default_user_2()
         user_2.profile.smoking = SiteProfile.SMOKING_YES
-        user_2.profile.marital_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_0
+        user_2.profile.marital_status_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_0
         rank_1 = user_1.profile.matching_function(user_2.profile)
         self.assertEqual(rank_1, 5)
         rank_2 = user_2.profile.matching_function(user_1.profile)
@@ -108,7 +108,7 @@ class SiteProfileMatchTestCase(TestCase):
         user_1.profile.save()
         user_2 = self.get_default_user_2()
         user_2.profile.smoking = SiteProfile.SMOKING_YES
-        user_2.profile.marital_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_0
+        user_2.profile.marital_status_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_0
         rank_1 = user_1.profile.matching_function(user_2.profile)
         self.assertEqual(rank_1, 0)
         rank_2 = user_2.profile.matching_function(user_1.profile)
@@ -137,7 +137,7 @@ class SiteProfileMatchTestCase(TestCase):
         user_1 = self.get_default_user_2()
         user_1.profile.smoking_match = {SiteProfile.SMOKING_YES: 3, SiteProfile.SMOKING_NO: 5, SiteProfile.SMOKING_SOMETIMES: 4}
         user_1.profile.diet_match = {User.DIET_VEGAN: 4, User.DIET_VEGETARIAN: 5, User.DIET_CARNIST: 0}
-        user_1.profile.marital_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_1
+        user_1.profile.marital_status_match[SiteProfile.MARITAL_STATUS_MARRIED] = SiteProfile.RANK_1
         user_2 = self.get_default_user_1()
         user_2.profile.marital_status = SiteProfile.MARITAL_STATUS_MARRIED
         rank_1 = user_1.profile.matching_function(user_2.profile)

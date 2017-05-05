@@ -151,7 +151,7 @@ msgid "Gender"
 msgstr ""
 
 #: accounts/models.py:80
-msgid "marital match"
+msgid "marital status match"
 msgstr ""
 
 #: likes/models.py:11

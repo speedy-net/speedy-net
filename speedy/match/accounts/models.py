@@ -68,16 +68,24 @@ class SiteProfile(SiteProfileBase):
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=180)
     smoking = models.SmallIntegerField(verbose_name=_('smoking'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
     city = models.CharField(verbose_name=_('city'), max_length=255, null=True)
-    marital_status = models.SmallIntegerField(verbose_name=_('Marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
+    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
     children = models.TextField(verbose_name=_('do you have children?'), null=True)
     more_children = models.TextField(verbose_name=_('do you want (more) children?'), null=True)
     profile_description = models.TextField(verbose_name=_('Few words about me'), null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), null=True)
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[])
 
-    diet_match = JSONField(verbose_name=('diet match'), default={User.DIET_VEGAN: RANK_5, User.DIET_VEGETARIAN: RANK_5, User.DIET_CARNIST: RANK_5})
-    smoking_match = JSONField(verbose_name=('smoking match'), default={SMOKING_NO: RANK_5, SMOKING_YES: RANK_5, SMOKING_SOMETIMES: RANK_5})
-    marital_match = JSONField(verbose_name=_('marital match'), default={
+    diet_match = JSONField(verbose_name=('diet match'), default={
+        User.DIET_VEGAN: RANK_5,
+        User.DIET_VEGETARIAN: RANK_5,
+        User.DIET_CARNIST: RANK_5,
+    })
+    smoking_match = JSONField(verbose_name=('smoking match'), default={
+        SMOKING_NO: RANK_5,
+        SMOKING_YES: RANK_5,
+        SMOKING_SOMETIMES: RANK_5,
+    })
+    marital_status_match = JSONField(verbose_name=_('marital status match'), default={
         MARITAL_STATUS_SINGLE: RANK_5,
         MARITAL_STATUS_DIVORCED: RANK_5,
         MARITAL_STATUS_WIDOWED: RANK_5,
@@ -85,7 +93,7 @@ class SiteProfile(SiteProfileBase):
         MARITAL_STATUS_IN_OPEN_RELATIONSHIP: RANK_5,
         MARITAL_STATUS_COMPLICATED: RANK_5,
         MARITAL_STATUS_SEPARATED: RANK_5,
-        MARITAL_STATUS_MARRIED: RANK_5
+        MARITAL_STATUS_MARRIED: RANK_5,
     })
     activation_step = models.PositiveSmallIntegerField(default=0)
 
@@ -119,8 +127,8 @@ class SiteProfile(SiteProfileBase):
             return self.RANK_0
         diet_rank = self.diet_match.get(other_profile.user.diet, self.RANK_5)
         smoking_rank = self.smoking_match.get(other_profile.smoking, self.RANK_5)
-        marital_rank = self.marital_match.get(other_profile.marital_status, self.RANK_5)
-        rank = min([diet_rank, smoking_rank, marital_rank])
+        marital_status_rank = self.marital_status_match.get(other_profile.marital_status, self.RANK_5)
+        rank = min([diet_rank, smoking_rank, marital_status_rank])
         if ((rank > self.RANK_0) and (second_call)):
             other_user_rank = other_profile.matching_function(other_profile=self, second_call=False)
             if (other_user_rank == self.RANK_0):

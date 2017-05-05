@@ -46,7 +46,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         model = SiteProfile
         fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking',
                   'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match',
-                  'diet_match', 'smoking_match', 'marital_match')
+                  'diet_match', 'smoking_match', 'marital_status_match')
         widgets = {
             'profile_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
             'children': forms.TextInput(),
@@ -57,7 +57,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'gender_to_match': CustomCheckboxSelectMultiple(choices=User.GENDER_CHOICES),
             'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES[1:]),
             'smoking_match': CustomJsonWidget(choices=SiteProfile.SMOKING_CHOICES),
-            'marital_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
+            'marital_status_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
         }
 
     def get_fields(self):
