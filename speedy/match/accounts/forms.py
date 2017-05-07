@@ -91,10 +91,17 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.instance.user.diet = self.cleaned_data['diet']
             self.instance.user.save()
         if commit:
-            if self.instance.activation_step + 1 == len(settings.SITE_PROFILE_FORM_FIELDS):
-                self.instance.activation_step = 0
-                self.instance.activate()
-            else:
-                self.instance.activation_step += 1
+            activation_step = self.instance.activation_step + 1
+            step, error_messages = self.instance.validate_profile_and_activate()
+            self.instance.activation_step = min([activation_step, step])
+            # if (len(error_messages) > 0):
+            #     for error_message in error_messages:
+            #         messages.error(request, error_message)
+
+            # if self.instance.activation_step + 1 == len(settings.SITE_PROFILE_FORM_FIELDS):
+            #     self.instance.activation_step = 0
+            #     self.instance.activate()
+            # else:
+            #     self.instance.activation_step += 1
         super().save(commit=commit)
         return self.instance

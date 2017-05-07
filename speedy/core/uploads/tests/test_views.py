@@ -4,7 +4,7 @@ import os
 import tempfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..models import Image
 
@@ -13,8 +13,8 @@ from ..models import Image
 @exclude_on_speedy_mail_software
 class UploadViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         upload_file = tempfile.NamedTemporaryFile()
         upload_file.file.write(b'this is a file')
         upload_file.file.seek(0)

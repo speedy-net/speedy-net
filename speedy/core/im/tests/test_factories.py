@@ -1,12 +1,12 @@
 import factory
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from ..models import Chat
 
 
 class ChatFactory(factory.DjangoModelFactory):
-    ent1 = factory.SubFactory(UserFactory)
-    ent2 = factory.SubFactory(UserFactory)
+    ent1 = factory.SubFactory(ActiveUserFactory)
+    ent2 = factory.SubFactory(ActiveUserFactory)
 
     class Meta:
         model = Chat

@@ -18,13 +18,12 @@ from .rules import friend_request_sent
 
 class FriendsMixin(object):
 
-    def get_friendship_requests(self):
+    def get_received_friendship_requests(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_received.all()
         if site.id == settings.SITE_PROFILES.get('net').get('site_id'):
             return qs
-        qs = [u for u in qs if
-              self.user.profile.matching_function(other_profile=u.from_user.profile)]
+        qs = [u for u in qs if self.user.profile.get_matching_rank(other_profile=u.from_user.profile)]
         return qs
 
     def get_sent_friendship_request(self):
@@ -32,14 +31,13 @@ class FriendsMixin(object):
         qs = self.user.friendship_requests_sent.all()
         if site.id == settings.SITE_PROFILES.get('net').get('site_id'):
             return qs
-        qs = [u for u in qs if
-              self.user.profile.matching_function(other_profile=u.to_user.profile)]
+        qs = [u for u in qs if self.user.profile.get_matching_rank(other_profile=u.to_user.profile)]
         return qs
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'received_requests': self.get_friendship_requests(),
+            'received_requests': self.get_received_friendship_requests(),
             'sent_requests': self.get_sent_friendship_request()
         })
         return cd
@@ -68,8 +66,7 @@ class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
                                'WHERE ent1_id=friendship_friend.from_user_id OR ent2_id=friendship_friend.from_user_id'
         }, ).order_by('-last_visit')
 
-        qs = [u for u in qs if
-              self.user.profile.matching_function(other_profile=u.from_user.profile) or u.like_exists or u.messages_exists]
+        qs = [u for u in qs if self.user.profile.get_matching_rank(other_profile=u.from_user.profile) or u.like_exists or u.messages_exists]
         return qs
 
     def get_context_data(self, **kwargs):

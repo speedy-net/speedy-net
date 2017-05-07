@@ -1,6 +1,6 @@
 from time import sleep
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.im.models import Message, ReadMark
 from .test_factories import ChatFactory
@@ -11,8 +11,8 @@ from ..templatetags import im_tags
 @exclude_on_speedy_mail_software
 class GetOtherParticipantTestCase(TestCase):
     def test_tag(self):
-        user1 = UserFactory()
-        user2 = UserFactory()
+        user1 = ActiveUserFactory()
+        user2 = ActiveUserFactory()
         chat = ChatFactory(ent1=user1, ent2=user2)
         self.assertEqual(first=im_tags.get_other_participant(chat, user1).id, second=user2.id)
         self.assertEqual(first=im_tags.get_other_participant(chat, user2).id, second=user1.id)
@@ -22,7 +22,7 @@ class GetOtherParticipantTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class AnnotateChatsWithReadMarksTestCase(TestCase):
     def test_tag(self):
-        user1 = UserFactory()
+        user1 = ActiveUserFactory()
         chats = [
             ChatFactory(ent1=user1),  # 0 - no messages, no read mark
             ChatFactory(ent1=user1),  # 1 - no messages, has read mark
@@ -60,8 +60,8 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class AnnotateMessagesWithReadMarksTestCase(TestCase):
     def test_tag(self):
-        user1 = UserFactory()
-        user2 = UserFactory()
+        user1 = ActiveUserFactory()
+        user2 = ActiveUserFactory()
         chat = ChatFactory(ent1=user1, ent2=user2)
         messages = [
             Message.objects.send_message(from_entity=user2, chat=chat, text='User 2 First Message'),
@@ -87,9 +87,9 @@ class AnnotateMessagesWithReadMarksTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class UnreadChatsCount(TestCase):
     def test_tag(self):
-        user1 = UserFactory()
-        user2 = UserFactory()
-        user3 = UserFactory()
+        user1 = ActiveUserFactory()
+        user2 = ActiveUserFactory()
+        user3 = ActiveUserFactory()
 
         chats = [
             ChatFactory(ent1=user1, ent2=user2),

@@ -1,7 +1,7 @@
 from django.test.client import RequestFactory
 from django.views import generic
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..views import UserMixin
 
@@ -16,8 +16,8 @@ class UserMixinTestView(UserMixin, generic.View):
 class UserMixinTextCase(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
-        self.user = UserFactory(slug='look-at-me', username='lookatme')
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
+        self.other_user = ActiveUserFactory()
 
     def test_find_user_by_exact_slug(self):
         view = UserMixinTestView.as_view()(self.factory.get('/look-at-me/some-page/'), slug='look-at-me')

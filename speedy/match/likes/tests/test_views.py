@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase
 from .test_factories import UserLikeFactory
 from ..models import UserLike
@@ -6,8 +6,8 @@ from ..models import UserLike
 
 class LikeViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/like/'.format(self.other_user.slug)
 
     def test_can_like(self):
@@ -23,8 +23,8 @@ class LikeViewTestCase(TestCase):
 
 class UnlikeViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
 
     def test_can_like(self):
@@ -38,8 +38,8 @@ class UnlikeViewTestCase(TestCase):
 
 class LikeListViewsTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.default_url = '/{}/likes/'.format(self.user.slug)
         self.to_url = '/{}/likes/to/'.format(self.user.slug)
         self.from_url = '/{}/likes/from/'.format(self.user.slug)

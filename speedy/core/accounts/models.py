@@ -136,9 +136,11 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
 
+    GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
+    GENDER_MAX_VALUE_PLUS_ONE = 4
     GENDER_CHOICES = (
         (GENDER_FEMALE, _('Female')),
         (GENDER_MALE, _('Male')),
@@ -149,6 +151,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     DIET_VEGAN = 1
     DIET_VEGETARIAN = 2
     DIET_CARNIST = 3
+    DIET_MAX_VALUE_PLUS_ONE = 4
     DIET_CHOICES = (
         (DIET_UNKNOWN, _('Please select...')),
         (DIET_VEGAN, _('Vegan (eats only plants and fungi)')),

@@ -7,14 +7,14 @@ from django.core import mail
 from speedy.core.accounts.models import Entity, User, UserEmailAddress, SiteProfileBase
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.base.test import exclude_on_speedy_match, exclude_on_speedy_net
-from .test_factories import UserFactory, UserEmailAddressFactory, InactiveUserFactory
+from .test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class IndexViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
 
     def test_visitor_gets_registration_page(self):
         r = self.client.get('/')
@@ -31,7 +31,7 @@ class IndexViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class MeViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory(slug='markmark')
+        self.user = ActiveUserFactory(slug='markmark')
 
     def test_visitor_has_no_access(self):
         r = self.client.get('/me/')
@@ -127,7 +127,7 @@ class RegistrationViewTestCase(TestCase):
         self.assertIn(member='http://he.localhost/', container=mail.outbox[0].body)
 
     def test_cannot_register_taken_username(self):
-        existing_user = UserFactory(username='username', slug='user-name')
+        existing_user = ActiveUserFactory(username='username', slug='user-name')
         self.data['slug'] = 'us-er-na-me'
         r = self.client.post('/', data=self.data)
         self.assertFormError(response=r, form='form', field='slug', errors='This username is already taken.')
@@ -137,10 +137,10 @@ class RegistrationViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class LoginViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory(slug='slug.with.dots')
+        self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
-        self.inactive_user = UserFactory(is_active=False)
+        self.inactive_user = ActiveUserFactory(is_active=False)
 
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
@@ -183,7 +183,7 @@ class LoginViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class LogoutViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     def test_user_can_logout(self):
@@ -199,7 +199,7 @@ class EditProfileViewTestCase(TestCase):
     page_url = '/edit-profile/'
 
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     def test_visitor_has_no_access(self):
@@ -237,7 +237,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
     page_url = '/edit-profile/privacy/'
 
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password='111')
 
@@ -271,7 +271,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
     page_url = '/edit-profile/notifications/'
 
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     def test_visitor_has_no_access(self):
@@ -302,7 +302,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
     page_url = '/edit-profile/credentials/'
 
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password='111')
 
@@ -374,7 +374,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
     page_url = '/edit-profile/deactivate/'
 
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     def test_visitor_has_no_access(self):
@@ -402,7 +402,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class VerifyUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
 
@@ -436,7 +436,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class AddUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.client.login(username=self.user.slug, password='111')
 
@@ -483,7 +483,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class SendConfirmationEmailViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_address.id)
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -516,7 +516,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class DeleteUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
         self.confirmed_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_address.id)
         self.primary_address = UserEmailAddressFactory(user=self.user, is_primary=True)
@@ -551,7 +551,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class SetPrimaryUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_address.id)
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -592,7 +592,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class PasswordResetViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
 
     def test_visitor_can_open_the_page(self):

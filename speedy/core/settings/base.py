@@ -246,3 +246,7 @@ FIXTURE_DIRS = [
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
 
 MODELTRANSLATION_ENABLE_FALLBACKS = False
+
+MIN_AGE_ALLOWED = 0 # In years.
+MAX_AGE_ALLOWED = 180 # In years.
+

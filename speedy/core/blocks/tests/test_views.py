@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..models import Block
 
@@ -7,9 +7,9 @@ from ..models import Block
 @exclude_on_speedy_mail_software
 class BlockListViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
-        self.third_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
+        self.third_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/'.format(self.user.slug)
 
     def test_visitor_has_no_access(self):
@@ -33,8 +33,8 @@ class BlockListViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class BlockViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/block/'.format(self.other_user.slug)
 
     def test_visitor_has_no_access(self):
@@ -62,8 +62,8 @@ class BlockViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class UnblockViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/unblock/'.format(self.other_user.slug)
 
     def test_visitor_has_no_access(self):

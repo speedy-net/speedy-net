@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from .test_factories import ChatFactory
 from ..forms import MessageForm
@@ -8,7 +8,7 @@ from ..forms import MessageForm
 @exclude_on_speedy_mail_software
 class MessageFormTestCase(TestCase):
     def test_form_to_chat_save(self):
-        user = UserFactory()
+        user = ActiveUserFactory()
         chat = ChatFactory(ent1=user)
         form = MessageForm(from_entity=user, chat=chat, data={'text': 'Hi!'})
         self.assertTrue(expr=form.is_valid())

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AnonymousUser
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
@@ -8,8 +8,8 @@ from speedy.match.likes.models import UserLike
 
 class LikeTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
 
     def test_anonymous_cannot_like(self):
@@ -32,8 +32,8 @@ class LikeTestCase(TestCase):
 
 class UnlikeTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
 
     def test_anonymous_cannot_unlike(self):
@@ -52,8 +52,8 @@ class UnlikeTestCase(TestCase):
 
 class ViewLikesTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
 
     def test_anonymous_cannot_view_likes(self):

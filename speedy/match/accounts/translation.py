@@ -5,4 +5,4 @@ from .models import SiteProfile
 @register(SiteProfile)
 class SiteProfileOptions(TranslationOptions):
 
-    fields = ('children', 'more_children', 'profile_description', 'city', 'match_description')
+    fields = ('profile_description', 'city', 'children', 'more_children', 'match_description')

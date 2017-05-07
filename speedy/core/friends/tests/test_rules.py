@@ -1,6 +1,6 @@
 from friendship.models import Friend
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.blocks.models import Block
 
@@ -9,8 +9,8 @@ from speedy.core.blocks.models import Block
 @exclude_on_speedy_mail_software
 class RequestTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
 
     def test_user_can_send_request_to_other_user(self):
         self.assertTrue(expr=self.user.has_perm('friends.request', self.other_user))
@@ -32,8 +32,8 @@ class RequestTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ViewRequestsTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
 
     def test_user_cannot_view_incoming_requests_for_other_user(self):
         self.assertFalse(expr=self.user.has_perm('friends.view_requests', self.other_user))
@@ -46,8 +46,8 @@ class ViewRequestsTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class RemoveTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(self.user, self.other_user).accept()
 
     def test_user_can_remove_other_user(self):

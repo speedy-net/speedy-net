@@ -1,7 +1,7 @@
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.base.test import exclude_on_speedy_match
 
@@ -10,8 +10,8 @@ from speedy.core.base.test import exclude_on_speedy_match
 @exclude_on_speedy_mail_software
 class UserFriendListViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
 
     @exclude_on_speedy_match
@@ -33,8 +33,8 @@ class UserFriendListViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ReceivedFriendshipRequestsListView(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
         self.page_url = '/{}/friends/received-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/received-requests/'.format(self.other_user.slug)
@@ -58,8 +58,8 @@ class ReceivedFriendshipRequestsListView(TestCase):
 @exclude_on_speedy_mail_software
 class SentFriendshipRequestsListView(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password='111')
         self.page_url = '/{}/friends/sent-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/sent-requests/'.format(self.other_user.slug)
@@ -83,8 +83,8 @@ class SentFriendshipRequestsListView(TestCase):
 @exclude_on_speedy_mail_software
 class UserFriendRequestViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
         self.client.login(username=self.user.slug, password='111')
 
@@ -110,7 +110,7 @@ class UserFriendRequestViewTestCase(TestCase):
 
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_cannot_send_friend_request_if_maximum(self):
-        Friend.objects.add_friend(self.user, UserFactory()).accept()
+        Friend.objects.add_friend(self.user, ActiveUserFactory()).accept()
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url(), fetch_redirect_response=False)
         r = self.client.get(self.other_user.get_absolute_url())
@@ -121,8 +121,8 @@ class UserFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class CancelFriendRequestViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
         self.client.login(username=self.user.slug, password='111')
 
@@ -144,8 +144,8 @@ class CancelFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class AcceptFriendRequestViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         frequest = Friend.objects.add_friend(self.user, self.other_user)
         self.page_url = '/{}/friends/request/accept/{}/'.format(self.other_user.slug, frequest.id)
 
@@ -168,7 +168,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
 
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
-        Friend.objects.add_friend(self.other_user, UserFactory()).accept()
+        Friend.objects.add_friend(self.other_user, ActiveUserFactory()).accept()
         self.client.login(username=self.other_user.slug, password='111')
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
@@ -178,7 +178,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
 
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
-        Friend.objects.add_friend(self.user, UserFactory()).accept()
+        Friend.objects.add_friend(self.user, ActiveUserFactory()).accept()
         self.client.login(username=self.other_user.slug, password='111')
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
@@ -191,8 +191,8 @@ class AcceptFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class RejectFriendRequestViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         frequest = Friend.objects.add_friend(self.user, self.other_user)
         self.page_url = '/{}/friends/request/reject/{}/'.format(self.other_user.slug, frequest.id)
 
@@ -220,8 +220,8 @@ class RejectFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class RemoveFriendViewTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(self.user, self.other_user).accept()
         self.page_url = '/{}/friends/remove/'.format(self.other_user.slug)
         self.opposite_url = '/{}/friends/remove/'.format(self.user.slug)

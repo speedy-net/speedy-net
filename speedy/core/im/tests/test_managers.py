@@ -1,6 +1,6 @@
 from time import sleep
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from .test_factories import ChatFactory
 from ..models import Chat, Message, ReadMark
@@ -11,9 +11,9 @@ from ..models import Chat, Message, ReadMark
 class ChatManagerTestCase(TestCase):
     def setUp(self):
         ChatFactory(is_group=True)
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
-        self.user3 = UserFactory()
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
+        self.user3 = ActiveUserFactory()
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_1_2_3 = ChatFactory(group=(self.user1, self.user2, self.user3))
 
@@ -28,7 +28,7 @@ class ChatManagerTestCase(TestCase):
         self.assertEqual(first=chat, second=self.chat_1_2)
 
     def test_chat_with_two_users_creates_new_one(self):
-        user4 = UserFactory()
+        user4 = ActiveUserFactory()
         chat_count = Chat.objects.count()
         chat = Chat.on_site.chat_with(self.user1, user4)
         self.assertEqual(first=Chat.objects.count(), second=chat_count + 1)
@@ -53,8 +53,8 @@ class ChatManagerTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class MessageManagerTestCase(TestCase):
     def test_sending_message_creates_new_chat(self):
-        user1 = UserFactory()
-        user2 = UserFactory()
+        user1 = ActiveUserFactory()
+        user2 = ActiveUserFactory()
         self.assertEqual(first=Chat.objects.count(), second=0)
         self.assertEqual(first=ReadMark.objects.count(), second=0)
         message = Message.objects.send_message(from_entity=user1, to_entity=user2, text='Hello')
@@ -75,7 +75,7 @@ class MessageManagerTestCase(TestCase):
         self.assertEqual(first=rmark.entity_id, second=user1.id)
 
     def test_sending_message_to_exising_chat(self):
-        user1 = UserFactory()
+        user1 = ActiveUserFactory()
         chat = ChatFactory(ent1=user1)
         self.assertEqual(first=Chat.objects.count(), second=1)
         self.assertEqual(first=ReadMark.objects.count(), second=0)
@@ -94,7 +94,7 @@ class MessageManagerTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ReadMarkManagerTestCase(TestCase):
     def test_mark(self):
-        user = UserFactory()
+        user = ActiveUserFactory()
         chat = ChatFactory(ent1=user)
         self.assertEqual(first=ReadMark.objects.count(), second=0)
         rmark = ReadMark.objects.mark(chat, user)

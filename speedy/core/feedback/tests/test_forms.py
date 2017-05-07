@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..forms import FeedbackForm
 from ..models import Feedback
@@ -18,7 +18,7 @@ class FeedbackFormTestCase(TestCase):
         self.assertTrue(expr=form.fields['sender_email'].required)
 
     def test_feedback_form_for_user_doesnt_require_name_and_email(self):
-        user = UserFactory()
+        user = ActiveUserFactory()
         form = FeedbackForm(
             defaults={
                 'type': Feedback.TYPE_FEEDBACK,
@@ -28,8 +28,8 @@ class FeedbackFormTestCase(TestCase):
         self.assertListEqual(list1=list(form.fields.keys()), list2=['text'])
 
     def test_form_save_for_abuse_report_as_user(self):
-        user = UserFactory()
-        other_user = UserFactory()
+        user = ActiveUserFactory()
+        other_user = ActiveUserFactory()
         form = FeedbackForm(
             data={
                 'text': "I personally don't like this user.",

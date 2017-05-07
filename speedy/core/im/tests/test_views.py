@@ -1,6 +1,6 @@
 from time import sleep
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.blocks.models import Block
 from .test_factories import ChatFactory
@@ -11,9 +11,9 @@ from ..models import Message, ReadMark, Chat
 @exclude_on_speedy_mail_software
 class ChatListViewTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
-        self.user3 = UserFactory()
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
+        self.user3 = ActiveUserFactory()
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_2_3 = ChatFactory(ent1=self.user2, ent2=self.user3)
         self.chat_3_1 = ChatFactory(ent1=self.user3, ent2=self.user1)
@@ -35,9 +35,9 @@ class ChatListViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ChatDetailViewTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
-        self.user3 = UserFactory()
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
+        self.user3 = ActiveUserFactory()
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_2_3 = ChatFactory(ent1=self.user2, ent2=self.user3)
         self.chat_3_1 = ChatFactory(ent1=self.user3, ent2=self.user1)
@@ -70,9 +70,9 @@ class ChatDetailViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class SendMessageToChatViewTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
-        self.user3 = UserFactory()
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
+        self.user3 = ActiveUserFactory()
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_2_3 = ChatFactory(ent1=self.user2, ent2=self.user3)
         self.chat_3_1 = ChatFactory(ent1=self.user3, ent2=self.user1)
@@ -114,8 +114,8 @@ class SendMessageToChatViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class SendMessageToUserViewTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
         self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
         self.data = {
             'text': 'Hi Hi Hi',
@@ -167,7 +167,7 @@ class SendMessageToUserViewTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class MarkChatAsReadViewTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
+        self.user1 = ActiveUserFactory()
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []
         self.messages.append(Message.objects.send_message(from_entity=self.chat.ent1, chat=self.chat, text='text'))

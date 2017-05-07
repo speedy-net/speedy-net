@@ -1,5 +1,5 @@
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
-from speedy.core.accounts.tests.test_factories import UserFactory, UserEmailAddressFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.base.test import exclude_on_speedy_match
@@ -34,7 +34,7 @@ class RegistrationFormTestCase(TestCase):
         self.assertNotIn(member='slug', container=form.errors)
 
     def test_non_unique_primary_confirmed_email(self):
-        existing_user = UserFactory()
+        existing_user = ActiveUserFactory()
         existing_user.email_addresses.create(email='email@example.com', is_confirmed=True)
         form = RegistrationForm(self.valid_data)
         self.assertEqual(first=form.errors['email'][0], second='This email is already in use.')
@@ -47,7 +47,7 @@ class RegistrationFormTestCase(TestCase):
         self.assertEqual(first=form.errors['slug'][0], second='This username is already taken.')
 
     def test_slug_validation_already_taken(self):
-        UserFactory(slug='validslug')
+        ActiveUserFactory(slug='validslug')
         data = self.valid_data.copy()
         data['slug'] = 'valid-slug'
         form = RegistrationForm(data)
@@ -93,8 +93,8 @@ class RegistrationFormTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ProfilePrivacyFormTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -105,7 +105,7 @@ class ProfilePrivacyFormTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class ProfileNotificationsFormTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
 
     @exclude_on_speedy_match
     def test_has_correct_fields(self):
@@ -119,8 +119,8 @@ class ProfileNotificationsFormTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class PasswordResetFormTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -141,7 +141,7 @@ class PasswordResetFormTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class DeactivationFormTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
+        self.user = ActiveUserFactory()
 
     def test_incorrect_password(self):
         form = SiteProfileDeactivationForm(user=self.user, data={

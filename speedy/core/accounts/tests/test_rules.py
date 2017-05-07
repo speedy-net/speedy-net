@@ -4,15 +4,15 @@ from speedy.core.accounts.models import ACCESS_FRIENDS, ACCESS_ME
 from speedy.core.base.test import TestCase, exclude_on_speedy_mail_software, exclude_on_speedy_composer
 from speedy.core.base.test import exclude_on_speedy_match
 from speedy.core.blocks.models import Block
-from .test_factories import UserFactory
+from .test_factories import ActiveUserFactory
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ViewProfileTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
 
     @exclude_on_speedy_match
     def test_has_access(self):

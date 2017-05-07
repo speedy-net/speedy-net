@@ -1,7 +1,7 @@
 from django.contrib.sites.models import Site
 from django.core import mail
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.uploads.tests.test_factories import FileFactory
 from ..models import Feedback
@@ -15,8 +15,8 @@ class FeedbackViewBaseMixin(object):
         raise NotImplementedError()
 
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
         self.file = FileFactory()
         self.page_url = self.get_page_url()
 

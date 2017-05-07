@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..models import Block
 
@@ -7,8 +7,8 @@ from ..models import Block
 @exclude_on_speedy_mail_software
 class BlockManagerTestCase(TestCase):
     def setUp(self):
-        self.user = UserFactory()
-        self.other_user = UserFactory()
+        self.user = ActiveUserFactory()
+        self.other_user = ActiveUserFactory()
 
     def test_block(self):
         self.assertEqual(first=Block.objects.count(), second=0)

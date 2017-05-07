@@ -1,17 +1,17 @@
 from friendship.models import Friend
 
-from speedy.core.accounts.tests.test_factories import UserFactory
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase
 from speedy.core.blocks.models import Block
 
 
 class BlocksTestCase(TestCase):
     def setUp(self):
-        self.user1 = UserFactory()
-        self.user2 = UserFactory()
-        Friend.objects.add_friend(from_user=self.user1, to_user=UserFactory()).accept()
-        Friend.objects.add_friend(from_user=self.user1, to_user=UserFactory())
-        Friend.objects.add_friend(from_user=UserFactory(), to_user=self.user1)
+        self.user1 = ActiveUserFactory()
+        self.user2 = ActiveUserFactory()
+        Friend.objects.add_friend(from_user=self.user1, to_user=ActiveUserFactory()).accept()
+        Friend.objects.add_friend(from_user=self.user1, to_user=ActiveUserFactory())
+        Friend.objects.add_friend(from_user=ActiveUserFactory(), to_user=self.user1)
 
     def assertCounters(self, user, requests, sent_requests, friends):
         self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
