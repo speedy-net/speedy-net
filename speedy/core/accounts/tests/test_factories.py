@@ -43,31 +43,31 @@ class ActiveUserFactory(DefaultUserFactory):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
             net_profile = self.get_profile(model=None, profile_model=settings.SITE_PROFILES.get('net').get('site_profile_model'))
             net_profile.activate()
-            # from speedy.match.accounts.models import SiteProfile
-            # self.profile.photo = "http://www.speedy.net/images/speedy_net_logo_345x93_1a.png"
-            # self.profile.profile_description = "Hi!"
-            # self.profile.city = "Tel Aviv."
-            # self.profile.children = "One boy."
-            # self.profile.more_children = "Yes."
-            # self.profile.match_description = "Hi!"
-            # self.profile.height = 170
-            # if (self.diet == User.DIET_UNKNOWN):
-            #     self.diet = User.DIET_VEGAN
-            # self.profile.smoking = SiteProfile.SMOKING_NO
-            # self.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
-            # self.profile.gender_to_match = [User.GENDER_OTHER]
-            # self.save()
-            # self.profile.save()
-            # step, error_messages = self.profile.validate_profile_and_activate()
-            # if (not(step == len(settings.SITE_PROFILE_FORM_FIELDS))):
-            #     raise Exception("Step not as expected, {}".format(step))
-            # if (len(error_messages) > 0):
-            #     raise Exception("Error messages not as expected, {}".format(", ".join(error_messages)))
+            from speedy.match.accounts.models import SiteProfile
+            # self.photo = ~~~~ TODO: some photo
+            self.profile.profile_description = "Hi!"
+            self.profile.city = "Tel Aviv."
+            self.profile.children = "One boy."
+            self.profile.more_children = "Yes."
+            self.profile.match_description = "Hi!"
+            self.profile.height = 170
+            if (self.diet == User.DIET_UNKNOWN):
+                self.diet = User.DIET_VEGAN
+            self.profile.smoking = SiteProfile.SMOKING_NO
+            self.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
+            self.profile.gender_to_match = [User.GENDER_OTHER]
+            self.save()
+            self.profile.save()
+            step, error_messages = self.profile.validate_profile_and_activate()
+            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
+                raise Exception("Step not as expected, {}".format(step))
+            if (len(error_messages) > 0):
+                raise Exception("Error messages not as expected, {}".format(", ".join(error_messages)))
             # # self.profile._set_active_languages(["en"])
             # # self.profile.save(update_fields={'active_languages', 'activation_step'})
             # ~~~~ TODO: remove the following lines, user can't be activated without executing self.profile.validate_profile_and_activate()
-            self.profile._set_active_languages(["en"])
-            self.profile.save(update_fields={'active_languages', 'activation_step'})
+            # self.profile._set_active_languages(["en"])
+            # self.profile.save(update_fields={'active_languages', 'activation_step'})
         else:
             self.profile.activate()
 

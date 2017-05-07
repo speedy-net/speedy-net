@@ -34,7 +34,7 @@ class LocaleDomainMiddleware(object):
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
         domain = request.META.get('HTTP_HOST', '')
 
-        if (not(domain == domain.lower())):
+        if (not (domain == domain.lower())):
             url = '//{domain}{path}'.format(
                 domain=domain.lower(),
                 path=request.get_full_path(),
@@ -55,7 +55,7 @@ class LocaleDomainMiddleware(object):
         except NoReverseMatch:
             pass
 
-        if (not(domain == "www.{domain}".format(domain=site.domain))):
+        if (not (domain == "www.{domain}".format(domain=site.domain))):
             for other_site in Site.objects.all().order_by("pk"):
                 if (other_site.domain in domain):
                     return redirect_to_www(site=other_site)
@@ -71,7 +71,7 @@ class LocaleDomainMiddleware(object):
             other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
             return redirect_to_www(site=other_site)
 
-        if (not(request.get_full_path() == '/')):
+        if (not (request.get_full_path() == '/')):
             return redirect_to_www(site=site)
 
         return language_selector(request=request)
