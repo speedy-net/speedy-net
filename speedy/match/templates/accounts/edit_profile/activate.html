@@ -18,7 +18,7 @@
             </div>
             {% if not request.user.has_verified_email %}
                 <div class="alert alert-danger">
-                    {% trans 'Please validate your email address' context user.get_gender %}
+                    {% trans 'Please confirm your email address.' context user.get_gender %}
                 </div>
             {% elif form %}
                 <div class="activation-step-wrapper">

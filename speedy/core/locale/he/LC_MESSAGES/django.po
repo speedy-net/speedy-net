@@ -458,7 +458,7 @@ msgid "Welcome to"
 msgstr ""
 
 #: templates/accounts/edit_profile/activate.html:16
-msgid "Please validate your email address"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: templates/accounts/edit_profile/activate.html:21
@@ -1132,17 +1132,17 @@ msgstr ""
 
 #: templates/translations.html:69
 msgctxt "female"
-msgid "Please validate your email address"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: templates/translations.html:70
 msgctxt "male"
-msgid "Please validate your email address"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: templates/translations.html:71
 msgctxt "other"
-msgid "Please validate your email address"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: templates/translations.html:74

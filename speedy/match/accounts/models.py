@@ -119,6 +119,7 @@ class SiteProfile(SiteProfileBase):
         return list(filter(None, (l.strip() for l in self.active_languages.split(','))))
 
     def validate_profile_and_activate(self):
+        # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
         lang = get_language()
         error_messages = list()
         for step in range(len(settings.SITE_PROFILE_FORM_FIELDS)):
@@ -184,13 +185,17 @@ class SiteProfile(SiteProfileBase):
             if (len(error_messages) > 0):
                 self._deactivate_language(step=step)
                 return step, error_messages
-        # Profile is valid. Activate in this language.
+        # Registration form is complete. Check if the user has a confirmed email address.
         step = len(settings.SITE_PROFILE_FORM_FIELDS)
         self.activation_step = step
-        languages = self.get_active_languages()
-        if (not (lang in languages)):
-            languages.append(lang)
-            self._set_active_languages(languages=languages)
+        if (self.user.has_confirmed_email()):
+            # Profile is valid. Activate in this language.
+            languages = self.get_active_languages()
+            if (not (lang in languages)):
+                languages.append(lang)
+                self._set_active_languages(languages=languages)
+        else:
+            error_messages.append(_("Please confirm your email address."))
         self.save(update_fields={'active_languages', 'activation_step'})
         return step, error_messages
 
