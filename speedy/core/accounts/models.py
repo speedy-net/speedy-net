@@ -236,22 +236,21 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return model.objects.get_or_create(user=self)[0]
 
     def get_gender(self):
-        genders = {1: 'female', 2: 'male', 3: 'other'}
+        genders = {self.__class__.GENDER_FEMALE: 'female', self.__class__.GENDER_MALE: 'male', self.__class__.GENDER_OTHER: 'other'}
         return genders.get(self.gender)
 
     def get_gender_translated(self):
-        genders = {1: _('female'), 2: _('male'), 3: _('other')}
+        genders = {self.__class__.GENDER_FEMALE: _('female'), self.__class__.GENDER_MALE: _('male'), self.__class__.GENDER_OTHER: _('other')}
         return genders.get(self.gender)
 
     def get_diet(self):
-        diets = {1: _('Vegan'), 2: _('Vegetarian'), 3: _('Carnist')}
+        diets = {self.__class__.DIET_VEGAN: _('Vegan'), self.__class__.DIET_VEGETARIAN: _('Vegetarian'), self.__class__.DIET_CARNIST: _('Carnist')}
         return diets.get(self.diet)
 
     def get_age(self):
         return get_age(date_birth=self.date_of_birth)
 
     def get_diet_choices(self):
-        print('herere')
         return (
             (self.__class__.DIET_VEGAN, pgettext_lazy(context=self.get_gender(), message='Vegan (eats only plants and fungi)')),
             (self.__class__.DIET_VEGETARIAN, pgettext_lazy(context=self.get_gender(), message='Vegetarian (doesn\'t eat fish and meat)')),

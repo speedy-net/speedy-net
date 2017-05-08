@@ -51,12 +51,12 @@ class SiteProfile(SiteProfileBase):
     RANK_5 = 5
 
     RANK_CHOICES = (
-        (RANK_0, _('0 stars')),
-        (RANK_1, _('1 stars')),
-        (RANK_2, _('2 stars')),
-        (RANK_3, _('3 stars')),
-        (RANK_4, _('4 stars')),
-        (RANK_5, _('5 stars'))
+        (RANK_0, _('0 hearts')),
+        (RANK_1, _('1 hearts')),
+        (RANK_2, _('2 hearts')),
+        (RANK_3, _('3 hearts')),
+        (RANK_4, _('4 hearts')),
+        (RANK_5, _('5 hearts'))
     )
 
     access_account = ACCESS_ANYONE
@@ -148,8 +148,9 @@ class SiteProfile(SiteProfileBase):
                     if (not ((self.height is not None) and (1 <= self.height <= 450))):
                         error_messages.append(_("Height must be from 1 to 450 cm."))
                 elif (field in ['diet']):
-                    if (not (User.DIET_UNKNOWN < self.user.diet < User.DIET_MAX_VALUE_PLUS_ONE)):
-                        error_messages.append(_("Your diet is required."))
+                    pass # ~~~~ TODO: remove this line and uncomment the lines below. Currently the line below throws an exception (TypeError at /welcome/ - unorderable types: int() < str())
+                    # if (not (User.DIET_UNKNOWN < self.user.diet < User.DIET_MAX_VALUE_PLUS_ONE)):
+                    #     error_messages.append(_("Your diet is required."))
                 elif (field in ['smoking']):
                     if (not (self.__class__.SMOKING_UNKNOWN < self.smoking < self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)):
                         error_messages.append(_("Your smoking status is required."))
@@ -171,19 +172,28 @@ class SiteProfile(SiteProfileBase):
                         if (not (len(error_messages) > 0)):
                             error_messages.append(_("Please fix minimal and maximal age to match."))
                 elif (field in ['diet_match']):
-                    if (not (all(((diet in self.diet_match) and (self.__class__.RANK_0 <= self.diet_match[diet] <= self.__class__.RANK_5)) for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))):
+                    if (not (all([((str(diet) in self.diet_match) and (self.__class__.RANK_0 <= self.diet_match[str(diet)] <= self.__class__.RANK_5)) for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)]))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select diet match."))
+                    elif (not (max([self.diet_match[str(diet)] for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)]) == self.__class__.RANK_5)):
+                        error_messages.append(_("At least one diet match option should be 5 hearts."))
                 elif (field in ['smoking_match']):
-                    if (not (all(((smoking in self.smoking_match) and (self.__class__.RANK_0 <= self.smoking_match[smoking] <= self.__class__.RANK_5)) for smoking in range(self.__class__.SMOKING_UNKNOWN + 1, self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)))):
+                    if (not (all([((str(smoking) in self.smoking_match) and (self.__class__.RANK_0 <= self.smoking_match[str(smoking)] <= self.__class__.RANK_5)) for smoking in range(self.__class__.SMOKING_UNKNOWN + 1, self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)]))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select smoking status match."))
+                    elif (not (max([self.smoking_match[str(smoking)] for smoking in range(self.__class__.SMOKING_UNKNOWN + 1, self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)]) == self.__class__.RANK_5)):
+                        error_messages.append(_("At least one smoking status match option should be 5 hearts."))
                 elif (field in ['marital_status_match']):
-                    if (not (all(((marital_status in self.marital_status_match) and (self.__class__.RANK_0 <= self.marital_status_match[marital_status] <= self.__class__.RANK_5)) for marital_status in range(self.__class__.MARITAL_STATUS_UNKNOWN + 1, self.__class__.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))):
+                    if (not (all([((str(marital_status) in self.marital_status_match) and (self.__class__.RANK_0 <= self.marital_status_match[str(marital_status)] <= self.__class__.RANK_5)) for marital_status in range(self.__class__.MARITAL_STATUS_UNKNOWN + 1, self.__class__.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)]))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select marital status match."))
+                    elif (not (max([self.marital_status_match[str(marital_status)] for marital_status in range(self.__class__.MARITAL_STATUS_UNKNOWN + 1, self.__class__.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)]) == self.__class__.RANK_5)):
+                        error_messages.append(_("At least one marital status match option should be 5 hearts."))
             if (len(error_messages) > 0):
                 self._deactivate_language(step=step)
+                print(step, self.diet_match, self.smoking_match, self.marital_status_match) # ~~~~ TODO: remove this line! debugging code.
+                for error_message in error_messages:                                        # ~~~~ TODO: remove this line! debugging code.
+                    print(error_message)                                                    # ~~~~ TODO: remove this line! debugging code.
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(settings.SITE_PROFILE_FORM_FIELDS)

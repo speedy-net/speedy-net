@@ -71,27 +71,27 @@ msgid "Married"
 msgstr ""
 
 #: accounts/models.py:51
-msgid "0 stars"
+msgid "0 hearts"
 msgstr ""
 
 #: accounts/models.py:52
-msgid "1 stars"
+msgid "1 hearts"
 msgstr ""
 
 #: accounts/models.py:53
-msgid "2 stars"
+msgid "2 hearts"
 msgstr ""
 
 #: accounts/models.py:54
-msgid "3 stars"
+msgid "3 hearts"
 msgstr ""
 
 #: accounts/models.py:55
-msgid "4 stars"
+msgid "4 hearts"
 msgstr ""
 
 #: accounts/models.py:56
-msgid "5 stars"
+msgid "5 hearts"
 msgstr ""
 
 #: accounts/models.py:62
