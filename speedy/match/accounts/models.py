@@ -67,7 +67,7 @@ class SiteProfile(SiteProfileBase):
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
     height = models.SmallIntegerField(verbose_name=_('height'), null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('minial age to match'), default=settings.MIN_AGE_ALLOWED)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED)
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED)
     smoking = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
     city = models.CharField(verbose_name=_('city or locality'), max_length=255, null=True)
@@ -109,6 +109,7 @@ class SiteProfile(SiteProfileBase):
         self.active_languages = ','.join(set(languages))
 
     def _deactivate_language(self, step):
+        # Profile is invalid. Deactivate in this language.
         lang = get_language()
         self._set_active_languages(set(self.get_active_languages()) - {lang})
         self.activation_step = step
@@ -127,87 +128,63 @@ class SiteProfile(SiteProfileBase):
                     pass # ~~~~ TODO: remove this line & uncomment the lines below!
                     # if (not (self.user.photo)):
                     #     error_messages.append(_("A profile picture is required."))
-                    #     self._deactivate_language(step=step)
-                    #     return step, error_messages
                 elif (field in ['profile_description']):
                     if (not ((self.profile_description is not None) and (len(self.profile_description) > 0))):
                         error_messages.append(_("Please write some text in this field."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['city']):
                     if (not ((self.city is not None) and (len(self.city) > 0))):
                         error_messages.append(_("Please write where you live."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['children']):
                     if (not ((self.children is not None) and (len(self.children) > 0))):
                         error_messages.append(_("Do you have children? How many?"))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['more_children']):
                     if (not ((self.more_children is not None) and (len(self.more_children) > 0))):
                         error_messages.append(_("Do you want (more) children?"))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['match_description']):
                     if (not ((self.match_description is not None) and (len(self.match_description) > 0))):
                         error_messages.append(_("Please write some text in this field."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['height']):
                     if (not ((self.height is not None) and (1 <= self.height <= 450))):
                         error_messages.append(_("Height must be from 1 to 450 cm."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['diet']):
                     if (not (User.DIET_UNKNOWN < self.user.diet < User.DIET_MAX_VALUE_PLUS_ONE)):
                         error_messages.append(_("Your diet is required."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['smoking']):
                     if (not (self.__class__.SMOKING_UNKNOWN < self.smoking < self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)):
                         error_messages.append(_("Your smoking status is required."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['marital_status']):
                     if (not (self.__class__.MARITAL_STATUS_UNKNOWN < self.marital_status < self.__class__.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)):
                         error_messages.append(_("Your marital status is required."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['gender_to_match']):
                     if (not ((len(self.gender_to_match) > 0) and (all((User.GENDER_UNKNOWN <= gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in self.gender_to_match)))):
                         self.gender_to_match = []
                         error_messages.append(_("Gender to match is required."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['min_age_match', 'max_age_match']):
                     if (not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= self.max_age_match <= settings.MAX_AGE_ALLOWED)):
                         if (not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= settings.MAX_AGE_ALLOWED)):
-                            error_messages.append(_("Minial age to match must be from 0 to 180 years."))
+                            error_messages.append(_("Minimal age to match must be from 0 to 180 years."))
                         if (not (settings.MIN_AGE_ALLOWED <= self.max_age_match <= settings.MAX_AGE_ALLOWED)):
                             error_messages.append(_("Maximal age to match must be from 0 to 180 years."))
                         if (not (self.min_age_match <= self.max_age_match)):
-                            error_messages.append(_("Maximal age to match can't be less than minial age to match."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
+                            error_messages.append(_("Maximal age to match can't be less than minimal age to match."))
+                        if (not (len(error_messages) > 0)):
+                            error_messages.append(_("Please fix minimal and maximal age to match."))
                 elif (field in ['diet_match']):
                     if (not (all(((diet in self.diet_match) and (self.__class__.RANK_0 <= self.diet_match[diet] <= self.__class__.RANK_5)) for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select diet match."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['smoking_match']):
                     if (not (all(((smoking in self.smoking_match) and (self.__class__.RANK_0 <= self.smoking_match[smoking] <= self.__class__.RANK_5)) for smoking in range(self.__class__.SMOKING_UNKNOWN + 1, self.__class__.SMOKING_MAX_VALUE_PLUS_ONE)))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select smoking status match."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
                 elif (field in ['marital_status_match']):
                     if (not (all(((marital_status in self.marital_status_match) and (self.__class__.RANK_0 <= self.marital_status_match[marital_status] <= self.__class__.RANK_5)) for marital_status in range(self.__class__.MARITAL_STATUS_UNKNOWN + 1, self.__class__.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))):
                         # This may be due to values added later.
                         error_messages.append(_("Please select marital status match."))
-                        self._deactivate_language(step=step)
-                        return step, error_messages
+            if (len(error_messages) > 0):
+                self._deactivate_language(step=step)
+                return step, error_messages
+        # Profile is valid. Activate in this language.
         step = len(settings.SITE_PROFILE_FORM_FIELDS)
         self.activation_step = step
         languages = self.get_active_languages()

@@ -20,6 +20,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='siteprofile',
             name='min_height_match',
-            field=models.PositiveSmallIntegerField(null=True, verbose_name='minial height to match'),
+            field=models.PositiveSmallIntegerField(null=True, verbose_name='minimal height to match'),
         ),
     ]

@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='siteprofile',
             name='min_age_match',
-            field=models.SmallIntegerField(default=0, verbose_name='minial age to match'),
+            field=models.SmallIntegerField(default=0, verbose_name='minimal age to match'),
         ),
         migrations.AddField(
             model_name='siteprofile',

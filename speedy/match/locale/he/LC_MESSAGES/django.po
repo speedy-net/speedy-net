@@ -111,7 +111,7 @@ msgid "height"
 msgstr ""
 
 #: accounts/models.py:67
-msgid "minial age to match"
+msgid "minimal age to match"
 msgstr ""
 
 #: accounts/models.py:68
