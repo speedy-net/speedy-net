@@ -10,7 +10,6 @@ from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
-from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 from .models import User, UserEmailAddress
 
 DATE_FIELD_FORMATS = [
