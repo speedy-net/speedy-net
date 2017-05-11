@@ -5,7 +5,7 @@ from speedy.core.base.test import TestCase
 from ..models import SiteProfile
 from speedy.core.base.test import exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_net
 from speedy.core.accounts.models import User
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory
 
 
 class SiteProfileTestCase(TestCase):
@@ -19,6 +19,19 @@ class SiteProfileTestCase(TestCase):
         p = SiteProfile()
         p._set_active_languages(['en', 'he'])
         self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})
+
+    def test_call_activate_directly_and_assert_exception(self):
+        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        with self.assertRaises(NotImplementedError):
+            user.profile.activate()
+
+    def test_call_deactivate_directly_and_assert_no_exception(self):
+        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user.profile.deactivate()
+
+    def test_call_get_name_directly_and_assert_no_exception(self):
+        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user.profile.get_name()
 
 
 @exclude_on_speedy_composer
