@@ -6,7 +6,6 @@
 #
 # from speedy.core.accounts.models import Entity, User, UserEmailAddress, SiteProfileBase
 # from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-# from speedy.core.base.test import exclude_on_speedy_match
 # from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 #
 #

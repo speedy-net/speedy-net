@@ -3,12 +3,19 @@ from django.conf import settings
 
 from speedy.core.base.test import TestCase
 from ..models import SiteProfile
-from speedy.core.base.test import exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_net
 from speedy.core.accounts.models import User
 from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory
 
 
 class SiteProfileTestCase(TestCase):
+    def get_default_user_1(self):
+        user_1 = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        return user_1
+
+    def get_default_user_2(self):
+        user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGETARIAN)
+        return user_2
+
     def test_get_active_languages(self):
         p = SiteProfile(active_languages='en, he, de')
         self.assertListEqual(list1=p.get_active_languages(), list2=['en', 'he', 'de'])
@@ -21,22 +28,23 @@ class SiteProfileTestCase(TestCase):
         self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})
 
     def test_call_activate_directly_and_assert_exception(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user_1 = self.get_default_user_1()
+        self.assertEqual(user_1.profile.is_active, False)
         with self.assertRaises(NotImplementedError):
-            user.profile.activate()
+            user_1.profile.activate()
+        self.assertEqual(user_1.profile.is_active, False)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
-        user.profile.deactivate()
+        user_1 = self.get_default_user_2()
+        self.assertEqual(user_1.profile.is_active, True)
+        user_1.profile.deactivate()
+        self.assertEqual(user_1.profile.is_active, False)
 
     def test_call_get_name_directly_and_assert_no_exception(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
-        user.profile.get_name()
+        user_1 = self.get_default_user_1()
+        self.assertEqual(user_1.profile.get_name(), 'Jesse')
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
-@exclude_on_speedy_net
 class SiteProfileMatchTestCase(TestCase):
     # def activate_user(self, user):
     #     # user.photo = ~~~~ TODO: some photo
