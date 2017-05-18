@@ -183,10 +183,12 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if ((not (site.pk == SPEEDY_NET_SITE_ID)) and (not (request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active))):
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
-        if ((site.pk == SPEEDY_MATCH_SITE_ID) and ('back' in request.GET)):
+        if site.pk == SPEEDY_MATCH_SITE_ID and 'back' in request.GET:
             if request.user.profile.activation_step >= 1:
                 request.user.profile.activation_step -= 1
                 request.user.profile.save()
+        if site.pk == SPEEDY_MATCH_SITE_ID and not self.request.user.profile.is_active and self.request.user.profile.activation_step == len(settings.SITE_PROFILE_FORM_FIELDS):
+            return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -196,14 +198,12 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return redirect(to=reverse_lazy('accounts:activate'))
 
     def form_valid(self, form):
-        # print(self.object.is_active)
         response = super().form_valid(form=form)
         if self.object.is_active:
             messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
         else:
             return redirect(reverse_lazy('accounts:activate'))
         return response
-        # return redirect(to=reverse_lazy('accounts:activate')) # Check if can use Super
 
 
 class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):

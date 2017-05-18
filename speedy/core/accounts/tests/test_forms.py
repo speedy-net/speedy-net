@@ -33,6 +33,7 @@ class RegistrationFormTestCase(TestCase):
         form.full_clean()
         self.assertNotIn(member='slug', container=form.errors)
 
+    @exclude_on_speedy_match # On speedy match user already is created with confirmed email
     def test_non_unique_primary_confirmed_email(self):
         existing_user = ActiveUserFactory()
         existing_user.email_addresses.create(email='email@example.com', is_confirmed=True)

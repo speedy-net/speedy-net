@@ -30,6 +30,9 @@ class UploadViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_upload_file(self):
+        initial_images_count = Image.objects.count()
+        initial_images_id = list(Image.objects.all().values_list('id', flat=True))
+        print(initial_images_id)
         self.client.login(username=self.user.slug, password='111')
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=200)
@@ -37,8 +40,8 @@ class UploadViewTestCase(TestCase):
         self.assertEqual(first=len(json_response['files'][0]['uuid']), second=20)
         self.assertEqual(first=json_response['files'][0]['name'], second=os.path.basename(self.upload_file.name))
         self.assertEqual(first=json_response['files'][0]['type'], second='image')
-        self.assertEqual(first=Image.objects.count(), second=1)
-        image = Image.objects.first()
+        self.assertEqual(first=Image.objects.count(), second=initial_images_count + 1)
+        image = Image.objects.exclude(id__in=initial_images_id).first()
         assert isinstance(image, Image)
         self.assertEqual(first=str(image.id), second=json_response['files'][0]['uuid'])
         self.assertEqual(first=image.basename, second=json_response['files'][0]['name'])

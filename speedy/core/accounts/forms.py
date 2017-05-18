@@ -10,7 +10,8 @@ from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
-from .models import User, UserEmailAddress
+from .models import User, UserEmailAddress, SiteProfileBase
+
 
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
@@ -300,3 +301,14 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
             InlineField('access', css_class='input-sm'),
         )
         return helper
+
+
+class ProfilePrivacyForm(forms.ModelForm):
+    class Meta:
+        fields = ()
+        model = SiteProfileBase
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', _('Save Changes')))

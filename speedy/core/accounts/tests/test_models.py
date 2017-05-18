@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import normalize_slug, normalize_username, Entity
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 from .test_factories import ActiveUserFactory, UserEmailAddressFactory
 
 
@@ -75,6 +75,7 @@ class EntityTestCase(TestCase):
 @exclude_on_speedy_mail_software
 class UserTestCase(TestCase):
 
+    @exclude_on_speedy_match
     def test_has_no_confirmed_email(self):
         user = ActiveUserFactory()
         UserEmailAddressFactory(user=user, is_confirmed=False)

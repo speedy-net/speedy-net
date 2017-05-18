@@ -1,3 +1,4 @@
+{% load i18n %}
 <div class="user-profile pull-left flip">
     <div class="user-profile-image">
         {% if user.photo %}
@@ -16,7 +17,7 @@
                  <span>{{ user.profile.city }}</span>
             {% endif %}
         {% if user.profile.height %}
-            , <span>{{ user.profile.height }}</span>
+            , <span>{{ user.profile.height }} {% trans 'cm' %}</span>
         {% endif %}
     </div>
     <div class="user-profile-more-info">

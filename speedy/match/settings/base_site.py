@@ -14,6 +14,7 @@ ROOT_URLCONF = 'speedy.match.urls'
 DEFAULT_FROM_EMAIL = 'webmaster@speedymatch.com'
 
 INSTALLED_APPS += [
+    'speedy.net.accounts',
     'speedy.match.accounts',
     'speedy.match.likes',
     'speedy.match.matches'

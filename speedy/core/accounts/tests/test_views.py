@@ -538,6 +538,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         r = self.client.post(self.primary_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url))
 
+    @exclude_on_speedy_match
     def test_user_can_delete_email_address(self):
         self.assertEqual(first=self.user.email_addresses.count(), second=2)
         r = self.client.post(self.confirmed_address_url)
@@ -575,6 +576,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         r = self.client.post(self.unconfirmed_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_address_url))
 
+    @exclude_on_speedy_match
     def test_user_can_make_confirmed_address_primary(self):
         self.assertEqual(first=self.user.email_addresses.count(), second=3)
         self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)

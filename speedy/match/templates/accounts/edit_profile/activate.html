@@ -44,6 +44,9 @@
                             <div>
                         {% endif %}
                             {% csrf_token %}
+                            {% if form.non_field_errors %}
+                                {{ form.non_field_errors }}
+                            {% endif %}
                             {% for field in form %}
                                 <div class="activation-form-field text-left flip">
                                     {{ field.errors }}

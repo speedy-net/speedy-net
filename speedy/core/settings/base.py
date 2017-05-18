@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'speedy.core.blocks',
     'speedy.core.uploads',
     'speedy.core.feedback',
-    'speedy.net.accounts',
 ]
 
 MIDDLEWARE = [
@@ -107,8 +106,6 @@ USER_PROFILE_WIDGETS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-WSGI_APPLICATION = 'speedy.net.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

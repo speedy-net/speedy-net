@@ -2,6 +2,7 @@ import json
 
 from django import forms
 from django.conf import settings
+from speedy.match.accounts import validators
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 
@@ -9,13 +10,13 @@ from modeltranslation.forms import TranslationModelForm
 from speedy.core.uploads.models import Image
 # from django.db.models
 from speedy.core.accounts.models import User
-from speedy.net.accounts.forms import ProfilePrivacyForm as NetAccountPrivacyForm
+from speedy.core.accounts.forms import ProfilePrivacyForm as BaseAccountPrivacyForm
 
 from .models import SiteProfile
 
 
-class AccountPrivacyForm(NetAccountPrivacyForm):
-    class Meta(NetAccountPrivacyForm.Meta):
+class AccountPrivacyForm(BaseAccountPrivacyForm):
+    class Meta(BaseAccountPrivacyForm.Meta):
         model = SiteProfile
         fields = ()
 
@@ -39,7 +40,7 @@ class CustomJsonWidget(CustomCheckboxSelectMultiple):
 
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
     # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking and marital status.
-    diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect(), label=_('My diet'))
+    diet = forms.ChoiceField(choices=User.DIET_CHOICES[1:], widget=forms.RadioSelect(), label=_('My diet'), validators=[validators.validate_diet])
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
@@ -60,8 +61,22 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'marital_status_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
         }
 
+    def clean_photo(self):
+        photo = self.files.get('photo')
+        if not photo:
+            photo = self.instance.user.photo
+        validators.validate_photo(photo=photo)
+        return self.cleaned_data
+
     def get_fields(self):
         return settings.SITE_PROFILE_FORM_FIELDS[self.instance.activation_step]
+
+    def clean(self):
+        if 'min_age_match' in self.fields and 'max_age_match' in self.fields:
+            min_age_match = self.cleaned_data.get('min_age_match')
+            max_age_match = self.cleaned_data.get('max_age_match')
+            validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
+        return self.cleaned_data
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -84,24 +99,13 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
                 user_image = Image(owner=self.instance.user, file=self.files['photo'])
                 user_image.save()
                 self.instance.user.photo = user_image
-            else:
-                self.instance.user.photo = None
             self.instance.user.save()
         if commit and 'diet' in self.fields:
             self.instance.user.diet = self.cleaned_data['diet']
             self.instance.user.save()
-        if commit:
-            activation_step = self.instance.activation_step + 1
-            step, error_messages = self.instance.validate_profile_and_activate()
-            self.instance.activation_step = min([activation_step, step])
-            # if (len(error_messages) > 0):
-            #     for error_message in error_messages:
-            #         messages.error(request, error_message)
-
-            # if self.instance.activation_step + 1 == len(settings.SITE_PROFILE_FORM_FIELDS):
-            #     self.instance.activation_step = 0
-            #     self.instance.activate()
-            # else:
-            #     self.instance.activation_step += 1
         super().save(commit=commit)
+        if commit:
+            step, errors = self.instance.validate_profile_and_activate()
+            self.instance.activation_step = min(self.instance.activation_step + 1, step)
+            self.instance.save(update_fields={'activation_step'})
         return self.instance

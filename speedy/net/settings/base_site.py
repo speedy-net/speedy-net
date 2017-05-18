@@ -12,6 +12,7 @@ SITE_TITLE = _('Speedy Net [alpha]')
 ROOT_URLCONF = 'speedy.net.urls'
 
 INSTALLED_APPS += [
+    'speedy.net.accounts',
     'speedy.net.pages',
     'speedy.net.groups',
     'speedy.net.causes',

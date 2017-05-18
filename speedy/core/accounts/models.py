@@ -301,6 +301,8 @@ class UserEmailAddress(TimeStampedModel):
     def verify(self):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
+        if hasattr(self.user.profile, 'validate_profile_and_activate'):
+            self.user.profile.validate_profile_and_activate()
 
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)
