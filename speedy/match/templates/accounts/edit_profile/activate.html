@@ -23,15 +23,33 @@
             {% elif form %}
                 <div class="activation-step-wrapper">
                     <div class="activation-steps">
-                        <span class="activation-step">1</span>
-                        <span class="activation-step">2</span>
-                        <span class="activation-step">3</span>
-                        <span class="activation-step">4</span>
-                        <span class="activation-step">5</span>
-                        <span class="activation-step">6</span>
-                        <span class="activation-step">7</span>
-                        <span class="activation-step">8</span>
-                        <span class="activation-step">9</span>
+                        <a href="{% url 'accounts:activate' %}?step=-1">
+                            <span class="activation-step">1</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=0">
+                            <span class="activation-step">2</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=1">
+                            <span class="activation-step">3</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=2">
+                            <span class="activation-step">4</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=3">
+                            <span class="activation-step">5</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=4">
+                            <span class="activation-step">6</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=5">
+                            <span class="activation-step">7</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=6">
+                            <span class="activation-step">8</span>
+                        </a>
+                        <a href="{% url 'accounts:activate' %}?step=7">
+                            <span class="activation-step">9</span>
+                        </a>
                     </div>
                     <div class="activation-form-header text-left flip">
                         {% trans 'About me' %}

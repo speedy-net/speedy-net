@@ -32,7 +32,6 @@ class UploadViewTestCase(TestCase):
     def test_upload_file(self):
         initial_images_count = Image.objects.count()
         initial_images_id = list(Image.objects.all().values_list('id', flat=True))
-        print(initial_images_id)
         self.client.login(username=self.user.slug, password='111')
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=200)

@@ -214,12 +214,10 @@ class SiteProfile(SiteProfileBase):
                         error_messages.append(str(e))
             if (len(error_messages) > 0):
                 self._deactivate_language(step=step)
-                for error_message in error_messages:                                        # ~~~~ TODO: remove this line! debugging code.
-                    print(error_message)                                                    # ~~~~ TODO: remove this line! debugging code.
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(settings.SITE_PROFILE_FORM_FIELDS)
-        if self.user.has_confirmed_email() and step == self.activation_step + 1:
+        if self.user.has_confirmed_email() and step <= self.activation_step + 1:
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()
             if not (lang in languages):
@@ -227,13 +225,14 @@ class SiteProfile(SiteProfileBase):
                 self._set_active_languages(languages=languages)
         else:
             error_messages.append(_("Please confirm your email address."))
-        self.save(update_fields={'active_languages'})
+        self.activation_step = step
+        self.save(update_fields={'active_languages', 'activation_step'})
         return step, error_messages
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
-        step, error_messages = self.validate_profile_and_activate()
-        other_profile_step, other_profile_error_messages = other_profile.validate_profile_and_activate()
-        if (step == len(settings.SITE_PROFILE_FORM_FIELDS)) and (other_profile_step == len(settings.SITE_PROFILE_FORM_FIELDS)):
+        self.validate_profile_and_activate()
+        other_profile.validate_profile_and_activate()
+        if self.is_active and other_profile.is_active:
             other_user_age = get_age(other_profile.user.date_of_birth)
             if other_profile.user.gender not in self.gender_to_match:
                 return self.__class__.RANK_0

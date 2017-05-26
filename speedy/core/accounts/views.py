@@ -187,6 +187,12 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             if request.user.profile.activation_step >= 1:
                 request.user.profile.activation_step -= 1
                 request.user.profile.save()
+        if site.pk == SPEEDY_MATCH_SITE_ID and 'step' in request.GET:
+            if request.GET.get('step') == '-1':
+                return redirect('accounts:edit_profile')
+            step, errors = self.request.user.profile.validate_profile_and_activate()
+            self.request.user.profile.activation_step = min(int(request.GET.get('step')), step)
+            self.request.user.profile.save(update_fields={'activation_step'})
         if site.pk == SPEEDY_MATCH_SITE_ID and not self.request.user.profile.is_active and self.request.user.profile.activation_step == len(settings.SITE_PROFILE_FORM_FIELDS):
             return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
