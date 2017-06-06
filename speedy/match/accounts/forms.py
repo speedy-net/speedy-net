@@ -72,7 +72,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         return settings.SITE_PROFILE_FORM_FIELDS[self.instance.activation_step]
 
     def clean(self):
-        if 'min_age_match' in self.fields and 'max_age_match' in self.fields:
+        if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
             min_age_match = self.cleaned_data.get('min_age_match')
             max_age_match = self.cleaned_data.get('max_age_match')
             validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
@@ -84,32 +84,34 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
-        if 'photo' in self.fields:
+        if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
-        if 'diet' in self.fields:
+        if ('diet' in self.fields):
             self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
             self.fields['diet'].initial = self.instance.user.diet
-        if 'diet_match' in self.fields:
+        if ('diet_match' in self.fields):
             # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking and marital status.
             self.fields['diet_match'].widget.choices = self.instance.user.get_diet_choices()
 
     def save(self, commit=True):
-        if commit and 'photo' in self.fields:
-            if self.files:
+        if ((commit) and ('photo' in self.fields)):
+            if (self.files):
                 user_image = Image(owner=self.instance.user, file=self.files['photo'])
                 user_image.save()
                 self.instance.user.photo = user_image
             self.instance.user.save()
-        if commit and 'diet' in self.fields:
+        if ((commit) and ('diet' in self.fields)):
             self.instance.user.diet = self.cleaned_data['diet']
             self.instance.user.save()
         super().save(commit=commit)
-        if commit:
+        if (commit):
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate()
             self.instance.activation_step = min(activation_step + 1, step)
-            if self.instance.activation_step >= len(settings.SITE_PROFILE_FORM_FIELDS):
+            if (self.instance.activation_step >= len(settings.SITE_PROFILE_FORM_FIELDS)):
                 # sets step to 0 in case user switches language to proccees from first step
                 self.instance.activation_step = 0
             self.instance.save(update_fields={'activation_step'})
         return self.instance
+
+

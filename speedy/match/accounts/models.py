@@ -183,7 +183,6 @@ class SiteProfile(SiteProfileBase):
                     except ValidationError as e:
                         error_messages.append(str(e))
                 elif field in ['min_age_match', 'max_age_match']:
-
                     if not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= self.max_age_match <= settings.MAX_AGE_ALLOWED):
                         try:
                             validators.validate_min_age_match(min_age_match=self.min_age_match)
