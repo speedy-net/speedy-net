@@ -35,29 +35,29 @@ def validate_match_description(match_description):
 
 
 def validate_height(height):
-    if not(height is not None and (1 <= height <= 450)):
+    if not ((height is not None) and (1 <= height <= 450)):
         raise ValidationError(_("Height must be from 1 to 450 cm."))
 
 
 def validate_diet(diet):
-    if not (diet is not None and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)):
+    if not ((diet is not None) and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)):
         raise ValidationError(_("Your diet is required."))
 
 
 def validate_smoking(smoking):
     from .models import SiteProfile
-    if not (smoking is not None and (SiteProfile.SMOKING_UNKNOWN < smoking < SiteProfile.SMOKING_MAX_VALUE_PLUS_ONE)):
+    if not ((smoking is not None) and (SiteProfile.SMOKING_UNKNOWN < smoking < SiteProfile.SMOKING_MAX_VALUE_PLUS_ONE)):
         raise ValidationError(_("Your smoking status is required."))
 
 
 def validate_marital_status(marital_status):
     from .models import SiteProfile
-    if not (SiteProfile.MARITAL_STATUS_UNKNOWN < marital_status < SiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE):
+    if not ((marital_status is not None) and (SiteProfile.MARITAL_STATUS_UNKNOWN < marital_status < SiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)):
         raise ValidationError(_("Your marital status is required."))
 
 
 def validate_gender_to_match(gender_to_match):
-    if not ((len(gender_to_match) > 0) and (all((User.GENDER_UNKNOWN <= gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in gender_to_match))):
+    if not ((len(gender_to_match) > 0) and (all((User.GENDER_UNKNOWN < gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in gender_to_match))):
         raise ValidationError(_("Gender to match is required."))
 
 

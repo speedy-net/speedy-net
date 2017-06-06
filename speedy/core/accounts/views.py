@@ -183,17 +183,17 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if ((not (site.pk == SPEEDY_NET_SITE_ID)) and (not (request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active))):
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
-        if site.pk == SPEEDY_MATCH_SITE_ID and 'back' in request.GET:
+        if ((site.pk == SPEEDY_MATCH_SITE_ID) and ('back' in request.GET)):
             if request.user.profile.activation_step >= 1:
                 request.user.profile.activation_step -= 1
                 request.user.profile.save()
-        if site.pk == SPEEDY_MATCH_SITE_ID and 'step' in request.GET:
-            if request.GET.get('step') == '-1':
+        if ((site.pk == SPEEDY_MATCH_SITE_ID) and ('step' in request.GET)):
+            if (request.GET.get('step') == '-1'):
                 return redirect('accounts:edit_profile')
             step, errors = self.request.user.profile.validate_profile_and_activate()
             self.request.user.profile.activation_step = min(int(request.GET.get('step')), step)
             self.request.user.profile.save(update_fields={'activation_step'})
-        if site.pk == SPEEDY_MATCH_SITE_ID and not self.request.user.profile.is_active and self.request.user.profile.activation_step == len(settings.SITE_PROFILE_FORM_FIELDS):
+        if ((site.pk == SPEEDY_MATCH_SITE_ID) and (not (self.request.user.profile.is_active)) and (self.request.user.profile.activation_step == len(settings.SITE_PROFILE_FORM_FIELDS))):
             return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
