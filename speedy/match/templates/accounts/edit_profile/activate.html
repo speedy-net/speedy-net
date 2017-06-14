@@ -57,9 +57,9 @@
                     <form action="{% url 'accounts:activate' %}" method="post" class="activation-form" enctype="multipart/form-data">
                         {% if 0 < request.user.profile.activation_step and request.user.profile.activation_step < 5 %}
                             {% include 'accounts/edit_profile/partials/user_profile.html' %}
-                            <div class="pull-right flip">
+                            <div class="activation-form-fileds pull-right flip">
                         {% else %}
-                            <div>
+                            <div class="activation-form-fileds">
                         {% endif %}
                             {% csrf_token %}
                             {% if form.non_field_errors %}

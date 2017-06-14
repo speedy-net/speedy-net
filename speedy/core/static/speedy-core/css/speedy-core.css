@@ -56,6 +56,21 @@ body.bidi-rtl .navbar-right {
     margin: 22px 0 0 20px;
 }
 
+.navbar .navbar-collapse .navbar-nav .menu-languages a {
+    display: inline-block;
+}
+
+.speedy-mobile-menu-icons {
+    font-size: 32px;
+}
+
+.speedy-mobile-menu-icons a {
+    color: white;
+}
+
+.speedy-mobile-menu-icons i {
+    padding: 0 5px;
+}
 
 .footer {
     text-align: center;
@@ -106,3 +121,41 @@ body.bidi-rtl .navbar-right {
     padding-top: 10px;
 }
 
+@media screen and (max-width: 767px) {
+    .navbar.navbar-inverse {
+        margin-bottom: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        top: 0;
+    }
+    .navbar-speedy-net #speedy-navbar-collapse{
+        background-color: #b2cafa;
+    }
+    .navbar .navbar-toggle .icon-bar, .navbar .navbar-toggle:hover .icon-bar {
+        background-color: black;
+    }
+
+    #speedy-navbar-collapse {
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: rgb(0, 140, 186);
+        height: 100%;
+        z-index: 20;
+    }
+    #speedy-navbar-collapse .nav.navbar-nav {
+        margin: 12px 0;
+    }
+    .speedy-body-container {
+        margin-top: 55px;
+    }
+    .page-header {
+        margin: 0;
+    }
+    .page-header h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}

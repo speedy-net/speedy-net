@@ -32,3 +32,10 @@ def sites(request):
         'site_title': site_title,
         'sites': Site.objects.all().order_by('pk'),
     }
+
+
+def speedy_net(request):
+    speedy_net_id = dj_settings.SITE_PROFILES['net']['site_id']
+    return {
+        'speedy_net': Site.objects.get(id=speedy_net_id)
+    }

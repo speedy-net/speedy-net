@@ -3,6 +3,77 @@
 {% load im_tags %}
 {% load staticfiles %}
 {% load i18n %}
+{% load core_tags_and_filters %}
+
+{% block navbar_mobile %}
+    <div class="container-fluid visible-xs">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed pull-left flip" data-toggle="collapse" data-target="#speedy-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% block navbar_mobile_header_icons %}
+            {% endblock %}
+        </div>
+        <div class="collapse navbar-collapse" id="speedy-navbar-collapse">
+            {% if request.user.is_authenticated %}
+                <ul class="nav navbar-nav">
+                    {% block navbar_mobile_menu_top %}
+                        <li>
+                            <a href="{% url 'profiles:user' slug=request.user.slug %}">{{ request.user }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">{% trans 'Friends' %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'im:list' %}">{% trans 'Messages' %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
+                        </li>
+                    {% endblock %}
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="menu-languages">
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <a href="//{{ language.code }}.{{ site.domain }}{{ request.get_full_path }}" title="{{ language.name_local }}">{{ language.name_local }}</a>
+                        {% endfor %}
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'feedback:feedback' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+                    </li>
+                    {% block navigate_other_site %}
+                    {% endblock %}
+                    <li>
+                        <a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a>
+                    </li>
+                </ul>
+            {% else %}
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">{% trans 'Home' %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
@@ -48,20 +119,6 @@
                 </div>
             </div>
         </form>
-
-{#        <ul class="nav navbar-nav navbar-right">#}
-{#            <li><a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a></li>#}
-{#            <li><a href="{% url 'accounts:index' %}">{% trans 'Register' %}</a></li>#}
-{#        </ul>#}
-{#        <form class="navbar-form navbar-right" method="post" action="{% url 'accounts:login' %}">#}
-{#            {% csrf_token %}#}
-{#            <div class="form-group">#}
-{#                <input name="next" type="hidden" value="{{ request.get_full_path }}">#}
-{#                <input name="username" type="text" class="form-control" placeholder="{% trans 'Email or Username' %}">#}
-{#                <input name="password" type="password" class="form-control" placeholder="{% trans 'Password' %}">#}
-{#            </div>#}
-{#            <button type="submit" class="btn btn-default btn-sm">{% trans 'Login' %}</button>#}
-{#        </form>#}
     {% endif %}
 {% endblock %}
 

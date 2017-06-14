@@ -140,10 +140,6 @@ body.bidi-rtl .user-profile {
     position: absolute;
 }
 
-/*.activation-form-actions {*/
-    /*margin-top: 30px;*/
-/*}*/
-
 .activation-form-button {
     border-radius: 6px;
     /*border-top-left-radius: 6px;*/
@@ -163,12 +159,34 @@ body.bidi-rtl .user-profile {
     color: #FF1C32;
 }
 
-/*.activation-form-button:after {*/
-    /*content: '';*/
-  /*position: absolute;*/
-  /*background-color: inherit;*/
-    /*width:  2em;*/
-  /*height: 2em;*/
-  /*border-top-right-radius: 30%;*/
-    /*transform: rotate(-30deg) skewX(-30deg) scale(1,.866);*/
-/*}*/
+@media screen and (max-width: 767px){
+    .page-header {
+        display: none;
+    }
+    .activation-step-wrapper {
+        padding-top: 15px;
+    }
+    .activation-step {
+        font-size: 19px;
+        width: 28px;
+    }
+    .activation-form-header {
+        margin-top: 20px;
+    }
+    .user-profile {
+        display: none;
+    }
+    .activation-form-fileds {
+        width: 100%;
+    }
+    .image-click-zone {
+        width: 100%;
+    }
+    .widget-group .choices {
+        width: 100%;
+        text-align: left;
+    }
+    .activation-form-field textarea, .activation-form-field input {
+        width: 100%;
+    }
+}

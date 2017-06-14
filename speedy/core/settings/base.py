@@ -94,6 +94,7 @@ TEMPLATES = [
                 'speedy.core.base.context_processors.active_url_name',
                 'speedy.core.base.context_processors.settings',
                 'speedy.core.base.context_processors.sites',
+                'speedy.core.base.context_processors.speedy_net',
             ],
         },
     },
@@ -170,7 +171,8 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/logout/',
     '/welcome/',
     '/contact/',
-    '/edit-profile/'
+    '/edit-profile/',
+    '/admin/'
 ]
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True

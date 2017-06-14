@@ -1,9 +1,30 @@
 {% extends 'base_with_login.html' %}
 
 {% load i18n %}
+{% load core_tags_and_filters %}
 
 {% block navbar_class %}navbar-inverse{% endblock %}
-
+{% block navbar_mobile_menu_top %}
+    {{ block.super }}
+    <li>
+        <a href="{% url 'likes:list' request.user.slug %}">{% trans 'Likes' %}</a>
+    </li>
+    <li>
+        <a href="{% url 'matches:list' %}">{% trans 'Matches' %}</a>
+    </li>
+{% endblock %}
+{% block navbar_mobile_header_icons %}
+    {% if request.user.is_authenticated %}
+        <div class="speedy-mobile-menu-icons pull-right flip">
+            <a href="{% url 'likes:list' request.user.slug %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+            <a href="{% url 'im:list' %}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block navigate_other_site %}
+    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_net.domain|remove_1_prefix_from_domain }}">{% trans speedy_net.name %}</a></li>
+{% endblock %}
 {% block user_menu %}
     {{ block.super }}
     {% if request.user.profile.is_active %}

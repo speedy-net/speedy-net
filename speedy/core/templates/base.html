@@ -41,6 +41,7 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
     <meta name="theme-color" content="#b2cafa" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block description %}{% endblock %}
     <script type="text/javascript">
         if (top != self) {
@@ -53,7 +54,7 @@
 {% block body %}
 
 <nav class="navbar {% block navbar_class %}{% endblock %}">
-    <div class="container">
+    <div class="container hidden-xs">
         {% block navbar %}
             <ul class="nav navbar-nav navbar-left" style="position: relative">
                 <li class="dropdown" style="position: absolute; right: 0">
@@ -72,8 +73,10 @@
             {% block login_logout_register %}{% endblock %}
         {% endblock %}
     </div>
+    {% block navbar_mobile %}
+    {% endblock %}
 </nav>
-<div class="container">
+<div class="container speedy-body-container">
     {% for message in messages %}
         <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible"
              role="alert">
@@ -92,7 +95,7 @@
 
         {% if request.user.is_authenticated and request.user.is_active %}
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 hidden-xs">
                     <div class="page-header">
                         <h1>&nbsp;</h1>
                     </div>
@@ -100,7 +103,7 @@
                         {% block user_menu_and_edit_profile %}{% endblock %}
                     </ul>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-xs-12">
         {% endif %}
                     {% block content %}
                     {% endblock %}
@@ -114,7 +117,7 @@
 {% block footer_wrap %}
     <hr>
 
-    <footer class="footer">
+    <footer class="footer hidden-xs">
         {% block footer %}
             {% comment %}
                 <div class="container">
