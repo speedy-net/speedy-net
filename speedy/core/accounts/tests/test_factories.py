@@ -60,8 +60,6 @@ class ActiveUserFactory(DefaultUserFactory):
         speedy_match_site_id = settings.SITE_PROFILES.get('match').get('site_id')
         if site.id == speedy_match_site_id:
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
-            net_profile = self.get_profile(model=None, profile_model=settings.SITE_PROFILES.get('net').get('site_profile_model'))
-            net_profile.activate()
             from speedy.match.accounts.models import SiteProfile
             self.profile.profile_description = "Hi!"
             self.profile.city = "Tel Aviv."

@@ -4,7 +4,8 @@ from django import forms
 from django.conf import settings
 from speedy.match.accounts import validators
 from django.template.loader import render_to_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
+from django.contrib.sites.models import Site
 
 from modeltranslation.forms import TranslationModelForm
 from speedy.core.uploads.models import Image
@@ -18,13 +19,19 @@ from .models import SiteProfile
 class AccountPrivacyForm(BaseAccountPrivacyForm):
     class Meta(BaseAccountPrivacyForm.Meta):
         model = SiteProfile
-        fields = ()
+        fields = ('access_dob_day_month', 'access_dob_year')
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
 
     def render(self, name, value, attrs=None):
-        return render_to_string('accounts/edit_profile/activation_form/photo_widget.html', {'name': name, 'user_photo': self.attrs['user'].photo})
+        language_code = get_language()
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        speedy_net_url = Site.objects.get(id=SPEEDY_NET_SITE_ID).domain
+        return render_to_string('accounts/edit_profile/activation_form/photo_widget.html', {'name': name,
+                                                                                            'user_photo': self.attrs['user'].photo,
+                                                                                            'LANGUAGE_CODE': language_code,
+                                                                                            'speedy_net_url': speedy_net_url})
 
 
 class CustomCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
@@ -109,8 +116,8 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             step, errors = self.instance.validate_profile_and_activate()
             self.instance.activation_step = min(activation_step + 1, step)
             if (self.instance.activation_step >= len(settings.SITE_PROFILE_FORM_FIELDS)):
-                # sets step to 0 in case user switches language to proccees from first step
-                self.instance.activation_step = 0
+                # sets step to 0 in case user switches language to proccees from second step
+                self.instance.activation_step = 1
             self.instance.save(update_fields={'activation_step'})
         return self.instance
 

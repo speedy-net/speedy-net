@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.core.exceptions import ValidationError
 
-from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE, User
+from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE, User, AccessField, ACCESS_ME
 from speedy.core.base.utils import get_age
 from speedy.match.accounts import validators
 
@@ -61,8 +61,9 @@ class SiteProfile(SiteProfileBase):
     )
 
     access_account = ACCESS_ANYONE
-    access_dob_day_month = ACCESS_ANYONE
-    access_dob_year = ACCESS_ANYONE
+
+    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ME)
+    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ME)
     notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
@@ -224,8 +225,7 @@ class SiteProfile(SiteProfileBase):
                 self._set_active_languages(languages=languages)
         else:
             error_messages.append(_("Please confirm your email address."))
-        self.activation_step = step
-        self.save(update_fields={'active_languages', 'activation_step'})
+        self.save(update_fields={'active_languages'})
         return step, error_messages
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
@@ -258,8 +258,7 @@ class SiteProfile(SiteProfileBase):
 
     @property
     def is_active(self):
-        speedy_net_profile = self.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model'])
-        return speedy_net_profile.is_active and get_language() in self.get_active_languages()
+        return self.user.is_active and get_language() in self.get_active_languages()
 
     def deactivate(self):
         self._set_active_languages([])

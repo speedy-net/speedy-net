@@ -181,20 +181,23 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         site = Site.objects.get_current()
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
-        if ((not (site.pk == SPEEDY_NET_SITE_ID)) and (not (request.user.get_profile(model=None, profile_model=settings.SITE_PROFILES['net']['site_profile_model']).is_active))):
+        if ((not (site.pk == SPEEDY_NET_SITE_ID)) and (not (request.user.is_active))):
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
-        if ((site.pk == SPEEDY_MATCH_SITE_ID) and ('back' in request.GET)):
+        elif ((site.pk == SPEEDY_MATCH_SITE_ID) and ('back' in request.GET)):
             if request.user.profile.activation_step >= 1:
                 request.user.profile.activation_step -= 1
                 request.user.profile.save()
-        if ((site.pk == SPEEDY_MATCH_SITE_ID) and ('step' in request.GET)):
+        elif ((site.pk == SPEEDY_MATCH_SITE_ID) and ('step' in request.GET)):
             if (request.GET.get('step') == '-1'):
                 return redirect('accounts:edit_profile')
             step, errors = self.request.user.profile.validate_profile_and_activate()
             self.request.user.profile.activation_step = min(int(request.GET.get('step')), step)
             self.request.user.profile.save(update_fields={'activation_step'})
-        if ((site.pk == SPEEDY_MATCH_SITE_ID) and (not (self.request.user.profile.is_active)) and (self.request.user.profile.activation_step == len(settings.SITE_PROFILE_FORM_FIELDS))):
-            return redirect(reverse_lazy('accounts:edit_profile_credentials'))
+        elif (site.pk == SPEEDY_MATCH_SITE_ID):
+            step, errors = self.request.user.profile.validate_profile_and_activate()
+            if (self.request.user.profile.activation_step == 0) and (
+                step == len(settings.SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
+                return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -205,10 +208,15 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form=form)
+        site = Site.objects.get_current()
+        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
         if self.object.is_active:
             messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
-        else:
-            return redirect(reverse_lazy('accounts:activate'))
+        if (site.pk == SPEEDY_MATCH_SITE_ID):
+            if self.request.user.profile.is_active:
+                return redirect(reverse_lazy('matches:list'))
+            else:
+                return redirect(reverse_lazy('accounts:activate'))
         return response
 
 
@@ -240,6 +248,13 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     model = UserEmailAddress
     success_url = reverse_lazy('accounts:edit_profile_emails')
 
+    def get_success_url(self):
+        site = Site.objects.get_current()
+        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        if site.pk == SPEEDY_MATCH_SITE_ID and self.request.user.email_addresses.filter(is_confirmed=True).count() == 1:
+            return reverse_lazy('matches:list')
+        return reverse_lazy('accounts:edit_profile_emails')
+
     def get(self, request, *args, **kwargs):
         email_address = self.get_object()
         token = self.kwargs.get('token')
@@ -251,7 +266,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
                 messages.success(self.request, pgettext_lazy(self.request.user.get_gender(), 'You\'ve confirmed your email address.'))
             else:
                 messages.error(self.request, _('Invalid confirmation link.'))
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):

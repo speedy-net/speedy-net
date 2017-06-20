@@ -303,8 +303,11 @@ class UserEmailAddress(TimeStampedModel):
     def verify(self):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
-        if hasattr(self.user.profile, 'validate_profile_and_activate'):
+        if hasattr(self.user.profile, 'validate_profile_and_activate') and UserEmailAddress.objects.filter(user=self.user_id, is_confirmed=True).count() == 1:
+            self.user.profile.activation_step = len(settings.SITE_PROFILE_FORM_FIELDS)
             self.user.profile.validate_profile_and_activate()
+            self.user.profile.activation_step = 1
+            self.user.profile.save(update_fields=['activation_step'])
 
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)

@@ -394,7 +394,6 @@ class DeactivateSiteProfileViewTestCase(TestCase):
         })
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
-        self.assertTrue(expr=user.is_active)
         self.assertFalse(expr=user.profile.is_active)
 
 

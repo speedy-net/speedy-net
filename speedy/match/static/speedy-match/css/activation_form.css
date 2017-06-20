@@ -26,6 +26,10 @@ body.bidi-rtl .user-profile {
     display: inline-block;
 }
 
+.activation-steps a:hover {
+    text-decoration: none;
+}
+
 .activation-step.active {
     background-color: #FF7B01;
     color: white;

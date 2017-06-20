@@ -20,10 +20,14 @@ class SiteProfile(SiteProfileBase):
 
     def activate(self):
         self.is_active = True
+        self.user.is_active = True
+        self.user.save(update_fields={'is_active'})
         self.save(update_fields={'is_active'})
 
     def deactivate(self):
         self.is_active = False
+        self.user.is_active = False
+        self.user.save(update_fields={'is_active'})
         self.save(update_fields={'is_active'})
 
     def get_name(self):

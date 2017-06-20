@@ -1,4 +1,9 @@
-<div class="image-click-zone">
+<div {% if user_photo %}
+        style="background-image: url(//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}/{{ user_photo.file.url }})"
+        class="image-click-zone uploaded"
+    {% else %}
+        class="image-click-zone"
+    {% endif %}>
     <i class="fa fa-camera" aria-hidden="true"></i>
 </div>
 <div class="activation-photo-input-wrapper">
