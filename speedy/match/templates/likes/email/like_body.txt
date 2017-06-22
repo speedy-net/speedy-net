@@ -1,3 +1,3 @@
-{{ like.from_user }} likes you.
+{{ like.from_user.profile.get_name }} likes you.
 
 {{ SITE_URL }}{% url 'likes:list' user.slug %}
