@@ -1,5 +1,7 @@
+from django.conf import settings
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.settings.utils import env
 from .test_factories import ChatFactory
 
 
@@ -11,9 +13,11 @@ class ChatTestCase(TestCase):
         self.assertEqual(first=len(chat.id), second=20)
 
     def test_str(self):
-        chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'),
-                           ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
-        self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
+        chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
+        if (int(settings.SITE_ID) == int(env('SPEEDY_MATCH_SITE_ID'))):
+            self.assertEqual(first=str(chat), second='Walter, Jesse')
+        else:
+            self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
 
     def test_get_slug(self):
         user1=ActiveUserFactory(first_name='Walter', last_name='White', slug='walter')
