@@ -185,7 +185,8 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
-        return self.get_full_name()
+        # Depends on site: full name in Speedy Net, first name in Speedy Match.
+        return self.profile.get_name()
 
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})

@@ -4,7 +4,7 @@
 {% load thumbnail %}
 {% load rules %}
 
-{% block title %}{{ user.profile.get_name }} / {{ block.super }}{% endblock %}
+{% block title %}{{ user }} / {{ block.super }}{% endblock %}
 
 {% block user_content_info %}
     {% has_perm 'accounts_match.view_profile' request.user user as can_view_profile %}
