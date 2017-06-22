@@ -4,7 +4,7 @@ from .base_site import *
 def activate_staging(settings):
     admins = (
         ('Uri Even-Chen', 'webmaster@speedy.net'),
-        ('Gleb Tocarenco', 'gleb.tocarenco@initech.co.il'),
+        ('Evgeniy Kirov', 'evgeniy.kirov@initech.co.il'),
     )
     settings.update({
         'DEFAULT_FROM_EMAIL': 'webmaster@speedy2000.net',
