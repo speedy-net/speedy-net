@@ -411,7 +411,7 @@ msgstr ""
 
 #: .\templates\profiles\user_detail.html:18
 msgid "ל"
-msgstr ""
+msgstr "ל"
 
 #: .\templates\profiles\user_detail.html:18
 msgid " also has a Speedy Net profile."
