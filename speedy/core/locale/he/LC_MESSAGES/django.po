@@ -948,13 +948,13 @@ msgstr ""
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
+"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדקי את תיבת הדואר הנכנס שלך."
 
 #: templates/translations.html:5
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
+"עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק את תיבת הדואר הנכנס שלך."
 
 #: templates/translations.html:6
 msgctxt "other"
@@ -965,27 +965,27 @@ msgstr ""
 #: templates/translations.html:9
 msgctxt "female"
 msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמשת הזאת"
 
 #: templates/translations.html:10
 msgctxt "male"
 msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמש הזה"
 
 #: templates/translations.html:11
 msgctxt "other"
 msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמש/ת הזה/הזאת"
 
 #: templates/translations.html:19
 msgctxt "female"
 msgid "Your Friend"
-msgstr "חבר/ה שלך"
+msgstr "חברה שלך"
 
 #: templates/translations.html:20
 msgctxt "male"
 msgid "Your Friend"
-msgstr "חבר/ה שלך"
+msgstr "חבר שלך"
 
 #: templates/translations.html:21
 msgctxt "other"
@@ -1133,27 +1133,27 @@ msgstr ""
 #: templates/translations.html:69
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "אמתי בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: templates/translations.html:70
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "אמת בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: templates/translations.html:71
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: templates/translations.html:74
 msgctxt "female"
 msgid "You can\\'t change your username."
-msgstr ".לא ניתן לשנות שם משתמש/ת"
+msgstr ".לא ניתן לשנות שם משתמשת"
 
 #: templates/translations.html:75
 msgctxt "male"
 msgid "You can\\'t change your username."
-msgstr ".לא ניתן לשנות שם משתמש/ת"
+msgstr ".לא ניתן לשנות שם משתמש"
 
 #: templates/translations.html:76
 msgctxt "other"
@@ -1426,67 +1426,78 @@ msgstr ".ביטלת את חסימת המשתמש/ת הזה"
 
 #: templates/translations.html:171
 msgctxt "female"
-msgid ""
-"This user doesn't match your profile but you can visit her Speedy Net profile"
-msgstr ""
+msgid "View "
+msgstr "צפי בפרופיל של "
 
 #: templates/translations.html:172
 msgctxt "male"
-msgid ""
-"This user doesn't match your profile but you can visit his Speedy Net profile"
-msgstr ""
+msgid "View "
+msgstr "צפה בפרופיל של "
 
 #: templates/translations.html:173
 msgctxt "other"
-msgid ""
-"This user doesn't match your profile but you can visit his Speedy Net profile"
-msgstr ""
+msgid "View "
+msgstr "צפה/י בפרופיל של "
 
 #: templates/translations.html:176
-#, fuzzy
-#| msgid "Vegan (eats only plants and fungi)"
 msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+msgid ""
+"This user doesn't match your profile but you can visit her Speedy Net profile"
+msgstr "המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט."
 
 #: templates/translations.html:177
-#, fuzzy
-#| msgid "Vegan (eats only plants and fungi)"
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
+msgid ""
+"This user doesn't match your profile, but you can visit his Speedy Net profile."
+msgstr "המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט."
 
 #: templates/translations.html:178
 msgctxt "other"
+msgid ""
+"This user doesn't match your profile, but you can visit his Speedy Net profile."
+msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט."
+
+#: templates/translations.html:180
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "טבעונית (אוכלת רק צמחים ופטריות)"
+
+#: templates/translations.html:181
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "טבעוני (אוכל רק צמחים ופטריות)"
+
+#: templates/translations.html:182
+msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: templates/translations.html:181
+#: templates/translations.html:184
 msgctxt "female"
 msgid "Vegetarian (doesn\\'t eat fish and meat)"
-msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+msgstr "צמחונית (לא אוכלת דגים ובשר)"
 
-#: templates/translations.html:182
+#: templates/translations.html:185
 msgctxt "male"
 msgid "Vegetarian (doesn\\'t eat fish and meat)"
-msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
+msgstr "צמחוני (לא אוכל דגים ובשר)"
 
-#: templates/translations.html:183
+#: templates/translations.html:186
 msgctxt "other"
 msgid "Vegetarian (doesn\\'t eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: templates/translations.html:186
+#: templates/translations.html:188
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "קרניסט/ית (אוכל/ת חיות)"
+msgstr "קרניסטית (אוכלת חיות)"
 
-#: templates/translations.html:187
+#: templates/translations.html:189
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "קרניסט/ית (אוכל/ת חיות)"
+msgstr "קרניסט (אוכל חיות)"
 
-#: templates/translations.html:188
+#: templates/translations.html:190
 msgctxt "other"
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"

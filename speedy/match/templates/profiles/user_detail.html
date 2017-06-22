@@ -13,10 +13,15 @@
             {% for widget in widgets %}
                 {{ widget.html }}
             {% endfor %}
+            <div class="col-sm-12">
+                <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
+                    {% trans "ל" %}{{ user }}{% trans " also has a Speedy Net profile." %} {% trans "View " context request.user.get_gender %}{{ user }}{% trans "'s profile on Speedy Net." %}
+                </a>
+            </div>
         {% else %}
             <div class="col-sm-12">
                 <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                    {% trans "This user doesn't match your profile but you can visit his Speedy Net profile" context user.get_gender %}
+                    {% trans "This user doesn't match your profile, but you can visit his Speedy Net profile." context user.get_gender %}
                 </a>
             </div>
         {% endif %}
