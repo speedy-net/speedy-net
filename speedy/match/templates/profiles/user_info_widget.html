@@ -14,8 +14,8 @@
             <tbody>
 
             <tr>
-                <th>{% trans 'Full Name' %}</th>
-                <td>{{ entity }}</td>
+                <th>{% trans 'Name' %}</th>
+                <td>{{ entity.profile.get_name }}</td>
             </tr>
 
             {% if can_view_username %}
@@ -55,6 +55,11 @@
                     </td>
                 </tr>
             {% endif %}
+
+            <tr>
+                <th>{% trans 'Age' %}</th>
+                <td>{{ entity.get_age }}</td>
+            </tr>
 
             {% for address in entity.email_addresses.all %}
                 {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
