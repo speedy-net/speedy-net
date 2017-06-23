@@ -97,7 +97,7 @@ msgstr "רק אני"
 
 #: accounts/models.py:29
 msgid "Me and my friends"
-msgstr "אני והחברים שלי"
+msgstr "אני והחברים/ות שלי"
 
 #: accounts/models.py:31
 msgid "Anyone"
