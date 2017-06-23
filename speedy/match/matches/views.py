@@ -2,6 +2,7 @@ from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 from speedy.core.accounts.models import User
 from speedy.core.base.utils import get_age_ranges_match
+from ..accounts.models import SiteProfile
 
 
 class MatchesListView(LoginRequiredMixin, generic.TemplateView):
@@ -12,7 +13,7 @@ class MatchesListView(LoginRequiredMixin, generic.TemplateView):
         age_ranges = get_age_ranges_match(self.request.user.profile.min_age_match, self.request.user.profile.max_age_match)
         qs = User.objects.active(gender__in=user_profile.gender_to_match, date_of_birth__range=age_ranges).exclude(pk=self.request.user.pk)
 
-        qs = [user for user in qs if self.request.user.profile.get_matching_rank(other_profile=user.profile) and user.profile.is_active]
+        qs = [user for user in qs if (self.request.user.profile.get_matching_rank(other_profile=user.profile) > SiteProfile.RANK_0) and user.profile.is_active]
 
         qs = sorted(qs, key=lambda user: (user.profile.rank, user.profile.last_visit), reverse=True)
         return qs

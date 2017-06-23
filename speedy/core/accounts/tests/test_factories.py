@@ -32,7 +32,7 @@ class InactiveUserFactory(DefaultUserFactory):
         # Deactivate only on speedy.net, speedy.match default is inactive.
         site = Site.objects.get_current()
         speedy_net_site_id = settings.SITE_PROFILES.get('net').get('site_id')
-        if site.id == speedy_net_site_id:
+        if (site.id == speedy_net_site_id):
             self.profile.deactivate()
 
 
@@ -58,7 +58,7 @@ class ActiveUserFactory(DefaultUserFactory):
     def activate_profile(self, create, extracted, **kwargs):
         site = Site.objects.get_current()
         speedy_match_site_id = settings.SITE_PROFILES.get('match').get('site_id')
-        if site.id == speedy_match_site_id:
+        if (site.id == speedy_match_site_id):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
             from speedy.match.accounts.models import SiteProfile
             self.profile.profile_description = "Hi!"

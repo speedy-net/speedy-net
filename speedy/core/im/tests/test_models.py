@@ -1,7 +1,7 @@
+from django.contrib.sites.models import Site
 from django.conf import settings
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.settings.utils import env
 from .test_factories import ChatFactory
 
 
@@ -14,7 +14,9 @@ class ChatTestCase(TestCase):
 
     def test_str(self):
         chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
-        if (int(settings.SITE_ID) == int(env('SPEEDY_MATCH_SITE_ID'))):
+        site = Site.objects.get_current()
+        speedy_match_site_id = settings.SITE_PROFILES.get('match').get('site_id')
+        if (site.id == speedy_match_site_id):
             self.assertEqual(first=str(chat), second='Walter, Jesse')
         else:
             self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
