@@ -382,7 +382,7 @@ msgid "People I Like"
 msgstr ""
 
 #: .\templates\likes\like_list.html:16
-msgid "People Who Likes Me"
+msgid "People Who Like Me"
 msgstr ""
 
 #: .\templates\likes\like_list.html:18

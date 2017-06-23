@@ -188,34 +188,28 @@ msgid "users"
 msgstr "משתמשים"
 
 #: accounts/models.py:237
-#, fuzzy
-#| msgid "Female"
 msgid "female"
 msgstr "נקבה"
 
 #: accounts/models.py:237
-#, fuzzy
-#| msgid "Female"
 msgid "male"
-msgstr "נקבה"
+msgstr "זכר"
 
 #: accounts/models.py:237
-#, fuzzy
-#| msgid "Other"
 msgid "other"
 msgstr "אחר/ת"
 
 #: accounts/models.py:241
 msgid "Vegan"
-msgstr ""
+msgstr "טבעוני/ת"
 
 #: accounts/models.py:241
 msgid "Vegetarian"
-msgstr ""
+msgstr "צמחוני/ת"
 
 #: accounts/models.py:241
 msgid "Carnist"
-msgstr ""
+msgstr "קרניסט/ית"
 
 #: accounts/models.py:259
 msgid "email"
@@ -470,7 +464,7 @@ msgstr ""
 #: templates/base_with_login.html:10 templates/base_with_login.html:96
 #: templates/profiles/tools/edit_profile.html:6
 msgid "Edit Profile"
-msgstr ""
+msgstr "ערוך/י פרופיל"
 
 #: templates/accounts/edit_profile/base.html:15
 msgid "Profile Info"
@@ -494,7 +488,7 @@ msgstr "משתמשים חסומים"
 
 #: templates/accounts/edit_profile/base.html:27
 msgid "Deactivate Account"
-msgstr ""
+msgstr "הפסק/י את פעילות החשבון שלי"
 
 #: templates/accounts/edit_profile/credentials.html:7
 msgid "Email Addresses"
@@ -612,9 +606,6 @@ msgid ""
 msgstr ""
 
 #: templates/base.html:87
-#, fuzzy
-#| msgctxt "male"
-#| msgid "You haven't confirmed your email address. Please check your inbox."
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
@@ -712,24 +703,24 @@ msgstr ""
 #: templates/base_with_login.html:78 templates/friends/base.html:7
 #: templates/friends/user_friends_widget.html:15
 msgid "Friends"
-msgstr ""
+msgstr "חברים/ות"
 
 #: templates/base_with_login.html:86 templates/im/chat_detail.html:13
 #: templates/im/chat_list.html:8 templates/im/chat_list.html:13
 msgid "Messages"
-msgstr ""
+msgstr "הודעות"
 
 #: templates/blocks/block_list.html:10
 msgid "You're blocking nobody."
-msgstr ""
+msgstr "לא חסמת אף אחד"
 
 #: templates/core/pagination.html:9
 msgid "Previous"
-msgstr ""
+msgstr "הקודם"
 
 #: templates/core/pagination.html:32
 msgid "Next"
-msgstr ""
+msgstr "הבא"
 
 #: templates/feedback/feedback_base.html:6
 #: templates/feedback/feedback_form.html:10
@@ -743,18 +734,15 @@ msgstr ""
 
 #: templates/feedback/feedback_success.html:8
 msgid "Thank You"
-msgstr ""
+msgstr "תודה"
 
 #: templates/feedback/feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "ההודעה שלך נשלחה לאדמינים."
 
 #: templates/friends/base.html:15
-#, fuzzy
-#| msgctxt "male"
-#| msgid "Your Friends"
 msgid "Your Friends"
-msgstr "חבר/ה שלך"
+msgstr "חברים/ות שלך"
 
 #: templates/friends/base.html:18
 msgid "Received Requests"
@@ -766,7 +754,7 @@ msgstr ""
 
 #: templates/friends/friend_list.html:10
 msgid "This user has no friends yet."
-msgstr ""
+msgstr "למשתמש/ת זה/זאת עדיין אין חברים/ות"
 
 #: templates/friends/received_requests.html:10
 #: templates/friends/sent_requests.html:10
@@ -830,11 +818,8 @@ msgstr ""
 "אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
 
 #: templates/profiles/block_warning.html:9
-#, fuzzy
-#| msgctxt "male"
-#| msgid "You blocked this user."
 msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמש/ת הזה/הזאת"
 
 #: templates/profiles/block_warning.html:11 templates/translations.html:14
 #: templates/translations.html:15 templates/translations.html:16
@@ -856,16 +841,10 @@ msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
 
 #: templates/profiles/tools/block_user.html:13
-#, fuzzy
-#| msgctxt "male"
-#| msgid "Block User"
 msgid "Block User"
 msgstr "חסום/י משתמש/ת"
 
 #: templates/profiles/tools/block_user.html:24
-#, fuzzy
-#| msgctxt "male"
-#| msgid "Unblock User"
 msgid "Unblock User"
 msgstr "בטל/י חסימת משתמש/ת"
 
@@ -896,9 +875,6 @@ msgstr "שלח/י הודעה"
 
 #: templates/profiles/tools/your_friend.html:9
 #: templates/profiles/tools/your_friend.html:10
-#, fuzzy
-#| msgctxt "male"
-#| msgid "Your Friend"
 msgid "Your Friend"
 msgstr "חבר/ה שלך"
 
@@ -1208,17 +1184,17 @@ msgstr ""
 #: templates/translations.html:94
 msgctxt "female"
 msgid "You have blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמשת הזאת"
 
 #: templates/translations.html:95
 msgctxt "male"
 msgid "You have blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמש הזה"
 
 #: templates/translations.html:96
 msgctxt "other"
 msgid "You have blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ".חסמת את המשתמש/ת הזה/הזאת"
 
 #: templates/translations.html:99
 msgctxt "female"
@@ -1307,17 +1283,17 @@ msgstr ""
 #: templates/translations.html:131
 msgctxt "female"
 msgid "You already are friends with this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:132
 msgctxt "male"
 msgid "You already are friends with this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:133
 msgctxt "other"
 msgid "You already are friends with this user."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:136
 msgctxt "female"
@@ -1337,17 +1313,17 @@ msgstr ""
 #: templates/translations.html:141
 msgctxt "female"
 msgid "You have removed this user from friends."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:142
 msgctxt "male"
 msgid "You have removed this user from friends."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:143
 msgctxt "other"
 msgid "You have removed this user from friends."
-msgstr ".חסמת את המשתמש/ת הזה"
+msgstr ""
 
 #: templates/translations.html:146
 msgctxt "female"
@@ -1382,32 +1358,32 @@ msgstr "המשתמש/ת הזה חסמ/ה אותך."
 #: templates/translations.html:156
 msgctxt "female"
 msgid "People I Like"
-msgstr ""
+msgstr "א/נשים שאני אוהבת"
 
 #: templates/translations.html:157
 msgctxt "male"
 msgid "People I Like"
-msgstr ""
+msgstr "א/נשים שאני אוהב"
 
 #: templates/translations.html:158
 msgctxt "other"
 msgid "People I Like"
-msgstr ""
+msgstr "א/נשים שאני אוהב/ת"
 
 #: templates/translations.html:161
 msgctxt "female"
-msgid "People Who Likes Me"
-msgstr ""
+msgid "People Who Like Me"
+msgstr "א/נשים שאוהבים/ות אותי"
 
 #: templates/translations.html:162
 msgctxt "male"
-msgid "People Who Likes Me"
-msgstr ""
+msgid "People Who Like Me"
+msgstr "א/נשים שאוהבים/ות אותי"
 
 #: templates/translations.html:163
 msgctxt "other"
-msgid "People Who Likes Me"
-msgstr ""
+msgid "People Who Like Me"
+msgstr "א/נשים שאוהבים/ות אותי"
 
 #: templates/translations.html:166
 msgctxt "female"

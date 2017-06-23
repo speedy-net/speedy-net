@@ -13,7 +13,7 @@
         <li class="{% active_class 'likes:list_to' %}"><a
                 href="{% url 'likes:list_to' user.slug %}">{% trans 'People I Like' context user.get_gender %}</a></li>
         <li class="{% active_class 'likes:list_from' %}"><a
-                href="{% url 'likes:list_from' user.slug %}">{% trans 'People Who Likes Me' context user.get_gender %}</a></li>
+                href="{% url 'likes:list_from' user.slug %}">{% trans 'People Who Like Me' context user.get_gender %}</a></li>
         <li class="{% active_class 'likes:list_mutual' %}"><a
                 href="{% url 'likes:list_mutual' user.slug %}">{% trans 'Mutual Likes' %}</a></li>
     </ul>
