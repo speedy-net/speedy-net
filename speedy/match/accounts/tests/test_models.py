@@ -44,6 +44,10 @@ class SiteProfileTestCase(TestCase):
         user_1 = self.get_default_user_1()
         self.assertEqual(user_1.profile.get_name(), 'Jesse')
 
+    def test_call_str_of_user_directly_and_assert_no_exception(self):
+        user_1 = self.get_default_user_1()
+        self.assertEqual(str(user_1), 'Jesse')
+
 
 class SiteProfileMatchTestCase(TestCase):
     # def activate_user(self, user):
