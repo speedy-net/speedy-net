@@ -742,7 +742,7 @@ msgstr "ההודעה שלך נשלחה לאדמינים."
 
 #: templates/friends/base.html:15
 msgid "Your Friends"
-msgstr "חברים/ות שלך"
+msgstr "החברות והחברים שלך"
 
 #: templates/friends/base.html:18
 msgid "Received Requests"
@@ -1030,21 +1030,6 @@ msgstr ""
 msgctxt "other"
 msgid "You have no messages yet."
 msgstr ""
-
-#: templates/translations.html:44
-msgctxt "female"
-msgid "Your Friends"
-msgstr "חבר/ה שלך"
-
-#: templates/translations.html:45
-msgctxt "male"
-msgid "Your Friends"
-msgstr "חבר/ה שלך"
-
-#: templates/translations.html:46
-msgctxt "other"
-msgid "Your Friends"
-msgstr "חבר/ה שלך"
 
 #: templates/translations.html:49
 msgctxt "female"
