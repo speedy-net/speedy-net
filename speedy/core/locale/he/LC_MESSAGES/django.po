@@ -48,7 +48,7 @@ msgstr "צור/י חשבון"
 
 #: accounts/forms.py:151 accounts/forms.py:172
 msgid "Save Changes"
-msgstr ".לא ניתן לשנות שם משתמש/ת"
+msgstr "שמור/י שינויים"
 
 #: accounts/forms.py:186 templates/base_with_login.html:27
 msgid "Email or Username"
