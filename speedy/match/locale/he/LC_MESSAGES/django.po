@@ -366,32 +366,32 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
-msgstr ""
+msgstr "ס\"מ"
 
 #: .\templates\base_site.html:10 .\templates\base_site.html:34
 #: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:10
 msgid "Likes"
-msgstr ""
+msgstr "לייקים"
 
 #: .\templates\base_site.html:13 .\templates\base_site.html:40
 msgid "Matches"
-msgstr ""
+msgstr "התאמות"
 
 #: .\templates\likes\like_list.html:14
 msgid "People I Like"
-msgstr ""
+msgstr "א/נשים שעשיתי להם לייק"
 
 #: .\templates\likes\like_list.html:16
 msgid "People Who Like Me"
-msgstr ""
+msgstr "א/נשים שעשו לי לייק"
 
 #: .\templates\likes\like_list.html:18
 msgid "Mutual Likes"
-msgstr ""
+msgstr "לייקים הדדיים"
 
 #: .\templates\likes\like_list.html:28
 msgid "You have no likes here."
-msgstr ""
+msgstr "אין פה א/נשים."
 
 #: .\templates\matches\matches_list.html:11
 msgid "Your matches"

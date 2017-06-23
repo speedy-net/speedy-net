@@ -746,11 +746,11 @@ msgstr "חברים/ות שלך"
 
 #: templates/friends/base.html:18
 msgid "Received Requests"
-msgstr ""
+msgstr "בקשות חברות שקיבלת"
 
 #: templates/friends/base.html:23
 msgid "Sent Requests"
-msgstr ""
+msgstr "בקשות חברות ששלחת"
 
 #: templates/friends/friend_list.html:10
 msgid "This user has no friends yet."
@@ -1358,47 +1358,47 @@ msgstr "המשתמש/ת הזה חסמ/ה אותך."
 #: templates/translations.html:156
 msgctxt "female"
 msgid "People I Like"
-msgstr "א/נשים שאני אוהבת"
+msgstr "א/נשים שעשיתי להם לייק"
 
 #: templates/translations.html:157
 msgctxt "male"
 msgid "People I Like"
-msgstr "א/נשים שאני אוהב"
+msgstr "א/נשים שעשיתי להם לייק"
 
 #: templates/translations.html:158
 msgctxt "other"
 msgid "People I Like"
-msgstr "א/נשים שאני אוהב/ת"
+msgstr "א/נשים שעשיתי להם לייק"
 
 #: templates/translations.html:161
 msgctxt "female"
 msgid "People Who Like Me"
-msgstr "א/נשים שאוהבים/ות אותי"
+msgstr "א/נשים שעשו לי לייק"
 
 #: templates/translations.html:162
 msgctxt "male"
 msgid "People Who Like Me"
-msgstr "א/נשים שאוהבים/ות אותי"
+msgstr "א/נשים שעשו לי לייק"
 
 #: templates/translations.html:163
 msgctxt "other"
 msgid "People Who Like Me"
-msgstr "א/נשים שאוהבים/ות אותי"
+msgstr "א/נשים שעשו לי לייק"
 
 #: templates/translations.html:166
 msgctxt "female"
 msgid "You have no likes here."
-msgstr ".ביטלת את חסימת המשתמש/ת הזה"
+msgstr "אין פה א/נשים."
 
 #: templates/translations.html:167
 msgctxt "male"
 msgid "You have no likes here."
-msgstr ".ביטלת את חסימת המשתמש/ת הזה"
+msgstr "אין פה א/נשים."
 
 #: templates/translations.html:168
 msgctxt "other"
 msgid "You have no likes here."
-msgstr ".ביטלת את חסימת המשתמש/ת הזה"
+msgstr "אין פה א/נשים."
 
 #: templates/translations.html:171
 msgctxt "female"
