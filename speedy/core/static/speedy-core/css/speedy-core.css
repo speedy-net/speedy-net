@@ -93,6 +93,16 @@ body.bidi-rtl .navbar-right {
     color: #3D70A3 !important;
 }
 
+.footer a::after {
+    content: " ·";
+    color: black;
+    display: inline-block;
+}
+
+.footer a:last-child::after {
+    display: none;
+}
+
 .footer a:visited {
     color: #3D70A3 !important;
 }
