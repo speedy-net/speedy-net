@@ -55,7 +55,7 @@ class BlockViewTestCase(TestCase):
         block = Block.objects.first()
         self.assertEqual(first=block.blocker_id, second=self.user.id)
         self.assertEqual(first=block.blockee_id, second=self.other_user.id)
-        self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug))
+        self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug), target_status_code=404)
 
 
 @exclude_on_speedy_composer
