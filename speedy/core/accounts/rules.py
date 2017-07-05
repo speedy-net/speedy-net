@@ -55,6 +55,7 @@ def has_access_perm_for_email_address(user, email_address):
 
 add_perm('accounts.view_profile', has_access_perm & ~is_blocked & ~has_blocked)
 add_perm('accounts.view_profile_username', is_self)
+add_perm('accounts.view_profile_header', has_access_perm)
 add_perm('accounts.view_profile_info', has_access_perm)
 add_perm('accounts.view_profile_dob_day_month', has_access_perm_for_dob_day_month)
 add_perm('accounts.view_profile_dob_year', has_access_perm_for_dob_year)

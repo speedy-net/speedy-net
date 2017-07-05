@@ -1,7 +1,6 @@
 from django.db.models import Q
 
-from rules import predicate, add_perm
-
+from rules import predicate, add_perm, remove_perm
 
 from .models import SiteProfile
 from speedy.core.im.models import Chat
@@ -20,5 +19,9 @@ def is_match_profile(user, other):
     return False
 
 
-add_perm('accounts_match.view_profile', has_access_perm & ~is_blocked & ~has_blocked & is_match_profile)
-add_perm('accounts_match.view_profile_info', has_access_perm & is_match_profile)
+remove_perm('accounts.view_profile')
+add_perm('accounts.view_profile', has_access_perm & ~is_blocked & ~has_blocked & is_match_profile)
+remove_perm('accounts.view_profile_header')
+add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & ~has_blocked & is_match_profile)
+remove_perm('accounts.view_profile_info')
+add_perm('accounts.view_profile_info', has_access_perm & is_match_profile)

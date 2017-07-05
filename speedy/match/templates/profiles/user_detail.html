@@ -4,26 +4,21 @@
 {% load thumbnail %}
 {% load rules %}
 
-{% block title %}{{ user }} / {{ block.super }}{% endblock %}
+{% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}
+
+{% block title %}{% if can_view_profile_header %}{{ user }} / {% endif %}{{ block.super }}{% endblock %}
 
 {% block user_content_info %}
-    {% has_perm 'accounts_match.view_profile' request.user user as can_view_profile %}
     <div class="row">
-        {% if can_view_profile %}
-            {% for widget in widgets %}
-                {{ widget.html }}
-            {% endfor %}
-            <div class="col-sm-12">
-                <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                    {% trans "ל" %}{{ user }}{% trans " also has a Speedy Net profile." %} {% trans "View " context request.user.get_gender %}{{ user }}{% trans "'s profile on Speedy Net." %}
-                </a>
-            </div>
-        {% else %}
-            <div class="col-sm-12">
-                <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                    {% trans "This user doesn't match your profile, but you can visit his Speedy Net profile." context user.get_gender %}
-                </a>
-            </div>
-        {% endif %}
+        {% for widget in widgets %}
+            {{ widget.html }}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
+                {% trans "ל" %}{{ user }}{% trans " also has a Speedy Net profile." %} {% trans "View " context request.user.get_gender %}{{ user }}{% trans "'s profile on Speedy Net." %}
+            </a>
+        </div>
     </div>
 {% endblock %}

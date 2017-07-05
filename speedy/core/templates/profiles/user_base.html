@@ -7,16 +7,22 @@
 
 {% block content %}
     {% has_perm 'accounts.view_profile' request.user user as can_view_profile %}
+    {% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}
     {% has_perm 'accounts.view_profile_info' request.user user as can_view_profile_info %}
 
+    {% if can_view_profile_header %}
     <div class="page-header">
         <h1>
             <div class="pull-right">
-                {% include 'profiles/tools/tools.html' %}
+                {% block user_tools %}
+                    {% include 'profiles/tools/tools.html' %}
+                {% endblock %}
             </div>
             {{ user }}
         </h1>
     </div>
+    {% endif %}
+
     {% if can_view_profile %}
         {% block user_content %}
         {% endblock %}
