@@ -35,3 +35,8 @@ SITE_PROFILE_FORM_FIELDS = [
     ['diet_match', 'smoking_match'],
     ['marital_status_match']
 ]
+
+USER_PROFILE_WIDGETS = [
+    'speedy.core.profiles.widgets.UserPhotoWidget',
+    'speedy.core.profiles.widgets.UserInfoWidget',
+]
