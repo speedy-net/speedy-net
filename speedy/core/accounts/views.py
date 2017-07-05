@@ -200,11 +200,19 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
                 return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
+    def get_account_activation_url(self):
+        site = Site.objects.get_current()
+        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        if site.pk == SPEEDY_MATCH_SITE_ID:
+            step = self.request.GET.get('step', self.request.user.profile.activation_step)
+            return reverse_lazy('accounts:activate') + '?step=' + str(step)
+        return reverse_lazy('accounts:activate')
+
     def post(self, request, *args, **kwargs):
         if request.user.has_verified_email:
             return super().post(request, *args, **kwargs)
         else:
-            return redirect(to=reverse_lazy('accounts:activate'))
+            return redirect(to=self.get_account_activation_url())
 
     def form_valid(self, form):
         response = super().form_valid(form=form)
@@ -214,9 +222,9 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
         if (site.pk == SPEEDY_MATCH_SITE_ID):
             if self.request.user.profile.is_active:
-                return redirect(reverse_lazy('matches:list'))
+                return redirect(to=reverse_lazy('matches:list'))
             else:
-                return redirect(reverse_lazy('accounts:activate'))
+                return redirect(to=self.get_account_activation_url())
         return response
 
 
