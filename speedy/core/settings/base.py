@@ -172,7 +172,9 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/welcome/',
     '/contact/',
     '/edit-profile/',
-    '/admin/'
+    '/admin/',
+    '/media/',
+    '/static/',
 ]
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True

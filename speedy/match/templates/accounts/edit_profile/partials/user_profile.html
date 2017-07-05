@@ -2,7 +2,7 @@
 <div class="user-profile pull-left flip">
     <div class="user-profile-image">
         {% if user.photo %}
-            <img src="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{{ user.photo.file.url }}" alt="">
+            <img src="{{ user.photo.file.url }}" alt="">
         {% else %}
             <i class="fa fa-camera" aria-hidden="true"></i>
         {% endif %}
