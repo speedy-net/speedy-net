@@ -41,7 +41,9 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
     <meta name="theme-color" content="#b2cafa" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block viewport %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
     {% block description %}{% endblock %}
     <script type="text/javascript">
         if (top != self) {
