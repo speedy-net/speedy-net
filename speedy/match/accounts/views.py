@@ -4,7 +4,12 @@ from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
+from speedy.core.accounts.views import IndexView as CoreIndexView
 from . import forms
+
+
+class IndexView(CoreIndexView):
+    registered_redirect_to = ''
 
 
 class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
