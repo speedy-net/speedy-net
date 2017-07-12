@@ -14,7 +14,7 @@
             <tbody>
 
             <tr>
-                <th>{% trans 'Full Name' %}</th>
+                <th>{% trans 'Name' %}</th>
                 <td>{{ entity }}</td>
             </tr>
 
@@ -34,17 +34,14 @@
                 <td>{{ entity.get_gender_display }}</td>
             </tr>
 
+            {% has_perm 'accounts.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
+            {% has_perm 'accounts.view_profile_dob_year' viewer entity as can_view_dob_year %}
             {% if can_view_profile and entity.date_of_birth %}
-                {% has_perm 'accounts.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
-                {% has_perm 'accounts.view_profile_dob_year' viewer entity as can_view_dob_year %}
                 <tr>
                     <th>{% trans 'Birthday' %}</th>
                     <td>
                         {% if can_view_dob_day_month and can_view_dob_year %}
                             {{ entity.date_of_birth }}
-                            <span class="text-muted">
-                                ({{ entity.date_of_birth|timesince }})
-                            </span>
                         {% elif can_view_dob_day_month %}
                             {{ entity.date_of_birth|date:'N j' }}
                         {% elif can_view_dob_year %}
@@ -53,6 +50,14 @@
                             <span class="text-muted">{% trans '(hidden)' %}</span>
                         {% endif %}
                     </td>
+                </tr>
+            {% endif %}
+
+            {% has_perm 'accounts.view_profile_age' viewer entity as can_view_profile_age %}
+            {% if can_view_profile and entity.date_of_birth and can_view_profile_age %}
+                <tr>
+                    <th>{% trans 'Age' %}</th>
+                    <td>{{ entity.get_age }}</td>
                 </tr>
             {% endif %}
 

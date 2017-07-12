@@ -1,6 +1,6 @@
 from django.db.models import Q
 
-from rules import predicate, add_perm, remove_perm
+from rules import predicate, add_perm, remove_perm, always_allow
 
 from .models import SiteProfile
 from speedy.core.im.models import Chat
@@ -25,3 +25,5 @@ remove_perm('accounts.view_profile_header')
 add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & ~has_blocked & is_match_profile)
 remove_perm('accounts.view_profile_info')
 add_perm('accounts.view_profile_info', has_access_perm & is_match_profile)
+remove_perm('accounts.view_profile_age')
+add_perm('accounts.view_profile_age', always_allow)
