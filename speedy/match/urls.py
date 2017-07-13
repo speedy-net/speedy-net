@@ -3,7 +3,8 @@ from django.contrib import admin
 
 from speedy.core.urls import urlpatterns
 
-urlpatterns += [
+urlpatterns = [
+    url(r'^matches/', include('speedy.match.matches.urls', namespace='matches')),
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -16,5 +17,4 @@ urlpatterns += [
     url(r'^(?P<slug>[-\._\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
     url(r'^uploads/', include('speedy.core.uploads.urls', namespace='uploads')),
     url(r'^', include('speedy.core.profiles.urls', namespace='profiles')),
-    url(r'^matches/', include('speedy.match.matches.urls', namespace='matches')),
-]
+] + urlpatterns
