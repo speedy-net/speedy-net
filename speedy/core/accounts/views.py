@@ -249,7 +249,7 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         if settings.SITE_ID == 1:
             message = _('Your Speedy Net and Speedy Match account has been deactivated. You can reactivate it any time.')
         else:
-            message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains intact.')
+            message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains intact.').format(current_site.name)
         messages.success(request=self.request, message=message)
         return super().form_valid(form=form)
 
