@@ -154,18 +154,13 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
 
 class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'accounts/edit_profile/activate.html'
-    success_url = '/'
+    success_url = reverse_lazy('accounts:activate')
 
     def get_object(self, queryset=None):
         return self.request.user.profile
 
     def get_form_class(self):
         return reflection_import(settings.SITE_PROFILE_ACTIVATION_FORM)
-
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.profile.is_active:
-            return redirect(to=self.success_url)
-        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -223,10 +218,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         if self.object.is_active:
             messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
         if (site.pk == SPEEDY_MATCH_SITE_ID):
-            if self.request.user.profile.is_active:
-                return redirect(to=reverse_lazy('matches:list'))
-            else:
-                return redirect(to=self.get_account_activation_url())
+            return redirect(to=self.get_account_activation_url())
         return response
 
 

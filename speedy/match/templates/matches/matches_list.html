@@ -8,9 +8,16 @@
 {% block content %}
     <div class="page-header">
         <h1>
+            <div class="pull-right">
+                <a href="{% url 'accounts:activate' %}" class="btn btn-default">
+                    <i class="fa fa-pencil"></i>
+                    {% trans 'Edit Settings' %}
+                </a>
+            </div>
             {% trans 'Your matches' context user.get_gender %}
         </h1>
     </div>
+
     {% for match in matches %}
         {% include 'profiles/user_list_item.html' with user=match %}
     {% empty %}
