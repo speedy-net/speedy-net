@@ -9,7 +9,7 @@ from . import forms
 
 
 class IndexView(CoreIndexView):
-    registered_redirect_to = ''
+    registered_redirect_to = 'matches:list'
 
 
 class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
