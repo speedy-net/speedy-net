@@ -1,12 +1,16 @@
+from django.urls import reverse_lazy
 from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 from speedy.core.accounts.models import User
 from speedy.core.base.utils import get_age_ranges_match
 from ..accounts.models import SiteProfile
+from .forms import MatchSettingsMiniForm
 
 
-class MatchesListView(LoginRequiredMixin, generic.TemplateView):
+class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/matches_list.html'
+    form_class = MatchSettingsMiniForm
+    success_url = reverse_lazy('matches:list')
 
     def get_matches(self):
         user_profile = self.request.user.profile
@@ -17,6 +21,9 @@ class MatchesListView(LoginRequiredMixin, generic.TemplateView):
 
         qs = sorted(qs, key=lambda user: (user.profile.rank, user.profile.last_visit), reverse=True)
         return qs
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)

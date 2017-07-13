@@ -1,6 +1,7 @@
 {% extends 'base_site.html' %}
 
 {% load core_tags_and_filters %}
+{% load crispy_forms_field %}
 {% load i18n %}
 {% load im_tags %}
 {% load rules %}
@@ -10,6 +11,20 @@
         <h1>
             {% trans 'Your matches' context user.get_gender %}
         </h1>
+    </div>
+    <div class="well">
+        <form action="{% url 'matches:list' %}" method="post" class="activation-form">
+            {% csrf_token %}
+            {{ form.errors }}
+            {% for field in form %}
+                <div class="activation-form-field text-left flip">
+                    {{ field.label_tag }}
+                    {% crispy_field field %}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-primary">
+        </form>
     </div>
     {% for match in matches %}
         {% include 'profiles/user_list_item.html' with user=match %}
