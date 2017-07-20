@@ -2,7 +2,8 @@ from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, \
+    exclude_on_speedy_match
 from ..views import UserMixin
 
 
@@ -13,6 +14,7 @@ class UserMixinTestView(UserMixin, generic.View):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
+@exclude_on_speedy_match  # 404s - has to be a match
 class UserMixinTextCase(TestCase):
     def setUp(self):
         self.factory = RequestFactory()

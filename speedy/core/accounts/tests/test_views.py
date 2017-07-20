@@ -12,6 +12,7 @@ from .test_factories import ActiveUserFactory, UserEmailAddressFactory, Inactive
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
+@exclude_on_speedy_match
 class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()

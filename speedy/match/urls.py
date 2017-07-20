@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from speedy.core.urls import urlpatterns
 
-urlpatterns = [
+urlpatterns += [
     url(r'^matches/', include('speedy.match.matches.urls', namespace='matches')),
     url(r'^', include('speedy.match.accounts.urls', namespace='accounts')),
     url(r'^admin/', admin.site.urls),
