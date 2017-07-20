@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 13:54+0300\n"
+"POT-Creation-Date: 2017-07-20 18:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,7 +153,7 @@ msgstr ""
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:81 .\templates\profiles\user_info_widget.html:33
+#: .\accounts\models.py:81
 msgid "Gender"
 msgstr ""
 
@@ -370,12 +370,14 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\matches\matches_list.html:11
+#: .\templates\matches\matches_list.html:12
 msgid "Your matches"
 msgstr ""
 
-#: .\templates\matches\matches_list.html:18
-msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
+#: .\templates\matches\matches_list.html:33
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\templates\profiles\tools\like.html:13
@@ -386,52 +388,18 @@ msgstr ""
 msgid "Unlike"
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:18
+#: .\templates\profiles\user_detail.html:20
 msgid "ל"
 msgstr " "
 
-#: .\templates\profiles\user_detail.html:18
+#: .\templates\profiles\user_detail.html:20
 msgid " also has a Speedy Net profile."
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:18
+#: .\templates\profiles\user_detail.html:20
 msgid "View "
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:18
+#: .\templates\profiles\user_detail.html:20
 msgid "'s profile on Speedy Net."
-msgstr ""
-
-#: .\templates\profiles\user_detail.html:24
-msgid ""
-"This user doesn't match your profile, but you can visit his Speedy Net "
-"profile."
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:11
-msgid "Information"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:17
-msgid "Name"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:23
-msgid "Username"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:41
-msgid "Birthday"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:53
-msgid "(hidden)"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:60
-msgid "Age"
-msgstr ""
-
-#: .\templates\profiles\user_info_widget.html:68
-msgid "Email"
 msgstr ""
