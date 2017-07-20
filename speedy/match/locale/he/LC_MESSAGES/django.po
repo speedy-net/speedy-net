@@ -398,8 +398,8 @@ msgid "Your matches"
 msgstr ""
 
 #: .\templates\matches\matches_list.html:18
-msgid "This user has no matches yet."
-msgstr ""
+msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
+msgstr "אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר יותר."
 
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"

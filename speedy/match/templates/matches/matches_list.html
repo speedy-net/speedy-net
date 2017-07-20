@@ -30,7 +30,7 @@
         {% include 'profiles/user_list_item.html' with user=match %}
     {% empty %}
         <div class="alert alert-warning">
-            {% trans 'This user has no matches yet.' context user.get_gender %}
+            {% trans "You don't have any matches yet. Try to broaden your search settings or check again later." context user.get_gender %}
         </div>
     {% endfor %}
 {% endblock %}

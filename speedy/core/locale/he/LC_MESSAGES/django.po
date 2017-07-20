@@ -1327,18 +1327,18 @@ msgstr ""
 
 #: templates/translations.html:151
 msgctxt "female"
-msgid "This user has no matches yet."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
+msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
+msgstr "אין לך עדיין התאמות. נסי להרחיב את טווח החיפוש שלך או חזרי לאתר מאוחר יותר."
 
 #: templates/translations.html:152
 msgctxt "male"
-msgid "This user has no matches yet."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
+msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
+msgstr "אין לך עדיין התאמות. נסה להרחיב את טווח החיפוש שלך או חזור לאתר מאוחר יותר."
 
 #: templates/translations.html:153
 msgctxt "other"
-msgid "This user has no matches yet."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
+msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
+msgstr "אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר יותר."
 
 #: templates/translations.html:156
 msgctxt "female"

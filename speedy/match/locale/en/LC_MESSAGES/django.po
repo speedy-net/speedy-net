@@ -375,7 +375,7 @@ msgid "Your matches"
 msgstr ""
 
 #: .\templates\matches\matches_list.html:18
-msgid "This user has no matches yet."
+msgid "You don't have any matches yet. Try to broaden your search settings or check again later."
 msgstr ""
 
 #: .\templates\profiles\tools\like.html:13
