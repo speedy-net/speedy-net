@@ -68,7 +68,7 @@ class SiteProfile(SiteProfileBase):
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
-    height = models.SmallIntegerField(verbose_name=_('height cm'), null=True, validators=[validators.validate_height])
+    height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), null=True, validators=[validators.validate_height])
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED, validators=[validators.validate_min_age_match])
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED, validators=[validators.validate_max_age_match])
     smoking = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN, validators=[validators.validate_smoking])
