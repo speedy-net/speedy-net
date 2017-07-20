@@ -504,7 +504,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
         r = self.client.post(self.unconfirmed_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertIn(member='A confirmation was sent to {}'.format(self.unconfirmed_address.email), container=map(str, r.context['messages']))
+        self.assertIn(member='A confirmation message was sent to {}'.format(self.unconfirmed_address.email), container=map(str, r.context['messages']))
         self.assertEqual(first=len(mail.outbox), second=1)
         site = Site.objects.get_current()
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(site.name))
