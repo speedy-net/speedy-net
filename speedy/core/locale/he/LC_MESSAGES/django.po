@@ -365,19 +365,19 @@ msgstr ""
 
 #: friends/views.py:136
 msgid "Friend request sent."
-msgstr ""
+msgstr "בקשת חברות נשלחה."
 
 #: friends/views.py:147
 msgid "No friend request."
-msgstr ""
+msgstr "אין בקשת חברות."
 
 #: friends/views.py:180
 msgid "Friend request accepted."
-msgstr ""
+msgstr "בקשת החברות התקבלה."
 
 #: friends/views.py:195
 msgid "Friend request rejected."
-msgstr ""
+msgstr "בקשת החברות נדחתה."
 
 #: im/models.py:13
 msgid "site"
@@ -711,8 +711,8 @@ msgid "Messages"
 msgstr "הודעות"
 
 #: templates/blocks/block_list.html:10
-msgid "You're blocking nobody."
-msgstr "לא חסמת אף אחד"
+msgid "You're not blocking anybody."
+msgstr "את/ה לא חוסם/ת אף אחד"
 
 #: templates/core/pagination.html:9
 msgid "Previous"
@@ -793,7 +793,7 @@ msgstr ""
 
 #: templates/im/chat_list.html:52
 msgid "You have no messages yet."
-msgstr ""
+msgstr "עדיין אין לך הודעות."
 
 #: templates/im/message.html:15
 msgid "New"
@@ -1019,47 +1019,47 @@ msgstr ""
 #: templates/translations.html:39
 msgctxt "female"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "עדיין אין לך הודעות."
 
 #: templates/translations.html:40
 msgctxt "male"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "עדיין אין לך הודעות."
 
 #: templates/translations.html:41
 msgctxt "other"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "עדיין אין לך הודעות."
 
 #: templates/translations.html:49
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "המשוב שלך נשלח למנהלים."
 
 #: templates/translations.html:50
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "המשוב שלך נשלח למנהלים."
 
 #: templates/translations.html:51
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "המשוב שלך נשלח למנהלים."
 
 #: templates/translations.html:54
 msgctxt "female"
-msgid "You're blocking nobody."
-msgstr ""
+msgid "You're not blocking anybody."
+msgstr "את לא חוסמת אף אחד"
 
 #: templates/translations.html:55
 msgctxt "male"
-msgid "You're blocking nobody."
-msgstr ""
+msgid "You're not blocking anybody."
+msgstr "אתה לא חוסם אף אחד"
 
 #: templates/translations.html:56
 msgctxt "other"
-msgid "You're blocking nobody."
-msgstr ""
+msgid "You're not blocking anybody."
+msgstr "את/ה לא חוסם/ת אף אחד"
 
 #: templates/translations.html:59
 msgctxt "female"
