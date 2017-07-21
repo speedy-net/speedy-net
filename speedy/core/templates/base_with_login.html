@@ -31,7 +31,7 @@
                             <a href="{% url 'im:list' %}">{% trans 'Messages' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
+                            <a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' context user.get_gender %}</a>
                         </li>
                     {% endblock %}
                 </ul>
@@ -78,7 +78,7 @@
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
+            <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' context user.get_gender %}</a></li>
             <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
         </ul>
         <p class="navbar-text navbar-right" style="margin-right: 1em">
@@ -152,7 +152,7 @@
     {% endblock %}
     <li><a href="{% url 'accounts:edit_profile' %}">
         <i class="fa fa-fw fa-pencil"></i>
-        {% trans 'Edit Profile' %}
+        {% trans 'Edit Profile' context user.get_gender %}
     </a></li>
 {% endblock %}
 

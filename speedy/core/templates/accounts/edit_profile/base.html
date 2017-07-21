@@ -3,11 +3,11 @@
 {% load core_tags_and_filters %}
 {% load i18n %}
 
-{% block title %}{% trans 'Edit Profile' %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Edit Profile' context user.get_gender %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1>{% trans 'Edit Profile' %}</h1>
+        <h1>{% trans 'Edit Profile' context user.get_gender %}</h1>
     </div>
 
     <ul class="nav nav-tabs">
