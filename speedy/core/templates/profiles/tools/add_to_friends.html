@@ -25,7 +25,7 @@
             {% csrf_token %}
             <button class="btn btn-success" type="submit">
                 <i class="fa fa-user-plus"></i>
-                {% trans 'Add to Friends' %}
+                {% trans 'Add to Friends' context user.get_gender %}
             </button>
         </form>
     {% endif %}

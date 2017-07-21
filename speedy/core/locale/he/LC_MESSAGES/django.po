@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 11:01+0300\n"
+"POT-Creation-Date: 2017-07-21 11:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -746,14 +746,22 @@ msgid "Next"
 msgstr "הבא"
 
 #: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:10
 msgid "Report Profile"
 msgstr ""
 
 #: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:12
 msgid "Report File"
 msgstr ""
+
+#: .\templates\feedback\feedback_form.html:10
+#: .\templates\profiles\tools\report_menu.html:9
+msgid "Report User"
+msgstr "דווח/י על משתמש/ת זה"
+
+#: .\templates\feedback\feedback_form.html:12
+#: .\templates\profiles\tools\report_menu.html:11
+msgid "Report Photo"
+msgstr "דווח/י על תמונה זו"
 
 #: .\templates\feedback\feedback_success.html:8
 msgid "Thank You"
@@ -882,14 +890,6 @@ msgstr "בטל/י בקשת חברות"
 #: .\templates\profiles\tools\report_menu.html:6
 msgid "Toggle Dropdown"
 msgstr ""
-
-#: .\templates\profiles\tools\report_menu.html:9
-msgid "Report User"
-msgstr "דווח/י על משתמש/ת זה"
-
-#: .\templates\profiles\tools\report_menu.html:11
-msgid "Report Photo"
-msgstr "דווח/י על תמונה זו"
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
@@ -1578,6 +1578,96 @@ msgstr "התנתק"
 msgctxt "other"
 msgid "Logout"
 msgstr "התנתק/י"
+
+#: .\templates\translations.html:209
+msgctxt "female"
+msgid "Like"
+msgstr ""
+
+#: .\templates\translations.html:210
+msgctxt "male"
+msgid "Like"
+msgstr ""
+
+#: .\templates\translations.html:211
+msgctxt "other"
+msgid "Like"
+msgstr ""
+
+#: .\templates\translations.html:213
+msgctxt "female"
+msgid "Unlike"
+msgstr ""
+
+#: .\templates\translations.html:214
+msgctxt "male"
+msgid "Unlike"
+msgstr ""
+
+#: .\templates\translations.html:215
+msgctxt "other"
+msgid "Unlike"
+msgstr ""
+
+#: .\templates\translations.html:217
+msgctxt "female"
+msgid "Send Message"
+msgstr "שלחי הודעה"
+
+#: .\templates\translations.html:218
+msgctxt "male"
+msgid "Send Message"
+msgstr "שלח הודעה"
+
+#: .\templates\translations.html:219
+msgctxt "other"
+msgid "Send Message"
+msgstr "שלח/י הודעה"
+
+#: .\templates\translations.html:221
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "הוסיפי לחברים"
+
+#: .\templates\translations.html:222
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "הוסף לחברים"
+
+#: .\templates\translations.html:223
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "הוסף/י לחברים"
+
+#: .\templates\translations.html:225
+msgctxt "female"
+msgid "Report User"
+msgstr "דווחי על משתמש/ת זה"
+
+#: .\templates\translations.html:226
+msgctxt "male"
+msgid "Report User"
+msgstr "דווח על משתמש/ת זה"
+
+#: .\templates\translations.html:227
+msgctxt "other"
+msgid "Report User"
+msgstr "דווח/י על משתמש/ת זה"
+
+#: .\templates\translations.html:229
+msgctxt "female"
+msgid "Report Photo"
+msgstr "דווחי על תמונה זו"
+
+#: .\templates\translations.html:230
+msgctxt "male"
+msgid "Report Photo"
+msgstr "דווח על תמונה זו"
+
+#: .\templates\translations.html:231
+msgctxt "other"
+msgid "Report Photo"
+msgstr "דווח/י על תמונה זו"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."

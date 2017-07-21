@@ -7,9 +7,9 @@
     <div class="page-header">
         <h1>
             {% if view.report_entity %}
-                {% trans 'Report Profile' %}
+                {% trans 'Report User' context user.get_gender %}
             {% elif view.report_file %}
-                {% trans 'Report File' %}
+                {% trans 'Report Photo' context user.get_gender %}
             {% else %}
                 {% trans 'Contact Us' %}
             {% endif %}
