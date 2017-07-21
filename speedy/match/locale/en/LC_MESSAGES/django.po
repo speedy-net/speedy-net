@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 10:06+0300\n"
+"POT-Creation-Date: 2017-07-21 10:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,7 +114,12 @@ msgid "active languages"
 msgstr ""
 
 #: .\accounts\models.py:71
-msgid "height cm"
+msgid "height"
+msgstr ""
+
+#: .\accounts\models.py:71
+#: .\templates\accounts\edit_profile\partials\user_profile.html:20
+msgid "cm"
 msgstr ""
 
 #: .\accounts\models.py:72
@@ -329,20 +334,16 @@ msgstr ""
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:81
+#: .\templates\accounts\edit_profile\activate.html:82
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:84
+#: .\templates\accounts\edit_profile\activate.html:85
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:90
+#: .\templates\accounts\edit_profile\activate.html:91
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-
-#: .\templates\accounts\edit_profile\partials\user_profile.html:20
-msgid "cm"
 msgstr ""
 
 #: .\templates\base_site.html:10 .\templates\base_site.html:34
