@@ -293,7 +293,7 @@ msgstr ""
 
 #: .\accounts\views.py:302 .\accounts\views.py:317
 msgid "A confirmation message was sent to {}"
-msgstr ""
+msgstr "הודעת אימות נשלחה ל-{}"
 
 #: .\base\models.py:42
 msgid "ID"
@@ -301,7 +301,7 @@ msgstr ""
 
 #: .\base\views.py:49
 msgid "Changes saved."
-msgstr ""
+msgstr "השינויים נשמרו."
 
 #: .\blocks\models.py:11
 msgid "blocked user"
