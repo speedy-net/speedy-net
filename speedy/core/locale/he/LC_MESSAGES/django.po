@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 10:43+0300\n"
+"POT-Creation-Date: 2017-07-21 10:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,23 +472,23 @@ msgstr ""
 #: .\templates\base_with_login.html:155
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
-msgstr "ערוך/י פרופיל"
+msgstr "עריכת פרופיל"
 
 #: .\templates\accounts\edit_profile\base.html:15
 msgid "Profile Info"
-msgstr ""
+msgstr "פרטי פרופיל"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Privacy Settings"
-msgstr ""
+msgstr "הגדרות פרטיות"
 
 #: .\templates\accounts\edit_profile\base.html:19
 msgid "Notifications"
-msgstr ""
+msgstr "התראות"
 
 #: .\templates\accounts\edit_profile\base.html:21
 msgid "Emails & Password"
-msgstr ""
+msgstr "דואר אלקטרוני וסיסמה"
 
 #: .\templates\accounts\edit_profile\base.html:24
 msgid "Blocked Users"
@@ -1571,30 +1571,15 @@ msgstr "קרניסט/ית (אוכל/ת חיות)"
 
 #: .\templates\translations.html:205
 msgctxt "female"
-msgid "Edit Profile"
-msgstr "ערכי פרופיל"
-
-#: .\templates\translations.html:206
-msgctxt "male"
-msgid "Edit Profile"
-msgstr "ערוך פרופיל"
-
-#: .\templates\translations.html:207
-msgctxt "other"
-msgid "Edit Profile"
-msgstr "ערוך/י פרופיל"
-
-#: .\templates\translations.html:209
-msgctxt "female"
 msgid "Logout"
 msgstr "התנתקי"
 
-#: .\templates\translations.html:210
+#: .\templates\translations.html:206
 msgctxt "male"
 msgid "Logout"
 msgstr "התנתק"
 
-#: .\templates\translations.html:211
+#: .\templates\translations.html:207
 msgctxt "other"
 msgid "Logout"
 msgstr "התנתק/י"

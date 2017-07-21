@@ -3,6 +3,6 @@
 {% if request.user == user %}
     <a href="{% url 'accounts:edit_profile' %}" class="btn btn-default">
         <i class="fa fa-pencil"></i>
-        {% trans 'Edit Profile' context user.get_gender %}
+        {% trans 'Edit Profile' %}
     </a>
 {% endif %}
