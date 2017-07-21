@@ -6,8 +6,8 @@
     <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
 </button>
 <ul class="dropdown-menu">
-    <li><a href="{% url 'feedback:report_entity' user.slug %}">{% trans 'Report User' context user.get_gender %}</a></li>
+    <li><a href="{% url 'feedback:report_entity' user.slug %}">{% trans 'Report User' context request.user.get_gender %}</a></li>
     {% if user.photo %}
-        <li><a href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report Photo' context user.get_gender %}</a></li>
+        <li><a href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report Photo' context request.user.get_gender %}</a></li>
     {% endif %}
 </ul>

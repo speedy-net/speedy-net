@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 11:19+0300\n"
+"POT-Creation-Date: 2017-07-21 11:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1582,32 +1582,32 @@ msgstr "התנתק/י"
 #: .\templates\translations.html:209
 msgctxt "female"
 msgid "Like"
-msgstr ""
+msgstr "לייק"
 
 #: .\templates\translations.html:210
 msgctxt "male"
 msgid "Like"
-msgstr ""
+msgstr "לייק"
 
 #: .\templates\translations.html:211
 msgctxt "other"
 msgid "Like"
-msgstr ""
+msgstr "לייק"
 
 #: .\templates\translations.html:213
 msgctxt "female"
 msgid "Unlike"
-msgstr ""
+msgstr "בטלי לייק"
 
 #: .\templates\translations.html:214
 msgctxt "male"
 msgid "Unlike"
-msgstr ""
+msgstr "בטל לייק"
 
 #: .\templates\translations.html:215
 msgctxt "other"
 msgid "Unlike"
-msgstr ""
+msgstr "בטל/י לייק"
 
 #: .\templates\translations.html:217
 msgctxt "female"

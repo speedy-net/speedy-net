@@ -55,7 +55,7 @@
                     {% block navigate_other_site %}
                     {% endblock %}
                     <li>
-                        <a href="{% url 'accounts:logout' %}">{% trans 'Logout' context user.get_gender %}</a>
+                        <a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
                     </li>
                 </ul>
             {% else %}
@@ -79,10 +79,10 @@
     {% if request.user.is_authenticated %}
         <ul class="nav navbar-nav navbar-right">
             <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
-            <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' context user.get_gender %}</a></li>
+            <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
         </ul>
         <p class="navbar-text navbar-right" style="margin-right: 1em">
-            {% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site.name context request.user.get_gender %}
+            {% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site.name context=request.user.get_gender %}
                 Hi
                 <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>,
                 welcome back to {{ site_name }}!
