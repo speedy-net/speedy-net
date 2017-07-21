@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 10:49+0300\n"
+"POT-Creation-Date: 2017-07-21 11:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -352,10 +352,8 @@ msgid "Welcome"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:55
-#, fuzzy
-#| msgid "About"
 msgid "About me"
-msgstr "אודות"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:82
 msgid "Back"
@@ -429,3 +427,6 @@ msgstr ""
 #: .\templates\profiles\user_detail.html:20
 msgid "'s profile on Speedy Net."
 msgstr " בספידי נט."
+
+#~ msgid "About"
+#~ msgstr "אודות"
