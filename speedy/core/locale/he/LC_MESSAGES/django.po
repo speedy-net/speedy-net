@@ -1057,12 +1057,12 @@ msgstr "חבר/ה שלך"
 #: .\templates\translations.html:42
 msgctxt "female"
 msgid "Block User"
-msgstr "חסום/י משתמש/ת"
+msgstr "חסמי משתמש/ת"
 
 #: .\templates\translations.html:43
 msgctxt "male"
 msgid "Block User"
-msgstr "חסום/י משתמש/ת"
+msgstr "חסום משתמש/ת"
 
 #: .\templates\translations.html:44
 msgctxt "other"
@@ -1072,12 +1072,12 @@ msgstr "חסום/י משתמש/ת"
 #: .\templates\translations.html:47
 msgctxt "female"
 msgid "Unblock User"
-msgstr "בטל/י חסימת משתמש/ת"
+msgstr "בטלי חסימת משתמש/ת"
 
 #: .\templates\translations.html:48
 msgctxt "male"
 msgid "Unblock User"
-msgstr "בטל/י חסימת משתמש/ת"
+msgstr "בטל חסימת משתמש/ת"
 
 #: .\templates\translations.html:49
 msgctxt "other"
