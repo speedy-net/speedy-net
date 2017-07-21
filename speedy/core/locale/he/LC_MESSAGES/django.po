@@ -932,7 +932,7 @@ msgstr "(מוסתר)"
 
 #: .\templates\profiles\user_info_widget.html:59
 msgid "Age"
-msgstr ""
+msgstr "גיל"
 
 #: .\templates\profiles\user_info_widget.html:68
 msgid "Email"
@@ -961,8 +961,7 @@ msgstr ""
 "                היי\n"
 "                <a href=\"%(user_link)s\" class=\"navbar-link\">"
 "%(user_name)s</a>,\n"
-"                ברוך שובך ל%(site_name)s!\n"
-"            "
+"ברוך שובך ל%(site_name)s!\n"
 
 #: .\templates\translations.html:10
 #, python-format
@@ -977,8 +976,7 @@ msgstr ""
 "                היי\n"
 "                <a href=\"%(user_link)s\" class=\"navbar-link\">"
 "%(user_name)s</a>,\n"
-"                ברוך שובך ל%(site_name)s!\n"
-"            "
+"ברוך שובך ל%(site_name)s!\n"
 
 #: .\templates\translations.html:15
 #, python-format
@@ -993,8 +991,7 @@ msgstr ""
 "                היי\n"
 "                <a href=\"%(user_link)s\" class=\"navbar-link\">"
 "%(user_name)s</a>,\n"
-"                ברוך שובך ל%(site_name)s!\n"
-"            "
+"ברוך שובך ל%(site_name)s!\n"
 
 #: .\templates\translations.html:22
 msgctxt "female"
