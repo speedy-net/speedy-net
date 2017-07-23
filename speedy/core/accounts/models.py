@@ -247,7 +247,7 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         return genders.get(self.gender)
 
     def get_diet(self):
-        diets = {self.__class__.DIET_VEGAN: _('Vegan'), self.__class__.DIET_VEGETARIAN: _('Vegetarian'), self.__class__.DIET_CARNIST: _('Carnist')}
+        diets = {self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message='Vegan'), self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message='Vegetarian'), self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message='Carnist')}
         return diets.get(self.diet)
 
     def get_age(self):

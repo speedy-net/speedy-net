@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-23 13:49+0300\n"
+"POT-Creation-Date: 2017-07-23 14:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,16 +72,8 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:252
-msgid "Activate my {} account"
-msgstr ""
-
 #: .\accounts\forms.py:261
 msgid "Your password"
-msgstr ""
-
-#: .\accounts\forms.py:268
-msgid "Deactivate your {} account"
 msgstr ""
 
 #: .\accounts\forms.py:273
@@ -198,18 +190,6 @@ msgstr ""
 
 #: .\accounts\models.py:246
 msgid "other"
-msgstr ""
-
-#: .\accounts\models.py:250
-msgid "Vegan"
-msgstr ""
-
-#: .\accounts\models.py:250
-msgid "Vegetarian"
-msgstr ""
-
-#: .\accounts\models.py:250
-msgid "Carnist"
 msgstr ""
 
 #: .\accounts\models.py:267
@@ -1515,164 +1495,239 @@ msgstr ""
 
 #: .\templates\translations.html:205
 msgctxt "female"
-msgid "Logout"
+msgid "Vegan"
 msgstr ""
 
 #: .\templates\translations.html:206
 msgctxt "male"
-msgid "Logout"
+msgid "Vegan"
 msgstr ""
 
 #: .\templates\translations.html:207
 msgctxt "other"
-msgid "Logout"
+msgid "Vegan"
 msgstr ""
 
 #: .\templates\translations.html:209
 msgctxt "female"
-msgid "Like"
+msgid "Vegetarian"
 msgstr ""
 
 #: .\templates\translations.html:210
 msgctxt "male"
-msgid "Like"
+msgid "Vegetarian"
 msgstr ""
 
 #: .\templates\translations.html:211
 msgctxt "other"
-msgid "Like"
+msgid "Vegetarian"
 msgstr ""
 
 #: .\templates\translations.html:213
 msgctxt "female"
-msgid "Unlike"
+msgid "Carnist"
 msgstr ""
 
 #: .\templates\translations.html:214
 msgctxt "male"
-msgid "Unlike"
+msgid "Carnist"
 msgstr ""
 
 #: .\templates\translations.html:215
 msgctxt "other"
-msgid "Unlike"
+msgid "Carnist"
 msgstr ""
 
 #: .\templates\translations.html:217
 msgctxt "female"
-msgid "Send Message"
+msgid "Logout"
 msgstr ""
 
 #: .\templates\translations.html:218
 msgctxt "male"
-msgid "Send Message"
+msgid "Logout"
 msgstr ""
 
 #: .\templates\translations.html:219
 msgctxt "other"
-msgid "Send Message"
+msgid "Logout"
 msgstr ""
 
 #: .\templates\translations.html:221
 msgctxt "female"
-msgid "Add to Friends"
+msgid "Like"
 msgstr ""
 
 #: .\templates\translations.html:222
 msgctxt "male"
-msgid "Add to Friends"
+msgid "Like"
 msgstr ""
 
 #: .\templates\translations.html:223
 msgctxt "other"
-msgid "Add to Friends"
+msgid "Like"
 msgstr ""
 
 #: .\templates\translations.html:225
 msgctxt "female"
-msgid "Report User"
+msgid "Unlike"
 msgstr ""
 
 #: .\templates\translations.html:226
 msgctxt "male"
-msgid "Report User"
+msgid "Unlike"
 msgstr ""
 
 #: .\templates\translations.html:227
 msgctxt "other"
-msgid "Report User"
+msgid "Unlike"
 msgstr ""
 
 #: .\templates\translations.html:229
 msgctxt "female"
-msgid "Report Photo"
+msgid "Send Message"
 msgstr ""
 
 #: .\templates\translations.html:230
 msgctxt "male"
-msgid "Report Photo"
+msgid "Send Message"
 msgstr ""
 
 #: .\templates\translations.html:231
 msgctxt "other"
-msgid "Report Photo"
+msgid "Send Message"
 msgstr ""
 
 #: .\templates\translations.html:233
 msgctxt "female"
-msgid "Deactivate Account"
+msgid "Add to Friends"
 msgstr ""
 
 #: .\templates\translations.html:234
 msgctxt "male"
-msgid "Deactivate Account"
+msgid "Add to Friends"
 msgstr ""
 
 #: .\templates\translations.html:235
 msgctxt "other"
-msgid "Deactivate Account"
+msgid "Add to Friends"
 msgstr ""
 
 #: .\templates\translations.html:237
 msgctxt "female"
+msgid "Report User"
+msgstr ""
+
+#: .\templates\translations.html:238
+msgctxt "male"
+msgid "Report User"
+msgstr ""
+
+#: .\templates\translations.html:239
+msgctxt "other"
+msgid "Report User"
+msgstr ""
+
+#: .\templates\translations.html:241
+msgctxt "female"
+msgid "Report Photo"
+msgstr ""
+
+#: .\templates\translations.html:242
+msgctxt "male"
+msgid "Report Photo"
+msgstr ""
+
+#: .\templates\translations.html:243
+msgctxt "other"
+msgid "Report Photo"
+msgstr ""
+
+#: .\templates\translations.html:245
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr ""
+
+#: .\templates\translations.html:246
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr ""
+
+#: .\templates\translations.html:247
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr ""
+
+#: .\templates\translations.html:249
+msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 
-#: .\templates\translations.html:238
+#: .\templates\translations.html:250
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 
-#: .\templates\translations.html:239
+#: .\templates\translations.html:251
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
 "reactivate it any time."
 msgstr ""
 
-#: .\templates\translations.html:241
+#: .\templates\translations.html:253
 msgctxt "female"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
 "Speedy Net account remains active."
 msgstr ""
 
-#: .\templates\translations.html:242
+#: .\templates\translations.html:254
 msgctxt "male"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
 "Speedy Net account remains active."
 msgstr ""
 
-#: .\templates\translations.html:243
+#: .\templates\translations.html:255
 msgctxt "other"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
 "Speedy Net account remains active."
+msgstr ""
+
+#: .\templates\translations.html:257
+msgctxt "female"
+msgid "Activate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:258
+msgctxt "male"
+msgid "Activate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:259
+msgctxt "other"
+msgid "Activate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:261
+msgctxt "female"
+msgid "Deactivate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:262
+msgctxt "male"
+msgid "Deactivate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:263
+msgctxt "other"
+msgid "Deactivate your {} account"
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6

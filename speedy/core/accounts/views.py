@@ -148,7 +148,7 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
         user = self.request.user
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         update_session_auth_hash(self.request, user)
-        messages.success(self.request, pgettext_lazy(self.request.user.get_gender(), 'Your new password has been saved.'))
+        messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='Your new password has been saved.'))
         return super().form_valid(form)
 
 
@@ -248,10 +248,10 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         current_site = Site.objects.get_current()
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if (settings.SITE_ID == SPEEDY_NET_SITE_ID):
-            message = pgettext_lazy(self.request.user.get_gender(), 'Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
+            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
             # message = _('Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
         else:
-            message = pgettext_lazy(self.request.user.get_gender(), 'Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name)) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
+            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name)) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
             # message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(current_site.name) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
         messages.success(request=self.request, message=message)
         return super().form_valid(form=form)
@@ -272,11 +272,11 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
         email_address = self.get_object()
         token = self.kwargs.get('token')
         if email_address.is_confirmed:
-            messages.warning(self.request, pgettext_lazy(self.request.user.get_gender(), 'You\'ve already confirmed this email address.'))
+            messages.warning(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='You\'ve already confirmed this email address.'))
         else:
             if email_address.confirmation_token == token:
                 email_address.verify()
-                messages.success(self.request, pgettext_lazy(self.request.user.get_gender(), 'You\'ve confirmed your email address.'))
+                messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='You\'ve confirmed your email address.'))
             else:
                 messages.error(self.request, _('Invalid confirmation link.'))
         return HttpResponseRedirect(self.get_success_url())

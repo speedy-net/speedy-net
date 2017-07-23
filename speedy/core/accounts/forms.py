@@ -154,7 +154,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if normalize_username(slug=slug) != username:
-            raise forms.ValidationError(pgettext_lazy(self.instance.get_gender(), 'You can\'t change your username.'))
+            raise forms.ValidationError(pgettext_lazy(context=self.instance.get_gender(), message='You can\'t change your username.'))
         return slug
 
 
@@ -249,7 +249,7 @@ class SiteProfileActivationForm(forms.ModelForm):
         super().__init__(**kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Activate my {} account').format(site.name)))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {} account').format(_(site.name)))) # ~~~~ TODO: add user's gender as context.
 
     def save(self, commit=True):
         if commit:
@@ -265,7 +265,7 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
         super().__init__(**kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Deactivate your {} account').format(site.name), css_class='btn-danger'))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {} account').format(_(site.name)), css_class='btn-danger')) # ~~~~ TODO: add user's gender as context.
 
     def clean_password(self):
         password = self.cleaned_data['password']

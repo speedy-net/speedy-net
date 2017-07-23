@@ -102,7 +102,7 @@ class LimitMaxFriendsMixin(object):
     def check_own_friends(self):
         user_number_of_friends = len(Friend.objects.friends(self.request.user))
         if user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
-            raise ValidationError(pgettext_lazy(self.request.user.get_gender(), "You already have {0} friends. You can't have more than {1} friends on "
+            raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on "
                                     "Speedy Net. Please remove friends before you proceed.").format(
                 user_number_of_friends,
                 settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
@@ -110,7 +110,7 @@ class LimitMaxFriendsMixin(object):
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user))
         if other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
-            raise ValidationError(pgettext_lazy(user.get_gender(), "This user already has {0} friends. They can't have more than {1} friends on "
+            raise ValidationError(pgettext_lazy(context=user.get_gender(), message="This user already has {0} friends. They can't have more than {1} friends on "
                                     "Speedy Net. Please ask them to remove friends before you proceed.").format(
                 other_user_number_of_friends,
                 settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
@@ -126,10 +126,10 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
         self.user = self.get_user()
         if request.user.is_authenticated:
             if friend_request_sent(request.user, self.user):
-                messages.warning(request, pgettext_lazy(request.user.get_gender(), 'You already requested friendship from this user.'))
+                messages.warning(request, pgettext_lazy(context=request.user.get_gender(), message='You already requested friendship from this user.'))
                 return redirect(to=self.user)
             if Friend.objects.are_friends(request.user, self.user):
-                messages.warning(request, pgettext_lazy(request.user.get_gender(), 'You already are friends with this user.'))
+                messages.warning(request, pgettext_lazy(context=request.user.get_gender(), message='You already are friends with this user.'))
                 return redirect(to=self.user)
         return super().dispatch(request, *args, **kwargs)
 
@@ -155,7 +155,7 @@ class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
             messages.error(request, _('No friend request.'))
             return redirect(to=self.user)
         frequest.cancel()
-        messages.success(request, pgettext_lazy(request.user.get_gender(), "You've cancelled your friend request."))
+        messages.success(request, pgettext_lazy(context=request.user.get_gender(), message="You've cancelled your friend request."))
         return redirect(to=self.user)
 
 
@@ -211,5 +211,5 @@ class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         Friend.objects.remove_friend(self.request.user, self.user)
-        messages.success(request, pgettext_lazy(request.user.get_gender(), 'You have removed this user from friends.'))
+        messages.success(request, pgettext_lazy(context=request.user.get_gender(), message='You have removed this user from friends.'))
         return redirect(to=self.user)

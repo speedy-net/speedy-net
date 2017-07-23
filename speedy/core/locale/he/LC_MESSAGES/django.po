@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-23 13:49+0300\n"
+"POT-Creation-Date: 2017-07-23 14:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,17 +73,9 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:252
-msgid "Activate my {} account"
-msgstr "הפעל/י את החשבון שלי ב{}"
-
 #: .\accounts\forms.py:261
 msgid "Your password"
 msgstr "הסיסמה שלך"
-
-#: .\accounts\forms.py:268
-msgid "Deactivate your {} account"
-msgstr "הקפא/י את פעילות החשבון שלך ב{}"
 
 #: .\accounts\forms.py:273
 msgid "Invalid password."
@@ -200,18 +192,6 @@ msgstr "זכר"
 #: .\accounts\models.py:246
 msgid "other"
 msgstr "אחר/ת"
-
-#: .\accounts\models.py:250
-msgid "Vegan"
-msgstr "טבעוני/ת"
-
-#: .\accounts\models.py:250
-msgid "Vegetarian"
-msgstr "צמחוני/ת"
-
-#: .\accounts\models.py:250
-msgid "Carnist"
-msgstr "קרניסט/ית"
 
 #: .\accounts\models.py:267
 msgid "email"
@@ -1554,125 +1534,170 @@ msgstr "קרניסט/ית (אוכל/ת חיות)"
 
 #: .\templates\translations.html:205
 msgctxt "female"
+msgid "Vegan"
+msgstr "טבעונית"
+
+#: .\templates\translations.html:206
+msgctxt "male"
+msgid "Vegan"
+msgstr "טבעוני"
+
+#: .\templates\translations.html:207
+msgctxt "other"
+msgid "Vegan"
+msgstr "טבעוני/ת"
+
+#: .\templates\translations.html:209
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "צמחונית"
+
+#: .\templates\translations.html:210
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "צמחוני"
+
+#: .\templates\translations.html:211
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "צמחוני/ת"
+
+#: .\templates\translations.html:213
+msgctxt "female"
+msgid "Carnist"
+msgstr "קרניסטית"
+
+#: .\templates\translations.html:214
+msgctxt "male"
+msgid "Carnist"
+msgstr "קרניסט"
+
+#: .\templates\translations.html:215
+msgctxt "other"
+msgid "Carnist"
+msgstr "קרניסט/ית"
+
+#: .\templates\translations.html:217
+msgctxt "female"
 msgid "Logout"
 msgstr "התנתקי"
 
-#: .\templates\translations.html:206
+#: .\templates\translations.html:218
 msgctxt "male"
 msgid "Logout"
 msgstr "התנתק"
 
-#: .\templates\translations.html:207
+#: .\templates\translations.html:219
 msgctxt "other"
 msgid "Logout"
 msgstr "התנתק/י"
 
-#: .\templates\translations.html:209
+#: .\templates\translations.html:221
 msgctxt "female"
 msgid "Like"
 msgstr "לייק"
 
-#: .\templates\translations.html:210
+#: .\templates\translations.html:222
 msgctxt "male"
 msgid "Like"
 msgstr "לייק"
 
-#: .\templates\translations.html:211
+#: .\templates\translations.html:223
 msgctxt "other"
 msgid "Like"
 msgstr "לייק"
 
-#: .\templates\translations.html:213
+#: .\templates\translations.html:225
 msgctxt "female"
 msgid "Unlike"
 msgstr "בטלי לייק"
 
-#: .\templates\translations.html:214
+#: .\templates\translations.html:226
 msgctxt "male"
 msgid "Unlike"
 msgstr "בטל לייק"
 
-#: .\templates\translations.html:215
+#: .\templates\translations.html:227
 msgctxt "other"
 msgid "Unlike"
 msgstr "בטל/י לייק"
 
-#: .\templates\translations.html:217
+#: .\templates\translations.html:229
 msgctxt "female"
 msgid "Send Message"
 msgstr "שלחי הודעה"
 
-#: .\templates\translations.html:218
+#: .\templates\translations.html:230
 msgctxt "male"
 msgid "Send Message"
 msgstr "שלח הודעה"
 
-#: .\templates\translations.html:219
+#: .\templates\translations.html:231
 msgctxt "other"
 msgid "Send Message"
 msgstr "שלח/י הודעה"
 
-#: .\templates\translations.html:221
+#: .\templates\translations.html:233
 msgctxt "female"
 msgid "Add to Friends"
 msgstr "הוסיפי לחברים"
 
-#: .\templates\translations.html:222
+#: .\templates\translations.html:234
 msgctxt "male"
 msgid "Add to Friends"
 msgstr "הוסף לחברים"
 
-#: .\templates\translations.html:223
+#: .\templates\translations.html:235
 msgctxt "other"
 msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
 
-#: .\templates\translations.html:225
+#: .\templates\translations.html:237
 msgctxt "female"
 msgid "Report User"
 msgstr "דווחי על משתמש/ת זה"
 
-#: .\templates\translations.html:226
+#: .\templates\translations.html:238
 msgctxt "male"
 msgid "Report User"
 msgstr "דווח על משתמש/ת זה"
 
-#: .\templates\translations.html:227
+#: .\templates\translations.html:239
 msgctxt "other"
 msgid "Report User"
 msgstr "דווח/י על משתמש/ת זה"
 
-#: .\templates\translations.html:229
+#: .\templates\translations.html:241
 msgctxt "female"
 msgid "Report Photo"
 msgstr "דווחי על תמונה זו"
 
-#: .\templates\translations.html:230
+#: .\templates\translations.html:242
 msgctxt "male"
 msgid "Report Photo"
 msgstr "דווח על תמונה זו"
 
-#: .\templates\translations.html:231
+#: .\templates\translations.html:243
 msgctxt "other"
 msgid "Report Photo"
 msgstr "דווח/י על תמונה זו"
 
-#: .\templates\translations.html:233
+#: .\templates\translations.html:245
 msgctxt "female"
 msgid "Deactivate Account"
 msgstr "הקפיאי את פעילות החשבון"
 
-#: .\templates\translations.html:234
+#: .\templates\translations.html:246
 msgctxt "male"
 msgid "Deactivate Account"
 msgstr "הקפא את פעילות החשבון"
 
-#: .\templates\translations.html:235
+#: .\templates\translations.html:247
 msgctxt "other"
 msgid "Deactivate Account"
 msgstr "הקפא/י את פעילות החשבון"
 
-#: .\templates\translations.html:237
+#: .\templates\translations.html:249
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1680,7 +1705,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכלי להפעיל אותם בכל זמן שתבחרי."
 
-#: .\templates\translations.html:238
+#: .\templates\translations.html:250
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1688,7 +1713,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל להפעיל אותם בכל זמן שתבחר."
 
-#: .\templates\translations.html:239
+#: .\templates\translations.html:251
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1696,7 +1721,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן שתבחר/י."
 
-#: .\templates\translations.html:241
+#: .\templates\translations.html:253
 msgctxt "female"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1705,7 +1730,7 @@ msgstr ""
 "החשבון שלך ב{} הוקפא. תוכלי להפעיל אותו בכל זמן שתבחרי. החשבון שלך בספידי נט "
 "נשאר פעיל."
 
-#: .\templates\translations.html:242
+#: .\templates\translations.html:254
 msgctxt "male"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1714,7 +1739,7 @@ msgstr ""
 "החשבון שלך ב{} הוקפא. תוכל להפעיל אותו בכל זמן שתבחר. החשבון שלך בספידי נט "
 "נשאר פעיל."
 
-#: .\templates\translations.html:243
+#: .\templates\translations.html:255
 msgctxt "other"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1722,6 +1747,36 @@ msgid ""
 msgstr ""
 "החשבון שלך ב{} הוקפא. תוכל/י להפעיל אותו בכל זמן שתבחר/י. החשבון שלך בספידי "
 "נט נשאר פעיל."
+
+#: .\templates\translations.html:257
+msgctxt "female"
+msgid "Activate your {} account"
+msgstr "הפעילי את החשבון שלך ב{}"
+
+#: .\templates\translations.html:258
+msgctxt "male"
+msgid "Activate your {} account"
+msgstr "הפעל את החשבון שלך ב{}"
+
+#: .\templates\translations.html:259
+msgctxt "other"
+msgid "Activate your {} account"
+msgstr "הפעל/י את החשבון שלך ב{}"
+
+#: .\templates\translations.html:261
+msgctxt "female"
+msgid "Deactivate your {} account"
+msgstr "הקפיאי את פעילות החשבון שלך ב{}"
+
+#: .\templates\translations.html:262
+msgctxt "male"
+msgid "Deactivate your {} account"
+msgstr "הקפא את פעילות החשבון שלך ב{}"
+
+#: .\templates\translations.html:263
+msgctxt "other"
+msgid "Deactivate your {} account"
+msgstr "הקפא/י את פעילות החשבון שלך ב{}"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -1754,6 +1809,12 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgid "Activate your {} account"
+#~ msgstr "הפעל/י את החשבון שלך ב{}"
+
+#~ msgid "Deactivate your {} account"
+#~ msgstr "הקפא/י את פעילות החשבון שלך ב{}"
 
 #~ msgid "Full Name"
 #~ msgstr "שם מלא"
