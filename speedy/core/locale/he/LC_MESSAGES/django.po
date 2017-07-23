@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-23 14:46+0300\n"
+"POT-Creation-Date: 2017-07-23 19:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -794,7 +794,8 @@ msgstr "עדיין אין לך הודעות."
 msgid "New"
 msgstr ""
 
-#: .\templates\im\message_form.html:7
+#: .\templates\im\message_form.html:7 .\templates\translations.html:52
+#: .\templates\translations.html:53 .\templates\translations.html:54
 #, python-format
 msgid "Send a message to %(user)s"
 msgstr ""
@@ -910,39 +911,9 @@ msgstr ""
 "הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
 "בספידי נט בשביל לשלוח הודעות ספאם."
 
-#: .\templates\translations.html:5
-#, python-format
-msgctxt "female"
-msgid ""
-"\n"
-"    Hi\n"
-"    <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>,\n"
-"    welcome back to %(site_name)s!\n"
-msgstr ""
-"\n"
-"                היי\n"
-"                <a href=\"%(user_link)s\" class=\"navbar-link\">"
-"%(user_name)s</a>,\n"
-"ברוך שובך ל%(site_name)s!\n"
-
-#: .\templates\translations.html:10
-#, python-format
-msgctxt "male"
-msgid ""
-"\n"
-"    Hi\n"
-"    <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>,\n"
-"    welcome back to %(site_name)s!\n"
-msgstr ""
-"\n"
-"                היי\n"
-"                <a href=\"%(user_link)s\" class=\"navbar-link\">"
-"%(user_name)s</a>,\n"
-"ברוך שובך ל%(site_name)s!\n"
-
+#: .\templates\translations.html:5 .\templates\translations.html:10
 #: .\templates\translations.html:15
 #, python-format
-msgctxt "other"
 msgid ""
 "\n"
 "    Hi\n"
@@ -1047,24 +1018,6 @@ msgstr "בטל חסימת משתמש/ת"
 msgctxt "other"
 msgid "Unblock User"
 msgstr "בטל/י חסימת משתמש/ת"
-
-#: .\templates\translations.html:52
-#, python-format
-msgctxt "female"
-msgid "Send a message to %(user)s"
-msgstr ""
-
-#: .\templates\translations.html:53
-#, python-format
-msgctxt "male"
-msgid "Send a message to %(user)s"
-msgstr ""
-
-#: .\templates\translations.html:54
-#, python-format
-msgctxt "other"
-msgid "Send a message to %(user)s"
-msgstr ""
 
 #: .\templates\translations.html:57
 msgctxt "female"
@@ -1246,54 +1199,18 @@ msgctxt "other"
 msgid "You have unblocked this user."
 msgstr ".ביטלת את חסימת המשתמש/ת הזה"
 
-#: .\templates\translations.html:117
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"\n"
-"    You already have {0} friends. You can't have more than {1} friends on "
-"Speedy Net. Please remove friends before you proceed.\n"
-msgstr ""
-
-#: .\templates\translations.html:120
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"\n"
-"    You already have {0} friends. You can't have more than {1} friends on "
-"Speedy Net. Please remove friends before you proceed.\n"
-msgstr ""
-
+#: .\templates\translations.html:117 .\templates\translations.html:120
 #: .\templates\translations.html:123
 #, python-brace-format
-msgctxt "other"
 msgid ""
 "\n"
 "    You already have {0} friends. You can't have more than {1} friends on "
 "Speedy Net. Please remove friends before you proceed.\n"
 msgstr ""
 
-#: .\templates\translations.html:128
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"\n"
-"    This user already has {0} friends. They can't have more than {1} friends "
-"on Speedy Net. Please ask them to remove friends before you proceed.\n"
-msgstr ""
-
-#: .\templates\translations.html:131
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"\n"
-"    This user already has {0} friends. They can't have more than {1} friends "
-"on Speedy Net. Please ask them to remove friends before you proceed.\n"
-msgstr ""
-
+#: .\templates\translations.html:128 .\templates\translations.html:131
 #: .\templates\translations.html:134
 #, python-brace-format
-msgctxt "other"
 msgid ""
 "\n"
 "    This user already has {0} friends. They can't have more than {1} friends "
@@ -1820,6 +1737,32 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgctxt "male"
+#~ msgid ""
+#~ "\n"
+#~ "    Hi\n"
+#~ "    <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>,\n"
+#~ "    welcome back to %(site_name)s!\n"
+#~ msgstr ""
+#~ "\n"
+#~ "                היי\n"
+#~ "                <a href=\"%(user_link)s\" class=\"navbar-link\">"
+#~ "%(user_name)s</a>,\n"
+#~ "ברוך שובך ל%(site_name)s!\n"
+
+#~ msgctxt "other"
+#~ msgid ""
+#~ "\n"
+#~ "    Hi\n"
+#~ "    <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>,\n"
+#~ "    welcome back to %(site_name)s!\n"
+#~ msgstr ""
+#~ "\n"
+#~ "                היי\n"
+#~ "                <a href=\"%(user_link)s\" class=\"navbar-link\">"
+#~ "%(user_name)s</a>,\n"
+#~ "ברוך שובך ל%(site_name)s!\n"
 
 #~ msgid "Activate your {} account"
 #~ msgstr "הפעל/י את החשבון שלך ב{}"
