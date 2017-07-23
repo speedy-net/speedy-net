@@ -29,6 +29,7 @@ def sites(request):
         site_title = _(site.name)
     return {
         'site': site,
+        'site_name': _(site.name),
         'site_title': site_title,
         'sites': Site.objects.all().order_by('pk'),
     }

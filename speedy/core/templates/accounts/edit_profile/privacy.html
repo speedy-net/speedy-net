@@ -6,7 +6,7 @@
 {% block tab_content %}
     {% if form.fields %}
         <div class="alert alert-warning">
-            {% blocktrans with site_name=site.name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
+            {% blocktrans with site_name=site_name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
         </div>
         {% crispy form %}
     {% endif %}

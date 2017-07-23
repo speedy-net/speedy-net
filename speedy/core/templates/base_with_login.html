@@ -82,7 +82,7 @@
             <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
         </ul>
         <p class="navbar-text navbar-right" style="margin-right: 1em">
-            {% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site.name context=request.user.get_gender %}
+            {% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name context=request.user.get_gender %}
                 Hi
                 <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>,
                 welcome back to {{ site_name }}!
