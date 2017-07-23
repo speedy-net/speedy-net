@@ -464,7 +464,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
         email_address = UserEmailAddress.objects.get(email='email@example.com')
         self.assertFalse(expr=email_address.is_primary)
         r = self.client.get('/edit-profile/')
-        self.assertIn(member='A confirmation was sent to email@example.com',container= map(str, r.context['messages']))
+        self.assertIn(member='A confirmation message was sent to email@example.com',container= map(str, r.context['messages']))
         self.assertEqual(first=len(mail.outbox), second=1)
         site = Site.objects.get_current()
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(site.name))
