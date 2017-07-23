@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-23 14:28+0300\n"
+"POT-Creation-Date: 2017-07-23 14:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,15 +252,11 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:224
-msgid "Welcome to {}!"
-msgstr ""
-
-#: .\accounts\views.py:281
+#: .\accounts\views.py:279
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:305 .\accounts\views.py:320
+#: .\accounts\views.py:303 .\accounts\views.py:318
 msgid "A confirmation message was sent to {}"
 msgstr ""
 
@@ -396,11 +392,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:191
+#: .\settings\base.py:194
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:192
+#: .\settings\base.py:195
 msgid "Hebrew"
 msgstr ""
 
@@ -1728,6 +1724,21 @@ msgstr ""
 #: .\templates\translations.html:263
 msgctxt "other"
 msgid "Deactivate your {} account"
+msgstr ""
+
+#: .\templates\translations.html:265
+msgctxt "female"
+msgid "Welcome to {}!"
+msgstr ""
+
+#: .\templates\translations.html:266
+msgctxt "male"
+msgid "Welcome to {}!"
+msgstr ""
+
+#: .\templates\translations.html:267
+msgctxt "other"
+msgid "Welcome to {}!"
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6

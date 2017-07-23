@@ -221,7 +221,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         site = Site.objects.get_current()
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
         if self.object.is_active:
-            messages.success(self.request, _('Welcome to {}!').format(Site.objects.get_current().name))
+            messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(_(site.name)))
         if (site.pk == SPEEDY_MATCH_SITE_ID):
             if self.request.user.profile.is_active:
                 return redirect(to=reverse_lazy('matches:list'))
@@ -248,11 +248,9 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         current_site = Site.objects.get_current()
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if (settings.SITE_ID == SPEEDY_NET_SITE_ID):
-            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
-            # message = _('Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
+            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.')
         else:
-            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name)) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
-            # message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(current_site.name) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
+            message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name))
         messages.success(request=self.request, message=message)
         return super().form_valid(form=form)
 
@@ -302,7 +300,7 @@ class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
         email_address.send_confirmation_email()
         if email_address.user.email_addresses.filter(is_primary=True).count() == 0:
             email_address.make_primary()
-        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email)) # ~~~~ TODO: translate this message to Hebrew.
+        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email))
         return response
 
 
@@ -317,7 +315,7 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.send_confirmation_email()
-        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email)) # ~~~~ TODO: translate this message to Hebrew.
+        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email))
         return HttpResponseRedirect(self.success_url)
 
 
