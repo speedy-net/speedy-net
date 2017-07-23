@@ -246,10 +246,13 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         user = self.request.user
         user.profile.deactivate()
         current_site = Site.objects.get_current()
-        if settings.SITE_ID == 1:
-            message = _('Your Speedy Net and Speedy Match account has been deactivated. You can reactivate it any time.')
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        if (settings.SITE_ID == SPEEDY_NET_SITE_ID):
+            message = pgettext_lazy(self.request.user.get_gender(), 'Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
+            # message = _('Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.') # ~~~~ TODO: add context - current user's gender (female, male or other).
         else:
-            message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains intact.').format(current_site.name)
+            message = pgettext_lazy(self.request.user.get_gender(), 'Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name)) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
+            # message = _('Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(current_site.name) # ~~~~ TODO: add context - current user's gender (female, male or other) + translate current_site.name to Hebrew.
         messages.success(request=self.request, message=message)
         return super().form_valid(form=form)
 

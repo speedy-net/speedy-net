@@ -24,7 +24,7 @@
                 <a href="{% url 'blocks:list' request.user.slug %}">{% trans 'Blocked Users' %}</a>
             </li>
             <li class="{% active_class 'accounts:deactivate_profile' %}">
-                <a href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' %}</a>
+                <a href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' context request.user.get_gender %}</a>
             </li>
         {% endif %}
     </ul>

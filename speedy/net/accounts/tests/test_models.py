@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_match
+from speedy.core.base.test import TestCase
 from speedy.core.accounts.models import User
 from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory
 
