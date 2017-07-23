@@ -249,7 +249,7 @@ class SiteProfileActivationForm(forms.ModelForm):
         super().__init__(**kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {} account').format(_(site.name)))) # ~~~~ TODO: add user's gender as context.
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {} account').format(_(site.name))))
 
     def save(self, commit=True):
         if commit:
@@ -265,7 +265,7 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
         super().__init__(**kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {} account').format(_(site.name)), css_class='btn-danger')) # ~~~~ TODO: add user's gender as context.
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {} account').format(_(site.name)), css_class='btn-danger'))
 
     def clean_password(self):
         password = self.cleaned_data['password']
