@@ -149,7 +149,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
                 for field in pair])
             for pair in zip(field_names[::2], field_names[1::2])
             ]))
-        self.helper.add_input(Submit('submit', _('Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
@@ -170,7 +170,7 @@ class ProfileNotificationsForm(forms.ModelForm):
             if field.name.startswith('notify_'):
                 self.fields[field.name] = field.formfield()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
@@ -312,4 +312,4 @@ class ProfilePrivacyForm(forms.ModelForm):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
