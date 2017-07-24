@@ -283,7 +283,7 @@ class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFor
     @property
     def helper(self):
         helper = FormHelper()
-        helper.add_input(Submit('submit', _('Add')))
+        helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Add')))
         return helper
 
 
