@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-24 15:13+0300\n"
+"POT-Creation-Date: 2017-07-24 15:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,14 +511,15 @@ msgstr "הוסף/י חדשה"
 msgid "Change Password"
 msgstr "שנה/י סיסמה"
 
+#: .\templates\accounts\edit_profile\notifications.html:7
 #: .\templates\accounts\edit_profile\privacy.html:9
 #, python-format
 msgid "These settings are specific for %(site_name)s."
 msgstr "ההגדרות האלה הן ספציפיות ל%(site_name)s."
 
 #: .\templates\accounts\edit_profile\privacy.html:15
-msgid "Change emails which are visible on your page."
-msgstr ""
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
@@ -1062,18 +1063,18 @@ msgstr "את/ה לא חוסם/ת אף אחד"
 
 #: .\templates\translations.html:72
 msgctxt "female"
-msgid "Change emails which are visible on your page."
-msgstr ""
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "שני הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 
 #: .\templates\translations.html:73
 msgctxt "male"
-msgid "Change emails which are visible on your page."
-msgstr ""
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "שנה הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 
 #: .\templates\translations.html:74
 msgctxt "other"
-msgid "Change emails which are visible on your page."
-msgstr ""
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 
 #: .\templates\translations.html:76
 msgctxt "female"

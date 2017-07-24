@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-24 15:14+0300\n"
+"POT-Creation-Date: 2017-07-24 15:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,13 +510,14 @@ msgstr ""
 msgid "Change Password"
 msgstr ""
 
+#: .\templates\accounts\edit_profile\notifications.html:7
 #: .\templates\accounts\edit_profile\privacy.html:9
 #, python-format
 msgid "These settings are specific for %(site_name)s."
 msgstr ""
 
 #: .\templates\accounts\edit_profile\privacy.html:15
-msgid "Change emails which are visible on your page."
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\accounts\email_address_form.html:6
@@ -1039,17 +1040,17 @@ msgstr ""
 
 #: .\templates\translations.html:72
 msgctxt "female"
-msgid "Change emails which are visible on your page."
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\translations.html:73
 msgctxt "male"
-msgid "Change emails which are visible on your page."
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\translations.html:74
 msgctxt "other"
-msgid "Change emails which are visible on your page."
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\translations.html:76

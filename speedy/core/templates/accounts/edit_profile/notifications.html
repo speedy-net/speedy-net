@@ -3,5 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block tab_content %}
+    <div class="alert alert-warning">
+        {% blocktrans with site_name=site_name %}These settings are specific for {{ site_name }}.{% endblocktrans %}
+    </div>
     {% crispy form %}
 {% endblock %}

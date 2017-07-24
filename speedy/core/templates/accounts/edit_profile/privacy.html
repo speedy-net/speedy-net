@@ -12,7 +12,7 @@
     {% endif %}
     <p>
         <a href="{% url 'accounts:edit_profile_credentials' %}">
-            {% trans 'Change emails which are visible on your page.' context user.get_gender %}
+            {% trans 'Change privacy settings of email addresses on your profile.' context request.user.get_gender %}
         </a>
     </p>
 {% endblock %}
