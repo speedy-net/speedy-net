@@ -325,8 +325,8 @@ class SiteProfileBase(TimeStampedModel):
     NOTIFICATIONS_ON = 1
 
     NOTIFICATIONS_CHOICES = (
-        (NOTIFICATIONS_ON, _('Notify')),
-        (NOTIFICATIONS_OFF, _('Don\'t notify')),
+        (NOTIFICATIONS_ON, _('Notify me')),
+        (NOTIFICATIONS_OFF, _('Don\'t notify me')),
     )
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')

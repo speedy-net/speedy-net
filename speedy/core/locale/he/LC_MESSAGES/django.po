@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-24 14:53+0300\n"
+"POT-Creation-Date: 2017-07-24 15:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -222,12 +222,12 @@ msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
 #: .\accounts\models.py:328
-msgid "Notify"
-msgstr "מקבל הודעות"
+msgid "Notify me"
+msgstr "הודיעו לי"
 
 #: .\accounts\models.py:329
-msgid "Don't notify"
-msgstr "לא מקבל הודעות"
+msgid "Don't notify me"
+msgstr "אל תודיעו לי"
 
 #: .\accounts\models.py:333
 msgid "last visit"
