@@ -139,6 +139,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         super().__init__(**kwargs)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
+        self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())

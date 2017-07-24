@@ -73,20 +73,44 @@
 {% trans 'Change emails which are visible on your page.' context 'male' %}
 {% trans 'Change emails which are visible on your page.' context 'other' %}
 
+{% trans 'Resend a confirmation email' context 'female' %}
+{% trans 'Resend a confirmation email' context 'male' %}
+{% trans 'Resend a confirmation email' context 'other' %}
+
+{% trans 'Make this email address primary' context 'female' %}
+{% trans 'Make this email address primary' context 'male' %}
+{% trans 'Make this email address primary' context 'other' %}
+
 {#core/templates/accounts/edit_profile/credentials.html 66#}
 {% trans 'Are you sure you want to delete this email address?' context 'female' %}
 {% trans 'Are you sure you want to delete this email address?' context 'male' %}
 {% trans 'Are you sure you want to delete this email address?' context 'other' %}
+
+{% trans 'Delete this email address' context 'female' %}
+{% trans 'Delete this email address' context 'male' %}
+{% trans 'Delete this email address' context 'other' %}
+
+{% trans 'Add Another' context 'female' %}
+{% trans 'Add Another' context 'male' %}
+{% trans 'Add Another' context 'other' %}
+
+{% trans 'Change Password' context 'female' %}
+{% trans 'Change Password' context 'male' %}
+{% trans 'Change Password' context 'other' %}
 
 {#core/templates/accounts/edit_profile/base.html# 16#}
 {% trans 'Please confirm your email address.' context 'female' %}
 {% trans 'Please confirm your email address.' context 'male' %}
 {% trans 'Please confirm your email address.' context 'other' %}
 
+{% trans "username (slug)" context 'female' %}
+{% trans "username (slug)" context 'male' %}
+{% trans "username (slug)" context 'other' %}
+
 {#core/accounts/forms.py 158#}
-{% trans "You can\'t change your username." context 'female' %}
-{% trans "You can\'t change your username." context 'male' %}
-{% trans "You can\'t change your username." context 'other' %}
+{% trans "You can't change your username." context 'female' %}
+{% trans "You can't change your username." context 'male' %}
+{% trans "You can't change your username." context 'other' %}
 
 {#core/accounts/views.py 149#}
 {% trans 'Your new password has been saved.' context 'female' %}

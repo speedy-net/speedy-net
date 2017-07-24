@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-23 19:39+0300\n"
+"POT-Creation-Date: 2017-07-24 14:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,11 +104,11 @@ msgstr ""
 
 #: .\accounts\models.py:67
 msgid "on new messages"
-msgstr ""
+msgstr "כאשר יש הודעות חדשות"
 
 #: .\accounts\models.py:68
 msgid "on new likes"
-msgstr ""
+msgstr "כאשר יש לייקים חדשים"
 
 #: .\accounts\models.py:69
 msgid "active languages"
