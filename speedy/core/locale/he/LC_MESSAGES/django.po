@@ -524,11 +524,11 @@ msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרו
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr ""
+msgstr "הוספת דואר אלקטרוני"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
-msgstr ""
+msgstr "התנתקת מהאתר"
 
 #: .\templates\accounts\password_reset\complete.html:5
 #: .\templates\accounts\password_reset\complete.html:11
