@@ -2,17 +2,17 @@
 
 
 {#core/templates/base_with_login.html 85#}
-{% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name context='female' %}
+{% blocktrans context 'female' with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}
     Hi
     <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>,
     welcome back to {{ site_name }}!
 {% endblocktrans %}
-{% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name context='male' %}
+{% blocktrans context 'male' with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}
     Hi
     <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>,
     welcome back to {{ site_name }}!
 {% endblocktrans %}
-{% blocktrans with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name context='other' %}
+{% blocktrans context 'other' with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}
     Hi
     <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>,
     welcome back to {{ site_name }}!
@@ -49,9 +49,9 @@
 {% trans 'Unblock User' context 'other' %}
 
 {#core/templates/im/message_form.html 7#}
-{% blocktrans context='female' %}Send a message to {{ user }}{% endblocktrans %}
-{% blocktrans context='male' %}Send a message to {{ user }}{% endblocktrans %}
-{% blocktrans context='other' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'female' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'male' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'other' %}Send a message to {{ user }}{% endblocktrans %}
 
 {#core/templates/im/chat_list.html 52#}
 {% trans 'You have no messages yet.' context 'female' %}
@@ -146,26 +146,14 @@
 {% trans "You have unblocked this user." context 'other' %}
 
 {#core/friends/views.py 51#}
-{% blocktrans context='female' %}
-    You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
-{% endblocktrans %}
-{% blocktrans context='male' %}
-    You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
-{% endblocktrans %}
-{% blocktrans context='other' %}
-    You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
-{% endblocktrans %}
+{% blocktrans context 'female' %}You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.{% endblocktrans %}
+{% blocktrans context 'male' %}You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.{% endblocktrans %}
+{% blocktrans context 'other' %}You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.{% endblocktrans %}
 
 {#core/friends/views.py 59#}
-{% blocktrans context='female' %}
-    This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
-{% endblocktrans %}
-{% blocktrans context='male' %}
-    This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
-{% endblocktrans %}
-{% blocktrans context='other' %}
-    This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
-{% endblocktrans %}
+{% blocktrans context 'female' %}This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.{% endblocktrans %}
+{% blocktrans context 'male' %}This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.{% endblocktrans %}
+{% blocktrans context 'other' %}This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.{% endblocktrans %}
 
 {#core/friends/views.py 75#}
 {% trans 'You already requested friendship from this user.' context 'female' %}
@@ -261,6 +249,10 @@
 {% trans "Send Message" context 'female' %}
 {% trans "Send Message" context 'male' %}
 {% trans "Send Message" context 'other' %}
+
+{% trans "Send" context 'female' %}
+{% trans "Send" context 'male' %}
+{% trans "Send" context 'other' %}
 
 {% trans "Add to Friends" context 'female' %}
 {% trans "Add to Friends" context 'male' %}

@@ -3,7 +3,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 from django import forms
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import pgettext_lazy
 
 from .models import Message
 
@@ -21,14 +21,13 @@ class MessageForm(forms.ModelForm):
         super().__init__(**kwargs)
         self.helper = FormHelper()
         if self.chat:
-            self.helper.form_action = reverse('im:chat_send',
-                                              kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
+            self.helper.form_action = reverse('im:chat_send', kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
         else:
             self.helper.form_action = reverse('im_entity:user_send', kwargs={'slug': self.to_entity.slug})
         self.helper.form_class = 'form-vertical'
         self.helper.layout = Layout(
             InlineField('text', style="height: 55px"),
-            Submit('submit', _('Send')),
+            Submit('submit', pgettext_lazy(context=self.from_entity.get_gender(), message='Send')),
         )
 
     def save(self, commit=True):

@@ -1,6 +1,6 @@
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, Row
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from speedy.core.accounts.forms import ModelFormWithDefaults
 from .models import Feedback
@@ -17,6 +17,7 @@ class FeedbackForm(ModelFormWithDefaults):
         if self.defaults.get('sender'):
             del self.fields['sender_name']
             del self.fields['sender_email']
+            self.helper.add_input(Submit('submit', pgettext_lazy(context=self.defaults['sender'].get_gender(), message='Send')))
         else:
             self.fields['sender_name'].required = True
             self.fields['sender_email'].required = True
@@ -24,4 +25,4 @@ class FeedbackForm(ModelFormWithDefaults):
                 Div('sender_name', css_class='col-md-6'),
                 Div('sender_email', css_class='col-md-6'),
             ))
-        self.helper.add_input(Submit('submit', _('Send')))
+            self.helper.add_input(Submit('submit', _('Send')))
