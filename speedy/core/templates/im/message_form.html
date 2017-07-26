@@ -4,6 +4,6 @@
 {% load i18n %}
 
 {% block user_content %}
-    <h2>{% blocktrans context user.get_gender %}Send a message to {{ user }}{% endblocktrans %}</h2>
+    <h2>{% blocktrans context request.user.get_gender with other_user=user %}Send a message to {{ other_user }}{% endblocktrans %}</h2>
     {% crispy form %}
 {% endblock %}

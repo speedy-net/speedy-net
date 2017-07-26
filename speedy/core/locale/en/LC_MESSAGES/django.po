@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 11:11+0300\n"
+"POT-Creation-Date: 2017-07-26 11:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -747,12 +747,12 @@ msgstr ""
 
 #: .\templates\im\chat_detail.html:21
 #, python-format
-msgid "Chat with <a href=\"%(link)s\">%(user)s</a>"
+msgid "Chat with <a href=\"%(link)s\">%(other_user)s</a>"
 msgstr ""
 
 #: .\templates\im\chat_detail.html:27 .\templates\im\message_form.html:7
 #, python-format
-msgid "Send a message to %(user)s"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\im\chat_detail.html:36
@@ -1002,19 +1002,19 @@ msgstr ""
 #: .\templates\translations.html:52
 #, python-format
 msgctxt "female"
-msgid "Send a message to %(user)s"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\translations.html:53
 #, python-format
 msgctxt "male"
-msgid "Send a message to %(user)s"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\translations.html:54
 #, python-format
 msgctxt "other"
-msgid "Send a message to %(user)s"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\translations.html:57

@@ -49,9 +49,9 @@
 {% trans 'Unblock User' context 'other' %}
 
 {#core/templates/im/message_form.html 7#}
-{% blocktrans context 'female' %}Send a message to {{ user }}{% endblocktrans %}
-{% blocktrans context 'male' %}Send a message to {{ user }}{% endblocktrans %}
-{% blocktrans context 'other' %}Send a message to {{ user }}{% endblocktrans %}
+{% blocktrans context 'female' %}Send a message to {{ other_user }}{% endblocktrans %}
+{% blocktrans context 'male' %}Send a message to {{ other_user }}{% endblocktrans %}
+{% blocktrans context 'other' %}Send a message to {{ other_user }}{% endblocktrans %}
 
 {#core/templates/im/chat_list.html 52#}
 {% trans 'You have no messages yet.' context 'female' %}
