@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 11:26+0300\n"
+"POT-Creation-Date: 2017-07-26 11:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -817,6 +817,10 @@ msgstr "דחה/י"
 #: .\templates\profiles\tools\add_to_friends.html:28
 msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
+
+#: .\templates\profiles\tools\block_user.html:8
+msgid "Are you sure you want to block this user?"
+msgstr "האם את/ה בטוח/ה שברצונך לחסום משתמש/ת זה?"
 
 #: .\templates\profiles\tools\block_user.html:13
 msgid "Block User"
@@ -1928,6 +1932,36 @@ msgstr "סמן שכל ההודעות נקראו"
 msgctxt "other"
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
+
+#: .\templates\translations.html:297
+msgctxt "female"
+msgid "Remove"
+msgstr "הסירי"
+
+#: .\templates\translations.html:298
+msgctxt "male"
+msgid "Remove"
+msgstr "הסר"
+
+#: .\templates\translations.html:299
+msgctxt "other"
+msgid "Remove"
+msgstr "הסר/י"
+
+#: .\templates\translations.html:301
+msgctxt "female"
+msgid "Are you sure you want to block this user?"
+msgstr "האם את בטוחה שברצונך לחסום משתמש/ת זה?"
+
+#: .\templates\translations.html:302
+msgctxt "male"
+msgid "Are you sure you want to block this user?"
+msgstr "האם אתה בטוח שברצונך לחסום משתמש/ת זו?"
+
+#: .\templates\translations.html:303
+msgctxt "other"
+msgid "Are you sure you want to block this user?"
+msgstr "האם את/ה בטוח/ה שברצונך לחסום משתמש/ת זה?"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."

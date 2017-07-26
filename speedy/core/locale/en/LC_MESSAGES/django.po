@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 11:21+0300\n"
+"POT-Creation-Date: 2017-07-26 11:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -804,6 +804,10 @@ msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:28
 msgid "Add to Friends"
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:8
+msgid "Are you sure you want to block this user?"
 msgstr ""
 
 #: .\templates\profiles\tools\block_user.html:13
@@ -1852,6 +1856,51 @@ msgstr ""
 #: .\templates\translations.html:291
 msgctxt "other"
 msgid "Welcome to {}!"
+msgstr ""
+
+#: .\templates\translations.html:293
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr ""
+
+#: .\templates\translations.html:294
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr ""
+
+#: .\templates\translations.html:295
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr ""
+
+#: .\templates\translations.html:297
+msgctxt "female"
+msgid "Remove"
+msgstr ""
+
+#: .\templates\translations.html:298
+msgctxt "male"
+msgid "Remove"
+msgstr ""
+
+#: .\templates\translations.html:299
+msgctxt "other"
+msgid "Remove"
+msgstr ""
+
+#: .\templates\translations.html:301
+msgctxt "female"
+msgid "Are you sure you want to block this user?"
+msgstr ""
+
+#: .\templates\translations.html:302
+msgctxt "male"
+msgid "Are you sure you want to block this user?"
+msgstr ""
+
+#: .\templates\translations.html:303
+msgctxt "other"
+msgid "Are you sure you want to block this user?"
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6
