@@ -60,21 +60,18 @@ class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
         table_name = SiteProfile._meta.db_table
         if (site.id == settings.SITE_PROFILES.get('net').get('site_id')):
             qs = self.user.friends.all().extra(select={
-                'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(
-                    table_name),
+                'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
             }, ).order_by('-last_visit')
             return qs
         elif (site.id == settings.SITE_PROFILES.get('match').get('site_id')):
-            from speedy.match.accounts.models import SiteProfile
+            # from speedy.match.accounts.models import SiteProfile # ~~~~ TODO: remove this line!
             qs = self.user.friends.all().extra(select={
                 'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
                 'like_exists': 'SELECT COUNT(1) FROM likes_userlike '
                                'WHERE from_user_id = friendship_friend.from_user_id OR to_user_id=friendship_friend.from_user_id',
-
                 'messages_exists': 'SELECT COUNT(1) FROM im_chat '
                                    'WHERE ent1_id=friendship_friend.from_user_id OR ent2_id=friendship_friend.from_user_id'
             }, ).order_by('-last_visit')
-
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0) or u.like_exists or u.messages_exists]
             return qs
         else:
