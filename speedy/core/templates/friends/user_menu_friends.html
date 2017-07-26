@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% with request.user.friendship_requests_received.count as frequests_count %}
     <li><a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">
         <i class="fa fa-fw fa-users"></i>
