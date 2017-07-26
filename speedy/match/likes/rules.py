@@ -20,5 +20,5 @@ def both_are_users(user, other):
 
 
 add_perm('likes.like', is_authenticated & ~is_self & ~is_blocked & ~already_likes & both_are_users)
-add_perm('likes.unlike', is_authenticated & ~is_self & already_likes & both_are_users)
+add_perm('likes.unlike', is_authenticated & ~is_self & ~is_blocked & already_likes & both_are_users)
 add_perm('likes.view_likes', is_authenticated & is_self)
