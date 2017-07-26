@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _, get_language
 from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE, User, AccessField, ACCESS_ME
+from speedy.core.blocks.models import Block
 from speedy.core.base.utils import get_age
 from speedy.match.accounts import validators
 
@@ -232,6 +233,8 @@ class SiteProfile(SiteProfileBase):
         self.validate_profile_and_activate()
         other_profile.validate_profile_and_activate()
         if self.is_active and other_profile.is_active:
+            if Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user):
+                return self.__class__.RANK_0
             other_user_age = get_age(other_profile.user.date_of_birth)
             if other_profile.user.gender not in self.gender_to_match:
                 return self.__class__.RANK_0

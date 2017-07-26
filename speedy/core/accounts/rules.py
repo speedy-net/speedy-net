@@ -1,7 +1,7 @@
 from friendship.models import Friend
 from rules import predicate, add_perm
 
-from speedy.core.blocks.rules import is_blocked, is_self, has_blocked
+from speedy.core.blocks.rules import is_self, there_is_block
 from .models import ACCESS_ANYONE, ACCESS_ME, ACCESS_FRIENDS, ACCESS_FRIENDS_2
 
 
@@ -53,7 +53,7 @@ def has_access_perm_for_email_address(user, email_address):
     return _has_access_perm_for_obj(user, email_address.user, email_address.access)
 
 
-add_perm('accounts.view_profile', has_access_perm & ~is_blocked & ~has_blocked)
+add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
 add_perm('accounts.view_profile_username', is_self)
 add_perm('accounts.view_profile_header', has_access_perm)
 add_perm('accounts.view_profile_info', has_access_perm)

@@ -18,5 +18,10 @@ def is_blocked(user, other):
     return Block.objects.has_blocked(blocker=other, blockee=user)
 
 
+@predicate
+def there_is_block(user, other):
+    return Block.objects.there_is_block(user_1=user, user_2=other)
+
+
 add_perm('blocks.block', is_authenticated & ~is_self & ~has_blocked)
 add_perm('blocks.unblock', is_authenticated & ~is_self & has_blocked)
