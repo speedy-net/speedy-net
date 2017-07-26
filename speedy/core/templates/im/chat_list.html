@@ -34,7 +34,7 @@
                         </div>
                         <div class="text-default">
                             {% if user.id == chat.last_message.sender_id %}
-                                <span class="text-muted">{% trans 'You:' %}</span>
+                                <span class="text-muted">{% trans 'You:' context request.user.get_gender %}</span>
                             {% else %}
                                 {# <i class="fa fa-angle-right text-muted"></i> #}
                             {% endif %}

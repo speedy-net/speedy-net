@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 14:02+0300\n"
+"POT-Creation-Date: 2017-07-26 15:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -325,19 +325,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:142
+#: .\friends\views.py:138
 msgid "Friend request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:153
+#: .\friends\views.py:149
 msgid "No friend request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:186
+#: .\friends\views.py:182
 msgid "Friend request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:201
+#: .\friends\views.py:197
 msgid "Friend request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -385,11 +385,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:194
+#: .\settings\base.py:195
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:195
+#: .\settings\base.py:196
 msgid "Hebrew"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgstr ""
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
 #: .\templates\base_with_login.html:34 .\templates\base_with_login.html:81
-#: .\templates\base_with_login.html:151
+#: .\templates\base_with_login.html:143
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr "עריכת פרופיל"
@@ -649,13 +649,13 @@ msgstr "הכרויות און-ליין בחינם"
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:28 .\templates\base_with_login.html:132
-#: .\templates\friends\base.html:7
+#: .\templates\base_with_login.html:28 .\templates\friends\base.html:7
 #: .\templates\friends\user_friends_widget.html:15
+#: .\templates\friends\user_menu_friends.html:6
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\templates\base_with_login.html:31 .\templates\base_with_login.html:141
+#: .\templates\base_with_login.html:31 .\templates\base_with_login.html:133
 #: .\templates\im\chat_detail.html:13 .\templates\im\chat_list.html:8
 #: .\templates\im\chat_list.html:13
 msgid "Messages"
@@ -733,17 +733,17 @@ msgid "Sent Requests"
 msgstr "בקשות חברות ששלחת"
 
 #: .\templates\friends\friend_list.html:10
-msgid "This user has no friends yet."
-msgstr "למשתמש/ת זה/זאת עדיין אין חברים/ות"
+msgid "You don't have any friends yet."
+msgstr "עדיין אין לך חברים/ות."
 
 #: .\templates\friends\received_requests.html:10
 #: .\templates\friends\sent_requests.html:10
 msgid "There are no pending friendship requests."
-msgstr ""
+msgstr "אין פה בקשות חברות."
 
 #: .\templates\friends\user_friends_widget.html:12
 msgid "See All"
-msgstr ""
+msgstr "ראה/י הכול"
 
 #: .\templates\im\chat_detail.html:21
 #, python-format
@@ -761,11 +761,11 @@ msgstr "סמנ/י שכל ההודעות נקראו"
 
 #: .\templates\im\chat_list.html:32
 msgid "Unread"
-msgstr ""
+msgstr "לא נקראה"
 
 #: .\templates\im\chat_list.html:37
 msgid "You:"
-msgstr ""
+msgstr "את/ה:"
 
 #: .\templates\im\chat_list.html:52
 msgid "You have no messages yet."
@@ -1943,6 +1943,21 @@ msgstr "האם אתה בטוח שברצונך לחסום משתמש/ת זו?"
 msgctxt "other"
 msgid "Are you sure you want to block this user?"
 msgstr "האם את/ה בטוח/ה שברצונך לחסום משתמש/ת זה?"
+
+#: .\templates\translations.html:293
+msgctxt "female"
+msgid "You:"
+msgstr "את:"
+
+#: .\templates\translations.html:294
+msgctxt "male"
+msgid "You:"
+msgstr "אתה:"
+
+#: .\templates\translations.html:295
+msgctxt "other"
+msgid "You:"
+msgstr "את/ה:"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."

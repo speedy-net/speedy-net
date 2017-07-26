@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 14:02+0300\n"
+"POT-Creation-Date: 2017-07-26 15:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -324,19 +324,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:142
+#: .\friends\views.py:138
 msgid "Friend request sent."
 msgstr ""
 
-#: .\friends\views.py:153
+#: .\friends\views.py:149
 msgid "No friend request."
 msgstr ""
 
-#: .\friends\views.py:186
+#: .\friends\views.py:182
 msgid "Friend request accepted."
 msgstr ""
 
-#: .\friends\views.py:201
+#: .\friends\views.py:197
 msgid "Friend request rejected."
 msgstr ""
 
@@ -384,11 +384,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:194
+#: .\settings\base.py:195
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:195
+#: .\settings\base.py:196
 msgid "Hebrew"
 msgstr ""
 
@@ -424,7 +424,7 @@ msgstr ""
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
 #: .\templates\base_with_login.html:34 .\templates\base_with_login.html:81
-#: .\templates\base_with_login.html:151
+#: .\templates\base_with_login.html:143
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr ""
@@ -647,13 +647,13 @@ msgstr ""
 msgid "Speedy"
 msgstr ""
 
-#: .\templates\base_with_login.html:28 .\templates\base_with_login.html:132
-#: .\templates\friends\base.html:7
+#: .\templates\base_with_login.html:28 .\templates\friends\base.html:7
 #: .\templates\friends\user_friends_widget.html:15
+#: .\templates\friends\user_menu_friends.html:6
 msgid "Friends"
 msgstr ""
 
-#: .\templates\base_with_login.html:31 .\templates\base_with_login.html:141
+#: .\templates\base_with_login.html:31 .\templates\base_with_login.html:133
 #: .\templates\im\chat_detail.html:13 .\templates\im\chat_list.html:8
 #: .\templates\im\chat_list.html:13
 msgid "Messages"
@@ -729,7 +729,7 @@ msgid "Sent Requests"
 msgstr ""
 
 #: .\templates\friends\friend_list.html:10
-msgid "This user has no friends yet."
+msgid "You don't have any friends yet."
 msgstr ""
 
 #: .\templates\friends\received_requests.html:10
@@ -1895,6 +1895,21 @@ msgstr ""
 #: .\templates\translations.html:291
 msgctxt "other"
 msgid "Are you sure you want to block this user?"
+msgstr ""
+
+#: .\templates\translations.html:293
+msgctxt "female"
+msgid "You:"
+msgstr ""
+
+#: .\templates\translations.html:294
+msgctxt "male"
+msgid "You:"
+msgstr ""
+
+#: .\templates\translations.html:295
+msgctxt "other"
+msgid "You:"
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6
