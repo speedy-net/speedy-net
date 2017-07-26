@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 11:20+0300\n"
+"POT-Creation-Date: 2017-07-26 11:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -765,7 +765,7 @@ msgstr "שלח/י הודעה ל%(other_user)s"
 
 #: .\templates\im\chat_detail.html:36
 msgid "Mark All as Read"
-msgstr ""
+msgstr "סמנ/י שכל ההודעות נקראו"
 
 #: .\templates\im\chat_list.html:32
 msgid "Unread"
@@ -1913,6 +1913,21 @@ msgstr "ברוך הבא ל{}!"
 msgctxt "other"
 msgid "Welcome to {}!"
 msgstr "ברוכ/ה הבא/ה ל{}!"
+
+#: .\templates\translations.html:293
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "סמני שכל ההודעות נקראו"
+
+#: .\templates\translations.html:294
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "סמן שכל ההודעות נקראו"
+
+#: .\templates\translations.html:295
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "סמנ/י שכל ההודעות נקראו"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
