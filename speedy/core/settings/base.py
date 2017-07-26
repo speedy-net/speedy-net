@@ -178,6 +178,7 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/admin/',
     '/media/',
     '/static/',
+    '/set-session/',
 ]
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True
