@@ -64,7 +64,6 @@ class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
             }, ).order_by('-last_visit')
             return qs
         elif (site.id == settings.SITE_PROFILES.get('match').get('site_id')):
-            # from speedy.match.accounts.models import SiteProfile # ~~~~ TODO: remove this line!
             qs = self.user.friends.all().extra(select={
                 'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
                 'like_exists': 'SELECT COUNT(1) FROM likes_userlike '
