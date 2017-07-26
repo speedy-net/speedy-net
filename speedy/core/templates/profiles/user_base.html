@@ -31,7 +31,7 @@
             {% include 'profiles/block_warning.html' with user=request.user other=user %}
         {% else %}
             <div class="alert alert-danger">
-                {% trans 'This page is private.' %}
+                {% trans 'This user is not a match.' %}
             </div>
         {% endif %}
     {% endif %}

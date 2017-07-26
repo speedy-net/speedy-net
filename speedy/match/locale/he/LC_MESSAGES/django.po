@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 12:46+0300\n"
+"POT-Creation-Date: 2017-07-26 14:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,148 +26,148 @@ msgstr ""
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\models.py:20
+#: .\accounts\models.py:21
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:21
+#: .\accounts\models.py:22
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:22
+#: .\accounts\models.py:23
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:37
+#: .\accounts\models.py:38
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:39
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:40
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:40
+#: .\accounts\models.py:41
 msgid "In a relatioship"
 msgstr ""
 
-#: .\accounts\models.py:41
+#: .\accounts\models.py:42
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:42
+#: .\accounts\models.py:43
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:43
+#: .\accounts\models.py:44
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:44
+#: .\accounts\models.py:45
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:55
+#: .\accounts\models.py:56
 msgid "0 hearts"
 msgstr ""
 
-#: .\accounts\models.py:56
+#: .\accounts\models.py:57
 msgid "1 hearts"
 msgstr ""
 
-#: .\accounts\models.py:57
+#: .\accounts\models.py:58
 msgid "2 hearts"
 msgstr ""
 
-#: .\accounts\models.py:58
+#: .\accounts\models.py:59
 msgid "3 hearts"
 msgstr ""
 
-#: .\accounts\models.py:59
+#: .\accounts\models.py:60
 msgid "4 hearts"
 msgstr ""
 
-#: .\accounts\models.py:60
+#: .\accounts\models.py:61
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:65
+#: .\accounts\models.py:66
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:66
+#: .\accounts\models.py:67
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:67
+#: .\accounts\models.py:68
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:68
+#: .\accounts\models.py:69
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:69
+#: .\accounts\models.py:70
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:71
+#: .\accounts\models.py:72
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:71
+#: .\accounts\models.py:72
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:73
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:73
+#: .\accounts\models.py:74
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:75
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:75
+#: .\accounts\models.py:76
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:77
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:77 .\accounts\validators.py:24
+#: .\accounts\models.py:78 .\accounts\validators.py:24
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:78 .\accounts\validators.py:29
+#: .\accounts\models.py:79 .\accounts\validators.py:29
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:80
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:81
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:81
+#: .\accounts\models.py:82
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:93
+#: .\accounts\models.py:94
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:227 .\templates\accounts\edit_profile\activate.html:21
+#: .\accounts\models.py:228 .\templates\accounts\edit_profile\activate.html:21
 msgid "Please confirm your email address."
 msgstr ""
 

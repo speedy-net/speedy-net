@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 12:41+0300\n"
+"POT-Creation-Date: 2017-07-26 14:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Permission Denied"
 msgstr ""
 
-#: .\templates\403.html:12 .\templates\profiles\user_base.html:34
+#: .\templates\403.html:12
 msgid "This page is private."
 msgstr ""
 
@@ -838,6 +838,10 @@ msgstr ""
 
 #: .\templates\profiles\tools\your_friend.html:10
 msgid "Remove"
+msgstr ""
+
+#: .\templates\profiles\user_base.html:34
+msgid "This user is not a match."
 msgstr ""
 
 #: .\templates\profiles\user_info_widget.html:11
