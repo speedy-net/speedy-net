@@ -1,6 +1,6 @@
 from rules import predicate, add_perm, is_authenticated
 
-from speedy.core.blocks.rules import is_blocked
+from speedy.core.blocks.rules import is_blocked, has_blocked
 from speedy.core.accounts.models import User
 from .models import UserLike
 
@@ -19,6 +19,6 @@ def both_are_users(user, other):
     return isinstance(user, User) and isinstance(other, User)
 
 
-add_perm('likes.like', is_authenticated & ~is_self & ~is_blocked & ~already_likes & both_are_users)
-add_perm('likes.unlike', is_authenticated & ~is_self & ~is_blocked & already_likes & both_are_users)
+add_perm('likes.like', is_authenticated & ~is_self & ~is_blocked & ~has_blocked & ~already_likes & both_are_users)
+add_perm('likes.unlike', is_authenticated & ~is_self & ~is_blocked & ~has_blocked & already_likes & both_are_users)
 add_perm('likes.view_likes', is_authenticated & is_self)
