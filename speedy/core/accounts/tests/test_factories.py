@@ -73,14 +73,14 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
             self.profile.gender_to_match = [User.GENDER_OTHER]
             self.photo = UserImageFactory(owner=self)
-            self.profile.activation_step = 7
+            self.profile.activation_step = 9
             email = UserConfirmedEmailAddressFactory(user=self)
             email.save()
             self.save()
             self.profile.save()
             self._profile = self.get_profile()
             step, error_messages = self.profile.validate_profile_and_activate()
-            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
+            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS) - 1)):
                 raise Exception("Step not as expected, {}".format(step))
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(", ".join(str(error_messages))))
