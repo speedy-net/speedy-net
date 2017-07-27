@@ -20,40 +20,50 @@ class IndexView(CoreIndexView):
 
 
 class ActivateSiteProfileView(CoreActivateSiteProfileView):
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'steps_range': list(range(1, len(settings.SITE_PROFILE_FORM_FIELDS))),
+            'current_step': self.step,
+            'previous_step': self.step - 1,
+        })
+        return cd
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
+        kwargs['step'] = self.step
         if 'gender_to_match' in self.request.POST:
             kwargs['data']['gender_to_match'] = ','.join(self.request.POST.getlist('gender_to_match'))
         return kwargs
+
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            self.step = int(kwargs['step'])
+        except (KeyError, ValueError):
+            return redirect('accounts:activate', step=self.request.user.profile.activation_step)
+        return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if not request.user.is_active:
             return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
-        elif 'back' in request.GET:
-            if request.user.profile.activation_step >= 1:
-                request.user.profile.activation_step -= 1
-                request.user.profile.save()
-        elif 'step' in request.GET:
-            if request.GET.get('step') == '-1':
-                return redirect('accounts:edit_profile')
-            step, errors = self.request.user.profile.validate_profile_and_activate()
-            self.request.user.profile.activation_step = min(int(request.GET.get('step')), step)
-            self.request.user.profile.save(update_fields={'activation_step'})
-        else:
-            step, errors = self.request.user.profile.validate_profile_and_activate()
-            if (self.request.user.profile.activation_step == 0) and (
-                step == len(settings.SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
-                return redirect(reverse_lazy('accounts:edit_profile_credentials'))
+        if self.step == 1:
+            return redirect('accounts:edit_profile')
+        # else:
+        #     step, errors = self.request.user.profile.validate_profile_and_activate()
+        #     if (self.request.user.profile.activation_step == 0) and (
+        #         step == len(settings.SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
+        #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
     def get_account_activation_url(self):
-        site = Site.objects.get_current()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
-        if site.pk == SPEEDY_MATCH_SITE_ID:
-            step = self.request.GET.get('step', self.request.user.profile.activation_step)
-            return reverse_lazy('accounts:activate') + '?step=' + str(step)
-        return reverse_lazy('accounts:activate')
+        return reverse_lazy('accounts:activate', kwargs={'step': self.step})
+
+    def get_success_url(self):
+        if self.step + 1 >= len(settings.SITE_PROFILE_FORM_FIELDS):
+            return '/'
+        else:
+            return reverse_lazy('accounts:activate', kwargs={'step': self.step + 1})
 
     def form_valid(self, form):
         super().form_valid(form=form)
@@ -63,7 +73,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         if self.request.user.profile.is_active:
             return redirect(to=reverse_lazy('matches:list'))
         else:
-            return redirect(to=self.get_account_activation_url())
+            return redirect(to=self.get_success_url())
 
 
 

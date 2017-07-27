@@ -76,7 +76,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         return self.cleaned_data
 
     def get_fields(self):
-        return settings.SITE_PROFILE_FORM_FIELDS[self.instance.activation_step]
+        return settings.SITE_PROFILE_FORM_FIELDS[self.step]
 
     def clean(self):
         if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
@@ -86,6 +86,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         return self.cleaned_data
 
     def __init__(self, *args, **kwargs):
+        self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         fields = self.get_fields()
         fields_for_deletion = set(self.fields.keys()) - set(fields)
@@ -117,7 +118,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.instance.activation_step = min(activation_step + 1, step)
             if (self.instance.activation_step >= len(settings.SITE_PROFILE_FORM_FIELDS)):
                 # sets step to 0 in case user switches language to proccees from second step
-                self.instance.activation_step = 1
+                self.instance.activation_step = 2
             self.instance.save(update_fields={'activation_step'})
         return self.instance
 

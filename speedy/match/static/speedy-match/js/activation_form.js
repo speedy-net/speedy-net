@@ -10,8 +10,6 @@ $(document).ready(function(){
         } else {
         }
     });
-    $('.activation-step').slice(0, profile_activation_step + 1).addClass('passed');
-    $($('.activation-step')[profile_activation_step + 1]).addClass('active');
     $('.image-click-zone').click(function(){
         $(this).closest('.activation-form-field').find('#id_photo').click()
     });

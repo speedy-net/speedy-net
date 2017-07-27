@@ -26,6 +26,8 @@ ACTIVATE_PROFILE_AFTER_REGISTRATION = False
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileActivationForm'
 
 SITE_PROFILE_FORM_FIELDS = [
+    [],  # There's no step 0
+    [],  # Step 1 = registration form
     ['photo'],
     ['profile_description', 'city', 'height'],
     ['children', 'more_children'],
