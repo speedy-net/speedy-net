@@ -1,10 +1,10 @@
 # python==3.5
 Django==1.11.3
 django-crispy-forms==1.6.1
-django-debug-toolbar==1.6
-django-environ==0.4.1
+django-debug-toolbar==1.8
+django-environ==0.4.3
 django-friendship==1.5.0
-django-modeltranslation==0.12
+django-modeltranslation==0.12.1
 factory-boy==2.8.1
 Faker==0.7.7
 Pillow==3.4.2
@@ -14,4 +14,4 @@ pytz==2017.2
 rules==1.2
 six==1.10.0
 sorl-thumbnail==12.4a1
-sqlparse==0.2.2
+sqlparse==0.2.3
