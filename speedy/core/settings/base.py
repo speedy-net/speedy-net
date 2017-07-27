@@ -170,6 +170,7 @@ UNAVAILABLE_USERNAMES = [
 DONT_REDIRECT_INACTIVE_USER = [
     '/logout/',
     '/welcome/',
+    '/registration-step-',
     '/about/',
     '/privacy/',
     '/terms/',

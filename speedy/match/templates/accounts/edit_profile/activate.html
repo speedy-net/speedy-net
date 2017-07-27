@@ -23,38 +23,20 @@
             {% elif form %}
                 <div class="activation-step-wrapper">
                     <div class="activation-steps">
-                        <a href="{% url 'accounts:activate' %}?step=-1">
-                            <span class="activation-step">1</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=0">
-                            <span class="activation-step">2</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=1">
-                            <span class="activation-step">3</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=2">
-                            <span class="activation-step">4</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=3">
-                            <span class="activation-step">5</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=4">
-                            <span class="activation-step">6</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=5">
-                            <span class="activation-step">7</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=6">
-                            <span class="activation-step">8</span>
-                        </a>
-                        <a href="{% url 'accounts:activate' %}?step=7">
-                            <span class="activation-step">9</span>
-                        </a>
+                        {% for step in steps_range %}
+                            {% if step < request.user.profile.activation_step %}
+                                <a href="{% url 'accounts:activate' step=step %}">
+                            {% endif %}
+                                <span class="activation-step {% if step == current_step %}active{% endif %} {% if step < current_step %}passed{% endif %}">{{ step }}</span>
+                            {% if step < request.user.profile.activation_step %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="activation-form-header text-left flip">
                         {% trans 'About me' %}
                     </div>
-                    <form action="{% url 'accounts:activate' %}" method="post" class="activation-form" enctype="multipart/form-data">
+                    <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form" enctype="multipart/form-data">
                         {% if 0 < request.user.profile.activation_step and request.user.profile.activation_step < 5 %}
                             {% include 'accounts/edit_profile/partials/user_profile.html' %}
                             <div class="activation-form-fileds pull-right flip">
@@ -79,7 +61,7 @@
                         <div class="clearfix"></div>
                         <div class="activation-form-actions">
                             {% if request.user.profile.activation_step != 0 %}
-                                <a class="btn btn-default activation-form-button" href="{% url 'accounts:activate' %}?back=true">{% trans 'Back' %}</a>
+                                <a class="btn btn-default activation-form-button" href="{% url 'accounts:activate' step=previous_step %}">{% trans 'Back' %}</a>
                             {% endif %}
                             <button class="btn btn-default activation-form-button" type="submit">
                                 {% trans 'Next step' %}

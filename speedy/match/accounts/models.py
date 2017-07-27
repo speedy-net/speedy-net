@@ -101,7 +101,7 @@ class SiteProfile(SiteProfileBase):
         MARITAL_STATUS_SEPARATED: RANK_5,
         MARITAL_STATUS_MARRIED: RANK_5,
     }, validators=[validators.validate_marital_status_match])
-    activation_step = models.PositiveSmallIntegerField(default=0)
+    activation_step = models.PositiveSmallIntegerField(default=2)
 
     class Meta:
         verbose_name = 'Speedy Match Profile'
