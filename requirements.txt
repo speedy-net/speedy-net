@@ -1,5 +1,5 @@
 # python==3.5
-Django==1.10.7
+Django==1.11.3
 django-crispy-forms==1.6.1
 django-debug-toolbar==1.6
 django-environ==0.4.1
@@ -10,6 +10,7 @@ Faker==0.7.7
 Pillow==3.4.2
 psycopg2==2.7
 python-dateutil==2.6.0
+pytz==2017.2
 rules==1.2
 six==1.10.0
 sorl-thumbnail==12.4a1
