@@ -20,7 +20,7 @@ from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
 from speedy.core.base.utils import reflection_import
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, SiteProfileActivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm
+from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
 
 
@@ -118,7 +118,7 @@ class EditProfileNotificationsView(LoginRequiredMixin, FormValidMessageMixin, ge
     form_class = ProfileNotificationsForm
 
     def get_object(self, queryset=None):
-        return self.request.user.profile
+        return self.request.user
 
 
 class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, generic.FormView):
@@ -309,3 +309,13 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
 
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)
+
+
+class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+    template_name = 'accounts/edit_profile/privacy.html'
+    success_url = reverse_lazy('accounts:edit_profile_privacy')
+    form_class = ProfilePrivacyForm
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+

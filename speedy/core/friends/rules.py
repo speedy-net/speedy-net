@@ -16,7 +16,7 @@ def friend_request_sent(user, other):
 
 @predicate
 def is_friend(user, other):
-    return Friend.objects.are_friends(user, other)
+    return Friend.objects.are_friends(user1=user, user2=other)
 
 
 add_perm('friends.request', is_authenticated & ~is_self & ~friend_request_sent & ~is_friend & ~there_is_block)

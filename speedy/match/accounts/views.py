@@ -1,18 +1,12 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext as _
-from django.views import generic
-
-from rules.contrib.views import LoginRequiredMixin
-
-from speedy.core.base.views import FormValidMessageMixin
-from speedy.core.accounts.views import IndexView as CoreIndexView
+from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
-from .forms import ProfilePrivacyForm
+from .forms import ProfileNotificationsForm
 
 
 class IndexView(CoreIndexView):
@@ -77,11 +71,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
 
 
-class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
-    template_name = 'accounts/edit_profile/privacy.html'
-    success_url = reverse_lazy('accounts:edit_profile_privacy')
-    form_class = ProfilePrivacyForm
+class EditProfileNotificationsView(CoreEditProfileNotificationsView):
+    form_class = ProfileNotificationsForm
 
-    def get_object(self, queryset=None):
-        return self.request.user.profile
 

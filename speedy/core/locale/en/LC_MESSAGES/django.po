@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 15:12+0300\n"
+"POT-Creation-Date: 2017-07-27 20:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,75 +45,75 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:187 .\templates\base_with_login.html:94
+#: .\accounts\forms.py:190 .\templates\base_with_login.html:94
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:192 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:195 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:114
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:195 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:198 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:110
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:207 .\accounts\forms.py:231
+#: .\accounts\forms.py:210 .\accounts\forms.py:234
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:241
+#: .\accounts\forms.py:244
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:262
+#: .\accounts\forms.py:265
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:274
+#: .\accounts\forms.py:277
 msgid "Invalid password."
 msgstr ""
 
-#: .\accounts\models.py:28
-msgid "Only me"
-msgstr ""
-
-#: .\accounts\models.py:29
-msgid "Me and my friends"
-msgstr ""
-
-#: .\accounts\models.py:31
-msgid "Anyone"
-msgstr ""
-
-#: .\accounts\models.py:50
+#: .\accounts\models.py:30
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:50 .\accounts\models.py:51 .\accounts\validators.py:11
+#: .\accounts\models.py:30 .\accounts\models.py:31 .\accounts\validators.py:11
 msgid "This username is already taken."
 msgstr ""
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:31
 msgid "username (slug)"
 msgstr ""
 
-#: .\accounts\models.py:52
+#: .\accounts\models.py:32
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:60 .\accounts\models.py:61 .\im\models.py:89
+#: .\accounts\models.py:40 .\accounts\models.py:41 .\im\models.py:89
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:54
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:102
 msgid "name"
+msgstr ""
+
+#: .\accounts\models.py:118
+msgid "Only me"
+msgstr ""
+
+#: .\accounts\models.py:119
+msgid "Me and my friends"
+msgstr ""
+
+#: .\accounts\models.py:121
+msgid "Anyone"
 msgstr ""
 
 #: .\accounts\models.py:145
@@ -144,87 +144,99 @@ msgstr ""
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:164
-msgid "first name"
-msgstr ""
-
-#: .\accounts\models.py:165
-msgid "last name"
-msgstr ""
-
 #: .\accounts\models.py:166
-msgid "date of birth"
-msgstr ""
-
-#: .\accounts\models.py:167
-msgid "I am"
-msgstr ""
-
-#: .\accounts\models.py:168
-msgid "diet"
-msgstr ""
-
-#: .\accounts\models.py:182 .\accounts\models.py:266 .\blocks\models.py:10
-msgid "user"
-msgstr ""
-
-#: .\accounts\models.py:183
-msgid "users"
-msgstr ""
-
-#: .\accounts\models.py:246
-msgid "female"
-msgstr ""
-
-#: .\accounts\models.py:246
-msgid "male"
-msgstr ""
-
-#: .\accounts\models.py:246
-msgid "other"
-msgstr ""
-
-#: .\accounts\models.py:267
-msgid "email"
-msgstr ""
-
-#: .\accounts\models.py:268
-msgid "is confirmed"
-msgstr ""
-
-#: .\accounts\models.py:269
-msgid "is primary"
-msgstr ""
-
-#: .\accounts\models.py:270
-msgid "confirmation token"
-msgstr ""
-
-#: .\accounts\models.py:271
-msgid "confirmation sent"
-msgstr ""
-
-#: .\accounts\models.py:272
-msgid "who can see this email"
-msgstr ""
-
-#: .\accounts\models.py:275
-msgid "email address"
-msgstr ""
-
-#: .\accounts\models.py:276
-msgid "email addresses"
-msgstr ""
-
-#: .\accounts\models.py:328
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:167
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:333
+#: .\accounts\models.py:172
+msgid "first name"
+msgstr ""
+
+#: .\accounts\models.py:173
+msgid "last name"
+msgstr ""
+
+#: .\accounts\models.py:174
+msgid "date of birth"
+msgstr ""
+
+#: .\accounts\models.py:175
+msgid "I am"
+msgstr ""
+
+#: .\accounts\models.py:176
+msgid "diet"
+msgstr ""
+
+#: .\accounts\models.py:179
+msgid "who can view my birth month and day"
+msgstr ""
+
+#: .\accounts\models.py:180
+msgid "who can view my birth year"
+msgstr ""
+
+#: .\accounts\models.py:181
+msgid "on new messages"
+msgstr ""
+
+#: .\accounts\models.py:193 .\accounts\models.py:277 .\blocks\models.py:10
+msgid "user"
+msgstr ""
+
+#: .\accounts\models.py:194
+msgid "users"
+msgstr ""
+
+#: .\accounts\models.py:257
+msgid "female"
+msgstr ""
+
+#: .\accounts\models.py:257
+msgid "male"
+msgstr ""
+
+#: .\accounts\models.py:257
+msgid "other"
+msgstr ""
+
+#: .\accounts\models.py:278
+msgid "email"
+msgstr ""
+
+#: .\accounts\models.py:279
+msgid "is confirmed"
+msgstr ""
+
+#: .\accounts\models.py:280
+msgid "is primary"
+msgstr ""
+
+#: .\accounts\models.py:281
+msgid "confirmation token"
+msgstr ""
+
+#: .\accounts\models.py:282
+msgid "confirmation sent"
+msgstr ""
+
+#: .\accounts\models.py:283
+msgid "who can see this email"
+msgstr ""
+
+#: .\accounts\models.py:286
+msgid "email address"
+msgstr ""
+
+#: .\accounts\models.py:287
+msgid "email addresses"
+msgstr ""
+
+#: .\accounts\models.py:336
 msgid "last visit"
 msgstr ""
 
@@ -506,13 +518,7 @@ msgstr ""
 msgid "Change Password"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\notifications.html:8
-#: .\templates\accounts\edit_profile\privacy.html:9
-#, python-format
-msgid "These settings are specific for %(site_name)s."
-msgstr ""
-
-#: .\templates\accounts\edit_profile\privacy.html:15
+#: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
