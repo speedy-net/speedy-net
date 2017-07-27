@@ -51,7 +51,7 @@ def set_session(request):
 
 
 class IndexView(generic.View):
-    registered_redirect_to = 'profiles:me'
+    registered_redirect_to = 'profiles:me' # The default.
 
     def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated():

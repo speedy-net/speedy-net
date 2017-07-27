@@ -9,8 +9,6 @@ urlpatterns = [
 
     url(r'^set-session/$', views.set_session, name='set_session'),
 
-    url(r'^$', views.IndexView.as_view(), name='index'),
-
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout', kwargs={'template_name': 'accounts/logged_out.html'}),
 
@@ -20,8 +18,6 @@ urlpatterns = [
     url(r'^reset-password/complete/$', auth_views.password_reset_complete, {'template_name': 'accounts/password_reset/complete.html'}, name='password_reset_complete'),
 
     url(r'^welcome/$', views.ActivateSiteProfileView.as_view(), name='activate'),
-
-    # url(r'^reactivate/$', views.activate, name='activate'),
 
     url(r'^edit-profile/$', views.EditProfileView.as_view(), name='edit_profile'),
     url(r'^edit-profile/notifications/$', views.EditProfileNotificationsView.as_view(), name='edit_profile_notifications'),

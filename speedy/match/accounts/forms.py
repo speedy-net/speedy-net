@@ -11,13 +11,13 @@ from modeltranslation.forms import TranslationModelForm
 from speedy.core.uploads.models import Image
 # from django.db.models
 from speedy.core.accounts.models import User
-from speedy.core.accounts.forms import ProfilePrivacyForm as BaseAccountPrivacyForm
+from speedy.core.accounts.forms import ProfilePrivacyForm as BaseProfilePrivacyForm
 
 from .models import SiteProfile
 
 
-class AccountPrivacyForm(BaseAccountPrivacyForm):
-    class Meta(BaseAccountPrivacyForm.Meta):
+class ProfilePrivacyForm(BaseProfilePrivacyForm):
+    class Meta(BaseProfilePrivacyForm.Meta):
         model = SiteProfile
         fields = ('access_dob_day_month', 'access_dob_year')
 

@@ -4,7 +4,12 @@ from django.views import generic
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
+from speedy.core.accounts.views import IndexView as CoreIndexView
 from .forms import ProfilePrivacyForm
+
+
+class IndexView(CoreIndexView):
+    registered_redirect_to = 'profiles:me'
 
 
 class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
@@ -14,3 +19,4 @@ class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.
 
     def get_object(self, queryset=None):
         return self.request.user.profile
+
