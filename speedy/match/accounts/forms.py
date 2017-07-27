@@ -116,8 +116,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate()
             self.instance.activation_step = min(activation_step + 1, step)
-            if (self.instance.activation_step >= len(settings.SITE_PROFILE_FORM_FIELDS)):
-                # sets step to 0 in case user switches language to proccees from second step
+            if (self.instance.activation_step - 1 >= len(settings.SITE_PROFILE_FORM_FIELDS)):
                 self.instance.activation_step = 2
             self.instance.save(update_fields={'activation_step'})
         return self.instance

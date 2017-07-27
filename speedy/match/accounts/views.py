@@ -60,7 +60,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return reverse_lazy('accounts:activate', kwargs={'step': self.step})
 
     def get_success_url(self):
-        if self.step + 1 >= len(settings.SITE_PROFILE_FORM_FIELDS):
+        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS) - 1:
             return '/'
         else:
             return reverse_lazy('accounts:activate', kwargs={'step': self.step + 1})
