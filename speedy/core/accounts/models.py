@@ -19,26 +19,6 @@ from speedy.core.uploads.fields import PhotoField
 from .managers import UserManager
 from .utils import get_site_profile_model
 
-ACCESS_ME = 1
-ACCESS_FRIENDS = 2
-ACCESS_FRIENDS_2 = 3
-ACCESS_ANYONE = 4
-
-ACCESS_CHOICES = (
-    (ACCESS_ME, _('Only me')),
-    (ACCESS_FRIENDS, _('Me and my friends')),
-    # (ACCESS_FRIENDS_2, _('Me, my friends and friends of my friends')),
-    (ACCESS_ANYONE, _('Anyone')),
-)
-
-
-class AccessField(models.PositiveIntegerField):
-    def __init__(self, **kwargs):
-        kwargs.update({
-            'choices': ACCESS_CHOICES,
-        })
-        super().__init__(**kwargs)
-
 
 class Entity(TimeStampedModel):
     MIN_USERNAME_LENGTH = 6
@@ -128,6 +108,26 @@ class NamedEntity(Entity):
         return '<NamedEntity {} - {}>'.format(self.id, self.name)
 
 
+class UserAccessField(models.PositiveIntegerField):
+    ACCESS_ME = 1
+    ACCESS_FRIENDS = 2
+    ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS = 3
+    ACCESS_ANYONE = 4
+
+    ACCESS_CHOICES = (
+        (ACCESS_ME, _('Only me')),
+        (ACCESS_FRIENDS, _('Me and my friends')),
+        # (ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS, _('Me, my friends and friends of my friends')),
+        (ACCESS_ANYONE, _('Anyone')),
+    )
+
+    def __init__(self, **kwargs):
+        kwargs.update({
+            'choices': self.ACCESS_CHOICES,
+        })
+        super().__init__(**kwargs)
+
+
 class User(Entity, PermissionsMixin, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
@@ -159,6 +159,14 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         (DIET_CARNIST, _('Carnist (eats animals)'))
     )
 
+    NOTIFICATIONS_OFF = 0
+    NOTIFICATIONS_ON = 1
+
+    NOTIFICATIONS_CHOICES = (
+        (NOTIFICATIONS_ON, _('Notify me')),
+        (NOTIFICATIONS_OFF, _('Don\'t notify me')),
+    )
+
     USERNAME_FIELD = 'username'
 
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
@@ -168,6 +176,9 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES, default=DIET_UNKNOWN)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    access_dob_day_month = UserAccessField(verbose_name=_('who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
+    access_dob_year = UserAccessField(verbose_name=_('who can view my birth year'), default=UserAccessField.ACCESS_ME)
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
 
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
 
@@ -269,7 +280,7 @@ class UserEmailAddress(TimeStampedModel):
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
-    access = AccessField(verbose_name=_('who can see this email'), default=ACCESS_ME)
+    access = UserAccessField(verbose_name=_('who can see this email'), default=UserAccessField.ACCESS_ME)
 
     class Meta:
         verbose_name = _('email address')
@@ -320,14 +331,6 @@ class SiteProfileBase(TimeStampedModel):
     """
     SiteProfile contains site-specific user settings.
     """
-
-    NOTIFICATIONS_OFF = 0
-    NOTIFICATIONS_ON = 1
-
-    NOTIFICATIONS_CHOICES = (
-        (NOTIFICATIONS_ON, _('Notify me')),
-        (NOTIFICATIONS_OFF, _('Don\'t notify me')),
-    )
 
     user = models.OneToOneField(User, primary_key=True, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)

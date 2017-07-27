@@ -161,20 +161,23 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
 
 class ProfileNotificationsForm(forms.ModelForm):
     class Meta:
-        model = get_site_profile_model(profile_model=None)
-        fields = ()
+        model = User
+        fields = ('notify_on_message', )
+        profile_model = get_site_profile_model(profile_model=None)
+        profile_fields = ()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        for field in self._meta.model._meta.fields:
-            if field.name.startswith('notify_'):
+        for field in self._meta.profile_model._meta.fields:
+            if field.name in self._meta.profile_fields:
                 self.fields[field.name] = field.formfield()
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
-            setattr(self.instance, field_name, self.cleaned_data[field_name])
+            if field_name in self._meta.profile_fields:
+                setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
         return super().save(commit=commit)
 
 
@@ -306,8 +309,8 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
 
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
-        fields = ()
-        model = SiteProfileBase
+        fields = ('access_dob_day_month', 'access_dob_year')
+        model = User
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

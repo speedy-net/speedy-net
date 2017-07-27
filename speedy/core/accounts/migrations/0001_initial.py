@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                 ('is_primary', models.BooleanField(default=False, verbose_name='is primary')),
                 ('confirmation_token', models.CharField(blank=True, max_length=32, verbose_name='confirmation token')),
                 ('confirmation_sent', models.IntegerField(default=0, verbose_name='confirmation sent')),
-                ('access', speedy.core.accounts.models.AccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can see this email')),
+                ('access', speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can see this email')),
             ],
             options={
                 'ordering': ('date_created', 'id'),

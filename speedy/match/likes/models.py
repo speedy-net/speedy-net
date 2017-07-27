@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
-from speedy.core.accounts.models import SiteProfileBase
+from speedy.core.accounts.models import User
 
 
 class UserLike(TimeStampedModel):
@@ -25,7 +25,7 @@ def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
     if not created:
         return
     user = instance.to_user
-    if user.profile.notify_on_like == SiteProfileBase.NOTIFICATIONS_ON:
+    if user.profile.notify_on_like == User.NOTIFICATIONS_ON:
         user.mail_user('likes/email/like', {
             'like': instance,
         })

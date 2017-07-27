@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.core.exceptions import ValidationError
 
-from speedy.core.accounts.models import SiteProfileBase, ACCESS_FRIENDS, ACCESS_ANYONE, User, AccessField, ACCESS_ME
+from speedy.core.accounts.models import SiteProfileBase, UserAccessField, User
 from speedy.core.blocks.models import Block
 from speedy.core.base.utils import get_age
 from speedy.match.accounts import validators
@@ -61,12 +61,7 @@ class SiteProfile(SiteProfileBase):
         (RANK_5, _('5 hearts'))
     )
 
-    access_account = ACCESS_ANYONE
-
-    access_dob_day_month = AccessField(verbose_name=_('who can view my birth month and day'), default=ACCESS_ME)
-    access_dob_year = AccessField(verbose_name=_('who can view my birth year'), default=ACCESS_ME)
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
-    notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=SiteProfileBase.NOTIFICATIONS_CHOICES, default=SiteProfileBase.NOTIFICATIONS_ON)
+    notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
     height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), null=True, validators=[validators.validate_height])

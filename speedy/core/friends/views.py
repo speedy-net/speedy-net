@@ -122,7 +122,7 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
             if friend_request_sent(request.user, self.user):
                 messages.warning(request, pgettext_lazy(context=request.user.get_gender(), message='You already requested friendship from this user.'))
                 return redirect(to=self.user)
-            if Friend.objects.are_friends(request.user, self.user):
+            if Friend.objects.are_friends(user1=request.user, user2=self.user):
                 messages.warning(request, pgettext_lazy(context=request.user.get_gender(), message='You already are friends with this user.'))
                 return redirect(to=self.user)
         return super().dispatch(request, *args, **kwargs)
