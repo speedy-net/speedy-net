@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-27 20:31+0300\n"
+"POT-Creation-Date: 2017-07-28 08:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,17 +175,15 @@ msgstr "תזונה"
 
 #: .\accounts\models.py:179
 msgid "who can view my birth month and day"
-msgstr ""
+msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
 #: .\accounts\models.py:180
 msgid "who can view my birth year"
-msgstr ""
+msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
 #: .\accounts\models.py:181
-#, fuzzy
-#| msgid "your message"
 msgid "on new messages"
-msgstr "ההודעה שלך"
+msgstr "כאשר יש הודעות חדשות"
 
 #: .\accounts\models.py:193 .\accounts\models.py:277 .\blocks\models.py:10
 msgid "user"
@@ -259,11 +257,11 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:279
+#: .\accounts\views.py:232
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:303 .\accounts\views.py:318
+#: .\accounts\views.py:256 .\accounts\views.py:271
 msgid "A confirmation message was sent to {}"
 msgstr "הודעת אימות נשלחה ל-{}"
 
@@ -399,11 +397,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:195
+#: .\settings\base.py:196
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:196
+#: .\settings\base.py:197
 msgid "Hebrew"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-27 20:31+0300\n"
+"POT-Creation-Date: 2017-07-28 08:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -318,19 +318,19 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:55
+#: .\templates\accounts\edit_profile\activate.html:37
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:82
+#: .\templates\accounts\edit_profile\activate.html:64
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:85
+#: .\templates\accounts\edit_profile\activate.html:67
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:91
+#: .\templates\accounts\edit_profile\activate.html:73
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
