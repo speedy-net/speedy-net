@@ -47,7 +47,7 @@ class ModelFormWithDefaults(forms.ModelForm):
 class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
-        email = User.objects.normalize_email(email)
+        email = User.objects.normalize_email(email=email)
         email = email.lower()
         if UserEmailAddress.objects.filter(email=email).exists():
             # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.

@@ -16,7 +16,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_username, normalize_slug, generate_confirmation_token, get_age
 from speedy.core.uploads.fields import PhotoField
-from .managers import UserManager
+from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
 
 
@@ -35,6 +35,8 @@ class Entity(TimeStampedModel):
         'username': get_username_validators(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
         'slug': get_slug_validators(min_length=MIN_SLUG_LENGTH, max_length=MAX_SLUG_LENGTH, allow_letters_after_digits=True),
     }
+
+    objects = EntityManager()
 
     class Meta:
         verbose_name = _('entity')

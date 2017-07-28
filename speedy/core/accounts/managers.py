@@ -1,11 +1,19 @@
 from django.contrib.auth.models import BaseUserManager
-from django.db.models import Q
+from django.db.models import Q, Manager
+from speedy.core.base.utils import normalize_username
+
+
+class EntityManager(Manager):
+    def get_by_username(self, username):
+        return self.get(username=normalize_username(slug=username))
+
+    def get_by_slug(self, slug):
+        return self.get_by_username(username=slug)
 
 
 class UserManager(BaseUserManager):
 
     def get_by_natural_key(self, username):
-        from .models import normalize_username
         return self.distinct().get(Q(username=normalize_username(slug=username)) | Q(email_addresses__email=username))
 
     def active(self, *args, **kwargs):

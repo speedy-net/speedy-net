@@ -12,14 +12,14 @@
 {% trans "You haven't confirmed your email address. Please check your inbox." context 'other' %}
 
 {#core/templates/profiles/block_warning.html 9#}
-{% trans 'You blocked this user.' context 'female' %}
-{% trans 'You blocked this user.' context 'male' %}
-{% trans 'You blocked this user.' context 'other' %}
+{% trans 'You blocked ' context 'female' %}
+{% trans 'You blocked ' context 'male' %}
+{% trans 'You blocked ' context 'other' %}
 
 {#core/templates/profiles/block_warning.html 11#}
-{% trans 'This user blocked you.' context 'female' %}
-{% trans 'This user blocked you.' context 'male' %}
-{% trans 'This user blocked you.' context 'other' %}
+{% trans ' blocked you.' context 'female' %}
+{% trans ' blocked you.' context 'male' %}
+{% trans ' blocked you.' context 'other' %}
 
 {#core/templates/profiles/tools/your_friend.html 9#}
 {% trans 'Your Friend' context 'female' %}
@@ -27,14 +27,14 @@
 {% trans 'Your Friend' context 'other' %}
 
 {#core/templates/profiles/tools/block_user.html 13#}
-{% trans 'Block User' context 'female' %}
-{% trans 'Block User' context 'male' %}
-{% trans 'Block User' context 'other' %}
+{% trans 'Block ' context 'female' %}
+{% trans 'Block ' context 'male' %}
+{% trans 'Block ' context 'other' %}
 
 {#core/templates/profiles/tools/block_user.html 24#}
-{% trans 'Unblock User' context 'female' %}
-{% trans 'Unblock User' context 'male' %}
-{% trans 'Unblock User' context 'other' %}
+{% trans 'Unblock ' context 'female' %}
+{% trans 'Unblock ' context 'male' %}
+{% trans 'Unblock ' context 'other' %}
 
 {#core/templates/im/message_form.html 7#}
 {% blocktrans context 'female' %}Send a message to {{ other_user }}{% endblocktrans %}
@@ -253,13 +253,17 @@
 {% trans "Add to Friends" context 'male' %}
 {% trans "Add to Friends" context 'other' %}
 
-{% trans "Report User" context 'female' %}
-{% trans "Report User" context 'male' %}
-{% trans "Report User" context 'other' %}
+{% trans "Report " context 'female' %}
+{% trans "Report " context 'male' %}
+{% trans "Report " context 'other' %}
 
-{% trans "Report Photo" context 'female' %}
-{% trans "Report Photo" context 'male' %}
-{% trans "Report Photo" context 'other' %}
+{% trans "Report this photo" context 'female' %}
+{% trans "Report this photo" context 'male' %}
+{% trans "Report this photo" context 'other' %}
+
+{% trans "Report a User" context 'female' %}
+{% trans "Report a User" context 'male' %}
+{% trans "Report a User" context 'other' %}
 
 {% trans "Deactivate Account" context 'female' %}
 {% trans "Deactivate Account" context 'male' %}
@@ -293,9 +297,9 @@
 {% trans "Remove" context 'male' %}
 {% trans "Remove" context 'other' %}
 
-{% trans "Are you sure you want to block this user?" context 'female' %}
-{% trans "Are you sure you want to block this user?" context 'male' %}
-{% trans "Are you sure you want to block this user?" context 'other' %}
+{% trans "Are you sure you want to block " context 'female' %}
+{% trans "Are you sure you want to block " context 'male' %}
+{% trans "Are you sure you want to block " context 'other' %}
 
 {% trans "You:" context 'female' %}
 {% trans "You:" context 'male' %}

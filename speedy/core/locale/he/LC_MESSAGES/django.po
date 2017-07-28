@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 11:48+0300\n"
+"POT-Creation-Date: 2017-07-28 15:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -701,22 +701,14 @@ msgid "Next"
 msgstr "הבא"
 
 #: .\templates\feedback\feedback_base.html:6
-msgid "Report Profile"
-msgstr ""
+#: .\templates\feedback\feedback_form.html:10
+msgid "Report a User"
+msgstr "דיווח על משתמש/ת"
 
 #: .\templates\feedback\feedback_base.html:6
-msgid "Report File"
-msgstr ""
-
-#: .\templates\feedback\feedback_form.html:10
-#: .\templates\profiles\tools\report_menu.html:9
-msgid "Report User"
-msgstr "דווח/י על משתמש/ת זה"
-
 #: .\templates\feedback\feedback_form.html:12
-#: .\templates\profiles\tools\report_menu.html:11
-msgid "Report Photo"
-msgstr "דווח/י על תמונה זו"
+msgid "Report a Photo"
+msgstr "דיווח על תמונה"
 
 #: .\templates\feedback\feedback_success.html:8
 msgid "Thank You"
@@ -795,12 +787,16 @@ msgstr ""
 "אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
 
 #: .\templates\profiles\block_warning.html:9
-msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה/הזאת"
+msgid "You blocked "
+msgstr ".חסמת את "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr ""
 
 #: .\templates\profiles\block_warning.html:11
-msgid "This user blocked you."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
+msgid " blocked you."
+msgstr " חסמ/ה אותך."
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:19
@@ -817,16 +813,20 @@ msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
 
 #: .\templates\profiles\tools\block_user.html:8
-msgid "Are you sure you want to block this user?"
-msgstr "האם את/ה בטוח/ה שברצונך לחסום משתמש/ת זה?"
+msgid "Are you sure you want to block "
+msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
+
+#: .\templates\profiles\tools\block_user.html:8
+msgid "?"
+msgstr ""
 
 #: .\templates\profiles\tools\block_user.html:13
-msgid "Block User"
-msgstr "חסום/י משתמש/ת"
+msgid "Block "
+msgstr "חסום/י את "
 
 #: .\templates\profiles\tools\block_user.html:24
-msgid "Unblock User"
-msgstr "בטל/י חסימת משתמש/ת"
+msgid "Unblock "
+msgstr "בטל/י את חסימת "
 
 #: .\templates\profiles\tools\friend_request_sent.html:9
 #: .\templates\profiles\tools\friend_request_sent.html:10
@@ -840,6 +840,14 @@ msgstr "בטל/י בקשת חברות"
 #: .\templates\profiles\tools\report_menu.html:6
 msgid "Toggle Dropdown"
 msgstr ""
+
+#: .\templates\profiles\tools\report_menu.html:9
+msgid "Report "
+msgstr "דווח/י על "
+
+#: .\templates\profiles\tools\report_menu.html:11
+msgid "Report this photo"
+msgstr "דווח/י על תמונה זו"
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
@@ -962,33 +970,33 @@ msgstr ""
 
 #: .\templates\translations.html:15
 msgctxt "female"
-msgid "You blocked this user."
-msgstr ".חסמת את המשתמשת הזאת"
+msgid "You blocked "
+msgstr ".חסמת את "
 
 #: .\templates\translations.html:16
 msgctxt "male"
-msgid "You blocked this user."
-msgstr ".חסמת את המשתמש הזה"
+msgid "You blocked "
+msgstr ".חסמת את "
 
 #: .\templates\translations.html:17
 msgctxt "other"
-msgid "You blocked this user."
-msgstr ".חסמת את המשתמש/ת הזה/הזאת"
+msgid "You blocked "
+msgstr ".חסמת את "
 
 #: .\templates\translations.html:20
 msgctxt "female"
-msgid "This user blocked you."
-msgstr "המשתמשת הזאת חסמה אותך."
+msgid " blocked you."
+msgstr " חסמה אותך."
 
 #: .\templates\translations.html:21
 msgctxt "male"
-msgid "This user blocked you."
-msgstr "המשתמש הזה חסם אותך."
+msgid " blocked you."
+msgstr " חסם אותך."
 
 #: .\templates\translations.html:22
 msgctxt "other"
-msgid "This user blocked you."
-msgstr "המשתמש/ת הזה חסמ/ה אותך."
+msgid " blocked you."
+msgstr " חסמ/ה אותך."
 
 #: .\templates\translations.html:25
 msgctxt "female"
@@ -1007,33 +1015,33 @@ msgstr "חבר/ה שלך"
 
 #: .\templates\translations.html:30
 msgctxt "female"
-msgid "Block User"
-msgstr "חסמי משתמש/ת"
+msgid "Block "
+msgstr "חסמי את "
 
 #: .\templates\translations.html:31
 msgctxt "male"
-msgid "Block User"
-msgstr "חסום משתמש/ת"
+msgid "Block "
+msgstr "חסום את "
 
 #: .\templates\translations.html:32
 msgctxt "other"
-msgid "Block User"
-msgstr "חסום/י משתמש/ת"
+msgid "Block "
+msgstr "חסום/י את "
 
 #: .\templates\translations.html:35
 msgctxt "female"
-msgid "Unblock User"
-msgstr "בטלי חסימת משתמש/ת"
+msgid "Unblock "
+msgstr "בטלי את חסימת "
 
 #: .\templates\translations.html:36
 msgctxt "male"
-msgid "Unblock User"
-msgstr "בטל חסימת משתמש/ת"
+msgid "Unblock "
+msgstr "בטל את חסימת "
 
 #: .\templates\translations.html:37
 msgctxt "other"
-msgid "Unblock User"
-msgstr "בטל/י חסימת משתמש/ת"
+msgid "Unblock "
+msgstr "בטל/י את חסימת "
 
 #: .\templates\translations.html:40
 #, python-format
@@ -1800,50 +1808,65 @@ msgstr "הוסף/י לחברים/ות"
 
 #: .\templates\translations.html:256
 msgctxt "female"
-msgid "Report User"
-msgstr "דווחי על משתמש/ת זה"
+msgid "Report "
+msgstr "דווחי על "
 
 #: .\templates\translations.html:257
 msgctxt "male"
-msgid "Report User"
-msgstr "דווח על משתמש/ת זה"
+msgid "Report "
+msgstr "דווח על "
 
 #: .\templates\translations.html:258
 msgctxt "other"
-msgid "Report User"
-msgstr "דווח/י על משתמש/ת זה"
+msgid "Report "
+msgstr "דווח/י על "
 
 #: .\templates\translations.html:260
 msgctxt "female"
-msgid "Report Photo"
+msgid "Report this photo"
 msgstr "דווחי על תמונה זו"
 
 #: .\templates\translations.html:261
 msgctxt "male"
-msgid "Report Photo"
+msgid "Report this photo"
 msgstr "דווח על תמונה זו"
 
 #: .\templates\translations.html:262
 msgctxt "other"
-msgid "Report Photo"
+msgid "Report this photo"
 msgstr "דווח/י על תמונה זו"
 
 #: .\templates\translations.html:264
 msgctxt "female"
+msgid "Report a User"
+msgstr "דיווח על משתמשת"
+
+#: .\templates\translations.html:265
+msgctxt "male"
+msgid "Report a User"
+msgstr "דיווח על משתמש"
+
+#: .\templates\translations.html:266
+msgctxt "other"
+msgid "Report a User"
+msgstr "דיווח על משתמש/ת"
+
+#: .\templates\translations.html:268
+msgctxt "female"
 msgid "Deactivate Account"
 msgstr "הקפיאי את פעילות החשבון"
 
-#: .\templates\translations.html:265
+#: .\templates\translations.html:269
 msgctxt "male"
 msgid "Deactivate Account"
 msgstr "הקפא את פעילות החשבון"
 
-#: .\templates\translations.html:266
+#: .\templates\translations.html:270
 msgctxt "other"
 msgid "Deactivate Account"
 msgstr "הקפא/י את פעילות החשבון"
 
-#: .\templates\translations.html:268
+#: .\templates\translations.html:272
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1851,7 +1874,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכלי להפעיל אותם בכל זמן שתבחרי."
 
-#: .\templates\translations.html:269
+#: .\templates\translations.html:273
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1859,7 +1882,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל להפעיל אותם בכל זמן שתבחר."
 
-#: .\templates\translations.html:270
+#: .\templates\translations.html:274
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1867,7 +1890,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן שתבחר/י."
 
-#: .\templates\translations.html:272
+#: .\templates\translations.html:276
 msgctxt "female"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1876,7 +1899,7 @@ msgstr ""
 "החשבון שלך ב{} הוקפא. תוכלי להפעיל אותו בכל זמן שתבחרי. החשבון שלך בספידי נט "
 "נשאר פעיל."
 
-#: .\templates\translations.html:273
+#: .\templates\translations.html:277
 msgctxt "male"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1885,7 +1908,7 @@ msgstr ""
 "החשבון שלך ב{} הוקפא. תוכל להפעיל אותו בכל זמן שתבחר. החשבון שלך בספידי נט "
 "נשאר פעיל."
 
-#: .\templates\translations.html:274
+#: .\templates\translations.html:278
 msgctxt "other"
 msgid ""
 "Your {} account has been deactivated. You can reactivate it any time. Your "
@@ -1894,107 +1917,107 @@ msgstr ""
 "החשבון שלך ב{} הוקפא. תוכל/י להפעיל אותו בכל זמן שתבחר/י. החשבון שלך בספידי "
 "נט נשאר פעיל."
 
-#: .\templates\translations.html:276
+#: .\templates\translations.html:280
 msgctxt "female"
 msgid "Activate your {} account"
 msgstr "הפעילי את החשבון שלך ב{}"
 
-#: .\templates\translations.html:277
+#: .\templates\translations.html:281
 msgctxt "male"
 msgid "Activate your {} account"
 msgstr "הפעל את החשבון שלך ב{}"
 
-#: .\templates\translations.html:278
+#: .\templates\translations.html:282
 msgctxt "other"
 msgid "Activate your {} account"
 msgstr "הפעל/י את החשבון שלך ב{}"
 
-#: .\templates\translations.html:280
+#: .\templates\translations.html:284
 msgctxt "female"
 msgid "Deactivate your {} account"
 msgstr "הקפיאי את פעילות החשבון שלך ב{}"
 
-#: .\templates\translations.html:281
+#: .\templates\translations.html:285
 msgctxt "male"
 msgid "Deactivate your {} account"
 msgstr "הקפא את פעילות החשבון שלך ב{}"
 
-#: .\templates\translations.html:282
+#: .\templates\translations.html:286
 msgctxt "other"
 msgid "Deactivate your {} account"
 msgstr "הקפא/י את פעילות החשבון שלך ב{}"
 
-#: .\templates\translations.html:284
+#: .\templates\translations.html:288
 msgctxt "female"
 msgid "Welcome to {}!"
 msgstr "ברוכה הבאה ל{}!"
 
-#: .\templates\translations.html:285
+#: .\templates\translations.html:289
 msgctxt "male"
 msgid "Welcome to {}!"
 msgstr "ברוך הבא ל{}!"
 
-#: .\templates\translations.html:286
+#: .\templates\translations.html:290
 msgctxt "other"
 msgid "Welcome to {}!"
 msgstr "ברוכ/ה הבא/ה ל{}!"
 
-#: .\templates\translations.html:288
+#: .\templates\translations.html:292
 msgctxt "female"
 msgid "Mark All as Read"
 msgstr "סמני שכל ההודעות נקראו"
 
-#: .\templates\translations.html:289
+#: .\templates\translations.html:293
 msgctxt "male"
 msgid "Mark All as Read"
 msgstr "סמן שכל ההודעות נקראו"
 
-#: .\templates\translations.html:290
+#: .\templates\translations.html:294
 msgctxt "other"
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\translations.html:292
+#: .\templates\translations.html:296
 msgctxt "female"
 msgid "Remove"
 msgstr "הסירי"
 
-#: .\templates\translations.html:293
+#: .\templates\translations.html:297
 msgctxt "male"
 msgid "Remove"
 msgstr "הסר"
 
-#: .\templates\translations.html:294
+#: .\templates\translations.html:298
 msgctxt "other"
 msgid "Remove"
 msgstr "הסר/י"
 
-#: .\templates\translations.html:296
-msgctxt "female"
-msgid "Are you sure you want to block this user?"
-msgstr "האם את בטוחה שברצונך לחסום משתמש/ת זה?"
-
-#: .\templates\translations.html:297
-msgctxt "male"
-msgid "Are you sure you want to block this user?"
-msgstr "האם אתה בטוח שברצונך לחסום משתמש/ת זו?"
-
-#: .\templates\translations.html:298
-msgctxt "other"
-msgid "Are you sure you want to block this user?"
-msgstr "האם את/ה בטוח/ה שברצונך לחסום משתמש/ת זה?"
-
 #: .\templates\translations.html:300
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "האם את בטוחה שברצונך לחסום את "
+
+#: .\templates\translations.html:301
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "האם אתה בטוח שברצונך לחסום את "
+
+#: .\templates\translations.html:302
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
+
+#: .\templates\translations.html:304
 msgctxt "female"
 msgid "You:"
 msgstr "את:"
 
-#: .\templates\translations.html:301
+#: .\templates\translations.html:305
 msgctxt "male"
 msgid "You:"
 msgstr "אתה:"
 
-#: .\templates\translations.html:302
+#: .\templates\translations.html:306
 msgctxt "other"
 msgid "You:"
 msgstr "את/ה:"

@@ -5,12 +5,12 @@
 {% has_perm 'blocks.unblock' request.user user as can_unblock %}
 
 {% if can_block %}
-    <form action="{% url 'blocks:block' user.slug %}" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block this user?' context request.user.get_gender %}');">
+    <form action="{% url 'blocks:block' user.slug %}" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
         {% csrf_token %}
         <div class="btn-group">
             <button class="btn btn-default" type="submit">
                 <i class="fa fa-ban"></i>
-                {% trans 'Block User' context request.user.get_gender %}
+                {% trans 'Block ' context request.user.get_gender %}{{ user }}
             </button>
             {% include 'profiles/tools/report_menu.html' %}
         </div>
@@ -21,7 +21,7 @@
         <div class="btn-group">
             <button class="btn btn-default" type="submit">
                 <i class="fa fa-ban"></i>
-                {% trans 'Unblock User' context request.user.get_gender %}
+                {% trans 'Unblock ' context request.user.get_gender %}{{ user }}
             </button>
             {% include 'profiles/tools/report_menu.html' %}
         </div>
