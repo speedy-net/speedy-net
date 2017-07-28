@@ -14,11 +14,13 @@
             {{ widget.html }}
         {% endfor %}
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                {% trans "ל" %}{{ user }}{% trans " also has a Speedy Net profile." %} {% trans "View " context request.user.get_gender %}{{ user }}{% trans "'s profile on Speedy Net." %}
-            </a>
+    {% if can_view_profile_header %}
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
+                    {% trans "ל" %}{{ user }}{% trans " also has a Speedy Net profile." %} {% trans "View " context request.user.get_gender %}{{ user }}{% trans "'s profile on Speedy Net." %}
+                </a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}

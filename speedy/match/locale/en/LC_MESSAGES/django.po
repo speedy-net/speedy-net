@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 08:38+0300\n"
+"POT-Creation-Date: 2017-07-28 11:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -377,18 +377,18 @@ msgstr ""
 msgid "Unlike"
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "ל"
 msgstr " "
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid " also has a Speedy Net profile."
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "View "
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "'s profile on Speedy Net."
 msgstr ""
