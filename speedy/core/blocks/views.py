@@ -22,8 +22,8 @@ class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
         return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
-        Block.objects.block(request.user, self.user)
-        messages.success(request, pgettext_lazy(context=self.user.get_gender(), message='You have blocked this user.'))
+        Block.objects.block(blocker=request.user, blockee=self.user)
+        messages.success(request, _('You have blocked {}.').format(self.user))
         return redirect(to=self.user)
 
 
@@ -34,6 +34,6 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
         return redirect(to=self.user)
 
     def post(self, request, *args, **kwargs):
-        Block.objects.unblock(request.user, self.user)
-        messages.success(request, pgettext_lazy(context=self.user.get_gender(), message='You have unblocked this user.'))
+        Block.objects.unblock(blocker=request.user, blockee=self.user)
+        messages.success(request, _('You have unblocked {}.').format(self.user))
         return redirect(to=self.user)

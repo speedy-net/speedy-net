@@ -12,28 +12,28 @@ class BlockManagerTestCase(TestCase):
 
     def test_block(self):
         self.assertEqual(first=Block.objects.count(), second=0)
-        block = Block.objects.block(self.user, self.other_user)
+        block = Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
         self.assertEqual(first=block.blocker_id, second=self.user.id)
         self.assertEqual(first=block.blockee_id, second=self.other_user.id)
 
     def test_existing_block(self):
-        block = Block.objects.block(self.user, self.other_user)
+        block = Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
-        block2 = Block.objects.block(self.user, self.other_user)
+        block2 = Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
         self.assertEqual(first=block, second=block2)
 
     def test_unblock(self):
-        Block.objects.block(self.user, self.other_user)
+        Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
-        Block.objects.unblock(self.user, self.other_user)
+        Block.objects.unblock(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=0)
-        Block.objects.unblock(self.user, self.other_user)
+        Block.objects.unblock(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=0)
 
     def test_has_blocked_true(self):
-        Block.objects.block(self.user, self.other_user)
+        Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertTrue(expr=Block.objects.has_blocked(self.user, self.other_user))
 
     def test_has_blocked_false(self):

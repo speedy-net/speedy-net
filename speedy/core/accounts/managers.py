@@ -1,9 +1,10 @@
 from django.contrib.auth.models import BaseUserManager
-from django.db.models import Q, Manager
+from django.db import models
+from django.db.models import Q
 from speedy.core.base.utils import normalize_username
 
 
-class EntityManager(Manager):
+class EntityManager(models.Manager):
     def get_by_username(self, username):
         return self.get(username=normalize_username(slug=username))
 

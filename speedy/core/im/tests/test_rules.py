@@ -18,7 +18,7 @@ class SendMessageTestCase(TestCase):
         self.assertTrue(expr=self.user1.has_perm('im.send_message', self.user2))
 
     def test_cannot_send_message_to_other_user_if_blocked(self):
-        Block.objects.block(self.user2, self.user1)
+        Block.objects.block(blocker=self.user2, self.user1)
         self.assertFalse(expr=self.user1.has_perm('im.send_message', self.user2))
         self.assertFalse(expr=self.user2.has_perm('im.send_message', self.user1))
 
