@@ -2,8 +2,7 @@ from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, \
-    exclude_on_speedy_match
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 from ..views import UserMixin
 
 
