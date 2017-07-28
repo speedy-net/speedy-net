@@ -50,3 +50,25 @@ class UserMixinTextCase(TestCase):
         r = self.client.get('/l-o-o-k_a_t_m-e-1/')
         self.assertEqual(first=r.status_code, second=404)
 
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
+class LoggedInUserTestCase(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
+        self.other_user = ActiveUserFactory()
+
+    def test_redirect_to_login_me(self):
+        r = self.client.get('/me/')
+        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+
+    def test_redirect_to_login_me_add_trailing_slash(self):
+        r = self.client.get('/me')
+        self.assertRedirects(response=r, expected_url='/me/', status_code=301, target_status_code=302)
+        r = self.client.get('/me/')
+        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+
+    # ~~~~ TODO: login and test /me/ and user profiles while logged in.
+
+
