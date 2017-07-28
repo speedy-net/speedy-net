@@ -25,12 +25,12 @@ def has_access_perm(user, other):
 
 @predicate
 def has_access_perm_for_dob_day_month(user, other):
-    return _has_access_perm_for_obj(user, other, other.access_dob_day_month)
+    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_day_month)
 
 
 @predicate
 def has_access_perm_for_dob_year(user, other):
-    return _has_access_perm_for_obj(user, other, other.access_dob_year)
+    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_year)
 
 
 @predicate
@@ -50,7 +50,7 @@ def email_address_is_primary(user, email_address):
 
 @predicate
 def has_access_perm_for_email_address(user, email_address):
-    return _has_access_perm_for_obj(user, email_address.user, email_address.access)
+    return _has_access_perm_for_obj(user=user, other=email_address.user, access=email_address.access)
 
 
 add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
