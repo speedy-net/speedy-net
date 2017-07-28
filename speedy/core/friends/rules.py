@@ -11,7 +11,7 @@ def is_self(user, other):
 
 @predicate
 def friend_request_sent(user, other):
-    return other.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user)]
+    return other.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user=user)]
 
 
 @predicate
