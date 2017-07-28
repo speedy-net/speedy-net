@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                        {% trans "This user doesn't match your profile, but you can visit his/her Speedy Net profile. View user's profile on Speedy Net." context request.user.get_gender %}
+                        {% trans "This user doesn't match your profile, " context user.get_gender %}{% trans "but you can visit his/her Speedy Net profile. " context user.get_gender %}{% trans "View " context request.user.get_gender %}{% trans "user's profile on Speedy Net." context user.get_gender %}
                     </a>
                 </div>
             </div>
