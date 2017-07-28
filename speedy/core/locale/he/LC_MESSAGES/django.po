@@ -979,17 +979,17 @@ msgstr ""
 #: .\templates\translations.html:15
 msgctxt "female"
 msgid "You blocked "
-msgstr ".חסמת את "
+msgstr "חסמת את "
 
 #: .\templates\translations.html:16
 msgctxt "male"
 msgid "You blocked "
-msgstr ".חסמת את "
+msgstr "חסמת את "
 
 #: .\templates\translations.html:17
 msgctxt "other"
 msgid "You blocked "
-msgstr ".חסמת את "
+msgstr "חסמת את "
 
 #: .\templates\translations.html:20
 msgctxt "female"
