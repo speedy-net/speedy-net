@@ -315,4 +315,6 @@ class ProfilePrivacyForm(forms.ModelForm):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+
+

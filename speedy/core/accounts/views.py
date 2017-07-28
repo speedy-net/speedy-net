@@ -317,5 +317,6 @@ class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.
     form_class = ProfilePrivacyForm
 
     def get_object(self, queryset=None):
-        return self.request.user.profile
+        return self.request.user
+
 
