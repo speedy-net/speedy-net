@@ -267,12 +267,6 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 #~ msgid "Welcome to {}!"
 #~ msgstr "ברוכ/ה הבא/ה ל{}!"
 
-#~ msgid "You have blocked this user."
-#~ msgstr ".חסמת את המשתמש/ת הזה"
-
-#~ msgid "You have unblocked this user."
-#~ msgstr ".ביטלת את חסימת המשתמש/ת הזה"
-
 #~ msgid "your name"
 #~ msgstr "השם שלך"
 
