@@ -6,7 +6,7 @@
 
 {% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}
 
-{% block title %}{% if can_view_profile_header %}{{ user }} / {% endif %}{{ block.super }}{% endblock %}
+{% block title %}{% if can_view_profile_header %}{{ user }}{% else %}{{ user.slug }}{% endif %} / {{ block.super }}{% endblock %}
 
 {% block user_content_info %}
     <div class="row">
