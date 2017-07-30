@@ -118,7 +118,6 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
 
 
 class ProfileNotificationsForm(CoreProfileNotificationsForm):
-    class Meta(CoreProfileNotificationsForm.Meta):
-        profile_fields = ("notify_on_like", )
+    profile_fields = ("notify_on_like", )
 
 

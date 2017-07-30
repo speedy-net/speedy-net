@@ -160,25 +160,30 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
 
 
 class ProfileNotificationsForm(forms.ModelForm):
+    profile_model = get_site_profile_model(profile_model=None)
+    profile_fields = ()
+
     class Meta:
         model = User
         fields = ('notify_on_message', )
-        profile_model = get_site_profile_model(profile_model=None)
-        profile_fields = ()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        for field in self._meta.profile_model._meta.fields:
-            if field.name in self._meta.profile_fields:
+        for field in self.profile_model._meta.fields:
+            if field.name in self.profile_fields:
                 self.fields[field.name] = field.formfield()
+                self.fields[field.name].initial = getattr(self.instance.profile, field.name)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
-            if field_name in self._meta.profile_fields:
+            if field_name in self.profile_fields:
                 setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
-        return super().save(commit=commit)
+        r = super().save(commit=commit)
+        if commit:
+            self.instance.profile.save()
+        return r
 
 
 class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
