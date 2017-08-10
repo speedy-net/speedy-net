@@ -108,6 +108,8 @@ USER_PROFILE_WIDGETS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+CRISPY_FAIL_SILENTLY = False
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 

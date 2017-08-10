@@ -4,11 +4,11 @@ from rules.contrib.views import LoginRequiredMixin
 from speedy.core.accounts.models import User
 from speedy.core.base.utils import get_age_ranges_match
 from ..accounts.models import SiteProfile
-from .forms import MatchSettingsMiniForm
+from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
 
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):
-    template_name = 'matches/matches_list.html'
+    template_name = 'matches/match_list.html'
     form_class = MatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
@@ -31,3 +31,21 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
             'matches': self.get_matches(),
         })
         return cd
+
+
+class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'matches/settings/matches.html'
+    form_class = MatchSettingsFullForm
+    success_url = reverse_lazy('matches:list')
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
+
+class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'matches/settings/about_me.html'
+    form_class = AboutMeForm
+    success_url = reverse_lazy('matches:list')
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile

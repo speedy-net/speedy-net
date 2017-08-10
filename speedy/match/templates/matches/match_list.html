@@ -9,6 +9,12 @@
 {% block content %}
     <div class="page-header">
         <h1>
+            <div class="pull-right">
+                <a href="{% url 'matches:edit_settings' %}" class="btn btn-default">
+                    <i class="fa fa-pencil"></i>
+                    {% trans 'Edit Settings' %}
+                </a>
+            </div>
             {% trans 'Your matches' context user.get_gender %}
         </h1>
     </div>
@@ -18,8 +24,6 @@
             {{ form.errors }}
             <div class="row">
                 <div class="col-md-3">
-
-
                     <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
                         {% trans 'Diet' %} <span class="caret"></span>
                     </button>
@@ -28,20 +32,19 @@
                             {% crispy_field form.diet_match %}
                         </div>
                     </div>
-
-
                 </div>
-
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-2 text-right"><div class="form-control-static">{% trans 'Age:' %}</div></div>
+                        <div class="col-md-2 text-right">
+                            <div class="form-control-static">{% trans 'Age:' %}</div>
+                        </div>
                         <div class="col-md-4">{% crispy_field form.min_age_match %}</div>
-                        <div class="col-md-1"><div class="form-control-static">&mdash;</div></div>
+                        <div class="col-md-1">
+                            <div class="form-control-static">&mdash;</div>
+                        </div>
                         <div class="col-md-4">{% crispy_field form.max_age_match %}</div>
                     </div>
-
                 </div>
-
                 <div class="col-md-3">
                     <input type="submit" class="btn btn-block btn-primary" value="{% trans 'Find' %}">
                 </div>

@@ -1,0 +1,31 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>
+            <div class="pull-right">
+                <a href="{% url 'matches:list' %}" class="btn btn-default">
+                    <i class="fa fa-arrow-left"></i>
+                    {% trans 'Back to Matches' %}
+                </a>
+            </div>
+            {% trans 'Match settings' context user.get_gender %}
+        </h1>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="{% active_class 'matches:edit_settings' %}"><a
+                href="{% url 'matches:edit_settings' %}">{% trans 'Search Settings' %}</a></li>
+        <li class="{% active_class 'matches:edit_about_me' %}"><a
+                href="{% url 'matches:edit_about_me' %}">{% trans 'About Me' %}</a></li>
+    </ul>
+    <br>
+    {% block tab_content %}
+        {% crispy form %}
+    {% endblock %}
+{% endblock %}
