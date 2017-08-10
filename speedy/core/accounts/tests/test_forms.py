@@ -1,8 +1,6 @@
-from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.base.test import exclude_on_speedy_match
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 
 
 @exclude_on_speedy_composer
@@ -110,7 +108,7 @@ class ProfileNotificationsFormTestCase(TestCase):
 
     @exclude_on_speedy_match
     def test_has_correct_fields(self):
-        form = ProfileNotificationsForm(instance=self.user.profile)
+        form = ProfileNotificationsForm(instance=self.user)
         self.assertListEqual(list1=list(form.fields.keys()), list2=[
             'notify_on_message',
         ])

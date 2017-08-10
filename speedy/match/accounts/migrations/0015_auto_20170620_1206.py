@@ -17,12 +17,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='siteprofile',
             name='access_dob_day_month',
-            field=speedy.core.accounts.models.AccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can view my birth month and day'),
+            field=speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can view my birth month and day'),
         ),
         migrations.AddField(
             model_name='siteprofile',
             name='access_dob_year',
-            field=speedy.core.accounts.models.AccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can view my birth year'),
+            field=speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='who can view my birth year'),
         ),
         migrations.AlterField(
             model_name='siteprofile',

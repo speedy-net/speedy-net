@@ -1,16 +1,7 @@
-from django.core.urlresolvers import reverse_lazy
-from django.views import generic
-
-from rules.contrib.views import LoginRequiredMixin
-
-from speedy.core.base.views import FormValidMessageMixin
-from .forms import ProfilePrivacyForm
+from speedy.core.accounts.views import IndexView as CoreIndexView
 
 
-class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
-    template_name = 'accounts/edit_profile/privacy.html'
-    success_url = reverse_lazy('accounts:edit_profile_privacy')
-    form_class = ProfilePrivacyForm
+class IndexView(CoreIndexView):
+    registered_redirect_to = 'profiles:me'
 
-    def get_object(self, queryset=None):
-        return self.request.user.profile
+

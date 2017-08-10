@@ -2,8 +2,7 @@ from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, \
-    exclude_on_speedy_match
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 from ..views import UserMixin
 
 
@@ -50,4 +49,26 @@ class UserMixinTextCase(TestCase):
     def test_user_slug_doesnt_exist_returns_404(self):
         r = self.client.get('/l-o-o-k_a_t_m-e-1/')
         self.assertEqual(first=r.status_code, second=404)
+
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
+class LoggedInUserTestCase(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
+        self.other_user = ActiveUserFactory()
+
+    def test_redirect_to_login_me(self):
+        r = self.client.get('/me/')
+        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+
+    def test_redirect_to_login_me_add_trailing_slash(self):
+        r = self.client.get('/me')
+        self.assertRedirects(response=r, expected_url='/me/', status_code=301, target_status_code=302)
+        r = self.client.get('/me/')
+        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+
+    # ~~~~ TODO: login and test /me/ and user profiles while logged in.
+
 

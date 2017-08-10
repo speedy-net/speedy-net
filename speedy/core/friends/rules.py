@@ -11,12 +11,12 @@ def is_self(user, other):
 
 @predicate
 def friend_request_sent(user, other):
-    return other.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user)]
+    return other.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user=user)]
 
 
 @predicate
 def is_friend(user, other):
-    return Friend.objects.are_friends(user, other)
+    return Friend.objects.are_friends(user1=user, user2=other)
 
 
 add_perm('friends.request', is_authenticated & ~is_self & ~friend_request_sent & ~is_friend & ~there_is_block)

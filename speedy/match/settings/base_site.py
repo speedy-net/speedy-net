@@ -15,8 +15,9 @@ DEFAULT_FROM_EMAIL = 'webmaster@speedymatch.com'
 
 INSTALLED_APPS += [
     'speedy.match.accounts',
+    'speedy.match.profiles',
     'speedy.match.likes',
-    'speedy.match.matches'
+    'speedy.match.matches',
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'

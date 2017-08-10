@@ -161,10 +161,10 @@ class AcceptFriendRequestViewTestCase(TestCase):
 
     def test_user_that_has_received_request_can_accept_it(self):
         self.client.login(username=self.other_user.slug, password='111')
-        self.assertFalse(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug))
-        self.assertTrue(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
@@ -174,7 +174,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
         r = self.client.get('/{}/friends/'.format(self.other_user.slug))
         self.assertIn(member="You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove friends before you proceed.", container=map(str, r.context['messages']))
-        self.assertFalse(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
@@ -184,7 +184,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
         r = self.client.get('/{}/friends/'.format(self.other_user.slug))
         self.assertIn(member="This user already has 1 friends. They can't have more than 1 friends on Speedy Net. Please ask them to remove friends before you proceed.", container=map(str, r.context['messages']))
-        self.assertFalse(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
 
 @exclude_on_speedy_composer
@@ -208,10 +208,10 @@ class RejectFriendRequestViewTestCase(TestCase):
 
     def test_user_that_has_received_request_can_reject_it(self):
         self.client.login(username=self.other_user.slug, password='111')
-        self.assertFalse(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug))
-        self.assertFalse(expr=Friend.objects.are_friends(self.user, self.other_user))
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         # self.assertIsNotNone(obj=self.other_user.friendship_requests_received.all()[0].rejected)
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=0)
 

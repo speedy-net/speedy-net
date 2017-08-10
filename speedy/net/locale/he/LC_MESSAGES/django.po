@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 15:12+0300\n"
+"POT-Creation-Date: 2017-07-28 16:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\models.py:16
-msgid "who can view my birth month and day"
-msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
-
-#: .\accounts\models.py:17
-msgid "who can view my birth year"
-msgstr "מי יכול/ה לראות את שנת הלידה שלי"
-
-#: .\accounts\models.py:18
-msgid "on new messages"
-msgstr "כאשר יש הודעות חדשות"
-
-#: .\accounts\models.py:19
+#: .\accounts\models.py:15
 msgid "indicates if a user has ever logged in to the site"
 msgstr ""
 
@@ -279,12 +267,6 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 #~ msgid "Welcome to {}!"
 #~ msgstr "ברוכ/ה הבא/ה ל{}!"
 
-#~ msgid "You have blocked this user."
-#~ msgstr ".חסמת את המשתמש/ת הזה"
-
-#~ msgid "You have unblocked this user."
-#~ msgstr ".ביטלת את חסימת המשתמש/ת הזה"
-
 #~ msgid "your name"
 #~ msgstr "השם שלך"
 
@@ -383,10 +365,10 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 #~ "שלכם. הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים "
 #~ "או אתרים אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
 
-#~ msgid "You blocked this user."
+#~ msgid "You blocked "
 #~ msgstr ".חסמת את המשתמש/ת הזה"
 
-#~ msgid "This user blocked you."
+#~ msgid " blocked you."
 #~ msgstr "המשתמש/ת הזה חסמ/ה אותך."
 
 #~ msgid "Accept"

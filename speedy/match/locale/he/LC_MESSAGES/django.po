@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-26 15:12+0300\n"
+"POT-Creation-Date: 2017-07-28 16:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\forms.py:50
+#: .\accounts\forms.py:45
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:51
+#: .\accounts\forms.py:46
 msgid "Add profile picture"
 msgstr ""
 
@@ -94,80 +94,68 @@ msgstr ""
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:66
-msgid "who can view my birth month and day"
-msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
-
-#: .\accounts\models.py:67
-msgid "who can view my birth year"
-msgstr "מי יכול/ה לראות את שנת הלידה שלי"
-
-#: .\accounts\models.py:68
-msgid "on new messages"
-msgstr "כאשר יש הודעות חדשות"
-
-#: .\accounts\models.py:69
+#: .\accounts\models.py:64
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:70
+#: .\accounts\models.py:65
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:67
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:67
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:73
+#: .\accounts\models.py:68
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:69
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:75
+#: .\accounts\models.py:70
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:71
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:72
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:78 .\accounts\validators.py:24
+#: .\accounts\models.py:73 .\accounts\validators.py:24
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:79 .\accounts\validators.py:29
+#: .\accounts\models.py:74 .\accounts\validators.py:29
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:75
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:81
+#: .\accounts\models.py:76
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:82
+#: .\accounts\models.py:77
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:94
+#: .\accounts\models.py:89
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:228 .\templates\accounts\edit_profile\activate.html:21
+#: .\accounts\models.py:223 .\templates\accounts\edit_profile\activate.html:21
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -185,7 +173,7 @@ msgstr ""
 
 #: .\accounts\validators.py:39
 msgid "Height must be from 1 to 450 cm."
-msgstr ""
+msgstr "הגובה חייב להיות בין 1 ל-450 ס\"מ."
 
 #: .\accounts\validators.py:44
 msgid "Your diet is required."
@@ -351,19 +339,19 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 msgid "Welcome"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:55
+#: .\templates\accounts\edit_profile\activate.html:37
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:82
+#: .\templates\accounts\edit_profile\activate.html:64
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:85
+#: .\templates\accounts\edit_profile\activate.html:67
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:91
+#: .\templates\accounts\edit_profile\activate.html:73
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
@@ -412,19 +400,19 @@ msgstr ""
 msgid "Unlike"
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "ל"
 msgstr "ל"
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid " also has a Speedy Net profile."
 msgstr " יש פרופיל גם בספידי נט."
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "View "
 msgstr ""
 
-#: .\templates\profiles\user_detail.html:20
+#: .\templates\profiles\user_detail.html:21
 msgid "'s profile on Speedy Net."
 msgstr " בספידי נט."
 

@@ -73,7 +73,7 @@ class UnblockViewTestCase(TestCase):
 
     def test_user_can_unblock_other_user(self):
         self.client.login(username=self.user.slug, password='111')
-        Block.objects.block(self.user, self.other_user)
+        Block.objects.block(blocker=self.user, blockee=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
         r = self.client.post(self.page_url)
         self.assertEqual(first=Block.objects.count(), second=0)

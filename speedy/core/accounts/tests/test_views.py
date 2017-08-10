@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core import mail
 
-from speedy.core.accounts.models import Entity, User, UserEmailAddress, SiteProfileBase
+from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.base.test import exclude_on_speedy_match, exclude_on_speedy_net
 from .test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
@@ -252,9 +252,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
 
-    @exclude_on_speedy_match
-    def test_user_can_save_his_settings(self):
-        self.assertEqual(first=self.user.profile.access_account, second=4)
+    def test_user_can_save_his_settings_1(self):
         data = {
             'access_dob_day_month': '2',
             'access_dob_year': '4',
@@ -262,8 +260,19 @@ class EditProfilePrivacyViewTestCase(TestCase):
         r = self.client.post(self.page_url, data)
         self.assertRedirects(response=r, expected_url=self.page_url)
         user = User.objects.get(id=self.user.id)
-        self.assertEqual(first=user.profile.access_dob_day_month, second=2)
-        self.assertEqual(first=user.profile.access_dob_year, second=4)
+        self.assertEqual(first=user.access_dob_day_month, second=2)
+        self.assertEqual(first=user.access_dob_year, second=4)
+
+    def test_user_can_save_his_settings_2(self):
+        data = {
+            'access_dob_day_month': '4',
+            'access_dob_year': '2',
+        }
+        r = self.client.post(self.page_url, data)
+        self.assertRedirects(response=r, expected_url=self.page_url)
+        user = User.objects.get(id=self.user.id)
+        self.assertEqual(first=user.access_dob_day_month, second=4)
+        self.assertEqual(first=user.access_dob_year, second=2)
 
 
 @exclude_on_speedy_composer
@@ -287,14 +296,14 @@ class EditProfileNotificationsViewTestCase(TestCase):
 
     @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
-        self.assertEqual(first=self.user.profile.notify_on_message, second=SiteProfileBase.NOTIFICATIONS_ON)
+        self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
         data = {
-            'notify_on_message': SiteProfileBase.NOTIFICATIONS_OFF,
+            'notify_on_message': User.NOTIFICATIONS_OFF,
         }
         r = self.client.post(self.page_url, data)
         self.assertRedirects(response=r, expected_url=self.page_url)
         user = User.objects.get(id=self.user.id)
-        self.assertEqual(first=user.profile.notify_on_message, second=SiteProfileBase.NOTIFICATIONS_OFF)
+        self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
 
 
 @exclude_on_speedy_composer

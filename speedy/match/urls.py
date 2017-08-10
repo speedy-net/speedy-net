@@ -16,5 +16,5 @@ urlpatterns += [
     url(r'^(?P<slug>[-\._\w]+)/blocks/', include('speedy.core.blocks.urls', namespace='blocks')),
     url(r'^(?P<slug>[-\._\w]+)/likes/', include('speedy.match.likes.urls', namespace='likes')),
     url(r'^uploads/', include('speedy.core.uploads.urls', namespace='uploads')),
-    url(r'^', include('speedy.core.profiles.urls', namespace='profiles')),
-] + urlpatterns
+    url(r'^', include('speedy.match.profiles.urls', namespace='profiles')),
+]

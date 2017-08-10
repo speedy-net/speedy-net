@@ -47,7 +47,7 @@ class ModelFormWithDefaults(forms.ModelForm):
 class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
-        email = User.objects.normalize_email(email)
+        email = User.objects.normalize_email(email=email)
         email = email.lower()
         if UserEmailAddress.objects.filter(email=email).exists():
             # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
@@ -160,22 +160,30 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
 
 
 class ProfileNotificationsForm(forms.ModelForm):
+    profile_model = get_site_profile_model(profile_model=None)
+    profile_fields = ()
+
     class Meta:
-        model = get_site_profile_model(profile_model=None)
-        fields = ()
+        model = User
+        fields = ('notify_on_message', )
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        for field in self._meta.model._meta.fields:
-            if field.name.startswith('notify_'):
+        for field in self.profile_model._meta.fields:
+            if field.name in self.profile_fields:
                 self.fields[field.name] = field.formfield()
+                self.fields[field.name].initial = getattr(self.instance.profile, field.name)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
-            setattr(self.instance, field_name, self.cleaned_data[field_name])
-        return super().save(commit=commit)
+            if field_name in self.profile_fields:
+                setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
+        r = super().save(commit=commit)
+        if commit:
+            self.instance.profile.save()
+        return r
 
 
 class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
@@ -306,10 +314,12 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
 
 class ProfilePrivacyForm(forms.ModelForm):
     class Meta:
-        fields = ()
-        model = SiteProfileBase
+        fields = ('access_dob_day_month', 'access_dob_year')
+        model = User
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+
+

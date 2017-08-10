@@ -3,5 +3,5 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %}{{ block.super }} - {% if view.report_entity %}{% trans 'Report Profile' %}{% elif view.report_file %}{% trans 'Report File' %}{% else %}{% trans 'Contact Us' %}{% endif %}{% endblock %}
+{% block title %}{{ block.super }} - {% if view.report_entity %}{% trans 'Report a User' context user.get_gender %}{% elif view.report_file %}{% trans 'Report a Photo' %}{% else %}{% trans 'Contact Us' %}{% endif %}{% endblock %}
 

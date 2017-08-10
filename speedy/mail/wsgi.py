@@ -14,7 +14,7 @@ from pathlib import Path
 from django.core.wsgi import get_wsgi_application
 
 sys.path.insert(0, str(Path(__file__).absolute().parent.parent.parent))
-from speedy.net.settings.utils import env
+from speedy.core.settings.utils import env
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "speedy.mail.settings.{}".format(env('ENVIRONMENT')))
 

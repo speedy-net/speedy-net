@@ -2,35 +2,35 @@ from friendship.models import Friend
 from rules import predicate, add_perm
 
 from speedy.core.blocks.rules import is_self, there_is_block
-from .models import ACCESS_ANYONE, ACCESS_ME, ACCESS_FRIENDS, ACCESS_FRIENDS_2
+from .models import UserAccessField
 
 
 def _has_access_perm_for_obj(user, other, access):
-    if access == ACCESS_ANYONE:
+    if access == UserAccessField.ACCESS_ANYONE:
         return True
     if user.is_authenticated():
-        if access == ACCESS_ME:
+        if access == UserAccessField.ACCESS_ME:
             return user == other
-        if access == ACCESS_FRIENDS:
-            return (user == other) or Friend.objects.are_friends(user, other)
-        if access == ACCESS_FRIENDS_2:
-            return (user == other) or Friend.objects.are_friends(user, other)
+        if access == UserAccessField.ACCESS_FRIENDS:
+            return (user == other) or Friend.objects.are_friends(user1=user, user2=other)
+        if access == UserAccessField.ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS:
+            return (user == other) or Friend.objects.are_friends(user1=user, user2=other)
     return False
 
 
 @predicate
 def has_access_perm(user, other):
-    return _has_access_perm_for_obj(user, other, other.profile.access_account)
+    return True
 
 
 @predicate
 def has_access_perm_for_dob_day_month(user, other):
-    return _has_access_perm_for_obj(user, other, other.profile.access_dob_day_month)
+    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_day_month)
 
 
 @predicate
 def has_access_perm_for_dob_year(user, other):
-    return _has_access_perm_for_obj(user, other, other.profile.access_dob_year)
+    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_year)
 
 
 @predicate
@@ -50,7 +50,7 @@ def email_address_is_primary(user, email_address):
 
 @predicate
 def has_access_perm_for_email_address(user, email_address):
-    return _has_access_perm_for_obj(user, email_address.user, email_address.access)
+    return _has_access_perm_for_obj(user=user, other=email_address.user, access=email_address.access)
 
 
 add_perm('accounts.view_profile', has_access_perm & ~there_is_block)

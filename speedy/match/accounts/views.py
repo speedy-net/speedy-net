@@ -6,12 +6,12 @@ from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext as _
 from django.views import generic
-
 from rules.contrib.views import LoginRequiredMixin
 
-from speedy.core.base.views import FormValidMessageMixin
-from speedy.core.accounts.views import IndexView as CoreIndexView
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
+from speedy.core.accounts.views import IndexView as CoreIndexView, \
+    EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.core.base.views import FormValidMessageMixin
 from . import forms
 
 
@@ -46,7 +46,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def get(self, request, *args, **kwargs):
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         if not request.user.is_active:
-            return render(self.request, self.template_name, {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
+            return render(self.request, self.template_name,
+                          {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         if self.step == 1:
             return redirect('accounts:edit_profile')
         # else:
@@ -69,12 +70,13 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         super().form_valid(form=form)
         site = Site.objects.get_current()
         if self.object.is_active:
-            messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(_(site.name)))
+            messages.success(self.request,
+                             pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(
+                                 _(site.name)))
         if self.request.user.profile.is_active:
             return redirect(to=reverse_lazy('matches:list'))
         else:
             return redirect(to=self.get_success_url())
-
 
 
 class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
@@ -84,3 +86,7 @@ class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.
 
     def get_object(self, queryset=None):
         return self.request.user.profile
+
+
+class EditProfileNotificationsView(CoreEditProfileNotificationsView):
+    form_class = forms.ProfileNotificationsForm

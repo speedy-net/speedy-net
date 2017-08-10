@@ -3,7 +3,7 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.accounts.models import Entity, SiteProfileBase
+from speedy.core.accounts.models import Entity, User
 from speedy.core.base.models import TimeStampedModel, RegularUDIDField
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
@@ -103,7 +103,7 @@ def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
         return
     other_participants = instance.chat.get_other_participants(instance.sender)
     for entity in other_participants:
-        if entity.user.profile.notify_on_message == SiteProfileBase.NOTIFICATIONS_ON:
+        if entity.user.notify_on_message == User.NOTIFICATIONS_ON:
             entity.user.mail_user(template_name_prefix='im/email/new_message', context={
                 'message': instance,
             })

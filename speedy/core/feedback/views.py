@@ -25,7 +25,7 @@ class FeedbackView(generic.CreateView):
             return None
         try:
             self.report_entity = True
-            return Entity.objects.get(slug=slug)
+            return Entity.objects.get_by_slug(slug=slug)
         except Entity.DoesNotExist:
             raise Http404()
 
