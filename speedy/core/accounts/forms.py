@@ -2,6 +2,7 @@ from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout, ButtonHolder
 from django import forms
+from django.conf import settings
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
@@ -86,9 +87,15 @@ class LocalizedFirstLastNameMixin(object):
             instance.save()
         return instance
 
-    def get_localized_fields(self):
-        loc_fields = ('first_name', 'last_name')
-        return ['{}_{}'.format(loc_field, self.language) for loc_field in loc_fields]
+    def get_localizeable_fields(self):
+        return ('first_name', 'last_name')
+
+    def get_localized_field(self, base_field_name, language):
+        return '{}_{}'.format(base_field_name, language or self.language)
+
+    def get_localized_fields(self, language=None):
+        loc_fields = self.get_localizeable_fields()
+        return [self.get_localized_field(base_field_name=loc_field, language=language or self.language) for loc_field in loc_fields]
 
 
 class AddAttributesToFieldsMixin(object):
@@ -120,6 +127,10 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["new_password1"])
+        for lang_code, lang_name in settings.LANGUAGES:
+            for loc_field in self.get_localizeable_fields():
+                setattr(user, self.get_localized_field(base_field_name=loc_field, language=lang_code),
+                        self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language=self.language)])
         if commit:
             user.save()
             email_address = user.email_addresses.create(
