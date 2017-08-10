@@ -163,6 +163,11 @@ body.bidi-rtl .user-profile {
     color: #FF1C32;
 }
 
+.widget-json-dropdown {
+    min-width: 420px;
+    padding: 20px;
+}
+
 @media screen and (max-width: 767px){
     .page-header {
         display: none;

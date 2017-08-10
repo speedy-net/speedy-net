@@ -4,10 +4,6 @@
 {% load i18n %}
 {% load static %}
 
-{% block extracss %}
-    <link rel="stylesheet" href="{% static '/speedy-match/css/activation_form.css' %}">
-{% endblock %}
-
 {% block title %}{% trans 'Welcome' %} / {{ block.super }}{% endblock %}
 
 {% block content %}
@@ -74,11 +70,4 @@
             {% endif %}
         </div>
     </div>
-{% endblock %}
-
-{% block extrajs %}
-    <script>
-        var profile_activation_step = {{ request.user.profile.activation_step }};
-    </script>
-    <script src="{% static 'speedy-match/js/activation_form.js' %}"></script>
 {% endblock %}

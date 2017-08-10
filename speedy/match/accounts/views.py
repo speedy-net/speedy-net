@@ -34,6 +34,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         kwargs = super().get_form_kwargs()
         kwargs['step'] = self.step
         if 'gender_to_match' in self.request.POST:
+            kwargs['data'] = kwargs['data'].copy()
             kwargs['data']['gender_to_match'] = ','.join(self.request.POST.getlist('gender_to_match'))
         return kwargs
 

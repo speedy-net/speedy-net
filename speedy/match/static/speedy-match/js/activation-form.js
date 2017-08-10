@@ -19,6 +19,9 @@ $(document).ready(function(){
             $(element).find('.widget-group[data-value="' + key + '"]').find('.widget-choice').slice(0, widget_value[key]).addClass('active')
         }
     });
+    $('.widget-json').click(function(e) {
+        e.stopPropagation();
+    });
     $('.widget-choice').click(function () {
         if($(this).closest('.widget-group').find('.widget-checkbox').prop('checked')) {
             var json_widget = $(this).closest('.widget-json');
