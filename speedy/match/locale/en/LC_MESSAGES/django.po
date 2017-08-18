@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 16:04+0300\n"
+"POT-Creation-Date: 2017-08-18 14:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,11 @@ msgid "No"
 msgstr ""
 
 #: .\accounts\models.py:22
-msgid "Yes"
+msgid "Sometimes"
 msgstr ""
 
 #: .\accounts\models.py:23
-msgid "Sometimes"
+msgid "Yes"
 msgstr ""
 
 #: .\accounts\models.py:38
@@ -154,7 +154,7 @@ msgstr ""
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:223 .\templates\accounts\edit_profile\activate.html:21
+#: .\accounts\models.py:223 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -314,23 +314,23 @@ msgstr ""
 msgid "Speedy Paz Technologies Ltd."
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:11
+#: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:37
+#: .\templates\accounts\edit_profile\activate.html:33
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:64
+#: .\templates\accounts\edit_profile\activate.html:60
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:67
+#: .\templates\accounts\edit_profile\activate.html:63
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:73
+#: .\templates\accounts\edit_profile\activate.html:69
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
@@ -359,14 +359,46 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\matches\matches_list.html:12
+#: .\templates\matches\match_list.html:15
+msgid "Edit Settings"
+msgstr ""
+
+#: .\templates\matches\match_list.html:18
 msgid "Your matches"
 msgstr ""
 
-#: .\templates\matches\matches_list.html:33
+#: .\templates\matches\match_list.html:28
+msgid "Diet"
+msgstr ""
+
+#: .\templates\matches\match_list.html:39
+msgid "Age:"
+msgstr ""
+
+#: .\templates\matches\match_list.html:49
+msgid "Find"
+msgstr ""
+
+#: .\templates\matches\match_list.html:61
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
+msgstr ""
+
+#: .\templates\matches\settings\base.html:15
+msgid "Back to Matches"
+msgstr ""
+
+#: .\templates\matches\settings\base.html:18
+msgid "Match settings"
+msgstr ""
+
+#: .\templates\matches\settings\base.html:23
+msgid "Search Settings"
+msgstr ""
+
+#: .\templates\matches\settings\base.html:25
+msgid "About Me"
 msgstr ""
 
 #: .\templates\profiles\tools\like.html:13

@@ -144,9 +144,9 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     GENDER_OTHER = 3
     GENDER_MAX_VALUE_PLUS_ONE = 4
     GENDER_CHOICES = (
-        (GENDER_FEMALE, _('Female')),
-        (GENDER_MALE, _('Male')),
-        (GENDER_OTHER, _('Other')),
+        (GENDER_FEMALE, _("Female")),
+        (GENDER_MALE, _("Male")),
+        (GENDER_OTHER, _("Other")),
     )
 
     DIET_UNKNOWN = 0
@@ -155,18 +155,18 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     DIET_CARNIST = 3
     DIET_MAX_VALUE_PLUS_ONE = 4
     DIET_CHOICES = (
-        (DIET_UNKNOWN, _('Please select...')),
-        (DIET_VEGAN, _('Vegan (eats only plants and fungi)')),
-        (DIET_VEGETARIAN, _('Vegetarian (doesn\'t eat fish and meat)')),
-        (DIET_CARNIST, _('Carnist (eats animals)'))
+        (DIET_UNKNOWN, _("Please select...")),
+        (DIET_VEGAN, _("Vegan (eats only plants and fungi)")),
+        (DIET_VEGETARIAN, _("Vegetarian (doesn't eat fish and meat)")),
+        (DIET_CARNIST, _("Carnist (eats animals)")),
     )
 
     NOTIFICATIONS_OFF = 0
     NOTIFICATIONS_ON = 1
 
     NOTIFICATIONS_CHOICES = (
-        (NOTIFICATIONS_ON, _('Notify me')),
-        (NOTIFICATIONS_OFF, _('Don\'t notify me')),
+        (NOTIFICATIONS_ON, _("Notify me")),
+        (NOTIFICATIONS_OFF, _("Don't notify me")),
     )
 
     USERNAME_FIELD = 'username'

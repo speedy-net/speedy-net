@@ -14,13 +14,13 @@ class SiteProfile(SiteProfileBase):
 
     SMOKING_UNKNOWN = 0
     SMOKING_NO = 1
-    SMOKING_YES = 2
-    SMOKING_SOMETIMES = 3
+    SMOKING_SOMETIMES = 2
+    SMOKING_YES = 3
     SMOKING_MAX_VALUE_PLUS_ONE = 4
     SMOKING_CHOICES = (
-        (SMOKING_NO, _('No')),
-        (SMOKING_YES, _('Yes')),
-        (SMOKING_SOMETIMES, _('Sometimes'))
+        (SMOKING_NO, _("No")),
+        (SMOKING_SOMETIMES, _("Sometimes")),
+        (SMOKING_YES, _("Yes")),
     )
 
     MARITAL_STATUS_UNKNOWN = 0
@@ -35,14 +35,14 @@ class SiteProfile(SiteProfileBase):
     MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
 
     MARITAL_STATUS_CHOICES = (
-        (MARITAL_STATUS_SINGLE, _('Single')),
-        (MARITAL_STATUS_DIVORCED, _('Divorced')),
-        (MARITAL_STATUS_WIDOWED, _('Widowed')),
-        (MARITAL_STATUS_IN_RELATIONSHIP, _('In a relatioship')),
-        (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _('In an open relationship')),
-        (MARITAL_STATUS_COMPLICATED, _('It\'s complicated')),
-        (MARITAL_STATUS_SEPARATED, _('Separated')),
-        (MARITAL_STATUS_MARRIED, _('Married'))
+        (MARITAL_STATUS_SINGLE, _("Single")),
+        (MARITAL_STATUS_DIVORCED, _("Divorced")),
+        (MARITAL_STATUS_WIDOWED, _("Widowed")),
+        (MARITAL_STATUS_IN_RELATIONSHIP, _("In a relatioship")),
+        (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
+        (MARITAL_STATUS_COMPLICATED, _("It's complicated")),
+        (MARITAL_STATUS_SEPARATED, _("Separated")),
+        (MARITAL_STATUS_MARRIED, _("Married")),
     )
 
     RANK_0 = 0
@@ -53,12 +53,12 @@ class SiteProfile(SiteProfileBase):
     RANK_5 = 5
 
     RANK_CHOICES = (
-        (RANK_0, _('0 hearts')),
-        (RANK_1, _('1 hearts')),
-        (RANK_2, _('2 hearts')),
-        (RANK_3, _('3 hearts')),
-        (RANK_4, _('4 hearts')),
-        (RANK_5, _('5 hearts'))
+        (RANK_0, _("0 hearts")),
+        (RANK_1, _("1 hearts")),
+        (RANK_2, _("2 hearts")),
+        (RANK_3, _("3 hearts")),
+        (RANK_4, _("4 hearts")),
+        (RANK_5, _("5 hearts")),
     )
 
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
