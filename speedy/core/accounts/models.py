@@ -1,3 +1,4 @@
+import warnings
 from datetime import timedelta
 
 from django.conf import settings
@@ -200,6 +201,13 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def __str__(self):
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
         return self.profile.get_name()
+
+    def delete(self, using=None, keep_parents=False):
+        if self.is_staff or self.is_superuser:
+            warnings.warn('Can’t delete staff user')
+            return False
+        else:
+            return super().delete(using, keep_parents)
 
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
