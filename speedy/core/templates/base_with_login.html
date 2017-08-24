@@ -37,13 +37,6 @@
                     {% endblock %}
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li class="menu-languages">
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                            <a href="//{{ language.code }}.{{ site.domain }}{{ request.get_full_path }}" title="{{ language.name_local }}">{{ language.name_local }}</a>
-                        {% endfor %}
-                    </li>
                     {% include 'menu/about_mobile_menu_links.html' %}
                     <li>
                         <a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
