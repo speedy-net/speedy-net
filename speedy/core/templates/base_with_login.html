@@ -25,10 +25,11 @@
                             <a href="{% url 'profiles:user' slug=request.user.slug %}">{{ request.user }}</a>
                         </li>
                         <li>
-                            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">{% trans 'Friends' %}</a>
-                        </li>
-                        <li>
                             <a href="{% url 'im:list' %}">{% trans 'Messages' %}</a>
+                        </li>
+                        {% block navbar_mobile_menu_top_extra %}{% endblock %}
+                        <li>
+                            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">{% trans 'Friends' %}</a>
                         </li>
                         <li>
                             <a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
@@ -43,17 +44,7 @@
                             <a href="//{{ language.code }}.{{ site.domain }}{{ request.get_full_path }}" title="{{ language.name_local }}">{{ language.name_local }}</a>
                         {% endfor %}
                     </li>
-                    <li>
-                        <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'feedback:feedback' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
-                    </li>
-                    {% block navigate_other_site %}
-                    {% endblock %}
+                    {% include 'menu/about_mobile_menu_links.html' %}
                     <li>
                         <a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
                     </li>
@@ -69,6 +60,9 @@
                     <li>
                         <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    {% include 'menu/about_mobile_menu_links.html' %}
                 </ul>
             {% endif %}
         </div>

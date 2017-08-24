@@ -95,6 +95,7 @@ TEMPLATES = [
                 'speedy.core.base.context_processors.settings',
                 'speedy.core.base.context_processors.sites',
                 'speedy.core.base.context_processors.speedy_net',
+                'speedy.core.base.context_processors.speedy_match',
             ],
         },
     },

@@ -4,8 +4,8 @@
 {% load core_tags_and_filters %}
 
 {% block navbar_class %}navbar-inverse{% endblock %}
-{% block navbar_mobile_menu_top %}
-    {{ block.super }}
+
+{% block navbar_mobile_menu_top_extra %}
     <li>
         <a href="{% url 'likes:list' request.user.slug %}">{% trans 'Likes' %}</a>
     </li>
@@ -13,6 +13,7 @@
         <a href="{% url 'matches:list' %}">{% trans 'Matches' %}</a>
     </li>
 {% endblock %}
+
 {% block navbar_mobile_header_icons %}
     {% if request.user.is_authenticated %}
         <div class="speedy-mobile-menu-icons pull-right flip">
@@ -22,9 +23,7 @@
         </div>
     {% endif %}
 {% endblock %}
-{% block navigate_other_site %}
-    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_net.domain|remove_1_prefix_from_domain }}">{% trans speedy_net.name %}</a></li>
-{% endblock %}
+
 {% block user_menu %}
     {{ block.super }}
     {% if request.user.profile.is_active %}

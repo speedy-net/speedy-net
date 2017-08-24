@@ -1,0 +1,16 @@
+<li>
+    <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
+</li>
+<li>
+    <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+</li>
+<li>
+    <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
+</li>
+<li>
+    <a href="{% url 'feedback:feedback' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+</li>
+{% block navigate_other_site %}
+    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_net.domain|remove_1_prefix_from_domain }}/">{% trans speedy_net.name %}</a></li>
+    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_match.domain|remove_1_prefix_from_domain }}/">{% trans speedy_match.name %}</a></li>
+{% endblock %}

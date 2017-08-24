@@ -40,3 +40,12 @@ def speedy_net(request):
     return {
         'speedy_net': Site.objects.get(id=speedy_net_id)
     }
+
+
+def speedy_match(request):
+    speedy_match_id = dj_settings.SITE_PROFILES['match']['site_id']
+    return {
+        'speedy_match': Site.objects.get(id=speedy_match_id)
+    }
+
+
