@@ -64,7 +64,10 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
     def get_success_url(self):
         if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS) - 1:
-            return '/'
+            if self.request.user.has_confirmed_email():
+                return reverse_lazy('matches:list')
+            else:
+                return reverse_lazy('accounts:edit_profile_emails')
         else:
             return reverse_lazy('accounts:activate', kwargs={'step': self.step + 1})
 
@@ -76,10 +79,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
                              pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(
                                  _(site.name)))
         if self.request.user.profile.is_active:
-            if self.request.user.has_confirmed_email():
-                return redirect(to=reverse_lazy('matches:list'))
-            else:
-                return redirect(to=reverse_lazy('accounts:edit_profile_emails'))
+            return redirect(to=reverse_lazy('matches:list'))
         else:
             return redirect(to=self.get_success_url())
 
