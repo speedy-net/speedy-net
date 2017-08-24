@@ -366,3 +366,6 @@ class SiteProfileBase(TimeStampedModel):
     def get_name(self):
         raise NotImplementedError()
 
+    @property
+    def is_active_or_superuser(self):
+        return self.is_active or self.user.is_superuser

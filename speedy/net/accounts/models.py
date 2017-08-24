@@ -22,8 +22,9 @@ class SiteProfile(SiteProfileBase):
 
     def deactivate(self):
         self.is_active = False
-        self.user.is_active = False
-        self.user.save(update_fields={'is_active'})
+        if not self.user.is_superuser:
+            self.user.is_active = False
+            self.user.save(update_fields={'is_active'})
         self.save(update_fields={'is_active'})
 
     def get_name(self):
