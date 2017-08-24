@@ -76,7 +76,10 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
                              pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(
                                  _(site.name)))
         if self.request.user.profile.is_active:
-            return redirect(to=reverse_lazy('matches:list'))
+            if self.request.user.has_confirmed_email():
+                return redirect(to=reverse_lazy('matches:list'))
+            else:
+                return redirect(to=reverse_lazy('accounts:edit_profile_emails'))
         else:
             return redirect(to=self.get_success_url())
 
