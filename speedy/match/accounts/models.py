@@ -219,10 +219,10 @@ class SiteProfile(SiteProfileBase):
             if not (lang in languages):
                 languages.append(lang)
                 self._set_active_languages(languages=languages)
+                self.save(update_fields={'active_languages'})
         else:
             self._deactivate_language(step=self.activation_step)
             error_messages.append(_("Please confirm your email address."))
-        self.save(update_fields={'active_languages', 'activation_step'})
         return step, error_messages
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
