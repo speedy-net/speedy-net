@@ -52,6 +52,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
                           {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         if self.step == 1:
             return redirect('accounts:edit_profile')
+        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
+            return redirect('matches:list')
         # else:
         #     step, errors = self.request.user.profile.validate_profile_and_activate()
         #     if (self.request.user.profile.activation_step == 0) and (
@@ -63,7 +65,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return reverse_lazy('accounts:activate', kwargs={'step': self.step})
 
     def get_success_url(self):
-        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS) - 1:
+        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
             if self.request.user.has_confirmed_email():
                 return reverse_lazy('matches:list')
             else:

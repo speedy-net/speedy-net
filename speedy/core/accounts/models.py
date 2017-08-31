@@ -322,13 +322,23 @@ class UserEmailAddress(TimeStampedModel):
         self.save(update_fields={'confirmation_sent'})
         return msg_count
 
+    # def verify(self):
+    #     self.is_confirmed = True
+    #     self.save(update_fields={'is_confirmed'})
+    #     if hasattr(self.user.profile, 'validate_profile_and_activate') and UserEmailAddress.objects.filter(user=self.user_id, is_confirmed=True).count() == 1:
+    #         self.user.profile.activation_step = len(settings.SITE_PROFILE_FORM_FIELDS)
+    #         self.user.profile.validate_profile_and_activate()
+    #         self.user.profile.activation_step = 2
+    #         self.user.profile.save(update_fields=['activation_step'])
+
     def verify(self):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
         if hasattr(self.user.profile, 'validate_profile_and_activate') and UserEmailAddress.objects.filter(user=self.user_id, is_confirmed=True).count() == 1:
+            old_step = self.user.profile.activation_step
             self.user.profile.activation_step = len(settings.SITE_PROFILE_FORM_FIELDS)
             self.user.profile.validate_profile_and_activate()
-            self.user.profile.activation_step = 2
+            self.user.profile.activation_step = old_step
             self.user.profile.save(update_fields=['activation_step'])
 
     def make_primary(self):
