@@ -1,3 +1,5 @@
+from itertools import zip_longest
+
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout, ButtonHolder
@@ -158,7 +160,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
             Row(*[
                 Div(field, css_class='col-md-6')
                 for field in pair])
-            for pair in zip(field_names[::2], field_names[1::2])
+            for pair in zip_longest(field_names[::2], field_names[1::2])
             ]))
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 

@@ -1,3 +1,6 @@
+import math
+from itertools import zip_longest
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Div, Row, Submit, Field
 from django.utils.translation import pgettext_lazy
@@ -23,7 +26,7 @@ class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
                 Div(Field(field, template='%s/render.html') if field in custom_field_names else field,
                     css_class='col-md-6')
                 for field in pair])
-            for pair in zip(field_names[::2], field_names[1::2])
+            for pair in zip_longest(field_names[::2], field_names[1::2])
         ]))
         self.helper.add_input(
             Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
