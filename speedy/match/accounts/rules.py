@@ -1,7 +1,9 @@
 from django.db.models import Q
+from django.conf import settings
 
 from rules import predicate, add_perm, remove_perm, always_allow
 
+from speedy.core.settings.utils import env
 from .models import SiteProfile
 from speedy.core.im.models import Chat
 from speedy.core.blocks.models import Block
@@ -21,11 +23,12 @@ def is_match_profile(user, other):
     return False
 
 
-remove_perm('accounts.view_profile')
-add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
-remove_perm('accounts.view_profile_header')
-add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & is_match_profile)
-remove_perm('accounts.view_profile_info')
-add_perm('accounts.view_profile_info', has_access_perm & ~is_blocked & is_match_profile)
-remove_perm('accounts.view_profile_age')
-add_perm('accounts.view_profile_age', always_allow)
+if settings.SITE_ID == int(env('SPEEDY_MATCH_SITE_ID')):
+    remove_perm('accounts.view_profile')
+    add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
+    remove_perm('accounts.view_profile_header')
+    add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & is_match_profile)
+    remove_perm('accounts.view_profile_info')
+    add_perm('accounts.view_profile_info', has_access_perm & ~is_blocked & is_match_profile)
+    remove_perm('accounts.view_profile_age')
+    add_perm('accounts.view_profile_age', always_allow)

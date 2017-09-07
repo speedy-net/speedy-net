@@ -360,8 +360,7 @@ class SiteProfileBase(TimeStampedModel):
         abstract = True
 
     def __str__(self):
-        site = Site.objects.get_current()
-        return '{} @ {}'.format(self.user, site.name)
+        return '{}'.format(self.user)
 
     def update_last_visit(self):
         self.last_visit = now()

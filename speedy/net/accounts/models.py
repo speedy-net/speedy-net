@@ -14,6 +14,9 @@ class SiteProfile(SiteProfileBase):
 
     is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=True)
 
+    def __str__(self):
+        return '{} @ Speedy Net'.format(self.user)
+
     def activate(self):
         self.is_active = True
         self.user.is_active = True

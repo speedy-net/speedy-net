@@ -30,6 +30,9 @@ class SiteProfile(SiteProfileBase):
 
     is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=False)
 
+    def __str__(self):
+        return '{} @ Speedy Composer'.format(self.user)
+
     def activate(self):
         self.is_active = True
         self.save(update_fields={'is_active'})

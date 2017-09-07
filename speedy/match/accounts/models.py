@@ -102,6 +102,9 @@ class SiteProfile(SiteProfileBase):
         verbose_name = 'Speedy Match Profile'
         verbose_name_plural = 'Speedy Match Profiles'
 
+    def __str__(self):
+        return '{} @ Speedy Match'.format(self.user)
+
     def _set_active_languages(self, languages):
         languages = sorted(list(set(languages)))
         self.active_languages = ','.join(set(languages))

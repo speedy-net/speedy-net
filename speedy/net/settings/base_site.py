@@ -16,6 +16,14 @@ INSTALLED_APPS += [
     'speedy.net.pages',
     'speedy.net.groups',
     'speedy.net.causes',
+    # Required by "A Speedy Net profile should have a link to the relevant Speedy Match profile"
+    # https://trello.com/c/2D1njNa4
+    'speedy.match.accounts',
+    'speedy.match.likes',
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'net_accounts.SiteProfile'
+
+USER_PROFILE_WIDGETS += [
+    'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
+]

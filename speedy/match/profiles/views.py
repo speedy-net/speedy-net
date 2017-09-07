@@ -5,5 +5,3 @@ from speedy.core.profiles.views import MeView, UserDetailView as CoreUserDetailV
 
 class UserDetailView(LoginRequiredMixin, CoreUserDetailView):
     pass
-
-
