@@ -20,7 +20,9 @@
 <li>
     <a href="{% url 'feedback:feedback' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
 </li>
+<li role="separator" class="divider"></li>
 {% block navigate_other_site %}
-    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_net.domain|remove_1_prefix_from_domain }}/">{% trans speedy_net.name %}</a></li>
-    <li><a href="//{{ LANGUAGE_CODE }}.{{ speedy_match.domain|remove_1_prefix_from_domain }}/">{% trans speedy_match.name %}</a></li>
+                            {% for other_site in sites %}
+                            <li><a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain|remove_1_prefix_from_domain }}{# ~~~~ TODO: This filter [remove_1_prefix_from_domain] is only because we use "1." domains in production. remove this filter! #}">{% trans other_site.name %}</a></li>
+                        {% endfor %}
 {% endblock %}
