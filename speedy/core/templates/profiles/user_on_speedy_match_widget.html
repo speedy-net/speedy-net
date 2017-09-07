@@ -2,6 +2,8 @@
 
 <div class="col-sm-12 pull-right">
     <a href="//{{ LANGUAGE_CODE }}.{{ speedy_match_url }}{% url 'profiles:user' slug=entity.slug %}">
-        {{ entity }}{% trans " also has a Speedy Match profile." %} {% trans "View " context entity.get_gender %}{{ entity }}{% trans "'s profile on Speedy Match." %}
+        {% blocktrans with entity=entity context request.user.get_gender %}
+            {{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.
+        {% endblocktrans %}
     </a>
 </div>
