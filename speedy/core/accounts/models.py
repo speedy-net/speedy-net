@@ -257,7 +257,10 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
         if model is None:
             model = get_site_profile_model(profile_model=profile_model)
-        return model.objects.get_or_create(user=self)[0]
+        profile = getattr(self, model.RELATED_NAME, None)
+        if profile is None:
+            profile = model.objects.get_or_create(user=self)[0]
+        return profile
 
     def get_gender(self):
         genders = {self.__class__.GENDER_FEMALE: 'female', self.__class__.GENDER_MALE: 'male', self.__class__.GENDER_OTHER: 'other'}

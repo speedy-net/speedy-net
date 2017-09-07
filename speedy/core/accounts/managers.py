@@ -1,6 +1,8 @@
 from django.contrib.auth.models import BaseUserManager
 from django.db import models
 from django.db.models import Q
+
+from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.utils import normalize_username
 
 
@@ -13,6 +15,10 @@ class EntityManager(models.Manager):
 
 
 class UserManager(BaseUserManager):
+
+    def get_queryset(self):
+        site_profile_model = get_site_profile_model()
+        return super().get_queryset().select_related(site_profile_model.RELATED_NAME)
 
     def get_by_natural_key(self, username):
         return self.distinct().get(Q(username=normalize_username(slug=username)) | Q(email_addresses__email=username))

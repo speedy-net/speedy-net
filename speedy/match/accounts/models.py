@@ -9,6 +9,8 @@ from speedy.core.blocks.models import Block
 from speedy.core.base.utils import get_age
 from speedy.match.accounts import validators
 
+from .managers import SiteProfileManager
+
 
 class SiteProfile(SiteProfileBase):
 
@@ -61,6 +63,9 @@ class SiteProfile(SiteProfileBase):
         (RANK_5, _("5 hearts")),
     )
 
+    RELATED_NAME = 'speedy_match_site_profile'
+    user = models.OneToOneField(User, primary_key=True, related_name=RELATED_NAME)
+
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
 
@@ -76,7 +81,7 @@ class SiteProfile(SiteProfileBase):
     match_description = models.TextField(verbose_name=_('My ideal match'), null=True, validators=[validators.validate_match_description])
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[], validators=[validators.validate_gender_to_match])
 
-    diet_match = JSONField(verbose_name=('diet match'), default= {
+    diet_match = JSONField(verbose_name=('diet match'), default={
         User.DIET_VEGAN: RANK_5,
         User.DIET_VEGETARIAN: RANK_5,
         User.DIET_CARNIST: RANK_5,
@@ -97,6 +102,8 @@ class SiteProfile(SiteProfileBase):
         MARITAL_STATUS_MARRIED: RANK_5,
     }, validators=[validators.validate_marital_status_match])
     activation_step = models.PositiveSmallIntegerField(default=2)
+
+    objects = SiteProfileManager()
 
     class Meta:
         verbose_name = 'Speedy Match Profile'

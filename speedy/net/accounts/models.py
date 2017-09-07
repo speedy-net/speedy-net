@@ -2,12 +2,15 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.accounts.models import UserAccessField
+from speedy.core.accounts.models import UserAccessField, User
 from speedy.core.accounts.models import SiteProfileBase
 from speedy.core.base.models import TimeStampedModel
 
 
 class SiteProfile(SiteProfileBase):
+    RELATED_NAME = 'speedy_net_site_profile'
+    user = models.OneToOneField(User, primary_key=True, related_name=RELATED_NAME)
+
     class Meta:
         verbose_name = 'Speedy Net Profile'
         verbose_name_plural = 'Speedy Net Profiles'

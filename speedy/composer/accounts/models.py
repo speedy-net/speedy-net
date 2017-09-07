@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.accounts.models import SiteProfileBase
+from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.base.models import TimeStampedModel
 
 
@@ -24,6 +24,9 @@ class SpeedyComposerNode(TimeStampedModel): # ~~~~ TODO: check which class we wa
 
 
 class SiteProfile(SiteProfileBase):
+    RELATED_NAME = 'speedy_composer_site_profile'
+    user = models.OneToOneField(User, primary_key=True, related_name=RELATED_NAME)
+
     class Meta:
         verbose_name = 'Speedy Composer Profile'
         verbose_name_plural = 'Speedy Composer Profiles'
