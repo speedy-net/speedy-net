@@ -3,11 +3,15 @@
 {% load i18n %}
 
 {% block tab_content %}
-    {% for friendship in friends %}
-        {% include 'profiles/user_list_item.html' with user=friendship.from_user %}
-    {% empty %}
-        <div class="alert alert-warning">
-            {% trans "You don't have any friends yet." %}
-        </div>
-    {% endfor %}
+    <div class="row">
+        {% for friendship in friends %}
+            {% include 'profiles/user_list_item.html' with user=friendship.from_user %}
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    {% trans "You don't have any friends yet." %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

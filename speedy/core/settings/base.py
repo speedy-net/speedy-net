@@ -107,7 +107,7 @@ USER_PROFILE_WIDGETS = [
     'speedy.core.friends.widgets.UserFriendsWidget',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CRISPY_FAIL_SILENTLY = False
 

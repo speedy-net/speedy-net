@@ -5,10 +5,12 @@
 {% has_perm 'accounts.view_profile_username' viewer entity as can_view_username %}
 
 
-<div class="col-sm-8 col-sm-pull-0">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{% trans 'Information' %}</h3>
+<div class="col-sm-8 col-sm-pull-0 mb-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">
+                {% trans 'Information' %}
+            </h5>
         </div>
         <table class="table">
             <tbody>

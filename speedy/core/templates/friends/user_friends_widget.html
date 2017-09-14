@@ -4,22 +4,20 @@
 
 
 {% if friends|length %}
-    <div class="col-sm-8 col-sm-pull-0">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="{% url 'friends:list' entity.slug %}">
-                    <span class="pull-right">
-                        {% trans 'See All' %}
-                    </span>
-                    <h3 class="panel-title">
-                        {% trans 'Friends' %}
-                    </h3>
+    <div class="col-sm-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'friends:list' entity.slug %}" class="pull-right">
+                    {% trans 'See All' %}
                 </a>
+                <h5 class="card-title mb-0">
+                    {% trans 'Friends' %}
+                </h5>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="row">
                     {% for friendship in friends %}
-                        <div class="col-xs-2">
+                        <div class="col-2">
                             {% profile_picture friendship.from_user '128x128' html_class="img-responsive" %}
                         </div>
                     {% endfor %}

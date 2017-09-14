@@ -19,10 +19,16 @@
         </h1>
     </div>
     <ul class="nav nav-tabs">
-        <li class="{% active_class 'matches:edit_settings' %}"><a
-                href="{% url 'matches:edit_settings' %}">{% trans 'Search Settings' %}</a></li>
-        <li class="{% active_class 'matches:edit_about_me' %}"><a
-                href="{% url 'matches:edit_about_me' %}">{% trans 'About Me' %}</a></li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'matches:edit_settings' %}" href="{% url 'matches:edit_settings' %}">
+                {% trans 'Search Settings' %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'matches:edit_about_me' %}" href="{% url 'matches:edit_about_me' %}">
+                {% trans 'About Me' %}
+            </a>
+        </li>
     </ul>
     <br>
     {% block tab_content %}

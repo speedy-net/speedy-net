@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load core_tags_and_filters %}
 
-{% block navbar_class %}navbar-inverse{% endblock %}
+{% block navbar_class %}bg-light{% endblock %}
 
 {% block navbar_mobile_menu_top_extra %}
     <li>
@@ -27,14 +27,14 @@
 {% block user_menu %}
     {{ block.super }}
     {% if request.user.profile.is_active %}
-        <li>
-            <a href="{% url 'likes:list' request.user.slug %}">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'likes:list' request.user.slug %}">
                 <i class="fa fa-fw fa-heart"></i>
                 {% trans 'Likes' %}
             </a>
         </li>
-        <li>
-            <a href="{% url 'matches:list' %}">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'matches:list' %}">
                 <i class="fa fa-fw fa-star" aria-hidden="true"></i>
                 <span>{% trans 'Matches' %}</span>
             </a>

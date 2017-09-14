@@ -5,9 +5,9 @@
     <span class="caret"></span>
     <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
 </button>
-<ul class="dropdown-menu">
-    <li><a href="{% url 'feedback:report_entity' user.slug %}">{% trans 'Report ' context request.user.get_gender %}{{ user }}</a></li>
+<div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'feedback:report_entity' user.slug %}">{% trans 'Report ' context request.user.get_gender %}{{ user }}</a>
     {% if user.photo %}
-        <li><a href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a></li>
+        <a class="dropdown-item" href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
     {% endif %}
-</ul>
+</div>

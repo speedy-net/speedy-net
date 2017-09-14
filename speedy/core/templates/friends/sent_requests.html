@@ -3,11 +3,15 @@
 {% load i18n %}
 
 {% block tab_content %}
-    {% for frequest in sent_requests %}
-        {% include 'profiles/user_list_item.html' with user=frequest.to_user %}
-    {% empty %}
-        <div class="alert alert-warning">
-            {% trans 'There are no pending friendship requests.' %}
-        </div>
-    {% endfor %}
+    <div class="row">
+        {% for frequest in sent_requests %}
+            {% include 'profiles/user_list_item.html' with user=frequest.to_user %}
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    {% trans 'There are no pending friendship requests.' %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

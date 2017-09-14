@@ -18,47 +18,53 @@
             {% trans 'Your matches' context user.get_gender %}
         </h1>
     </div>
-    <div class="well">
-        <form action="{% url 'matches:list' %}" method="post" class="">
-            {% csrf_token %}
-            {{ form.errors }}
-            <div class="row">
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
-                        {% trans 'Diet' %} <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <div class="widget-json-dropdown">
-                            {% crispy_field form.diet_match %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <form action="{% url 'matches:list' %}" method="post" class="">
+                {% csrf_token %}
+                {{ form.errors }}
+                <div class="row">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
+                            {% trans 'Diet' %} <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="widget-json-dropdown">
+                                {% crispy_field form.diet_match %}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-2 text-right">
-                            <div class="form-control-static">{% trans 'Age:' %}</div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-2 text-right">
+                                <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
+                            </div>
+                            <div class="col-md-4">{% crispy_field form.min_age_match %}</div>
+                            <div class="col-md-1">
+                                <div class="form-control-static mt-1">&mdash;</div>
+                            </div>
+                            <div class="col-md-4">{% crispy_field form.max_age_match %}</div>
                         </div>
-                        <div class="col-md-4">{% crispy_field form.min_age_match %}</div>
-                        <div class="col-md-1">
-                            <div class="form-control-static">&mdash;</div>
-                        </div>
-                        <div class="col-md-4">{% crispy_field form.max_age_match %}</div>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" class="btn btn-block btn-primary" value="{% trans 'Find' %}">
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <input type="submit" class="btn btn-block btn-primary" value="{% trans 'Find' %}">
+                {{ field.label_tag }}
+                {#                    {% crispy_field field %}#}
+                {{ field.errors }}
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        {% for match in matches %}
+            {% include 'profiles/user_list_item.html' with user=match %}
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    {% trans "You don't have any matches yet. Try to broaden your search settings or check again later." context user.get_gender %}
                 </div>
             </div>
-            {{ field.label_tag }}
-            {#                    {% crispy_field field %}#}
-            {{ field.errors }}
-        </form>
+        {% endfor %}
     </div>
-    {% for match in matches %}
-        {% include 'profiles/user_list_item.html' with user=match %}
-    {% empty %}
-        <div class="alert alert-warning">
-            {% trans "You don't have any matches yet. Try to broaden your search settings or check again later." context user.get_gender %}
-        </div>
-    {% endfor %}
 {% endblock %}

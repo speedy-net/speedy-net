@@ -10,21 +10,37 @@
         <h1>{% trans 'Edit Profile' %}</h1>
     </div>
 
-    <ul class="nav nav-tabs">
-        <li class="{% active_class 'accounts:edit_profile' %}"><a
-                href="{% url 'accounts:edit_profile' %}">{% trans 'Profile Info' %}</a></li>
-        <li class="{% active_class 'accounts:edit_profile_privacy' %}"><a
-                href="{% url 'accounts:edit_profile_privacy' %}">{% trans 'Privacy Settings' %}</a></li>
-        <li class="{% active_class 'accounts:edit_profile_notifications' %}"><a
-                href="{% url 'accounts:edit_profile_notifications' %}">{% trans 'Notifications' %}</a></li>
-        <li class="{% active_class 'accounts:edit_profile_credentials' %}"><a
-                href="{% url 'accounts:edit_profile_credentials' %}">{% trans 'Emails & Password' %}</a></li>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile' %}" href="{% url 'accounts:edit_profile' %}">
+                {% trans 'Profile Info' %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_privacy' %}" href="{% url 'accounts:edit_profile_privacy' %}">
+                {% trans 'Privacy' %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_notifications' %}" href="{% url 'accounts:edit_profile_notifications' %}">
+                {% trans 'Notifications' %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_credentials' %}" href="{% url 'accounts:edit_profile_credentials' %}">
+                {% trans 'Emails & Password' %}
+            </a>
+        </li>
         {% if request.user.profile.is_active %}
-            <li class="{% active_class 'blocks:list' %}">
-                <a href="{% url 'blocks:list' request.user.slug %}">{% trans 'Blocked Users' %}</a>
+            <li class="nav-item">
+                <a class="nav-link {% active_class 'blocks:list' %}" href="{% url 'blocks:list' request.user.slug %}">
+                    {% trans 'Blocked Users' %}
+                </a>
             </li>
-            <li class="{% active_class 'accounts:deactivate_profile' %}">
-                <a href="{% url 'accounts:deactivate_profile' %}">{% trans 'Deactivate Account' context request.user.get_gender %}</a>
+            <li class="nav-item">
+                <a class="nav-link {% active_class 'accounts:deactivate_profile' %}" href="{% url 'accounts:deactivate_profile' %}">
+                    {% trans 'Deactivate Account' context request.user.get_gender %}
+                </a>
             </li>
         {% endif %}
     </ul>

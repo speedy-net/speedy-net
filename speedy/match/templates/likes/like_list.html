@@ -9,26 +9,38 @@
     <div class="page-header">
         <h1>{% trans 'Likes' %}</h1>
     </div>
-    <ul class="nav nav-tabs nav-justified">
-        <li class="{% active_class 'likes:list_to' %}"><a
-                href="{% url 'likes:list_to' user.slug %}">{% trans 'People I Like' context user.get_gender %}</a></li>
-        <li class="{% active_class 'likes:list_from' %}"><a
-                href="{% url 'likes:list_from' user.slug %}">{% trans 'People Who Like Me' context user.get_gender %}</a></li>
-        <li class="{% active_class 'likes:list_mutual' %}"><a
-                href="{% url 'likes:list_mutual' user.slug %}">{% trans 'Mutual Likes' %}</a></li>
+    <ul class="nav nav-pills mb-4">
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'likes:list_to' %}" href="{% url 'likes:list_to' user.slug %}">
+                {% trans 'People I Like' context user.get_gender %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'likes:list_from' %}" href="{% url 'likes:list_from' user.slug %}">
+                {% trans 'People Who Like Me' context user.get_gender %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'likes:list_mutual' %}" href="{% url 'likes:list_mutual' user.slug %}">
+                {% trans 'Mutual Likes' %}
+            </a>
+        </li>
     </ul>
-    {% for like in object_list %}
-        {% if display == 'from' %}
-            {% include 'profiles/user_list_item.html' with user=like.from_user %}
-        {% elif display == 'to' %}
-            {% include 'profiles/user_list_item.html' with user=like.to_user %}
-        {% endif %}
-    {% empty %}
-        <div class="alert alert-danger">
-            {% trans 'You have no likes here.' context user.get_gender %}
-        </div>
-    {% endfor %}
-
+    <div class="row">
+        {% for like in object_list %}
+            {% if display == 'from' %}
+                {% include 'profiles/user_list_item.html' with user=like.from_user %}
+            {% elif display == 'to' %}
+                {% include 'profiles/user_list_item.html' with user=like.to_user %}
+            {% endif %}
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    {% trans 'You have no likes here.' context user.get_gender %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
     {% pagination %}
 
 {% endblock %}

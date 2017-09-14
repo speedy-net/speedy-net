@@ -1,11 +1,13 @@
 {% load i18n %}
 
 {% with request.user.friendship_requests_received.count as frequests_count %}
-    <li><a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">
-        <i class="fa fa-fw fa-users"></i>
-        {% trans 'Friends' %}
-        {% if frequests_count %}
-            <span class="badge">{{ frequests_count }}</span>
-        {% endif %}
-    </a></li>
+    <li class="nav-item">
+        <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}" class="nav-link">
+            <i class="fa fa-fw fa-users"></i>
+            {% trans 'Friends' %}
+            {% if frequests_count %}
+                <span class="badge">{{ frequests_count }}</span>
+            {% endif %}
+        </a>
+    </li>
 {% endwith %}

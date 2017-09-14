@@ -7,6 +7,7 @@
 
 {% block navbar_mobile %}
     <div class="container-fluid visible-xs">
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed pull-left flip" data-toggle="collapse" data-target="#speedy-navbar-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -64,41 +65,30 @@
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
-            <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
-        </ul>
-        <p class="navbar-text navbar-right" style="margin-right: 1em">
-            {% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
-        </p>
+        <li class="nav-item">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
     {% else %}
-        <form class="navbar-form navbar-right" action="{% url 'accounts:login' %}" method="post">
+        <form class="form" method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
-            <div class="userbarbox">
-
-                <div class="username-area">
-                    <div>
-                        <label>{% trans 'Email or Username' %}</label>
-                    </div>
-                    <div class="text-input-div">
-                        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+            <input name="next" type="hidden" value="{{ request.get_full_path }}">
+            <div class="row">
+                <div class="col-auto">
+                    <label>
+                        {% trans 'Email or Username' %}
                         <input name="username" type="text" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                    </div>
+                    </label>
                 </div>
-
-                <div class="password-area">
-                    <div>
-                        <label>{% trans 'Password' %}</label>
-                    </div>
-                    <div class="text-input-div">
+                <div class="col-auto">
+                    <label>
+                        {% trans 'Password' %}
                         <input name="password" type="password" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                    </div>
-                    <div class="forgot-password-div">
-                        <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
-                    </div>
+                    </label>
+                    <br>
+                    <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
                 </div>
-                <div class="submit-button-div">
-                     <button type="submit" class="btn btn-default btn-sm">{% trans 'Login' %}</button>
+                <div class="col-auto pt-4">
+                    <button type="submit" class="btn btn-outline-primary">{% trans 'Login' %}</button>
                 </div>
             </div>
         </form>
@@ -108,27 +98,33 @@
 {% block user_menu_and_edit_profile %}
     {% block user_menu %}
         {% if request.user.profile.is_active %}
-            <li><a href="{% url 'profiles:user' slug=request.user.slug %}">
-                <i class="fa fa-fw fa-user"></i>
-                {{ request.user }}
-            </a></li>
+            <li class="nav-item">
+                <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
+                    <i class="fa fa-fw fa-user"></i>
+                    {{ request.user }}
+                </a>
+            </li>
             {% block user_menu_friends %}
                 {% include 'friends/user_menu_friends.html' %}
             {% endblock %}
-            <li><a href="{% url 'im:list' %}">
-                <i class="fa fa-fw fa-comments"></i>
-                {% trans 'Messages' %}
-                {% unread_chats_count request.user as unread_chats %}
-                {% if unread_chats %}
-                    <span class="badge">{{ unread_chats }}</span>
-                {% endif %}
-            </a></li>
+            <li class="nav-item">
+                <a href="{% url 'im:list' %}" class="nav-link">
+                    <i class="fa fa-fw fa-comments"></i>
+                    {% trans 'Messages' %}
+                    {% unread_chats_count request.user as unread_chats %}
+                    {% if unread_chats %}
+                        <span class="badge">{{ unread_chats }}</span>
+                    {% endif %}
+                </a>
+            </li>
         {% endif %}
     {% endblock %}
-    <li><a href="{% url 'accounts:edit_profile' %}">
-        <i class="fa fa-fw fa-pencil"></i>
-        {% trans 'Edit Profile' %}
-    </a></li>
+    <li class="nav-item">
+        <a href="{% url 'accounts:edit_profile' %}" class="nav-link">
+            <i class="fa fa-fw fa-pencil"></i>
+            {% trans 'Edit Profile' %}
+        </a>
+    </li>
 {% endblock %}
 
 {% block domain_cookie_login %}

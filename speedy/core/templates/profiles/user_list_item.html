@@ -2,27 +2,27 @@
 {% load thumbnail %}
 {% load user_tags %}
 
-<div class="media">
-    <div class="media-left">
-        {% profile_picture user '64x64' %}
-    </div>
-    <div class="media-body">
-        <h4 class="media-heading">
+<div class="col-sm-6 col-md-4 mb-4">
+    <div class="card text-center">
+        {% profile_picture user '256x256' html_class="card-img-top" %}
+        <div class="card-body">
             <a href="{{ user.get_absolute_url }}">
-                {{ user }}
+                <h5 class="card-title mb-0">
+                    {{ user }}
+                </h5>
             </a>
-        </h4>
-        {% if friend_request %}
-            <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post"
-                  class="pull-left">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-sm btn-success">{% trans 'Accept' %}</button>
-            </form>
-            <form action="{% url 'friends:reject_request' request.user.slug friend_request.id %}" method="post"
-                  class="pull-left">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-sm btn-danger">{% trans 'Reject' %}</button>
-            </form>
-        {% endif %}
+            {% if friend_request %}
+                <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post"
+                      class="pull-left">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-success">{% trans 'Accept' %}</button>
+                </form>
+                <form action="{% url 'friends:reject_request' request.user.slug friend_request.id %}" method="post"
+                      class="pull-left">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-danger">{% trans 'Reject' %}</button>
+                </form>
+            {% endif %}
+        </div>
     </div>
 </div>
