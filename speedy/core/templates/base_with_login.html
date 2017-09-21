@@ -65,7 +65,7 @@
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
-        <li class="nav-item">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</li>
+        <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
     {% else %}

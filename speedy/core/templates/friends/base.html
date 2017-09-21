@@ -10,7 +10,7 @@
     {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
 
     {% if can_view_requests %}
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link {% active_class 'friends:list' %}" href="{% url 'friends:list' user.slug %}">
                     {% trans 'Your Friends' %}

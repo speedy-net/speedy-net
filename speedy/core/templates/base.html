@@ -13,8 +13,14 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% block site_title %}{{ site_title }}{% endblock %}{% endblock %}</title>
     {% block css %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/yeti.css' %}" /> #}
+        {% block site_theme %}
+            {% get_current_language_bidi as LANGUAGE_BIDI %}
+            {% if LANGUAGE_BIDI %}
+                <link rel="stylesheet" href="{% static 'themes/speedy-net.rtl.css' %}" />
+            {% else %}
+                <link rel="stylesheet" href="{% static 'themes/speedy-net.css' %}" />
+            {% endif %}
+        {% endblock %}
         <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" />
         <link rel="stylesheet" href="{% static 'vendor/jquery-ui-custom/jquery-ui.css' %}" />
         {% if LANGUAGE_BIDI %}
@@ -57,7 +63,7 @@
 
 {% block body %}
 
-<nav class="navbar navbar-expand-lg navbar-light {% block navbar_class %}bg-speedy-net{% endblock %}">
+<nav class="navbar navbar-expand-lg navbar-light {% block navbar_class %}bg-light{% endblock %}">
     <div class="container">
         <div class="dropdown">
             <button class="btn btn-outline-secondary mr-2" type="button" id="dropdownMenuButton"
@@ -111,7 +117,7 @@
                         {% block user_menu_and_edit_profile %}{% endblock %}
                     </ul>
                 </div>
-                <div class="col-md-9 col-xs-12">
+                <div class="col-12 col-md-9">
         {% endif %}
                     {% block content %}
                     {% endblock %}

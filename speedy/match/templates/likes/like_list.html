@@ -9,7 +9,7 @@
     <div class="page-header">
         <h1>{% trans 'Likes' %}</h1>
     </div>
-    <ul class="nav nav-pills mb-4">
+    <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
             <a class="nav-link {% active_class 'likes:list_to' %}" href="{% url 'likes:list_to' user.slug %}">
                 {% trans 'People I Like' context user.get_gender %}

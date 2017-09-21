@@ -17,28 +17,37 @@
         {% annotate_chats_with_read_marks chat_list user %}
         {% for chat in chat_list %}
             {% get_other_participant chat user as entity %}
-            <a href="{% url 'im:chat' chat_slug=chat|get_chat_slug:user %}">
-                <div class="media well well-sm {% if chat.is_unread %}bg-success{% endif %}">
-                    <div class="media-left">
-                        {% profile_picture entity '42x42' with_link=False %}
-                    </div>
-                    <div class="media-body">
-                        <div>
-                            {{ entity.user }}
-                            <small class="text-muted">
-                                {{ chat.last_message.date_created }}
-                            </small>
-                            {% if chat.is_unread %}
-                                <span class="pull-right label label-success">{% trans 'Unread' %}</span>
-                            {% endif %}
-                        </div>
-                        <div class="text-default">
-                            {% if user.id == chat.last_message.sender_id %}
-                                <span class="text-muted">{% trans 'You:' context request.user.get_gender %}</span>
-                            {% else %}
-                                {# <i class="fa fa-angle-right text-muted"></i> #}
-                            {% endif %}
-                            {{ chat.last_message.text|truncatechars:35 }}
+            <a class="text-default" href="{% url 'im:chat' chat_slug=chat|get_chat_slug:user %}">
+                <div class="card  mb-4 bg-white {% if chat.is_unread %}border-primary{% endif %}">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-1">
+                                {% profile_picture entity '64x64' with_link=False html_class="img-fluid" %}
+                            </div>
+                            <div class="col-11">
+                                <div>
+                                    <strong>
+                                        {{ entity.user }}
+                                    </strong>
+                                    <small>
+                                        {{ chat.last_message.date_created }}
+                                    </small>
+                                    {% if chat.is_unread %}
+                                        <span class="pull-right">
+                                            <i class="fa fa-circle text-primary" title="{% trans 'Unread' %}"></i>
+                                        </span>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if user.id == chat.last_message.sender_id %}
+                                        <strong><small>{% trans 'You:' context request.user.get_gender %}</small></strong>
+                                    {% else %}
+                                        {# <i class="fa fa-angle-right text-muted"></i> #}
+                                    {% endif %}
+                                    {{ chat.last_message.text|truncatechars:35 }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

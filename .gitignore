@@ -4,6 +4,8 @@ env.ini
 .venv
 media/
 
+node_modules/
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/

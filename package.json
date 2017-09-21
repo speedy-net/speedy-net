@@ -1,0 +1,26 @@
+{
+  "name": "speedy-net",
+  "version": "1.0.0",
+  "description": "Speedy Net is a new social network which will have apps, such as Speedy Match (a dating/matching app for singles) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urievenchen/speedy-net.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/urievenchen/speedy-net/issues"
+  },
+  "homepage": "https://github.com/urievenchen/speedy-net#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rtlcss": "^1.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

@@ -97,6 +97,22 @@ To run Speedy Match tests:
     ./manage.py test
 
 
+### Build frontend
+
+The project uses Bootstrap 4 with [gulp.js](https://gulpjs.com). `css` are compiled from `scss`
+
+You need to setup [Node](https://nodejs.org/en/) with [npm](https://www.npmjs.com). To install build tools run:
+
+    npm install --global gulp-cli
+    npm install
+
+Then:
+
+    gulp
+
+Will compile static files and watch for changes.
+
+
 ## How to setup a server (Ubuntu 16.04)
 
 Install all dependencies using **apt-get**:
@@ -163,7 +179,7 @@ Copy sample **nginx** and **uwsgi** configs:
     sudo cp contrib/nginx/*.conf /etc/nginx/sites-enabled/
 
 Remove default **nginx** config:
- 
+
      sudo rm /etc/nginx/sites-enabled/default
 
 Review and edit these config files, restart servers:

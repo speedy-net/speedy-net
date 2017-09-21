@@ -2,8 +2,18 @@
 
 {% load i18n %}
 {% load core_tags_and_filters %}
+{% load staticfiles %}
 
-{% block navbar_class %}bg-light{% endblock %}
+{% block site_theme %}
+    {% get_current_language_bidi as LANGUAGE_BIDI %}
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" href="{% static 'themes/speedy-match.rtl.css' %}" />
+    {% else %}
+        <link rel="stylesheet" href="{% static 'themes/speedy-match.css' %}" />
+    {% endif %}
+{% endblock %}
+
+{% block navbar_class %}navbar-light bg-speedy-match{% endblock %}
 
 {% block navbar_mobile_menu_top_extra %}
     <li>
