@@ -11,6 +11,15 @@
                     {{ user }}
                 </h5>
             </a>
+            {% if user.profile.rank %}
+                <div>
+                    <i class="fa fa-heart {% if user.profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                </div>
+            {% endif %}
             {% if friend_request %}
                 <form action="{% url 'friends:accept_request' request.user.slug friend_request.id %}" method="post"
                       class="pull-left">
