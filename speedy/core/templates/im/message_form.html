@@ -4,6 +4,11 @@
 {% load i18n %}
 
 {% block user_content %}
-    <h2>{% blocktrans context request.user.get_gender with other_user=user %}Send a message to {{ other_user }}{% endblocktrans %}</h2>
-    {% crispy form %}
+    <div class="card mb-4 bg-light">
+        <div class="card-body">
+            <h2>{% blocktrans context request.user.get_gender with other_user=user %}Send a message to
+                {{ other_user }}{% endblocktrans %}</h2>
+            {% crispy form %}
+        </div>
+    </div>
 {% endblock %}
