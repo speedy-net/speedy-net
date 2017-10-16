@@ -1,11 +1,13 @@
 var datepickerOptions = {
-    dateFormat: 'MM d, yy',
+    dateFormat: 'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
     minDate: '-180y',
     maxDate: '+0d',
     yearRange: '-180:+0'
 };
+$.datepicker.regional.en = {
+	dateFormat: 'MM d, yy' };
 
 $.datepicker.regional.he = {
 	closeText: "סגור",
