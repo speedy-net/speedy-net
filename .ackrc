@@ -1,0 +1,7 @@
+--ignore-dir=.venv 
+--ignore-dir=speedy/mail/static_serve
+--ignore-dir=speedy/net/static_serve
+--ignore-dir=speedy/match/static_serve
+--ignore-dir=speedy/composer/static_serve
+--ignore-dir=speedy/core/static_serve
+--ignore-dir=older_stuff

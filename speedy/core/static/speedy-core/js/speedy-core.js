@@ -1,5 +1,19 @@
+function initDatepicker() {
+    var dobDpElem = this.$("#id_date_of_birth").clone();
+    dobDpElem.attr('id', 'id_date_of_birth_dp');
+    dobDpElem.attr('name', 'date_of_birth_dp');
+    this.$("#id_date_of_birth").after(dobDpElem);
+    this.$("#id_date_of_birth").attr('type','hidden');
+    this.$("#id_date_of_birth").removeAttr('class');
+    this.$("#id_date_of_birth").removeAttr('required');
+    this.$("#id_date_of_birth_dp").datepicker(datepickerOptions);
+    var dob = $.datepicker.parseDate('yy-mm-dd', this.$("#id_date_of_birth").val());
+    this.$("#id_date_of_birth_dp").datepicker('setDate', dob);
+}
+
 var datepickerOptions = {
-    dateFormat: 'yy-mm-dd',
+    altField: "#id_date_of_birth",
+    altFormat: 'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
     minDate: '-180y',
@@ -45,11 +59,12 @@ evil.block('@@RegistrationForm', {
     },
 
     init: function () {
+        console.log(this);
         this.slugField = this.$('#id_slug');
         this.firstNameField = this.$('#id_first_name');
         this.lastNameField = this.$('#id_last_name');
         this.slugChanged = (this.slugField.val() != this._generateSlug());
-        this.$("#id_date_of_birth").datepicker(datepickerOptions);
+        initDatepicker();
     },
 
     'change on #id_slug': function () {
@@ -69,9 +84,17 @@ evil.block('@@RegistrationForm', {
 
 evil.block('@@AccountForm', {
 
-    init: function () {
-        this.$("#id_date_of_birth").datepicker(datepickerOptions);
-    }
+    init: initDatepicker /*function () {
+        console.log(this);
+        this.$("#id_date_of_birth").after('<input type="text" name="date_of_birth_dp" ' + 
+                                          'required id="id_date_of_birth_dp" ' + 
+                                          'class="dateinput form-control" />');
+        this.$("#id_date_of_birth").attr('type','hidden');
+        this.$("#id_date_of_birth_dp").datepicker(datepickerOptions);
+        dob = this.$.datepicker().parseDate("yy-mm-dd", this.$("#id_date_of_birth").val()));
+        this.$("#id_date_of_birth_dp").datepicker().setDate(dob);
+        console.log("initialized value:\"" + this.$("#id_date_of_birth_dp").val() + "\"");
+    }*/
 
 });
 
