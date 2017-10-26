@@ -36,7 +36,7 @@ $.datepicker.regional.he = {
 	dayNamesShort: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	dayNamesMin: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	weekHeader: "Wk",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "d MM yy", //"dd/mm/yy",
 	firstDay: 0,
 	isRTL: true,
 	showMonthAfterYear: false,
@@ -84,17 +84,7 @@ evil.block('@@RegistrationForm', {
 
 evil.block('@@AccountForm', {
 
-    init: initDatepicker /*function () {
-        console.log(this);
-        this.$("#id_date_of_birth").after('<input type="text" name="date_of_birth_dp" ' + 
-                                          'required id="id_date_of_birth_dp" ' + 
-                                          'class="dateinput form-control" />');
-        this.$("#id_date_of_birth").attr('type','hidden');
-        this.$("#id_date_of_birth_dp").datepicker(datepickerOptions);
-        dob = this.$.datepicker().parseDate("yy-mm-dd", this.$("#id_date_of_birth").val()));
-        this.$("#id_date_of_birth_dp").datepicker().setDate(dob);
-        console.log("initialized value:\"" + this.$("#id_date_of_birth_dp").val() + "\"");
-    }*/
+    init: initDatepicker
 
 });
 
