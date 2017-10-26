@@ -16,12 +16,13 @@ var datepickerOptions = {
     altFormat: 'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
+	  dateFormat: "d MM yy", //"dd/mm/yy",
     minDate: '-180y',
     maxDate: '+0d',
     yearRange: '-180:+0'
 };
-$.datepicker.regional.en = {
-	dateFormat: 'MM d yy' };
+//$.datepicker.regional.en = {
+//	dateFormat: 'MM d yy' };
 
 $.datepicker.regional.he = {
 	closeText: "סגור",
@@ -36,7 +37,7 @@ $.datepicker.regional.he = {
 	dayNamesShort: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	dayNamesMin: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	weekHeader: "Wk",
-	dateFormat: "d MM yy", //"dd/mm/yy",
+//	dateFormat: "d MM yy", //"dd/mm/yy",
 	firstDay: 0,
 	isRTL: true,
 	showMonthAfterYear: false,
