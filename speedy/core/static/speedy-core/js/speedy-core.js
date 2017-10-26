@@ -21,7 +21,7 @@ var datepickerOptions = {
     yearRange: '-180:+0'
 };
 $.datepicker.regional.en = {
-	dateFormat: 'MM d, yy' };
+	dateFormat: 'MM d yy' };
 
 $.datepicker.regional.he = {
 	closeText: "סגור",
