@@ -41,7 +41,7 @@ class Entity(TimeStampedModel):
 
     class Meta:
         verbose_name = _('entity')
-        verbose_name_plural = _('entity')
+        verbose_name_plural = _('entities')
         ordering = ('id',)
 
     def __str__(self):

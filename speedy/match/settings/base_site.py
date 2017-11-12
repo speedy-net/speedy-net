@@ -31,3 +31,22 @@ USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserInfoWidget',
     'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/speedy_debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
