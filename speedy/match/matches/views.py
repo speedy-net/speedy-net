@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
@@ -8,11 +10,13 @@ from speedy.core.base.utils import get_age_ranges_match
 from ..accounts.models import SiteProfile
 from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
 
+log = logging.getLogger(__name__)
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/match_list.html'
     form_class = MatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
+    log.debug("MatchesListView(): success_url: %s", success_url)
 
     def get_matches(self):
         return SiteProfile.objects.get_matches(self.request.user.profile)

@@ -1,3 +1,5 @@
+import logging
+
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.sites.models import Site
@@ -14,7 +16,7 @@ from speedy.core.accounts.views import IndexView as CoreIndexView, \
 from speedy.core.base.views import FormValidMessageMixin
 from . import forms
 
-
+log = logging.getLogger(__name__)
 
 class IndexView(CoreIndexView):
     registered_redirect_to = 'matches:list'
@@ -22,6 +24,7 @@ class IndexView(CoreIndexView):
 
 class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def get_context_data(self, **kwargs):
+        log.debug('HERE: get_context_data: kwargs: %s', kwargs)
         cd = super().get_context_data(**kwargs)
         cd.update({
             'steps_range': list(range(1, len(settings.SITE_PROFILE_FORM_FIELDS))),
@@ -31,6 +34,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return cd
 
     def get_form_kwargs(self):
+        log.debug('HERE: get_form_kwargs')
         kwargs = super().get_form_kwargs()
         kwargs['step'] = self.step
         if 'gender_to_match' in self.request.POST:
@@ -38,16 +42,28 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             kwargs['data']['gender_to_match'] = ','.join(self.request.POST.getlist('gender_to_match'))
         return kwargs
 
+    #TODO: Read about dispatch and request lifecycle to understand why 'step' is wrong
     def dispatch(self, request, *args, **kwargs):
+        log.debug('HERE: dispatch: args: %s, kwargs: %s', args, kwargs)
         try:
-            self.step = int(kwargs['step'])
-        except (KeyError, ValueError):
+            if not 'step' in kwargs:
+                log.debug("dispatch: 'step' is missing from kwargs, adding it")
+                kwargs['step'] = self.request.user.profile.activation_step
+
+            self.step = int(kwargs['step']) 
+            log.debug("dispatch: self.step: %i" , self.step)
+        except (ValueError):
+            log.debug("dispatch: kwargs['step']: %s, is not a number")
+            log.debug("dispatch: self.request.user.profile.activation_step: %i" , self.request.user.profile.activation_step)
             return redirect('accounts:activate', step=self.request.user.profile.activation_step)
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
+        log.debug('HERE: get: kwargs: %s', kwargs)
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        log.debug('get: request.user.is_active ? %s' , request.user.is_active)
         if not request.user.is_active:
+            log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
             return render(self.request, self.template_name,
                           {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         if self.step == 1:
@@ -67,9 +83,9 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def get_success_url(self):
         if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
             if self.request.user.has_confirmed_email():
-                return reverse_lazy('matches:list')
+                return reverse_lazy('matches:list', kwargs={'step': self.step})
             else:
-                return reverse_lazy('accounts:edit_profile_emails')
+                return reverse_lazy('accounts:edit_profile_emails', kwargs={'step': self.step})
         else:
             return reverse_lazy('accounts:activate', kwargs={'step': self.step + 1})
 
