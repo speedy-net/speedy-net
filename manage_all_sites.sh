@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-script="$(dirname $0)"
-echo $0
-SCRIPT_DIR="$(cd $(dirname  "$SCRIPT" ) && pwd -P)"
+SCRIPT_DIR="$(cd $(dirname  "$0" ) && pwd -P)"
 VENV_DIR=${VENV_DIR:-"$SCRIPT_DIR/.venv"}
 SITES="net match composer mail core"
 

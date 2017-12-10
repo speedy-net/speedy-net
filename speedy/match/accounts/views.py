@@ -13,7 +13,7 @@ from rules.contrib.views import LoginRequiredMixin
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
 from speedy.core.accounts.views import IndexView as CoreIndexView, \
     EditProfileNotificationsView as CoreEditProfileNotificationsView
-from speedy.core.base.views import FormValidMessageMixin
+
 from . import forms
 
 log = logging.getLogger(__name__)
@@ -48,6 +48,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         try:
             if not 'step' in kwargs:
                 log.debug("dispatch: 'step' is missing from kwargs, adding it")
+                log.debug("self.request.user.profile.activation_step: %d", self.request.user.profile.activation_step)
                 kwargs['step'] = self.request.user.profile.activation_step
 
             self.step = int(kwargs['step']) 
@@ -59,7 +60,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        log.debug('HERE: get: kwargs: %s', kwargs)
+        log.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         log.debug('get: request.user.is_active ? %s' , request.user.is_active)
         if not request.user.is_active:
@@ -67,9 +68,12 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             return render(self.request, self.template_name,
                           {'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
         if self.step == 1:
+            log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
             return redirect('accounts:edit_profile')
         if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
+            log.debug('get: inside "if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):"')
             return redirect('matches:list')
+        log.debug('get: did not get into "if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):"')
         # else:
         #     step, errors = self.request.user.profile.validate_profile_and_activate()
         #     if (self.request.user.profile.activation_step == 0) and (

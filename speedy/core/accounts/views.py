@@ -1,4 +1,5 @@
 from importlib import import_module
+import logging
 from urllib.parse import urlparse
 
 from django.conf import settings
@@ -23,6 +24,7 @@ from speedy.core.base.utils import reflection_import
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
 
+log = logging.getLogger(__name__)
 
 @csrf_exempt
 def set_session(request):
@@ -67,7 +69,10 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
+        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', 
+                settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
         if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
+            log.debug('activating profile, profile: %s', self.object.profile) 
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
@@ -215,6 +220,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     def get_success_url(self):
         site = Site.objects.get_current()
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        # if user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page
         if site.pk == SPEEDY_MATCH_SITE_ID and self.request.user.email_addresses.filter(is_confirmed=True).count() == 1:
             return reverse_lazy('matches:list')
         return reverse_lazy('accounts:edit_profile_emails')

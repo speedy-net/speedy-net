@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import ugettext_lazy as _, get_language
 from django.core.exceptions import ValidationError
 
-from speedy.core.accounts.models import SiteProfileBase, UserAccessField, User
+from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 from speedy.core.base.utils import get_age
 from speedy.match.accounts import validators
