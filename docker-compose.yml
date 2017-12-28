@@ -1,0 +1,92 @@
+version: '3'
+
+services:
+
+  net:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.backend
+    env_file:
+      - env.docker.ini
+    environment:
+      - CURRENT_SITE=net
+    depends_on:
+      - db
+      - memcached
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    command: runserver 0.0.0.0:8000
+
+  match:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.backend
+    env_file:
+      - env.docker.ini
+    environment:
+      - CURRENT_SITE=match
+    depends_on:
+      - db
+      - memcached
+    volumes:
+      - .:/app
+    ports:
+      - 9000:9000
+    command: runserver 0.0.0.0:9000
+
+  composer:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.backend
+    env_file:
+      - env.docker.ini
+    environment:
+      - CURRENT_SITE=composer
+    depends_on:
+      - db
+      - memcached
+    volumes:
+      - .:/app
+    ports:
+      - 10000:10000
+    command: runserver 0.0.0.0:10000
+
+  mail:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.backend
+    env_file:
+      - env.docker.ini
+    environment:
+      - CURRENT_SITE=mail
+    depends_on:
+      - db
+      - memcached
+    volumes:
+      - .:/app
+    ports:
+      - 11000:11000
+    command: runserver 0.0.0.0:11000
+
+  static:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.frontend
+    volumes:
+      - .:/app
+    command: gulp
+
+  db:
+    image: postgres:9.6-alpine
+    ports:
+      - 39887:5432
+    environment:
+      - POSTGRES_USER=speedy
+      - POSTGRES_DB=speedy
+    volumes:
+      - ./.volumes/postgres:/var/lib/postgresql
+
+  memcached:
+    image: memcached:1.4-alpine

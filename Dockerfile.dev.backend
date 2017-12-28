@@ -1,0 +1,15 @@
+FROM python:3.5
+
+ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update
+RUN apt-get -y install gettext
+RUN rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /app
+WORKDIR /app
+ADD . /app
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
