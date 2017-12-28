@@ -72,6 +72,16 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.smoking = SiteProfile.SMOKING_NO
             self.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
             self.profile.gender_to_match = [User.GENDER_OTHER]
+            self.profile.diet_match = {
+                str(User.DIET_VEGAN): SiteProfile.RANK_5,
+                str(User.DIET_VEGETARIAN): SiteProfile.RANK_5,
+                str(User.DIET_CARNIST): SiteProfile.RANK_5,
+            }
+            self.profile.smoking_match = {
+                str(SiteProfile.SMOKING_NO): SiteProfile.RANK_5,
+                str(SiteProfile.SMOKING_YES): SiteProfile.RANK_5,
+                str(SiteProfile.SMOKING_SOMETIMES): SiteProfile.RANK_5,
+            }
             self.photo = UserImageFactory(owner=self)
             self.profile.activation_step = 9
             email = UserConfirmedEmailAddressFactory(user=self)
@@ -80,10 +90,10 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.save()
             self._profile = self.get_profile()
             step, error_messages = self.profile.validate_profile_and_activate()
-            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS) - 1)):
+            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
             if (len(error_messages) > 0):
-                raise Exception("Error messages not as expected, {}".format(", ".join(str(error_messages))))
+                raise Exception("Error messages not as expected, {}".format(error_messages))
             # # self.profile._set_active_languages(["en"])
             # # self.profile.save(update_fields={'active_languages', 'activation_step'})
             # ~~~~ TODO: remove the following lines, user can't be activated without executing self.profile.validate_profile_and_activate()

@@ -54,7 +54,7 @@ class RegistrationViewTestCase(TestCase):
             'last_name_en': 'Last',
             'email': 'email@example.com',
             'slug': 'user1234',
-            'date_of_birth': 'August 28, 1980',
+            'date_of_birth': '1980-08-20',
             'gender': 1,
             'new_password1': 'password',
             # 'password2': 'password',
@@ -217,7 +217,7 @@ class EditProfileViewTestCase(TestCase):
         data = {
             'first_name_en': 'Johnny',
             'last_name_en': 'English',
-            'date_of_birth': 'June 3, 1976',
+            'date_of_birth': '1976-06-03',
             'slug': self.user.slug,
             'gender': 1,
         }

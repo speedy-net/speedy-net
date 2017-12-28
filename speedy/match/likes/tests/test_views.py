@@ -1,9 +1,10 @@
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase
+from speedy.core.base.test import TestCase, only_on_speedy_match
 from .test_factories import UserLikeFactory
 from ..models import UserLike
 
 
+@only_on_speedy_match
 class LikeViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
@@ -21,6 +22,7 @@ class LikeViewTestCase(TestCase):
         self.assertEqual(first=like.to_user.id, second=self.other_user.id)
 
 
+@only_on_speedy_match
 class UnlikeViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
@@ -36,6 +38,7 @@ class UnlikeViewTestCase(TestCase):
         self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
+@only_on_speedy_match
 class LikeListViewsTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()

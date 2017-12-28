@@ -1,12 +1,13 @@
 from datetime import datetime
 from django.conf import settings
 
-from speedy.core.base.test import TestCase
+from speedy.core.base.test import TestCase, only_on_speedy_match
 from ..models import SiteProfile
 from speedy.core.accounts.models import User
 from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory
 
 
+@only_on_speedy_match
 class SiteProfileTestCase(TestCase):
     def get_default_user_1(self):
         user_1 = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
@@ -49,6 +50,7 @@ class SiteProfileTestCase(TestCase):
         self.assertEqual(str(user_1), 'Jesse')
 
 
+@only_on_speedy_match
 class SiteProfileMatchTestCase(TestCase):
     # def activate_user(self, user):
     #     # user.photo = ~~~~ TODO: some photo

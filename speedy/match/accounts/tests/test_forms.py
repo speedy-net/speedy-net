@@ -1,8 +1,9 @@
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase
+from speedy.core.base.test import TestCase, only_on_speedy_match
 from speedy.match.accounts.forms import ProfileNotificationsForm
 
 
+@only_on_speedy_match
 class ProfileNotificationsFormTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
@@ -13,5 +14,3 @@ class ProfileNotificationsFormTestCase(TestCase):
             'notify_on_message',
             'notify_on_like',
         ])
-
-

@@ -44,6 +44,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
     #TODO: Read about dispatch and request lifecycle to understand why 'step' is wrong
     def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
         log.debug('HERE: dispatch: args: %s, kwargs: %s', args, kwargs)
         try:
             if not 'step' in kwargs:
@@ -51,7 +53,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
                 log.debug("self.request.user.profile.activation_step: %d", self.request.user.profile.activation_step)
                 kwargs['step'] = self.request.user.profile.activation_step
 
-            self.step = int(kwargs['step']) 
+            self.step = int(kwargs['step'])
             log.debug("dispatch: self.step: %i" , self.step)
         except (ValueError):
             log.debug("dispatch: kwargs['step']: %s, is not a number")
