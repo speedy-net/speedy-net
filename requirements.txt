@@ -15,3 +15,4 @@ rules==1.2
 six==1.10.0
 sorl-thumbnail==12.4a1
 sqlparse==0.2.3
+python-memcached==1.58
