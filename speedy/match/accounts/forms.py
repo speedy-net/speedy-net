@@ -90,7 +90,8 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
-        self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
+        if ('gender_to_match' in self.fields):
+            self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
