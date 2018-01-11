@@ -13,6 +13,7 @@ class EditMatchSettingsViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
 
     def test_user_can_access(self):
+        self.client.login(username=self.user.username, password='111')
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='matches/settings/matches.html')
@@ -29,6 +30,7 @@ class EditMatchSettingsViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
 
     def test_user_can_access(self):
+        self.client.login(username=self.user.username, password='111')
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='matches/settings/about_me.html')
