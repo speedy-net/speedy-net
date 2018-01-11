@@ -2,6 +2,8 @@ import json
 
 from django import forms
 from django.conf import settings
+from django.utils.datastructures import MultiValueDict
+
 from speedy.match.accounts import validators
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _, get_language
@@ -29,15 +31,13 @@ class CustomPhotoWidget(forms.widgets.Widget):
         })
 
 
-class CustomCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
-    def value_from_datadict(self, data, files, name):
-        return data.get(name)
-
-
-class CustomJsonWidget(CustomCheckboxSelectMultiple):
+class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
     def render(self, name, value, attrs=None):
         return render_to_string('accounts/edit_profile/activation_form/json_widget.html', {'choices': self.choices, 'name': name,'value': json.loads(value)})
+
+    def value_from_datadict(self, data, files, name):
+        return data.get(name)
 
 
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
@@ -57,7 +57,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'smoking': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
             'match_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            'gender_to_match': CustomCheckboxSelectMultiple(choices=User.GENDER_CHOICES),
+            # 'gender_to_match': forms.MultipleChoiceField(choices=User.GENDER_CHOICES),
             'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES[1:]),
             'smoking_match': CustomJsonWidget(choices=SiteProfile.SMOKING_CHOICES),
             'marital_status_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
@@ -69,6 +69,9 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             photo = self.instance.user.photo
         validators.validate_photo(photo=photo)
         return self.cleaned_data
+
+    def clean_gender_to_match(self):
+        return [int(value) for value in self.cleaned_data['gender_to_match']]
 
     def get_fields(self):
         return settings.SITE_PROFILE_FORM_FIELDS[self.step]
@@ -87,6 +90,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
+        self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
