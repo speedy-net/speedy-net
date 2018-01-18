@@ -16,6 +16,12 @@ case "$1" in
             python manage.py "${@:2}"
         done
     ;;
+    python)
+        echo
+        echo "@@@ speedy-$CURRENT_SITE @@@"
+        cd /app/speedy/$CURRENT_SITE
+        "$@"
+    ;;
     *)
         echo
         echo "@@@ speedy-$CURRENT_SITE @@@"

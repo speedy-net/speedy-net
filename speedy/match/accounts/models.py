@@ -223,7 +223,7 @@ class SiteProfile(SiteProfileBase):
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(settings.SITE_PROFILE_FORM_FIELDS)
-        if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
+        if ((self.user.has_verified_email) and (step >= self.activation_step)):
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()
             if not (lang in languages):

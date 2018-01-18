@@ -4,7 +4,6 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render
 from django.http import HttpRequest
-from django.http import HttpResponsePermanentRedirect
 from django.http.response import HttpResponseBase
 from django.shortcuts import render
 from django.urls import NoReverseMatch
@@ -18,7 +17,7 @@ def redirect_to_www(site: Site) -> HttpResponseBase:
         domain=site.domain,
         path="/",
     )
-    return redirect(to=url, permanent=True)
+    return redirect(to=url, permanent=(not settings.DEBUG))
 
 
 def language_selector(request: HttpRequest) -> HttpResponseBase:
@@ -39,7 +38,7 @@ class LocaleDomainMiddleware(object):
                 domain=domain.lower(),
                 path=request.get_full_path(),
             )
-            return redirect(to=url, permanent=True)
+            return redirect(to=url, permanent=(not settings.DEBUG))
 
         site = Site.objects.get_current()
 
@@ -110,5 +109,5 @@ class RemoveExtraSlashesMiddleware(object):
         normalized_path = self.normalize_path(path=request.path)
         if normalized_path != request.path:
             request.path = normalized_path
-            return HttpResponsePermanentRedirect(redirect_to=request.get_full_path())
+            return redirect(to=request.get_full_path(), permanent=(not settings.DEBUG))
         return self.get_response(request=request)
