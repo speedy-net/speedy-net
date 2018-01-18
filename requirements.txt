@@ -1,5 +1,5 @@
 # python==3.5
-Django==1.11.7
+Django==1.11.9
 django-crispy-forms==1.6.1
 django-debug-toolbar==1.8
 django-environ==0.4.3
@@ -10,9 +10,9 @@ Faker==0.7.7
 Pillow==3.4.2
 psycopg2==2.7
 python-dateutil==2.6.0
+python-memcached==1.58
 pytz==2017.2
 rules==1.2
 six==1.10.0
 sorl-thumbnail==12.4a1
 sqlparse==0.2.3
-python-memcached==1.58
