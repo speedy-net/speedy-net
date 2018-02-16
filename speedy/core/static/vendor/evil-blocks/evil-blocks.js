@@ -1,13 +1,23 @@
-;(function ($, window) {
+(function(factory) {
     "use strict";
 
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+        module.exports = factory(require('jquery'), window)
+    } else {
+        /*
+         * Evil namespace. Also can be used in Evil Front.
+         */
+        if ( !window.evil ) window.evil = {};
+        window.evil.block = factory(window.$, window)
+    }
+}(function ($, window) {
     // Helpers
     var $window = $(window);
 
     // Clone object
     var clone = function (origin) {
-        var cloned = {};
-        for (var name in origin) {
+        var cloned = { };
+        for ( var name in origin ) {
             cloned[name] = origin[name];
         }
         return cloned;
@@ -26,13 +36,13 @@
 
     var rewriteSelector = function (context, name, pos) {
         var original = context[name];
-        if (!original) return;
+        if ( !original ) return;
 
         context[name] = function () {
             arguments[pos] = arguments[pos].replace(
                 /@@([\w\u00c0-\uFFFF\-]+)/g, '[data-block~="$1"]');
             arguments[pos] = arguments[pos].replace(
-                /@([\w\u00c0-\uFFFF\-]+)/g, '[data-role~="$1"]');
+                /@([\w\u00c0-\uFFFF\-]+)/g,  '[data-role~="$1"]');
             return original.apply(context, arguments);
         };
 
@@ -44,19 +54,12 @@
     rewriteSelector($.find, 'matchesSelector', 1);
     rewriteSelector($.find, 'matches', 0);
 
-    /*
-     * Evil namespace. Also can be used in Evil Front.
-     */
-    if (!window.evil) {
-        window.evil = {};
-    }
-    var evil = window.evil;
-
     // Find selector inside base DOM node and cretae class for it.
     var find = function (base, id, selector, klass) {
-        var blocks = $().add(base.filter(selector)).add(base.find(selector));
+        var blocks = $().add( base.filter(selector) ).
+                         add( base.find(selector) );
 
-        if (blocks.length == 0) return;
+        if ( blocks.length == 0 ) return;
 
         var objects = [];
 
@@ -66,16 +69,16 @@
             var obj = clone(klass);
             obj.block = block;
 
-            for (var i = 0; i < evil.block.filters.length; i++) {
-                var stop = evil.block.filters[i](obj, id);
-                if (stop === false) return;
+            for ( var i = 0; i < evilBlock.filters.length; i++ ) {
+                var stop = evilBlock.filters[i](obj, id);
+                if ( stop === false ) return;
             }
 
             objects.push(obj)
         });
 
         return function () {
-            for (var i = 0; i < objects.length; i++) {
+            for ( var i = 0; i < objects.length; i++ ) {
                 if (objects[i].init) objects[i].init();
             }
         };
@@ -86,7 +89,7 @@
 
     // If onload event was already happend.
     var loaded = false;
-    $window.load(function (event) {
+    $window.on('load', function (event) {
         loaded = event;
     });
 
@@ -97,7 +100,7 @@
      * Create object for every `selector` finded in page and call their
      * `init` method.
      *
-     *   evil.block '.user-page .buttons',
+     *   evilBlock '.user-page .buttons',
      *     init: ->
      *       @gallery.fotorama()
      *     delete: ->
@@ -125,22 +128,22 @@
      *
      * If your block contrain only `init` method, you can use shortcut:
      *
-     *   evil.block '.block', ->
+     *   evilBlock '.block', ->
      *     # init method
      */
-    evil.block = function (selector, klass) {
+    var evilBlock = function (selector, klass) {
         lastBlock += 1;
         var id = lastBlock;
 
-        if (typeof(klass) == 'function') {
-            klass = {init: klass};
+        if ( typeof(klass) == 'function' ) {
+            klass = { init: klass };
         }
 
-        evil.block.defined.push([id, selector, klass]);
+        evilBlock.defined.push([id, selector, klass]);
 
-        if (ready) {
+        if ( ready ) {
             var init = find($(document), id, selector, klass);
-            if (init) init();
+            if ( init ) init();
         }
     };
 
@@ -150,30 +153,30 @@
      *
      *   'on click on @load': ->
      *     $.get '/comments', (comments) =>
-     *       evil.block.vitalize $(comments).applyTo(@comments)
+     *       evilBlock.vitalize $(comments).applyTo(@comments)
      */
-    evil.block.vitalize = function (base) {
-        if (base) {
+    evilBlock.vitalize = function (base) {
+        if ( base ) {
             base = $(base);
         } else {
             base = $(document);
         }
 
         var inits = [];
-        for (var i = 0; i < evil.block.defined.length; i++) {
-            var define = evil.block.defined[i];
-            inits.push(find(base, define[0], define[1], define[2]));
+        for ( var i = 0; i < evilBlock.defined.length; i++ ) {
+            var define = evilBlock.defined[i];
+            inits.push( find(base, define[0], define[1], define[2]) );
         }
 
-        for (var i = 0; i < inits.length; i++) {
-            if (inits[i]) inits[i]();
+        for ( var i = 0; i < inits.length; i++ ) {
+            if ( inits[i] ) inits[i]();
         }
     };
 
     /**
      * Evil blocks list.
      */
-    evil.block.defined = [];
+    evilBlock.defined = [];
 
     /**
      * Filters to process block object and add some extra functions
@@ -182,9 +185,9 @@
      * Filter will receive block object and unique class ID.
      * If filter return `false`, block will not be created.
      */
-    evil.block.filters = [];
+    evilBlock.filters = [];
 
-    var filters = evil.block.filters;
+    var filters = evilBlock.filters;
 
     /**
      * Don’t vitalize already vitalized block.
@@ -193,9 +196,9 @@
      */
     filters.push(function (obj, id) {
         var ids = obj.block.data('evil-blocks');
-        if (!ids) {
+        if ( !ids ) {
             ids = [];
-        } else if (ids.indexOf(id) != -1) {
+        } else if ( ids.indexOf(id) != -1 ) {
             return false;
         }
         ids.push(id);
@@ -217,10 +220,10 @@
     filters.push(function (obj) {
         obj.block.find('[data-role]').each(function (_, el) {
             var roles = el.attributes['data-role'].value.split(' ');
-            for (var i = 0; i < roles.length; i++) {
+            for ( var i = 0; i < roles.length; i++ ) {
                 var role = roles[i];
-                if (!obj[role]) obj[role] = $();
-                if (obj[role].jquery) obj[role].push(el);
+                if ( !obj[role] ) obj[role] = $();
+                if ( obj[role].jquery ) obj[role].push(el);
             }
         });
     });
@@ -229,16 +232,16 @@
      * Syntax sugar to listen block events.
      */
     filters.push(function (obj) {
-        for (var name in obj) {
-            if (name.substr(0, 3) != 'on ') continue;
+        for ( var name in obj ) {
+            if ( name.substr(0, 3) != 'on ' ) continue;
 
-            var events = name.substr(3);
+            var events   = name.substr(3);
             var callback = obj[name];
             delete obj[name];
 
             (function (events, callback) {
                 obj.block.on(events, function (e) {
-                    if (e.currentTarget == e.target) {
+                    if ( e.currentTarget == e.target ) {
                         callback.apply(obj, arguments);
                     }
                 });
@@ -251,18 +254,18 @@
      * if page was already loaded.
      */
     filters.push(function (obj) {
-        var name = 'load on window';
+        var name     = 'load on window';
         var callback = obj[name];
 
-        if (!callback) return;
+        if ( !callback ) return;
         delete obj[name];
 
-        if (loaded) {
+        if ( loaded ) {
             setTimeout(function () {
                 callback.call(obj, loaded);
             }, 1);
         } else {
-            $window.load(function (event) {
+            $window.on('load', function (event) {
                 callback.call(obj, event);
             });
         }
@@ -272,17 +275,17 @@
      * Syntax sugar to listen window and body events.
      */
     filters.push(function (obj) {
-        for (var name in obj) {
+        for ( var name in obj ) {
             var elem = false;
-            if (endsWith(name, 'on body')) {
+            if ( endsWith(name, 'on body') ) {
                 elem = $('body');
-            } else if (endsWith(name, 'on window')) {
+            } else if ( endsWith(name, 'on window') ) {
                 elem = $window;
             }
 
-            if (!elem) continue;
+            if ( !elem ) continue;
 
-            var event = name.split(' on ')[0];
+            var event    = name.split(' on ')[0];
             var callback = obj[name];
             delete obj[name];
 
@@ -298,9 +301,9 @@
      * Syntax sugar to listen element events.
      */
     filters.push(function (obj) {
-        for (var name in obj) {
+        for ( var name in obj ) {
             var parts = name.split(' on ');
-            if (!parts[1]) continue;
+            if ( !parts[1] ) continue;
 
             var callback = obj[name];
             delete obj[name];
@@ -319,7 +322,8 @@
      */
     $(document).ready(function () {
         ready = true;
-        evil.block.vitalize();
+        evilBlock.vitalize();
     });
 
-})(jQuery, window);
+    return evilBlock
+}))

@@ -243,11 +243,3 @@ window.speedy.setSession = function (domain, key) {
         }
     });
 };
-
-$(document).ready(function () {
-    $('[data-toggle="collapse"]').on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $($(this).data('target')).toggleClass('in');
-    });
-});
