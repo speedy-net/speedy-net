@@ -5,6 +5,11 @@
 {% load i18n %}
 {% load im_tags %}
 {% load rules %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="page-header">
@@ -18,17 +23,17 @@
             {% trans 'Your matches' context user.get_gender %}
         </h1>
     </div>
-    <div class="card mb-4">
+    <div class="card mb-4 filters">
         <div class="card-body">
             <form action="{% url 'matches:list' %}" method="post" class="">
                 {% csrf_token %}
                 {{ form.errors }}
                 <div class="row">
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-default btn-block dropdown-toggle diet-button" data-toggle="dropdown">
                             {% trans 'Diet' %} <span class="caret"></span>
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu diet-menu">
                             <div class="widget-json-dropdown">
                                 {% crispy_field form.diet_match %}
                             </div>
@@ -41,7 +46,7 @@
                             </div>
                             <div class="col-md-4">{% crispy_field form.min_age_match %}</div>
                             <div class="col-md-1">
-                                <div class="form-control-static mt-1">&mdash;</div>
+                                <div class="form-control-static mt-1">&ndash;</div>
                             </div>
                             <div class="col-md-4">{% crispy_field form.max_age_match %}</div>
                         </div>

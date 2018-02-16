@@ -1,0 +1,14 @@
+.card.filters {
+    border: none;
+    font-size: 18px;
+}
+
+.diet-button {
+    background-color: transparent;
+    color: #212529;
+    font-size: 18px;
+}
+
+.diet-menu.show {
+    width: 450px;
+}
