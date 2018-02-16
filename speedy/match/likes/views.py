@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
+from speedy.core.accounts.models import User
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.profiles.views import UserMixin
 from .models import UserLike
@@ -54,7 +55,11 @@ class LikeListMutualView(LikeListViewBase):
     display = 'to'
 
     def get_queryset(self):
-        who_likes_me = UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True)
+        who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
+
+        # filter out users that are only active in another language
+        who_likes_me = [u.pk for u in who_likes_me if u.profile.is_active]
+
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
         return UserLike.objects.filter(from_user=self.user,
