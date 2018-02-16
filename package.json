@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/urievenchen/speedy-net#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-rtlcss": "^1.0.0",
