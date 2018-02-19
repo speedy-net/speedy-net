@@ -96,6 +96,10 @@ To run Speedy Match tests:
     cd speedy/match
     ./manage.py test
 
+You need to run both Net and Match in parallel in separate console tabs, with Net running on the default port (8000) and Match running on port 9000.
+Use the URLs in the django_site db table to access the websites:
+speedy.net.localhost:8000
+speedy.match.localhost:9000
 
 ### Build frontend
 
