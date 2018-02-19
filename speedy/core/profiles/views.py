@@ -46,8 +46,12 @@ class UserMixin(object):
                 else:
                     raise PermissionDenied()
             user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(slug=slug)))
-            if not user.profile.is_active:
-                raise Http404('This user is not active on this site.')
+
+            # inactive user profiles will have a link to the Speedy Net profile page
+            # so the user has to get to the profile page and not a 404
+            # if not user.profile.is_active:
+            #     raise Http404('This user is not active on this site.')
+
             return user
         except User.DoesNotExist:
             raise Http404()
