@@ -33,7 +33,12 @@ class LikeListToView(LikeListViewBase):
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
-        return UserLike.objects.filter(from_user=self.user).extra(select={
+
+        # filter out users that are only active in another language
+        liked_user = User.objects.filter(pk__in=UserLike.objects.filter(from_user=self.user).values_list('to_user_id', flat=True))
+        liked_user = [u.pk for u in liked_user if u.profile.is_active]
+
+        return UserLike.objects.filter(from_user=self.user).filter(to_user__in=liked_user).extra(select={
                 'last_visit': 'select last_visit from {} where user_id = likes_userlike.to_user_id'.format(
                     table_name),
             }, ).order_by('-last_visit')
@@ -45,7 +50,12 @@ class LikeListFromView(LikeListViewBase):
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
-        return UserLike.objects.filter(to_user=self.user).extra(select={
+
+        # filter out users that are only active in another language
+        who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
+        who_likes_me = [u.pk for u in who_likes_me if u.profile.is_active]
+
+        return UserLike.objects.filter(to_user=self.user).filter(from_user__in=who_likes_me).extra(select={
                 'last_visit': 'select last_visit from {} where user_id = likes_userlike.from_user_id'.format(
                     table_name),
             }, ).order_by('-last_visit')
