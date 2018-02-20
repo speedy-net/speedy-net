@@ -3,4 +3,15 @@
 
 <div class="col-sm-4 mb-4">
     {% profile_picture entity "390" html_class="img-thumbnail img-fluid center-block" %}
+    {% with user=entity %}
+    {% if user.profile.rank %}
+        <div>
+            <i class="fa fa-heart {% if user.profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+            <i class="fa fa-heart {% if user.profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+            <i class="fa fa-heart {% if user.profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+            <i class="fa fa-heart {% if user.profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+            <i class="fa fa-heart {% if user.profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+        </div>
+    {% endif %}
+    {% endwith %}
 </div>
