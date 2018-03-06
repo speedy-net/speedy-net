@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load rules %}
+
+{% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
+{% has_perm 'accounts.view_profile_username' viewer entity as can_view_username %}
+
+
+<div class="col-sm-8 col-sm-pull-0 mb-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">
+                {% trans 'More Information' %}
+            </h5>
+        </div>
+        <table class="table">
+            <tbody>
+
+            <tr>
+                <th>{% trans 'Profile Description' %}</th>
+                <td>{{ entity.profile.profile_description }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'City' %}</th>
+                <td>{{ entity.profile.city }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Height' %}</th>
+                <td>{{ entity.profile.height }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Children' %}</th>
+                <td>{{ entity.profile.children }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'More Children' %}</th>
+                <td>{{ entity.profile.more_children }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Diet' %}</th>
+                <td>{{ diet }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Smoking' %}</th>
+                <td>{{ smoking_choice }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Marital Status' %}</th>
+                <td>{{ marital_status }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Gender To Match' %}</th>
+                <td>{{ gender_to_match }}</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'My Ideal Match' %}</th>
+                <td>{{ entity.profile.match_description }}</td>
+            </tr>
+
+            
+            </tbody>
+        </table>
+    </div>
+</div>
