@@ -29,6 +29,6 @@ SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileAc
 USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
-    'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
     'speedy.match.profiles.widgets.UserExtraDetailsWidget',
+    'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
 ]
