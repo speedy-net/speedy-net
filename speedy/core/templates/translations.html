@@ -6,6 +6,14 @@
 {% blocktrans context 'male' with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
 {% blocktrans context 'other' with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
 
+{% blocktrans with entity=entity context 'female' %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with entity=entity context 'male' %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with entity=entity context 'other' %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
+
+{% blocktrans with entity=entity context 'female' %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with entity=entity context 'male' %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with entity=entity context 'other' %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+
 {#core/templates/base.html 85#}
 {% trans "You haven't confirmed your email address. Please check your inbox." context 'female' %}
 {% trans "You haven't confirmed your email address. Please check your inbox." context 'male' %}
