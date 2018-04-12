@@ -11,16 +11,33 @@
     {% has_perm 'accounts.view_profile_info' request.user user as can_view_profile_info %}
 
     {% if can_view_profile_header %}
-    <div class="page-header">
-        <h1>
-            <div class="pull-right">
+    <div class="row">
+        <div class="col-md">
+            <div class="page-header">
+                <h1>
+                    {{ user }}
+                </h1>
+                {% if friend_request_sent %}
+                    <div class="text-muted">
+                        {% trans 'Friend request sent' %}
+                    </div>
+                {% endif %}
+                {% if user_is_friend %}
+                    <div class="text-muted">
+                        {% trans 'Your friend' %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-auto">
+            <div class="my-2">
                 {% block user_tools %}
                     {% include 'profiles/tools/tools.html' %}
                 {% endblock %}
             </div>
-            {{ user }}
-        </h1>
+        </div>
     </div>
+
     {% endif %}
 
     {% if can_view_profile %}

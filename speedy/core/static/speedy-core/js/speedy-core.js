@@ -45,6 +45,13 @@ $.datepicker.regional.he = {
 
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
+evil.block('@@HamburgerMenu', {
+    init: function () {
+        this.sideMenuPlaceholder.html($('@@SideMenu').html());
+        this.sideMenuPlaceholder.find('li:last-child').remove();  // Remove redundant "Edit profile"
+    }
+});
+
 evil.block('@@RegistrationForm', {
 
     _generateSlug: function () {
@@ -86,30 +93,6 @@ evil.block('@@RegistrationForm', {
 evil.block('@@AccountForm', {
 
     init: initDatepicker
-
-});
-
-
-evil.block('@@RemoveFromFriendsForm', {
-
-    switchState: function (flag) {
-        this.button.toggleClass('disabled', !flag);
-        this.button.toggleClass('btn-danger', flag);
-        this.button.text(this.button.data(flag ? 'hover-text' : 'default-text'));
-    },
-
-    init: function () {
-        this.switchState(false);
-        this.button.width(this.button.width());
-    },
-
-    'mouseover on @button': function () {
-        this.switchState(true);
-    },
-
-    'mouseout on @button': function () {
-        this.switchState(false);
-    }
 
 });
 

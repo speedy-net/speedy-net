@@ -66,6 +66,7 @@
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
         <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
+        <div class="d-lg-none d-xl-none" data-role="sideMenuPlaceholder"></div>
         <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
     {% else %}
@@ -101,7 +102,7 @@
             <li class="nav-item">
                 <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
                     <i class="fa fa-fw fa-user"></i>
-                    {{ request.user }}
+                    <span class="label">{{ request.user }}</span>
                 </a>
             </li>
             {% block user_menu_friends %}
@@ -110,7 +111,7 @@
             <li class="nav-item">
                 <a href="{% url 'im:list' %}" class="nav-link">
                     <i class="fa fa-fw fa-comments"></i>
-                    {% trans 'Messages' %}
+                    <span class="label">{% trans 'Messages' %}</span>
                     {% unread_chats_count request.user as unread_chats %}
                     {% if unread_chats %}
                         <span class="badge">{{ unread_chats }}</span>
@@ -122,7 +123,7 @@
     <li class="nav-item">
         <a href="{% url 'accounts:edit_profile' %}" class="nav-link">
             <i class="fa fa-fw fa-pencil"></i>
-            {% trans 'Edit Profile' %}
+            <span class="label">{% trans 'Edit Profile' %}</span>
         </a>
     </li>
 {% endblock %}

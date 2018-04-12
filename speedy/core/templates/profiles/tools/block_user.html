@@ -5,7 +5,7 @@
 {% has_perm 'blocks.unblock' request.user user as can_unblock %}
 
 {% if can_block %}
-    <form action="{% url 'blocks:block' user.slug %}" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
+    <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
         {% csrf_token %}
         <div class="btn-group">
             <button class="btn btn-default" type="submit">

@@ -83,7 +83,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" data-block="HamburgerMenu">
                 {% block login_logout_register %}{% endblock %}
             </ul>
         </div>
@@ -113,7 +113,7 @@
                     <div class="page-header">
                         <h1>&nbsp;</h1>
                     </div>
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-column d-none d-lg-flex d-xl-flex" data-block="SideMenu">
                         {% block user_menu_and_edit_profile %}{% endblock %}
                     </ul>
                 </div>
