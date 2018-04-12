@@ -3,6 +3,8 @@ env.ini
 .idea/
 .venv
 media/
+.DS_Store
+.volumes
 
 node_modules/
 

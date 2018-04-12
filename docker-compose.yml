@@ -79,14 +79,14 @@ services:
     command: gulp
 
   db:
-    image: postgres:9.6-alpine
+    image: postgres:10.3-alpine
     ports:
       - 39887:5432
     environment:
       - POSTGRES_USER=speedy
       - POSTGRES_DB=speedy
     volumes:
-      - ./.volumes/postgres:/var/lib/postgresql
+      - ./.volumes/postgres:/var/lib/postgresql/data
 
   memcached:
     image: memcached:1.4-alpine

@@ -117,6 +117,14 @@ Then:
 Will compile static files and watch for changes.
 
 
+## How to setup the project and run locally (with docker-compose)
+
+    mkdir .volumes
+    mkdir .volumes/postgres
+    chmod 700 .volumes/postgres
+    docker-compose up
+
+
 ## How to setup a server (Ubuntu 16.04)
 
 Install all dependencies using **apt-get**:
