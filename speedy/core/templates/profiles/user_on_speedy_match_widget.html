@@ -3,7 +3,7 @@
 {% if is_match %}
     <div class="col-sm-12 pull-right">
         <a href="//{{ LANGUAGE_CODE }}.{{ speedy_match_url }}{% url 'profiles:user' slug=entity.slug %}">
-            {% blocktrans with entity=entity context request.user.get_gender %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+            {% blocktrans with entity=entity context viewer.get_gender %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
         </a>
     </div>
 {% endif %}
