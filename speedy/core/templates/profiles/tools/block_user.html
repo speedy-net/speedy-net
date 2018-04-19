@@ -4,26 +4,35 @@
 {% has_perm 'blocks.block' request.user user as can_block %}
 {% has_perm 'blocks.unblock' request.user user as can_unblock %}
 
-{% if can_block %}
-    <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
-        {% csrf_token %}
-        <div class="btn-group">
-            <button class="btn btn-default" type="submit">
-                <i class="fa fa-ban"></i>
-                {% trans 'Block ' context request.user.get_gender %}{{ user }}
-            </button>
-            {% include 'profiles/tools/report_menu.html' %}
-        </div>
-    </form>
-{% elif can_unblock %}
-    <form action="{% url 'blocks:unblock' user.slug %}" method="post">
-        {% csrf_token %}
-        <div class="btn-group">
-            <button class="btn btn-default" type="submit">
-                <i class="fa fa-ban"></i>
-                {% trans 'Unblock ' context request.user.get_gender %}{{ user }}
-            </button>
-            {% include 'profiles/tools/report_menu.html' %}
-        </div>
-    </form>
+
+{% if can_block or can_unblock %}
+    <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+        <span class="fa fa-ellipsis-h"></span>
+        <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
+    </button>
+    <div class="dropdown-menu">
+        {% if can_block %}
+            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('
+                    {% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
+                {% csrf_token %}
+                <button class="dropdown-item" type="submit">
+                    {% trans 'Block ' context request.user.get_gender %}{{ user }}
+                </button>
+            </form>
+        {% elif can_unblock %}
+            <form action="{% url 'blocks:unblock' user.slug %}" method="post">
+                {% csrf_token %}
+                <button class="dropdown-item" type="submit">
+                    {% trans 'Unblock ' context request.user.get_gender %}{{ user }}
+                </button>
+            </form>
+        {% endif %}
+        <a class="dropdown-item" href="{% url 'feedback:report_entity' user.slug %}">
+            {% trans 'Report ' context request.user.get_gender %}{{ user }}</a>
+        {% if user.photo %}
+            <a class="dropdown-item"
+               href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
+        {% endif %}
+    </div>
 {% endif %}
