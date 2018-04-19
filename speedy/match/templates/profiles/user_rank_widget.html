@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<div class="col-sm-8 ml-auto mb-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">
+                {% trans 'Match rank' %}
+            </h5>
+        </div>
+        <div class="card-body text-center">
+            {% with user=entity %}
+                {% if user.profile.rank %}
+                    <div>
+                        <i class="fa fa-heart fa-2x {% if user.profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>

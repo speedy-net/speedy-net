@@ -7,6 +7,11 @@ from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as MatchSiteProfile
 
 
+class UserRankWidget(Widget):
+    template_name = 'profiles/user_rank_widget.html'
+    permission_required = 'accounts.view_profile_info'
+
+
 class UserOnSpeedyMatchWidget(Widget):
     template_name = 'profiles/user_on_speedy_match_widget.html'
     permission_required = 'accounts.view_profile_info'

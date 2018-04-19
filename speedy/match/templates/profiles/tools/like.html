@@ -6,7 +6,7 @@
 
 
 {% if can_like %}
-    <form action="{% url 'likes:like' user.slug %}" method="post">
+    <form action="{% url 'likes:like' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
         <button class="btn btn-danger" type="submit">
             <i class="fa fa-heart"></i>
@@ -14,7 +14,7 @@
         </button>
     </form>
 {% elif can_unlike %}
-    <form action="{% url 'likes:unlike' user.slug %}" method="post">
+    <form action="{% url 'likes:unlike' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
         <button class="btn btn-default" type="submit">
             <i class="fa fa-heart"></i>
@@ -22,4 +22,3 @@
         </button>
     </form>
 {% endif %}
-
