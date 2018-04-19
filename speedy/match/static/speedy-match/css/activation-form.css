@@ -164,7 +164,7 @@ body.bidi-rtl .user-profile {
 }
 
 .widget-json-dropdown {
-    min-width: 420px;
+    min-width: 220px;
     padding: 20px;
 }
 
@@ -186,16 +186,25 @@ body.bidi-rtl .user-profile {
         display: none;
     }
     .activation-form-fileds {
-        width: 100%;
+        width: auto;
     }
     .image-click-zone {
-        width: 100%;
+        width: auto;
     }
     .widget-group .choices {
-        width: 100%;
+        width: auto;
         text-align: left;
+        float: none;
+        display: block;
+        margin-bottom: 1em;
     }
     .activation-form-field textarea, .activation-form-field input {
-        width: 100%;
+        width: auto;
+    }
+
+    .diet-menu.show {
+        width: auto !important;
+        right: 29px; !important;
+        min-width: 0 !important;
     }
 }
