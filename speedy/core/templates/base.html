@@ -59,7 +59,8 @@
         }
     </script>
 </head>
-<body class="bidi-{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">
+<body class="bidi-{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }} {% block body_class %}{% endblock %}">
+<div class="body-inner">
 
 {% block body %}
 
@@ -77,7 +78,9 @@
 
             </div>
         </div>
-        <a class="navbar-brand" href="/">{% trans site.name %}</a>
+        {% block navbar_brand %}
+            <a class="navbar-brand" href="/">{% trans site.name %}</a>
+        {% endblock %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -199,6 +202,8 @@
     <br />
 </center>
 {% endblock %}
+
+</div>
 
 {% block js %}
     <script

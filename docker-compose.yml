@@ -75,8 +75,9 @@ services:
       context: .
       dockerfile: Dockerfile.dev.frontend
     volumes:
-      - .:/app
-    command: gulp
+      - ./themes:/app/themes
+      - ./speedy/core/static/themes:/app/speedy/core/static/themes
+    command: npm run watch
 
   db:
     image: postgres:10.3-alpine

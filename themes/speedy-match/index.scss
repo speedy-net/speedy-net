@@ -26,12 +26,13 @@ $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #C93366;
-$red: #E83B3D;
-$orange: #EA6045;
+$red: #ff1c32;
+$orange: #ff5338;
 $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
 $cyan: #17a2b8;
+$light-orange: #fff1cf;
 
 $colors: (
     blue: $blue,
@@ -60,12 +61,12 @@ $theme-colors: (
     dark: $gray-800
 );
 
-$enable-gradients: true;
-$enable-shadows: true;
+$enable-gradients: false;
+$enable-shadows: false;
 
-$border-radius: .5rem;
-$border-radius-lg: .7rem;
-$border-radius-sm: .3rem;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
 @import "./node_modules/bootstrap/scss/bootstrap";
 
@@ -79,8 +80,66 @@ html {
 
 .bg-speedy-match {
     background: $orange;
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    form {
+        color: black;
+        a {
+            color: black;
+        }
+    }
+
+    a {
+        color: white;
+    }
 }
 
 .hidden {
     display: none;
 }
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color}.btn-arrow-right {
+        background: $value;
+        background: linear-gradient(-135deg, transparent 1em, $value 0) top right,
+        linear-gradient(-45deg, transparent 1em, $value 0) bottom right;
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+        border: transparent;
+        padding-right: 3em;
+
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled).active {
+            background: inherit;
+        }
+    }
+}
+
+body.with-background {
+    background-image: linear-gradient(#ff7200, #ff3a64);
+    color: $light-orange;
+    font-weight: bold;
+
+    > .body-inner {
+        background: url('/static/speedy-match/images/hearts-bg.png') no-repeat;
+        background-size: cover;
+
+        a {
+            color: $white;
+        }
+    }
+
+    .speedy-body-container .col-md-8 {
+        background: url('/static/speedy-match/images/photo.png') bottom left no-repeat;
+        background-size: contain;
+    }
+
+    .navbar.bg-speedy-match {
+        background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));
+        font-weight: normal;
+    }
+}
+

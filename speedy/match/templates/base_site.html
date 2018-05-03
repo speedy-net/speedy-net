@@ -34,6 +34,10 @@
     {% endif %}
 {% endblock %}
 
+{% block navbar_brand %}
+    <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}" alt="{{ site.name }}"></a>
+{% endblock %}
+
 {% block user_menu %}
     {{ block.super }}
     {% if request.user.profile.is_active %}

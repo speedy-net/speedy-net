@@ -4,7 +4,7 @@
   "description": "Speedy Net is a new social network which will have apps, such as Speedy Match (a dating/matching app for singles) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "gulp"
   },
   "repository": {
     "type": "git",

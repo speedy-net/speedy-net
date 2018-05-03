@@ -144,16 +144,6 @@ body.bidi-rtl .user-profile {
     position: absolute;
 }
 
-.activation-form-button {
-    border-radius: 6px;
-    /*border-top-left-radius: 6px;*/
-    /*border-bottom-left-radius: 6px;*/
-    color: white;
-    background-color: #FF1C32;
-    font-size: 15px;
-    /*position: relative;*/
-}
-
 .widget-choice {
     color: #ACACAC;
     font-size: 24px;

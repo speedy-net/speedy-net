@@ -124,7 +124,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         self.fields['slug'].label = _('New username')
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Create an account')))
+        self.helper.add_input(Submit('submit', _('Create an account'), css_class='btn-lg btn-arrow-right'))
 
     def save(self, commit=True):
         user = super().save(commit=False)
