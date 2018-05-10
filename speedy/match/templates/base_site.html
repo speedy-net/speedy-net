@@ -7,9 +7,9 @@
 {% block site_theme %}
     {% get_current_language_bidi as LANGUAGE_BIDI %}
     {% if LANGUAGE_BIDI %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match.rtl.css' %}" />
+        <link rel="stylesheet" href="{% static 'themes/speedy-match.rtl.css' %}"/>
     {% else %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match.css' %}" />
+        <link rel="stylesheet" href="{% static 'themes/speedy-match.css' %}"/>
     {% endif %}
 {% endblock %}
 
@@ -29,32 +29,46 @@
         <div class="speedy-mobile-menu-icons pull-right flip">
             <a href="{% url 'likes:list' request.user.slug %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
             <a href="{% url 'im:list' %}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i
+                    class="fa fa-user-plus" aria-hidden="true"></i></a>
         </div>
     {% endif %}
 {% endblock %}
 
 {% block navbar_brand %}
-    <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}" alt="{{ site.name }}"></a>
+    <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}"
+                                          alt="{{ site.name }}"></a>
 {% endblock %}
 
-{% block user_menu %}
-    {{ block.super }}
-    {% if request.user.profile.is_active %}
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'likes:list' request.user.slug %}">
-                <i class="fa fa-fw fa-heart"></i>
-                {% trans 'Likes' %}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'matches:list' %}">
-                <i class="fa fa-fw fa-star" aria-hidden="true"></i>
-                <span>{% trans 'Matches' %}</span>
-            </a>
-        </li>
-        {% include 'friends/user_menu_friends.html' %}
-    {% endif %}
-{% endblock %}
 
 {% block user_menu_friends %}{% endblock %}
+
+{% block navbar_left_menu %}
+    {% block user_menu %}
+        {{ block.super }}
+        {% if request.user.profile.is_active %}
+            <li class="nav-item">
+                <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
+                    <i class="fa fa-fw fa-heart"></i>
+                    {% trans 'Likes' %}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
+                    <i class="fa fa-fw fa-star" aria-hidden="true"></i>
+                    <span>{% trans 'Matches' %}</span>
+                </a>
+            </li>
+            {% include 'friends/user_menu_friends.html' %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
+
+{% block greeting %}
+{% endblock %}
+
+
+{% block full_content %}
+    {% block content %}
+    {% endblock %}
+{% endblock %}

@@ -2,7 +2,7 @@
 
 {% with request.user.friendship_requests_received.count as frequests_count %}
     <li class="nav-item">
-        <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}" class="nav-link">
+        <a href="{% url frequests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}" class="nav-link {% block user_menu_friends_class %}{% endblock %}">
             <i class="fa fa-fw fa-users"></i>
             <span class="label">{% trans 'Friends' %}</span>
             {% if frequests_count %}

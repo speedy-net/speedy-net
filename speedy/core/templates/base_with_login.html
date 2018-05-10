@@ -9,7 +9,8 @@
     <div class="container-fluid visible-xs">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed pull-left flip" data-toggle="collapse" data-target="#speedy-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed pull-left flip" data-toggle="collapse"
+                    data-target="#speedy-navbar-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -65,10 +66,18 @@
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
-        <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
+        {% block greeting %}
+            <li class="nav-item"><span
+                    class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}
+                Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}
+                !{% endblocktrans %}</span></li>
+        {% endblock %}
         <div class="d-lg-none d-xl-none" data-role="sideMenuPlaceholder"></div>
-        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
+        </li>
     {% else %}
         <form class="form" method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
@@ -77,13 +86,15 @@
                 <div class="col-auto">
                     <label>
                         {% trans 'Email or Username' %}
-                        <input name="username" type="text" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <input name="username" type="text" class="form-control" autocomplete="off" autocorrect="off"
+                               autocapitalize="off" spellcheck="false">
                     </label>
                 </div>
                 <div class="col-auto">
                     <label>
                         {% trans 'Password' %}
-                        <input name="password" type="password" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <input name="password" type="password" class="form-control" autocomplete="off" autocorrect="off"
+                               autocapitalize="off" spellcheck="false">
                     </label>
                     <br>
                     <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>

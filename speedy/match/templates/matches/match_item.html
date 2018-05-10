@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_tags %}
+
+<div class="col-sm-6 col-md-3 mb-0">
+    <div class="text-center">
+        {% profile_picture user '256x200' html_class="rounded-lg" %}
+        <div class="card-body">
+            <a href="{{ user.get_absolute_url }}">
+                <h5 class="card-title mb-0">
+                    {{ user }},
+                    {{ user.get_age }},
+                    {{ user.get_diet }}
+                </h5>
+            </a>
+            {% if user.profile.rank %}
+                <div>
+                    <i class="fa fa-heart {% if user.profile.rank >= 1 %}text-light{% else %}text-dark{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 2 %}text-light{% else %}text-dark{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 3 %}text-light{% else %}text-dark{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 4 %}text-light{% else %}text-dark{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.profile.rank >= 5 %}text-light{% else %}text-dark{% endif %}"></i>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

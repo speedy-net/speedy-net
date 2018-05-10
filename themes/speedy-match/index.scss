@@ -64,14 +64,15 @@ $theme-colors: (
 $enable-gradients: false;
 $enable-shadows: false;
 
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+//$border-radius: 0;
+//$border-radius-sm: 0;
+$border-radius-lg: 10px;
 
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 html, body {
     direction: ltr;
+    min-height: 100%;
 }
 
 html {
@@ -118,6 +119,31 @@ html {
     }
 }
 
+.rounded-lg {
+  border-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-top {
+  border-top-left-radius: $border-radius-lg !important;
+  border-top-right-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-right {
+  border-top-right-radius: $border-radius-lg !important;
+  border-bottom-right-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-bottom {
+  border-bottom-right-radius: $border-radius-lg !important;
+  border-bottom-left-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-left {
+  border-top-left-radius: $border-radius-lg !important;
+  border-bottom-left-radius: $border-radius-lg !important;
+}
+
+
 body.with-background {
     background-image: linear-gradient(#ff7200, #ff3a64);
     color: $light-orange;
@@ -126,10 +152,13 @@ body.with-background {
     > .body-inner {
         background: url('/static/speedy-match/images/hearts-bg.png') no-repeat;
         background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
 
         a {
             color: $white;
         }
+
     }
 
     .speedy-body-container .col-md-8 {
@@ -143,3 +172,6 @@ body.with-background {
     }
 }
 
+.navbar-nav .nav-link.active {
+    color: $white !important;
+}
