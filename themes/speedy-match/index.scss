@@ -117,6 +117,22 @@ html {
             background: inherit;
         }
     }
+
+    .btn-#{$color}.btn-arrow-left {
+        background: $value;
+        background: linear-gradient(135deg, transparent 1em, $value 0) top right,
+        linear-gradient(45deg, transparent 1em, $value 0) bottom right;
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+        border: transparent;
+        padding-left: 3em;
+
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled).active {
+            background: inherit;
+        }
+    }
+
 }
 
 .rounded-lg {

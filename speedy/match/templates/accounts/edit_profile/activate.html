@@ -57,9 +57,9 @@
                         <div class="clearfix"></div>
                         <div class="activation-form-actions">
                             {% if request.user.profile.activation_step != 0 %}
-                                <a class="btn btn-default activation-form-button" href="{% url 'accounts:activate' step=previous_step %}">{% trans 'Back' %}</a>
+                                <a class="btn btn-primary btn-lg btn-arrow-left" href="{% url 'accounts:activate' step=previous_step %}">{% trans 'Back' %}</a>
                             {% endif %}
-                            <button class="btn btn-default activation-form-button" type="submit">
+                            <button class="btn btn-primary btn-lg btn-arrow-right" type="submit">
                                 {% trans 'Next step' %}
                             </button>
                         </div>

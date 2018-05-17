@@ -6081,6 +6081,16 @@ html {
   .btn-primary.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-primary.btn-arrow-right:not(:disabled):not(.disabled).active {
     background: inherit; }
 
+.btn-primary.btn-arrow-left {
+  background: #ff1c32;
+  background: linear-gradient(135deg, transparent 1em, #ff1c32 0) top right, linear-gradient(45deg, transparent 1em, #ff1c32 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-primary.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-primary.btn-arrow-left:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
 .btn-secondary.btn-arrow-right {
   background: #ffab9e;
   background: linear-gradient(-135deg, transparent 1em, #ffab9e 0) top right, linear-gradient(-45deg, transparent 1em, #ffab9e 0) bottom right;
@@ -6089,6 +6099,16 @@ html {
   border: transparent;
   padding-right: 3em; }
   .btn-secondary.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-secondary.btn-arrow-right:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
+.btn-secondary.btn-arrow-left {
+  background: #ffab9e;
+  background: linear-gradient(135deg, transparent 1em, #ffab9e 0) top right, linear-gradient(45deg, transparent 1em, #ffab9e 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-secondary.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-secondary.btn-arrow-left:not(:disabled):not(.disabled).active {
     background: inherit; }
 
 .btn-success.btn-arrow-right {
@@ -6101,6 +6121,16 @@ html {
   .btn-success.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-success.btn-arrow-right:not(:disabled):not(.disabled).active {
     background: inherit; }
 
+.btn-success.btn-arrow-left {
+  background: #28a745;
+  background: linear-gradient(135deg, transparent 1em, #28a745 0) top right, linear-gradient(45deg, transparent 1em, #28a745 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-success.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-success.btn-arrow-left:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
 .btn-info.btn-arrow-right {
   background: #17a2b8;
   background: linear-gradient(-135deg, transparent 1em, #17a2b8 0) top right, linear-gradient(-45deg, transparent 1em, #17a2b8 0) bottom right;
@@ -6109,6 +6139,16 @@ html {
   border: transparent;
   padding-right: 3em; }
   .btn-info.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-info.btn-arrow-right:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
+.btn-info.btn-arrow-left {
+  background: #17a2b8;
+  background: linear-gradient(135deg, transparent 1em, #17a2b8 0) top right, linear-gradient(45deg, transparent 1em, #17a2b8 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-info.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-info.btn-arrow-left:not(:disabled):not(.disabled).active {
     background: inherit; }
 
 .btn-warning.btn-arrow-right {
@@ -6121,6 +6161,16 @@ html {
   .btn-warning.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-warning.btn-arrow-right:not(:disabled):not(.disabled).active {
     background: inherit; }
 
+.btn-warning.btn-arrow-left {
+  background: #ffc107;
+  background: linear-gradient(135deg, transparent 1em, #ffc107 0) top right, linear-gradient(45deg, transparent 1em, #ffc107 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-warning.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-warning.btn-arrow-left:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
 .btn-danger.btn-arrow-right {
   background: #ff1c32;
   background: linear-gradient(-135deg, transparent 1em, #ff1c32 0) top right, linear-gradient(-45deg, transparent 1em, #ff1c32 0) bottom right;
@@ -6129,6 +6179,16 @@ html {
   border: transparent;
   padding-right: 3em; }
   .btn-danger.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-danger.btn-arrow-right:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
+.btn-danger.btn-arrow-left {
+  background: #ff1c32;
+  background: linear-gradient(135deg, transparent 1em, #ff1c32 0) top right, linear-gradient(45deg, transparent 1em, #ff1c32 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-danger.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-danger.btn-arrow-left:not(:disabled):not(.disabled).active {
     background: inherit; }
 
 .btn-light.btn-arrow-right {
@@ -6141,6 +6201,16 @@ html {
   .btn-light.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-light.btn-arrow-right:not(:disabled):not(.disabled).active {
     background: inherit; }
 
+.btn-light.btn-arrow-left {
+  background: #f8f9fa;
+  background: linear-gradient(135deg, transparent 1em, #f8f9fa 0) top right, linear-gradient(45deg, transparent 1em, #f8f9fa 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-light.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-light.btn-arrow-left:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
 .btn-dark.btn-arrow-right {
   background: #343a40;
   background: linear-gradient(-135deg, transparent 1em, #343a40 0) top right, linear-gradient(-45deg, transparent 1em, #343a40 0) bottom right;
@@ -6149,6 +6219,16 @@ html {
   border: transparent;
   padding-right: 3em; }
   .btn-dark.btn-arrow-right:not(:disabled):not(.disabled):active, .btn-dark.btn-arrow-right:not(:disabled):not(.disabled).active {
+    background: inherit; }
+
+.btn-dark.btn-arrow-left {
+  background: #343a40;
+  background: linear-gradient(135deg, transparent 1em, #343a40 0) top right, linear-gradient(45deg, transparent 1em, #343a40 0) bottom right;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border: transparent;
+  padding-left: 3em; }
+  .btn-dark.btn-arrow-left:not(:disabled):not(.disabled):active, .btn-dark.btn-arrow-left:not(:disabled):not(.disabled).active {
     background: inherit; }
 
 .rounded-lg {
