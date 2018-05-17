@@ -26,6 +26,7 @@ from .models import UserEmailAddress
 
 log = logging.getLogger(__name__)
 
+
 @csrf_exempt
 def set_session(request):
     """
@@ -69,10 +70,10 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', 
+        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s',
                 settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
         if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
-            log.debug('activating profile, profile: %s', self.object.profile) 
+            log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
@@ -90,6 +91,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
 @sensitive_post_parameters()
 @never_cache
+@csrf_exempt
 def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None):
     response = auth_views.login(
         request,
