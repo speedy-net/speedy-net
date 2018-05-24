@@ -5894,5 +5894,8 @@ html {
 .bg-light {
   background: #e8f0f7; }
 
+.bg-unread {
+  background: #e8f0f7; }
+
 .hidden {
   display: none; }

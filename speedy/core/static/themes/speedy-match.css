@@ -6068,6 +6068,9 @@ html {
   .bg-speedy-match a {
     color: white; }
 
+.bg-unread {
+  background: #FAE6D8; }
+
 .hidden {
   display: none; }
 
@@ -6249,6 +6252,21 @@ html {
 .rounded-lg-left {
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important; }
+
+.card {
+  border: none; }
+  .card .card-header {
+    background: none;
+    padding: 0.75em;
+    border-bottom: none; }
+  .card .card-title {
+    font-weight: bold; }
+  .card .table th {
+    font-weight: inherit; }
+  .card .table th, .card .table td {
+    border: none;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em; }
 
 body.with-background {
   background-image: linear-gradient(#ff7200, #ff3a64);

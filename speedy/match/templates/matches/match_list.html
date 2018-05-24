@@ -11,58 +11,61 @@
     <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}">
 {% endblock %}
 
- {% block user_menu_matches_class %}active{% endblock %}
+{% block user_menu_matches_class %}active{% endblock %}
 
 {% block body_class %}with-background{% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <h1>
-            <div class="pull-right">
-                <a href="{% url 'matches:edit_settings' %}" class="btn btn-default">
-                    <i class="fa fa-pencil"></i>
-                    {% trans 'Edit Settings' %}
-                </a>
-            </div>
-        </h1>
-    </div>
     <div class="mb-4 filters">
         <form action="{% url 'matches:list' %}" method="post" class="">
             {% csrf_token %}
             {{ form.errors }}
             <div class="row justify-content-center">
-                <div class="col-md-7">
+                <div class="col-12 col-md-7">
                     <strong>{% trans 'Search for your matches' context user.get_gender %}</strong>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-1">
-                    <button type="button" class="form-control dropdown-toggle"
-                            data-toggle="dropdown">
-                        {% trans 'Diet' %} <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu diet-menu">
-                        <div class="widget-json-dropdown">
-                            {% crispy_field form.diet_match %}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
+
+                <div class="col-12 col-md-7">
+
                     <div class="row">
-                        <div class="col-md-3 text-right">
-                            <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
+
+                        <div class="col">
+                            <button type="button" class="form-control dropdown-toggle"
+                                    data-toggle="dropdown">
+                                {% trans 'Diet' %} <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu diet-menu">
+                                <div class="widget-json-dropdown">
+                                    {% crispy_field form.diet_match %}
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4">{% crispy_field form.min_age_match %}</div>
-                        <div class="col-md-1">
-                            <div class="form-control-static mt-1">&ndash;</div>
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-3 text-right">
+                                    <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
+                                </div>
+                                <div class="col-4">{% crispy_field form.min_age_match %}</div>
+                                <div class="col-1">
+                                    <div class="form-control-static mt-1">&ndash;</div>
+                                </div>
+                                <div class="col-4">{% crispy_field form.max_age_match %}</div>
+                            </div>
                         </div>
-                        <div class="col-md-4">{% crispy_field form.max_age_match %}</div>
+                        <div class="col">
+                            <input type="submit" class="btn btn-block btn-primary btn-arrow-right"
+                                   value="{% trans 'Refresh' %}">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <input type="submit" class="btn btn-block btn-primary btn-arrow-right"
-                           value="{% trans 'Refresh' %}">
-                </div>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'matches:edit_settings' %}" class="btn btn-default">
+                    {% trans 'Add more options' %}
+                </a>
+
             </div>
             {{ field.label_tag }}
             {#                    {% crispy_field field %}#}

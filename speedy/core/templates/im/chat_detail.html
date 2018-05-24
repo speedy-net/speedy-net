@@ -9,6 +9,9 @@
 {% load user_tags %}
 {% load rules %}
 
+{% block user_menu_messages_class %}active{% endblock %}
+
+{% block body_class %}with-background{% endblock %}
 
 {% block title %}{% get_other_participant chat user as other %}{{ other.user }} / {% trans 'Messages' %} /
     {{ block.super }}{% endblock %}
@@ -17,37 +20,42 @@
     {% get_other_participant chat user as other %}
     {% has_perm 'im.send_message' user other as can_send_message %}
 
-    <div class="page-header">
-        <h1>
-            {% blocktrans with other_user=other.user link=other.user.get_absolute_url %}Chat with
-                <a href="{{ link }}">{{ other_user }}</a>{% endblocktrans %}
-        </h1>
-    </div>
+    <div class="row justify-content-center">
 
-    {% if can_send_message %}
-        <div class="card mb-4 bg-light">
-            <div class="card-body">
-                <p>{% blocktrans context request.user.get_gender with other_user=other.user %}Send a message to
-                    {{ other_user }}{% endblocktrans %}</p>
-                {% crispy form %}
+        <div class="{% if site == speedy_match %}col-md-7{% else %}col-12{% endif %}">
+
+            <div class="page-header">
+                <h1>
+                    {% blocktrans with other_user=other.user link=other.user.get_absolute_url %}Chat with
+                        <a href="{{ link }}">{{ other_user }}</a>{% endblocktrans %}
+                </h1>
             </div>
+
+            {% if can_send_message %}
+                <div class="mb-4">
+                    <p>{% blocktrans context request.user.get_gender with other_user=other.user %}Send a message to
+                        {{ other_user }}{% endblocktrans %}</p>
+                    {% crispy form %}
+                </div>
+            {% else %}
+                {% include 'profiles/block_warning.html' with user=user other=other %}
+            {% endif %}
+
+        <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-default"
+                    type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
+        </form>
+
+
+        <div class="bg-primary rounded-lg mt-4" data-block="MessageList"
+             data-poll-url="{% url 'im:chat_poll' chat_slug=chat|get_chat_slug:user %}">
+            {% include 'im/message_list_poll.html' %}
         </div>
-    {% else %}
-        {% include 'profiles/block_warning.html' with user=user other=other %}
-    {% endif %}
 
-    <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-default"
-                type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
-    </form>
+        {% pagination %}
 
-
-    <div class="mt-4" data-block="MessageList"
-         data-poll-url="{% url 'im:chat_poll' chat_slug=chat|get_chat_slug:user %}">
-        {% include 'im/message_list_poll.html' %}
     </div>
-
-    {% pagination %}
+    </div>
 
 {% endblock %}

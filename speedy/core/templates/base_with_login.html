@@ -120,7 +120,7 @@
                 {% include 'friends/user_menu_friends.html' %}
             {% endblock %}
             <li class="nav-item">
-                <a href="{% url 'im:list' %}" class="nav-link">
+                <a href="{% url 'im:list' %}" class="nav-link {% block user_menu_messages_class %}{% endblock %}">
                     <i class="fa fa-fw fa-comments"></i>
                     <span class="label">{% trans 'Messages' %}</span>
                     {% unread_chats_count request.user as unread_chats %}

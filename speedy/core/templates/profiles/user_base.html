@@ -10,52 +10,61 @@
     {% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}
     {% has_perm 'accounts.view_profile_info' request.user user as can_view_profile_info %}
 
-    {% if can_view_profile_header %}
-        <div class="row">
-            <div class="col-md">
-                <div class="page-header">
-                    <h1>
-                        {{ user }}
-                    </h1>
-                    <div class="text-muted">
-                        {% block user_status %}
-                            {% if friend_request_sent %}
-                                {% trans 'Friend request sent' %}
-                            {% endif %}
-                            {% if user_is_friend %}
-                                {% trans 'Your friend' %}
-                            {% endif %}
-                        {% endblock %}
+    <div class="row justify-content-center">
+
+        <div class="{% if site == speedy_match %}col-md-7{% else %}col-12{% endif %}">
+
+
+            {% if can_view_profile_header %}
+                <div class="row">
+                    <div class="col-md">
+                        <div class="page-header">
+                            <h1>
+                                {{ user }}
+                            </h1>
+                            <div class="text-muted">
+                                {% block user_status %}
+                                    {% if friend_request_sent %}
+                                        {% trans 'Friend request sent' %}
+                                    {% endif %}
+                                    {% if user_is_friend %}
+                                        {% trans 'Your friend' %}
+                                    {% endif %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="my-2">
+                            {% block user_tools %}
+                                {% include 'profiles/tools/tools.html' %}
+                            {% endblock %}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-auto">
-                <div class="my-2">
-                    {% block user_tools %}
-                        {% include 'profiles/tools/tools.html' %}
-                    {% endblock %}
-                </div>
-            </div>
+
+            {% endif %}
+
+            {% if can_view_profile %}
+                {% block user_content %}
+                {% endblock %}
+            {% else %}
+                {% if can_view_profile_info %}
+                    {% include 'profiles/block_warning.html' with user=request.user other=user %}
+                {% else %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a href="//{{ LANGUAGE_CODE }}.
+                                    {{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
+                                {% trans "This user doesn't match your profile, " context user.get_gender %}{% trans "but you can visit his/her Speedy Net profile. " context user.get_gender %}{% trans "View " context request.user.get_gender %}{% trans "user's profile on Speedy Net." context user.get_gender %}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% block user_content_info %}
+            {% endblock %}
         </div>
+    </div>
 
-    {% endif %}
-
-    {% if can_view_profile %}
-        {% block user_content %}
-        {% endblock %}
-    {% else %}
-        {% if can_view_profile_info %}
-            {% include 'profiles/block_warning.html' with user=request.user other=user %}
-        {% else %}
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="//{{ LANGUAGE_CODE }}.{{ speedy_net_url }}{% url 'profiles:user' slug=user.slug %}">
-                        {% trans "This user doesn't match your profile, " context user.get_gender %}{% trans "but you can visit his/her Speedy Net profile. " context user.get_gender %}{% trans "View " context request.user.get_gender %}{% trans "user's profile on Speedy Net." context user.get_gender %}
-                    </a>
-                </div>
-            </div>
-        {% endif %}
-    {% endif %}
-    {% block user_content_info %}
-    {% endblock %}
 {% endblock %}

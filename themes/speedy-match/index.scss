@@ -32,6 +32,7 @@ $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
 $cyan: #17a2b8;
+$unread: #FAE6D8;
 $light-orange: #fff1cf;
 
 $colors: (
@@ -98,6 +99,10 @@ html {
     }
 }
 
+.bg-unread {
+    background: $unread;
+}
+
 .hidden {
     display: none;
 }
@@ -159,6 +164,31 @@ html {
   border-bottom-left-radius: $border-radius-lg !important;
 }
 
+
+// Remove borders from cards
+.card {
+    border: none;
+
+    .card-header {
+        background: none;
+        padding: 0.75em;
+        border-bottom: none;
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+
+    .table th {
+        font-weight: inherit;
+    }
+
+    .table th, .table td {
+        border: none;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+    }
+}
 
 body.with-background {
     background-image: linear-gradient(#ff7200, #ff3a64);

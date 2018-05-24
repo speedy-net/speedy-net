@@ -1,31 +1,26 @@
 {% load i18n %}
 {% load user_tags %}
 
-
-<div class="card mb-4 bg-white {% if message.is_unread %}border-primary{% endif %}">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-1">
-                {% profile_picture message.sender '64x64' html_class="img-fluid" %}
-            </div>
-            <div class="col-11">
-                <div>
-                    <strong>
-                        <a href="{{ message.sender.user.get_absolute_url }}">{{ message.sender.user }}</a>
-                    </strong>
-                    <small>
-                        {{ message.date_created }}
-                    </small>
-                    {% if message.is_unread %}
-                        <span class="pull-right">
+<div class="row no-gutters {% if message.is_unread %}border-primary{% endif %} py-3 pr-3">
+    <div class="col-2 px-3">
+        {% profile_picture message.sender '128x128' html_class="img-fluid rounded-lg" %}
+    </div>
+    <div class="col-10">
+        <div class="p-3 rounded-lg text-default {{ message.is_unread|yesno:'bg-unread,bg-white' }}">
+            <p>
+                <strong>
+                    {{ message.sender.user }}
+                </strong>
+                <small>
+                    {{ message.date_created }}
+                </small>
+                {% if message.is_unread %}
+                    <span class="pull-right">
                             <i class="fa fa-circle text-primary" title="{% trans 'New' %}"></i>
                         </span>
-                    {% endif %}
-                </div>
-                <div>
-                    {{ message.text|linebreaksbr|urlizetrunc:50 }}
-                </div>
-            </div>
+                {% endif %}
+            </p>
+            {{ message.text|linebreaks|urlizetrunc:50 }}
         </div>
     </div>
 </div>
