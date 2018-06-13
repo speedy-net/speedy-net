@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 14:46+0200\n"
+"POT-Creation-Date: 2018-06-13 18:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -359,53 +359,53 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:20 .\templates\base_site.html:43
-#: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:10
+#: .\templates\base_site.html:20 .\templates\base_site.html:53
+#: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
 msgid "Likes"
 msgstr "לייקים"
 
-#: .\templates\base_site.html:23 .\templates\base_site.html:49
+#: .\templates\base_site.html:23 .\templates\base_site.html:59
 msgid "Matches"
 msgstr "התאמות"
 
-#: .\templates\likes\like_list.html:15
+#: .\templates\likes\like_list.html:17
 msgid "People I Like"
 msgstr "א/נשים שעשיתי להם לייק"
 
-#: .\templates\likes\like_list.html:20
+#: .\templates\likes\like_list.html:22
 msgid "People Who Like Me"
 msgstr "א/נשים שעשו לי לייק"
 
-#: .\templates\likes\like_list.html:25
+#: .\templates\likes\like_list.html:27
 msgid "Mutual Likes"
 msgstr "לייקים הדדיים"
 
-#: .\templates\likes\like_list.html:39
+#: .\templates\likes\like_list.html:41
 msgid "You have no likes here."
 msgstr "אין פה א/נשים."
 
-#: .\templates\matches\match_list.html:20
-msgid "Edit Settings"
+#: .\templates\matches\match_list.html:25
+msgid "Search for your matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:23
-msgid "Your matches"
-msgstr ""
-
-#: .\templates\matches\match_list.html:34
+#: .\templates\matches\match_list.html:37
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:45
+#: .\templates\matches\match_list.html:48
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:55
-msgid "Find"
+#: .\templates\matches\match_list.html:59
+msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:70
+#: .\templates\matches\match_list.html:66
+msgid "Add more options"
+msgstr ""
+
+#: .\templates\matches\match_list.html:82
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
@@ -445,7 +445,7 @@ msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
-msgstr ""
+msgstr "פרטים נוספים"
 
 #: .\templates\profiles\user_extra_info_widget.html:19
 msgid "Profile Description"
@@ -481,6 +481,10 @@ msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:64
 msgid "My Ideal Match"
+msgstr ""
+
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
 msgstr ""
 
 #~ msgid "ל"

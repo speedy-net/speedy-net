@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 14:55+0200\n"
+"POT-Creation-Date: 2018-06-13 18:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,18 +45,18 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:208 .\templates\base_with_login.html:78
+#: .\accounts\forms.py:208 .\templates\base_with_login.html:88
 msgid "Email or Username"
 msgstr ""
 
 #: .\accounts\forms.py:213 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:52
-#: .\templates\base_with_login.html:91
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:53
+#: .\templates\base_with_login.html:103
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:216 .\templates\base_with_login.html:55
-#: .\templates\base_with_login.html:88
+#: .\accounts\forms.py:216 .\templates\base_with_login.html:56
+#: .\templates\base_with_login.html:100
 msgid "Forgot your password?"
 msgstr ""
 
@@ -424,7 +424,7 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:150
+#: .\templates\about\about_base.html:5 .\templates\base.html:156
 #: .\templates\menu\about_mobile_menu_links.html:12
 msgid "About"
 msgstr ""
@@ -447,8 +447,8 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:36 .\templates\base_with_login.html:69
-#: .\templates\base_with_login.html:125
+#: .\templates\base_with_login.html:37 .\templates\base_with_login.html:76
+#: .\templates\base_with_login.html:137
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr ""
@@ -457,7 +457,7 @@ msgstr ""
 msgid "Profile Info"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:151
+#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:157
 #: .\templates\menu\about_mobile_menu_links.html:15
 msgid "Privacy"
 msgstr ""
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Email with password reset instructions has been sent."
 msgstr ""
 
-#: .\templates\accounts\registration.html:9
+#: .\templates\accounts\registration.html:11
 #, python-format
 msgid ""
 "\n"
@@ -580,7 +580,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\templates\accounts\registration.html:18
+#: .\templates\accounts\registration.html:20
 #, python-format
 msgid ""
 "\n"
@@ -588,112 +588,114 @@ msgid ""
 "                "
 msgstr ""
 
-#: .\templates\base.html:104
+#: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:151 .\templates\menu\about_mobile_menu_links.html:15
+#: .\templates\base.html:157 .\templates\menu\about_mobile_menu_links.html:15
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base.html:152 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base.html:152 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base.html:153 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:159 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:21
 msgid "Contact Us"
 msgstr ""
 
-#: .\templates\base.html:156
+#: .\templates\base.html:162
 msgid "Speedy Net"
 msgstr ""
 
-#: .\templates\base.html:157
+#: .\templates\base.html:163
 msgid "Speedy Match"
 msgstr ""
 
-#: .\templates\base.html:158
+#: .\templates\base.html:164
 msgid "Speedy Composer"
 msgstr ""
 
-#: .\templates\base.html:159
+#: .\templates\base.html:165
 msgid "Speedy Mail Software"
 msgstr ""
 
-#: .\templates\base.html:160
+#: .\templates\base.html:166
 msgid "Speedy Net Blog"
 msgstr ""
 
-#: .\templates\base.html:163
+#: .\templates\base.html:169
 msgid "Speedy Net's Shop"
 msgstr ""
 
-#: .\templates\base.html:164
+#: .\templates\base.html:170
 msgid "Speedy Match's Shop"
 msgstr ""
 
-#: .\templates\base.html:165
+#: .\templates\base.html:171
 msgid "Speedy Composer's Shop"
 msgstr ""
 
-#: .\templates\base.html:166
+#: .\templates\base.html:172
 msgid "Speedy S-logo Shop"
 msgstr ""
 
-#: .\templates\base.html:169
+#: .\templates\base.html:175
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:170
+#: .\templates\base.html:176
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:171
+#: .\templates\base.html:177
 msgid "Free Online Dating"
 msgstr ""
 
-#: .\templates\base.html:192 .\templates\base.html:194
+#: .\templates\base.html:198 .\templates\base.html:200
 msgid "Speedy"
 msgstr ""
 
-#: .\templates\base_with_login.html:29 .\templates\base_with_login.html:113
-#: .\templates\im\chat_detail.html:13 .\templates\im\chat_list.html:8
-#: .\templates\im\chat_list.html:13
+#: .\templates\base_with_login.html:30 .\templates\base_with_login.html:125
+#: .\templates\im\chat_detail.html:16 .\templates\im\chat_list.html:8
+#: .\templates\im\chat_list.html:21
 msgid "Messages"
 msgstr ""
 
-#: .\templates\base_with_login.html:33 .\templates\friends\base.html:7
+#: .\templates\base_with_login.html:34 .\templates\friends\base.html:7
 #: .\templates\friends\user_friends_widget.html:14
 #: .\templates\friends\user_menu_friends.html:7
 msgid "Friends"
 msgstr ""
 
-#: .\templates\base_with_login.html:43 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:44 .\templates\base_with_login.html:79
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base_with_login.html:49
+#: .\templates\base_with_login.html:50
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:68
+#: .\templates\base_with_login.html:71
 #, python-format
 msgid ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"\n"
+"                Hi <a href=\"%(user_link)s\" class=\"navbar-link\">"
+"%(user_name)s</a>, welcome back to %(site_name)s\n"
+"                !"
 msgstr ""
 
-#: .\templates\base_with_login.html:84
+#: .\templates\base_with_login.html:95
 msgid "Password"
 msgstr ""
 
@@ -727,19 +729,19 @@ msgstr ""
 msgid "Your feedback was sent to administrators."
 msgstr ""
 
-#: .\templates\friends\base.html:16
+#: .\templates\friends\base.html:18
 msgid "Your Friends"
 msgstr ""
 
-#: .\templates\friends\base.html:21
+#: .\templates\friends\base.html:23
 msgid "Received Requests"
 msgstr ""
 
-#: .\templates\friends\base.html:27
+#: .\templates\friends\base.html:29
 msgid "Sent Requests"
 msgstr ""
 
-#: .\templates\friends\friend_list.html:12
+#: .\templates\friends\friend_list.html:14
 msgid "You don't have any friends yet."
 msgstr ""
 
@@ -752,37 +754,37 @@ msgstr ""
 msgid "See All"
 msgstr ""
 
-#: .\templates\im\chat_detail.html:22
+#: .\templates\im\chat_detail.html:29
 #, python-format
 msgid ""
 "Chat with\n"
-"                <a href=\"%(link)s\">%(other_user)s</a>"
+"                        <a href=\"%(link)s\">%(other_user)s</a>"
 msgstr ""
 
-#: .\templates\im\chat_detail.html:30
+#: .\templates\im\chat_detail.html:36
 #, python-format
 msgid ""
 "Send a message to\n"
-"                    %(other_user)s"
+"                        %(other_user)s"
 msgstr ""
 
-#: .\templates\im\chat_detail.html:42
+#: .\templates\im\chat_detail.html:47
 msgid "Mark All as Read"
 msgstr ""
 
-#: .\templates\im\chat_list.html:38
+#: .\templates\im\chat_list.html:47
 msgid "Unread"
 msgstr ""
 
-#: .\templates\im\chat_list.html:44
+#: .\templates\im\chat_list.html:54
 msgid "You:"
 msgstr ""
 
-#: .\templates\im\chat_list.html:61
+#: .\templates\im\chat_list.html:73
 msgid "You have no messages yet."
 msgstr ""
 
-#: .\templates\im\message.html:21
+#: .\templates\im\message.html:19
 msgid "New"
 msgstr ""
 
@@ -828,69 +830,67 @@ msgstr ""
 msgid "Add to Friends"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:8
-msgid "Are you sure you want to block "
-msgstr ""
-
-#: .\templates\profiles\tools\block_user.html:8
-msgid "?"
-msgstr ""
-
-#: .\templates\profiles\tools\block_user.html:13
-msgid "Block "
-msgstr ""
-
-#: .\templates\profiles\tools\block_user.html:24
-msgid "Unblock "
-msgstr ""
-
-#: .\templates\profiles\tools\friend_request_sent.html:9
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Friend Request Sent"
-msgstr ""
-
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Cancel Request"
-msgstr ""
-
-#: .\templates\profiles\tools\report_menu.html:6
+#: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
 msgstr ""
 
-#: .\templates\profiles\tools\report_menu.html:9
+#: .\templates\profiles\tools\block_user.html:17
+msgid "Are you sure you want to block "
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:17
+msgid "?"
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:20
+msgid "Block "
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:27
+msgid "Unblock "
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:32
 msgid "Report "
 msgstr ""
 
-#: .\templates\profiles\tools\report_menu.html:11
+#: .\templates\profiles\tools\block_user.html:35
 msgid "Report this photo"
+msgstr ""
+
+#: .\templates\profiles\tools\friend_request_sent.html:7
+msgid "Cancel Friend Request"
+msgstr ""
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
 msgstr ""
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
 msgstr ""
 
-#: .\templates\profiles\tools\your_friend.html:9
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Your Friend"
+#: .\templates\profiles\user_base.html:28
+msgid "Friend request sent"
 msgstr ""
 
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Remove"
+#: .\templates\profiles\user_base.html:31
+msgid "Your friend"
 msgstr ""
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "This user doesn't match your profile, "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "View "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "user's profile on Speedy Net."
 msgstr ""
 

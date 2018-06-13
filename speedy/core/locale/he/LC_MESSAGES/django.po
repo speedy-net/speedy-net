@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 14:46+0200\n"
+"POT-Creation-Date: 2018-06-13 18:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,18 +46,18 @@ msgstr "שם משתמש/ת חדש"
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:208 .\templates\base_with_login.html:78
+#: .\accounts\forms.py:208 .\templates\base_with_login.html:88
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
 #: .\accounts\forms.py:213 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:52
-#: .\templates\base_with_login.html:91
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:53
+#: .\templates\base_with_login.html:103
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:216 .\templates\base_with_login.html:55
-#: .\templates\base_with_login.html:88
+#: .\accounts\forms.py:216 .\templates\base_with_login.html:56
+#: .\templates\base_with_login.html:100
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -427,7 +427,7 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:150
+#: .\templates\about\about_base.html:5 .\templates\base.html:156
 #: .\templates\menu\about_mobile_menu_links.html:12
 msgid "About"
 msgstr "אודות"
@@ -450,8 +450,8 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:36 .\templates\base_with_login.html:69
-#: .\templates\base_with_login.html:125
+#: .\templates\base_with_login.html:37 .\templates\base_with_login.html:76
+#: .\templates\base_with_login.html:137
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr "עריכת פרופיל"
@@ -460,7 +460,7 @@ msgstr "עריכת פרופיל"
 msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:151
+#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:157
 #: .\templates\menu\about_mobile_menu_links.html:15
 msgid "Privacy"
 msgstr "פרטיות"
@@ -569,7 +569,7 @@ msgstr "איפוס סיסמה נכשל. קישור לא תקין."
 msgid "Email with password reset instructions has been sent."
 msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
 
-#: .\templates\accounts\registration.html:9
+#: .\templates\accounts\registration.html:11
 #, python-format
 msgid ""
 "\n"
@@ -583,7 +583,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\templates\accounts\registration.html:18
+#: .\templates\accounts\registration.html:20
 #, python-format
 msgid ""
 "\n"
@@ -591,115 +591,120 @@ msgid ""
 "                "
 msgstr ""
 
-#: .\templates\base.html:104
+#: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:151 .\templates\menu\about_mobile_menu_links.html:15
+#: .\templates\base.html:157 .\templates\menu\about_mobile_menu_links.html:15
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base.html:152 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base.html:152 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base.html:153 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:159 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:21
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:156
+#: .\templates\base.html:162
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:157
+#: .\templates\base.html:163
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:158
+#: .\templates\base.html:164
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:165
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:166
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:163
+#: .\templates\base.html:169
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:170
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:165
+#: .\templates\base.html:171
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:166
+#: .\templates\base.html:172
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:169
+#: .\templates\base.html:175
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:170
+#: .\templates\base.html:176
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:171
+#: .\templates\base.html:177
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: .\templates\base.html:192 .\templates\base.html:194
+#: .\templates\base.html:198 .\templates\base.html:200
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:29 .\templates\base_with_login.html:113
-#: .\templates\im\chat_detail.html:13 .\templates\im\chat_list.html:8
-#: .\templates\im\chat_list.html:13
+#: .\templates\base_with_login.html:30 .\templates\base_with_login.html:125
+#: .\templates\im\chat_detail.html:16 .\templates\im\chat_list.html:8
+#: .\templates\im\chat_list.html:21
 msgid "Messages"
 msgstr "הודעות"
 
-#: .\templates\base_with_login.html:33 .\templates\friends\base.html:7
+#: .\templates\base_with_login.html:34 .\templates\friends\base.html:7
 #: .\templates\friends\user_friends_widget.html:14
 #: .\templates\friends\user_menu_friends.html:7
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\templates\base_with_login.html:43 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:44 .\templates\base_with_login.html:79
 msgid "Logout"
 msgstr "התנתק/י"
 
-#: .\templates\base_with_login.html:49
+#: .\templates\base_with_login.html:50
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:68
-#, python-format
+#: .\templates\base_with_login.html:71
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+#| "welcome back to %(site_name)s!"
 msgid ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"\n"
+"                Hi <a href=\"%(user_link)s\" class=\"navbar-link\">"
+"%(user_name)s</a>, welcome back to %(site_name)s\n"
+"                !"
 msgstr ""
 "היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "ברוכ/ה השב/ה ל%(site_name)s!"
 
-#: .\templates\base_with_login.html:84
+#: .\templates\base_with_login.html:95
 msgid "Password"
 msgstr ""
 
@@ -733,19 +738,19 @@ msgstr "תודה"
 msgid "Your feedback was sent to administrators."
 msgstr "המשוב שלך נשלח למנהלים."
 
-#: .\templates\friends\base.html:16
+#: .\templates\friends\base.html:18
 msgid "Your Friends"
 msgstr "החברות והחברים שלך"
 
-#: .\templates\friends\base.html:21
+#: .\templates\friends\base.html:23
 msgid "Received Requests"
 msgstr "בקשות חברות שקיבלת"
 
-#: .\templates\friends\base.html:27
+#: .\templates\friends\base.html:29
 msgid "Sent Requests"
 msgstr "בקשות חברות ששלחת"
 
-#: .\templates\friends\friend_list.html:12
+#: .\templates\friends\friend_list.html:14
 msgid "You don't have any friends yet."
 msgstr "עדיין אין לך חברים/ות."
 
@@ -758,39 +763,39 @@ msgstr "אין פה בקשות חברות."
 msgid "See All"
 msgstr "ראה/י הכול"
 
-#: .\templates\im\chat_detail.html:22
+#: .\templates\im\chat_detail.html:29
 #, fuzzy, python-format
 #| msgid "Chat with <a href=\"%(link)s\">%(other_user)s</a>"
 msgid ""
 "Chat with\n"
-"                <a href=\"%(link)s\">%(other_user)s</a>"
+"                        <a href=\"%(link)s\">%(other_user)s</a>"
 msgstr "שיחה עם <a href=\"%(link)s\">%(other_user)s</a>"
 
-#: .\templates\im\chat_detail.html:30
+#: .\templates\im\chat_detail.html:36
 #, fuzzy, python-format
 #| msgid "Send a message to %(other_user)s"
 msgid ""
 "Send a message to\n"
-"                    %(other_user)s"
+"                        %(other_user)s"
 msgstr "שלח/י הודעה ל%(other_user)s"
 
-#: .\templates\im\chat_detail.html:42
+#: .\templates\im\chat_detail.html:47
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\im\chat_list.html:38
+#: .\templates\im\chat_list.html:47
 msgid "Unread"
 msgstr "לא נקראה"
 
-#: .\templates\im\chat_list.html:44
+#: .\templates\im\chat_list.html:54
 msgid "You:"
 msgstr "את/ה:"
 
-#: .\templates\im\chat_list.html:61
+#: .\templates\im\chat_list.html:73
 msgid "You have no messages yet."
 msgstr "עדיין אין לך הודעות."
 
-#: .\templates\im\message.html:21
+#: .\templates\im\message.html:19
 msgid "New"
 msgstr ""
 
@@ -841,69 +846,75 @@ msgstr "דחה/י"
 msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
 
-#: .\templates\profiles\tools\block_user.html:8
-msgid "Are you sure you want to block "
-msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
-
-#: .\templates\profiles\tools\block_user.html:8
-msgid "?"
-msgstr ""
-
-#: .\templates\profiles\tools\block_user.html:13
-msgid "Block "
-msgstr "חסום/י את "
-
-#: .\templates\profiles\tools\block_user.html:24
-msgid "Unblock "
-msgstr "בטל/י את חסימת "
-
-#: .\templates\profiles\tools\friend_request_sent.html:9
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Friend Request Sent"
-msgstr "בקשת חברות נשלחה"
-
-#: .\templates\profiles\tools\friend_request_sent.html:10
-msgid "Cancel Request"
-msgstr "בטל/י בקשת חברות"
-
-#: .\templates\profiles\tools\report_menu.html:6
+#: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
 msgstr ""
 
-#: .\templates\profiles\tools\report_menu.html:9
+#: .\templates\profiles\tools\block_user.html:17
+msgid "Are you sure you want to block "
+msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
+
+#: .\templates\profiles\tools\block_user.html:17
+msgid "?"
+msgstr ""
+
+#: .\templates\profiles\tools\block_user.html:20
+msgid "Block "
+msgstr "חסום/י את "
+
+#: .\templates\profiles\tools\block_user.html:27
+msgid "Unblock "
+msgstr "בטל/י את חסימת "
+
+#: .\templates\profiles\tools\block_user.html:32
 msgid "Report "
 msgstr "דווח/י על "
 
-#: .\templates\profiles\tools\report_menu.html:11
+#: .\templates\profiles\tools\block_user.html:35
 msgid "Report this photo"
 msgstr "דווח/י על תמונה זו"
+
+#: .\templates\profiles\tools\friend_request_sent.html:7
+#, fuzzy
+#| msgid "Cancel Request"
+msgid "Cancel Friend Request"
+msgstr "בטל/י בקשת חברות"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+#, fuzzy
+#| msgid "Your Friend"
+msgid "Remove Friend"
+msgstr "חבר/ה שלך"
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
 msgstr "שלח/י הודעה"
 
-#: .\templates\profiles\tools\your_friend.html:9
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Your Friend"
+#: .\templates\profiles\user_base.html:28
+#, fuzzy
+#| msgid "Friend request sent."
+msgid "Friend request sent"
+msgstr "בקשת חברות נשלחה."
+
+#: .\templates\profiles\user_base.html:31
+#, fuzzy
+#| msgid "Your Friend"
+msgid "Your friend"
 msgstr "חבר/ה שלך"
 
-#: .\templates\profiles\tools\your_friend.html:10
-msgid "Remove"
-msgstr "הסר/י"
-
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "This user doesn't match your profile, "
 msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, "
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "אבל באפשרותך לראות אותו/ה בספידי נט. "
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "View "
 msgstr "צפה/י בפרופיל של "
 
-#: .\templates\profiles\user_base.html:36
+#: .\templates\profiles\user_base.html:59
 msgid "user's profile on Speedy Net."
 msgstr "משתמש/ת זה/זאת בספידי נט."
 
@@ -944,14 +955,16 @@ msgstr "דואר אלקטרוני"
 msgid ""
 "%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
 "Speedy Match."
-msgstr "ל%(entity)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(entity)s בספידי מץ'."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(entity)s בספידי מץ'."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:5
 #, python-format
 msgid ""
 "%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
 "Speedy Net."
-msgstr "ל%(entity)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(entity)s בספידי נט."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(entity)s בספידי נט."
 
 #: .\templates\terms\terms_of_service.html:17
 msgid ""
@@ -999,7 +1012,8 @@ msgctxt "female"
 msgid ""
 "%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
 "Speedy Net."
-msgstr "ל%(entity)s יש גם פרופיל בספידי נט. צפי בפרופיל של %(entity)s בספידי נט."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי נט. צפי בפרופיל של %(entity)s בספידי נט."
 
 #: .\templates\translations.html:10
 #, python-format
@@ -1007,7 +1021,8 @@ msgctxt "male"
 msgid ""
 "%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
 "Speedy Net."
-msgstr "ל%(entity)s יש גם פרופיל בספידי נט. צפה בפרופיל של %(entity)s בספידי נט."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי נט. צפה בפרופיל של %(entity)s בספידי נט."
 
 #: .\templates\translations.html:11
 #, python-format
@@ -1015,7 +1030,8 @@ msgctxt "other"
 msgid ""
 "%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
 "Speedy Net."
-msgstr "ל%(entity)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(entity)s בספידי נט."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(entity)s בספידי נט."
 
 #: .\templates\translations.html:13
 #, python-format
@@ -1023,7 +1039,8 @@ msgctxt "female"
 msgid ""
 "%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
 "Speedy Match."
-msgstr "ל%(entity)s יש גם פרופיל בספידי מץ'. צפי בפרופיל של %(entity)s בספידי מץ'."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי מץ'. צפי בפרופיל של %(entity)s בספידי מץ'."
 
 #: .\templates\translations.html:14
 #, python-format
@@ -1031,7 +1048,8 @@ msgctxt "male"
 msgid ""
 "%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
 "Speedy Match."
-msgstr "ל%(entity)s יש גם פרופיל בספידי מץ'. צפה בפרופיל של %(entity)s בספידי מץ'."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי מץ'. צפה בפרופיל של %(entity)s בספידי מץ'."
 
 #: .\templates\translations.html:15
 #, python-format
@@ -1039,7 +1057,8 @@ msgctxt "other"
 msgid ""
 "%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
 "Speedy Match."
-msgstr "ל%(entity)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(entity)s בספידי מץ'."
+msgstr ""
+"ל%(entity)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(entity)s בספידי מץ'."
 
 #: .\templates\translations.html:18
 msgctxt "female"
@@ -2114,6 +2133,12 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgid "Friend Request Sent"
+#~ msgstr "בקשת חברות נשלחה"
+
+#~ msgid "Remove"
+#~ msgstr "הסר/י"
 
 #~ msgid "Privacy Settings"
 #~ msgstr "הגדרות פרטיות"
