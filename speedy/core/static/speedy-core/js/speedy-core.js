@@ -45,12 +45,14 @@ $.datepicker.regional.he = {
 
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
+/*
 evil.block('@@HamburgerMenu', {
     init: function () {
         this.sideMenuPlaceholder.html($('@@SideMenu').html());
         this.sideMenuPlaceholder.find('li:last-child').remove();  // Remove redundant "Edit profile"
     }
 });
+*/
 
 evil.block('@@RegistrationForm', {
 
