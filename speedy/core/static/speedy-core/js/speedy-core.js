@@ -67,7 +67,6 @@ evil.block('@@RegistrationForm', {
     },
 
     init: function () {
-        console.log(this);
         this.slugField = this.$('#id_slug');
         this.firstNameField = this.$('#id_first_name');
         this.lastNameField = this.$('#id_last_name');
