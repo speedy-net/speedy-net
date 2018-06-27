@@ -8,7 +8,7 @@ from .models import UserAccessField
 def _has_access_perm_for_obj(user, other, access):
     if access == UserAccessField.ACCESS_ANYONE:
         return True
-    if user.is_authenticated():
+    if user.is_authenticated:
         if access == UserAccessField.ACCESS_ME:
             return user == other
         if access == UserAccessField.ACCESS_FRIENDS:

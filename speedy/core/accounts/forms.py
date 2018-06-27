@@ -7,7 +7,7 @@ from django import forms
 from django.conf import settings
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from speedy.core.accounts.utils import get_site_profile_model

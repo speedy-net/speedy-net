@@ -5,6 +5,7 @@ from django.views import generic
 from . import forms
 from . import views
 
+app_name = 'speedy.core.accounts'
 urlpatterns = [
 
     url(r'^set-session/$', views.set_session, name='set_session'),

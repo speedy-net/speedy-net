@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 
 from django.conf.urls.static import static
 
+app_name = 'speedy.core'
 urlpatterns = [
     url(r'^about/', include('speedy.core.about.urls', namespace='about')),
     url(r'^privacy/', include('speedy.core.privacy.urls', namespace='privacy')),

@@ -14,7 +14,7 @@ from speedy.core.accounts.rules import has_access_perm
 
 @predicate
 def is_match_profile(user, other):
-    if user.is_authenticated():
+    if user.is_authenticated:
         match_profile = user.profile.get_matching_rank(other_profile=other.profile) > SiteProfile.RANK_0
         has_message = Chat.on_site.filter((Q(ent1_id=user) & Q(ent2_id=other)) | (Q(ent1_id=other) & Q(ent2_id=user))).exists()
         has_likes = UserLike.objects.filter((Q(from_user=user) & Q(to_user=other)) | (Q(from_user=other) & Q(to_user=user))).exists()

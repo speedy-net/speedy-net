@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.shortcuts import redirect
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin

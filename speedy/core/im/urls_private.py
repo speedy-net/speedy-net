@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'speedy.core.im'
 urlpatterns = [
     url(r'^$', views.ChatListView.as_view(), name='list'),
     url(r'^(?P<chat_slug>[-._\w]+)/$', views.ChatDetailView.as_view(), name='chat'),

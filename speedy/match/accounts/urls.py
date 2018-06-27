@@ -3,6 +3,7 @@ from django.conf.urls import url
 from . import views
 from speedy.core.accounts.urls import urlpatterns
 
+app_name = 'speedy.match.accounts'
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^welcome/$', views.ActivateSiteProfileView.as_view(), name='welcome'),

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import resolve, reverse
+from django.urls import resolve, reverse
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
@@ -73,7 +73,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
     paginate_by = 25
 
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated():
+        if not request.user.is_authenticated:
             return self.handle_no_permission()
         visited_user = self.get_user_queryset().filter(
             username=normalize_username(slug=self.kwargs['chat_slug'])).first()

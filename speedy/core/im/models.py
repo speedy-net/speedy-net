@@ -10,12 +10,12 @@ from .managers import ChatManager, MessageManager, ReadMarkManager
 
 class Chat(TimeStampedModel):
     id = RegularUDIDField()
-    site = models.ForeignKey(verbose_name=_('site'), to=Site)
-    ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, null=True, blank=True, related_name='+')
-    ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, null=True, blank=True, related_name='+')
+    site = models.ForeignKey(verbose_name=_('site'), on_delete=models.PROTECT, to=Site)
+    ent1 = models.ForeignKey(verbose_name=_('participant 1'), to=Entity, on_delete=models.SET_NULL, null=True, blank=True, related_name='+')
+    ent2 = models.ForeignKey(verbose_name=_('participant 2'), to=Entity, on_delete=models.SET_NULL, null=True, blank=True, related_name='+')
     group = models.ManyToManyField(verbose_name=_('participants'), to=Entity)
     is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
-    last_message = models.ForeignKey(verbose_name=_('last message'), to='Message', blank=True, null=True, related_name='+')
+    last_message = models.ForeignKey(verbose_name=_('last message'), to='Message', on_delete=models.SET_NULL, blank=True, null=True, related_name='+')
 
     objects = models.Manager()
     on_site = ChatManager()
@@ -86,8 +86,8 @@ class Message(TimeStampedModel):
 
 
 class ReadMark(TimeStampedModel):
-    entity = models.ForeignKey(verbose_name=_('entity'), to=Entity, related_name='+')
-    chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, related_name='+')
+    entity = models.ForeignKey(verbose_name=_('entity'), to=Entity, on_delete=models.CASCADE, related_name='+')
+    chat = models.ForeignKey(verbose_name=_('chat'), to=Chat, on_delete=models.CASCADE, related_name='+')
 
     objects = ReadMarkManager()
 

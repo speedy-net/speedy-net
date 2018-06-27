@@ -63,7 +63,7 @@ class UserMixin(object):
         cd.update({
             'user': self.user,
         })
-        if self.request.user.is_authenticated():
+        if self.request.user.is_authenticated:
             try:
                 friend_request_received = FriendshipRequest.objects.get(from_user=self.user, to_user=self.request.user)
             except FriendshipRequest.DoesNotExist:

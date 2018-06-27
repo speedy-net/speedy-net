@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME, update_session_auth_hash
 from django.contrib.auth import views as auth_views
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
@@ -56,7 +56,7 @@ class IndexView(generic.View):
     registered_redirect_to = 'profiles:me' # The default.
 
     def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated():
+        if self.request.user.is_authenticated:
             return redirect(to=self.registered_redirect_to)
         else:
             return RegistrationView.as_view()(request=request, *args, **kwargs)

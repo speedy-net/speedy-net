@@ -1,6 +1,6 @@
 from urllib import parse
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.urls import resolve, Resolver404
 from django.http import Http404
 from django.views import generic
@@ -42,7 +42,7 @@ class FeedbackView(generic.CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         defaults = {
-            'sender': self.request.user if self.request.user.is_authenticated() else None,
+            'sender': self.request.user if self.request.user.is_authenticated else None,
             'type': self.get_type(),
             'report_entity': self.get_report_entity(),
             'report_file': self.get_report_file(),

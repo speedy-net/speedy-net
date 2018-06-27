@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext as _

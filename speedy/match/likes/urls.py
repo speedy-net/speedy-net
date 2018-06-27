@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'speedy.match.likes'
 urlpatterns = [
     url('^$', views.LikeListDefaultRedirectView.as_view(), name='list'),
     url('^to/$', views.LikeListToView.as_view(), name='list_to'),

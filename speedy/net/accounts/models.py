@@ -9,7 +9,7 @@ from speedy.core.base.models import TimeStampedModel
 
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_net_site_profile'
-    user = models.OneToOneField(User, primary_key=True, related_name=RELATED_NAME)
+    user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
 
     class Meta:
         verbose_name = 'Speedy Net Profile'

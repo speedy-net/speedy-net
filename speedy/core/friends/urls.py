@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'speedy.core.friends'
 urlpatterns = [
     url(r'^$', views.UserFriendListView.as_view(), name='list'),
     url(r'^received-requests/$', views.ReceivedFriendshipRequestsListView.as_view(), name='received_requests'),

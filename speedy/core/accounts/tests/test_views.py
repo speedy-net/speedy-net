@@ -104,7 +104,7 @@ class RegistrationViewTestCase(TestCase):
         else:
             self.assertRedirects(response=r, expected_url='/welcome/', fetch_redirect_response=False)
             r = self.client.get('/welcome/')
-        self.assertTrue(expr=r.context['user'].is_authenticated())
+        self.assertTrue(expr=r.context['user'].is_authenticated)
         self.assertEqual(first=r.context['user'].slug, second='user1234')
 
     def test_user_gets_email_after_registration_in_english(self):
@@ -191,7 +191,7 @@ class LogoutViewTestCase(TestCase):
         r = self.client.get('/logout/')
         self.assertEqual(first=r.status_code, second=200)
         r = self.client.get('/')
-        self.assertFalse(expr=r.context['user'].is_authenticated())
+        self.assertFalse(expr=r.context['user'].is_authenticated)
 
 
 @exclude_on_speedy_composer

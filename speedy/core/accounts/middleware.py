@@ -5,7 +5,7 @@ from django.utils.deprecation import MiddlewareMixin
 
 class SiteProfileMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             request.user.profile.update_last_visit()
             if not request.user.has_verified_email:
                 request.user.profile.deactivate()
