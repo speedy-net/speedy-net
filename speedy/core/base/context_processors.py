@@ -54,10 +54,3 @@ def speedy_match_url(request):
     }
 
 
-def language_code(request):
-    LANGUAGE_CODE = get_language()
-    return {
-        'LANGUAGE_CODE': LANGUAGE_CODE,
-    }
-
-
