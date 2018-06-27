@@ -94,11 +94,6 @@ class ActiveUserFactory(DefaultUserFactory):
                 raise Exception("Step not as expected, {}".format(step))
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
-            # # self.profile._set_active_languages(["en"])
-            # # self.profile.save(update_fields={'active_languages', 'activation_step'})
-            # ~~~~ TODO: remove the following lines, user can't be activated without executing self.profile.validate_profile_and_activate()
-            # self.profile._set_active_languages(["en"])
-            # self.profile.save(update_fields={'active_languages', 'activation_step'})
         else:
             self.profile.activate()
 
