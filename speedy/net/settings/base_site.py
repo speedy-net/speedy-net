@@ -25,5 +25,6 @@ INSTALLED_APPS += [
 AUTH_SITE_PROFILE_MODEL = 'net_accounts.SiteProfile'
 
 USER_PROFILE_WIDGETS += [
+    'speedy.core.friends.widgets.UserFriendsWidget',
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
 ]

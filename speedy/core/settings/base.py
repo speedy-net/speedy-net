@@ -104,7 +104,6 @@ TEMPLATES = [
 USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
-    'speedy.core.friends.widgets.UserFriendsWidget',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

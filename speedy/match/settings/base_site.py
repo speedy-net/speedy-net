@@ -26,9 +26,7 @@ ACTIVATE_PROFILE_AFTER_REGISTRATION = False
 
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileActivationForm'
 
-USER_PROFILE_WIDGETS = [
-    'speedy.core.profiles.widgets.UserPhotoWidget',
-    'speedy.core.profiles.widgets.UserInfoWidget',
+USER_PROFILE_WIDGETS += [
     'speedy.match.profiles.widgets.UserRankWidget',
     'speedy.match.profiles.widgets.UserExtraDetailsWidget',
     'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
