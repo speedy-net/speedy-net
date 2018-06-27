@@ -2,7 +2,6 @@ from django.conf import settings
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.http import Http404
-from django.contrib.sites.models import Site
 from django.shortcuts import redirect
 from django.utils.module_loading import import_string
 from django.views import generic
