@@ -8,6 +8,7 @@
 {% load static %}
 
 {% block extracss %}
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}">
 {% endblock %}
 

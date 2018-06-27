@@ -27,9 +27,7 @@
             {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}" /> #}
         {% endif %}
         <link rel="stylesheet" href="{% static 'speedy-core/css/speedy-core.css' %}" />
-        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}">
-    {% endblock %}
-    {% block extracss %}
+        {% block extracss %}{% endblock %}
     {% endblock %}
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png" />
@@ -218,10 +216,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{% static 'vendor/evil-blocks/evil-blocks.js' %}"></script>
     <script src="{% static 'speedy-core/js/speedy-core.js' %}"></script>
-    <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
+    {% block extrajs %}{% endblock %}
     {% block domain_cookie_login %}{% endblock %}
-{% endblock %}
-{% block extrajs %}
 {% endblock %}
 
 </body>

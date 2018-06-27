@@ -4,6 +4,10 @@
 {% load core_tags_and_filters %}
 {% load staticfiles %}
 
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}">
+{% endblock %}
+
 {% block site_theme %}
     {% get_current_language_bidi as LANGUAGE_BIDI %}
     {% if LANGUAGE_BIDI %}
@@ -40,7 +44,6 @@
                                           alt="{{ site.name }}"></a>
 {% endblock %}
 
-
 {% block user_menu_friends %}{% endblock %}
 
 {% block navbar_left_menu %}
@@ -67,8 +70,12 @@
 {% block greeting %}
 {% endblock %}
 
-
 {% block full_content %}
     {% block content %}
     {% endblock %}
 {% endblock %}
+
+{% block extrajs %}
+    <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
+{% endblock %}
+
