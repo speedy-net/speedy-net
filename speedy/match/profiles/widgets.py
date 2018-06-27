@@ -1,6 +1,3 @@
-from django.conf import settings
-from django.contrib.sites.models import Site
-
 from speedy.core.profiles.widgets import Widget
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as MatchSiteProfile
