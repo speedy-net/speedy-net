@@ -5,16 +5,12 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% get_current_language as LANGUAGE_CODE %}
-{% get_current_language_bidi as LANGUAGE_BIDI %}
-
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% block site_title %}{{ site_title }}{% endblock %}{% endblock %}</title>
     {% block css %}
         {% block site_theme %}
-            {% get_current_language_bidi as LANGUAGE_BIDI %}
             {% if LANGUAGE_BIDI %}
                 <link rel="stylesheet" href="{% static 'themes/speedy-net.rtl.css' %}" />
             {% else %}
@@ -141,7 +137,6 @@
                 <div class="row">
                     <div class="col-md-2">
                         <p>
-                            {% get_available_languages as LANGUAGES %}
                             {% get_language_info_list for LANGUAGES as languages %}
                             {% for language in languages %}
                                 <a href="//{{ language.code }}.{{ site.domain }}{{ request.get_full_path }}" title="{{ language.name_local }}">{{ language.name_local }}</a>

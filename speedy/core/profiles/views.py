@@ -103,11 +103,9 @@ class UserDetailView(UserMixin, generic.TemplateView):
         return widgets
 
     def get_context_data(self, **kwargs):
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
         cd = super().get_context_data(**kwargs)
         cd.update({
             'widgets': self.get_widgets(),
-            'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain
         })
 
         return cd

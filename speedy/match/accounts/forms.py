@@ -6,7 +6,7 @@ from django.utils.datastructures import MultiValueDict
 
 from speedy.match.accounts import validators
 from django.template.loader import render_to_string
-from django.utils.translation import ugettext_lazy as _, get_language
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import Site
 
 from modeltranslation.forms import TranslationModelForm
@@ -20,14 +20,9 @@ from .models import SiteProfile
 class CustomPhotoWidget(forms.widgets.Widget):
 
     def render(self, name, value, attrs=None):
-        language_code = get_language()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
-        speedy_net_url = Site.objects.get(id=SPEEDY_NET_SITE_ID).domain
         return render_to_string('accounts/edit_profile/activation_form/photo_widget.html', {
             'name': name,
             'user_photo': self.attrs['user'].photo,
-            'LANGUAGE_CODE': language_code,
-            'speedy_net_url': speedy_net_url,
         })
 
 

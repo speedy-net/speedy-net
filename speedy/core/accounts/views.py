@@ -10,7 +10,7 @@ from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _, get_language, pgettext_lazy
 from django.views import generic
 from django.views.decorators.cache import never_cache
@@ -69,10 +69,10 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', 
+        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s',
                 settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
         if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
-            log.debug('activating profile, profile: %s', self.object.profile) 
+            log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
@@ -172,12 +172,6 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return redirect(to=self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        cd = super().get_context_data(**kwargs)
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
-        cd.update({'speedy_net_url': Site.objects.get(id=SPEEDY_NET_SITE_ID).domain})
-        return cd
-
     def get_account_activation_url(self):
         return reverse_lazy('accounts:activate')
 
@@ -204,7 +198,7 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         user = self.request.user
         user.profile.deactivate()
         current_site = Site.objects.get_current()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES['net']['site_id']
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
         if (settings.SITE_ID == SPEEDY_NET_SITE_ID):
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.')
         else:
@@ -219,7 +213,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
 
     def get_success_url(self):
         site = Site.objects.get_current()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
+        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
         # if user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page
         if site.pk == SPEEDY_MATCH_SITE_ID and self.request.user.email_addresses.filter(is_confirmed=True).count() == 1:
             return reverse_lazy('matches:list')

@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings as dj_settings
 from django.contrib.sites.models import Site
+from django.utils.translation import get_language
 
 
 def active_url_name(request):
@@ -35,17 +36,28 @@ def sites(request):
     }
 
 
-def speedy_net(request):
-    speedy_net_id = dj_settings.SITE_PROFILES['net']['site_id']
+def speedy_net_url(request):
+    SPEEDY_NET_SITE_ID = dj_settings.SITE_PROFILES.get('net').get('site_id')
+    SPEEDY_NET_URL = Site.objects.get(id=SPEEDY_NET_SITE_ID).domain
     return {
-        'speedy_net': Site.objects.get(id=speedy_net_id)
+        # 'speedy_net': Site.objects.get(id=SPEEDY_NET_SITE_ID),
+        'SPEEDY_NET_URL': SPEEDY_NET_URL,
     }
 
 
-def speedy_match(request):
-    speedy_match_id = dj_settings.SITE_PROFILES['match']['site_id']
+def speedy_match_url(request):
+    SPEEDY_MATCH_SITE_ID = dj_settings.SITE_PROFILES.get('match').get('site_id')
+    SPEEDY_MATCH_URL = Site.objects.get(id=SPEEDY_MATCH_SITE_ID).domain
     return {
-        'speedy_match': Site.objects.get(id=speedy_match_id)
+        # 'speedy_match': Site.objects.get(id=SPEEDY_MATCH_SITE_ID),
+        'SPEEDY_MATCH_URL': SPEEDY_MATCH_URL,
+    }
+
+
+def language_code(request):
+    LANGUAGE_CODE = get_language()
+    return {
+        'LANGUAGE_CODE': LANGUAGE_CODE,
     }
 
 

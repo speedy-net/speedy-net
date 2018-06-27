@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.contrib.sites.models import Site
-from django.utils.translation import get_language
 
 from speedy.core.profiles.widgets import Widget
 from speedy.core.accounts.models import User
@@ -33,12 +32,8 @@ class UserOnSpeedyMatchWidget(Widget):
 
     def get_context_data(self):
         cd = super().get_context_data()
-        language_code = get_language()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES['match']['site_id']
         cd.update({
             'is_match': self.is_match(),
-            'speedy_match_url': Site.objects.get(id=SPEEDY_MATCH_SITE_ID).domain,
-            'LANGUAGE_CODE': language_code
         })
         return cd
 
