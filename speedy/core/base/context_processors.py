@@ -40,7 +40,6 @@ def speedy_net_url(request):
     SPEEDY_NET_SITE_ID = dj_settings.SITE_PROFILES.get('net').get('site_id')
     SPEEDY_NET_URL = Site.objects.get(id=SPEEDY_NET_SITE_ID).domain
     return {
-        # 'speedy_net': Site.objects.get(id=SPEEDY_NET_SITE_ID),
         'SPEEDY_NET_URL': SPEEDY_NET_URL,
     }
 
@@ -49,7 +48,6 @@ def speedy_match_url(request):
     SPEEDY_MATCH_SITE_ID = dj_settings.SITE_PROFILES.get('match').get('site_id')
     SPEEDY_MATCH_URL = Site.objects.get(id=SPEEDY_MATCH_SITE_ID).domain
     return {
-        # 'speedy_match': Site.objects.get(id=SPEEDY_MATCH_SITE_ID),
         'SPEEDY_MATCH_URL': SPEEDY_MATCH_URL,
     }
 
