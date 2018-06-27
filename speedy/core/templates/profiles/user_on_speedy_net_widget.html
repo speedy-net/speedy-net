@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="col-sm-12 pull-right">
-   <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_URL }}{% url 'profiles:user' slug=entity.slug %}">
+   <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=entity.slug %}">
         {% blocktrans with entity=entity context viewer.get_gender %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
     </a>
 </div>

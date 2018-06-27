@@ -66,7 +66,7 @@
                     </form>
                 </div>
             {% else %}
-                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_URL }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' %}</a>
+                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' %}</a>
             {% endif %}
         </div>
     </div>
