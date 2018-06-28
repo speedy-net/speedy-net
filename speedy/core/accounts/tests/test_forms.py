@@ -11,10 +11,9 @@ class RegistrationFormTestCase(TestCase):
             'first_name_en': 'First',
             'last_name_en': 'Last',
             'email': 'email@example.com',
-            'slug': 'user',
+            'slug': 'user22',
             'gender': 1,
             'new_password1': 'password',
-            # 'new_password2': 'password',
             'date_of_birth': '1980-01-01',
         }
 
@@ -79,12 +78,23 @@ class RegistrationFormTestCase(TestCase):
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
 
-    # def test_passwords_mismatch(self):
-    #     data = self.valid_data.copy()
-    #     data['new_password2'] = 'haha'
-    #     form = RegistrationForm(data)
-    #     form.full_clean()
-    #     self.assertEqual(first=form.errors['new_password2'][0], second='The two password fields didn\'t match.')
+    def test_slug_dots_and_underscores_gets_converted_to_dashes(self):
+        data = self.valid_data.copy()
+        data['slug'] = 'this.is__a.slug'
+        form = RegistrationForm(data)
+        form.full_clean()
+        user = form.save()
+        self.assertEqual(first=user.slug, second='this-is-a-slug')
+        self.assertEqual(first=user.username, second='thisisaslug')
+
+    def test_slug_dashes_are_trimmed_and_double_dashes_are_converted_to_single_dashes(self):
+        data = self.valid_data.copy()
+        data['slug'] = '--this--is---a--slug--'
+        form = RegistrationForm(data)
+        form.full_clean()
+        user = form.save()
+        self.assertEqual(first=user.slug, second='this-is-a-slug')
+        self.assertEqual(first=user.username, second='thisisaslug')
 
 
 @exclude_on_speedy_composer
