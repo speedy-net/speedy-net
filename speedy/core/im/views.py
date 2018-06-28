@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.core.exceptions import PermissionDenied
-from django.urls import resolve, reverse
+from django.urls import reverse
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
