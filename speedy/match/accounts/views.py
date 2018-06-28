@@ -15,6 +15,7 @@ from .forms import ProfileNotificationsForm
 
 log = logging.getLogger(__name__)
 
+
 class IndexView(CoreIndexView):
     registered_redirect_to = 'matches:list'
 
