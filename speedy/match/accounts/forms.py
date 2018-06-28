@@ -16,8 +16,7 @@ from .models import SiteProfile
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
-
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         return render_to_string(template_name='accounts/edit_profile/activation_form/photo_widget.html', context={
             'name': name,
             'user_photo': self.attrs['user'].photo,
@@ -25,8 +24,7 @@ class CustomPhotoWidget(forms.widgets.Widget):
 
 
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
-
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         return render_to_string(template_name='accounts/edit_profile/activation_form/json_widget.html', context={'choices': self.choices, 'name': name,'value': json.loads(value)})
 
     def value_from_datadict(self, data, files, name):
@@ -50,7 +48,6 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'smoking': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
             'match_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            # 'gender_to_match': forms.MultipleChoiceField(choices=User.GENDER_CHOICES),
             'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES[1:]),
             'smoking_match': CustomJsonWidget(choices=SiteProfile.SMOKING_CHOICES),
             'marital_status_match': CustomJsonWidget(choices=SiteProfile.MARITAL_STATUS_CHOICES)
