@@ -219,7 +219,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return helper
 
     def get_users(self, email):
-        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email, user__is_active=True)
+        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email)
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
