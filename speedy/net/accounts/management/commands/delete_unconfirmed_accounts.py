@@ -8,9 +8,7 @@ from speedy.core.accounts.models import UserEmailAddress
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        emails = UserEmailAddress.objects \
-            .filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=10))) \
-            .exclude(user__is_staff=True)
+        emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=10))).exclude(user__is_staff=True)
 
         for email in emails:
             has_confirmed_email = email.user.email_addresses.filter(is_confirmed=True).exists()

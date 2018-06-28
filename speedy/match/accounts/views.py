@@ -7,12 +7,9 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext as _
-from django.views import generic
-from rules.contrib.views import LoginRequiredMixin
 
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
-from speedy.core.accounts.views import IndexView as CoreIndexView, \
-    EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 
 from . import forms
 
