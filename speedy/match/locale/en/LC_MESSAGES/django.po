@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 18:29+0300\n"
+"POT-Creation-Date: 2018-06-29 01:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\accounts\forms.py:45
+#: .\accounts\forms.py:36
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:46
+#: .\accounts\forms.py:37
 msgid "Add profile picture"
 msgstr ""
 
@@ -91,6 +91,10 @@ msgstr ""
 
 #: .\accounts\models.py:63
 msgid "5 hearts"
+msgstr ""
+
+#: .\accounts\models.py:67
+msgid "user"
 msgstr ""
 
 #: .\accounts\models.py:69
@@ -338,12 +342,12 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:20 .\templates\base_site.html:53
+#: .\templates\base_site.html:23 .\templates\base_site.html:55
 #: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
 msgid "Likes"
 msgstr ""
 
-#: .\templates\base_site.html:23 .\templates\base_site.html:59
+#: .\templates\base_site.html:26 .\templates\base_site.html:61
 msgid "Matches"
 msgstr ""
 
@@ -363,28 +367,28 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\matches\match_list.html:25
+#: .\templates\matches\match_list.html:26
 msgid "Search for your matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:37
+#: .\templates\matches\match_list.html:38
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:48
+#: .\templates\matches\match_list.html:49
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:59
+#: .\templates\matches\match_list.html:60
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:66
+#: .\templates\matches\match_list.html:67
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:82
+#: .\templates\matches\match_list.html:83
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 18:28+0300\n"
+"POT-Creation-Date: 2018-06-29 01:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\models.py:28 .\compose\models.py:23
+msgid "user"
+msgstr ""
 
 #: .\accounts\models.py:34
 msgid "indicates if a user has ever logged in to the site"
@@ -36,10 +40,6 @@ msgstr ""
 
 #: .\compose\models.py:19
 msgid "accompaniments"
-msgstr ""
-
-#: .\compose\models.py:23
-msgid "user"
 msgstr ""
 
 #: .\compose\models.py:26 .\compose\models.py:31

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 18:29+0300\n"
+"POT-Creation-Date: 2018-06-29 01:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,232 +18,233 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\forms.py:60
+#: .\accounts\forms.py:50
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\forms.py:68
+#: .\accounts\forms.py:58
 msgid "Password too short."
 msgstr "הסיסמה קצרה מדי."
 
-#: .\accounts\forms.py:70
+#: .\accounts\forms.py:60
 msgid "Password too long."
 msgstr "הסיסמה ארוכה מדי."
 
-#: .\accounts\forms.py:115
+#: .\accounts\forms.py:105
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:116
+#: .\accounts\forms.py:106
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:114
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:127
+#: .\accounts\forms.py:117
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:208 .\templates\base_with_login.html:88
+#: .\accounts\forms.py:198 .\templates\base_with_login.html:88
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:213 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:203 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:53
 #: .\templates\base_with_login.html:103
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:216 .\templates\base_with_login.html:56
+#: .\accounts\forms.py:206 .\templates\base_with_login.html:56
 #: .\templates\base_with_login.html:100
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:228 .\accounts\forms.py:252
+#: .\accounts\forms.py:218 .\accounts\forms.py:233
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:262
+#: .\accounts\forms.py:243
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:283
+#: .\accounts\forms.py:264
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:295
+#: .\accounts\forms.py:276
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:30
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:31 .\accounts\models.py:32 .\accounts\validators.py:11
+#: .\accounts\models.py:30 .\accounts\models.py:31 .\accounts\validators.py:11
 msgid "This username is already taken."
-msgstr "שם המשתמש/ת הזה כבר תפוס"
+msgstr "שם המשתמש/ת הזה כבר תפוס."
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:31
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:32
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:43 .\im\models.py:89
+#: .\accounts\models.py:42 .\im\models.py:89
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:44
+#: .\accounts\models.py:43
 #, fuzzy
 #| msgid "entity"
 msgid "entities"
 msgstr "ישות"
 
-#: .\accounts\models.py:57
+#: .\accounts\models.py:56
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:105
+#: .\accounts\models.py:104
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:121
+#: .\accounts\models.py:120
 msgid "Only me"
 msgstr "רק אני"
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:121
 msgid "Me and my friends"
 msgstr "אני והחברים/ות שלי"
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:123
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\models.py:148
+#: .\accounts\models.py:147
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:149
+#: .\accounts\models.py:148
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:150
+#: .\accounts\models.py:149
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:159
+#: .\accounts\models.py:158
 msgid "Please select..."
 msgstr "בחר/י בבקשה..."
 
-#: .\accounts\models.py:160
+#: .\accounts\models.py:159
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:161
+#: .\accounts\models.py:160
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:162
+#: .\accounts\models.py:161
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:169
+#: .\accounts\models.py:168
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:170
+#: .\accounts\models.py:169
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:175
+#: .\accounts\models.py:174
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:176
+#: .\accounts\models.py:175
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:177
+#: .\accounts\models.py:176
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:178
+#: .\accounts\models.py:177
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:179
+#: .\accounts\models.py:178
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:182
+#: .\accounts\models.py:181
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:183
+#: .\accounts\models.py:182
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:184
+#: .\accounts\models.py:183
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:196 .\accounts\models.py:290 .\blocks\models.py:10
+#: .\accounts\models.py:195 .\accounts\models.py:289 .\accounts\models.py:348
+#: .\blocks\models.py:10
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:197
+#: .\accounts\models.py:196
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:269
 msgid "female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:269
 msgid "male"
 msgstr "זכר"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:269
 msgid "other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:291
+#: .\accounts\models.py:290
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:292
+#: .\accounts\models.py:291
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:293
+#: .\accounts\models.py:292
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:294
+#: .\accounts\models.py:293
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:295
+#: .\accounts\models.py:294
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:296
+#: .\accounts\models.py:295
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:299
+#: .\accounts\models.py:298
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\accounts\models.py:300
+#: .\accounts\models.py:299
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:349
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -259,15 +260,15 @@ msgid ""
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\views.py:68
+#: .\accounts\views.py:69
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:238
+#: .\accounts\views.py:232
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:262 .\accounts\views.py:277
+#: .\accounts\views.py:256 .\accounts\views.py:271
 msgid "A confirmation message was sent to {}"
 msgstr "הודעת אימות נשלחה ל-{}"
 
@@ -351,19 +352,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:138
+#: .\friends\views.py:144
 msgid "Friend request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:149
+#: .\friends\views.py:155
 msgid "No friend request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:182
+#: .\friends\views.py:188
 msgid "Friend request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:197
+#: .\friends\views.py:203
 msgid "Friend request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -411,11 +412,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:199
+#: .\settings\base.py:197
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:200
+#: .\settings\base.py:198
 msgid "Hebrew"
 msgstr ""
 
@@ -427,8 +428,8 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:156
-#: .\templates\menu\about_mobile_menu_links.html:12
+#: .\templates\about\about_base.html:5 .\templates\base.html:149
+#: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
 
@@ -460,8 +461,8 @@ msgstr "עריכת פרופיל"
 msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:157
-#: .\templates\menu\about_mobile_menu_links.html:15
+#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:150
+#: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
 
@@ -591,82 +592,82 @@ msgid ""
 "                "
 msgstr ""
 
-#: .\templates\base.html:110
+#: .\templates\base.html:104
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:157 .\templates\menu\about_mobile_menu_links.html:15
+#: .\templates\base.html:150 .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:151 .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base.html:158 .\templates\menu\about_mobile_menu_links.html:18
+#: .\templates\base.html:151 .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base.html:159 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:152 .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
-#: .\templates\menu\about_mobile_menu_links.html:21
+#: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:155
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:163
+#: .\templates\base.html:156
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:157
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:165
+#: .\templates\base.html:158
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:166
+#: .\templates\base.html:159
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:169
+#: .\templates\base.html:162
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:170
+#: .\templates\base.html:163
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:171
+#: .\templates\base.html:164
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:172
+#: .\templates\base.html:165
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:175
+#: .\templates\base.html:168
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:176
+#: .\templates\base.html:169
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:177
+#: .\templates\base.html:170
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: .\templates\base.html:198 .\templates\base.html:200
+#: .\templates\base.html:191 .\templates\base.html:193
 msgid "Speedy"
 msgstr "ספידי"
 
@@ -902,19 +903,19 @@ msgstr "בקשת חברות נשלחה."
 msgid "Your friend"
 msgstr "חבר/ה שלך"
 
-#: .\templates\profiles\user_base.html:59
+#: .\templates\profiles\user_base.html:58
 msgid "This user doesn't match your profile, "
 msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, "
 
-#: .\templates\profiles\user_base.html:59
+#: .\templates\profiles\user_base.html:58
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "אבל באפשרותך לראות אותו/ה בספידי נט. "
 
-#: .\templates\profiles\user_base.html:59
+#: .\templates\profiles\user_base.html:58
 msgid "View "
 msgstr "צפה/י בפרופיל של "
 
-#: .\templates\profiles\user_base.html:59
+#: .\templates\profiles\user_base.html:58
 msgid "user's profile on Speedy Net."
 msgstr "משתמש/ת זה/זאת בספידי נט."
 
