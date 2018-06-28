@@ -1,4 +1,5 @@
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory
+from speedy.core.accounts.models import UserEmailAddress
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 
@@ -95,6 +96,25 @@ class RegistrationFormTestCase(TestCase):
         user = form.save()
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
+
+    def test_slug_gets_converted_to_lowercase(self):
+        data = self.valid_data.copy()
+        data['slug'] = 'THIS-IS-A-SLUG'
+        form = RegistrationForm(data)
+        form.full_clean()
+        user = form.save()
+        self.assertEqual(first=user.slug, second='this-is-a-slug')
+        self.assertEqual(first=user.username, second='thisisaslug')
+
+    def test_email_gets_converted_to_lowercase(self):
+        data = self.valid_data.copy()
+        data['email'] = 'EMAIL22@EXAMPLE.COM'
+        form = RegistrationForm(data)
+        form.full_clean()
+        user = form.save()
+        email_addresses = UserEmailAddress.objects.filter(user=user)
+        email_addresses_set = {e.email for e in email_addresses}
+        self.assertEqual(first=email_addresses_set, second={'email22@example.com'})
 
 
 @exclude_on_speedy_composer
