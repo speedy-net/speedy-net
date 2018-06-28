@@ -11,7 +11,6 @@ from .test_factories import ActiveUserFactory, UserEmailAddressFactory, Inactive
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
-@exclude_on_speedy_match
 class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
@@ -20,11 +19,6 @@ class IndexViewTestCase(TestCase):
         r = self.client.get('/')
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
-
-    def test_user_gets_redirected_to_his_profile(self):
-        self.client.login(username=self.user.slug, password='111')
-        r = self.client.get('/')
-        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
 
 
 @exclude_on_speedy_composer

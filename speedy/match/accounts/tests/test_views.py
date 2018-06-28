@@ -7,12 +7,7 @@ class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
 
-    def test_visitor_gets_registration_page(self):
-        r = self.client.get('/')
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
-
-    def test_user_gets_redirected_to_his_profile(self):
+    def test_user_gets_redirected_to_his_matches(self):
         self.client.login(username=self.user.slug, password='111')
         r = self.client.get('/')
         self.assertRedirects(response=r, expected_url='/matches/', target_status_code=200)

@@ -79,7 +79,6 @@ class RegistrationFormTestCase(TestCase):
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
 
-
     # def test_passwords_mismatch(self):
     #     data = self.valid_data.copy()
     #     data['new_password2'] = 'haha'
