@@ -1,7 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings as dj_settings
 from django.contrib.sites.models import Site
-from django.utils.translation import get_language
 
 
 def active_url_name(request):
