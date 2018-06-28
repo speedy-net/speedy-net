@@ -1,9 +1,10 @@
 from django.test.client import RequestFactory
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase
+from speedy.core.base.test import TestCase, only_on_speedy_match
 
 
+@only_on_speedy_match
 class UserMixinTextCase(TestCase):
     def setUp(self):
         self.factory = RequestFactory()

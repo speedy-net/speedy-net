@@ -1,10 +1,8 @@
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_net
+from speedy.core.base.test import TestCase, only_on_speedy_match
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
-@exclude_on_speedy_net
+@only_on_speedy_match
 class IndexViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
@@ -19,17 +17,8 @@ class IndexViewTestCase(TestCase):
         r = self.client.get('/')
         self.assertRedirects(response=r, expected_url='/matches/', target_status_code=200)
 
-# from datetime import date
-#
-# from django.conf import settings
-# from django.contrib.sites.models import Site
-# from django.core import mail
-#
-# from speedy.core.accounts.models import Entity, User, UserEmailAddress, SiteProfileBase
-# from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-# from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
-#
-#
+
+# @only_on_speedy_match
 # class ActivateSiteProfileViewTestCase(TestCase):
 #
 #     def test_inactive_user_can_request_activation(self):
