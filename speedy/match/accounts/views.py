@@ -11,7 +11,7 @@ from django.utils.translation import ugettext as _
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
 from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 
-from . import forms
+from .forms import ProfileNotificationsForm
 
 log = logging.getLogger(__name__)
 
@@ -102,4 +102,4 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
 
 class EditProfileNotificationsView(CoreEditProfileNotificationsView):
-    form_class = forms.ProfileNotificationsForm
+    form_class = ProfileNotificationsForm
