@@ -15,7 +15,7 @@ class FileInput(forms.TextInput):
             file = File.objects.get(id=value)
         except (File.DoesNotExist, ValueError):
             file = None
-        return render_to_string('uploads/file_input.html', {
+        return render_to_string(template_name='uploads/file_input.html', context={
             'real_input': real_input,
             'file': file
         })

@@ -2,12 +2,10 @@ import json
 
 from django import forms
 from django.conf import settings
-from django.utils.datastructures import MultiValueDict
 
 from speedy.match.accounts import validators
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.sites.models import Site
 
 from modeltranslation.forms import TranslationModelForm
 from speedy.core.uploads.models import Image
@@ -20,7 +18,7 @@ from .models import SiteProfile
 class CustomPhotoWidget(forms.widgets.Widget):
 
     def render(self, name, value, attrs=None):
-        return render_to_string('accounts/edit_profile/activation_form/photo_widget.html', {
+        return render_to_string(template_name='accounts/edit_profile/activation_form/photo_widget.html', context={
             'name': name,
             'user_photo': self.attrs['user'].photo,
         })
@@ -29,7 +27,7 @@ class CustomPhotoWidget(forms.widgets.Widget):
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
     def render(self, name, value, attrs=None):
-        return render_to_string('accounts/edit_profile/activation_form/json_widget.html', {'choices': self.choices, 'name': name,'value': json.loads(value)})
+        return render_to_string(template_name='accounts/edit_profile/activation_form/json_widget.html', context={'choices': self.choices, 'name': name,'value': json.loads(value)})
 
     def value_from_datadict(self, data, files, name):
         return data.get(name)

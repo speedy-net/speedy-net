@@ -25,8 +25,7 @@ class Widget(object):
     def render(self):
         if not self.viewer.has_perm(self.get_permission_required(), self.entity):
             return ''
-        return mark_safe(render_to_string(self.get_template_name(),
-                                          self.get_context_data()))
+        return mark_safe(render_to_string(template_name=self.get_template_name(), context=self.get_context_data()))
 
     @property
     def html(self):

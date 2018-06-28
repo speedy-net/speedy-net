@@ -317,7 +317,7 @@ class UserEmailAddress(TimeStampedModel):
             'email_address': self,
             'user': self.user,
         })
-        return send_mail([self.email], template_name_prefix, context)
+        return send_mail(to=[self.email], template_name_prefix=template_name_prefix, context=context)
 
     def send_confirmation_email(self):
         msg_count = self.mail('accounts/email/verify_email')

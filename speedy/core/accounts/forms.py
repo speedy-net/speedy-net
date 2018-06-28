@@ -18,16 +18,6 @@ from .models import User, UserEmailAddress, SiteProfileBase
 
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
-#    '%m/%d/%Y',  # '10/25/2006'
-#    '%m/%d/%y',  # '10/25/06'
-#    '%b %d %Y',  # 'Oct 25 2006'
-#    '%b %d, %Y',  # 'Oct 25, 2006'
-#    '%d %b %Y',  # '25 Oct 2006'
-#    '%d %b, %Y',  # '25 Oct, 2006'
-#    '%B %d %Y',  # 'October 25 2006'
-#    '%B %d, %Y',  # 'October 25, 2006'
-#    '%d %B %Y',  # '25 October 2006'
-#    '%d %B, %Y',  # '25 October, 2006'
 ]
 
 DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
@@ -229,20 +219,11 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return helper
 
     def get_users(self, email):
-        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email,
-                                                                                 user__is_active=True)
+        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email, user__is_active=True)
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
-    def send_mail(
-        self,
-        subject_template_name,
-        email_template_name,
-        context,
-        from_email,
-        to_email,
-        html_email_template_name=None,
-    ):
-        send_mail([to_email], 'accounts/email/password_reset', context)
+    def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
+        send_mail(to=[to_email], template_name_prefix='accounts/email/password_reset', context=context)
 
 
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.SetPasswordForm):

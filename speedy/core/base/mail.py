@@ -32,14 +32,14 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     })
 
     # render subject
-    subject = render_to_string(subject_template_name, context)
+    subject = render_to_string(template_name=subject_template_name, context=context)
 
     # render plain text
     context.update({
         'subject': subject,
         'base_template': plain_base_template_name,
     })
-    body_plain = render_to_string(plain_template_name, context)
+    body_plain = render_to_string(template_name=plain_template_name, context=context)
 
     # render html
     context.update({
@@ -47,9 +47,9 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
         'base_template': html_base_template_name,
     })
     try:
-        body_html = render_to_string(html_template_name, context)
+        body_html = render_to_string(template_name=html_template_name, context=context)
     except TemplateDoesNotExist:
-        body_html = render_to_string(html_base_template_name, context)
+        body_html = render_to_string(template_name=html_base_template_name, context=context)
 
     return RenderedMail(
         subject=' '.join(subject.splitlines(keepends=False)).strip(),
@@ -71,4 +71,6 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
-    return send_mail([a[1] for a in settings.MANAGERS], template_name_prefix, context, **kwargs)
+    return send_mail(to=[a[1] for a in settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
+
+
