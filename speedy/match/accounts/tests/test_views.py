@@ -1,5 +1,5 @@
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import exclude_on_speedy_composer, exclude_on_speedy_mail_software, TestCase, exclude_on_speedy_net
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_net
 
 
 @exclude_on_speedy_composer

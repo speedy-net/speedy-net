@@ -20,7 +20,7 @@ class Accompaniment(SpeedyComposerNode):
 
 
 class Folder(SpeedyComposerNode):
-    user = models.ForeignKey(verbose_name=_('user'), to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='+')
+    user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='+')
 
     class Meta:
         verbose_name = _('folder')
@@ -28,9 +28,9 @@ class Folder(SpeedyComposerNode):
 
 
 class Composition(SpeedyComposerNode):
-    folder = models.ForeignKey(verbose_name=_('folder'), to=Folder, on_delete=models.CASCADE, related_name='+')
-    chords_template = models.ForeignKey(verbose_name=_('chords template'), to=ChordsTemplate, on_delete=models.CASCADE, related_name='+')
-    accompaniment = models.ForeignKey(verbose_name=_('accompaniment'), to=Accompaniment, on_delete=models.CASCADE, related_name='+')
+    folder = models.ForeignKey(to=Folder, verbose_name=_('folder'), on_delete=models.CASCADE, related_name='+')
+    chords_template = models.ForeignKey(to=ChordsTemplate, verbose_name=_('chords template'), on_delete=models.CASCADE, related_name='+')
+    accompaniment = models.ForeignKey(to=Accompaniment, verbose_name=_('accompaniment'), on_delete=models.CASCADE, related_name='+')
     tempo = models.SmallIntegerField(verbose_name=_('tempo'), default=105)
     public = models.BooleanField(verbose_name=_('public'), default=False)
 

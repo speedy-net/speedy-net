@@ -10,7 +10,7 @@ from .utils import uuid_dir
 
 class File(TimeStampedModel):
     id = RegularUDIDField()
-    owner = models.ForeignKey(verbose_name=_('owner'), to='accounts.Entity', on_delete=models.SET_NULL, null=True)
+    owner = models.ForeignKey(to='accounts.Entity', verbose_name=_('owner'), on_delete=models.SET_NULL, null=True)
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file_size'), default=0)

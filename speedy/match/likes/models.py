@@ -8,8 +8,8 @@ from speedy.core.accounts.models import User
 
 
 class UserLike(TimeStampedModel):
-    from_user = models.ForeignKey(verbose_name=_('from user'), to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='+')
-    to_user = models.ForeignKey(verbose_name=('to user'), to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    from_user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_('from user'), on_delete=models.CASCADE, related_name='+')
+    to_user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=('to user'), on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = _('user like')

@@ -5,8 +5,7 @@ from django.contrib.sites.models import Site
 from django.core import mail
 
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.base.test import exclude_on_speedy_match, exclude_on_speedy_net
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match, exclude_on_speedy_net
 from .test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
@@ -370,13 +369,13 @@ class ActivateSiteProfileViewTestCase(TestCase):
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.profile.is_active)
 
-    @exclude_on_speedy_net
-    @exclude_on_speedy_match
-    def test_inactive_match_profile_inactive_net_profile_cannot_activate(self):
-        r = self.client.post(self.page_url)
-        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
-        user = User.objects.get(id=self.user.id)
-        self.assertFalse(expr=user.profile.is_active)
+    # @exclude_on_speedy_net
+    # @exclude_on_speedy_match
+    # def test_inactive_match_profile_inactive_net_profile_cannot_activate(self):
+    #     r = self.client.post(self.page_url)
+    #     self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+    #     user = User.objects.get(id=self.user.id)
+    #     self.assertFalse(expr=user.profile.is_active)
 
 
 @exclude_on_speedy_composer

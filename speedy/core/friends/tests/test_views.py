@@ -2,8 +2,7 @@ from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.base.test import exclude_on_speedy_match
+from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 
 
 @exclude_on_speedy_composer

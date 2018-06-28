@@ -1,7 +1,6 @@
 from friendship.models import Friend
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_mail_software, exclude_on_speedy_composer
-from speedy.core.base.test import exclude_on_speedy_match
+from speedy.core.base.test import TestCase, exclude_on_speedy_mail_software, exclude_on_speedy_composer, exclude_on_speedy_match
 from speedy.core.blocks.models import Block
 from .test_factories import ActiveUserFactory
 

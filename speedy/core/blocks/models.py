@@ -7,8 +7,8 @@ from .managers import BlockManager
 
 
 class Block(TimeStampedModel):
-    blocker = models.ForeignKey(verbose_name=_('user'), to=Entity, on_delete=models.SET_NULL, null=True, related_name='+')
-    blockee = models.ForeignKey(verbose_name=_('blocked user'), to=Entity, on_delete=models.SET_NULL, null=True, related_name='+')
+    blocker = models.ForeignKey(to=Entity, verbose_name=_('user'), on_delete=models.SET_NULL, null=True, related_name='+')
+    blockee = models.ForeignKey(to=Entity, verbose_name=_('blocked user'), on_delete=models.SET_NULL, null=True, related_name='+')
 
     objects = BlockManager()
 
