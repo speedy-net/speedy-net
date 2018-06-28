@@ -5,7 +5,6 @@ from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render
 from django.http import HttpRequest
 from django.http.response import HttpResponseBase
-from django.shortcuts import render
 from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
