@@ -10,12 +10,12 @@ def is_self(user, other):
 
 @predicate
 def has_blocked(user, other):
-    return Block.objects.has_blocked(blocker=user, blockee=other)
+    return Block.objects.has_blocked(blocker=user, blocked=other)
 
 
 @predicate
 def is_blocked(user, other):
-    return Block.objects.has_blocked(blocker=other, blockee=user)
+    return Block.objects.has_blocked(blocker=other, blocked=user)
 
 
 @predicate

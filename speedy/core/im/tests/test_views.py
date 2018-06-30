@@ -60,8 +60,8 @@ class ChatDetailViewTestCase(TestCase):
 
     def test_user_can_read_chat_with_a_blocker(self):
         self.client.login(username=self.user1.slug, password='111')
-        Block.objects.block(blocker=self.user2, blockee=self.user1)
-        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        Block.objects.block(blocker=self.user2, blocked=self.user1)
+        Block.objects.block(blocker=self.user1, blocked=self.user2)
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
 
@@ -99,13 +99,13 @@ class SendMessageToChatViewTestCase(TestCase):
 
     def test_cannot_write_to_a_blocker(self):
         self.client.login(username=self.user1.slug, password='111')
-        Block.objects.block(blocker=self.user2, blockee=self.user1)
+        Block.objects.block(blocker=self.user2, blocked=self.user1)
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=403)
 
-    def test_cannot_write_to_a_blockee(self):
+    def test_cannot_write_to_a_blocked(self):
         self.client.login(username=self.user1.slug, password='111')
-        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        Block.objects.block(blocker=self.user1, blocked=self.user2)
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=403)
 

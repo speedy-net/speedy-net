@@ -23,7 +23,7 @@ class LikeTestCase(TestCase):
         self.assertTrue(expr=self.user.has_perm('likes.like', self.other_user))
 
     def test_user_cannot_like_if_blocked(self):
-        Block.objects.block(blocker=self.other_user, blockee=self.user)
+        Block.objects.block(blocker=self.other_user, blocked=self.user)
         self.assertFalse(expr=self.user.has_perm('likes.like', self.other_user))
 
     def test_user_cannot_like_twice(self):

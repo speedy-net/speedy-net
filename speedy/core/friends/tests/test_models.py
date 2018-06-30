@@ -22,7 +22,7 @@ class BlocksTestCase(TestCase):
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=1)
 
     def test_if_no_relation_between_users_nothings_get_affected(self):
-        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        Block.objects.block(blocker=self.user1, blocked=self.user2)
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=1)
         self.assertCounters(user=self.user2, requests=0, sent_requests=0, friends=0)
 
@@ -30,7 +30,7 @@ class BlocksTestCase(TestCase):
         Friend.objects.add_friend(from_user=self.user1, to_user=self.user2)
         self.assertCounters(user=self.user1, requests=1, sent_requests=2, friends=1)
         self.assertCounters(user=self.user2, requests=1, sent_requests=0, friends=0)
-        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        Block.objects.block(blocker=self.user1, blocked=self.user2)
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=1)
         self.assertCounters(user=self.user2, requests=0, sent_requests=0, friends=0)
 
@@ -38,6 +38,6 @@ class BlocksTestCase(TestCase):
         Friend.objects.add_friend(from_user=self.user1, to_user=self.user2).accept()
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=2)
         self.assertCounters(user=self.user2, requests=0, sent_requests=0, friends=1)
-        Block.objects.block(blocker=self.user1, blockee=self.user2)
+        Block.objects.block(blocker=self.user1, blocked=self.user2)
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=1)
         self.assertCounters(user=self.user2, requests=0, sent_requests=0, friends=0)

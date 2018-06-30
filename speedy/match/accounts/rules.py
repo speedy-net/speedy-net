@@ -18,7 +18,7 @@ def is_match_profile(user, other):
         match_profile = user.profile.get_matching_rank(other_profile=other.profile) > SiteProfile.RANK_0
         has_message = Chat.on_site.filter((Q(ent1_id=user) & Q(ent2_id=other)) | (Q(ent1_id=other) & Q(ent2_id=user))).exists()
         has_likes = UserLike.objects.filter((Q(from_user=user) & Q(to_user=other)) | (Q(from_user=other) & Q(to_user=user))).exists()
-        has_blocked = Block.objects.has_blocked(blocker=user, blockee=other)
+        has_blocked = Block.objects.has_blocked(blocker=user, blocked=other)
         return (user == other) or (match_profile or has_message or has_likes or has_blocked)
     return False
 

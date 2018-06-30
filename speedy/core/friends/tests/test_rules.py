@@ -16,7 +16,7 @@ class RequestTestCase(TestCase):
         self.assertTrue(expr=self.user.has_perm('friends.request', self.other_user))
 
     def test_user_cannot_send_request_to_other_user_if_blocked(self):
-        Block.objects.block(blocker=self.other_user, blockee=self.user)
+        Block.objects.block(blocker=self.other_user, blocked=self.user)
         self.assertFalse(expr=self.user.has_perm('friends.request', self.other_user))
         self.assertFalse(expr=self.other_user.has_perm('friends.request', self.user))
 

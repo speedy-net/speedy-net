@@ -54,7 +54,7 @@ class BlockViewTestCase(TestCase):
         self.assertEqual(first=Block.objects.count(), second=1)
         block = Block.objects.first()
         self.assertEqual(first=block.blocker_id, second=self.user.id)
-        self.assertEqual(first=block.blockee_id, second=self.other_user.id)
+        self.assertEqual(first=block.blocked_id, second=self.other_user.id)
         self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug), target_status_code=404)
 
 
@@ -73,7 +73,7 @@ class UnblockViewTestCase(TestCase):
 
     def test_user_can_unblock_other_user(self):
         self.client.login(username=self.user.slug, password='111')
-        Block.objects.block(blocker=self.user, blockee=self.other_user)
+        Block.objects.block(blocker=self.user, blocked=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
         r = self.client.post(self.page_url)
         self.assertEqual(first=Block.objects.count(), second=0)
