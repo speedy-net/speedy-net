@@ -61,6 +61,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
     source .venv/bin/activate   # *.nix
 
 Next:
+
     python -m pip install -U pip
     pip install -r requirements.txt
     cp env.ini.example env.ini
@@ -84,7 +85,7 @@ To run Speedy Net server:
 To run Speedy Match server:
 
     cd speedy/match
-    ./manage.py runserver
+    ./manage.py runserver 9000
 
 To run Speedy Net tests:
 
