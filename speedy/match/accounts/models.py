@@ -64,11 +64,43 @@ class SiteProfile(SiteProfileBase):
     )
 
     RELATED_NAME = 'speedy_match_site_profile'
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
 
+    @staticmethod
+    def gender_to_match_default():
+        return list()
+
+    @staticmethod
+    def diet_match_default():
+        return dict({
+            User.DIET_VEGAN: __class__.RANK_5,
+            User.DIET_VEGETARIAN: __class__.RANK_5,
+            User.DIET_CARNIST: __class__.RANK_5,
+        })
+
+    @staticmethod
+    def smoking_match_default():
+        return dict({
+            __class__.SMOKING_NO: __class__.RANK_5,
+            __class__.SMOKING_YES: __class__.RANK_5,
+            __class__.SMOKING_SOMETIMES: __class__.RANK_5,
+        })
+
+    @staticmethod
+    def marital_status_match_default():
+        return dict({
+            __class__.MARITAL_STATUS_SINGLE: __class__.RANK_5,
+            __class__.MARITAL_STATUS_DIVORCED: __class__.RANK_5,
+            __class__.MARITAL_STATUS_WIDOWED: __class__.RANK_5,
+            __class__.MARITAL_STATUS_IN_RELATIONSHIP: __class__.RANK_5,
+            __class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP: __class__.RANK_5,
+            __class__.MARITAL_STATUS_COMPLICATED: __class__.RANK_5,
+            __class__.MARITAL_STATUS_SEPARATED: __class__.RANK_5,
+            __class__.MARITAL_STATUS_MARRIED: __class__.RANK_5,
+        })
+
+    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
-
     height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), null=True, validators=[validators.validate_height])
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED, validators=[validators.validate_min_age_match])
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED, validators=[validators.validate_max_age_match])
@@ -79,28 +111,10 @@ class SiteProfile(SiteProfileBase):
     more_children = models.TextField(verbose_name=_('Do you want (more) children?'), null=True, validators=[validators.validate_more_children])
     profile_description = models.TextField(verbose_name=_('Few words about me'), null=True, validators=[validators.validate_profile_description])
     match_description = models.TextField(verbose_name=_('My ideal match'), null=True, validators=[validators.validate_match_description])
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=[], validators=[validators.validate_gender_to_match])
-
-    diet_match = JSONField(verbose_name=('diet match'), default={
-        User.DIET_VEGAN: RANK_5,
-        User.DIET_VEGETARIAN: RANK_5,
-        User.DIET_CARNIST: RANK_5,
-    }, validators=[validators.validate_diet_match])
-    smoking_match = JSONField(verbose_name=('smoking status match'), default={
-        SMOKING_NO: RANK_5,
-        SMOKING_YES: RANK_5,
-        SMOKING_SOMETIMES: RANK_5,
-    }, validators=[validators.validate_smoking_match])
-    marital_status_match = JSONField(verbose_name=_('marital status match'), default={
-        MARITAL_STATUS_SINGLE: RANK_5,
-        MARITAL_STATUS_DIVORCED: RANK_5,
-        MARITAL_STATUS_WIDOWED: RANK_5,
-        MARITAL_STATUS_IN_RELATIONSHIP: RANK_5,
-        MARITAL_STATUS_IN_OPEN_RELATIONSHIP: RANK_5,
-        MARITAL_STATUS_COMPLICATED: RANK_5,
-        MARITAL_STATUS_SEPARATED: RANK_5,
-        MARITAL_STATUS_MARRIED: RANK_5,
-    }, validators=[validators.validate_marital_status_match])
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=gender_to_match_default.__func__, validators=[validators.validate_gender_to_match])
+    diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__, validators=[validators.validate_diet_match])
+    smoking_match = JSONField(verbose_name=('smoking status match'), default=smoking_match_default.__func__, validators=[validators.validate_smoking_match])
+    marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__, validators=[validators.validate_marital_status_match])
     activation_step = models.PositiveSmallIntegerField(default=2)
 
     objects = SiteProfileManager()

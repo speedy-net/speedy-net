@@ -15,7 +15,6 @@ class EntityManager(models.Manager):
 
 
 class UserManager(BaseUserManager):
-
     def get_queryset(self):
         site_profile_model = get_site_profile_model()
         return super().get_queryset().select_related(site_profile_model.RELATED_NAME)
@@ -53,7 +52,5 @@ class UserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
 
         user = self._create_user(slug, password, **extra_fields)
-
-
-
         return user
+
