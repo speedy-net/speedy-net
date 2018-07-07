@@ -92,7 +92,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 @never_cache
 def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None):
     response = auth_views.login(
-        request,
+        request=request,
         template_name=template_name,
         redirect_field_name=redirect_field_name,
         authentication_form=authentication_form,
