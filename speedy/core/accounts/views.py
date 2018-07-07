@@ -4,8 +4,7 @@ from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME, update_session_auth_hash
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import login as auth_login, views as auth_views, REDIRECT_FIELD_NAME, update_session_auth_hash
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.http import HttpResponse
@@ -77,7 +76,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
         user = form.instance
         user.email_addresses.all()[0].send_confirmation_email()
         user.backend = settings.DEFAULT_AUTHENTICATION_BACKEND
-        auth_login(self.request, user)
+        auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
 
     def get_form_kwargs(self):
@@ -152,7 +151,7 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
         form.save()
         user = self.request.user
         user.backend = 'django.contrib.auth.backends.ModelBackend'
-        update_session_auth_hash(self.request, user)
+        update_session_auth_hash(request=self.request, user=user)
         messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='Your new password has been saved.'))
         return super().form_valid(form)
 
