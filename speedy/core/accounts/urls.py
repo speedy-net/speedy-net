@@ -11,12 +11,12 @@ urlpatterns = [
     url(r'^set-session/$', views.set_session, name='set_session'),
 
     url(r'^login/$', views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout', kwargs={'template_name': 'accounts/logged_out.html'}),
+    url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout', kwargs={'template_name': 'accounts/logged_out.html'}),
 
-    url(r'^reset-password/$', auth_views.password_reset, {'post_reset_redirect': 'accounts:password_reset_done', 'template_name': 'accounts/password_reset/form.html', 'password_reset_form': forms.PasswordResetForm}, name='password_reset'),
+    url(r'^reset-password/$', auth_views.PasswordResetView.as_view(), {'post_reset_redirect': 'accounts:password_reset_done', 'template_name': 'accounts/password_reset/form.html', 'password_reset_form': forms.PasswordResetForm}, name='password_reset'),
     url(r'^reset-password/done/$', generic.TemplateView.as_view(template_name='accounts/password_reset/done.html'), name='password_reset_done'),
-    url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', auth_views.password_reset_confirm, {'post_reset_redirect': 'accounts:password_reset_complete', 'set_password_form': forms.SetPasswordForm, 'template_name': 'accounts/password_reset/confirm.html'}, name='password_reset_confirm'),
-    url(r'^reset-password/complete/$', auth_views.password_reset_complete, {'template_name': 'accounts/password_reset/complete.html'}, name='password_reset_complete'),
+    url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', auth_views.PasswordResetConfirmView.as_view(), {'post_reset_redirect': 'accounts:password_reset_complete', 'set_password_form': forms.SetPasswordForm, 'template_name': 'accounts/password_reset/confirm.html'}, name='password_reset_confirm'),
+    url(r'^reset-password/complete/$', auth_views.PasswordResetCompleteView.as_view(), {'template_name': 'accounts/password_reset/complete.html'}, name='password_reset_complete'),
 
     url(r'^welcome/$', views.ActivateSiteProfileView.as_view(), name='activate'),
 

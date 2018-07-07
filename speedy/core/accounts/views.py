@@ -89,14 +89,14 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
 @sensitive_post_parameters()
 @never_cache
-def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None):
-    response = auth_views.login(
-        request=request,
+def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None, redirect_authenticated_user=False):
+    response = auth_views.LoginView.as_view(
         template_name=template_name,
         redirect_field_name=redirect_field_name,
-        authentication_form=authentication_form,
+        form_class=authentication_form,
         extra_context=extra_context,
-    )
+        redirect_authenticated_user=redirect_authenticated_user,
+    )(request)
     return response
 
 
