@@ -64,7 +64,7 @@ class SiteProfile(SiteProfileBase):
     )
 
     RELATED_NAME = 'speedy_match_site_profile'
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True,on_delete=models.CASCADE, related_name=RELATED_NAME)
+    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
 
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)

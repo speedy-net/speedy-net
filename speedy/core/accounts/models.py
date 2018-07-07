@@ -345,7 +345,7 @@ class SiteProfileBase(TimeStampedModel):
     SiteProfile contains site-specific user settings.
     """
 
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True,on_delete=models.CASCADE, related_name='+')
+    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 

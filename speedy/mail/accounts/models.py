@@ -6,7 +6,7 @@ from speedy.core.accounts.models import SiteProfileBase, User
 
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_mail_site_profile'
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True,on_delete=models.CASCADE, related_name=RELATED_NAME)
+    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
 
     class Meta:
         verbose_name = 'Speedy Composer Profile'
