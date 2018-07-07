@@ -38,9 +38,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
 
     class Meta:
         model = SiteProfile
-        fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking',
-                  'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match',
-                  'diet_match', 'smoking_match', 'marital_status_match')
+        fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking', 'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match', 'diet_match', 'smoking_match', 'marital_status_match')
         widgets = {
             'profile_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
             'children': forms.TextInput(),
