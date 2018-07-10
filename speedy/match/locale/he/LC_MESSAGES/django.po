@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-29 01:26+0300\n"
+"POT-Creation-Date: 2018-07-10 18:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,72 +94,72 @@ msgstr ""
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:67
+#: .\accounts\models.py:101
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:69
+#: .\accounts\models.py:102
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:70
+#: .\accounts\models.py:103
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:104
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:104
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:73
+#: .\accounts\models.py:105
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:106
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:75
+#: .\accounts\models.py:107
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:108
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:109
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:78 .\accounts\validators.py:24
+#: .\accounts\models.py:110 .\accounts\validators.py:24
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:79 .\accounts\validators.py:29
+#: .\accounts\models.py:111 .\accounts\validators.py:29
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:112
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:81
+#: .\accounts\models.py:113
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:82
+#: .\accounts\models.py:114
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:94
+#: .\accounts\models.py:117
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:235 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:249 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 

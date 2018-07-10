@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-29 01:26+0300\n"
+"POT-Creation-Date: 2018-07-10 18:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,92 +159,92 @@ msgstr "הודיעו לי"
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:174
+#: .\accounts\models.py:175
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:175
+#: .\accounts\models.py:176
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:176
+#: .\accounts\models.py:177
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:177
+#: .\accounts\models.py:178
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:178
+#: .\accounts\models.py:179
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:182
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:182
+#: .\accounts\models.py:183
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:183
+#: .\accounts\models.py:184
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:195 .\accounts\models.py:289 .\accounts\models.py:348
-#: .\blocks\models.py:10
+#: .\accounts\models.py:194 .\accounts\models.py:288 .\accounts\models.py:347
+#: .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:196
+#: .\accounts\models.py:195
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:268
 msgid "female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:268
 msgid "male"
 msgstr "זכר"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:268
 msgid "other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:290
+#: .\accounts\models.py:289
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:291
+#: .\accounts\models.py:290
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:292
+#: .\accounts\models.py:291
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:293
+#: .\accounts\models.py:292
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:294
+#: .\accounts\models.py:293
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:295
+#: .\accounts\models.py:294
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:298
+#: .\accounts\models.py:297
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\accounts\models.py:299
+#: .\accounts\models.py:298
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:349
+#: .\accounts\models.py:348
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -260,15 +260,15 @@ msgid ""
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\views.py:69
+#: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:232
+#: .\accounts\views.py:231
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:256 .\accounts\views.py:271
+#: .\accounts\views.py:255 .\accounts\views.py:270
 msgid "A confirmation message was sent to {}"
 msgstr "הודעת אימות נשלחה ל-{}"
 
@@ -280,15 +280,15 @@ msgstr ""
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
-#: .\blocks\models.py:11
+#: .\blocks\models.py:12
 msgid "blocked user"
 msgstr ""
 
-#: .\blocks\models.py:16
+#: .\blocks\models.py:17
 msgid "block"
 msgstr ""
 
-#: .\blocks\models.py:17
+#: .\blocks\models.py:18
 msgid "user blocks"
 msgstr ""
 
