@@ -229,3 +229,45 @@ Available settings:
 * `SPEEDY_*_SITE_ID` — just leave these as its.
 
 Refer to [django-environ documentation](https://django-environ.readthedocs.io/en/latest/) for more information.
+
+
+## How to upgrade required packages
+
+To upgrade all the requirements (with Django>=1.11,<2.0), run:
+
+    pip install --upgrade -r requirements-pip-upgrade.txt
+
+To upgrade all the requirements (including Django), run:
+
+    pip install --upgrade -r requirements-without-versions.txt
+
+Currently all the required packages support Django 2.0 with stable releases, except django-modeltranslation. You can install the latest beta release of django-modeltranslation (which supports Django 2.0) with this command:
+
+    pip install --upgrade --pre django-modeltranslation
+
+But it's not recommended to use non-stable releases, therefore we didn't upgrade Django to 2.0 yet (and we are using the latest stable release of django-modeltranslation which doesn't support Django 2.0).
+
+See also [Support Django 2.0 · Issue #472 · deschler/django-modeltranslation](https://github.com/deschler/django-modeltranslation/issues/472)
+
+## How to make migrations and migrate
+
+To make all migrations, run:
+
+    ./manage_all_sites.sh makemigrations
+
+To migrate all sites, run:
+
+    ./manage_all_sites.sh migrate
+
+## How to make and compile all messages for translation (To Hebrew):
+
+To make all messages (in both languages), run:
+
+    ./make_all_messages.sh
+
+Edit \*.po files in speedy/\*/locale/he/LC_MESSAGES directories (No need to translate to English, leave all the files in speedy/\*/locale/en as they are).
+
+To compile all messages (in both languages) after you've done editing all the \*.po files, run:
+
+    ./compile_all_messages.sh
+
