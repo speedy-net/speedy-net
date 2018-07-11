@@ -16,6 +16,12 @@ class SiteDiscoverRunner(DiscoverRunner):
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
+class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
+    def run_tests(self, test_labels, extra_tests=None, **kwargs):
+        # We don't run tests on speedy.core
+        pass
+
+
 def conditional_test(test_func):
     def wrapper(method_or_class):
         if inspect.isclass(method_or_class):

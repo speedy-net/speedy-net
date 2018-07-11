@@ -56,8 +56,10 @@ First make sure that you're using Python 3.4 or later.
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
-    python -m venv .venv
-    .venv\Scripts\activate.bat  # Windows
+    pip install virtualenv # (as administrator)
+    virtualenv .venv
+    .venv\Scripts\activate.bat  # Windows cmd (not recommended)
+    source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
 Next:
@@ -258,6 +260,12 @@ To make all migrations, run:
 To migrate all sites, run:
 
     ./manage_all_sites.sh migrate
+
+## How to run all tests locally:
+
+To run all tests locally, run:
+
+    ./manage_all_sites.sh test
 
 ## How to make and compile all messages for translation (To Hebrew):
 

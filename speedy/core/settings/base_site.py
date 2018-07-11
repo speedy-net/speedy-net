@@ -10,3 +10,7 @@ def update_site_paths(settings):
 
 
 update_site_paths(settings=globals())
+
+# We don't run tests on speedy.core
+TEST_RUNNER = 'speedy.core.base.test.SpeedyCoreDiscoverRunner'
+
