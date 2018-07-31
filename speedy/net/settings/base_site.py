@@ -13,9 +13,9 @@ ROOT_URLCONF = 'speedy.net.urls'
 
 INSTALLED_APPS += [
     'speedy.net.accounts',
-    'speedy.net.pages',
-    'speedy.net.groups',
-    'speedy.net.causes',
+    # 'speedy.net.pages',
+    # 'speedy.net.groups',
+    # 'speedy.net.causes',
     'speedy.match.accounts',
     'speedy.match.likes',
 ]
