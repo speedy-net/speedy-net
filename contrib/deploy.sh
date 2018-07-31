@@ -1,18 +1,18 @@
 #!/bin/sh
 
 DIR=/home/ubuntu/speedy-net
-PY=$DIR/env/bin/python
-PIP=$DIR/env/bin/pip
+PY=${DIR}/env/bin/python
+PIP=${DIR}/env/bin/pip
 SITES="net match composer mail"
 
-cd $DIR
+cd ${DIR}
 git pull
-$PIP install -r requirements.txt
+${PIP} install -r requirements.txt
 
-for site in $SITES
+for site in ${SITES}
 do
-    cd "$DIR/speedy/$site"
-    $PY manage.py migrate
-    $PY manage.py collectstatic --no-input
-    touch "/run/uwsgi/app/speedy_$site/reload"
+    cd "${DIR}/speedy/${site}"
+    ${PY} manage.py migrate
+    ${PY} manage.py collectstatic --no-input
+    touch "/run/uwsgi/app/speedy_${site}/reload"
 done
