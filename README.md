@@ -99,6 +99,10 @@ To run Speedy Match tests:
     cd speedy/match
     ./manage.py test
 
+To run tests with deprecation warnings (in any directory):
+
+    python -W error::DeprecationWarning manage.py test
+
 You need to run both Net and Match in parallel in separate console tabs, with Net running on the default port (8000) and Match running on port 9000.
 Use the URLs in the django_site db table to access the websites:
 speedy.net.localhost:8000
@@ -266,6 +270,10 @@ To migrate all sites, run:
 To run all tests locally, run:
 
     ./manage_all_sites.sh test
+
+To run all tests locally with deprecation warnings, run:
+
+    ./manage_all_sites_with_deprecation_warnings.sh test
 
 ## How to make and compile all messages for translation (To Hebrew):
 
