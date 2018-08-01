@@ -41,3 +41,14 @@ def get_username_validators(min_length, max_length, allow_letters_after_digits):
         validators.MinLengthValidator(min_length),
         validators.MaxLengthValidator(max_length),
     ]
+
+
+class ValidateUserPasswordMixin(object):
+    def validate_password(self, password):
+        from .models import User
+        if len(password) < User.MIN_PASSWORD_LENGTH:
+            raise ValidationError(_('Password too short.'))
+        if len(password) > User.MAX_PASSWORD_LENGTH:
+            raise ValidationError(_('Password too long.'))
+
+

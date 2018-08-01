@@ -14,6 +14,7 @@ from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
+from .validators import ValidateUserPasswordMixin
 
 
 DATE_FIELD_FORMATS = [
@@ -51,13 +52,10 @@ class CleanEmailMixin(object):
         return email
 
 
-class CleanNewPasswordMixin(object):
+class CleanNewPasswordMixin(ValidateUserPasswordMixin):
     def clean_new_password1(self):
         password = self.cleaned_data['new_password1']
-        if len(password) < User.MIN_PASSWORD_LENGTH:
-            raise forms.ValidationError(_('Password too short.'))
-        if len(password) > User.MAX_PASSWORD_LENGTH:
-            raise forms.ValidationError(_('Password too long.'))
+        self.validate_password(password=password)
         return password
 
 
@@ -91,7 +89,6 @@ class LocalizedFirstLastNameMixin(object):
 
 
 class AddAttributesToFieldsMixin(object):
-
     attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
 
     def __init__(self, *args, **kwargs):
@@ -118,7 +115,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data["new_password1"])
+        user.set_password(raw_password=self.cleaned_data["new_password1"])
         for lang_code, lang_name in settings.LANGUAGES:
             for loc_field in self.get_localizeable_fields():
                 setattr(user, self.get_localized_field(base_field_name=loc_field, language=lang_code),

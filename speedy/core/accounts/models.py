@@ -11,13 +11,13 @@ from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
-from speedy.core.accounts.validators import get_username_validators, get_slug_validators
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_username, normalize_slug, generate_confirmation_token, get_age
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
+from .validators import get_username_validators, get_slug_validators, ValidateUserPasswordMixin
 
 
 class Entity(TimeStampedModel):
@@ -130,7 +130,7 @@ class UserAccessField(models.PositiveIntegerField):
         super().__init__(**kwargs)
 
 
-class User(Entity, PermissionsMixin, AbstractBaseUser):
+class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
     MIN_SLUG_LENGTH = 6
@@ -200,12 +200,16 @@ class User(Entity, PermissionsMixin, AbstractBaseUser):
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
         return self.profile.get_name()
 
+    def set_password(self, raw_password):
+        self.validate_password(password=raw_password)
+        return super().set_password(raw_password=raw_password)
+
     def delete(self, using=None, keep_parents=False):
         if self.is_staff or self.is_superuser:
             warnings.warn('Can’t delete staff user')
             return False
         else:
-            return super().delete(using, keep_parents)
+            return super().delete(using=using, keep_parents=keep_parents)
 
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
