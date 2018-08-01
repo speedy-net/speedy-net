@@ -38,7 +38,6 @@ class NormalizeUsernameTestCase(TestCase):
 
 
 class EntityTestCase(TestCase):
-
     def test_automatic_creation_of_id(self):
         entity = Entity(slug='zzzzzz')
         entity.save()
@@ -74,7 +73,6 @@ class EntityTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UserTestCase(TestCase):
-
     @exclude_on_speedy_match
     def test_has_no_confirmed_email(self):
         user = ActiveUserFactory()

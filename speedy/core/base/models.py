@@ -2,12 +2,11 @@ from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from speedy.core.base.utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid, generate_small_udid
-from speedy.core.base.validators import regular_udid_validator, small_udid_validator
+from .utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid, generate_small_udid
+from .validators import regular_udid_validator, small_udid_validator
 
 
 class BaseModel(models.Model):
-
     def save(self, *args, **kwargs):
         try:
             field = self._meta.get_field('id')
@@ -33,7 +32,6 @@ class TimeStampedModel(BaseModel):
 
 # Never use this class directly. Only use inherited classes below.
 class UDIDField(models.CharField):
-
     class Meta:
         abstract = True
 
