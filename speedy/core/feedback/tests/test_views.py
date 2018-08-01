@@ -1,7 +1,7 @@
 from django.contrib.sites.models import Site
 from django.core import mail
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from speedy.core.uploads.tests.test_factories import FileFactory
 from ..models import Feedback
@@ -41,7 +41,7 @@ class FeedbackViewBaseMixin(object):
     @exclude_on_speedy_composer
     @exclude_on_speedy_mail_software
     def test_user_can_see_feedback_form(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
@@ -51,7 +51,7 @@ class FeedbackViewBaseMixin(object):
     @exclude_on_speedy_composer
     @exclude_on_speedy_mail_software
     def test_user_can_submit_form(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Feedback.objects.count(), second=0)
         r = self.client.post(self.page_url, data={
             'text': 'Hello',

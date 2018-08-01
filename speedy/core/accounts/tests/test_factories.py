@@ -1,4 +1,5 @@
 import string
+import random
 from datetime import date
 
 import factory
@@ -11,6 +12,11 @@ from speedy.core.accounts.models import normalize_username, User, UserEmailAddre
 from speedy.core.uploads.models import Image
 
 
+# Generate a new random password for each test.
+USER_PASSWORD_LENGTH = random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
+USER_PASSWORD = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(USER_PASSWORD_LENGTH))
+
+
 class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
@@ -18,15 +24,13 @@ class DefaultUserFactory(factory.DjangoModelFactory):
     gender = User.GENDER_OTHER
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
     username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
-
-    password = factory.PostGenerationMethodCall('set_password', '111')
+    password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=USER_PASSWORD)
 
     class Meta:
         model = User
 
 
 class InactiveUserFactory(DefaultUserFactory):
-
     @factory.post_generation
     def deactivate_speedy_net_profile(self, create, extracted, **kwargs):
         # Deactivate only on speedy.net, speedy.match default is inactive.
@@ -45,7 +49,6 @@ class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
 
 
 class UserImageFactory(factory.DjangoModelFactory):
-
     file = factory.django.ImageField()
 
     class Meta:
@@ -53,7 +56,6 @@ class UserImageFactory(factory.DjangoModelFactory):
 
 
 class ActiveUserFactory(DefaultUserFactory):
-
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         site = Site.objects.get_current()

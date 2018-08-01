@@ -6,7 +6,7 @@ from django.core import mail
 
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match, exclude_on_speedy_net
-from .test_factories import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
+from .test_factories import USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 @exclude_on_speedy_composer
@@ -32,7 +32,7 @@ class MeViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next=/me/')
 
     def test_uset_gets_redirected_to_his_profile(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.get('/me/')
         self.assertRedirects(response=r, expected_url='/markmark/')
 
@@ -146,7 +146,7 @@ class LoginViewTestCase(TestCase):
         r = self.client.post('/login/', data={
             # 'username': 'slug-with-dots',
             'username': 'slug.with.dots',
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
 
@@ -154,21 +154,21 @@ class LoginViewTestCase(TestCase):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         r = self.client.post('/login/', data={
             'username': 'slug____with.....dots---',
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
 
     def test_visitor_can_login_using_email(self):
         r = self.client.post('/login/', data={
             'username': self.user_email.email,
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
 
     def test_visitor_still_can_login_if_he_is_not_active_user(self):
         r = self.client.post('/login/', data={
             'username': self.inactive_user.slug,
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
 
@@ -178,7 +178,7 @@ class LoginViewTestCase(TestCase):
 class LogoutViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_user_can_logout(self):
         r = self.client.get('/logout/')
@@ -194,7 +194,7 @@ class EditProfileViewTestCase(TestCase):
 
     def setUp(self):
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -233,7 +233,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -275,7 +275,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
 
     def setUp(self):
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -307,7 +307,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -321,7 +321,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
 
     def test_user_can_change_password(self):
         r = self.client.post(self.page_url, {
-            'old_password': '111',
+            'old_password': USER_PASSWORD,
             'new_password1': '88888888',
             'new_password2': '88888888',
         })
@@ -338,7 +338,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
 
     def setUp(self):
         self.user = InactiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertFalse(expr=self.user.profile.is_active)
 
     def test_visitor_has_no_access(self):
@@ -379,7 +379,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
 
     def setUp(self):
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -394,7 +394,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
     def test_user_can_deactivate_his_account(self):
         self.assertTrue(expr=self.user.is_active)
         r = self.client.post(self.page_url, {
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
@@ -416,7 +416,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=404)
 
     def test_confirmed_email_link_redirects_to_edit_profile(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         email_id = self.confirmed_address.id
         token = self.confirmed_address.confirmation_token
         r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
@@ -425,7 +425,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.assertIn(member='You\'ve already confirmed this email address.', container=map(str, r.context['messages']))
 
     def test_unconfirmed_email_link_confirms_email(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         email_id = self.unconfirmed_address.id
         token = self.unconfirmed_address.confirmation_token
         r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
@@ -441,7 +441,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -493,7 +493,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
         self.confirmed_address_url = '/edit-profile/emails/{}/confirm/'.format(self.confirmed_address.id)
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_users_address.id)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -526,7 +526,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_users_address = UserEmailAddressFactory(is_primary=False)
         self.other_users_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_users_address.id)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -564,7 +564,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_users_address.id)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()

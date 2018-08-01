@@ -4,7 +4,7 @@ import os
 import tempfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
 from ..models import Image
 
@@ -32,7 +32,7 @@ class UploadViewTestCase(TestCase):
     def test_upload_file(self):
         initial_images_count = Image.objects.count()
         initial_images_id = list(Image.objects.all().values_list('id', flat=True))
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url, self.data)
         self.assertEqual(first=r.status_code, second=200)
         json_response = json.loads(r.content.decode())

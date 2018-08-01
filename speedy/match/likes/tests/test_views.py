@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, only_on_speedy_match
 from .test_factories import UserLikeFactory
 from ..models import UserLike
@@ -12,7 +12,7 @@ class LikeViewTestCase(TestCase):
         self.page_url = '/{}/likes/like/'.format(self.other_user.slug)
 
     def test_can_like(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=UserLike.objects.count(), second=0)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
@@ -30,7 +30,7 @@ class UnlikeViewTestCase(TestCase):
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
 
     def test_can_like(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         UserLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertEqual(first=UserLike.objects.count(), second=1)
         r = self.client.post(self.page_url)
@@ -61,7 +61,7 @@ class LikeListViewsTestCase(TestCase):
             UserLikeFactory(to_user=self.user),
             UserLikeFactory(to_user=self.user, from_user=self.other_user),
         }
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()

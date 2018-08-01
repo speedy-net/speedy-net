@@ -1,7 +1,7 @@
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 
 
@@ -11,7 +11,7 @@ class UserFriendListViewTestCase(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     @exclude_on_speedy_match
     def test_visitor_can_open_the_page(self):
@@ -34,7 +34,7 @@ class ReceivedFriendshipRequestsListView(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.page_url = '/{}/friends/received-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/received-requests/'.format(self.other_user.slug)
 
@@ -59,7 +59,7 @@ class SentFriendshipRequestsListView(TestCase):
     def setUp(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.page_url = '/{}/friends/sent-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/sent-requests/'.format(self.other_user.slug)
 
@@ -85,7 +85,7 @@ class UserFriendRequestViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_cannot_send_friend_request(self):
         self.client.logout()
@@ -123,7 +123,7 @@ class CancelFriendRequestViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_cannot_cancel_friend_request(self):
         self.client.logout()
@@ -154,12 +154,12 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_accept_friend_request_he_sent_another_user(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_that_has_received_request_can_accept_it(self):
-        self.client.login(username=self.other_user.slug, password='111')
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug))
@@ -168,7 +168,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
         Friend.objects.add_friend(self.other_user, ActiveUserFactory()).accept()
-        self.client.login(username=self.other_user.slug, password='111')
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
         r = self.client.get('/{}/friends/'.format(self.other_user.slug))
@@ -178,7 +178,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
     @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
         Friend.objects.add_friend(self.user, ActiveUserFactory()).accept()
-        self.client.login(username=self.other_user.slug, password='111')
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug), fetch_redirect_response=False)
         r = self.client.get('/{}/friends/'.format(self.other_user.slug))
@@ -201,12 +201,12 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_reject_friend_request_he_sent_another_user(self):
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_that_has_received_request_can_reject_it(self):
-        self.client.login(username=self.other_user.slug, password='111')
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug))
@@ -231,14 +231,14 @@ class RemoveFriendViewTestCase(TestCase):
 
     def test_user_can_remove_other_user(self):
         self.assertEqual(first=Friend.objects.count(), second=1 * 2)
-        self.client.login(username=self.user.slug, password='111')
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=Friend.objects.count(), second=0)
 
     def test_other_user_can_remove_first_user(self):
         self.assertEqual(first=Friend.objects.count(), second=1 * 2)
-        self.client.login(username=self.other_user.slug, password='111')
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
         r = self.client.post(self.opposite_url)
         self.assertRedirects(response=r, expected_url=self.user.get_absolute_url())
         self.assertEqual(first=Friend.objects.count(), second=0)

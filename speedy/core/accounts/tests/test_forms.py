@@ -1,4 +1,4 @@
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory, UserEmailAddressFactory
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
 from speedy.core.accounts.models import UserEmailAddress
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
@@ -173,12 +173,12 @@ class DeactivationFormTestCase(TestCase):
 
     def test_incorrect_password(self):
         form = SiteProfileDeactivationForm(user=self.user, data={
-            'password': 'wrong password',
+            'password': 'wrong password!!',
         })
         self.assertFalse(expr=form.is_valid())
 
     def test_correct_password(self):
         form = SiteProfileDeactivationForm(user=self.user, data={
-            'password': '111',
+            'password': USER_PASSWORD,
         })
         self.assertTrue(expr=form.is_valid())
