@@ -15,6 +15,7 @@ from speedy.core.uploads.models import Image
 # Generate a new random password for each test.
 USER_PASSWORD_LENGTH = random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
 USER_PASSWORD = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(USER_PASSWORD_LENGTH))
+# USER_PASSWORD = 'vjha9c4q44zs'
 
 
 class DefaultUserFactory(factory.DjangoModelFactory):
