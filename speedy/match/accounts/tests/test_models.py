@@ -31,7 +31,7 @@ class SiteProfileTestCase(TestCase):
     def test_call_activate_directly_and_assert_exception(self):
         user_1 = self.get_default_user_1()
         self.assertEqual(user_1.profile.is_active, False)
-        with self.assertRaises(expected_exception=NotImplementedError) as cm:
+        with self.assertRaises(NotImplementedError) as cm:
             user_1.profile.activate()
         self.assertEqual(user_1.profile.is_active, False)
 
