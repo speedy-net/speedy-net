@@ -45,8 +45,10 @@ class EntityTestCase(TestCase):
 
     def test_slug_and_username_min_length_fail(self):
         entity = Entity(slug='a' * 5, username='a' * 5)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]", callable=entity.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]", callable=entity.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
+            entity.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
+            entity.full_clean()
 
     def test_slug_and_username_min_length_ok(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
@@ -54,8 +56,10 @@ class EntityTestCase(TestCase):
 
     def test_slug_and_username_max_length_fail(self):
         entity = Entity(slug='a' * 201, username='z' * 201)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", callable=entity.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]", callable=entity.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]") as cm:
+            entity.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]") as cm:
+            entity.full_clean()
 
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
@@ -97,8 +101,10 @@ class UserTestCase(TestCase):
 
     def test_slug_and_username_min_length_fail(self):
         user = ActiveUserFactory(slug='a' * 5)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
+            user.full_clean()
 
     def test_slug_and_username_min_length_ok(self):
         user = ActiveUserFactory(slug='a' * 6)
@@ -106,16 +112,20 @@ class UserTestCase(TestCase):
 
     def test_slug_max_length_fail(self):
         user = ActiveUserFactory(slug='a' * 201)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 201\).'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 201\).'\]") as cm:
+            user.full_clean()
 
     def test_slug_max_length_ok(self):
         user = ActiveUserFactory(slug='b' * 200)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 200\).'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 200\).'\]") as cm:
+            user.full_clean()
 
     def test_username_max_length_fail(self):
         user = ActiveUserFactory(slug='a' * 41)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 41\).'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 40 characters \(it has 41\).'\]") as cm:
+            user.full_clean()
 
     def test_username_max_length_ok(self):
         user = ActiveUserFactory(slug='a' * 40)
@@ -127,25 +137,34 @@ class UserTestCase(TestCase):
 
     def test_come2us_is_invalid_username(self):
         user = ActiveUserFactory(slug='come2us', username='come2us')
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
 
     def test_000000_is_invalid_username(self):
         user = ActiveUserFactory(slug='0' * 6, username='0' * 6)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
 
     def test_0test1_is_invalid_username(self):
         user = ActiveUserFactory(slug='0-test-1', username='0test1')
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
 
     def test_slug_and_username_dont_match_but_valid(self):
         user = ActiveUserFactory(slug='star2001', username='star2000')
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
+            user.full_clean()
 
     def test_slug_and_username_dont_match_and_invalid(self):
         user = ActiveUserFactory(slug='0-test-2', username='0test1')
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]", callable=user.full_clean)
-        self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]", callable=user.full_clean)
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
+            user.full_clean()
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'\]") as cm:
+            user.full_clean()
 
