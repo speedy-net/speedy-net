@@ -12,15 +12,15 @@ class SendMessageTestCase(TestCase):
         self.user2 = ActiveUserFactory()
 
     def test_cannot_send_message_to_self(self):
-        self.assertFalse(expr=self.user1.has_perm('im.send_message', self.user1))
+        self.assertFalse(expr=self.user1.has_perm(perm='im.send_message', obj=self.user1))
 
     def test_can_send_message_to_other_user(self):
-        self.assertTrue(expr=self.user1.has_perm('im.send_message', self.user2))
+        self.assertTrue(expr=self.user1.has_perm(perm='im.send_message', obj=self.user2))
 
     def test_cannot_send_message_to_other_user_if_blocked(self):
         Block.objects.block(blocker=self.user2, blocked=self.user1)
-        self.assertFalse(expr=self.user1.has_perm('im.send_message', self.user2))
-        self.assertFalse(expr=self.user2.has_perm('im.send_message', self.user1))
+        self.assertFalse(expr=self.user1.has_perm(perm='im.send_message', obj=self.user2))
+        self.assertFalse(expr=self.user2.has_perm(perm='im.send_message', obj=self.user1))
 
 
 @exclude_on_speedy_composer
@@ -31,10 +31,10 @@ class ViewChatsTestCase(TestCase):
         self.user2 = ActiveUserFactory()
 
     def test_can_see_his_chats(self):
-        self.assertTrue(expr=self.user1.has_perm('im.view_chats', self.user1))
+        self.assertTrue(expr=self.user1.has_perm(perm='im.view_chats', obj=self.user1))
 
     def test_cannot_see_other_user_chats(self):
-        self.assertFalse(expr=self.user1.has_perm('im.view_chats', self.user2))
+        self.assertFalse(expr=self.user1.has_perm(perm='im.view_chats', obj=self.user2))
 
 
 @exclude_on_speedy_composer
@@ -48,7 +48,7 @@ class ReadChatTestCase(TestCase):
         self.chat_1_3 = ChatFactory(ent1=self.user1, ent2=self.user3)
 
     def test_can_read_his_chat(self):
-        self.assertTrue(expr=self.user2.has_perm('im.read_chat', self.chat_1_2))
+        self.assertTrue(expr=self.user2.has_perm(perm='im.read_chat', obj=self.chat_1_2))
 
     def test_cannot_read_a_chat_user_is_not_participate_in(self):
-        self.assertFalse(expr=self.user2.has_perm('im.read_chat', self.chat_1_3))
+        self.assertFalse(expr=self.user2.has_perm(perm='im.read_chat', obj=self.chat_1_3))

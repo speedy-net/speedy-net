@@ -25,7 +25,7 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
         return Chat.on_site.chats(self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
 
     def has_permission(self):
-        return self.request.user.has_perm('im.view_chats', self.user)
+        return self.request.user.has_perm(perm='im.view_chats', obj=self.user)
 
 
 class UserSingleChatMixin(UserChatsMixin):
@@ -51,7 +51,7 @@ class UserSingleChatMixin(UserChatsMixin):
         return self.get_chat().message_set.select_related('sender__user')
 
     def has_permission(self):
-        return super().has_permission() and self.request.user.has_perm('im.read_chat', self.chat)
+        return super().has_permission() and self.request.user.has_perm(perm='im.read_chat', obj=self.chat)
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -148,7 +148,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     def has_permission(self):
         if self.chat.participants_count != 2:
             return super().has_permission()
-        return self.user.has_perm('im.send_message', self.chat.get_other_participants(entity=self.user)[0])
+        return self.user.has_perm(perm='im.send_message', obj=self.chat.get_other_participants(entity=self.user)[0])
 
 
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):

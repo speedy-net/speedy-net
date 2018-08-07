@@ -19,7 +19,7 @@ class UserMixin(object):
         return self.user_slug_kwarg not in self.kwargs
 
     def render_to_response(self, context, **response_kwargs):
-        if not self.request.user.has_perm('accounts.view_profile', self.get_user()):
+        if not self.request.user.has_perm(perm='accounts.view_profile', obj=self.get_user()):
             response_kwargs['status'] = 404
         return super().render_to_response(context, **response_kwargs)
 
