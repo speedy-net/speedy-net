@@ -131,7 +131,7 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
             if Friend.objects.are_friends(user1=request.user, user2=self.user):
                 messages.warning(request, pgettext_lazy(context=request.user.get_gender(), message='You already are friends with this user.'))
                 return redirect(to=self.user)
-        return super().dispatch(request, *args, **kwargs)
+        return super().dispatch(request=request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -195,7 +195,7 @@ class AcceptFriendRequestView(LimitMaxFriendsMixin, AcceptRejectFriendRequestVie
         except ValidationError as e:
             messages.error(self.request, e.message)
             return redirect(to=self.get_redirect_url())
-        return super().post(request, *args, **kwargs)
+        return super().post(request=request, *args, **kwargs)
 
 
 class RejectFriendRequestView(AcceptRejectFriendRequestViewBase):

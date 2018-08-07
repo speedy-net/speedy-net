@@ -164,19 +164,19 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return self.request.user.profile
 
     def get_form_class(self):
-        return reflection_import(settings.SITE_PROFILE_ACTIVATION_FORM)
+        return reflection_import(name=settings.SITE_PROFILE_ACTIVATION_FORM)
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user.profile.is_active:
             return redirect(to=self.success_url)
-        return super().dispatch(request, *args, **kwargs)
+        return super().dispatch(request=request, *args, **kwargs)
 
     def get_account_activation_url(self):
         return reverse_lazy('accounts:activate')
 
     def post(self, request, *args, **kwargs):
         if request.user.has_verified_email:
-            return super().post(request, *args, **kwargs)
+            return super().post(request=request, *args, **kwargs)
         else:
             return redirect(to=self.get_account_activation_url())
 
@@ -279,8 +279,8 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)
 
-    def delete(self, request, *args, **kwargs):
-        response = super().delete(request, *args, **kwargs)
+    def delete(self, *args, **kwargs):
+        response = super().delete(*args, **kwargs)
         messages.success(self.request, 'The email address was deleted.')
         return response
 

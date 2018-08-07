@@ -54,7 +54,7 @@ class FeedbackView(generic.CreateView):
 class FeedbackSuccessView(generic.TemplateView):
     template_name = 'feedback/feedback_success.html'
 
-    def get(self, request, *args, **kwargs):
+    def get(self, *args, **kwargs):
         redirect_from_path = parse.urlparse(self.request.META.get('HTTP_REFERER')).path
         try:
             redirect_from_view = resolve(redirect_from_path)
@@ -62,4 +62,4 @@ class FeedbackSuccessView(generic.TemplateView):
             self.report_entity = redirect_from_view.kwargs.get('report_entity_slug')
         except Resolver404:
             pass
-        return super(FeedbackSuccessView, self).get(request, *args, **kwargs)
+        return super().get(*args, **kwargs)

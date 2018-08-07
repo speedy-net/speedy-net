@@ -27,9 +27,9 @@ class File(TimeStampedModel):
     def __str__(self):
         return self.basename
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
         self.size = self.file.size
-        return super().save(**kwargs)
+        return super().save(*args, **kwargs)
 
     def store(self):
         self.is_stored = True

@@ -17,7 +17,7 @@ from ..base.utils import normalize_username
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         try:
-            return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request=request, *args, **kwargs)
         except PermissionDenied:
             return self.handle_no_permission()
 
@@ -32,7 +32,7 @@ class UserSingleChatMixin(UserChatsMixin):
     def dispatch(self, request, *args, **kwargs):
         try:
             self.chat = self.get_chat()
-            return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request=request, *args, **kwargs)
         except PermissionDenied:
             return self.handle_no_permission()
 
@@ -82,8 +82,8 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         if visited_user and visited_user != request.user and not Chat.on_site.chat_with(self.request.user, visited_user, create=False):
             self.user = visited_user
             self.chat = None
-            return self.get(request, *args, **kwargs)
-        return super().dispatch(request, *args, **kwargs)
+            return self.get(request=request, *args, **kwargs)
+        return super().dispatch(request=request, *args, **kwargs)
 
     def get_form(self):
         if self.chat:
@@ -160,7 +160,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
         existing_chat = Chat.on_site.chat_with(self.request.user, self.user, create=False)
         if existing_chat is not None:
             return redirect(to='im:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
-        return super().get(request, *args, **kwargs)
+        return super().get(request=request, *args, **kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()

@@ -13,7 +13,7 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
 
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
+        return super().dispatch(request=request, *args, **kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()

@@ -204,12 +204,12 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         self.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
 
-    def delete(self, using=None, keep_parents=False):
+    def delete(self, *args, **kwargs):
         if self.is_staff or self.is_superuser:
             warnings.warn('Can’t delete staff user')
             return False
         else:
-            return super().delete(using=using, keep_parents=keep_parents)
+            return super().delete(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
