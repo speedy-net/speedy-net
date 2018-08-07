@@ -6,6 +6,14 @@ from .utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid
 from .validators import regular_udid_validator, small_udid_validator
 
 
+class ValidateModelMixin(object):
+    def save(self, *args, **kwargs):
+        """Call `full_clean` before saving."""
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
+
+# class BaseModel(ValidateModelMixin, models.Model): # ~~~~ TODO: doesn't work, most of the tests fail, fix and remove the following line.
 class BaseModel(models.Model):
     def save(self, *args, **kwargs):
         try:
