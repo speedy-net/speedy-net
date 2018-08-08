@@ -52,30 +52,8 @@ class SiteProfileTestCase(TestCase):
 
 @only_on_speedy_match
 class SiteProfileMatchTestCase(TestCase):
-    # def activate_user(self, user):
-    #     # user.photo = ~~~~ TODO: some photo
-    #     user.profile.profile_description = "Hi!"
-    #     user.profile.city = "Tel Aviv."
-    #     user.profile.children = "One boy."
-    #     user.profile.more_children = "Yes."
-    #     user.profile.match_description = "Hi!"
-    #     user.profile.height = 170
-    #     user.profile.smoking = SiteProfile.SMOKING_NO
-    #     user.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
-    #     user.profile.gender_to_match = [User.GENDER_OTHER]
-    #     user.save()
-    #     user.profile.save()
-    #     step, error_messages = user.profile.validate_profile_and_activate()
-    #     self.assertEqual(step, len(settings.SITE_PROFILE_FORM_FIELDS))
-    #     self.assertEqual(error_messages, [])
-    #     # if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
-    #     #     raise Exception("Step not as expected, {}".format(step))
-    #     # if (len(error_messages) > 0):
-    #     #     raise Exception("Error messages not as expected, {}".format(", ".join(error_messages)))
-
     def get_default_user_1(self):
         user_1 = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=datetime(1958, 10, 22), gender=User.GENDER_MALE, diet=User.DIET_VEGETARIAN)
-        # self.activate_user(user=user_1) # ~~~~ TODO
         user_1.profile.smoking = SiteProfile.SMOKING_NO
         user_1.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
         user_1.profile.min_age_match = 20
@@ -87,7 +65,6 @@ class SiteProfileMatchTestCase(TestCase):
 
     def get_default_user_2(self):
         user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
-        # self.activate_user(user=user_2) # ~~~~ TODO
         user_2.profile.smoking = SiteProfile.SMOKING_YES
         user_2.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
         user_2.profile.gender_to_match = [User.GENDER_MALE]

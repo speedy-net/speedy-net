@@ -37,7 +37,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         kwargs['step'] = self.step
         return kwargs
 
-    #TODO: Read about dispatch and request lifecycle to understand why 'step' is wrong
+    # ~~~~ TODO: Read about dispatch and request lifecycle to understand why 'step' is wrong
     def dispatch(self, request, *args, **kwargs):
         if not self.request.user.is_authenticated:
             return super().dispatch(request=request, *args, **kwargs)
@@ -58,7 +58,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
     def get(self, request, *args, **kwargs):
         log.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
+        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id') # ~~~~ TODO: maybe we don't need this line? Remove it.
         log.debug('get: request.user.is_active ? %s' , request.user.is_active)
         if not request.user.is_active:
             log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
