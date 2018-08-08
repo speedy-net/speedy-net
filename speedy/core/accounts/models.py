@@ -123,11 +123,11 @@ class UserAccessField(models.PositiveIntegerField):
         (ACCESS_ANYONE, _('Anyone')),
     )
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         kwargs.update({
             'choices': self.ACCESS_CHOICES,
         })
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser):

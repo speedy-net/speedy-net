@@ -11,8 +11,8 @@ class FeedbackForm(ModelFormWithDefaults):
         model = Feedback
         fields = ('sender_name', 'sender_email', 'text')
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         if self.defaults.get('sender'):
             del self.fields['sender_name']

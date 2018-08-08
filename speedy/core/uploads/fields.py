@@ -22,13 +22,13 @@ class FileInput(forms.TextInput):
 
 
 class PhotoField(models.ForeignKey):
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         kwargs.update({
             'to': 'uploads.Image',
             'on_delete': models.SET_NULL,
             'related_name': '+',
         })
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         kwargs.update({

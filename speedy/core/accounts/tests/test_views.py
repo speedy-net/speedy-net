@@ -9,6 +9,24 @@ from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_
 from .test_factories import USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
+class RedirectMeMixin(object):
+    def assert_me_url_redirects(self, expected_url):
+        r = self.client.get('/me/')
+        self.assertRedirects(response=r, expected_url=expected_url)
+
+    def assert_me_url_redirects_to_login_url(self):
+        expected_url = '/login/?next=/me/'
+        self.assert_me_url_redirects(expected_url=expected_url)
+
+    def assert_me_url_redirects_to_user_profile_url(self, user):
+        expected_url = '/{}/'.format(user.slug)
+        self.assert_me_url_redirects(expected_url=expected_url)
+
+    def assert_me_url_redirects_to_welcome_url(self):
+        expected_url = '/welcome/'
+        self.assert_me_url_redirects(expected_url=expected_url)
+
+
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class IndexViewTestCase(TestCase):
@@ -23,24 +41,23 @@ class IndexViewTestCase(TestCase):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
-class MeViewTestCase(TestCase):
+class MeViewTestCase(RedirectMeMixin, TestCase):
     def setUp(self):
         self.user = ActiveUserFactory(slug='markmark')
 
     def test_visitor_has_no_access(self):
-        r = self.client.get('/me/')
-        self.assertRedirects(response=r, expected_url='/login/?next=/me/')
+        self.assert_me_url_redirects_to_login_url()
 
-    def test_uset_gets_redirected_to_his_profile(self):
+    def test_user_gets_redirected_to_his_profile(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        r = self.client.get('/me/')
-        self.assertRedirects(response=r, expected_url='/markmark/')
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+        # Assert expected_url directly once to confirm.
+        self.assert_me_url_redirects(expected_url='/markmark/')
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RegistrationViewTestCase(TestCase):
-
     def setUp(self):
         self.data = {
             'first_name_en': 'First',
@@ -76,12 +93,13 @@ class RegistrationViewTestCase(TestCase):
         self.assertEqual(first=user, second=entity.user)
         self.assertEqual(first=user.id, second=entity.id)
         self.assertEqual(first=15, second=len(entity.id))
-        self.assertTrue(expr=user.check_password('password'))
+        self.assertTrue(expr=user.check_password(raw_password='password'))
         self.assertEqual(first=user.first_name, second='First')
         self.assertEqual(first=user.first_name_en, second='First')
         self.assertEqual(first=user.last_name, second='Last')
         self.assertEqual(first=user.last_name_en, second='Last')
         self.assertEqual(first=user.slug, second='user1234')
+        self.assertEqual(first=user.username, second='user1234')
         self.assertEqual(first=user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.all()[0].email, second='email@example.com')
         self.assertFalse(expr=user.email_addresses.all()[0].is_confirmed)
@@ -129,12 +147,12 @@ class RegistrationViewTestCase(TestCase):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
-class LoginViewTestCase(TestCase):
+class LoginViewTestCase(RedirectMeMixin, TestCase):
     def setUp(self):
         self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
-        self.inactive_user = ActiveUserFactory(is_active=False)
+        self.inactive_user = InactiveUserFactory()
 
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
@@ -144,11 +162,22 @@ class LoginViewTestCase(TestCase):
     def test_visitor_can_login_using_slug(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         r = self.client.post('/login/', data={
-            # 'username': 'slug-with-dots',
+            'username': 'slug-with-dots',
+            'password': USER_PASSWORD,
+        })
+        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+        # Assert expected_url directly once to confirm.
+        self.assert_me_url_redirects(expected_url='/slug-with-dots/')
+
+    def test_visitor_can_login_using_original_slug(self):
+        self.assertEqual(first=self.user.slug, second='slug-with-dots')
+        r = self.client.post('/login/', data={
             'username': 'slug.with.dots',
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_visitor_can_login_using_slug_modified(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
@@ -157,6 +186,16 @@ class LoginViewTestCase(TestCase):
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_visitor_can_login_using_slug_uppercase(self):
+        self.assertEqual(first=self.user.slug, second='slug-with-dots')
+        r = self.client.post('/login/', data={
+            'username': 'SLUG-WITH-DOTS',
+            'password': USER_PASSWORD,
+        })
+        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_visitor_can_login_using_email(self):
         r = self.client.post('/login/', data={
@@ -164,6 +203,15 @@ class LoginViewTestCase(TestCase):
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_visitor_can_login_using_email_uppercase(self):
+        r = self.client.post('/login/', data={
+            'username': self.user_email.email.upper(),
+            'password': USER_PASSWORD,
+        })
+        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_visitor_still_can_login_if_he_is_not_active_user(self):
         r = self.client.post('/login/', data={
@@ -171,6 +219,18 @@ class LoginViewTestCase(TestCase):
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        # Inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
+        self.assert_me_url_redirects_to_welcome_url()
+
+    def test_visitor_cannot_login_using_wrong_password(self):
+        self.assertEqual(first=self.user.slug, second='slug-with-dots')
+        r = self.client.post('/login/', data={
+            'username': 'slug-with-dots',
+            'password': 'wrong password!!',
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertEqual(first=r.context['form'].errors, second={'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']})
+        self.assert_me_url_redirects_to_login_url()
 
 
 @exclude_on_speedy_composer
@@ -322,18 +382,69 @@ class EditProfileCredentialsViewTestCase(TestCase):
     def test_user_can_change_password(self):
         r = self.client.post(self.page_url, {
             'old_password': USER_PASSWORD,
-            'new_password1': '88888888',
-            'new_password2': '88888888',
+            'new_password1': '8' * 8,
+            'new_password2': '8' * 8,
         })
         self.assertRedirects(response=r, expected_url=self.page_url)
         user = User.objects.get(id=self.user.id)
-        self.assertTrue(expr=user.check_password('88888888'))
+        self.assertTrue(expr=user.check_password(raw_password='8' * 8))
+        self.assertFalse(expr=user.check_password(raw_password='1' * 8))
+        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
+
+    def test_old_password_incorrect(self):
+        r = self.client.post(self.page_url, {
+            'old_password': '7' * 8,
+            'new_password1': '8' * 8,
+            'new_password2': '8' * 8,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertEqual(first=r.context['form'].errors, second={'old_password': ['Your old password was entered incorrectly. Please enter it again.']})
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password='8' * 8))
+        self.assertFalse(expr=user.check_password(raw_password='7' * 8))
+
+    def test_password_too_short(self):
+        r = self.client.post(self.page_url, {
+            'old_password': USER_PASSWORD,
+            'new_password1': '8' * 3,
+            'new_password2': '8' * 3,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertEqual(first=r.context['form'].errors, second={'new_password1': ['Password too short.']})
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password='8' * 3))
+
+    def test_password_too_long(self):
+        r = self.client.post(self.page_url, {
+            'old_password': USER_PASSWORD,
+            'new_password1': '8' * 121,
+            'new_password2': '8' * 121,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertEqual(first=r.context['form'].errors, second={'new_password1': ['Password too long.']})
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password='8' * 121))
+
+    def test_passwords_dont_match(self):
+        r = self.client.post(self.page_url, {
+            'old_password': USER_PASSWORD,
+            'new_password1': '8' * 8,
+            'new_password2': '7' * 8,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertEqual(first=r.context['form'].errors, second={'new_password2': ["The two password fields didn't match."]})
+        user = User.objects.get(id=self.user.id)
+        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password='8' * 8))
+        self.assertFalse(expr=user.check_password(raw_password='7' * 8))
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ActivateSiteProfileViewTestCase(TestCase):
-
     page_url = '/welcome/'
 
     def setUp(self):

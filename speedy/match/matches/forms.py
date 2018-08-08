@@ -14,8 +14,8 @@ class MatchSettingsMiniForm(SpeedyMatchProfileActivationForm):
 
 
 class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         # split into two columns
         field_names = list(self.fields.keys())

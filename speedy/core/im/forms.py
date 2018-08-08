@@ -13,12 +13,12 @@ class MessageForm(forms.ModelForm):
         model = Message
         fields = ('text',)
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         self.from_entity = kwargs.pop('from_entity', None)
         self.to_entity = kwargs.pop('to_entity', None)
         self.chat = kwargs.pop('chat', None)
         assert bool(self.from_entity and self.to_entity) != bool(self.from_entity and self.chat)
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         if self.chat:
             self.helper.form_action = reverse('im:chat_send', kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})

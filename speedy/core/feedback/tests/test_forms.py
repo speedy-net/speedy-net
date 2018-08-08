@@ -47,4 +47,4 @@ class FeedbackFormTestCase(TestCase):
         self.assertEqual(first=feedback.sender_email, second='')
         self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_ENTITY)
         self.assertEqual(first=feedback.report_entity_id, second=other_user.id)
-        self.assertEqual(first=feedback.report_file, second=None)
+        self.assertIsNone(obj=feedback.report_file)

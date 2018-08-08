@@ -25,9 +25,9 @@ DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
 
 
 class ModelFormWithDefaults(forms.ModelForm):
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         self.defaults = kwargs.pop('defaults', {})
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
 
     def save(self, commit=True):
         instance = super().save(commit=False)
@@ -135,8 +135,8 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         model = User
         fields = ('date_of_birth', 'photo', 'slug', 'gender')
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
         self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
@@ -167,8 +167,8 @@ class ProfileNotificationsForm(forms.ModelForm):
         model = User
         fields = ('notify_on_message', )
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         for field in self.profile_model._meta.fields:
             if field.name in self.profile_fields:
                 self.fields[field.name] = field.formfield()
@@ -232,9 +232,9 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_fo
 
 
 class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
-    def __init__(self, **kwargs):
-        user = kwargs.pop('user')
-        super().__init__(user, **kwargs)
+    def __init__(self, *args, **kwargs):
+        # user = kwargs.pop('user') # ~~~~ TODO: remove this line.
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Hidden('_form', 'password'))
         self.helper.add_input(Submit('submit', _('Change')))
@@ -245,8 +245,8 @@ class SiteProfileActivationForm(forms.ModelForm):
         model = get_site_profile_model(profile_model=None)
         fields = ()
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {} account').format(_(site.name))))
@@ -260,16 +260,16 @@ class SiteProfileActivationForm(forms.ModelForm):
 class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput)
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user')
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {} account').format(_(site.name)), css_class='btn-danger'))
 
     def clean_password(self):
         password = self.cleaned_data['password']
-        if not self.user.check_password(password):
+        if not self.user.check_password(raw_password=password):
             raise forms.ValidationError(_('Invalid password.'))
         return password
 
@@ -308,8 +308,8 @@ class ProfilePrivacyForm(forms.ModelForm):
         fields = ('access_dob_day_month', 'access_dob_year')
         model = User
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 

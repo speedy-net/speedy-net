@@ -211,7 +211,6 @@ class RejectFriendRequestViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/{}/friends/'.format(self.other_user.slug))
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
-        # self.assertIsNotNone(obj=self.other_user.friendship_requests_received.all()[0].rejected)
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=0)
 
 

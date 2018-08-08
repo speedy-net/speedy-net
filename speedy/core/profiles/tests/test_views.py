@@ -2,6 +2,7 @@ from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+from speedy.core.accounts.tests.test_views import RedirectMeMixin
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
 from ..views import UserMixin
 
@@ -53,21 +54,19 @@ class UserMixinTextCase(TestCase):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
-class LoggedInUserTestCase(TestCase):
+class LoggedInUserTestCase(RedirectMeMixin, TestCase):
     def setUp(self):
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()
 
     def test_redirect_to_login_me(self):
-        r = self.client.get('/me/')
-        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+        self.assert_me_url_redirects_to_login_url()
 
     def test_redirect_to_login_me_add_trailing_slash(self):
         r = self.client.get('/me')
         self.assertRedirects(response=r, expected_url='/me/', status_code=301, target_status_code=302)
-        r = self.client.get('/me/')
-        self.assertRedirects(response=r, expected_url='/login/?next=/me/', status_code=302)
+        self.assert_me_url_redirects_to_login_url()
 
     # ~~~~ TODO: login and test /me/ and user profiles while logged in.
 

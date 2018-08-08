@@ -43,38 +43,44 @@ class UDIDField(models.CharField):
     class Meta:
         abstract = True
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
+        given_kwargs = kwargs
         defaults = {
             'verbose_name': _('ID'),
             'primary_key': True,
             'db_index': True,
             'unique': True,
         }
-        defaults.update(kwargs)
-        super().__init__(**defaults)
+        kwargs = defaults
+        kwargs.update(given_kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class RegularUDIDField(UDIDField):
     id_generator = staticmethod(generate_regular_udid)
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
+        given_kwargs = kwargs
         defaults = {
             'max_length': REGULAR_UDID_LENGTH,
             'validators': [regular_udid_validator],
         }
-        defaults.update(kwargs)
-        super().__init__(**defaults)
+        kwargs = defaults
+        kwargs.update(given_kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class SmallUDIDField(UDIDField):
     id_generator = staticmethod(generate_small_udid)
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
+        given_kwargs = kwargs
         defaults = {
             'max_length': SMALL_UDID_LENGTH,
             'validators': [small_udid_validator],
         }
-        defaults.update(kwargs)
-        super().__init__(**defaults)
+        kwargs = defaults
+        kwargs.update(given_kwargs)
+        super().__init__(*args, **kwargs)
 
 
