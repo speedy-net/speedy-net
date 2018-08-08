@@ -74,7 +74,7 @@ class MessageManagerTestCase(TestCase):
         self.assertEqual(first=rmark.chat, second=chat)
         self.assertEqual(first=rmark.entity_id, second=user1.id)
 
-    def test_sending_message_to_exising_chat(self):
+    def test_sending_message_to_existing_chat(self):
         user1 = ActiveUserFactory()
         chat = ChatFactory(ent1=user1)
         self.assertEqual(first=Chat.objects.count(), second=1)
