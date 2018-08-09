@@ -3,8 +3,8 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
+from speedy.core.base.models import TimeStampedModel, BaseManager, RegularUDIDField
 from speedy.core.accounts.models import Entity, User
-from speedy.core.base.models import TimeStampedModel, RegularUDIDField
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
@@ -17,7 +17,7 @@ class Chat(TimeStampedModel):
     is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
     last_message = models.ForeignKey(to='Message', verbose_name=_('last message'), on_delete=models.SET_NULL, blank=True, null=True, related_name='+')
 
-    objects = models.Manager()
+    objects = BaseManager()
     on_site = ChatManager()
 
     class Meta:

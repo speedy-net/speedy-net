@@ -1,9 +1,10 @@
-from django.db import models
 from friendship.models import Friend
 from django.core.exceptions import ValidationError
 
+from speedy.core.base.models import BaseManager
 
-class BlockManager(models.Manager):
+
+class BlockManager(BaseManager):
     def block(self, blocker, blocked):
         if blocker == blocked:
             raise ValidationError("Users cannot block themselves.")

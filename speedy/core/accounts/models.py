@@ -47,9 +47,14 @@ class Entity(TimeStampedModel):
         return '<Entity {}>'.format(self.id)
 
     def save(self, *args, **kwargs):
-        self.slug = normalize_slug(slug=self.slug)
-        self.username = normalize_username(slug=self.username)
         return super().save(*args, **kwargs)
+
+    def normalize_slug_and_username(self):
+        self.slug = normalize_slug(slug=self.slug)
+        if self.username:
+            self.username = normalize_username(slug=self.username)
+        else:
+            self.username = normalize_username(slug=self.slug)
 
     def validate_username_for_slug(self):
         if normalize_username(slug=self.slug) != self.username:
@@ -59,18 +64,14 @@ class Entity(TimeStampedModel):
         """
         Allows to have different slug and username validators for Entity and User.
         """
+        self.normalize_slug_and_username()
+
         try:
             super().clean_fields(exclude=exclude)
         except ValidationError as e:
             errors = e.error_dict
         else:
             errors = {}
-
-        self.slug = normalize_slug(slug=self.slug)
-        if self.username:
-            self.username = normalize_username(slug=self.username)
-        else:
-            self.username = normalize_username(slug=self.slug)
 
         username_exists = Entity.objects.filter(username=self.username).exclude(id=self.id).exists()
         if username_exists:

@@ -1,9 +1,10 @@
 from django.contrib.sites.models import Site
-from django.db import models
 from django.db.models import Q
 
+from speedy.core.base.models import BaseManager
 
-class ChatManager(models.Manager):
+
+class ChatManager(BaseManager):
     def get_queryset(self):
         return super().get_queryset().filter(site=Site.objects.get_current())
 
@@ -26,7 +27,7 @@ class ChatManager(models.Manager):
         return chat
 
 
-class MessageManager(models.Manager):
+class MessageManager(BaseManager):
     def send_message(self, from_entity, to_entity=None, chat=None, text=None):
         from .models import Chat
         assert bool(from_entity and to_entity) != bool(from_entity and chat)
@@ -40,7 +41,7 @@ class MessageManager(models.Manager):
         return chat.last_message
 
 
-class ReadMarkManager(models.Manager):
+class ReadMarkManager(BaseManager):
     def mark(self, chat, entity):
         rmark, created = self.get_or_create(chat=chat, entity=entity)
         if not created:

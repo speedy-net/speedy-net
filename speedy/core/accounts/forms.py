@@ -155,7 +155,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if normalize_username(slug=slug) != username:
-            raise forms.ValidationError(pgettext_lazy(context=self.instance.get_gender(), message='You can\'t change your username.'))
+            raise forms.ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 
 

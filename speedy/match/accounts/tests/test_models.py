@@ -10,11 +10,11 @@ from speedy.core.accounts.tests.test_factories import DefaultUserFactory, Active
 @only_on_speedy_match
 class SiteProfileTestCase(TestCase):
     def get_default_user_1(self):
-        user_1 = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user_1 = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
         return user_1
 
     def get_default_user_2(self):
-        user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGETARIAN)
+        user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGETARIAN)
         return user_2
 
     def test_get_active_languages(self):
@@ -33,6 +33,7 @@ class SiteProfileTestCase(TestCase):
         self.assertEqual(user_1.profile.is_active, False)
         with self.assertRaises(NotImplementedError) as cm:
             user_1.profile.activate()
+        self.assertEqual(first=str(cm.exception), second='')
         self.assertEqual(user_1.profile.is_active, False)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):
@@ -64,7 +65,7 @@ class SiteProfileMatchTestCase(TestCase):
         return user_1
 
     def get_default_user_2(self):
-        user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user_2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(1978, 9, 12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
         user_2.profile.smoking = SiteProfile.SMOKING_YES
         user_2.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
         user_2.profile.gender_to_match = [User.GENDER_MALE]

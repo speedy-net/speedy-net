@@ -1,4 +1,5 @@
 from django.core.exceptions import FieldDoesNotExist
+from django.contrib.auth.models import BaseUserManager as DjangoBaseUserManager
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -11,6 +12,11 @@ class ValidateModelMixin(object):
         """Call `full_clean` before saving."""
         self.full_clean()
         return super().save(*args, **kwargs)
+
+
+class ManagerMixin(object):
+    def bulk_create(self, *args, **kwargs):
+        raise NotImplementedError()
 
 
 # class BaseModel(ValidateModelMixin, models.Model): # ~~~~ TODO: doesn't work, most of the tests fail, fix and remove the following line.
@@ -36,6 +42,14 @@ class TimeStampedModel(BaseModel):
 
     class Meta:
         abstract = True
+
+
+class BaseManager(ManagerMixin, models.Manager):
+    pass
+
+
+class BaseUserManager(ManagerMixin, DjangoBaseUserManager):
+    pass
 
 
 # Never use this class directly. Only use inherited classes below.

@@ -44,4 +44,5 @@ class BlockManagerTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             Block.objects.block(blocker=self.user, blocked=self.user)
         self.assertEqual(first=str(cm.exception.message), second="Users cannot block themselves.")
+        self.assertEqual(first=list(cm.exception), second=['Users cannot block themselves.'])
 

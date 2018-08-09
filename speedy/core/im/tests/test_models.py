@@ -22,10 +22,10 @@ class ChatTestCase(TestCase):
             self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
 
     def test_get_slug(self):
-        user1=ActiveUserFactory(first_name='Walter', last_name='White', slug='walter')
-        user2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse')
+        user1 = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter')
+        user2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman')
         chat = ChatFactory(ent1=user1, ent2=user2)
-        self.assertEqual(first=chat.get_slug(current_user=user1), second='jesse')
+        self.assertEqual(first=chat.get_slug(current_user=user1), second='jesse-pinkman')
         self.assertEqual(first=chat.get_slug(current_user=user2), second='walter')
         chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user1, user2, ActiveUserFactory(), ActiveUserFactory()])
         self.assertEqual(first=chat.get_slug(current_user=user1), second=chat.id)
