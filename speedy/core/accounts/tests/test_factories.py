@@ -25,7 +25,8 @@ class DefaultUserFactory(factory.DjangoModelFactory):
     gender = User.GENDER_OTHER
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
     username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
-    password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=USER_PASSWORD)
+    password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
+    _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=USER_PASSWORD)
 
     class Meta:
         model = User
