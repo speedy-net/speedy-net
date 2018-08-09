@@ -50,11 +50,11 @@ class EntityTestCase(TestCase):
         entity = Entity(slug='a' * 5, username='a' * 5)
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
             entity.full_clean()
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at least 6 characters \(it has 5\).'\]") as cm:
             entity.full_clean()
 
     def test_slug_and_username_min_length_ok(self):
@@ -66,11 +66,11 @@ class EntityTestCase(TestCase):
         entity = Entity(slug='a' * 201, username='z' * 201)
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Ensure this value has at most 200 characters \(it has 201\).'\]") as cm:
             entity.full_clean()
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Ensure this value has at most 120 characters \(it has 201\).'\]") as cm:
             entity.full_clean()
 
     def test_slug_and_username_max_length_ok(self):
@@ -92,40 +92,40 @@ class EntityTestCase(TestCase):
         entity = Entity(slug='0' * 6, username='0' * 6)
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.full_clean()
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.full_clean()
 
     def test_0test1_is_invalid_username(self):
         entity = Entity(slug='0-test-1', username='0test1')
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.full_clean()
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.full_clean()
 
     def test_slug_and_username_dont_match_but_valid(self):
         entity = Entity(slug='star2001', username='star2000')
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
             entity.full_clean()
 
     def test_slug_and_username_dont_match_and_invalid(self):
         entity = Entity(slug='0-test-2', username='0test1')
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'slug': \['Slug does not parse to username.'\]") as cm:
             entity.full_clean()
         with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.save()
-        # with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm: # ~~~~ TODO: Uncomment this line when entity.save() will call self.full_clean() (when class BaseModel will inherit from ValidateModelMixin) and therefore will raise ValidationError as expected.
+        with self.assertRaisesRegex(expected_exception=ValidationError, expected_regex="'username': \['Username must start with 4 or more letters, and may contain letters, digits or dashes.'\]") as cm:
             entity.full_clean()
 
 
