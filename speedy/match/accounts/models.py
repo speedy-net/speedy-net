@@ -13,6 +13,7 @@ from .managers import SiteProfileManager
 
 
 class SiteProfile(SiteProfileBase):
+    RELATED_NAME = 'speedy_match_site_profile'
 
     SMOKING_UNKNOWN = 0
     SMOKING_NO = 1
@@ -20,6 +21,7 @@ class SiteProfile(SiteProfileBase):
     SMOKING_YES = 3
     SMOKING_MAX_VALUE_PLUS_ONE = 4
     SMOKING_CHOICES = (
+        (SMOKING_UNKNOWN, _("Please select...")),
         (SMOKING_NO, _("No")),
         (SMOKING_SOMETIMES, _("Sometimes")),
         (SMOKING_YES, _("Yes")),
@@ -37,6 +39,7 @@ class SiteProfile(SiteProfileBase):
     MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
 
     MARITAL_STATUS_CHOICES = (
+        (MARITAL_STATUS_UNKNOWN, _("Please select...")),
         (MARITAL_STATUS_SINGLE, _("Single")),
         (MARITAL_STATUS_DIVORCED, _("Divorced")),
         (MARITAL_STATUS_WIDOWED, _("Widowed")),
@@ -62,8 +65,6 @@ class SiteProfile(SiteProfileBase):
         (RANK_4, _("4 hearts")),
         (RANK_5, _("5 hearts")),
     )
-
-    RELATED_NAME = 'speedy_match_site_profile'
 
     @staticmethod
     def gender_to_match_default():
@@ -101,20 +102,20 @@ class SiteProfile(SiteProfileBase):
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
-    height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), null=True, validators=[validators.validate_height])
-    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED, validators=[validators.validate_min_age_match])
-    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED, validators=[validators.validate_max_age_match])
-    smoking = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN, validators=[validators.validate_smoking])
-    city = models.CharField(verbose_name=_('city or locality'), max_length=255, null=True, validators=[validators.validate_city])
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN, validators=[validators.validate_marital_status])
-    children = models.TextField(verbose_name=_('Do you have children? How many?'), null=True, validators=[validators.validate_children])
-    more_children = models.TextField(verbose_name=_('Do you want (more) children?'), null=True, validators=[validators.validate_more_children])
-    profile_description = models.TextField(verbose_name=_('Few words about me'), null=True, validators=[validators.validate_profile_description])
-    match_description = models.TextField(verbose_name=_('My ideal match'), null=True, validators=[validators.validate_match_description])
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=gender_to_match_default.__func__, validators=[validators.validate_gender_to_match])
-    diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__, validators=[validators.validate_diet_match])
-    smoking_match = JSONField(verbose_name=('smoking status match'), default=smoking_match_default.__func__, validators=[validators.validate_smoking_match])
-    marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__, validators=[validators.validate_marital_status_match])
+    height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), blank=True, null=True)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED)
+    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED)
+    smoking = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
+    city = models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
+    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
+    children = models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True)
+    more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
+    profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
+    match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=gender_to_match_default.__func__, blank=True, null=True)
+    diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
+    smoking_match = JSONField(verbose_name=('smoking status match'), default=smoking_match_default.__func__)
+    marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
     activation_step = models.PositiveSmallIntegerField(default=2)
 
     objects = SiteProfileManager()
