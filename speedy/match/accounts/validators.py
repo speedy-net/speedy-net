@@ -40,7 +40,7 @@ def validate_height(height):
 
 
 def validate_diet(diet):
-    if not ((diet is not None) and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)):
+    if not ((diet is not None) and (User.DIET_UNKNOWN < diet < User.DIET_MAX_VALUE_PLUS_ONE)):
         raise ValidationError(_("Your diet is required."))
 
 
@@ -57,7 +57,7 @@ def validate_marital_status(marital_status):
 
 
 def validate_gender_to_match(gender_to_match):
-    if not ((len(gender_to_match) > 0) and (all((User.GENDER_UNKNOWN < gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in gender_to_match))):
+    if not ((gender_to_match is not None) and (len(gender_to_match) > 0) and (all((User.GENDER_UNKNOWN < gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in gender_to_match))):
         raise ValidationError(_("Gender to match is required."))
 
 
