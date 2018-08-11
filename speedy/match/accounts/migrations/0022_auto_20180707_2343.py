@@ -34,6 +34,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='siteprofile',
             name='smoking_match',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.smoking_match_default, validators=[speedy.match.accounts.validators.validate_smoking_match], verbose_name='smoking status match'),
+            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.smoking_status_match_default, validators=[speedy.match.accounts.validators.validate_smoking_status_match], verbose_name='smoking status match'),
         ),
     ]

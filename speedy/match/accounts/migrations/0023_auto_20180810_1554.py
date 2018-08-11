@@ -133,6 +133,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='siteprofile',
             name='smoking_match',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.smoking_match_default, verbose_name='smoking status match'),
+            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.smoking_status_match_default, verbose_name='smoking status match'),
         ),
     ]

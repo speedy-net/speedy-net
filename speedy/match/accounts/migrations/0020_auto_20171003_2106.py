@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='siteprofile',
             name='smoking',
-            field=models.SmallIntegerField(choices=[(1, 'No'), (2, 'Sometimes'), (3, 'Yes')], default=0, validators=[speedy.match.accounts.validators.validate_smoking], verbose_name='smoking status'),
+            field=models.SmallIntegerField(choices=[(1, 'No'), (2, 'Sometimes'), (3, 'Yes')], default=0, validators=[speedy.match.accounts.validators.validate_smoking_status], verbose_name='smoking status'),
         ),
         migrations.AlterField(
             model_name='siteprofile',

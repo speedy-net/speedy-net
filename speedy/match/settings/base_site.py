@@ -26,6 +26,9 @@ ACTIVATE_PROFILE_AFTER_REGISTRATION = False
 
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileActivationForm'
 
+MIN_HEIGHT_ALLOWED = 1 # In cm.
+MAX_HEIGHT_ALLOWED = 450 # In years.
+
 USER_PROFILE_WIDGETS += [
     'speedy.match.profiles.widgets.UserRankWidget',
     'speedy.match.profiles.widgets.UserExtraDetailsWidget',

@@ -160,8 +160,8 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
 
 
 class ProfileNotificationsForm(forms.ModelForm):
-    profile_model = get_site_profile_model(profile_model=None)
-    profile_fields = ()
+    _profile_model = get_site_profile_model(profile_model=None)
+    _profile_fields = ()
 
     class Meta:
         model = User
@@ -169,8 +169,8 @@ class ProfileNotificationsForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field in self.profile_model._meta.fields:
-            if field.name in self.profile_fields:
+        for field in self._profile_model._meta.fields:
+            if field.name in self._profile_fields:
                 self.fields[field.name] = field.formfield()
                 self.fields[field.name].initial = getattr(self.instance.profile, field.name)
         self.helper = FormHelper()
@@ -178,7 +178,7 @@ class ProfileNotificationsForm(forms.ModelForm):
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
-            if field_name in self.profile_fields:
+            if field_name in self._profile_fields:
                 setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
         r = super().save(commit=commit)
         if commit:

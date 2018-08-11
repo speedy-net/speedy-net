@@ -263,9 +263,9 @@ SITE_PROFILE_FORM_FIELDS = [
     ['photo'],
     ['profile_description', 'city', 'height'],
     ['children', 'more_children'],
-    ['diet', 'smoking'],
+    ['diet', 'smoking_status'],
     ['marital_status'],
     ['gender_to_match', 'match_description', 'min_age_match', 'max_age_match'],
-    ['diet_match', 'smoking_match'],
+    ['diet_match', 'smoking_status_match'],
     ['marital_status_match']
 ]

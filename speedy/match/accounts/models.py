@@ -7,7 +7,6 @@ from django.core.exceptions import ValidationError
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 from speedy.core.base.utils import get_age
-from speedy.match.accounts import validators
 
 from .managers import SiteProfileManager
 
@@ -15,17 +14,20 @@ from .managers import SiteProfileManager
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_match_site_profile'
 
-    SMOKING_UNKNOWN = 0
-    SMOKING_NO = 1
-    SMOKING_SOMETIMES = 2
-    SMOKING_YES = 3
-    SMOKING_MAX_VALUE_PLUS_ONE = 4
-    SMOKING_CHOICES = (
-        (SMOKING_UNKNOWN, _("Please select...")),
-        (SMOKING_NO, _("No")),
-        (SMOKING_SOMETIMES, _("Sometimes")),
-        (SMOKING_YES, _("Yes")),
+    SMOKING_STATUS_UNKNOWN = 0
+    SMOKING_STATUS_NO = 1
+    SMOKING_STATUS_SOMETIMES = 2
+    SMOKING_STATUS_YES = 3
+    SMOKING_STATUS_MAX_VALUE_PLUS_ONE = 4
+
+    SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
+        (SMOKING_STATUS_UNKNOWN, _("Unknown")),
+        (SMOKING_STATUS_NO, _("No")),
+        (SMOKING_STATUS_SOMETIMES, _("Sometimes")),
+        (SMOKING_STATUS_YES, _("Yes")),
     )
+    SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
+    SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
 
     MARITAL_STATUS_UNKNOWN = 0
     MARITAL_STATUS_SINGLE = 1
@@ -38,8 +40,8 @@ class SiteProfile(SiteProfileBase):
     MARITAL_STATUS_MARRIED = 8
     MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
 
-    MARITAL_STATUS_CHOICES = (
-        (MARITAL_STATUS_UNKNOWN, _("Please select...")),
+    MARITAL_STATUS_CHOICES_WITH_DEFAULT = (
+        (MARITAL_STATUS_UNKNOWN, _("Unknown")),
         (MARITAL_STATUS_SINGLE, _("Single")),
         (MARITAL_STATUS_DIVORCED, _("Divorced")),
         (MARITAL_STATUS_WIDOWED, _("Widowed")),
@@ -49,6 +51,8 @@ class SiteProfile(SiteProfileBase):
         (MARITAL_STATUS_SEPARATED, _("Separated")),
         (MARITAL_STATUS_MARRIED, _("Married")),
     )
+    MARITAL_STATUS_VALID_CHOICES = MARITAL_STATUS_CHOICES_WITH_DEFAULT[1:]
+    MARITAL_STATUS_VALID_VALUES = [choice[0] for choice in MARITAL_STATUS_VALID_CHOICES]
 
     RANK_0 = 0
     RANK_1 = 1
@@ -65,6 +69,7 @@ class SiteProfile(SiteProfileBase):
         (RANK_4, _("4 hearts")),
         (RANK_5, _("5 hearts")),
     )
+    RANK_VALID_VALUES = [choice[0] for choice in RANK_CHOICES]
 
     @staticmethod
     def gender_to_match_default():
@@ -73,17 +78,17 @@ class SiteProfile(SiteProfileBase):
     @staticmethod
     def diet_match_default():
         return dict({
-            User.DIET_VEGAN: __class__.RANK_5,
-            User.DIET_VEGETARIAN: __class__.RANK_5,
-            User.DIET_CARNIST: __class__.RANK_5,
+            str(User.DIET_VEGAN): __class__.RANK_5,
+            str(User.DIET_VEGETARIAN): __class__.RANK_5,
+            str(User.DIET_CARNIST): __class__.RANK_5,
         })
 
     @staticmethod
-    def smoking_match_default():
+    def smoking_status_match_default():
         return dict({
-            __class__.SMOKING_NO: __class__.RANK_5,
-            __class__.SMOKING_YES: __class__.RANK_5,
-            __class__.SMOKING_SOMETIMES: __class__.RANK_5,
+            str(__class__.SMOKING_STATUS_NO): __class__.RANK_5,
+            str(__class__.SMOKING_STATUS_YES): __class__.RANK_5,
+            str(__class__.SMOKING_STATUS_SOMETIMES): __class__.RANK_5,
         })
 
     @staticmethod
@@ -98,6 +103,16 @@ class SiteProfile(SiteProfileBase):
             __class__.MARITAL_STATUS_SEPARATED: __class__.RANK_5,
             __class__.MARITAL_STATUS_MARRIED: __class__.RANK_5,
         })
+        return dict({
+            str(__class__.MARITAL_STATUS_SINGLE): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_DIVORCED): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_WIDOWED): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_IN_RELATIONSHIP): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_COMPLICATED): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_SEPARATED): __class__.RANK_5,
+            str(__class__.MARITAL_STATUS_MARRIED): __class__.RANK_5,
+        })
 
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
@@ -105,16 +120,16 @@ class SiteProfile(SiteProfileBase):
     height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), blank=True, null=True)
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED)
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED)
-    smoking = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_CHOICES, default=SMOKING_UNKNOWN)
+    smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
     city = models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES, default=MARITAL_STATUS_UNKNOWN)
+    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
     children = models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True)
     more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
     profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=gender_to_match_default.__func__, blank=True, null=True)
     diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
-    smoking_match = JSONField(verbose_name=('smoking status match'), default=smoking_match_default.__func__)
+    smoking_status_match = JSONField(verbose_name=('smoking status match'), default=smoking_status_match_default.__func__)
     marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
     activation_step = models.PositiveSmallIntegerField(default=2)
 
@@ -143,17 +158,18 @@ class SiteProfile(SiteProfileBase):
 
     def validate_profile_and_activate(self):
         # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
+        from speedy.match.accounts import validators
         lang = get_language()
         error_messages = []
         for step in range(1, len(settings.SITE_PROFILE_FORM_FIELDS) - 1):
             fields = settings.SITE_PROFILE_FORM_FIELDS[step]
             for field in fields:
                 if field in ['photo']:
-                    if (not (self.user.photo)):
-                        try:
-                            validators.validate_photo(photo=self.user.photo)
-                        except ValidationError as e:
-                            error_messages.append(str(e))
+                    # if (not (self.user.photo)):
+                    try:
+                        validators.validate_photo(photo=self.user.photo)
+                    except ValidationError as e:
+                        error_messages.append(str(e))
                 elif field in ['profile_description']:
                     try:
                         validators.validate_profile_description(profile_description=self.profile_description)
@@ -189,9 +205,9 @@ class SiteProfile(SiteProfileBase):
                         validators.validate_diet(diet=self.user.diet)
                     except ValidationError as e:
                         error_messages.append(str(e))
-                elif field in ['smoking']:
+                elif field in ['smoking_status']:
                     try:
-                        validators.validate_smoking(smoking=self.smoking)
+                        validators.validate_smoking_status(smoking_status=self.smoking_status)
                     except ValidationError as e:
                         error_messages.append(str(e))
                 elif field in ['marital_status']:
@@ -205,27 +221,27 @@ class SiteProfile(SiteProfileBase):
                     except ValidationError as e:
                         error_messages.append(str(e))
                 elif field in ['min_age_match', 'max_age_match']:
-                    if not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= self.max_age_match <= settings.MAX_AGE_ALLOWED):
-                        try:
-                            validators.validate_min_age_match(min_age_match=self.min_age_match)
-                        except ValidationError as e:
-                            error_messages.append(str(e))
-                        try:
-                            validators.validate_max_age_match(max_age_match=self.max_age_match)
-                        except ValidationError as e:
-                            error_messages.append(str(e))
-                        try:
-                            validators.validate_min_max_age_to_match(min_age_match=self.min_age_match, max_age_match=self.max_age_match)
-                        except ValidationError as e:
-                            error_messages.append(str(e))
+                    # if not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= self.max_age_match <= settings.MAX_AGE_ALLOWED):
+                    try:
+                        validators.validate_min_age_match(min_age_match=self.min_age_match)
+                    except ValidationError as e:
+                        error_messages.append(str(e))
+                    try:
+                        validators.validate_max_age_match(max_age_match=self.max_age_match)
+                    except ValidationError as e:
+                        error_messages.append(str(e))
+                    try:
+                        validators.validate_min_max_age_to_match(min_age_match=self.min_age_match, max_age_match=self.max_age_match)
+                    except ValidationError as e:
+                        error_messages.append(str(e))
                 elif (field in ['diet_match']):
                     try:
                         validators.validate_diet_match(diet_match=self.diet_match)
                     except ValidationError as e:
                         error_messages.append(str(e))
-                elif (field in ['smoking_match']):
+                elif (field in ['smoking_status_match']):
                     try:
-                        validators.validate_smoking_match(smoking_match=self.smoking_match)
+                        validators.validate_smoking_status_match(smoking_status_match=self.smoking_status_match)
                     except ValidationError as e:
                         error_messages.append(str(e))
                 elif (field in ['marital_status_match']):
@@ -263,14 +279,14 @@ class SiteProfile(SiteProfileBase):
                 return self.__class__.RANK_0
             if (other_profile.user.diet == User.DIET_UNKNOWN):
                 return self.__class__.RANK_0
-            if (other_profile.smoking == self.__class__.SMOKING_UNKNOWN):
+            if (other_profile.smoking_status == self.__class__.SMOKING_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
             if (other_profile.marital_status == self.__class__.MARITAL_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
             diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_5)
-            smoking_rank = self.smoking_match.get(str(other_profile.smoking), self.__class__.RANK_5)
+            smoking_status_rank = self.smoking_status_match.get(str(other_profile.smoking_status), self.__class__.RANK_5)
             marital_status_rank = self.marital_status_match.get(str(other_profile.marital_status), self.__class__.RANK_5)
-            rank = min([diet_rank, smoking_rank, marital_status_rank])
+            rank = min([diet_rank, smoking_status_rank, marital_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
                 other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
                 if (other_user_rank == self.__class__.RANK_0):

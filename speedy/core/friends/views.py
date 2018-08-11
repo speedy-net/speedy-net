@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.urls import reverse
-from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from django.views import generic
@@ -11,13 +10,11 @@ from friendship.models import Friend, FriendshipRequest
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.core.accounts.utils import get_site_profile_model
-from speedy.core.accounts.models import User
 from speedy.core.profiles.views import UserMixin
 from .rules import friend_request_sent
 
 
 class FriendsMixin(object):
-
     def get_received_friendship_requests(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_received.all()
@@ -26,8 +23,8 @@ class FriendsMixin(object):
         if (site.id == SPEEDY_NET_SITE_ID):
             return qs
         elif (site.id == SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -40,8 +37,8 @@ class FriendsMixin(object):
         if (site.id == SPEEDY_NET_SITE_ID):
             return qs
         elif (site.id == SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SiteProfile.RANK_0)]
+            from speedy.match.accounts.models import SpeedyMatchSiteProfile as SpeedyMatchSiteProfile
+            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()

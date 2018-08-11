@@ -123,11 +123,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='siteprofile',
             name='smoking',
-            field=models.SmallIntegerField(choices=[(1, 'No'), (2, 'Yes'), (3, 'Sometimes')], default=0, validators=[speedy.match.accounts.validators.validate_smoking], verbose_name='smoking status'),
+            field=models.SmallIntegerField(choices=[(1, 'No'), (2, 'Yes'), (3, 'Sometimes')], default=0, validators=[speedy.match.accounts.validators.validate_smoking_status], verbose_name='smoking status'),
         ),
         migrations.AlterField(
             model_name='siteprofile',
             name='smoking_match',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default={1: 5, 2: 5, 3: 5}, validators=[speedy.match.accounts.validators.validate_smoking_match], verbose_name='smoking status match'),
+            field=django.contrib.postgres.fields.jsonb.JSONField(default={1: 5, 2: 5, 3: 5}, validators=[speedy.match.accounts.validators.validate_smoking_status_match], verbose_name='smoking status match'),
         ),
     ]

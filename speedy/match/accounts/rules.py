@@ -4,7 +4,7 @@ from django.conf import settings
 from rules import predicate, add_perm, remove_perm, always_allow
 
 from speedy.core.settings.utils import env
-from .models import SiteProfile
+from .models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.core.im.models import Chat
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
@@ -15,7 +15,7 @@ from speedy.core.accounts.rules import has_access_perm
 @predicate
 def is_match_profile(user, other):
     if user.is_authenticated:
-        match_profile = user.profile.get_matching_rank(other_profile=other.profile) > SiteProfile.RANK_0
+        match_profile = user.profile.get_matching_rank(other_profile=other.profile) > SpeedyMatchSiteProfile.RANK_0
         has_message = Chat.on_site.filter((Q(ent1_id=user) & Q(ent2_id=other)) | (Q(ent1_id=other) & Q(ent2_id=user))).exists()
         has_likes = UserLike.objects.filter((Q(from_user=user) & Q(to_user=other)) | (Q(from_user=other) & Q(to_user=user))).exists()
         has_blocked = Block.objects.has_blocked(blocker=user, blocked=other)
