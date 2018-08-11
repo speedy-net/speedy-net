@@ -94,16 +94,6 @@ class SiteProfile(SiteProfileBase):
     @staticmethod
     def marital_status_match_default():
         return dict({
-            __class__.MARITAL_STATUS_SINGLE: __class__.RANK_5,
-            __class__.MARITAL_STATUS_DIVORCED: __class__.RANK_5,
-            __class__.MARITAL_STATUS_WIDOWED: __class__.RANK_5,
-            __class__.MARITAL_STATUS_IN_RELATIONSHIP: __class__.RANK_5,
-            __class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP: __class__.RANK_5,
-            __class__.MARITAL_STATUS_COMPLICATED: __class__.RANK_5,
-            __class__.MARITAL_STATUS_SEPARATED: __class__.RANK_5,
-            __class__.MARITAL_STATUS_MARRIED: __class__.RANK_5,
-        })
-        return dict({
             str(__class__.MARITAL_STATUS_SINGLE): __class__.RANK_5,
             str(__class__.MARITAL_STATUS_DIVORCED): __class__.RANK_5,
             str(__class__.MARITAL_STATUS_WIDOWED): __class__.RANK_5,
@@ -161,11 +151,10 @@ class SiteProfile(SiteProfileBase):
         from speedy.match.accounts import validators
         lang = get_language()
         error_messages = []
-        for step in range(1, len(settings.SITE_PROFILE_FORM_FIELDS) - 1):
+        for step in range(1, len(settings.SITE_PROFILE_FORM_FIELDS)):
             fields = settings.SITE_PROFILE_FORM_FIELDS[step]
             for field in fields:
                 if field in ['photo']:
-                    # if (not (self.user.photo)):
                     try:
                         validators.validate_photo(photo=self.user.photo)
                     except ValidationError as e:
@@ -221,7 +210,6 @@ class SiteProfile(SiteProfileBase):
                     except ValidationError as e:
                         error_messages.append(str(e))
                 elif field in ['min_age_match', 'max_age_match']:
-                    # if not (settings.MIN_AGE_ALLOWED <= self.min_age_match <= self.max_age_match <= settings.MAX_AGE_ALLOWED):
                     try:
                         validators.validate_min_age_match(min_age_match=self.min_age_match)
                     except ValidationError as e:
