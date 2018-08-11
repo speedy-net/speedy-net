@@ -27,7 +27,7 @@ ACTIVATE_PROFILE_AFTER_REGISTRATION = False
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.match.accounts.forms.SpeedyMatchProfileActivationForm'
 
 MIN_HEIGHT_ALLOWED = 1 # In cm.
-MAX_HEIGHT_ALLOWED = 450 # In years.
+MAX_HEIGHT_ALLOWED = 450 # In cm.
 
 SITE_PROFILE_FORM_FIELDS = [
     [],  # There's no step 0

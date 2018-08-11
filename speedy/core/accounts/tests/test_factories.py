@@ -21,7 +21,8 @@ USER_PASSWORD = ''.join(random.choice(string.digits + string.ascii_letters + str
 class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
-    date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(1900, 1, 1))
+    date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(year=1900, month=1, day=1))
+    # ~~~~ TODO: assign values randomly (gender).
     gender = User.GENDER_OTHER
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
     username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
@@ -64,7 +65,8 @@ class ActiveUserFactory(DefaultUserFactory):
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
         if (site.id == SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
-            from speedy.match.accounts.models import SiteProfile
+            # ~~~~ TODO: assign values randomly (height, diet, smoking, gender etc).
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self.profile.profile_description = "Hi!"
             self.profile.city = "Tel Aviv."
             self.profile.children = "One boy."
@@ -73,19 +75,9 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.height = 170
             if (self.diet == User.DIET_UNKNOWN):
                 self.diet = User.DIET_VEGAN
-            self.profile.smoking = SiteProfile.SMOKING_NO
-            self.profile.marital_status = SiteProfile.MARITAL_STATUS_SINGLE
+            self.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
+            self.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
             self.profile.gender_to_match = [User.GENDER_OTHER]
-            self.profile.diet_match = {
-                str(User.DIET_VEGAN): SiteProfile.RANK_5,
-                str(User.DIET_VEGETARIAN): SiteProfile.RANK_5,
-                str(User.DIET_CARNIST): SiteProfile.RANK_5,
-            }
-            self.profile.smoking_match = {
-                str(SiteProfile.SMOKING_NO): SiteProfile.RANK_5,
-                str(SiteProfile.SMOKING_YES): SiteProfile.RANK_5,
-                str(SiteProfile.SMOKING_SOMETIMES): SiteProfile.RANK_5,
-            }
             self.photo = UserImageFactory(owner=self)
             self.profile.activation_step = 9
             email = UserConfirmedEmailAddressFactory(user=self)
@@ -94,10 +86,10 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.save()
             self._profile = self.get_profile()
             step, error_messages = self.profile.validate_profile_and_activate()
-            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
-                raise Exception("Step not as expected, {}".format(step))
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
+            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
+                raise Exception("Step not as expected, {}".format(step))
         else:
             self.profile.activate()
 

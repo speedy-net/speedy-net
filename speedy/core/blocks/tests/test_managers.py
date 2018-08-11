@@ -43,6 +43,6 @@ class BlockManagerTestCase(TestCase):
     def test_user_blocks_himself_throws_an_exception(self):
         with self.assertRaises(ValidationError) as cm:
             Block.objects.block(blocker=self.user, blocked=self.user)
-        self.assertEqual(first=str(cm.exception.message), second="Users cannot block themselves.")
-        self.assertEqual(first=list(cm.exception), second=['Users cannot block themselves.'])
+        self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.')
+        self.assertListEqual(list1=list(cm.exception), list2=['Users cannot block themselves.'])
 

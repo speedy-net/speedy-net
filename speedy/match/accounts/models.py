@@ -14,6 +14,9 @@ from .managers import SiteProfileManager
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_match_site_profile'
 
+    HEIGHT_VALID_VALUES = range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1)
+    AGE_VALID_VALUES = range(settings.MIN_AGE_ALLOWED, settings.MAX_AGE_ALLOWED + 1)
+
     SMOKING_STATUS_UNKNOWN = 0
     SMOKING_STATUS_NO = 1
     SMOKING_STATUS_SOMETIMES = 2

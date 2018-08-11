@@ -37,7 +37,7 @@ def validate_match_description(match_description):
 
 
 def validate_height(height):
-    if not ((height is not None) and (height in range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1))):
+    if not ((height is not None) and (height in SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)):
         raise ValidationError(_("Height must be from 1 to 450 cm."))
 
 
@@ -70,12 +70,12 @@ def validate_gender_to_match(gender_to_match):
 
 
 def validate_min_age_match(min_age_match):
-    if not (min_age_match in range(settings.MIN_AGE_ALLOWED, settings.MAX_AGE_ALLOWED + 1)):
+    if not (min_age_match in SpeedyMatchSiteProfile.AGE_VALID_VALUES):
         raise ValidationError(_("Minimal age to match must be from 0 to 180 years."))
 
 
 def validate_max_age_match(max_age_match):
-    if not (max_age_match in range(settings.MIN_AGE_ALLOWED, settings.MAX_AGE_ALLOWED + 1)):
+    if not (max_age_match in SpeedyMatchSiteProfile.AGE_VALID_VALUES):
         raise ValidationError(_("Maximal age to match must be from 0 to 180 years."))
 
 

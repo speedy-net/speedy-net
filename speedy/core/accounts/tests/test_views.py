@@ -229,7 +229,7 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
             'password': 'wrong password!!',
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertEqual(first=r.context['form'].errors, second={'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']})
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']})
         self.assert_me_url_redirects_to_login_url()
 
 
@@ -282,7 +282,7 @@ class EditProfileViewTestCase(TestCase):
                 pass
             else:
                 self.assertEqual(first=getattr(user, key), second=value)
-        self.assertEqual(first=user.date_of_birth, second=date(1976, 6, 3))
+        self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
 
 @exclude_on_speedy_composer
@@ -398,7 +398,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': '8' * 8,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertEqual(first=r.context['form'].errors, second={'old_password': ['Your old password was entered incorrectly. Please enter it again.']})
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'old_password': ['Your old password was entered incorrectly. Please enter it again.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password='8' * 8))
@@ -411,7 +411,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': '8' * 3,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertEqual(first=r.context['form'].errors, second={'new_password1': ['Password too short.']})
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password1': ['Password too short.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password='8' * 3))
@@ -423,7 +423,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': '8' * 121,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertEqual(first=r.context['form'].errors, second={'new_password1': ['Password too long.']})
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password1': ['Password too long.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password='8' * 121))
@@ -435,7 +435,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': '7' * 8,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertEqual(first=r.context['form'].errors, second={'new_password2': ["The two password fields didn't match."]})
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password2': ["The two password fields didn't match."]})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password='8' * 8))

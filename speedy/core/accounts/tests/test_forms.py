@@ -114,7 +114,7 @@ class RegistrationFormTestCase(TestCase):
         user = form.save()
         email_addresses = UserEmailAddress.objects.filter(user=user)
         email_addresses_set = {e.email for e in email_addresses}
-        self.assertEqual(first=email_addresses_set, second={'email22@example.com'})
+        self.assertSetEqual(set1=email_addresses_set, set2={'email22@example.com'})
 
 
 @exclude_on_speedy_composer
