@@ -28,7 +28,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         return user
 
     def assert_step_and_error_messages_ok(self, step, error_messages):
-        self.assertEqual(first=step, second=len(settings.SITE_PROFILE_FORM_FIELDS))
+        self.assertEqual(first=step, second=len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
         self.assertEqual(first=len(error_messages), second=0)
         self.assertListEqual(list1=error_messages, list2=[])
 

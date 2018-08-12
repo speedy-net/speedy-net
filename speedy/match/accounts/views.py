@@ -25,7 +25,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         log.debug('HERE: get_context_data: kwargs: %s', kwargs)
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'steps_range': list(range(1, len(settings.SITE_PROFILE_FORM_FIELDS))),
+            'steps_range': list(range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))),
             'current_step': self.step,
             'previous_step': self.step - 1,
         })
@@ -66,14 +66,14 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         if self.step == 1:
             log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
             return redirect('accounts:edit_profile')
-        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
-            log.debug('get: inside "if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):"')
+        if self.step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS):
+            log.debug('get: inside "if self.step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS):"')
             return redirect('matches:list')
-        log.debug('get: did not get into "if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):"')
+        log.debug('get: did not get into "if self.step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS):"')
         # else:
         #     step, errors = self.request.user.profile.validate_profile_and_activate()
         #     if (self.request.user.profile.activation_step == 0) and (
-        #         step == len(settings.SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
+        #         step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
         #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(self.request, *args, **kwargs)
 
@@ -81,7 +81,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return reverse_lazy('accounts:activate', kwargs={'step': self.step})
 
     def get_success_url(self):
-        if self.step >= len(settings.SITE_PROFILE_FORM_FIELDS):
+        if self.step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS):
             if self.request.user.has_confirmed_email():
                 return reverse_lazy('matches:list', kwargs={'step': self.step})
             else:

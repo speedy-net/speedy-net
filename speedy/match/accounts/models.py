@@ -154,8 +154,8 @@ class SiteProfile(SiteProfileBase):
         from speedy.match.accounts import validators
         lang = get_language()
         error_messages = []
-        for step in range(1, len(settings.SITE_PROFILE_FORM_FIELDS)):
-            fields = settings.SITE_PROFILE_FORM_FIELDS[step]
+        for step in range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
+            fields = settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step]
             for field in fields:
                 if field in ['photo']:
                     try:
@@ -244,7 +244,7 @@ class SiteProfile(SiteProfileBase):
                 self._deactivate_language(step=step)
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
-        step = len(settings.SITE_PROFILE_FORM_FIELDS)
+        step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
         if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()

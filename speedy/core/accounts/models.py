@@ -338,7 +338,7 @@ class UserEmailAddress(TimeStampedModel):
         self.save(update_fields={'is_confirmed'})
         # if hasattr(self.user.profile, 'validate_profile_and_activate') and UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1:
         #     old_step = self.user.profile.activation_step
-        #     self.user.profile.activation_step = len(settings.SITE_PROFILE_FORM_FIELDS)
+        #     self.user.profile.activation_step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
         #     self.user.profile.validate_profile_and_activate()
         #     self.user.profile.activation_step = old_step
         #     self.user.profile.save(update_fields=['activation_step'])

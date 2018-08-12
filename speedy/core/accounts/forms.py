@@ -233,7 +233,6 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_fo
 
 class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
     def __init__(self, *args, **kwargs):
-        # user = kwargs.pop('user') # ~~~~ TODO: remove this line.
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Hidden('_form', 'password'))

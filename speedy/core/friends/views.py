@@ -37,7 +37,7 @@ class FriendsMixin(object):
         if (site.id == SPEEDY_NET_SITE_ID):
             return qs
         elif (site.id == SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SpeedyMatchSiteProfile as SpeedyMatchSiteProfile
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:

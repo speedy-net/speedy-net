@@ -88,7 +88,7 @@ class ActiveUserFactory(DefaultUserFactory):
             step, error_messages = self.profile.validate_profile_and_activate()
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
-            if (not (step == len(settings.SITE_PROFILE_FORM_FIELDS))):
+            if (not (step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
         else:
             self.profile.activate()

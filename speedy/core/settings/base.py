@@ -185,9 +185,6 @@ DONT_REDIRECT_INACTIVE_USER = [
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True
 
-MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 800 # ~~~~ TODO: uncomment this line!
-# MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 2 # For testing when there are close to MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED friends. # ~~~~ TODO: remove this line!
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -253,7 +250,4 @@ FIXTURE_DIRS = [
 SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
 
 MODELTRANSLATION_ENABLE_FALLBACKS = False
-
-MIN_AGE_ALLOWED = 0 # In years.
-MAX_AGE_ALLOWED = 180 # In years.
 
