@@ -88,8 +88,23 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         # ~~~~ TODO: assert all values.
         self.assertIn(member=user.profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
         self.assertIn(member=user.diet, container=User.DIET_VALID_VALUES)
+        validators.validate_photo(photo=user.photo)
+        validators.validate_profile_description(profile_description=user.profile.profile_description)
+        validators.validate_city(city=user.profile.city)
+        validators.validate_children(children=user.profile.children)
+        validators.validate_more_children(more_children=user.profile.more_children)
+        validators.validate_match_description(match_description=user.profile.match_description)
         validators.validate_height(height=user.profile.height)
         validators.validate_diet(diet=user.diet)
+        validators.validate_smoking_status(smoking_status=user.profile.smoking_status)
+        validators.validate_marital_status(marital_status=user.profile.marital_status)
+        validators.validate_gender_to_match(gender_to_match=user.profile.gender_to_match)
+        validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
+        validators.validate_max_age_match(max_age_match=user.profile.max_age_match)
+        validators.validate_min_max_age_to_match(min_age_match=user.profile.min_age_match, max_age_match=user.profile.max_age_match)
+        validators.validate_diet_match(diet_match=user.profile.diet_match)
+        validators.validate_smoking_status_match(smoking_status_match=user.profile.smoking_status_match)
+        validators.validate_marital_status_match(marital_status_match=user.profile.marital_status_match)
 
     def test_validate_profile_and_activate_exception_on_photo(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
