@@ -220,6 +220,13 @@ class UserTestCase(TestCase):
             user.full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at least 6 characters (it has 0).'], 'slug': ['Ensure this value has at least 6 characters (it has 0).']})
 
+    def test_cannot_create_user_with_unknown_gender(self):
+        with self.assertRaises(ValidationError) as cm:
+            user = ActiveUserFactory(gender=User.GENDER_UNKNOWN)
+            user.save()
+            user.full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'gender': ['Value 0 is not a valid choice.']})
+
     def test_cannot_create_users_with_bulk_create(self):
         user_1 = User(slug='zzzzzz')
         user_2 = User(slug='ZZZ-ZZZ')
