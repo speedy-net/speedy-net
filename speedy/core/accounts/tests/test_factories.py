@@ -82,9 +82,7 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.activation_step = 9
             email = UserConfirmedEmailAddressFactory(user=self)
             email.save()
-            self.save()
-            self.profile.save()
-            self._profile = self.get_profile()
+            self.save_user_and_profile()
             step, error_messages = self.profile.validate_profile_and_activate()
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))

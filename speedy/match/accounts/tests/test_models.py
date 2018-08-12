@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.conf import settings
-from django.db import transaction
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import TestCase, only_on_speedy_match
@@ -29,14 +28,49 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
 
     def assert_step_and_error_messages_ok(self, step, error_messages):
         self.assertEqual(first=step, second=len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+        self.assertEqual(first=step, second=10)
         self.assertEqual(first=len(error_messages), second=0)
         self.assertListEqual(list1=error_messages, list2=[])
 
+    def save_user_and_profile_and_assert_exceptions_for_photo(self, user, field_name, value_to_test, null):
+        if ((null == True) and (value_to_test in self._empty_string_list)):
+            with self.assertRaises(ValueError) as cm:
+                user.save_user_and_profile()
+            self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
+        else:
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            if ((null == False) and (value_to_test in self._none_list)):
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
+            elif (isinstance(value_to_test, int)):
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value {} is not a valid choice.'.format(value_to_test)]})
+            else:
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ["'{}' value must be an integer.".format(value_to_test)]})
+
+    def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null):
+        if ((null == True) and (value_to_test in self._empty_string_list)):
+            with self.assertRaises(ValueError) as cm:
+                user.save_user_and_profile()
+            self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
+        else:
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            if ((null == False) and (value_to_test in self._none_list)):
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
+            elif (isinstance(value_to_test, int)):
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value {} is not a valid choice.'.format(value_to_test)]})
+            else:
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ["'{}' value must be an integer.".format(value_to_test)]})
+
     def test_height_valid_values(self):
+        self.assertEqual(first=settings.MIN_HEIGHT_ALLOWED, second=1)
+        self.assertEqual(first=settings.MAX_HEIGHT_ALLOWED, second=450)
         self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(1, 450 + 1))
 
     def test_age_valid_values(self):
+        self.assertEqual(first=settings.MIN_AGE_ALLOWED, second=0)
+        self.assertEqual(first=settings.MAX_AGE_ALLOWED, second=180)
         self.assertEqual(first=SpeedyMatchSiteProfile.AGE_VALID_VALUES, second=range(settings.MIN_AGE_ALLOWED, settings.MAX_AGE_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.AGE_VALID_VALUES, second=range(0, 180 + 1))
 
@@ -85,9 +119,15 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         user = ActiveUserFactory()
         step, error_messages = user.profile.validate_profile_and_activate()
         self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
-        # ~~~~ TODO: assert all values.
-        self.assertIn(member=user.profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
+        self.assertIn(member=user.gender, container=User.GENDER_VALID_VALUES)
         self.assertIn(member=user.diet, container=User.DIET_VALID_VALUES)
+        self.assertIn(member=user.profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
+        self.assertIn(member=user.profile.smoking_status, container=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
+        self.assertIn(member=user.profile.marital_status, container=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
+        self.assertIn(member=user.profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_VALID_VALUES)
+        self.assertIn(member=user.profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_VALID_VALUES)
+        self.assertEqual(first=user.profile.min_age_match, second=settings.MIN_AGE_ALLOWED)
+        self.assertEqual(first=user.profile.max_age_match, second=settings.MAX_AGE_ALLOWED)
         validators.validate_photo(photo=user.photo)
         validators.validate_profile_description(profile_description=user.profile.profile_description)
         validators.validate_city(city=user.profile.city)
@@ -109,22 +149,23 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
     def test_validate_profile_and_activate_exception_on_photo(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         valid_values = [UserImageFactory]
-        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + valid_values
+        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, 10 + 1)) + valid_values
         valid_values_for_save = self._none_list + valid_values
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
-            if value_to_test == UserImageFactory:
-                user.photo = UserImageFactory(owner=user)
+            if (value_to_test == UserImageFactory):
+                value_to_assign = UserImageFactory(owner=user)
             else:
-                user.photo = value_to_test
+                value_to_assign = value_to_test
+            user.photo = value_to_assign
             print(value_to_test)
             if (not (value_to_test in valid_values_for_save)):
-                user.save()
-                user.profile.save()
+                self.save_user_and_profile_and_assert_exceptions_for_photo(user=user, field_name='photo', value_to_test=value_to_test, null=True)
                 model_save_failures_count = model_save_failures_count + 1
             else:
-                user.save()
-                user.profile.save()
+                user.save_user_and_profile()
                 step, error_messages = user.profile.validate_profile_and_activate()
                 if (not (value_to_test in valid_values)):
                     self.assertEqual(first=step, second=2)
@@ -140,7 +181,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                     validators.validate_photo(photo=user.photo)
                     ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(1, 1))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(450, 22, 5))
 
     def test_validate_profile_and_activate_exception_on_profile_description(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
@@ -149,25 +191,24 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
             user.profile.profile_description = value_to_test
-            user.save()
-            user.profile.save()
+            user.save_user_and_profile()
             step, error_messages = user.profile.validate_profile_and_activate()
             if (value_to_test in invalid_values):
                 self.assertEqual(first=step, second=3)
                 self.assertEqual(first=len(error_messages), second=1)
                 self.assertListEqual(list1=error_messages, list2=["['Please write some text in this field.']"])
                 with self.assertRaises(ValidationError) as cm:
-                    validators.validate_profile_description(profile_description=user.profile_description)
+                    validators.validate_profile_description(profile_description=user.profile.profile_description)
                 self.assertEqual(first=str(cm.exception.message), second='Please write some text in this field.')
                 self.assertListEqual(list1=list(cm.exception), list2=['Please write some text in this field.'])
                 validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
             else:
                 self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
-                validators.validate_profile_description(profile_description=user.profile_description)
+                validators.validate_profile_description(profile_description=user.profile.profile_description)
                 ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(self._valid_string_values_to_test), len(self._empty_values_to_test)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(values_to_test)- len(invalid_values), len(invalid_values), 0))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2, 0))
 
     def test_validate_profile_and_activate_exception_on_city(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
@@ -176,8 +217,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
             user.profile.city = value_to_test
-            user.save()
-            user.profile.save()
+            user.save_user_and_profile()
             step, error_messages = user.profile.validate_profile_and_activate()
             if (value_to_test in invalid_values):
                 self.assertEqual(first=step, second=3)
@@ -193,41 +233,25 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 validators.validate_city(city=user.profile.city)
                 ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(self._valid_string_values_to_test), len(self._empty_values_to_test)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(values_to_test)- len(invalid_values), len(invalid_values), 0))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2, 0))
 
     def test_validate_profile_and_activate_exception_on_height(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_HEIGHT_ALLOWED + 10 + 1))
         valid_values_for_save = self._none_list + [value for value in values_to_test if (isinstance(value, int))]
         valid_values = SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
             print(value_to_test)
             user = ActiveUserFactory()
             user.profile.height = value_to_test
             if (not (value_to_test in valid_values_for_save)):
-                if (value_to_test in self._empty_string_list):
-                    with self.assertRaises(ValueError) as cm:
-                        with transaction.atomic():
-                            user.save()
-                            user.profile.save()
-                    print(str(cm.exception))
-                    self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
-                else:
-                    with self.assertRaises(ValidationError) as cm:
-                        with transaction.atomic():
-                            user.save()
-                            user.profile.save()
-                    print(str(cm.exception))
-                    print(dict(cm.exception))
-                    print(list(cm.exception))
-                    self.assertDictEqual(d1=dict(cm.exception), d2={'height': ["'{}' value must be an integer.".format(value_to_test)]})
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='height', value_to_test=value_to_test, null=True)
                 model_save_failures_count = model_save_failures_count + 1
             else:
-                user.save()
-                user.profile.save()
+                user.save_user_and_profile()
                 step, error_messages = user.profile.validate_profile_and_activate()
                 if (not (value_to_test in valid_values)):
                     self.assertEqual(first=step, second=3)
@@ -253,8 +277,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
             user.profile.children = value_to_test
-            user.save()
-            user.profile.save()
+            user.save_user_and_profile()
             step, error_messages = user.profile.validate_profile_and_activate()
             if (value_to_test in invalid_values):
                 self.assertEqual(first=step, second=4)
@@ -270,8 +293,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 validators.validate_children(children=user.profile.children)
                 ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(self._valid_string_values_to_test), len(self._empty_values_to_test)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(values_to_test)- len(invalid_values), len(invalid_values), 0))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2, 0))
 
     def test_validate_profile_and_activate_exception_on_more_children(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
@@ -280,8 +303,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
             user.profile.more_children = value_to_test
-            user.save()
-            user.profile.save()
+            user.save_user_and_profile()
             step, error_messages = user.profile.validate_profile_and_activate()
             if (value_to_test in invalid_values):
                 self.assertEqual(first=step, second=4)
@@ -297,77 +319,124 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 validators.validate_more_children(more_children=user.profile.more_children)
                 ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(self._valid_string_values_to_test), len(self._empty_values_to_test)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(values_to_test)- len(invalid_values), len(invalid_values), 0))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2, 0))
 
     def test_validate_profile_and_activate_exception_on_diet(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.DIET_MAX_VALUE_PLUS_ONE + 10))
+        valid_values_for_save = [choice[0] for choice in User.DIET_CHOICES_WITH_DEFAULT]
         valid_values = User.DIET_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.diet = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='diet', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
+            else:
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=5)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Your diet is required.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_diet(diet=user.diet)
+                    self.assertEqual(first=str(cm.exception.message), second='Your diet is required.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Your diet is required.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_diet(diet=user.diet)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(3, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_smoking_status(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.SMOKING_STATUS_MAX_VALUE_PLUS_ONE + 10))
+        valid_values_for_save = [choice[0] for choice in SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT]
         valid_values = SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.profile.smoking_status = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='smoking_status', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
+            else:
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=5)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Your smoking status is required.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_smoking_status(smoking_status=user.profile.smoking_status)
+                    self.assertEqual(first=str(cm.exception.message), second='Your smoking status is required.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Your smoking status is required.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_smoking_status(smoking_status=user.profile.smoking_status)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(3, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_marital_status(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE + 10))
+        valid_values_for_save = [choice[0] for choice in SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT]
         valid_values = SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.profile.marital_status = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='marital_status', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
+            else:
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=6)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Your marital status is required.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_marital_status(marital_status=user.profile.marital_status)
+                    self.assertEqual(first=str(cm.exception.message), second='Your marital status is required.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Your marital status is required.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_marital_status(marital_status=user.profile.marital_status)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(8, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_gender_to_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test
-        for value_to_test in values_to_test:
-            user = ActiveUserFactory()
-            user.profile.gender_to_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=["['Gender to match is required.']"])
-        self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        # values_to_test = self._empty_values_to_test
+        # for value_to_test in values_to_test:
+        #     user = ActiveUserFactory()
+        #     user.profile.gender_to_match = value_to_test
+        #     user.save_user_and_profile()
+        #     step, error_messages = user.profile.validate_profile_and_activate()
+        #     self.assertEqual(first=step, second=7)
+        #     self.assertEqual(first=len(error_messages), second=1)
+        #     self.assertListEqual(list1=error_messages, list2=["['Gender to match is required.']"])
+        # self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
+        # self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
 
     def test_validate_profile_and_activate_exception_on_match_description(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
@@ -376,8 +445,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         for value_to_test in values_to_test:
             user = ActiveUserFactory()
             user.profile.match_description = value_to_test
-            user.save()
-            user.profile.save()
+            user.save_user_and_profile()
             step, error_messages = user.profile.validate_profile_and_activate()
             if (value_to_test in invalid_values):
                 self.assertEqual(first=step, second=7)
@@ -393,139 +461,157 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 validators.validate_match_description(match_description=user.profile.match_description)
                 ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(self._valid_string_values_to_test), len(self._empty_values_to_test)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(values_to_test)- len(invalid_values), len(invalid_values), 0))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(5, 2, 0))
 
     def test_validate_profile_and_activate_exception_on_min_age_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_AGE_ALLOWED + 1 + 10))
+        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_AGE_ALLOWED + 10 + 1))
+        valid_values_for_save = [value for value in values_to_test if (isinstance(value, int))]
         valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.profile.min_age_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            if (value_to_test not in valid_values):
-                self.assertEqual(first=step, second=7)
-                self.assertEqual(first=len(error_messages), second=1)
-                self.assertListEqual(list1=error_messages, list2=[1])
-                with self.assertRaises(ValidationError) as cm:
-                    validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
-                self.assertEqual(first=str(cm.exception.message), second='Please write some text in this field.')
-                self.assertListEqual(list1=list(cm.exception), list2=['Please write some text in this field.'])
-                validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='min_age_match', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
             else:
-                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
-                validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
-                ok_count = ok_count + 1
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=7)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Minimal age to match must be from 0 to 180 years.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
+                    self.assertEqual(first=str(cm.exception.message), second='Minimal age to match must be from 0 to 180 years.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Minimal age to match must be from 0 to 180 years.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(values_to_test) - len(valid_values)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(181, 20))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(3, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_max_age_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_AGE_ALLOWED + 1 + 10))
+        values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_AGE_ALLOWED + 10 + 1))
+        valid_values_for_save = [value for value in values_to_test if (isinstance(value, int))]
         valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
-        for value in valid_values:
-            self.assertIn(member=value, container=values_to_test)
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.profile.max_age_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            if (value_to_test not in valid_values):
-                self.assertEqual(first=step, second=7)
-                self.assertEqual(first=len(error_messages), second=4)
-                self.assertListEqual(list1=error_messages, list2=[1])
-                with self.assertRaises(ValidationError) as cm:
-                    validators.validate_max_age_match(max_age_match=user.profile.max_age_match)
-                self.assertEqual(first=str(cm.exception.message), second='Please write some text in this field.')
-                self.assertListEqual(list1=list(cm.exception), list2=['Please write some text in this field.'])
-                validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='max_age_match', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
             else:
-                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
-                validators.validate_max_age_match(max_age_match=user.profile.max_age_match)
-                ok_count = ok_count + 1
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=7)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Maximal age to match must be from 0 to 180 years.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_max_age_match(max_age_match=user.profile.max_age_match)
+                    self.assertEqual(first=str(cm.exception.message), second='Maximal age to match must be from 0 to 180 years.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Maximal age to match must be from 0 to 180 years.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_max_age_match(max_age_match=user.profile.max_age_match)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(values_to_test) - len(valid_values)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(181, 20))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(3, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_min_max_age_to_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = [(i, i) for i in self._empty_values_to_test] + [(i, settings.MAX_AGE_ALLOWED + 1 - i) for i in list(range(-10, settings.MAX_AGE_ALLOWED + 1 + 10))]
-        valid_values = [value for value in values_to_test if ((value[0] in SpeedyMatchSiteProfile.AGE_VALID_VALUES) and (value[1] in SpeedyMatchSiteProfile.AGE_VALID_VALUES) and (value[0] not in self._empty_values_to_test) and (value[1] not in self._empty_values_to_test) and (value[0] <= value[1]))]
+        values_to_test = [(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test] + [(value, settings.MAX_AGE_ALLOWED - value) for value in list(range(-10, settings.MAX_AGE_ALLOWED + 10 + 1))]
+        self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
+        valid_values_for_save = [(value, value) for value in self._none_list] + [value for value in values_to_test if (all(isinstance(value[i], int) for i in range(len(value))))]
+        valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
+        for value in valid_values:
+            self.assertIn(member=(value, settings.MAX_AGE_ALLOWED - value), container=values_to_test)
+        # valid_values = [value for value in values_to_test if (all(value[i] in SpeedyMatchSiteProfile.AGE_VALID_VALUES for value in range(len(value))) and (value[0] <= value[1]))]
+        self.assertTrue(expr=set(valid_values).issubset(set(values_to_test)))
+        self.assertLess(a=len(valid_values), b=len(values_to_test))
         for value_to_test in values_to_test:
+            print(value_to_test)
             user = ActiveUserFactory()
             user.profile.min_age_match = value_to_test[0]
             user.profile.max_age_match = value_to_test[1]
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            if (value_to_test not in valid_values):
-                self.assertEqual(first=step, second=7)
-                self.assertEqual(first=len(error_messages), second=1)
-                self.assertListEqual(list1=error_messages, list2=[1])
-                with self.assertRaises(ValidationError) as cm:
-                    validators.validate_min_max_age_to_match(min_age_match=user.profile.min_age_match, max_age_match=user.profile.max_age_match)
-                self.assertEqual(first=str(cm.exception.message), second='Please write some text in this field.')
-                self.assertListEqual(list1=list(cm.exception), list2=['Please write some text in this field.'])
-                validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+            if (not (value_to_test in valid_values_for_save)):
+                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name='min_age_match', value_to_test=value_to_test, null=False)
+                model_save_failures_count = model_save_failures_count + 1
             else:
-                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
-                validators.validate_min_max_age_to_match(min_age_match=user.profile.min_age_match, max_age_match=user.profile.max_age_match)
-                ok_count = ok_count + 1
+                user.save_user_and_profile()
+                step, error_messages = user.profile.validate_profile_and_activate()
+                if (not (value_to_test in valid_values)):
+                    self.assertEqual(first=step, second=7)
+                    self.assertEqual(first=len(error_messages), second=1)
+                    self.assertListEqual(list1=error_messages, list2=["['Minimal age to match must be from 0 to 180 years.']"])
+                    with self.assertRaises(ValidationError) as cm:
+                        validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
+                    self.assertEqual(first=str(cm.exception.message), second='Minimal age to match must be from 0 to 180 years.')
+                    self.assertListEqual(list1=list(cm.exception), list2=['Minimal age to match must be from 0 to 180 years.'])
+                    validate_profile_and_activate_failures_count = validate_profile_and_activate_failures_count + 1
+                else:
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    validators.validate_min_age_match(min_age_match=user.profile.min_age_match)
+                    ok_count = ok_count + 1
         self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(values_to_test) - len(valid_values)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(181, 20))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_for_save) - len(valid_values), len(values_to_test) - len(valid_values_for_save)))
+        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(3, 1, 26))
 
     def test_validate_profile_and_activate_exception_on_diet_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test
-        for value_to_test in values_to_test:
-            user = ActiveUserFactory()
-            user.profile.diet_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
-        self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        # values_to_test = self._empty_values_to_test
+        # for value_to_test in values_to_test:
+        #     user = ActiveUserFactory()
+        #     user.profile.diet_match = value_to_test
+        #     user.save_user_and_profile()
+        #     step, error_messages = user.profile.validate_profile_and_activate()
+        #     self.assertEqual(first=step, second=7)
+        #     self.assertEqual(first=len(error_messages), second=1)
+        #     self.assertListEqual(list1=error_messages, list2=[1])
+        # self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
+        # self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
 
     def test_validate_profile_and_activate_exception_on_smoking_status_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test
-        for value_to_test in values_to_test:
-            user = ActiveUserFactory()
-            user.profile.smoking_status_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
-        self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        # values_to_test = self._empty_values_to_test
+        # for value_to_test in values_to_test:
+        #     user = ActiveUserFactory()
+        #     user.profile.smoking_status_match = value_to_test
+        #     user.save_user_and_profile()
+        #     step, error_messages = user.profile.validate_profile_and_activate()
+        #     self.assertEqual(first=step, second=7)
+        #     self.assertEqual(first=len(error_messages), second=1)
+        #     self.assertListEqual(list1=error_messages, list2=[1])
+        # self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
+        # self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
 
     def test_validate_profile_and_activate_exception_on_marital_status_match(self):
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        values_to_test = self._empty_values_to_test
-        for value_to_test in values_to_test:
-            user = ActiveUserFactory()
-            user.profile.marital_status_match = value_to_test
-            user.save()
-            user.profile.save()
-            step, error_messages = user.profile.validate_profile_and_activate()
-            self.assertEqual(first=step, second=7)
-            self.assertEqual(first=len(error_messages), second=1)
-            self.assertListEqual(list1=error_messages, list2=[1])
-        self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
+        # values_to_test = self._empty_values_to_test
+        # for value_to_test in values_to_test:
+        #     user = ActiveUserFactory()
+        #     user.profile.marital_status_match = value_to_test
+        #     user.save_user_and_profile()
+        #     step, error_messages = user.profile.validate_profile_and_activate()
+        #     self.assertEqual(first=step, second=7)
+        #     self.assertEqual(first=len(error_messages), second=1)
+        #     self.assertListEqual(list1=error_messages, list2=[1])
+        # self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
+        # self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(-1, -1))
 
 
 @only_on_speedy_match
@@ -537,8 +623,7 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         user.profile.min_age_match = 20
         user.profile.max_age_match = 180
         user.profile.gender_to_match = [User.GENDER_FEMALE]
-        user.save()
-        user.profile.save()
+        user.save_user_and_profile()
         return user
 
     def get_default_user_2(self):
@@ -546,8 +631,7 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         user.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
         user.profile.gender_to_match = [User.GENDER_MALE]
-        user.save()
-        user.profile.save()
+        user.save_user_and_profile()
         return user
 
     def test_gender_doesnt_match_profile(self):
@@ -574,9 +658,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         user_2 = self.get_default_user_2()
         user_2.gender = User.GENDER_MALE
         user_2.profile.gender_to_match = [User.GENDER_MALE]
-        user_2.save()
-        user_2.profile.save()
-        user_2._profile = user_2.get_profile()
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(user_2.profile)
         self.assertEqual(first=rank_1, second=5)
         rank_2 = user_2.profile.get_matching_rank(user_1.profile)
@@ -595,9 +678,10 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def test_smoking_status_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
         user_1.profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 0, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 0}
-        user_1.profile.save()
         user_2 = self.get_default_user_2()
         user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(user_2.profile)
         self.assertEqual(first=rank_1, second=0)
         rank_2 = user_2.profile.get_matching_rank(user_1.profile)
@@ -605,10 +689,11 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_marital_status_match_profile(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.save()
         user_2 = self.get_default_user_2()
         user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user_2.profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(user_2.profile)
         self.assertEqual(first=rank_1, second=5)
         rank_2 = user_2.profile.get_matching_rank(user_1.profile)
@@ -617,10 +702,11 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def test_marital_status_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
         user_1.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED
-        user_1.profile.save()
         user_2 = self.get_default_user_2()
         user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user_2.profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(user_2.profile)
         self.assertEqual(first=rank_1, second=0)
         rank_2 = user_2.profile.get_matching_rank(user_1.profile)

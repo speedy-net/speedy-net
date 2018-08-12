@@ -202,9 +202,11 @@ class EntityTestCase(TestCase):
 class UserTestCase(TestCase):
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
+        self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 4)))
 
     def test_diet_valid_values(self):
         self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))
+        self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(1, 4)))
 
     def test_cannot_create_user_without_all_the_required_fields(self):
         user = User()

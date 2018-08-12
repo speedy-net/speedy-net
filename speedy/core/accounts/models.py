@@ -6,7 +6,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.core.exceptions import ValidationError
 from django.urls import reverse
-from django.db import models
+from django.db import models, transaction
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
@@ -45,9 +45,6 @@ class Entity(TimeStampedModel):
 
     def __str__(self):
         return '<Entity {}>'.format(self.id)
-
-    def save(self, *args, **kwargs):
-        return super().save(*args, **kwargs)
 
     def normalize_slug_and_username(self):
         self.slug = normalize_slug(slug=self.slug)
@@ -270,6 +267,12 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
             profile = model.objects.get_or_create(user=self)[0]
         return profile
 
+    def save_user_and_profile(self):
+        with transaction.atomic():
+            self.save()
+            self.profile.save()
+        # self._profile = self.get_profile() # ~~~~ TODO: remove this line!
+
     def get_gender(self):
         genders = {self.__class__.GENDER_FEMALE: 'female', self.__class__.GENDER_MALE: 'male', self.__class__.GENDER_OTHER: 'other'}
         return genders.get(self.gender)
@@ -363,6 +366,11 @@ class SiteProfileBase(TimeStampedModel):
 
     def __str__(self):
         return '{}'.format(self.user)
+
+    def save(self, *args, **kwargs):
+        return_value = super().save(*args, **kwargs)
+        self.user._profile = self.user.get_profile()
+        return return_value
 
     def update_last_visit(self):
         self.last_visit = now()
