@@ -72,7 +72,7 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.children = "One boy."
             self.profile.more_children = "Yes."
             self.profile.match_description = "Hi!"
-            self.profile.height = 170
+            self.profile.height = random.randint(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED)
             if (self.diet == User.DIET_UNKNOWN):
                 self.diet = User.DIET_VEGAN
             self.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
