@@ -286,7 +286,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         return diets.get(self.diet)
 
     def get_age(self):
-        return get_age(date_birth=self.date_of_birth)
+        return get_age(date_of_birth=self.date_of_birth)
 
     def get_diet_choices(self):
         return (

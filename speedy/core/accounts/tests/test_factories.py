@@ -77,7 +77,7 @@ class ActiveUserFactory(DefaultUserFactory):
                 self.diet = User.DIET_VEGAN
             self.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
             self.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
-            self.profile.gender_to_match = [User.GENDER_OTHER]
+            self.profile.gender_to_match = User.GENDER_VALID_VALUES
             self.photo = UserImageFactory(owner=self)
             self.profile.activation_step = 9
             email = UserConfirmedEmailAddressFactory(user=self)

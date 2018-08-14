@@ -112,7 +112,8 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.fields['diet_match'].widget.choices = self.instance.user.get_diet_choices()
         for field_name, field in self.fields.items():
             if field_name in self._validators:
-                field.validators = self._validators[field_name]
+                # field.validators = self._validators[field_name]
+                print(field.validators)
 
     def save(self, commit=True):
         if ((commit) and ('photo' in self.fields)):

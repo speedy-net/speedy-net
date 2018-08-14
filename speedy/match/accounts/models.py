@@ -6,7 +6,6 @@ from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
-from speedy.core.base.utils import get_age
 
 from .managers import SiteProfileManager
 
@@ -120,7 +119,7 @@ class SiteProfile(SiteProfileBase):
     more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
     profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=3, default=gender_to_match_default.__func__, blank=True, null=True)
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=('smoking status match'), default=smoking_status_match_default.__func__)
     marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
@@ -260,13 +259,14 @@ class SiteProfile(SiteProfileBase):
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         self.validate_profile_and_activate()
         other_profile.validate_profile_and_activate()
-        if self.is_active and other_profile.is_active:
+        if (self.user.pk == other_profile.user.pk):
+            return self.__class__.RANK_0
+        if ((self.is_active) and (other_profile.is_active)):
             if Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user):
                 return self.__class__.RANK_0
-            other_user_age = get_age(other_profile.user.date_of_birth)
-            if other_profile.user.gender not in self.gender_to_match:
+            if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0
-            if not self.min_age_match <= other_user_age <= self.max_age_match:
+            if (not (self.min_age_match <= other_profile.user.get_age() <= self.max_age_match)):
                 return self.__class__.RANK_0
             if (other_profile.user.diet == User.DIET_UNKNOWN):
                 return self.__class__.RANK_0

@@ -27,7 +27,7 @@ class UserOnSpeedyMatchWidget(Widget):
             return False
         if (self.viewer == self.entity):
             return False
-        return self.get_entity_speedy_match_profile().get_matching_rank(self.get_viewer_speedy_match_profile()) > SpeedyMatchSiteProfile.RANK_0
+        return self.get_entity_speedy_match_profile().get_matching_rank(other_profile=self.get_viewer_speedy_match_profile()) > SpeedyMatchSiteProfile.RANK_0
 
     def get_context_data(self):
         cd = super().get_context_data()
