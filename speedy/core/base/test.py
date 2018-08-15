@@ -66,3 +66,16 @@ only_on_speedy_net = only_on_site(env('SPEEDY_NET_SITE_ID'))
 only_on_speedy_match = only_on_site(env('SPEEDY_MATCH_SITE_ID'))
 only_on_speedy_composer = only_on_site(env('SPEEDY_COMPOSER_SITE_ID'))
 only_on_speedy_mail_software = only_on_site(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
+
+
+# def _get_class(_class, _exceptions, _exceptions_dict_list, *args, **kwargs):
+#     r = range(10)
+#     for i in r:
+#         try:
+#             return _class(*args, **kwargs)
+#         except _exceptions as e:
+#             print(e, type(e))
+#             if (dict(e) not in _exceptions_dict_list):
+#                 raise e
+#     raise Exception("_get_class failed after {} times, class={}", len(r), _class)
+

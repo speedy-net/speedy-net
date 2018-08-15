@@ -7,15 +7,34 @@ import factory.fuzzy
 
 from django.contrib.sites.models import Site
 from django.conf import settings
+from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import normalize_username, User, UserEmailAddress
 from speedy.core.uploads.models import Image
+# from speedy.core.base.test import _get_class
 
 
 # Generate a new random password for each test.
 USER_PASSWORD_LENGTH = random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
 USER_PASSWORD = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(USER_PASSWORD_LENGTH))
 # USER_PASSWORD = 'vjha9c4q44zs'
+
+
+# class UserEmailAddressGetClassMixin(object):
+#     @staticmethod
+#     def _get_class(*args, **kwargs):
+#         _exceptions = ValidationError
+#         _exceptions_dict_list = [{'email': ['Email address with this Email already exists.1']}]
+#         return _get_class(_class=__class__, _exceptions=_exceptions, _exceptions_dict_list=_exceptions_dict_list, *args, **kwargs)
+
+
+# class UserConfirmedEmailAddressFactory(UserEmailAddressGetClassMixin, factory.DjangoModelFactory):
+class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
+    email = factory.Faker('email')
+    is_confirmed = True
+
+    class Meta:
+        model = UserEmailAddress
 
 
 class DefaultUserFactory(factory.DjangoModelFactory):
@@ -41,14 +60,6 @@ class InactiveUserFactory(DefaultUserFactory):
         SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
         if (site.id == SPEEDY_NET_SITE_ID):
             self.profile.deactivate()
-
-
-class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
-    email = factory.Faker('email')
-    is_confirmed = True
-
-    class Meta:
-        model = UserEmailAddress
 
 
 class UserImageFactory(factory.DjangoModelFactory):
@@ -92,9 +103,12 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.activate()
 
 
+# class UserEmailAddressFactory(UserEmailAddressGetClassMixin, factory.DjangoModelFactory):
 class UserEmailAddressFactory(factory.DjangoModelFactory):
     user = factory.SubFactory(ActiveUserFactory)
     email = factory.Faker('email')
 
     class Meta:
         model = UserEmailAddress
+
+
