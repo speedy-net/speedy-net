@@ -13,7 +13,7 @@ from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
 
 from .models import SiteProfile as SpeedyMatchSiteProfile
-from speedy.match.accounts import validators
+from speedy.match.accounts import validators, utils
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
@@ -84,7 +84,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
 
     def get_fields(self):
-        return settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[self.step]
+        return utils.get_step_form_fields(step=self.step)
 
     def clean(self):
         if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):

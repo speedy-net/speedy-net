@@ -28,10 +28,10 @@ class ChatManagerTestCase(TestCase):
         self.assertEqual(first=chat, second=self.chat_1_2)
 
     def test_chat_with_two_users_creates_new_one(self):
+        initial_chat_count = Chat.objects.count()
         user4 = ActiveUserFactory()
-        chat_count = Chat.objects.count()
         chat = Chat.on_site.chat_with(self.user1, user4)
-        self.assertEqual(first=Chat.objects.count(), second=chat_count + 1)
+        self.assertEqual(first=Chat.objects.count(), second=initial_chat_count + 1)
         self.assertIsNotNone(obj=chat.id)
         self.assertEqual(first=chat.participants_count, second=2)
         entities_ids = set(ent.id for ent in chat.participants)

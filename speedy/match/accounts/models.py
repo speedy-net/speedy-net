@@ -150,95 +150,16 @@ class SiteProfile(SiteProfileBase):
 
     def validate_profile_and_activate(self):
         # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
-        from speedy.match.accounts import validators
+        from speedy.match.accounts import utils
         lang = get_language()
         error_messages = []
-        for step in range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
-            fields = settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step]
-            for field in fields:
-                if field in ['photo']:
-                    try:
-                        validators.validate_photo(photo=self.user.photo)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['profile_description']:
-                    try:
-                        validators.validate_profile_description(profile_description=self.profile_description)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['city']:
-                    try:
-                        validators.validate_city(city=self.city)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['children']:
-                    try:
-                        validators.validate_children(children=self.children)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['more_children']:
-                    try:
-                        validators.validate_more_children(more_children=self.more_children)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['match_description']:
-                    try:
-                        validators.validate_match_description(match_description=self.match_description)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['height']:
-                    try:
-                        validators.validate_height(height=self.height)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['diet']:
-                    try:
-                        validators.validate_diet(diet=self.user.diet)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['smoking_status']:
-                    try:
-                        validators.validate_smoking_status(smoking_status=self.smoking_status)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['marital_status']:
-                    try:
-                        validators.validate_marital_status(marital_status=self.marital_status)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['gender_to_match']:
-                    try:
-                        validators.validate_gender_to_match(gender_to_match=self.gender_to_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif field in ['min_age_match', 'max_age_match']:
-                    try:
-                        validators.validate_min_age_match(min_age_match=self.min_age_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                    try:
-                        validators.validate_max_age_match(max_age_match=self.max_age_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                    try:
-                        validators.validate_min_max_age_to_match(min_age_match=self.min_age_match, max_age_match=self.max_age_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif (field in ['diet_match']):
-                    try:
-                        validators.validate_diet_match(diet_match=self.diet_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif (field in ['smoking_status_match']):
-                    try:
-                        validators.validate_smoking_status_match(smoking_status_match=self.smoking_status_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
-                elif (field in ['marital_status_match']):
-                    try:
-                        validators.validate_marital_status_match(marital_status_match=self.marital_status_match)
-                    except ValidationError as e:
-                        error_messages.append(str(e))
+        for step in utils.get_steps_range():
+            fields = utils.get_step_fields_to_validate(step=step)
+            for field_name in fields:
+                try:
+                    utils.validate_field(field_name=field_name, user=self.user)
+                except ValidationError as e:
+                    error_messages.append(str(e))
             if (len(error_messages) > 0):
                 self._deactivate_language(step=step)
                 return step, error_messages

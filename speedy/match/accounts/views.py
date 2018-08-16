@@ -10,6 +10,7 @@ from django.utils.translation import ugettext as _
 
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
 from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.match.accounts import utils
 
 from .forms import ProfileNotificationsForm
 
@@ -25,7 +26,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         log.debug('HERE: get_context_data: kwargs: %s', kwargs)
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'steps_range': list(range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))),
+            'steps_range': list(utils.get_steps_range()),
             'current_step': self.step,
             'previous_step': self.step - 1,
         })

@@ -13,6 +13,6 @@ SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS = [
     ['marital_status'],
     ['gender_to_match', 'match_description', 'min_age_match', 'max_age_match'],
     ['diet_match', 'smoking_status_match'],
-    ['marital_status_match']
+    ['marital_status_match'],
 ]
 
