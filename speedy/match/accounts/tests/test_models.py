@@ -218,51 +218,36 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
             valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
         elif (field_name in ['min_max_age_to_match']):
+            values_to_test_valid_ages = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
+            self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
             if (test_settings["test_invalid_values_to_save"]):
                 values_to_test = [(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test] + [(value, settings.MAX_AGE_ALLOWED - value) for value in range(-10, settings.MAX_AGE_ALLOWED + 10 + 1)]
-                values_to_test_valid_ages = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
-                self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
-                self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
+            else:
+                values_to_test = values_to_test_valid_ages
+            self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
+            if (test_settings["test_invalid_values_to_save"]):
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
                 valid_values_to_save = [value for value in values_to_test if all(isinstance(value[i], int) for i in range(len(value)))]
                 valid_values = [value for value in values_to_test_valid_ages if (value[0] <= value[1])]
-                invalid_values = [value for value in values_to_test if (value not in valid_values)]
-                # invalid_values = [value for value in values_to_test_valid_ages if (value not in valid_values)]
+            else:
+                valid_values_to_save = values_to_test
+                valid_values = [value for value in values_to_test if (value[0] <= value[1])]
+            invalid_values = [value for value in values_to_test if (value not in valid_values)]
+            self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(0, 90 + 1)])
+            self.assertEqual(first=valid_values[0], second=(0, 180))
+            self.assertEqual(first=valid_values[-1], second=(90, 90))
+            if (test_settings["test_invalid_values_to_save"]):
                 invalid_values_valid_ages = [value for value in values_to_test_valid_ages if (value not in valid_values)]
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=invalid_values_valid_ages, list_2=invalid_values)
-                # valid_values_to_save = values_to_test[1:] # ~~~~ TODO: remove this line!
-                # print(values_to_test) # ~~~~ TODO: remove this line!
-                # print(valid_values_to_save) # ~~~~ TODO: remove this line!
-                # print(valid_values) # ~~~~ TODO: remove this line!
-                # print(invalid_values) # ~~~~ TODO: remove this line!
-                self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(0, 90 + 1)])
-                self.assertEqual(first=valid_values[0], second=(0, 180))
-                self.assertEqual(first=valid_values[-1], second=(90, 90))
                 self.assertListEqual(list1=invalid_values_valid_ages, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
                 self.assertEqual(first=invalid_values_valid_ages[0], second=(91, 89))
                 self.assertEqual(first=invalid_values_valid_ages[-1], second=(180, 0))
                 self.assertListEqual(list1=invalid_values, list2=[(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test] + [(value, 180 - value) for value in (list(range(-10, 0)) + list(range(91, 180 + 10 + 1)))])
                 self.assertEqual(first=invalid_values[0], second=(None, None))
                 self.assertEqual(first=invalid_values[-1], second=(190, -10))
-                # self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(-10, 90 + 1)])
-                # self.assertEqual(first=valid_values[0], second=(-10, 190))
-                # self.assertEqual(first=valid_values[-1], second=(90, 90))
-                # self.assertListEqual(list1=invalid_values, list2=[(value, 180 - value) for value in range(91, 180 + 10 + 1)])
-                # self.assertEqual(first=invalid_values[0], second=(91, 89))
-                # self.assertEqual(first=invalid_values[-1], second=(190, -0))
+                self.assertListEqual(list1=invalid_values[16:-10], list2=invalid_values_valid_ages)
+                self.assertListEqual(list1=invalid_values[16:106], list2=invalid_values_valid_ages)
             else:
-                values_to_test = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
-                self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
-                valid_values_to_save = values_to_test
-                valid_values = [value for value in values_to_test if (value[0] <= value[1])]
-                invalid_values = [value for value in values_to_test if (value not in valid_values)]
-                # print(values_to_test) # ~~~~ TODO: remove this line!
-                # print(valid_values_to_save) # ~~~~ TODO: remove this line!
-                # print(valid_values) # ~~~~ TODO: remove this line!
-                # print(invalid_values) # ~~~~ TODO: remove this line!
-                self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(0, 90 + 1)])
-                self.assertEqual(first=valid_values[0], second=(0, 180))
-                self.assertEqual(first=valid_values[-1], second=(90, 90))
                 self.assertListEqual(list1=invalid_values, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
                 self.assertEqual(first=invalid_values[0], second=(91, 89))
                 self.assertEqual(first=invalid_values[-1], second=(180, 0))
