@@ -91,19 +91,27 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         self.assertListEqual(list1=error_messages, list2=[])
 
     def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null):
-        if ((null == True) and (value_to_test in self._empty_string_list)):
-            with self.assertRaises(ValueError) as cm:
-                user.save_user_and_profile()
-            self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
-        else:
+        if ((isinstance(field_name, (list, tuple))) and (isinstance(value_to_test, (list, tuple))) and len(field_name) == len(value_to_test)):
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-            if ((null == False) and (value_to_test in self._none_list)):
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
-            elif (isinstance(value_to_test, int)):
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value {} is not a valid choice.'.format(value_to_test)]})
+            if ((null == False) and all(value_to_test[i] in self._none_list for i in range(len(value_to_test)))):
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name[i]: ['This field cannot be null.'] for i in range(len(field_name))})
             else:
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ["'{}' value must be an integer.".format(value_to_test)]})
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name[i]: ["'{}' value must be an integer.".format(value_to_test[i])] for i in range(len(field_name))})
+        else:
+            if ((null == True) and (value_to_test in self._empty_string_list)):
+                with self.assertRaises(ValueError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
+            else:
+                with self.assertRaises(ValidationError) as cm:
+                    user.save_user_and_profile()
+                if ((null == False) and (value_to_test in self._none_list)):
+                    self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
+                elif (isinstance(value_to_test, int)):
+                    self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value {} is not a valid choice.'.format(value_to_test)]})
+                else:
+                    self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ["'{}' value must be an integer.".format(value_to_test)]})
 
     def run_test_validate_profile_and_activate_exception(self, field_name, expected_step, expected_error_message, expected_error_messages, expected_counts_tuple):
         user = ActiveUserFactory()
@@ -160,14 +168,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                             values_to_test.extend(product[3:8])
                 else:
                     values_to_test.extend([([i] + [item for j in range(10) for item in User.GENDER_VALID_VALUES])[:n] for i in range_to_test])
-            # print(len(values_to_test)) # ~~~~ TODO: remove this line!
-            # print(values_to_test) # ~~~~ TODO: remove this line!
             valid_values_to_save = self._none_list + [gender_to_match for gender_to_match in values_to_test if (isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) <= len(User.GENDER_VALID_VALUES))]
-            # print(len(valid_values_to_save)) # ~~~~ TODO: remove this line!
-            # print(valid_values_to_save) # ~~~~ TODO: remove this line!
             valid_values = [gender_to_match for gender_to_match in values_to_test if (isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) > 0) and (len(gender_to_match) == len(set(gender_to_match))) and all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)]
-            # print(len(valid_values)) # ~~~~ TODO: remove this line!
-            # print(valid_values) # ~~~~ TODO: remove this line!
             for value in [[1], [2], [3], (1,), (2,), (3,), [1, 2], [1, 3], [2, 3], (1, 2), (1, 3), [1, 2, 3], (1, 2, 3)]:
                 for val in [value, list(value)]:
                     self.assertIn(member=val, container=values_to_test)
@@ -200,11 +202,18 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
             valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
         elif (field_name in ['min_max_age_to_match']):
-            values_to_test = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
+            values_to_test = [(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test] + [(value, settings.MAX_AGE_ALLOWED - value) for value in range(-10, settings.MAX_AGE_ALLOWED + 10 + 1)]
+            values_to_test_valid_ages = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
             self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
-            valid_values_to_save = values_to_test
-            valid_values = [value for value in values_to_test if (value[0] <= value[1])]
+            self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
+            self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
+            valid_values_to_save = [value for value in values_to_test if all(isinstance(value[i], int) for i in range(len(value)))]
+            valid_values = [value for value in values_to_test_valid_ages if (value[0] <= value[1])]
             invalid_values = [value for value in values_to_test if (value not in valid_values)]
+            # invalid_values = [value for value in values_to_test_valid_ages if (value not in valid_values)]
+            invalid_values_valid_ages = [value for value in values_to_test_valid_ages if (value not in valid_values)]
+            self.assert_list_2_contains_all_elements_in_list_1(list_1=invalid_values_valid_ages, list_2=invalid_values)
+            # valid_values_to_save = values_to_test[1:] # ~~~~ TODO: remove this line!
             # print(values_to_test) # ~~~~ TODO: remove this line!
             # print(valid_values_to_save) # ~~~~ TODO: remove this line!
             # print(valid_values) # ~~~~ TODO: remove this line!
@@ -212,9 +221,18 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(0, 90 + 1)])
             self.assertEqual(first=valid_values[0], second=(0, 180))
             self.assertEqual(first=valid_values[-1], second=(90, 90))
-            self.assertListEqual(list1=invalid_values, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
-            self.assertEqual(first=invalid_values[0], second=(91, 89))
-            self.assertEqual(first=invalid_values[-1], second=(180, 0))
+            self.assertListEqual(list1=invalid_values_valid_ages, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
+            self.assertEqual(first=invalid_values_valid_ages[0], second=(91, 89))
+            self.assertEqual(first=invalid_values_valid_ages[-1], second=(180, 0))
+            self.assertListEqual(list1=invalid_values, list2=[(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test] + [(value, 180 - value) for value in (list(range(-10, 0)) + list(range(91, 180 + 10 + 1)))])
+            self.assertEqual(first=invalid_values[0], second=(None, None))
+            self.assertEqual(first=invalid_values[-1], second=(190, -10))
+            # self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(-10, 90 + 1)])
+            # self.assertEqual(first=valid_values[0], second=(-10, 190))
+            # self.assertEqual(first=valid_values[-1], second=(90, 90))
+            # self.assertListEqual(list1=invalid_values, list2=[(value, 180 - value) for value in range(91, 180 + 10 + 1)])
+            # self.assertEqual(first=invalid_values[0], second=(91, 89))
+            # self.assertEqual(first=invalid_values[-1], second=(190, -0))
         elif (field_name in ['diet_match']):
             values_to_test = []
             valid_values_to_save = []
@@ -231,8 +249,15 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             valid_values_to_assign = values_to_test
         if (invalid_values is None):
             invalid_values = [value for value in values_to_test if (value not in valid_values)]
+        print(len(values_to_test)) # ~~~~ TODO: remove this line!
+        print(values_to_test) # ~~~~ TODO: remove this line!
+        print(len(valid_values_to_save)) # ~~~~ TODO: remove this line!
+        print(valid_values_to_save) # ~~~~ TODO: remove this line!
+        print(len(valid_values)) # ~~~~ TODO: remove this line!
+        print(valid_values) # ~~~~ TODO: remove this line!
         self.assert_valid_values_ok(values_to_test=values_to_test, valid_values_to_assign=valid_values_to_assign, valid_values_to_save=valid_values_to_save, valid_values=valid_values, invalid_values=invalid_values)
-        if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'min_max_age_to_match']):
+        # if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'min_max_age_to_match']):
+        if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description']):
             self.assertEqual(first=len(valid_values_to_save), second=len(values_to_test))
             self.assertListEqual(list1=valid_values_to_save, list2=values_to_test)
         else:
@@ -256,7 +281,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             can_save_user_and_profile_set.add(can_save_user_and_profile)
             value_is_valid_set.add(value_is_valid)
             value_is_invalid_set.add(value_is_invalid)
-            # print(value_to_test) # ~~~~ TODO: remove this line!
+            print(value_to_test) # ~~~~ TODO: remove this line!
             if (field_name in ['photo']):
                 user.photo = None
                 if (value_to_test == UserImageFactory):
@@ -312,6 +337,18 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                     self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True)
                 elif (field_name in ['diet', 'smoking_status', 'marital_status', 'min_age_match', 'max_age_match']):
                     self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
+                elif (field_name in ['min_max_age_to_match']):
+                    self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=['min_age_match', 'max_age_match'], value_to_test=value_to_test, null=False)
+                    # with self.assertRaises(ValidationError) as cm:
+                    #     user.save_user_and_profile()
+                    # print(str(cm.exception)) # ~~~~ TODO: remove this line!
+                    # print(dict(cm.exception)) # ~~~~ TODO: remove this line!
+                    # if (value_to_test in [(value, value) for value in self._none_list]):
+                    #     self.assertDictEqual(d1=dict(cm.exception), d2={f_name: ['This field cannot be null.'] for f_name in ['min_age_match', 'max_age_match']})
+                    #     self.assertDictEqual(d1=dict(cm.exception), d2={'min_age_match': ['This field cannot be null.'], 'max_age_match': ['This field cannot be null.']})
+                    # else:
+                    #     self.assertDictEqual(d1=dict(cm.exception), d2={f_name: ["'{}' value must be an integer.".format(value_to_test)] for f_name in ['min_age_match', 'max_age_match']})
+                    #     self.assertDictEqual(d1=dict(cm.exception), d2={'min_age_match': ["'' value must be an integer."], 'max_age_match': ["'' value must be an integer."]})
                 elif (field_name in ['gender_to_match']):
                     if (isinstance(value_to_test, str)):
                         with self.assertRaises(DataError) as cm:
@@ -332,13 +369,27 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 step, error_messages = user.profile.validate_profile_and_activate()
                 if (not (value_is_valid)):
                     self.assertEqual(first=step, second=expected_step)
-                    self.assertEqual(first=len(error_messages), second=1)
-                    print(error_messages)
-                    self.assertListEqual(list1=error_messages, list2=expected_error_messages)
-                    with self.assertRaises(ValidationError) as cm:
+                    if ((field_name in ['min_max_age_to_match']) and (isinstance(value_to_test, (list, tuple))) and (not all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_VALID_VALUES for i in range(2)))):
+                        self.assertEqual(first=len(error_messages), second=2)
+                        print(error_messages)
+                        self.assertListEqual(list1=error_messages, list2=["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"])
                         utils.validate_field(field_name=field_name, user=user)
-                    self.assertEqual(first=str(cm.exception.message), second=expected_error_message)
-                    self.assertListEqual(list1=list(cm.exception), list2=[expected_error_message])
+                        with self.assertRaises(ValidationError) as cm:
+                            utils.validate_field(field_name='min_age_match', user=user)
+                        self.assertEqual(first=str(cm.exception.message), second='Minimal age to match must be from 0 to 180 years.')
+                        self.assertListEqual(list1=list(cm.exception), list2=['Minimal age to match must be from 0 to 180 years.'])
+                        with self.assertRaises(ValidationError) as cm:
+                            utils.validate_field(field_name='max_age_match', user=user)
+                        self.assertEqual(first=str(cm.exception.message), second='Maximal age to match must be from 0 to 180 years.')
+                        self.assertListEqual(list1=list(cm.exception), list2=['Maximal age to match must be from 0 to 180 years.'])
+                    else:
+                        self.assertEqual(first=len(error_messages), second=1)
+                        print(error_messages)
+                        self.assertListEqual(list1=error_messages, list2=expected_error_messages)
+                        with self.assertRaises(ValidationError) as cm:
+                            utils.validate_field(field_name=field_name, user=user)
+                        self.assertEqual(first=str(cm.exception.message), second=expected_error_message)
+                        self.assertListEqual(list1=list(cm.exception), list2=[expected_error_message])
                     validate_profile_and_activate_failures_count += 1
                 else:
                     self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
@@ -348,7 +399,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertSetEqual(set1=can_assign_value_set, set2={False, True})
         else:
             self.assertSetEqual(set1=can_assign_value_set, set2={True})
-        if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'min_max_age_to_match']):
+        # if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'min_max_age_to_match']):
+        if (field_name in ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description']):
             self.assertSetEqual(set1=can_save_user_and_profile_set, set2={True})
         else:
             self.assertSetEqual(set1=can_save_user_and_profile_set, set2={False, True})
@@ -851,7 +903,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         self.run_test_validate_profile_and_activate_exception(field_name='max_age_match', expected_step=7, expected_error_message='Maximal age to match must be from 0 to 180 years.', expected_error_messages=["['Maximal age to match must be from 0 to 180 years.']"], expected_counts_tuple=(181, 20, 6))
 
     def test_validate_profile_and_activate_exception_on_min_max_age_to_match(self):
-        self.run_test_validate_profile_and_activate_exception(field_name='min_max_age_to_match', expected_step=7, expected_error_message="Maximal age to match can't be less than minimal age to match.", expected_error_messages=['["Maximal age to match can\'t be less than minimal age to match."]'], expected_counts_tuple=(91, 90, 0))
+        self.run_test_validate_profile_and_activate_exception(field_name='min_max_age_to_match', expected_step=7, expected_error_message="Maximal age to match can't be less than minimal age to match.", expected_error_messages=['["Maximal age to match can\'t be less than minimal age to match."]'], expected_counts_tuple=(91, 110, 6))
         # user = ActiveUserFactory()
         # ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
         # values_to_test = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
