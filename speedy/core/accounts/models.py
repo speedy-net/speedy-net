@@ -290,9 +290,10 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
 
     def get_diet_choices(self):
         return (
-            (self.__class__.DIET_VEGAN, pgettext_lazy(context=self.get_gender(), message='Vegan (eats only plants and fungi)')),
-            (self.__class__.DIET_VEGETARIAN, pgettext_lazy(context=self.get_gender(), message='Vegetarian (doesn\'t eat fish and meat)')),
-            (self.__class__.DIET_CARNIST, pgettext_lazy(context=self.get_gender(), message='Carnist (eats animals)'))
+            (self.__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (self.__class__.DIET_VEGAN, pgettext_lazy(context=self.get_gender(), message="Vegan (eats only plants and fungi)")),
+            (self.__class__.DIET_VEGETARIAN, pgettext_lazy(context=self.get_gender(), message="Vegetarian (doesn't eat fish and meat)")),
+            (self.__class__.DIET_CARNIST, pgettext_lazy(context=self.get_gender(), message="Carnist (eats animals)"))
         )
 
 
