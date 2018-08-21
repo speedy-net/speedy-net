@@ -431,6 +431,18 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         self.assertListEqual(list1=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES, list2=list(range(1, 9)))
 
+    def test_diet_match_default_keys(self):
+        diet_match = SpeedyMatchSiteProfile.diet_match_default()
+        self.assertSetEqual(set1=set(diet_match.keys()), set2={str(diet) for diet in User.DIET_VALID_VALUES})
+
+    def test_smoking_status_match_default_keys(self):
+        smoking_status_match = SpeedyMatchSiteProfile.smoking_status_match_default()
+        self.assertSetEqual(set1=set(smoking_status_match.keys()), set2={str(smoking_status) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES})
+
+    def test_marital_status_match_default_keys(self):
+        marital_status_match = SpeedyMatchSiteProfile.marital_status_match_default()
+        self.assertSetEqual(set1=set(marital_status_match.keys()), set2={str(marital_status) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES})
+
     def test_get_steps_range(self):
         self.assertEqual(first=len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
         self.assertEqual(first=utils.get_steps_range(), second=range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
