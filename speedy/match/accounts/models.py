@@ -89,8 +89,8 @@ class SiteProfile(SiteProfileBase):
     def smoking_status_match_default():
         return dict({
             str(__class__.SMOKING_STATUS_NO): __class__.RANK_5,
-            str(__class__.SMOKING_STATUS_YES): __class__.RANK_5,
             str(__class__.SMOKING_STATUS_SOMETIMES): __class__.RANK_5,
+            str(__class__.SMOKING_STATUS_YES): __class__.RANK_5,
         })
 
     @staticmethod
