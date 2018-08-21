@@ -342,8 +342,9 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertListEqual(list1=range_to_test, list2=expected_range_to_test_list)
             self.assertSetEqual(set1=set(range_to_test) - set(SpeedyMatchSiteProfile.RANK_VALID_VALUES), set2=expected_invalid_keys_set)
             self.assert_list_2_contains_all_elements_in_list_1(list_1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list_2=range_to_test)
-            values_to_test = self._empty_values_to_test + [list(), tuple(), dict(), set()]
-            valid_values_to_save, valid_values, invalid_values_with_valid_ranks = [], [], []
+            values_to_test, valid_values_to_save, valid_values, invalid_values_with_valid_ranks = [], [], [], []
+            if (test_settings["test_invalid_values_to_save"]):
+                values_to_test.extend(self._empty_values_to_test + [list(), tuple(), dict(), set()])
             if (test_settings["test_invalid_keys_and_ranks"]):
                 for key in all_keys_with_invalid_keys:
                     value_to_test = self.get_field_default_value(field_name=field_name)
@@ -783,7 +784,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         }
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_values_to_save(self):
+    def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
         test_settings = self.get_min_max_age_to_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": False,
@@ -792,7 +793,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_values_to_save(self):
+    def test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save(self):
         test_settings = self.get_min_max_age_to_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
@@ -801,7 +802,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_diet_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
@@ -811,17 +812,17 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_diet_match_default_test_settings()
         test_settings.update({
-            "test_invalid_values_to_save": True,
+            "test_invalid_values_to_save": False,
             "test_invalid_keys_and_ranks": False,
-            "expected_counts_tuple": (31, 65, 6),
+            "expected_counts_tuple": (31, 65, 0),
             "expected_error_messages_counts_tuple": (0, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_smoking_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
@@ -831,17 +832,17 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_smoking_status_match_default_test_settings()
         test_settings.update({
-            "test_invalid_values_to_save": True,
+            "test_invalid_values_to_save": False,
             "test_invalid_keys_and_ranks": False,
-            "expected_counts_tuple": (31, 65, 6),
+            "expected_counts_tuple": (31, 65, 0),
             "expected_error_messages_counts_tuple": (0, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_marital_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
@@ -851,12 +852,12 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-    def test_validate_profile_and_activate_exception_on_marital_status_match_without_invalid_keys_and_ranks(self):
+    def test_validate_profile_and_activate_exception_on_marital_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
         test_settings = self.get_marital_status_match_default_test_settings()
         test_settings.update({
-            "test_invalid_values_to_save": True,
+            "test_invalid_values_to_save": False,
             "test_invalid_keys_and_ranks": False,
-            "expected_counts_tuple": (81, 165, 6),
+            "expected_counts_tuple": (81, 165, 0),
             "expected_error_messages_counts_tuple": (0, 165),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
