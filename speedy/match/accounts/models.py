@@ -79,32 +79,15 @@ class SiteProfile(SiteProfileBase):
 
     @staticmethod
     def diet_match_default():
-        return dict({
-            str(User.DIET_VEGAN): __class__.RANK_5,
-            str(User.DIET_VEGETARIAN): __class__.RANK_5,
-            str(User.DIET_CARNIST): __class__.RANK_5,
-        })
+        return dict({str(diet): __class__.RANK_5 for diet in User.DIET_VALID_VALUES})
 
     @staticmethod
     def smoking_status_match_default():
-        return dict({
-            str(__class__.SMOKING_STATUS_NO): __class__.RANK_5,
-            str(__class__.SMOKING_STATUS_SOMETIMES): __class__.RANK_5,
-            str(__class__.SMOKING_STATUS_YES): __class__.RANK_5,
-        })
+        return dict({str(smoking_status): __class__.RANK_5 for smoking_status in __class__.SMOKING_STATUS_VALID_VALUES})
 
     @staticmethod
     def marital_status_match_default():
-        return dict({
-            str(__class__.MARITAL_STATUS_SINGLE): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_DIVORCED): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_WIDOWED): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_IN_RELATIONSHIP): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_COMPLICATED): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_SEPARATED): __class__.RANK_5,
-            str(__class__.MARITAL_STATUS_MARRIED): __class__.RANK_5,
-        })
+        return dict({str(marital_status): __class__.RANK_5 for marital_status in __class__.MARITAL_STATUS_VALID_VALUES})
 
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
