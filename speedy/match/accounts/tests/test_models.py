@@ -168,7 +168,11 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
         elif (field_name in ['gender_to_match']):
             range_to_test = [User.GENDER_UNKNOWN] + User.GENDER_VALID_VALUES + [User.GENDER_MAX_VALUE_PLUS_ONE]
-            self.assertEqual(first=range_to_test, second=list(range(5)))
+            self.assertListEqual(list1=range_to_test, list2=list(range(User.GENDER_UNKNOWN, User.GENDER_MAX_VALUE_PLUS_ONE + 1)))
+            self.assertListEqual(list1=range_to_test, list2=list(range(5)))
+            self.assertSetEqual(set1=set(range_to_test) - set(User.GENDER_VALID_VALUES), set2={User.GENDER_UNKNOWN, User.GENDER_MAX_VALUE_PLUS_ONE})
+            self.assertSetEqual(set1=set(range_to_test) - set(User.GENDER_VALID_VALUES), set2={0, 4})
+            self.assert_list_2_contains_all_elements_in_list_1(list_1=User.GENDER_VALID_VALUES, list_2=range_to_test)
             values_to_test = self._empty_values_to_test + [list(), tuple(), User.GENDER_VALID_VALUES + User.GENDER_VALID_VALUES, tuple(User.GENDER_VALID_VALUES + User.GENDER_VALID_VALUES), User.GENDER_VALID_VALUES[0:2] + User.GENDER_VALID_VALUES[0:1], User.GENDER_VALID_VALUES[0:2] + User.GENDER_VALID_VALUES[0:2]]
             for n in range(10 + 1):
                 if (n <= len(User.GENDER_VALID_VALUES)):
@@ -252,6 +256,10 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 self.assertEqual(first=invalid_values[0], second=(91, 89))
                 self.assertEqual(first=invalid_values[-1], second=(180, 0))
         elif (field_name in ['diet_match']):
+            range_to_test = [SpeedyMatchSiteProfile.RANK_VALID_VALUES[0] - 1] + SpeedyMatchSiteProfile.RANK_VALID_VALUES + [SpeedyMatchSiteProfile.RANK_VALID_VALUES[-1] + 1]
+            self.assertListEqual(list1=range_to_test, list2=list(range(-1, 6 + 1)))
+            self.assertSetEqual(set1=set(range_to_test) - set(SpeedyMatchSiteProfile.RANK_VALID_VALUES), set2={-1, 6})
+            self.assert_list_2_contains_all_elements_in_list_1(list_1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list_2=range_to_test)
             values_to_test = []
             valid_values_to_save = []
             valid_values = []
@@ -430,6 +438,10 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
     def test_marital_status_valid_values(self):
         self.assertListEqual(list1=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES, list2=list(range(1, 9)))
+
+    def test_rank_valid_values(self):
+        self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.RANK_0, SpeedyMatchSiteProfile.RANK_5 + 1)))
+        self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(0, 5 + 1)))
 
     def test_diet_match_default_keys(self):
         diet_match = SpeedyMatchSiteProfile.diet_match_default()
