@@ -877,6 +877,72 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
+    def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_only(self):
+        test_settings = self.get_diet_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": False,
+            "expected_counts_tuple": (31, 71, 0),
+            "expected_error_messages_counts_tuple": (6, 65),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+    def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_ranks_only(self):
+        test_settings = self.get_diet_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": True,
+            "expected_counts_tuple": (31, 145, 0),
+            "expected_error_messages_counts_tuple": (80, 65),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+    def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_only(self):
+        test_settings = self.get_smoking_status_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": False,
+            "expected_counts_tuple": (31, 71, 0),
+            "expected_error_messages_counts_tuple": (6, 65),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+    def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_ranks_only(self):
+        test_settings = self.get_smoking_status_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": True,
+            "expected_counts_tuple": (31, 145, 0),
+            "expected_error_messages_counts_tuple": (80, 65),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+    def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_only(self):
+        test_settings = self.get_marital_status_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": False,
+            "expected_counts_tuple": (81, 176, 0),
+            "expected_error_messages_counts_tuple": (11, 165),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+    def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_ranks_only(self):
+        test_settings = self.get_marital_status_match_default_test_settings()
+        test_settings.update({
+            "test_invalid_values_to_save": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": True,
+            "expected_counts_tuple": (81, 375, 0),
+            "expected_error_messages_counts_tuple": (210, 165),
+        })
+        self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
 
 @only_on_speedy_match
 class SpeedyMatchSiteProfileMatchTestCase(TestCase):
