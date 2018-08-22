@@ -187,7 +187,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         field_name = test_settings["field_name"]
         expected_test_settings_keys = {"field_name", "test_invalid_values_to_save", "expected_step", "expected_counts_tuple"}
         if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
-            expected_test_settings_keys.update({"test_invalid_keys_and_ranks", "expected_error_message_1", "expected_error_messages_1", "expected_error_message_2", "expected_error_messages_2", "expected_error_messages_counts_tuple"})
+            expected_test_settings_keys.update({"test_invalid_keys", "test_invalid_ranks", "expected_error_message_1", "expected_error_messages_1", "expected_error_message_2", "expected_error_messages_2", "expected_error_messages_counts_tuple"})
         else:
             expected_test_settings_keys.update({"expected_error_message", "expected_error_messages"})
         if (field_name in ['min_max_age_to_match']):
@@ -331,7 +331,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             else:
                 raise Exception("Unexpected: field_name={}".format(field_name))
             all_keys_with_invalid_keys = ["___"] + [all_keys[0] - 1] + all_keys + [all_keys[-1] + 1]
-            if (test_settings["test_invalid_keys_and_ranks"]):
+            if (test_settings["test_invalid_ranks"]):
                 range_to_test = [SpeedyMatchSiteProfile.RANK_VALID_VALUES[0] - 1] + SpeedyMatchSiteProfile.RANK_VALID_VALUES + [SpeedyMatchSiteProfile.RANK_VALID_VALUES[-1] + 1]
                 expected_range_to_test_list = list(range(-1, 6 + 1))
                 expected_invalid_keys_set = {-1, 6}
@@ -345,7 +345,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             values_to_test, valid_values_to_save, valid_values, invalid_values_with_valid_ranks = [], [], [], []
             if (test_settings["test_invalid_values_to_save"]):
                 values_to_test.extend(self._empty_values_to_test + [list(), tuple(), dict(), set()])
-            if (test_settings["test_invalid_keys_and_ranks"]):
+            if (test_settings["test_invalid_keys"]):
                 for key in all_keys_with_invalid_keys:
                     value_to_test = self.get_field_default_value(field_name=field_name)
                     if (key in all_keys):
@@ -815,7 +815,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_diet_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
-            "test_invalid_keys_and_ranks": True,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": True,
             "expected_counts_tuple": (31, 151, 6),
             "expected_error_messages_counts_tuple": (86, 65),
         })
@@ -825,7 +826,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_diet_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": False,
-            "test_invalid_keys_and_ranks": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": False,
             "expected_counts_tuple": (31, 65, 0),
             "expected_error_messages_counts_tuple": (0, 65),
         })
@@ -835,7 +837,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_smoking_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
-            "test_invalid_keys_and_ranks": True,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": True,
             "expected_counts_tuple": (31, 151, 6),
             "expected_error_messages_counts_tuple": (86, 65),
         })
@@ -845,7 +848,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_smoking_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": False,
-            "test_invalid_keys_and_ranks": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": False,
             "expected_counts_tuple": (31, 65, 0),
             "expected_error_messages_counts_tuple": (0, 65),
         })
@@ -855,7 +859,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_marital_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": True,
-            "test_invalid_keys_and_ranks": True,
+            "test_invalid_keys": True,
+            "test_invalid_ranks": True,
             "expected_counts_tuple": (81, 386, 6),
             "expected_error_messages_counts_tuple": (221, 165),
         })
@@ -865,7 +870,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = self.get_marital_status_match_default_test_settings()
         test_settings.update({
             "test_invalid_values_to_save": False,
-            "test_invalid_keys_and_ranks": False,
+            "test_invalid_keys": False,
+            "test_invalid_ranks": False,
             "expected_counts_tuple": (81, 165, 0),
             "expected_error_messages_counts_tuple": (0, 165),
         })
