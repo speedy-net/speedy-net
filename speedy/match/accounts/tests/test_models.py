@@ -32,8 +32,11 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = {
             "field_name": 'min_max_age_to_match',
             "expected_step": 7,
-            "expected_error_message": "Maximal age to match can't be less than minimal age to match.",
-            "expected_error_messages": ['["Maximal age to match can\'t be less than minimal age to match."]'],
+            "expected_error_message_min_age_match_and_max_age_match_valid": "Maximal age to match can't be less than minimal age to match.",
+            "expected_error_message_min_age_match_invalid": 'Minimal age to match must be from 0 to 180 years.',
+            "expected_error_message_max_age_match_invalid": 'Maximal age to match must be from 0 to 180 years.',
+            "expected_error_messages_min_age_match_and_max_age_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'],
+            "expected_error_messages_min_age_match_and_max_age_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"],
         }
         return test_settings
 
@@ -41,10 +44,10 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = {
             "field_name": 'diet_match',
             "expected_step": 8,
-            "expected_error_message_1": 'Please select diet match.',
-            "expected_error_messages_1": ["['Please select diet match.']"],
-            "expected_error_message_2": 'At least one diet match option should be 5 hearts.',
-            "expected_error_messages_2": ["['At least one diet match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": 'Please select diet match.',
+            "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"],
+            "expected_error_message_max_rank_invalid": 'At least one diet match option should be 5 hearts.',
+            "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be 5 hearts.']"],
         }
         return test_settings
 
@@ -52,10 +55,10 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = {
             "field_name": 'smoking_status_match',
             "expected_step": 8,
-            "expected_error_message_1": 'Please select smoking status match.',
-            "expected_error_messages_1": ["['Please select smoking status match.']"],
-            "expected_error_message_2": 'At least one smoking status match option should be 5 hearts.',
-            "expected_error_messages_2": ["['At least one smoking status match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": 'Please select smoking status match.',
+            "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"],
+            "expected_error_message_max_rank_invalid": 'At least one smoking status match option should be 5 hearts.',
+            "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be 5 hearts.']"],
         }
         return test_settings
 
@@ -63,10 +66,10 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         test_settings = {
             "field_name": 'marital_status_match',
             "expected_step": 9,
-            "expected_error_message_1": 'Please select marital status match.',
-            "expected_error_messages_1": ["['Please select marital status match.']"],
-            "expected_error_message_2": 'At least one marital status match option should be 5 hearts.',
-            "expected_error_messages_2": ["['At least one marital status match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": 'Please select marital status match.',
+            "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"],
+            "expected_error_message_max_rank_invalid": 'At least one marital status match option should be 5 hearts.',
+            "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"],
         }
         return test_settings
 
@@ -186,15 +189,16 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         self.assertIn(member="field_name", container=test_settings.keys())
         field_name = test_settings["field_name"]
         expected_test_settings_keys = {"field_name", "test_invalid_values_to_save", "expected_step", "expected_counts_tuple"}
-        if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
-            expected_test_settings_keys.update({"test_invalid_keys", "test_invalid_ranks", "expected_error_message_1", "expected_error_messages_1", "expected_error_message_2", "expected_error_messages_2", "expected_error_messages_counts_tuple"})
+        if (field_name in ['min_max_age_to_match']):
+            expected_test_settings_keys.update({"test_invalid_ages", "expected_error_message_min_age_match_and_max_age_match_valid", "expected_error_message_min_age_match_invalid", "expected_error_message_max_age_match_invalid", "expected_error_messages_min_age_match_and_max_age_match_valid", "expected_error_messages_min_age_match_and_max_age_match_invalid", "expected_min_max_age_to_match_error_messages_counts_tuple"})
+        elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            expected_test_settings_keys.update({"test_invalid_keys", "test_invalid_ranks", "expected_error_message_keys_and_ranks_invalid", "expected_error_messages_keys_and_ranks_invalid", "expected_error_message_max_rank_invalid", "expected_error_messages_max_rank_invalid", "expected_keys_and_ranks_error_messages_counts_tuple"})
         else:
             expected_test_settings_keys.update({"expected_error_message", "expected_error_messages"})
-        if (field_name in ['min_max_age_to_match']):
-            expected_test_settings_keys.update({"test_invalid_ages"})
         self.assertSetEqual(set1=set(test_settings.keys()), set2=expected_test_settings_keys)
         ok_count, validate_profile_and_activate_failures_count, model_save_failures_count = 0, 0, 0
-        error_message_1_count, error_message_2_count = 0, 0
+        error_message_min_age_match_and_max_age_match_valid_count, error_message_min_age_match_and_max_age_match_invalid_count = 0, 0
+        error_message_keys_and_ranks_invalid_count, error_message_max_rank_invalid_count = 0, 0
         can_assign_value_set, can_save_user_and_profile_set, value_is_valid_set, value_is_invalid_set = set(), set(), set(), set()
         values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values, invalid_values_with_valid_ranks = None, None, None, None, None, None
         if (field_name in ['photo']):
@@ -292,11 +296,11 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 values_to_test.extend([(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test])
             if (test_settings["test_invalid_ages"]):
                 values_to_test.extend([(value, settings.MAX_AGE_ALLOWED - value) for value in range(-10, settings.MAX_AGE_ALLOWED + 10 + 1)])
+                self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
             else:
                 values_to_test.extend(values_to_test_valid_ages)
             self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
             if (test_settings["test_invalid_values_to_save"]):
-                self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
                 valid_values_to_save = [value for value in values_to_test if all(isinstance(value[i], int) for i in range(len(value)))]
                 valid_values = [value for value in values_to_test_valid_ages if (value[0] <= value[1])]
             else:
@@ -306,7 +310,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertListEqual(list1=valid_values, list2=[(value, 180 - value) for value in range(0, 90 + 1)])
             self.assertEqual(first=valid_values[0], second=(0, 180))
             self.assertEqual(first=valid_values[-1], second=(90, 90))
-            if (test_settings["test_invalid_values_to_save"]):
+            if (test_settings["test_invalid_ages"]):
                 invalid_values_valid_ages = [value for value in values_to_test_valid_ages if (value not in valid_values)]
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=invalid_values_valid_ages, list_2=invalid_values)
                 self.assertListEqual(list1=invalid_values_valid_ages, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
@@ -431,7 +435,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                     user.save_user_and_profile()
                     self.assertEqual(first=user.photo, second=None)
                     self.assertNotEqual(first=user.photo, second=value_to_assign)
-                    model_save_failures_count += 1
+                    model_save_failures_count += 1 # ~~~~ TODO: rename counter.
                 else:
                     user.photo = value_to_assign
             elif (field_name in ['profile_description']):
@@ -497,37 +501,49 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 if (not (value_is_valid)):
                     self.assertEqual(first=step, second=test_settings["expected_step"])
                     print(error_messages) # ~~~~ TODO: remove this line!
-                    if ((field_name in ['min_max_age_to_match']) and (test_settings["test_invalid_ages"]) and (isinstance(value_to_test, (list, tuple))) and (not all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_VALID_VALUES for i in range(2)))):
-                        self.assertEqual(first=len(error_messages), second=2)
-                        self.assertListEqual(list1=error_messages, list2=["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"])
-                        utils.validate_field(field_name=field_name, user=user)
-                        with self.assertRaises(ValidationError) as cm:
-                            utils.validate_field(field_name='min_age_match', user=user)
-                        self.assertEqual(first=str(cm.exception.message), second='Minimal age to match must be from 0 to 180 years.')
-                        self.assertListEqual(list1=list(cm.exception), list2=['Minimal age to match must be from 0 to 180 years.'])
-                        with self.assertRaises(ValidationError) as cm:
-                            utils.validate_field(field_name='max_age_match', user=user)
-                        self.assertEqual(first=str(cm.exception.message), second='Maximal age to match must be from 0 to 180 years.')
-                        self.assertListEqual(list1=list(cm.exception), list2=['Maximal age to match must be from 0 to 180 years.'])
-                    else:
-                        if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
-                            if (not (value_to_test in invalid_values_with_valid_ranks)):
-                                expected_error_message_key = "expected_error_message_1"
-                                expected_error_messages_key = "expected_error_messages_1"
-                                error_message_1_count += 1
-                            else:
-                                expected_error_message_key = "expected_error_message_2"
-                                expected_error_messages_key = "expected_error_messages_2"
-                                error_message_2_count += 1
+                    if (field_name in ['min_max_age_to_match']):
+                        self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
+                        if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_VALID_VALUES for i in range(2))):
+                            expected_error_messages_len = 1
+                            expected_error_messages_key = "expected_error_messages_min_age_match_and_max_age_match_valid"
+                            fields_and_error_messages = [(field_name, "expected_error_message_min_age_match_and_max_age_match_valid")]
+                            error_message_min_age_match_and_max_age_match_valid_count += 1
                         else:
-                            expected_error_message_key = "expected_error_message"
-                            expected_error_messages_key = "expected_error_messages"
-                        self.assertEqual(first=len(error_messages), second=1)
-                        self.assertListEqual(list1=error_messages, list2=test_settings[expected_error_messages_key])
-                        with self.assertRaises(ValidationError) as cm:
-                            utils.validate_field(field_name=field_name, user=user)
-                        self.assertEqual(first=str(cm.exception.message), second=test_settings[expected_error_message_key])
-                        self.assertListEqual(list1=list(cm.exception), list2=[test_settings[expected_error_message_key]])
+                            self.assertTrue(expr=test_settings["test_invalid_ages"])
+                            expected_error_messages_len = 2
+                            expected_error_messages_key = "expected_error_messages_min_age_match_and_max_age_match_invalid"
+                            fields_and_error_messages = []
+                            for _field_name in ['min_age_match', 'max_age_match', 'min_max_age_to_match']:
+                                if (_field_name in ['min_max_age_to_match']):
+                                    fields_and_error_messages.append((_field_name, None))
+                                else:
+                                    fields_and_error_messages.append((_field_name, "expected_error_message_{}_invalid".format(_field_name)))
+                            error_message_min_age_match_and_max_age_match_invalid_count += 1
+                    elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+                        if (not (value_to_test in invalid_values_with_valid_ranks)):
+                            expected_error_messages_len = 1
+                            expected_error_messages_key = "expected_error_messages_keys_and_ranks_invalid"
+                            fields_and_error_messages = [(field_name, "expected_error_message_keys_and_ranks_invalid")]
+                            error_message_keys_and_ranks_invalid_count += 1
+                        else:
+                            expected_error_messages_len = 1
+                            expected_error_messages_key = "expected_error_messages_max_rank_invalid"
+                            fields_and_error_messages = [(field_name, "expected_error_message_max_rank_invalid")]
+                            error_message_max_rank_invalid_count += 1
+                    else:
+                        expected_error_messages_len = 1
+                        expected_error_messages_key = "expected_error_messages"
+                        fields_and_error_messages = [(field_name, "expected_error_message")]
+                    self.assertEqual(first=len(error_messages), second=expected_error_messages_len)
+                    self.assertListEqual(list1=error_messages, list2=test_settings[expected_error_messages_key])
+                    for (_field_name, expected_error_message_key) in fields_and_error_messages:
+                        if (expected_error_message_key is None):
+                            utils.validate_field(field_name=_field_name, user=user)
+                        else:
+                            with self.assertRaises(ValidationError) as cm:
+                                utils.validate_field(field_name=_field_name, user=user)
+                            self.assertEqual(first=str(cm.exception.message), second=test_settings[expected_error_message_key])
+                            self.assertListEqual(list1=list(cm.exception), list2=[test_settings[expected_error_message_key]])
                     validate_profile_and_activate_failures_count += 1
                 else:
                     self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
@@ -543,14 +559,31 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             self.assertSetEqual(set1=can_save_user_and_profile_set, set2={True})
         self.assertSetEqual(set1=value_is_valid_set, set2={False, True})
         self.assertSetEqual(set1=value_is_invalid_set, set2={False, True})
-        self.assertEqual(first=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count, second=len(values_to_test))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=(len(valid_values), len(valid_values_to_save) - len(valid_values), len(values_to_test) - len(valid_values_to_save)))
-        self.assertTupleEqual(tuple1=(ok_count, validate_profile_and_activate_failures_count, model_save_failures_count), tuple2=test_settings["expected_counts_tuple"])
-        if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
-            expected_error_messages_counts_tuple = test_settings["expected_error_messages_counts_tuple"]
+        self.assertGreater(a=ok_count, b=0)
+        self.assertGreater(a=validate_profile_and_activate_failures_count, b=0)
+        if (test_settings["test_invalid_values_to_save"]):
+            self.assertGreater(a=model_save_failures_count, b=0)
         else:
-            expected_error_messages_counts_tuple = (0, 0)
-        self.assertTupleEqual(tuple1=(error_message_1_count, error_message_2_count), tuple2=expected_error_messages_counts_tuple)
+            self.assertEqual(first=model_save_failures_count, second=0)
+        counts_tuple = (ok_count, validate_profile_and_activate_failures_count, model_save_failures_count)
+        min_max_age_to_match_error_messages_counts_tuple = (error_message_min_age_match_and_max_age_match_valid_count, error_message_min_age_match_and_max_age_match_invalid_count)
+        keys_and_ranks_error_messages_counts_tuple = (error_message_keys_and_ranks_invalid_count, error_message_max_rank_invalid_count)
+        self.assertEqual(first=sum(counts_tuple), second=ok_count + validate_profile_and_activate_failures_count + model_save_failures_count)
+        self.assertEqual(first=sum(counts_tuple), second=len(values_to_test))
+        self.assertTupleEqual(tuple1=counts_tuple, tuple2=(len(valid_values), len(valid_values_to_save) - len(valid_values), len(values_to_test) - len(valid_values_to_save)))
+        self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
+        if (field_name in ['min_max_age_to_match']):
+            self.assertEqual(first=sum(min_max_age_to_match_error_messages_counts_tuple), second=validate_profile_and_activate_failures_count)
+            self.assertTupleEqual(tuple1=min_max_age_to_match_error_messages_counts_tuple, tuple2=test_settings["expected_min_max_age_to_match_error_messages_counts_tuple"])
+        else:
+            self.assertEqual(first=sum(min_max_age_to_match_error_messages_counts_tuple), second=0)
+            self.assertTupleEqual(tuple1=min_max_age_to_match_error_messages_counts_tuple, tuple2=(0, 0))
+        if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            self.assertEqual(first=sum(keys_and_ranks_error_messages_counts_tuple), second=validate_profile_and_activate_failures_count)
+            self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=test_settings["expected_keys_and_ranks_error_messages_counts_tuple"])
+        else:
+            self.assertEqual(first=sum(keys_and_ranks_error_messages_counts_tuple), second=0)
+            self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=(0, 0))
 
     def test_height_valid_values(self):
         self.assertEqual(first=settings.MIN_HEIGHT_ALLOWED, second=1)
@@ -799,6 +832,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_values_to_save": False,
             "test_invalid_ages": False,
             "expected_counts_tuple": (91, 90, 0),
+            "expected_min_max_age_to_match_error_messages_counts_tuple": (90, 0),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -808,6 +842,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_values_to_save": True,
             "test_invalid_ages": True,
             "expected_counts_tuple": (91, 110, 6),
+            "expected_min_max_age_to_match_error_messages_counts_tuple": (90, 20),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -818,7 +853,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": True,
             "test_invalid_ranks": True,
             "expected_counts_tuple": (31, 151, 6),
-            "expected_error_messages_counts_tuple": (86, 65),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (86, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -829,7 +864,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": False,
             "test_invalid_ranks": False,
             "expected_counts_tuple": (31, 65, 0),
-            "expected_error_messages_counts_tuple": (0, 65),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (0, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -840,7 +875,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": True,
             "test_invalid_ranks": True,
             "expected_counts_tuple": (31, 151, 6),
-            "expected_error_messages_counts_tuple": (86, 65),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (86, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -851,7 +886,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": False,
             "test_invalid_ranks": False,
             "expected_counts_tuple": (31, 65, 0),
-            "expected_error_messages_counts_tuple": (0, 65),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (0, 65),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -862,7 +897,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": True,
             "test_invalid_ranks": True,
             "expected_counts_tuple": (81, 386, 6),
-            "expected_error_messages_counts_tuple": (221, 165),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (221, 165),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -873,7 +908,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             "test_invalid_keys": False,
             "test_invalid_ranks": False,
             "expected_counts_tuple": (81, 165, 0),
-            "expected_error_messages_counts_tuple": (0, 165),
+            "expected_keys_and_ranks_error_messages_counts_tuple": (0, 165),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
