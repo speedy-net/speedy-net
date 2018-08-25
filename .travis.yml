@@ -17,11 +17,5 @@ install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
 script:
-  - cd speedy/net
-  - python -W error::DeprecationWarning manage.py test
-  - cd ../match
-  - python -W error::DeprecationWarning manage.py test
-  - cd ../composer
-  - python -W error::DeprecationWarning manage.py test
-  - cd ../mail
-  - python -W error::DeprecationWarning manage.py test
+  - chmod -c 775 *.sh
+  - ./manage_all_sites_with_deprecation_warnings.sh test
