@@ -356,18 +356,19 @@ class UserTestCase(TestCase):
         self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Slug does not parse to username.']})
 
     def test_user_can_change_password(self):
+        new_password = '8' * 8
+        incorrect_new_password = '7' * 8
         user = DefaultUserFactory()
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
-        new_password = '8' * 8
         user.set_password(raw_password=new_password)
         self.assertTrue(expr=user.check_password(raw_password=new_password))
-        self.assertFalse(expr=user.check_password(raw_password='7' * 8))
+        self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
         self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
 
     def test_password_too_short_exception(self):
+        new_password = '8' * 3
         user = DefaultUserFactory()
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
-        new_password = '8' * 3
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
         self.assertEqual(first=str(cm.exception.message), second='Password too short.')
@@ -376,9 +377,9 @@ class UserTestCase(TestCase):
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_password_too_long_exception(self):
+        new_password = '8' * 121
         user = DefaultUserFactory()
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
-        new_password = '8' * 121
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
         self.assertEqual(first=str(cm.exception.message), second='Password too long.')

@@ -67,7 +67,6 @@ class RegistrationViewTestCase(TestCase):
             'date_of_birth': '1980-08-20',
             'gender': 1,
             'new_password1': 'password',
-            # 'password2': 'password',
         }
         site = Site.objects.get_current()
         site.domain = 'localhost'
