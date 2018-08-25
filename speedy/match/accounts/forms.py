@@ -113,7 +113,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         for field_name, field in self.fields.items():
             if field_name in self._validators:
                 # field.validators = self._validators[field_name] # ~~~~ TODO
-                print(field.validators) # ~~~~ TODO: remove this line!
+                print("SpeedyMatchProfileActivationForm::__init__", field_name, field.validators) # ~~~~ TODO: remove this line!
 
     def save(self, commit=True):
         if ((commit) and ('photo' in self.fields)):
