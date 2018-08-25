@@ -17,5 +17,4 @@ install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
 script:
-  - chmod -c 775 *.sh
   - ./manage_all_sites_with_deprecation_warnings.sh test
