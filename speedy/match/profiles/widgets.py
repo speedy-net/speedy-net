@@ -44,39 +44,23 @@ class UserExtraDetailsWidget(Widget):
     def get_context_data(self):
         cd = super().get_context_data()
 
-        # diet = _("Unknown")
         diet_code = self.entity.diet
-        diet_list = [choice[1] for choice in User.DIET_CHOICES_WITH_DEFAULT if (choice[0] == diet_code)]
-        diet = diet_list[0] if (len(diet_list) == 1) else _("Unknown")
-        # for choice in User.DIET_CHOICES_WITH_DEFAULT:
-        #     if (choice[0] == diet_code):
-        #         diet = choice[1]
+        diet_list = [str(choice[1]) for choice in User.DIET_CHOICES_WITH_DEFAULT if (choice[0] == diet_code)]
+        diet = diet_list[0] if (len(diet_list) == 1) else str(_("Unknown"))
 
-        # smoking_status = _("Unknown")
         smoking_status_code = self.entity.profile.smoking_status
-        smoking_status_list = [choice[1] for choice in SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
-        smoking_status = smoking_status_list[0] if (len(smoking_status_list) == 1) else _("Unknown")
-        # for choice in SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT:
-        #     if (choice[0] == smoking_status_code):
-        #         smoking_status = choice[1]
+        smoking_status_list = [str(choice[1]) for choice in SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
+        smoking_status = smoking_status_list[0] if (len(smoking_status_list) == 1) else str(_("Unknown"))
 
-        # marital_status = _("Unknown")
         marital_status_code = self.entity.profile.marital_status
-        marital_status_list = [choice[1] for choice in SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == marital_status_code)]
-        marital_status = marital_status_list[0] if (len(marital_status_list) == 1) else _("Unknown")
-        # for choice in SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT:
-        #     if (choice[0] == marital_status_code):
-        #         marital_status = choice[1]
+        marital_status_list = [str(choice[1]) for choice in SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == marital_status_code)]
+        marital_status = marital_status_list[0] if (len(marital_status_list) == 1) else str(_("Unknown"))
 
-        # genders_to_match = []
         gender_codes = self.entity.profile.gender_to_match
-        genders_to_match_list = [choice[1] for choice in User.GENDER_CHOICES if (choice[0] in gender_codes)]
+        genders_to_match_list = [str(choice[1]) for choice in User.GENDER_CHOICES if (choice[0] in gender_codes)]
         if (len(genders_to_match_list) == 0):
-            genders_to_match_list.append(_("None"))
+            genders_to_match_list.append(str(_("None")))
         genders_to_match = ", ".join(genders_to_match_list)
-        # for choice in User.GENDER_CHOICES:
-        #     if (choice[0] in gender_codes):
-        #         genders_to_match.append(str(choice[1]))
 
         cd.update({
             'diet': diet,
