@@ -7,7 +7,6 @@ import factory.fuzzy
 
 from django.contrib.sites.models import Site
 from django.conf import settings
-from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import normalize_username, User, UserEmailAddress
 from speedy.core.uploads.models import Image
