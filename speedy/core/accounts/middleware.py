@@ -14,3 +14,5 @@ class SiteProfileMiddleware(MiddlewareMixin):
                     if request.path.startswith(url):
                         return
                 return redirect(to='accounts:activate')
+
+

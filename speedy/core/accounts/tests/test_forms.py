@@ -182,3 +182,5 @@ class DeactivationFormTestCase(TestCase):
             'password': USER_PASSWORD,
         })
         self.assertTrue(expr=form.is_valid())
+
+

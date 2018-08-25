@@ -34,5 +34,6 @@ class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
 
 class AboutMeForm(MatchSettingsFullForm):
     def get_fields(self):
-        return (
-        'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking_status', 'marital_status')
+        return ('profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking_status', 'marital_status')
+
+

@@ -6,3 +6,4 @@ MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 800 # ~~~~ TODO: uncomment this line!
 MIN_AGE_ALLOWED = 0 # In years.
 MAX_AGE_ALLOWED = 180 # In years.
 
+

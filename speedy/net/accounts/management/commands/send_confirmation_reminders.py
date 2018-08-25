@@ -12,3 +12,5 @@ class Command(BaseCommand):
         for email in emails:
             if email.user.profile.is_active:
                 email.send_confirmation_email()
+
+

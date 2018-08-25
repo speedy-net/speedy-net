@@ -106,3 +106,5 @@ class ReadMarkManagerTestCase(TestCase):
         rmark = ReadMark.objects.mark(chat, user)
         self.assertEqual(first=rmark.id, second=old_rmark.id)
         self.assertGreater(a=rmark.date_updated, b=old_rmark.date_updated)
+
+

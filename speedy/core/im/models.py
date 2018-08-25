@@ -107,3 +107,5 @@ def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
             entity.user.mail_user(template_name_prefix='im/email/new_message', context={
                 'message': instance,
             })
+
+

@@ -46,3 +46,5 @@ class UploadViewTestCase(TestCase):
         self.assertEqual(first=image.basename, second=json_response['files'][0]['name'])
         self.assertEqual(first=image.size, second=14)
         self.assertEqual(first=image.owner_id, second=self.user.id)
+
+

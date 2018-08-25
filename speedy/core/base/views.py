@@ -55,3 +55,5 @@ class FormValidMessageMixin(object):
         response = super().form_valid(form=form)
         messages.success(request=self.request, message=self.get_form_valid_message(form=form))
         return response
+
+

@@ -14,3 +14,5 @@ class ProfileNotificationsFormTestCase(TestCase):
             'notify_on_message',
             'notify_on_like',
         ])
+
+

@@ -44,3 +44,5 @@ class Image(File):
     class Meta:
         verbose_name = _('images')
         verbose_name_plural = _('uploaded images')
+
+

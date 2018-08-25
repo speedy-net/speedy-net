@@ -53,3 +53,4 @@ class UserManager(BaseUserManager):
         user = self._create_user(slug=slug, password=password, **extra_fields)
         return user
 
+

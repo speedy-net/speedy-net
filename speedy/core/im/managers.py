@@ -47,3 +47,5 @@ class ReadMarkManager(BaseManager):
         if not created:
             rmark.save(update_fields={'date_updated'})
         return rmark
+
+

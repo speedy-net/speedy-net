@@ -110,3 +110,5 @@ class RemoveExtraSlashesMiddleware(object):
             request.path = normalized_path
             return redirect(to=request.get_full_path(), permanent=(not settings.DEBUG))
         return self.get_response(request=request)
+
+

@@ -41,3 +41,5 @@ class UserPhotoWidget(Widget):
 class UserInfoWidget(Widget):
     template_name = 'profiles/user_info_widget.html'
     permission_required = 'accounts.view_profile_info'
+
+

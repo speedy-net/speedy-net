@@ -37,3 +37,5 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
         Block.objects.unblock(blocker=request.user, blocked=self.user)
         messages.success(request, _('You have unblocked {}.').format(self.user))
         return redirect(to=self.user)
+
+

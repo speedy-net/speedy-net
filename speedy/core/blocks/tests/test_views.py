@@ -78,3 +78,5 @@ class UnblockViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertEqual(first=Block.objects.count(), second=0)
         self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug))
+
+

@@ -34,3 +34,5 @@ class EditMatchSettingsViewTestCase(TestCase):
         r = self.client.get(self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='matches/settings/about_me.html')
+
+

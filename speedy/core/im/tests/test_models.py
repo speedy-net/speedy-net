@@ -29,3 +29,5 @@ class ChatTestCase(TestCase):
         self.assertEqual(first=chat.get_slug(current_user=user2), second='walter')
         chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user1, user2, ActiveUserFactory(), ActiveUserFactory()])
         self.assertEqual(first=chat.get_slug(current_user=user1), second=chat.id)
+
+

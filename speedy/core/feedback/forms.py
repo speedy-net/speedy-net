@@ -26,3 +26,5 @@ class FeedbackForm(ModelFormWithDefaults):
                 Div('sender_email', css_class='col-md-6'),
             ))
             self.helper.add_input(Submit('submit', _('Send')))
+
+

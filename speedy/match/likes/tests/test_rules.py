@@ -67,3 +67,5 @@ class ViewLikesTestCase(TestCase):
 
     def test_user_can_view_likes(self):
         self.assertTrue(expr=self.user.has_perm(perm='likes.view_likes', obj=self.user))
+
+

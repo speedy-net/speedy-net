@@ -19,3 +19,5 @@ from speedy.core.settings.utils import env
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "speedy.composer.settings.{}".format(env('ENVIRONMENT')))
 
 application = get_wsgi_application()
+
+

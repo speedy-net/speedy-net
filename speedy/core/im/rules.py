@@ -16,3 +16,5 @@ def is_participant(user, chat):
 add_perm('im.send_message', is_authenticated & ~is_self & ~there_is_block)
 add_perm('im.view_chats', is_authenticated & is_self)
 add_perm('im.read_chat', is_authenticated & is_participant)
+
+

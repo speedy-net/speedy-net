@@ -18,3 +18,4 @@ class ChatFactory(factory.DjangoModelFactory):
             for entity in extracted:
                 self.group.add(entity)
 
+

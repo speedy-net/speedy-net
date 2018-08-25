@@ -19,8 +19,8 @@ class ManagerMixin(object):
         raise NotImplementedError()
 
 
-class BaseModel(ValidateModelMixin, models.Model): # ~~~~ TODO: doesn't work, most of the tests fail, fix and remove the following line.
-# class BaseModel(models.Model):
+# class BaseModel(models.Model): # ~~~~ TODO: remove this line!
+class BaseModel(ValidateModelMixin, models.Model):
     def save(self, *args, **kwargs):
         try:
             field = self._meta.get_field('id')

@@ -16,3 +16,5 @@ class Command(BaseCommand):
                 pass
             else:
                 email.user.delete()
+
+

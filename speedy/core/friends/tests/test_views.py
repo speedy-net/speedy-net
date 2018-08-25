@@ -241,3 +241,5 @@ class RemoveFriendViewTestCase(TestCase):
         r = self.client.post(self.opposite_url)
         self.assertRedirects(response=r, expected_url=self.user.get_absolute_url())
         self.assertEqual(first=Friend.objects.count(), second=0)
+
+

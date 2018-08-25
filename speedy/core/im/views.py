@@ -184,3 +184,5 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
 
     def get_success_url(self):
         return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+
+

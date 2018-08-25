@@ -109,3 +109,5 @@ class UserDetailView(UserMixin, generic.TemplateView):
         })
 
         return cd
+
+

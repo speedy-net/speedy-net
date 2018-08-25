@@ -6,3 +6,5 @@ app_name = 'speedy.composer.main'
 urlpatterns = [
     url(r'', views.MainPageView.as_view(), name='main_page'),
 ]
+
+

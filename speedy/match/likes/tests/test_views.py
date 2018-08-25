@@ -88,3 +88,5 @@ class LikeListViewsTestCase(TestCase):
         r = self.client.get(self.mutual_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertSetEqual(set1=set(r.context['object_list']), set2=self.mutual_likes)
+
+

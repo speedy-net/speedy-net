@@ -1087,3 +1087,4 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
         self.assertEqual(first=rank_2, second=5)
 
+

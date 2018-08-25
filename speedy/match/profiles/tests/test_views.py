@@ -19,3 +19,4 @@ class UserMixinTextCase(TestCase):
         r = self.client.get('/l-o-o-k_a_t_m-e-1/')
         self.assertRedirects(response=r, expected_url='/login/?next=/l-o-o-k_a_t_m-e-1/', status_code=302)
 
+

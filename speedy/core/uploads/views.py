@@ -36,3 +36,5 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
                 'type': 'image',
             }],
         })
+
+

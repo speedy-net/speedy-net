@@ -23,3 +23,5 @@ class BlockManager(BaseManager):
 
     def there_is_block(self, user_1, user_2):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
+
+

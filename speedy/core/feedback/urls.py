@@ -10,3 +10,5 @@ urlpatterns = [
     url(r'^thank-you/$', views.FeedbackSuccessView.as_view(), name='success'),
     url(r'^$', views.FeedbackView.as_view(), name='feedback'),
 ]
+
+

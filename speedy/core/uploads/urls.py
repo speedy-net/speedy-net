@@ -6,3 +6,5 @@ app_name = 'speedy.core.uploads'
 urlpatterns = [
     url(r'^upload/$', views.UploadView.as_view(), name='upload'),
 ]
+
+

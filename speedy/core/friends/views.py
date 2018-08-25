@@ -210,3 +210,5 @@ class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
         Friend.objects.remove_friend(self.request.user, self.user)
         messages.success(request, pgettext_lazy(context=request.user.get_gender(), message='You have removed this user from friends.'))
         return redirect(to=self.user)
+
+

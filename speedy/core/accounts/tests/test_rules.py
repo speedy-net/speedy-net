@@ -22,3 +22,5 @@ class ViewProfileTestCase(TestCase):
         Block.objects.block(blocker=self.other_user, blocked=self.user)
         self.assertFalse(expr=self.user.has_perm(perm='accounts.view_profile', obj=self.other_user))
         self.assertFalse(expr=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user))
+
+

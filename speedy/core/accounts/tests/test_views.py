@@ -723,3 +723,5 @@ class PasswordResetViewTestCase(TestCase):
         self.assertEqual(first=len(mail.outbox), second=1)
         site = Site.objects.get_current()
         self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(site.name))
+
+

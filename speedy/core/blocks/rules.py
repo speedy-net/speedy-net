@@ -25,3 +25,5 @@ def there_is_block(user, other):
 
 add_perm('blocks.block', is_authenticated & ~is_self & ~has_blocked)
 add_perm('blocks.unblock', is_authenticated & ~is_self & has_blocked)
+
+

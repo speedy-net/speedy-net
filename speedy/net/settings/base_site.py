@@ -28,3 +28,5 @@ USER_PROFILE_WIDGETS += [
     'speedy.core.friends.widgets.UserFriendsWidget',
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
 ]
+
+

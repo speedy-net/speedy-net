@@ -65,3 +65,5 @@ def unread_chats_count(entity):
     chat_list = Chat.on_site.chats(entity)
     annotate_chats_with_read_marks(chat_list, entity)
     return len([c for c in chat_list if c.is_unread])
+
+

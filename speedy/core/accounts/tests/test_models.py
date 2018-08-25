@@ -356,3 +356,4 @@ class UserTestCase(TestCase):
             user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Slug does not parse to username.']})
 
+

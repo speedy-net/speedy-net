@@ -15,3 +15,5 @@ INSTALLED_APPS += [
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'composer_accounts.SiteProfile'
+
+

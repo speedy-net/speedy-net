@@ -48,3 +48,5 @@ class Feedback(TimeStampedModel):
 def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
     if created:
         mail_managers(template_name_prefix='feedback/email/admin_feedback', context={'feedback': instance}, headers={'Reply-To': instance.sender_email or instance.sender.email})
+
+

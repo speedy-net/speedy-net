@@ -14,3 +14,4 @@ class SiteProfileManager(BaseManager):
         qs = sorted(qs, key=lambda user: (user.profile.rank, user.profile.last_visit), reverse=True)
         return qs
 
+

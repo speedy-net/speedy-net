@@ -41,3 +41,5 @@ class BlocksTestCase(TestCase):
         Block.objects.block(blocker=self.user1, blocked=self.user2)
         self.assertCounters(user=self.user1, requests=1, sent_requests=1, friends=1)
         self.assertCounters(user=self.user2, requests=0, sent_requests=0, friends=0)
+
+

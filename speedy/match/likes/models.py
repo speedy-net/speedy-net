@@ -29,3 +29,5 @@ def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
         user.mail_user('likes/email/like', {
             'like': instance,
         })
+
+

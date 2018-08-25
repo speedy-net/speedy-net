@@ -8,3 +8,5 @@ class UserTranslationOptions(TranslationOptions):
 
 
 translator.register(User, UserTranslationOptions)
+
+

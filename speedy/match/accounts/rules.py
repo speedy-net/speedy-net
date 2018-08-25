@@ -32,3 +32,5 @@ if settings.SITE_ID == int(env('SPEEDY_MATCH_SITE_ID')):
     add_perm('accounts.view_profile_info', has_access_perm & ~is_blocked & is_match_profile)
     remove_perm('accounts.view_profile_age')
     add_perm('accounts.view_profile_age', always_allow)
+
+

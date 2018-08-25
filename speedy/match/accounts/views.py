@@ -105,3 +105,5 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
 class EditProfileNotificationsView(CoreEditProfileNotificationsView):
     form_class = ProfileNotificationsForm
+
+

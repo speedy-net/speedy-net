@@ -103,3 +103,5 @@ class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
         UserLike.objects.filter(from_user=self.request.user, to_user=self.user).delete()
         # messages.success(request, _('You don\'t like this user.'))
         return redirect(to=self.user)
+
+

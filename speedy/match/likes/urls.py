@@ -11,3 +11,5 @@ urlpatterns = [
     url('^like/$', views.LikeView.as_view(), name='like'),
     url('^unlike/$', views.UnlikeView.as_view(), name='unlike'),
 ]
+
+

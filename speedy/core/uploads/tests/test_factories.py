@@ -10,3 +10,5 @@ class FileFactory(factory.DjangoModelFactory):
 
     owner = factory.SubFactory(ActiveUserFactory)
     file = factory.django.FileField()
+
+

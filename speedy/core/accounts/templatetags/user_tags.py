@@ -13,3 +13,5 @@ def profile_picture(user, geometry, with_link=True, html_class=''):
         'with_link': with_link,
         'html_class': html_class,
     }
+
+

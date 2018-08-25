@@ -14,3 +14,5 @@ INSTALLED_APPS += [
 ]
 
 AUTH_SITE_PROFILE_MODEL = 'mail_accounts.SiteProfile'
+
+

@@ -102,3 +102,5 @@ class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
     def test_404(self):
         r = self.client.get('/contact/report/file/abrakadabra/')
         self.assertEqual(first=r.status_code, second=404)
+
+

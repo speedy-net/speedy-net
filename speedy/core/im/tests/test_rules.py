@@ -52,3 +52,5 @@ class ReadChatTestCase(TestCase):
 
     def test_cannot_read_a_chat_user_is_not_participate_in(self):
         self.assertFalse(expr=self.user2.has_perm(perm='im.read_chat', obj=self.chat_1_3))
+
+

@@ -47,3 +47,4 @@ class SiteProfile(SiteProfileBase):
     def get_name(self):
         return self.user.get_full_name()
 
+

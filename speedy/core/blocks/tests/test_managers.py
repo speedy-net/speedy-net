@@ -46,3 +46,4 @@ class BlockManagerTestCase(TestCase):
         self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.')
         self.assertListEqual(list1=list(cm.exception), list2=['Users cannot block themselves.'])
 
+

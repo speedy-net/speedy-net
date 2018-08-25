@@ -13,3 +13,5 @@ class UserFriendsWidget(Widget):
             'friends': self.get_random_friends(6)
         })
         return cd
+
+

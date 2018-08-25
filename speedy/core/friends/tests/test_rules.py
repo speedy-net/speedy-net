@@ -62,3 +62,5 @@ class RemoveTestCase(TestCase):
     def test_user_cannot_remove_other_user_if_not_friends(self):
         Friend.objects.remove_friend(self.user, self.other_user)
         self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.other_user))
+
+

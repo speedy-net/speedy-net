@@ -8,3 +8,5 @@ urlpatterns = [
     url(r'^block/$', views.BlockView.as_view(), name='block'),
     url(r'^unblock/$', views.UnblockView.as_view(), name='unblock'),
 ]
+
+

@@ -188,3 +188,5 @@ class MarkChatAsReadViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url=self.chat_url)
         self.assertGreater(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
+
+

@@ -10,3 +10,5 @@ urlpatterns = [
     url(r'^(?P<chat_slug>[-\w]+)/send/$', views.SendMessageToChatView.as_view(), name='chat_send'),
     url(r'^(?P<chat_slug>[-\w]+)/mark-read/$', views.MarkChatAsReadView.as_view(), name='mark_read'),
 ]
+
+

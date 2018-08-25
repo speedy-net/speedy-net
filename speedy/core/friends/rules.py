@@ -24,3 +24,4 @@ add_perm('friends.cancel_request', is_authenticated & friend_request_sent)
 add_perm('friends.view_requests', is_self)
 add_perm('friends.remove', is_authenticated & is_friend)
 
+

@@ -18,3 +18,5 @@ class MessageFormTestCase(TestCase):
         self.assertEqual(first=message.text, second='Hi!')
         chat = message.chat
         self.assertEqual(first=chat.last_message, second=message)
+
+

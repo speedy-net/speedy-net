@@ -204,3 +204,4 @@ class SiteProfile(SiteProfileBase):
         # Speedy Match name is user's first name.
         return self.user.get_first_name()
 
+

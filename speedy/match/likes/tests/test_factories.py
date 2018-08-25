@@ -10,3 +10,5 @@ class UserLikeFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = UserLike
+
+

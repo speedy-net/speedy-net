@@ -251,3 +251,4 @@ SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivation
 
 MODELTRANSLATION_ENABLE_FALLBACKS = False
 
+

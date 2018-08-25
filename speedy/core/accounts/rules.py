@@ -66,3 +66,5 @@ add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_add
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
 add_perm('accounts.change_useremailaddress', is_email_address_owner)
 add_perm('accounts.view_useremailaddress', email_address_is_confirmed & has_access_perm_for_email_address)
+
+

@@ -119,3 +119,5 @@ class UnreadChatsCount(TestCase):
         self.assertEqual(first=im_tags.unread_chats_count(user1), second=1 + 1 + 0)
         self.assertEqual(first=im_tags.unread_chats_count(user2), second=0 + 0 + 1)
         self.assertEqual(first=im_tags.unread_chats_count(user3), second=0 + 0 + 0)
+
+

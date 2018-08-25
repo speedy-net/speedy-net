@@ -6,3 +6,5 @@ app_name = 'speedy.composer'
 urlpatterns += [
     url(r'^', include('speedy.composer.main.urls', namespace='main')),
 ]
+
+

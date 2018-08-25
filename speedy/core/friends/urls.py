@@ -13,3 +13,5 @@ urlpatterns = [
     url(r'^request/reject/(?P<friendship_request_id>\d+)/$', views.RejectFriendRequestView.as_view(), name='reject_request'),
     url(r'^remove/$', views.RemoveFriendView.as_view(), name='remove'),
 ]
+
+

@@ -56,3 +56,5 @@ class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
         response = super().form_valid(form=form)
         messages.success(self.request, _('Your match settings were saved.'))
         return response
+
+

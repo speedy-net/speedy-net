@@ -35,3 +35,5 @@ class PhotoField(models.ForeignKey):
             'widget': FileInput,
         })
         return super().formfield(**kwargs)
+
+
