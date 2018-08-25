@@ -73,26 +73,6 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT), #### TODO
         }
 
-    def clean_photo(self):
-        photo = self.files.get('photo')
-        if not photo:
-            photo = self.instance.user.photo
-        validators.validate_photo(photo=photo)
-        return self.cleaned_data
-
-    def clean_gender_to_match(self):
-        return [int(value) for value in self.cleaned_data['gender_to_match']]
-
-    def get_fields(self):
-        return utils.get_step_form_fields(step=self.step)
-
-    def clean(self):
-        if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
-            min_age_match = self.cleaned_data.get('min_age_match')
-            max_age_match = self.cleaned_data.get('max_age_match')
-            validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
-        return self.cleaned_data
-
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
@@ -113,7 +93,28 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         for field_name, field in self.fields.items():
             if field_name in self._validators:
                 # field.validators = self._validators[field_name] # ~~~~ TODO
+                # field.validators.extend(self._validators[field_name]) # ~~~~ TODO
                 print("SpeedyMatchProfileActivationForm::__init__", field_name, field.validators) # ~~~~ TODO: remove this line!
+
+    def clean_photo(self):
+        photo = self.files.get('photo')
+        if not photo:
+            photo = self.instance.user.photo
+        validators.validate_photo(photo=photo)
+        return self.cleaned_data
+
+    def clean_gender_to_match(self):
+        return [int(value) for value in self.cleaned_data['gender_to_match']]
+
+    def get_fields(self):
+        return utils.get_step_form_fields(step=self.step)
+
+    def clean(self):
+        if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
+            min_age_match = self.cleaned_data.get('min_age_match')
+            max_age_match = self.cleaned_data.get('max_age_match')
+            validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
+        return self.cleaned_data
 
     def save(self, commit=True):
         if ((commit) and ('photo' in self.fields)):
