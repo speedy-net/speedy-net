@@ -35,6 +35,7 @@ class FeedbackViewBaseMixin(object):
             'text': 'Hello',
         })
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
+        self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
 
@@ -57,6 +58,7 @@ class FeedbackViewBaseMixin(object):
             'text': 'Hello',
         })
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
+        self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
         self.assertEqual(first=len(mail.outbox), second=1)

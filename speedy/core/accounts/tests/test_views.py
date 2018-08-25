@@ -86,8 +86,8 @@ class RegistrationViewTestCase(TestCase):
     def test_visitor_can_register(self):
         r = self.client.post('/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
-        self.assertEqual(first=1, second=Entity.objects.count())
-        self.assertEqual(first=1, second=User.objects.count())
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
         entity = Entity.objects.all()[0]
         user = User.objects.all()[0]
         self.assertEqual(first=user, second=entity.user)

@@ -29,8 +29,9 @@ class UnlikeViewTestCase(TestCase):
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
 
-    def test_can_like(self):
+    def test_can_unlike(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=UserLike.objects.count(), second=0)
         UserLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertEqual(first=UserLike.objects.count(), second=1)
         r = self.client.post(self.page_url)
