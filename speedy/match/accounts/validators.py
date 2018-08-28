@@ -70,9 +70,8 @@ def validate_height(height):
 
 
 def validate_diet(diet):
-    # ~~~~ TODO: assert that diet is in DIET_VALID_CHOICES (and smoking status and marital_status)
     # ~~~~ TODO: instead of range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)]), define a list in the model and create a test to assert that the list is equal to the range.
-    # if not ((diet is not None) and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)):
+    # if not ((diet is not None) and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)): # ~~~~ TODO: remove this line and all the commented lines in this file.
     if not (diet_is_valid(diet=diet)):
         raise ValidationError(_("Your diet is required."))
 

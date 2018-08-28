@@ -56,8 +56,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
 
     class Meta:
         model = SpeedyMatchSiteProfile
-        fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet',
-                  'smoking_status', 'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
+        fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
         widgets = {
             'profile_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
             'children': forms.TextInput(),
@@ -65,12 +64,12 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'smoking_status': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
             'match_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            # 'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
-            # 'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),
-            # 'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_CHOICES),
-            'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES_WITH_DEFAULT), #### TODO
-            'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT), #### TODO
-            'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT), #### TODO
+            'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
+            'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),
+            'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_CHOICES),
+            # 'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES_WITH_DEFAULT), #### TODO
+            # 'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT), #### TODO
+            # 'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT), #### TODO
         }
 
     def __init__(self, *args, **kwargs):
@@ -86,14 +85,22 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
             self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
-            self.fields['diet'].initial = self.instance.user.diet
+            self.fields['diet'].initial = self.instance.user.diet # ~~~~ TODO: diet, smoking_status and marital_status - this line is required if the field is in class User - not in class SpeedyMatchSiteProfile.
+        if ('smoking_status' in self.fields):
+            self.fields['smoking_status'].widget.choices = self.instance.get_smoking_status_choices()
+        if ('marital_status' in self.fields):
+            self.fields['marital_status'].widget.choices = self.instance.get_marital_status_choices()
+        # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking status and marital status.
         if ('diet_match' in self.fields):
-            # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking status and marital status.
-            self.fields['diet_match'].widget.choices = self.instance.user.get_diet_choices()
+            self.fields['diet_match'].widget.choices = self.instance.get_diet_match_choices()
+        if ('smoking_status_match' in self.fields):
+            self.fields['smoking_status_match'].widget.choices = self.instance.get_smoking_status_match_choices()
+        if ('marital_status_match' in self.fields):
+            self.fields['marital_status_match'].widget.choices = self.instance.get_marital_status_match_choices()
         for field_name, field in self.fields.items():
             if field_name in self._validators:
                 # field.validators = self._validators[field_name] # ~~~~ TODO
-                # field.validators.extend(self._validators[field_name]) # ~~~~ TODO
+                field.validators.extend(self._validators[field_name]) # ~~~~ TODO
                 print("SpeedyMatchProfileActivationForm::__init__", field_name, field.validators) # ~~~~ TODO: remove this line!
 
     def clean_photo(self):

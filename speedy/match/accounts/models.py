@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.postgres.fields import JSONField, ArrayField
-from django.utils.translation import ugettext_lazy as _, get_language
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy, get_language
 from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import SiteProfileBase, User
@@ -89,20 +89,44 @@ class SiteProfile(SiteProfileBase):
     def marital_status_match_default():
         return dict({str(marital_status): __class__.RANK_5 for marital_status in __class__.MARITAL_STATUS_VALID_VALUES})
 
+    @staticmethod
+    def smoking_status_choices(gender):
+        return (
+            # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.SMOKING_STATUS_NO, pgettext_lazy(context=gender, message="No")),
+            (__class__.SMOKING_STATUS_SOMETIMES, pgettext_lazy(context=gender, message="Sometimes")),
+            (__class__.SMOKING_STATUS_YES, pgettext_lazy(context=gender, message="Yes")),
+        )
+
+    @staticmethod
+    def marital_status_choices(gender):
+        return (
+            # (__class__.MARITAL_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.MARITAL_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
+            (__class__.MARITAL_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
+            (__class__.MARITAL_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
+            (__class__.MARITAL_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relatioship")),
+            (__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
+            (__class__.MARITAL_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
+            (__class__.MARITAL_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
+            (__class__.MARITAL_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
+        )
+
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
     height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), blank=True, null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED)
-    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED)
+    # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
-    city = models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
     marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
+    profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
+    city = models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
     children = models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True)
     more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
-    profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_ALLOWED)
+    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_ALLOWED)
     diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=('smoking status match'), default=smoking_status_match_default.__func__)
     marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
@@ -203,5 +227,26 @@ class SiteProfile(SiteProfileBase):
     def get_name(self):
         # Speedy Match name is user's first name.
         return self.user.get_first_name()
+
+    def get_match_gender(self):
+        if (len(self.gender_to_match) == 1):
+            return User.GENDERS_DICT.get(self.gender_to_match[0])
+        else:
+            return User.GENDERS_DICT.get(User.GENDER_OTHER)
+
+    def get_smoking_status_choices(self):
+        return self.__class__.smoking_status_choices(gender=self.user.get_gender())
+
+    def get_marital_status_choices(self):
+        return self.__class__.marital_status_choices(gender=self.user.get_gender())
+
+    def get_diet_match_choices(self):
+        return User.diet_choices(gender=self.get_match_gender())
+
+    def get_smoking_status_match_choices(self):
+        return self.__class__.smoking_status_choices(gender=self.get_match_gender())
+
+    def get_marital_status_match_choices(self):
+        return self.__class__.marital_status_choices(gender=self.get_match_gender())
 
 

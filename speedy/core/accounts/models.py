@@ -148,6 +148,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         (GENDER_OTHER, _("Other")),
     )
     GENDER_VALID_VALUES = [choice[0] for choice in GENDER_CHOICES]
+    GENDERS_DICT = {GENDER_FEMALE: 'female', GENDER_MALE: 'male', GENDER_OTHER: 'other'}
 
     DIET_UNKNOWN = 0
     DIET_VEGAN = 1
@@ -175,10 +176,20 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
 
+    @staticmethod
+    def diet_choices(gender):
+        return (
+            # (__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan (eats only plants and fungi)")),
+            (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian (doesn't eat fish and meat)")),
+            (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist (eats animals)")),
+        )
+
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
+    # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -274,12 +285,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         # self._profile = self.get_profile() # ~~~~ TODO: remove this line!
 
     def get_gender(self):
-        genders = {self.__class__.GENDER_FEMALE: 'female', self.__class__.GENDER_MALE: 'male', self.__class__.GENDER_OTHER: 'other'}
-        return genders.get(self.gender)
-
-    def get_gender_translated(self):
-        genders = {self.__class__.GENDER_FEMALE: _('female'), self.__class__.GENDER_MALE: _('male'), self.__class__.GENDER_OTHER: _('other')}
-        return genders.get(self.gender)
+        return self.__class__.GENDERS_DICT.get(self.gender)
 
     def get_diet(self):
         diets = {self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message='Vegan'), self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message='Vegetarian'), self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message='Carnist')}
@@ -289,12 +295,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         return get_age(date_of_birth=self.date_of_birth)
 
     def get_diet_choices(self):
-        return (
-            (self.__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (self.__class__.DIET_VEGAN, pgettext_lazy(context=self.get_gender(), message="Vegan (eats only plants and fungi)")),
-            (self.__class__.DIET_VEGETARIAN, pgettext_lazy(context=self.get_gender(), message="Vegetarian (doesn't eat fish and meat)")),
-            (self.__class__.DIET_CARNIST, pgettext_lazy(context=self.get_gender(), message="Carnist (eats animals)"))
-        )
+        return self.__class__.diet_choices(gender=self.get_gender())
 
 
 class UserEmailAddress(TimeStampedModel):

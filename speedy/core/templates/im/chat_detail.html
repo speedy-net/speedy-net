@@ -26,15 +26,13 @@
 
             <div class="page-header">
                 <h1>
-                    {% blocktrans with other_user=other.user link=other.user.get_absolute_url %}Chat with
-                        <a href="{{ link }}">{{ other_user }}</a>{% endblocktrans %}
+                    {% blocktrans with other_user=other.user link=other.user.get_absolute_url %}Chat with <a href="{{ link }}">{{ other_user }}</a>{% endblocktrans %}
                 </h1>
             </div>
 
             {% if can_send_message %}
                 <div class="mb-4">
-                    <p>{% blocktrans context request.user.get_gender with other_user=other.user %}Send a message to
-                        {{ other_user }}{% endblocktrans %}</p>
+                    <p>{% blocktrans context request.user.get_gender with other_user=other.user %}Send a message to {{ other_user }}{% endblocktrans %}</p>
                     {% crispy form %}
                 </div>
             {% else %}
