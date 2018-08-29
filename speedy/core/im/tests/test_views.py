@@ -10,7 +10,7 @@ from ..models import Message, ReadMark, Chat
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ChatListViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -34,7 +34,7 @@ class ChatListViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ChatDetailViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -69,7 +69,7 @@ class ChatDetailViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SendMessageToChatViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -113,7 +113,7 @@ class SendMessageToChatViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SendMessageToUserViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
@@ -166,7 +166,7 @@ class SendMessageToUserViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class MarkChatAsReadViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []

@@ -14,7 +14,7 @@ class FeedbackViewBaseMixin(object):
     def check_feedback(self, feedback):
         raise NotImplementedError()
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.file = FileFactory()

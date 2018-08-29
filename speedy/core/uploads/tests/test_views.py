@@ -12,7 +12,7 @@ from ..models import Image
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UploadViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         upload_file = tempfile.NamedTemporaryFile()

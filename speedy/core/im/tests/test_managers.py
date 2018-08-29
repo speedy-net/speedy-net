@@ -9,7 +9,7 @@ from ..models import Chat, Message, ReadMark
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ChatManagerTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         ChatFactory(is_group=True)
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()

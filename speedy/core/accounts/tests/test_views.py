@@ -30,8 +30,12 @@ class RedirectMeMixin(object):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class IndexViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_gets_registration_page(self):
         r = self.client.get('/')
@@ -42,8 +46,12 @@ class IndexViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class MeViewTestCase(RedirectMeMixin, TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory(slug='markmark')
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.assert_me_url_redirects_to_login_url()
@@ -57,8 +65,61 @@ class MeViewTestCase(RedirectMeMixin, TestCase):
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
+class LoginTestCase(RedirectMeMixin, TestCase):
+    def set_up(self):
+        self.user = ActiveUserFactory()
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+
+    def test_user_can_login_with_slug(self):
+        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_can_login_with_username(self):
+        self.client.login(username=self.user.username, password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_can_login_with_confirmed_email_address(self):
+        self.client.login(username=self.confirmed_email_address.email, password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_can_login_with_unconfirmed_email_address(self):
+        self.client.login(username=self.unconfirmed_email_address.email, password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_can_login_with_confirmed_email_address_uppercase(self):
+        self.client.login(username=self.confirmed_email_address.email.upper(), password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_can_login_with_unconfirmed_email_address_uppercase(self):
+        self.client.login(username=self.unconfirmed_email_address.email.upper(), password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+
+    def test_user_cannot_login_with_wrong_slug(self):
+        self.client.login(username='a{}'.format(self.user.slug), password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_login_url()
+
+    def test_user_cannot_login_with_wrong_username(self):
+        self.client.login(username='a{}'.format(self.user.slug), password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_login_url()
+
+    def test_user_cannot_login_with_wrong_email(self):
+        self.client.login(username='a{}'.format(self.confirmed_email_address.email), password=USER_PASSWORD)
+        self.assert_me_url_redirects_to_login_url()
+
+    def test_user_cannot_login_with_wrong_password(self):
+        self.client.login(username=self.user.slug, password='{}-'.format(USER_PASSWORD))
+        self.assert_me_url_redirects_to_login_url()
+
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
 class RegistrationViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.data = {
             'first_name_en': 'First',
             'last_name_en': 'Last',
@@ -71,16 +132,49 @@ class RegistrationViewTestCase(TestCase):
         site = Site.objects.get_current()
         site.domain = 'localhost'
         site.save()
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_can_see_registration_page(self):
         r = self.client.get('/')
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
 
-    def test_non_unique_email_address(self):
+    def test_non_unique_confirmed_email_address(self):
         UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
         r = self.client.post('/', data=self.data)
         self.assertFormError(response=r, form='form', field='email', errors='This email is already in use.')
+
+    def test_unique_confirmed_email_address(self):
+        UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=True)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        r = self.client.post('/', data=self.data)
+        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
+
+    def test_non_unique_unconfirmed_email_address(self):
+        # Unconfirmed email address is deleted if another user adds it again.
+        UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        r = self.client.post('/', data=self.data)
+        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+
+    def test_unique_unconfirmed_email_address(self):
+        UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        r = self.client.post('/', data=self.data)
+        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
 
     def test_visitor_can_register(self):
         r = self.client.post('/', data=self.data)
@@ -147,11 +241,23 @@ class RegistrationViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class LoginViewTestCase(RedirectMeMixin, TestCase):
-    def setUp(self):
+    _incorrect_username_and_password_errors_dict = {'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']}
+    _other_user_password = '8' * 8
+    
+    def set_up(self):
         self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
+        self.other_user = self.other_user_email.user
+        self.other_user.set_password(raw_password=self._other_user_password)
+        self.other_user.save_user_and_profile()
         self.inactive_user = InactiveUserFactory()
+        self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
+        self.assertNotEqual(first=USER_PASSWORD, second=self._other_user_password)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
@@ -161,13 +267,22 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
     def test_visitor_can_login_using_slug(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         r = self.client.post('/login/', data={
-            'username': 'slug-with-dots',
+            'username': self.user.slug,
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
         # Assert expected_url directly once to confirm.
         self.assert_me_url_redirects(expected_url='/slug-with-dots/')
+
+    def test_visitor_can_login_using_username(self):
+        self.assertEqual(first=self.user.username, second='slugwithdots')
+        r = self.client.post('/login/', data={
+            'username': self.user.username,
+            'password': USER_PASSWORD,
+        })
+        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_visitor_can_login_using_original_slug(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
@@ -212,6 +327,23 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
+    def test_visitor_cannot_login_using_wrong_email(self):
+        r = self.client.post('/login/', data={
+            'username': self.other_user_email.email,
+            'password': USER_PASSWORD,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._incorrect_username_and_password_errors_dict)
+        self.assert_me_url_redirects_to_login_url()
+
+    def test_visitor_can_login_using_other_user_email_and_password(self):
+        r = self.client.post('/login/', data={
+            'username': self.other_user_email.email,
+            'password': self._other_user_password,
+        })
+        self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+        self.assert_me_url_redirects_to_user_profile_url(user=self.other_user)
+
     def test_visitor_still_can_login_if_he_is_not_active_user(self):
         r = self.client.post('/login/', data={
             'username': self.inactive_user.slug,
@@ -228,16 +360,20 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
             'password': 'wrong password!!',
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2={'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']})
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._incorrect_username_and_password_errors_dict)
         self.assert_me_url_redirects_to_login_url()
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class LogoutViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_user_can_logout(self):
         r = self.client.get('/logout/')
@@ -251,9 +387,13 @@ class LogoutViewTestCase(TestCase):
 class EditProfileViewTestCase(TestCase):
     page_url = '/edit-profile/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -289,10 +429,14 @@ class EditProfileViewTestCase(TestCase):
 class EditProfilePrivacyViewTestCase(TestCase):
     page_url = '/edit-profile/privacy/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -332,9 +476,13 @@ class EditProfilePrivacyViewTestCase(TestCase):
 class EditProfileNotificationsViewTestCase(TestCase):
     page_url = '/edit-profile/notifications/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -363,10 +511,14 @@ class EditProfileNotificationsViewTestCase(TestCase):
 class EditProfileCredentialsViewTestCase(TestCase):
     page_url = '/edit-profile/credentials/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -454,10 +606,14 @@ class EditProfileCredentialsViewTestCase(TestCase):
 class ActivateSiteProfileViewTestCase(TestCase):
     page_url = '/welcome/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = InactiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertFalse(expr=self.user.profile.is_active)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -495,9 +651,13 @@ class ActivateSiteProfileViewTestCase(TestCase):
 class DeactivateSiteProfileViewTestCase(TestCase):
     page_url = '/edit-profile/deactivate/'
 
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -522,10 +682,14 @@ class DeactivateSiteProfileViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class VerifyUserEmailAddressViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
-        self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_wrong_link_gives_404(self):
         user_email_address = UserEmailAddress()
@@ -535,8 +699,8 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
 
     def test_confirmed_email_link_redirects_to_edit_profile(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        email_id = self.confirmed_address.id
-        token = self.confirmed_address.confirmation_token
+        email_id = self.confirmed_email_address.id
+        token = self.confirmed_email_address.confirmation_token
         r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
@@ -544,22 +708,26 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
 
     def test_unconfirmed_email_link_confirms_email(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        email_id = self.unconfirmed_address.id
-        token = self.unconfirmed_address.confirmation_token
+        email_id = self.unconfirmed_email_address.id
+        token = self.unconfirmed_email_address.confirmation_token
         r = self.client.get('/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn(member='You\'ve confirmed your email address.', container=map(str, r.context['messages']))
-        self.assertTrue(expr=UserEmailAddress.objects.get(id=self.unconfirmed_address.id).is_confirmed)
+        self.assertTrue(expr=UserEmailAddress.objects.get(id=self.unconfirmed_email_address.id).is_confirmed)
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class AddUserEmailAddressViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
-        self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -571,13 +739,30 @@ class AddUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
 
-    def test_non_unique_email_address(self):
+    def test_non_unique_confirmed_email_address(self):
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
         r = self.client.post('/edit-profile/emails/add/', data={
-            'email': self.confirmed_address.email,
+            'email': self.confirmed_email_address.email,
         })
         self.assertFormError(response=r, form='form', field='email', errors='This email is already in use.')
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+
+    def test_non_unique_unconfirmed_email_address(self):
+        self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
+        r = self.client.post('/edit-profile/emails/add/', data={
+            'email': self.unconfirmed_email_address.email,
+        })
+        email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
+        self.assertFalse(expr=email_address.is_primary)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
 
     def test_user_can_add_email_address(self):
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
         r = self.client.post('/edit-profile/emails/add/', data={
             'email': 'email@example.com',
         })
@@ -585,71 +770,87 @@ class AddUserEmailAddressViewTestCase(TestCase):
         email_address = UserEmailAddress.objects.get(email='email@example.com')
         self.assertFalse(expr=email_address.is_primary)
         r = self.client.get('/edit-profile/')
-        self.assertIn(member='A confirmation message was sent to email@example.com',container= map(str, r.context['messages']))
+        self.assertIn(member='A confirmation message was sent to email@example.com', container=map(str, r.context['messages']))
         self.assertEqual(first=len(mail.outbox), second=1)
         site = Site.objects.get_current()
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(site.name))
         self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
 
     def test_first_email_is_primary(self):
-        self.confirmed_address.delete()
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.confirmed_email_address.delete()
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
         r = self.client.post('/edit-profile/emails/add/', data={
             'email': 'email@example.com',
         })
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         email_address = UserEmailAddress.objects.get(email='email@example.com')
         self.assertTrue(expr=email_address.is_primary)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SendConfirmationEmailViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
-        self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
-        self.unconfirmed_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_address.id)
-        self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.confirmed_address_url = '/edit-profile/emails/{}/confirm/'.format(self.confirmed_address.id)
+        self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.confirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.confirmed_email_address.id)
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.unconfirmed_address_url)
-        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_address_url))
+        r = self.client.post(self.unconfirmed_email_address_url)
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
 
     def test_user_has_no_access_to_other_users_address(self):
         r = self.client.post(self.other_users_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_users_address_url))
 
     def test_user_can_resend_confirmation(self):
-        r = self.client.post(self.unconfirmed_address_url)
+        r = self.client.post(self.unconfirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
-        self.assertIn(member='A confirmation message was sent to {}'.format(self.unconfirmed_address.email), container=map(str, r.context['messages']))
+        self.assertIn(member='A confirmation message was sent to {}'.format(self.unconfirmed_email_address.email), container=map(str, r.context['messages']))
         self.assertEqual(first=len(mail.outbox), second=1)
         site = Site.objects.get_current()
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(site.name))
-        self.assertIn(member=UserEmailAddress.objects.get(email=self.unconfirmed_address.email).confirmation_token, container=mail.outbox[0].body)
+        self.assertIn(member=UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email).confirmation_token, container=mail.outbox[0].body)
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class DeleteUserEmailAddressViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
-        self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
-        self.confirmed_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_address.id)
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
+        self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
         self.primary_address = UserEmailAddressFactory(user=self.user, is_primary=True)
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_users_address = UserEmailAddressFactory(is_primary=False)
         self.other_users_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.confirmed_address_url)
-        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_address_url))
+        r = self.client.post(self.confirmed_email_address_url)
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url))
 
     def test_user_has_no_access_to_other_users_address(self):
         r = self.client.post(self.other_users_address_url)
@@ -662,7 +863,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
     @exclude_on_speedy_match
     def test_user_can_delete_email_address(self):
         self.assertEqual(first=self.user.email_addresses.count(), second=2)
-        r = self.client.post(self.confirmed_address_url)
+        r = self.client.post(self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn(member='The email address was deleted.', container=map(str, r.context['messages']))
@@ -672,51 +873,59 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SetPrimaryUserEmailAddressViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
-        self.unconfirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
-        self.unconfirmed_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_address.id)
-        self.confirmed_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.confirmed_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.confirmed_address.id)
+        self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
+        self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+        self.confirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.confirmed_email_address.id)
         self.primary_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.confirmed_address_url)
-        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_address_url))
+        r = self.client.post(self.confirmed_email_address_url)
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url))
 
     def test_user_has_no_access_to_other_users_address(self):
         r = self.client.post(self.other_users_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_users_address_url))
 
-    def test_user_cannot_make_unconfirmed_address_primary(self):
-        r = self.client.post(self.unconfirmed_address_url)
-        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_address_url))
+    def test_user_cannot_make_unconfirmed_email_address_primary(self):
+        r = self.client.post(self.unconfirmed_email_address_url)
+        self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
 
     @exclude_on_speedy_match
-    def test_user_can_make_confirmed_address_primary(self):
+    def test_user_can_make_confirmed_email_address_primary(self):
         self.assertEqual(first=self.user.email_addresses.count(), second=3)
         self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
         self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
-        r = self.client.post(self.confirmed_address_url)
+        r = self.client.post(self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get('/edit-profile/')
         self.assertIn(member='You have changed your primary email address.', container=map(str, r.context['messages']))
         self.assertEqual(first=self.user.email_addresses.count(), second=3)
         self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
-        self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_address)
+        self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class PasswordResetViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_can_open_the_page(self):
         r = self.client.get('/reset-password/')

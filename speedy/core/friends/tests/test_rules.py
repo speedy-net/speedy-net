@@ -8,7 +8,7 @@ from speedy.core.blocks.models import Block
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RequestTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -31,7 +31,7 @@ class RequestTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ViewRequestsTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -45,7 +45,7 @@ class ViewRequestsTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RemoveTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(self.user, self.other_user).accept()

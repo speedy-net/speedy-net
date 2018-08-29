@@ -7,7 +7,7 @@ from ..models import Block
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class BlockManagerTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 

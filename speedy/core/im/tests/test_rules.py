@@ -7,7 +7,7 @@ from .test_factories import ChatFactory
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SendMessageTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -26,7 +26,7 @@ class SendMessageTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ViewChatsTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -40,7 +40,7 @@ class ViewChatsTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ReadChatTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()

@@ -46,6 +46,13 @@ def conditional_test(test_func):
 class TestCase(DjangoTestCase):
     client_host = 'en.localhost'
 
+    def setUp(self):
+        super().setUp()
+        self.set_up()
+
+    def set_up(self):
+        pass
+
     def _pre_setup(self):
         super()._pre_setup()
         call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_local.json', verbosity=0)

@@ -7,7 +7,7 @@ from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RegistrationFormTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.valid_data = {
             'first_name_en': 'First',
             'last_name_en': 'Last',
@@ -120,7 +120,7 @@ class RegistrationFormTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ProfilePrivacyFormTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -132,7 +132,7 @@ class ProfilePrivacyFormTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ProfileNotificationsFormTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
 
     @exclude_on_speedy_match
@@ -146,7 +146,7 @@ class ProfileNotificationsFormTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class PasswordResetFormTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -168,7 +168,7 @@ class PasswordResetFormTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class DeactivationFormTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
 
     def test_incorrect_password(self):

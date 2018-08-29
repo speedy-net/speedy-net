@@ -6,7 +6,7 @@ from ..models import Block
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class BlockListViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.third_user = ActiveUserFactory()
@@ -32,7 +32,7 @@ class BlockListViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class BlockViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/block/'.format(self.other_user.slug)
@@ -61,7 +61,7 @@ class BlockViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UnblockViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/unblock/'.format(self.other_user.slug)

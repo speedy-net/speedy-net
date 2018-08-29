@@ -8,7 +8,7 @@ from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UserFriendListViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -31,7 +31,7 @@ class UserFriendListViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ReceivedFriendshipRequestsListView(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -56,7 +56,7 @@ class ReceivedFriendshipRequestsListView(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class SentFriendshipRequestsListView(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -81,7 +81,7 @@ class SentFriendshipRequestsListView(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UserFriendRequestViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
@@ -119,7 +119,7 @@ class UserFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class CancelFriendRequestViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
@@ -142,7 +142,7 @@ class CancelFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class AcceptFriendRequestViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         frequest = Friend.objects.add_friend(self.user, self.other_user)
@@ -189,7 +189,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RejectFriendRequestViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         frequest = Friend.objects.add_friend(self.user, self.other_user)
@@ -217,7 +217,7 @@ class RejectFriendRequestViewTestCase(TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class RemoveFriendViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(self.user, self.other_user).accept()

@@ -4,7 +4,7 @@ from speedy.core.base.test import TestCase, only_on_speedy_net
 
 @only_on_speedy_net
 class IndexViewTestCase(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.user = ActiveUserFactory()
 
     def test_user_gets_redirected_to_his_profile(self):
