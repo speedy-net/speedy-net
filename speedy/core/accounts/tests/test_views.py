@@ -34,8 +34,8 @@ class IndexViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_gets_registration_page(self):
         r = self.client.get('/')
@@ -50,8 +50,8 @@ class MeViewTestCase(RedirectMeMixin, TestCase):
         self.user = ActiveUserFactory(slug='markmark')
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_has_no_access(self):
         self.assert_me_url_redirects_to_login_url()
@@ -72,7 +72,7 @@ class LoginTestCase(RedirectMeMixin, TestCase):
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_user_can_login_with_slug(self):
@@ -89,14 +89,6 @@ class LoginTestCase(RedirectMeMixin, TestCase):
 
     def test_user_can_login_with_unconfirmed_email_address(self):
         self.client.login(username=self.unconfirmed_email_address.email, password=USER_PASSWORD)
-        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
-
-    def test_user_can_login_with_confirmed_email_address_uppercase(self):
-        self.client.login(username=self.confirmed_email_address.email.upper(), password=USER_PASSWORD)
-        self.assert_me_url_redirects_to_user_profile_url(user=self.user)
-
-    def test_user_can_login_with_unconfirmed_email_address_uppercase(self):
-        self.client.login(username=self.unconfirmed_email_address.email.upper(), password=USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_user_cannot_login_with_wrong_slug(self):
@@ -132,10 +124,10 @@ class RegistrationViewTestCase(TestCase):
         site = Site.objects.get_current()
         site.domain = 'localhost'
         site.save()
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=0)
+        self.assertEqual(first=User.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_can_see_registration_page(self):
         r = self.client.get('/')
@@ -254,10 +246,10 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
         self.inactive_user = InactiveUserFactory()
         self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
         self.assertNotEqual(first=USER_PASSWORD, second=self._other_user_password)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=3)
+        self.assertEqual(first=User.objects.count(), second=3)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_can_see_login_page(self):
         r = self.client.get('/login/')
@@ -372,8 +364,8 @@ class LogoutViewTestCase(TestCase):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_user_can_logout(self):
         r = self.client.get('/logout/')
@@ -392,8 +384,8 @@ class EditProfileViewTestCase(TestCase):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -481,8 +473,8 @@ class EditProfileNotificationsViewTestCase(TestCase):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -612,8 +604,8 @@ class ActivateSiteProfileViewTestCase(TestCase):
         self.assertFalse(expr=self.user.profile.is_active)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -656,8 +648,8 @@ class DeactivateSiteProfileViewTestCase(TestCase):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -688,7 +680,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_wrong_link_gives_404(self):
@@ -805,9 +797,9 @@ class SendConfirmationEmailViewTestCase(TestCase):
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=3)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
@@ -842,9 +834,9 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
         self.other_users_address = UserEmailAddressFactory(is_primary=False)
         self.other_users_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=3)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_visitor_has_no_access(self):
@@ -884,10 +876,10 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
         self.other_users_address = UserEmailAddressFactory()
         self.other_users_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_users_address.id)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=4)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=2)
 
     def test_visitor_has_no_access(self):
         self.client.logout()
