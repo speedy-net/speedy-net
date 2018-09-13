@@ -9,7 +9,8 @@ from speedy.core.base.test import TestCase, only_on_speedy_match
 from ..models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User
-from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory, UserImageFactory
+from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory
+from speedy.core.uploads.tests.test_factories import UserImageFactory
 
 
 @only_on_speedy_match

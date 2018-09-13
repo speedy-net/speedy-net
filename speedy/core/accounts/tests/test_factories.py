@@ -8,8 +8,7 @@ import factory.fuzzy
 from django.contrib.sites.models import Site
 from django.conf import settings
 
-from speedy.core.accounts.models import normalize_username, User, UserEmailAddress
-from speedy.core.uploads.models import Image
+from ..models import normalize_username, User, UserEmailAddress
 
 
 # Generate a new random password for each test.
@@ -51,13 +50,6 @@ class InactiveUserFactory(DefaultUserFactory):
             self.profile.deactivate()
 
 
-class UserImageFactory(factory.DjangoModelFactory):
-    file = factory.django.ImageField()
-
-    class Meta:
-        model = Image
-
-
 class ActiveUserFactory(DefaultUserFactory):
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
@@ -66,6 +58,7 @@ class ActiveUserFactory(DefaultUserFactory):
         if (site.id == SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
             # ~~~~ TODO: assign values randomly (height, diet, smoking, gender etc).
+            from speedy.core.uploads.tests.test_factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self.profile.profile_description = "Hi!"
             self.profile.city = "Tel Aviv."
