@@ -62,8 +62,7 @@ class FeedbackViewBaseMixin(object):
         feedback = Feedback.objects.first()
         self.check_feedback(feedback)
         self.assertEqual(first=len(mail.outbox), second=1)
-        site = Site.objects.get_current()
-        self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(site.name, str(feedback)))
+        self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site.name, str(feedback)))
 
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):

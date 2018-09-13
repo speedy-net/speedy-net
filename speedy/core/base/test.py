@@ -56,9 +56,11 @@ class TestCase(DjangoTestCase):
     def _pre_setup(self):
         super()._pre_setup()
         call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_local.json', verbosity=0)
-        site = Site.objects.get_current()
-        site.domain = 'localhost'
-        site.save()
+        self.site = Site.objects.get_current()
+        self.site.domain = 'localhost'
+        self.site.save()
+        self.SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
+        self.SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
         self.client = self.client_class(HTTP_HOST=self.client_host)
 
 

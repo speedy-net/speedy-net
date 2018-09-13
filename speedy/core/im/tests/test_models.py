@@ -14,9 +14,7 @@ class ChatTestCase(TestCase):
 
     def test_str(self):
         chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
-        site = Site.objects.get_current()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        if (site.id == SPEEDY_MATCH_SITE_ID):
+        if (self.site.id == self.SPEEDY_MATCH_SITE_ID):
             self.assertEqual(first=str(chat), second='Walter, Jesse')
         else:
             self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
