@@ -5,6 +5,7 @@ env.ini
 media/
 .DS_Store
 .volumes
+development_*.py
 
 node_modules/
 
