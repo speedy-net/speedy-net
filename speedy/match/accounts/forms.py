@@ -50,8 +50,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         'marital_status_match': [validators.validate_marital_status_match],
     }
     # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking status and marital status.
-    # diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'), validators=[validators.validate_diet])
-    diet = forms.ChoiceField(choices=User.DIET_CHOICES_WITH_DEFAULT, widget=forms.RadioSelect(), label=_('My diet'), validators=[validators.validate_diet]) #### TODO
+    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'), validators=[validators.validate_diet])
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
@@ -67,9 +66,6 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
             'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),
             'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_CHOICES),
-            # 'diet_match': CustomJsonWidget(choices=User.DIET_CHOICES_WITH_DEFAULT), #### TODO
-            # 'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT), #### TODO
-            # 'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT), #### TODO
         }
 
     def __init__(self, *args, **kwargs):
@@ -99,9 +95,8 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             self.fields['marital_status_match'].widget.choices = self.instance.get_marital_status_match_choices()
         for field_name, field in self.fields.items():
             if field_name in self._validators:
-                # field.validators = self._validators[field_name] # ~~~~ TODO
-                field.validators.extend(self._validators[field_name]) # ~~~~ TODO
-                print("SpeedyMatchProfileActivationForm::__init__", field_name, field.validators) # ~~~~ TODO: remove this line!
+                field.validators.extend(self._validators[field_name])
+                field.required = True
 
     def clean_photo(self):
         photo = self.files.get('photo')
