@@ -1,2 +1,0 @@
-Please activate url by following the next url:
-{{ url }}
