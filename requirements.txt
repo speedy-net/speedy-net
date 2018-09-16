@@ -1,12 +1,12 @@
 # python==3.5
 Django==1.11.15
 django-crispy-forms==1.7.2
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.10.1
 django-environ==0.4.5
 django-friendship==1.8.0
 django-modeltranslation==0.12.2
 factory-boy==2.11.1
-Faker==0.9.0
+Faker==0.9.1
 Pillow==5.2.0
 psycopg2==2.7.5
 python-dateutil==2.7.3
@@ -14,6 +14,6 @@ python-memcached==1.59
 pytz==2018.5
 rules==2.0
 six==1.11.0
-sorl-thumbnail==12.4.1
+sorl-thumbnail==12.5.0
 sqlparse==0.2.4
 text-unidecode==1.2
