@@ -61,7 +61,7 @@ class EntityTestCase(TestCase):
         entity_2 = Entity(slug='ZZZ-ZZZ')
         with self.assertRaises(NotImplementedError) as cm:
             Entity.objects.bulk_create([entity_1, entity_2])
-        self.assertEqual(first=str(cm.exception), second='')
+        self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
     def test_cannot_create_entity_with_an_invalid_id(self):
         old_entity = self.create_one_entity()
@@ -234,7 +234,7 @@ class UserTestCase(TestCase):
         user_2 = User(slug='ZZZ-ZZZ')
         with self.assertRaises(NotImplementedError) as cm:
             User.objects.bulk_create([user_1, user_2])
-        self.assertEqual(first=str(cm.exception), second='')
+        self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
     def test_cannot_create_user_with_existing_username_1(self):
         entity = Entity(slug='zzzzzz')

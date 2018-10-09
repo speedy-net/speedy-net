@@ -76,7 +76,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         #     if (self.request.user.profile.activation_step == 0) and (
         #         step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
         #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
-        return super().get(self.request, *args, **kwargs)
+        return super().get(request=self.request, *args, **kwargs)
 
     def get_account_activation_url(self):
         return reverse_lazy('accounts:activate', kwargs={'step': self.step})

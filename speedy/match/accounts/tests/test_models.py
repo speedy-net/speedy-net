@@ -667,7 +667,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
         self.assertEqual(first=user.profile.is_active, second=False)
         with self.assertRaises(NotImplementedError) as cm:
             user.profile.activate()
-        self.assertEqual(first=str(cm.exception), second='')
+        self.assertEqual(first=str(cm.exception), second="activate is not implemented.")
         self.assertEqual(first=user.profile.is_active, second=False)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):

@@ -21,7 +21,7 @@ class UserMixin(object):
     def render_to_response(self, context, **response_kwargs):
         if not self.request.user.has_perm(perm='accounts.view_profile', obj=self.get_user()):
             response_kwargs['status'] = 404
-        return super().render_to_response(context, **response_kwargs)
+        return super().render_to_response(context=context, **response_kwargs)
 
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()

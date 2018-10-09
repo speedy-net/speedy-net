@@ -379,13 +379,13 @@ class SiteProfileBase(TimeStampedModel):
         self.save(update_fields={'last_visit'})
 
     def activate(self):
-        raise NotImplementedError()
+        raise NotImplementedError("activate is not implemented.")
 
     def deactivate(self):
-        raise NotImplementedError()
+        raise NotImplementedError("deactivate is not implemented.")
 
     def get_name(self):
-        raise NotImplementedError()
+        raise NotImplementedError("get_name is not implemented.")
 
     @property
     def is_active_or_superuser(self):

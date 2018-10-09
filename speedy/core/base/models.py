@@ -16,7 +16,7 @@ class ValidateModelMixin(object):
 
 class ManagerMixin(object):
     def bulk_create(self, *args, **kwargs):
-        raise NotImplementedError()
+        raise NotImplementedError("bulk_create is not implemented.")
 
 
 # class BaseModel(models.Model): # ~~~~ TODO: remove this line!
