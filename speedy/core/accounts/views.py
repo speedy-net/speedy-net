@@ -74,7 +74,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
             log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
-        user.email_addresses.all()[0].send_confirmation_email()
+        user.email_addresses.first().send_confirmation_email()
         user.backend = settings.DEFAULT_AUTHENTICATION_BACKEND
         auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')

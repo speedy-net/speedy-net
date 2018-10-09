@@ -45,6 +45,14 @@ def conditional_test(test_func):
 
 class TestCase(DjangoTestCase):
     client_host = 'en.localhost'
+    _incorrect_username_and_password_errors_dict = {'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']}
+    _password_too_short_errors_dict = {'new_password1': ['Password too short.']}
+    _password_too_long_errors_dict = {'new_password1': ['Password too long.']}
+    _your_old_password_was_entered_incorrectly_errors_dict = {'old_password': ['Your old password was entered incorrectly. Please enter it again.']}
+    _the_two_password_fields_didnt_match_errors_dict = {'new_password2': ["The two password fields didn't match."]}
+    _this_email_is_already_in_use_errors_dict = {'email': ['This email is already in use.']}
+    _this_username_is_already_taken_errors_dict = {'slug': ['This username is already taken.']}
+    # ~~~~ TODO: {'username': ['This username is already taken.'], 'slug': ['This username is already taken.']}
 
     def setUp(self):
         super().setUp()
