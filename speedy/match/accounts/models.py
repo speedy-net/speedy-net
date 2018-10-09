@@ -150,7 +150,7 @@ class SiteProfile(SiteProfileBase):
         lang = get_language()
         self._set_active_languages(set(self.get_active_languages()) - {lang})
         self.activation_step = step
-        self.save(update_fields={'active_languages', 'activation_step'})
+        self.user.save_user_and_profile()
 
     def get_active_languages(self):
         return list(filter(None, (l.strip() for l in self.active_languages.split(','))))
@@ -178,7 +178,7 @@ class SiteProfile(SiteProfileBase):
             if not (lang in languages):
                 languages.append(lang)
                 self._set_active_languages(languages=languages)
-                self.save(update_fields={'active_languages'})
+                self.user.save_user_and_profile()
         else:
             self._deactivate_language(step=self.activation_step)
             error_messages.append(_("Please confirm your email address."))
@@ -222,7 +222,7 @@ class SiteProfile(SiteProfileBase):
     def deactivate(self):
         self._set_active_languages([])
         self.activation_step = 0
-        self.save(update_fields={'active_languages', 'activation_step'})
+        self.user.save_user_and_profile()
 
     def get_name(self):
         # Speedy Match name is user's first name.

@@ -1,7 +1,7 @@
 from time import sleep
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.im.models import Message, ReadMark
 from .test_factories import ChatFactory
 from ..templatetags import im_tags

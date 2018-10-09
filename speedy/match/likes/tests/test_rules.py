@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AnonymousUser
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
 

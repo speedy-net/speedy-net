@@ -29,8 +29,7 @@ class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
     date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(year=1900, month=1, day=1))
-    # ~~~~ TODO: assign values randomly (gender).
-    gender = User.GENDER_OTHER
+    gender = factory.fuzzy.FuzzyChoice(choices=User.GENDER_VALID_VALUES)
     slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
     username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
     password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
@@ -57,7 +56,6 @@ class ActiveUserFactory(DefaultUserFactory):
         SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
         if (site.id == SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
-            # ~~~~ TODO: assign values randomly (height, diet, smoking, gender etc).
             from speedy.core.uploads.tests.test_factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self.profile.profile_description = "Hi!"
@@ -67,9 +65,17 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.match_description = "Hi!"
             self.profile.height = random.randint(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED)
             if (self.diet == User.DIET_UNKNOWN):
-                self.diet = User.DIET_VEGAN
-            self.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
-            self.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
+                self.diet = random.choice(User.DIET_VALID_VALUES)
+            else:
+                raise Exception("Unexpected: diet={}".format(self.diet))
+            if (self.profile.smoking_status == SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN):
+                self.profile.smoking_status = random.choice(SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
+            else:
+                raise Exception("Unexpected: smoking_status={}".format(self.profile.smoking_status))
+            if (self.profile.marital_status == SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN):
+                self.profile.marital_status = random.choice(SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
+            else:
+                raise Exception("Unexpected: marital_status={}".format(self.profile.marital_status))
             self.profile.gender_to_match = User.GENDER_VALID_VALUES
             self.photo = UserImageFactory(owner=self)
             self.profile.activation_step = 9
@@ -81,8 +87,12 @@ class ActiveUserFactory(DefaultUserFactory):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
             if (not (step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
+            # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
+            # print(USER_PASSWORD_LENGTH, USER_PASSWORD) # ~~~~ TODO: remove this line!
         else:
             self.profile.activate()
+            # print(self.gender, self.diet) # ~~~~ TODO: remove this line!
+            # print(USER_PASSWORD_LENGTH, USER_PASSWORD) # ~~~~ TODO: remove this line!
 
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):

@@ -1,5 +1,5 @@
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, only_on_speedy_net
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
 @only_on_speedy_net

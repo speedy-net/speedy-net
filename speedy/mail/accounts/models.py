@@ -19,11 +19,11 @@ class SiteProfile(SiteProfileBase):
 
     def activate(self):
         self.is_active = True
-        self.save(update_fields={'is_active'})
+        self.user.save_user_and_profile()
 
     def deactivate(self):
         self.is_active = False
-        self.save(update_fields={'is_active'})
+        self.user.save_user_and_profile()
 
     def get_name(self):
         return self.user.get_full_name()

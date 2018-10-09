@@ -1,11 +1,10 @@
 import json
-
 import os
 import tempfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from ..models import Image
 
 

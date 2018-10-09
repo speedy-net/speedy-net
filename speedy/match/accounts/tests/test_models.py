@@ -22,11 +22,15 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
     _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
 
     def get_default_user_1(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user.diet = User.DIET_VEGAN
+        user.save_user_and_profile()
         return user
 
     def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGETARIAN)
+        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user.diet = User.DIET_VEGETARIAN
+        user.save_user_and_profile()
         return user
 
     def get_min_max_age_to_match_default_test_settings(self):
@@ -953,7 +957,8 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
 @only_on_speedy_match
 class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def get_default_user_1(self):
-        user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=datetime(year=1958, month=10, day=22), gender=User.GENDER_MALE, diet=User.DIET_VEGETARIAN)
+        user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=datetime(year=1958, month=10, day=22), gender=User.GENDER_MALE)
+        user.diet = User.DIET_VEGETARIAN
         user.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
         user.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
         user.profile.min_age_match = 20
@@ -963,7 +968,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         return user
 
     def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE, diet=User.DIET_VEGAN)
+        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user.diet = User.DIET_VEGAN
         user.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
         user.profile.gender_to_match = [User.GENDER_MALE]

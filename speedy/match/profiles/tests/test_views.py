@@ -1,7 +1,7 @@
 from django.test.client import RequestFactory
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
 @only_on_speedy_match

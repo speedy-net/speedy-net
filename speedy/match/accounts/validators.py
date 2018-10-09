@@ -1,6 +1,5 @@
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-# from django.conf import settings
 
 from speedy.core.accounts.models import User
 from .models import SiteProfile as SpeedyMatchSiteProfile
@@ -70,28 +69,21 @@ def validate_height(height):
 
 
 def validate_diet(diet):
-    # ~~~~ TODO: instead of range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)]), define a list in the model and create a test to assert that the list is equal to the range.
-    # if not ((diet is not None) and (User.DIET_UNKNOWN < int(diet) < User.DIET_MAX_VALUE_PLUS_ONE)): # ~~~~ TODO: remove this line and all the commented lines in this file.
     if not (diet_is_valid(diet=diet)):
         raise ValidationError(_("Your diet is required."))
 
 
 def validate_smoking_status(smoking_status):
-    # from .models import SiteProfile as SpeedyMatchSiteProfile
-    # if not ((smoking_status is not None) and (SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN < int(smoking_status) < SpeedyMatchSiteProfile.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)):
     if not (smoking_status_is_valid(smoking_status=smoking_status)):
         raise ValidationError(_("Your smoking status is required."))
 
 
 def validate_marital_status(marital_status):
-    # from .models import SiteProfile as SpeedyMatchSiteProfile
-    # if not ((marital_status is not None) and (SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN < int(marital_status) < SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)):
     if not (marital_status_is_valid(marital_status=marital_status)):
         raise ValidationError(_("Your marital status is required."))
 
 
 def validate_gender_to_match(gender_to_match):
-    # if not ((gender_to_match is not None) and (len(gender_to_match) > 0) and (all((User.GENDER_UNKNOWN < gender < User.GENDER_MAX_VALUE_PLUS_ONE) for gender in gender_to_match))):
     if not ((gender_to_match is not None) and (len(gender_to_match) > 0) and (len(gender_to_match) == len(set(gender_to_match))) and (all(gender_is_valid(gender=gender) for gender in gender_to_match))):
         raise ValidationError(_("Gender to match is required."))
 
@@ -113,37 +105,25 @@ def validate_min_max_age_to_match(min_age_match, max_age_match):
 
 
 def validate_diet_match(diet_match):
-    # from .models import SiteProfile as SpeedyMatchSiteProfile
-    # if not (all([((str(diet) in diet_match) and (SpeedyMatchSiteProfile.RANK_0 <= diet_match[str(diet)] <= SpeedyMatchSiteProfile.RANK_5)) for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)])):
-    # if not (all([((str(diet) in diet_match) and (rank_is_valid(rank=diet_match[str(diet)]))) for diet in User.DIET_VALID_VALUES])):
     if not ((set(diet_match.keys()) == {str(diet) for diet in User.DIET_VALID_VALUES}) and (all([((str(diet) in diet_match) and (rank_is_valid(rank=diet_match[str(diet)]))) for diet in User.DIET_VALID_VALUES]))):
         # This may be due to values added later.
         raise ValidationError(_("Please select diet match."))
-    # if not (max([diet_match[str(diet)] for diet in range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)]) == SpeedyMatchSiteProfile.RANK_5):
     if not (max([diet_match[str(diet)] for diet in User.DIET_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5):
         raise ValidationError(_("At least one diet match option should be 5 hearts."))
 
 
 def validate_smoking_status_match(smoking_status_match):
-    # from .models import SiteProfile as SpeedyMatchSiteProfile
-    # if not (all([((str(smoking_status) in smoking_status_match) and (SpeedyMatchSiteProfile.RANK_0 <= smoking_status_match[str(smoking_status)] <= SpeedyMatchSiteProfile.RANK_5)) for smoking_status in range(SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)])):
-    # if not (all([((str(smoking_status) in smoking_status_match) and (rank_is_valid(rank=smoking_status_match[str(smoking_status)]))) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES])):
     if not ((set(smoking_status_match.keys()) == {str(smoking_status) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES}) and (all([((str(smoking_status) in smoking_status_match) and (rank_is_valid(rank=smoking_status_match[str(smoking_status)]))) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES]))):
         # This may be due to values added later.
         raise ValidationError(_("Please select smoking status match."))
-    # if not (max([smoking_status_match[str(smoking_status)] for smoking_status in range(SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)]) == SpeedyMatchSiteProfile.RANK_5):
     if not (max([smoking_status_match[str(smoking_status)] for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5):
         raise ValidationError(_("At least one smoking status match option should be 5 hearts."))
 
 
 def validate_marital_status_match(marital_status_match):
-    # from .models import SiteProfile as SpeedyMatchSiteProfile
-    # if not (all([((str(marital_status) in marital_status_match) and (SpeedyMatchSiteProfile.RANK_0 <= marital_status_match[str(marital_status)] <= SpeedyMatchSiteProfile.RANK_5)) for marital_status in range(SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)])):
-    # if not (all([((str(marital_status) in marital_status_match) and (rank_is_valid(rank=marital_status_match[str(marital_status)]))) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES])):
     if not ((set(marital_status_match.keys()) == {str(marital_status) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES}) and (all([((str(marital_status) in marital_status_match) and (rank_is_valid(rank=marital_status_match[str(marital_status)]))) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES]))):
         # This may be due to values added later.
         raise ValidationError( _("Please select marital status match."))
-    # elif not (max([marital_status_match[str(marital_status)] for marital_status in range(SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)]) == SpeedyMatchSiteProfile.RANK_5):
     elif not (max([marital_status_match[str(marital_status)] for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5):
         raise ValidationError(_("At least one marital status match option should be 5 hearts."))
 

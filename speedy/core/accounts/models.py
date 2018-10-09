@@ -262,7 +262,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
 
     def activate(self):
         self.is_active = True
-        self.save(update_fields={'is_active'})
+        self.save_user_and_profile()
 
     @property
     def profile(self):
@@ -376,7 +376,7 @@ class SiteProfileBase(TimeStampedModel):
 
     def update_last_visit(self):
         self.last_visit = now()
-        self.save(update_fields={'last_visit'})
+        self.user.save_user_and_profile()
 
     def activate(self):
         raise NotImplementedError("activate is not implemented.")
