@@ -987,9 +987,11 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_gender_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.gender_to_match = [User.GENDER_MALE]
         user_2 = self.get_default_user_2()
+        user_1.profile.gender_to_match = [User.GENDER_MALE]
         user_2.profile.gender_to_match = [User.GENDER_MALE]
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=0)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
@@ -998,6 +1000,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def test_gender_match_profile_different_gender(self):
         user_1 = self.get_default_user_1()
         user_2 = self.get_default_user_2()
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=5)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
@@ -1005,8 +1009,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_gender_match_profile_same_gender(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.gender_to_match = [User.GENDER_MALE]
         user_2 = self.get_default_user_2()
+        user_1.profile.gender_to_match = [User.GENDER_MALE]
         user_2.gender = User.GENDER_MALE
         user_2.profile.gender_to_match = [User.GENDER_MALE]
         user_1.save_user_and_profile()
@@ -1018,9 +1022,11 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_age_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
+        user_2 = self.get_default_user_2()
         user_1.profile.min_age_match = 20
         user_1.profile.max_age_match = 30
-        user_2 = self.get_default_user_2()
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=0)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
@@ -1028,8 +1034,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_smoking_status_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 0, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 0}
         user_2 = self.get_default_user_2()
+        user_1.profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 0, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 0}
         user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
@@ -1041,7 +1047,6 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def test_marital_status_match_profile(self):
         user_1 = self.get_default_user_1()
         user_2 = self.get_default_user_2()
-        user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user_2.profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
@@ -1052,9 +1057,8 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_marital_status_doesnt_match_profile(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED
         user_2 = self.get_default_user_2()
-        user_2.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
+        user_1.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED
         user_2.profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
@@ -1065,9 +1069,11 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_match_profile_rank_3(self):
         user_1 = self.get_default_user_1()
+        user_2 = self.get_default_user_2()
         user_1.profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 3, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 4}
         user_1.profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
-        user_2 = self.get_default_user_2()
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=3)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
@@ -1075,8 +1081,10 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_match_profile_rank_4(self):
         user_1 = self.get_default_user_1()
-        user_1.profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
         user_2 = self.get_default_user_2()
+        user_1.profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=4)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
@@ -1084,11 +1092,13 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
 
     def test_match_profile_rank_1(self):
         user_1 = self.get_default_user_2()
+        user_2 = self.get_default_user_1()
         user_1.profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 3, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 4}
         user_1.profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
         user_1.profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1
-        user_2 = self.get_default_user_1()
         user_2.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED
+        user_1.save_user_and_profile()
+        user_2.save_user_and_profile()
         rank_1 = user_1.profile.get_matching_rank(other_profile=user_2.profile)
         self.assertEqual(first=rank_1, second=1)
         rank_2 = user_2.profile.get_matching_rank(other_profile=user_1.profile)
