@@ -143,11 +143,11 @@ class CancelFriendRequestView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         try:
-            frequest = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
+            friendship_request = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
         except FriendshipRequest.DoesNotExist:
             messages.error(request, _('No friend request.'))
             return redirect(to=self.user)
-        frequest.cancel()
+        friendship_request.cancel()
         messages.success(request, pgettext_lazy(context=request.user.get_gender(), message="You've cancelled your friend request."))
         return redirect(to=self.user)
 
@@ -170,8 +170,8 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
         return redirect(to=self.get_redirect_url())
 
     def post(self, request, *args, **kwargs):
-        frequest = self.get_friend_request()
-        getattr(frequest, self.action)()
+        friendship_request = self.get_friend_request()
+        getattr(friendship_request, self.action)()
         messages.success(request, self.message)
         return redirect(to=self.get_redirect_url())
 
@@ -181,10 +181,10 @@ class AcceptFriendRequestView(LimitMaxFriendsMixin, AcceptRejectFriendRequestVie
     message = _('Friend request accepted.')
 
     def post(self, request, *args, **kwargs):
-        frequest = self.get_friend_request()
+        friendship_request = self.get_friend_request()
         try:
             self.check_own_friends()
-            self.check_other_user_friends(frequest.from_user)
+            self.check_other_user_friends(friendship_request.from_user)
         except ValidationError as e:
             messages.error(self.request, e.message)
             return redirect(to=self.get_redirect_url())

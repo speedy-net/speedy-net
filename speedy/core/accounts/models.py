@@ -84,9 +84,9 @@ class Entity(TimeStampedModel):
                 if f.blank and raw_value in f.empty_values:
                     pass
                 else:
-                    for v in validators:
+                    for validator in validators:
                         try:
-                            v(raw_value)
+                            validator(raw_value)
                             if field_name == 'slug' and self.username:
                                 self.validate_username_for_slug()
                         except ValidationError as e:
@@ -187,8 +187,8 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
 
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
-    date_of_birth = models.DateField(verbose_name=_('date of birth'))
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
+    date_of_birth = models.DateField(verbose_name=_('date of birth'))
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
     is_active = models.BooleanField(default=True)

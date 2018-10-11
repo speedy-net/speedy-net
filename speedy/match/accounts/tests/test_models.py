@@ -160,11 +160,11 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
             if ((null == False) and (value_to_test in self._none_list)):
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name(field_name=field_name))
             elif (isinstance(value_to_test, int)):
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value {} is not a valid choice.'.format(value_to_test)]})
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
             else:
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ["'{}' value must be an integer.".format(value_to_test)]})
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
 
     def save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test):
         if (isinstance(value_to_test, str)):
@@ -177,28 +177,28 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                 user.save_user_and_profile()
             # print(str(cm.exception)) # ~~~~ TODO: remove this line!
             # print(dict(cm.exception)) # ~~~~ TODO: remove this line!
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['List contains {} items, it should contain no more than 3.'.format(len(value_to_test))]})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
 
     def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
         if ((null == False) and (value_to_test in self._none_list)):
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be null.']})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name(field_name=field_name))
         elif ((blank == False) and (value_to_test in self._empty_string_list + [list(), tuple(), dict()])):
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['This field cannot be blank.']})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_blank_errors_dict_by_field_name(field_name=field_name))
         else:
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name: ['Value must be valid JSON.']})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_valid_json_errors_dict_by_field_name(field_name=field_name))
 
-    def save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name, value_to_test, null):
-        self.assertTrue(expr=(isinstance(field_name, (list, tuple))))
+    def save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name_list, value_to_test, null):
+        self.assertTrue(expr=(isinstance(field_name_list, (list, tuple))))
         self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
-        self.assertEqual(first=len(field_name), second=len(value_to_test))
+        self.assertEqual(first=len(field_name_list), second=len(value_to_test))
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
         if ((null == False) and all(value_to_test[i] in self._none_list for i in range(len(value_to_test)))):
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name[i]: ['This field cannot be null.'] for i in range(len(field_name))})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name_list(field_name_list=field_name_list))
         else:
-            self.assertDictEqual(d1=dict(cm.exception), d2={field_name[i]: ["'{}' value must be an integer.".format(value_to_test[i])] for i in range(len(field_name))})
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list=field_name_list, value_list=value_to_test))
 
     def run_test_validate_profile_and_activate_exception(self, test_settings):
         user = ActiveUserFactory()
@@ -502,7 +502,7 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
                     elif (field_name in ['diet', 'smoking_status', 'marital_status', 'min_age_match', 'max_age_match']):
                         self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
                     elif (field_name in ['min_max_age_to_match']):
-                        self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name=['min_age_match', 'max_age_match'], value_to_test=value_to_test, null=False)
+                        self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name_list=['min_age_match', 'max_age_match'], value_to_test=value_to_test, null=False)
                     elif (field_name in ['gender_to_match']):
                         self.save_user_and_profile_and_assert_exceptions_for_gender_to_match(user=user, field_name=field_name, value_to_test=value_to_test)
                     elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
@@ -668,16 +668,20 @@ class SpeedyMatchSiteProfileTestCase(TestCase):
 
     def test_call_activate_directly_and_assert_exception(self):
         user = self.get_default_user_1()
+        self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.profile.is_active, second=False)
         with self.assertRaises(NotImplementedError) as cm:
             user.profile.activate()
         self.assertEqual(first=str(cm.exception), second="activate is not implemented.")
+        self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.profile.is_active, second=False)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):
         user = self.get_default_user_2()
+        self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.profile.is_active, second=True)
         user.profile.deactivate()
+        self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.profile.is_active, second=False)
 
     def test_call_get_name_directly_and_assert_no_exception(self):

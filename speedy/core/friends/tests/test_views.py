@@ -97,9 +97,9 @@ class UserFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=1)
         self.assertEqual(first=self.user.friendship_requests_sent.count(), second=1)
-        frequest = self.other_user.friendship_requests_received.all()[0]
-        self.assertEqual(first=frequest.from_user, second=self.user)
-        self.assertEqual(first=frequest.to_user, second=self.other_user)
+        friendship_request = self.other_user.friendship_requests_received.first()
+        self.assertEqual(first=friendship_request.from_user, second=self.user)
+        self.assertEqual(first=friendship_request.to_user, second=self.other_user)
 
     def test_user_cannot_send_friend_request_twice(self):
         r1 = self.client.post(self.page_url)
@@ -145,8 +145,8 @@ class AcceptFriendRequestViewTestCase(TestCase):
     def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        frequest = Friend.objects.add_friend(self.user, self.other_user)
-        self.page_url = '/{}/friends/request/accept/{}/'.format(self.other_user.slug, frequest.id)
+        friendship_request = Friend.objects.add_friend(self.user, self.other_user)
+        self.page_url = '/{}/friends/request/accept/{}/'.format(self.other_user.slug, friendship_request.id)
 
     def test_visitor_cannot_accept_friend_request(self):
         self.client.logout()
@@ -192,8 +192,8 @@ class RejectFriendRequestViewTestCase(TestCase):
     def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        frequest = Friend.objects.add_friend(self.user, self.other_user)
-        self.page_url = '/{}/friends/request/reject/{}/'.format(self.other_user.slug, frequest.id)
+        friendship_request = Friend.objects.add_friend(self.user, self.other_user)
+        self.page_url = '/{}/friends/request/reject/{}/'.format(self.other_user.slug, friendship_request.id)
 
     def test_visitor_cannot_reject_friend_request(self):
         self.client.logout()

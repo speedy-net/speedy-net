@@ -11,9 +11,21 @@ from django.conf import settings
 from ..models import normalize_username, User, UserEmailAddress
 
 
+def get_random_user_password_length():
+    return random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
+
+
+def get_random_user_password():
+    user_password_length = get_random_user_password_length()
+    user_password = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(user_password_length))
+    if (len(user_password) == user_password_length):
+        return user_password
+    else:
+        raise Exception("Unexpected: len(user_password)={}, user_password_length={}".format(len(user_password), user_password_length))
+
+
 # Generate a new random password for each test.
-USER_PASSWORD_LENGTH = random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
-USER_PASSWORD = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(USER_PASSWORD_LENGTH))
+USER_PASSWORD = get_random_user_password()
 # USER_PASSWORD = 'vjha9c4q44zs'
 
 
@@ -88,11 +100,11 @@ class ActiveUserFactory(DefaultUserFactory):
             if (not (step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
             # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
-            # print(USER_PASSWORD_LENGTH, USER_PASSWORD) # ~~~~ TODO: remove this line!
+            # print(USER_PASSWORD) # ~~~~ TODO: remove this line!
         else:
             self.profile.activate()
             # print(self.gender, self.diet) # ~~~~ TODO: remove this line!
-            # print(USER_PASSWORD_LENGTH, USER_PASSWORD) # ~~~~ TODO: remove this line!
+            # print(USER_PASSWORD) # ~~~~ TODO: remove this line!
 
 
 class UserEmailAddressFactory(factory.DjangoModelFactory):
