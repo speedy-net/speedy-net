@@ -7,6 +7,9 @@ from ..models import Feedback
 
 
 class FeedbackViewBaseMixin(object):
+    def set_up_other_user_and_file(self):
+        raise NotImplementedError()
+
     def get_page_url(self):
         raise NotImplementedError()
 
@@ -15,12 +18,11 @@ class FeedbackViewBaseMixin(object):
 
     def set_up(self):
         self.user = ActiveUserFactory()
-        self.other_user = ActiveUserFactory()
-        self.file = FileFactory()
+        self.set_up_other_user_and_file()
         self.page_url = self.get_page_url()
 
     def test_visitor_can_see_feedback_form(self):
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
         self.assertContains(response=r, text='id_sender_name')
@@ -28,21 +30,22 @@ class FeedbackViewBaseMixin(object):
 
     def test_visitor_can_submit_form(self):
         self.assertEqual(first=Feedback.objects.count(), second=0)
-        r = self.client.post(self.page_url, data={
+        data = {
             'sender_name': 'Mike',
             'sender_email': 'mike@example.com',
             'text': 'Hello',
-        })
+        }
+        r = self.client.post(path=self.page_url, data=data)
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
-        self.check_feedback(feedback)
+        self.check_feedback(feedback=feedback)
 
     @exclude_on_speedy_composer
     @exclude_on_speedy_mail_software
     def test_user_can_see_feedback_form(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
         self.assertNotContains(response=r, text='id_sender_name')
@@ -53,18 +56,22 @@ class FeedbackViewBaseMixin(object):
     def test_user_can_submit_form(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Feedback.objects.count(), second=0)
-        r = self.client.post(self.page_url, data={
+        data = {
             'text': 'Hello',
-        })
+        }
+        r = self.client.post(path=self.page_url, data=data)
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
-        self.check_feedback(feedback)
+        self.check_feedback(feedback=feedback)
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site.name, str(feedback)))
 
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
+    def set_up_other_user_and_file(self):
+        pass
+
     def get_page_url(self):
         return '/contact/'
 
@@ -75,6 +82,9 @@ class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
+    def set_up_other_user_and_file(self):
+        self.other_user = ActiveUserFactory()
+
     def get_page_url(self):
         return '/contact/report/entity/{}/'.format(self.other_user.slug)
 
@@ -83,13 +93,16 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(first=feedback.report_entity_id, second=self.other_user.id)
 
     def test_404(self):
-        r = self.client.get('/contact/report/entity/abrakadabra/')
+        r = self.client.get(path='/contact/report/entity/abrakadabra/')
         self.assertEqual(first=r.status_code, second=404)
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
+    def set_up_other_user_and_file(self):
+        self.file = FileFactory()
+
     def get_page_url(self):
         return '/contact/report/file/{}/'.format(self.file.id)
 
@@ -98,7 +111,7 @@ class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(first=feedback.report_file_id, second=self.file.id)
 
     def test_404(self):
-        r = self.client.get('/contact/report/file/abrakadabra/')
+        r = self.client.get(path='/contact/report/file/abrakadabra/')
         self.assertEqual(first=r.status_code, second=404)
 
 

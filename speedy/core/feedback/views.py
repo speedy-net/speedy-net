@@ -30,12 +30,12 @@ class FeedbackView(generic.CreateView):
             raise Http404()
 
     def get_report_file(self):
-        id = self.kwargs.get('report_file_id')
+        report_file_id = self.kwargs.get('report_file_id')
         if self.get_type() != Feedback.TYPE_REPORT_FILE:
             return None
         try:
             self.report_file = True
-            return File.objects.get(id=id)
+            return File.objects.get(pk=report_file_id)
         except (File.DoesNotExist, ValueError):
             raise Http404()
 

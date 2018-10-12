@@ -9,7 +9,7 @@ class IndexViewTestCase(TestCase):
 
     def test_user_gets_redirected_to_his_matches(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        r = self.client.get('/')
+        r = self.client.get(path='/')
         self.assertRedirects(response=r, expected_url='/matches/', target_status_code=200)
 
 

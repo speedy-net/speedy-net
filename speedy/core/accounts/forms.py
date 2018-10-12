@@ -9,6 +9,7 @@ from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
+from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
@@ -48,7 +49,7 @@ class CleanEmailMixin(object):
             UserEmailAddress.objects.filter(email=email, is_confirmed=False).delete()
             # If this email address is confirmed, raise an exception.
             if UserEmailAddress.objects.filter(email=email).exists():
-                raise forms.ValidationError(_('This email is already in use.'))
+                raise ValidationError(_('This email is already in use.'))
         return email
 
 
@@ -122,11 +123,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
                         self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language=self.language)])
         if commit:
             user.save()
-            email_address = user.email_addresses.create(
-                email=self.cleaned_data['email'],
-                is_confirmed=False,
-                is_primary=True,
-            )
+            user.email_addresses.create(email=self.cleaned_data['email'], is_confirmed=False, is_primary=True)
         return user
 
 
@@ -155,7 +152,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if normalize_username(slug=slug) != username:
-            raise forms.ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
+            raise ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 
 
@@ -269,7 +266,7 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
     def clean_password(self):
         password = self.cleaned_data['password']
         if not self.user.check_password(raw_password=password):
-            raise forms.ValidationError(_('Invalid password.'))
+            raise ValidationError(_('Invalid password.'))
         return password
 
 

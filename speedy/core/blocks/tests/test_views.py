@@ -14,17 +14,17 @@ class BlockListViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_other_user_has_no_access(self):
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_has_access(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='blocks/block_list.html')
 
@@ -39,18 +39,18 @@ class BlockViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_block_self(self):
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_block_other_user(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Block.objects.count(), second=0)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertEqual(first=Block.objects.count(), second=1)
         block = Block.objects.first()
         self.assertEqual(first=block.blocker_id, second=self.user.id)
@@ -68,14 +68,14 @@ class UnblockViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_unblock_other_user(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         Block.objects.block(blocker=self.user, blocked=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertEqual(first=Block.objects.count(), second=0)
         self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug))
 

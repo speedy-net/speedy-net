@@ -8,9 +8,12 @@ from ..forms import MessageForm
 @exclude_on_speedy_mail_software
 class MessageFormTestCase(TestCase):
     def test_form_to_chat_save(self):
+        data = {
+            'text': 'Hi!',
+        }
         user = ActiveUserFactory()
         chat = ChatFactory(ent1=user)
-        form = MessageForm(from_entity=user, chat=chat, data={'text': 'Hi!'})
+        form = MessageForm(from_entity=user, chat=chat, data=data)
         self.assertTrue(expr=form.is_valid())
         message = form.save()
         self.assertEqual(first=message.chat, second=chat)

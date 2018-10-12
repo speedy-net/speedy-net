@@ -1373,32 +1373,32 @@ msgstr ""
 
 #: .\templates\translations.html:125
 msgctxt "female"
-msgid "You\\'ve already confirmed this email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\templates\translations.html:126
 msgctxt "male"
-msgid "You\\'ve already confirmed this email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\templates\translations.html:127
 msgctxt "other"
-msgid "You\\'ve already confirmed this email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\templates\translations.html:130
 msgctxt "female"
-msgid "You\\'ve confirmed your email address."
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\templates\translations.html:131
 msgctxt "male"
-msgid "You\\'ve confirmed your email address."
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\templates\translations.html:132
 msgctxt "other"
-msgid "You\\'ve confirmed your email address."
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\templates\translations.html:135

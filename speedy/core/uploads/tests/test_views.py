@@ -11,6 +11,8 @@ from ..models import Image
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class UploadViewTestCase(TestCase):
+    page_url = '/uploads/upload/'
+
     def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
@@ -21,18 +23,17 @@ class UploadViewTestCase(TestCase):
             'file': SimpleUploadedFile(upload_file.name, upload_file.read())
         }
         self.upload_file = upload_file
-        self.page_url = '/uploads/upload/'
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_upload_file(self):
         initial_images_count = Image.objects.count()
         initial_images_id = list(Image.objects.all().values_list('id', flat=True))
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=r.status_code, second=200)
         json_response = json.loads(r.content.decode())
         self.assertEqual(first=len(json_response['files'][0]['uuid']), second=20)

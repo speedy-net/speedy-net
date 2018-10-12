@@ -10,6 +10,8 @@ from ..models import Message, ReadMark, Chat
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class ChatListViewTestCase(TestCase):
+    page_url = '/messages/'
+
     def set_up(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
@@ -17,16 +19,15 @@ class ChatListViewTestCase(TestCase):
         self.chat_1_2 = ChatFactory(ent1=self.user1, ent2=self.user2)
         self.chat_2_3 = ChatFactory(ent1=self.user2, ent2=self.user3)
         self.chat_3_1 = ChatFactory(ent1=self.user3, ent2=self.user1)
-        self.page_url = '/messages/'
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_see_a_list_of_his_chats(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertListEqual(list1=list(r.context['chat_list']), list2=[self.chat_3_1, self.chat_1_2])
 
@@ -48,12 +49,12 @@ class ChatDetailViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_read_a_chat_he_has_access_to(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         messages = r.context['message_list']
         self.assertEqual(first=len(messages), second=3)
@@ -62,7 +63,7 @@ class ChatDetailViewTestCase(TestCase):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
         Block.objects.block(blocker=self.user2, blocked=self.user1)
         Block.objects.block(blocker=self.user1, blocked=self.user2)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
 
 
@@ -84,29 +85,29 @@ class SendMessageToChatViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=r.status_code, second=403)
 
     def test_get_redirects_to_chat_page(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.chat_url)
 
     def test_user_can_write_to_a_chat_he_has_access_to(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertRedirects(response=r, expected_url=self.chat_url)
 
     def test_cannot_write_to_a_blocker(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
         Block.objects.block(blocker=self.user2, blocked=self.user1)
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=r.status_code, second=403)
 
     def test_cannot_write_to_a_blocked(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
         Block.objects.block(blocker=self.user1, blocked=self.user2)
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=r.status_code, second=403)
 
 
@@ -123,34 +124,34 @@ class SendMessageToUserViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_send_message_to_self(self):
         self.client.login(username=self.user2.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_see_a_form(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='im/message_form.html')
 
     def test_user_gets_redirected_to_existing_chat(self):
-        chat = Chat.on_site.chat_with(self.user1, self.user2)
+        chat = Chat.on_site.chat_with(ent1=self.user1, ent2=self.user2)
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
-        r = self.client.get(self.page_url)
+        r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/messages/{}/'.format(self.user2.slug))
 
     def test_user_can_submit_the_form(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
         self.assertEqual(first=Message.objects.count(), second=0)
-        r = self.client.post(self.page_url, self.data)
+        r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=Message.objects.count(), second=1)
         message = Message.objects.latest()
         chat = message.chat
@@ -179,13 +180,13 @@ class MarkChatAsReadViewTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_mark_chat_as_read(self):
         self.client.login(username=self.user1.slug, password=USER_PASSWORD)
         self.assertLess(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.chat_url)
         self.assertGreater(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
 

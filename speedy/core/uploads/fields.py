@@ -10,9 +10,9 @@ class FileInput(forms.TextInput):
         if attrs is None:
             attrs = {}
         attrs['data-role'] = 'realInput'
-        real_input = super().render(name, value, attrs)
+        real_input = super().render(name=name, value=value, attrs=attrs, renderer=renderer)
         try:
-            file = File.objects.get(id=value)
+            file = File.objects.get(pk=value)
         except (File.DoesNotExist, ValueError):
             file = None
         return render_to_string(template_name='uploads/file_input.html', context={
