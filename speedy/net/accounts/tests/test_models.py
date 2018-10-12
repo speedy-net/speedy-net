@@ -18,27 +18,23 @@ class SpeedyNetSiteProfileTestCase(TestCase):
         return user
 
     def test_call_activate_directly_and_assert_no_exception(self):
-        user = self.get_default_user_2()
-        self.assertEqual(first=user.is_active, second=False)
-        self.assertEqual(first=user.profile.is_active, second=False)
-        user.profile.activate()
-        self.assertEqual(first=user.is_active, second=True)
-        self.assertEqual(first=user.profile.is_active, second=True)
+        user_1 = self.get_default_user_2()
+        self.assertEqual(first=user_1.profile.is_active, second=False)
+        user_1.profile.activate()
+        self.assertEqual(first=user_1.profile.is_active, second=True)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):
-        user = self.get_default_user_1()
-        self.assertEqual(first=user.is_active, second=True)
-        self.assertEqual(first=user.profile.is_active, second=True)
-        user.profile.deactivate()
-        self.assertEqual(first=user.is_active, second=False)
-        self.assertEqual(first=user.profile.is_active, second=False)
+        user_1 = self.get_default_user_1()
+        self.assertEqual(first=user_1.profile.is_active, second=True)
+        user_1.profile.deactivate()
+        self.assertEqual(first=user_1.profile.is_active, second=False)
 
     def test_call_get_name_directly_and_assert_no_exception(self):
-        user = self.get_default_user_1()
-        self.assertEqual(first=user.profile.get_name(), second='Jesse Pinkman')
+        user_1 = self.get_default_user_1()
+        self.assertEqual(first=user_1.profile.get_name(), second='Jesse Pinkman')
 
     def test_call_str_of_user_directly_and_assert_no_exception(self):
-        user = self.get_default_user_1()
-        self.assertEqual(first=str(user), second='Jesse Pinkman')
+        user_1 = self.get_default_user_1()
+        self.assertEqual(first=str(user_1), second='Jesse Pinkman')
 
 

@@ -4,8 +4,8 @@ from django.conf import settings
 from django.core import mail
 
 from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match, exclude_on_speedy_net
-from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User, UserEmailAddress
-from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
+from speedy.core.accounts.models import Entity, User, UserEmailAddress
+from .test_factories import USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 class RedirectMeMixin(object):
@@ -111,22 +111,15 @@ class LoginTestCase(RedirectMeMixin, TestCase):
 @exclude_on_speedy_mail_software
 class RegistrationViewTestCase(TestCase):
     def set_up(self):
-        self.password = get_random_user_password()
         self.data = {
             'first_name_en': 'First',
             'last_name_en': 'Last',
             'email': 'email@example.com',
-            'slug': 'user-1234',
-            'new_password1': self.password,
-            'gender': 1,
+            'slug': 'user1234',
             'date_of_birth': '1980-08-20',
+            'gender': 1,
+            'new_password1': 'password',
         }
-        self.username = normalize_username(self.data['slug'])
-        self.slug = normalize_slug(self.data['slug'])
-        self.assertNotEqual(first=self.password, second=USER_PASSWORD)
-        self.assertEqual(first=self.username, second='user1234')
-        self.assertEqual(first=self.slug, second='user-1234')
-        self.assertNotEqual(first=self.username, second=self.slug)
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -137,98 +130,61 @@ class RegistrationViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/registration.html')
 
-    def test_visitor_can_register(self):
-        r = self.client.post('/', data=self.data)
-        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
-        entity = Entity.objects.get(username=self.username)
-        user = User.objects.get(username=self.username)
-        self.assertEqual(first=user, second=entity.user)
-        self.assertEqual(first=entity.id, second=user.id)
-        self.assertEqual(first=entity.username, second=user.username)
-        self.assertEqual(first=entity.slug, second=user.slug)
-        self.assertEqual(first=len(entity.id), second=15)
-        self.assertTrue(expr=user.check_password(raw_password=self.password))
-        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
-        self.assertEqual(first=user.first_name, second='First')
-        self.assertEqual(first=user.first_name_en, second='First')
-        self.assertEqual(first=user.last_name, second='Last')
-        self.assertEqual(first=user.last_name_en, second='Last')
-        self.assertEqual(first=user.username, second=self.username)
-        self.assertEqual(first=user.username, second='user1234')
-        self.assertEqual(first=user.slug, second=self.slug)
-        self.assertEqual(first=user.slug, second='user-1234')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.first().email, second='email@example.com')
-        self.assertFalse(expr=user.email_addresses.first().is_confirmed)
-        self.assertTrue(expr=user.email_addresses.first().is_primary)
-
     def test_non_unique_confirmed_email_address(self):
         UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post('/', data=self.data)
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertFormError(response=r, form='form', field='email', errors='This email is already in use.')
 
     def test_unique_confirmed_email_address(self):
         UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=True)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post('/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 2, self.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
         UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         r = self.client.post('/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
 
     def test_unique_unconfirmed_email_address(self):
         UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         r = self.client.post('/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 2, self.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
 
-    def test_password_too_short(self):
-        self.data['new_password1'] = '8' * 3
+    def test_visitor_can_register(self):
         r = self.client.post('/', data=self.data)
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict)
-        self.assertEqual(first=Entity.objects.count(), second=0)
-        self.assertEqual(first=User.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-
-    def test_password_too_long(self):
-        self.data['new_password1'] = '8' * 121
-        r = self.client.post('/', data=self.data)
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict)
-        self.assertEqual(first=Entity.objects.count(), second=0)
-        self.assertEqual(first=User.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        entity = Entity.objects.all()[0]
+        user = User.objects.all()[0]
+        self.assertEqual(first=user, second=entity.user)
+        self.assertEqual(first=user.id, second=entity.id)
+        self.assertEqual(first=15, second=len(entity.id))
+        self.assertTrue(expr=user.check_password(raw_password='password'))
+        self.assertEqual(first=user.first_name, second='First')
+        self.assertEqual(first=user.first_name_en, second='First')
+        self.assertEqual(first=user.last_name, second='Last')
+        self.assertEqual(first=user.last_name_en, second='Last')
+        self.assertEqual(first=user.slug, second='user1234')
+        self.assertEqual(first=user.username, second='user1234')
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.all()[0].email, second='email@example.com')
+        self.assertFalse(expr=user.email_addresses.all()[0].is_confirmed)
+        self.assertTrue(expr=user.email_addresses.all()[0].is_primary)
 
     def test_user_is_logged_in_after_registration(self):
         r = self.client.post('/', data=self.data)
@@ -241,17 +197,12 @@ class RegistrationViewTestCase(TestCase):
             self.assertRedirects(response=r, expected_url='/welcome/', fetch_redirect_response=False)
             r = self.client.get('/welcome/')
         self.assertTrue(expr=r.context['user'].is_authenticated)
-        self.assertEqual(first=r.context['user'].username, second='user1234')
-        self.assertEqual(first=r.context['user'].slug, second='user-1234')
+        self.assertEqual(first=r.context['user'].slug, second='user1234')
 
     def test_user_gets_email_after_registration_in_english(self):
         r = self.client.post('/', data=self.data)
         self.assertEqual(first=len(mail.outbox), second=1)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
-        user = User.objects.get(username=self.username)
+        user = User.objects.first()
         email = user.email_addresses.first()
         self.assertFalse(expr=email.is_confirmed)
         self.assertEqual(first=email.confirmation_sent, second=1)
@@ -269,17 +220,13 @@ class RegistrationViewTestCase(TestCase):
         existing_user = ActiveUserFactory(username='username', slug='user-name')
         self.data['slug'] = 'us-er-na-me'
         r = self.client.post('/', data=self.data)
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._slug_this_username_is_already_taken_errors_dict)
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 0, self.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assertFormError(response=r, form='form', field='slug', errors='This username is already taken.')
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
 class LoginViewTestCase(RedirectMeMixin, TestCase):
+    _incorrect_username_and_password_errors_dict = {'__all__': ['Please enter a correct username and password. Note that both fields may be case-sensitive.']}
     _other_user_password = '8' * 8
     
     def set_up(self):
@@ -365,6 +312,15 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
+    def test_visitor_cannot_login_using_wrong_email(self):
+        r = self.client.post('/login/', data={
+            'username': self.other_user_email.email,
+            'password': USER_PASSWORD,
+        })
+        self.assertEqual(first=r.status_code, second=200)
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._incorrect_username_and_password_errors_dict)
+        self.assert_me_url_redirects_to_login_url()
+
     def test_visitor_can_login_using_other_user_email_and_password(self):
         r = self.client.post('/login/', data={
             'username': self.other_user_email.email,
@@ -382,15 +338,6 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
         # Inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
         self.assert_me_url_redirects_to_welcome_url()
 
-    def test_visitor_cannot_login_using_wrong_email(self):
-        r = self.client.post('/login/', data={
-            'username': self.other_user_email.email,
-            'password': USER_PASSWORD,
-        })
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict)
-        self.assert_me_url_redirects_to_login_url()
-
     def test_visitor_cannot_login_using_wrong_password(self):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         r = self.client.post('/login/', data={
@@ -398,7 +345,7 @@ class LoginViewTestCase(RedirectMeMixin, TestCase):
             'password': 'wrong password!!',
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict)
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._incorrect_username_and_password_errors_dict)
         self.assert_me_url_redirects_to_login_url()
 
 
@@ -591,7 +538,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': new_password,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_old_password_was_entered_incorrectly_errors_dict)
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'old_password': ['Your old password was entered incorrectly. Please enter it again.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -605,7 +552,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': new_password,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict)
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password1': ['Password too short.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -618,7 +565,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': new_password,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict)
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password1': ['Password too long.']})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -632,7 +579,7 @@ class EditProfileCredentialsViewTestCase(TestCase):
             'new_password2': new_password_2,
         })
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._the_two_password_fields_didnt_match_errors_dict)
+        self.assertDictEqual(d1=r.context['form'].errors, d2={'new_password2': ["The two password fields didn't match."]})
         user = User.objects.get(id=self.user.id)
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password_1))
@@ -647,8 +594,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
     def set_up(self):
         self.user = InactiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
-        self.assertEqual(first=self.user.is_active, second={self.SPEEDY_NET_SITE_ID: False, self.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
-        self.assertEqual(first=self.user.profile.is_active, second=False)
+        self.assertFalse(expr=self.user.profile.is_active)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -674,8 +620,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
         r = self.client.post(self.page_url)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
-        self.assertEqual(first=user.is_active, second=True)
-        self.assertEqual(first=user.profile.is_active, second=True)
+        self.assertTrue(expr=user.profile.is_active)
 
 
 @exclude_on_speedy_composer
@@ -702,15 +647,13 @@ class DeactivateSiteProfileViewTestCase(TestCase):
         self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
 
     def test_user_can_deactivate_his_account(self):
-        self.assertEqual(first=self.user.is_active, second=True)
-        self.assertEqual(first=self.user.profile.is_active, second=True)
+        self.assertTrue(expr=self.user.is_active)
         r = self.client.post(self.page_url, {
             'password': USER_PASSWORD,
         })
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         user = User.objects.get(id=self.user.id)
-        self.assertEqual(first=user.is_active, second={self.SPEEDY_NET_SITE_ID: False, self.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
-        self.assertEqual(first=user.profile.is_active, second=False)
+        self.assertFalse(expr=user.profile.is_active)
 
 
 @exclude_on_speedy_composer
@@ -778,8 +721,7 @@ class AddUserEmailAddressViewTestCase(TestCase):
         r = self.client.post('/edit-profile/emails/add/', data={
             'email': self.confirmed_email_address.email,
         })
-        self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict)
+        self.assertFormError(response=r, form='form', field='email', errors='This email is already in use.')
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -787,7 +729,6 @@ class AddUserEmailAddressViewTestCase(TestCase):
     def test_non_unique_unconfirmed_email_address(self):
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 2, self.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post('/edit-profile/emails/add/', data={
             'email': self.unconfirmed_email_address.email,
         })
@@ -796,7 +737,6 @@ class AddUserEmailAddressViewTestCase(TestCase):
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 2, self.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_user_can_add_email_address(self):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={self.SPEEDY_NET_SITE_ID: 1, self.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])

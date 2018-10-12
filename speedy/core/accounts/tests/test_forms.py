@@ -13,88 +13,68 @@ class RegistrationFormTestCase(TestCase):
             'last_name_en': 'Last',
             'email': 'email@example.com',
             'slug': 'user22',
-            'new_password1': 'password',
             'gender': 1,
+            'new_password1': 'password',
             'date_of_birth': '1980-01-01',
         }
 
     def test_required_fields(self):
         form = RegistrationForm({})
         required_fields = self.valid_data.keys()
-        # self.assertEqual(first=self._registration_form_all_the_required_fields_are_required_errors_dict.keys(), second={field: [self._this_field_is_required_error_message] for field in required_fields}.keys()) # ~~~~ TODO: remove this line!
-        # self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict.keys()), set2=set({field: [self._this_field_is_required_error_message] for field in required_fields}.keys())) # ~~~~ TODO: remove this line!
-        self.assertDictEqual(d1=self._registration_form_all_the_required_fields_are_required_errors_dict, d2={field: [self._this_field_is_required_error_message] for field in required_fields})
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict)
-        # for field in required_fields:
-        #     self.assertEqual(first=form.errors[field][0], second=self._this_field_is_required_error_message) # ~~~~ TODO: remove this line!
+        for field in required_fields:
+            self.assertEqual(first='This field is required.', second=form.errors[field][0])
 
-    # ~~~~ TODO - remove @exclude_on_speedy_match
-    # @exclude_on_speedy_match # On speedy match user already is created with confirmed email
+    def test_dots_in_slug_are_allowed(self):
+        form = RegistrationForm({'slug': 'user-rrrrr'})
+        form.full_clean()
+        self.assertNotIn(member='slug', container=form.errors)
+
+    @exclude_on_speedy_match # On speedy match user already is created with confirmed email
     def test_non_unique_primary_confirmed_email(self):
         existing_user = ActiveUserFactory()
         existing_user.email_addresses.create(email='email@example.com', is_confirmed=True)
         form = RegistrationForm(self.valid_data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._this_email_is_already_in_use_errors_dict)
-        # self.assertEqual(first=form.errors['email'][0], second=self._this_email_is_already_in_use_error_message) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['email'][0], second='This email is already in use.')
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
 
     def test_slug_validation_reserved(self):
         data = self.valid_data.copy()
         data['slug'] = 'editprofile'
         form = RegistrationForm(data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict)
-        # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['slug'][0], second='This username is already taken.')
 
     def test_slug_validation_already_taken(self):
         ActiveUserFactory(slug='validslug')
         data = self.valid_data.copy()
         data['slug'] = 'valid-slug'
         form = RegistrationForm(data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict)
-        # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['slug'][0], second='This username is already taken.')
 
     def test_slug_validation_too_short(self):
         data = self.valid_data.copy()
         data['slug'] = 'a' * 5
         form = RegistrationForm(data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
-        # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['slug'][0], second='Ensure this value has at least 6 characters (it has 5).')
 
     def test_slug_validation_too_long(self):
         data = self.valid_data.copy()
         data['slug'] = 'a' * 201
         form = RegistrationForm(data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._user_slug_max_length_fail_errors_dict_by_value_length(value_length=201))
-        # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=201)) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['slug'][0], second='Ensure this value has at most 200 characters (it has 201).')
 
     def test_slug_validation_regex(self):
         data = self.valid_data.copy()
         data['slug'] = '1234567890digits'
         form = RegistrationForm(data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._user_slug_username_must_start_with_4_or_more_letters_errors_dict)
-        # self.assertEqual(first=form.errors['slug'][0], second=self._user_username_must_start_with_4_or_more_letters_error_message) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=form.errors['slug'][0], second='Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.')
 
     def test_slug_gets_converted_to_username(self):
         data = self.valid_data.copy()
         data['slug'] = 'this-is-a-slug'
         form = RegistrationForm(data)
         form.full_clean()
-        self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
         user = form.save()
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
@@ -104,8 +84,6 @@ class RegistrationFormTestCase(TestCase):
         data['slug'] = 'this.is__a.slug'
         form = RegistrationForm(data)
         form.full_clean()
-        self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
         user = form.save()
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
@@ -115,8 +93,6 @@ class RegistrationFormTestCase(TestCase):
         data['slug'] = '--this--is---a--slug--'
         form = RegistrationForm(data)
         form.full_clean()
-        self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
         user = form.save()
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
@@ -126,8 +102,6 @@ class RegistrationFormTestCase(TestCase):
         data['slug'] = 'THIS-IS-A-SLUG'
         form = RegistrationForm(data)
         form.full_clean()
-        self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
         user = form.save()
         self.assertEqual(first=user.slug, second='this-is-a-slug')
         self.assertEqual(first=user.username, second='thisisaslug')
@@ -137,8 +111,6 @@ class RegistrationFormTestCase(TestCase):
         data['email'] = 'EMAIL22@EXAMPLE.COM'
         form = RegistrationForm(data)
         form.full_clean()
-        self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
         user = form.save()
         email_addresses = UserEmailAddress.objects.filter(user=user)
         email_addresses_set = {e.email for e in email_addresses}
@@ -204,13 +176,11 @@ class DeactivationFormTestCase(TestCase):
             'password': 'wrong password!!',
         })
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._invalid_password_errors_dict)
 
     def test_correct_password(self):
         form = SiteProfileDeactivationForm(user=self.user, data={
             'password': USER_PASSWORD,
         })
         self.assertTrue(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2={})
 
 
