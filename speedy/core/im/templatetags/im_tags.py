@@ -62,7 +62,7 @@ def get_chat_slug(chat, current_user):
 
 @register.simple_tag
 def unread_chats_count(entity):
-    chat_list = Chat.on_site.chats(entity)
+    chat_list = Chat.on_site.chats(entity=entity)
     annotate_chats_with_read_marks(chat_list, entity)
     return len([c for c in chat_list if c.is_unread])
 

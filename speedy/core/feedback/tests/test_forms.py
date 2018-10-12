@@ -8,38 +8,35 @@ from ..models import Feedback
 @exclude_on_speedy_mail_software
 class FeedbackFormTestCase(TestCase):
     def test_feedback_form_for_visitor_displays_name_and_email(self):
-        form = FeedbackForm(
-            defaults={
-                'type': Feedback.TYPE_FEEDBACK,
-            }
-        )
+        defaults = {
+            'type': Feedback.TYPE_FEEDBACK,
+        }
+        form = FeedbackForm(defaults=defaults)
         self.assertListEqual(list1=list(form.fields.keys()), list2=['sender_name', 'sender_email', 'text'])
         self.assertTrue(expr=form.fields['sender_name'].required)
         self.assertTrue(expr=form.fields['sender_email'].required)
 
     def test_feedback_form_for_user_doesnt_require_name_and_email(self):
         user = ActiveUserFactory()
-        form = FeedbackForm(
-            defaults={
-                'type': Feedback.TYPE_FEEDBACK,
-                'sender': user,
-            }
-        )
+        defaults = {
+            'type': Feedback.TYPE_FEEDBACK,
+            'sender': user,
+        }
+        form = FeedbackForm(defaults=defaults)
         self.assertListEqual(list1=list(form.fields.keys()), list2=['text'])
 
     def test_form_save_for_abuse_report_as_user(self):
         user = ActiveUserFactory()
         other_user = ActiveUserFactory()
-        form = FeedbackForm(
-            data={
-                'text': "I personally don't like this user.",
-            },
-            defaults={
-                'type': Feedback.TYPE_REPORT_ENTITY,
-                'sender': user,
-                'report_entity': other_user,
-            }
-        )
+        data = {
+            'text': "I personally don't like this user.",
+        }
+        defaults = {
+            'type': Feedback.TYPE_REPORT_ENTITY,
+            'sender': user,
+            'report_entity': other_user,
+        }
+        form = FeedbackForm(data=data, defaults=defaults)
         self.assertTrue(expr=form.is_valid())
         feedback = form.save()
         self.assertEqual(first=feedback.sender, second=user)

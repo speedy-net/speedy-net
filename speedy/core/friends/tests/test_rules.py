@@ -24,7 +24,7 @@ class RequestTestCase(TestCase):
         self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.user))
 
     def test_user_cannot_send_second_request(self):
-        Friend.objects.add_friend(self.user, self.other_user)
+        Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
         self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
 
 
@@ -48,7 +48,7 @@ class RemoveTestCase(TestCase):
     def set_up(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
-        Friend.objects.add_friend(self.user, self.other_user).accept()
+        Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
 
     def test_user_can_remove_other_user(self):
         self.assertTrue(expr=self.user.has_perm(perm='friends.remove', obj=self.other_user))
@@ -60,7 +60,7 @@ class RemoveTestCase(TestCase):
         self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.user))
 
     def test_user_cannot_remove_other_user_if_not_friends(self):
-        Friend.objects.remove_friend(self.user, self.other_user)
+        Friend.objects.remove_friend(from_user=self.user, to_user=self.other_user)
         self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.other_user))
 
 

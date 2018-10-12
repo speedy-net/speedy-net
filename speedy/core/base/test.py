@@ -43,8 +43,171 @@ def conditional_test(test_func):
     return wrapper
 
 
+class ErrorsMixin(object):
+    _this_field_is_required_error_message = 'This field is required.'
+    _this_field_cannot_be_null_error_message = 'This field cannot be null.'
+    _this_field_cannot_be_blank_error_message = 'This field cannot be blank.'
+    _id_contains_illegal_characters_error_message = 'id contains illegal characters.'
+    _value_must_be_valid_json_error_message = 'Value must be valid JSON.'
+    _invalid_password_error_message = 'Invalid password.'
+    _password_too_short_error_message = 'Password too short.'
+    _password_too_long_error_message = 'Password too long.'
+    _you_cant_change_your_username_error_message = "You can't change your username."
+    _this_username_is_already_taken_error_message = 'This username is already taken.'
+    _enter_a_valid_email_address_error_message = 'Enter a valid email address.'
+    _this_email_is_already_in_use_error_message = 'This email is already in use.'
+    _please_enter_a_correct_username_and_password_error_message = 'Please enter a correct username and password. Note that both fields may be case-sensitive.'
+    _your_old_password_was_entered_incorrectly_error_message = 'Your old password was entered incorrectly. Please enter it again.'
+    _the_two_password_fields_didnt_match_error_message = "The two password fields didn't match."
+    _entity_username_must_start_with_4_or_more_letters_error_message = 'Username must start with 4 or more letters, and may contain letters, digits or dashes.'
+    _user_username_must_start_with_4_or_more_letters_error_message = 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'
+    _slug_does_not_parse_to_username_error_message = 'Slug does not parse to username.'
+
+    _id_contains_illegal_characters_errors_dict = {'id': [_id_contains_illegal_characters_error_message]}
+    _please_enter_a_correct_username_and_password_errors_dict = {'__all__': [_please_enter_a_correct_username_and_password_error_message]}
+    _invalid_password_errors_dict = {'password': [_invalid_password_error_message]}
+    _password_too_short_errors_dict = {'new_password1': [_password_too_short_error_message]}
+    _password_too_long_errors_dict = {'new_password1': [_password_too_long_error_message]}
+    _your_old_password_was_entered_incorrectly_errors_dict = {'old_password': [_your_old_password_was_entered_incorrectly_error_message]}
+    _the_two_password_fields_didnt_match_errors_dict = {'new_password2': [_the_two_password_fields_didnt_match_error_message]}
+    _enter_a_valid_email_address_errors_dict = {'email': [_enter_a_valid_email_address_error_message]}
+    _this_email_is_already_in_use_errors_dict = {'email': [_this_email_is_already_in_use_error_message]}
+    _you_cant_change_your_username_errors_dict = {'slug': [_you_cant_change_your_username_error_message]}
+    _slug_this_username_is_already_taken_errors_dict = {'slug': [_this_username_is_already_taken_error_message]}
+    _slug_and_username_this_username_is_already_taken_errors_dict = {'username': [_this_username_is_already_taken_error_message], 'slug': [_this_username_is_already_taken_error_message]}
+    _entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict = {'username': [_entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [_entity_username_must_start_with_4_or_more_letters_error_message]}
+    _entity_username_username_must_start_with_4_or_more_letters_errors_dict = {'username': [_entity_username_must_start_with_4_or_more_letters_error_message]}
+    _entity_slug_username_must_start_with_4_or_more_letters_errors_dict = {'slug': [_entity_username_must_start_with_4_or_more_letters_error_message]}
+    _user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict = {'username': [_user_username_must_start_with_4_or_more_letters_error_message], 'slug': [_user_username_must_start_with_4_or_more_letters_error_message]}
+    _user_username_username_must_start_with_4_or_more_letters_errors_dict = {'username': [_user_username_must_start_with_4_or_more_letters_error_message]}
+    _user_slug_username_must_start_with_4_or_more_letters_errors_dict = {'slug': [_user_username_must_start_with_4_or_more_letters_error_message]}
+    _slug_does_not_parse_to_username_errors_dict = {'slug': [_slug_does_not_parse_to_username_error_message]}
+    _entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict = {'username': [_entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [_slug_does_not_parse_to_username_error_message]}
+    _user_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict = {'username': [_user_username_must_start_with_4_or_more_letters_error_message], 'slug': [_slug_does_not_parse_to_username_error_message]}
+    _cannot_create_user_email_address_without_all_the_required_fields_errors_dict = {'user': [_this_field_cannot_be_null_error_message], 'email': [_this_field_cannot_be_blank_error_message]}
+
+    @staticmethod
+    def _value_is_not_a_valid_choice_error_message_by_value(value):
+        return 'Value {} is not a valid choice.'.format(value)
+
+    @staticmethod
+    def _value_must_be_an_integer_error_message_by_value(value):
+        return "'{}' value must be an integer.".format(value)
+
+    @staticmethod
+    def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(value):
+        return 'List contains {} items, it should contain no more than 3.'.format(len(value))
+
+    @staticmethod
+    def _ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length, value_length):
+        return 'Ensure this value has at least {} characters (it has {}).'.format(min_length, value_length)
+
+    @staticmethod
+    def _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length, value_length):
+        return 'Ensure this value has at most {} characters (it has {}).'.format(max_length, value_length)
+
+    @staticmethod
+    def _this_field_cannot_be_null_errors_dict_by_field_name(field_name):
+        return {field_name: [__class__._this_field_cannot_be_null_error_message]}
+
+    @staticmethod
+    def _this_field_cannot_be_blank_errors_dict_by_field_name(field_name):
+        return {field_name: [__class__._this_field_cannot_be_blank_error_message]}
+
+    @staticmethod
+    def _value_must_be_valid_json_errors_dict_by_field_name(field_name):
+        return {field_name: [__class__._value_must_be_valid_json_error_message]}
+
+    @staticmethod
+    def _value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name, value):
+        return {field_name: [__class__._value_is_not_a_valid_choice_error_message_by_value(value=value)]}
+
+    @staticmethod
+    def _value_must_be_an_integer_errors_dict_by_field_name_and_value(field_name, value):
+        return {field_name: [__class__._value_must_be_an_integer_error_message_by_value(value=value)]}
+
+    @staticmethod
+    def _list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_value(field_name, value):
+        return {field_name: [__class__._list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(value=value)]}
+
+    @staticmethod
+    def _this_field_cannot_be_null_errors_dict_by_field_name_list(field_name_list):
+        return {field_name_list[i]: [__class__._this_field_cannot_be_null_error_message] for i in range(len(field_name_list))}
+
+    @staticmethod
+    def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list, value_list):
+        return {field_name_list[i]: [__class__._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
+
+    # ~~~~ TODO: simplify these functions! "slug_and_username" etc.
+
+    @staticmethod
+    def _entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _entity_username_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _user_username_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _entity_slug_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _user_slug_min_length_fail_errors_dict_by_value_length(value_length):
+        return {'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+
+    @staticmethod
+    def _entity_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)], 'slug': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+
+    @staticmethod
+    def _user_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)], 'slug': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+
+    @staticmethod
+    def _entity_username_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)]}
+
+    @staticmethod
+    def _user_username_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'username': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)]}
+
+    @staticmethod
+    def _entity_slug_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'slug': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+
+    @staticmethod
+    def _user_slug_max_length_fail_errors_dict_by_value_length(value_length):
+        return {'slug': [__class__._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+
+    @staticmethod
+    def _cannot_create_user_without_all_the_required_fields_errors_dict():
+        return {'first_name': [__class__._this_field_cannot_be_blank_error_message], 'last_name': [__class__._this_field_cannot_be_blank_error_message], 'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'password': [__class__._this_field_cannot_be_blank_error_message], 'gender': [__class__._this_field_cannot_be_null_error_message], 'date_of_birth': [__class__._this_field_cannot_be_null_error_message]}
+
+    @staticmethod
+    def _registration_form_in_english_all_the_required_fields_keys_by_language(language):
+        return [key.format(language=language) for key in ['first_name_{language}', 'last_name_{language}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
+
+    @staticmethod
+    def _registration_form_all_the_required_fields_are_required_errors_dict_by_language(language):
+        return {key: [__class__._this_field_is_required_error_message] for key in __class__._registration_form_in_english_all_the_required_fields_keys_by_language(language=language)}
+
+    def assert_registration_form_required_fields(self, language, required_fields):
+        self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict_by_language(language=language).keys()), set2=set(required_fields))
+        self.assertDictEqual(d1=self._registration_form_all_the_required_fields_are_required_errors_dict_by_language(language=language), d2={field: [self._this_field_is_required_error_message] for field in required_fields})
+
+
 class TestCase(DjangoTestCase):
-    client_host = 'en.localhost'
+    english_client_host = 'en.localhost'
+    hebrew_client_host = 'he.localhost'
 
     def setUp(self):
         super().setUp()
@@ -61,7 +224,7 @@ class TestCase(DjangoTestCase):
         self.site.save()
         self.SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
         self.SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        self.client = self.client_class(HTTP_HOST=self.client_host)
+        self.client = self.client_class(HTTP_HOST=self.english_client_host)
 
 
 exclude_on_site = lambda site_id: conditional_test(lambda: int(settings.SITE_ID) != int(site_id))

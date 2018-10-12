@@ -14,7 +14,7 @@ class LikeViewTestCase(TestCase):
     def test_can_like(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=UserLike.objects.count(), second=0)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=UserLike.objects.count(), second=1)
         like = UserLike.objects.first()
@@ -34,7 +34,7 @@ class UnlikeViewTestCase(TestCase):
         self.assertEqual(first=UserLike.objects.count(), second=0)
         UserLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertEqual(first=UserLike.objects.count(), second=1)
-        r = self.client.post(self.page_url)
+        r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=UserLike.objects.count(), second=0)
 
@@ -66,26 +66,26 @@ class LikeListViewsTestCase(TestCase):
 
     def test_visitor_has_no_access(self):
         self.client.logout()
-        self.assertEqual(first=self.client.get(self.to_url).status_code, second=302)
-        self.assertEqual(first=self.client.get(self.from_url).status_code, second=302)
-        self.assertEqual(first=self.client.get(self.mutual_url).status_code, second=302)
+        self.assertEqual(first=self.client.get(path=self.to_url).status_code, second=302)
+        self.assertEqual(first=self.client.get(path=self.from_url).status_code, second=302)
+        self.assertEqual(first=self.client.get(path=self.mutual_url).status_code, second=302)
 
     def test_default_redirect(self):
-        r = self.client.get(self.default_url)
+        r = self.client.get(path=self.default_url)
         self.assertRedirects(response=r, expected_url=self.to_url)
 
     def test_user_can_see_who_he_likes(self):
-        r = self.client.get(self.to_url)
+        r = self.client.get(path=self.to_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertSetEqual(set1=set(r.context['object_list']), set2=self.to_likes)
 
     def test_user_can_see_who_likes_him(self):
-        r = self.client.get(self.from_url)
+        r = self.client.get(path=self.from_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertSetEqual(set1=set(r.context['object_list']), set2=self.from_likes)
 
     def test_user_can_see_mutual_likes(self):
-        r = self.client.get(self.mutual_url)
+        r = self.client.get(path=self.mutual_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertSetEqual(set1=set(r.context['object_list']), set2=self.mutual_likes)
 

@@ -88,7 +88,7 @@ class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         UserLike.objects.create(from_user=self.request.user, to_user=self.user)
-        # messages.success(request, _('You like this user.'))
+        # messages.success(request=request, message=_('You like this user.'))
         return redirect(to=self.user)
 
 
@@ -101,7 +101,7 @@ class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         UserLike.objects.filter(from_user=self.request.user, to_user=self.user).delete()
-        # messages.success(request, _('You don\'t like this user.'))
+        # messages.success(request=request, message=_('You don\'t like this user.'))
         return redirect(to=self.user)
 
 

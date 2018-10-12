@@ -22,7 +22,7 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
             return self.handle_no_permission()
 
     def get_chat_queryset(self):
-        return Chat.on_site.chats(self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
+        return Chat.on_site.chats(entity=self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
 
     def has_permission(self):
         return self.request.user.has_perm(perm='im.view_chats', obj=self.user)
@@ -79,7 +79,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
             username=normalize_username(slug=self.kwargs['chat_slug'])).first()
         if visited_user and visited_user.slug != self.kwargs['chat_slug']:
             return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}))
-        if visited_user and visited_user != request.user and not Chat.on_site.chat_with(self.request.user, visited_user, create=False):
+        if visited_user and visited_user != request.user and not Chat.on_site.chat_with(ent1=self.request.user, ent2=visited_user, create=False):
             self.user = visited_user
             self.chat = None
             return self.get(request=request, *args, **kwargs)
@@ -157,7 +157,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
     form_class = MessageForm
 
     def get(self, request, *args, **kwargs):
-        existing_chat = Chat.on_site.chat_with(self.request.user, self.user, create=False)
+        existing_chat = Chat.on_site.chat_with(ent1=self.request.user, ent2=self.user, create=False)
         if existing_chat is not None:
             return redirect(to='im:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
         return super().get(request=request, *args, **kwargs)

@@ -62,7 +62,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         log.debug('get: request.user.is_active ? %s' , request.user.is_active)
         if not request.user.is_active:
             log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
-            return render(self.request, self.template_name, {})
+            return render(request=self.request, template_name=self.template_name, context={})
         if self.step == 1:
             log.debug('get: inside "if not request.user.is_active" self.template_name: %s', self.template_name)
             return redirect('accounts:edit_profile')
@@ -93,9 +93,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         super().form_valid(form=form)
         site = Site.objects.get_current()
         if self.object.is_active:
-            messages.success(self.request,
-                             pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(
-                                 _(site.name)))
+            messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(_(site.name)))
         if self.request.user.profile.is_active:
             return redirect(to=reverse_lazy('matches:list'))
         else:

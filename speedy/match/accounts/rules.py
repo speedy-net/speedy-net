@@ -23,7 +23,9 @@ def is_match_profile(user, other):
     return False
 
 
-if settings.SITE_ID == int(env('SPEEDY_MATCH_SITE_ID')):
+SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
+if (settings.SITE_ID == SPEEDY_MATCH_SITE_ID):
+# if settings.SITE_ID == int(env('SPEEDY_MATCH_SITE_ID')): # ~~~~ TODO: remove this line!
     remove_perm('accounts.view_profile')
     add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
     remove_perm('accounts.view_profile_header')

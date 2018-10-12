@@ -22,7 +22,7 @@ def redirect_to_www(site: Site) -> HttpResponseBase:
 def language_selector(request: HttpRequest) -> HttpResponseBase:
     translation.activate('en')
     request.LANGUAGE_CODE = translation.get_language()
-    return render(request, 'www/welcome.html')
+    return render(request=request, template_name='www/welcome.html')
 
 
 class LocaleDomainMiddleware(object):
@@ -54,20 +54,23 @@ class LocaleDomainMiddleware(object):
             pass
 
         if (not (domain == "www.{domain}".format(domain=site.domain))):
-            for other_site in Site.objects.all().order_by("pk"):
-                if (other_site.domain in domain):
+            for _site in Site.objects.all().order_by("pk"):
+                if (_site.domain in domain):
+                    other_site = _site
                     return redirect_to_www(site=other_site)
+            other_site = None
             if ("match" in domain):
                 other_site = Site.objects.get(pk=int(env('SPEEDY_MATCH_SITE_ID')))
-                return redirect_to_www(site=other_site)
-            if ("composer" in domain):
+            elif ("composer" in domain):
                 other_site = Site.objects.get(pk=int(env('SPEEDY_COMPOSER_SITE_ID')))
-                return redirect_to_www(site=other_site)
-            if ("mail" in domain):
+            elif ("mail" in domain):
                 other_site = Site.objects.get(pk=int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID')))
+            else:
+                other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
+            if ((other_site is not None) and (other_site.pk in [_site.pk for _site in Site.objects.all().order_by("pk")])):
                 return redirect_to_www(site=other_site)
-            other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
-            return redirect_to_www(site=other_site)
+            else:
+                raise Exception("Unexpected: other_site={}".format(other_site))
 
         if (not (request.get_full_path() == '/')):
             return redirect_to_www(site=site)

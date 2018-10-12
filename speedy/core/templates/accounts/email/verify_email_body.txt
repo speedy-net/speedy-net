@@ -2,4 +2,4 @@
 
 {% block content %}Use this link to activate your email:
 
-{{ SITE_URL }}{% url 'accounts:verify_email' pk=email_address.id token=email_address.confirmation_token %}{% endblock %}
+{{ SITE_URL }}{% url 'accounts:verify_email' pk=email_address.pk token=email_address.confirmation_token %}{% endblock %}

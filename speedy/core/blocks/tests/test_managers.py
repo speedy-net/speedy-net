@@ -36,10 +36,10 @@ class BlockManagerTestCase(TestCase):
 
     def test_has_blocked_true(self):
         Block.objects.block(blocker=self.user, blocked=self.other_user)
-        self.assertTrue(expr=Block.objects.has_blocked(self.user, self.other_user))
+        self.assertTrue(expr=Block.objects.has_blocked(blocker=self.user, blocked=self.other_user))
 
     def test_has_blocked_false(self):
-        self.assertFalse(expr=Block.objects.has_blocked(self.user, self.other_user))
+        self.assertFalse(expr=Block.objects.has_blocked(blocker=self.user, blocked=self.other_user))
 
     def test_user_blocks_himself_throws_an_exception(self):
         with self.assertRaises(ValidationError) as cm:

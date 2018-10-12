@@ -33,7 +33,7 @@ class MessageManager(BaseManager):
         assert bool(from_entity and to_entity) != bool(from_entity and chat)
         assert text
         if not chat:
-            chat = Chat.on_site.chat_with(from_entity, to_entity)
+            chat = Chat.on_site.chat_with(ent1=from_entity, ent2=to_entity)
         chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
         chat.date_updated = chat.last_message.date_created
         chat.save(update_fields={'last_message', 'date_updated'})

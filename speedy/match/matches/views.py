@@ -40,7 +40,7 @@ class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form=form)
-        messages.success(self.request, _('Your match settings were saved.'))
+        messages.success(request=self.request, message=_('Your match settings were saved.'))
         return response
 
 
@@ -54,7 +54,7 @@ class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form=form)
-        messages.success(self.request, _('Your match settings were saved.'))
+        messages.success(request=self.request, message=_('Your match settings were saved.'))
         return response
 
 

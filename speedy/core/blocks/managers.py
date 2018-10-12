@@ -9,7 +9,7 @@ class BlockManager(BaseManager):
         if blocker == blocked:
             raise ValidationError("Users cannot block themselves.")
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
-        Friend.objects.remove_friend(blocker, blocked)
+        Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
         return block
 
     def unblock(self, blocker, blocked):

@@ -74,7 +74,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
             log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
-        user.email_addresses.all()[0].send_confirmation_email()
+        user.email_addresses.first().send_confirmation_email()
         user.backend = settings.DEFAULT_AUTHENTICATION_BACKEND
         auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
@@ -152,7 +152,7 @@ class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, gene
         user = self.request.user
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         update_session_auth_hash(request=self.request, user=user)
-        messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='Your new password has been saved.'))
+        messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Your new password has been saved.'))
         return super().form_valid(form)
 
 
@@ -222,13 +222,13 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
         email_address = self.get_object()
         token = self.kwargs.get('token')
         if email_address.is_confirmed:
-            messages.warning(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='You\'ve already confirmed this email address.'))
+            messages.warning(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="You've already confirmed this email address."))
         else:
             if email_address.confirmation_token == token:
                 email_address.verify()
-                messages.success(self.request, pgettext_lazy(context=self.request.user.get_gender(), message='You\'ve confirmed your email address.'))
+                messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="You've confirmed your email address."))
             else:
-                messages.error(self.request, _('Invalid confirmation link.'))
+                messages.error(request=self.request, message=_('Invalid confirmation link.'))
         return HttpResponseRedirect(self.get_success_url())
 
 
@@ -252,7 +252,7 @@ class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
         email_address.send_confirmation_email()
         if email_address.user.email_addresses.filter(is_primary=True).count() == 0:
             email_address.make_primary()
-        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email))
+        messages.success(request=self.request, message=_('A confirmation message was sent to {}').format(email_address.email))
         return response
 
 
@@ -267,7 +267,7 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.send_confirmation_email()
-        messages.success(self.request, _('A confirmation message was sent to {}').format(email_address.email))
+        messages.success(request=self.request, message=_('A confirmation message was sent to {}').format(email_address.email))
         return HttpResponseRedirect(self.success_url)
 
 
@@ -281,7 +281,7 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
 
     def delete(self, *args, **kwargs):
         response = super().delete(*args, **kwargs)
-        messages.success(self.request, 'The email address was deleted.')
+        messages.success(request=self.request, message='The email address was deleted.')
         return response
 
 
@@ -296,7 +296,7 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.make_primary()
-        messages.success(self.request, 'You have changed your primary email address.')
+        messages.success(request=self.request, message='You have changed your primary email address.')
         return HttpResponseRedirect(self.success_url)
 
 

@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
-from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User
+from speedy.core.base.test import ErrorsMixin, TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User, UserEmailAddress
 from .test_factories import USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
 
@@ -39,7 +39,7 @@ class NormalizeUsernameTestCase(TestCase):
         self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
 
 
-class EntityTestCase(TestCase):
+class EntityTestCase(ErrorsMixin, TestCase):
     def create_one_entity(self):
         entity = Entity(slug='zzzzzz', username='zzzzzz')
         entity.save()
@@ -54,7 +54,7 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at least 6 characters (it has 0).'], 'slug': ['Ensure this value has at least 6 characters (it has 0).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=0))
 
     def test_cannot_create_entities_with_bulk_create(self):
         entity_1 = Entity(slug='zzzzzz')
@@ -84,7 +84,7 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             new_entity.save()
             # new_entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'id': ['id contains illegal characters']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict)
 
     def test_cannot_create_entity_with_existing_username(self):
         entity_1 = Entity(slug='zzzzzz')
@@ -94,7 +94,7 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             entity_2.save()
             # entity_2.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['This username is already taken.'], 'slug': ['This username is already taken.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_and_username_this_username_is_already_taken_errors_dict)
 
     def test_automatic_creation_of_username_and_id(self):
         entity = Entity(slug='zzzzzz')
@@ -139,7 +139,7 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at least 6 characters (it has 5).'], 'slug': ['Ensure this value has at least 6 characters (it has 5).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
 
     def test_slug_and_username_min_length_ok(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
@@ -151,7 +151,21 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at most 120 characters (it has 201).'], 'slug': ['Ensure this value has at most 200 characters (it has 201).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
+
+    def test_slug_max_length_ok_username_max_length_fail_1(self):
+        entity = Entity(slug='b' * 200, username='b' * 200)
+        with self.assertRaises(ValidationError) as cm:
+            entity.save()
+            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=200))
+
+    def test_slug_max_length_ok_username_max_length_fail_2(self):
+        entity = Entity(slug='b' * 121, username='b' * 121)
+        with self.assertRaises(ValidationError) as cm:
+            entity.save()
+            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=121))
 
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
@@ -173,33 +187,33 @@ class EntityTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, and may contain letters, digits or dashes.'], 'slug': ['Username must start with 4 or more letters, and may contain letters, digits or dashes.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict)
 
     def test_0test1_is_invalid_username(self):
         entity = Entity(slug='0-test-1', username='0test1')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, and may contain letters, digits or dashes.'], 'slug': ['Username must start with 4 or more letters, and may contain letters, digits or dashes.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict)
 
     def test_slug_and_username_dont_match_but_valid(self):
         entity = Entity(slug='star2001', username='star2000')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'slug': ['Slug does not parse to username.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict)
 
     def test_slug_and_username_dont_match_and_invalid(self):
         entity = Entity(slug='0-test-2', username='0test1')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, and may contain letters, digits or dashes.'], 'slug': ['Slug does not parse to username.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict)
 
 
 @exclude_on_speedy_composer
 @exclude_on_speedy_mail_software
-class UserTestCase(TestCase):
+class UserTestCase(ErrorsMixin, TestCase):
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 3 + 1)))
@@ -213,21 +227,21 @@ class UserTestCase(TestCase):
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'slug': ['Ensure this value has at least 6 characters (it has 0).'], 'gender': ['This field cannot be null.'], 'last_name': ['This field cannot be blank.'], 'password': ['This field cannot be blank.'], 'first_name': ['This field cannot be blank.'], 'username': ['Ensure this value has at least 6 characters (it has 0).'], 'date_of_birth': ['This field cannot be null.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict())
 
     def test_cannot_create_user_with_empty_slug(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at least 6 characters (it has 0).'], 'slug': ['Ensure this value has at least 6 characters (it has 0).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=0))
 
     def test_cannot_create_user_with_unknown_gender(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(gender=User.GENDER_UNKNOWN)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'gender': ['Value 0 is not a valid choice.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name='gender', value=0))
 
     def test_cannot_create_users_with_bulk_create(self):
         user_1 = User(slug='zzzzzz')
@@ -244,7 +258,7 @@ class UserTestCase(TestCase):
             user = DefaultUserFactory(slug='ZZZ-ZZZ')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['This username is already taken.'], 'slug': ['This username is already taken.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_and_username_this_username_is_already_taken_errors_dict)
 
     def test_cannot_create_user_with_existing_username_2(self):
         user_1 = DefaultUserFactory(slug='zzzzzz')
@@ -254,7 +268,7 @@ class UserTestCase(TestCase):
             user_2 = DefaultUserFactory(slug='ZZZ-ZZZ')
             user_2.save_user_and_profile()
             # user_2.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['This username is already taken.'], 'slug': ['This username is already taken.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_and_username_this_username_is_already_taken_errors_dict)
 
     def test_has_no_confirmed_email(self):
         user = DefaultUserFactory()
@@ -282,35 +296,35 @@ class UserTestCase(TestCase):
             user = DefaultUserFactory(slug='a' * 5)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at least 6 characters (it has 5).'], 'slug': ['Ensure this value has at least 6 characters (it has 5).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
 
     def test_slug_and_username_min_length_ok(self):
         user = DefaultUserFactory(slug='a' * 6)
         user.save_user_and_profile()
         # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
-    def test_slug_max_length_fail(self):
+    def test_slug_and_username_max_length_fail(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='a' * 201)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at most 40 characters (it has 201).'], 'slug': ['Ensure this value has at most 200 characters (it has 201).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
 
-    def test_slug_max_length_ok(self):
+    def test_slug_max_length_ok_username_max_length_fail_1(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='b' * 200)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at most 40 characters (it has 200).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=200))
 
-    def test_username_max_length_fail(self):
+    def test_slug_max_length_ok_username_max_length_fail_2(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='a' * 41)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Ensure this value has at most 40 characters (it has 41).']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=41))
 
-    def test_username_max_length_ok(self):
+    def test_slug_and_username_max_length_ok(self):
         user = DefaultUserFactory(slug='a' * 40)
         user.save_user_and_profile()
         # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -325,35 +339,35 @@ class UserTestCase(TestCase):
             user = DefaultUserFactory(slug='come2us', username='come2us')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict)
 
     def test_000000_is_invalid_username(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='0' * 6, username='0' * 6)
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict)
 
     def test_0test1_is_invalid_username(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='0-test-1', username='0test1')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict)
 
     def test_slug_and_username_dont_match_but_valid(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='star2001', username='star2000')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'slug': ['Slug does not parse to username.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict)
 
     def test_slug_and_username_dont_match_and_invalid(self):
         with self.assertRaises(ValidationError) as cm:
             user = DefaultUserFactory(slug='0-test-2', username='0test1')
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={'username': ['Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'], 'slug': ['Slug does not parse to username.']})
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict)
 
     def test_user_can_change_password(self):
         new_password = '8' * 8
@@ -371,8 +385,8 @@ class UserTestCase(TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second='Password too short.')
-        self.assertListEqual(list1=list(cm.exception), list2=['Password too short.'])
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message)
+        self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
@@ -382,9 +396,95 @@ class UserTestCase(TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second='Password too long.')
-        self.assertListEqual(list1=list(cm.exception), list2=['Password too long.'])
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message)
+        self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
+
+
+@exclude_on_speedy_composer
+@exclude_on_speedy_mail_software
+class UserEmailAddressTestCase(ErrorsMixin, TestCase):
+    def test_cannot_create_user_email_address_without_all_the_required_fields(self):
+        user_email_address = UserEmailAddress()
+        with self.assertRaises(ValidationError) as cm:
+            user_email_address.save()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_email_address_without_all_the_required_fields_errors_dict)
+
+    def test_cannot_create_user_email_address_with_invalid_email(self):
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='email')
+        with self.assertRaises(ValidationError) as cm:
+            user_email_address.save()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict)
+
+    def test_non_unique_confirmed_email_address(self):
+        existing_user = DefaultUserFactory()
+        existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='email@example.com')
+        with self.assertRaises(ValidationError) as cm:
+            user_email_address.save()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+
+    def test_non_unique_confirmed_email_address_uppercase(self):
+        existing_user = DefaultUserFactory()
+        existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='EMAIL@EXAMPLE.COM')
+        user_email_address.save() # TODO
+        with self.assertRaises(ValidationError) as cm:
+            user_email_address.save()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+
+    def test_non_unique_unconfirmed_email_address(self):
+        # Unconfirmed email address is deleted if another user adds it again.
+        existing_user = DefaultUserFactory()
+        existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=False)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='email@example.com')
+        user_email_address.save()
+        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+
+    def test_email_gets_converted_to_lowercase_1(self):
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
+        user_email_address.save()
+        self.assertEqual(first=user_email_address.email, second='email77@example.com')
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+
+    def test_email_gets_converted_to_lowercase_2(self):
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddressFactory(user=user, email='EMAIL77@EXAMPLE.COM')
+        self.assertEqual(first=user_email_address.email, second='email77@example.com')
+        self.assertEqual(first=user.email_addresses.count(), second=2)
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=user.email_addresses.count(), second=2)
 
 

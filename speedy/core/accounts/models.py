@@ -18,6 +18,7 @@ from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
 from .validators import get_username_validators, get_slug_validators, ValidateUserPasswordMixin
+# from .mixins import CleanEmailMixin # ~~~~ TODO
 
 
 class Entity(TimeStampedModel):
@@ -84,9 +85,9 @@ class Entity(TimeStampedModel):
                 if f.blank and raw_value in f.empty_values:
                     pass
                 else:
-                    for v in validators:
+                    for validator in validators:
                         try:
-                            v(raw_value)
+                            validator(raw_value)
                             if field_name == 'slug' and self.username:
                                 self.validate_username_for_slug()
                         except ValidationError as e:
@@ -128,7 +129,7 @@ class UserAccessField(models.PositiveIntegerField):
         super().__init__(*args, **kwargs)
 
 
-class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser):
+class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
     MIN_SLUG_LENGTH = 6
@@ -187,8 +188,8 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
 
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
-    date_of_birth = models.DateField(verbose_name=_('date of birth'))
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
+    date_of_birth = models.DateField(verbose_name=_('date of birth'))
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
     is_active = models.BooleanField(default=True)
@@ -288,7 +289,11 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         return self.__class__.GENDERS_DICT.get(self.gender)
 
     def get_diet(self):
-        diets = {self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message='Vegan'), self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message='Vegetarian'), self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message='Carnist')}
+        diets = {
+            self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message='Vegan'),
+            self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message='Vegetarian'),
+            self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message='Carnist'),
+        }
         return diets.get(self.diet)
 
     def get_age(self):
@@ -298,6 +303,7 @@ class User(Entity, ValidateUserPasswordMixin, PermissionsMixin, AbstractBaseUser
         return self.__class__.diet_choices(gender=self.get_gender())
 
 
+# class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
 class UserEmailAddress(TimeStampedModel):
     id = RegularUDIDField()
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
