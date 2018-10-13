@@ -1,12 +1,11 @@
-from speedy.core.base.test import TestCase, exclude_on_speedy_mail_software, exclude_on_speedy_composer, exclude_on_speedy_match
+from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.blocks.models import Block
 from .test_factories import ActiveUserFactory
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ViewProfileTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 

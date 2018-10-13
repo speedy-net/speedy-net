@@ -6,7 +6,7 @@ from speedy.core.blocks.models import Block
 
 
 class BlocksTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user1, to_user=ActiveUserFactory()).accept()

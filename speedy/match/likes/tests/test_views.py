@@ -6,7 +6,7 @@ from ..models import UserLike
 
 @only_on_speedy_match
 class LikeViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/like/'.format(self.other_user.slug)
@@ -24,7 +24,7 @@ class LikeViewTestCase(TestCase):
 
 @only_on_speedy_match
 class UnlikeViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
@@ -41,7 +41,7 @@ class UnlikeViewTestCase(TestCase):
 
 @only_on_speedy_match
 class LikeListViewsTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.default_url = '/{}/likes/'.format(self.user.slug)

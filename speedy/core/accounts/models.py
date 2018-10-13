@@ -71,7 +71,7 @@ class Entity(TimeStampedModel):
         else:
             errors = {}
 
-        username_exists = Entity.objects.filter(username=self.username).exclude(id=self.id).exists()
+        username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
         if username_exists:
             errors['slug'] = [self._meta.get_field('slug').error_messages['unique']]
             # errors['username'] = [self._meta.get_field('username').error_messages['unique']]

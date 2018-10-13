@@ -1,18 +1,17 @@
 from time import sleep
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.blocks.models import Block
 from .test_factories import ChatFactory
 from ..models import Message, ReadMark, Chat
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ChatListViewTestCase(TestCase):
     page_url = '/messages/'
 
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -32,10 +31,9 @@ class ChatListViewTestCase(TestCase):
         self.assertListEqual(list1=list(r.context['chat_list']), list2=[self.chat_3_1, self.chat_1_2])
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ChatDetailViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -67,10 +65,9 @@ class ChatDetailViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class SendMessageToChatViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -111,10 +108,9 @@ class SendMessageToChatViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=403)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class SendMessageToUserViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
@@ -164,10 +160,9 @@ class SendMessageToUserViewTestCase(TestCase):
         self.assertTrue(expr=chat.is_private)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class MarkChatAsReadViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user1 = ActiveUserFactory()
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []

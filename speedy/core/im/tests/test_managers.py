@@ -1,15 +1,14 @@
 from time import sleep
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from .test_factories import ChatFactory
 from ..models import Chat, Message, ReadMark
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ChatManagerTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         ChatFactory(is_group=True)
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
@@ -49,8 +48,7 @@ class ChatManagerTestCase(TestCase):
         self.assertEqual(first=rmark.entity.id, second=self.user2.id)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class MessageManagerTestCase(TestCase):
     def test_sending_message_creates_new_chat(self):
         user1 = ActiveUserFactory()
@@ -90,8 +88,7 @@ class MessageManagerTestCase(TestCase):
         self.assertEqual(first=rmark.entity_id, second=user1.id)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ReadMarkManagerTestCase(TestCase):
     def test_mark(self):
         user = ActiveUserFactory()

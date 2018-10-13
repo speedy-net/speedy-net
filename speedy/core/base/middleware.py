@@ -41,9 +41,9 @@ class LocaleDomainMiddleware(object):
 
         site = Site.objects.get_current()
 
-        for lang_code, lang_name in settings.LANGUAGES:
-            if (domain == "{lang_code}.{domain}".format(lang_code=lang_code, domain=site.domain)):
-                translation.activate(lang_code)
+        for language_code, language_name in settings.LANGUAGES:
+            if (domain == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
+                translation.activate(language_code)
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
@@ -60,14 +60,14 @@ class LocaleDomainMiddleware(object):
                     return redirect_to_www(site=other_site)
             other_site = None
             if ("match" in domain):
-                other_site = Site.objects.get(pk=int(env('SPEEDY_MATCH_SITE_ID')))
+                other_site = Site.objects.get(pk=SPEEDY_MATCH_SITE_ID)
             elif ("composer" in domain):
-                other_site = Site.objects.get(pk=int(env('SPEEDY_COMPOSER_SITE_ID')))
+                other_site = Site.objects.get(pk=SPEEDY_COMPOSER_SITE_ID)
             elif ("mail" in domain):
-                other_site = Site.objects.get(pk=int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID')))
+                other_site = Site.objects.get(pk=SPEEDY_MAIL_SOFTWARE_SITE_ID)
             else:
-                other_site = Site.objects.get(pk=int(env('SPEEDY_NET_SITE_ID')))
-            if ((other_site is not None) and (other_site.pk in [_site.pk for _site in Site.objects.all().order_by("pk")])):
+                other_site = Site.objects.get(pk=settings.SPEEDY_NET_SITE_ID)
+            if ((other_site is not None) and (other_site.id in [_site.id for _site in Site.objects.all().order_by("pk")])):
                 return redirect_to_www(site=other_site)
             else:
                 raise Exception("Unexpected: other_site={}".format(other_site))

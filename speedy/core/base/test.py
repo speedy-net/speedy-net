@@ -44,7 +44,7 @@ def conditional_test(test_func):
 
 
 class ErrorsMixin(object):
-    _this_field_is_required_error_message = 'This field is required.'
+    # _this_field_is_required_error_message = 'This field is required.'
     _this_field_cannot_be_null_error_message = 'This field cannot be null.'
     _this_field_cannot_be_blank_error_message = 'This field cannot be blank.'
     _id_contains_illegal_characters_error_message = 'id contains illegal characters.'
@@ -56,12 +56,15 @@ class ErrorsMixin(object):
     _this_username_is_already_taken_error_message = 'This username is already taken.'
     _enter_a_valid_email_address_error_message = 'Enter a valid email address.'
     _this_email_is_already_in_use_error_message = 'This email is already in use.'
+    _enter_a_valid_date_error_message = 'Enter a valid date.'
     _please_enter_a_correct_username_and_password_error_message = 'Please enter a correct username and password. Note that both fields may be case-sensitive.'
     _your_old_password_was_entered_incorrectly_error_message = 'Your old password was entered incorrectly. Please enter it again.'
     _the_two_password_fields_didnt_match_error_message = "The two password fields didn't match."
     _entity_username_must_start_with_4_or_more_letters_error_message = 'Username must start with 4 or more letters, and may contain letters, digits or dashes.'
     _user_username_must_start_with_4_or_more_letters_error_message = 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'
     _slug_does_not_parse_to_username_error_message = 'Slug does not parse to username.'
+
+    _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
 
     _id_contains_illegal_characters_errors_dict = {'id': [_id_contains_illegal_characters_error_message]}
     _please_enter_a_correct_username_and_password_errors_dict = {'__all__': [_please_enter_a_correct_username_and_password_error_message]}
@@ -72,6 +75,7 @@ class ErrorsMixin(object):
     _the_two_password_fields_didnt_match_errors_dict = {'new_password2': [_the_two_password_fields_didnt_match_error_message]}
     _enter_a_valid_email_address_errors_dict = {'email': [_enter_a_valid_email_address_error_message]}
     _this_email_is_already_in_use_errors_dict = {'email': [_this_email_is_already_in_use_error_message]}
+    _enter_a_valid_date_errors_dict = {'date_of_birth': [_enter_a_valid_date_error_message]}
     _you_cant_change_your_username_errors_dict = {'slug': [_you_cant_change_your_username_error_message]}
     _slug_this_username_is_already_taken_errors_dict = {'slug': [_this_username_is_already_taken_error_message]}
     _slug_and_username_this_username_is_already_taken_errors_dict = {'username': [_this_username_is_already_taken_error_message], 'slug': [_this_username_is_already_taken_error_message]}
@@ -192,51 +196,89 @@ class ErrorsMixin(object):
     def _cannot_create_user_without_all_the_required_fields_errors_dict():
         return {'first_name': [__class__._this_field_cannot_be_blank_error_message], 'last_name': [__class__._this_field_cannot_be_blank_error_message], 'username': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'slug': [__class__._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'password': [__class__._this_field_cannot_be_blank_error_message], 'gender': [__class__._this_field_cannot_be_null_error_message], 'date_of_birth': [__class__._this_field_cannot_be_null_error_message]}
 
-    @staticmethod
-    def _registration_form_in_english_all_the_required_fields_keys_by_language(language):
-        return [key.format(language=language) for key in ['first_name_{language}', 'last_name_{language}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
+    def _registration_form_all_the_required_fields_keys(self):
+        return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
-    @staticmethod
-    def _registration_form_all_the_required_fields_are_required_errors_dict_by_language(language):
-        return {key: [__class__._this_field_is_required_error_message] for key in __class__._registration_form_in_english_all_the_required_fields_keys_by_language(language=language)}
+    def _registration_form_all_the_required_fields_are_required_errors_dict(self):
+        return {field_name: [__class__._this_field_is_required_error_message_dict[self.language_code]] for field_name in self._registration_form_all_the_required_fields_keys()}
 
-    def assert_registration_form_required_fields(self, language, required_fields):
-        self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict_by_language(language=language).keys()), set2=set(required_fields))
-        self.assertDictEqual(d1=self._registration_form_all_the_required_fields_are_required_errors_dict_by_language(language=language), d2={field: [self._this_field_is_required_error_message] for field in required_fields})
+    def assert_registration_form_required_fields(self, required_fields):
+        self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict().keys()), set2=set(required_fields))
+        self.assertDictEqual(d1=self._registration_form_all_the_required_fields_are_required_errors_dict(), d2={field_name: [self._this_field_is_required_error_message_dict[self.language_code]] for field_name in required_fields})
 
 
 class TestCase(DjangoTestCase):
-    english_client_host = 'en.localhost'
-    hebrew_client_host = 'he.localhost'
+    def _pre_setup(self):
+        super()._pre_setup()
+        call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_tests.json', verbosity=0)
+        self.site = Site.objects.get_current()
+
+    def _validate_all_values(self):
+        site_id_dict = {
+            settings.SPEEDY_NET_SITE_ID: 1,
+            settings.SPEEDY_MATCH_SITE_ID: 2,
+            settings.SPEEDY_COMPOSER_SITE_ID: 3,
+            settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 5,##TODO
+        }
+        domain_dict = {
+            settings.SPEEDY_NET_SITE_ID: "speedy.net.localhost",
+            settings.SPEEDY_MATCH_SITE_ID: "speedy.match.localhost",
+            settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
+            settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
+        }
+        self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
+        self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
+        self.assertEqual(first=len(self.all_languages_code_list), second=2)
+        self.assertEqual(first=len(self.all_other_languages_code_list), second=1)
+        self.assertEqual(first=len(self.all_languages_code_list), second=len(set(self.all_languages_code_list)))
+        self.assertEqual(first=len(self.all_other_languages_code_list), second=len(set(self.all_other_languages_code_list)))
+        self.assertListEqual(list1=self.all_languages_code_list, list2=['en', 'he'])
+        self.assertListEqual(list1=self.all_other_languages_code_list, list2={'en': ['he'], 'he': ['en']}[self.language_code])
+        self.assertIn(member=self.language_code, container=self.all_languages_code_list)
+        self.assertSetEqual(set1=set(self.all_languages_code_list) - {self.language_code}, set2=set(self.all_other_languages_code_list))
+        self.assertEqual(first=self.full_http_host, second='http://{language_code}.{domain}/'.format(language_code=self.language_code, domain=self.site.domain))
+        self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(self.all_other_languages_code_list))
+        self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(set(self.all_other_full_http_host_list)))
+        self.assertListEqual(list1=self.all_other_full_http_host_list, list2={'en': ['http://he.{domain}/'.format(domain=self.site.domain)], 'he': ['http://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
+        self.validate_language_code()
+
+    def _setup(self):
+        self.language_code = settings.LANGUAGE_CODE
+        self.all_languages_code_list = [language_code for language_code, language_name in settings.LANGUAGES]
+        self.all_other_languages_code_list = [language_code for language_code in self.all_languages_code_list if (not(language_code == self.language_code))]
+        self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
+        self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
+        self.all_other_full_http_host_list = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_languages_code_list]
+        self._validate_all_values()
+        self.client = self.client_class(HTTP_HOST=self.http_host)
+        self.setup()
 
     def setUp(self):
         super().setUp()
-        self.set_up()
+        self._setup()
 
-    def set_up(self):
+    def setup(self):
+        # No need to call super(), all the setup in this class is done in def _setup.
         pass
 
-    def _pre_setup(self):
-        super()._pre_setup()
-        call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_local.json', verbosity=0)
-        self.site = Site.objects.get_current()
-        self.site.domain = 'localhost'
-        self.site.save()
-        self.SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        self.SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        self.client = self.client_class(HTTP_HOST=self.english_client_host)
+    def validate_language_code(self):
+        # No need to call super(), all the validation in this class is done in def _validate_all_values.
+        pass
 
 
-exclude_on_site = lambda site_id: conditional_test(lambda: int(settings.SITE_ID) != int(site_id))
-exclude_on_speedy_net = exclude_on_site(env('SPEEDY_NET_SITE_ID'))
-exclude_on_speedy_match = exclude_on_site(env('SPEEDY_MATCH_SITE_ID'))
-exclude_on_speedy_composer = exclude_on_site(env('SPEEDY_COMPOSER_SITE_ID'))
-exclude_on_speedy_mail_software = exclude_on_site(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
+exclude_on_site = lambda site_id: conditional_test(test_func=lambda: not(settings.SITE_ID == site_id))
+exclude_on_speedy_net = exclude_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
+exclude_on_speedy_match = exclude_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
+exclude_on_speedy_composer = exclude_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
+exclude_on_speedy_mail_software = exclude_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
 
-only_on_site = lambda site_id: conditional_test(lambda: int(settings.SITE_ID) == int(site_id))
-only_on_speedy_net = only_on_site(env('SPEEDY_NET_SITE_ID'))
-only_on_speedy_match = only_on_site(env('SPEEDY_MATCH_SITE_ID'))
-only_on_speedy_composer = only_on_site(env('SPEEDY_COMPOSER_SITE_ID'))
-only_on_speedy_mail_software = only_on_site(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
+only_on_site = lambda site_id: conditional_test(test_func=lambda: (settings.SITE_ID == site_id))
+only_on_speedy_net = only_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
+only_on_speedy_match = only_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
+only_on_speedy_composer = only_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
+only_on_speedy_mail_software = only_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
+
+only_on_sites = lambda site_id_list: conditional_test(test_func=lambda: (settings.SITE_ID in site_id_list))
+only_on_sites_with_login = only_on_sites(site_id_list=[settings.SPEEDY_NET_SITE_ID, settings.SPEEDY_MATCH_SITE_ID])
 
 

@@ -1,10 +1,9 @@
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from .test_factories import ChatFactory
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ChatTestCase(TestCase):
     def test_id_length(self):
         chat = ChatFactory()
@@ -12,7 +11,7 @@ class ChatTestCase(TestCase):
 
     def test_str(self):
         chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
-        if (self.site.id == self.SPEEDY_MATCH_SITE_ID):
+        if (self.site.id == settings.SPEEDY_MATCH_SITE_ID):
             self.assertEqual(first=str(chat), second='Walter, Jesse')
         else:
             self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')

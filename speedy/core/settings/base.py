@@ -14,6 +14,12 @@ from django.utils.translation import ugettext_lazy as _
 
 from .utils import env, APP_DIR, ROOT_DIR
 
+
+SPEEDY_NET_SITE_ID = int(env('SPEEDY_NET_SITE_ID'))
+SPEEDY_MATCH_SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
+SPEEDY_COMPOSER_SITE_ID = int(env('SPEEDY_COMPOSER_SITE_ID'))
+SPEEDY_MAIL_SOFTWARE_SITE_ID = int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -156,8 +162,8 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/me/'
 
 XD_AUTH_SITES = [
-    int(env('SPEEDY_NET_SITE_ID')),
-    int(env('SPEEDY_MATCH_SITE_ID')),
+    SPEEDY_NET_SITE_ID,
+    SPEEDY_MATCH_SITE_ID,
 ]
 
 UNAVAILABLE_USERNAMES = [
@@ -237,11 +243,9 @@ TEST_RUNNER = 'speedy.core.base.test.SiteDiscoverRunner'
 SITE_PROFILES = {
     'net': {
         'site_profile_model': 'net_accounts.SiteProfile',
-        'site_id': int(env('SPEEDY_NET_SITE_ID'))
     },
     'match': {
         'site_profile_model': 'match_accounts.SiteProfile',
-        'site_id': int(env('SPEEDY_MATCH_SITE_ID'))
     }
 }
 

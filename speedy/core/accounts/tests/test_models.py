@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 
-from speedy.core.base.test import ErrorsMixin, TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import ErrorsMixin, TestCase, only_on_sites_with_login
 from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User, UserEmailAddress
 from .test_factories import USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
@@ -211,8 +211,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UserTestCase(ErrorsMixin, TestCase):
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
@@ -402,8 +401,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UserEmailAddressTestCase(ErrorsMixin, TestCase):
     def test_cannot_create_user_email_address_without_all_the_required_fields(self):
         user_email_address = UserEmailAddress()

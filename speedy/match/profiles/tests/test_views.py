@@ -6,7 +6,7 @@ from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 @only_on_speedy_match
 class UserMixinTextCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()

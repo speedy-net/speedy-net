@@ -6,6 +6,7 @@ media/
 .DS_Store
 .volumes
 development_*.py
+default_sites_local_*.json
 
 node_modules/
 

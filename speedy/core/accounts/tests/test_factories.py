@@ -56,8 +56,7 @@ class InactiveUserFactory(DefaultUserFactory):
     def deactivate_speedy_net_profile(self, create, extracted, **kwargs):
         # Deactivate only on speedy.net, speedy.match default is inactive.
         site = Site.objects.get_current()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        if (site.id == SPEEDY_NET_SITE_ID):
+        if (site.id == settings.SPEEDY_NET_SITE_ID):
             self.profile.deactivate()
 
 
@@ -65,8 +64,7 @@ class ActiveUserFactory(DefaultUserFactory):
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         site = Site.objects.get_current()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        if (site.id == SPEEDY_MATCH_SITE_ID):
+        if (site.id == settings.SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
             from speedy.core.uploads.tests.test_factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile

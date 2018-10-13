@@ -1,14 +1,13 @@
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
+from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UserFriendListViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -30,10 +29,9 @@ class UserFriendListViewTestCase(TestCase):
         self.assertEqual(first=r.status_code, second=200)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ReceivedFriendshipRequestsListView(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -55,10 +53,9 @@ class ReceivedFriendshipRequestsListView(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class SentFriendshipRequestsListView(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -80,10 +77,9 @@ class SentFriendshipRequestsListView(TestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UserFriendRequestViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
@@ -118,10 +114,9 @@ class UserFriendRequestViewTestCase(TestCase):
         self.assertIn(member="You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove friends before you proceed.", container=map(str, r.context['messages']))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class CancelFriendRequestViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
@@ -141,10 +136,9 @@ class CancelFriendRequestViewTestCase(TestCase):
         self.assertIn(member="You've cancelled your friend request.", container=map(str, r.context['messages']))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class AcceptFriendRequestViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -189,10 +183,9 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class RejectFriendRequestViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -218,10 +211,9 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=0)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class RemoveFriendViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

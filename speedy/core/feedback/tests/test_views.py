@@ -1,13 +1,13 @@
 from django.core import mail
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.uploads.tests.test_factories import FileFactory
 from ..models import Feedback
 
 
 class FeedbackViewBaseMixin(object):
-    def set_up_other_user_and_file(self):
+    def setup_other_user_and_file(self):
         raise NotImplementedError()
 
     def get_page_url(self):
@@ -16,9 +16,9 @@ class FeedbackViewBaseMixin(object):
     def check_feedback(self, feedback):
         raise NotImplementedError()
 
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
-        self.set_up_other_user_and_file()
+        self.setup_other_user_and_file()
         self.page_url = self.get_page_url()
 
     def test_visitor_can_see_feedback_form(self):
@@ -41,8 +41,7 @@ class FeedbackViewBaseMixin(object):
         feedback = Feedback.objects.first()
         self.check_feedback(feedback=feedback)
 
-    @exclude_on_speedy_composer
-    @exclude_on_speedy_mail_software
+    @only_on_sites_with_login
     def test_user_can_see_feedback_form(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.get(path=self.page_url)
@@ -51,8 +50,7 @@ class FeedbackViewBaseMixin(object):
         self.assertNotContains(response=r, text='id_sender_name')
         self.assertNotContains(response=r, text='id_sender_email')
 
-    @exclude_on_speedy_composer
-    @exclude_on_speedy_mail_software
+    @only_on_sites_with_login
     def test_user_can_submit_form(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Feedback.objects.count(), second=0)
@@ -69,7 +67,7 @@ class FeedbackViewBaseMixin(object):
 
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
-    def set_up_other_user_and_file(self):
+    def setup_other_user_and_file(self):
         pass
 
     def get_page_url(self):
@@ -79,10 +77,9 @@ class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(first=feedback.type, second=Feedback.TYPE_FEEDBACK)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
-    def set_up_other_user_and_file(self):
+    def setup_other_user_and_file(self):
         self.other_user = ActiveUserFactory()
 
     def get_page_url(self):
@@ -97,10 +94,9 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
         self.assertEqual(first=r.status_code, second=404)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
-    def set_up_other_user_and_file(self):
+    def setup_other_user_and_file(self):
         self.file = FileFactory()
 
     def get_page_url(self):

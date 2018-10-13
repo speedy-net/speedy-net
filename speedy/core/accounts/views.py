@@ -82,7 +82,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
-            'language': get_language(),
+            'language_code': get_language(),
         })
         return kwargs
 
@@ -108,7 +108,7 @@ class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateV
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
-            'language': get_language(),
+            'language_code': get_language(),
         })
         return kwargs
 
@@ -197,8 +197,7 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         user = self.request.user
         user.profile.deactivate()
         current_site = Site.objects.get_current()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        if (settings.SITE_ID == SPEEDY_NET_SITE_ID):
+        if (settings.SITE_ID == settings.SPEEDY_NET_SITE_ID):
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate it any time.')
         else:
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(_(current_site.name))
@@ -212,10 +211,10 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
 
     def get_success_url(self):
         site = Site.objects.get_current()
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        # if user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page
-        if site.pk == SPEEDY_MATCH_SITE_ID and self.request.user.email_addresses.filter(is_confirmed=True).count() == 1:
-            return reverse_lazy('matches:list')
+        # if user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page.
+        if (site.id == settings.SPEEDY_MATCH_SITE_ID):
+            if (self.request.user.email_addresses.filter(is_confirmed=True).count() == 1):
+                return reverse_lazy('matches:list')
         return reverse_lazy('accounts:edit_profile_emails')
 
     def get(self, request, *args, **kwargs):
