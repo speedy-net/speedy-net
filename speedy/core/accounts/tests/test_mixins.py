@@ -41,8 +41,8 @@ class ErrorsMixin(object):
     _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': '___Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'}
     _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': '___Slug does not parse to username.'}
 
-    _ensure_this_value_has_at_least_min_length_characters_error_message_dict_by_min_length_and_value_length = {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).___'}
-    _ensure_this_value_has_at_most_max_length_characters_error_message_dict_by_max_length_and_value_length = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).___'}
+    _ensure_this_value_has_at_least_min_length_characters_error_message_dict_by_min_length_and_value_length = {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).'}
+    _ensure_this_value_has_at_most_max_length_characters_error_message_dict_by_max_length_and_value_length = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
 
     def _registration_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
