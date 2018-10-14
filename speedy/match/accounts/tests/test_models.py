@@ -5,7 +5,8 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
-from speedy.core.base.test import ErrorsMixin, TestCase, only_on_speedy_match
+from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.accounts.tests.test_mixins import ErrorsMixin
 from ..models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User

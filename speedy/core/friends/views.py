@@ -18,11 +18,9 @@ class FriendsMixin(object):
     def get_received_friendship_requests(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_received.all()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        if (site.id == SPEEDY_NET_SITE_ID):
+        if (site.id == settings.SPEEDY_NET_SITE_ID):
             return qs
-        elif (site.id == SPEEDY_MATCH_SITE_ID):
+        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
@@ -32,11 +30,9 @@ class FriendsMixin(object):
     def get_sent_friendship_request(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_sent.all()
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        if (site.id == SPEEDY_NET_SITE_ID):
+        if (site.id == settings.SPEEDY_NET_SITE_ID):
             return qs
-        elif (site.id == SPEEDY_MATCH_SITE_ID):
+        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
@@ -59,14 +55,12 @@ class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
         site = Site.objects.get_current()
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
-        SPEEDY_NET_SITE_ID = settings.SITE_PROFILES.get('net').get('site_id')
-        SPEEDY_MATCH_SITE_ID = settings.SITE_PROFILES.get('match').get('site_id')
-        if (site.id == SPEEDY_NET_SITE_ID):
+        if (site.id == settings.SPEEDY_NET_SITE_ID):
             qs = self.user.friends.all().extra(select={
                 'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
             }, ).order_by('-last_visit')
             return qs
-        elif (site.id == SPEEDY_MATCH_SITE_ID):
+        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
             qs = self.user.friends.all().extra(select={
                 'last_visit': 'select last_visit from {} where user_id = friendship_friend.from_user_id'.format(table_name),
                 'like_exists': 'SELECT COUNT(1) FROM likes_userlike '

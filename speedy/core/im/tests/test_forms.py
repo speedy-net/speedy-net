@@ -1,11 +1,10 @@
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from .test_factories import ChatFactory
 from ..forms import MessageForm
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class MessageFormTestCase(TestCase):
     def test_form_to_chat_save(self):
         data = {

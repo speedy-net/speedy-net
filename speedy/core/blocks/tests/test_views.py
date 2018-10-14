@@ -1,12 +1,11 @@
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from ..models import Block
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class BlockListViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.third_user = ActiveUserFactory()
@@ -29,10 +28,9 @@ class BlockListViewTestCase(TestCase):
         self.assertTemplateUsed(response=r, template_name='blocks/block_list.html')
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class BlockViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/block/'.format(self.other_user.slug)
@@ -58,10 +56,9 @@ class BlockViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url='/{}/'.format(self.other_user.slug), target_status_code=404)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UnblockViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/unblock/'.format(self.other_user.slug)

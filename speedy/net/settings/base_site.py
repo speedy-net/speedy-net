@@ -7,7 +7,7 @@ from .utils import APP_DIR
 
 update_site_paths(settings=globals())
 
-SITE_ID = int(env('SPEEDY_NET_SITE_ID'))
+SITE_ID = SPEEDY_NET_SITE_ID
 
 SITE_TITLE = _('Speedy Net [alpha]')
 

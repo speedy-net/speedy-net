@@ -147,8 +147,8 @@ class SiteProfile(SiteProfileBase):
 
     def _deactivate_language(self, step):
         # Profile is invalid. Deactivate in this language.
-        lang = get_language()
-        self._set_active_languages(set(self.get_active_languages()) - {lang})
+        language_code = get_language()
+        self._set_active_languages(set(self.get_active_languages()) - {language_code})
         self.activation_step = step
         self.user.save_user_and_profile()
 
@@ -158,7 +158,7 @@ class SiteProfile(SiteProfileBase):
     def validate_profile_and_activate(self):
         # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
         from speedy.match.accounts import utils
-        lang = get_language()
+        language_code = get_language()
         error_messages = []
         for step in utils.get_steps_range():
             fields = utils.get_step_fields_to_validate(step=step)
@@ -175,8 +175,8 @@ class SiteProfile(SiteProfileBase):
         if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()
-            if not (lang in languages):
-                languages.append(lang)
+            if not (language_code in languages):
+                languages.append(language_code)
                 self._set_active_languages(languages=languages)
                 self.user.save_user_and_profile()
         else:

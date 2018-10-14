@@ -3,17 +3,16 @@ import os
 import tempfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from ..models import Image
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class UploadViewTestCase(TestCase):
     page_url = '/uploads/upload/'
 
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         upload_file = tempfile.NamedTemporaryFile()

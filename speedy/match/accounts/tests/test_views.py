@@ -4,7 +4,7 @@ from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserF
 
 @only_on_speedy_match
 class IndexViewTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
 
     def test_user_gets_redirected_to_his_matches(self):

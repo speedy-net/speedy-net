@@ -1,7 +1,7 @@
 from django.test.client import RequestFactory
 from django.views import generic
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software, exclude_on_speedy_match
+from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.accounts.tests.test_views import RedirectMeMixin
 from ..views import UserMixin
@@ -12,11 +12,10 @@ class UserMixinTestView(UserMixin, generic.View):
         return self
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 @exclude_on_speedy_match  # 404s - has to be a match
 class UserMixinTextCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()
@@ -52,10 +51,9 @@ class UserMixinTextCase(TestCase):
         self.assertEqual(first=r.status_code, second=404)
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class LoggedInUserTestCase(RedirectMeMixin, TestCase):
-    def set_up(self):
+    def setup(self):
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()

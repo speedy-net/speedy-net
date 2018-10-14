@@ -1,14 +1,13 @@
 from friendship.models import Friend
 
-from speedy.core.base.test import TestCase, exclude_on_speedy_composer, exclude_on_speedy_mail_software
+from speedy.core.base.test import TestCase, only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class RequestTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -28,10 +27,9 @@ class RequestTestCase(TestCase):
         self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class ViewRequestsTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -42,10 +40,9 @@ class ViewRequestsTestCase(TestCase):
         self.assertTrue(expr=self.user.has_perm(perm='friends.view_requests', obj=self.user))
 
 
-@exclude_on_speedy_composer
-@exclude_on_speedy_mail_software
+@only_on_sites_with_login
 class RemoveTestCase(TestCase):
-    def set_up(self):
+    def setup(self):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

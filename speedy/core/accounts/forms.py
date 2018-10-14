@@ -62,7 +62,7 @@ class CleanNewPasswordMixin(ValidateUserPasswordMixin):
 
 class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
-        self.language = kwargs.pop('language', 'en')
+        self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
         for loc_field in reversed(self.get_localized_fields()):
             self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
@@ -81,12 +81,12 @@ class LocalizedFirstLastNameMixin(object):
     def get_localizeable_fields(self):
         return ('first_name', 'last_name')
 
-    def get_localized_field(self, base_field_name, language):
-        return '{}_{}'.format(base_field_name, language or self.language)
+    def get_localized_field(self, base_field_name, language_code):
+        return '{}_{}'.format(base_field_name, language_code or self.language_code)
 
     def get_localized_fields(self, language=None):
         loc_fields = self.get_localizeable_fields()
-        return [self.get_localized_field(base_field_name=loc_field, language=language or self.language) for loc_field in loc_fields]
+        return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
 
 
 class AddAttributesToFieldsMixin(object):
@@ -117,10 +117,9 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(raw_password=self.cleaned_data["new_password1"])
-        for lang_code, lang_name in settings.LANGUAGES:
+        for language_code, language_name in settings.LANGUAGES:
             for loc_field in self.get_localizeable_fields():
-                setattr(user, self.get_localized_field(base_field_name=loc_field, language=lang_code),
-                        self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language=self.language)])
+                setattr(user, self.get_localized_field(base_field_name=loc_field, language_code=language_code), self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language_code=self.language_code)])
         if commit:
             user.save()
             user.email_addresses.create(email=self.cleaned_data['email'], is_confirmed=False, is_primary=True)
@@ -213,7 +212,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return helper
 
     def get_users(self, email):
-        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email)
+        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email.lower())
         return {e.user for e in email_addresses if e.user.has_usable_password()}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
