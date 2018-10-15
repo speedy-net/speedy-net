@@ -5,7 +5,9 @@ env.ini
 media/
 .DS_Store
 .volumes
-development_*.py
+
+# Every file or directory starting with "___" is ignored.
+___*
 
 node_modules/
 

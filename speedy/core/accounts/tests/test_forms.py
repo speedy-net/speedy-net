@@ -129,14 +129,21 @@ class RegistrationFormTestCaseMixin(object):
         email_addresses_set = {e.email for e in email_addresses}
         self.assertSetEqual(set1=email_addresses_set, set2={'email22@example.com'})
 
-    def test_required_fields(self):
-        data = {}
+    def run_test_required_fields(self, data):
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
         self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
         # for field in required_fields:
         #     self.assertEqual(first=form.errors[field][0], second=self._this_field_is_required_error_message) # ~~~~ TODO: remove this line!
+
+    def test_required_fields_1(self):
+        data = {}
+        self.run_test_required_fields(data=data)
+
+    def test_required_fields_2(self):
+        data = {field_name: '' for field_name in self.required_fields}
+        self.run_test_required_fields(data=data)
 
     def test_non_unique_confirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
@@ -243,12 +250,15 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_email_address_errors_dict())
 
     def test_cannot_register_invalid_date_of_birth(self):
-        data = self.data.copy()
-        data['date_of_birth'] = '1980-02-31'
-        form = RegistrationForm(language_code=self.language_code, data=data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_date_errors_dict())
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
+            print(date_of_birth)
+            data = self.data.copy()
+            data['date_of_birth'] = date_of_birth
+            form = RegistrationForm(language_code=self.language_code, data=data)
+            form.full_clean()
+            self.assertFalse(expr=form.is_valid())
+            self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_date_errors_dict())
 
 
 @only_on_sites_with_login
@@ -256,11 +266,11 @@ class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, ErrorsMixin
     def setup(self):
         super().setup()
         self.data.update({
-            'first_name_en': 'Doron',
-            'last_name_en': 'Matalon',
+            'first_name_en': "Doron",
+            'last_name_en': "Matalon",
         })
-        self.first_name = 'Doron'
-        self.last_name = 'Matalon'
+        self.first_name = "Doron"
+        self.last_name = "Matalon"
         self.setup_required_fields()
 
     def validate_language_code(self):
@@ -273,11 +283,11 @@ class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, ErrorsMixin,
     def setup(self):
         super().setup()
         self.data.update({
-            'first_name_he': 'דורון',
-            'last_name_he': 'מטלון',
+            'first_name_he': "דורון",
+            'last_name_he': "מטלון",
         })
-        self.first_name = 'דורון'
-        self.last_name = 'מטלון'
+        self.first_name = "דורון"
+        self.last_name = "מטלון"
         self.setup_required_fields()
 
     def validate_language_code(self):

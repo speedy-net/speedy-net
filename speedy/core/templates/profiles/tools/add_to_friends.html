@@ -5,14 +5,14 @@
 
 {% if can_friend_request %}
     {% if friend_request_received %}
-        <form action="{% url 'friends:accept_request' request.user.slug friend_request_received.id %}" method="post" style="display: inline">
+        <form action="{% url 'friends:accept_request' request.user.slug friend_request_received.pk %}" method="post" style="display: inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-success">
                 <i class="fa fa-check"></i>
                 {% trans 'Accept' %}
             </button>
         </form>
-        <form action="{% url 'friends:reject_request' request.user.slug friend_request_received.id %}" method="post" style="display: inline">
+        <form action="{% url 'friends:reject_request' request.user.slug friend_request_received.pk %}" method="post" style="display: inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">
                 <i class="fa fa-times"></i>

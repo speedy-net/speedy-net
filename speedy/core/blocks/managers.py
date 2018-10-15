@@ -14,12 +14,12 @@ class BlockManager(BaseManager):
 
     def unblock(self, blocker, blocked):
         try:
-            return self.get(blocker__id=blocker.id, blocked__id=blocked.id).delete()
+            return self.get(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
         except self.model.DoesNotExist:
             return
 
     def has_blocked(self, blocker, blocked):
-        return self.filter(blocker__id=blocker.id, blocked__id=blocked.id).exists()
+        return self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).exists()
 
     def there_is_block(self, user_1, user_2):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)

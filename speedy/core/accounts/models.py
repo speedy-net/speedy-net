@@ -136,6 +136,9 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     MAX_SLUG_LENGTH = 200
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
+    MIN_AGE_ALLOWED_IN_MODEL = 0  # In years.
+    MAX_AGE_ALLOWED_IN_MODEL = 250  # In years.
+    AGE_VALID_VALUES_IN_MODEL = range(MIN_AGE_ALLOWED_IN_MODEL, MAX_AGE_ALLOWED_IN_MODEL)
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1

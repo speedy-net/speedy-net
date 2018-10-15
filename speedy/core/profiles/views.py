@@ -8,7 +8,7 @@ from django.views import generic
 from friendship.models import FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
-from speedy.core.friends.rules import friend_request_sent, is_friend
+from speedy.core.friends.rules import friend_request_sent, are_friends
 from speedy.core.accounts.models import User, normalize_username
 
 
@@ -69,8 +69,8 @@ class UserMixin(object):
             except FriendshipRequest.DoesNotExist:
                 friend_request_received = False
             cd.update({
-                'user_is_friend': is_friend(user=self.request.user, other=self.user),
-                'friend_request_sent': friend_request_sent(user=self.request.user, other=self.user),
+                'user_is_friend': are_friends(user=self.request.user, other_user=self.user),
+                'friend_request_sent': friend_request_sent(user=self.request.user, other_user=self.user),
                 'friend_request_received': friend_request_received,
             })
         return cd

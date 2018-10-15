@@ -1,11 +1,7 @@
 from rules import predicate, add_perm, is_authenticated
 
+from speedy.core.accounts.base_rules import is_self
 from speedy.core.blocks.rules import there_is_block
-
-
-@predicate
-def is_self(user, other):
-    return user == other
 
 
 @predicate

@@ -2,11 +2,9 @@ import inspect
 
 from django.conf import settings
 from django.core.management import call_command
-from django.contrib.sites.models import Site
-from django.test import TestCase as DjangoTestCase
+from django.test import override_settings, TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
-
-# from speedy.core.settings.utils import env # ~~~~ TODO: remove this line!
+from django.contrib.sites.models import Site
 
 
 class SiteDiscoverRunner(DiscoverRunner):
@@ -22,10 +20,73 @@ class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
         pass
 
 
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+
+class TestsDynamicSettingsMixin(object):
+    SITES_FIXTURE = 'default_sites_tests.json'
+    OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 4
+
+    @staticmethod
+    def get_override_settings_kwargs():
+        # import speedy.core.settings.tests as tests_settings  # ~~~~ TODO: remove this line!
+        kwargs = dict(
+            SITES_FIXTURE=__class__.SITES_FIXTURE,
+            OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=__class__.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED,
+            VALID_DATE_OF_BIRTH_LIST=__class__._valid_date_of_birth_list(),
+            INVALID_DATE_OF_BIRTH_LIST=__class__._invalid_date_of_birth_list(),
+        )
+        return kwargs
+
+    @staticmethod
+    def _valid_date_of_birth_list():
+        return [
+            '1904-02-29',
+            '1980-01-31',
+            '1999-12-01',
+            '2000-02-29',
+            '2004-02-29',
+            '2018-10-15',
+        ]
+
+    @staticmethod
+    def _invalid_date_of_birth_list():
+        today = date.today()
+        return [
+            '1900-02-29',
+            '1901-02-29',
+            '1980-02-31',
+            '1980-02-99',
+            '1980-02-00',
+            '1980-02-001',
+            '1999-00-01',
+            '1999-13-01',
+            '2001-02-29',
+            '2018-10-16',
+            '2019-01-01',
+            '3000-01-01',
+            '1769-01-01',
+            '1768-01-01',
+            '1000-01-01',
+            '1-01-01',
+            str(today + relativedelta(days=1)),
+            str(today - relativedelta(years=250)),
+            str(today),
+            str(today - relativedelta(years=250) + relativedelta(days=1)),
+            'a',
+            '',
+        ]
+
+
+# class TestCase(TestsDynamicSettingsMixin, DjangoTestCase):
+@override_settings(**TestsDynamicSettingsMixin.get_override_settings_kwargs())
 class TestCase(DjangoTestCase):
     def _pre_setup(self):
         super()._pre_setup()
-        call_command('loaddata', settings.FIXTURE_DIRS[-1] + '/default_sites_tests.json', verbosity=0)
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        # call_command('loaddata', tests_settings.SITES_FIXTURE, verbosity=0) # ~~~~ TODO: remove this line!
+        call_command('loaddata', settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()
 
     def _validate_all_values(self):

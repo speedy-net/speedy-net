@@ -1,5 +1,48 @@
-
-
+# from datetime import date
+# from dateutil.relativedelta import relativedelta
+#
+#
+# class TestsDynamicSettingsMixin(object):
+#     @staticmethod
+#     def _valid_date_of_birth_list():
+#         return [
+#             '1904-02-29',
+#             '1980-01-31',
+#             '1999-12-01',
+#             '2000-02-29',
+#             '2004-02-29',
+#             '2018-10-15',
+#         ]
+#
+#     @staticmethod
+#     def _invalid_date_of_birth_list(self):
+#         today = date.today()
+#         return [
+#             '1900-02-29',
+#             '1901-02-29',
+#             '1980-02-31',
+#             '1980-02-99',
+#             '1980-02-00',
+#             '1980-02-001',
+#             '1999-00-01',
+#             '1999-13-01',
+#             '2001-02-29',
+#             '2018-10-16',
+#             '2019-01-01',
+#             '3000-01-01',
+#             '1769-01-01',
+#             '1768-01-01',
+#             '1000-01-01',
+#             '1-01-01',
+#             str(today + relativedelta(days=1)),
+#             str(today - relativedelta(years=250)),
+#             str(today),
+#             str(today - relativedelta(years=250) + relativedelta(days=1)),
+#             'a',
+#             '',
+#         ]
+#
+#
 class ErrorsMixin(object):
     # _this_field_is_required_error_message = 'This field is required.'
     # _this_field_cannot_be_null_error_message = 'This field cannot be null.'
@@ -47,8 +90,14 @@ class ErrorsMixin(object):
     def _registration_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
+    def _profile_form_all_the_required_fields_keys(self):
+        return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
+
     def _registration_form_all_the_required_fields_are_required_errors_dict(self):
         return {field_name: [self._this_field_is_required_error_message_dict[self.language_code]] for field_name in self._registration_form_all_the_required_fields_keys()}
+
+    def _profile_form_all_the_required_fields_are_required_errors_dict(self):
+        return {field_name: [self._this_field_is_required_error_message_dict[self.language_code]] for field_name in self._profile_form_all_the_required_fields_keys()}
 
     def _cannot_create_user_without_all_the_required_fields_errors_dict(self):
         return {'first_name': [self._this_field_cannot_be_blank_error_message_dict[self.language_code]], 'last_name': [self._this_field_cannot_be_blank_error_message_dict[self.language_code]], 'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=0)], 'password': [self._this_field_cannot_be_blank_error_message_dict[self.language_code]], 'gender': [self._this_field_cannot_be_null_error_message_dict[self.language_code]], 'date_of_birth': [self._this_field_cannot_be_null_error_message_dict[self.language_code]]}
@@ -227,5 +276,9 @@ class ErrorsMixin(object):
     def assert_registration_form_required_fields(self, required_fields):
         self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict().keys()), set2=set(required_fields))
         self.assertDictEqual(d1=self._registration_form_all_the_required_fields_are_required_errors_dict(), d2={field_name: [self._this_field_is_required_error_message_dict[self.language_code]] for field_name in required_fields})
+
+    def assert_profile_form_required_fields(self, required_fields):
+        self.assertSetEqual(set1=set(self._profile_form_all_the_required_fields_are_required_errors_dict().keys()), set2=set(required_fields))
+        self.assertDictEqual(d1=self._profile_form_all_the_required_fields_are_required_errors_dict(), d2={field_name: [self._this_field_is_required_error_message_dict[self.language_code]] for field_name in required_fields})
 
 

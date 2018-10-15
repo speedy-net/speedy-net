@@ -78,7 +78,8 @@ class LocalizedFirstLastNameMixin(object):
             instance.save()
         return instance
 
-    def get_localizeable_fields(self):
+    @staticmethod
+    def get_localizeable_fields():
         return ('first_name', 'last_name')
 
     def get_localized_field(self, base_field_name, language_code):

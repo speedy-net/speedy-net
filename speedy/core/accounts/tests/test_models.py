@@ -385,7 +385,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message)
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message_dict[self.language_code])
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -396,7 +396,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message)
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message_dict[self.language_code])
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))

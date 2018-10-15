@@ -1,36 +1,37 @@
-from friendship.models import Friend
 from rules import predicate, add_perm
 
-from speedy.core.blocks.rules import is_self, there_is_block
+from speedy.core.accounts.base_rules import is_self
+from speedy.core.friends.rules import are_friends
+from speedy.core.blocks.rules import there_is_block
 from .models import UserAccessField
 
 
-def _has_access_perm_for_obj(user, other, access):
+def _has_access_perm_for_obj(user, other_user, access):
     if access == UserAccessField.ACCESS_ANYONE:
         return True
     if user.is_authenticated:
         if access == UserAccessField.ACCESS_ME:
-            return user == other
+            return is_self(user=user, other_user=other_user)
         if access == UserAccessField.ACCESS_FRIENDS:
-            return (user == other) or Friend.objects.are_friends(user1=user, user2=other)
+            return ((is_self(user=user, other_user=other_user)) or (are_friends(user=user, other_user=other_user)))
         if access == UserAccessField.ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS:
-            return (user == other) or Friend.objects.are_friends(user1=user, user2=other)
+            return ((is_self(user=user, other_user=other_user)) or (are_friends(user=user, other_user=other_user)))
     return False
 
 
 @predicate
-def has_access_perm(user, other):
+def has_access_perm(user, other_user):
     return True
 
 
 @predicate
-def has_access_perm_for_dob_day_month(user, other):
-    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_day_month)
+def has_access_perm_for_dob_day_month(user, other_user):
+    return _has_access_perm_for_obj(user=user, other_user=other_user, access=other_user.access_dob_day_month)
 
 
 @predicate
-def has_access_perm_for_dob_year(user, other):
-    return _has_access_perm_for_obj(user=user, other=other, access=other.access_dob_year)
+def has_access_perm_for_dob_year(user, other_user):
+    return _has_access_perm_for_obj(user=user, other_user=other_user, access=other_user.access_dob_year)
 
 
 @predicate
@@ -50,7 +51,7 @@ def email_address_is_primary(user, email_address):
 
 @predicate
 def has_access_perm_for_email_address(user, email_address):
-    return _has_access_perm_for_obj(user=user, other=email_address.user, access=email_address.access)
+    return _has_access_perm_for_obj(user=user, other_user=email_address.user, access=email_address.access)
 
 
 add_perm('accounts.view_profile', has_access_perm & ~there_is_block)

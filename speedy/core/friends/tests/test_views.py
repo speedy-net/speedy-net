@@ -1,8 +1,11 @@
+from django.conf import settings
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+# import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+# OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 4 # ~~~~ TODO: remove this line!
 
 
 @only_on_sites_with_login
@@ -83,12 +86,14 @@ class UserFriendRequestViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
+        self.same_user_page_url = '/{}/friends/request/'.format(self.user.slug)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
 
     def test_visitor_cannot_send_friend_request(self):
         self.client.logout()
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_can_send_friend_request(self):
         r = self.client.post(path=self.page_url)
@@ -98,20 +103,76 @@ class UserFriendRequestViewTestCase(TestCase):
         friendship_request = self.other_user.friendship_requests_received.first()
         self.assertEqual(first=friendship_request.from_user, second=self.user)
         self.assertEqual(first=friendship_request.to_user, second=self.other_user)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user.get_absolute_url())
+        self.assertListEqual(list1=['Friend request sent.'], list2=list(map(str, r.context['messages'])))
 
     def test_user_cannot_send_friend_request_twice(self):
-        r1 = self.client.post(path=self.page_url)
-        r2 = self.client.post(path=self.page_url)
-        self.assertRedirects(response=r2, expected_url=self.other_user.get_absolute_url())
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=1)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=1)
+        self.assertIsNone(obj=r.context)
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
+        self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=1)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=1)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user.get_absolute_url())
+        self.assertListEqual(list1=["Friendship already requested."], list2=list(map(str, r.context['messages'])))
+        self.assertListEqual(list1=["Friendship already requested"], list2=list(map(str, r.context['messages'])))#### # ~~~~ TODO: remove this line!
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
+    def test_user_cannot_send_friend_request_to_a_friend(self):
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
+        self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
+        self.assertEqual(first=self.user.friendship_requests_received.count(), second=0)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=0)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.user.get_absolute_url())
+        self.assertListEqual(list1=["Users are already friends."], list2=list(map(str, r.context['messages'])))
+        self.assertListEqual(list1=["Users are already friends"], list2=list(map(str, r.context['messages'])))#### # ~~~~ TODO: remove this line!
+
+    def test_user_cannot_send_friend_request_to_himself(self):
+        r = self.client.post(path=self.same_user_page_url)
+        self.assertRedirects(response=r, expected_url=self.user.get_absolute_url())
+        self.assertEqual(first=self.user.friendship_requests_received.count(), second=0)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=0)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.user.get_absolute_url())
+        self.assertListEqual(list1=["Users cannot be friends with themselves."], list2=list(map(str, r.context['messages'])))
+        self.assertListEqual(list1=["Users cannot be friends with themselves"], list2=list(map(str, r.context['messages'])))#### # ~~~~ TODO: remove this line!
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    def test_user_can_send_friend_request_if_not_maximum(self):
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
+            Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
+        self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=1)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=1)
+        friendship_request = self.other_user.friendship_requests_received.first()
+        self.assertEqual(first=friendship_request.from_user, second=self.user)
+        self.assertEqual(first=friendship_request.to_user, second=self.other_user)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user.get_absolute_url())
+        self.assertListEqual(list1=['Friend request sent.'], list2=list(map(str, r.context['messages'])))
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
     def test_user_cannot_send_friend_request_if_maximum(self):
-        Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+            Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url(), fetch_redirect_response=False)
+        self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=0)
+        self.assertEqual(first=self.user.friendship_requests_sent.count(), second=0)
+        self.assertIsNone(obj=r.context)
         r = self.client.get(path=self.other_user.get_absolute_url())
-        self.assertIn(member="You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove friends before you proceed.", container=map(str, r.context['messages']))
+        self.assertListEqual(list1=["You already have 4 friends. You can't have more than 4 friends on Speedy Net. Please remove friends before you proceed."], list2=list(map(str, r.context['messages'])))
 
 
 @only_on_sites_with_login
@@ -126,6 +187,7 @@ class CancelFriendRequestViewTestCase(TestCase):
         self.client.logout()
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_can_cancel_friend_request(self):
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -133,7 +195,7 @@ class CancelFriendRequestViewTestCase(TestCase):
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url(), fetch_redirect_response=False)
         r = self.client.get(path=self.other_user.get_absolute_url())
-        self.assertIn(member="You've cancelled your friend request.", container=map(str, r.context['messages']))
+        self.assertListEqual(list1=["You've cancelled your friend request."], list2=list(map(str, r.context['messages'])))
 
 
 @only_on_sites_with_login
@@ -142,18 +204,20 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
-        self.page_url = '/{}/friends/request/accept/{}/'.format(self.other_user.slug, friendship_request.id)
+        self.page_url = '/{}/friends/request/accept/{}/'.format(self.other_user.slug, friendship_request.pk)
         self.other_user_friends_list_url = '/{}/friends/'.format(self.other_user.slug)
 
     def test_visitor_cannot_accept_friend_request(self):
         self.client.logout()
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_cannot_accept_friend_request_he_sent_another_user(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_that_has_received_request_can_accept_it(self):
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
@@ -161,25 +225,64 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url)
         self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user_friends_list_url)
+        self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
-    def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
-        Friend.objects.add_friend(from_user=self.other_user, to_user=ActiveUserFactory()).accept()
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
+            Friend.objects.add_friend(from_user=self.other_user, to_user=ActiveUserFactory()).accept()
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url)
+        self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user_friends_list_url)
+        self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+            Friend.objects.add_friend(from_user=self.other_user, to_user=ActiveUserFactory()).accept()
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url, fetch_redirect_response=False)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.get(path=self.other_user_friends_list_url)
-        self.assertIn(member="You already have 1 friends. You can't have more than 1 friends on Speedy Net. Please remove friends before you proceed.", container=map(str, r.context['messages']))
+        self.assertListEqual(list1=["You already have 4 friends. You can't have more than 4 friends on Speedy Net. Please remove friends before you proceed."], list2=list(map(str, r.context['messages'])))
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=1)
-    def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
-        Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
+            Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        r = self.client.post(path=self.page_url)
+        self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url)
+        self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user_friends_list_url)
+        self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
+
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
+        self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+        for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
+            Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
+        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url, fetch_redirect_response=False)
+        self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         r = self.client.get(path=self.other_user_friends_list_url)
-        self.assertIn(member="This user already has 1 friends. They can't have more than 1 friends on Speedy Net. Please ask them to remove friends before you proceed.", container=map(str, r.context['messages']))
+        self.assertListEqual(list1=["This user already has 4 friends. They can't have more than 4 friends on Speedy Net. Please ask them to remove friends before you proceed."], list2=list(map(str, r.context['messages'])))
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
 
@@ -189,18 +292,20 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
-        self.page_url = '/{}/friends/request/reject/{}/'.format(self.other_user.slug, friendship_request.id)
+        self.page_url = '/{}/friends/request/reject/{}/'.format(self.other_user.slug, friendship_request.pk)
         self.other_user_friends_list_url = '/{}/friends/'.format(self.other_user.slug)
 
     def test_visitor_cannot_reject_friend_request(self):
         self.client.logout()
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_cannot_reject_friend_request_he_sent_another_user(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_that_has_received_request_can_reject_it(self):
         self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
@@ -209,6 +314,9 @@ class RejectFriendRequestViewTestCase(TestCase):
         self.assertRedirects(response=r, expected_url=self.other_user_friends_list_url)
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
         self.assertEqual(first=self.other_user.friendship_requests_received.count(), second=0)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user_friends_list_url)
+        self.assertListEqual(list1=['Friend request rejected.'], list2=list(map(str, r.context['messages'])))
 
 
 @only_on_sites_with_login
@@ -223,6 +331,7 @@ class RemoveFriendViewTestCase(TestCase):
     def test_visitor_has_no_access(self):
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+        self.assertIsNone(obj=r.context)
 
     def test_user_can_remove_other_user(self):
         self.assertEqual(first=Friend.objects.count(), second=1 * 2)
@@ -230,6 +339,9 @@ class RemoveFriendViewTestCase(TestCase):
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
         self.assertEqual(first=Friend.objects.count(), second=0)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user.get_absolute_url())
+        self.assertListEqual(list1=['You have removed this user from friends.'], list2=list(map(str, r.context['messages'])))
 
     def test_other_user_can_remove_first_user(self):
         self.assertEqual(first=Friend.objects.count(), second=1 * 2)
@@ -237,5 +349,8 @@ class RemoveFriendViewTestCase(TestCase):
         r = self.client.post(path=self.opposite_url)
         self.assertRedirects(response=r, expected_url=self.user.get_absolute_url())
         self.assertEqual(first=Friend.objects.count(), second=0)
+        self.assertIsNone(obj=r.context)
+        r = self.client.get(path=self.other_user.get_absolute_url())
+        self.assertListEqual(list1=['You have removed this user from friends.'], list2=list(map(str, r.context['messages'])))
 
 

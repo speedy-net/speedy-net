@@ -8,7 +8,6 @@ from django.http.response import HttpResponseBase
 from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
-from speedy.core.settings.utils import env
 
 
 def redirect_to_www(site: Site) -> HttpResponseBase:

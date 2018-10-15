@@ -1,7 +1,9 @@
 import re
 import random
 import string
-import datetime
+
+from datetime import date
+
 from dateutil.relativedelta import relativedelta
 
 
@@ -42,7 +44,7 @@ def normalize_username(slug):
 
 
 def get_age(date_of_birth):
-    today = datetime.date.today()
+    today = date.today()
     age = today.year - date_of_birth.year
     if ((today.month, today.day) < (date_of_birth.month, date_of_birth.day)):
         age -= 1
@@ -50,9 +52,9 @@ def get_age(date_of_birth):
 
 
 def get_age_ranges_match(min_age, max_age):
-    current = datetime.date.today()
-    min_date = current - relativedelta(years=min_age)
-    max_date = current - relativedelta(years=max_age + 1) + relativedelta(days=1)
+    today = date.today()
+    min_date = today - relativedelta(years=min_age)
+    max_date = today - relativedelta(years=max_age + 1) + relativedelta(days=1)
     return max_date, min_date
 
 

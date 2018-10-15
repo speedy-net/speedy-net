@@ -1,9 +1,9 @@
-from modeltranslation.translator import TranslationOptions, register
+from modeltranslation.translator import register, TranslationOptions
 from .models import SiteProfile as SpeedyMatchSiteProfile
 
 
 @register(SpeedyMatchSiteProfile)
-class SiteProfileOptions(TranslationOptions):
+class SpeedyMatchSiteProfileTranslationOptions(TranslationOptions):
     fields = ('profile_description', 'city', 'children', 'more_children', 'match_description')
 
 

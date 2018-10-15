@@ -5,10 +5,14 @@ from datetime import date
 import factory
 import factory.fuzzy
 
-from django.contrib.sites.models import Site
 from django.conf import settings
+# from django.test import TestCase as DjangoTestCase #### TODO
+from django.contrib.sites.models import Site
 
+from speedy.core.base.test import TestCase
 from ..models import normalize_username, User, UserEmailAddress
+from ..translation import UserTranslationOptions
+from ..forms import LocalizedFirstLastNameMixin
 
 
 def get_random_user_password_length():
@@ -37,6 +41,10 @@ class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
         model = UserEmailAddress
 
 
+# class DefaultUserFactory(factory.DjangoModelFactory, DjangoTestCase): # ~~~~ TODO
+# class DefaultUserFactory(factory.DjangoModelFactory, TestCase):
+# class DefaultUserFactory(DjangoTestCase, factory.DjangoModelFactory): # ~~~~ TODO
+# class DefaultUserFactory(TestCase, factory.DjangoModelFactory):
 class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
@@ -50,6 +58,28 @@ class DefaultUserFactory(factory.DjangoModelFactory):
     class Meta:
         model = User
 
+    # @factory.post_generation
+    # def validate_first_and_last_name_in_all_languages(self, create, extracted, **kwargs):
+    #     localizeable_fields = UserTranslationOptions.fields
+    #     self.assertEqual(first=localizeable_fields, second=LocalizedFirstLastNameMixin.get_localizeable_fields())
+    #     self.assertEqual(first=localizeable_fields, second=('first_name', 'last_name'))
+    #     self.assertEqual(first=localizeable_fields, second=('first_name', 'last_name', '1'))####
+    #     # self.assertEqual(first=self.first_name_en, second=self.first_name)
+    #     # self.assertEqual(first=self.first_name_he, second=self.first_name)
+    #     # self.assertEqual(first=self.last_name_en, second=self.last_name)
+    #     # self.assertEqual(first=self.last_name_he, second=self.last_name)
+    #     field_name_localized_list = list()
+    #     for base_field_name in localizeable_fields:
+    #         for language_code in self.all_languages_code_list:
+    #             field_name_localized = '{}_{}'.format(base_field_name, language_code)
+    #             self.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)
+    #             field_name_localized_list.append(field_name_localized)
+    #     self.assertListEqual(list1=field_name_localized_list, list2=[])
+    #     self.assertEqual(first=self.first_name_en, second=self.first_name)
+    #     self.assertEqual(first=self.first_name_he, second=self.first_name)
+    #     self.assertEqual(first=self.last_name_en, second=self.last_name)
+    #     self.assertEqual(first=self.last_name_he, second=self.last_name)
+    #
 
 class InactiveUserFactory(DefaultUserFactory):
     @factory.post_generation
@@ -74,10 +104,14 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.more_children = "Yes."
             self.profile.match_description = "Hi!"
             self.profile.height = random.randint(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED)
+            # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
+            # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
             if (self.diet == User.DIET_UNKNOWN):
                 self.diet = random.choice(User.DIET_VALID_VALUES)
             else:
                 raise Exception("Unexpected: diet={}".format(self.diet))
+            # self.diet = random.choice(User.DIET_VALID_VALUES)
+            # self.assertNotEqual(first=self.diet, second=User.DIET_UNKNOWN)
             if (self.profile.smoking_status == SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN):
                 self.profile.smoking_status = random.choice(SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
             else:
