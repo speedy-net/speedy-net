@@ -92,9 +92,9 @@ class ErrorsMixin(object):
     _you_cant_change_your_username_error_message_dict_by_gender = {
         'en': {gender: "You can't change your username." for gender in ALL_GENDERS},
         'he': {
-            'female': "___.לא ניתן לשנות שם משתמשת",
-            'male': "___.לא ניתן לשנות שם משתמש",
-            'other': "___.לא ניתן לשנות שם משתמש/ת",
+            'female': ".לא ניתן לשנות שם משתמשת",
+            'male': ".לא ניתן לשנות שם משתמש",
+            'other': ".לא ניתן לשנות שם משתמש/ת",
         },
     }
 
