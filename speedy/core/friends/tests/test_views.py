@@ -11,6 +11,7 @@ from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserF
 @only_on_sites_with_login
 class UserFriendListViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -35,6 +36,7 @@ class UserFriendListViewTestCase(TestCase):
 @only_on_sites_with_login
 class ReceivedFriendshipRequestsListView(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -59,6 +61,7 @@ class ReceivedFriendshipRequestsListView(TestCase):
 @only_on_sites_with_login
 class SentFriendshipRequestsListView(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -83,6 +86,7 @@ class SentFriendshipRequestsListView(TestCase):
 @only_on_sites_with_login
 class UserFriendRequestViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
@@ -178,6 +182,7 @@ class UserFriendRequestViewTestCase(TestCase):
 @only_on_sites_with_login
 class CancelFriendRequestViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
@@ -201,6 +206,7 @@ class CancelFriendRequestViewTestCase(TestCase):
 @only_on_sites_with_login
 class AcceptFriendRequestViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -289,6 +295,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
 @only_on_sites_with_login
 class RejectFriendRequestViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -322,6 +329,7 @@ class RejectFriendRequestViewTestCase(TestCase):
 @only_on_sites_with_login
 class RemoveFriendViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

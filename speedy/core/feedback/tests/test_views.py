@@ -17,6 +17,7 @@ class FeedbackViewBaseMixin(object):
         raise NotImplementedError()
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.setup_other_user_and_file()
         self.page_url = self.get_page_url()

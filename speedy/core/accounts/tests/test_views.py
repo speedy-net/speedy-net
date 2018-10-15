@@ -31,6 +31,7 @@ class RedirectMeMixin(object):
 @only_on_sites_with_login
 class IndexViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
@@ -46,6 +47,7 @@ class IndexViewTestCase(TestCase):
 @only_on_sites_with_login
 class MeViewTestCase(RedirectMeMixin, TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory(slug='markmark')
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
@@ -65,6 +67,7 @@ class MeViewTestCase(RedirectMeMixin, TestCase):
 @only_on_sites_with_login
 class LoginTestCase(RedirectMeMixin, TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -108,6 +111,7 @@ class LoginTestCase(RedirectMeMixin, TestCase):
 
 class RegistrationViewTestCaseMixin(object):
     def setup(self):
+        super().setup()
         self.password = get_random_user_password()
         self.data = {
             'email': 'email@example.com',
@@ -361,7 +365,7 @@ class RegistrationViewTestCaseMixin(object):
     def test_cannot_register_invalid_date_of_birth(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
-            print(date_of_birth)
+            print("test_cannot_register_invalid_date_of_birth", date_of_birth)
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path='/', data=data)
@@ -385,7 +389,8 @@ class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, ErrorsMixin
         self.last_name = "Matalon"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
 
 
@@ -402,7 +407,8 @@ class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, ErrorsMixin,
         self.last_name = "מטלון"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
@@ -412,6 +418,7 @@ class LoginViewTestCase(RedirectMeMixin, ErrorsMixin, TestCase):
     _other_user_password = '8' * 8
     
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user_email = UserEmailAddressFactory()
@@ -545,6 +552,7 @@ class LoginViewTestCase(RedirectMeMixin, ErrorsMixin, TestCase):
 @only_on_sites_with_login
 class LogoutViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
@@ -563,6 +571,7 @@ class EditProfileViewTestCaseMixin(object):
     page_url = '/edit-profile/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.data = {
             'date_of_birth': '1976-06-03',
@@ -608,12 +617,18 @@ class EditProfileViewTestCaseMixin(object):
         self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
     def run_test_required_fields(self, data):
+        self.first_name = self.user.first_name
+        self.last_name = self.user.last_name
         r = self.client.post(path=self.page_url, data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        user = User.objects.get(pk=self.user.pk)
+        self.assertEqual(first=user.first_name, second=self.first_name)
+        self.assertEqual(first=user.first_name_en, second=self.first_name)
+        self.assertEqual(first=user.first_name_he, second=self.first_name)
+        self.assertEqual(first=user.last_name, second=self.last_name)
+        self.assertEqual(first=user.last_name_en, second=self.last_name)
+        self.assertEqual(first=user.last_name_he, second=self.last_name)
 
     def test_required_fields_1(self):
         data = {}
@@ -634,7 +649,7 @@ class EditProfileViewTestCaseMixin(object):
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
         self.assertNotEqual(first=user.slug, second=old_slug)
-        print("test_user_can_change_his_slug", old_slug, new_slug, user.slug)  # ~~~~ TODO: remove this line!
+        print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
 
     def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -664,13 +679,13 @@ class EditProfileViewTestCaseMixin(object):
         self.assertNotEqual(first=normalize_username(slug=new_slug), second=self.user.username)
         r = self.client.post(path=self.page_url, data=data)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._you_cant_change_your_username_errors_dict())
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._you_cant_change_your_username_errors_dict_by_gender(gender=self.user.get_gender()))
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=old_slug)
         self.assertNotEqual(first=user.slug, second=new_slug)
         self.assertEqual(first=user.username, second=normalize_username(slug=old_slug))
         self.assertNotEqual(first=user.username, second=normalize_username(slug=new_slug))
-        print("test_user_cannot_change_his_username", old_slug, new_slug, user.slug)  # ~~~~ TODO: remove this line!
+        print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
 
     def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -705,7 +720,8 @@ class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, ErrorsMixin, 
         self.last_name = "Connelly"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
 
 
@@ -722,7 +738,8 @@ class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, ErrorsMixin, T
         self.last_name = "קונלי"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
@@ -731,6 +748,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
     page_url = '/edit-profile/privacy/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -777,6 +795,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
     page_url = '/edit-profile/notifications/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
@@ -811,6 +830,7 @@ class EditProfileCredentialsViewTestCase(ErrorsMixin, TestCase):
     page_url = '/edit-profile/credentials/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -910,6 +930,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
     page_url = '/welcome/'
 
     def setup(self):
+        super().setup()
         self.user = InactiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=self.user.is_active, second={settings.SPEEDY_NET_SITE_ID: False, settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
@@ -948,6 +969,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
     page_url = '/edit-profile/deactivate/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
@@ -981,6 +1003,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
 @only_on_sites_with_login
 class VerifyUserEmailAddressViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -1018,6 +1041,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
 @only_on_sites_with_login
 class AddUserEmailAddressViewTestCase(ErrorsMixin, TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -1101,6 +1125,7 @@ class AddUserEmailAddressViewTestCase(ErrorsMixin, TestCase):
 @only_on_sites_with_login
 class SendConfirmationEmailViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
@@ -1138,6 +1163,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
 @only_on_sites_with_login
 class DeleteUserEmailAddressViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
         self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
@@ -1177,6 +1203,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
 @only_on_sites_with_login
 class SetPrimaryUserEmailAddressViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
@@ -1222,6 +1249,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
 @only_on_sites_with_login
 class PasswordResetViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.assertEqual(first=Entity.objects.count(), second=1)

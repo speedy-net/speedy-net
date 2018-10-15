@@ -8,6 +8,7 @@ from ..models import Block
 @only_on_sites_with_login
 class BlockManagerTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 

@@ -5,6 +5,7 @@ from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserF
 @only_on_speedy_net
 class IndexViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
 
     def test_user_gets_redirected_to_his_profile(self):

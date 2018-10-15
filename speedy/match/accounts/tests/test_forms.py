@@ -6,6 +6,7 @@ from speedy.match.accounts.forms import ProfileNotificationsForm
 @only_on_speedy_match
 class ProfileNotificationsFormTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
 
     def test_has_correct_fields(self):

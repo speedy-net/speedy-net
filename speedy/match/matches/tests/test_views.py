@@ -10,6 +10,7 @@ class EditViewBaseMixin(object):
         raise NotImplementedError()
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.page_url = self.get_page_url()
         self.template_name = self.get_template_name()

@@ -9,6 +9,7 @@ from speedy.match.likes.models import UserLike
 @only_on_speedy_match
 class LikeTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
@@ -34,6 +35,7 @@ class LikeTestCase(TestCase):
 @only_on_speedy_match
 class UnlikeTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
@@ -55,6 +57,7 @@ class UnlikeTestCase(TestCase):
 @only_on_speedy_match
 class ViewLikesTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()

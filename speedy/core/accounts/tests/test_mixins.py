@@ -1,3 +1,7 @@
+from speedy.core.accounts.models import User
+
+
+# ~~~~ TODO: remove these lines!
 # from datetime import date
 # from dateutil.relativedelta import relativedelta
 #
@@ -44,6 +48,8 @@
 #
 #
 class ErrorsMixin(object):
+    ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]
+    
     # _this_field_is_required_error_message = 'This field is required.'
     # _this_field_cannot_be_null_error_message = 'This field cannot be null.'
     # _this_field_cannot_be_blank_error_message = 'This field cannot be blank.'
@@ -72,7 +78,6 @@ class ErrorsMixin(object):
     _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': '___Invalid password.'}
     _password_too_short_error_message_dict = {'en': 'Password too short.', 'he': 'הסיסמה קצרה מדי.'}
     _password_too_long_error_message_dict = {'en': 'Password too long.', 'he': 'הסיסמה ארוכה מדי.'}
-    _you_cant_change_your_username_error_message_dict = {'en': "You can't change your username.", 'he': '___You can\'t change your username.'}
     _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
     _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דוא"ל חוקית'}
     _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
@@ -83,6 +88,15 @@ class ErrorsMixin(object):
     _entity_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, and may contain letters, digits or dashes.', 'he': '___Username must start with 4 or more letters, and may contain letters, digits or dashes.'}
     _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': '___Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'}
     _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': '___Slug does not parse to username.'}
+
+    _you_cant_change_your_username_error_message_dict_by_gender = {
+        'en': {gender: "You can't change your username." for gender in ALL_GENDERS},
+        'he': {
+            'female': "___.לא ניתן לשנות שם משתמשת",
+            'male': "___.לא ניתן לשנות שם משתמש",
+            'other': "___.לא ניתן לשנות שם משתמש/ת",
+        },
+    }
 
     _ensure_this_value_has_at_least_min_length_characters_error_message_dict_by_min_length_and_value_length = {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).'}
     _ensure_this_value_has_at_most_max_length_characters_error_message_dict_by_max_length_and_value_length = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
@@ -135,8 +149,8 @@ class ErrorsMixin(object):
     def _enter_a_valid_date_errors_dict(self):
         return {'date_of_birth': [self._enter_a_valid_date_error_message_dict[self.language_code]]}
 
-    def _you_cant_change_your_username_errors_dict(self):
-        return {'slug': [self._you_cant_change_your_username_error_message_dict[self.language_code]]}
+    def _you_cant_change_your_username_errors_dict_by_gender(self, gender):
+        return {'slug': [self._you_cant_change_your_username_error_message_dict_by_gender[self.language_code][gender]]}
 
     def _slug_this_username_is_already_taken_errors_dict(self):
         return {'slug': [self._this_username_is_already_taken_error_message_dict[self.language_code]]}
@@ -272,6 +286,10 @@ class ErrorsMixin(object):
     # @staticmethod
     def _user_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
         return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+
+    def setup(self):
+        super().setup()
+        self.assertListEqual(list1=self.ALL_GENDERS, list2=['female', 'male', 'other'])
 
     def assert_registration_form_required_fields(self, required_fields):
         self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_are_required_errors_dict().keys()), set2=set(required_fields))

@@ -16,6 +16,7 @@ class UserMixinTestView(UserMixin, generic.View):
 @exclude_on_speedy_match  # 404s - has to be a match
 class UserMixinTextCase(TestCase):
     def setup(self):
+        super().setup()
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()
@@ -54,6 +55,7 @@ class UserMixinTextCase(TestCase):
 @only_on_sites_with_login
 class LoggedInUserTestCase(RedirectMeMixin, TestCase):
     def setup(self):
+        super().setup()
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()

@@ -6,6 +6,7 @@ from .test_factories import ActiveUserFactory
 @only_on_sites_with_login
 class ViewProfileTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 

@@ -12,6 +12,7 @@ from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, Site
 
 class RegistrationFormTestCaseMixin(object):
     def setup(self):
+        super().setup()
         self.password = get_random_user_password()
         self.data = {
             'email': 'email@example.com',
@@ -273,7 +274,8 @@ class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, ErrorsMixin
         self.last_name = "Matalon"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
 
 
@@ -290,13 +292,15 @@ class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, ErrorsMixin,
         self.last_name = "מטלון"
         self.setup_required_fields()
 
-    def validate_language_code(self):
+    def validate_all_values(self):
+        super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
 class ProfilePrivacyFormTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -308,6 +312,7 @@ class ProfilePrivacyFormTestCase(TestCase):
 @only_on_sites_with_login
 class ProfileNotificationsFormTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
 
     @exclude_on_speedy_match
@@ -321,6 +326,7 @@ class ProfileNotificationsFormTestCase(TestCase):
 @only_on_sites_with_login
 class PasswordResetFormTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -351,6 +357,7 @@ class PasswordResetFormTestCase(TestCase):
 @only_on_sites_with_login
 class DeactivationFormTestCase(ErrorsMixin, TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
 
     def test_incorrect_password(self):

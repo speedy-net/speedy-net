@@ -8,6 +8,7 @@ from speedy.core.blocks.models import Block
 @only_on_sites_with_login
 class RequestTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -30,6 +31,7 @@ class RequestTestCase(TestCase):
 @only_on_sites_with_login
 class ViewRequestsTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -43,6 +45,7 @@ class ViewRequestsTestCase(TestCase):
 @only_on_sites_with_login
 class RemoveTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

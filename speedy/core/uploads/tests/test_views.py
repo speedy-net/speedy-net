@@ -13,6 +13,7 @@ class UploadViewTestCase(TestCase):
     page_url = '/uploads/upload/'
 
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         upload_file = tempfile.NamedTemporaryFile()

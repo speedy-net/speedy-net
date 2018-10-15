@@ -7,6 +7,7 @@ from .test_factories import ChatFactory
 @only_on_sites_with_login
 class SendMessageTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -25,6 +26,7 @@ class SendMessageTestCase(TestCase):
 @only_on_sites_with_login
 class ViewChatsTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -38,6 +40,7 @@ class ViewChatsTestCase(TestCase):
 @only_on_sites_with_login
 class ReadChatTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()

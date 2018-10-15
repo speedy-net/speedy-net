@@ -90,7 +90,7 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
             raise Exception("Unexpected: field_name={}".format(field_name))
         return default_value
 
-    def validate_all_values(self, user):
+    def validate_all_user_values(self, user):
         all_fields = ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'height', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'marital_status_match']
         _all_fields = []
         for step in utils.get_steps_range():
@@ -706,7 +706,7 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
         self.assertIn(member=user.profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_VALID_VALUES)
         self.assertEqual(first=user.profile.min_age_match, second=settings.MIN_AGE_ALLOWED)
         self.assertEqual(first=user.profile.max_age_match, second=settings.MAX_AGE_ALLOWED)
-        self.validate_all_values(user=user)
+        self.validate_all_user_values(user=user)
 
     def test_validate_profile_and_activate_exception_on_photo(self):
         test_settings = {

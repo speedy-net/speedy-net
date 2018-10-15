@@ -12,6 +12,7 @@ class ChatListViewTestCase(TestCase):
     page_url = '/messages/'
 
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -34,6 +35,7 @@ class ChatListViewTestCase(TestCase):
 @only_on_sites_with_login
 class ChatDetailViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -68,6 +70,7 @@ class ChatDetailViewTestCase(TestCase):
 @only_on_sites_with_login
 class SendMessageToChatViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -111,6 +114,7 @@ class SendMessageToChatViewTestCase(TestCase):
 @only_on_sites_with_login
 class SendMessageToUserViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
@@ -163,6 +167,7 @@ class SendMessageToUserViewTestCase(TestCase):
 @only_on_sites_with_login
 class MarkChatAsReadViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user1 = ActiveUserFactory()
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []

@@ -6,6 +6,7 @@ from ..models import Block
 @only_on_sites_with_login
 class BlockListViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.third_user = ActiveUserFactory()
@@ -31,6 +32,7 @@ class BlockListViewTestCase(TestCase):
 @only_on_sites_with_login
 class BlockViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/block/'.format(self.other_user.slug)
@@ -59,6 +61,7 @@ class BlockViewTestCase(TestCase):
 @only_on_sites_with_login
 class UnblockViewTestCase(TestCase):
     def setup(self):
+        super().setup()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/blocks/unblock/'.format(self.other_user.slug)

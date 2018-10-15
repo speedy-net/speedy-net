@@ -9,6 +9,7 @@ from ..models import Chat, Message, ReadMark
 @only_on_sites_with_login
 class ChatManagerTestCase(TestCase):
     def setup(self):
+        super().setup()
         ChatFactory(is_group=True)
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()

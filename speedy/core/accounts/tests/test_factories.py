@@ -9,10 +9,10 @@ from django.conf import settings
 # from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
-from speedy.core.base.test import TestCase
+from speedy.core.base.test import TestCase #### TODO
 from ..models import normalize_username, User, UserEmailAddress
-from ..translation import UserTranslationOptions
-from ..forms import LocalizedFirstLastNameMixin
+from ..translation import UserTranslationOptions #### TODO
+from ..forms import LocalizedFirstLastNameMixin #### TODO
 
 
 def get_random_user_password_length():

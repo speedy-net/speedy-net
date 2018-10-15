@@ -1,4 +1,6 @@
 import inspect
+from datetime import date
+from dateutil.relativedelta import relativedelta
 
 from django.conf import settings
 from django.core.management import call_command
@@ -18,10 +20,6 @@ class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
     def run_tests(self, test_labels, extra_tests=None, **kwargs):
         # We don't run tests on speedy.core
         pass
-
-
-from datetime import date
-from dateutil.relativedelta import relativedelta
 
 
 class TestsDynamicSettingsMixin(object):
@@ -89,7 +87,7 @@ class TestCase(DjangoTestCase):
         call_command('loaddata', settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()
 
-    def _validate_all_values(self):
+    def validate_all_values(self):
         site_id_dict = {
             settings.SPEEDY_NET_SITE_ID: 1,
             settings.SPEEDY_MATCH_SITE_ID: 2,
@@ -116,30 +114,20 @@ class TestCase(DjangoTestCase):
         self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(self.all_other_languages_code_list))
         self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(set(self.all_other_full_http_host_list)))
         self.assertListEqual(list1=self.all_other_full_http_host_list, list2={'en': ['http://he.{domain}/'.format(domain=self.site.domain)], 'he': ['http://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
-        self.validate_language_code()
 
-    def _setup(self):
+    def setup(self):
         self.language_code = settings.LANGUAGE_CODE
         self.all_languages_code_list = [language_code for language_code, language_name in settings.LANGUAGES]
         self.all_other_languages_code_list = [language_code for language_code in self.all_languages_code_list if (not(language_code == self.language_code))]
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
         self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
         self.all_other_full_http_host_list = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_languages_code_list]
-        self._validate_all_values()
+        self.validate_all_values()
         self.client = self.client_class(HTTP_HOST=self.http_host)
-        self.setup()
 
     def setUp(self):
         super().setUp()
-        self._setup()
-
-    def setup(self):
-        # No need to call super(), all the setup in this class is done in def _setup.
-        pass
-
-    def validate_language_code(self):
-        # No need to call super(), all the validation in this class is done in def _validate_all_values.
-        pass
+        self.setup()
 
 
 def conditional_test(test_func):
