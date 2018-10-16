@@ -1,5 +1,6 @@
 import inspect
 from datetime import date
+# from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
 from django.conf import settings
@@ -39,19 +40,39 @@ class TestsDynamicSettingsMixin(object):
 
     @staticmethod
     def _valid_date_of_birth_list():
-        return [
+        today = date.today()
+        VALID_DATE_OF_BIRTH_LIST = [
             '1904-02-29',
             '1980-01-31',
             '1999-12-01',
             '2000-02-29',
             '2004-02-29',
             '2018-10-15',
+            '2019-01-01', # ~~~~ TODO
+            '3000-01-01', # ~~~~ TODO
+            '9999-12-31', # ~~~~ TODO
+            '1769-01-01', # ~~~~ TODO
+            '1768-01-01', # ~~~~ TODO
+            '1000-01-01', # ~~~~ TODO
+            '0001-01-01',  # ~~~~ TODO
+            '0999-01-01',  # ~~~~ TODO
+            (today + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            (today - relativedelta(years=250)).isoformat(), # ~~~~ TODO
+            today.isoformat(), # ~~~~ TODO
+            (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            date(year=1, month=1, day=1).isoformat(),  # ~~~~ TODO
+            date(year=9999, month=12, day=31).isoformat(),  # ~~~~ TODO
+            (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
+            (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
+            (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
         ]
+        print(VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST)))
+        return VALID_DATE_OF_BIRTH_LIST
 
     @staticmethod
     def _invalid_date_of_birth_list():
         today = date.today()
-        return [
+        INVALID_DATE_OF_BIRTH_LIST = [
             '1900-02-29',
             '1901-02-29',
             '1980-02-31',
@@ -61,25 +82,40 @@ class TestsDynamicSettingsMixin(object):
             '1999-00-01',
             '1999-13-01',
             '2001-02-29',
-            '2018-10-16',
-            '2019-01-01',
-            '3000-01-01',
-            '1769-01-01',
-            '1768-01-01',
-            '1000-01-01',
+            # '2018-10-16', # ~~~~ TODO
+            # '2019-01-01', # ~~~~ TODO
+            # '3000-01-01', # ~~~~ TODO
+            # '9999-12-31', # ~~~~ TODO
+            '10000-01-01', # ~~~~ TODO
+            # '1769-01-01', # ~~~~ TODO
+            # '1768-01-01', # ~~~~ TODO
+            # '1000-01-01', # ~~~~ TODO
             '1-01-01',
-            str(today + relativedelta(days=1)),
-            str(today - relativedelta(years=250)),
-            str(today),
-            str(today - relativedelta(years=250) + relativedelta(days=1)),
+            '100-01-01',
+            '999-01-01',
+            # '0001-01-01', # ~~~~ TODO
+            # '0999-01-01', # ~~~~ TODO
+            # (today + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            # (today - relativedelta(years=250)).isoformat(), # ~~~~ TODO
+            # today.isoformat(), # ~~~~ TODO
+            # (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            # date(year=1, month=1, day=1).isoformat(), # ~~~~ TODO
+            # date(year=9999, month=12, day=31).isoformat(), # ~~~~ TODO
+            # (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            # (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            # (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
             'a',
             '',
         ]
+        print(INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST)))
+        return INVALID_DATE_OF_BIRTH_LIST
 
 
 # class TestCase(TestsDynamicSettingsMixin, DjangoTestCase):
 @override_settings(**TestsDynamicSettingsMixin.get_override_settings_kwargs())
 class TestCase(DjangoTestCase):
+    maxDiff = None
+
     def _pre_setup(self):
         super()._pre_setup()
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 import itertools
 
 from django.conf import settings
@@ -23,13 +23,13 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
     _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
 
     def get_default_user_1(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.save_user_and_profile()
         return user
 
     def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGETARIAN
         user.save_user_and_profile()
         return user
@@ -962,7 +962,7 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
 @only_on_speedy_match
 class SpeedyMatchSiteProfileMatchTestCase(TestCase):
     def get_default_user_1(self):
-        user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=datetime(year=1958, month=10, day=22), gender=User.GENDER_MALE)
+        user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
         user.diet = User.DIET_VEGETARIAN
         user.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
         user.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
@@ -973,7 +973,7 @@ class SpeedyMatchSiteProfileMatchTestCase(TestCase):
         return user
 
     def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=datetime(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user.profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE

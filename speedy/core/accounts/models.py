@@ -192,6 +192,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
+    # ~~~~ TODO - validate age between 0 and 250 in the model. Don't allow dates in the future or more than 250 years ago (including exactly 250 years).
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)

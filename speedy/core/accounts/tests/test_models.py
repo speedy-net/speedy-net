@@ -227,7 +227,55 @@ class UserTestCase(ErrorsMixin, TestCase):
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict())
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
+
+    def test_cannot_create_user_with_all_the_required_fields_blank(self):
+        user = User(**{field_name: '' for field_name in self._user_all_the_required_fields_keys})
+        with self.assertRaises(ValidationError) as cm:
+            user.save_user_and_profile()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=''))
+
+    def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
+        user = User(**{field_name: (str(number) if (not(field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
+        # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
+        with self.assertRaises(ValidationError) as cm:
+            user.save_user_and_profile()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=number, gender_is_valid=gender_is_valid))
+
+    def test_cannot_create_user_with_all_the_required_fields_zero(self):
+        self.run_test_cannot_create_user_with_all_the_required_fields_number(number=0)
+        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys})
+        # with self.assertRaises(ValidationError) as cm:
+        #     user.save_user_and_profile()
+        #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
+
+    def test_cannot_create_user_with_all_the_required_fields_minus_one(self):
+        self.run_test_cannot_create_user_with_all_the_required_fields_number(number=-1)
+        # user = User(**{field_name: -1 for field_name in self._user_all_the_required_fields_keys})
+        # with self.assertRaises(ValidationError) as cm:
+        #     user.save_user_and_profile()
+        #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
+
+    def test_cannot_create_user_with_all_the_required_fields_ninety_nine(self):
+        self.run_test_cannot_create_user_with_all_the_required_fields_number(number=99)
+        # user = User(**{field_name: 99 for field_name in self._user_all_the_required_fields_keys})
+        # with self.assertRaises(ValidationError) as cm:
+        #     user.save_user_and_profile()
+        #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
+
+    def test_cannot_create_user_with_all_the_required_fields_one(self):
+        self.run_test_cannot_create_user_with_all_the_required_fields_number(number=1, gender_is_valid=True)
+        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys})
+        # with self.assertRaises(ValidationError) as cm:
+        #     user.save_user_and_profile()
+        #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
     def test_cannot_create_user_with_empty_slug(self):
         with self.assertRaises(ValidationError) as cm:
@@ -385,7 +433,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message_dict[self.language_code])
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -396,10 +444,47 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message_dict[self.language_code])
+        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
+
+    def test_valid_date_of_birth_list_ok(self):
+        raise NotImplementedError() # ~~~~ TODO: implement!
+        # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        # for date_of_birth in settings.VALID_DATE_OF_BIRTH_LIST:
+        #     print("test_valid_date_of_birth_list_ok", date_of_birth)
+        #     data = self.data.copy()
+        #     data['date_of_birth'] = date_of_birth
+        #     r = self.client.post(path=self.page_url, data=data)
+        #     self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+        #     user = User.objects.get(pk=self.user.pk)
+        #     # TODO - uncomment these lines
+        #     # self.assertEqual(first=user.first_name, second=self.first_name)
+        #     # self.assertEqual(first=user.first_name_en, second=self.first_name)
+        #     # self.assertEqual(first=user.first_name_he, second=self.first_name)
+        #     # self.assertEqual(first=user.last_name, second=self.last_name)
+        #     # self.assertEqual(first=user.last_name_en, second=self.last_name)
+        #     # self.assertEqual(first=user.last_name_he, second=self.last_name)
+        #     for (key, value) in self.data.items():
+        #         if (not(key in ['date_of_birth'])):
+        #             self.assertEqual(first=getattr(user, key), second=value)
+        #     self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+
+    def test_invalid_date_of_birth_list_fail(self):
+        raise NotImplementedError() # ~~~~ TODO: implement!
+        # self.date_of_birth = self.user.date_of_birth
+        # self.last_name = self.user.last_name
+        # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        # for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
+        #     print("test_invalid_date_of_birth_list_fail", date_of_birth)
+        #     data = self.data.copy()
+        #     data['date_of_birth'] = date_of_birth
+        #     r = self.client.post(path=self.page_url, data=data)
+        #     self.assertEqual(first=r.status_code, second=200, msg="{} is a valid date of birth.".format(date_of_birth))
+        #     self.assertDictEqual(d1=r.context['form'].errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
+        #     user = User.objects.get(pk=self.user.pk)
+        #     self.assertEqual(first=user.date_of_birth, second=self.date_of_birth)
 
 
 @only_on_sites_with_login

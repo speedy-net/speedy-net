@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 from django.conf import settings
 from django.test import override_settings
@@ -362,15 +362,15 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
-    def test_cannot_register_invalid_date_of_birth(self):
+    def test_invalid_date_of_birth_list_fail(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
-            print("test_cannot_register_invalid_date_of_birth", date_of_birth)
+            print("test_invalid_date_of_birth_list_fail", date_of_birth)
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path='/', data=data)
             self.assertEqual(first=r.status_code, second=200, msg="{} is a valid date of birth.".format(date_of_birth))
-            self.assertDictEqual(d1=r.context['form'].errors, d2=self._enter_a_valid_date_errors_dict())
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
             self.assertEqual(first=Entity.objects.count(), second=0)
             self.assertEqual(first=User.objects.count(), second=0)
             self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -706,6 +706,41 @@ class EditProfileViewTestCaseMixin(object):
         new_slug = '==-{}\@!!#@#&^&*()({}=*&^%$1)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         new_slug_normalized = '{}-{}-1-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         self.run_test_user_cannot_change_his_username_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
+
+    def test_valid_date_of_birth_list_ok(self):
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        for date_of_birth in settings.VALID_DATE_OF_BIRTH_LIST:
+            print("test_valid_date_of_birth_list_ok", date_of_birth)
+            data = self.data.copy()
+            data['date_of_birth'] = date_of_birth
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+            user = User.objects.get(pk=self.user.pk)
+            # TODO - uncomment these lines
+            # self.assertEqual(first=user.first_name, second=self.first_name)
+            # self.assertEqual(first=user.first_name_en, second=self.first_name)
+            # self.assertEqual(first=user.first_name_he, second=self.first_name)
+            # self.assertEqual(first=user.last_name, second=self.last_name)
+            # self.assertEqual(first=user.last_name_en, second=self.last_name)
+            # self.assertEqual(first=user.last_name_he, second=self.last_name)
+            for (key, value) in self.data.items():
+                if (not(key in ['date_of_birth'])):
+                    self.assertEqual(first=getattr(user, key), second=value)
+            self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+
+    def test_invalid_date_of_birth_list_fail(self):
+        self.date_of_birth = self.user.date_of_birth
+        self.last_name = self.user.last_name
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
+            print("test_invalid_date_of_birth_list_fail", date_of_birth)
+            data = self.data.copy()
+            data['date_of_birth'] = date_of_birth
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertEqual(first=r.status_code, second=200, msg="{} is a valid date of birth.".format(date_of_birth))
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
+            user = User.objects.get(pk=self.user.pk)
+            self.assertEqual(first=user.date_of_birth, second=self.date_of_birth)
 
 
 @only_on_sites_with_login

@@ -215,9 +215,36 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict())
         # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short(self):
+    def test_slug_validation_too_short_1(self): #### TODO
         data = self.data.copy()
         data['slug'] = 'a' * 5
+        form = RegistrationForm(language_code=self.language_code, data=data)
+        form.full_clean()
+        self.assertFalse(expr=form.is_valid())
+        self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
+        # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
+
+    def test_slug_validation_too_short_2(self): #### TODO
+        data = self.data.copy()
+        data['slug'] = 'aa-aa'
+        form = RegistrationForm(language_code=self.language_code, data=data)
+        form.full_clean()
+        self.assertFalse(expr=form.is_valid())
+        self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
+        # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
+
+    def test_slug_validation_too_short_3(self): #### TODO
+        data = self.data.copy()
+        data['slug'] = 'a-a-a-a'
+        form = RegistrationForm(language_code=self.language_code, data=data)
+        form.full_clean()
+        self.assertFalse(expr=form.is_valid())
+        self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
+        # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
+
+    def test_slug_validation_too_short_4(self): #### TODO
+        data = self.data.copy()
+        data['slug'] = '---a--a--a--a---'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
@@ -250,7 +277,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertFalse(expr=form.is_valid())
         self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_email_address_errors_dict())
 
-    def test_cannot_register_invalid_date_of_birth(self):
+    def test_invalid_date_of_birth_list_fail(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
             print(date_of_birth)
@@ -258,8 +285,8 @@ class RegistrationFormTestCaseMixin(object):
             data['date_of_birth'] = date_of_birth
             form = RegistrationForm(language_code=self.language_code, data=data)
             form.full_clean()
-            self.assertFalse(expr=form.is_valid())
-            self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_date_errors_dict())
+            self.assertFalse(expr=form.is_valid(), msg="{} is a valid date of birth.".format(date_of_birth))
+            self.assertDictEqual(d1=form.errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
 
 
 @only_on_sites_with_login
