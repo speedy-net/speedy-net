@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_username, normalize_slug, generate_confirmation_token, get_age
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
@@ -33,8 +33,8 @@ class Entity(TimeStampedModel):
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {
-        'username': get_username_validators(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_length=MIN_SLUG_LENGTH, max_length=MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        'username': get_username_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+        'slug': get_slug_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, min_slug_length=MIN_SLUG_LENGTH, max_slug_length=MAX_SLUG_LENGTH, allow_letters_after_digits=True),
     }
 
     objects = EntityManager()
@@ -85,13 +85,13 @@ class Entity(TimeStampedModel):
                 if f.blank and raw_value in f.empty_values:
                     pass
                 else:
-                    for validator in validators:
-                        try:
+                    try:
+                        for validator in validators:
                             validator(raw_value)
-                            if field_name == 'slug' and self.username:
-                                self.validate_username_for_slug()
-                        except ValidationError as e:
-                            errors[f.name] = [e.error_list[0].messages[0]]
+                        if field_name == 'slug' and self.username:
+                            self.validate_username_for_slug()
+                    except ValidationError as e:
+                        errors[f.name] = [e.error_list[0].messages[0]]
         if errors:
             raise ValidationError(errors)
 
@@ -205,8 +205,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     objects = UserManager()
 
     validators = {
-        'username': get_username_validators(min_length=MIN_USERNAME_LENGTH, max_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_length=MIN_SLUG_LENGTH, max_length=MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+        'username': get_username_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+        'slug': get_slug_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, min_slug_length=MIN_SLUG_LENGTH, max_slug_length=MAX_SLUG_LENGTH, allow_letters_after_digits=False),
     }
 
     class Meta:

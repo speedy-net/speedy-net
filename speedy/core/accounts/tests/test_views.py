@@ -6,7 +6,8 @@ from django.core import mail
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from .test_mixins import ErrorsMixin
-from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User, UserEmailAddress
+from speedy.core.base.utils import normalize_slug, normalize_username
+from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 

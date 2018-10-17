@@ -1344,17 +1344,17 @@ msgstr "שם משתמש/ת (slug)"
 #: .\templates\translations.html:115
 msgctxt "female"
 msgid "You can't change your username."
-msgstr ".לא ניתן לשנות שם משתמשת"
+msgstr "לא ניתן לשנות שם משתמשת."
 
 #: .\templates\translations.html:116
 msgctxt "male"
 msgid "You can't change your username."
-msgstr ".לא ניתן לשנות שם משתמש"
+msgstr "לא ניתן לשנות שם משתמש."
 
 #: .\templates\translations.html:117
 msgctxt "other"
 msgid "You can't change your username."
-msgstr ".לא ניתן לשנות שם משתמש/ת"
+msgstr "לא ניתן לשנות שם משתמש/ת."
 
 #: .\templates\translations.html:120
 msgctxt "female"

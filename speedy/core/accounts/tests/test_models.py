@@ -2,7 +2,8 @@ from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login
 from .test_mixins import ErrorsMixin
-from speedy.core.accounts.models import normalize_slug, normalize_username, Entity, User, UserEmailAddress
+from speedy.core.base.utils import normalize_slug, normalize_username
+from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from .test_factories import USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
 

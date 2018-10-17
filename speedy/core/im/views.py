@@ -9,9 +9,9 @@ from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.core.profiles.views import UserMixin
+from speedy.core.base.utils import normalize_username
 from .forms import MessageForm
 from .models import Chat
-from ..base.utils import normalize_username
 
 
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
