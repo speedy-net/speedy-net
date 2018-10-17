@@ -66,7 +66,7 @@ class TestsDynamicSettingsMixin(object):
             (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
             (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
         ]
-        print(VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST)))
+        print("VALID_DATE_OF_BIRTH_LIST", VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST))) # ~~~~ TODO
         return VALID_DATE_OF_BIRTH_LIST
 
     @staticmethod
@@ -107,7 +107,7 @@ class TestsDynamicSettingsMixin(object):
             'a',
             '',
         ]
-        print(INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST)))
+        print("INVALID_DATE_OF_BIRTH_LIST", INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST))) # ~~~~ TODO
         return INVALID_DATE_OF_BIRTH_LIST
 
 
