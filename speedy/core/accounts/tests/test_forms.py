@@ -71,7 +71,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertFalse(expr=user.email_addresses.first().is_confirmed)
         self.assertTrue(expr=user.email_addresses.first().is_primary)
         for (key, value) in self.data.items():
-            if (not(key in ['new_password1', 'date_of_birth'])):
+            if (not (key in ['new_password1', 'date_of_birth'])):
                 self.assertEqual(first=getattr(user, key), second=value)
         self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=1, day=1))
 
@@ -167,7 +167,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
@@ -193,7 +193,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         # self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         # self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
 
@@ -216,7 +216,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict())
         # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_1(self): #### TODO
+    def test_slug_validation_too_short_1(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'a' * 5
         form = RegistrationForm(language_code=self.language_code, data=data)
@@ -225,7 +225,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_2(self): #### TODO
+    def test_slug_validation_too_short_2(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'aa-aa'
         form = RegistrationForm(language_code=self.language_code, data=data)
@@ -234,7 +234,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_3(self): #### TODO
+    def test_slug_validation_too_short_3(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'a-a-a-a'
         form = RegistrationForm(language_code=self.language_code, data=data)
@@ -243,7 +243,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_4(self): #### TODO
+    def test_slug_validation_too_short_4(self):  #### TODO
         data = self.data.copy()
         data['slug'] = '---a--a--a--a---'
         form = RegistrationForm(language_code=self.language_code, data=data)
@@ -403,5 +403,3 @@ class DeactivationFormTestCase(ErrorsMixin, TestCase):
         form = SiteProfileDeactivationForm(user=self.user, data=data)
         self.assertTrue(expr=form.is_valid())
         self.assertDictEqual(d1=form.errors, d2={})
-
-

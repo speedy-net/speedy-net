@@ -97,12 +97,12 @@ class SentFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequired
 class LimitMaxFriendsMixin(object):
     def check_own_friends(self):
         user_number_of_friends = len(Friend.objects.friends(user=self.request.user))
-        if user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
+        if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(user_number_of_friends, settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
 
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user=user))
-        if other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED:
+        if (other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=user.get_gender(), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(other_user_number_of_friends, settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
 
 
@@ -123,14 +123,14 @@ class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin
 
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
-        if request.user.is_authenticated:
-            if is_self(user=request.user, other_user=self.user):
+        if (request.user.is_authenticated):
+            if (is_self(user=request.user, other_user=self.user)):
                 messages.error(request=request, message=self._you_cannot_be_friends_with_yourself_error_message(user=request.user))
                 return redirect(to=self.user)
-            if friend_request_sent(user=request.user, other_user=self.user):
+            if (friend_request_sent(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_requested_friendship_from_this_user_error_message(user=request.user))
                 return redirect(to=self.user)
-            if are_friends(user=request.user, other_user=self.user):
+            if (are_friends(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_are_friends_with_this_user_error_message(user=request.user))
                 return redirect(to=self.user)
         return super().dispatch(request=request, *args, **kwargs)
@@ -184,7 +184,7 @@ class AcceptRejectFriendRequestViewBase(UserMixin, PermissionRequiredMixin, gene
         return reverse('friends:list', kwargs={'slug': self.request.user.slug})
 
     def get_friend_request(self):
-        if not hasattr(self, '_friend_request'):
+        if (not (hasattr(self, '_friend_request'))):
             self._friend_request = get_object_or_404(self.user.friendship_requests_received, pk=self.kwargs.get('friendship_request_id'))
         return self._friend_request
 

@@ -29,8 +29,8 @@ class UserManager(BaseUserManager):
         Creates and saves a User with the given username and password.
         """
         extra_fields.setdefault('gender', self.model.GENDER_OTHER)
-        if not slug:
-            raise ValueError('The given username must be set')
+        if (not (slug)):
+            raise ValueError('The given username must be set.')
         user = self.model(slug=slug, **extra_fields)
         user.set_password(raw_password=password)
         user.save(using=self._db)
@@ -45,9 +45,9 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
-        if extra_fields.get('is_staff') is not True:
+        if (extra_fields.get('is_staff') is not True):
             raise ValueError('Superuser must have is_staff=True.')
-        if extra_fields.get('is_superuser') is not True:
+        if (extra_fields.get('is_superuser') is not True):
             raise ValueError('Superuser must have is_superuser=True.')
 
         user = self._create_user(slug=slug, password=password, **extra_fields)

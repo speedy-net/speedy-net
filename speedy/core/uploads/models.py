@@ -20,7 +20,7 @@ class File(TimeStampedModel):
         verbose_name_plural = _('uploaded files')
 
     def __init__(self, *args, **kwargs):
-        if not kwargs.get('id'):
+        if (not (kwargs.get('id'))):
             kwargs['id'] = generate_regular_udid()
         super().__init__(*args, **kwargs)
 

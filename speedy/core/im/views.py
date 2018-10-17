@@ -51,7 +51,7 @@ class UserSingleChatMixin(UserChatsMixin):
         return self.get_chat().message_set.select_related('sender__user')
 
     def has_permission(self):
-        return super().has_permission() and self.request.user.has_perm(perm='im.read_chat', obj=self.chat)
+        return ((super().has_permission()) and (self.request.user.has_perm(perm='im.read_chat', obj=self.chat)))
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -73,20 +73,20 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
     paginate_by = 25
 
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
+        if (not (request.user.is_authenticated)):
             return self.handle_no_permission()
         visited_user = self.get_user_queryset().filter(
             username=normalize_username(slug=self.kwargs['chat_slug'])).first()
-        if visited_user and visited_user.slug != self.kwargs['chat_slug']:
+        if ((visited_user) and (visited_user.slug != self.kwargs['chat_slug'])):
             return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}))
-        if visited_user and visited_user != request.user and not Chat.on_site.chat_with(ent1=self.request.user, ent2=visited_user, create=False):
+        if ((visited_user) and (visited_user != request.user) and (not (Chat.on_site.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
             self.user = visited_user
             self.chat = None
             return self.get(request=request, *args, **kwargs)
         return super().dispatch(request=request, *args, **kwargs)
 
     def get_form(self):
-        if self.chat:
+        if (self.chat):
             return MessageForm(**{
                 'from_entity': self.request.user,
                 'chat': self.chat,
@@ -98,13 +98,13 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
             })
 
     def get_queryset(self):
-        if self.chat:
+        if (self.chat):
             return self.get_messages_queryset()
         else:
             return []
 
     def get_template_names(self):
-        if self.chat:
+        if (self.chat):
             return 'im/chat_detail.html'
         else:
             return 'im/message_form.html'
@@ -146,7 +146,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
     def has_permission(self):
-        if self.chat.participants_count != 2:
+        if (self.chat.participants_count != 2):
             return super().has_permission()
         return self.user.has_perm(perm='im.send_message', obj=self.chat.get_other_participants(entity=self.user)[0])
 
@@ -158,7 +158,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
 
     def get(self, request, *args, **kwargs):
         existing_chat = Chat.on_site.chat_with(ent1=self.request.user, ent2=self.user, create=False)
-        if existing_chat is not None:
+        if (existing_chat is not None):
             return redirect(to='im:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
         return super().get(request=request, *args, **kwargs)
 

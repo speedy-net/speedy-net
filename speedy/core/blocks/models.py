@@ -20,7 +20,7 @@ class Block(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         # Ensure users can't block themselves.
-        if self.blocker == self.blocked:
+        if (self.blocker == self.blocked):
             raise ValidationError("Users cannot block themselves.")
         super().save(*args, **kwargs)
 

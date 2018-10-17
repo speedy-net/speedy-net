@@ -23,7 +23,7 @@ def settings(request):
 
 def sites(request):
     site = Site.objects.get_current()
-    if hasattr(dj_settings, 'SITE_TITLE'):
+    if (hasattr(dj_settings, 'SITE_TITLE')):
         site_title = dj_settings.SITE_TITLE
     else:
         site_title = _(site.name)

@@ -14,7 +14,7 @@ class FeedbackForm(ModelFormWithDefaults):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        if self.defaults.get('sender'):
+        if (self.defaults.get('sender')):
             del self.fields['sender_name']
             del self.fields['sender_email']
             self.helper.add_input(Submit('submit', pgettext_lazy(context=self.defaults['sender'].get_gender(), message='Send')))

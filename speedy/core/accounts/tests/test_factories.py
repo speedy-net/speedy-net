@@ -28,6 +28,7 @@ def get_random_user_password():
         raise Exception("Unexpected: len(user_password)={}, user_password_length={}".format(len(user_password), user_password_length))
 
 
+# ~~~~ TODO: move to base test.
 # Generate a new random password for each test.
 USER_PASSWORD = get_random_user_password()
 # USER_PASSWORD = 'vjha9c4q44zs'
@@ -60,16 +61,18 @@ class DefaultUserFactory(factory.DjangoModelFactory):
 
     # @factory.post_generation
     # def validate_first_and_last_name_in_all_languages(self, create, extracted, **kwargs):
-    #     localizeable_fields = UserTranslationOptions.fields
-    #     self.assertEqual(first=localizeable_fields, second=LocalizedFirstLastNameMixin.get_localizeable_fields())
-    #     self.assertEqual(first=localizeable_fields, second=('first_name', 'last_name'))
-    #     self.assertEqual(first=localizeable_fields, second=('first_name', 'last_name', '1'))####
+    #     localizable_fields = UserTranslationOptions.fields
+    #     # ~~~~ TODO: use assert
+    #     assert localizable_fields == LocalizedFirstLastNameMixin.get_localizable_fields()
+    #     self.assertEqual(first=localizable_fields, second=LocalizedFirstLastNameMixin.get_localizable_fields())
+    #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name'))
+    #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name', '1'))####
     #     # self.assertEqual(first=self.first_name_en, second=self.first_name)
     #     # self.assertEqual(first=self.first_name_he, second=self.first_name)
     #     # self.assertEqual(first=self.last_name_en, second=self.last_name)
     #     # self.assertEqual(first=self.last_name_he, second=self.last_name)
     #     field_name_localized_list = list()
-    #     for base_field_name in localizeable_fields:
+    #     for base_field_name in localizable_fields:
     #         for language_code in self.all_languages_code_list:
     #             field_name_localized = '{}_{}'.format(base_field_name, language_code)
     #             self.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)

@@ -7,14 +7,14 @@ from .models import UserAccessField
 
 
 def _has_access_perm_for_obj(user, other_user, access):
-    if access == UserAccessField.ACCESS_ANYONE:
+    if (access == UserAccessField.ACCESS_ANYONE):
         return True
-    if user.is_authenticated:
-        if access == UserAccessField.ACCESS_ME:
+    if (user.is_authenticated):
+        if (access == UserAccessField.ACCESS_ME):
             return is_self(user=user, other_user=other_user)
-        if access == UserAccessField.ACCESS_FRIENDS:
+        if (access == UserAccessField.ACCESS_FRIENDS):
             return ((is_self(user=user, other_user=other_user)) or (are_friends(user=user, other_user=other_user)))
-        if access == UserAccessField.ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS:
+        if (access == UserAccessField.ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS):
             return ((is_self(user=user, other_user=other_user)) or (are_friends(user=user, other_user=other_user)))
     return False
 

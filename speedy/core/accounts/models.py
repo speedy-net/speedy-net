@@ -49,13 +49,13 @@ class Entity(TimeStampedModel):
 
     def normalize_slug_and_username(self):
         self.slug = normalize_slug(slug=self.slug)
-        if self.username:
+        if (self.username):
             self.username = normalize_username(slug=self.username)
         else:
             self.username = normalize_username(slug=self.slug)
 
     def validate_username_for_slug(self):
-        if normalize_username(slug=self.slug) != self.username:
+        if (normalize_username(slug=self.slug) != self.username):
             raise ValidationError(_('Slug does not parse to username.'))
 
     def clean_fields(self, exclude=None):
@@ -72,27 +72,27 @@ class Entity(TimeStampedModel):
             errors = {}
 
         username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
-        if username_exists:
+        if (username_exists):
             errors['slug'] = [self._meta.get_field('slug').error_messages['unique']]
             # errors['username'] = [self._meta.get_field('username').error_messages['unique']]
 
         for field_name, validators in self.validators.items():
             f = self._meta.get_field(field_name)
-            if field_name in exclude:
+            if (field_name in exclude):
                 pass
             else:
                 raw_value = getattr(self, f.attname)
-                if f.blank and raw_value in f.empty_values:
+                if ((f.blank) and (raw_value in f.empty_values)):
                     pass
                 else:
                     try:
                         for validator in validators:
                             validator(raw_value)
-                        if field_name == 'slug' and self.username:
+                        if ((field_name == 'slug') and (self.username)):
                             self.validate_username_for_slug()
                     except ValidationError as e:
                         errors[f.name] = [e.error_list[0].messages[0]]
-        if errors:
+        if (errors):
             raise ValidationError(errors)
 
 
@@ -224,8 +224,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         return super().set_password(raw_password=raw_password)
 
     def delete(self, *args, **kwargs):
-        if self.is_staff or self.is_superuser:
-            warnings.warn('Can’t delete staff user')
+        if ((self.is_staff) or (self.is_superuser)):
+            warnings.warn('Can’t delete staff user.')
             return False
         else:
             return super().delete(*args, **kwargs)
@@ -242,10 +242,10 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
-        if not send_to_unconfirmed:
+        if (not (send_to_unconfirmed)):
             addresses = addresses.filter(is_confirmed=True)
         addresses = list(addresses)
-        if addresses:
+        if (addresses):
             return addresses[0].mail(template_name_prefix=template_name_prefix, context=context)
         return False
 
@@ -271,15 +271,15 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     @property
     def profile(self):
-        if not hasattr(self, '_profile'):
+        if (not (hasattr(self, '_profile'))):
             self._profile = self.get_profile()
         return self._profile
 
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
-        if model is None:
+        if (model is None):
             model = get_site_profile_model(profile_model=profile_model)
         profile = getattr(self, model.RELATED_NAME, None)
-        if profile is None:
+        if (profile is None):
             profile = model.objects.get_or_create(user=self)[0]
         return profile
 
@@ -327,7 +327,7 @@ class UserEmailAddress(TimeStampedModel):
         return self.email
 
     def save(self, *args, **kwargs):
-        if not self.confirmation_token:
+        if (not (self.confirmation_token)):
             self.confirmation_token = self._generate_confirmation_token()
         return super().save(*args, **kwargs)
 
@@ -351,12 +351,12 @@ class UserEmailAddress(TimeStampedModel):
     def verify(self):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
-        # if hasattr(self.user.profile, 'validate_profile_and_activate') and UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1:
-        #     old_step = self.user.profile.activation_step
-        #     self.user.profile.activation_step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        #     self.user.profile.validate_profile_and_activate()
-        #     self.user.profile.activation_step = old_step
-        #     self.user.profile.save(update_fields=['activation_step'])
+        if ((hasattr(self.user.profile, 'validate_profile_and_activate')) and (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1)):
+            old_step = self.user.profile.activation_step
+            self.user.profile.activation_step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+            self.user.profile.validate_profile_and_activate()
+            self.user.profile.activation_step = old_step
+            self.user.profile.save(update_fields=['activation_step'])
 
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)

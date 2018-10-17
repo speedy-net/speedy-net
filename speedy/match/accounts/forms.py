@@ -94,13 +94,13 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         if ('marital_status_match' in self.fields):
             self.fields['marital_status_match'].widget.choices = self.instance.get_marital_status_match_choices()
         for field_name, field in self.fields.items():
-            if field_name in self._validators:
+            if (field_name in self._validators):
                 field.validators.extend(self._validators[field_name])
                 field.required = True
 
     def clean_photo(self):
         photo = self.files.get('photo')
-        if not photo:
+        if (not (photo)):
             photo = self.instance.user.photo
         validators.validate_photo(photo=photo)
         return self.cleaned_data

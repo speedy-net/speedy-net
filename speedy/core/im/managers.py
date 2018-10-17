@@ -15,7 +15,7 @@ class ChatManager(BaseManager):
         try:
             return self.get(Q(ent1=ent1, ent2=ent2) | Q(ent1=ent2, ent2=ent1))
         except self.model.DoesNotExist:
-            if create:
+            if (create):
                 return self.create(ent1=ent1, ent2=ent2)
             else:
                 return None
@@ -32,7 +32,7 @@ class MessageManager(BaseManager):
         from .models import Chat
         assert bool(from_entity and to_entity) != bool(from_entity and chat)
         assert text
-        if not chat:
+        if (not (chat)):
             chat = Chat.on_site.chat_with(ent1=from_entity, ent2=to_entity)
         chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
         chat.date_updated = chat.last_message.date_created
@@ -44,7 +44,7 @@ class MessageManager(BaseManager):
 class ReadMarkManager(BaseManager):
     def mark(self, chat, entity):
         rmark, created = self.get_or_create(chat=chat, entity=entity)
-        if not created:
+        if (not (created)):
             rmark.save(update_fields={'date_updated'})
         return rmark
 

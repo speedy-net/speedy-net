@@ -31,13 +31,13 @@ class Feedback(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
-        if self.type == self.TYPE_REPORT_ENTITY:
+        if (self.type == self.TYPE_REPORT_ENTITY):
             on = ' on {}'.format(self.report_entity.user)
-        elif self.type == self.TYPE_REPORT_FILE:
+        elif (self.type == self.TYPE_REPORT_FILE):
             on = ' on {}'.format(self.report_file)
         else:
             on = ''
-        if self.sender:
+        if (self.sender):
             by = str(self.sender)
         else:
             by = self.sender_name
@@ -46,7 +46,7 @@ class Feedback(TimeStampedModel):
 
 @receiver(models.signals.post_save, sender=Feedback)
 def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
-    if created:
+    if (created):
         mail_managers(template_name_prefix='feedback/email/admin_feedback', context={'feedback': instance}, headers={'Reply-To': instance.sender_email or instance.sender.email})
 
 

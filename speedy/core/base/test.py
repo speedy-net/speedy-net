@@ -12,8 +12,8 @@ from django.contrib.sites.models import Site
 
 class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
-        if not test_labels:
-            test_labels = [label for label in settings.INSTALLED_APPS if label.startswith('speedy.')]
+        if (not (test_labels)):
+            test_labels = [label for label in settings.INSTALLED_APPS if (label.startswith('speedy.'))]
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
@@ -48,25 +48,25 @@ class TestsDynamicSettingsMixin(object):
             '2000-02-29',
             '2004-02-29',
             '2018-10-15',
-            '2019-01-01', # ~~~~ TODO
-            '3000-01-01', # ~~~~ TODO
-            '9999-12-31', # ~~~~ TODO
-            '1769-01-01', # ~~~~ TODO
-            '1768-01-01', # ~~~~ TODO
-            '1000-01-01', # ~~~~ TODO
+            '2019-01-01',  # ~~~~ TODO
+            '3000-01-01',  # ~~~~ TODO
+            '9999-12-31',  # ~~~~ TODO
+            '1769-01-01',  # ~~~~ TODO
+            '1768-01-01',  # ~~~~ TODO
+            '1000-01-01',  # ~~~~ TODO
             '0001-01-01',  # ~~~~ TODO
             '0999-01-01',  # ~~~~ TODO
-            (today + relativedelta(days=1)).isoformat(), # ~~~~ TODO
-            (today - relativedelta(years=250)).isoformat(), # ~~~~ TODO
-            today.isoformat(), # ~~~~ TODO
-            (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            (today + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
+            (today - relativedelta(years=250)).isoformat(),  # ~~~~ TODO
+            today.isoformat(),  # ~~~~ TODO
+            (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
             date(year=1, month=1, day=1).isoformat(),  # ~~~~ TODO
             date(year=9999, month=12, day=31).isoformat(),  # ~~~~ TODO
             (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
             (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
             (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
         ]
-        print("VALID_DATE_OF_BIRTH_LIST", VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST))) # ~~~~ TODO
+        print("VALID_DATE_OF_BIRTH_LIST", VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST)))  # ~~~~ TODO
         return VALID_DATE_OF_BIRTH_LIST
 
     @staticmethod
@@ -86,7 +86,7 @@ class TestsDynamicSettingsMixin(object):
             # '2019-01-01', # ~~~~ TODO
             # '3000-01-01', # ~~~~ TODO
             # '9999-12-31', # ~~~~ TODO
-            '10000-01-01', # ~~~~ TODO
+            '10000-01-01',  # ~~~~ TODO
             # '1769-01-01', # ~~~~ TODO
             # '1768-01-01', # ~~~~ TODO
             # '1000-01-01', # ~~~~ TODO
@@ -107,7 +107,7 @@ class TestsDynamicSettingsMixin(object):
             'a',
             '',
         ]
-        print("INVALID_DATE_OF_BIRTH_LIST", INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST))) # ~~~~ TODO
+        print("INVALID_DATE_OF_BIRTH_LIST", INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST)))  # ~~~~ TODO
         return INVALID_DATE_OF_BIRTH_LIST
 
 
@@ -154,7 +154,7 @@ class TestCase(DjangoTestCase):
     def setup(self):
         self.language_code = settings.LANGUAGE_CODE
         self.all_languages_code_list = [language_code for language_code, language_name in settings.LANGUAGES]
-        self.all_other_languages_code_list = [language_code for language_code in self.all_languages_code_list if (not(language_code == self.language_code))]
+        self.all_other_languages_code_list = [language_code for language_code in self.all_languages_code_list if (not (language_code == self.language_code))]
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
         self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
         self.all_other_full_http_host_list = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_languages_code_list]
@@ -168,16 +168,16 @@ class TestCase(DjangoTestCase):
 
 def conditional_test(test_func):
     def wrapper(method_or_class):
-        if inspect.isclass(method_or_class):
+        if (inspect.isclass(method_or_class)):
             # Decorate class
-            if test_func():
+            if (test_func()):
                 return method_or_class
             else:
                 return
         else:
             # Decorate method
             def inner(*args, **kwargs):
-                if test_func():
+                if (test_func()):
                     return method_or_class(*args, **kwargs)
                 else:
                     return
@@ -187,7 +187,7 @@ def conditional_test(test_func):
     return wrapper
 
 
-exclude_on_site = lambda site_id: conditional_test(test_func=lambda: not(settings.SITE_ID == site_id))
+exclude_on_site = lambda site_id: conditional_test(test_func=lambda: (not (settings.SITE_ID == site_id)))
 exclude_on_speedy_net = exclude_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
 exclude_on_speedy_match = exclude_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
 exclude_on_speedy_composer = exclude_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
@@ -201,5 +201,3 @@ only_on_speedy_mail_software = only_on_site(site_id=settings.SPEEDY_MAIL_SOFTWAR
 
 only_on_sites = lambda site_id_list: conditional_test(test_func=lambda: (settings.SITE_ID in site_id_list))
 only_on_sites_with_login = only_on_sites(site_id_list=[settings.SPEEDY_NET_SITE_ID, settings.SPEEDY_MATCH_SITE_ID])
-
-

@@ -238,7 +238,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=''))
 
     def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
-        user = User(**{field_name: (str(number) if (not(field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
+        user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
         # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
         # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
         with self.assertRaises(ValidationError) as cm:
@@ -451,7 +451,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_valid_date_of_birth_list_ok(self):
-        raise NotImplementedError() # ~~~~ TODO: implement!
+        raise NotImplementedError()  # ~~~~ TODO: implement!
         # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         # for date_of_birth in settings.VALID_DATE_OF_BIRTH_LIST:
         #     print("test_valid_date_of_birth_list_ok", date_of_birth)
@@ -468,12 +468,12 @@ class UserTestCase(ErrorsMixin, TestCase):
         #     # self.assertEqual(first=user.last_name_en, second=self.last_name)
         #     # self.assertEqual(first=user.last_name_he, second=self.last_name)
         #     for (key, value) in self.data.items():
-        #         if (not(key in ['date_of_birth'])):
+        #         if (not (key in ['date_of_birth'])):
         #             self.assertEqual(first=getattr(user, key), second=value)
         #     self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
 
     def test_invalid_date_of_birth_list_fail(self):
-        raise NotImplementedError() # ~~~~ TODO: implement!
+        raise NotImplementedError()  # ~~~~ TODO: implement!
         # self.date_of_birth = self.user.date_of_birth
         # self.last_name = self.user.last_name
         # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
@@ -518,7 +518,7 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
         existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -528,7 +528,7 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL@EXAMPLE.COM')
-        user_email_address.save() # ~~~~ TODO
+        user_email_address.save()  # ~~~~ TODO
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -536,7 +536,7 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
         existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -551,7 +551,7 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=2)
         existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -561,7 +561,7 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
     def test_email_gets_converted_to_lowercase_2(self):
@@ -569,7 +569,5 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         user_email_address = UserEmailAddressFactory(user=user, email='EMAIL77@EXAMPLE.COM')
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
-
-

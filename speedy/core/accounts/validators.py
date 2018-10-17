@@ -7,18 +7,18 @@ from speedy.core.base.utils import normalize_slug, normalize_username
 
 
 def reserved_username_validator(value):
-    if normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in settings.UNAVAILABLE_USERNAMES]:
+    if (normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in settings.UNAVAILABLE_USERNAMES]):
         raise ValidationError(_('This username is already taken.'))
 
 
-def generate_regex_validator(allow_dashes=False, allow_letters_after_digits=False):
+def generate_regex_validator(allow_dashes, allow_letters_after_digits):
     letters = r'a-z'
     digits = r'0-9'
-    symbols = r'\-' if allow_dashes else r''
+    symbols = r'\-' if (allow_dashes) else r''
     regex = r'[' + letters + symbols + ']{4,}[' + digits + symbols + ']*'
-    if allow_letters_after_digits:
+    if (allow_letters_after_digits):
         regex += r'[' + letters + digits + symbols + ']*'
-    if allow_letters_after_digits:
+    if (allow_letters_after_digits):
         invalid_regex_message = _("Username must start with 4 or more letters, and may contain letters, digits or dashes.")
     else:
         invalid_regex_message = _("Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.")
@@ -98,9 +98,9 @@ def get_slug_validators(min_username_length, max_username_length, min_slug_lengt
 class ValidateUserPasswordMixin(object):
     def validate_password(self, password):
         from .models import User
-        if len(password) < User.MIN_PASSWORD_LENGTH:
+        if (len(password) < User.MIN_PASSWORD_LENGTH):
             raise ValidationError(_('Password too short.'))
-        if len(password) > User.MAX_PASSWORD_LENGTH:
+        if (len(password) > User.MAX_PASSWORD_LENGTH):
             raise ValidationError(_('Password too long.'))
 
 

@@ -25,9 +25,9 @@ class BaseModel(ValidateModelMixin, models.Model):
     def save(self, *args, **kwargs):
         try:
             field = self._meta.get_field('id')
-            if not self.id and hasattr(field, 'id_generator'):
+            if ((not (self.id)) and (hasattr(field, 'id_generator'))):
                 self.id = field.id_generator()
-                while self._meta.model.objects.filter(id=self.id).exists():
+                while (self._meta.model.objects.filter(id=self.id).exists()):
                     self.id = field.id_generator()
         except FieldDoesNotExist:
             pass

@@ -12,7 +12,7 @@ class Command(BaseCommand):
 
         for email in emails:
             has_confirmed_email = email.user.email_addresses.filter(is_confirmed=True).exists()
-            if has_confirmed_email:
+            if (has_confirmed_email):
                 pass
             else:
                 email.user.delete()

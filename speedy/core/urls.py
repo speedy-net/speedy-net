@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
 ]
 
-if settings.DEBUG:
+if (settings.DEBUG):
     urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + urlpatterns
 
 try:

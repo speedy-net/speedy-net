@@ -7,7 +7,7 @@ from .models import File
 
 class FileInput(forms.TextInput):
     def render(self, name, value, attrs=None, renderer=None):
-        if attrs is None:
+        if (attrs is None):
             attrs = {}
         attrs['data-role'] = 'realInput'
         real_input = super().render(name=name, value=value, attrs=attrs, renderer=renderer)

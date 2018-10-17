@@ -21,7 +21,7 @@ class FeedbackView(generic.CreateView):
 
     def get_report_entity(self):
         slug = self.kwargs.get('report_entity_slug')
-        if self.get_type() != Feedback.TYPE_REPORT_ENTITY:
+        if (self.get_type() != Feedback.TYPE_REPORT_ENTITY):
             return None
         try:
             self.report_entity = True
@@ -31,7 +31,7 @@ class FeedbackView(generic.CreateView):
 
     def get_report_file(self):
         report_file_id = self.kwargs.get('report_file_id')
-        if self.get_type() != Feedback.TYPE_REPORT_FILE:
+        if (self.get_type() != Feedback.TYPE_REPORT_FILE):
             return None
         try:
             self.report_file = True
@@ -42,7 +42,7 @@ class FeedbackView(generic.CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         defaults = {
-            'sender': self.request.user if self.request.user.is_authenticated else None,
+            'sender': self.request.user if (self.request.user.is_authenticated) else None,
             'type': self.get_type(),
             'report_entity': self.get_report_entity(),
             'report_file': self.get_report_file(),

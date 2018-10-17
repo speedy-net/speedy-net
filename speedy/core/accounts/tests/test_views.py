@@ -172,7 +172,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertFalse(expr=user.email_addresses.first().is_confirmed)
         self.assertTrue(expr=user.email_addresses.first().is_primary)
         for (key, value) in self.data.items():
-            if (not(key in ['new_password1', 'date_of_birth'])):
+            if (not (key in ['new_password1', 'date_of_birth'])):
                 self.assertEqual(first=getattr(user, key), second=value)
         self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
 
@@ -208,7 +208,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_unique_confirmed_email_address(self):
@@ -226,7 +226,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 2, settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
@@ -245,8 +245,8 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id]) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])  # ~~~~ TODO: remove this line!
 
     def test_unique_unconfirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
@@ -263,7 +263,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 2, settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_password_too_short(self):
@@ -290,7 +290,7 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         r = self.client.get(path='/')
-        if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
+        if (settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
             self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
             r = self.client.get(path='/{}/'.format(self.data['slug']))
         else:
@@ -336,7 +336,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
 
     def test_email_gets_converted_to_lowercase(self):
@@ -417,7 +417,7 @@ class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, ErrorsMixin,
 class LoginViewTestCase(RedirectMeMixin, ErrorsMixin, TestCase):
     login_url = '/login/'
     _other_user_password = '8' * 8
-    
+
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory(slug='slug.with.dots')
@@ -613,7 +613,7 @@ class EditProfileViewTestCaseMixin(object):
         self.assertEqual(first=user.last_name_en, second=self.last_name)
         self.assertEqual(first=user.last_name_he, second=self.last_name)
         for (key, value) in self.data.items():
-            if (not(key in ['date_of_birth'])):
+            if (not (key in ['date_of_birth'])):
                 self.assertEqual(first=getattr(user, key), second=value)
         self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
@@ -668,7 +668,7 @@ class EditProfileViewTestCaseMixin(object):
         self.run_test_user_can_change_his_slug_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
     def test_user_can_change_his_slug_with_normalize_slug_2(self):
-        new_slug = '==-{}\@!!#@#&^&*()({}=*&^%$)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
+        new_slug = '==-{}\\@!!#@#&^&*()({}=*&^%$)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         new_slug_normalized = '{}-{}-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         self.run_test_user_can_change_his_slug_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
@@ -704,7 +704,7 @@ class EditProfileViewTestCaseMixin(object):
         self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
     def test_user_cannot_change_his_username_with_normalize_slug(self):
-        new_slug = '==-{}\@!!#@#&^&*()({}=*&^%$1)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
+        new_slug = '==-{}\\@!!#@#&^&*()({}=*&^%$1)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         new_slug_normalized = '{}-{}-1-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
         self.run_test_user_cannot_change_his_username_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
@@ -725,7 +725,7 @@ class EditProfileViewTestCaseMixin(object):
             # self.assertEqual(first=user.last_name_en, second=self.last_name)
             # self.assertEqual(first=user.last_name_he, second=self.last_name)
             for (key, value) in self.data.items():
-                if (not(key in ['date_of_birth'])):
+                if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)
             self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
 
@@ -988,7 +988,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
     def test_inactive_user_can_open_the_page(self):
         r = self.client.get(path=self.page_url)
         self.assertIn(member=r.status_code, container={200, 302})
-        if r.status_code == 200:
+        if (r.status_code == 200):
             self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
 
     @exclude_on_speedy_match

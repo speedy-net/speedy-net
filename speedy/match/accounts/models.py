@@ -175,7 +175,7 @@ class SiteProfile(SiteProfileBase):
         if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()
-            if not (language_code in languages):
+            if (not (language_code in languages)):
                 languages.append(language_code)
                 self._set_active_languages(languages=languages)
                 self.user.save_user_and_profile()
@@ -190,7 +190,7 @@ class SiteProfile(SiteProfileBase):
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
         if ((self.is_active) and (other_profile.is_active)):
-            if Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user):
+            if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0
@@ -217,7 +217,7 @@ class SiteProfile(SiteProfileBase):
 
     @property
     def is_active(self):
-        return self.user.is_active and get_language() in self.get_active_languages()
+        return ((self.user.is_active) and (get_language() in self.get_active_languages()))
 
     def deactivate(self):
         self._set_active_languages([])

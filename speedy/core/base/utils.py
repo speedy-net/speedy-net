@@ -7,6 +7,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 
+# ~~~~ TODO: move to settings.
 REGULAR_UDID_LENGTH = 20
 SMALL_UDID_LENGTH = 15
 
@@ -14,7 +15,7 @@ SMALL_UDID_LENGTH = 15
 def _generate_udid(length):
     digits = string.digits
     digits_without_zero = digits[1:]
-    return ''.join(random.choice(digits if i > 0 else digits_without_zero) for i in range(length))
+    return ''.join(random.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
 
 
 def generate_regular_udid():

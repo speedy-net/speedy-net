@@ -29,7 +29,7 @@ class Chat(TimeStampedModel):
         return ', '.join(str(ent.user) for ent in self.participants)
 
     def save(self, *args, **kwargs):
-        if self.is_private:
+        if (self.is_private):
             assert self.ent1
             assert self.ent2
             assert self.ent1 != self.ent2
@@ -39,19 +39,19 @@ class Chat(TimeStampedModel):
 
     @property
     def is_private(self):
-        return not self.is_group
+        return (not (self.is_group))
 
     def get_slug(self, current_user: Entity):
-        if self.is_private:
-            if self.ent1_id == current_user.id:
+        if (self.is_private):
+            if (self.ent1_id == current_user.id):
                 return self.ent2.slug
-            elif self.ent2_id == current_user.id:
+            elif (self.ent2_id == current_user.id):
                 return self.ent1.slug
         return self.id
 
     @property
     def participants(self):
-        if self.is_private:
+        if (self.is_private):
             return (self.ent1, self.ent2)
         else:
             return self.participants.order_by('date_created')
@@ -61,7 +61,7 @@ class Chat(TimeStampedModel):
         return len(self.participants)
 
     def get_other_participants(self, entity):
-        return [p for p in self.participants if p.id != entity.id]
+        return [p for p in self.participants if (p.id != entity.id)]
 
     def mark_read(self, entity):
         return ReadMark.objects.mark(self, entity)
@@ -99,11 +99,11 @@ class ReadMark(TimeStampedModel):
 
 @receiver(models.signals.post_save, sender=Message)
 def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
-    if not created:
+    if (not (created)):
         return
     other_participants = instance.chat.get_other_participants(instance.sender)
     for entity in other_participants:
-        if entity.user.notify_on_message == User.NOTIFICATIONS_ON:
+        if (entity.user.notify_on_message == User.NOTIFICATIONS_ON):
             entity.user.mail_user(template_name_prefix='im/email/new_message', context={
                 'message': instance,
             })

@@ -35,12 +35,12 @@ def set_session(request):
     origin = request.META.get('HTTP_ORIGIN')
     netloc = urlparse(origin).netloc
     valid_origin = any(netloc.endswith('.' + site.domain) for site in Site.objects.all().order_by("pk"))
-    if not valid_origin:
+    if (not (valid_origin)):
         return response
-    if request.method == 'POST':
+    if (request.method == 'POST'):
         session_key = request.POST.get('key')
         SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
-        if session_key and SessionStore().exists(session_key):
+        if ((session_key) and (SessionStore().exists(session_key))):
             # Set session cookie
             request.session = SessionStore(session_key)
             request.session.modified = True
@@ -56,7 +56,7 @@ class IndexView(generic.View):
     registered_redirect_to = 'profiles:me' # The default.
 
     def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated:
+        if (self.request.user.is_authenticated):
             return redirect(to=self.registered_redirect_to)
         else:
             return RegistrationView.as_view()(request=request, *args, **kwargs)
@@ -70,7 +70,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
     def form_valid(self, form):
         self.object = form.save()
         log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
-        if settings.ACTIVATE_PROFILE_AFTER_REGISTRATION:
+        if (settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
             log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
@@ -167,7 +167,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return reflection_import(name=settings.SITE_PROFILE_ACTIVATION_FORM)
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.profile.is_active:
+        if ((request.user.is_authenticated) and (request.user.profile.is_active)):
             return redirect(to=self.success_url)
         return super().dispatch(request=request, *args, **kwargs)
 
@@ -175,7 +175,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy('accounts:activate')
 
     def post(self, request, *args, **kwargs):
-        if request.user.has_verified_email:
+        if (request.user.has_verified_email):
             return super().post(request=request, *args, **kwargs)
         else:
             return redirect(to=self.get_account_activation_url())
@@ -211,7 +211,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
 
     def get_success_url(self):
         site = Site.objects.get_current()
-        # if user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page.
+        # If user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page.
         if (site.id == settings.SPEEDY_MATCH_SITE_ID):
             if (self.request.user.email_addresses.filter(is_confirmed=True).count() == 1):
                 return reverse_lazy('matches:list')
@@ -220,10 +220,10 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     def get(self, request, *args, **kwargs):
         email_address = self.get_object()
         token = self.kwargs.get('token')
-        if email_address.is_confirmed:
+        if (email_address.is_confirmed):
             messages.warning(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="You've already confirmed this email address."))
         else:
-            if email_address.confirmation_token == token:
+            if (email_address.confirmation_token == token):
                 email_address.verify()
                 messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="You've confirmed your email address."))
             else:
@@ -249,7 +249,7 @@ class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
         response = super().form_valid(form)
         email_address = self.object
         email_address.send_confirmation_email()
-        if email_address.user.email_addresses.filter(is_primary=True).count() == 0:
+        if (email_address.user.email_addresses.filter(is_primary=True).count() == 0):
             email_address.make_primary()
         messages.success(request=self.request, message=_('A confirmation message was sent to {}').format(email_address.email))
         return response

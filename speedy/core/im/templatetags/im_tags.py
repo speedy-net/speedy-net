@@ -24,9 +24,9 @@ def annotate_chats_with_read_marks(chat_list, entity):
     rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
     for chat in chat_list:
         rmark = rmarks.get(chat.id)
-        if chat.last_message is None:
+        if (chat.last_message is None):
             chat.is_unread = False
-        elif rmark is None:
+        elif (rmark is None):
             chat.is_unread = True
         else:
             chat.is_unread = chat.last_message.date_created > rmark.date_updated
@@ -43,7 +43,7 @@ def annotate_messages_with_read_marks(message_list, entity):
     rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chats, entity=entity)}
     for message in message_list:
         rmark = rmarks.get(message.chat_id)
-        if rmark is None:
+        if (rmark is None):
             message.is_unread = True
         else:
             message.is_unread = message.date_created > rmark.date_updated
@@ -64,6 +64,6 @@ def get_chat_slug(chat, current_user):
 def unread_chats_count(entity):
     chat_list = Chat.on_site.chats(entity=entity)
     annotate_chats_with_read_marks(chat_list, entity)
-    return len([c for c in chat_list if c.is_unread])
+    return len([c for c in chat_list if (c.is_unread)])
 
 

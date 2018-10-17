@@ -17,16 +17,16 @@ class UserMixin(object):
     user_slug_kwarg = 'slug'
 
     def use_request_user(self):
-        return self.user_slug_kwarg not in self.kwargs
+        return (self.user_slug_kwarg not in self.kwargs)
 
     def render_to_response(self, context, **response_kwargs):
-        if not self.request.user.has_perm(perm='accounts.view_profile', obj=self.get_user()):
+        if (not (self.request.user.has_perm(perm='accounts.view_profile', obj=self.get_user()))):
             response_kwargs['status'] = 404
         return super().render_to_response(context=context, **response_kwargs)
 
     def dispatch(self, request, *args, **kwargs):
         self.user = self.get_user()
-        if not self.use_request_user() and self.user.slug != kwargs[self.user_slug_kwarg]:
+        if ((not (self.use_request_user())) and (self.user.slug != kwargs[self.user_slug_kwarg])):
             kwargs[self.user_slug_kwarg] = self.user.slug
             components = []
             components.extend(request.resolver_match.namespaces)
@@ -40,8 +40,8 @@ class UserMixin(object):
     def get_user(self):
         try:
             slug = self.kwargs.get(self.user_slug_kwarg)
-            if self.use_request_user() or slug == 'me':
-                if self.request.user.is_authenticated:
+            if ((self.use_request_user()) or (slug == 'me')):
+                if (self.request.user.is_authenticated):
                     return self.request.user
                 else:
                     raise PermissionDenied()
@@ -49,7 +49,7 @@ class UserMixin(object):
 
             # inactive user profiles will have a link to the Speedy Net profile page
             # so the user has to get to the profile page and not a 404
-            # if not user.profile.is_active:
+            # if (not (user.profile.is_active)):
             #     raise Http404('This user is not active on this site.')
 
             return user
@@ -64,7 +64,7 @@ class UserMixin(object):
         cd.update({
             'user': self.user,
         })
-        if self.request.user.is_authenticated:
+        if (self.request.user.is_authenticated):
             try:
                 friend_request_received = FriendshipRequest.objects.get(from_user=self.user, to_user=self.request.user)
             except FriendshipRequest.DoesNotExist:
@@ -81,7 +81,7 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         url = self.request.user.get_absolute_url()
         rest = kwargs.get('rest')
-        if rest:
+        if (rest):
             url += '/' + rest
         return url
 

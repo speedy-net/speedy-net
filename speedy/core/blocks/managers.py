@@ -6,7 +6,7 @@ from speedy.core.base.models import BaseManager
 
 class BlockManager(BaseManager):
     def block(self, blocker, blocked):
-        if blocker == blocked:
+        if (blocker == blocked):
             raise ValidationError("Users cannot block themselves.")
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
         Friend.objects.remove_friend(from_user=blocker, to_user=blocked)

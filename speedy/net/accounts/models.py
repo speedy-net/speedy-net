@@ -24,7 +24,7 @@ class SiteProfile(SiteProfileBase):
 
     def deactivate(self):
         self.is_active = False
-        if not self.user.is_superuser:
+        if (not (self.user.is_superuser)):
             self.user.is_active = False
         self.user.save_user_and_profile()
 

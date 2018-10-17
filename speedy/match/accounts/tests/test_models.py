@@ -196,7 +196,7 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=len(field_name_list), second=len(value_to_test))
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
-        if ((null == False) and all(value_to_test[i] in self._none_list for i in range(len(value_to_test)))):
+        if ((null == False) and (all(value_to_test[i] in self._none_list for i in range(len(value_to_test))))):
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name_list(field_name_list=field_name_list))
         else:
             self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list=field_name_list, value_list=value_to_test))
@@ -274,8 +274,8 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
                             values_to_test.extend(product[3:8])
                 else:
                     values_to_test.extend([([i] + [item for j in range(10) for item in User.GENDER_VALID_VALUES])[:n] for i in range_to_test])
-            valid_values_to_save = self._none_list + [gender_to_match for gender_to_match in values_to_test if (isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) <= len(User.GENDER_VALID_VALUES))]
-            valid_values = [gender_to_match for gender_to_match in values_to_test if (isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) > 0) and (len(gender_to_match) == len(set(gender_to_match))) and all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)]
+            valid_values_to_save = self._none_list + [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) <= len(User.GENDER_VALID_VALUES)))]
+            valid_values = [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) > 0) and (len(gender_to_match) == len(set(gender_to_match))) and (all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)))]
             for value in [[1], [2], [3], (1,), (2,), (3,), [1, 2], [1, 3], [2, 3], (1, 2), (1, 3), [1, 2, 3], (1, 2, 3)]:
                 for val in [value, list(value)]:
                     self.assertIn(member=val, container=values_to_test)
@@ -320,7 +320,7 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
                 values_to_test.extend(values_to_test_valid_ages)
             self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
             if (test_settings["test_invalid_values_to_save"]):
-                valid_values_to_save = [value for value in values_to_test if all(isinstance(value[i], int) for i in range(len(value)))]
+                valid_values_to_save = [value for value in values_to_test if (all(isinstance(value[i], int) for i in range(len(value))))]
                 valid_values = [value for value in values_to_test_valid_ages if (value[0] <= value[1])]
             else:
                 valid_values_to_save = values_to_test

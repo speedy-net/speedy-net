@@ -13,7 +13,7 @@ def already_likes(user, other_user):
 
 @predicate
 def both_are_users(user, other_user):
-    return isinstance(user, User) and isinstance(other_user, User)
+    return ((isinstance(user, User)) and (isinstance(other_user, User)))
 
 
 add_perm('likes.like', is_authenticated & ~is_self & ~there_is_block & ~already_likes & both_are_users)

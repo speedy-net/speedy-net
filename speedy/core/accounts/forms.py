@@ -18,6 +18,7 @@ from .models import User, UserEmailAddress
 from .validators import ValidateUserPasswordMixin
 
 
+# ~~~~ TODO: move to settings.
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
 ]
@@ -34,7 +35,7 @@ class ModelFormWithDefaults(forms.ModelForm):
         instance = super().save(commit=False)
         for field, value in self.defaults.items():
             setattr(instance, field, value)
-        if commit:
+        if (commit):
             instance.save()
         return instance
 
@@ -44,11 +45,11 @@ class CleanEmailMixin(object):
         email = self.cleaned_data['email']
         email = User.objects.normalize_email(email=email)
         email = email.lower()
-        if UserEmailAddress.objects.filter(email=email).exists():
+        if (UserEmailAddress.objects.filter(email=email).exists()):
             # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
             UserEmailAddress.objects.filter(email=email, is_confirmed=False).delete()
             # If this email address is confirmed, raise an exception.
-            if UserEmailAddress.objects.filter(email=email).exists():
+            if (UserEmailAddress.objects.filter(email=email).exists()):
                 raise ValidationError(_('This email is already in use.'))
         return email
 
@@ -74,19 +75,19 @@ class LocalizedFirstLastNameMixin(object):
         instance = super().save(commit=False)
         for loc_field in self.get_localized_fields():
             setattr(instance, loc_field, self.cleaned_data[loc_field])
-        if commit:
+        if (commit):
             instance.save()
         return instance
 
     @staticmethod
-    def get_localizeable_fields():
+    def get_localizable_fields():
         return ('first_name', 'last_name')
 
     def get_localized_field(self, base_field_name, language_code):
         return '{}_{}'.format(base_field_name, language_code or self.language_code)
 
     def get_localized_fields(self, language=None):
-        loc_fields = self.get_localizeable_fields()
+        loc_fields = self.get_localizable_fields()
         return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
 
 
@@ -96,7 +97,7 @@ class AddAttributesToFieldsMixin(object):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            if field_name in self.attribute_fields:
+            if (field_name in self.attribute_fields):
                 field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize' : 'off', 'spellcheck': 'false'})
 
 
@@ -119,9 +120,9 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         user = super().save(commit=False)
         user.set_password(raw_password=self.cleaned_data["new_password1"])
         for language_code, language_name in settings.LANGUAGES:
-            for loc_field in self.get_localizeable_fields():
+            for loc_field in self.get_localizable_fields():
                 setattr(user, self.get_localized_field(base_field_name=loc_field, language_code=language_code), self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language_code=self.language_code)])
-        if commit:
+        if (commit):
             user.save()
             user.email_addresses.create(email=self.cleaned_data['email'], is_confirmed=False, is_primary=True)
         return user
@@ -151,7 +152,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
-        if normalize_username(slug=slug) != username:
+        if (normalize_username(slug=slug) != username):
             raise ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 
@@ -167,7 +168,7 @@ class ProfileNotificationsForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self._profile_model._meta.fields:
-            if field.name in self._profile_fields:
+            if (field.name in self._profile_fields):
                 self.fields[field.name] = field.formfield()
                 self.fields[field.name].initial = getattr(self.instance.profile, field.name)
         self.helper = FormHelper()
@@ -175,10 +176,10 @@ class ProfileNotificationsForm(forms.ModelForm):
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
-            if field_name in self._profile_fields:
+            if (field_name in self._profile_fields):
                 setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
         r = super().save(commit=commit)
-        if commit:
+        if (commit):
             self.instance.profile.save()
         return r
 
@@ -187,7 +188,7 @@ class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data = self.data.copy()
-        if 'username' in self.data:
+        if ('username' in self.data):
             self.data['username'] = self.data['username'].lower()
         self.fields['username'].label = _('Email or Username')
         self.helper = FormHelper()
@@ -214,7 +215,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
 
     def get_users(self, email):
         email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email.lower())
-        return {e.user for e in email_addresses if e.user.has_usable_password()}
+        return {e.user for e in email_addresses if (e.user.has_usable_password())}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
         send_mail(to=[to_email], template_name_prefix='accounts/email/password_reset', context=context)
@@ -248,7 +249,7 @@ class SiteProfileActivationForm(forms.ModelForm):
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {} account').format(_(site.name))))
 
     def save(self, commit=True):
-        if commit:
+        if (commit):
             self.instance.activate()
         return super().save(commit=commit)
 
@@ -265,7 +266,7 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
 
     def clean_password(self):
         password = self.cleaned_data['password']
-        if not self.user.check_password(raw_password=password):
+        if (not (self.user.check_password(raw_password=password))):
             raise ValidationError(_('Invalid password.'))
         return password
 

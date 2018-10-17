@@ -36,7 +36,7 @@ class LikeListToView(LikeListViewBase):
 
         # filter out users that are only active in another language
         liked_user = User.objects.filter(pk__in=UserLike.objects.filter(from_user=self.user).values_list('to_user_id', flat=True))
-        liked_user = [u.pk for u in liked_user if u.profile.is_active]
+        liked_user = [u.pk for u in liked_user if (u.profile.is_active)]
 
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
@@ -53,7 +53,7 @@ class LikeListFromView(LikeListViewBase):
 
         # filter out users that are only active in another language
         who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
-        who_likes_me = [u.pk for u in who_likes_me if u.profile.is_active]
+        who_likes_me = [u.pk for u in who_likes_me if (u.profile.is_active)]
 
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.from_user_id'.format(table_name),
@@ -67,7 +67,7 @@ class LikeListMutualView(LikeListViewBase):
     def get_queryset(self):
         # filter out users that are only active in another language
         who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
-        who_likes_me = [u.pk for u in who_likes_me if u.profile.is_active]
+        who_likes_me = [u.pk for u in who_likes_me if (u.profile.is_active)]
 
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table

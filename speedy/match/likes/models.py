@@ -22,10 +22,10 @@ class UserLike(TimeStampedModel):
 
 @receiver(models.signals.post_save, sender=UserLike)
 def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
-    if not created:
+    if (not (created)):
         return
     user = instance.to_user
-    if user.profile.notify_on_like == User.NOTIFICATIONS_ON:
+    if (user.profile.notify_on_like == User.NOTIFICATIONS_ON):
         user.mail_user('likes/email/like', {
             'like': instance,
         })
