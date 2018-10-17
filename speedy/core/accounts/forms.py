@@ -162,7 +162,7 @@ class ProfileNotificationsForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('notify_on_message', )
+        fields = ('notify_on_message',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
