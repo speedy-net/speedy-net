@@ -98,7 +98,7 @@ class AddAttributesToFieldsMixin(object):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if (field_name in self.attribute_fields):
-                field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize' : 'off', 'spellcheck': 'false'})
+                field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize': 'off', 'spellcheck': 'false'})
 
 
 class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
@@ -146,7 +146,7 @@ class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms
                 Div(field, css_class='col-md-6')
                 for field in pair])
             for pair in zip_longest(field_names[::2], field_names[1::2])
-            ]))
+        ]))
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def clean_slug(self):
