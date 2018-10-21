@@ -280,7 +280,7 @@ class RegistrationFormTestCaseMixin(object):
 
     def test_invalid_date_of_birth_list_fail(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
-        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
+        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
             print(date_of_birth)
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth

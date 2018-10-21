@@ -15,7 +15,7 @@ from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
-from .validators import ValidateUserPasswordMixin
+from .validators import validate_date_of_birth_in_forms, ValidateUserPasswordMixin
 
 
 # ~~~~ TODO: move to settings.
@@ -61,6 +61,13 @@ class CleanNewPasswordMixin(ValidateUserPasswordMixin):
         return password
 
 
+class CleanDateOfBirthMixin(object):
+    def clean_date_of_birth(self):
+        date_of_birth = self.cleaned_data['date_of_birth']
+        validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
+        return date_of_birth
+
+
 class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
         self.language_code = kwargs.pop('language_code', 'en')
@@ -101,7 +108,7 @@ class AddAttributesToFieldsMixin(object):
                 field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize': 'off', 'spellcheck': 'false'})
 
 
-class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     email = forms.EmailField(label=_('Your email'))
     new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
 
@@ -128,7 +135,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         return user
 
 
-class ProfileForm(AddAttributesToFieldsMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('date_of_birth', 'photo', 'slug', 'gender')

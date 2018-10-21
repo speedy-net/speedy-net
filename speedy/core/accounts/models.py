@@ -17,7 +17,7 @@ from speedy.core.base.utils import normalize_slug, normalize_username, generate_
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
-from .validators import get_username_validators, get_slug_validators, ValidateUserPasswordMixin
+from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, ValidateUserPasswordMixin
 # from .mixins import CleanEmailMixin # ~~~~ TODO
 
 
@@ -136,9 +136,13 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     MAX_SLUG_LENGTH = 200
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
+    # Users can register from age 0 to 180, but can't be kept on the site after age 250.
     MIN_AGE_ALLOWED_IN_MODEL = 0  # In years.
     MAX_AGE_ALLOWED_IN_MODEL = 250  # In years.
     AGE_VALID_VALUES_IN_MODEL = range(MIN_AGE_ALLOWED_IN_MODEL, MAX_AGE_ALLOWED_IN_MODEL)
+    MIN_AGE_ALLOWED_IN_FORMS = 0  # In years.
+    MAX_AGE_ALLOWED_IN_FORMS = 180  # In years.
+    AGE_VALID_VALUES_IN_FORMS = range(MIN_AGE_ALLOWED_IN_FORMS, MAX_AGE_ALLOWED_IN_FORMS)
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
@@ -207,6 +211,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     validators = {
         'username': get_username_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
         'slug': get_slug_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, min_slug_length=MIN_SLUG_LENGTH, max_slug_length=MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+        'date_of_birth': [validate_date_of_birth_in_model],
     }
 
     class Meta:

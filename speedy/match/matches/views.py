@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import ugettext_lazy as _
 from rules.contrib.views import LoginRequiredMixin
+
 from ..accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
 

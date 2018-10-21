@@ -1,9 +1,22 @@
+import logging
+
 from django.conf import settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _, ungettext_lazy
 
-from speedy.core.base.utils import normalize_slug, normalize_username
+from speedy.core.base.utils import normalize_slug, normalize_username, get_age
+
+
+log = logging.getLogger(__name__)
+
+
+def _get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
+    try:
+        age = get_age(date_of_birth=date_of_birth)
+    except AttributeError:
+        age = default
+    return age
 
 
 def reserved_username_validator(value):
@@ -94,6 +107,37 @@ def get_slug_validators(min_username_length, max_username_length, min_slug_lengt
         MaxLengthValidator(limit_value=max_slug_length),
     ]
 
+
+def age_is_valid_in_model(age):
+    from .models import User
+    return (age in User.AGE_VALID_VALUES_IN_MODEL)
+
+
+def age_is_valid_in_forms(age):
+    from .models import User
+    return (age in User.AGE_VALID_VALUES_IN_FORMS)
+
+
+# ~~~~ TODO: create tests for this validator.
+def validate_date_of_birth_in_model(date_of_birth):
+    age = _get_age_or_default(date_of_birth=date_of_birth)
+    if (not (age_is_valid_in_model(age=age))):
+        log.debug("validate_date_of_birth_in_model::age is not valid in model (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
+        raise ValidationError(_('Enter a valid date.'))
+        # raise ValidationError(_('Enter a valid date (age can be from 0 to 250 years).')) #### TODO
+
+
+# ~~~~ TODO: create tests for this validator.
+def validate_date_of_birth_in_forms(date_of_birth):
+    age = _get_age_or_default(date_of_birth=date_of_birth)
+    if (not (age_is_valid_in_forms(age=age))):
+        log.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
+        raise ValidationError(_('Enter a valid date.'))
+        # raise ValidationError(_('Enter a valid date (age can be from 0 to 180 years).')) #### TODO
+
+
+# ~~~~ TODO: Use Django's built-in password validators (settings.AUTH_PASSWORD_VALIDATORS)
+# class MinimumLengthValidator
 
 class ValidateUserPasswordMixin(object):
     def validate_password(self, password):

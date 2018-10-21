@@ -1,10 +1,13 @@
+from datetime import datetime
+
+from django.conf import settings
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login
 from .test_mixins import ErrorsMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
-from .test_factories import USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
+from .test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
 
 class NormalizeSlugTestCase(TestCase):
@@ -169,6 +172,20 @@ class EntityTestCase(ErrorsMixin, TestCase):
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=121))
 
+    # ~~~~ TODO: check when username is ok but slug is too long.
+    def test_slug_and_username_max_length_zzzzzzzzzzzzzzzzzzzzzzzz_1(self):# ~~~~ TODO
+        entity = Entity(slug='a-' * 120, username='a' * 120)
+        entity.save()
+        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+
+
+    # ~~~~ TODO: check when username is ok but slug is too long.
+    def test_slug_and_username_max_length_zzzzzzzzzzzzzzzzzzzzzzzz_2(self):# ~~~~ TODO
+        entity = Entity(slug='a-' * 120)
+        entity.save()
+        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+
+
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
         entity.save()
@@ -215,6 +232,18 @@ class EntityTestCase(ErrorsMixin, TestCase):
 
 @only_on_sites_with_login
 class UserTestCase(ErrorsMixin, TestCase):
+    def setup(self):
+        super().setup()
+        self.password = get_random_user_password()
+        self.data = {
+            'password': self.password,
+            'slug': 'user-1234',
+            'gender': 1,
+            'date_of_birth': '1900-08-20',
+            'first_name': "First",
+            'last_name': "Last",
+        }
+
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 3 + 1)))
@@ -451,41 +480,46 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_valid_date_of_birth_list_ok(self):
-        raise NotImplementedError()  # ~~~~ TODO: implement!
-        # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
-        # for date_of_birth in settings.VALID_DATE_OF_BIRTH_LIST:
-        #     print("test_valid_date_of_birth_list_ok", date_of_birth)
-        #     data = self.data.copy()
-        #     data['date_of_birth'] = date_of_birth
-        #     r = self.client.post(path=self.page_url, data=data)
-        #     self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
-        #     user = User.objects.get(pk=self.user.pk)
-        #     # TODO - uncomment these lines
-        #     # self.assertEqual(first=user.first_name, second=self.first_name)
-        #     # self.assertEqual(first=user.first_name_en, second=self.first_name)
-        #     # self.assertEqual(first=user.first_name_he, second=self.first_name)
-        #     # self.assertEqual(first=user.last_name, second=self.last_name)
-        #     # self.assertEqual(first=user.last_name_en, second=self.last_name)
-        #     # self.assertEqual(first=user.last_name_he, second=self.last_name)
-        #     for (key, value) in self.data.items():
-        #         if (not (key in ['date_of_birth'])):
-        #             self.assertEqual(first=getattr(user, key), second=value)
-        #     self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        for date_of_birth in settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
+            print("test_valid_date_of_birth_list_ok", date_of_birth)
+            data = self.data.copy()
+            data['slug'] = 'user-{}'.format(date_of_birth)
+            data['date_of_birth'] = date_of_birth
+            user = User(**data)
+            user.save_user_and_profile()
+            user = User.objects.get(pk=user.pk)
+            # TODO - uncomment these lines
+            # self.assertEqual(first=user.first_name, second=self.first_name)
+            # self.assertEqual(first=user.first_name_en, second=self.first_name)
+            # self.assertEqual(first=user.first_name_he, second=self.first_name)
+            # self.assertEqual(first=user.last_name, second=self.last_name)
+            # self.assertEqual(first=user.last_name_en, second=self.last_name)
+            # self.assertEqual(first=user.last_name_he, second=self.last_name)
+            for (key, value) in data.items():
+                if (not (key in ['date_of_birth'])):
+                    self.assertEqual(first=getattr(user, key), second=value)
+            self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+        self.assertEqual(first=Entity.objects.count(), second=len(settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        self.assertEqual(first=User.objects.count(), second=len(settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_invalid_date_of_birth_list_fail(self):
-        raise NotImplementedError()  # ~~~~ TODO: implement!
-        # self.date_of_birth = self.user.date_of_birth
-        # self.last_name = self.user.last_name
-        # # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
-        # for date_of_birth in settings.INVALID_DATE_OF_BIRTH_LIST:
-        #     print("test_invalid_date_of_birth_list_fail", date_of_birth)
-        #     data = self.data.copy()
-        #     data['date_of_birth'] = date_of_birth
-        #     r = self.client.post(path=self.page_url, data=data)
-        #     self.assertEqual(first=r.status_code, second=200, msg="{} is a valid date of birth.".format(date_of_birth))
-        #     self.assertDictEqual(d1=r.context['form'].errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
-        #     user = User.objects.get(pk=self.user.pk)
-        #     self.assertEqual(first=user.date_of_birth, second=self.date_of_birth)
+        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
+        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
+            print("test_invalid_date_of_birth_list_fail", date_of_birth)
+            data = self.data.copy()
+            data['date_of_birth'] = date_of_birth
+            user = User(**data)
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_date_errors_dict())
+        self.assertEqual(first=Entity.objects.count(), second=0)
+        self.assertEqual(first=User.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
 
 @only_on_sites_with_login
@@ -571,3 +605,5 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=user.email_addresses.count(), second=2)
         user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
+
+

@@ -18,10 +18,10 @@ class ErrorsMixin(object):
     def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(self, value):
         return 'List contains {} items, it should contain no more than 3.'.format(len(value))
 
-    # @staticmethod
-    def _value_has_an_invalid_date_format_error_message_by_value(self, value):
-        return "'{}' value has an invalid date format. It must be in YYYY-MM-DD format.".format(value)
-
+    # # @staticmethod
+    # def _value_has_an_invalid_date_format_error_message_by_value(self, value):
+    #     return "'{}' value has an invalid date format. It must be in YYYY-MM-DD format.".format(value)
+    #
     # @staticmethod
     def _ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
         # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length" and also use normalize...
@@ -143,7 +143,8 @@ class ErrorsMixin(object):
                     gender_error_messages = [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]
                 else:
                     gender_error_messages = None
-            date_of_birth_error_messages = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
+            # date_of_birth_error_messages = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
+            date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
         slug_and_username_error_messages = [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=len(str_value))]
         errors_dict = {
             # 'first_name': [self._this_field_cannot_be_blank_error_message],

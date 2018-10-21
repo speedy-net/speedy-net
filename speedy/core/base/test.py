@@ -33,46 +33,37 @@ class TestsDynamicSettingsMixin(object):
         kwargs = dict(
             SITES_FIXTURE=__class__.SITES_FIXTURE,
             OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=__class__.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED,
-            VALID_DATE_OF_BIRTH_LIST=__class__._valid_date_of_birth_list(),
-            INVALID_DATE_OF_BIRTH_LIST=__class__._invalid_date_of_birth_list(),
+            VALID_DATE_OF_BIRTH_IN_MODEL_LIST=__class__._valid_date_of_birth_list(max_age_allowed=250),
+            INVALID_DATE_OF_BIRTH_IN_MODEL_LIST=__class__._invalid_date_of_birth_list(max_age_allowed=250),
+            VALID_DATE_OF_BIRTH_IN_FORMS_LIST=__class__._valid_date_of_birth_list(max_age_allowed=180),
+            INVALID_DATE_OF_BIRTH_IN_FORMS_LIST=__class__._invalid_date_of_birth_list(max_age_allowed=180),
         )
         return kwargs
 
     @staticmethod
-    def _valid_date_of_birth_list():
+    def _valid_date_of_birth_list(max_age_allowed):
         today = date.today()
-        VALID_DATE_OF_BIRTH_LIST = [
+        valid_date_of_birth_list = [
             '1904-02-29',
             '1980-01-31',
             '1999-12-01',
             '2000-02-29',
             '2004-02-29',
             '2018-10-15',
-            '2019-01-01',  # ~~~~ TODO
-            '3000-01-01',  # ~~~~ TODO
-            '9999-12-31',  # ~~~~ TODO
-            '1769-01-01',  # ~~~~ TODO
-            '1768-01-01',  # ~~~~ TODO
-            '1000-01-01',  # ~~~~ TODO
-            '0001-01-01',  # ~~~~ TODO
-            '0999-01-01',  # ~~~~ TODO
-            (today + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
-            (today - relativedelta(years=250)).isoformat(),  # ~~~~ TODO
-            today.isoformat(),  # ~~~~ TODO
-            (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
-            date(year=1, month=1, day=1).isoformat(),  # ~~~~ TODO
-            date(year=9999, month=12, day=31).isoformat(),  # ~~~~ TODO
-            (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
-            (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(),  # ~~~~ TODO
-            (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(),  # ~~~~ TODO
+            '{}-01-01'.format(today.year + 1 - max_age_allowed),
+            '{}-12-31'.format(today.year + 1 - max_age_allowed),
+            today.isoformat(),
+            (today - relativedelta(days=1)).isoformat(),
+            (today - relativedelta(years=max_age_allowed) + relativedelta(days=1)).isoformat(),
         ]
-        print("VALID_DATE_OF_BIRTH_LIST", VALID_DATE_OF_BIRTH_LIST, len(VALID_DATE_OF_BIRTH_LIST), len(set(VALID_DATE_OF_BIRTH_LIST)))  # ~~~~ TODO
-        return VALID_DATE_OF_BIRTH_LIST
+        valid_date_of_birth_list = sorted(list(set(valid_date_of_birth_list)))
+        print("valid_date_of_birth_list (max_age_allowed={})".format(max_age_allowed), valid_date_of_birth_list, len(valid_date_of_birth_list), len(set(valid_date_of_birth_list)))  # ~~~~ TODO
+        return valid_date_of_birth_list
 
     @staticmethod
-    def _invalid_date_of_birth_list():
+    def _invalid_date_of_birth_list(max_age_allowed):
         today = date.today()
-        INVALID_DATE_OF_BIRTH_LIST = [
+        invalid_date_of_birth_list = [
             '1900-02-29',
             '1901-02-29',
             '1980-02-31',
@@ -82,33 +73,33 @@ class TestsDynamicSettingsMixin(object):
             '1999-00-01',
             '1999-13-01',
             '2001-02-29',
-            # '2018-10-16', # ~~~~ TODO
-            # '2019-01-01', # ~~~~ TODO
-            # '3000-01-01', # ~~~~ TODO
-            # '9999-12-31', # ~~~~ TODO
-            '10000-01-01',  # ~~~~ TODO
-            # '1769-01-01', # ~~~~ TODO
-            # '1768-01-01', # ~~~~ TODO
-            # '1000-01-01', # ~~~~ TODO
+            '2019-01-01', # ~~~~ TODO
+            '2025-01-01',
+            '3000-01-01',
+            '9999-12-31',
+            '10000-01-01',
+            '1768-10-01',
+            '1000-01-01',
             '1-01-01',
             '100-01-01',
             '999-01-01',
-            # '0001-01-01', # ~~~~ TODO
-            # '0999-01-01', # ~~~~ TODO
-            # (today + relativedelta(days=1)).isoformat(), # ~~~~ TODO
-            # (today - relativedelta(years=250)).isoformat(), # ~~~~ TODO
-            # today.isoformat(), # ~~~~ TODO
-            # (today - relativedelta(years=250) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
-            # date(year=1, month=1, day=1).isoformat(), # ~~~~ TODO
-            # date(year=9999, month=12, day=31).isoformat(), # ~~~~ TODO
-            # (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(), # ~~~~ TODO
-            # (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(), # ~~~~ TODO
-            # (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(), # ~~~~ TODO
+            '0001-01-01',
+            '0999-01-01',
+            '{}-01-01'.format(today.year - 1 - max_age_allowed),
+            '{}-12-31'.format(today.year - 1 - max_age_allowed),
+            (today + relativedelta(days=1)).isoformat(),
+            (today - relativedelta(years=max_age_allowed)).isoformat(),
+            date(year=1, month=1, day=1).isoformat(),
+            date(year=9999, month=12, day=31).isoformat(),
+            (date(year=1, month=1, day=2) - relativedelta(days=1)).isoformat(),
+            (date(year=9999, month=12, day=31) - relativedelta(days=1)).isoformat(),
+            (date(year=9999, month=12, day=30) + relativedelta(days=1)).isoformat(),
             'a',
             '',
         ]
-        print("INVALID_DATE_OF_BIRTH_LIST", INVALID_DATE_OF_BIRTH_LIST, len(INVALID_DATE_OF_BIRTH_LIST), len(set(INVALID_DATE_OF_BIRTH_LIST)))  # ~~~~ TODO
-        return INVALID_DATE_OF_BIRTH_LIST
+        invalid_date_of_birth_list = sorted(list(set(invalid_date_of_birth_list)))
+        print("invalid_date_of_birth_list (max_age_allowed={})".format(max_age_allowed), invalid_date_of_birth_list, len(invalid_date_of_birth_list), len(set(invalid_date_of_birth_list)))  # ~~~~ TODO
+        return invalid_date_of_birth_list
 
 
 # class TestCase(TestsDynamicSettingsMixin, DjangoTestCase):
@@ -150,6 +141,10 @@ class TestCase(DjangoTestCase):
         self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(self.all_other_languages_code_list))
         self.assertEqual(first=len(self.all_other_full_http_host_list), second=len(set(self.all_other_full_http_host_list)))
         self.assertListEqual(list1=self.all_other_full_http_host_list, list2={'en': ['http://he.{domain}/'.format(domain=self.site.domain)], 'he': ['http://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
+        self.assertGreater(a=len(settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST), b=8)
+        self.assertGreater(a=len(settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), b=24)
+        self.assertGreater(a=len(settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), b=8)
+        self.assertGreater(a=len(settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST), b=24)
 
     def setup(self):
         self.language_code = settings.LANGUAGE_CODE

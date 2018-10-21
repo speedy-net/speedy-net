@@ -17,7 +17,7 @@ var datepickerOptions = {
     changeMonth: true,
     changeYear: true,
 	  dateFormat: "d MM yy", //"dd/mm/yy",
-    minDate: '-180y',
+    minDate: '-180y+1d',
     maxDate: '+0d',
     yearRange: '-180:+0'
 };
