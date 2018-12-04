@@ -121,8 +121,8 @@ msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:20
-msgid "Uri Even-Chen"
-msgstr "אורי אבן-חן"
+msgid "Uri Rodberg"
+msgstr "אורי רודברג"
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:21
 msgid "Founder and Director of Speedy Net and Speedy Composer,"

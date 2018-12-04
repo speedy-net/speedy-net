@@ -106,7 +106,7 @@ msgid "Thank you and good luck,"
 msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:20
-msgid "Uri Even-Chen"
+msgid "Uri Rodberg"
 msgstr ""
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:21

@@ -224,6 +224,6 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 - In tags, the same person can't be tagged in the same picture more than once (if they are on Speedy Net). But two tags with the same name are allowed (if two people have the same name).
 
 Best Regards,
-Uri Even-Chen
+Uri Rodberg
 E-mail: uri@speedy.net
 Website: http://www.speedysoftware.com/uri/en/

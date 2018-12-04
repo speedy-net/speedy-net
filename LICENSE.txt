@@ -1,6 +1,6 @@
 == License and copyright information ==
 
-Copyright (C) 2018 Uri Even-Chen <uri@speedy.net>
+Copyright (C) 2018 Uri Rodberg <uri@speedy.net>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as

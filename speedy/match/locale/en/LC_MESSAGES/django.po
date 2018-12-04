@@ -320,7 +320,7 @@ msgid "Thank you and good luck,"
 msgstr ""
 
 #: .\templates\about\about.html:30
-msgid "Uri Even-Chen"
+msgid "Uri Rodberg"
 msgstr ""
 
 #: .\templates\about\about.html:31
