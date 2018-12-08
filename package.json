@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/urievenchen/speedy-net.git"
+    "url": "git+https://github.com/speedy-net/speedy-net.git"
   },
   "author": "",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/urievenchen/speedy-net/issues"
+    "url": "https://github.com/speedy-net/speedy-net/issues"
   },
-  "homepage": "https://github.com/urievenchen/speedy-net#readme",
+  "homepage": "https://github.com/speedy-net/speedy-net#readme",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "gulp": "^3.9.1",

@@ -48,7 +48,7 @@ Speedy Net is a new social network which will have apps, such as Speedy Match (a
 
 You can find more details in the specifications.
 
-[![Build Status](https://travis-ci.org/urievenchen/speedy-net.svg?branch=master)](https://travis-ci.org/urievenchen/speedy-net)
+[![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
 
 ## How to setup the project and run locally
 
@@ -143,7 +143,7 @@ Install all dependencies using **apt-get**:
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
 
-    git clone https://github.com/urievenchen/speedy-net.git
+    git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
     python3 -m venv env
     source env/bin/activate
