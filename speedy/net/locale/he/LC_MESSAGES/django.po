@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-13 07:02+0200\n"
+"POT-Creation-Date: 2018-12-13 08:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -726,7 +726,8 @@ msgstr "תנאי שימוש"
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base.html:183 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:183 .\templates\feedback\contact.html:11
+#: .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 msgid "Contact Us"
 msgstr "צרו קשר"
@@ -823,6 +824,18 @@ msgstr ""
 #: .\templates\core\pagination.html:32
 msgid "Next"
 msgstr ""
+
+#: .\templates\feedback\contact.html:15
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team "
+"- please contact us by e-mail."
+msgstr ""
+"אם יש לכם שאלות, הצעות או אם אתם מעוניינים להצטרף לצוות - צרו איתנו קשר "
+"בדואר אלקטרוני."
+
+#: .\templates\feedback\contact.html:17
+msgid "Uri Rodberg, founder and webmaster: "
+msgstr "אורי רודברג, מייסד ומנהל האתר: "
 
 #: .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:10

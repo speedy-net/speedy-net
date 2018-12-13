@@ -2,13 +2,18 @@ from django.core.urlresolvers import reverse_lazy
 from django.http import Http404
 from django.views import generic
 
+from speedy.core.views import StaticContactBaseView
 from speedy.net.accounts.models import Entity
 from speedy.net.uploads.models import File
 from .forms import FeedbackForm
 from .models import Feedback
 
 
-class FeedbackView(generic.CreateView):
+class ContactView(StaticContactBaseView):
+    template_name = 'feedback/contact.html'
+
+
+class ___FeedbackView(generic.CreateView): # Not working in production, replacing.
     form_class = FeedbackForm
     template_name = 'feedback/feedback_form.html'
     success_url = reverse_lazy('feedback:success')
@@ -47,5 +52,5 @@ class FeedbackView(generic.CreateView):
 
 
 
-class FeedbackSuccessView(generic.TemplateView):
+class ___FeedbackSuccessView(generic.TemplateView): # Not working in production, replacing.
     template_name = 'feedback/feedback_success.html'
