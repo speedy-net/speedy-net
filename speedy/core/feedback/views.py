@@ -6,6 +6,8 @@ from django.urls import resolve, Resolver404
 from django.http import Http404
 from django.views import generic
 
+from speedy.core.base.views import StaticContactBaseView
+
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.uploads.models import File
     from speedy.core.accounts.models import Entity
@@ -14,7 +16,11 @@ from .forms import FeedbackForm
 from .models import Feedback
 
 
-class FeedbackView(generic.CreateView):
+class ContactView(StaticContactBaseView):
+    template_name = 'feedback/contact.html'
+
+
+class ___FeedbackView(generic.CreateView): # Not working in production, replacing.
     form_class = FeedbackForm
     template_name = 'feedback/feedback_form.html'
     success_url = reverse_lazy('feedback:success')
@@ -60,7 +66,7 @@ class FeedbackView(generic.CreateView):
         return kwargs
 
 
-class FeedbackSuccessView(generic.TemplateView):
+class ___FeedbackSuccessView(generic.TemplateView): # Not working in production, replacing.
     template_name = 'feedback/feedback_success.html'
 
     def get(self, *args, **kwargs):
