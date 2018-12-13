@@ -6,5 +6,5 @@ cd "speedy/net"
 for site in ${SITES}
 do
     cd "../${site}"
-    python manage.py ${@}
+    python -W error::DeprecationWarning manage.py ${@}
 done
