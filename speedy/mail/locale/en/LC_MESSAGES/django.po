@@ -16,7 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\accounts\models.py:12
 msgid "indicates if a user has ever logged in to the site"
@@ -24,7 +23,7 @@ msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"
-msgstr "אודות תוכנת דואר ספידי"
+msgstr ""
 
 #: .\templates\about\about.html:15
 msgid ""
@@ -41,16 +40,6 @@ msgid ""
 "reactivate Speedy Mail and will allow any company or organization to operate "
 "a similar web-based e-mail on their site."
 msgstr ""
-"תוכנת דואר ספידי תהיה תוכנה חופשית בקוד פתוח לדואר אלקטרוני מבוסס web כמו "
-"Gmail. אנחנו רוצים שהדואר יהיה דומה ככל האפשר לדואר האלקטרוני המצויין של "
-"חברת גוגל, Gmail. כאשר נפתח תוכנת דואר כזאת, בכוונתנו להפעיל שירות דואר "
-"אלקטרוני בחינם לכל חברי ספידי נט, כך ששם המשתמש של כל אדם בספידי נט + שם "
-"הדומיין speedy.net יהווה את כתובת הדואר האלקטרוני של המשתמש. בעבר הפעלנו "
-"דואר אלקטרוני כזה, אך לצערי נאלצנו לסגור אותו מכיוון שהוא היה הרבה פחות טוב "
-"מ-Gmail, מבחינת פיצ'רים וגם נפח אחסון, וגם מכיוון שלא הצלחנו להשתלט על בעיית "
-"הספאם (\"דואר זבל\") שנשלח ללקוחותינו. אך אם נצליח לגייס מתנדבים שייבנו "
-"תוכנת דואר אלקטרוני טובה, נפעיל מחדש את דואר ספידי וגם נאפשר לכל חברה או "
-"ארגון אחר להפעיל דואר אלקטרוני דומה באתר שלהם."
 
 #: .\templates\about\about.html:17
 msgid ""
@@ -59,9 +48,6 @@ msgid ""
 "free software & open source projects. If you want to help developing Speedy "
 "Mail Software, please contact me by e-mail."
 msgstr ""
-"תוכנת דואר ספידי תהיה זמינה בשתי שפות - עברית ואנגלית, ותהיה ללא תשלום. "
-"ספידי נט ותוכנת דואר ספידי הם פרויקטים של תוכנה חופשית וקוד פתוח. אם אתם "
-"רוצים לעזור בפיתוח תוכנת דואר ספידי, אנא צרו איתי קשר באמצעות דואר אלקטרוני."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -69,37 +55,32 @@ msgid ""
 "speedyevenchen\" title=\"Speedy\">Speedy</a>, a female dog that was with us "
 "for many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"תוכנת דואר ספידי נקראת על שם <a href=\"https://www.facebook.com/"
-"speedyevenchen\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה "
-"בשנת 2003. ספידי המליטה 7 גורים בשנת 1988."
 
 #: .\templates\about\about.html:21 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr "תודה ובהצלחה,"
+msgstr ""
 
 #: .\templates\about\about.html:22 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr "אורי רודברג"
+msgstr ""
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"
-msgstr "מייסד ומנהל ספידי נט ודואר ספידי,"
+msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr "ספידי פז טכנולוגיות בע\"מ."
+msgstr ""
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based e-mail such as Gmail."
 msgstr ""
-"אנחנו מחפשים מתנדבים שיעזרו לנו לפתח את תוכנת דואר ספידי, תוכנה חופשית בקוד "
-"פתוח לדואר אלקטרוני מבוסס web כמו Gmail."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Mail Software!"
-msgstr "ברוכים הבאים לתוכנת דואר ספידי!"
+msgstr ""
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -116,17 +97,6 @@ msgid ""
 "mail program, we will reactivate Speedy Mail and will allow any company or "
 "organization to operate a similar web-based e-mail on their site."
 msgstr ""
-"אנחנו מחפשים מתנדבים שיעזרו לנו לפתח את תוכנת דואר ספידי, תוכנה חופשית בקוד "
-"פתוח לדואר אלקטרוני מבוסס web כמו Gmail. אנחנו רוצים שהדואר יהיה דומה ככל "
-"האפשר לדואר האלקטרוני המצויין של חברת גוגל, Gmail. כאשר נפתח תוכנת דואר "
-"כזאת, בכוונתנו להפעיל שירות דואר אלקטרוני בחינם לכל חברי ספידי נט, כך ששם "
-"המשתמש של כל אדם בספידי נט + שם הדומיין speedy.net יהווה את כתובת הדואר "
-"האלקטרוני של המשתמש. בעבר הפעלנו דואר אלקטרוני כזה, אך לצערי נאלצנו לסגור "
-"אותו מכיוון שהוא היה הרבה פחות טוב מ-Gmail, מבחינת פיצ'רים וגם נפח אחסון, "
-"וגם מכיוון שלא הצלחנו להשתלט על בעיית הספאם (\"דואר זבל\") שנשלח ללקוחותינו. "
-"אך אם נצליח לגייס מתנדבים שייבנו תוכנת דואר אלקטרוני טובה, נפעיל מחדש את "
-"דואר ספידי וגם נאפשר לכל חברה או ארגון אחר להפעיל דואר אלקטרוני דומה באתר "
-"שלהם."
 
 #: .\templates\main\main_page.html:21
 msgid ""
@@ -134,11 +104,3 @@ msgid ""
 "Net is also free software and open source. If you are interested in "
 "volunteering, please contact me by e-mail."
 msgstr ""
-"תוכנת דואר ספידי תשתמש בשפות Python ו-JavaScript. ספידי נט היא גם תוכנה "
-"חופשית בקוד פתוח. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני."
-
-#~ msgid "Speedy Mail Software"
-#~ msgstr "תוכנת דואר ספידי"
-
-#~ msgid "About"
-#~ msgstr "אודות"
