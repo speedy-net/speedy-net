@@ -61,6 +61,6 @@ https://sourceforge.net/projects/speedycomposer/
 In the future, we will also develop an application for composing melodies on personal computers (for Windows, Mac and Linux) and for mobile devices (Android and iPhone). The applications will be open source.
 
 Best Regards,
-Uri Even-Chen
+Uri Rodberg
 E-mail: uri@speedy.net
 Website: http://www.speedysoftware.com/uri/en/

@@ -3,6 +3,13 @@ env.ini
 .idea/
 .venv
 media/
+.DS_Store
+.volumes
+
+# Every file or directory starting with "___" is ignored.
+___*
+
+node_modules/
 
 ### Python template
 # Byte-compiled / optimized / DLL files
@@ -59,6 +66,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+**/static_serve
+media
 
 # Flask instance folder
 instance/
@@ -93,5 +102,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Eclipse
+.project
+.pydevproject
 
 # Created by .ignore support plugin (hsz.mobi)

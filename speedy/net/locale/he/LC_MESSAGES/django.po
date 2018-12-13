@@ -559,8 +559,8 @@ msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
 #: .\templates\about\about.html:32
-msgid "Uri Even-Chen"
-msgstr "אורי אבן-חן"
+msgid "Uri Rodberg"
+msgstr "אורי רודברג"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"

@@ -1,6 +1,6 @@
 def activate_staging(settings):
     admins = (
-        ('Uri Even-Chen', 'webmaster@speedy.net'),
+        ('Uri Rodberg', 'webmaster@speedy.net'),
         ('Evgeniy Kirov', 'evgeniy.kirov@initech.co.il'),
     )
     settings.update({

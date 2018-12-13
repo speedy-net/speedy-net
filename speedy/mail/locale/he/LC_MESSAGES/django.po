@@ -82,8 +82,8 @@ msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
 #: .\templates\about\about.html:22 .\templates\main\main_page.html:24
-msgid "Uri Even-Chen"
-msgstr "אורי אבן-חן"
+msgid "Uri Rodberg"
+msgstr "אורי רודברג"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"

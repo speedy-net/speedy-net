@@ -28,7 +28,7 @@ ALLOWED_HOSTS = ['*']
 DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
 
 ADMINS = MANAGERS = (
-    ('Uri Even-Chen', 'webmaster@speedy.net'),
+    ('Uri Rodberg', 'webmaster@speedy.net'),
 )
 
 USE_SSL = False
