@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-28 18:24+0300\n"
+"POT-Creation-Date: 2018-12-13 06:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,231 +17,279 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\accounts\forms.py:51
+#: .\accounts\___mixins.py:16 .\accounts\forms.py:53
 msgid "This email is already in use."
 msgstr ""
 
-#: .\accounts\forms.py:102
+#: .\accounts\forms.py:112
 msgid "Your email"
 msgstr ""
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:113
 msgid "New password"
 msgstr ""
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:121
 msgid "New username"
 msgstr ""
 
-#: .\accounts\forms.py:114
+#: .\accounts\forms.py:124
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:195 .\templates\base_with_login.html:83
+#: .\accounts\forms.py:200 .\templates\base_with_login.html:83
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:200 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:205 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:52
 #: .\templates\base_with_login.html:96
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:203 .\templates\base_with_login.html:55
+#: .\accounts\forms.py:208 .\templates\base_with_login.html:55
 #: .\templates\base_with_login.html:93
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:215 .\accounts\forms.py:230
+#: .\accounts\forms.py:220 .\accounts\forms.py:235
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:239
+#: .\accounts\forms.py:244
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:260
+#: .\accounts\forms.py:265
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:272
+#: .\accounts\forms.py:277
 msgid "Invalid password."
 msgstr ""
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:31
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:30 .\accounts\models.py:31 .\accounts\validators.py:11
+#: .\accounts\models.py:31 .\accounts\models.py:32 .\accounts\validators.py:24
 msgid "This username is already taken."
 msgstr ""
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:32
 msgid "username (slug)"
 msgstr ""
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:33
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:42 .\im\models.py:89
+#: .\accounts\models.py:43 .\im\models.py:89
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:43
+#: .\accounts\models.py:44
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:58
+#: .\accounts\models.py:59
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:102
+#: .\accounts\models.py:103
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:119
 msgid "Only me"
 msgstr ""
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:120
 msgid "Me and my friends"
 msgstr ""
 
-#: .\accounts\models.py:121
+#: .\accounts\models.py:122
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\models.py:146
+#: .\accounts\models.py:154
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:147
+#: .\accounts\models.py:155
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:148
+#: .\accounts\models.py:156
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:160
+#: .\accounts\models.py:168
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:161
+#: .\accounts\models.py:169
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:162
+#: .\accounts\models.py:170
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:163
+#: .\accounts\models.py:171
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:172
+#: .\accounts\models.py:180
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:173
+#: .\accounts\models.py:181
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:188
+#: .\accounts\models.py:196
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:189
+#: .\accounts\models.py:197
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:190
-msgid "date of birth"
-msgstr ""
-
-#: .\accounts\models.py:191
+#: .\accounts\models.py:198
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:193
+#: .\accounts\models.py:200
+msgid "date of birth"
+msgstr ""
+
+#: .\accounts\models.py:202
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:196
+#: .\accounts\models.py:205
 msgid "who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:197
+#: .\accounts\models.py:206
 msgid "who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:198
+#: .\accounts\models.py:207
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:208 .\accounts\models.py:303 .\accounts\models.py:362
+#: .\accounts\models.py:218 .\accounts\models.py:318 .\accounts\models.py:377
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:209
+#: .\accounts\models.py:219
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:304
+#: .\accounts\models.py:319
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:305
+#: .\accounts\models.py:320
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:321
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:307
+#: .\accounts\models.py:322
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:308
+#: .\accounts\models.py:323
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:309
+#: .\accounts\models.py:324
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:312
+#: .\accounts\models.py:327
 msgid "email address"
 msgstr ""
 
-#: .\accounts\models.py:313
+#: .\accounts\models.py:328
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:378
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\validators.py:22
+#: .\accounts\validators.py:35
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
 
-#: .\accounts\validators.py:24
+#: .\accounts\validators.py:37
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\validators.py:50
+#: .\accounts\validators.py:43
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:54
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:65
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:76
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:126 .\accounts\validators.py:135
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\accounts\validators.py:146
 msgid "Password too short."
 msgstr ""
 
-#: .\accounts\validators.py:52
+#: .\accounts\validators.py:148
 msgid "Password too long."
 msgstr ""
 
@@ -249,16 +297,20 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:231
+#: .\accounts\views.py:230
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:255 .\accounts\views.py:270
+#: .\accounts\views.py:254 .\accounts\views.py:269
 msgid "A confirmation message was sent to {}"
 msgstr ""
 
-#: .\base\models.py:63
+#: .\base\models.py:64
 msgid "ID"
+msgstr ""
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
 msgstr ""
 
 #: .\base\views.py:49
@@ -337,19 +389,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:141
+#: .\friends\views.py:162
 msgid "Friend request sent."
 msgstr ""
 
-#: .\friends\views.py:152
+#: .\friends\views.py:173
 msgid "No friend request."
 msgstr ""
 
-#: .\friends\views.py:185
+#: .\friends\views.py:203
 msgid "Friend request accepted."
 msgstr ""
 
-#: .\friends\views.py:200
+#: .\friends\views.py:218
 msgid "Friend request rejected."
 msgstr ""
 
@@ -397,11 +449,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:196
+#: .\settings\base.py:202
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:197
+#: .\settings\base.py:203
 msgid "Hebrew"
 msgstr ""
 
