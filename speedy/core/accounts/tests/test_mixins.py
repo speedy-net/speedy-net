@@ -180,7 +180,7 @@ class ErrorsMixin(object):
         if (value is None):
             str_value = ''
             gender_error_messages = [self._this_field_cannot_be_null_error_message]
-            date_of_birth_error_messages = [self._this_field_cannot_be_null_error_message]
+            # date_of_birth_error_messages = [self._this_field_cannot_be_null_error_message]
         else:
             str_value = str(value)
             if (value == ''):
@@ -191,9 +191,10 @@ class ErrorsMixin(object):
                 else:
                     gender_error_messages = None
             # date_of_birth_error_messages = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
-            date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
+            # date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
         # slug_and_username_error_messages = [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=len(str_value))]
         slug_and_username_error_messages = [self._user_username_must_start_with_4_or_more_letters_error_message]
+        date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
         errors_dict = {
             # 'first_name': [self._this_field_cannot_be_blank_error_message],
             # 'last_name': [self._this_field_cannot_be_blank_error_message],

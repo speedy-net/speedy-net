@@ -156,7 +156,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
 
     def test_slug_and_username_min_length_ok(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
@@ -273,7 +273,7 @@ class UserTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=User.MIN_USERNAME_LENGTH, second=6)
         self.assertEqual(first=User.MAX_USERNAME_LENGTH, second=40)
         self.assertEqual(first=User.MIN_SLUG_LENGTH, second=6)
-        self.assertEqual(first=User.MAX_SLUG_LENGTH, second=200-1) ###### ~~~~ TODO
+        self.assertEqual(first=User.MAX_SLUG_LENGTH, second=200)
         self.assertEqual(first=User.MIN_PASSWORD_LENGTH, second=8)
         self.assertEqual(first=User.MAX_PASSWORD_LENGTH, second=120)
 
@@ -412,7 +412,7 @@ class UserTestCase(ErrorsMixin, TestCase):
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, slug_value_length=5, username_value_length=5))
 
     def test_slug_and_username_min_length_ok(self):
         user = DefaultUserFactory(slug='a' * 6)
