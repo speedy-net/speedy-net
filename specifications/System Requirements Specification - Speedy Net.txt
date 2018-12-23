@@ -22,7 +22,7 @@ Activate/Deactivate - will be per website but not per language. If a user deacti
 
 Sending messages will not be per language, a message sent in English will also be visible on the Hebrew website. But it will be linked to the user's profile in English.
 
-Please notice that all the URLs contains slugs and not usernames, a username is a specific case of a slug. When entering a URL, the slug will be stripped from dots, dashes and underlines and then compared with a username. If this username belongs to a user, the user's page (or any specific page) will be displayed if the slug is exactly the same as the user's slug. If not, the page will be redirected to the user's slug. For example, if my slug is uri-even-chen, en.speedy.net/urirodberg/ and en.speedy.net/uri.even.chen/ will be redirected to en.speedy.net/uri-even-chen/ , which will display my profile.
+Please notice that all the URLs contains slugs and not usernames, a username is a specific case of a slug. When entering a URL, the slug will be stripped from dots, dashes and underlines and then compared with a username. If this username belongs to a user, the user's page (or any specific page) will be displayed if the slug is exactly the same as the user's slug. If not, the page will be redirected to the user's slug. For example, if my slug is uri-rodberg, en.speedy.net/urirodberg/ and en.speedy.net/uri.rodberg/ will be redirected to en.speedy.net/uri-rodberg/ , which will display my profile.
 
 Coding Style - https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
 
@@ -156,7 +156,7 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
 4. Character encoding for the whole website and database will be unicode (UTF-8). Language will be English, but project will be built to support more languages in the future, including right-to-left languages such as Hebrew and Arabic. And of course French, Spanish, Portugese, Italian, German, Chinese and Japanese.
 
-5. When registering a new person, the user will have to enter First Name, Last Name, Email, Password, Sex / Gender, Date of birth and select a new username (default username will be first name + last name). Usernames with dots, dashes and underlines (".","-","_") will ignore the dots, dashes and underlines (uri.even.chen will be same as urirodberg). But the user's default slug will be what he entered in his username field, such as uri-even-chen (slugs can contains only letters, digits, dashes, dots and underlines). All urls with other slugs which reflect the same username will be redirected to the default slug, for example en.speedy.net/urirodberg and en.speedy.net/uri-even-chen/ will be redirected to en.speedy.net/uri-even-chen/ (ending with a slash).
+5. When registering a new person, the user will have to enter First Name, Last Name, Email, Password, Sex / Gender, Date of birth and select a new username (default username will be first name + last name). Usernames with dots, dashes and underlines (".","-","_") will ignore the dots, dashes and underlines (uri.rodberg will be same as urirodberg). But the user's default slug will be what he entered in his username field, such as uri-rodberg (slugs can contains only letters, digits, dashes, dots and underlines). All urls with other slugs which reflect the same username will be redirected to the default slug, for example en.speedy.net/urirodberg and en.speedy.net/uri-rodberg/ will be redirected to en.speedy.net/uri-rodberg/ (ending with a slash).
 
 6. Password will not be saved, only SHA-256 hash of it to prevent cracking (with using 256 random bits of salt). The salt and the hashed password will be saved in the database. If a user forgets his password, a new password will be generated (after a user confirms by email).
 
@@ -184,7 +184,7 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
 18. The website should be tested and work with the most popular browsers - Chrome, Firefox and Safari. We will not spend time to check more browsers, at least in the alpha version - to speed development time. It's possible later that we find time to make the website compatible for all browsers.
 
-19. All words in the URL will be stripped from dots, dashes and underlines, so en.speedy.net/uri_even_chen and en.speedy.net/uri.even.chen and en.speedy.net/uri-even-chen will all be the same. We will try not to use "?=" notation but use the "/" notation instead. More slashes will not change anything. For example en.speedy.net///urirodberg/// will be redirected to en.speedy.net/uri-even-chen/ .
+19. All words in the URL will be stripped from dots, dashes and underlines, so en.speedy.net/uri_rodberg and en.speedy.net/uri.rodberg and en.speedy.net/uri-rodberg will all be the same. We will try not to use "?=" notation but use the "/" notation instead. More slashes will not change anything. For example en.speedy.net///urirodberg/// will be redirected to en.speedy.net/uri-rodberg/ .
 
 20. URLs with dots, dashes or underlines will be redirected to the same URL without dots, dashes and underlines. Also en.speedy.net/user/football will be redirected to en.speedy.net/football if this page has a username (football).
 
