@@ -394,8 +394,7 @@ class PasswordResetFormTestCase(TestCase):
         self.assertSetEqual(set1=self.form.get_users(email='email@example.com'), set2=set())
 
 
-@only_on_sites_with_login
-class DeactivationFormTestCase(ErrorsMixin, TestCase):
+class DeactivationFormTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -415,3 +414,20 @@ class DeactivationFormTestCase(ErrorsMixin, TestCase):
         form = SiteProfileDeactivationForm(user=self.user, data=data)
         self.assertTrue(expr=form.is_valid())
         self.assertDictEqual(d1=form.errors, d2={})
+
+
+@only_on_sites_with_login
+class DeactivationFormEnglishTestCase(DeactivationFormTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class DeactivationFormHebrewTestCase(DeactivationFormTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+

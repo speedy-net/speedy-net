@@ -2,6 +2,7 @@ from datetime import date
 import itertools
 
 from django.conf import settings
+from django.test import override_settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
@@ -14,8 +15,7 @@ from speedy.core.accounts.tests.test_factories import DefaultUserFactory, Active
 from speedy.core.uploads.tests.test_factories import UserImageFactory
 
 
-@only_on_speedy_match
-class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
+class SpeedyMatchSiteProfileTestCaseMixin(object):
     _none_list = [None]
     _empty_string_list = [""]
     _empty_values_to_test = _none_list + _empty_string_list
@@ -957,6 +957,21 @@ class SpeedyMatchSiteProfileTestCase(ErrorsMixin, TestCase):
             "expected_keys_and_ranks_error_messages_counts_tuple": (0, 165),
         })
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+
+@only_on_speedy_match
+class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_speedy_match
+@override_settings(LANGUAGE_CODE='he')
+class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_speedy_match

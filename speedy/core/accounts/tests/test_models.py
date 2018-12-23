@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.conf import settings
+from django.test import override_settings
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login
@@ -44,7 +45,7 @@ class NormalizeUsernameTestCase(TestCase):
         self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
 
 
-class EntityTestCase(ErrorsMixin, TestCase):
+class EntityTestCaseMixin(object):
     def create_one_entity(self):
         entity = Entity(slug='zzzzzz', username='zzzzzz')
         entity.save()
@@ -255,8 +256,20 @@ class EntityTestCase(ErrorsMixin, TestCase):
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
 
-@only_on_sites_with_login
-class UserTestCase(ErrorsMixin, TestCase):
+class EntityEnglishTestCase(EntityTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@override_settings(LANGUAGE_CODE='he')
+class EntityHebrewTestCase(EntityTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+
+class UserTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.password = get_random_user_password()
@@ -265,12 +278,7 @@ class UserTestCase(ErrorsMixin, TestCase):
             'slug': 'user-1234',
             'gender': 1,
             'date_of_birth': '1900-08-20',
-            'first_name': "Doron",
-            'last_name': "Matalon",
         }
-        # ~~~~ TODO: maybe test model in both languages?
-        self.first_name = "Doron"
-        self.last_name = "Matalon"
 
     def test_model_min_and_max_length(self):
         self.assertEqual(first=User.MIN_USERNAME_LENGTH, second=6)
@@ -581,7 +589,41 @@ class UserTestCase(ErrorsMixin, TestCase):
 
 
 @only_on_sites_with_login
-class UserEmailAddressTestCase(ErrorsMixin, TestCase):
+class UserEnglishTestCase(UserTestCaseMixin, ErrorsMixin, TestCase):
+    def setup(self):
+        super().setup()
+        self.data.update({
+            'first_name': "Doron",
+            'last_name': "Matalon",
+        })
+        self.first_name = "Doron"
+        self.last_name = "Matalon"
+        self.setup_required_fields()
+
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class UserHebrewTestCase(UserTestCaseMixin, ErrorsMixin, TestCase):
+    def setup(self):
+        super().setup()
+        self.data.update({
+            'first_name': "דורון",
+            'last_name': "מטלון",
+        })
+        self.first_name = "דורון"
+        self.last_name = "מטלון"
+        self.setup_required_fields()
+
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+
+class UserEmailAddressTestCaseMixin(object):
     def test_cannot_create_user_email_address_without_all_the_required_fields(self):
         user_email_address = UserEmailAddress()
         with self.assertRaises(ValidationError) as cm:
@@ -663,5 +705,20 @@ class UserEmailAddressTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=user.email_addresses.count(), second=2)
         user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
+
+
+@only_on_sites_with_login
+class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class UserEmailAddressHebrewTestCase(UserEmailAddressTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 

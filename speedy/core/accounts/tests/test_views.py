@@ -414,8 +414,7 @@ class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, ErrorsMixin,
         self.assertEqual(first=self.language_code, second='he')
 
 
-@only_on_sites_with_login
-class LoginViewTestCase(RedirectMeMixin, ErrorsMixin, TestCase):
+class LoginViewTestCaseMixin(object):
     login_url = '/login/'
     _other_user_password = '8' * 8
 
@@ -549,6 +548,21 @@ class LoginViewTestCase(RedirectMeMixin, ErrorsMixin, TestCase):
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
         self.assert_me_url_redirects_to_login_url()
+
+
+@only_on_sites_with_login
+class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
@@ -864,8 +878,7 @@ class EditProfileNotificationsViewTestCase(TestCase):
         self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
 
 
-@only_on_sites_with_login
-class EditProfileCredentialsViewTestCase(ErrorsMixin, TestCase):
+class EditProfileCredentialsViewTestCaseMixin(object):
     page_url = '/edit-profile/credentials/'
 
     def setup(self):
@@ -962,6 +975,21 @@ class EditProfileCredentialsViewTestCase(ErrorsMixin, TestCase):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password_1))
         self.assertFalse(expr=user.check_password(raw_password=new_password_2))
+
+
+@only_on_sites_with_login
+class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
@@ -1077,8 +1105,7 @@ class VerifyUserEmailAddressViewTestCase(TestCase):
         self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
 
 
-@only_on_sites_with_login
-class AddUserEmailAddressViewTestCase(ErrorsMixin, TestCase):
+class AddUserEmailAddressViewTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1159,6 +1186,21 @@ class AddUserEmailAddressViewTestCase(ErrorsMixin, TestCase):
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+
+
+@only_on_sites_with_login
+class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, ErrorsMixin, TestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
