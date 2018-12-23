@@ -3,6 +3,7 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+  - "3.7"
 sudo: required
 dist: trusty
 addons:
@@ -16,6 +17,8 @@ before_script:
 install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
+  - pip freeze
+  - pwd
 script:
   - cd speedy/net
   - python -W error::DeprecationWarning manage.py test
