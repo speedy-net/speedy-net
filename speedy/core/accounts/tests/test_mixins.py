@@ -360,7 +360,7 @@ class ErrorsMixin(object):
         _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
         _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית'}
         _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
-        _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'he': '___יש להזין תאריך חוקי.'}
+        _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'he': 'יש להזין תאריך חוקי.'}
         _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
         _your_old_password_was_entered_incorrectly_error_message_dict = {'en': 'Your old password was entered incorrectly. Please enter it again.', 'he': 'סיסמתך הישנה הוזנה בצורה שגויה. נא להזינה שוב.'}
         _the_two_password_fields_didnt_match_error_message_dict = {'en': "The two password fields didn't match.", 'he': 'שני שדות הסיסמה אינם זהים.'}
