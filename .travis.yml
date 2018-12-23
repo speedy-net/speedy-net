@@ -19,6 +19,7 @@ install:
   - pip install -r requirements.txt
   - pip freeze
   - pwd
+  - lsb_release -a
 script:
   - cd speedy/net
   - python -W error::DeprecationWarning manage.py test
