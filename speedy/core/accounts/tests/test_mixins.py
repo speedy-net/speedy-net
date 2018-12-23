@@ -1,10 +1,19 @@
-from speedy.core.accounts.models import User
+from speedy.core.accounts.models import Entity, User
 
 
 class ErrorsMixin(object):
     ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]
 
     _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
+
+    def _assert_model_is_entity_or_user(self, model):
+        self.assertIn(member=model, container=[Entity, User])
+        if (model is Entity):
+            pass
+        elif (model is User):
+            pass
+        else:
+            raise Exception("Unexpected: model={}".format(model))
 
     # @staticmethod
     def _value_is_not_a_valid_choice_error_message_by_value(self, value):
@@ -23,14 +32,30 @@ class ErrorsMixin(object):
     #     return "'{}' value has an invalid date format. It must be in YYYY-MM-DD format.".format(value)
     #
     # @staticmethod
-    def _ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
-        # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length" and also use normalize...
-        return self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
+    # def _ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
+    #     # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length" and also use normalize...
+    #     return self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
+    # 
+    # @staticmethod
+    # def _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+    #     # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length" and also use normalize...
+    #     return self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
+    # 
+    # @staticmethod
+    def _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
+        return self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
 
     # @staticmethod
-    def _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
-        # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length" and also use normalize...
-        return self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
+    def _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+        return self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
+
+    # @staticmethod
+    def _username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
+        return self._username_must_contain_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
+
+    # @staticmethod
+    def _username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+        return self._username_must_contain_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
     def _registration_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
@@ -92,33 +117,55 @@ class ErrorsMixin(object):
     def _slug_and_username_this_username_is_already_taken_errors_dict(self):
         return {'username': [self._this_username_is_already_taken_error_message], 'slug': [self._this_username_is_already_taken_error_message]}
 
-    def _entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
+    def _username_must_start_with_4_or_more_letters_errors_dict(self, model, slug_fail=False, username_fail=False):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {}
+        if (slug_fail):
+            if (model is Entity):
+                errors_dict['slug'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
+            elif (model is User):
+                errors_dict['slug'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+        if (username_fail):
+            if (model is Entity):
+                errors_dict['username'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
+            elif (model is User):
+                errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+        return errors_dict
 
-    def _entity_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
+    # def _entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    # def _entity_username_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    # def _entity_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    # def _user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    # def _user_username_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    # def _user_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
+    #     return {'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
+    #
+    def _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {'slug': [self._slug_does_not_parse_to_username_error_message]}
+        if (username_fail):
+            if (model is Entity):
+                errors_dict['username'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
+            elif (model is User):
+                errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+        return errors_dict
 
-    def _entity_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
-
-    def _user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-
-    def _user_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-
-    def _user_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
-        return {'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-
-    def _slug_does_not_parse_to_username_errors_dict(self):
-        return {'slug': [self._slug_does_not_parse_to_username_error_message]}
-
-    def _entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
-        return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
-
-    def _user_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
-        return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
-
+    # def _entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
+    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
+    #
+    # def _user_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
+    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
+    #
     def _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth):
         if (date_of_birth == ''):
             return self._date_of_birth_is_required_errors_dict()
@@ -145,7 +192,8 @@ class ErrorsMixin(object):
                     gender_error_messages = None
             # date_of_birth_error_messages = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
             date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
-        slug_and_username_error_messages = [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=len(str_value))]
+        # slug_and_username_error_messages = [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=len(str_value))]
+        slug_and_username_error_messages = [self._user_username_must_start_with_4_or_more_letters_error_message]
         errors_dict = {
             # 'first_name': [self._this_field_cannot_be_blank_error_message],
             # 'last_name': [self._this_field_cannot_be_blank_error_message],
@@ -173,6 +221,46 @@ class ErrorsMixin(object):
         # else:
         #     errors_dict['gender'] = [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]
         #     errors_dict['date_of_birth'] = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
+        return errors_dict
+
+    # @staticmethod
+    def _model_slug_or_username_min_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {}
+        if (slug_fail):
+            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_SLUG_LENGTH, value_length=slug_value_length)]
+        if (username_fail):
+            errors_dict['username'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
+        return errors_dict
+
+    # @staticmethod
+    def _model_slug_or_username_max_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {}
+        if (slug_fail):
+            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_SLUG_LENGTH, value_length=slug_value_length)]
+        if (username_fail):
+            errors_dict['username'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
+        return errors_dict
+
+    # @staticmethod
+    def _model_slug_or_username_min_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {}
+        if (slug_fail):
+            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_SLUG_LENGTH, value_length=slug_value_length)]
+        if (username_fail):
+            errors_dict['username'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
+        return errors_dict
+
+    # @staticmethod
+    def _model_slug_or_username_max_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+        self._assert_model_is_entity_or_user(model=model)
+        errors_dict = {}
+        if (slug_fail):
+            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_SLUG_LENGTH, value_length=slug_value_length)]
+        if (username_fail):
+            errors_dict['username'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod
@@ -207,56 +295,56 @@ class ErrorsMixin(object):
     def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list):
         return {field_name_list[i]: [self._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
 
-    # ~~~~ TODO: simplify these functions! "slug_and_username" etc.
-
-    # @staticmethod
-    def _entity_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _entity_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _entity_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-
-    # @staticmethod
-    def _entity_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-
-    # @staticmethod
-    def _entity_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)]}
-
-    # @staticmethod
-    def _entity_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-
-    # @staticmethod
-    def _user_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
-        return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-
+    # # ~~~~ TODO: simplify these functions! "slug_and_username" etc.
+    # 
+    # # @staticmethod
+    # def _entity_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _entity_username_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_username_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _entity_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _entity_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _entity_username_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_username_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _entity_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+    # 
+    # # @staticmethod
+    # def _user_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
+    #     return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
+    # 
     def setup(self):
         super().setup()
 
@@ -279,8 +367,12 @@ class ErrorsMixin(object):
         _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': '___Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.'}
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': '___Slug does not parse to username.'}
 
-        _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).'}
-        _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
+        # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).'}
+        # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
+        _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).___'}
+        _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).___'}
+        _username_must_contain_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {min_length} תווים לכל הפחות (מכיל {value_length}).___'}
+        _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).___'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
             'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
@@ -310,8 +402,12 @@ class ErrorsMixin(object):
         self._user_username_must_start_with_4_or_more_letters_error_message = _user_username_must_start_with_4_or_more_letters_error_message_dict[self.language_code]
         self._slug_does_not_parse_to_username_error_message = _slug_does_not_parse_to_username_error_message_dict[self.language_code]
 
-        self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
-        self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format = _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
+        # self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
+        # self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format = _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
+        self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format = _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict[self.language_code]
+        self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format = _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict[self.language_code]
+        self._username_must_contain_at_least_min_length_characters_error_message_to_format = _username_must_contain_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
+        self._username_must_contain_at_most_max_length_characters_error_message_to_format = _username_must_contain_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
 
         self._you_cant_change_your_username_error_message_dict_by_gender = _you_cant_change_your_username_error_message_dict_by_gender[self.language_code]
 
