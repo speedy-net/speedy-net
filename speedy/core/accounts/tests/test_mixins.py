@@ -350,8 +350,8 @@ class ErrorsMixin(object):
         super().setup()
 
         _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
-        _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק._null___'}
-        _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק._blank___'}
+        _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק.'}
+        _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק.'}
         _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
         _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'he': '___ערך חייב להיות JSON חוקי.'}
         _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': 'הסיסמה לא תקינה.'}
