@@ -66,7 +66,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=0))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
@@ -155,8 +155,8 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_and_username_min_length_ok(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
@@ -169,8 +169,8 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_max_length_ok_username_max_length_fail_1(self):
         entity = Entity(slug='b' * 200, username='b' * 200)
@@ -178,8 +178,8 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=200))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_max_length_ok_username_max_length_fail_2(self):
         entity = Entity(slug='b' * 121, username='b' * 121)
@@ -187,22 +187,22 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=121))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_max_length_fail_username_max_length_ok_with_username(self):
         entity = Entity(slug='a-' * 120, username='a' * 120)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
     def test_slug_max_length_fail_username_max_length_ok_without_username(self):
         entity = Entity(slug='a-' * 120)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
@@ -225,7 +225,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
     def test_0test1_is_invalid_username(self):
         entity = Entity(slug='0-test-1', username='0test1')
@@ -233,7 +233,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_and_username_dont_match_but_valid(self):
         entity = Entity(slug='star2001', username='star2000')
@@ -248,7 +248,7 @@ class EntityTestCase(ErrorsMixin, TestCase):
             entity.save()
             # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict())
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
@@ -411,8 +411,8 @@ class UserTestCase(ErrorsMixin, TestCase):
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_and_username_min_length_ok(self):
         user = DefaultUserFactory(slug='a' * 6)
@@ -425,8 +425,8 @@ class UserTestCase(ErrorsMixin, TestCase):
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
     def test_slug_max_length_ok_username_max_length_fail_1(self):
         with self.assertRaises(ValidationError) as cm:
@@ -434,8 +434,8 @@ class UserTestCase(ErrorsMixin, TestCase):
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=200))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
 
     def test_slug_max_length_ok_username_max_length_fail_2(self):
         with self.assertRaises(ValidationError) as cm:
@@ -443,8 +443,8 @@ class UserTestCase(ErrorsMixin, TestCase):
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=41))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True))
 
     def test_slug_and_username_max_length_ok(self):
         user = DefaultUserFactory(slug='a' * 40)
@@ -472,7 +472,7 @@ class UserTestCase(ErrorsMixin, TestCase):
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict())
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
     def test_0test1_is_invalid_username(self):
         with self.assertRaises(ValidationError) as cm:
@@ -481,7 +481,7 @@ class UserTestCase(ErrorsMixin, TestCase):
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict())
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
     def test_slug_and_username_dont_match_but_valid(self):
         with self.assertRaises(ValidationError) as cm:

@@ -224,7 +224,7 @@ class ErrorsMixin(object):
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_min_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
@@ -234,7 +234,7 @@ class ErrorsMixin(object):
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_max_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
@@ -244,7 +244,7 @@ class ErrorsMixin(object):
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_min_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
@@ -254,7 +254,7 @@ class ErrorsMixin(object):
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_max_length_fail_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
