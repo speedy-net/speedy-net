@@ -5,7 +5,6 @@ python:
   - "3.6"
   - "3.7"
 sudo: required
-dist: trusty
 addons:
   postgresql: "9.6"
 services:
