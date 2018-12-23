@@ -598,7 +598,6 @@ class UserEnglishTestCase(UserTestCaseMixin, ErrorsMixin, TestCase):
         })
         self.first_name = "Doron"
         self.last_name = "Matalon"
-        self.setup_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -616,7 +615,6 @@ class UserHebrewTestCase(UserTestCaseMixin, ErrorsMixin, TestCase):
         })
         self.first_name = "דורון"
         self.last_name = "מטלון"
-        self.setup_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()

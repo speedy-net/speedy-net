@@ -133,6 +133,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
     MIN_SLUG_LENGTH = 6
+    MIN_SLUG_LENGTH = 60 ###### # ~~~~ TODO: remove this line!
     MAX_SLUG_LENGTH = 200
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120

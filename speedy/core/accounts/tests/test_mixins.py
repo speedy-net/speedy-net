@@ -349,31 +349,31 @@ class ErrorsMixin(object):
     def setup(self):
         super().setup()
 
-        _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': '___יש להזין תוכן בשדה זה.'}
-        _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': '___שדה זה אינו יכול להיות ריק.'}
-        _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': '___שדה זה אינו יכול להיות ריק.'}
-        _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': '___id מכיל תווים לא חוקיים.'}
+        _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
+        _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק._null___'}
+        _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק._blank___'}
+        _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
         _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'he': '___ערך חייב להיות JSON חוקי.'}
-        _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': '___הסיסמה לא תקינה.'}
-        _password_too_short_error_message_dict = {'en': 'Password too short.', 'he': '___הסיסמה קצרה מדי.'}
-        _password_too_long_error_message_dict = {'en': 'Password too long.', 'he': '___הסיסמה ארוכה מדי.'}
-        _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': '___שם המשתמש/ת הזה כבר תפוס.'}
-        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': '___נא להזין כתובת דוא"ל חוקית'}
-        _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': '___הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
+        _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': 'הסיסמה לא תקינה.'}
+        _password_too_short_error_message_dict = {'en': 'Password too short.', 'he': 'הסיסמה קצרה מדי.'}
+        _password_too_long_error_message_dict = {'en': 'Password too long.', 'he': 'הסיסמה ארוכה מדי.'}
+        _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
+        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית'}
+        _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
         _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'he': '___יש להזין תאריך חוקי.'}
-        _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': '___נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
-        _your_old_password_was_entered_incorrectly_error_message_dict = {'en': 'Your old password was entered incorrectly. Please enter it again.', 'he': '___סיסמתך הישנה הוזנה בצורה שגויה. נא להזינה שוב.'}
-        _the_two_password_fields_didnt_match_error_message_dict = {'en': "The two password fields didn't match.", 'he': '___שני שדות הסיסמה אינם זהים.'}
-        _entity_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, and may contain letters, digits or dashes.', 'he': '___שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או מקפים.'}
-        _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': '___שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים.'}
-        _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': '___slug לא מתאים לשם המשתמש/ת.'}
+        _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
+        _your_old_password_was_entered_incorrectly_error_message_dict = {'en': 'Your old password was entered incorrectly. Please enter it again.', 'he': 'סיסמתך הישנה הוזנה בצורה שגויה. נא להזינה שוב.'}
+        _the_two_password_fields_didnt_match_error_message_dict = {'en': "The two password fields didn't match.", 'he': 'שני שדות הסיסמה אינם זהים.'}
+        _entity_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, and may contain letters, digits or dashes.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או מקפים.'}
+        _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים.'}
+        _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
 
         # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'}
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'}
-        _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': '___נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).___'}
-        _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': '___נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}).___'}
+        _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
+        _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}).'}
         _username_must_contain_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': '___נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).___'}
-        _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': '___נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).___'}
+        _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
             'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
