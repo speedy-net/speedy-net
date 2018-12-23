@@ -265,9 +265,12 @@ class UserTestCase(ErrorsMixin, TestCase):
             'slug': 'user-1234',
             'gender': 1,
             'date_of_birth': '1900-08-20',
-            'first_name': "First",
-            'last_name': "Last",
+            'first_name': "Doron",
+            'last_name': "Matalon",
         }
+        # ~~~~ TODO: maybe test model in both languages?
+        self.first_name = "Doron"
+        self.last_name = "Matalon"
 
     def test_model_min_and_max_length(self):
         self.assertEqual(first=User.MIN_USERNAME_LENGTH, second=6)
@@ -545,12 +548,12 @@ class UserTestCase(ErrorsMixin, TestCase):
             user.save_user_and_profile()
             user = User.objects.get(pk=user.pk)
             # TODO - uncomment these lines
-            # self.assertEqual(first=user.first_name, second=self.first_name)
-            # self.assertEqual(first=user.first_name_en, second=self.first_name)
-            # self.assertEqual(first=user.first_name_he, second=self.first_name)
-            # self.assertEqual(first=user.last_name, second=self.last_name)
-            # self.assertEqual(first=user.last_name_en, second=self.last_name)
-            # self.assertEqual(first=user.last_name_he, second=self.last_name)
+            self.assertEqual(first=user.first_name, second=self.first_name)
+            self.assertEqual(first=user.first_name_en, second=self.first_name)
+            # self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
+            self.assertEqual(first=user.last_name, second=self.last_name)
+            self.assertEqual(first=user.last_name_en, second=self.last_name)
+            # self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
             for (key, value) in data.items():
                 if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)
