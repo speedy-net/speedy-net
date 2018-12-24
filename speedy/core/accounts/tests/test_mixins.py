@@ -379,7 +379,7 @@ class ErrorsMixin(object):
 
         _value_is_not_a_valid_choice_error_message_to_format_dict= {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
         _value_must_be_an_integer_error_message_to_format_dict= {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
-        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {list_length} items, it should contain no more than 3.', 'he': '___"הרשימה מכילה {list_length} פריטים, עליה להכיל לא יותר מ-3.'}
+        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {list_length} items, it should contain no more than 3.', 'he': '___הרשימה מכילה {list_length} פריטים, עליה להכיל לא יותר מ-3.'}
         # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'}
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'}
         _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
