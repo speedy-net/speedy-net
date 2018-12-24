@@ -17,15 +17,15 @@ class ErrorsMixin(object):
 
     # @staticmethod
     def _value_is_not_a_valid_choice_error_message_by_value(self, value):
-        return 'Value {} is not a valid choice.'.format(value)
+        return self._value_is_not_a_valid_choice_error_message_to_format.format(value=value)
 
     # @staticmethod
     def _value_must_be_an_integer_error_message_by_value(self, value):
-        return "'{}' value must be an integer.".format(value)
+        return self._value_must_be_an_integer_error_message_to_format.format(value=value)
 
     # @staticmethod
     def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(self, value):
-        return 'List contains {} items, it should contain no more than 3.'.format(len(value))
+        return self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format.format(value=value)
 
     # # @staticmethod
     # def _value_has_an_invalid_date_format_error_message_by_value(self, value):
@@ -362,12 +362,12 @@ class ErrorsMixin(object):
         _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק.'}
         _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק.'}
         _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
-        _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'he': '___ערך חייב להיות JSON חוקי.'}
+        _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'he': 'ערך חייב להיות JSON חוקי.'}
         _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': 'הסיסמה לא תקינה.'}
-        _password_too_short_error_message_dict = {'en': 'This password is too short. It must contain at least 8 characters.', 'he': 'סיסמה זו קצרה מדי. היא חייבת להכיל לפחות 8 תווים.___'}
-        _password_too_long_error_message_dict = {'en': 'This password is too long. It must contain at most 120 characters.', 'he': 'סיסמה זו ארוכה מדי. היא יכולה להכיל 120 תווים לכל היותר.___'}
+        _password_too_short_error_message_dict = {'en': 'This password is too short. It must contain at least 8 characters.', 'he': 'סיסמה זו קצרה מדי. היא חייבת להכיל לפחות 8 תווים.'}
+        _password_too_long_error_message_dict = {'en': 'This password is too long. It must contain at most 120 characters.', 'he': 'סיסמה זו ארוכה מדי. היא יכולה להכיל 120 תווים לכל היותר.'}
         _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
-        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית.___'}
+        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית.'}
         _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
         _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'he': 'יש להזין תאריך חוקי.'}
         _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
@@ -377,6 +377,9 @@ class ErrorsMixin(object):
         _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים.'}
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
 
+        _value_is_not_a_valid_choice_error_message_to_format_dict= {'en': 'Value {value} is not a valid choice.', 'he': '___ערך {value} אינו אפשרות חוקית.'}
+        _value_must_be_an_integer_error_message_to_format_dict= {'en': "'{value}' value must be an integer.", 'he': "___הערך '{value}' חייב להיות מספר שלם."}
+        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {value} items, it should contain no more than 3.', 'he': '___"הרשימה מכילה {value} פריטים, עליה להכיל לא יותר מ-3.'}
         # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'}
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'}
         _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
@@ -387,7 +390,7 @@ class ErrorsMixin(object):
         _you_cant_change_your_username_error_message_dict_by_gender = {
             'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
             'he': {
-                'female': "___לא ניתן לשנות שם משתמשת.",
+                'female': "לא ניתן לשנות שם משתמשת.",
                 'male': "___לא ניתן לשנות שם משתמש.",
                 'other': "___לא ניתן לשנות שם משתמש/ת.",
             },
@@ -412,6 +415,9 @@ class ErrorsMixin(object):
         self._user_username_must_start_with_4_or_more_letters_error_message = _user_username_must_start_with_4_or_more_letters_error_message_dict[self.language_code]
         self._slug_does_not_parse_to_username_error_message = _slug_does_not_parse_to_username_error_message_dict[self.language_code]
 
+        self._value_is_not_a_valid_choice_error_message_to_format = _value_is_not_a_valid_choice_error_message_to_format_dict[self.language_code]
+        self._value_must_be_an_integer_error_message_to_format = _value_must_be_an_integer_error_message_to_format_dict[self.language_code]
+        self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format = _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict[self.language_code]
         # self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
         # self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format = _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
         self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format = _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict[self.language_code]
