@@ -7,7 +7,8 @@ from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
 from speedy.core.base.test import TestCase, only_on_speedy_match
-from speedy.core.accounts.tests.test_mixins import ErrorsMixin
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.match.accounts.tests.test_mixins import SpeedyMatchAccountsLanguageMixin
 from ..models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User
@@ -38,45 +39,53 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         test_settings = {
             "field_name": 'min_max_age_to_match',
             "expected_step": 7,
-            "expected_error_message_min_age_match_and_max_age_match_valid": "Maximal age to match can't be less than minimal age to match.",
-            "expected_error_message_min_age_match_invalid": 'Minimal age to match must be from 0 to 180 years.',
-            "expected_error_message_max_age_match_invalid": 'Maximal age to match must be from 0 to 180 years.',
-            "expected_error_messages_min_age_match_and_max_age_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'],
-            "expected_error_messages_min_age_match_and_max_age_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"],
+            "expected_error_message_min_age_match_and_max_age_match_valid": self._maximal_age_to_match_cant_be_less_than_minimal_age_to_match_error_message,
+            "expected_error_message_min_age_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
+            "expected_error_message_max_age_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
+            # "expected_error_messages_min_age_match_and_max_age_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'], # ~~~~ TODO
+            # "expected_error_messages_min_age_match_and_max_age_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
         }
+        test_settings["expected_error_messages_min_age_match_and_max_age_match_valid"] = ['["{expected_error_message_min_age_match_and_max_age_match_valid}"]'.format(expected_error_message_min_age_match_and_max_age_match_valid=test_settings["expected_error_message_min_age_match_and_max_age_match_valid"])]
+        test_settings["expected_error_messages_min_age_match_and_max_age_match_invalid"] = ["['{expected_error_message_min_age_match_invalid}']".format(expected_error_message_min_age_match_invalid=test_settings["expected_error_message_min_age_match_invalid"]), "['{expected_error_message_max_age_match_invalid}']".format(expected_error_message_max_age_match_invalid=test_settings["expected_error_message_max_age_match_invalid"])]
         return test_settings
 
     def get_diet_match_default_test_settings(self):
         test_settings = {
             "field_name": 'diet_match',
             "expected_step": 8,
-            "expected_error_message_keys_and_ranks_invalid": 'Please select diet match.',
-            "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"],
-            "expected_error_message_max_rank_invalid": 'At least one diet match option should be 5 hearts.',
-            "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": self._please_select_diet_match_error_message,
+            # "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"], # ~~~~ TODO
+            "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
+            # "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be 5 hearts.']"], # ~~~~ TODO
         }
+        test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
+        test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
         return test_settings
 
     def get_smoking_status_match_default_test_settings(self):
         test_settings = {
             "field_name": 'smoking_status_match',
             "expected_step": 8,
-            "expected_error_message_keys_and_ranks_invalid": 'Please select smoking status match.',
-            "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"],
-            "expected_error_message_max_rank_invalid": 'At least one smoking status match option should be 5 hearts.',
-            "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": self._please_select_smoking_status_match_error_message,
+            # "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"], # ~~~~ TODO
+            "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
+            # "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be 5 hearts.']"], # ~~~~ TODO
         }
+        test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
+        test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
         return test_settings
 
     def get_marital_status_match_default_test_settings(self):
         test_settings = {
             "field_name": 'marital_status_match',
             "expected_step": 9,
-            "expected_error_message_keys_and_ranks_invalid": 'Please select marital status match.',
-            "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"],
-            "expected_error_message_max_rank_invalid": 'At least one marital status match option should be 5 hearts.',
-            "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"],
+            "expected_error_message_keys_and_ranks_invalid": self._please_select_marital_status_match_error_message,
+            # "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"], # ~~~~ TODO
+            "expected_error_message_max_rank_invalid": self._at_least_one_marital_status_match_option_should_be_5_hearts_error_message,
+            # "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"], # ~~~~ TODO
         }
+        test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
+        test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
         return test_settings
 
     def get_field_default_value(self, field_name):
@@ -714,10 +723,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": True,
             "test_invalid_values_to_save": False,
             "expected_step": 2,
-            "expected_error_message": 'A profile picture is required.',
-            "expected_error_messages": ["['A profile picture is required.']"],
+            "expected_error_message": self._a_profile_picture_is_required_error_message,
+            # "expected_error_messages": ["['A profile picture is required.']"], # ~~~~ TODO
             "expected_counts_tuple": (1, 1, 26, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_profile_description(self):
@@ -726,10 +736,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": False,
             "expected_step": 3,
-            "expected_error_message": 'Please write some text in this field.',
-            "expected_error_messages": ["['Please write some text in this field.']"],
+            "expected_error_message": self._please_write_some_text_in_this_field_error_message,
+            # "expected_error_messages": ["['Please write some text in this field.']"], # ~~~~ TODO
             "expected_counts_tuple": (5, 2, 0, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_city(self):
@@ -738,10 +749,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": False,
             "expected_step": 3,
-            "expected_error_message": 'Please write where you live.',
-            "expected_error_messages": ["['Please write where you live.']"],
+            "expected_error_message": self._please_write_where_you_live_error_message,
+            # "expected_error_messages": ["['Please write where you live.']"], # ~~~~ TODO
             "expected_counts_tuple": (5, 2, 0, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_children(self):
@@ -750,10 +762,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": False,
             "expected_step": 4,
-            "expected_error_message": 'Do you have children? How many?',
-            "expected_error_messages": ["['Do you have children? How many?']"],
+            "expected_error_message": self._do_you_have_children_how_many_error_message,
+            # "expected_error_messages": ["['Do you have children? How many?']"], # ~~~~ TODO
             "expected_counts_tuple": (5, 2, 0, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_more_children(self):
@@ -762,10 +775,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": False,
             "expected_step": 4,
-            "expected_error_message": 'Do you want (more) children?',
-            "expected_error_messages": ["['Do you want (more) children?']"],
+            "expected_error_message": self._do_you_want_more_children_error_message,
+            # "expected_error_messages": ["['Do you want (more) children?']"], # ~~~~ TODO
             "expected_counts_tuple": (5, 2, 0, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_match_description(self):
@@ -774,10 +788,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": False,
             "expected_step": 7,
-            "expected_error_message": 'Please write some text in this field.',
-            "expected_error_messages": ["['Please write some text in this field.']"],
+            "expected_error_message": self._please_write_some_text_in_this_field_error_message,
+            # "expected_error_messages": ["['Please write some text in this field.']"], # ~~~~ TODO
             "expected_counts_tuple": (5, 2, 0, 0),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_height(self):
@@ -786,10 +801,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 3,
-            "expected_error_message": 'Height must be from 1 to 450 cm.',
-            "expected_error_messages": ["['Height must be from 1 to 450 cm.']"],
+            "expected_error_message": self._height_must_be_from_1_to_450_cm_error_message,
+            # "expected_error_messages": ["['Height must be from 1 to 450 cm.']"], # ~~~~ TODO
             "expected_counts_tuple": (450, 22, 0, 5),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_diet(self):
@@ -798,10 +814,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 5,
-            "expected_error_message": 'Your diet is required.',
-            "expected_error_messages": ["['Your diet is required.']"],
+            "expected_error_message": self._your_diet_is_required_error_message,
+            # "expected_error_messages": ["['Your diet is required.']"], # ~~~~ TODO
             "expected_counts_tuple": (3, 1, 0, 26),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_smoking_status(self):
@@ -810,10 +827,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 5,
-            "expected_error_message": 'Your smoking status is required.',
-            "expected_error_messages": ["['Your smoking status is required.']"],
+            "expected_error_message": self._your_smoking_status_is_required_error_message,
+            # "expected_error_messages": ["['Your smoking status is required.']"], # ~~~~ TODO
             "expected_counts_tuple": (3, 1, 0, 26),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_marital_status(self):
@@ -822,10 +840,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 6,
-            "expected_error_message": 'Your marital status is required.',
-            "expected_error_messages": ["['Your marital status is required.']"],
+            "expected_error_message": self._your_marital_status_is_required_error_message,
+            # "expected_error_messages": ["['Your marital status is required.']"], # ~~~~ TODO
             "expected_counts_tuple": (8, 1, 0, 26),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_gender_to_match(self):
@@ -834,10 +853,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 7,
-            "expected_error_message": 'Gender to match is required.',
-            "expected_error_messages": ["['Gender to match is required.']"],
+            "expected_error_message": self._gender_to_match_is_required_error_message,
+            # "expected_error_messages": ["['Gender to match is required.']"], # ~~~~ TODO
             "expected_counts_tuple": (23, 153, 0, 39),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_min_age_match(self):
@@ -846,10 +866,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 7,
-            "expected_error_message": 'Minimal age to match must be from 0 to 180 years.',
-            "expected_error_messages": ["['Minimal age to match must be from 0 to 180 years.']"],
+            "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
+            # "expected_error_messages": ["['Minimal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
             "expected_counts_tuple": (181, 20, 0, 6),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_max_age_match(self):
@@ -858,10 +879,11 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             "test_invalid_values_to_assign": False,
             "test_invalid_values_to_save": True,
             "expected_step": 7,
-            "expected_error_message": 'Maximal age to match must be from 0 to 180 years.',
-            "expected_error_messages": ["['Maximal age to match must be from 0 to 180 years.']"],
+            "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
+            # "expected_error_messages": ["['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
             "expected_counts_tuple": (181, 20, 0, 6),
         }
+        test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
         self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
     def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
@@ -960,7 +982,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
 
 
 @only_on_speedy_match
-class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, ErrorsMixin, TestCase):
+class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -968,7 +990,7 @@ class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin,
 
 @only_on_speedy_match
 @override_settings(LANGUAGE_CODE='he')
-class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, ErrorsMixin, TestCase):
+class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
