@@ -10,20 +10,20 @@ from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 
 
-class SiteDiscoverRunner(DiscoverRunner):
+class SiteDiscoverRunner(DiscoverRunner): # models
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
             test_labels = [label for label in settings.INSTALLED_APPS if (label.startswith('speedy.'))]
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
-class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
+class SpeedyCoreDiscoverRunner(SiteDiscoverRunner): # models
     def run_tests(self, test_labels, extra_tests=None, **kwargs):
         # We don't run tests on speedy.core
         pass
 
 
-class TestsDynamicSettingsMixin(object):
+class TestsDynamicSettingsMixin(object): # models / settings
     SITES_FIXTURE = 'default_sites_tests.json'
     OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 4
 
@@ -104,7 +104,8 @@ class TestsDynamicSettingsMixin(object):
 
 # class TestCase(TestsDynamicSettingsMixin, DjangoTestCase):
 @override_settings(**TestsDynamicSettingsMixin.get_override_settings_kwargs())
-class TestCase(DjangoTestCase):
+# class SiteTestCase(DjangoTestCase): TODO - rename to SiteTestCase? or to SpeedyTestCase?
+class TestCase(DjangoTestCase): # models
     maxDiff = None
 
     def _pre_setup(self):
@@ -161,7 +162,7 @@ class TestCase(DjangoTestCase):
         self.setup()
 
 
-def conditional_test(test_func):
+def conditional_test(test_func): # conditional_test / conditional_tests / decorators
     def wrapper(method_or_class):
         if (inspect.isclass(method_or_class)):
             # Decorate class

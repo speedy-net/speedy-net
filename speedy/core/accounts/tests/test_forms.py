@@ -270,6 +270,11 @@ class RegistrationFormTestCaseMixin(object):
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
+    def test_zzz(self):  #### TODO
+        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
+        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
+        raise Exception
+
     def test_slug_validation_fails_with_username_too_long(self):
         data = self.data.copy()
         data['slug'] = 'a' * 201
