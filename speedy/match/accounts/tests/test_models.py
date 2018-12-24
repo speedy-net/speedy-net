@@ -178,7 +178,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
                 user.save_user_and_profile()
             # print(str(cm.exception)) # ~~~~ TODO: remove this line!
             # print(dict(cm.exception)) # ~~~~ TODO: remove this line!
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_list_length(field_name=field_name, list_length=len(value_to_test)))
 
     def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
         with self.assertRaises(ValidationError) as cm:

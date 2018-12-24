@@ -24,8 +24,8 @@ class ErrorsMixin(object):
         return self._value_must_be_an_integer_error_message_to_format.format(value=value)
 
     # @staticmethod
-    def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(self, value):
-        return self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format.format(value=value)
+    def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_list_length(self, list_length):
+        return self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format.format(list_length=list_length)
 
     # # @staticmethod
     # def _value_has_an_invalid_date_format_error_message_by_value(self, value):
@@ -294,8 +294,8 @@ class ErrorsMixin(object):
         return {field_name: [self._value_must_be_an_integer_error_message_by_value(value=value)]}
 
     # @staticmethod
-    def _list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_value(self, field_name, value):
-        return {field_name: [self._list_contains_items_it_should_contain_no_more_than_3_error_message_by_value(value=value)]}
+    def _list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_list_length(self, field_name, list_length):
+        return {field_name: [self._list_contains_items_it_should_contain_no_more_than_3_error_message_by_list_length(list_length=list_length)]}
 
     # @staticmethod
     def _this_field_cannot_be_null_errors_dict_by_field_name_list(self, field_name_list):
@@ -377,9 +377,9 @@ class ErrorsMixin(object):
         _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים.'}
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
 
-        _value_is_not_a_valid_choice_error_message_to_format_dict= {'en': 'Value {value} is not a valid choice.', 'he': '___ערך {value} אינו אפשרות חוקית.'}
-        _value_must_be_an_integer_error_message_to_format_dict= {'en': "'{value}' value must be an integer.", 'he': "___הערך '{value}' חייב להיות מספר שלם."}
-        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {value} items, it should contain no more than 3.', 'he': '___"הרשימה מכילה {value} פריטים, עליה להכיל לא יותר מ-3.'}
+        _value_is_not_a_valid_choice_error_message_to_format_dict= {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
+        _value_must_be_an_integer_error_message_to_format_dict= {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
+        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {list_length} items, it should contain no more than 3.', 'he': '___"הרשימה מכילה {list_length} פריטים, עליה להכיל לא יותר מ-3.'}
         # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'}
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'}
         _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
@@ -391,8 +391,8 @@ class ErrorsMixin(object):
             'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
             'he': {
                 'female': "לא ניתן לשנות שם משתמשת.",
-                'male': "___לא ניתן לשנות שם משתמש.",
-                'other': "___לא ניתן לשנות שם משתמש/ת.",
+                'male': "לא ניתן לשנות שם משתמש.",
+                'other': "לא ניתן לשנות שם משתמש/ת.",
             },
         }
 
