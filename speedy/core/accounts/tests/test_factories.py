@@ -16,7 +16,7 @@ from ..forms import LocalizedFirstLastNameMixin #### TODO
 
 
 def get_random_user_password_length():
-    return random.randint(User.MIN_PASSWORD_LENGTH, User.MAX_PASSWORD_LENGTH)
+    return random.randint(settings.MIN_PASSWORD_LENGTH, settings.MAX_PASSWORD_LENGTH)
 
 
 def get_random_user_password():

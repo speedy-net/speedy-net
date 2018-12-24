@@ -364,8 +364,8 @@ class ErrorsMixin(object):
         _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
         _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'he': '___ערך חייב להיות JSON חוקי.'}
         _invalid_password_error_message_dict = {'en': 'Invalid password.', 'he': 'הסיסמה לא תקינה.'}
-        _password_too_short_error_message_dict = {'en': 'Password too short.', 'he': 'הסיסמה קצרה מדי.'}
-        _password_too_long_error_message_dict = {'en': 'Password too long.', 'he': 'הסיסמה ארוכה מדי.'}
+        _password_too_short_error_message_dict = {'en': 'This password is too short. It must contain at least 8 characters.', 'he': 'סיסמה זו קצרה מדי. היא חייבת להכיל לפחות 8 תווים.___'}
+        _password_too_long_error_message_dict = {'en': 'This password is too long. It must contain at most 120 characters.', 'he': 'סיסמה זו ארוכה מדי. היא יכולה להכיל 120 תווים לכל היותר.___'}
         _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
         _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית.___'}
         _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}

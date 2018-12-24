@@ -18,6 +18,14 @@ def _generate_udid(length):
     return ''.join(random.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
 
 
+def _get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
+    try:
+        age = get_age(date_of_birth=date_of_birth)
+    except AttributeError:
+        age = default
+    return age
+
+
 def generate_regular_udid():
     return _generate_udid(length=REGULAR_UDID_LENGTH)
 

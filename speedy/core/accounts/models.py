@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.db import models, transaction
 from django.utils.timezone import now
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
@@ -136,10 +136,10 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
     MIN_SLUG_LENGTH = 6
-    MIN_SLUG_LENGTH = 60 ###### # ~~~~ TODO: remove this line!
+    # MIN_SLUG_LENGTH = 60 ###### # ~~~~ TODO: remove this line!
     MAX_SLUG_LENGTH = 200
-    MIN_PASSWORD_LENGTH = 8
-    MAX_PASSWORD_LENGTH = 120
+    # MIN_PASSWORD_LENGTH = 8
+    # MAX_PASSWORD_LENGTH = 120
     # ~~~~ TODO: move to settings.
     # Users can register from age 0 to 180, but can't be kept on the site after age 250.
     MIN_AGE_ALLOWED_IN_MODEL = 0  # In years.

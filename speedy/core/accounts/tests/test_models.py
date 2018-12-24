@@ -300,8 +300,8 @@ class UserTestCaseMixin(object):
         self.assertEqual(first=User.MAX_USERNAME_LENGTH, second=40)
         self.assertEqual(first=User.MIN_SLUG_LENGTH, second=6)
         self.assertEqual(first=User.MAX_SLUG_LENGTH, second=200)
-        self.assertEqual(first=User.MIN_PASSWORD_LENGTH, second=8)
-        self.assertEqual(first=User.MAX_PASSWORD_LENGTH, second=120)
+        self.assertEqual(first=settings.MIN_PASSWORD_LENGTH, second=8)
+        self.assertEqual(first=settings.MAX_PASSWORD_LENGTH, second=120)
 
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
@@ -559,7 +559,6 @@ class UserTestCaseMixin(object):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_short_error_message)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
@@ -570,7 +569,6 @@ class UserTestCaseMixin(object):
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
-        self.assertEqual(first=str(cm.exception.message), second=self._password_too_long_error_message)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
         self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))

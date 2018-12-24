@@ -3,20 +3,15 @@ import logging
 from django.conf import settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _, ungettext_lazy
+from django.contrib.auth import (
+    authenticate, get_user_model, password_validation,
+)
+from django.utils.translation import gettext_lazy as _, ngettext_lazy
 
-from speedy.core.base.utils import normalize_slug, normalize_username, get_age
+from speedy.core.base.utils import normalize_slug, normalize_username, _get_age_or_default
 
 
 log = logging.getLogger(__name__)
-
-
-def _get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
-    try:
-        age = get_age(date_of_birth=date_of_birth)
-    except AttributeError:
-        age = default
-    return age
 
 
 def reserved_username_validator(value):
@@ -39,7 +34,7 @@ def generate_regex_validator(allow_dashes, allow_letters_after_digits):
 
 
 class UsernameMinLengthValidator(MinLengthValidator):
-    message = ungettext_lazy(
+    message = ngettext_lazy(
         singular='Username must contain at least %(limit_value)d alphanumeric character (it has %(show_value)d).',
         plural='Username must contain at least %(limit_value)d alphanumeric characters (it has %(show_value)d).',
         number='limit_value',
@@ -50,7 +45,7 @@ class UsernameMinLengthValidator(MinLengthValidator):
 
 
 class UsernameMaxLengthValidator(MaxLengthValidator):
-    message = ungettext_lazy(
+    message = ngettext_lazy(
         singular='Username must contain at most %(limit_value)d alphanumeric character (it has %(show_value)d).',
         plural='Username must contain at most %(limit_value)d alphanumeric characters (it has %(show_value)d).',
         number='limit_value',
@@ -61,7 +56,7 @@ class UsernameMaxLengthValidator(MaxLengthValidator):
 
 
 class SlugMinLengthValidator(MinLengthValidator):
-    message = ungettext_lazy(
+    message = ngettext_lazy(
         singular='Username must contain at least %(limit_value)d character (it has %(show_value)d).',
         plural='Username must contain at least %(limit_value)d characters (it has %(show_value)d).',
         number='limit_value',
@@ -72,7 +67,7 @@ class SlugMinLengthValidator(MinLengthValidator):
 
 
 class SlugMaxLengthValidator(MaxLengthValidator):
-    message = ungettext_lazy(
+    message = ngettext_lazy(
         singular='Username must contain at most %(limit_value)d character (it has %(show_value)d).',
         plural='Username must contain at most %(limit_value)d characters (it has %(show_value)d).',
         number='limit_value',
@@ -80,6 +75,60 @@ class SlugMaxLengthValidator(MaxLengthValidator):
 
     def clean(self, x):
         return len(normalize_slug(slug=x))
+
+
+class PasswordMinLengthValidator:
+    """
+    Validate whether the password is of a minimum length.
+    """
+    def __init__(self, min_length=settings.MIN_PASSWORD_LENGTH):
+        self.min_length = min_length
+
+    def validate(self, password, user=None):
+        if len(password) < self.min_length:
+            raise ValidationError(
+                ngettext_lazy(
+                    singular="This password is too short. It must contain at least %(min_length)d character.",
+                    plural="This password is too short. It must contain at least %(min_length)d characters.",
+                    number=self.min_length,
+                ),
+                code='password_too_short',
+                params={'min_length': self.min_length},
+            )
+
+    def get_help_text(self):
+        return ngettext_lazy(
+            singular="Your password must contain at least %(min_length)d character.",
+            plural="Your password must contain at least %(min_length)d characters.",
+            number=self.min_length,
+        ) % {'min_length': self.min_length}
+
+
+class PasswordMaxLengthValidator:
+    """
+    Validate whether the password is of a maximum length.
+    """
+    def __init__(self, max_length=settings.MAX_PASSWORD_LENGTH):
+        self.max_length = max_length
+
+    def validate(self, password, user=None):
+        if len(password) > self.max_length:
+            raise ValidationError(
+                ngettext_lazy(
+                    singular="This password is too long. It must contain at most %(max_length)d character.",
+                    plural="This password is too long. It must contain at most %(max_length)d characters.",
+                    number=self.max_length,
+                ),
+                code='password_too_long',
+                params={'max_length': self.max_length},
+            )
+
+    def get_help_text(self):
+        return ngettext_lazy(
+            singular="Your password must contain at most %(max_length)d character.",
+            plural="Your password must contain at most %(max_length)d characters.",
+            number=self.max_length,
+        ) % {'max_length': self.max_length}
 
 
 def get_username_validators(min_username_length, max_username_length, allow_letters_after_digits):
@@ -109,12 +158,12 @@ def get_slug_validators(min_username_length, max_username_length, min_slug_lengt
 
 
 def age_is_valid_in_model(age):
-    from .models import User
+    from .models import User # ~~~~ TODO
     return (age in User.AGE_VALID_VALUES_IN_MODEL)
 
 
 def age_is_valid_in_forms(age):
-    from .models import User
+    from .models import User # ~~~~ TODO
     return (age in User.AGE_VALID_VALUES_IN_FORMS)
 
 
@@ -136,15 +185,8 @@ def validate_date_of_birth_in_forms(date_of_birth):
         # raise ValidationError(_('Enter a valid date (age can be from 0 to 180 years).')) #### TODO
 
 
-# ~~~~ TODO: Use Django's built-in password validators (settings.AUTH_PASSWORD_VALIDATORS)
-# class MinimumLengthValidator
-
 class ValidateUserPasswordMixin(object):
     def validate_password(self, password):
-        from .models import User
-        if (len(password) < User.MIN_PASSWORD_LENGTH):
-            raise ValidationError(_('Password too short.'))
-        if (len(password) > User.MAX_PASSWORD_LENGTH):
-            raise ValidationError(_('Password too long.'))
+        password_validation.validate_password(password=password)
 
 

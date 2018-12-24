@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.postgres.fields import JSONField, ArrayField
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy, get_language
+from django.utils.translation import gettext_lazy as _, pgettext_lazy, get_language
 from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.models import SiteProfileBase, User

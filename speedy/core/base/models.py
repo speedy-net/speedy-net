@@ -1,7 +1,7 @@
 from django.core.exceptions import FieldDoesNotExist
 from django.contrib.auth.models import BaseUserManager as DjangoBaseUserManager
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid, generate_small_udid
 from .validators import regular_udid_validator, small_udid_validator

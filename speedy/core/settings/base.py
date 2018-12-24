@@ -1,3 +1,4 @@
+# ~~~~ TODO: remove unnecessary comments.
 """
 Django settings for speedy project.
 
@@ -10,7 +11,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .utils import env, APP_DIR, ROOT_DIR
 
@@ -129,8 +130,23 @@ CACHES = {
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = []
+MIN_PASSWORD_LENGTH = 8
+MAX_PASSWORD_LENGTH = 120
 
+PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'speedy.core.accounts.validators.PasswordMinLengthValidator',
+    },
+    {
+        'NAME': 'speedy.core.accounts.validators.PasswordMaxLengthValidator',
+    },
+]
+
+AUTH_PASSWORD_VALIDATORS = PASSWORD_VALIDATORS
+
+# ~~~~ TODO: remove
+# AUTH_PASSWORD_VALIDATORS = []
+#
 # AUTH_PASSWORD_VALIDATORS = [
 #     {
 #         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

@@ -1,7 +1,7 @@
 import os
 
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel, RegularUDIDField
 from speedy.core.base.utils import generate_regular_udid

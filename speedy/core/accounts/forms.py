@@ -8,7 +8,7 @@ from django.conf import settings
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
 
 from speedy.core.accounts.utils import get_site_profile_model

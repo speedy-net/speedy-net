@@ -4,7 +4,7 @@ from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.shortcuts import redirect, get_object_or_404
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.views import generic
 
 from friendship.models import Friend, FriendshipRequest
