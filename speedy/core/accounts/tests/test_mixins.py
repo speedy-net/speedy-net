@@ -111,12 +111,21 @@ class ErrorsMixin(object):
     def _this_email_is_already_in_use_errors_dict(self):
         return {'email': [self._this_email_is_already_in_use_error_message]}
 
-    def _slug_this_username_is_already_taken_errors_dict(self):
-        return {'slug': [self._this_username_is_already_taken_error_message]}
+    def _this_username_is_already_taken_errors_dict(self, slug_fail=False, username_fail=False):
+        self.assertTrue(expr=slug_fail)
+        errors_dict = {}
+        if (slug_fail):
+            errors_dict['slug'] = [self._this_username_is_already_taken_error_message]
+        if (username_fail):
+            errors_dict['username'] = [self._this_username_is_already_taken_error_message]
+        return errors_dict
 
-    def _slug_and_username_this_username_is_already_taken_errors_dict(self):
-        return {'username': [self._this_username_is_already_taken_error_message], 'slug': [self._this_username_is_already_taken_error_message]}
-
+    # def _slug_this_username_is_already_taken_errors_dict(self):
+    #     return {'slug': [self._this_username_is_already_taken_error_message]}
+    #
+    # def _slug_and_username_this_username_is_already_taken_errors_dict(self):
+    #     return {'username': [self._this_username_is_already_taken_error_message], 'slug': [self._this_username_is_already_taken_error_message]}
+    #
     def _username_must_start_with_4_or_more_letters_errors_dict(self, model, slug_fail=False, username_fail=False):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -225,21 +234,21 @@ class ErrorsMixin(object):
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=slug_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         if (username_fail):
             errors_dict['username'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod
-    def _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+    def _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=slug_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         if (username_fail):
             errors_dict['username'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
@@ -358,7 +367,7 @@ class ErrorsMixin(object):
         _password_too_short_error_message_dict = {'en': 'Password too short.', 'he': 'הסיסמה קצרה מדי.'}
         _password_too_long_error_message_dict = {'en': 'Password too long.', 'he': 'הסיסמה ארוכה מדי.'}
         _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
-        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית'}
+        _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית.___'}
         _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
         _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'he': 'יש להזין תאריך חוקי.'}
         _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
@@ -378,9 +387,9 @@ class ErrorsMixin(object):
         _you_cant_change_your_username_error_message_dict_by_gender = {
             'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
             'he': {
-                'female': "___לא ניתן לשנות שם משתמשת",
-                'male': "___לא ניתן לשנות שם משתמש",
-                'other': "___לא ניתן לשנות שם משתמש/ת",
+                'female': "___לא ניתן לשנות שם משתמשת.",
+                'male': "___לא ניתן לשנות שם משתמש.",
+                'other': "___לא ניתן לשנות שם משתמש/ת.",
             },
         }
 

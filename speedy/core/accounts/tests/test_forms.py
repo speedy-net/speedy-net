@@ -197,81 +197,91 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         # self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_reserved(self):
+    def test_slug_validation_fails_with_reserved_username(self):
         data = self.data.copy()
-        data['slug'] = 'editprofile'
+        data['slug'] = 'webmaster'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict())
+        self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
         # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_already_taken(self):
+    def test_slug_validation_fails_with_reserved_and_too_short_username(self):
+        data = self.data.copy()
+        data['slug'] = 'mail'
+        form = RegistrationForm(language_code=self.language_code, data=data)
+        form.full_clean()
+        self.assertFalse(expr=form.is_valid())
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
+        # self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
+        # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
+
+    def test_slug_validation_fails_with_username_already_taken(self):
         ActiveUserFactory(slug='validslug')
         data = self.data.copy()
         data['slug'] = 'valid-slug'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._slug_this_username_is_already_taken_errors_dict())
+        self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
         # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_1(self):  #### TODO
+    def test_slug_validation_fails_with_username_too_short_1(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'a' * 5
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=5))
-        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=5))
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=5))
+        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=5))
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_2(self):  #### TODO
+    def test_slug_validation_fails_with_username_too_short_2(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'aa-aa'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=4))
-        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=4))
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
+        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_3(self):  #### TODO
+    def test_slug_validation_fails_with_username_too_short_3(self):  #### TODO
         data = self.data.copy()
         data['slug'] = 'a-a-a-a'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=4))
-        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=4))
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
+        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_short_4(self):  #### TODO
+    def test_slug_validation_fails_with_username_too_short_4(self):  #### TODO
         data = self.data.copy()
         data['slug'] = '---a--a--a--a---'
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=4))
-        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=4))
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
+        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_too_long(self):
+    def test_slug_validation_fails_with_username_too_long(self):
         data = self.data.copy()
         data['slug'] = 'a' * 201
         form = RegistrationForm(language_code=self.language_code, data=data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=201))
-        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=201))
+        self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=201))
+        # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=201))
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_max_length_fail_errors_dict_by_value_length(value_length=201))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=201)) # ~~~~ TODO: remove this line!
 
-    def test_slug_validation_regex(self):
+    def test_slug_validation_fails_with_invalid_username_regex(self):
         data = self.data.copy()
         data['slug'] = '1234567890digits'
         form = RegistrationForm(language_code=self.language_code, data=data)
@@ -431,3 +441,4 @@ class DeactivationFormHebrewTestCase(DeactivationFormTestCaseMixin, ErrorsMixin,
         self.assertEqual(first=self.language_code, second='he')
 
 
+# ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")

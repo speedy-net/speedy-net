@@ -331,7 +331,7 @@ class RegistrationViewTestCaseMixin(object):
         data['slug'] = 'us-er-na-me'
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
-        self.assertDictEqual(d1=r.context['form'].errors, d2=self._slug_this_username_is_already_taken_errors_dict())
+        self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -1352,3 +1352,4 @@ class PasswordResetViewTestCase(TestCase):
         self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(self.site.name))
 
 
+# ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")
