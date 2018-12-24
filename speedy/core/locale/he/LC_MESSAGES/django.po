@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 23:25+0200\n"
+"POT-Creation-Date: 2018-12-24 09:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,164 +69,164 @@ msgstr "הסיסמה שלך"
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:32
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:31 .\accounts\models.py:32 .\accounts\validators.py:24
+#: .\accounts\models.py:32 .\accounts\models.py:33 .\accounts\validators.py:19
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:33
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:34
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:43 .\im\models.py:89
+#: .\accounts\models.py:44 .\im\models.py:89
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:44
+#: .\accounts\models.py:45
 msgid "entities"
 msgstr "ישויות"
 
-#: .\accounts\models.py:59
+#: .\accounts\models.py:60
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:105
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:121
 msgid "Only me"
 msgstr "רק אני"
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:122
 msgid "Me and my friends"
 msgstr "אני והחברים/ות שלי"
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:124
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\models.py:154
+#: .\accounts\models.py:159
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:155
+#: .\accounts\models.py:160
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:156
+#: .\accounts\models.py:161
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:168
+#: .\accounts\models.py:173
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:169
+#: .\accounts\models.py:174
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:170
+#: .\accounts\models.py:175
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:171
+#: .\accounts\models.py:176
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:180
+#: .\accounts\models.py:185
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:186
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:196
+#: .\accounts\models.py:201
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:197
+#: .\accounts\models.py:202
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:198
+#: .\accounts\models.py:203
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:200
+#: .\accounts\models.py:205
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:202
+#: .\accounts\models.py:207
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:210
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:206
+#: .\accounts\models.py:211
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:212
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:218 .\accounts\models.py:318 .\accounts\models.py:377
+#: .\accounts\models.py:223 .\accounts\models.py:323 .\accounts\models.py:382
 #: .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:219
+#: .\accounts\models.py:224
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:324
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:325
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:326
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:327
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:328
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:329
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:327 .\templates\translations.html:5
+#: .\accounts\models.py:332 .\templates\translations.html:5
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:333
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:378
+#: .\accounts\models.py:383
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\validators.py:35
+#: .\accounts\validators.py:30
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -234,7 +234,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או "
 "מקפים."
 
-#: .\accounts\validators.py:37
+#: .\accounts\validators.py:32
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -242,7 +242,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
 "של ספרות. ניתן להוסיף מקפים בין מילים."
 
-#: .\accounts\validators.py:43
+#: .\accounts\validators.py:38
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -257,7 +257,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לפחות (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:54
+#: .\accounts\validators.py:49
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -272,7 +272,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:65
+#: .\accounts\validators.py:60
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -285,7 +285,7 @@ msgstr[0] ""
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל %(show_value)d)."
 
-#: .\accounts\validators.py:76
+#: .\accounts\validators.py:71
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -300,17 +300,43 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:126 .\accounts\validators.py:135
+#: .\accounts\validators.py:91
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות תו %(min_length)d."
+msgstr[1] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות %(min_length)d תווים."
+
+#: .\accounts\validators.py:101
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "הסיסמה שלך חייבת להכיל לפחות תו %(min_length)d."
+msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d תווים."
+
+#: .\accounts\validators.py:118
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d characters."
+msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
+msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
+
+#: .\accounts\validators.py:128
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
+msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
+
+#: .\accounts\validators.py:175 .\accounts\validators.py:184
 msgid "Enter a valid date."
 msgstr ""
-
-#: .\accounts\validators.py:146
-msgid "Password too short."
-msgstr "הסיסמה קצרה מדי."
-
-#: .\accounts\validators.py:148
-msgid "Password too long."
-msgstr "הסיסמה ארוכה מדי."
 
 #: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
@@ -468,11 +494,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:202
+#: .\settings\base.py:218
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:203
+#: .\settings\base.py:219
 msgid "Hebrew"
 msgstr ""
 
@@ -1009,7 +1035,7 @@ msgstr ""
 
 #: .\templates\translations.html:3
 msgid "Enter a valid email address."
-msgstr "נא להזין כתובת דואר אלקטרוני חוקית"
+msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 
 #: .\templates\translations.html:4
 msgid "Email address"
@@ -2176,6 +2202,12 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgid "Password too short."
+#~ msgstr "הסיסמה קצרה מדי."
+
+#~ msgid "Password too long."
+#~ msgstr "הסיסמה ארוכה מדי."
 
 #~ msgid "Please select..."
 #~ msgstr "בחר/י בבקשה..."

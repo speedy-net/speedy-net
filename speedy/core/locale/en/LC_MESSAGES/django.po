@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 23:25+0200\n"
+"POT-Creation-Date: 2018-12-24 09:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,176 +68,176 @@ msgstr ""
 msgid "Invalid password."
 msgstr ""
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:32
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:31 .\accounts\models.py:32 .\accounts\validators.py:24
+#: .\accounts\models.py:32 .\accounts\models.py:33 .\accounts\validators.py:19
 msgid "This username is already taken."
 msgstr ""
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:33
 msgid "username (slug)"
 msgstr ""
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:34
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:43 .\im\models.py:89
+#: .\accounts\models.py:44 .\im\models.py:89
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:44
+#: .\accounts\models.py:45
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:59
+#: .\accounts\models.py:60
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:105
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:121
 msgid "Only me"
 msgstr ""
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:122
 msgid "Me and my friends"
 msgstr ""
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:124
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\models.py:154
+#: .\accounts\models.py:159
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:155
+#: .\accounts\models.py:160
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:156
+#: .\accounts\models.py:161
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:168
+#: .\accounts\models.py:173
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:169
+#: .\accounts\models.py:174
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:170
+#: .\accounts\models.py:175
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:171
+#: .\accounts\models.py:176
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:180
+#: .\accounts\models.py:185
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:186
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:196
+#: .\accounts\models.py:201
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:197
+#: .\accounts\models.py:202
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:198
+#: .\accounts\models.py:203
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:200
+#: .\accounts\models.py:205
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:202
+#: .\accounts\models.py:207
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:210
 msgid "who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:206
+#: .\accounts\models.py:211
 msgid "who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:212
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:218 .\accounts\models.py:318 .\accounts\models.py:377
+#: .\accounts\models.py:223 .\accounts\models.py:323 .\accounts\models.py:382
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:219
+#: .\accounts\models.py:224
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:324
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:325
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:326
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:327
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:328
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:329
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:327 .\templates\translations.html:5
+#: .\accounts\models.py:332 .\templates\translations.html:5
 msgid "email address"
 msgstr ""
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:333
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:378
+#: .\accounts\models.py:383
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\validators.py:35
+#: .\accounts\validators.py:30
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
 
-#: .\accounts\validators.py:37
+#: .\accounts\validators.py:32
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\validators.py:43
+#: .\accounts\validators.py:38
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -248,7 +248,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:54
+#: .\accounts\validators.py:49
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -259,7 +259,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:65
+#: .\accounts\validators.py:60
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -270,7 +270,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:76
+#: .\accounts\validators.py:71
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -281,16 +281,42 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:126 .\accounts\validators.py:135
+#: .\accounts\validators.py:91
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:101
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:118
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:128
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\accounts\validators.py:175 .\accounts\validators.py:184
 msgid "Enter a valid date."
-msgstr ""
-
-#: .\accounts\validators.py:146
-msgid "Password too short."
-msgstr ""
-
-#: .\accounts\validators.py:148
-msgid "Password too long."
 msgstr ""
 
 #: .\accounts\views.py:68
@@ -449,11 +475,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:202
+#: .\settings\base.py:218
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:203
+#: .\settings\base.py:219
 msgid "Hebrew"
 msgstr ""
 
