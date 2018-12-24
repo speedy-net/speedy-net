@@ -5,7 +5,7 @@ from django.test import override_settings
 from django.core import mail
 
 from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
-from .test_mixins import ErrorsMixin
+from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
@@ -380,7 +380,7 @@ class RegistrationViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, ErrorsMixin, TestCase):
+class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -398,7 +398,7 @@ class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, ErrorsMixin
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, ErrorsMixin, TestCase):
+class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -551,7 +551,7 @@ class LoginViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, ErrorsMixin, TestCase):
+class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -559,7 +559,7 @@ class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, ErrorsMi
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, ErrorsMixin, TestCase):
+class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
@@ -762,7 +762,7 @@ class EditProfileViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, ErrorsMixin, TestCase):
+class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -780,7 +780,7 @@ class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, ErrorsMixin, 
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, ErrorsMixin, TestCase):
+class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -978,7 +978,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, ErrorsMixin, TestCase):
+class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -986,7 +986,7 @@ class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCa
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, ErrorsMixin, TestCase):
+class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
@@ -1189,7 +1189,7 @@ class AddUserEmailAddressViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, ErrorsMixin, TestCase):
+class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1197,7 +1197,7 @@ class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixi
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, ErrorsMixin, TestCase):
+class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
