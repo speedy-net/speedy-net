@@ -1,14 +1,11 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-24 17:40+0200\n"
+"POT-Creation-Date: 2018-12-24 19:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,7 +210,7 @@ msgstr ""
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:332 .\base\__translations__.py:6
+#: .\accounts\models.py:332 .\base\__translations__.py:8
 msgid "email address"
 msgstr ""
 
@@ -331,27 +328,27 @@ msgstr ""
 msgid "A confirmation message was sent to {}"
 msgstr ""
 
-#: .\base\__translations__.py:4
+#: .\base\__translations__.py:6
 msgid "Enter a valid email address."
 msgstr ""
 
-#: .\base\__translations__.py:5
+#: .\base\__translations__.py:7
 msgid "Email address"
 msgstr ""
 
-#: .\base\__translations__.py:7
+#: .\base\__translations__.py:9
 msgid "Email address:"
 msgstr ""
 
-#: .\base\__translations__.py:8 .\templates\profiles\user_info_widget.html:70
+#: .\base\__translations__.py:10 .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr ""
 
-#: .\base\__translations__.py:9
+#: .\base\__translations__.py:11
 msgid "Value must be valid JSON."
 msgstr ""
 
-#: .\base\__translations__.py:13
+#: .\base\__translations__.py:15
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -522,7 +519,7 @@ msgstr ""
 msgid "This page is private."
 msgstr ""
 
-#: .\templates\__translations__.html:12
+#: .\templates\__translations__.html:6
 #, python-format
 msgctxt "female"
 msgid ""
@@ -530,1080 +527,1080 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 
-#: .\templates\__translations__.html:13
+#: .\templates\__translations__.html:7
 #, python-format
 msgctxt "male"
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
+msgstr ""
+
+#: .\templates\__translations__.html:8
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+
+#: .\templates\__translations__.html:10
+#, python-format
+msgctxt "female"
+msgid ""
+"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
+"Speedy Net."
+msgstr ""
+
+#: .\templates\__translations__.html:11
+#, python-format
+msgctxt "male"
+msgid ""
+"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
+"Speedy Net."
+msgstr ""
+
+#: .\templates\__translations__.html:12
+#, python-format
+msgctxt "other"
+msgid ""
+"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
+"Speedy Net."
 msgstr ""
 
 #: .\templates\__translations__.html:14
 #, python-format
-msgctxt "other"
+msgctxt "female"
 msgid ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
+"Speedy Match."
+msgstr ""
+
+#: .\templates\__translations__.html:15
+#, python-format
+msgctxt "male"
+msgid ""
+"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
+"Speedy Match."
 msgstr ""
 
 #: .\templates\__translations__.html:16
 #, python-format
-msgctxt "female"
-msgid ""
-"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
-"Speedy Net."
-msgstr ""
-
-#: .\templates\__translations__.html:17
-#, python-format
-msgctxt "male"
-msgid ""
-"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
-"Speedy Net."
-msgstr ""
-
-#: .\templates\__translations__.html:18
-#, python-format
 msgctxt "other"
 msgid ""
-"%(entity)s also has a Speedy Net profile. View %(entity)s’s profile on "
-"Speedy Net."
+"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
+"Speedy Match."
+msgstr ""
+
+#: .\templates\__translations__.html:19
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
 #: .\templates\__translations__.html:20
-#, python-format
-msgctxt "female"
-msgid ""
-"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
-"Speedy Match."
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
 #: .\templates\__translations__.html:21
-#, python-format
-msgctxt "male"
-msgid ""
-"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
-"Speedy Match."
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\__translations__.html:22
-#, python-format
-msgctxt "other"
-msgid ""
-"%(entity)s also has a Speedy Match profile. View %(entity)s’s profile on "
-"Speedy Match."
+#: .\templates\__translations__.html:24
+msgctxt "female"
+msgid "You blocked "
 msgstr ""
 
 #: .\templates\__translations__.html:25
-msgctxt "female"
-msgid "You haven't confirmed your email address. Please check your inbox."
+msgctxt "male"
+msgid "You blocked "
 msgstr ""
 
 #: .\templates\__translations__.html:26
-msgctxt "male"
-msgid "You haven't confirmed your email address. Please check your inbox."
+msgctxt "other"
+msgid "You blocked "
 msgstr ""
 
-#: .\templates\__translations__.html:27
-msgctxt "other"
-msgid "You haven't confirmed your email address. Please check your inbox."
+#: .\templates\__translations__.html:29
+msgctxt "female"
+msgid " blocked you."
 msgstr ""
 
 #: .\templates\__translations__.html:30
-msgctxt "female"
-msgid "You blocked "
+msgctxt "male"
+msgid " blocked you."
 msgstr ""
 
 #: .\templates\__translations__.html:31
-msgctxt "male"
-msgid "You blocked "
+msgctxt "other"
+msgid " blocked you."
 msgstr ""
 
-#: .\templates\__translations__.html:32
-msgctxt "other"
-msgid "You blocked "
+#: .\templates\__translations__.html:34
+msgctxt "female"
+msgid "Your Friend"
 msgstr ""
 
 #: .\templates\__translations__.html:35
-msgctxt "female"
-msgid " blocked you."
+msgctxt "male"
+msgid "Your Friend"
 msgstr ""
 
 #: .\templates\__translations__.html:36
-msgctxt "male"
-msgid " blocked you."
+msgctxt "other"
+msgid "Your Friend"
 msgstr ""
 
-#: .\templates\__translations__.html:37
-msgctxt "other"
-msgid " blocked you."
+#: .\templates\__translations__.html:39
+msgctxt "female"
+msgid "Block "
 msgstr ""
 
 #: .\templates\__translations__.html:40
-msgctxt "female"
-msgid "Your Friend"
+msgctxt "male"
+msgid "Block "
 msgstr ""
 
 #: .\templates\__translations__.html:41
-msgctxt "male"
-msgid "Your Friend"
+msgctxt "other"
+msgid "Block "
 msgstr ""
 
-#: .\templates\__translations__.html:42
-msgctxt "other"
-msgid "Your Friend"
+#: .\templates\__translations__.html:44
+msgctxt "female"
+msgid "Unblock "
 msgstr ""
 
 #: .\templates\__translations__.html:45
-msgctxt "female"
-msgid "Block "
+msgctxt "male"
+msgid "Unblock "
 msgstr ""
 
 #: .\templates\__translations__.html:46
-msgctxt "male"
-msgid "Block "
+msgctxt "other"
+msgid "Unblock "
 msgstr ""
 
-#: .\templates\__translations__.html:47
-msgctxt "other"
-msgid "Block "
+#: .\templates\__translations__.html:49
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\__translations__.html:50
-msgctxt "female"
-msgid "Unblock "
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
 #: .\templates\__translations__.html:51
-msgctxt "male"
-msgid "Unblock "
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(other_user)s"
 msgstr ""
 
-#: .\templates\__translations__.html:52
-msgctxt "other"
-msgid "Unblock "
+#: .\templates\__translations__.html:54
+msgctxt "female"
+msgid "You have no messages yet."
 msgstr ""
 
 #: .\templates\__translations__.html:55
-#, python-format
-msgctxt "female"
-msgid "Send a message to %(other_user)s"
+msgctxt "male"
+msgid "You have no messages yet."
 msgstr ""
 
 #: .\templates\__translations__.html:56
-#, python-format
-msgctxt "male"
-msgid "Send a message to %(other_user)s"
+msgctxt "other"
+msgid "You have no messages yet."
 msgstr ""
 
-#: .\templates\__translations__.html:57
-#, python-format
-msgctxt "other"
-msgid "Send a message to %(other_user)s"
+#: .\templates\__translations__.html:59
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
 msgstr ""
 
 #: .\templates\__translations__.html:60
-msgctxt "female"
-msgid "You have no messages yet."
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
 msgstr ""
 
 #: .\templates\__translations__.html:61
-msgctxt "male"
-msgid "You have no messages yet."
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
 msgstr ""
 
-#: .\templates\__translations__.html:62
-msgctxt "other"
-msgid "You have no messages yet."
+#: .\templates\__translations__.html:64
+msgctxt "female"
+msgid "You're not blocking anybody."
 msgstr ""
 
 #: .\templates\__translations__.html:65
-msgctxt "female"
-msgid "Your feedback was sent to administrators."
+msgctxt "male"
+msgid "You're not blocking anybody."
 msgstr ""
 
 #: .\templates\__translations__.html:66
-msgctxt "male"
-msgid "Your feedback was sent to administrators."
+msgctxt "other"
+msgid "You're not blocking anybody."
 msgstr ""
 
-#: .\templates\__translations__.html:67
-msgctxt "other"
-msgid "Your feedback was sent to administrators."
+#: .\templates\__translations__.html:69
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\__translations__.html:70
-msgctxt "female"
-msgid "You're not blocking anybody."
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
 #: .\templates\__translations__.html:71
-msgctxt "male"
-msgid "You're not blocking anybody."
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
 
-#: .\templates\__translations__.html:72
-msgctxt "other"
-msgid "You're not blocking anybody."
+#: .\templates\__translations__.html:73
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr ""
+
+#: .\templates\__translations__.html:74
+msgctxt "male"
+msgid "Resend a confirmation email"
 msgstr ""
 
 #: .\templates\__translations__.html:75
-msgctxt "female"
-msgid "Change privacy settings of email addresses on your profile."
-msgstr ""
-
-#: .\templates\__translations__.html:76
-msgctxt "male"
-msgid "Change privacy settings of email addresses on your profile."
+msgctxt "other"
+msgid "Resend a confirmation email"
 msgstr ""
 
 #: .\templates\__translations__.html:77
-msgctxt "other"
-msgid "Change privacy settings of email addresses on your profile."
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr ""
+
+#: .\templates\__translations__.html:78
+msgctxt "male"
+msgid "Make this email address primary"
 msgstr ""
 
 #: .\templates\__translations__.html:79
-msgctxt "female"
-msgid "Resend a confirmation email"
-msgstr ""
-
-#: .\templates\__translations__.html:80
-msgctxt "male"
-msgid "Resend a confirmation email"
-msgstr ""
-
-#: .\templates\__translations__.html:81
 msgctxt "other"
-msgid "Resend a confirmation email"
+msgid "Make this email address primary"
+msgstr ""
+
+#: .\templates\__translations__.html:82
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
 msgstr ""
 
 #: .\templates\__translations__.html:83
-msgctxt "female"
-msgid "Make this email address primary"
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
 msgstr ""
 
 #: .\templates\__translations__.html:84
-msgctxt "male"
-msgid "Make this email address primary"
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
 msgstr ""
 
-#: .\templates\__translations__.html:85
-msgctxt "other"
-msgid "Make this email address primary"
+#: .\templates\__translations__.html:86
+msgctxt "female"
+msgid "Delete this email address"
+msgstr ""
+
+#: .\templates\__translations__.html:87
+msgctxt "male"
+msgid "Delete this email address"
 msgstr ""
 
 #: .\templates\__translations__.html:88
-msgctxt "female"
-msgid "Are you sure you want to delete this email address?"
-msgstr ""
-
-#: .\templates\__translations__.html:89
-msgctxt "male"
-msgid "Are you sure you want to delete this email address?"
+msgctxt "other"
+msgid "Delete this email address"
 msgstr ""
 
 #: .\templates\__translations__.html:90
-msgctxt "other"
-msgid "Are you sure you want to delete this email address?"
+msgctxt "female"
+msgid "Add Another"
+msgstr ""
+
+#: .\templates\__translations__.html:91
+msgctxt "male"
+msgid "Add Another"
 msgstr ""
 
 #: .\templates\__translations__.html:92
-msgctxt "female"
-msgid "Delete this email address"
-msgstr ""
-
-#: .\templates\__translations__.html:93
-msgctxt "male"
-msgid "Delete this email address"
+msgctxt "other"
+msgid "Add Another"
 msgstr ""
 
 #: .\templates\__translations__.html:94
-msgctxt "other"
-msgid "Delete this email address"
+msgctxt "female"
+msgid "Change Password"
+msgstr ""
+
+#: .\templates\__translations__.html:95
+msgctxt "male"
+msgid "Change Password"
 msgstr ""
 
 #: .\templates\__translations__.html:96
-msgctxt "female"
-msgid "Add Another"
-msgstr ""
-
-#: .\templates\__translations__.html:97
-msgctxt "male"
-msgid "Add Another"
+msgctxt "other"
+msgid "Change Password"
 msgstr ""
 
 #: .\templates\__translations__.html:98
-msgctxt "other"
-msgid "Add Another"
+msgctxt "female"
+msgid "Save Changes"
+msgstr ""
+
+#: .\templates\__translations__.html:99
+msgctxt "male"
+msgid "Save Changes"
 msgstr ""
 
 #: .\templates\__translations__.html:100
-msgctxt "female"
-msgid "Change Password"
-msgstr ""
-
-#: .\templates\__translations__.html:101
-msgctxt "male"
-msgid "Change Password"
+msgctxt "other"
+msgid "Save Changes"
 msgstr ""
 
 #: .\templates\__translations__.html:102
-msgctxt "other"
-msgid "Change Password"
+msgctxt "female"
+msgid "Add"
+msgstr ""
+
+#: .\templates\__translations__.html:103
+msgctxt "male"
+msgid "Add"
 msgstr ""
 
 #: .\templates\__translations__.html:104
-msgctxt "female"
-msgid "Save Changes"
-msgstr ""
-
-#: .\templates\__translations__.html:105
-msgctxt "male"
-msgid "Save Changes"
-msgstr ""
-
-#: .\templates\__translations__.html:106
 msgctxt "other"
-msgid "Save Changes"
+msgid "Add"
+msgstr ""
+
+#: .\templates\__translations__.html:107
+msgctxt "female"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: .\templates\__translations__.html:108
-msgctxt "female"
-msgid "Add"
+msgctxt "male"
+msgid "Please confirm your email address."
 msgstr ""
 
 #: .\templates\__translations__.html:109
-msgctxt "male"
-msgid "Add"
+msgctxt "other"
+msgid "Please confirm your email address."
 msgstr ""
 
-#: .\templates\__translations__.html:110
-msgctxt "other"
-msgid "Add"
+#: .\templates\__translations__.html:111
+msgctxt "female"
+msgid "username (slug)"
+msgstr ""
+
+#: .\templates\__translations__.html:112
+msgctxt "male"
+msgid "username (slug)"
 msgstr ""
 
 #: .\templates\__translations__.html:113
-msgctxt "female"
-msgid "Please confirm your email address."
-msgstr ""
-
-#: .\templates\__translations__.html:114
-msgctxt "male"
-msgid "Please confirm your email address."
-msgstr ""
-
-#: .\templates\__translations__.html:115
 msgctxt "other"
-msgid "Please confirm your email address."
+msgid "username (slug)"
+msgstr ""
+
+#: .\templates\__translations__.html:116
+msgctxt "female"
+msgid "You can't change your username."
 msgstr ""
 
 #: .\templates\__translations__.html:117
-msgctxt "female"
-msgid "username (slug)"
+msgctxt "male"
+msgid "You can't change your username."
 msgstr ""
 
 #: .\templates\__translations__.html:118
-msgctxt "male"
-msgid "username (slug)"
+msgctxt "other"
+msgid "You can't change your username."
 msgstr ""
 
-#: .\templates\__translations__.html:119
-msgctxt "other"
-msgid "username (slug)"
+#: .\templates\__translations__.html:121
+msgctxt "female"
+msgid "Your new password has been saved."
 msgstr ""
 
 #: .\templates\__translations__.html:122
-msgctxt "female"
-msgid "You can't change your username."
+msgctxt "male"
+msgid "Your new password has been saved."
 msgstr ""
 
 #: .\templates\__translations__.html:123
-msgctxt "male"
-msgid "You can't change your username."
+msgctxt "other"
+msgid "Your new password has been saved."
 msgstr ""
 
-#: .\templates\__translations__.html:124
-msgctxt "other"
-msgid "You can't change your username."
+#: .\templates\__translations__.html:126
+msgctxt "female"
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\templates\__translations__.html:127
-msgctxt "female"
-msgid "Your new password has been saved."
+msgctxt "male"
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\templates\__translations__.html:128
-msgctxt "male"
-msgid "Your new password has been saved."
+msgctxt "other"
+msgid "You've already confirmed this email address."
 msgstr ""
 
-#: .\templates\__translations__.html:129
-msgctxt "other"
-msgid "Your new password has been saved."
+#: .\templates\__translations__.html:131
+msgctxt "female"
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\templates\__translations__.html:132
-msgctxt "female"
-msgid "You've already confirmed this email address."
+msgctxt "male"
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\templates\__translations__.html:133
-msgctxt "male"
-msgid "You've already confirmed this email address."
+msgctxt "other"
+msgid "You've confirmed your email address."
 msgstr ""
 
-#: .\templates\__translations__.html:134
-msgctxt "other"
-msgid "You've already confirmed this email address."
+#: .\templates\__translations__.html:136
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
 
 #: .\templates\__translations__.html:137
-msgctxt "female"
-msgid "You've confirmed your email address."
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
 
 #: .\templates\__translations__.html:138
-msgctxt "male"
-msgid "You've confirmed your email address."
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
 
-#: .\templates\__translations__.html:139
-msgctxt "other"
-msgid "You've confirmed your email address."
+#: .\templates\__translations__.html:141
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 
 #: .\templates\__translations__.html:142
 #, python-brace-format
-msgctxt "female"
+msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 
 #: .\templates\__translations__.html:143
 #, python-brace-format
-msgctxt "male"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-
-#: .\templates\__translations__.html:144
-#, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+
+#: .\templates\__translations__.html:146
+msgctxt "female"
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\templates\__translations__.html:147
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+msgctxt "male"
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\templates\__translations__.html:148
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+msgctxt "other"
+msgid "You already requested friendship from this user."
 msgstr ""
 
-#: .\templates\__translations__.html:149
-#, python-brace-format
-msgctxt "other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+#: .\templates\__translations__.html:151
+msgctxt "female"
+msgid "You already are friends with this user."
 msgstr ""
 
 #: .\templates\__translations__.html:152
-msgctxt "female"
-msgid "You already requested friendship from this user."
+msgctxt "male"
+msgid "You already are friends with this user."
 msgstr ""
 
 #: .\templates\__translations__.html:153
-msgctxt "male"
-msgid "You already requested friendship from this user."
+msgctxt "other"
+msgid "You already are friends with this user."
 msgstr ""
 
-#: .\templates\__translations__.html:154
-msgctxt "other"
-msgid "You already requested friendship from this user."
+#: .\templates\__translations__.html:156
+msgctxt "female"
+msgid "You've cancelled your friend request."
 msgstr ""
 
 #: .\templates\__translations__.html:157
-msgctxt "female"
-msgid "You already are friends with this user."
+msgctxt "male"
+msgid "You've cancelled your friend request."
 msgstr ""
 
 #: .\templates\__translations__.html:158
-msgctxt "male"
-msgid "You already are friends with this user."
+msgctxt "other"
+msgid "You've cancelled your friend request."
 msgstr ""
 
-#: .\templates\__translations__.html:159
-msgctxt "other"
-msgid "You already are friends with this user."
+#: .\templates\__translations__.html:161
+msgctxt "female"
+msgid "You have removed this user from friends."
 msgstr ""
 
 #: .\templates\__translations__.html:162
-msgctxt "female"
-msgid "You've cancelled your friend request."
+msgctxt "male"
+msgid "You have removed this user from friends."
 msgstr ""
 
 #: .\templates\__translations__.html:163
-msgctxt "male"
-msgid "You've cancelled your friend request."
+msgctxt "other"
+msgid "You have removed this user from friends."
 msgstr ""
 
-#: .\templates\__translations__.html:164
-msgctxt "other"
-msgid "You've cancelled your friend request."
+#: .\templates\__translations__.html:166
+msgctxt "female"
+msgid "Your matches"
 msgstr ""
 
 #: .\templates\__translations__.html:167
-msgctxt "female"
-msgid "You have removed this user from friends."
+msgctxt "male"
+msgid "Your matches"
 msgstr ""
 
 #: .\templates\__translations__.html:168
-msgctxt "male"
-msgid "You have removed this user from friends."
+msgctxt "other"
+msgid "Your matches"
 msgstr ""
 
-#: .\templates\__translations__.html:169
-msgctxt "other"
-msgid "You have removed this user from friends."
+#: .\templates\__translations__.html:171
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\templates\__translations__.html:172
-msgctxt "female"
-msgid "Your matches"
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\templates\__translations__.html:173
-msgctxt "male"
-msgid "Your matches"
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
-#: .\templates\__translations__.html:174
-msgctxt "other"
-msgid "Your matches"
+#: .\templates\__translations__.html:176
+msgctxt "female"
+msgid "People I Like"
 msgstr ""
 
 #: .\templates\__translations__.html:177
-msgctxt "female"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgctxt "male"
+msgid "People I Like"
 msgstr ""
 
 #: .\templates\__translations__.html:178
-msgctxt "male"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgctxt "other"
+msgid "People I Like"
 msgstr ""
 
-#: .\templates\__translations__.html:179
-msgctxt "other"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+#: .\templates\__translations__.html:181
+msgctxt "female"
+msgid "People Who Like Me"
 msgstr ""
 
 #: .\templates\__translations__.html:182
-msgctxt "female"
-msgid "People I Like"
+msgctxt "male"
+msgid "People Who Like Me"
 msgstr ""
 
 #: .\templates\__translations__.html:183
-msgctxt "male"
-msgid "People I Like"
+msgctxt "other"
+msgid "People Who Like Me"
 msgstr ""
 
-#: .\templates\__translations__.html:184
-msgctxt "other"
-msgid "People I Like"
+#: .\templates\__translations__.html:186
+msgctxt "female"
+msgid "You have no likes here."
 msgstr ""
 
 #: .\templates\__translations__.html:187
-msgctxt "female"
-msgid "People Who Like Me"
+msgctxt "male"
+msgid "You have no likes here."
 msgstr ""
 
 #: .\templates\__translations__.html:188
-msgctxt "male"
-msgid "People Who Like Me"
+msgctxt "other"
+msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\__translations__.html:189
-msgctxt "other"
-msgid "People Who Like Me"
+#: .\templates\__translations__.html:191
+msgctxt "female"
+msgid "View "
 msgstr ""
 
 #: .\templates\__translations__.html:192
-msgctxt "female"
-msgid "You have no likes here."
+msgctxt "male"
+msgid "View "
 msgstr ""
 
 #: .\templates\__translations__.html:193
-msgctxt "male"
-msgid "You have no likes here."
+msgctxt "other"
+msgid "View "
 msgstr ""
 
-#: .\templates\__translations__.html:194
-msgctxt "other"
-msgid "You have no likes here."
+#: .\templates\__translations__.html:195
+msgctxt "female"
+msgid "This user doesn't match your profile, "
+msgstr ""
+
+#: .\templates\__translations__.html:196
+msgctxt "male"
+msgid "This user doesn't match your profile, "
 msgstr ""
 
 #: .\templates\__translations__.html:197
-msgctxt "female"
-msgid "View "
-msgstr ""
-
-#: .\templates\__translations__.html:198
-msgctxt "male"
-msgid "View "
+msgctxt "other"
+msgid "This user doesn't match your profile, "
 msgstr ""
 
 #: .\templates\__translations__.html:199
-msgctxt "other"
-msgid "View "
-msgstr ""
-
-#: .\templates\__translations__.html:201
-msgctxt "female"
-msgid "This user doesn't match your profile, "
-msgstr ""
-
-#: .\templates\__translations__.html:202
-msgctxt "male"
-msgid "This user doesn't match your profile, "
-msgstr ""
-
-#: .\templates\__translations__.html:203
-msgctxt "other"
-msgid "This user doesn't match your profile, "
-msgstr ""
-
-#: .\templates\__translations__.html:205
 msgctxt "female"
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "but you can visit her Speedy Net profile. "
 
-#: .\templates\__translations__.html:206
+#: .\templates\__translations__.html:200
 msgctxt "male"
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "but you can visit his Speedy Net profile. "
 
-#: .\templates\__translations__.html:207
+#: .\templates\__translations__.html:201
 msgctxt "other"
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "but you can visit his/her Speedy Net profile. "
 
-#: .\templates\__translations__.html:209
+#: .\templates\__translations__.html:203
 msgctxt "female"
 msgid "user's profile on Speedy Net."
 msgstr ""
 
-#: .\templates\__translations__.html:210
+#: .\templates\__translations__.html:204
 msgctxt "male"
 msgid "user's profile on Speedy Net."
+msgstr ""
+
+#: .\templates\__translations__.html:205
+msgctxt "other"
+msgid "user's profile on Speedy Net."
+msgstr ""
+
+#: .\templates\__translations__.html:207
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr ""
+
+#: .\templates\__translations__.html:208
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr ""
+
+#: .\templates\__translations__.html:209
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
 #: .\templates\__translations__.html:211
-msgctxt "other"
-msgid "user's profile on Speedy Net."
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr ""
+
+#: .\templates\__translations__.html:212
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
 #: .\templates\__translations__.html:213
-msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr ""
-
-#: .\templates\__translations__.html:214
-msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
 #: .\templates\__translations__.html:215
-msgctxt "other"
-msgid "Vegan (eats only plants and fungi)"
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr ""
+
+#: .\templates\__translations__.html:216
+msgctxt "male"
+msgid "Carnist (eats animals)"
 msgstr ""
 
 #: .\templates\__translations__.html:217
-msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
-
-#: .\templates\__translations__.html:218
-msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
+msgctxt "other"
+msgid "Carnist (eats animals)"
 msgstr ""
 
 #: .\templates\__translations__.html:219
-msgctxt "other"
-msgid "Vegetarian (doesn't eat fish and meat)"
+msgctxt "female"
+msgid "Vegan"
+msgstr ""
+
+#: .\templates\__translations__.html:220
+msgctxt "male"
+msgid "Vegan"
 msgstr ""
 
 #: .\templates\__translations__.html:221
-msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr ""
-
-#: .\templates\__translations__.html:222
-msgctxt "male"
-msgid "Carnist (eats animals)"
+msgctxt "other"
+msgid "Vegan"
 msgstr ""
 
 #: .\templates\__translations__.html:223
-msgctxt "other"
-msgid "Carnist (eats animals)"
+msgctxt "female"
+msgid "Vegetarian"
+msgstr ""
+
+#: .\templates\__translations__.html:224
+msgctxt "male"
+msgid "Vegetarian"
 msgstr ""
 
 #: .\templates\__translations__.html:225
-msgctxt "female"
-msgid "Vegan"
-msgstr ""
-
-#: .\templates\__translations__.html:226
-msgctxt "male"
-msgid "Vegan"
+msgctxt "other"
+msgid "Vegetarian"
 msgstr ""
 
 #: .\templates\__translations__.html:227
-msgctxt "other"
-msgid "Vegan"
+msgctxt "female"
+msgid "Carnist"
+msgstr ""
+
+#: .\templates\__translations__.html:228
+msgctxt "male"
+msgid "Carnist"
 msgstr ""
 
 #: .\templates\__translations__.html:229
-msgctxt "female"
-msgid "Vegetarian"
-msgstr ""
-
-#: .\templates\__translations__.html:230
-msgctxt "male"
-msgid "Vegetarian"
+msgctxt "other"
+msgid "Carnist"
 msgstr ""
 
 #: .\templates\__translations__.html:231
-msgctxt "other"
-msgid "Vegetarian"
+msgctxt "female"
+msgid "Logout"
+msgstr ""
+
+#: .\templates\__translations__.html:232
+msgctxt "male"
+msgid "Logout"
 msgstr ""
 
 #: .\templates\__translations__.html:233
-msgctxt "female"
-msgid "Carnist"
-msgstr ""
-
-#: .\templates\__translations__.html:234
-msgctxt "male"
-msgid "Carnist"
+msgctxt "other"
+msgid "Logout"
 msgstr ""
 
 #: .\templates\__translations__.html:235
-msgctxt "other"
-msgid "Carnist"
+msgctxt "female"
+msgid "Like"
+msgstr ""
+
+#: .\templates\__translations__.html:236
+msgctxt "male"
+msgid "Like"
 msgstr ""
 
 #: .\templates\__translations__.html:237
-msgctxt "female"
-msgid "Logout"
-msgstr ""
-
-#: .\templates\__translations__.html:238
-msgctxt "male"
-msgid "Logout"
+msgctxt "other"
+msgid "Like"
 msgstr ""
 
 #: .\templates\__translations__.html:239
-msgctxt "other"
-msgid "Logout"
+msgctxt "female"
+msgid "Unlike"
+msgstr ""
+
+#: .\templates\__translations__.html:240
+msgctxt "male"
+msgid "Unlike"
 msgstr ""
 
 #: .\templates\__translations__.html:241
-msgctxt "female"
-msgid "Like"
-msgstr ""
-
-#: .\templates\__translations__.html:242
-msgctxt "male"
-msgid "Like"
+msgctxt "other"
+msgid "Unlike"
 msgstr ""
 
 #: .\templates\__translations__.html:243
-msgctxt "other"
-msgid "Like"
+msgctxt "female"
+msgid "Send Message"
+msgstr ""
+
+#: .\templates\__translations__.html:244
+msgctxt "male"
+msgid "Send Message"
 msgstr ""
 
 #: .\templates\__translations__.html:245
-msgctxt "female"
-msgid "Unlike"
-msgstr ""
-
-#: .\templates\__translations__.html:246
-msgctxt "male"
-msgid "Unlike"
+msgctxt "other"
+msgid "Send Message"
 msgstr ""
 
 #: .\templates\__translations__.html:247
-msgctxt "other"
-msgid "Unlike"
+msgctxt "female"
+msgid "Send"
+msgstr ""
+
+#: .\templates\__translations__.html:248
+msgctxt "male"
+msgid "Send"
 msgstr ""
 
 #: .\templates\__translations__.html:249
-msgctxt "female"
-msgid "Send Message"
-msgstr ""
-
-#: .\templates\__translations__.html:250
-msgctxt "male"
-msgid "Send Message"
+msgctxt "other"
+msgid "Send"
 msgstr ""
 
 #: .\templates\__translations__.html:251
-msgctxt "other"
-msgid "Send Message"
+msgctxt "female"
+msgid "Add to Friends"
+msgstr ""
+
+#: .\templates\__translations__.html:252
+msgctxt "male"
+msgid "Add to Friends"
 msgstr ""
 
 #: .\templates\__translations__.html:253
-msgctxt "female"
-msgid "Send"
-msgstr ""
-
-#: .\templates\__translations__.html:254
-msgctxt "male"
-msgid "Send"
+msgctxt "other"
+msgid "Add to Friends"
 msgstr ""
 
 #: .\templates\__translations__.html:255
-msgctxt "other"
-msgid "Send"
+msgctxt "female"
+msgid "Report "
+msgstr ""
+
+#: .\templates\__translations__.html:256
+msgctxt "male"
+msgid "Report "
 msgstr ""
 
 #: .\templates\__translations__.html:257
-msgctxt "female"
-msgid "Add to Friends"
-msgstr ""
-
-#: .\templates\__translations__.html:258
-msgctxt "male"
-msgid "Add to Friends"
+msgctxt "other"
+msgid "Report "
 msgstr ""
 
 #: .\templates\__translations__.html:259
-msgctxt "other"
-msgid "Add to Friends"
+msgctxt "female"
+msgid "Report this photo"
+msgstr ""
+
+#: .\templates\__translations__.html:260
+msgctxt "male"
+msgid "Report this photo"
 msgstr ""
 
 #: .\templates\__translations__.html:261
-msgctxt "female"
-msgid "Report "
-msgstr ""
-
-#: .\templates\__translations__.html:262
-msgctxt "male"
-msgid "Report "
+msgctxt "other"
+msgid "Report this photo"
 msgstr ""
 
 #: .\templates\__translations__.html:263
-msgctxt "other"
-msgid "Report "
+msgctxt "female"
+msgid "Report a User"
+msgstr ""
+
+#: .\templates\__translations__.html:264
+msgctxt "male"
+msgid "Report a User"
 msgstr ""
 
 #: .\templates\__translations__.html:265
-msgctxt "female"
-msgid "Report this photo"
-msgstr ""
-
-#: .\templates\__translations__.html:266
-msgctxt "male"
-msgid "Report this photo"
+msgctxt "other"
+msgid "Report a User"
 msgstr ""
 
 #: .\templates\__translations__.html:267
-msgctxt "other"
-msgid "Report this photo"
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr ""
+
+#: .\templates\__translations__.html:268
+msgctxt "male"
+msgid "Deactivate Account"
 msgstr ""
 
 #: .\templates\__translations__.html:269
-msgctxt "female"
-msgid "Report a User"
-msgstr ""
-
-#: .\templates\__translations__.html:270
-msgctxt "male"
-msgid "Report a User"
+msgctxt "other"
+msgid "Deactivate Account"
 msgstr ""
 
 #: .\templates\__translations__.html:271
-msgctxt "other"
-msgid "Report a User"
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"reactivate it any time."
+msgstr ""
+
+#: .\templates\__translations__.html:272
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"reactivate it any time."
 msgstr ""
 
 #: .\templates\__translations__.html:273
-msgctxt "female"
-msgid "Deactivate Account"
-msgstr ""
-
-#: .\templates\__translations__.html:274
-msgctxt "male"
-msgid "Deactivate Account"
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"reactivate it any time."
 msgstr ""
 
 #: .\templates\__translations__.html:275
-msgctxt "other"
-msgid "Deactivate Account"
+msgctxt "female"
+msgid ""
+"Your {} account has been deactivated. You can reactivate it any time. Your "
+"Speedy Net account remains active."
+msgstr ""
+
+#: .\templates\__translations__.html:276
+msgctxt "male"
+msgid ""
+"Your {} account has been deactivated. You can reactivate it any time. Your "
+"Speedy Net account remains active."
 msgstr ""
 
 #: .\templates\__translations__.html:277
-msgctxt "female"
+msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate it any time."
-msgstr ""
-
-#: .\templates\__translations__.html:278
-msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate it any time."
+"Your {} account has been deactivated. You can reactivate it any time. Your "
+"Speedy Net account remains active."
 msgstr ""
 
 #: .\templates\__translations__.html:279
-msgctxt "other"
-msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate it any time."
+msgctxt "female"
+msgid "Activate your {} account"
+msgstr ""
+
+#: .\templates\__translations__.html:280
+msgctxt "male"
+msgid "Activate your {} account"
 msgstr ""
 
 #: .\templates\__translations__.html:281
-msgctxt "female"
-msgid ""
-"Your {} account has been deactivated. You can reactivate it any time. Your "
-"Speedy Net account remains active."
-msgstr ""
-
-#: .\templates\__translations__.html:282
-msgctxt "male"
-msgid ""
-"Your {} account has been deactivated. You can reactivate it any time. Your "
-"Speedy Net account remains active."
+msgctxt "other"
+msgid "Activate your {} account"
 msgstr ""
 
 #: .\templates\__translations__.html:283
-msgctxt "other"
-msgid ""
-"Your {} account has been deactivated. You can reactivate it any time. Your "
-"Speedy Net account remains active."
+msgctxt "female"
+msgid "Deactivate your {} account"
+msgstr ""
+
+#: .\templates\__translations__.html:284
+msgctxt "male"
+msgid "Deactivate your {} account"
 msgstr ""
 
 #: .\templates\__translations__.html:285
-msgctxt "female"
-msgid "Activate your {} account"
-msgstr ""
-
-#: .\templates\__translations__.html:286
-msgctxt "male"
-msgid "Activate your {} account"
+msgctxt "other"
+msgid "Deactivate your {} account"
 msgstr ""
 
 #: .\templates\__translations__.html:287
-msgctxt "other"
-msgid "Activate your {} account"
+msgctxt "female"
+msgid "Welcome to {}!"
+msgstr ""
+
+#: .\templates\__translations__.html:288
+msgctxt "male"
+msgid "Welcome to {}!"
 msgstr ""
 
 #: .\templates\__translations__.html:289
-msgctxt "female"
-msgid "Deactivate your {} account"
-msgstr ""
-
-#: .\templates\__translations__.html:290
-msgctxt "male"
-msgid "Deactivate your {} account"
+msgctxt "other"
+msgid "Welcome to {}!"
 msgstr ""
 
 #: .\templates\__translations__.html:291
-msgctxt "other"
-msgid "Deactivate your {} account"
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr ""
+
+#: .\templates\__translations__.html:292
+msgctxt "male"
+msgid "Mark All as Read"
 msgstr ""
 
 #: .\templates\__translations__.html:293
-msgctxt "female"
-msgid "Welcome to {}!"
-msgstr ""
-
-#: .\templates\__translations__.html:294
-msgctxt "male"
-msgid "Welcome to {}!"
+msgctxt "other"
+msgid "Mark All as Read"
 msgstr ""
 
 #: .\templates\__translations__.html:295
-msgctxt "other"
-msgid "Welcome to {}!"
+msgctxt "female"
+msgid "Remove"
+msgstr ""
+
+#: .\templates\__translations__.html:296
+msgctxt "male"
+msgid "Remove"
 msgstr ""
 
 #: .\templates\__translations__.html:297
-msgctxt "female"
-msgid "Mark All as Read"
-msgstr ""
-
-#: .\templates\__translations__.html:298
-msgctxt "male"
-msgid "Mark All as Read"
+msgctxt "other"
+msgid "Remove"
 msgstr ""
 
 #: .\templates\__translations__.html:299
-msgctxt "other"
-msgid "Mark All as Read"
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr ""
+
+#: .\templates\__translations__.html:300
+msgctxt "male"
+msgid "Are you sure you want to block "
 msgstr ""
 
 #: .\templates\__translations__.html:301
-msgctxt "female"
-msgid "Remove"
-msgstr ""
-
-#: .\templates\__translations__.html:302
-msgctxt "male"
-msgid "Remove"
+msgctxt "other"
+msgid "Are you sure you want to block "
 msgstr ""
 
 #: .\templates\__translations__.html:303
-msgctxt "other"
-msgid "Remove"
+msgctxt "female"
+msgid "You:"
+msgstr ""
+
+#: .\templates\__translations__.html:304
+msgctxt "male"
+msgid "You:"
 msgstr ""
 
 #: .\templates\__translations__.html:305
-msgctxt "female"
-msgid "Are you sure you want to block "
-msgstr ""
-
-#: .\templates\__translations__.html:306
-msgctxt "male"
-msgid "Are you sure you want to block "
-msgstr ""
-
-#: .\templates\__translations__.html:307
-msgctxt "other"
-msgid "Are you sure you want to block "
-msgstr ""
-
-#: .\templates\__translations__.html:309
-msgctxt "female"
-msgid "You:"
-msgstr ""
-
-#: .\templates\__translations__.html:310
-msgctxt "male"
-msgid "You:"
-msgstr ""
-
-#: .\templates\__translations__.html:311
 msgctxt "other"
 msgid "You:"
 msgstr ""
