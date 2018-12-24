@@ -85,26 +85,26 @@ class SlugMaxLengthValidator(MaxLengthValidator):
 def get_username_validators(min_username_length, max_username_length, allow_letters_after_digits):
     return [
         generate_regex_validator(allow_dashes=False, allow_letters_after_digits=allow_letters_after_digits),
-        reserved_username_validator,
         UsernameMinLengthValidator(limit_value=min_username_length),
         UsernameMaxLengthValidator(limit_value=max_username_length),
         SlugMinLengthValidator(limit_value=min_username_length),
         SlugMaxLengthValidator(limit_value=max_username_length),
         MinLengthValidator(limit_value=min_username_length),
         MaxLengthValidator(limit_value=max_username_length),
+        reserved_username_validator,
     ]
 
 
 def get_slug_validators(min_username_length, max_username_length, min_slug_length, max_slug_length, allow_letters_after_digits):
     return [
         generate_regex_validator(allow_dashes=True, allow_letters_after_digits=allow_letters_after_digits),
-        reserved_username_validator,
         UsernameMinLengthValidator(limit_value=min_username_length),
         UsernameMaxLengthValidator(limit_value=max_username_length),
         SlugMinLengthValidator(limit_value=min_slug_length),
         SlugMaxLengthValidator(limit_value=max_slug_length),
         MinLengthValidator(limit_value=min_slug_length),
         MaxLengthValidator(limit_value=max_slug_length),
+        reserved_username_validator,
     ]
 
 
