@@ -9,6 +9,7 @@ _("email address")
 _("Email address:")
 _("Email")
 _("Value must be valid JSON.")
+_("Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.")
 
 
 ngettext_lazy(

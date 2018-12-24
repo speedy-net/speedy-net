@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-24 19:40+0200\n"
+"POT-Creation-Date: 2018-12-24 20:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -348,7 +348,14 @@ msgstr ""
 msgid "Value must be valid JSON."
 msgstr ""
 
-#: .\base\__translations__.py:15
+#: .\base\__translations__.py:12
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+
+#: .\base\__translations__.py:16
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
