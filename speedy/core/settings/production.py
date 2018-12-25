@@ -1,11 +1,5 @@
 from .base_site import *
-
-
-def activate_production(settings):
-    settings.update({
-        'DEFAULT_FROM_EMAIL': 'webmaster@speedy.net',
-        'DEBUG': False,
-    })
+from speedy.core.settings.production_utils import activate_production
 
 activate_production(settings=globals())
 
