@@ -6,7 +6,7 @@ from django.views import generic
 from django.utils.translation import gettext_lazy as _
 from rules.contrib.views import LoginRequiredMixin
 
-from ..accounts.models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
 
 log = logging.getLogger(__name__)
@@ -18,10 +18,10 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('matches:list')
 
     def get_matches(self):
-        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.profile)
+        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
 
     def get_object(self, queryset=None):
-        return self.request.user.profile
+        return self.request.user.speedy_match_profile
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -37,7 +37,7 @@ class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('matches:list')
 
     def get_object(self, queryset=None):
-        return self.request.user.profile
+        return self.request.user.speedy_match_profile
 
     def form_valid(self, form):
         response = super().form_valid(form=form)
@@ -51,7 +51,7 @@ class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('matches:list')
 
     def get_object(self, queryset=None):
-        return self.request.user.profile
+        return self.request.user.speedy_match_profile
 
     def form_valid(self, form):
         response = super().form_valid(form=form)

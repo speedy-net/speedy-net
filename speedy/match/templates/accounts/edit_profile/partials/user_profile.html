@@ -13,19 +13,19 @@
         <span>{{ user.get_age }}</span>
     </div>
     <div class="user-profile-additional-info">
-            {% if user.profile.city %}
-                 <span>{{ user.profile.city }}</span>
+            {% if user.speedy_match_profile.city %}
+                 <span>{{ user.speedy_match_profile.city }}</span>
             {% endif %}
-        {% if user.profile.height %}
-            , <span>{{ user.profile.height }} {% trans 'cm' %}</span>
+        {% if user.speedy_match_profile.height %}
+            , <span>{{ user.speedy_match_profile.height }} {% trans 'cm' %}</span>
         {% endif %}
     </div>
     <div class="user-profile-more-info">
-        {% if user.profile.children %}
-            <span>{{ user.profile.children }}</span>
+        {% if user.speedy_match_profile.children %}
+            <span>{{ user.speedy_match_profile.children }}</span>
         {% endif %}
-        {% if user.profile.more_children %}
-            , <span>{{ user.profile.more_children }}</span>
+        {% if user.speedy_match_profile.more_children %}
+            , <span>{{ user.speedy_match_profile.more_children }}</span>
         {% endif %}
         {% if user.get_diet %}
             , <span>{{ user.get_diet }}</span>

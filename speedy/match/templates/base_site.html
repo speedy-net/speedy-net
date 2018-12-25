@@ -48,7 +48,7 @@
 {% block navbar_left_menu %}
     {% block user_menu %}
         {{ block.super }}
-        {% if request.user.profile.is_active %}
+        {% if request.user.speedy_match_profile.is_active %}
             <li class="nav-item">
                 <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
                     <i class="fa fa-fw fa-heart"></i>

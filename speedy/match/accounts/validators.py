@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.accounts.models import User
-from .models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
 def height_is_valid(height):
