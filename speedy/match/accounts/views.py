@@ -46,15 +46,15 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         try:
             if (not ('step' in kwargs)):
                 log.debug("dispatch: 'step' is missing from kwargs, adding it")
-                log.debug("self.request.user.profile.activation_step: %d", self.request.user.profile.activation_step)
-                kwargs['step'] = self.request.user.profile.activation_step
+                log.debug("self.request.user.speedy_match_profile.activation_step: %d", self.request.user.speedy_match_profile.activation_step)
+                kwargs['step'] = self.request.user.speedy_match_profile.activation_step
 
             self.step = int(kwargs['step'])
             log.debug("dispatch: self.step: %i" , self.step)
         except (ValueError):
             log.debug("dispatch: kwargs['step']: %s, is not a number")
-            log.debug("dispatch: self.request.user.profile.activation_step: %i" , self.request.user.profile.activation_step)
-            return redirect('accounts:activate', step=self.request.user.profile.activation_step)
+            log.debug("dispatch: self.request.user.speedy_match_profile.activation_step: %i" , self.request.user.speedy_match_profile.activation_step)
+            return redirect('accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
         return super().dispatch(request=request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -71,8 +71,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             return redirect('matches:list')
         log.debug('get: did not get into "if (self.step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
         # else:
-        #     step, errors = self.request.user.profile.validate_profile_and_activate()
-        #     if (self.request.user.profile.activation_step == 0) and (
+        #     step, errors = self.request.user.speedy_match_profile.validate_profile_and_activate()
+        #     if (self.request.user.speedy_match_profile.activation_step == 0) and (
         #         step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
         #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(request=self.request, *args, **kwargs)
@@ -94,7 +94,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         site = Site.objects.get_current()
         if (self.object.is_active):
             messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(_(site.name)))
-        if (self.request.user.profile.is_active):
+        if (self.request.user.speedy_match_profile.is_active):
             return redirect(to=reverse_lazy('matches:list'))
         else:
             return redirect(to=self.get_success_url())

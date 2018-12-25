@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
 @register(SpeedyMatchSiteProfile)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SiteProfile as SpeedyNetSiteProfile
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 admin.site.register(SpeedyNetSiteProfile)
 

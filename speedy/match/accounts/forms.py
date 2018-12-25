@@ -12,7 +12,7 @@ from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
 
-from .models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import validators, utils
 
 
