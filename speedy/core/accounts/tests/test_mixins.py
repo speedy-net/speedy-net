@@ -6,6 +6,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
     ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]
 
     _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
+    _password_errors_dict_field_names = ['new_password1', 'new_password2']
 
     def _assert_model_is_entity_or_user(self, model):
         self.assertIn(member=model, container=[Entity, User])
@@ -95,10 +96,10 @@ class SpeedyCoreAccountsLanguageMixin(object):
         return {'password': [self._invalid_password_error_message]}
 
     def _password_too_short_errors_dict(self):
-        return {'new_password1': [self._password_too_short_error_message]}
+        return {field_name: [self._password_too_short_error_message] for field_name in self._password_errors_dict_field_names}
 
     def _password_too_long_errors_dict(self):
-        return {'new_password1': [self._password_too_long_error_message]}
+        return {field_name: [self._password_too_long_error_message] for field_name in self._password_errors_dict_field_names}
 
     def _your_old_password_was_entered_incorrectly_errors_dict(self):
         return {'old_password': [self._your_old_password_was_entered_incorrectly_error_message]}

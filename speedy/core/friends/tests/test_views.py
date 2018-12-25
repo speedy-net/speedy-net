@@ -2,9 +2,9 @@ from django.conf import settings
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
+import speedy.core.settings.tests as tests_settings
 from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
-# import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
 # OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 4 # ~~~~ TODO: remove this line!
 
 
@@ -149,7 +149,7 @@ class UserFriendRequestViewTestCase(TestCase):
         self.assertListEqual(list1=["Users cannot be friends with themselves."], list2=list(map(str, r.context['messages'])))
         self.assertListEqual(list1=["Users cannot be friends with themselves"], list2=list(map(str, r.context['messages'])))#### # ~~~~ TODO: remove this line!
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_can_send_friend_request_if_not_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -165,7 +165,7 @@ class UserFriendRequestViewTestCase(TestCase):
         r = self.client.get(path=self.other_user.get_absolute_url())
         self.assertListEqual(list1=['Friend request sent.'], list2=list(map(str, r.context['messages'])))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_cannot_send_friend_request_if_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
@@ -235,7 +235,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -249,7 +249,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
@@ -263,7 +263,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         self.assertListEqual(list1=["You already have 4 friends. You can't have more than 4 friends on Speedy Net. Please remove friends before you proceed."], list2=list(map(str, r.context['messages'])))
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -277,7 +277,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=['Friend request accepted.'], list2=list(map(str, r.context['messages'])))
 
-    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED)
+    @override_settings(MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
         self.assertEqual(first=settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):

@@ -4,6 +4,7 @@ from django.conf import settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
 
+import speedy.core.settings.tests as tests_settings
 from speedy.core.base.test import TestCase, only_on_sites_with_login
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
@@ -580,7 +581,7 @@ class UserTestCaseMixin(object):
 
     def test_valid_date_of_birth_list_ok(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
-        for date_of_birth in settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
+        for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
             print("test_valid_date_of_birth_list_ok", date_of_birth)
             data = self.data.copy()
             data['slug'] = 'user-{}'.format(date_of_birth)
@@ -599,14 +600,14 @@ class UserTestCaseMixin(object):
                 if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)
             self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
-        self.assertEqual(first=Entity.objects.count(), second=len(settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
-        self.assertEqual(first=User.objects.count(), second=len(settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        self.assertEqual(first=Entity.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        self.assertEqual(first=User.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_invalid_date_of_birth_list_fail(self):
         # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
-        for date_of_birth in settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
+        for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
             print("test_invalid_date_of_birth_list_fail", date_of_birth)
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
