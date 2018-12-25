@@ -6,8 +6,8 @@ LOGIN_ENABLED = True
 
 INSTALLED_APPS += [
     'speedy.core.accounts',
-    'speedy.core.im',
     'speedy.core.profiles',
+    'speedy.core.im',
     'speedy.core.friends',
     'speedy.core.blocks',
     'speedy.core.uploads',
