@@ -2,7 +2,7 @@ import inspect
 
 from django.conf import settings
 from django.core.management import call_command
-from django.test import override_settings, TestCase as DjangoTestCase
+from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 
