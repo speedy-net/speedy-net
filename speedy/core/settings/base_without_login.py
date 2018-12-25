@@ -6,8 +6,8 @@ LOGIN_ENABLED = False
 
 INSTALLED_APPS += [
     'speedy.core.accounts', # ~~~~ TODO: remove this line!
-    'speedy.core.im', # ~~~~ TODO: remove this line!
     # 'speedy.core.profiles', # ~~~~ TODO: remove this line!
+    'speedy.core.im', # ~~~~ TODO: remove this line!
     # 'speedy.core.friends', # ~~~~ TODO: remove this line!
     'speedy.core.blocks', # ~~~~ TODO: remove this line!
     'speedy.core.uploads', # ~~~~ TODO: remove this line!
