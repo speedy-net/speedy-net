@@ -291,8 +291,20 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     @property
     def profile(self):
         if (not (hasattr(self, '_profile'))):
-            self._profile = self.get_profile()
+            self.refresh_all_profiles()
         return self._profile
+
+    @property
+    def speedy_net_profile(self):
+        if (not (hasattr(self, '_speedy_net_profile'))):
+            self.refresh_all_profiles()
+        return self._speedy_net_profile
+
+    @property
+    def speedy_match_profile(self):
+        if (not (hasattr(self, '_speedy_match_profile'))):
+            self.refresh_all_profiles()
+        return self._speedy_match_profile
 
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
         if (model is None):
@@ -302,11 +314,17 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             profile = model.objects.get_or_create(user=self)[0]
         return profile
 
+    def refresh_all_profiles(self):
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+        self._profile = self.get_profile()
+        self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
+        self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
+
     def save_user_and_profile(self):
         with transaction.atomic():
             self.save()
             self.profile.save()
-        # self._profile = self.get_profile() # ~~~~ TODO: remove this line!
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
@@ -403,7 +421,7 @@ class SiteProfileBase(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         return_value = super().save(*args, **kwargs)
-        self.user._profile = self.user.get_profile()
+        self.user.refresh_all_profiles()
         return return_value
 
     def update_last_visit(self):
