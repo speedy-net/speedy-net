@@ -313,6 +313,14 @@ class UserTestCaseMixin(object):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 3 + 1)))
 
+    def test_gender_strings(self):
+        self.assertEqual(first=User.GENDER_FEMALE_STRING, second='female')
+        self.assertEqual(first=User.GENDER_MALE_STRING, second='male')
+        self.assertEqual(first=User.GENDER_OTHER_STRING, second='other')
+        self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES])
+        self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDER_FEMALE_STRING, User.GENDER_MALE_STRING, User.GENDER_OTHER_STRING])
+        self.assertListEqual(list1=User.ALL_GENDERS, list2=['female', 'male', 'other'])
+
     def test_diet_valid_values(self):
         self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(1, 3 + 1)))

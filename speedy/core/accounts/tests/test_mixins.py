@@ -3,10 +3,9 @@ from speedy.core.accounts.models import Entity, User
 
 # class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
 class SpeedyCoreAccountsLanguageMixin(object):
-    ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]
-
     _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
-    _password_errors_dict_field_names = ['new_password1', 'new_password2']
+    _first_password_field_names = ['new_password1']
+    _both_password_field_names = ['new_password1', 'new_password2']
 
     def _assert_model_is_entity_or_user(self, model):
         self.assertIn(member=model, container=[Entity, User])
@@ -95,11 +94,11 @@ class SpeedyCoreAccountsLanguageMixin(object):
     def _invalid_password_errors_dict(self):
         return {'password': [self._invalid_password_error_message]}
 
-    def _password_too_short_errors_dict(self):
-        return {field_name: [self._password_too_short_error_message] for field_name in self._password_errors_dict_field_names}
+    def _password_too_short_errors_dict(self, field_names):
+        return {field_name: [self._password_too_short_error_message] for field_name in field_names}
 
-    def _password_too_long_errors_dict(self):
-        return {field_name: [self._password_too_long_error_message] for field_name in self._password_errors_dict_field_names}
+    def _password_too_long_errors_dict(self, field_names):
+        return {field_name: [self._password_too_long_error_message] for field_name in field_names}
 
     def _your_old_password_was_entered_incorrectly_errors_dict(self):
         return {'old_password': [self._your_old_password_was_entered_incorrectly_error_message]}
@@ -390,11 +389,11 @@ class SpeedyCoreAccountsLanguageMixin(object):
         _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
-            'en': {gender: "You can't change your username." for gender in self.ALL_GENDERS},
+            'en': {gender: "You can't change your username." for gender in User.ALL_GENDERS},
             'he': {
-                'female': "לא ניתן לשנות שם משתמשת.",
-                'male': "לא ניתן לשנות שם משתמש.",
-                'other': "לא ניתן לשנות שם משתמש/ת.",
+                User.GENDER_FEMALE_STRING: "לא ניתן לשנות שם משתמשת.",
+                User.GENDER_MALE_STRING: "לא ניתן לשנות שם משתמש.",
+                User.GENDER_OTHER_STRING: "לא ניתן לשנות שם משתמש/ת.",
             },
         }
 
@@ -429,9 +428,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
 
         self._you_cant_change_your_username_error_message_dict_by_gender = _you_cant_change_your_username_error_message_dict_by_gender[self.language_code]
 
-        self.assertListEqual(list1=self.ALL_GENDERS, list2=['female', 'male', 'other'])
-
-        self.assertSetEqual(set1=set(self._you_cant_change_your_username_error_message_dict_by_gender.keys()), set2=set(self.ALL_GENDERS))
+        self.assertSetEqual(set1=set(self._you_cant_change_your_username_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
         self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys))
         self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys(), list2=[field_name for field_name in self._registration_form_all_the_required_fields_keys() if (not (field_name in ['email', 'new_password1']))])

@@ -155,13 +155,17 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     GENDER_OTHER = 3
     GENDER_MAX_VALUE_PLUS_ONE = 4
 
+    GENDER_FEMALE_STRING = 'female'
+    GENDER_MALE_STRING = 'male'
+    GENDER_OTHER_STRING = 'other'
+
     GENDER_CHOICES = (
         (GENDER_FEMALE, _("Female")),
         (GENDER_MALE, _("Male")),
         (GENDER_OTHER, _("Other")),
     )
     GENDER_VALID_VALUES = [choice[0] for choice in GENDER_CHOICES]
-    GENDERS_DICT = {GENDER_FEMALE: 'female', GENDER_MALE: 'male', GENDER_OTHER: 'other'}
+    GENDERS_DICT = {GENDER_FEMALE: GENDER_FEMALE_STRING, GENDER_MALE: GENDER_MALE_STRING, GENDER_OTHER: GENDER_OTHER_STRING}
 
     DIET_UNKNOWN = 0
     DIET_VEGAN = 1
@@ -315,6 +319,9 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     def get_diet_choices(self):
         return self.__class__.diet_choices(gender=self.get_gender())
+
+
+User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
 # class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
