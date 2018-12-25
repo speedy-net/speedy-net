@@ -1,4 +1,4 @@
-from speedy.core.accounts.forms import ModelFormWithDefaults
+from speedy.core.base.forms import ModelFormWithDefaults
 from .models import File, Image
 
 

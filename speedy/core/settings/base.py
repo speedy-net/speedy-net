@@ -57,13 +57,13 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'speedy.core.base',
-    'speedy.core.accounts',
-    'speedy.core.im',
-    'speedy.core.profiles',
-    'speedy.core.friends',
-    'speedy.core.blocks',
-    'speedy.core.uploads',
-    'speedy.core.feedback',
+    # 'speedy.core.accounts',
+    # 'speedy.core.im',
+    # 'speedy.core.profiles',
+    # 'speedy.core.friends',
+    # 'speedy.core.blocks',
+    # 'speedy.core.uploads',
+    # 'speedy.core.feedback',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'speedy.core.base.middleware.LocaleDomainMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'speedy.core.accounts.middleware.SiteProfileMiddleware',
+    # 'speedy.core.accounts.middleware.SiteProfileMiddleware',
 ]
 
 TEMPLATES = [
@@ -107,11 +107,11 @@ TEMPLATES = [
     },
 ]
 
-USER_PROFILE_WIDGETS = [
-    'speedy.core.profiles.widgets.UserPhotoWidget',
-    'speedy.core.profiles.widgets.UserInfoWidget',
-]
-
+# USER_PROFILE_WIDGETS = [
+#     'speedy.core.profiles.widgets.UserPhotoWidget',
+#     'speedy.core.profiles.widgets.UserInfoWidget',
+# ]
+#
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CRISPY_FAIL_SILENTLY = False
@@ -130,20 +130,20 @@ CACHES = {
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 
-MIN_PASSWORD_LENGTH = 8
-MAX_PASSWORD_LENGTH = 120
-
-PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'speedy.core.accounts.validators.PasswordMinLengthValidator',
-    },
-    {
-        'NAME': 'speedy.core.accounts.validators.PasswordMaxLengthValidator',
-    },
-]
-
-AUTH_PASSWORD_VALIDATORS = PASSWORD_VALIDATORS
-
+# MIN_PASSWORD_LENGTH = 8
+# MAX_PASSWORD_LENGTH = 120
+#
+# PASSWORD_VALIDATORS = [
+#     {
+#         'NAME': 'speedy.core.accounts.validators.PasswordMinLengthValidator',
+#     },
+#     {
+#         'NAME': 'speedy.core.accounts.validators.PasswordMaxLengthValidator',
+#     },
+# ]
+#
+# AUTH_PASSWORD_VALIDATORS = PASSWORD_VALIDATORS
+#
 # ~~~~ TODO: remove
 # AUTH_PASSWORD_VALIDATORS = []
 #
@@ -171,42 +171,42 @@ AUTHENTICATION_BACKENDS = (
 
 SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 
-AUTH_USER_MODEL = 'accounts.User'
-
-LOGIN_URL = '/login/'
-
-LOGIN_REDIRECT_URL = '/me/'
-
+# AUTH_USER_MODEL = 'accounts.User'
+#
+# LOGIN_URL = '/login/'
+#
+# LOGIN_REDIRECT_URL = '/me/'
+#
 XD_AUTH_SITES = [
     SPEEDY_NET_SITE_ID,
     SPEEDY_MATCH_SITE_ID,
 ]
 
-UNAVAILABLE_USERNAMES = [
-    'admin', 'root', 'webmaster', 'uri', 'speedy',
-    'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
-    'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
-    'welcome', 'setsession', 'static', 'images', 'icons', 'css', 'js',
-    'javascript', 'python',
-    'speedynet', 'speedymatch', 'speedycomposer', 'speedymail', 'speedymailsoftware',
-    'postmaster', 'mail', 'domain', 'locale',
-]
-
-DONT_REDIRECT_INACTIVE_USER = [
-    '/logout/',
-    '/welcome/',
-    '/registration-step-',
-    '/about/',
-    '/privacy/',
-    '/terms/',
-    '/contact/',
-    '/edit-profile/',
-    '/admin/',
-    '/media/',
-    '/static/',
-    '/set-session/',
-]
-
+# UNAVAILABLE_USERNAMES = [
+#     'admin', 'root', 'webmaster', 'uri', 'speedy',
+#     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',
+#     'friends', 'messages', 'feedback', 'contact', 'about', 'i18n',
+#     'welcome', 'setsession', 'static', 'images', 'icons', 'css', 'js',
+#     'javascript', 'python',
+#     'speedynet', 'speedymatch', 'speedycomposer', 'speedymail', 'speedymailsoftware',
+#     'postmaster', 'mail', 'domain', 'locale',
+# ]
+#
+# DONT_REDIRECT_INACTIVE_USER = [
+#     '/logout/',
+#     '/welcome/',
+#     '/registration-step-',
+#     '/about/',
+#     '/privacy/',
+#     '/terms/',
+#     '/contact/',
+#     '/edit-profile/',
+#     '/admin/',
+#     '/media/',
+#     '/static/',
+#     '/set-session/',
+# ]
+#
 ACTIVATE_PROFILE_AFTER_REGISTRATION = True
 
 # Internationalization
@@ -270,8 +270,8 @@ FIXTURE_DIRS = [
     str(ROOT_DIR / 'speedy/core/fixtures')
 ]
 
-SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
-
+# SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
+#
 MODELTRANSLATION_ENABLE_FALLBACKS = False
 
 

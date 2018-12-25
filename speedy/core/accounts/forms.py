@@ -11,6 +11,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
 
+from speedy.core.base.forms import ModelFormWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
@@ -24,20 +25,6 @@ DATE_FIELD_FORMATS = [
 ]
 
 DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
-
-
-class ModelFormWithDefaults(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        self.defaults = kwargs.pop('defaults', {})
-        super().__init__(*args, **kwargs)
-
-    def save(self, commit=True):
-        instance = super().save(commit=False)
-        for field, value in self.defaults.items():
-            setattr(instance, field, value)
-        if (commit):
-            instance.save()
-        return instance
 
 
 class CleanEmailMixin(object):

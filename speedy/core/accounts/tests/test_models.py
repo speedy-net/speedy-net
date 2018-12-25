@@ -277,12 +277,14 @@ class EntityTestCaseMixin(object):
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
 
 
+@only_on_sites_with_login
 class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
 
 
+@only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
 class EntityHebrewTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
     def validate_all_values(self):
