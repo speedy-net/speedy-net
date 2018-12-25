@@ -325,6 +325,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         with transaction.atomic():
             self.save()
             self.profile.save()
+            self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
+            self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
