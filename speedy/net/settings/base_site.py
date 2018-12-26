@@ -24,6 +24,10 @@ INSTALLED_APPS += [
 
 AUTH_SITE_PROFILE_MODEL = 'net_accounts.SiteProfile'
 
+ACTIVATE_PROFILE_AFTER_REGISTRATION = True #### ~~~~ TODO: maybe user has to confirm email before activation?
+
+SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
+
 USER_PROFILE_WIDGETS += [
     'speedy.core.friends.widgets.UserFriendsWidget',
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',

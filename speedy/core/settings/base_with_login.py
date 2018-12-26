@@ -83,7 +83,3 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/set-session/',
 ]
 
-ACTIVATE_PROFILE_AFTER_REGISTRATION = True
-
-SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
-
