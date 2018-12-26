@@ -99,6 +99,7 @@ class ActiveUserFactory(DefaultUserFactory):
         site = Site.objects.get_current()
         if (site.id == settings.SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
+            # ~~~~ TODO: maybe change ".profile" to ".speedy_match_profile"?
             from speedy.core.uploads.tests.test_factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self.profile.profile_description = "Hi!"

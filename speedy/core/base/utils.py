@@ -99,4 +99,3 @@ def conditional_method_or_class(conditional_function): # conditional_test / cond
     return wrapper
 
 
-only_if_login_is_enabled = lambda site_id: conditional_method_or_class(conditional_function=lambda: (settings.LOGIN_ENABLED))
