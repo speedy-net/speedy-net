@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Speedy Net",
-      "domain": "speedy.net.localhost:8000"
+      "domain": "speedy.net.localhost:8010"
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name": "Speedy Match",
-      "domain": "speedy.match.localhost:9000"
+      "domain": "speedy.match.localhost:8020"
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "name": "Speedy Composer",
-      "domain": "speedy.composer.localhost:10000"
+      "domain": "speedy.composer.localhost:8030"
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "name": "Speedy Mail Software",
-      "domain": "speedy.mail.software.localhost:11000"
+      "domain": "speedy.mail.software.localhost:8040"
     }
   }
 ]

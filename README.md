@@ -82,12 +82,12 @@ Then you can run migrations:
 To run Speedy Net server:
 
     cd speedy/net
-    ./manage.py runserver
+    ./manage.py runserver 8010
 
 To run Speedy Match server:
 
     cd speedy/match
-    ./manage.py runserver 9000
+    ./manage.py runserver 8020
 
 To run Speedy Net tests:
 
@@ -103,10 +103,14 @@ To run tests with deprecation warnings (in any directory):
 
     python -W error::DeprecationWarning manage.py test
 
-You need to run both Net and Match in parallel in separate console tabs, with Net running on the default port (8000) and Match running on port 9000.
-Use the URLs in the django_site db table to access the websites:
-speedy.net.localhost:8000
-speedy.match.localhost:9000
+You need to run both Speedy Net and Speedy Match in parallel in separate console tabs.
+
+Use the following URLs to access the websites:
+
+    http://www.speedy.net.localhost:8010/
+    http://www.speedy.match.localhost:8020/
+    http://www.speedy.composer.localhost:8030/
+    http://www.speedy.mail.software.localhost:8040/
 
 ### Build frontend
 
