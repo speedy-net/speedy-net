@@ -1,13 +1,14 @@
 from django.contrib.auth.models import AnonymousUser
 
-from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
 
 
 @only_on_speedy_match
-class LikeTestCase(TestCase):
+class LikeTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -33,7 +34,7 @@ class LikeTestCase(TestCase):
 
 
 @only_on_speedy_match
-class UnlikeTestCase(TestCase):
+class UnlikeTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -55,7 +56,7 @@ class UnlikeTestCase(TestCase):
 
 
 @only_on_speedy_match
-class ViewLikesTestCase(TestCase):
+class ViewLikesTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

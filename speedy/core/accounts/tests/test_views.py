@@ -5,7 +5,8 @@ from django.test import override_settings
 from django.core import mail
 
 import speedy.core.settings.tests as tests_settings
-from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
@@ -31,7 +32,7 @@ class RedirectMeMixin(object):
 
 
 @only_on_sites_with_login
-class IndexViewTestCase(TestCase):
+class IndexViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -47,7 +48,7 @@ class IndexViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class MeViewTestCase(RedirectMeMixin, TestCase):
+class MeViewTestCase(RedirectMeMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory(slug='markmark')
@@ -67,7 +68,7 @@ class MeViewTestCase(RedirectMeMixin, TestCase):
 
 
 @only_on_sites_with_login
-class LoginTestCase(RedirectMeMixin, TestCase):
+class LoginTestCase(RedirectMeMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -386,7 +387,7 @@ class RegistrationViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -404,7 +405,7 @@ class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -557,7 +558,7 @@ class LoginViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -565,14 +566,14 @@ class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCo
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class LogoutViewTestCase(TestCase):
+class LogoutViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -768,7 +769,7 @@ class EditProfileViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -786,7 +787,7 @@ class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAcc
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -803,7 +804,7 @@ class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAcco
 
 
 @only_on_sites_with_login
-class EditProfilePrivacyViewTestCase(TestCase):
+class EditProfilePrivacyViewTestCase(SiteTestCase):
     page_url = '/edit-profile/privacy/'
 
     def setup(self):
@@ -850,7 +851,7 @@ class EditProfilePrivacyViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class EditProfileNotificationsViewTestCase(TestCase):
+class EditProfileNotificationsViewTestCase(SiteTestCase):
     page_url = '/edit-profile/notifications/'
 
     def setup(self):
@@ -984,7 +985,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -992,14 +993,14 @@ class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCa
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class ActivateSiteProfileViewTestCase(TestCase):
+class ActivateSiteProfileViewTestCase(SiteTestCase):
     page_url = '/welcome/'
 
     def setup(self):
@@ -1038,7 +1039,7 @@ class ActivateSiteProfileViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class DeactivateSiteProfileViewTestCase(TestCase):
+class DeactivateSiteProfileViewTestCase(SiteTestCase):
     page_url = '/edit-profile/deactivate/'
 
     def setup(self):
@@ -1074,7 +1075,7 @@ class DeactivateSiteProfileViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class VerifyUserEmailAddressViewTestCase(TestCase):
+class VerifyUserEmailAddressViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1195,7 +1196,7 @@ class AddUserEmailAddressViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1203,14 +1204,14 @@ class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixi
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class SendConfirmationEmailViewTestCase(TestCase):
+class SendConfirmationEmailViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1248,7 +1249,7 @@ class SendConfirmationEmailViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class DeleteUserEmailAddressViewTestCase(TestCase):
+class DeleteUserEmailAddressViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1288,7 +1289,7 @@ class DeleteUserEmailAddressViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class SetPrimaryUserEmailAddressViewTestCase(TestCase):
+class SetPrimaryUserEmailAddressViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1334,7 +1335,7 @@ class SetPrimaryUserEmailAddressViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class PasswordResetViewTestCase(TestCase):
+class PasswordResetViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

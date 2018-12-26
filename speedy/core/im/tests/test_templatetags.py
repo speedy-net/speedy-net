@@ -1,6 +1,7 @@
 from time import sleep
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.im.models import Message, ReadMark
 from .test_factories import ChatFactory
@@ -8,7 +9,7 @@ from ..templatetags import im_tags
 
 
 @only_on_sites_with_login
-class GetOtherParticipantTestCase(TestCase):
+class GetOtherParticipantTestCase(SiteTestCase):
     def test_tag(self):
         user1 = ActiveUserFactory()
         user2 = ActiveUserFactory()
@@ -18,7 +19,7 @@ class GetOtherParticipantTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class AnnotateChatsWithReadMarksTestCase(TestCase):
+class AnnotateChatsWithReadMarksTestCase(SiteTestCase):
     def test_tag(self):
         user1 = ActiveUserFactory()
         chats = [
@@ -55,7 +56,7 @@ class AnnotateChatsWithReadMarksTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class AnnotateMessagesWithReadMarksTestCase(TestCase):
+class AnnotateMessagesWithReadMarksTestCase(SiteTestCase):
     def test_tag(self):
         user1 = ActiveUserFactory()
         user2 = ActiveUserFactory()
@@ -81,7 +82,7 @@ class AnnotateMessagesWithReadMarksTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class UnreadChatsCount(TestCase):
+class UnreadChatsCount(SiteTestCase):
     def test_tag(self):
         user1 = ActiveUserFactory()
         user2 = ActiveUserFactory()

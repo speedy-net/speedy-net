@@ -6,7 +6,8 @@ from django.test import override_settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
-from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.match.accounts.tests.test_mixins import SpeedyMatchAccountsLanguageMixin
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -982,7 +983,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
 
 
 @only_on_speedy_match
-class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCase):
+class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -990,14 +991,14 @@ class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin,
 
 @only_on_speedy_match
 @override_settings(LANGUAGE_CODE='he')
-class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCase):
+class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_speedy_match
-class SpeedyMatchSiteProfileMatchTestCase(TestCase):
+class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
     def get_default_user_1(self):
         user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
         user.diet = User.DIET_VEGETARIAN

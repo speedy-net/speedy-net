@@ -5,14 +5,15 @@ from django.test import override_settings
 from django.core.exceptions import ValidationError
 
 import speedy.core.settings.tests as tests_settings
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from .test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
 
-class NormalizeSlugTestCase(TestCase):
+class NormalizeSlugTestCase(SiteTestCase):
     def test_convert_to_lowercase(self):
         self.assertEqual(first=normalize_slug(slug='CamelCase'), second='camelcase')
         self.assertEqual(first=normalize_slug(slug='UPPERCASE'), second='uppercase')
@@ -40,7 +41,7 @@ class NormalizeSlugTestCase(TestCase):
         self.assertEqual(first=normalize_slug(slug='under_score_'), second='under-score')
 
 
-class NormalizeUsernameTestCase(TestCase):
+class NormalizeUsernameTestCase(SiteTestCase):
     def test_remove_dashes_dots_and_underscores(self):
         self.assertEqual(first=normalize_username(slug='this-is-a-slug'), second='thisisaslug')
         self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
@@ -278,7 +279,7 @@ class EntityTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -286,7 +287,7 @@ class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EntityHebrewTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class EntityHebrewTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
@@ -633,7 +634,7 @@ class UserTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class UserEnglishTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class UserEnglishTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -650,7 +651,7 @@ class UserEnglishTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, Te
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class UserHebrewTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class UserHebrewTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -750,7 +751,7 @@ class UserEmailAddressTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -758,7 +759,7 @@ class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class UserEmailAddressHebrewTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class UserEmailAddressHebrewTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')

@@ -4,7 +4,8 @@ from django.conf import settings
 from django.test import override_settings
 
 import speedy.core.settings.tests as tests_settings
-from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
 from speedy.core.base.utils import normalize_slug, normalize_username
@@ -319,7 +320,7 @@ class RegistrationFormTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -337,7 +338,7 @@ class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -354,7 +355,7 @@ class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SpeedyCoreAc
 
 
 @only_on_sites_with_login
-class ProfilePrivacyFormTestCase(TestCase):
+class ProfilePrivacyFormTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -366,7 +367,7 @@ class ProfilePrivacyFormTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class ProfileNotificationsFormTestCase(TestCase):
+class ProfileNotificationsFormTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -380,7 +381,7 @@ class ProfileNotificationsFormTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class PasswordResetFormTestCase(TestCase):
+class PasswordResetFormTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -433,7 +434,7 @@ class DeactivationFormTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class DeactivationFormEnglishTestCase(DeactivationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class DeactivationFormEnglishTestCase(DeactivationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -441,7 +442,7 @@ class DeactivationFormEnglishTestCase(DeactivationFormTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class DeactivationFormHebrewTestCase(DeactivationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, TestCase):
+class DeactivationFormHebrewTestCase(DeactivationFormTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')

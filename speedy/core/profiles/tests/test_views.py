@@ -1,7 +1,8 @@
 from django.test.client import RequestFactory
 from django.views import generic
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.accounts.tests.test_views import RedirectMeMixin
 from ..views import UserMixin
@@ -14,7 +15,7 @@ class UserMixinTestView(UserMixin, generic.View):
 
 @only_on_sites_with_login
 @exclude_on_speedy_match  # 404s - has to be a match
-class UserMixinTextCase(TestCase):
+class UserMixinTextCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.factory = RequestFactory()
@@ -53,7 +54,7 @@ class UserMixinTextCase(TestCase):
 
 
 @only_on_sites_with_login
-class LoggedInUserTestCase(RedirectMeMixin, TestCase):
+class LoggedInUserTestCase(RedirectMeMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.factory = RequestFactory()

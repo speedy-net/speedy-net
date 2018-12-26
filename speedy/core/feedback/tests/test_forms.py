@@ -1,11 +1,12 @@
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from ..forms import FeedbackForm
 from ..models import Feedback
 
 
 @only_on_sites_with_login
-class FeedbackFormTestCase(TestCase):
+class FeedbackFormTestCase(SiteTestCase):
     def test_feedback_form_for_visitor_displays_name_and_email(self):
         defaults = {
             'type': Feedback.TYPE_FEEDBACK,

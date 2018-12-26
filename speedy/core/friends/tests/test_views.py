@@ -3,13 +3,14 @@ from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
 import speedy.core.settings.tests as tests_settings
-from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 # OVERRIDE_MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED = 4 # ~~~~ TODO: remove this line!
 
 
 @only_on_sites_with_login
-class UserFriendListViewTestCase(TestCase):
+class UserFriendListViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -34,7 +35,7 @@ class UserFriendListViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class ReceivedFriendshipRequestsListView(TestCase):
+class ReceivedFriendshipRequestsListView(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -59,7 +60,7 @@ class ReceivedFriendshipRequestsListView(TestCase):
 
 
 @only_on_sites_with_login
-class SentFriendshipRequestsListView(TestCase):
+class SentFriendshipRequestsListView(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -84,7 +85,7 @@ class SentFriendshipRequestsListView(TestCase):
 
 
 @only_on_sites_with_login
-class UserFriendRequestViewTestCase(TestCase):
+class UserFriendRequestViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -180,7 +181,7 @@ class UserFriendRequestViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class CancelFriendRequestViewTestCase(TestCase):
+class CancelFriendRequestViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -204,7 +205,7 @@ class CancelFriendRequestViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class AcceptFriendRequestViewTestCase(TestCase):
+class AcceptFriendRequestViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -293,7 +294,7 @@ class AcceptFriendRequestViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class RejectFriendRequestViewTestCase(TestCase):
+class RejectFriendRequestViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -327,7 +328,7 @@ class RejectFriendRequestViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class RemoveFriendViewTestCase(TestCase):
+class RemoveFriendViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

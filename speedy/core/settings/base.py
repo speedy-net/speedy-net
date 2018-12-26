@@ -254,7 +254,7 @@ THUMBNAIL_DUMMY = True
 
 # Tests
 
-TEST_RUNNER = 'speedy.core.base.test.SiteDiscoverRunner'
+TEST_RUNNER = 'speedy.core.base.test.models.SiteDiscoverRunner'
 
 # ~~~~ TODO: remove
 # SITE_PROFILES = {
