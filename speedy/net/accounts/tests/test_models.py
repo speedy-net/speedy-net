@@ -1,12 +1,13 @@
 from datetime import date
 
-from speedy.core.base.test import TestCase, only_on_speedy_net
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_net
 from speedy.core.accounts.models import User
 from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory
 
 
 @only_on_speedy_net
-class SpeedyNetSiteProfileTestCase(TestCase):
+class SpeedyNetSiteProfileTestCase(SiteTestCase):
     def get_default_user_1(self):
         user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.save_user_and_profile()

@@ -1,3 +1,4 @@
+import inspect
 import re
 import random
 import string
@@ -5,6 +6,8 @@ import string
 from datetime import date
 
 from dateutil.relativedelta import relativedelta
+
+from django.conf import settings
 
 
 # ~~~~ TODO: move to settings.
@@ -75,3 +78,25 @@ def reflection_import(name):
     return klass
 
 
+def conditional_method_or_class(conditional_function): # conditional_test / conditional_tests / decorators
+    def wrapper(method_or_class):
+        if (inspect.isclass(method_or_class)):
+            # Decorate class
+            if (conditional_function()):
+                return method_or_class
+            else:
+                return
+        else:
+            # Decorate method
+            def inner(*args, **kwargs):
+                if (conditional_function()):
+                    return method_or_class(*args, **kwargs)
+                else:
+                    return
+
+            return inner
+
+    return wrapper
+
+
+only_if_login_is_enabled = lambda site_id: conditional_method_or_class(conditional_function=lambda: (settings.LOGIN_ENABLED))

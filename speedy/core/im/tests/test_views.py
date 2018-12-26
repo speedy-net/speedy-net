@@ -1,6 +1,7 @@
 from time import sleep
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.blocks.models import Block
 from .test_factories import ChatFactory
@@ -8,7 +9,7 @@ from ..models import Message, ReadMark, Chat
 
 
 @only_on_sites_with_login
-class ChatListViewTestCase(TestCase):
+class ChatListViewTestCase(SiteTestCase):
     page_url = '/messages/'
 
     def setup(self):
@@ -33,7 +34,7 @@ class ChatListViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class ChatDetailViewTestCase(TestCase):
+class ChatDetailViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user1 = ActiveUserFactory()
@@ -68,7 +69,7 @@ class ChatDetailViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class SendMessageToChatViewTestCase(TestCase):
+class SendMessageToChatViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user1 = ActiveUserFactory()
@@ -112,7 +113,7 @@ class SendMessageToChatViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class SendMessageToUserViewTestCase(TestCase):
+class SendMessageToUserViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user1 = ActiveUserFactory()
@@ -165,7 +166,7 @@ class SendMessageToUserViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class MarkChatAsReadViewTestCase(TestCase):
+class MarkChatAsReadViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user1 = ActiveUserFactory()

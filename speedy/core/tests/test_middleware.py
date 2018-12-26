@@ -1,8 +1,8 @@
-from speedy.core.base.test import TestCase
+from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.middleware import RemoveExtraSlashesMiddleware
 
 
-class RemoveExtraSlashesMiddlewareTestCase(TestCase):
+class RemoveExtraSlashesMiddlewareTestCase(SiteTestCase):
     def test_normalize_path(self):
         self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/'), second='/zzz/')
         self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/yyy/'), second='/zzz/yyy/')

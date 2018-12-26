@@ -1,11 +1,12 @@
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from .test_factories import ChatFactory
 from ..forms import MessageForm
 
 
 @only_on_sites_with_login
-class MessageFormTestCase(TestCase):
+class MessageFormTestCase(SiteTestCase):
     def test_form_to_chat_save(self):
         data = {
             'text': 'Hi!',

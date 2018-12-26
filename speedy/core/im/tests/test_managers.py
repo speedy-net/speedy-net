@@ -1,13 +1,14 @@
 from time import sleep
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from .test_factories import ChatFactory
 from ..models import Chat, Message, ReadMark
 
 
 @only_on_sites_with_login
-class ChatManagerTestCase(TestCase):
+class ChatManagerTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         ChatFactory(is_group=True)
@@ -50,7 +51,7 @@ class ChatManagerTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class MessageManagerTestCase(TestCase):
+class MessageManagerTestCase(SiteTestCase):
     def test_sending_message_creates_new_chat(self):
         user1 = ActiveUserFactory()
         user2 = ActiveUserFactory()
@@ -90,7 +91,7 @@ class MessageManagerTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class ReadMarkManagerTestCase(TestCase):
+class ReadMarkManagerTestCase(SiteTestCase):
     def test_mark(self):
         user = ActiveUserFactory()
         chat = ChatFactory(ent1=user)

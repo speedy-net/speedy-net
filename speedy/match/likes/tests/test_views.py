@@ -1,11 +1,12 @@
-from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from .test_factories import UserLikeFactory
 from ..models import UserLike
 
 
 @only_on_speedy_match
-class LikeViewTestCase(TestCase):
+class LikeViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -24,7 +25,7 @@ class LikeViewTestCase(TestCase):
 
 
 @only_on_speedy_match
-class UnlikeViewTestCase(TestCase):
+class UnlikeViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -42,7 +43,7 @@ class UnlikeViewTestCase(TestCase):
 
 
 @only_on_speedy_match
-class LikeListViewsTestCase(TestCase):
+class LikeListViewsTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

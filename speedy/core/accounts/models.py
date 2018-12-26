@@ -13,7 +13,7 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, only_if_login_is_enabled
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
@@ -294,12 +294,14 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             self.refresh_all_profiles()
         return self._profile
 
+    @only_if_login_is_enabled
     @property
     def speedy_net_profile(self):
         if (not (hasattr(self, '_speedy_net_profile'))):
             self.refresh_all_profiles()
         return self._speedy_net_profile
 
+    @only_if_login_is_enabled
     @property
     def speedy_match_profile(self):
         if (not (hasattr(self, '_speedy_match_profile'))):
@@ -315,18 +317,20 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         return profile
 
     def refresh_all_profiles(self):
-        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
-        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         self._profile = self.get_profile()
-        self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
-        self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
+        if (settings.LOGIN_ENABLED):
+            from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
+            self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
 
     def save_user_and_profile(self):
         with transaction.atomic():
             self.save()
             self.profile.save()
-            self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
-            self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
+            if (settings.LOGIN_ENABLED):
+                self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
+                self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)

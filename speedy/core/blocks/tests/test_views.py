@@ -1,10 +1,11 @@
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from ..models import Block
 
 
 @only_on_sites_with_login
-class BlockListViewTestCase(TestCase):
+class BlockListViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -30,7 +31,7 @@ class BlockListViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class BlockViewTestCase(TestCase):
+class BlockViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -59,7 +60,7 @@ class BlockViewTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class UnblockViewTestCase(TestCase):
+class UnblockViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

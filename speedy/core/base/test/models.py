@@ -1,4 +1,4 @@
-import inspect
+# import inspect
 
 from django.conf import settings
 from django.core.management import call_command
@@ -7,23 +7,24 @@ from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 
 import speedy.core.settings.tests as tests_settings
+# from speedy.core.base.utils import conditional_method_or_class as conditional_test
 
 
-class SiteDiscoverRunner(DiscoverRunner): # models
+class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
             test_labels = [label for label in settings.INSTALLED_APPS if (label.startswith('speedy.'))]
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
-class SpeedyCoreDiscoverRunner(SiteDiscoverRunner): # models
+class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
     def run_tests(self, test_labels, extra_tests=None, **kwargs):
         # We don't run tests on speedy.core
         pass
 
 
 # class SiteTestCase(DjangoTestCase): TODO - rename to SiteTestCase? or to SpeedyTestCase?
-class TestCase(DjangoTestCase): # models
+class SiteTestCase(DjangoTestCase):
     maxDiff = None
 
     def _pre_setup(self):
@@ -82,38 +83,38 @@ class TestCase(DjangoTestCase): # models
         self.setup()
 
 
-def conditional_test(test_func): # conditional_test / conditional_tests / decorators
-    def wrapper(method_or_class):
-        if (inspect.isclass(method_or_class)):
-            # Decorate class
-            if (test_func()):
-                return method_or_class
-            else:
-                return
-        else:
-            # Decorate method
-            def inner(*args, **kwargs):
-                if (test_func()):
-                    return method_or_class(*args, **kwargs)
-                else:
-                    return
-
-            return inner
-
-    return wrapper
-
-
-exclude_on_site = lambda site_id: conditional_test(test_func=lambda: (not (settings.SITE_ID == site_id)))
-exclude_on_speedy_net = exclude_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
-exclude_on_speedy_match = exclude_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
-exclude_on_speedy_composer = exclude_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
-exclude_on_speedy_mail_software = exclude_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
-
-only_on_site = lambda site_id: conditional_test(test_func=lambda: (settings.SITE_ID == site_id))
-only_on_speedy_net = only_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
-only_on_speedy_match = only_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
-only_on_speedy_composer = only_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
-only_on_speedy_mail_software = only_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
-
-only_on_sites = lambda site_id_list: conditional_test(test_func=lambda: (settings.SITE_ID in site_id_list))
-only_on_sites_with_login = only_on_sites(site_id_list=[settings.SPEEDY_NET_SITE_ID, settings.SPEEDY_MATCH_SITE_ID])
+# def conditional_test(conditional_function): # conditional_test / conditional_tests / decorators
+#     def wrapper(method_or_class):
+#         if (inspect.isclass(method_or_class)):
+#             # Decorate class
+#             if (conditional_function()):
+#                 return method_or_class
+#             else:
+#                 return
+#         else:
+#             # Decorate method
+#             def inner(*args, **kwargs):
+#                 if (conditional_function()):
+#                     return method_or_class(*args, **kwargs)
+#                 else:
+#                     return
+#
+#             return inner
+#
+#     return wrapper
+#
+#
+# exclude_on_site = lambda site_id: conditional_test(conditional_function=lambda: (not (settings.SITE_ID == site_id)))
+# exclude_on_speedy_net = exclude_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
+# exclude_on_speedy_match = exclude_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
+# exclude_on_speedy_composer = exclude_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
+# exclude_on_speedy_mail_software = exclude_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
+#
+# only_on_site = lambda site_id: conditional_test(conditional_function=lambda: (settings.SITE_ID == site_id))
+# only_on_speedy_net = only_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
+# only_on_speedy_match = only_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
+# only_on_speedy_composer = only_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
+# only_on_speedy_mail_software = only_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
+#
+# only_on_sites = lambda site_id_list: conditional_test(conditional_function=lambda: (settings.SITE_ID in site_id_list))
+# only_on_sites_with_login = only_on_sites(site_id_list=[settings.SPEEDY_NET_SITE_ID, settings.SPEEDY_MATCH_SITE_ID])

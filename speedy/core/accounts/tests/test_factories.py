@@ -9,7 +9,7 @@ from django.conf import settings
 # from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
-from speedy.core.base.test import TestCase #### TODO
+from speedy.core.base.test.models import SiteTestCase #### TODO
 from ..models import normalize_username, User, UserEmailAddress
 from ..translation import UserTranslationOptions #### TODO
 from ..forms import LocalizedFirstLastNameMixin #### TODO
@@ -43,9 +43,9 @@ class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
 
 
 # class DefaultUserFactory(factory.DjangoModelFactory, DjangoTestCase): # ~~~~ TODO
-# class DefaultUserFactory(factory.DjangoModelFactory, TestCase):
+# class DefaultUserFactory(factory.DjangoModelFactory, SiteTestCase):
 # class DefaultUserFactory(DjangoTestCase, factory.DjangoModelFactory): # ~~~~ TODO
-# class DefaultUserFactory(TestCase, factory.DjangoModelFactory):
+# class DefaultUserFactory(SiteTestCase, factory.DjangoModelFactory):
 class DefaultUserFactory(factory.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')

@@ -1,10 +1,11 @@
-from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.match.accounts.forms import ProfileNotificationsForm
 
 
 @only_on_speedy_match
-class ProfileNotificationsFormTestCase(TestCase):
+class ProfileNotificationsFormTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

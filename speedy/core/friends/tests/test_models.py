@@ -1,11 +1,11 @@
 from friendship.models import Friend
 
-from speedy.core.base.test import TestCase
+from speedy.core.base.test.models import SiteTestCase
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
 
 
-class BlocksTestCase(TestCase):
+class BlocksTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user1 = ActiveUserFactory()

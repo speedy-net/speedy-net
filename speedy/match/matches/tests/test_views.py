@@ -1,4 +1,5 @@
-from speedy.core.base.test import TestCase, only_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
@@ -27,7 +28,7 @@ class EditViewBaseMixin(object):
 
 
 @only_on_speedy_match
-class EditMatchSettingsViewTestCase(EditViewBaseMixin, TestCase):
+class EditMatchSettingsViewTestCase(EditViewBaseMixin, SiteTestCase):
     def get_page_url(self):
         return '/matches/settings/'
 
@@ -36,7 +37,7 @@ class EditMatchSettingsViewTestCase(EditViewBaseMixin, TestCase):
 
 
 @only_on_speedy_match
-class EditAboutMeViewTestCase(EditViewBaseMixin, TestCase):
+class EditAboutMeViewTestCase(EditViewBaseMixin, SiteTestCase):
     def get_page_url(self):
         return '/matches/settings/about-me/'
 

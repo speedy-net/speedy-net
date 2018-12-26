@@ -1,10 +1,11 @@
-from speedy.core.base.test import TestCase, only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.blocks.models import Block
 from .test_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login
-class ViewProfileTestCase(TestCase):
+class ViewProfileTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

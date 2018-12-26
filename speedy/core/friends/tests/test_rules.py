@@ -1,12 +1,13 @@
 from friendship.models import Friend
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
 
 
 @only_on_sites_with_login
-class RequestTestCase(TestCase):
+class RequestTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -29,7 +30,7 @@ class RequestTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class ViewRequestsTestCase(TestCase):
+class ViewRequestsTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -43,7 +44,7 @@ class ViewRequestsTestCase(TestCase):
 
 
 @only_on_sites_with_login
-class RemoveTestCase(TestCase):
+class RemoveTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()

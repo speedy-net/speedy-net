@@ -1,6 +1,7 @@
 from django.core import mail
 
-from speedy.core.base.test import TestCase, only_on_sites_with_login
+from speedy.core.base.test.models import SiteTestCase
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.uploads.tests.test_factories import FileFactory
 from ..models import Feedback
@@ -67,7 +68,7 @@ class FeedbackViewBaseMixin(object):
         self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site.name, str(feedback)))
 
 
-class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
+class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, SiteTestCase):
     def setup_other_user_and_file(self):
         pass
 
@@ -79,7 +80,7 @@ class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, TestCase):
 
 
 @only_on_sites_with_login
-class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
+class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, SiteTestCase):
     def setup_other_user_and_file(self):
         self.other_user = ActiveUserFactory()
 
@@ -96,7 +97,7 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, TestCase):
 
 
 @only_on_sites_with_login
-class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, TestCase):
+class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, SiteTestCase):
     def setup_other_user_and_file(self):
         self.file = FileFactory()
 
