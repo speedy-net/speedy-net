@@ -15,11 +15,11 @@ INSTALLED_APPS += [
 ]
 
 
-MIN_PASSWORD_LENGTH = 8 * 100 # ~~~~ TODO: remove this line!
-MAX_PASSWORD_LENGTH = 120 * 100 # ~~~~ TODO: remove this line!
+# MIN_PASSWORD_LENGTH = 8 * 100 # ~~~~ TODO: remove this line!
+# MAX_PASSWORD_LENGTH = 120 * 100 # ~~~~ TODO: remove this line!
 
 AUTH_USER_MODEL = 'accounts.User' # ~~~~ TODO: remove this line!
 
-UNAVAILABLE_USERNAMES = [] # ~~~~ TODO: remove this line!
+# UNAVAILABLE_USERNAMES = [] # ~~~~ TODO: remove this line!
 
 

@@ -1,6 +1,6 @@
 from datetime import date
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.test import override_settings
 
 from speedy.core.settings import tests as tests_settings
@@ -154,11 +154,11 @@ class RegistrationFormTestCaseMixin(object):
         existing_user = existing_user_email.user
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
         # existing_user.email_addresses.create(email='email@example.com', is_confirmed=True) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         form = RegistrationForm(language_code=self.language_code, data=self.data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
@@ -166,11 +166,11 @@ class RegistrationFormTestCaseMixin(object):
         # self.assertEqual(first=form.errors['email'][0], second=self._this_email_is_already_in_use_error_message) # ~~~~ TODO: remove this line!
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -178,11 +178,11 @@ class RegistrationFormTestCaseMixin(object):
         existing_user = existing_user_email.user
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
         # existing_user.email_addresses.create(email='email@example.com', is_confirmed=False) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         form = RegistrationForm(language_code=self.language_code, data=self.data)
         form.full_clean()
         self.assertTrue(expr=form.is_valid())
@@ -191,13 +191,13 @@ class RegistrationFormTestCaseMixin(object):
         # self.assertEqual(first=form.errors['email'][0], second=self._this_email_is_already_in_use_error_message) # ~~~~ TODO: remove this line!
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        # self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        # self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
         existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 0, settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        # self.assertEqual(first=existing_user.email_addresses.count(), second={settings.SPEEDY_NET_SITE_ID: 1, settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        # self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
 
     def test_slug_validation_fails_with_reserved_username(self):
         data = self.data.copy()

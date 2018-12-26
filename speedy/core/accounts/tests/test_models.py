@@ -1,6 +1,5 @@
 from datetime import datetime
 
-from django.conf import settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
 
@@ -57,11 +56,11 @@ class EntityTestCaseMixin(object):
         self.assertEqual(first=len(entity.id), second=15)
         return entity
 
-    def test_model_min_and_max_length(self):
-        self.assertEqual(first=Entity.MIN_USERNAME_LENGTH, second=6)
-        self.assertEqual(first=Entity.MAX_USERNAME_LENGTH, second=120)
-        self.assertEqual(first=Entity.MIN_SLUG_LENGTH, second=6)
-        self.assertEqual(first=Entity.MAX_SLUG_LENGTH, second=200)
+    def test_model_settings(self):
+        self.assertEqual(first=Entity.settings.MIN_USERNAME_LENGTH, second=6)
+        self.assertEqual(first=Entity.settings.MAX_USERNAME_LENGTH, second=120)
+        self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
+        self.assertEqual(first=Entity.settings.MAX_SLUG_LENGTH, second=200)
 
     def test_cannot_create_entity_without_a_slug(self):
         entity = Entity()
@@ -304,13 +303,13 @@ class UserTestCaseMixin(object):
             'date_of_birth': '1900-08-20',
         }
 
-    def test_model_min_and_max_length(self):
-        self.assertEqual(first=User.MIN_USERNAME_LENGTH, second=6)
-        self.assertEqual(first=User.MAX_USERNAME_LENGTH, second=40)
-        self.assertEqual(first=User.MIN_SLUG_LENGTH, second=6)
-        self.assertEqual(first=User.MAX_SLUG_LENGTH, second=200)
-        self.assertEqual(first=settings.MIN_PASSWORD_LENGTH, second=8)
-        self.assertEqual(first=settings.MAX_PASSWORD_LENGTH, second=120)
+    def test_model_settings(self):
+        self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
+        self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
+        self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
+        self.assertEqual(first=User.settings.MAX_SLUG_LENGTH, second=200)
+        self.assertEqual(first=User.settings.MIN_PASSWORD_LENGTH, second=8)
+        self.assertEqual(first=User.settings.MAX_PASSWORD_LENGTH, second=120)
 
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))

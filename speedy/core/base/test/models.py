@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.core.management import call_command
 from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
@@ -10,7 +10,7 @@ from speedy.core.settings import tests as tests_settings
 class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
-            test_labels = [label for label in settings.INSTALLED_APPS if (label.startswith('speedy.'))]
+            test_labels = [label for label in django_settings.INSTALLED_APPS if (label.startswith('speedy.'))]
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
@@ -30,16 +30,16 @@ class SiteTestCase(DjangoTestCase):
 
     def validate_all_values(self):
         site_id_dict = {
-            settings.SPEEDY_NET_SITE_ID: 1,
-            settings.SPEEDY_MATCH_SITE_ID: 2,
-            settings.SPEEDY_COMPOSER_SITE_ID: 3,
-            settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 4,
+            django_settings.SPEEDY_NET_SITE_ID: 1,
+            django_settings.SPEEDY_MATCH_SITE_ID: 2,
+            django_settings.SPEEDY_COMPOSER_SITE_ID: 3,
+            django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 4,
         }
         domain_dict = {
-            settings.SPEEDY_NET_SITE_ID: "speedy.net.localhost",
-            settings.SPEEDY_MATCH_SITE_ID: "speedy.match.localhost",
-            settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
-            settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
+            django_settings.SPEEDY_NET_SITE_ID: "speedy.net.localhost",
+            django_settings.SPEEDY_MATCH_SITE_ID: "speedy.match.localhost",
+            django_settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
+            django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
         }
         self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
         self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
@@ -65,8 +65,8 @@ class SiteTestCase(DjangoTestCase):
         self.assertTrue(expr=(24 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 32))
 
     def setup(self):
-        self.language_code = settings.LANGUAGE_CODE
-        self.all_languages_code_list = [language_code for language_code, language_name in settings.LANGUAGES]
+        self.language_code = django_settings.LANGUAGE_CODE
+        self.all_languages_code_list = [language_code for language_code, language_name in django_settings.LANGUAGES]
         self.all_other_languages_code_list = [language_code for language_code in self.all_languages_code_list if (not (language_code == self.language_code))]
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
         self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)

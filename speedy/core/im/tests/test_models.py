@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
@@ -14,7 +14,7 @@ class ChatTestCase(SiteTestCase):
 
     def test_str(self):
         chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
-        if (self.site.id == settings.SPEEDY_MATCH_SITE_ID):
+        if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             self.assertEqual(first=str(chat), second='Walter, Jesse')
         else:
             self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')

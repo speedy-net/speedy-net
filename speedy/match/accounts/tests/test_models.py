@@ -1,7 +1,7 @@
 from datetime import date
 import itertools
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
@@ -157,7 +157,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assert_list_2_doesnt_contain_elements_in_list_1(list_1=invalid_values, list_2=valid_values)
 
     def assert_step_and_error_messages_ok(self, step, error_messages):
-        self.assertEqual(first=step, second=len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+        self.assertEqual(first=step, second=len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
         self.assertEqual(first=step, second=10)
         self.assertEqual(first=len(error_messages), second=0)
         self.assertListEqual(list1=error_messages, list2=[])
@@ -241,7 +241,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             invalid_values = self._empty_values_to_test
             valid_values = self._valid_string_values_to_test
         elif (field_name in ['height']):
-            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_HEIGHT_ALLOWED + 10 + 1))
+            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, django_settings.MAX_HEIGHT_ALLOWED + 10 + 1))
             valid_values_to_save = self._none_list + [value for value in values_to_test if (isinstance(value, int))]
             valid_values = SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES
         elif (field_name in ['diet']):
@@ -314,17 +314,17 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             # print(valid_sets) # ~~~~ TODO: remove this line!
             self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
         elif (field_name in ['min_age_match', 'max_age_match']):
-            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, settings.MAX_AGE_ALLOWED + 10 + 1))
+            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, django_settings.MAX_AGE_MATCH_ALLOWED + 10 + 1))
             valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
-            valid_values = SpeedyMatchSiteProfile.AGE_VALID_VALUES
+            valid_values = SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES
         elif (field_name in ['min_max_age_to_match']):
-            values_to_test_valid_ages = [(value, settings.MAX_AGE_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_VALID_VALUES]
+            values_to_test_valid_ages = [(value, django_settings.MAX_AGE_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
             self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
             values_to_test = []
             if (test_settings["test_invalid_values_to_save"]):
                 values_to_test.extend([(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test])
             if (test_settings["test_invalid_ages"]):
-                values_to_test.extend([(value, settings.MAX_AGE_ALLOWED - value) for value in range(-10, settings.MAX_AGE_ALLOWED + 10 + 1)])
+                values_to_test.extend([(value, django_settings.MAX_AGE_MATCH_ALLOWED - value) for value in range(-10, django_settings.MAX_AGE_MATCH_ALLOWED + 10 + 1)])
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
             else:
                 values_to_test.extend(values_to_test_valid_ages)
@@ -531,7 +531,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
                         # print(error_messages) # ~~~~ TODO: remove this line!
                         if (field_name in ['min_max_age_to_match']):
                             self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
-                            if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_VALID_VALUES for i in range(2))):
+                            if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES for i in range(2))):
                                 expected_error_messages_len = 1
                                 expected_error_messages_key = "expected_error_messages_min_age_match_and_max_age_match_valid"
                                 fields_and_error_messages = [(field_name, "expected_error_message_min_age_match_and_max_age_match_valid")]
@@ -617,16 +617,16 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=(0, 0))
 
     def test_height_valid_values(self):
-        self.assertEqual(first=settings.MIN_HEIGHT_ALLOWED, second=1)
-        self.assertEqual(first=settings.MAX_HEIGHT_ALLOWED, second=450)
-        self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1))
+        self.assertEqual(first=django_settings.MIN_HEIGHT_ALLOWED, second=1)
+        self.assertEqual(first=django_settings.MAX_HEIGHT_ALLOWED, second=450)
+        self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(django_settings.MIN_HEIGHT_ALLOWED, django_settings.MAX_HEIGHT_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(1, 450 + 1))
 
     def test_age_valid_values(self):
-        self.assertEqual(first=settings.MIN_AGE_ALLOWED, second=0)
-        self.assertEqual(first=settings.MAX_AGE_ALLOWED, second=180)
-        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_VALID_VALUES, second=range(settings.MIN_AGE_ALLOWED, settings.MAX_AGE_ALLOWED + 1))
-        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_VALID_VALUES, second=range(0, 180 + 1))
+        self.assertEqual(first=django_settings.MIN_AGE_MATCH_ALLOWED, second=0)
+        self.assertEqual(first=django_settings.MAX_AGE_MATCH_ALLOWED, second=180)
+        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(django_settings.MIN_AGE_MATCH_ALLOWED, django_settings.MAX_AGE_MATCH_ALLOWED + 1))
+        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
     def test_smoking_status_valid_values(self):
         self.assertListEqual(list1=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN + 1, SpeedyMatchSiteProfile.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)))
@@ -662,8 +662,8 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertListEqual(list1=[marital_status_match[str(marital_status)] for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES], list2=[5 for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES])
 
     def test_get_steps_range(self):
-        self.assertEqual(first=len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
-        self.assertEqual(first=utils.get_steps_range(), second=range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
+        self.assertEqual(first=len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
+        self.assertEqual(first=utils.get_steps_range(), second=range(1, len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
         self.assertEqual(first=utils.get_steps_range(), second=range(1, 10))
 
     def test_get_active_languages(self):
@@ -712,10 +712,10 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertIn(member=user.speedy_match_profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
         self.assertIn(member=user.speedy_match_profile.smoking_status, container=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
         self.assertIn(member=user.speedy_match_profile.marital_status, container=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
-        self.assertIn(member=user.speedy_match_profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_VALID_VALUES)
-        self.assertIn(member=user.speedy_match_profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_VALID_VALUES)
-        self.assertEqual(first=user.speedy_match_profile.min_age_match, second=settings.MIN_AGE_ALLOWED)
-        self.assertEqual(first=user.speedy_match_profile.max_age_match, second=settings.MAX_AGE_ALLOWED)
+        self.assertIn(member=user.speedy_match_profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+        self.assertIn(member=user.speedy_match_profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+        self.assertEqual(first=user.speedy_match_profile.min_age_match, second=django_settings.MIN_AGE_MATCH_ALLOWED)
+        self.assertEqual(first=user.speedy_match_profile.max_age_match, second=django_settings.MAX_AGE_MATCH_ALLOWED)
         self.validate_all_user_values(user=user)
 
     def test_validate_profile_and_activate_exception_on_photo(self):

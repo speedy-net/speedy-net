@@ -1,9 +1,10 @@
+from django.conf import settings as django_settings
 from django.core.exceptions import FieldDoesNotExist
 from django.contrib.auth.models import BaseUserManager as DjangoBaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .utils import REGULAR_UDID_LENGTH, SMALL_UDID_LENGTH, generate_regular_udid, generate_small_udid
+from .utils import generate_regular_udid, generate_small_udid
 from .validators import regular_udid_validator, small_udid_validator
 
 
@@ -71,28 +72,28 @@ class UDIDField(models.CharField):
         super().__init__(*args, **kwargs)
 
 
-class RegularUDIDField(UDIDField):
-    id_generator = staticmethod(generate_regular_udid)
-
-    def __init__(self, *args, **kwargs):
-        given_kwargs = kwargs
-        defaults = {
-            'max_length': REGULAR_UDID_LENGTH,
-            'validators': [regular_udid_validator],
-        }
-        kwargs = defaults
-        kwargs.update(given_kwargs)
-        super().__init__(*args, **kwargs)
-
-
 class SmallUDIDField(UDIDField):
     id_generator = staticmethod(generate_small_udid)
 
     def __init__(self, *args, **kwargs):
         given_kwargs = kwargs
         defaults = {
-            'max_length': SMALL_UDID_LENGTH,
+            'max_length': django_settings.SMALL_UDID_LENGTH,
             'validators': [small_udid_validator],
+        }
+        kwargs = defaults
+        kwargs.update(given_kwargs)
+        super().__init__(*args, **kwargs)
+
+
+class RegularUDIDField(UDIDField):
+    id_generator = staticmethod(generate_regular_udid)
+
+    def __init__(self, *args, **kwargs):
+        given_kwargs = kwargs
+        defaults = {
+            'max_length': django_settings.REGULAR_UDID_LENGTH,
+            'validators': [regular_udid_validator],
         }
         kwargs = defaults
         kwargs.update(given_kwargs)

@@ -4,13 +4,9 @@ import random
 import string
 
 from datetime import date
-
 from dateutil.relativedelta import relativedelta
 
-
-# ~~~~ TODO: move to settings.
-REGULAR_UDID_LENGTH = 20
-SMALL_UDID_LENGTH = 15
+from django.conf import settings as django_settings
 
 
 def _generate_udid(length):
@@ -27,12 +23,12 @@ def _get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
     return age
 
 
-def generate_regular_udid():
-    return _generate_udid(length=REGULAR_UDID_LENGTH)
-
-
 def generate_small_udid():
-    return _generate_udid(length=SMALL_UDID_LENGTH)
+    return _generate_udid(length=django_settings.SMALL_UDID_LENGTH)
+
+
+def generate_regular_udid():
+    return _generate_udid(length=django_settings.REGULAR_UDID_LENGTH)
 
 
 # Export generate_regular_udid as generate_confirmation_token.

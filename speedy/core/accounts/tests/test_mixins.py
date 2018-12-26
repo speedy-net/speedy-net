@@ -239,9 +239,9 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         if (username_fail):
-            errors_dict['username'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['username'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod
@@ -249,9 +249,9 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         if (username_fail):
-            errors_dict['username'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['username'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod
@@ -259,9 +259,9 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_SLUG_LENGTH, value_length=slug_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_SLUG_LENGTH, value_length=slug_value_length)]
         if (username_fail):
-            errors_dict['username'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.MIN_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['username'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod
@@ -269,9 +269,9 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
         if (slug_fail):
-            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_SLUG_LENGTH, value_length=slug_value_length)]
+            errors_dict['slug'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_SLUG_LENGTH, value_length=slug_value_length)]
         if (username_fail):
-            errors_dict['username'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.MAX_USERNAME_LENGTH, value_length=username_value_length)]
+            errors_dict['username'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
     # @staticmethod

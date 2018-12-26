@@ -1,7 +1,7 @@
 import json
 
 from django import forms
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
@@ -133,8 +133,8 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate()
             self.instance.activation_step = min(activation_step + 1, step)
-            if (self.instance.activation_step >= len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
-                self.instance.activation_step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+            if (self.instance.activation_step >= len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
+                self.instance.activation_step = len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
             self.instance.save(update_fields={'activation_step'})
         return self.instance
 

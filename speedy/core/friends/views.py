@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
@@ -21,9 +21,9 @@ class FriendsMixin(object):
     def get_received_friendship_requests(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_received.all()
-        if (site.id == settings.SPEEDY_NET_SITE_ID):
+        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
             return qs
-        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
+        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
@@ -33,9 +33,9 @@ class FriendsMixin(object):
     def get_sent_friendship_request(self):
         site = Site.objects.get_current()
         qs = self.user.friendship_requests_sent.all()
-        if (site.id == settings.SPEEDY_NET_SITE_ID):
+        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
             return qs
-        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
+        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
@@ -58,13 +58,13 @@ class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
         site = Site.objects.get_current()
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
-        if (site.id == settings.SPEEDY_NET_SITE_ID):
+        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
             extra_select = {
                 'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
             }
             qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
             return qs
-        elif (site.id == settings.SPEEDY_MATCH_SITE_ID):
+        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             extra_select = {
                 'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
                 'like_exists': 'SELECT COUNT(1) FROM likes_userlike WHERE from_user_id = friendship_friend.from_user_id OR to_user_id=friendship_friend.from_user_id',
@@ -97,13 +97,13 @@ class SentFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequired
 class LimitMaxFriendsMixin(object):
     def check_own_friends(self):
         user_number_of_friends = len(Friend.objects.friends(user=self.request.user))
-        if (user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-            raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(user_number_of_friends, settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
+        if (user_number_of_friends >= django_settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+            raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(user_number_of_friends, django_settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
 
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user=user))
-        if (other_user_number_of_friends >= settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED):
-            raise ValidationError(pgettext_lazy(context=user.get_gender(), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(other_user_number_of_friends, settings.MAXIMUM_NUMBER_OF_FRIENDS_ALLOWED))
+        if (other_user_number_of_friends >= django_settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+            raise ValidationError(pgettext_lazy(context=user.get_gender(), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(other_user_number_of_friends, django_settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
 
 
 class FriendRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin, generic.View):

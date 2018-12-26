@@ -2,7 +2,7 @@ from importlib import import_module
 import logging
 from urllib.parse import urlparse
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, views as auth_views, REDIRECT_FIELD_NAME, update_session_auth_hash
 from django.contrib.sites.models import Site
@@ -39,7 +39,7 @@ def set_session(request):
         return response
     if (request.method == 'POST'):
         session_key = request.POST.get('key')
-        SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
+        SessionStore = import_module(django_settings.SESSION_ENGINE).SessionStore
         if ((session_key) and (SessionStore().exists(session_key))):
             # Set session cookie
             request.session = SessionStore(session_key)
@@ -69,13 +69,13 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        log.debug('RegistrationView#form_valid(): settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
-        if (settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
+        log.debug('RegistrationView#form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
+        if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
             log.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.first().send_confirmation_email()
-        user.backend = settings.DEFAULT_AUTHENTICATION_BACKEND
+        user.backend = django_settings.DEFAULT_AUTHENTICATION_BACKEND
         auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
 
@@ -164,7 +164,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return self.request.user.profile
 
     def get_form_class(self):
-        return reflection_import(name=settings.SITE_PROFILE_ACTIVATION_FORM)
+        return reflection_import(name=django_settings.SITE_PROFILE_ACTIVATION_FORM)
 
     def dispatch(self, request, *args, **kwargs):
         if ((request.user.is_authenticated) and (request.user.profile.is_active)):
@@ -197,7 +197,7 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         user = self.request.user
         user.profile.deactivate()
         current_site = Site.objects.get_current()
-        if (settings.SITE_ID == settings.SPEEDY_NET_SITE_ID):
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate them any time.')
         else:
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(site_name=_(current_site.name))
@@ -212,7 +212,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     def get_success_url(self):
         site = Site.objects.get_current()
         # If user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page.
-        if (site.id == settings.SPEEDY_MATCH_SITE_ID):
+        if (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             if (self.request.user.email_addresses.filter(is_confirmed=True).count() == 1):
                 return reverse_lazy('matches:list')
         return reverse_lazy('accounts:edit_profile_emails')

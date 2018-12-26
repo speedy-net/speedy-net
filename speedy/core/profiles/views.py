@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.http import Http404
@@ -98,7 +98,7 @@ class UserDetailView(UserMixin, generic.TemplateView):
 
     def get_widgets(self):
         widgets = []
-        for widget_path in settings.USER_PROFILE_WIDGETS:
+        for widget_path in django_settings.USER_PROFILE_WIDGETS:
             widget_class = import_string(widget_path)
             widgets.append(widget_class(**self.get_widget_kwargs()))
         return widgets
