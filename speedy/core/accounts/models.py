@@ -129,8 +129,8 @@ class UserAccessField(models.PositiveIntegerField):
 class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
     settings = speedy_net_global_settings.UserSettings
 
-    AGE_VALID_VALUES_IN_MODEL = range(django_settings.MIN_AGE_ALLOWED_IN_MODEL, django_settings.MAX_AGE_ALLOWED_IN_MODEL)
-    AGE_VALID_VALUES_IN_FORMS = range(django_settings.MIN_AGE_ALLOWED_IN_FORMS, django_settings.MAX_AGE_ALLOWED_IN_FORMS)
+    AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
+    AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
