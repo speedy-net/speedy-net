@@ -5,7 +5,7 @@ from datetime import date
 import factory
 import factory.fuzzy
 
-from django.conf import settings
+from django.conf import settings as django_settings
 # from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
@@ -16,7 +16,7 @@ from ..forms import LocalizedFirstLastNameMixin #### TODO
 
 
 def get_random_user_password_length():
-    return random.randint(settings.MIN_PASSWORD_LENGTH, settings.MAX_PASSWORD_LENGTH)
+    return random.randint(User.settings.MIN_PASSWORD_LENGTH, User.settings.MAX_PASSWORD_LENGTH)
 
 
 def get_random_user_password():
@@ -89,7 +89,7 @@ class InactiveUserFactory(DefaultUserFactory):
     def deactivate_speedy_net_profile(self, create, extracted, **kwargs):
         # Deactivate only on speedy.net, speedy.match default is inactive.
         site = Site.objects.get_current()
-        if (site.id == settings.SPEEDY_NET_SITE_ID):
+        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
             self.profile.deactivate()
 
 
@@ -97,7 +97,7 @@ class ActiveUserFactory(DefaultUserFactory):
     @factory.post_generation
     def activate_profile(self, create, extracted, **kwargs):
         site = Site.objects.get_current()
-        if (site.id == settings.SPEEDY_MATCH_SITE_ID):
+        if (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
             # ~~~~ TODO: maybe change ".profile" to ".speedy_match_profile"?
             from speedy.core.uploads.tests.test_factories import UserImageFactory
@@ -107,7 +107,7 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.children = "One boy."
             self.profile.more_children = "Yes."
             self.profile.match_description = "Hi!"
-            self.profile.height = random.randint(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED)
+            self.profile.height = random.randint(django_settings.MIN_HEIGHT_ALLOWED, django_settings.MAX_HEIGHT_ALLOWED)
             # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
             # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
             if (self.diet == User.DIET_UNKNOWN):
@@ -133,7 +133,7 @@ class ActiveUserFactory(DefaultUserFactory):
             step, error_messages = self.profile.validate_profile_and_activate()
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
-            if (not (step == len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+            if (not (step == len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
             # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
             # print(USER_PASSWORD) # ~~~~ TODO: remove this line!

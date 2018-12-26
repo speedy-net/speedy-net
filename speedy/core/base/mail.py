@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
 from django.core.mail import EmailMultiAlternatives
 from django.template.exceptions import TemplateDoesNotExist
@@ -21,7 +21,7 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     context = context or {}
     site = Site.objects.get_current()
     params = {
-        'protocol': 'https' if (settings.USE_SSL) else 'http',
+        'protocol': 'https' if (django_settings.USE_SSL) else 'http',
         'language_code': translation.get_language() or 'en', # ~~~~ TODO: find solution in order find language in management commands (None is this case)
         'domain': site.domain,
     }
@@ -71,6 +71,6 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
-    return send_mail(to=[a[1] for a in settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
+    return send_mail(to=[a[1] for a in django_settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
 
 

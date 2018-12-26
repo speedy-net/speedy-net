@@ -1,7 +1,7 @@
 import warnings
 from datetime import timedelta
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.core.exceptions import ValidationError
@@ -11,6 +11,7 @@ from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
+from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings?
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
@@ -22,11 +23,7 @@ from .validators import get_username_validators, get_slug_validators, validate_d
 
 
 class Entity(TimeStampedModel):
-    # ~~~~ TODO: move to settings.
-    MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 120
-    MIN_SLUG_LENGTH = 6
-    MAX_SLUG_LENGTH = 200
+    settings = speedy_net_global_settings.EntitySettings
 
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -34,8 +31,8 @@ class Entity(TimeStampedModel):
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
     validators = {
-        'username': get_username_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, min_slug_length=MIN_SLUG_LENGTH, max_slug_length=MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
     }
 
     objects = EntityManager()
@@ -98,9 +95,7 @@ class Entity(TimeStampedModel):
 
 
 class NamedEntity(Entity):
-    # ~~~~ TODO: move to settings.
-    MIN_NAME_LENGTH = 1
-    MAX_NAME_LENGTH = 200
+    settings = speedy_net_global_settings.NamedEntitySettings
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
@@ -132,22 +127,10 @@ class UserAccessField(models.PositiveIntegerField):
 
 
 class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
-    # ~~~~ TODO: move to settings.
-    MIN_USERNAME_LENGTH = 6
-    MAX_USERNAME_LENGTH = 40
-    MIN_SLUG_LENGTH = 6
-    # MIN_SLUG_LENGTH = 60 ###### # ~~~~ TODO: remove this line!
-    MAX_SLUG_LENGTH = 200
-    # MIN_PASSWORD_LENGTH = 8
-    # MAX_PASSWORD_LENGTH = 120
-    # ~~~~ TODO: move to settings.
-    # Users can register from age 0 to 180, but can't be kept on the site after age 250.
-    MIN_AGE_ALLOWED_IN_MODEL = 0  # In years.
-    MAX_AGE_ALLOWED_IN_MODEL = 250  # In years.
-    AGE_VALID_VALUES_IN_MODEL = range(MIN_AGE_ALLOWED_IN_MODEL, MAX_AGE_ALLOWED_IN_MODEL)
-    MIN_AGE_ALLOWED_IN_FORMS = 0  # In years.
-    MAX_AGE_ALLOWED_IN_FORMS = 180  # In years.
-    AGE_VALID_VALUES_IN_FORMS = range(MIN_AGE_ALLOWED_IN_FORMS, MAX_AGE_ALLOWED_IN_FORMS)
+    settings = speedy_net_global_settings.UserSettings
+
+    AGE_VALID_VALUES_IN_MODEL = range(django_settings.MIN_AGE_ALLOWED_IN_MODEL, django_settings.MAX_AGE_ALLOWED_IN_MODEL)
+    AGE_VALID_VALUES_IN_FORMS = range(django_settings.MIN_AGE_ALLOWED_IN_FORMS, django_settings.MAX_AGE_ALLOWED_IN_FORMS)
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
@@ -223,8 +206,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     objects = UserManager()
 
     validators = {
-        'username': get_username_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_username_length=MIN_USERNAME_LENGTH, max_username_length=MAX_USERNAME_LENGTH, min_slug_length=MIN_SLUG_LENGTH, max_slug_length=MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
         'date_of_birth': [validate_date_of_birth_in_model],
     }
 
@@ -296,14 +279,14 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     @property
     def speedy_net_profile(self):
-        if (settings.LOGIN_ENABLED):
+        if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_profile'))):
                 self.refresh_all_profiles()
             return self._speedy_net_profile
 
     @property
     def speedy_match_profile(self):
-        if (settings.LOGIN_ENABLED):
+        if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_match_profile'))):
                 self.refresh_all_profiles()
             return self._speedy_match_profile
@@ -318,7 +301,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     def refresh_all_profiles(self):
         self._profile = self.get_profile()
-        if (settings.LOGIN_ENABLED):
+        if (django_settings.LOGIN_ENABLED):
             from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
@@ -328,7 +311,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         with transaction.atomic():
             self.save()
             self.profile.save()
-            if (settings.LOGIN_ENABLED):
+            if (django_settings.LOGIN_ENABLED):
                 self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
                 self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
 
@@ -356,7 +339,7 @@ User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VA
 # class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
 class UserEmailAddress(TimeStampedModel):
     id = RegularUDIDField()
-    user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
+    user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
@@ -399,7 +382,7 @@ class UserEmailAddress(TimeStampedModel):
         self.save(update_fields={'is_confirmed'})
         if ((hasattr(self.user.profile, 'validate_profile_and_activate')) and (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1)):
             old_step = self.user.profile.activation_step
-            self.user.profile.activation_step = len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+            self.user.profile.activation_step = len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
             self.user.profile.validate_profile_and_activate()
             self.user.profile.activation_step = old_step
             self.user.profile.save(update_fields=['activation_step'])
@@ -412,7 +395,7 @@ class UserEmailAddress(TimeStampedModel):
 
 class SiteProfileBase(TimeStampedModel):
     """
-    SiteProfile contains site-specific user settings.
+    SiteProfile contains site-specific user django_settings.
     """
 
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name='+')

@@ -4,7 +4,7 @@ from crispy_forms.bootstrap import InlineField
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib.auth import forms as auth_forms
 from django.contrib.sites.models import Site
 from django.urls import reverse
@@ -17,14 +17,6 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
 from .validators import validate_date_of_birth_in_forms, ValidateUserPasswordMixin
-
-
-# ~~~~ TODO: move to settings.
-DATE_FIELD_FORMATS = [
-    '%Y-%m-%d',  # '2006-10-25'
-]
-
-DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
 
 
 class CleanEmailMixin(object):
@@ -106,14 +98,14 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = _('New username')
-        self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
+        self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', _('Create an account'), css_class='btn-lg btn-arrow-right'))
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(raw_password=self.cleaned_data["new_password1"])
-        for language_code, language_name in settings.LANGUAGES:
+        for language_code, language_name in django_settings.LANGUAGES:
             for loc_field in self.get_localizable_fields():
                 setattr(user, self.get_localized_field(base_field_name=loc_field, language_code=language_code), self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language_code=self.language_code)])
         if (commit):
@@ -129,8 +121,8 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['date_of_birth'].input_formats = DATE_FIELD_FORMATS
-        self.fields['date_of_birth'].widget.format = DEFAULT_DATE_FIELD_FORMAT
+        self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
+        self.fields['date_of_birth'].widget.format = django_settings.DEFAULT_DATE_FIELD_FORMAT
         self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
         self.helper = FormHelper()
         # split into two columns

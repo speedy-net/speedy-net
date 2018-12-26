@@ -1,6 +1,6 @@
 import re
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render
 from django.http import HttpRequest
@@ -15,7 +15,7 @@ def redirect_to_www(site: Site) -> HttpResponseBase:
         domain=site.domain,
         path="/",
     )
-    return redirect(to=url, permanent=(not (settings.DEBUG)))
+    return redirect(to=url, permanent=(not (django_settings.DEBUG)))
 
 
 def language_selector(request: HttpRequest) -> HttpResponseBase:
@@ -36,11 +36,11 @@ class LocaleDomainMiddleware(object):
                 domain=domain.lower(),
                 path=request.get_full_path(),
             )
-            return redirect(to=url, permanent=(not (settings.DEBUG)))
+            return redirect(to=url, permanent=(not (django_settings.DEBUG)))
 
         site = Site.objects.get_current()
 
-        for language_code, language_name in settings.LANGUAGES:
+        for language_code, language_name in django_settings.LANGUAGES:
             if (domain == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
                 translation.activate(language_code)
                 request.LANGUAGE_CODE = translation.get_language()
@@ -59,13 +59,13 @@ class LocaleDomainMiddleware(object):
                     return redirect_to_www(site=other_site)
             other_site = None
             if ("match" in domain):
-                other_site = Site.objects.get(pk=settings.SPEEDY_MATCH_SITE_ID)
+                other_site = Site.objects.get(pk=django_settings.SPEEDY_MATCH_SITE_ID)
             elif ("composer" in domain):
-                other_site = Site.objects.get(pk=settings.SPEEDY_COMPOSER_SITE_ID)
+                other_site = Site.objects.get(pk=django_settings.SPEEDY_COMPOSER_SITE_ID)
             elif ("mail" in domain):
-                other_site = Site.objects.get(pk=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
+                other_site = Site.objects.get(pk=django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
             else:
-                other_site = Site.objects.get(pk=settings.SPEEDY_NET_SITE_ID)
+                other_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
             if ((other_site is not None) and (other_site.id in [_site.id for _site in Site.objects.all().order_by("pk")])):
                 return redirect_to_www(site=other_site)
             else:
@@ -89,8 +89,8 @@ class SessionCookieDomainMiddleware(object):
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
         site = Site.objects.get_current()
         response = self.get_response(request=request)
-        if (settings.SESSION_COOKIE_NAME in response.cookies):
-            response.cookies[settings.SESSION_COOKIE_NAME]['domain'] = '.' + site.domain.split(':')[0]
+        if (django_settings.SESSION_COOKIE_NAME in response.cookies):
+            response.cookies[django_settings.SESSION_COOKIE_NAME]['domain'] = '.' + site.domain.split(':')[0]
         return response
 
 
@@ -110,7 +110,7 @@ class RemoveExtraSlashesMiddleware(object):
         normalized_path = self.normalize_path(path=request.path)
         if (normalized_path != request.path):
             request.path = normalized_path
-            return redirect(to=request.get_full_path(), permanent=(not (settings.DEBUG)))
+            return redirect(to=request.get_full_path(), permanent=(not (django_settings.DEBUG)))
         return self.get_response(request=request)
 
 

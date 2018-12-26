@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -20,7 +20,7 @@ class Accompaniment(SpeedyComposerNode):
 
 
 class Folder(SpeedyComposerNode):
-    user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='+')
+    user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='+')
 
     class Meta:
         verbose_name = _('folder')

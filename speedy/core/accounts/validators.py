@@ -1,6 +1,5 @@
 import logging
 
-from django.conf import settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from django.contrib.auth import (
@@ -15,7 +14,8 @@ log = logging.getLogger(__name__)
 
 
 def reserved_username_validator(value):
-    if (normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in settings.UNAVAILABLE_USERNAMES]):
+    from .models import Entity # ~~~~ TODO
+    if (normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in Entity.settings.UNAVAILABLE_USERNAMES]):
         raise ValidationError(_('This username is already taken.'))
 
 
@@ -81,7 +81,10 @@ class PasswordMinLengthValidator:
     """
     Validate whether the password is of a minimum length.
     """
-    def __init__(self, min_length=settings.MIN_PASSWORD_LENGTH):
+    def __init__(self, min_length=None):
+        if (min_length is None):
+            from .models import User # ~~~~ TODO
+            min_length = User.settings.MIN_PASSWORD_LENGTH
         self.min_length = min_length
 
     def validate(self, password, user=None):
@@ -108,7 +111,10 @@ class PasswordMaxLengthValidator:
     """
     Validate whether the password is of a maximum length.
     """
-    def __init__(self, max_length=settings.MAX_PASSWORD_LENGTH):
+    def __init__(self, max_length=None):
+        if (max_length is None):
+            from .models import User # ~~~~ TODO
+            max_length = User.settings.MAX_PASSWORD_LENGTH
         self.max_length = max_length
 
     def validate(self, password, user=None):

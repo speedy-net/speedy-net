@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from rules import predicate, add_perm, remove_perm, always_allow
 
@@ -23,7 +23,7 @@ def is_match_profile(user, other_user):
     return False
 
 
-if (settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID):
+if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
     remove_perm('accounts.view_profile')
     add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
     remove_perm('accounts.view_profile_header')

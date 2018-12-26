@@ -1,14 +1,14 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from speedy.match.accounts import validators
 
 
 def get_steps_range():
-    return range(1, len(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+    return range(1, len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
 
 
 def get_step_form_fields(step):
-    return list(settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step])
+    return list(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step])
 
 
 def get_step_fields_to_validate(step):

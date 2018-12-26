@@ -1,12 +1,12 @@
 from urllib import parse
 
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.urls import reverse_lazy
 from django.urls import resolve, Resolver404
 from django.http import Http404
 from django.views import generic
 
-if (settings.LOGIN_ENABLED):
+if (django_settings.LOGIN_ENABLED):
     from speedy.core.uploads.models import File
     from speedy.core.accounts.models import Entity
 
@@ -23,7 +23,7 @@ class FeedbackView(generic.CreateView):
         return self.kwargs.get('type', Feedback.TYPE_FEEDBACK)
 
     def get_report_entity(self):
-        if (settings.LOGIN_ENABLED):
+        if (django_settings.LOGIN_ENABLED):
             slug = self.kwargs.get('report_entity_slug')
             if (self.get_type() != Feedback.TYPE_REPORT_ENTITY):
                 return None
@@ -36,7 +36,7 @@ class FeedbackView(generic.CreateView):
             return None
 
     def get_report_file(self):
-        if (settings.LOGIN_ENABLED):
+        if (django_settings.LOGIN_ENABLED):
             report_file_id = self.kwargs.get('report_file_id')
             if (self.get_type() != Feedback.TYPE_REPORT_FILE):
                 return None

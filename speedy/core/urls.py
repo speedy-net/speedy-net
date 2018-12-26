@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.conf.urls import url, include
 
 from django.conf.urls.static import static
@@ -11,8 +11,8 @@ urlpatterns = [
     url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
 ]
 
-if (settings.DEBUG):
-    urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + urlpatterns
+if (django_settings.DEBUG):
+    urlpatterns = static(django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT) + urlpatterns
 
 try:
     import debug_toolbar
