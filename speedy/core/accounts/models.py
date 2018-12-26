@@ -13,7 +13,8 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, only_if_login_is_enabled
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
+from speedy.core.base.decorators import only_if_login_is_enabled
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
