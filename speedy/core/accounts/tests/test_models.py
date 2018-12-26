@@ -4,7 +4,7 @@ from django.conf import settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
 
-import speedy.core.settings.tests as tests_settings
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
@@ -591,7 +591,6 @@ class UserTestCaseMixin(object):
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_valid_date_of_birth_list_ok(self):
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
             print("test_valid_date_of_birth_list_ok", date_of_birth)
             data = self.data.copy()
@@ -617,7 +616,6 @@ class UserTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_invalid_date_of_birth_list_fail(self):
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
             print("test_invalid_date_of_birth_list_fail", date_of_birth)
             data = self.data.copy()

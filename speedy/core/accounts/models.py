@@ -14,7 +14,6 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
-from speedy.core.base.decorators import only_if_login_is_enabled
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model
@@ -295,19 +294,19 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             self.refresh_all_profiles()
         return self._profile
 
-    @only_if_login_is_enabled
     @property
     def speedy_net_profile(self):
-        if (not (hasattr(self, '_speedy_net_profile'))):
-            self.refresh_all_profiles()
-        return self._speedy_net_profile
+        if (settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_speedy_net_profile'))):
+                self.refresh_all_profiles()
+            return self._speedy_net_profile
 
-    @only_if_login_is_enabled
     @property
     def speedy_match_profile(self):
-        if (not (hasattr(self, '_speedy_match_profile'))):
-            self.refresh_all_profiles()
-        return self._speedy_match_profile
+        if (settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_speedy_match_profile'))):
+                self.refresh_all_profiles()
+            return self._speedy_match_profile
 
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
         if (model is None):
