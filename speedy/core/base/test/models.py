@@ -1,13 +1,10 @@
-# import inspect
-
 from django.conf import settings
 from django.core.management import call_command
 from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 
-import speedy.core.settings.tests as tests_settings
-# from speedy.core.base.utils import conditional_method_or_class as conditional_test
+from speedy.core.settings import tests as tests_settings
 
 
 class SiteDiscoverRunner(DiscoverRunner):
@@ -23,7 +20,6 @@ class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
         pass
 
 
-# class SiteTestCase(DjangoTestCase): TODO - rename to SiteTestCase? or to SpeedyTestCase?
 class SiteTestCase(DjangoTestCase):
     maxDiff = None
 
@@ -63,10 +59,10 @@ class SiteTestCase(DjangoTestCase):
         # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
         # print("tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
         # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
-        self.assertGreater(a=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST), b=8)
-        self.assertGreater(a=len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), b=24)
-        self.assertGreater(a=len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), b=8)
-        self.assertGreater(a=len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST), b=24)
+        self.assertTrue(expr=(8 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 15))
+        self.assertTrue(expr=(24 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 32))
+        self.assertTrue(expr=(8 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 15))
+        self.assertTrue(expr=(24 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 32))
 
     def setup(self):
         self.language_code = settings.LANGUAGE_CODE
@@ -83,38 +79,3 @@ class SiteTestCase(DjangoTestCase):
         self.setup()
 
 
-# def conditional_test(conditional_function): # conditional_test / conditional_tests / decorators
-#     def wrapper(method_or_class):
-#         if (inspect.isclass(method_or_class)):
-#             # Decorate class
-#             if (conditional_function()):
-#                 return method_or_class
-#             else:
-#                 return
-#         else:
-#             # Decorate method
-#             def inner(*args, **kwargs):
-#                 if (conditional_function()):
-#                     return method_or_class(*args, **kwargs)
-#                 else:
-#                     return
-#
-#             return inner
-#
-#     return wrapper
-#
-#
-# exclude_on_site = lambda site_id: conditional_test(conditional_function=lambda: (not (settings.SITE_ID == site_id)))
-# exclude_on_speedy_net = exclude_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
-# exclude_on_speedy_match = exclude_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
-# exclude_on_speedy_composer = exclude_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
-# exclude_on_speedy_mail_software = exclude_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
-#
-# only_on_site = lambda site_id: conditional_test(conditional_function=lambda: (settings.SITE_ID == site_id))
-# only_on_speedy_net = only_on_site(site_id=settings.SPEEDY_NET_SITE_ID)
-# only_on_speedy_match = only_on_site(site_id=settings.SPEEDY_MATCH_SITE_ID)
-# only_on_speedy_composer = only_on_site(site_id=settings.SPEEDY_COMPOSER_SITE_ID)
-# only_on_speedy_mail_software = only_on_site(site_id=settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
-#
-# only_on_sites = lambda site_id_list: conditional_test(conditional_function=lambda: (settings.SITE_ID in site_id_list))
-# only_on_sites_with_login = only_on_sites(site_id_list=[settings.SPEEDY_NET_SITE_ID, settings.SPEEDY_MATCH_SITE_ID])

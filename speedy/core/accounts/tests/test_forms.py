@@ -3,7 +3,7 @@ from datetime import date
 from django.conf import settings
 from django.test import override_settings
 
-import speedy.core.settings.tests as tests_settings
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
@@ -308,7 +308,6 @@ class RegistrationFormTestCaseMixin(object):
         self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_email_address_errors_dict())
 
     def test_invalid_date_of_birth_list_fail(self):
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
             print(date_of_birth)
             data = self.data.copy()

@@ -21,6 +21,13 @@ SPEEDY_MATCH_SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
 SPEEDY_COMPOSER_SITE_ID = int(env('SPEEDY_COMPOSER_SITE_ID'))
 SPEEDY_MAIL_SOFTWARE_SITE_ID = int(env('SPEEDY_MAIL_SOFTWARE_SITE_ID'))
 
+SITES_WITH_LOGIN = [
+    SPEEDY_NET_SITE_ID,
+    SPEEDY_MATCH_SITE_ID,
+]
+
+XD_AUTH_SITES = SITES_WITH_LOGIN
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -177,11 +184,11 @@ SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 #
 # LOGIN_REDIRECT_URL = '/me/'
 #
-XD_AUTH_SITES = [
-    SPEEDY_NET_SITE_ID,
-    SPEEDY_MATCH_SITE_ID,
-]
-
+# XD_AUTH_SITES = [
+#     SPEEDY_NET_SITE_ID,
+#     SPEEDY_MATCH_SITE_ID,
+# ]
+#
 # UNAVAILABLE_USERNAMES = [
 #     'admin', 'root', 'webmaster', 'uri', 'speedy',
 #     'register', 'login', 'logout', 'me', 'editprofile', 'resetpassword',

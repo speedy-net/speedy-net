@@ -7,8 +7,6 @@ from datetime import date
 
 from dateutil.relativedelta import relativedelta
 
-from django.conf import settings
-
 
 # ~~~~ TODO: move to settings.
 REGULAR_UDID_LENGTH = 20
@@ -78,7 +76,7 @@ def reflection_import(name):
     return klass
 
 
-def conditional_method_or_class(conditional_function): # conditional_test / conditional_tests / decorators
+def conditional_method_or_class(conditional_function):
     def wrapper(method_or_class):
         if (inspect.isclass(method_or_class)):
             # Decorate class

@@ -4,7 +4,7 @@ from django.conf import settings
 from django.test import override_settings
 from django.core import mail
 
-import speedy.core.settings.tests as tests_settings
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
@@ -367,7 +367,6 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_invalid_date_of_birth_list_fail(self):
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
             print("test_invalid_date_of_birth_list_fail", date_of_birth)
             data = self.data.copy()
@@ -733,7 +732,6 @@ class EditProfileViewTestCaseMixin(object):
         self.run_test_user_cannot_change_his_username_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
     def test_valid_date_of_birth_list_ok(self):
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
             print("test_valid_date_of_birth_list_ok", date_of_birth)
             data = self.data.copy()
@@ -756,7 +754,6 @@ class EditProfileViewTestCaseMixin(object):
     def test_invalid_date_of_birth_list_fail(self):
         self.date_of_birth = self.user.date_of_birth
         self.last_name = self.user.last_name
-        # import speedy.core.settings.tests as tests_settings # ~~~~ TODO: remove this line!
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
             print("test_invalid_date_of_birth_list_fail", date_of_birth)
             data = self.data.copy()

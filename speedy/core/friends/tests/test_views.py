@@ -2,7 +2,7 @@ from django.conf import settings
 from django.test import override_settings
 from friendship.models import Friend, FriendshipRequest
 
-import speedy.core.settings.tests as tests_settings
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
