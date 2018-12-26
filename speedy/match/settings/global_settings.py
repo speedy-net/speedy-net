@@ -1,12 +1,12 @@
 # Used also by Speedy Net.
 
-MIN_HEIGHT_ALLOWED = 1 # In cm.
-MAX_HEIGHT_ALLOWED = 450 # In cm.
+MIN_HEIGHT_ALLOWED = 1 # In cm. # ~~~~ TODO: move to class SpeedyMatchSiteProfileSettings?
+MAX_HEIGHT_ALLOWED = 450 # In cm. # ~~~~ TODO: move to class SpeedyMatchSiteProfileSettings?
 
-MIN_AGE_MATCH_ALLOWED = 0 # In years.
-MAX_AGE_MATCH_ALLOWED = 180 # In years.
+MIN_AGE_MATCH_ALLOWED = 0 # In years. # ~~~~ TODO: move to class SpeedyMatchSiteProfileSettings?
+MAX_AGE_MATCH_ALLOWED = 180 # In years. # ~~~~ TODO: move to class SpeedyMatchSiteProfileSettings?
 
-SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS = [
+SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS = [ # ~~~~ TODO: move to class SpeedyMatchSiteProfileSettings?
     [],  # There's no step 0
     [],  # Step 1 = registration form
     ['photo'],

@@ -214,7 +214,9 @@ SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 #     '/set-session/',
 # ]
 #
-ACTIVATE_PROFILE_AFTER_REGISTRATION = True
+
+SMALL_UDID_LENGTH = 15
+REGULAR_UDID_LENGTH = 20
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
