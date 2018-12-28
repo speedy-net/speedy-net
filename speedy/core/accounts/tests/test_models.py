@@ -199,8 +199,7 @@ class EntityTestCaseMixin(object):
         # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
         raise Exception
 
-    # @override_settings(USER_SETTINGS=get_user_settings_with_override_settings(override_user_settings_min_slug_length=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH)) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
     def test_slug_min_length_fail_username_min_length_ok_1(self):
         # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok_1: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####

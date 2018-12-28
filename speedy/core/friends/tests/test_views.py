@@ -150,8 +150,7 @@ class UserFriendRequestViewTestCase(SiteTestCase):
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users cannot be friends with themselves."])
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users cannot be friends with themselves"])#### # ~~~~ TODO: remove this line!
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_can_send_friend_request_if_not_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -167,8 +166,7 @@ class UserFriendRequestViewTestCase(SiteTestCase):
         r = self.client.get(path=self.other_user.get_absolute_url())
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['Friend request sent.'])
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_cannot_send_friend_request_if_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED):
@@ -238,8 +236,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['Friend request accepted.'])
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -253,8 +250,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['Friend request accepted.'])
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED):
@@ -268,8 +264,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You already have 4 friends. You can't have more than 4 friends on Speedy Net. Please remove friends before you proceed."])
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
@@ -283,8 +278,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
         r = self.client.get(path=self.other_user_friends_list_url)
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['Friend request accepted.'])
 
-    # @override_settings(MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED) # ~~~~ TODO: check configuration!
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
         self.assertEqual(first=django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED):
