@@ -2,12 +2,10 @@ import logging
 
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
-from django.contrib.auth import (
-    authenticate, get_user_model, password_validation,
-)
+from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
 
-from speedy.core.base.utils import normalize_slug, normalize_username, _get_age_or_default
+from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
 
 
 log = logging.getLogger(__name__)
@@ -175,7 +173,7 @@ def age_is_valid_in_forms(age):
 
 # ~~~~ TODO: create tests for this validator.
 def validate_date_of_birth_in_model(date_of_birth):
-    age = _get_age_or_default(date_of_birth=date_of_birth)
+    age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_model(age=age))):
         log.debug("validate_date_of_birth_in_model::age is not valid in model (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
@@ -184,7 +182,7 @@ def validate_date_of_birth_in_model(date_of_birth):
 
 # ~~~~ TODO: create tests for this validator.
 def validate_date_of_birth_in_forms(date_of_birth):
-    age = _get_age_or_default(date_of_birth=date_of_birth)
+    age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_forms(age=age))):
         log.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
