@@ -31,4 +31,7 @@ class SiteProfile(SiteProfileBase):
     def get_name(self):
         return self.user.get_full_name()
 
+    def call_after_verify_email_address(self):
+        pass
+
 

@@ -11,10 +11,12 @@ from .managers import SiteProfileManager
 
 
 class SiteProfile(SiteProfileBase):
+    settings = django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS
+
     RELATED_NAME = 'speedy_match_site_profile'
 
-    HEIGHT_VALID_VALUES = range(django_settings.MIN_HEIGHT_ALLOWED, django_settings.MAX_HEIGHT_ALLOWED + 1)
-    AGE_MATCH_VALID_VALUES = range(django_settings.MIN_AGE_MATCH_ALLOWED, django_settings.MAX_AGE_MATCH_ALLOWED + 1)
+    HEIGHT_VALID_VALUES = range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1)
+    AGE_MATCH_VALID_VALUES = range(settings.MIN_AGE_MATCH_ALLOWED, settings.MAX_AGE_MATCH_ALLOWED + 1)
 
     SMOKING_STATUS_UNKNOWN = 0
     SMOKING_STATUS_NO = 1
@@ -125,8 +127,8 @@ class SiteProfile(SiteProfileBase):
     more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
     match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=django_settings.MIN_AGE_MATCH_ALLOWED)
-    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=django_settings.MAX_AGE_MATCH_ALLOWED)
+    min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_MATCH_ALLOWED)
+    max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
     diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=('smoking status match'), default=smoking_status_match_default.__func__)
     marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
@@ -171,7 +173,7 @@ class SiteProfile(SiteProfileBase):
                 self._deactivate_language(step=step)
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
-        step = len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
         if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
             # Profile is valid. Activate in this language.
             languages = self.get_active_languages()
@@ -183,6 +185,13 @@ class SiteProfile(SiteProfileBase):
             self._deactivate_language(step=self.activation_step)
             error_messages.append(_("Please confirm your email address."))
         return step, error_messages
+
+    def call_after_verify_email_address(self):
+        old_step = self.activation_step
+        self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        self.validate_profile_and_activate()
+        self.activation_step = old_step
+        self.user.save_user_and_profile()
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         self.validate_profile_and_activate()

@@ -350,8 +350,13 @@ class UserTestCaseMixin(object):
         self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
         self.assertEqual(first=User.settings.MAX_SLUG_LENGTH, second=200)
+        self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_MODEL, second=0)
+        self.assertEqual(first=User.settings.MAX_AGE_ALLOWED_IN_MODEL, second=250)
+        self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_FORMS, second=0)
+        self.assertEqual(first=User.settings.MAX_AGE_ALLOWED_IN_FORMS, second=181)
         self.assertEqual(first=User.settings.MIN_PASSWORD_LENGTH, second=8)
         self.assertEqual(first=User.settings.MAX_PASSWORD_LENGTH, second=120)
+        self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=801)
 
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))

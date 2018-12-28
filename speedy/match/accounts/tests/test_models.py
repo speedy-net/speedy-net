@@ -24,14 +24,14 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
     _non_int_string_values_to_test = ["Tel Aviv.", "One boy.", "Yes.", "Hi!"]
     _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
 
-    def get_default_user_1(self):
-        user = DefaultUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+    def get_default_user_doron(self):
+        user = DefaultUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.save_user_and_profile()
         return user
 
-    def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+    def get_active_user_jennifer(self):
+        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGETARIAN
         user.save_user_and_profile()
         return user
@@ -157,7 +157,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assert_list_2_doesnt_contain_elements_in_list_1(list_1=invalid_values, list_2=valid_values)
 
     def assert_step_and_error_messages_ok(self, step, error_messages):
-        self.assertEqual(first=step, second=len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+        self.assertEqual(first=step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
         self.assertEqual(first=step, second=10)
         self.assertEqual(first=len(error_messages), second=0)
         self.assertListEqual(list1=error_messages, list2=[])
@@ -241,7 +241,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             invalid_values = self._empty_values_to_test
             valid_values = self._valid_string_values_to_test
         elif (field_name in ['height']):
-            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, django_settings.MAX_HEIGHT_ALLOWED + 10 + 1))
+            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 10 + 1))
             valid_values_to_save = self._none_list + [value for value in values_to_test if (isinstance(value, int))]
             valid_values = SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES
         elif (field_name in ['diet']):
@@ -314,17 +314,17 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             # print(valid_sets) # ~~~~ TODO: remove this line!
             self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
         elif (field_name in ['min_age_match', 'max_age_match']):
-            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, django_settings.MAX_AGE_MATCH_ALLOWED + 10 + 1))
+            values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 10 + 1))
             valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
             valid_values = SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES
         elif (field_name in ['min_max_age_to_match']):
-            values_to_test_valid_ages = [(value, django_settings.MAX_AGE_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
+            values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
             self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
             values_to_test = []
             if (test_settings["test_invalid_values_to_save"]):
                 values_to_test.extend([(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test])
             if (test_settings["test_invalid_ages"]):
-                values_to_test.extend([(value, django_settings.MAX_AGE_MATCH_ALLOWED - value) for value in range(-10, django_settings.MAX_AGE_MATCH_ALLOWED + 10 + 1)])
+                values_to_test.extend([(value, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED - value) for value in range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 10 + 1)])
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
             else:
                 values_to_test.extend(values_to_test_valid_ages)
@@ -617,15 +617,15 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=(0, 0))
 
     def test_height_valid_values(self):
-        self.assertEqual(first=django_settings.MIN_HEIGHT_ALLOWED, second=1)
-        self.assertEqual(first=django_settings.MAX_HEIGHT_ALLOWED, second=450)
-        self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(django_settings.MIN_HEIGHT_ALLOWED, django_settings.MAX_HEIGHT_ALLOWED + 1))
+        self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, second=1)
+        self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED, second=450)
+        self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(1, 450 + 1))
 
     def test_age_valid_values(self):
-        self.assertEqual(first=django_settings.MIN_AGE_MATCH_ALLOWED, second=0)
-        self.assertEqual(first=django_settings.MAX_AGE_MATCH_ALLOWED, second=180)
-        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(django_settings.MIN_AGE_MATCH_ALLOWED, django_settings.MAX_AGE_MATCH_ALLOWED + 1))
+        self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED, second=0)
+        self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED, second=180)
+        self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
     def test_smoking_status_valid_values(self):
@@ -662,8 +662,8 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertListEqual(list1=[marital_status_match[str(marital_status)] for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES], list2=[5 for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES])
 
     def test_get_steps_range(self):
-        self.assertEqual(first=len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
-        self.assertEqual(first=utils.get_steps_range(), second=range(1, len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
+        self.assertEqual(first=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
+        self.assertEqual(first=utils.get_steps_range(), second=range(1, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
         self.assertEqual(first=utils.get_steps_range(), second=range(1, 10))
 
     def test_get_active_languages(self):
@@ -678,7 +678,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})
 
     def test_call_activate_directly_and_assert_exception(self):
-        user = self.get_default_user_1()
+        user = self.get_default_user_doron()
         self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
         with self.assertRaises(NotImplementedError) as cm:
@@ -688,7 +688,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
     def test_call_deactivate_directly_and_assert_no_exception(self):
-        user = self.get_default_user_2()
+        user = self.get_active_user_jennifer()
         self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
         user.speedy_match_profile.deactivate()
@@ -696,12 +696,20 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
     def test_call_get_name_directly_and_assert_no_exception(self):
-        user = self.get_default_user_1()
-        self.assertEqual(first=user.speedy_match_profile.get_name(), second='Jesse')
+        user = self.get_default_user_doron()
+        self.assertEqual(first=user.speedy_match_profile.get_name(), second="Jennifer")
+
+    def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
+        user = self.get_default_user_doron()
+        self.assertEqual(first=user.is_active, second=True)
+        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+        user.speedy_match_profile.call_after_verify_email_address()
+        self.assertEqual(first=user.is_active, second=True)
+        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
     def test_call_str_of_user_directly_and_assert_no_exception(self):
-        user = self.get_default_user_1()
-        self.assertEqual(first=str(user), second='Jesse')
+        user = self.get_default_user_doron()
+        self.assertEqual(first=str(user), second="Jennifer")
 
     def test_validate_profile_and_activate_ok(self):
         user = ActiveUserFactory()
@@ -714,8 +722,8 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertIn(member=user.speedy_match_profile.marital_status, container=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
         self.assertIn(member=user.speedy_match_profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
         self.assertIn(member=user.speedy_match_profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
-        self.assertEqual(first=user.speedy_match_profile.min_age_match, second=django_settings.MIN_AGE_MATCH_ALLOWED)
-        self.assertEqual(first=user.speedy_match_profile.max_age_match, second=django_settings.MAX_AGE_MATCH_ALLOWED)
+        self.assertEqual(first=user.speedy_match_profile.min_age_match, second=SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED)
+        self.assertEqual(first=user.speedy_match_profile.max_age_match, second=SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED)
         self.validate_all_user_values(user=user)
 
     def test_validate_profile_and_activate_exception_on_photo(self):
@@ -999,8 +1007,8 @@ class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, 
 
 @only_on_speedy_match
 class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
-    def get_default_user_1(self):
-        user = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter', date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
+    def get_active_user_doron(self):
+        user = ActiveUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
         user.diet = User.DIET_VEGETARIAN
         user.speedy_match_profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
         user.speedy_match_profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
@@ -1010,8 +1018,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         user.save_user_and_profile()
         return user
 
-    def get_default_user_2(self):
-        user = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman', date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+    def get_active_user_jennifer(self):
+        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.speedy_match_profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user.speedy_match_profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
@@ -1029,8 +1037,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
             self.assertEqual(first=rank, second=0)
 
     def test_gender_doesnt_match_profile(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
         user_2.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
         user_1.save_user_and_profile()
@@ -1041,8 +1049,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=0)
 
     def test_gender_match_profile_different_gender(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
         rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
@@ -1051,8 +1059,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=5)
 
     def test_gender_match_profile_same_gender(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
         user_2.gender = User.GENDER_MALE
         user_2.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
@@ -1064,8 +1072,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=5)
 
     def test_age_doesnt_match_profile(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.min_age_match = 20
         user_1.speedy_match_profile.max_age_match = 30
         user_1.save_user_and_profile()
@@ -1076,8 +1084,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=0)
 
     def test_smoking_status_doesnt_match_profile(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 0, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 0}
         user_2.speedy_match_profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user_1.save_user_and_profile()
@@ -1088,8 +1096,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=0)
 
     def test_marital_status_match_profile(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_2.speedy_match_profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
@@ -1099,8 +1107,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=5)
 
     def test_marital_status_doesnt_match_profile(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED
         user_2.speedy_match_profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
         user_1.save_user_and_profile()
@@ -1111,8 +1119,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=0)
 
     def test_match_profile_rank_3(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 3, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 4}
         user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
         user_1.save_user_and_profile()
@@ -1123,8 +1131,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=5)
 
     def test_match_profile_rank_4(self):
-        user_1 = self.get_default_user_1()
-        user_2 = self.get_default_user_2()
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
         user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
         user_1.save_user_and_profile()
         user_2.save_user_and_profile()
@@ -1134,8 +1142,8 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         self.assertEqual(first=rank_2, second=5)
 
     def test_match_profile_rank_1(self):
-        user_1 = self.get_default_user_2()
-        user_2 = self.get_default_user_1()
+        user_1 = self.get_active_user_jennifer()
+        user_2 = self.get_active_user_doron()
         user_1.speedy_match_profile.smoking_status_match = {str(SpeedyMatchSiteProfile.SMOKING_STATUS_YES): 3, str(SpeedyMatchSiteProfile.SMOKING_STATUS_NO): 5, str(SpeedyMatchSiteProfile.SMOKING_STATUS_SOMETIMES): 4}
         user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
         user_1.speedy_match_profile.marital_status_match[str(SpeedyMatchSiteProfile.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1

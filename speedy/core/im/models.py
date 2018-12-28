@@ -54,7 +54,7 @@ class Chat(TimeStampedModel):
         if (self.is_private):
             return (self.ent1, self.ent2)
         else:
-            return self.participants.order_by('date_created')
+            return self.group.order_by('date_created')
 
     @property
     def participants_count(self):

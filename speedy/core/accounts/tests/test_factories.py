@@ -107,7 +107,7 @@ class ActiveUserFactory(DefaultUserFactory):
             self.profile.children = "One boy."
             self.profile.more_children = "Yes."
             self.profile.match_description = "Hi!"
-            self.profile.height = random.randint(django_settings.MIN_HEIGHT_ALLOWED, django_settings.MAX_HEIGHT_ALLOWED)
+            self.profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED)
             # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
             # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
             if (self.diet == User.DIET_UNKNOWN):
@@ -133,7 +133,7 @@ class ActiveUserFactory(DefaultUserFactory):
             step, error_messages = self.profile.validate_profile_and_activate()
             if (len(error_messages) > 0):
                 raise Exception("Error messages not as expected, {}".format(error_messages))
-            if (not (step == len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+            if (not (step == len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 raise Exception("Step not as expected, {}".format(step))
             # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
             # print(USER_PASSWORD) # ~~~~ TODO: remove this line!

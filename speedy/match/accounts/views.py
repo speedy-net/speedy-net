@@ -66,14 +66,14 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         if (self.step == 1):
             log.debug('get: inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
             return redirect('accounts:edit_profile')
-        if (self.step >= len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
-            log.debug('get: inside "if (self.step >= len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
+        if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
+            log.debug('get: inside "if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
             return redirect('matches:list')
-        log.debug('get: did not get into "if (self.step >= len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
+        log.debug('get: did not get into "if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
         # else:
         #     step, errors = self.request.user.speedy_match_profile.validate_profile_and_activate()
         #     if (self.request.user.speedy_match_profile.activation_step == 0) and (
-        #         step == len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
+        #         step == len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
         #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(request=self.request, *args, **kwargs)
 
@@ -81,7 +81,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return reverse_lazy('accounts:activate', kwargs={'step': self.step})
 
     def get_success_url(self):
-        if (self.step >= len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
+        if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
             if (self.request.user.has_confirmed_email()):
                 return reverse_lazy('matches:list', kwargs={'step': self.step})
             else:

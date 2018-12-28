@@ -8,24 +8,53 @@ from .test_factories import ChatFactory
 
 @only_on_sites_with_login
 class ChatTestCase(SiteTestCase):
+    def get_active_user_doron(self):
+        user = ActiveUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon")
+        user.save_user_and_profile()
+        return user
+
+    def get_active_user_jennifer(self):
+        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly")
+        user.save_user_and_profile()
+        return user
+
     def test_id_length(self):
         chat = ChatFactory()
         self.assertEqual(first=len(chat.id), second=20)
 
-    def test_str(self):
-        chat = ChatFactory(ent1=ActiveUserFactory(first_name='Walter', last_name='White'), ent2=ActiveUserFactory(first_name='Jesse', last_name='Pinkman'))
+    def test_str_private_chat(self):
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
+        chat = ChatFactory(ent1=user_1, ent2=user_2)
         if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
-            self.assertEqual(first=str(chat), second='Walter, Jesse')
+            self.assertEqual(first=str(chat), second='Doron, Jennifer')
         else:
-            self.assertEqual(first=str(chat), second='Walter White, Jesse Pinkman')
+            self.assertEqual(first=str(chat), second="Doron Matalon, Jennifer Connelly")
 
-    def test_get_slug(self):
-        user1 = ActiveUserFactory(first_name='Walter', last_name='White', slug='walter')
-        user2 = ActiveUserFactory(first_name='Jesse', last_name='Pinkman', slug='jesse-pinkman')
-        chat = ChatFactory(ent1=user1, ent2=user2)
-        self.assertEqual(first=chat.get_slug(current_user=user1), second='jesse-pinkman')
-        self.assertEqual(first=chat.get_slug(current_user=user2), second='walter')
-        chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user1, user2, ActiveUserFactory(), ActiveUserFactory()])
-        self.assertEqual(first=chat.get_slug(current_user=user1), second=chat.id)
+    def test_get_slug_private_chat(self):
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
+        chat = ChatFactory(ent1=user_1, ent2=user_2)
+        self.assertEqual(first=chat.get_slug(current_user=user_1), second="jennifer-connelly")
+        self.assertEqual(first=chat.get_slug(current_user=user_2), second="doron-matalon")
 
+    def test_str_group_chat(self):
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
+        user_3 = ActiveUserFactory()
+        user_4 = ActiveUserFactory()
+        chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
+        print("test_str_group_chat: str(chat)=", str(chat))###### ~~~~ TODO: remove this line
+        if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
+            self.assertEqual(first=str(chat), second="Doron, Jennifer, {}, {}".format(user_3.profile.get_name(), user_4.profile.get_name()))
+        else:
+            self.assertEqual(first=str(chat), second="Doron Matalon, Jennifer Connelly, {}, {}".format(user_3.profile.get_name(), user_4.profile.get_name()))
+
+    def test_get_slug_group_chat(self):
+        user_1 = self.get_active_user_doron()
+        user_2 = self.get_active_user_jennifer()
+        user_3 = ActiveUserFactory()
+        user_4 = ActiveUserFactory()
+        chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
+        self.assertEqual(first=chat.get_slug(current_user=user_1), second=chat.id)
 

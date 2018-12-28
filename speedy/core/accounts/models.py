@@ -383,12 +383,8 @@ class UserEmailAddress(TimeStampedModel):
     def verify(self):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
-        if ((hasattr(self.user.profile, 'validate_profile_and_activate')) and (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1)):
-            old_step = self.user.profile.activation_step
-            self.user.profile.activation_step = len(django_settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-            self.user.profile.validate_profile_and_activate()
-            self.user.profile.activation_step = old_step
-            self.user.profile.save(update_fields=['activation_step'])
+        if (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1):
+            self.user.profile.call_after_verify_email_address()
 
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)
@@ -428,6 +424,12 @@ class SiteProfileBase(TimeStampedModel):
 
     def get_name(self):
         raise NotImplementedError("get_name is not implemented.")
+
+    def validate_profile_and_activate(self):
+        raise NotImplementedError("validate_profile_and_activate is not implemented.")
+
+    def call_after_verify_email_address(self):
+        raise NotImplementedError("call_after_verify_email_address is not implemented.")
 
     @property
     def is_active_or_superuser(self):
