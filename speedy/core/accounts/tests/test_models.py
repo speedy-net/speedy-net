@@ -1,11 +1,13 @@
 from datetime import datetime
 
+from django.conf import settings as django_settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
 
 from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
+from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
@@ -175,7 +177,48 @@ class EntityTestCaseMixin(object):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
 
-    def test_zzz(self):  #### TODO
+    def test_slug_min_length_fail_username_min_length_ok_9999999(self):
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok_9999999: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_9999999: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_9999999: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_9999999: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # entity = Entity(slug='a-' * 28 + 'a')
+        entity = Entity(slug='a-' * 29 + 'a')
+        # entity = Entity(slug='a-' * 30 + 'a')
+        # entity = Entity(slug='a-' * 31)
+        entity = Entity(slug='a' * 5, username='a' * 5)#####
+        with self.assertRaises(ValidationError) as cm:
+            entity.save()
+            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2={})
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
+        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
+        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
+        raise Exception
+
+    # @override_settings(USER_SETTINGS=get_user_settings_with_override_settings(override_user_settings_min_slug_length=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH)) # ~~~~ TODO: check configuration!
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH)) # ~~~~ TODO: check configuration!
+    def test_slug_min_length_fail_username_min_length_ok_1(self):
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok_1: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_1: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_1: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok_1: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # entity = Entity(slug='a-' * 28 + 'a')
+        entity = Entity(slug='a-' * 29 + 'a')
+        # entity = Entity(slug='a-' * 30 + 'a')
+        # entity = Entity(slug='a-' * 31)
+        entity = Entity(slug='a' * 5, username='a' * 5)#####
+        with self.assertRaises(ValidationError) as cm:
+            entity.save()
+            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2={})
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
+        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
         # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
         # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
         raise Exception

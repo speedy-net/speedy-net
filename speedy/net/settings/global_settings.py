@@ -4,7 +4,8 @@
 # ~~~~ TODO: move to speedy.core?
 
 
-class EntitySettings(object):
+# class EntitySettings(object):
+class ENTITY_SETTINGS(object):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
 
@@ -51,12 +52,14 @@ class EntitySettings(object):
     ]
 
 
-class NamedEntitySettings(object):
+# class NamedEntitySettings(object):
+class NAMED_ENTITY_SETTINGS(object):
     MIN_NAME_LENGTH = 1 # ~~~~ TODO: too short?
     MAX_NAME_LENGTH = 200
 
 
-class UserSettings(object):
+# class UserSettings(object):
+class USER_SETTINGS(object):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
 
@@ -74,6 +77,9 @@ class UserSettings(object):
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
 
+    MAX_NUMBER_OF_FRIENDS_ALLOWED = 800
+    # MAX_NUMBER_OF_FRIENDS_ALLOWED = 2 # For testing when there are close to MAX_NUMBER_OF_FRIENDS_ALLOWED friends. # ~~~~ TODO: remove this line!
+
     PASSWORD_VALIDATORS = [
         {
             'NAME': 'speedy.core.accounts.validators.PasswordMinLengthValidator',
@@ -84,7 +90,7 @@ class UserSettings(object):
     ]
 
 
-AUTH_PASSWORD_VALIDATORS = UserSettings.PASSWORD_VALIDATORS
+AUTH_PASSWORD_VALIDATORS = USER_SETTINGS.PASSWORD_VALIDATORS
 
 
 # ~~~~ TODO: move to django_settings.
@@ -95,7 +101,12 @@ DATE_FIELD_FORMATS = [
 DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
 
 
-MAX_NUMBER_OF_FRIENDS_ALLOWED = 800 # ~~~~ TODO: move to class UserSettings? And then check how can it be overridden in tests.
+# MAX_NUMBER_OF_FRIENDS_ALLOWED = 800 # ~~~~ TODO: move to class USER_SETTINGS? And then check how can it be overridden in tests.
 # MAX_NUMBER_OF_FRIENDS_ALLOWED = 2 # For testing when there are close to MAX_NUMBER_OF_FRIENDS_ALLOWED friends. # ~~~~ TODO: remove this line!
+
+
+# ENTITY_SETTINGS = EntitySettings
+# NAMED_ENTITY_SETTINGS = NamedEntitySettings
+# USER_SETTINGS = UserSettings
 
 

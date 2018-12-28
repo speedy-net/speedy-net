@@ -66,10 +66,14 @@ class TestsDynamicSettings(object):
 
 
 SITES_FIXTURE = 'default_sites_tests.json'
-OVERRIDE_MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 VALID_DATE_OF_BIRTH_IN_MODEL_LIST = TestsDynamicSettings.valid_date_of_birth_list(max_age_allowed=250)
 INVALID_DATE_OF_BIRTH_IN_MODEL_LIST = TestsDynamicSettings.invalid_date_of_birth_list(max_age_allowed=250)
 VALID_DATE_OF_BIRTH_IN_FORMS_LIST = TestsDynamicSettings.valid_date_of_birth_list(max_age_allowed=180)
 INVALID_DATE_OF_BIRTH_IN_FORMS_LIST = TestsDynamicSettings.invalid_date_of_birth_list(max_age_allowed=180)
+
+
+class OVERRIDE_USER_SETTINGS(object):
+    MIN_SLUG_LENGTH = 60
+    MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
 

@@ -11,7 +11,7 @@ from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
-from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings?
+# from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings?
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
@@ -23,7 +23,8 @@ from .validators import get_username_validators, get_slug_validators, validate_d
 
 
 class Entity(TimeStampedModel):
-    settings = speedy_net_global_settings.EntitySettings
+    settings = django_settings.ENTITY_SETTINGS
+    # settings = speedy_net_global_settings.EntitySettings
 
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -95,7 +96,8 @@ class Entity(TimeStampedModel):
 
 
 class NamedEntity(Entity):
-    settings = speedy_net_global_settings.NamedEntitySettings
+    settings = django_settings.NAMED_ENTITY_SETTINGS
+    # settings = speedy_net_global_settings.NamedEntitySettings
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
@@ -127,7 +129,8 @@ class UserAccessField(models.PositiveIntegerField):
 
 
 class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
-    settings = speedy_net_global_settings.UserSettings
+    settings = django_settings.USER_SETTINGS
+    # settings = speedy_net_global_settings.UserSettings
 
     AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
     AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
