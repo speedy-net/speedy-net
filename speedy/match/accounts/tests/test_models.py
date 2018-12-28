@@ -697,7 +697,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
 
     def test_call_get_name_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
-        self.assertEqual(first=user.speedy_match_profile.get_name(), second="Jennifer")
+        self.assertEqual(first=user.speedy_match_profile.get_name(), second="Doron")
 
     def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
@@ -709,7 +709,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
 
     def test_call_str_of_user_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
-        self.assertEqual(first=str(user), second="Jennifer")
+        self.assertEqual(first=str(user), second="Doron")
 
     def test_validate_profile_and_activate_ok(self):
         user = ActiveUserFactory()

@@ -36,7 +36,7 @@ class SpeedyNetSiteProfileTestCase(SiteTestCase):
 
     def test_call_get_name_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
-        self.assertEqual(first=user.speedy_net_profile.get_name(), second="Jennifer Connelly")
+        self.assertEqual(first=user.speedy_net_profile.get_name(), second="Doron Matalon")
 
     def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
         user = self.get_inactive_user_jennifer()
@@ -58,6 +58,6 @@ class SpeedyNetSiteProfileTestCase(SiteTestCase):
 
     def test_call_str_of_user_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
-        self.assertEqual(first=str(user), second="Jennifer Connelly")
+        self.assertEqual(first=str(user), second="Doron Matalon")
 
 
