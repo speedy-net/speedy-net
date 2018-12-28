@@ -1,6 +1,5 @@
 import logging
 
-from django.conf import settings as django_settings
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
@@ -11,6 +10,7 @@ from django.utils.translation import ugettext as _
 from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
 from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 from speedy.match.accounts import utils
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 from .forms import ProfileNotificationsForm
 
