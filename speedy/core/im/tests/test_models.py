@@ -35,6 +35,10 @@ class ChatTestCase(SiteTestCase):
         user_1 = self.get_active_user_doron()
         user_2 = self.get_active_user_jennifer()
         chat = ChatFactory(ent1=user_1, ent2=user_2)
+        self.assertEqual(first=chat.get_slug(current_user=user_1), second=user_2.slug)
+        self.assertEqual(first=chat.get_slug(current_user=user_2), second=user_1.slug)
+        self.assertNotEqual(first=chat.get_slug(current_user=user_1), second=user_1.slug)
+        self.assertNotEqual(first=chat.get_slug(current_user=user_2), second=user_2.slug)
         self.assertEqual(first=chat.get_slug(current_user=user_1), second="jennifer-connelly")
         self.assertEqual(first=chat.get_slug(current_user=user_2), second="doron-matalon")
 
@@ -45,6 +49,8 @@ class ChatTestCase(SiteTestCase):
         user_4 = ActiveUserFactory()
         chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
         print("test_str_group_chat: str(chat)=", str(chat))###### ~~~~ TODO: remove this line
+        self.assertEqual(first=str(chat), second="{}, {}, {}, {}".format(user_1.profile.get_name(), user_2.profile.get_name(), user_3.profile.get_name(), user_4.profile.get_name()))
+        self.assertEqual(first=str(chat), second="{}, {}, {}, {}".format(str(user_1), str(user_2), str(user_3), str(user_4)))
         if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
             self.assertEqual(first=str(chat), second="Doron, Jennifer, {}, {}".format(user_3.profile.get_name(), user_4.profile.get_name()))
         else:

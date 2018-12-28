@@ -13,7 +13,7 @@ from speedy.match.accounts.tests.test_mixins import SpeedyMatchAccountsLanguageM
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User
-from speedy.core.accounts.tests.test_factories import DefaultUserFactory, ActiveUserFactory
+from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 from speedy.core.uploads.tests.test_factories import UserImageFactory
 
 
@@ -616,6 +616,22 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
             self.assertEqual(first=sum(keys_and_ranks_error_messages_counts_tuple), second=0)
             self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=(0, 0))
 
+    def test_profile_property_and_class(self):
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+
+        user = self.get_default_user_doron()
+        self.assertEqual(first=user.profile, second=user.speedy_match_profile)
+        self.assertEqual(first=user.profile.pk, second=user.speedy_match_profile.pk)
+        self.assertEqual(first=user.profile.__class__, second=user.speedy_match_profile.__class__)
+        self.assertEqual(first=user.profile.__class__, second=SpeedyMatchSiteProfile)
+        self.assertEqual(first=user.profile.__class__.__name__, second="SiteProfile")
+        self.assertEqual(first=user.speedy_match_profile.__class__, second=SpeedyMatchSiteProfile)
+        self.assertEqual(first=user.speedy_match_profile.__class__.__name__, second="SiteProfile")
+        self.assertEqual(first=user.speedy_net_profile.__class__, second=SpeedyNetSiteProfile)
+        self.assertNotEqual(first=user.speedy_net_profile, second=user.profile)
+        self.assertNotEqual(first=user.speedy_net_profile.__class__, second=user.profile.__class__)
+        self.assertNotEqual(first=user.speedy_net_profile.__class__, second=SpeedyMatchSiteProfile)
+
     def test_height_valid_values(self):
         self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, second=1)
         self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED, second=450)
@@ -695,10 +711,6 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
-    def test_call_get_name_directly_and_assert_no_exception(self):
-        user = self.get_default_user_doron()
-        self.assertEqual(first=user.speedy_match_profile.get_name(), second="Doron")
-
     def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
         self.assertEqual(first=user.is_active, second=True)
@@ -707,9 +719,21 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
         self.assertEqual(first=user.is_active, second=True)
         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
+    def test_call_get_name_directly_and_assert_no_exception(self):
+        user = self.get_default_user_doron()
+        self.assertEqual(first=user.speedy_match_profile.get_name(), second="Doron")
+
     def test_call_str_of_user_directly_and_assert_no_exception(self):
         user = self.get_default_user_doron()
         self.assertEqual(first=str(user), second="Doron")
+
+    def test_str_of_user_is_the_same_as_get_name_and_get_first_name(self):
+        for user in [self.get_default_user_doron(), self.get_active_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
+            self.assertEqual(first=str(user), second=user.speedy_match_profile.get_name())
+            self.assertEqual(first=str(user), second=user.get_first_name())
+            self.assertEqual(first=str(user), second='{}'.format(user.first_name))
+            self.assertNotEqual(first=str(user), second=user.get_full_name())
+            self.assertNotEqual(first=str(user), second='{} {}'.format(user.first_name, user.last_name))
 
     def test_validate_profile_and_activate_ok(self):
         user = ActiveUserFactory()
