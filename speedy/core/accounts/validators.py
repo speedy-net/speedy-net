@@ -194,3 +194,9 @@ class ValidateUserPasswordMixin(object):
         password_validation.validate_password(password=password)
 
 
+# # code for debugging. ~~~~ TODO: remove this line and the following lines.
+# from django.conf import settings as django_settings
+# if (django_settings.DEBUG): # Only for tests
+#     _get_username_validators = get_username_validators
+#     _get_slug_validators = get_slug_validators
+#     from .___validators import get_username_validators, get_slug_validators
