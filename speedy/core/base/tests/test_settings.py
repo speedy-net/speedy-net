@@ -13,7 +13,7 @@ class SettingsTestCase(SiteTestCase):
     def test_login_enabled(self):
         self.assertEqual(first=django_settings.LOGIN_ENABLED, second=(django_settings.SITE_ID in django_settings.SITES_WITH_LOGIN))
 
-    def test_zzzyyyxxx(self): #### TODO
+    def test_raise(self): #### TODO
         raise Exception
 
 

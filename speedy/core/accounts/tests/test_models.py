@@ -9,43 +9,8 @@ from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
-from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from .test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
-
-
-class NormalizeSlugTestCase(SiteTestCase):
-    def test_convert_to_lowercase(self):
-        self.assertEqual(first=normalize_slug(slug='CamelCase'), second='camelcase')
-        self.assertEqual(first=normalize_slug(slug='UPPERCASE'), second='uppercase')
-        self.assertEqual(first=normalize_slug(slug='lowercase'), second='lowercase')
-
-    def test_convert_dots_to_dashes(self):
-        self.assertEqual(first=normalize_slug(slug='one.dot'), second='one-dot')
-        self.assertEqual(first=normalize_slug(slug='two..dot.s'), second='two-dot-s')
-
-    def test_convert_underscores_to_dashes(self):
-        self.assertEqual(first=normalize_slug(slug='one_underscore'), second='one-underscore')
-        self.assertEqual(first=normalize_slug(slug='two__under_scores'), second='two-under-scores')
-
-    def test_convert_multiple_dashes_to_one(self):
-        self.assertEqual(first=normalize_slug(slug='three---dash---es'), second='three-dash-es')
-
-    def test_cut_leading_symbols(self):
-        self.assertEqual(first=normalize_slug(slug='-dash'), second='dash')
-        self.assertEqual(first=normalize_slug(slug='..dots'), second='dots')
-        self.assertEqual(first=normalize_slug(slug='_under_score'), second='under-score')
-
-    def test_cut_trailing_symbols(self):
-        self.assertEqual(first=normalize_slug(slug='dash-'), second='dash')
-        self.assertEqual(first=normalize_slug(slug='dots...'), second='dots')
-        self.assertEqual(first=normalize_slug(slug='under_score_'), second='under-score')
-
-
-class NormalizeUsernameTestCase(SiteTestCase):
-    def test_remove_dashes_dots_and_underscores(self):
-        self.assertEqual(first=normalize_username(slug='this-is-a-slug'), second='thisisaslug')
-        self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
 
 
 class EntityTestCaseMixin(object):
@@ -57,6 +22,30 @@ class EntityTestCaseMixin(object):
         self.assertEqual(first=entity.slug, second='zzzzzz')
         self.assertEqual(first=len(entity.id), second=15)
         return entity
+
+    def run_test_all_slugs_to_test_list(self, test_settings):
+        ok_count, model_save_failures_count = 0, 0
+        for d in tests_settings.SLUGS_TO_TEST_LIST:
+            entity = Entity(slug=d["slug"])
+            if (d["length"] >= Entity.settings.MIN_SLUG_LENGTH):
+                entity.save()
+                # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+                ok_count += 1
+            else:
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                    # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=d["length"]))
+                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
+                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
+                model_save_failures_count += 1
+        counts_tuple = (ok_count, model_save_failures_count)
+        self.assertEqual(first=Entity.objects.count(), second=ok_count)
+        self.assertEqual(first=User.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
+        self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
     def test_model_settings(self):
         self.assertEqual(first=Entity.settings.MIN_USERNAME_LENGTH, second=6)
@@ -177,55 +166,52 @@ class EntityTestCaseMixin(object):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
 
-    def test_slug_min_length_fail_username_min_length_ok_9999999(self):
-        # from django.conf import settings as django_settings
-        print("test_slug_min_length_fail_username_min_length_ok_9999999: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_9999999: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_9999999: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_9999999: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
-        # entity = Entity(slug='a-' * 28 + 'a')
-        entity = Entity(slug='a-' * 29 + 'a')
-        # entity = Entity(slug='a-' * 30 + 'a')
-        # entity = Entity(slug='a-' * 31)
-        entity = Entity(slug='a' * 5, username='a' * 5)#####
-        with self.assertRaises(ValidationError) as cm:
-            entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={})
-        # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
-        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
-        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
-        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
-        raise Exception
-
-    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
-    def test_slug_min_length_fail_username_min_length_ok_1(self):
-        # from django.conf import settings as django_settings
-        print("test_slug_min_length_fail_username_min_length_ok_1: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_1: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_1: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok_1: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
-        # entity = Entity(slug='a-' * 28 + 'a')
-        entity = Entity(slug='a-' * 29 + 'a')
-        # entity = Entity(slug='a-' * 30 + 'a')
-        # entity = Entity(slug='a-' * 31)
-        entity = Entity(slug='a' * 5, username='a' * 5)#####
-        with self.assertRaises(ValidationError) as cm:
-            entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2={})
-        # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
-        # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
-        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
-        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
-        raise Exception
-
-    def test_slug_and_username_min_length_ok(self):
+    def test_slug_and_username_min_length_ok_1(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
         entity.save()
         # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+
+    def test_slug_and_username_min_length_ok_2(self):
+        # from django.conf import settings as django_settings
+        print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
+        self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
+        test_settings = {
+            "expected_counts_tuple": (8, 0),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+
+    @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
+    # @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH * 2)) # ~~~~ TODO: remove this line!
+    def test_slug_min_length_fail_username_min_length_ok(self):
+        # ~~~~ TODO: remove all the following lines.
+        from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
+        Entity.settings = django_settings.ENTITY_SETTINGS
+        Entity.validators = {
+            'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        }
+        User.settings = django_settings.USER_SETTINGS
+        User.validators = {
+            'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+            'date_of_birth': [validate_date_of_birth_in_model],
+        }
+
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
+        # ~~~~ TODO: remove all the above lines.
+
+        self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
+        test_settings = {
+            "expected_counts_tuple": (4, 4),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
     def test_slug_and_username_max_length_fail(self):
         entity = Entity(slug='a' * 201, username='z' * 201)
@@ -345,6 +331,40 @@ class UserTestCaseMixin(object):
             'date_of_birth': '1900-08-20',
         }
 
+    def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
+        user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
+        # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
+        with self.assertRaises(ValidationError) as cm:
+            user.save_user_and_profile()
+            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=number, gender_is_valid=gender_is_valid))
+
+    def run_test_all_slugs_to_test_list(self, test_settings):
+        ok_count, model_save_failures_count = 0, 0
+        for d in tests_settings.SLUGS_TO_TEST_LIST:
+            if (d["length"] >= User.settings.MIN_SLUG_LENGTH):
+                user = DefaultUserFactory(slug=d["slug"])
+                user.save_user_and_profile()
+                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+                ok_count += 1
+            else:
+                with self.assertRaises(ValidationError) as cm:
+                    user = DefaultUserFactory(slug=d["slug"])
+                    user.save_user_and_profile()
+                    # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=d["length"]))
+                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
+                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
+                model_save_failures_count += 1
+        counts_tuple = (ok_count, model_save_failures_count)
+        self.assertEqual(first=Entity.objects.count(), second=ok_count)
+        self.assertEqual(first=User.objects.count(), second=ok_count)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
+        self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
+
     def test_model_settings(self):
         self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
         self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
@@ -387,15 +407,6 @@ class UserTestCaseMixin(object):
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=''))
-
-    def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
-        user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
-        # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
-        # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
-        with self.assertRaises(ValidationError) as cm:
-            user.save_user_and_profile()
-            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=number, gender_is_valid=gender_is_valid))
 
     def test_cannot_create_user_with_all_the_required_fields_zero(self):
         self.run_test_cannot_create_user_with_all_the_required_fields_number(number=0)
@@ -518,10 +529,52 @@ class UserTestCaseMixin(object):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
 
-    def test_slug_and_username_min_length_ok(self):
+    def test_slug_and_username_min_length_ok_1(self):
         user = DefaultUserFactory(slug='a' * 6)
         user.save_user_and_profile()
         # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+
+    def test_slug_and_username_min_length_ok_2(self):
+        # from django.conf import settings as django_settings
+        print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok_2: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
+        test_settings = {
+            "expected_counts_tuple": (8, 0),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
+    # @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH * 2)) # ~~~~ TODO: remove this line!
+    def test_slug_min_length_fail_username_min_length_ok(self):
+        # ~~~~ TODO: remove all the following lines.
+        from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
+        Entity.settings = django_settings.ENTITY_SETTINGS
+        Entity.validators = {
+            'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        }
+        User.settings = django_settings.USER_SETTINGS
+        User.validators = {
+            'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+            'date_of_birth': [validate_date_of_birth_in_model],
+        }
+
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # ~~~~ TODO: remove all the above lines.
+
+        self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
+        test_settings = {
+            "expected_counts_tuple": (4, 4),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
     def test_slug_and_username_max_length_fail(self):
         with self.assertRaises(ValidationError) as cm:

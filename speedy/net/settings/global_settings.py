@@ -64,7 +64,6 @@ class USER_SETTINGS(object):
     MAX_USERNAME_LENGTH = 40
 
     MIN_SLUG_LENGTH = 6
-    # MIN_SLUG_LENGTH = 60 ###### # ~~~~ TODO: override in tests to assert specific error messages.
     MAX_SLUG_LENGTH = 200
 
     # Users can register from age 0 to 180, but can't be kept on the site after age 250.
