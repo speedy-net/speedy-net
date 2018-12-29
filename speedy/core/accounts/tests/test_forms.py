@@ -6,6 +6,7 @@ from django.test import override_settings
 from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 from .test_mixins import SpeedyCoreAccountsLanguageMixin
 from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
 from speedy.core.base.utils import normalize_slug, normalize_username
@@ -39,6 +40,53 @@ class RegistrationFormTestCaseMixin(object):
         self.required_fields = self.data.keys()
         self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
+    def run_test_all_slugs_to_test_list(self, test_settings):
+        ok_count, model_save_failures_count = 0, 0
+        for d in tests_settings.SLUGS_TO_TEST_LIST:
+            data = self.data.copy()
+            data['slug'] = d["slug"]
+            username = normalize_username(slug=data['slug'])
+            slug = normalize_slug(slug=data['slug'])
+            data['email'] = "{username}@example.com".format(username=username)
+            if (d["length"] >= User.settings.MIN_SLUG_LENGTH):
+                form = RegistrationForm(language_code=self.language_code, data=data)
+                form.full_clean()
+                self.assertTrue(expr=form.is_valid())
+                self.assertDictEqual(d1=form.errors, d2={})
+                user = form.save()
+                self.assertEqual(first=User.objects.filter(username=username).count(), second=1)
+                user = User.objects.get(username=username)
+                self.assertEqual(first=user.username, second=username)
+                self.assertEqual(first=user.slug, second=slug)
+                ok_count += 1
+            else:
+                form = RegistrationForm(language_code=self.language_code, data=data)
+                form.full_clean()
+                self.assertFalse(expr=form.is_valid())
+                self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=d["length"]))
+                # user = form.save()########################
+                self.assertEqual(first=User.objects.filter(username=username).count(), second=0)
+                # user = User.objects.get(username=username)###############
+                # self.assertEqual(first=user.username, second=username)
+                # self.assertEqual(first=user.slug, second=slug)
+                # self.assertEqual(first=user.slug, second=self.slug)#########
+                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
+                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
+                model_save_failures_count += 1
+        # email_addresses = UserEmailAddress.objects.all()#########
+        # email_addresses_set = {e.email for e in email_addresses}#########
+        # print(sorted(list(email_addresses_set)))#########
+        counts_tuple = (ok_count, model_save_failures_count)
+        self.assertEqual(first=Entity.objects.count(), second=ok_count)
+        self.assertEqual(first=User.objects.count(), second=ok_count)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=ok_count)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
+        self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
+        # email_addresses = UserEmailAddress.objects.all()#########
+        # email_addresses_set = {e.email for e in email_addresses}#########
+        # print(sorted(list(email_addresses_set)))#########
+
     def test_visitor_can_register(self):
         form = RegistrationForm(language_code=self.language_code, data=self.data)
         form.full_clean()
@@ -49,6 +97,8 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        self.assertEqual(first=Entity.objects.filter(username=self.username).count(), second=1)
+        self.assertEqual(first=User.objects.filter(username=self.username).count(), second=1)
         entity = Entity.objects.get(username=self.username)
         user = User.objects.get(username=self.username)
         self.assertEqual(first=user, second=entity.user)
@@ -272,10 +322,47 @@ class RegistrationFormTestCaseMixin(object):
         # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-    def test_zzz(self):  #### TODO
-        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
-        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
-        raise Exception
+    def test_slug_and_username_min_length_ok(self):
+        # from django.conf import settings as django_settings
+        print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_and_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
+        test_settings = {
+            "expected_counts_tuple": (8, 0),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+
+    @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
+    # @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH * 2)) # ~~~~ TODO: remove this line!
+    def test_slug_min_length_fail_username_min_length_ok(self):
+        # ~~~~ TODO: remove all the following lines.
+        from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
+        Entity.settings = django_settings.ENTITY_SETTINGS
+        Entity.validators = {
+            'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        }
+        User.settings = django_settings.USER_SETTINGS
+        User.validators = {
+            'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+            'date_of_birth': [validate_date_of_birth_in_model],
+        }
+
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # ~~~~ TODO: remove all the above lines.
+
+        self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
+        test_settings = {
+            "expected_counts_tuple": (4, 4),
+        }
+        self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
     def test_slug_validation_fails_with_username_too_long(self):
         data = self.data.copy()
