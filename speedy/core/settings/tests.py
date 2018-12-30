@@ -72,14 +72,14 @@ VALID_DATE_OF_BIRTH_IN_FORMS_LIST = TestsDynamicSettings.valid_date_of_birth_lis
 INVALID_DATE_OF_BIRTH_IN_FORMS_LIST = TestsDynamicSettings.invalid_date_of_birth_list(max_age_allowed=180)
 
 SLUGS_TO_TEST_LIST = [
-    {"slug": 'a-' * 28 + 'b', "length": 57},
-    {"slug": 'a-' * 29, "length": 57},
-    {"slug": 'a-' * 29 + 'b', "length": 59},
-    {"slug": 'a-' * 30, "length": 59},
-    {"slug": 'a-' * 30 + 'b', "length": 61},
-    {"slug": 'a-' * 31, "length": 61},
-    {"slug": 'z-' * 31 + 'b', "length": 63},
-    {"slug": 'z-' * 32, "length": 63},
+    {"slug": 'a-' * 28 + 'b', "slug_length": 57},
+    {"slug": 'a-' * 29, "slug_length": 57},
+    {"slug": 'a-' * 29 + 'b', "slug_length": 59},
+    {"slug": 'a-' * 30, "slug_length": 59},
+    {"slug": 'a-' * 30 + 'b', "slug_length": 61},
+    {"slug": 'a-' * 31, "slug_length": 61},
+    {"slug": 'z-' * 31 + 'b', "slug_length": 63},
+    {"slug": 'z-' * 32, "slug_length": 63},
 ]
 
 

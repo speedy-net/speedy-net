@@ -42,13 +42,14 @@ class RegistrationFormTestCaseMixin(object):
 
     def run_test_all_slugs_to_test_list(self, test_settings):
         ok_count, model_save_failures_count = 0, 0
-        for d in tests_settings.SLUGS_TO_TEST_LIST:
+        for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
             data = self.data.copy()
-            data['slug'] = d["slug"]
+            data['slug'] = slug_dict["slug"]
             username = normalize_username(slug=data['slug'])
             slug = normalize_slug(slug=data['slug'])
             data['email'] = "{username}@example.com".format(username=username)
-            if (d["length"] >= User.settings.MIN_SLUG_LENGTH):
+            self.assertEqual(first=slug_dict["slug_length"], second=len(slug))
+            if (slug_dict["slug_length"] >= User.settings.MIN_SLUG_LENGTH):
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
                 self.assertTrue(expr=form.is_valid())
@@ -63,7 +64,7 @@ class RegistrationFormTestCaseMixin(object):
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
                 self.assertFalse(expr=form.is_valid())
-                self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=d["length"]))
+                self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                 # user = form.save()########################
                 self.assertEqual(first=User.objects.filter(username=username).count(), second=0)
                 # user = User.objects.get(username=username)###############
