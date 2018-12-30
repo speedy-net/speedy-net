@@ -65,18 +65,8 @@ class RegistrationFormTestCaseMixin(object):
                 form.full_clean()
                 self.assertFalse(expr=form.is_valid())
                 self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
-                # user = form.save()########################
                 self.assertEqual(first=User.objects.filter(username=username).count(), second=0)
-                # user = User.objects.get(username=username)###############
-                # self.assertEqual(first=user.username, second=username)
-                # self.assertEqual(first=user.slug, second=slug)
-                # self.assertEqual(first=user.slug, second=self.slug)#########
-                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
-                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
                 model_save_failures_count += 1
-        # email_addresses = UserEmailAddress.objects.all()#########
-        # email_addresses_set = {e.email for e in email_addresses}#########
-        # print(sorted(list(email_addresses_set)))#########
         counts_tuple = (ok_count, model_save_failures_count)
         self.assertEqual(first=Entity.objects.count(), second=ok_count)
         self.assertEqual(first=User.objects.count(), second=ok_count)
@@ -84,9 +74,6 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
         self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
         self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
-        # email_addresses = UserEmailAddress.objects.all()#########
-        # email_addresses_set = {e.email for e in email_addresses}#########
-        # print(sorted(list(email_addresses_set)))#########
 
     def test_visitor_can_register(self):
         form = RegistrationForm(language_code=self.language_code, data=self.data)

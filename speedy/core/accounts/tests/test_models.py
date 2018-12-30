@@ -36,8 +36,6 @@ class EntityTestCaseMixin(object):
                     entity.save()
                     # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
-                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
-                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
                 model_save_failures_count += 1
         counts_tuple = (ok_count, model_save_failures_count)
         self.assertEqual(first=Entity.objects.count(), second=ok_count)
@@ -354,8 +352,6 @@ class UserTestCaseMixin(object):
                     user.save_user_and_profile()
                     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
-                # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.###### TODO
-                # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).###### TODO
                 model_save_failures_count += 1
         counts_tuple = (ok_count, model_save_failures_count)
         self.assertEqual(first=Entity.objects.count(), second=ok_count)

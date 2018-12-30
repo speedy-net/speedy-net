@@ -34,16 +34,12 @@ class TestsSettingsTestCase(SiteTestCase):
             self.assertIn(member=len(username), container={29, 30, 31, 32})
             self.assertIn(member=len(slug), container={57, 59, 61, 63})
             self.assertIn(member=len(slug), container={len(username) * 2, (len(username) * 2) - 1})
-        # print(sorted(list(username_set)))##############
-        # print(sorted(list(slug_set)))#################
         self.assertEqual(first=len(username_set), second=8)
         self.assertEqual(first=len(slug_set), second=8)
         self.assertEqual(first=len(username_length_set), second=4)
         self.assertEqual(first=len(slug_length_set), second=4)
         self.assertSetEqual(set1=username_length_set, set2={29, 30, 31, 32})
         self.assertSetEqual(set1=slug_length_set, set2={57, 59, 61, 63})
-        # print(sorted(list(username_set)))##############
-        # print(sorted(list(slug_set)))#################
 
     def test_raise(self): #### TODO
         raise Exception

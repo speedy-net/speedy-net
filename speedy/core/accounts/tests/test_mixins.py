@@ -385,7 +385,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'} # ~~~~ TODO
         _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
         _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}).'}
-        _username_must_contain_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': '___נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).___'} # ~~~~ TODO
+        _username_must_contain_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
         _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
