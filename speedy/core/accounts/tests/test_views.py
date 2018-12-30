@@ -384,11 +384,6 @@ class RegistrationViewTestCaseMixin(object):
             self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
             self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
-    def test_zzz(self):  #### TODO
-        # a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a - 60 chars ok; 59 too short; override settings MIN_SLUG_LENGTH = 60; test also in views and models; also in Hebrew.
-        # נא לוודא ששם המשתמש/ת מכיל 60 תווים לפחות (מכיל 59).
-        raise Exception
-
 
 @only_on_sites_with_login
 class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
