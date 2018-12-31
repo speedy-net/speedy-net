@@ -1096,7 +1096,6 @@ class VerifyUserEmailAddressViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've already confirmed this email address."])  ###### TODO
 
     def test_unconfirmed_email_link_confirms_email(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -1106,7 +1105,6 @@ class VerifyUserEmailAddressViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_error_message])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've confirmed your email address."])  ###### TODO
         self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
 
 
@@ -1184,7 +1182,6 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         self.assertFalse(expr=email_address.is_primary)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to {email_address}'.format(email_address='email@example.com')])  ###### TODO
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
@@ -1255,7 +1252,6 @@ class SendConfirmationEmailViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to {email_address}'.format(email_address=self.unconfirmed_email_address.email)])  ###### TODO
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
@@ -1313,7 +1309,6 @@ class DeleteUserEmailAddressViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['The email address was deleted.'])  ###### TODO
         self.assertEqual(first=self.user.email_addresses.count(), second=1)
 
 
@@ -1372,7 +1367,6 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['You have changed your primary email address.'])  ###### TODO
         self.assertEqual(first=self.user.email_addresses.count(), second=3)
         self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
         self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
