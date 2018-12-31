@@ -11,7 +11,7 @@ from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
-# from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings?
+# from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings? # ~~~~ TODO: remove this line!
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
@@ -24,7 +24,7 @@ from .validators import get_username_validators, get_slug_validators, validate_d
 
 class Entity(TimeStampedModel):
     settings = django_settings.ENTITY_SETTINGS
-    # settings = speedy_net_global_settings.EntitySettings
+    # settings = speedy_net_global_settings.EntitySettings # ~~~~ TODO: remove this line!
 
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -97,7 +97,7 @@ class Entity(TimeStampedModel):
 
 class NamedEntity(Entity):
     settings = django_settings.NAMED_ENTITY_SETTINGS
-    # settings = speedy_net_global_settings.NamedEntitySettings
+    # settings = speedy_net_global_settings.NamedEntitySettings # ~~~~ TODO: remove this line!
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
@@ -130,7 +130,7 @@ class UserAccessField(models.PositiveIntegerField):
 
 class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
     settings = django_settings.USER_SETTINGS
-    # settings = speedy_net_global_settings.UserSettings
+    # settings = speedy_net_global_settings.UserSettings # ~~~~ TODO: remove this line!
 
     AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
     AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
@@ -315,8 +315,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             self.save()
             self.profile.save()
             if (django_settings.LOGIN_ENABLED):
-                self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
-                self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
+                self.speedy_net_profile.save()  # ~~~~ TODO: is this necessary?
+                self.speedy_match_profile.save()  # ~~~~ TODO: is this necessary?
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
@@ -336,7 +336,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         return self.__class__.diet_choices(gender=self.get_gender())
 
 
-User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
+User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
 # class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO

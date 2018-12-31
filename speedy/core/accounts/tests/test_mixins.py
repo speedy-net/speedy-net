@@ -58,6 +58,10 @@ class SpeedyCoreAccountsLanguageMixin(object):
     def _username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
         return self._username_must_contain_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
+    # @staticmethod
+    def _a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(self, email_address):
+        return self._a_confirmation_message_was_sent_to_email_address_error_message_to_format.format(email_address=email_address)
+
     def _registration_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
@@ -377,16 +381,21 @@ class SpeedyCoreAccountsLanguageMixin(object):
         _entity_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, and may contain letters, digits or dashes.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או מקפים.'}
         _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים.'}
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
+        _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'he': '___'}
+        _youve_confirmed_your_email_address_error_message_dict = {'en': "You've confirmed your email address.", 'he': '___'}
+        _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': '___'}
+        _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have changed your primary email address.', 'he': '___'}
 
-        _value_is_not_a_valid_choice_error_message_to_format_dict= {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
-        _value_must_be_an_integer_error_message_to_format_dict= {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
-        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict= {'en': 'List contains {list_length} items, it should contain no more than 3.', 'he': 'הרשימה מכילה {list_length} פריטים, עליה להכיל לא יותר מ-3.'}
-        # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'} # ~~~~ TODO
+        _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
+        _value_must_be_an_integer_error_message_to_format_dict = {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
+        _list_contains_items_it_should_contain_no_more_than_3_error_message_to_format_dict = {'en': 'List contains {list_length} items, it should contain no more than 3.', 'he': 'הרשימה מכילה {list_length} פריטים, עליה להכיל לא יותר מ-3.'}
+        # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '___'} # ~~~~ TODO
         # _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'he': '___'} # ~~~~ TODO
-        _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
+        _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}).'}
         _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}).'}
-        _username_must_contain_at_least_min_length_characters_error_message_to_format_dict= {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
+        _username_must_contain_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
         _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
+        _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'he': '___הודעת אימות נשלחה ל-{email_address}'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
             'en': {gender: "You can't change your username." for gender in User.ALL_GENDERS},
@@ -415,6 +424,10 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._entity_username_must_start_with_4_or_more_letters_error_message = _entity_username_must_start_with_4_or_more_letters_error_message_dict[self.language_code]
         self._user_username_must_start_with_4_or_more_letters_error_message = _user_username_must_start_with_4_or_more_letters_error_message_dict[self.language_code]
         self._slug_does_not_parse_to_username_error_message = _slug_does_not_parse_to_username_error_message_dict[self.language_code]
+        self._youve_already_confirmed_this_email_address_error_message = _youve_already_confirmed_this_email_address_error_message_dict[self.language_code]
+        self._youve_confirmed_your_email_address_error_message = _youve_confirmed_your_email_address_error_message_dict[self.language_code]
+        self._the_email_address_was_deleted_error_message = _the_email_address_was_deleted_error_message_dict[self.language_code]
+        self._you_have_changed_your_primary_email_address_error_message = _you_have_changed_your_primary_email_address_error_message_dict[self.language_code]
 
         self._value_is_not_a_valid_choice_error_message_to_format = _value_is_not_a_valid_choice_error_message_to_format_dict[self.language_code]
         self._value_must_be_an_integer_error_message_to_format = _value_must_be_an_integer_error_message_to_format_dict[self.language_code]
@@ -425,6 +438,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
         self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format = _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict[self.language_code]
         self._username_must_contain_at_least_min_length_characters_error_message_to_format = _username_must_contain_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
         self._username_must_contain_at_most_max_length_characters_error_message_to_format = _username_must_contain_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
+        self._a_confirmation_message_was_sent_to_email_address_error_message_to_format = _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict[self.language_code]
 
         self._you_cant_change_your_username_error_message_dict_by_gender = _you_cant_change_your_username_error_message_dict_by_gender[self.language_code]
 

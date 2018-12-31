@@ -373,7 +373,7 @@ class RegistrationViewTestCaseMixin(object):
 
     def test_invalid_date_of_birth_list_fail(self):
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth)
+            print("test_invalid_date_of_birth_list_fail", date_of_birth)  # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path='/', data=data)
@@ -673,7 +673,7 @@ class EditProfileViewTestCaseMixin(object):
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
         self.assertNotEqual(first=user.slug, second=old_slug)
-        print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
+        # print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
 
     def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -709,7 +709,7 @@ class EditProfileViewTestCaseMixin(object):
         self.assertNotEqual(first=user.slug, second=new_slug)
         self.assertEqual(first=user.username, second=normalize_username(slug=old_slug))
         self.assertNotEqual(first=user.username, second=normalize_username(slug=new_slug))
-        print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
+        # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
 
     def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -733,7 +733,7 @@ class EditProfileViewTestCaseMixin(object):
 
     def test_valid_date_of_birth_list_ok(self):
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_valid_date_of_birth_list_ok", date_of_birth)
+            print("test_valid_date_of_birth_list_ok", date_of_birth)  # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)
@@ -755,7 +755,7 @@ class EditProfileViewTestCaseMixin(object):
         self.date_of_birth = self.user.date_of_birth
         self.last_name = self.user.last_name
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth)
+            print("test_invalid_date_of_birth_list_fail", date_of_birth)  # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)
@@ -1071,8 +1071,7 @@ class DeactivateSiteProfileViewTestCase(SiteTestCase):
         self.assertEqual(first=user.profile.is_active, second=False)
 
 
-@only_on_sites_with_login
-class VerifyUserEmailAddressViewTestCase(SiteTestCase):
+class VerifyUserEmailAddressViewTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1096,7 +1095,8 @@ class VerifyUserEmailAddressViewTestCase(SiteTestCase):
         r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've already confirmed this email address."])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've already confirmed this email address."])  ###### TODO
 
     def test_unconfirmed_email_link_confirms_email(self):
         self.client.login(username=self.user.slug, password=USER_PASSWORD)
@@ -1105,8 +1105,24 @@ class VerifyUserEmailAddressViewTestCase(SiteTestCase):
         r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've confirmed your email address."])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_error_message])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["You've confirmed your email address."])  ###### TODO
         self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
+
+
+@only_on_sites_with_login
+class VerifyUserEmailAddressViewEnglishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class VerifyUserEmailAddressViewHebrewTestCase(VerifyUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 class AddUserEmailAddressViewTestCaseMixin(object):
@@ -1167,7 +1183,8 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         email_address = UserEmailAddress.objects.get(email='email@example.com')
         self.assertFalse(expr=email_address.is_primary)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to email@example.com'])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to {email_address}'.format(email_address='email@example.com')])  ###### TODO
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
@@ -1207,8 +1224,7 @@ class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin
         self.assertEqual(first=self.language_code, second='he')
 
 
-@only_on_sites_with_login
-class SendConfirmationEmailViewTestCase(SiteTestCase):
+class SendConfirmationEmailViewTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1238,7 +1254,8 @@ class SendConfirmationEmailViewTestCase(SiteTestCase):
         r = self.client.post(path=self.unconfirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to {}'.format(self.unconfirmed_email_address.email)])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['A confirmation message was sent to {email_address}'.format(email_address=self.unconfirmed_email_address.email)])  ###### TODO
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
@@ -1246,7 +1263,21 @@ class SendConfirmationEmailViewTestCase(SiteTestCase):
 
 
 @only_on_sites_with_login
-class DeleteUserEmailAddressViewTestCase(SiteTestCase):
+class SendConfirmationEmailViewEnglishTestCase(SendConfirmationEmailViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class SendConfirmationEmailViewHebrewTestCase(SendConfirmationEmailViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+
+class DeleteUserEmailAddressViewTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1281,12 +1312,27 @@ class DeleteUserEmailAddressViewTestCase(SiteTestCase):
         r = self.client.post(path=self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['The email address was deleted.'])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['The email address was deleted.'])  ###### TODO
         self.assertEqual(first=self.user.email_addresses.count(), second=1)
 
 
 @only_on_sites_with_login
-class SetPrimaryUserEmailAddressViewTestCase(SiteTestCase):
+class DeleteUserEmailAddressViewEnglishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class DeleteUserEmailAddressViewHebrewTestCase(DeleteUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+
+class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1325,10 +1371,26 @@ class SetPrimaryUserEmailAddressViewTestCase(SiteTestCase):
         r = self.client.post(path=self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['You have changed your primary email address.'])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=['You have changed your primary email address.'])  ###### TODO
         self.assertEqual(first=self.user.email_addresses.count(), second=3)
         self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
         self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
+
+
+@only_on_sites_with_login
+class SetPrimaryUserEmailAddressViewEnglishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@only_on_sites_with_login
+@override_settings(LANGUAGE_CODE='he')
+class SetPrimaryUserEmailAddressViewHebrewTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login

@@ -251,7 +251,7 @@ class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
         email_address.send_confirmation_email()
         if (email_address.user.email_addresses.filter(is_primary=True).count() == 0):
             email_address.make_primary()
-        messages.success(request=self.request, message=_('A confirmation message was sent to {}').format(email_address.email))
+        messages.success(request=self.request, message=_('A confirmation message was sent to {email_address}').format(email_address=email_address.email))
         return response
 
 
@@ -266,7 +266,7 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.send_confirmation_email()
-        messages.success(request=self.request, message=_('A confirmation message was sent to {}').format(email_address.email))
+        messages.success(request=self.request, message=_('A confirmation message was sent to {email_address}').format(email_address=email_address.email))
         return HttpResponseRedirect(self.success_url)
 
 
