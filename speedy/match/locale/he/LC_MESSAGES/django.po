@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-25 10:54+0200\n"
+"POT-Creation-Date: 2018-12-31 17:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,145 +23,145 @@ msgstr ""
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\models.py:26 .\accounts\models.py:46 .\profiles\widgets.py:49
-#: .\profiles\widgets.py:53 .\profiles\widgets.py:57
+#: .\accounts\models.py:28 .\accounts\models.py:48 .\profiles\widgets.py:41
+#: .\profiles\widgets.py:45 .\profiles\widgets.py:49
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:27
+#: .\accounts\models.py:29
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:28
+#: .\accounts\models.py:30
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:29
+#: .\accounts\models.py:31
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:47
+#: .\accounts\models.py:49
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:48
+#: .\accounts\models.py:50
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:51
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:52
 msgid "In a relatioship"
 msgstr ""
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:53
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:52
+#: .\accounts\models.py:54
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:55
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:54
+#: .\accounts\models.py:56
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:67
+#: .\accounts\models.py:69
 msgid "0 hearts"
 msgstr ""
 
-#: .\accounts\models.py:68
+#: .\accounts\models.py:70
 msgid "1 hearts"
 msgstr ""
 
-#: .\accounts\models.py:69
+#: .\accounts\models.py:71
 msgid "2 hearts"
 msgstr ""
 
-#: .\accounts\models.py:70
+#: .\accounts\models.py:72
 msgid "3 hearts"
 msgstr ""
 
-#: .\accounts\models.py:71
+#: .\accounts\models.py:73
 msgid "4 hearts"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:74
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:115
+#: .\accounts\models.py:117
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:116
+#: .\accounts\models.py:118
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:117
+#: .\accounts\models.py:119
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:120
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:120
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:122
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:121
+#: .\accounts\models.py:123
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:124
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:123
+#: .\accounts\models.py:125
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:124 .\accounts\validators.py:53
+#: .\accounts\models.py:126 .\accounts\validators.py:53
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:125 .\accounts\validators.py:58
+#: .\accounts\models.py:127 .\accounts\validators.py:58
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:126
+#: .\accounts\models.py:128
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:127
+#: .\accounts\models.py:129
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:130
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:131
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:134
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:184 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:186 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -249,13 +249,28 @@ msgstr ""
 msgid "Your match settings were saved."
 msgstr ""
 
-#: .\profiles\widgets.py:62
+#: .\profiles\widgets.py:54
 msgid "None"
 msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
 msgstr "ספידי מץ' [אלפא]"
+
+#: .\templates\__translations.html:4
+msgctxt "female"
+msgid "Married"
+msgstr "נשואה"
+
+#: .\templates\__translations.html:5
+msgctxt "male"
+msgid "Married"
+msgstr "נשוי"
+
+#: .\templates\__translations.html:6
+msgctxt "other"
+msgid "Married"
+msgstr "נשוי/נשואה"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Match"
@@ -490,21 +505,6 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
 msgstr ""
-
-#: .\templates\translations.html:4
-msgctxt "female"
-msgid "Married"
-msgstr "נשואה"
-
-#: .\templates\translations.html:5
-msgctxt "male"
-msgid "Married"
-msgstr "נשוי"
-
-#: .\templates\translations.html:6
-msgctxt "other"
-msgid "Married"
-msgstr "נשוי/נשואה"
 
 #~ msgid "ל"
 #~ msgstr "ל"
