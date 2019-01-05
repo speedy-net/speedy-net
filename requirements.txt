@@ -1,5 +1,5 @@
 # python==3.5
-Django==1.11.18
+Django==1.11
 django-crispy-forms==1.7.2
 django-debug-toolbar==1.11
 django-environ==0.4.5
