@@ -5,6 +5,7 @@ python:
   - "3.6"
   - "3.7"
 sudo: required
+dist: xenial
 addons:
   postgresql: "9.6"
 services:
