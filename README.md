@@ -257,7 +257,7 @@ Currently all the required packages support Django 2.0 with stable releases, exc
 
 But it's not recommended to use non-stable releases, therefore we didn't upgrade Django to 2.0 yet (and we are using the latest stable release of django-modeltranslation which doesn't support Django 2.0).
 
-See also [Support Django 2.0 · Issue #472 · deschler/django-modeltranslation](https://github.com/deschler/django-modeltranslation/issues/472)
+See also [Support Django 2.0 and 2.1 · Issue #472 · deschler/django-modeltranslation](https://github.com/deschler/django-modeltranslation/issues/472)
 
 ## How to make migrations and migrate
 
