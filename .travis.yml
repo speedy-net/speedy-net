@@ -3,8 +3,9 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+  - "3.7"
 sudo: required
-dist: trusty
+dist: xenial
 addons:
   postgresql: "9.6"
 services:
@@ -16,6 +17,9 @@ before_script:
 install:
   - cp env.ini.example env.ini
   - pip install -r requirements.txt
+  - pip freeze
+  - pwd
+  - lsb_release -a
 script:
   - cd speedy/net
   - python -W error::DeprecationWarning manage.py test
