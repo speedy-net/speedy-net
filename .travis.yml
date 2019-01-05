@@ -3,7 +3,7 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "3.7"
+#  - "3.7" # Raises a DeprecationWarning with Django 1.11.* - see https://code.djangoproject.com/ticket/30078
 sudo: required
 dist: xenial
 addons:
