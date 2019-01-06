@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 21:33+0200\n"
+"POT-Creation-Date: 2019-01-06 22:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -893,32 +893,32 @@ msgstr ""
 #: .\__translations\__translations.py:82
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:84
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:88
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
