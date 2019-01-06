@@ -93,7 +93,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         super().form_valid(form=form)
         site = Site.objects.get_current()
         if (self.object.is_active):
-            messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {}!').format(_(site.name)))
+            messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {site_name}!').format(site_name=_(site.name)))
         if (self.request.user.speedy_match_profile.is_active):
             return redirect(to=reverse_lazy('matches:list'))
         else:

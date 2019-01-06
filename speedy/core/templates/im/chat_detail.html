@@ -41,8 +41,7 @@
 
         <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
             {% csrf_token %}
-            <button class="btn btn-default"
-                    type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
+            <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
         </form>
 
 

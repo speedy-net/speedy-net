@@ -61,8 +61,7 @@
 <nav class="navbar mb-4 navbar-expand-lg navbar-light {% block navbar_class %}bg-light{% endblock %}">
     <div class="container">
         <div class="dropdown">
-            <button class="btn btn-outline-secondary mr-2" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-outline-secondary mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-th"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -75,8 +74,7 @@
         {% block navbar_brand %}
             <a class="navbar-brand" href="/">{% trans site.name %}</a>
         {% endblock %}
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -94,8 +92,7 @@
     {% for message in messages %}
         <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible"
              role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
-                    class="sr-only">Close</span></button>
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             {{ message }}
         </div>
     {% endfor %}

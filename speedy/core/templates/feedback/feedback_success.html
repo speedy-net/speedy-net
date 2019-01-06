@@ -8,6 +8,6 @@
         <h1>{% trans 'Thank You' %}</h1>
     </div>
     <div class="alert alert-success">
-        {% trans 'Your feedback was sent to administrators.' context user.gender %}
+        {% trans 'Your feedback was sent to administrators.' context user.get_gender %}
     </div>
 {% endblock %}

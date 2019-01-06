@@ -6,8 +6,7 @@
 
 
 {% if can_block or can_unblock %}
-    <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+    <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="fa fa-ellipsis-h"></span>
         <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
     </button>
@@ -31,8 +30,7 @@
         <a class="dropdown-item" href="{% url 'feedback:report_entity' user.slug %}">
             {% trans 'Report ' context request.user.get_gender %}{{ user }}</a>
         {% if user.photo %}
-            <a class="dropdown-item"
-               href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
+            <a class="dropdown-item" href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
         {% endif %}
     </div>
 {% endif %}
