@@ -280,7 +280,7 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
 
     def delete(self, *args, **kwargs):
         response = super().delete(*args, **kwargs)
-        messages.success(request=self.request, message='The email address was deleted.')
+        messages.success(request=self.request, message=_('The email address was deleted.'))
         return response
 
 
@@ -295,7 +295,7 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.make_primary()
-        messages.success(request=self.request, message='You have changed your primary email address.')
+        messages.success(request=self.request, message=_('You have made this email address primary.'))
         return HttpResponseRedirect(self.success_url)
 
 

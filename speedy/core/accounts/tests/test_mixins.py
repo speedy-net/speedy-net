@@ -383,8 +383,8 @@ class SpeedyCoreAccountsLanguageMixin(object):
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
         _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'he': '___'}
         _youve_confirmed_your_email_address_error_message_dict = {'en': "You've confirmed your email address.", 'he': '___'}
-        _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': '___'}
-        _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have changed your primary email address.', 'he': '___'}
+        _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': '___כתובת הדואר האלקטרוני נמחקה.'}
+        _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'he': '___הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
 
         _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
         _value_must_be_an_integer_error_message_to_format_dict = {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
