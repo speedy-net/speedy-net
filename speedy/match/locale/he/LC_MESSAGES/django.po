@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 19:12+0200\n"
+"POT-Creation-Date: 2019-01-06 21:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,301 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "People I Like"
+msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:11
+msgctxt "male"
+msgid "People I Like"
+msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:12
+msgctxt "other"
+msgid "People I Like"
+msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
+
+#: .\__translations\__translations.html:19
+msgctxt "male"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
+
+#: .\__translations\__translations.html:20
+msgctxt "other"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
+
+#: .\__translations\__translations.html:22
+msgctxt "female"
+msgid "Search for your matches"
+msgstr ""
+
+#: .\__translations\__translations.html:23
+msgctxt "male"
+msgid "Search for your matches"
+msgstr ""
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Search for your matches"
+msgstr ""
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"אין לך עדיין התאמות. נסי להרחיב את טווח החיפוש שלך או חזרי לאתר מאוחר יותר."
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"אין לך עדיין התאמות. נסה להרחיב את טווח החיפוש שלך או חזור לאתר מאוחר יותר."
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
+"יותר."
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Match settings"
+msgstr ""
+
+#: .\__translations\__translations.html:31
+msgctxt "male"
+msgid "Match settings"
+msgstr ""
+
+#: .\__translations\__translations.html:32
+msgctxt "other"
+msgid "Match settings"
+msgstr ""
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Like"
+msgstr "לייק"
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Like"
+msgstr "לייק"
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Like"
+msgstr "לייק"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Unlike"
+msgstr "בטלי לייק"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Unlike"
+msgstr "בטל לייק"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Unlike"
+msgstr "בטל/י לייק"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid "No"
+msgstr ""
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid "No"
+msgstr ""
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid "No"
+msgstr ""
+
+#: .\__translations\__translations.py:10
+msgctxt "female"
+msgid "Sometimes"
+msgstr ""
+
+#: .\__translations\__translations.py:11
+msgctxt "male"
+msgid "Sometimes"
+msgstr ""
+
+#: .\__translations\__translations.py:12
+msgctxt "other"
+msgid "Sometimes"
+msgstr ""
+
+#: .\__translations\__translations.py:14
+msgctxt "female"
+msgid "Yes"
+msgstr ""
+
+#: .\__translations\__translations.py:15
+msgctxt "male"
+msgid "Yes"
+msgstr ""
+
+#: .\__translations\__translations.py:16
+msgctxt "other"
+msgid "Yes"
+msgstr ""
+
+#: .\__translations\__translations.py:18
+msgctxt "female"
+msgid "Single"
+msgstr ""
+
+#: .\__translations\__translations.py:19
+msgctxt "male"
+msgid "Single"
+msgstr ""
+
+#: .\__translations\__translations.py:20
+msgctxt "other"
+msgid "Single"
+msgstr ""
+
+#: .\__translations\__translations.py:22
+msgctxt "female"
+msgid "Divorced"
+msgstr ""
+
+#: .\__translations\__translations.py:23
+msgctxt "male"
+msgid "Divorced"
+msgstr ""
+
+#: .\__translations\__translations.py:24
+msgctxt "other"
+msgid "Divorced"
+msgstr ""
+
+#: .\__translations\__translations.py:26
+msgctxt "female"
+msgid "Widowed"
+msgstr ""
+
+#: .\__translations\__translations.py:27
+msgctxt "male"
+msgid "Widowed"
+msgstr ""
+
+#: .\__translations\__translations.py:28
+msgctxt "other"
+msgid "Widowed"
+msgstr ""
+
+#: .\__translations\__translations.py:30
+msgctxt "female"
+msgid "In a relatioship"
+msgstr ""
+
+#: .\__translations\__translations.py:31
+msgctxt "male"
+msgid "In a relatioship"
+msgstr ""
+
+#: .\__translations\__translations.py:32
+msgctxt "other"
+msgid "In a relatioship"
+msgstr ""
+
+#: .\__translations\__translations.py:34
+msgctxt "female"
+msgid "In an open relationship"
+msgstr ""
+
+#: .\__translations\__translations.py:35
+msgctxt "male"
+msgid "In an open relationship"
+msgstr ""
+
+#: .\__translations\__translations.py:36
+msgctxt "other"
+msgid "In an open relationship"
+msgstr ""
+
+#: .\__translations\__translations.py:38
+msgctxt "female"
+msgid "It's complicated"
+msgstr ""
+
+#: .\__translations\__translations.py:39
+msgctxt "male"
+msgid "It's complicated"
+msgstr ""
+
+#: .\__translations\__translations.py:40
+msgctxt "other"
+msgid "It's complicated"
+msgstr ""
+
+#: .\__translations\__translations.py:42
+msgctxt "female"
+msgid "Separated"
+msgstr ""
+
+#: .\__translations\__translations.py:43
+msgctxt "male"
+msgid "Separated"
+msgstr ""
+
+#: .\__translations\__translations.py:44
+msgctxt "other"
+msgid "Separated"
+msgstr ""
+
+#: .\__translations\__translations.py:46
+msgctxt "female"
+msgid "Married"
+msgstr "נשואה"
+
+#: .\__translations\__translations.py:47
+msgctxt "male"
+msgid "Married"
+msgstr "נשוי"
+
+#: .\__translations\__translations.py:48
+msgctxt "other"
+msgid "Married"
+msgstr "נשוי/נשואה"
 
 #: .\accounts\forms.py:53
 msgid "My diet"
@@ -257,21 +552,6 @@ msgstr ""
 msgid "Speedy Match [alpha]"
 msgstr "ספידי מץ' [אלפא]"
 
-#: .\templates\__translations.html:4
-msgctxt "female"
-msgid "Married"
-msgstr "נשואה"
-
-#: .\templates\__translations.html:5
-msgctxt "male"
-msgid "Married"
-msgstr "נשוי"
-
-#: .\templates\__translations.html:6
-msgctxt "other"
-msgid "Married"
-msgstr "נשוי/נשואה"
-
 #: .\templates\about\about.html:11
 msgid "About Speedy Match"
 msgstr "אודות ספידי מץ'"
@@ -413,24 +693,24 @@ msgstr "אין פה א/נשים."
 msgid "Search for your matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:38
+#: .\templates\matches\match_list.html:37
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:49
+#: .\templates\matches\match_list.html:48
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:60
+#: .\templates\matches\match_list.html:59
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:67
+#: .\templates\matches\match_list.html:66
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:83
+#: .\templates\matches\match_list.html:82
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
@@ -505,12 +785,3 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
 msgstr ""
-
-#~ msgid "ל"
-#~ msgstr "ל"
-
-#~ msgid " also has a Speedy Net profile."
-#~ msgstr " יש פרופיל גם בספידי נט."
-
-#~ msgid "'s profile on Speedy Net."
-#~ msgstr " בספידי נט."
