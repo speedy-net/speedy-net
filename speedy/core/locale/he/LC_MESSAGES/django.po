@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 22:16+0200\n"
+"POT-Creation-Date: 2019-01-07 07:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,17 +561,17 @@ msgstr "דווח/י על תמונה זו"
 #: .\__translations\__translations.html:150
 msgctxt "female"
 msgid "Remove Friend"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:151
 msgctxt "male"
 msgid "Remove Friend"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:152
 msgctxt "other"
 msgid "Remove Friend"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:154
 msgctxt "female"
@@ -824,17 +824,17 @@ msgstr "קרניסט/ית"
 #: .\__translations\__translations.py:70
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
@@ -998,77 +998,77 @@ msgstr ""
 #: .\__translations\__translations.py:102
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "You've cancelled your friend request."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "You've cancelled your friend request."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "You've cancelled your friend request."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "You have removed this user from friends."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "You have removed this user from friends."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "You have removed this user from friends."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:122
 #, python-brace-format
@@ -1125,11 +1125,11 @@ msgstr "שכחת את הסיסמה שלך?"
 
 #: .\accounts\forms.py:199 .\accounts\forms.py:214
 msgid "Submit"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\forms.py:223
 msgid "Change"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\forms.py:244
 msgid "Your password"
@@ -1197,7 +1197,7 @@ msgstr "אחר/ת"
 
 #: .\accounts\models.py:168
 msgid "Unknown"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:169
 msgid "Vegan (eats only plants and fungi)"
@@ -1274,15 +1274,15 @@ msgstr "ראשי"
 
 #: .\accounts\models.py:349
 msgid "confirmation token"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:350
 msgid "confirmation sent"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:351
 msgid "who can see this email"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:355
 msgid "email addresses"
@@ -1402,15 +1402,15 @@ msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
 #: .\accounts\validators.py:179 .\accounts\validators.py:188
 msgid "Enter a valid date."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\views.py:230
 msgid "Invalid confirmation link."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\views.py:254 .\accounts\views.py:269
 #, python-brace-format
@@ -1427,7 +1427,7 @@ msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראש
 
 #: .\base\models.py:65
 msgid "ID"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -1439,15 +1439,15 @@ msgstr "השינויים נשמרו."
 
 #: .\blocks\models.py:12
 msgid "blocked user"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\blocks\models.py:17
 msgid "block"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\blocks\models.py:18
 msgid "user blocks"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\blocks\views.py:26
 msgid "You have blocked {}."
@@ -1463,19 +1463,19 @@ msgstr "שלח/י"
 
 #: .\feedback\models.py:15
 msgid "Feedback"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:16
 msgid "Abuse (User)"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:17
 msgid "Abuse (Photo)"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:20 .\im\models.py:73
 msgid "sender"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:21
 msgid "your name"
@@ -1487,7 +1487,7 @@ msgstr "הדואר האלקטרוני שלך"
 
 #: .\feedback\models.py:23
 msgid "type"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:24
 msgid "your message"
@@ -1495,19 +1495,19 @@ msgstr "ההודעה שלך"
 
 #: .\feedback\models.py:26
 msgid "reported entity"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:27
 msgid "reported photo"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:30
 msgid "feedback"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\feedback\models.py:31
 msgid "feedbacks"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\friends\views.py:163
 msgid "Friend request sent."
@@ -1527,63 +1527,63 @@ msgstr "בקשת החברות נדחתה."
 
 #: .\im\models.py:13
 msgid "site"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:14
 msgid "participant 1"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:15
 msgid "participant 2"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:16
 msgid "participants"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:17
 msgid "is group chat"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:18
 msgid "last message"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:24 .\im\models.py:25 .\im\models.py:72 .\im\models.py:90
 msgid "chat"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:74 .\im\models.py:79
 msgid "message"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:80
 msgid "messages"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:95
 msgid "read mark"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\im\models.py:96
 msgid "read marks"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\settings\base.py:227
 msgid "English"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\settings\base.py:228
 msgid "Hebrew"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\403.html:9
 msgid "Permission Denied"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\403.html:12
 msgid "This page is private."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\about\about_base.html:5 .\templates\base.html:146
 #: .\templates\menu\about_mobile_menu_links.html:11
@@ -1592,19 +1592,19 @@ msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 msgid "Welcome to"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:21
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1645,19 +1645,19 @@ msgstr "כתובות דואר אלקטרוני"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
@@ -1730,24 +1730,22 @@ msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס �
 #: .\templates\accounts\registration.html:11
 #, python-format
 msgid ""
-"\n"
-"                <h2>Welcome to %(site_name)s!</h2>\n"
-"                We are working on the next version of Speedy Net, and a new "
-"app for Speedy Net users – Speedy Match – a new\n"
-"                dating/matching app for singles. Speedy Net and Speedy Match "
-"will be free software & open source. You are\n"
-"                invited to sign up now, and grab yourself a username at "
-"Speedy Net.\n"
-"            "
+"<h2>Welcome to %(site_name)s!</h2>We are working on the next version of "
+"Speedy Net, and a new app for Speedy Net users – Speedy Match – a new dating/"
+"matching app for singles. Speedy Net and Speedy Match will be free software "
+"& open source. You are invited to sign up now, and grab yourself a username "
+"at Speedy Net."
 msgstr ""
+"_____ # ~~~~ TODO _____ <h2>Welcome to %(site_name)s!</h2>We are working on "
+"the next version of Speedy Net, and a new app for Speedy Net users – Speedy "
+"Match – a new dating/matching app for singles. Speedy Net and Speedy Match "
+"will be free software & open source. You are invited to sign up now, and "
+"grab yourself a username at Speedy Net."
 
-#: .\templates\accounts\registration.html:20
+#: .\templates\accounts\registration.html:15
 #, python-format
-msgid ""
-"\n"
-"                    Join %(site_name)s!\n"
-"                "
-msgstr ""
+msgid "Join %(site_name)s!"
+msgstr "_____ # ~~~~ TODO _____ Join %(site_name)s!"
 
 #: .\templates\base.html:101
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -1846,7 +1844,7 @@ msgstr "התנתק/י"
 
 #: .\templates\base_with_login.html:49
 msgid "Home"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\base_with_login.html:69
 #, python-format
@@ -1859,7 +1857,7 @@ msgstr ""
 
 #: .\templates\base_with_login.html:89
 msgid "Password"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\blocks\block_list.html:12
 msgid "You're not blocking anybody."
@@ -1944,7 +1942,7 @@ msgstr "עדיין אין לך הודעות."
 
 #: .\templates\im\message.html:19
 msgid "New"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\privacy\privacy_policy.html:17
 msgid ""
@@ -1965,7 +1963,7 @@ msgstr "חסמת את "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
@@ -1987,7 +1985,7 @@ msgstr "הוסף/י לחברים"
 
 #: .\templates\profiles\tools\block_user.html:11
 msgid "Toggle Dropdown"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
@@ -1995,7 +1993,7 @@ msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
@@ -2019,7 +2017,7 @@ msgstr "בטל/י בקשת חברות"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
@@ -2117,15 +2115,15 @@ msgstr "קובץ"
 
 #: .\uploads\models.py:15
 msgid "is stored"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\uploads\models.py:16
 msgid "file_size"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\uploads\models.py:20
 msgid "uploaded files"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\uploads\models.py:45
 msgid "images"
@@ -2133,7 +2131,7 @@ msgstr "תמונות"
 
 #: .\uploads\models.py:46
 msgid "uploaded images"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #~ msgid "Password too short."
 #~ msgstr "הסיסמה קצרה מדי."

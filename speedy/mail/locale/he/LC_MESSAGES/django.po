@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 22:16+0200\n"
+"POT-Creation-Date: 2019-01-07 07:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: .\accounts\models.py:10
 msgid "user"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:11
 msgid "indicates if a user has ever logged in to the site"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"

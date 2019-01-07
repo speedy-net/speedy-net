@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 22:16+0200\n"
+"POT-Creation-Date: 2019-01-07 07:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,17 +63,17 @@ msgstr "אין פה א/נשים."
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Search for your matches"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Search for your matches"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Search for your matches"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -103,17 +103,17 @@ msgstr ""
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Match settings"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Match settings"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Match settings"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
@@ -148,152 +148,152 @@ msgstr "בטל/י לייק"
 #: .\__translations\__translations.py:6
 msgctxt "female"
 msgid "No"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
 msgid "No"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
 msgid "No"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:10
 msgctxt "female"
 msgid "Sometimes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
 msgid "Sometimes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
 msgid "Sometimes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:14
 msgctxt "female"
 msgid "Yes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:15
 msgctxt "male"
 msgid "Yes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:16
 msgctxt "other"
 msgid "Yes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:18
 msgctxt "female"
 msgid "Single"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:19
 msgctxt "male"
 msgid "Single"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:20
 msgctxt "other"
 msgid "Single"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:22
 msgctxt "female"
 msgid "Divorced"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:23
 msgctxt "male"
 msgid "Divorced"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:24
 msgctxt "other"
 msgid "Divorced"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:26
 msgctxt "female"
 msgid "Widowed"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:27
 msgctxt "male"
 msgid "Widowed"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:28
 msgctxt "other"
 msgid "Widowed"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:30
 msgctxt "female"
 msgid "In a relatioship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:31
 msgctxt "male"
 msgid "In a relatioship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:32
 msgctxt "other"
 msgid "In a relatioship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:34
 msgctxt "female"
 msgid "In an open relationship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:35
 msgctxt "male"
 msgid "In an open relationship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:36
 msgctxt "other"
 msgid "In an open relationship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:38
 msgctxt "female"
 msgid "It's complicated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:39
 msgctxt "male"
 msgid "It's complicated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:40
 msgctxt "other"
 msgid "It's complicated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "Separated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:43
 msgctxt "male"
 msgid "Separated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:44
 msgctxt "other"
 msgid "Separated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:46
 msgctxt "female"
@@ -312,56 +312,56 @@ msgstr "נשוי/נשואה"
 
 #: .\accounts\forms.py:53
 msgid "My diet"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\forms.py:54
 msgid "Add profile picture"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:28 .\accounts\models.py:48 .\profiles\widgets.py:41
 #: .\profiles\widgets.py:45 .\profiles\widgets.py:49
 msgid "Unknown"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:29
 msgid "No"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:30
 msgid "Sometimes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:31
 msgid "Yes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:49
 msgid "Single"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:50
 msgid "Divorced"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:51
 msgid "Widowed"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:52
 msgid "In a relatioship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:53
 msgid "In an open relationship"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:54
 msgid "It's complicated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:55
 msgid "Separated"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:56
 msgid "Married"
@@ -369,31 +369,31 @@ msgstr "נשוי/נשואה"
 
 #: .\accounts\models.py:69
 msgid "0 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:70
 msgid "1 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:71
 msgid "2 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:72
 msgid "3 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:73
 msgid "4 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:74
 msgid "5 hearts"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:117
 msgid "user"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:118
 msgid "on new likes"
@@ -401,11 +401,11 @@ msgstr "כאשר יש לייקים חדשים"
 
 #: .\accounts\models.py:119
 msgid "active languages"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:120
 msgid "height"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:120
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
@@ -414,63 +414,63 @@ msgstr "ס\"מ"
 
 #: .\accounts\models.py:122
 msgid "smoking status"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:123
 msgid "marital status"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:124
 msgid "Few words about me"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:125
 msgid "city or locality"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:126 .\accounts\validators.py:53
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:127 .\accounts\validators.py:58
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:128
 msgid "My ideal match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:129
 msgid "Gender"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:130
 msgid "minimal age to match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:131
 msgid "maximal age to match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:134
 msgid "marital status match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\models.py:186 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:38
 msgid "A profile picture is required."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:43 .\accounts\validators.py:63
 msgid "Please write some text in this field."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:48
 msgid "Please write where you live."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
@@ -478,75 +478,75 @@ msgstr "הגובה חייב להיות בין 1 ל-450 ס\"מ."
 
 #: .\accounts\validators.py:73
 msgid "Your diet is required."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:78
 msgid "Your smoking status is required."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:83
 msgid "Your marital status is required."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:88
 msgid "Gender to match is required."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:110
 msgid "Please select diet match."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be 5 hearts."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:118
 msgid "Please select smoking status match."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be 5 hearts."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:126
 msgid "Please select marital status match."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\accounts\validators.py:128
 msgid "At least one marital status match option should be 5 hearts."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\likes\models.py:11
 msgid "from user"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\likes\models.py:15
 msgid "user like"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\likes\models.py:16
 msgid "user likes"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\matches\views.py:44 .\matches\views.py:58
 msgid "Your match settings were saved."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\profiles\widgets.py:54
 msgid "None"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
@@ -646,23 +646,23 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:33
 msgid "About me"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:60
 msgid "Back"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:63
 msgid "Next step"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\accounts\edit_profile\activate.html:69
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\base_site.html:23 .\templates\base_site.html:55
 #: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
@@ -691,24 +691,24 @@ msgstr "אין פה א/נשים."
 
 #: .\templates\matches\match_list.html:26
 msgid "Search for your matches"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\match_list.html:37
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\match_list.html:48
 msgid "Age:"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\match_list.html:59
 msgid "Refresh"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\match_list.html:66
 msgid "Add more options"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\match_list.html:82
 msgid ""
@@ -720,27 +720,27 @@ msgstr ""
 
 #: .\templates\matches\settings\base.html:15
 msgid "Back to Matches"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\settings\base.html:18
 msgid "Match settings"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\settings\base.html:24
 msgid "Search Settings"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\matches\settings\base.html:29
 msgid "About Me"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
@@ -748,39 +748,39 @@ msgstr "פרטים נוספים"
 
 #: .\templates\profiles\user_extra_info_widget.html:19
 msgid "Profile Description"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:24
 msgid "City"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:29
 msgid "Height"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Children"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:39
 msgid "More Children"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:49
 msgid "Smoking"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "Marital Status"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:59
 msgid "Gender To Match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_extra_info_widget.html:64
 msgid "My Ideal Match"
-msgstr ""
+msgstr "_____ # ~~~~ TODO"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

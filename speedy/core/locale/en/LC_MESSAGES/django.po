@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 22:16+0200\n"
+"POT-Creation-Date: 2019-01-07 07:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1671,23 +1671,16 @@ msgstr ""
 #: .\templates\accounts\registration.html:11
 #, python-format
 msgid ""
-"\n"
-"                <h2>Welcome to %(site_name)s!</h2>\n"
-"                We are working on the next version of Speedy Net, and a new "
-"app for Speedy Net users – Speedy Match – a new\n"
-"                dating/matching app for singles. Speedy Net and Speedy Match "
-"will be free software & open source. You are\n"
-"                invited to sign up now, and grab yourself a username at "
-"Speedy Net.\n"
-"            "
+"<h2>Welcome to %(site_name)s!</h2>We are working on the next version of "
+"Speedy Net, and a new app for Speedy Net users – Speedy Match – a new dating/"
+"matching app for singles. Speedy Net and Speedy Match will be free software "
+"& open source. You are invited to sign up now, and grab yourself a username "
+"at Speedy Net."
 msgstr ""
 
-#: .\templates\accounts\registration.html:20
+#: .\templates\accounts\registration.html:15
 #, python-format
-msgid ""
-"\n"
-"                    Join %(site_name)s!\n"
-"                "
+msgid "Join %(site_name)s!"
 msgstr ""
 
 #: .\templates\base.html:101
