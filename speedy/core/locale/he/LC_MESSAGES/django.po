@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 07:33+0200\n"
+"POT-Creation-Date: 2019-01-07 07:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1402,7 +1402,7 @@ msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
 #: .\accounts\validators.py:179 .\accounts\validators.py:188
 msgid "Enter a valid date."
-msgstr "_____ # ~~~~ TODO"
+msgstr "יש להזין תאריך חוקי."
 
 #: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
