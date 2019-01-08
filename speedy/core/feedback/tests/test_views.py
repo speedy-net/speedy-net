@@ -8,20 +8,26 @@ from ..models import Feedback
 
 
 class FeedbackViewBaseMixin(object):
-    def setup_other_user_and_file(self):
+    def setup_class(self):
         raise NotImplementedError()
 
     def get_page_url(self):
         raise NotImplementedError()
 
-    def check_feedback(self, feedback):
-        raise NotImplementedError()
-
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
-        self.setup_other_user_and_file()
+        self.setup_class()
         self.page_url = self.get_page_url()
+
+    def check_feedback(self, feedback, expected_sender_id, expected_sender_name, expected_sender_email, expected_text):
+        self.assertEqual(first=feedback.type, second=self.expected_feedback_type)
+        self.assertEqual(first=feedback.report_entity_id, second=self.expected_report_entity_id)
+        self.assertEqual(first=feedback.report_file_id, second=self.expected_report_file_id)
+        self.assertEqual(first=feedback.sender_id, second=expected_sender_id)
+        self.assertEqual(first=feedback.sender_name, second=expected_sender_name)
+        self.assertEqual(first=feedback.sender_email, second=expected_sender_email)
+        self.assertEqual(first=feedback.text, second=expected_text)
 
     def test_visitor_can_see_feedback_form(self):
         r = self.client.get(path=self.page_url)
@@ -41,7 +47,7 @@ class FeedbackViewBaseMixin(object):
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
-        self.check_feedback(feedback=feedback)
+        self.check_feedback(feedback=feedback, expected_sender_id=None, expected_sender_name=data['sender_name'], expected_sender_email=data['sender_email'], expected_text=data['text'])
 
     @only_on_sites_with_login
     def test_user_can_see_feedback_form(self):
@@ -63,33 +69,31 @@ class FeedbackViewBaseMixin(object):
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
-        self.check_feedback(feedback=feedback)
+        self.check_feedback(feedback=feedback, expected_sender_id=self.user.pk, expected_sender_name='', expected_sender_email='', expected_text=data['text'])
         self.assertEqual(first=len(mail.outbox), second=1)
         self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site.name, str(feedback)))
 
 
 class FeedbackViewTypeFeedbackTestCase(FeedbackViewBaseMixin, SiteTestCase):
-    def setup_other_user_and_file(self):
-        pass
+    def setup_class(self):
+        self.expected_feedback_type = Feedback.TYPE_FEEDBACK
+        self.expected_report_entity_id = None
+        self.expected_report_file_id = None
 
     def get_page_url(self):
         return '/contact/'
 
-    def check_feedback(self, feedback):
-        self.assertEqual(first=feedback.type, second=Feedback.TYPE_FEEDBACK)
-
 
 @only_on_sites_with_login
 class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, SiteTestCase):
-    def setup_other_user_and_file(self):
+    def setup_class(self):
         self.other_user = ActiveUserFactory()
+        self.expected_feedback_type = Feedback.TYPE_REPORT_ENTITY
+        self.expected_report_entity_id = self.other_user.pk
+        self.expected_report_file_id = None
 
     def get_page_url(self):
         return '/contact/report/entity/{}/'.format(self.other_user.slug)
-
-    def check_feedback(self, feedback):
-        self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_ENTITY)
-        self.assertEqual(first=feedback.report_entity_id, second=self.other_user.id)
 
     def test_404(self):
         r = self.client.get(path='/contact/report/entity/abrakadabra/')
@@ -98,15 +102,14 @@ class FeedbackViewTypeReportEntityTestCase(FeedbackViewBaseMixin, SiteTestCase):
 
 @only_on_sites_with_login
 class FeedbackViewTypeReportFileTestCase(FeedbackViewBaseMixin, SiteTestCase):
-    def setup_other_user_and_file(self):
+    def setup_class(self):
         self.file = FileFactory()
+        self.expected_feedback_type = Feedback.TYPE_REPORT_FILE
+        self.expected_report_entity_id = None
+        self.expected_report_file_id = self.file.pk
 
     def get_page_url(self):
-        return '/contact/report/file/{}/'.format(self.file.id)
-
-    def check_feedback(self, feedback):
-        self.assertEqual(first=feedback.type, second=Feedback.TYPE_REPORT_FILE)
-        self.assertEqual(first=feedback.report_file_id, second=self.file.id)
+        return '/contact/report/file/{}/'.format(self.file.pk)
 
     def test_404(self):
         r = self.client.get(path='/contact/report/file/abrakadabra/')
