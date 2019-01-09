@@ -36,18 +36,29 @@ class FeedbackViewBaseMixin(object):
         self.assertContains(response=r, text='id_sender_name')
         self.assertContains(response=r, text='id_sender_email')
 
-    def test_visitor_can_submit_form(self):
+    def run_test_visitor_can_submit_form(self, data):
         self.assertEqual(first=Feedback.objects.count(), second=0)
-        data = {
-            'sender_name': 'Mike',
-            'sender_email': 'mike@example.com',
-            'text': 'Hello',
-        }
         r = self.client.post(path=self.page_url, data=data)
         self.assertRedirects(response=r, expected_url='/contact/thank-you/')
         self.assertEqual(first=Feedback.objects.count(), second=1)
         feedback = Feedback.objects.first()
         self.check_feedback(feedback=feedback, expected_sender_id=None, expected_sender_name=data['sender_name'], expected_sender_email=data['sender_email'], expected_text=data['text'])
+
+    def test_visitor_can_submit_form_1(self):
+        data = {
+            'sender_name': 'Yarden Harel',
+            'sender_email': 'yarden@example.com',
+            'text': 'Hello',
+        }
+        self.run_test_visitor_can_submit_form(data=data)
+
+    def test_visitor_can_submit_form_2(self):
+        data = {
+            'sender_name': 'Mike',
+            'sender_email': 'mike@example.com',
+            'text': "I personally don't like this user.",
+        }
+        self.run_test_visitor_can_submit_form(data=data)
 
     @only_on_sites_with_login
     def test_user_can_see_feedback_form(self):
