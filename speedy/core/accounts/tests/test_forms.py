@@ -13,7 +13,8 @@ from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
+    from speedy.core.base.test.utils import get_random_user_password
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory, UserEmailAddressFactory
 
 
 class RegistrationFormTestCaseMixin(object):
@@ -29,7 +30,7 @@ class RegistrationFormTestCaseMixin(object):
         }
         self.username = normalize_username(slug=self.data['slug'])
         self.slug = normalize_slug(slug=self.data['slug'])
-        self.assertNotEqual(first=self.password, second=USER_PASSWORD)
+        self.assertNotEqual(first=self.password, second=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.username, second='user22')
         self.assertEqual(first=self.slug, second='user-22')
         self.assertNotEqual(first=self.username, second=self.slug)
@@ -97,7 +98,7 @@ class RegistrationFormTestCaseMixin(object):
         self.assertEqual(first=entity.slug, second=user.slug)
         self.assertEqual(first=len(entity.id), second=15)
         self.assertTrue(expr=user.check_password(raw_password=self.password))
-        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertEqual(first=user.first_name, second=self.first_name)
         self.assertEqual(first=user.first_name_en, second=self.first_name)
         self.assertEqual(first=user.first_name_he, second=self.first_name)
@@ -502,7 +503,7 @@ class DeactivationFormTestCaseMixin(object):
 
     def test_correct_password(self):
         data = {
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         form = SiteProfileDeactivationForm(user=self.user, data=data)
         self.assertTrue(expr=form.is_valid())

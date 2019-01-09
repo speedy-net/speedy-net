@@ -4,12 +4,13 @@ import tempfile
 from django.conf import settings as django_settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.uploads.models import Image
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
 
 
 @only_on_sites_with_login
@@ -36,7 +37,7 @@ class UploadViewTestCase(SiteTestCase):
     def test_upload_file(self):
         initial_images_count = Image.objects.count()
         initial_images_id = list(Image.objects.all().values_list('id', flat=True))
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.post(path=self.page_url, data=self.data)
         self.assertEqual(first=r.status_code, second=200)
         json_response = json.loads(r.content.decode())

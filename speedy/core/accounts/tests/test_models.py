@@ -12,7 +12,8 @@ from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMix
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
+    from speedy.core.base.test.utils import get_random_user_password
+    from speedy.core.accounts.tests.test_factories  import DefaultUserFactory, UserEmailAddressFactory
 
 
 class EntityTestCaseMixin(object):
@@ -661,30 +662,30 @@ class UserTestCaseMixin(object):
         new_password = '8' * 8
         incorrect_new_password = '7' * 8
         user = DefaultUserFactory()
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         user.set_password(raw_password=new_password)
         self.assertTrue(expr=user.check_password(raw_password=new_password))
         self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
-        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
 
     def test_password_too_short_exception(self):
         new_password = '8' * 3
         user = DefaultUserFactory()
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_password_too_long_exception(self):
         new_password = '8' * 121
         user = DefaultUserFactory()
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         with self.assertRaises(ValidationError) as cm:
             user.set_password(raw_password=new_password)
         self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_valid_date_of_birth_list_ok(self):

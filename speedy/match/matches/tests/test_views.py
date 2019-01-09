@@ -1,10 +1,11 @@
 from django.conf import settings as django_settings
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
 
 
 class EditViewBaseMixin(object):
@@ -25,7 +26,7 @@ class EditViewBaseMixin(object):
         self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
 
     def test_user_can_access(self):
-        self.client.login(username=self.user.username, password=USER_PASSWORD)
+        self.client.login(username=self.user.username, password=tests_settings.USER_PASSWORD)
         r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name=self.template_name)

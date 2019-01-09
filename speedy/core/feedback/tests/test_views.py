@@ -2,13 +2,14 @@ from django.conf import settings as django_settings
 from django.test import override_settings
 from django.core import mail
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.feedback.tests.test_mixins import SpeedyCoreFeedbackLanguageMixin
 from speedy.core.feedback.models import Feedback
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
     from speedy.core.uploads.tests.test_factories import FileFactory
 
 
@@ -84,7 +85,7 @@ class FeedbackViewBaseMixin(object):
 
     @only_on_sites_with_login
     def test_user_can_see_feedback_form(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
@@ -101,7 +102,7 @@ class FeedbackViewBaseMixin(object):
 
     @only_on_sites_with_login
     def test_user_can_submit_form(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Feedback.objects.count(), second=0)
         data = {
             'text': 'Hello',
@@ -116,7 +117,7 @@ class FeedbackViewBaseMixin(object):
 
     @only_on_sites_with_login
     def test_user_cannot_submit_form_without_all_the_required_fields(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Feedback.objects.count(), second=0)
         data = {}
         r = self.client.post(path=self.page_url, data=data)

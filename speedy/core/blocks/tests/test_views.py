@@ -1,11 +1,12 @@
 from django.conf import settings as django_settings
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.blocks.models import Block
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
 
 
 @only_on_sites_with_login
@@ -23,12 +24,12 @@ class BlockListViewTestCase(SiteTestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_other_user_has_no_access(self):
-        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_has_access(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='blocks/block_list.html')
@@ -48,12 +49,12 @@ class BlockViewTestCase(SiteTestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_cannot_block_self(self):
-        self.client.login(username=self.other_user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_block_other_user(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Block.objects.count(), second=0)
         r = self.client.post(path=self.page_url)
         self.assertEqual(first=Block.objects.count(), second=1)
@@ -77,7 +78,7 @@ class UnblockViewTestCase(SiteTestCase):
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
 
     def test_user_can_unblock_other_user(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         Block.objects.block(blocker=self.user, blocked=self.other_user)
         self.assertEqual(first=Block.objects.count(), second=1)
         r = self.client.post(path=self.page_url)

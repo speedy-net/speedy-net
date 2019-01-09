@@ -1,6 +1,11 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
+from django.conf import settings as django_settings
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.base.test.utils import get_random_user_password
+
 
 class TestsDynamicSettings(object):
     @staticmethod
@@ -96,8 +101,17 @@ SLUGS_TO_TEST_LIST = [
 class OVERRIDE_ENTITY_SETTINGS(object):
     MIN_SLUG_LENGTH = 60
 
+
 class OVERRIDE_USER_SETTINGS(object):
     MIN_SLUG_LENGTH = 60
     MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
+
+
+if (django_settings.LOGIN_ENABLED):
+    # ~~~~ TODO: move to base test.
+    # ~~~~ TODO: maybe move to tests settings.
+    # Generate a new random password for each test.
+    USER_PASSWORD = get_random_user_password()
+    # USER_PASSWORD = 'vjha9c4q44zs'
 
 

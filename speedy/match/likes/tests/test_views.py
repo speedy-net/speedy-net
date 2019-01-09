@@ -1,12 +1,13 @@
 from django.conf import settings as django_settings
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
 from speedy.match.likes.tests.test_factories import UserLikeFactory
 from speedy.match.likes.models import UserLike
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
 
 
 @only_on_speedy_match
@@ -18,7 +19,7 @@ class LikeViewTestCase(SiteTestCase):
         self.page_url = '/{}/likes/like/'.format(self.other_user.slug)
 
     def test_can_like(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=UserLike.objects.count(), second=0)
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
@@ -37,7 +38,7 @@ class UnlikeViewTestCase(SiteTestCase):
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
 
     def test_can_unlike(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=UserLike.objects.count(), second=0)
         UserLike.objects.create(from_user=self.user, to_user=self.other_user)
         self.assertEqual(first=UserLike.objects.count(), second=1)
@@ -70,7 +71,7 @@ class LikeListViewsTestCase(SiteTestCase):
             UserLikeFactory(to_user=self.user),
             UserLikeFactory(to_user=self.user, from_user=self.other_user),
         }
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
 
     def test_visitor_has_no_access(self):
         self.client.logout()

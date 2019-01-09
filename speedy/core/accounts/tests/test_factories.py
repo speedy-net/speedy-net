@@ -9,6 +9,7 @@ from django.conf import settings as django_settings
 # from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
+from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase #### TODO
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User, UserEmailAddress
@@ -18,24 +19,24 @@ from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
 
 if (django_settings.LOGIN_ENABLED):
 
-    def get_random_user_password_length():
-        return random.randint(User.settings.MIN_PASSWORD_LENGTH, User.settings.MAX_PASSWORD_LENGTH)
+    # def get_random_user_password_length():
+    #     return random.randint(User.settings.MIN_PASSWORD_LENGTH, User.settings.MAX_PASSWORD_LENGTH)
+    #
+    #
+    # def get_random_user_password():
+    #     user_password_length = get_random_user_password_length()
+    #     user_password = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(user_password_length))
+    #     if (len(user_password) == user_password_length):
+    #         return user_password
+    #     else:
+    #         raise Exception("Unexpected: len(user_password)={}, user_password_length={}".format(len(user_password), user_password_length))
+    #
 
-
-    def get_random_user_password():
-        user_password_length = get_random_user_password_length()
-        user_password = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(user_password_length))
-        if (len(user_password) == user_password_length):
-            return user_password
-        else:
-            raise Exception("Unexpected: len(user_password)={}, user_password_length={}".format(len(user_password), user_password_length))
-
-
-    # ~~~~ TODO: move to base test.
-    # ~~~~ TODO: maybe move to tests settings.
-    # Generate a new random password for each test.
-    USER_PASSWORD = get_random_user_password()
-    # USER_PASSWORD = 'vjha9c4q44zs'
+    # # ~~~~ TODO: move to base test.
+    # # ~~~~ TODO: maybe move to tests settings.
+    # # Generate a new random password for each test.
+    # USER_PASSWORD = get_random_user_password()
+    # # USER_PASSWORD = 'vjha9c4q44zs'
 
 
     class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
@@ -58,7 +59,7 @@ if (django_settings.LOGIN_ENABLED):
         slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
         username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
         password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
-        _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=USER_PASSWORD)
+        _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=tests_settings.USER_PASSWORD)
 
         class Meta:
             model = User
@@ -140,11 +141,11 @@ if (django_settings.LOGIN_ENABLED):
                 if (not (step == len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                     raise Exception("Step not as expected, {}".format(step))
                 # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
-                # print(USER_PASSWORD) # ~~~~ TODO: remove this line!
+                # print(tests_settings.USER_PASSWORD) # ~~~~ TODO: remove this line!
             else:
                 self.profile.activate()
                 # print(self.gender, self.diet) # ~~~~ TODO: remove this line!
-                # print(USER_PASSWORD) # ~~~~ TODO: remove this line!
+                # print(tests_settings.USER_PASSWORD) # ~~~~ TODO: remove this line!
 
 
     class UserEmailAddressFactory(factory.DjangoModelFactory):

@@ -12,7 +12,8 @@ from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
+    from speedy.core.base.test.utils import get_random_user_password
+    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 class RedirectMeMixin(object):
@@ -63,7 +64,7 @@ class MeViewTestCase(RedirectMeMixin, SiteTestCase):
         self.assert_me_url_redirects_to_login_url()
 
     def test_user_gets_redirected_to_his_profile(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
         # Assert expected_url directly once to confirm.
         self.assert_me_url_redirects(expected_url='/markmark/')
@@ -82,35 +83,35 @@ class LoginTestCase(RedirectMeMixin, SiteTestCase):
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_user_can_login_with_slug(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_user_can_login_with_username(self):
-        self.client.login(username=self.user.username, password=USER_PASSWORD)
+        self.client.login(username=self.user.username, password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_user_can_login_with_confirmed_email_address(self):
-        self.client.login(username=self.confirmed_email_address.email, password=USER_PASSWORD)
+        self.client.login(username=self.confirmed_email_address.email, password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_user_can_login_with_unconfirmed_email_address(self):
-        self.client.login(username=self.unconfirmed_email_address.email, password=USER_PASSWORD)
+        self.client.login(username=self.unconfirmed_email_address.email, password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
     def test_user_cannot_login_with_wrong_slug(self):
-        self.client.login(username='a{}'.format(self.user.slug), password=USER_PASSWORD)
+        self.client.login(username='a{}'.format(self.user.slug), password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_login_url()
 
     def test_user_cannot_login_with_wrong_username(self):
-        self.client.login(username='a{}'.format(self.user.slug), password=USER_PASSWORD)
+        self.client.login(username='a{}'.format(self.user.slug), password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_login_url()
 
     def test_user_cannot_login_with_wrong_email(self):
-        self.client.login(username='a{}'.format(self.confirmed_email_address.email), password=USER_PASSWORD)
+        self.client.login(username='a{}'.format(self.confirmed_email_address.email), password=tests_settings.USER_PASSWORD)
         self.assert_me_url_redirects_to_login_url()
 
     def test_user_cannot_login_with_wrong_password(self):
-        self.client.login(username=self.user.slug, password='{}-'.format(USER_PASSWORD))
+        self.client.login(username=self.user.slug, password='{}-'.format(tests_settings.USER_PASSWORD))
         self.assert_me_url_redirects_to_login_url()
 
 
@@ -127,7 +128,7 @@ class RegistrationViewTestCaseMixin(object):
         }
         self.username = normalize_username(slug=self.data['slug'])
         self.slug = normalize_slug(slug=self.data['slug'])
-        self.assertNotEqual(first=self.password, second=USER_PASSWORD)
+        self.assertNotEqual(first=self.password, second=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.username, second='user1234')
         self.assertEqual(first=self.slug, second='user-1234')
         self.assertNotEqual(first=self.username, second=self.slug)
@@ -162,7 +163,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=entity.slug, second=user.slug)
         self.assertEqual(first=len(entity.id), second=15)
         self.assertTrue(expr=user.check_password(raw_password=self.password))
-        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
         self.assertEqual(first=user.first_name_en, second=self.first_name)
@@ -436,7 +437,7 @@ class LoginViewTestCaseMixin(object):
         self.other_user.save_user_and_profile()
         self.inactive_user = InactiveUserFactory()
         self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
-        self.assertNotEqual(first=USER_PASSWORD, second=self._other_user_password)
+        self.assertNotEqual(first=tests_settings.USER_PASSWORD, second=self._other_user_password)
         self.assertEqual(first=Entity.objects.count(), second=3)
         self.assertEqual(first=User.objects.count(), second=3)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id])
@@ -451,7 +452,7 @@ class LoginViewTestCaseMixin(object):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         data = {
             'username': self.user.slug,
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -463,7 +464,7 @@ class LoginViewTestCaseMixin(object):
         self.assertEqual(first=self.user.username, second='slugwithdots')
         data = {
             'username': self.user.username,
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -473,7 +474,7 @@ class LoginViewTestCaseMixin(object):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         data = {
             'username': 'slug.with.dots',
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -483,7 +484,7 @@ class LoginViewTestCaseMixin(object):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         data = {
             'username': 'slug____with.....dots---',
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -493,7 +494,7 @@ class LoginViewTestCaseMixin(object):
         self.assertEqual(first=self.user.slug, second='slug-with-dots')
         data = {
             'username': 'SLUG-WITH-DOTS',
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -502,7 +503,7 @@ class LoginViewTestCaseMixin(object):
     def test_visitor_can_login_using_email(self):
         data = {
             'username': self.user_email.email,
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -511,7 +512,7 @@ class LoginViewTestCaseMixin(object):
     def test_visitor_can_login_using_email_uppercase(self):
         data = {
             'username': self.user_email.email.upper(),
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -529,7 +530,7 @@ class LoginViewTestCaseMixin(object):
     def test_visitor_still_can_login_if_he_is_not_active_user(self):
         data = {
             'username': self.inactive_user.slug,
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
@@ -539,7 +540,7 @@ class LoginViewTestCaseMixin(object):
     def test_visitor_cannot_login_using_wrong_email(self):
         data = {
             'username': self.other_user_email.email,
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertEqual(first=r.status_code, second=200)
@@ -578,7 +579,7 @@ class LogoutViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -602,7 +603,7 @@ class EditProfileViewTestCaseMixin(object):
             'slug': self.user.slug,
             'gender': 1,
         }
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -810,7 +811,7 @@ class EditProfilePrivacyViewTestCase(SiteTestCase):
         super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -856,7 +857,7 @@ class EditProfileNotificationsViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -891,7 +892,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -911,7 +912,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         new_password = '8' * 8
         incorrect_new_password = '1' * 8
         data = {
-            'old_password': USER_PASSWORD,
+            'old_password': tests_settings.USER_PASSWORD,
             'new_password1': new_password,
             'new_password2': new_password,
         }
@@ -920,7 +921,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         user = User.objects.get(pk=self.user.pk)
         self.assertTrue(expr=user.check_password(raw_password=new_password))
         self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
-        self.assertFalse(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
 
     def test_old_password_incorrect(self):
         incorrect_old_password = '7' * 8
@@ -934,14 +935,14 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_old_password_was_entered_incorrectly_errors_dict())
         user = User.objects.get(pk=self.user.pk)
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
         self.assertFalse(expr=user.check_password(raw_password=incorrect_old_password))
 
     def test_password_too_short(self):
         new_password = '8' * 3
         data = {
-            'old_password': USER_PASSWORD,
+            'old_password': tests_settings.USER_PASSWORD,
             'new_password1': new_password,
             'new_password2': new_password,
         }
@@ -949,13 +950,13 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict(field_names=self._both_password_field_names))
         user = User.objects.get(pk=self.user.pk)
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_password_too_long(self):
         new_password = '8' * 121
         data = {
-            'old_password': USER_PASSWORD,
+            'old_password': tests_settings.USER_PASSWORD,
             'new_password1': new_password,
             'new_password2': new_password,
         }
@@ -963,14 +964,14 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict(field_names=self._both_password_field_names))
         user = User.objects.get(pk=self.user.pk)
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password))
 
     def test_passwords_dont_match(self):
         new_password_1 = '8' * 8
         new_password_2 = '7' * 8
         data = {
-            'old_password': USER_PASSWORD,
+            'old_password': tests_settings.USER_PASSWORD,
             'new_password1': new_password_1,
             'new_password2': new_password_2,
         }
@@ -978,7 +979,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._the_two_password_fields_didnt_match_errors_dict())
         user = User.objects.get(pk=self.user.pk)
-        self.assertTrue(expr=user.check_password(raw_password=USER_PASSWORD))
+        self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
         self.assertFalse(expr=user.check_password(raw_password=new_password_1))
         self.assertFalse(expr=user.check_password(raw_password=new_password_2))
 
@@ -1005,7 +1006,7 @@ class ActivateSiteProfileViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = InactiveUserFactory()
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
         self.assertEqual(first=self.user.profile.is_active, second=False)
         self.assertEqual(first=Entity.objects.count(), second=1)
@@ -1044,7 +1045,7 @@ class DeactivateSiteProfileViewTestCase(SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -1064,7 +1065,7 @@ class DeactivateSiteProfileViewTestCase(SiteTestCase):
         self.assertEqual(first=self.user.is_active, second=True)
         self.assertEqual(first=self.user.profile.is_active, second=True)
         data = {
-            'password': USER_PASSWORD,
+            'password': tests_settings.USER_PASSWORD,
         }
         r = self.client.post(path=self.page_url, data=data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
@@ -1091,7 +1092,7 @@ class VerifyUserEmailAddressViewTestCaseMixin(object):
         self.assertEqual(first=r.status_code, second=404)
 
     def test_confirmed_email_link_redirects_to_edit_profile(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         email_id = self.confirmed_email_address.id
         token = self.confirmed_email_address.confirmation_token
         r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
@@ -1100,7 +1101,7 @@ class VerifyUserEmailAddressViewTestCaseMixin(object):
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
 
     def test_unconfirmed_email_link_confirms_email(self):
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         email_id = self.unconfirmed_email_address.id
         token = self.unconfirmed_email_address.confirmation_token
         r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
@@ -1130,7 +1131,7 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -1233,7 +1234,7 @@ class SendConfirmationEmailViewTestCaseMixin(object):
         self.confirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.confirmed_email_address.id)
         self.other_user_address = UserEmailAddressFactory()
         self.other_user_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_user_address.id)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id])
@@ -1285,7 +1286,7 @@ class DeleteUserEmailAddressViewTestCaseMixin(object):
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_user_address = UserEmailAddressFactory(is_primary=False)
         self.other_user_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_user_address.id)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id])
@@ -1341,7 +1342,7 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
         self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
         self.other_user_address = UserEmailAddressFactory()
         self.other_user_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_user_address.id)
-        self.client.login(username=self.user.slug, password=USER_PASSWORD)
+        self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 6}[self.site.id])
