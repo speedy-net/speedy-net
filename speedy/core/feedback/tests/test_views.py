@@ -133,7 +133,6 @@ class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMix
         self.assertEqual(first=self.language_code, second='he')
 
 
-@only_on_sites_with_login
 class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin):
     def setup_class(self):
         self.other_user = ActiveUserFactory()
@@ -164,7 +163,6 @@ class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTes
         self.assertEqual(first=self.language_code, second='he')
 
 
-@only_on_sites_with_login
 class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin):
     def setup_class(self):
         self.file = FileFactory()

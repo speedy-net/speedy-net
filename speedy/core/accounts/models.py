@@ -315,8 +315,8 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             self.save()
             self.profile.save()
             if (django_settings.LOGIN_ENABLED):
-                self.speedy_net_profile.save()  # ~~~~ TODO: is this necessary?
-                self.speedy_match_profile.save()  # ~~~~ TODO: is this necessary?
+                self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
+                self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
@@ -336,7 +336,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         return self.__class__.diet_choices(gender=self.get_gender())
 
 
-User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
+User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
 # class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO

@@ -11,7 +11,7 @@ SITE_ID = SPEEDY_COMPOSER_SITE_ID
 ROOT_URLCONF = 'speedy.composer.urls'
 
 # if (LOGIN_ENABLED):
-if (True or LOGIN_ENABLED):  # ~~~~ TODO: remove this line!
+if (True or LOGIN_ENABLED): # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
         'speedy.composer.accounts',
         'speedy.composer.compose',

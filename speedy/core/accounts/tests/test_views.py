@@ -215,7 +215,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_unique_confirmed_email_address(self):
@@ -233,7 +233,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
@@ -252,8 +252,8 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id]) # ~~~~ TODO: remove this line!
 
     def test_unique_unconfirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
@@ -270,7 +270,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_password_too_short(self):
@@ -345,7 +345,7 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
 
     def test_email_gets_converted_to_lowercase(self):
@@ -375,7 +375,7 @@ class RegistrationViewTestCaseMixin(object):
 
     def test_invalid_date_of_birth_list_fail(self):
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth)  # ~~~~ TODO: remove this line!
+            print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path='/', data=data)
@@ -675,7 +675,7 @@ class EditProfileViewTestCaseMixin(object):
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
         self.assertNotEqual(first=user.slug, second=old_slug)
-        # print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
+        # print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug)) # ~~~~ TODO: remove this line!
 
     def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -711,7 +711,7 @@ class EditProfileViewTestCaseMixin(object):
         self.assertNotEqual(first=user.slug, second=new_slug)
         self.assertEqual(first=user.username, second=normalize_username(slug=old_slug))
         self.assertNotEqual(first=user.username, second=normalize_username(slug=new_slug))
-        # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug))  # ~~~~ TODO: remove this line!
+        # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug)) # ~~~~ TODO: remove this line!
 
     def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -735,7 +735,7 @@ class EditProfileViewTestCaseMixin(object):
 
     def test_valid_date_of_birth_list_ok(self):
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_valid_date_of_birth_list_ok", date_of_birth)  # ~~~~ TODO: remove this line!
+            print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)
@@ -757,7 +757,7 @@ class EditProfileViewTestCaseMixin(object):
         self.date_of_birth = self.user.date_of_birth
         self.last_name = self.user.last_name
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth)  # ~~~~ TODO: remove this line!
+            print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)

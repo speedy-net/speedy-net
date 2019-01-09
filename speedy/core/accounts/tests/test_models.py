@@ -789,8 +789,8 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -807,8 +807,8 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -822,8 +822,8 @@ class UserEmailAddressTestCaseMixin(object):
         user_email_address.save()
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
@@ -833,7 +833,7 @@ class UserEmailAddressTestCaseMixin(object):
         user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
     def test_email_gets_converted_to_lowercase_2(self):
@@ -841,7 +841,7 @@ class UserEmailAddressTestCaseMixin(object):
         user_email_address = UserEmailAddressFactory(user=user, email='EMAIL77@EXAMPLE.COM')
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
         self.assertEqual(first=user.email_addresses.count(), second=2)
-        user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=2)
 
 
