@@ -22,10 +22,10 @@ install:
   - lsb_release -a
 script:
   - cd speedy/net
-  - python -W error::DeprecationWarning manage.py test
+  - python manage.py test # python -W error::DeprecationWarning manage.py test
   - cd ../match
-  - python -W error::DeprecationWarning manage.py test
+  - python manage.py test # python -W error::DeprecationWarning manage.py test
   - cd ../composer
-  - python -W error::DeprecationWarning manage.py test
+  - python manage.py test # python -W error::DeprecationWarning manage.py test
   - cd ../mail
-  - python -W error::DeprecationWarning manage.py test
+  - python manage.py test # python -W error::DeprecationWarning manage.py test
