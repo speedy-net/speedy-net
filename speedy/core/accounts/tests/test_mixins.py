@@ -1,8 +1,9 @@
+from speedy.core.base.tests.test_mixins import SpeedyCoreBaseLanguageMixin
 from speedy.core.accounts.models import Entity, User
 
 
 # class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
-class SpeedyCoreAccountsLanguageMixin(object):
+class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
     _first_password_field_names = ['new_password1']
     _both_password_field_names = ['new_password1', 'new_password2']
@@ -67,9 +68,6 @@ class SpeedyCoreAccountsLanguageMixin(object):
 
     def _profile_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
-
-    def _all_the_required_fields_are_required_errors_dict_by_required_fields(self, required_fields):
-        return {field_name: [self._this_field_is_required_error_message] for field_name in required_fields}
 
     def _registration_form_all_the_required_fields_are_required_errors_dict(self):
         return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._registration_form_all_the_required_fields_keys())
@@ -363,7 +361,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
     def setup(self):
         super().setup()
 
-        _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
+        # _this_field_is_required_error_message_dict = {'en': '___This field is required.', 'he': 'יש להזין תוכן בשדה זה.___'} # ~~~~ TODO: remove this line!
         _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק.'}
         _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק.'}
         _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
@@ -406,7 +404,7 @@ class SpeedyCoreAccountsLanguageMixin(object):
             },
         }
 
-        self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code]
+        # self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code] # ~~~~ TODO: remove this line!
         self._this_field_cannot_be_null_error_message = _this_field_cannot_be_null_error_message_dict[self.language_code]
         self._this_field_cannot_be_blank_error_message = _this_field_cannot_be_blank_error_message_dict[self.language_code]
         self._id_contains_illegal_characters_error_message = _id_contains_illegal_characters_error_message_dict[self.language_code]
