@@ -17,6 +17,8 @@ class FeedbackFormTestCase(SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
         print(form.fields['text'].widget) # ~~~~ TODO: remove this line!
         print(form.fields['text'].required) # ~~~~ TODO: remove this line!
         print(form.fields['text'].disabled) # ~~~~ TODO: remove this line!
+        print(form.fields['text'].widget.is_required) # ~~~~ TODO: remove this line!
+        print(form.fields['text'].widget.is_hidden) # ~~~~ TODO: remove this line!
 
     def test_feedback_form_for_visitor_displays_name_and_email(self):
         defaults = {
