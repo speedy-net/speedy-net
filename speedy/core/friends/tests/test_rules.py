@@ -1,9 +1,12 @@
+from django.conf import settings as django_settings
 from friendship.models import Friend
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.blocks.models import Block
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login

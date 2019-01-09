@@ -7,10 +7,12 @@ from django.core import mail
 from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
-from .test_mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
-from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 class RedirectMeMixin(object):

@@ -1,10 +1,13 @@
+from django.conf import settings as django_settings
 from django.core import mail
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
-from speedy.core.uploads.tests.test_factories import FileFactory
-from ..models import Feedback
+from speedy.core.feedback.models import Feedback
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
+    from speedy.core.uploads.tests.test_factories import FileFactory
 
 
 class FeedbackViewBaseMixin(object):
@@ -16,7 +19,8 @@ class FeedbackViewBaseMixin(object):
 
     def setup(self):
         super().setup()
-        self.user = ActiveUserFactory()
+        if (django_settings.LOGIN_ENABLED):
+            self.user = ActiveUserFactory()
         self.setup_class()
         self.page_url = self.get_page_url()
 

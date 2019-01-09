@@ -6,8 +6,10 @@ from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 from speedy.core.accounts.models import User
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
 @only_on_sites_with_login

@@ -1,10 +1,13 @@
 from datetime import date
+from django.conf import settings as django_settings
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_net
 from speedy.core.accounts.models import User
-from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
 @only_on_speedy_net

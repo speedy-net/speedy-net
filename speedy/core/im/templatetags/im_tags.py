@@ -2,7 +2,7 @@ from django import template
 
 register = template.Library()
 
-from ..models import ReadMark, Chat
+from speedy.core.im.models import ReadMark, Chat
 
 
 @register.simple_tag

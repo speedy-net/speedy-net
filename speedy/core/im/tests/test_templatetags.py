@@ -1,11 +1,14 @@
 from time import sleep
+from django.conf import settings as django_settings
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.im.models import Message, ReadMark
-from .test_factories import ChatFactory
-from ..templatetags import im_tags
+from speedy.core.im.templatetags import im_tags
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+    from speedy.core.im.tests.test_factories import ChatFactory
 
 
 @only_on_sites_with_login

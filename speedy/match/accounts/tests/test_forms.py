@@ -1,7 +1,11 @@
+from django.conf import settings as django_settings
+
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.match.accounts.forms import ProfileNotificationsForm
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
 @only_on_speedy_match

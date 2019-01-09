@@ -7,11 +7,13 @@ from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-from .test_mixins import SpeedyCoreAccountsLanguageMixin
-from .test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm, ProfileNotificationsForm
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, ActiveUserFactory, UserEmailAddressFactory
 
 
 class RegistrationFormTestCaseMixin(object):

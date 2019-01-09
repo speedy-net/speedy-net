@@ -1,8 +1,12 @@
+from django.conf import settings as django_settings
+
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from ..forms import FeedbackForm
-from ..models import Feedback
+from speedy.core.feedback.forms import FeedbackForm
+from speedy.core.feedback.models import Feedback
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login

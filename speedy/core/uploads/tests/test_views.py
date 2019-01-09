@@ -1,12 +1,15 @@
 import json
 import os
 import tempfile
+from django.conf import settings as django_settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
-from ..models import Image
+from speedy.core.uploads.models import Image
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
 @only_on_sites_with_login

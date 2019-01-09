@@ -1,11 +1,14 @@
+from django.conf import settings as django_settings
 from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 from speedy.core.accounts.tests.test_views import RedirectMeMixin
-from ..views import UserMixin
+from speedy.core.profiles.views import UserMixin
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
 class UserMixinTestView(UserMixin, generic.View):

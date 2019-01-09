@@ -1,14 +1,19 @@
 import factory
+from django.conf import settings as django_settings
 
-from speedy.core.accounts.tests.test_factories import ActiveUserFactory
-from ..models import UserLike
+from speedy.match.likes.models import UserLike
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
 
 
-class UserLikeFactory(factory.django.DjangoModelFactory):
-    from_user = factory.SubFactory(ActiveUserFactory)
-    to_user = factory.SubFactory(ActiveUserFactory)
+if (django_settings.LOGIN_ENABLED):
 
-    class Meta:
-        model = UserLike
+    class UserLikeFactory(factory.django.DjangoModelFactory):
+        from_user = factory.SubFactory(ActiveUserFactory)
+        to_user = factory.SubFactory(ActiveUserFactory)
+
+        class Meta:
+            model = UserLike
 
 

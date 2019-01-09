@@ -13,8 +13,10 @@ from speedy.match.accounts.tests.test_mixins import SpeedyMatchAccountsLanguageM
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User
-from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 from speedy.core.uploads.tests.test_factories import UserImageFactory
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
 class SpeedyMatchSiteProfileTestCaseMixin(object):

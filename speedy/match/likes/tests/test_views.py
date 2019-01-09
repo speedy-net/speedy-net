@@ -1,8 +1,12 @@
+from django.conf import settings as django_settings
+
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
-from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
-from .test_factories import UserLikeFactory
-from ..models import UserLike
+from speedy.match.likes.tests.test_factories import UserLikeFactory
+from speedy.match.likes.models import UserLike
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import USER_PASSWORD, ActiveUserFactory
 
 
 @only_on_speedy_match

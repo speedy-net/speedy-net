@@ -1,6 +1,6 @@
 from django import template
 
-from ..models import Block
+from speedy.core.blocks.models import Block
 
 register = template.Library()
 

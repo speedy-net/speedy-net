@@ -8,9 +8,11 @@ from speedy.core.settings import tests as tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-from .test_mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
-from .test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
+
+if (django_settings.LOGIN_ENABLED):
+    from speedy.core.accounts.tests.test_factories import get_random_user_password, USER_PASSWORD, DefaultUserFactory, UserEmailAddressFactory
 
 
 class EntityTestCaseMixin(object):
