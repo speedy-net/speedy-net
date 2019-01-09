@@ -39,10 +39,10 @@ class FeedbackViewBaseMixin(object):
         r = self.client.get(path=self.page_url)
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
-        self.assertContains(response=r, text='id_sender_name')
-        self.assertContains(response=r, text='id_sender_email')
-        self.assertContains(response=r, text='id_text')
-        self.assertContains(response=r, text='<textarea ')
+        self.assertContains(response=r, text='id_sender_name', count=3)
+        self.assertContains(response=r, text='id_sender_email', count=3)
+        self.assertContains(response=r, text='id_text', count=3)
+        self.assertContains(response=r, text='<textarea ', count=1)
 
     def run_test_visitor_can_submit_form(self, data):
         self.assertEqual(first=Feedback.objects.count(), second=0)
@@ -84,8 +84,8 @@ class FeedbackViewBaseMixin(object):
         self.assertTemplateUsed(response=r, template_name='feedback/feedback_form.html')
         self.assertNotContains(response=r, text='id_sender_name')
         self.assertNotContains(response=r, text='id_sender_email')
-        self.assertContains(response=r, text='id_text')
-        self.assertContains(response=r, text='<textarea ')
+        self.assertContains(response=r, text='id_text', count=3)
+        self.assertContains(response=r, text='<textarea ', count=1)
 
     @only_on_sites_with_login
     def test_user_can_submit_form(self):
