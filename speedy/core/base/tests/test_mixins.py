@@ -5,7 +5,7 @@ class SpeedyCoreBaseLanguageMixin(object):
     def setup(self):
         super().setup()
 
-        _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.___'}
+        _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
 
         self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code]
 
