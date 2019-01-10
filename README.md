@@ -220,9 +220,11 @@ Review and edit these config files, restart servers:
     u.slug = 'admin'
     u.date_of_birth = now()
     u.gender = User.GENDER_OTHER
+    u.first_name = 'admin'
+    u.last_name = 'admin'
     u.is_staff = True
     u.is_superuser = True
-    u.set_password('admin')
+    u.set_password('<PASSWORD>')
     u.save()
 
 
