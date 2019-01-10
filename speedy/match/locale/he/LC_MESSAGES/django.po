@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 20:15+0200\n"
+"POT-Creation-Date: 2019-01-10 21:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,167 +145,167 @@ msgctxt "other"
 msgid "Unlike"
 msgstr "בטל/י לייק"
 
-#: .\__translations\__translations.py:6
-msgctxt "female"
-msgid "No"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:7
-msgctxt "male"
+msgctxt "female"
 msgid "No"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:8
+msgctxt "male"
+msgid "No"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:9
 msgctxt "other"
 msgid "No"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:10
-msgctxt "female"
-msgid "Sometimes"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:11
-msgctxt "male"
+msgctxt "female"
 msgid "Sometimes"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:12
+msgctxt "male"
+msgid "Sometimes"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:13
 msgctxt "other"
 msgid "Sometimes"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:14
-msgctxt "female"
-msgid "Yes"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:15
-msgctxt "male"
+msgctxt "female"
 msgid "Yes"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:16
+msgctxt "male"
+msgid "Yes"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:17
 msgctxt "other"
 msgid "Yes"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:18
-msgctxt "female"
-msgid "Single"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:19
-msgctxt "male"
+msgctxt "female"
 msgid "Single"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:20
+msgctxt "male"
+msgid "Single"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:21
 msgctxt "other"
 msgid "Single"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:22
-msgctxt "female"
-msgid "Divorced"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:23
-msgctxt "male"
+msgctxt "female"
 msgid "Divorced"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:24
+msgctxt "male"
+msgid "Divorced"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:25
 msgctxt "other"
 msgid "Divorced"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:26
-msgctxt "female"
-msgid "Widowed"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:27
-msgctxt "male"
+msgctxt "female"
 msgid "Widowed"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:28
+msgctxt "male"
+msgid "Widowed"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:29
 msgctxt "other"
 msgid "Widowed"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:30
-msgctxt "female"
-msgid "In a relatioship"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:31
-msgctxt "male"
+msgctxt "female"
 msgid "In a relatioship"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:32
+msgctxt "male"
+msgid "In a relatioship"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:33
 msgctxt "other"
 msgid "In a relatioship"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:34
-msgctxt "female"
-msgid "In an open relationship"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:35
-msgctxt "male"
+msgctxt "female"
 msgid "In an open relationship"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:36
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:37
 msgctxt "other"
 msgid "In an open relationship"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:38
-msgctxt "female"
-msgid "It's complicated"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:39
-msgctxt "male"
+msgctxt "female"
 msgid "It's complicated"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:40
+msgctxt "male"
+msgid "It's complicated"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:41
 msgctxt "other"
 msgid "It's complicated"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:42
-msgctxt "female"
-msgid "Separated"
-msgstr "_____ # ~~~~ TODO"
-
 #: .\__translations\__translations.py:43
-msgctxt "male"
+msgctxt "female"
 msgid "Separated"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\__translations\__translations.py:44
+msgctxt "male"
+msgid "Separated"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\__translations\__translations.py:45
 msgctxt "other"
 msgid "Separated"
 msgstr "_____ # ~~~~ TODO"
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:47
 msgctxt "female"
 msgid "Married"
 msgstr "נשואה"
 
-#: .\__translations\__translations.py:47
+#: .\__translations\__translations.py:48
 msgctxt "male"
 msgid "Married"
 msgstr "נשוי"
 
-#: .\__translations\__translations.py:48
+#: .\__translations\__translations.py:49
 msgctxt "other"
 msgid "Married"
 msgstr "נשוי/נשואה"

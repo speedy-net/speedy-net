@@ -3,6 +3,7 @@
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
 
+# from speedy.match
 pgettext_lazy(context="female", message="No")
 pgettext_lazy(context="male", message="No")
 pgettext_lazy(context="other", message="No")

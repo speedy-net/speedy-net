@@ -3,6 +3,7 @@
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
 
+# from django
 _('Enter a valid email address.')
 _("Email address")
 _("email address")
@@ -12,6 +13,23 @@ _("Value must be valid JSON.")
 _("Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.")
 
 
+# from friendship.models
+_('Message')
+
+_('Friendship Request')
+_('Friendship Requests')
+
+_('Friend')
+_('Friends')
+
+_('Following Relationship')
+_('Following Relationships')
+
+_('Blocker Relationship')
+_('Blocked Relationships')
+
+
+# from django
 ngettext_lazy(
     singular='List contains %(show_value)d item, it should contain no more than %(limit_value)d.',
     plural='List contains %(show_value)d items, it should contain no more than %(limit_value)d.',
@@ -19,6 +37,7 @@ ngettext_lazy(
 )
 
 
+# from speedy.core
 pgettext_lazy(context="female", message='username (slug)')
 pgettext_lazy(context="male", message='username (slug)')
 pgettext_lazy(context="other", message='username (slug)')
