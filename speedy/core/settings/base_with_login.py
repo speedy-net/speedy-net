@@ -83,3 +83,8 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/set-session/',
 ]
 
+LOCALE_PATHS += [
+    str(ROOT_DIR / 'speedy/net/locale'),
+    str(ROOT_DIR / 'speedy/match/locale'),
+]
+

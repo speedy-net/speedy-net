@@ -230,7 +230,7 @@ LANGUAGES = [
 
 LOCALE_PATHS = [
     str(APP_DIR / 'locale'),
-    str(ROOT_DIR / 'speedy/core/locale')
+    str(ROOT_DIR / 'speedy/core/locale'),
 ]
 
 TIME_ZONE = 'UTC'
