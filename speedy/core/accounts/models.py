@@ -61,6 +61,9 @@ class Entity(TimeStampedModel):
         """
         Allows to have different slug and username validators for Entity and User.
         """
+        if exclude is None:
+            exclude = []
+
         self.normalize_slug_and_username()
 
         try:
@@ -234,6 +237,18 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
             return False
         else:
             return super().delete(*args, **kwargs)
+
+    def clean_fields(self, exclude=None):
+        """
+        Allows to have different slug and username validators for Entity and User.
+        """
+        if exclude is None:
+            exclude = []
+
+        if (self.is_superuser):
+            exclude = ['username', 'slug']
+
+        return super().clean_fields(exclude=exclude)
 
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
