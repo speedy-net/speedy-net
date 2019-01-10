@@ -129,16 +129,16 @@ class SiteProfile(SiteProfileBase):
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_MATCH_ALLOWED)
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
-    diet_match = JSONField(verbose_name=('diet match'), default=diet_match_default.__func__)
-    smoking_status_match = JSONField(verbose_name=('smoking status match'), default=smoking_status_match_default.__func__)
+    diet_match = JSONField(verbose_name=_('diet match'), default=diet_match_default.__func__)
+    smoking_status_match = JSONField(verbose_name=_('smoking status match'), default=smoking_status_match_default.__func__)
     marital_status_match = JSONField(verbose_name=_('marital status match'), default=marital_status_match_default.__func__)
     activation_step = models.PositiveSmallIntegerField(default=2)
 
     objects = SiteProfileManager()
 
     class Meta:
-        verbose_name = 'Speedy Match Profile'
-        verbose_name_plural = 'Speedy Match Profiles'
+        verbose_name = _('Speedy Match Profile')
+        verbose_name_plural = _('Speedy Match Profiles')
 
     def __str__(self):
         return '{} @ Speedy Match'.format(self.user)

@@ -22,7 +22,7 @@ class Chat(TimeStampedModel):
 
     class Meta:
         verbose_name = _('chat')
-        verbose_name_plural = _('chat')
+        verbose_name_plural = _('chats')
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):

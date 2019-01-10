@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 19:53+0200\n"
+"POT-Creation-Date: 2019-01-10 20:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,14 @@ msgstr "משתמש/ת"
 #: .\accounts\models.py:11
 msgid "indicates if a user has ever logged in to the site"
 msgstr "_____ # ~~~~ TODO"
+
+#: .\accounts\models.py:14
+msgid "Speedy Net Profile"
+msgstr "פרופיל ספידי נט"
+
+#: .\accounts\models.py:15
+msgid "Speedy Net Profiles"
+msgstr "פרופילים ספידי נט"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -320,9 +328,6 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 
 #~ msgid "Speedy Mail Software"
 #~ msgstr "תוכנת דואר ספידי"
-
-#~ msgid "Speedy Net Blog"
-#~ msgstr "ספידי נט בלוג"
 
 #~ msgid "Speedy Net's Shop"
 #~ msgstr "החנות של ספידי נט"

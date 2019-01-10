@@ -11,8 +11,8 @@ class SiteProfile(SiteProfileBase):
     is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=True)
 
     class Meta:
-        verbose_name = 'Speedy Net Profile'
-        verbose_name_plural = 'Speedy Net Profiles'
+        verbose_name = _('Speedy Net Profile')
+        verbose_name_plural = _('Speedy Net Profiles')
 
     def __str__(self):
         return '{} @ Speedy Net'.format(self.user)

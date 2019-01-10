@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 19:53+0200\n"
+"POT-Creation-Date: 2019-01-10 20:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -452,9 +452,25 @@ msgstr "_____ # ~~~~ TODO"
 msgid "maximal age to match"
 msgstr "_____ # ~~~~ TODO"
 
+#: .\accounts\models.py:132
+msgid "diet match"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\accounts\models.py:133
+msgid "smoking status match"
+msgstr "_____ # ~~~~ TODO"
+
 #: .\accounts\models.py:134
 msgid "marital status match"
 msgstr "_____ # ~~~~ TODO"
+
+#: .\accounts\models.py:140
+msgid "Speedy Match Profile"
+msgstr "פרופיל ספידי מץ'"
+
+#: .\accounts\models.py:141
+msgid "Speedy Match Profiles"
+msgstr "פרופילים ספידי מץ'"
 
 #: .\accounts\models.py:186 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
@@ -530,6 +546,10 @@ msgstr "_____ # ~~~~ TODO"
 
 #: .\likes\models.py:11
 msgid "from user"
+msgstr "_____ # ~~~~ TODO"
+
+#: .\likes\models.py:12
+msgid "to user"
 msgstr "_____ # ~~~~ TODO"
 
 #: .\likes\models.py:15
