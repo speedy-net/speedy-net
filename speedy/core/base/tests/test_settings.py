@@ -15,9 +15,6 @@ class SettingsTestCase(SiteTestCase):
     def test_login_enabled(self):
         self.assertEqual(first=django_settings.LOGIN_ENABLED, second=(django_settings.SITE_ID in django_settings.SITES_WITH_LOGIN))
 
-    # def test_raise(self): #### TODO
-    #     raise Exception
-    #
 
 class TestsSettingsTestCase(SiteTestCase):
     def test_slugs_to_test_list(self):
@@ -41,7 +38,4 @@ class TestsSettingsTestCase(SiteTestCase):
         self.assertSetEqual(set1=username_length_set, set2={29, 30, 31, 32})
         self.assertSetEqual(set1=slug_length_set, set2={57, 59, 61, 63})
 
-    # def test_raise(self): #### TODO
-    #     raise Exception
-    #
 
