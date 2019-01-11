@@ -17,35 +17,27 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         else:
             raise Exception("Unexpected: model={}".format(model))
 
-    # @staticmethod
     def _value_is_not_a_valid_choice_error_message_by_value(self, value):
         return self._value_is_not_a_valid_choice_error_message_to_format.format(value=value)
 
-    # @staticmethod
     def _value_must_be_an_integer_error_message_by_value(self, value):
         return self._value_must_be_an_integer_error_message_to_format.format(value=value)
 
-    # @staticmethod
     def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_list_length(self, list_length):
         return self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format.format(list_length=list_length)
 
-    # @staticmethod
     def _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
         return self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
 
-    # @staticmethod
     def _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
         return self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
-    # @staticmethod
     def _username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
         return self._username_must_contain_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
 
-    # @staticmethod
     def _username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
         return self._username_must_contain_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
-    # @staticmethod
     def _a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(self, email_address):
         return self._a_confirmation_message_was_sent_to_email_address_error_message_to_format.format(email_address=email_address)
 
@@ -192,7 +184,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         #     errors_dict['date_of_birth'] = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
         return errors_dict
 
-    # @staticmethod
     def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -202,7 +193,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             errors_dict['username'] = [self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
-    # @staticmethod
     def _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -212,7 +202,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             errors_dict['username'] = [self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
-    # @staticmethod
     def _model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -222,7 +211,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             errors_dict['username'] = [self._username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=model.settings.MIN_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
-    # @staticmethod
     def _model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -232,35 +220,27 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             errors_dict['username'] = [self._username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=model.settings.MAX_USERNAME_LENGTH, value_length=username_value_length)]
         return errors_dict
 
-    # @staticmethod
     def _this_field_cannot_be_null_errors_dict_by_field_name(self, field_name):
         return {field_name: [self._this_field_cannot_be_null_error_message]}
 
-    # @staticmethod
     def _this_field_cannot_be_blank_errors_dict_by_field_name(self, field_name):
         return {field_name: [self._this_field_cannot_be_blank_error_message]}
 
-    # @staticmethod
     def _value_must_be_valid_json_errors_dict_by_field_name(self, field_name):
         return {field_name: [self._value_must_be_valid_json_error_message]}
 
-    # @staticmethod
     def _value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(self, field_name, value):
         return {field_name: [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]}
 
-    # @staticmethod
     def _value_must_be_an_integer_errors_dict_by_field_name_and_value(self, field_name, value):
         return {field_name: [self._value_must_be_an_integer_error_message_by_value(value=value)]}
 
-    # @staticmethod
     def _list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_list_length(self, field_name, list_length):
         return {field_name: [self._list_contains_items_it_should_contain_no_more_than_3_error_message_by_list_length(list_length=list_length)]}
 
-    # @staticmethod
     def _this_field_cannot_be_null_errors_dict_by_field_name_list(self, field_name_list):
         return {field_name_list[i]: [self._this_field_cannot_be_null_error_message] for i in range(len(field_name_list))}
 
-    # @staticmethod
     def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list):
         return {field_name_list[i]: [self._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
 
