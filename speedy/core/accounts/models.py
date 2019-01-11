@@ -17,12 +17,12 @@ from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDI
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
-from .utils import get_site_profile_model
-from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, ValidateUserPasswordMixin
-# from .mixins import CleanEmailMixin # ~~~~ TODO
+from .utils import get_site_profile_model, normalize_email
+from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email, ValidateUserPasswordMixin
+from .mixins import CleanAndValidateAllFieldsMixin # ~~~~ TODO
 
 
-class Entity(TimeStampedModel):
+class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     settings = django_settings.ENTITY_SETTINGS
     # settings = speedy_net_global_settings.EntitySettings # ~~~~ TODO: remove this line!
 
@@ -46,56 +46,32 @@ class Entity(TimeStampedModel):
     def __str__(self):
         return '<Entity {}>'.format(self.id)
 
-    def normalize_slug_and_username(self):
-        self.slug = normalize_slug(slug=self.slug)
-        if (self.username):
-            self.username = normalize_username(slug=self.username)
-        else:
-            self.username = normalize_username(slug=self.slug)
-
-    def validate_username_for_slug(self):
-        if (normalize_username(slug=self.slug) != self.username):
-            raise ValidationError(_('Slug does not parse to username.'))
-
-    def clean_fields(self, exclude=None):
-        """
-        Allows to have different slug and username validators for Entity and User.
-        """
-        if exclude is None:
-            exclude = []
+    def clean_all_fields(self, exclude=None):
+        super().clean_all_fields(exclude=exclude)
 
         self.normalize_slug_and_username()
 
-        try:
-            super().clean_fields(exclude=exclude)
-        except ValidationError as e:
-            errors = e.error_dict
-        else:
-            errors = {}
-
+    def validate_all_fields(self, errors, exclude=None):
         username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
         if (username_exists):
             errors['slug'] = [self._meta.get_field('slug').error_messages['unique']]
             # errors['username'] = [self._meta.get_field('username').error_messages['unique']]
 
-        for field_name, validators in self.validators.items():
-            f = self._meta.get_field(field_name)
-            if (field_name in exclude):
-                pass
-            else:
-                raw_value = getattr(self, f.attname)
-                if ((f.blank) and (raw_value in f.empty_values)):
-                    pass
-                else:
-                    try:
-                        for validator in validators:
-                            validator(raw_value)
-                        if ((field_name == 'slug') and (self.username)):
-                            self.validate_username_for_slug()
-                    except ValidationError as e:
-                        errors[f.name] = [e.error_list[0].messages[0]]
-        if (errors):
-            raise ValidationError(errors)
+        super().validate_all_fields(errors=errors, exclude=exclude)
+
+    def normalize_slug_and_username(self):
+        self.slug = normalize_slug(slug=self.slug)
+        if (self.username):
+            self.username = normalize_username(username=self.username)
+        else:
+            self.username = normalize_username(username=self.slug)
+
+    def validate_slug(self):
+        self.validate_username_for_slug()
+
+    def validate_username_for_slug(self):
+        if (not (normalize_username(username=self.slug) == self.username)):
+            raise ValidationError(_('Slug does not parse to username.'))
 
 
 class NamedEntity(Entity):
@@ -354,8 +330,9 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
-# class UserEmailAddress(CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
-class UserEmailAddress(TimeStampedModel):
+# class UserEmailAddress(CleanAndValidateAllFieldsMixin, CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
+class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel): # ~~~~ TODO
+# class UserEmailAddress(TimeStampedModel): # ~~~~ TODO
     id = RegularUDIDField()
     user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
@@ -364,6 +341,10 @@ class UserEmailAddress(TimeStampedModel):
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
     access = UserAccessField(verbose_name=_('who can see this email'), default=UserAccessField.ACCESS_ME)
+
+    validators = {
+        # 'email': [validate_email],
+    }
 
     class Meta:
         verbose_name = _('email address')
@@ -377,6 +358,19 @@ class UserEmailAddress(TimeStampedModel):
         if (not (self.confirmation_token)):
             self.confirmation_token = self._generate_confirmation_token()
         return super().save(*args, **kwargs)
+
+    def clean_all_fields(self, exclude=None):
+        super().clean_all_fields(exclude=exclude)
+
+        self.email = normalize_email(email=self.email)
+
+    def validate_all_fields(self, errors, exclude=None):
+        try:
+            validate_email(self.email, user_email_address_pk=self.pk)
+        except ValidationError as e:
+            errors['email'] = [e.error_list[0].messages[0]]
+
+        super().validate_all_fields(errors=errors, exclude=exclude)
 
     def _generate_confirmation_token(self):
         return generate_confirmation_token()

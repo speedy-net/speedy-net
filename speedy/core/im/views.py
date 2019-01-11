@@ -76,7 +76,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         if (not (request.user.is_authenticated)):
             return self.handle_no_permission()
         visited_user = self.get_user_queryset().filter(
-            username=normalize_username(slug=self.kwargs['chat_slug'])).first()
+            username=normalize_username(username=self.kwargs['chat_slug'])).first()
         if ((visited_user) and (visited_user.slug != self.kwargs['chat_slug'])):
             return redirect(reverse('im:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.on_site.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):

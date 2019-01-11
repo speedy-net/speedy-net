@@ -7,19 +7,28 @@ from speedy.core.accounts.utils import get_site_profile_model
 
 class EntityManager(BaseManager):
     def get_by_username(self, username):
-        return self.get(username=normalize_username(slug=username))
+        return self.get(username=normalize_username(username=username))
 
     def get_by_slug(self, slug):
         return self.get_by_username(username=slug)
 
 
 class UserManager(BaseUserManager):
+    @classmethod
+    def normalize_email(cls, email):
+        """
+        Normalize the email address by lowercasing it.
+        """
+        email = super().normalize_email(email=email)
+        email = email.lower()
+        return email
+
     def get_queryset(self):
         site_profile_model = get_site_profile_model()
         return super().get_queryset().select_related(site_profile_model.RELATED_NAME)
 
     def get_by_natural_key(self, username):
-        return self.distinct().get(Q(username=normalize_username(slug=username)) | Q(email_addresses__email=username))
+        return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
 
     def active(self, *args, **kwargs):
         return self.filter(is_active=True, *args, **kwargs)

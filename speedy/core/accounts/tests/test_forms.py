@@ -28,7 +28,7 @@ class RegistrationFormTestCaseMixin(object):
             'gender': 1,
             'date_of_birth': '1980-01-01',
         }
-        self.username = normalize_username(slug=self.data['slug'])
+        self.username = normalize_username(username=self.data['slug'])
         self.slug = normalize_slug(slug=self.data['slug'])
         self.assertNotEqual(first=self.password, second=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.username, second='user22')
@@ -48,7 +48,7 @@ class RegistrationFormTestCaseMixin(object):
         for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
             data = self.data.copy()
             data['slug'] = slug_dict["slug"]
-            username = normalize_username(slug=data['slug'])
+            username = normalize_username(username=data['slug'])
             slug = normalize_slug(slug=data['slug'])
             data['email'] = "{username}@example.com".format(username=username)
             self.assertEqual(first=slug_dict["slug_length"], second=len(slug))

@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 
 def reserved_username_validator(value):
     from .models import Entity # ~~~~ TODO
-    if (normalize_username(slug=value) in [normalize_username(slug=reserved) for reserved in Entity.settings.UNAVAILABLE_USERNAMES]):
+    if (normalize_username(username=value) in [normalize_username(username=reserved) for reserved in Entity.settings.UNAVAILABLE_USERNAMES]):
         raise ValidationError(_('This username is already taken.'))
 
 
@@ -39,7 +39,7 @@ class UsernameMinLengthValidator(MinLengthValidator):
     )
 
     def clean(self, x):
-        return len(normalize_username(slug=x))
+        return len(normalize_username(username=x))
 
 
 class UsernameMaxLengthValidator(MaxLengthValidator):
@@ -50,7 +50,7 @@ class UsernameMaxLengthValidator(MaxLengthValidator):
     )
 
     def clean(self, x):
-        return len(normalize_username(slug=x))
+        return len(normalize_username(username=x))
 
 
 class SlugMinLengthValidator(MinLengthValidator):
@@ -187,6 +187,16 @@ def validate_date_of_birth_in_forms(date_of_birth):
         log.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
         # raise ValidationError(_('Enter a valid date (age can be from 0 to 180 years).')) #### TODO
+
+
+def validate_email(email, user_email_address_pk=None):
+    from .models import UserEmailAddress # ~~~~ TODO
+    if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
+        # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
+        UserEmailAddress.objects.filter(email=email, is_confirmed=False).exclude(pk=user_email_address_pk).delete()
+        # If this email address is confirmed, raise an exception.
+        if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
+            raise ValidationError(_('This email is already in use.'))
 
 
 class ValidateUserPasswordMixin(object):

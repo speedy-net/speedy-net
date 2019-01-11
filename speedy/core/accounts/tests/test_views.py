@@ -126,7 +126,7 @@ class RegistrationViewTestCaseMixin(object):
             'gender': 1,
             'date_of_birth': '1980-08-20',
         }
-        self.username = normalize_username(slug=self.data['slug'])
+        self.username = normalize_username(username=self.data['slug'])
         self.slug = normalize_slug(slug=self.data['slug'])
         self.assertNotEqual(first=self.password, second=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.username, second='user1234')
@@ -670,13 +670,13 @@ class EditProfileViewTestCaseMixin(object):
         data = self.data.copy()
         data['slug'] = new_slug
         self.assertNotEqual(first=self.user.slug, second=normalize_slug(slug=new_slug))
-        self.assertEqual(first=normalize_username(slug=new_slug), second=self.user.username)
+        self.assertEqual(first=normalize_username(username=new_slug), second=self.user.username)
         r = self.client.post(path=self.page_url, data=data)
         self.assertRedirects(response=r, expected_url=self.page_url)
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
         self.assertNotEqual(first=user.slug, second=old_slug)
-        # print("run_test_user_can_change_his_slug", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug)) # ~~~~ TODO: remove this line!
+        # print("run_test_user_can_change_his_slug", old_slug, normalize_username(username=old_slug), new_slug, normalize_username(username=new_slug), user.slug, normalize_username(username=user.slug)) # ~~~~ TODO: remove this line!
 
     def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -703,16 +703,16 @@ class EditProfileViewTestCaseMixin(object):
         data = self.data.copy()
         data['slug'] = new_slug
         self.assertNotEqual(first=self.user.slug, second=new_slug)
-        self.assertNotEqual(first=normalize_username(slug=new_slug), second=self.user.username)
+        self.assertNotEqual(first=normalize_username(username=new_slug), second=self.user.username)
         r = self.client.post(path=self.page_url, data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._you_cant_change_your_username_errors_dict_by_gender(gender=self.user.get_gender()))
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(first=user.slug, second=old_slug)
         self.assertNotEqual(first=user.slug, second=new_slug)
-        self.assertEqual(first=user.username, second=normalize_username(slug=old_slug))
-        self.assertNotEqual(first=user.username, second=normalize_username(slug=new_slug))
-        # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(slug=old_slug), new_slug, normalize_username(slug=new_slug), user.slug, normalize_username(slug=user.slug)) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=user.username, second=normalize_username(username=old_slug))
+        self.assertNotEqual(first=user.username, second=normalize_username(username=new_slug))
+        # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(username=old_slug), new_slug, normalize_username(username=new_slug), user.slug, normalize_username(username=user.slug)) # ~~~~ TODO: remove this line!
 
     def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
         self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
