@@ -20,8 +20,15 @@ def reserved_username_validator(value):
 def generate_regex_validator(allow_dashes, allow_letters_after_digits):
     letters = r'a-z'
     digits = r'0-9'
-    symbols = r'\-' if (allow_dashes) else r''
-    regex = r'[' + letters + symbols + ']{4,}[' + digits + symbols + ']*'
+    letters_regex = r'[' + letters + r']'
+    if (allow_dashes):
+        symbols = r'\-'
+        symbols_regex = r'[' + symbols + r']{0,1}'
+    else:
+        symbols = r''
+        symbols_regex = r''
+    digits_and_symbols_regex = r'[' + digits + symbols + r']'
+    regex = r'(' + letters_regex + symbols_regex + r'){4,}' + digits_and_symbols_regex + r'*'
     if (allow_letters_after_digits):
         regex += r'[' + letters + digits + symbols + ']*'
     if (allow_letters_after_digits):

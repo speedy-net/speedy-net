@@ -108,7 +108,7 @@ class RemoveExtraSlashesMiddleware(object):
 
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
         normalized_path = self.normalize_path(path=request.path)
-        if (normalized_path != request.path):
+        if (not (normalized_path == request.path)):
             request.path = normalized_path
             return redirect(to=request.get_full_path(), permanent=(not (django_settings.DEBUG)))
         return self.get_response(request=request)

@@ -367,15 +367,18 @@ class RegistrationFormTestCaseMixin(object):
         # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=201)) # ~~~~ TODO: remove this line!
 
     def test_slug_validation_fails_with_invalid_username_regex(self):
-        data = self.data.copy()
-        data['slug'] = '1234567890digits'
-        form = RegistrationForm(language_code=self.language_code, data=data)
-        form.full_clean()
-        self.assertFalse(expr=form.is_valid())
-        self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True))
-        # self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True))
-        # self.assertDictEqual(d1=form.errors, d2=self._user_slug_username_must_start_with_4_or_more_letters_errors_dict())
-        # self.assertEqual(first=form.errors['slug'][0], second=self._user_username_must_start_with_4_or_more_letters_error_message) # ~~~~ TODO: remove this line!
+        slug_list = ['0' * 6, '0test1', '1234567890digits', 'aaa', 'aaa 9999', 'aaa-9999', 'aaa+9999']
+        for slug in slug_list:
+            print(slug)######### ~~~~ TODO
+            data = self.data.copy()
+            data['slug'] = slug
+            form = RegistrationForm(language_code=self.language_code, data=data)
+            form.full_clean()
+            self.assertFalse(expr=form.is_valid(), msg="{} is a valid slug.".format(slug))
+            self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True), msg='"{}" - Unexpected error messages.'.format(slug))
+            # self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True))
+            # self.assertDictEqual(d1=form.errors, d2=self._user_slug_username_must_start_with_4_or_more_letters_errors_dict())
+            # self.assertEqual(first=form.errors['slug'][0], second=self._user_username_must_start_with_4_or_more_letters_error_message) # ~~~~ TODO: remove this line!
 
     def test_cannot_register_invalid_email(self):
         data = self.data.copy()

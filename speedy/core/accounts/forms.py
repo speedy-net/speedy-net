@@ -133,7 +133,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
-        if (normalize_username(username=slug) != username):
+        if (not (normalize_username(username=slug) == username)):
             raise ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 
