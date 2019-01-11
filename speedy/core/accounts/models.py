@@ -51,14 +51,6 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
         self.normalize_slug_and_username()
 
-    # def validate_all_fields(self, errors, exclude=None):
-    #     username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
-    #     if (username_exists):
-    #         errors['slug'] = [self._meta.get_field('slug').error_messages['unique']]
-    #         # errors['username'] = [self._meta.get_field('username').error_messages['unique']]
-    #
-    #     super().validate_all_fields(errors=errors, exclude=exclude)
-    #
     def normalize_slug_and_username(self):
         self.slug = normalize_slug(slug=self.slug)
         if (self.username):
@@ -370,14 +362,6 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel): # ~~~~
 
         self.normalize_email()
 
-    # def validate_all_fields(self, errors, exclude=None):
-    #     try:
-    #         validate_email(self.email, user_email_address_pk=self.pk)
-    #     except ValidationError as e:
-    #         errors['email'] = [e.error_list[0].messages[0]]
-    #
-    #     super().validate_all_fields(errors=errors, exclude=exclude)
-    #
     def normalize_email(self):
         self.email = normalize_email(email=self.email)
 

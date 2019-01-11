@@ -19,26 +19,6 @@ from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
 
 if (django_settings.LOGIN_ENABLED):
 
-    # def get_random_user_password_length():
-    #     return random.randint(User.settings.MIN_PASSWORD_LENGTH, User.settings.MAX_PASSWORD_LENGTH)
-    #
-    #
-    # def get_random_user_password():
-    #     user_password_length = get_random_user_password_length()
-    #     user_password = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(user_password_length))
-    #     if (len(user_password) == user_password_length):
-    #         return user_password
-    #     else:
-    #         raise Exception("Unexpected: len(user_password)={}, user_password_length={}".format(len(user_password), user_password_length))
-    #
-
-    # # ~~~~ TODO: move to base test.
-    # # ~~~~ TODO: maybe move to tests settings.
-    # # Generate a new random password for each test.
-    # USER_PASSWORD = get_random_user_password()
-    # # USER_PASSWORD = 'vjha9c4q44zs'
-
-
     class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
         email = factory.Faker('email')
         is_confirmed = True

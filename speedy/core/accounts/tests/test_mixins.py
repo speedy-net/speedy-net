@@ -29,20 +29,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def _list_contains_items_it_should_contain_no_more_than_3_error_message_by_list_length(self, list_length):
         return self._list_contains_items_it_should_contain_no_more_than_3_error_message_to_format.format(list_length=list_length)
 
-    # # @staticmethod
-    # def _value_has_an_invalid_date_format_error_message_by_value(self, value):
-    #     return "'{}' value has an invalid date format. It must be in YYYY-MM-DD format.".format(value)
-    #
-    # @staticmethod
-    # def _ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
-    #     # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length" and also use normalize...
-    #     return self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
-    # 
-    # @staticmethod
-    # def _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
-    #     # ~~~~ TODO: search for this string: "_ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length" and also use normalize...
-    #     return self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
-    # 
     # @staticmethod
     def _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
         return self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
@@ -123,12 +109,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             errors_dict['username'] = [self._this_username_is_already_taken_error_message]
         return errors_dict
 
-    # def _slug_this_username_is_already_taken_errors_dict(self):
-    #     return {'slug': [self._this_username_is_already_taken_error_message]}
-    #
-    # def _slug_and_username_this_username_is_already_taken_errors_dict(self):
-    #     return {'username': [self._this_username_is_already_taken_error_message], 'slug': [self._this_username_is_already_taken_error_message]}
-    #
     def _username_must_start_with_4_or_more_letters_errors_dict(self, model, slug_fail=False, username_fail=False):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {}
@@ -144,24 +124,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
                 errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
         return errors_dict
 
-    # def _entity_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
-    #
-    # def _entity_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
-    #
-    # def _entity_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'slug': [self._entity_username_must_start_with_4_or_more_letters_error_message]}
-    #
-    # def _user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-    #
-    # def _user_username_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-    #
-    # def _user_slug_username_must_start_with_4_or_more_letters_errors_dict(self):
-    #     return {'slug': [self._user_username_must_start_with_4_or_more_letters_error_message]}
-    #
     def _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False):
         self._assert_model_is_entity_or_user(model=model)
         errors_dict = {'slug': [self._slug_does_not_parse_to_username_error_message]}
@@ -172,12 +134,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
                 errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
         return errors_dict
 
-    # def _entity_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
-    #     return {'username': [self._entity_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
-    #
-    # def _user_username_must_start_with_4_or_more_letters_and_slug_does_not_parse_to_username_errors_dict(self):
-    #     return {'username': [self._user_username_must_start_with_4_or_more_letters_error_message], 'slug': [self._slug_does_not_parse_to_username_error_message]}
-    #
     def _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth):
         if (date_of_birth == ''):
             return self._date_of_birth_is_required_errors_dict()
@@ -308,56 +264,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list):
         return {field_name_list[i]: [self._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
 
-    # # ~~~~ TODO: simplify these functions! "slug_and_username" etc.
-    # 
-    # # @staticmethod
-    # def _entity_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_slug_and_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _entity_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_username_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _entity_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_slug_min_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'slug': [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _entity_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_slug_and_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)], 'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _entity_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=120, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_username_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'username': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=40, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _entity_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-    # 
-    # # @staticmethod
-    # def _user_slug_max_length_fail_errors_dict_by_value_length(self, value_length):
-    #     return {'slug': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=value_length)]}
-    # 
     def setup(self):
         super().setup()
 
@@ -457,5 +363,3 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def assert_profile_form_required_fields(self, required_fields):
         self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
 
-    # def assert_user_all_the_required_fields(self, required_fields):
-    #     self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(required_fields))
