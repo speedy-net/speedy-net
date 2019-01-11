@@ -21,7 +21,7 @@ class TestsSettingsTestCase(SiteTestCase):
         self.assertEqual(first=len(tests_settings.SLUGS_TO_TEST_LIST), second=8)
         username_set, slug_set, username_length_set, slug_length_set = set(), set(), set(), set()
         for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
-            username = normalize_username(slug=slug_dict["slug"])
+            username = normalize_username(username=slug_dict["slug"])
             slug = normalize_slug(slug=slug_dict["slug"])
             username_set.add(username)
             slug_set.add(slug)

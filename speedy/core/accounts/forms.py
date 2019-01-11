@@ -16,20 +16,15 @@ from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
-from .validators import validate_date_of_birth_in_forms, ValidateUserPasswordMixin
+from .utils import normalize_email
+from .validators import validate_date_of_birth_in_forms, validate_email_unique, ValidateUserPasswordMixin
 
 
 class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
-        email = User.objects.normalize_email(email=email)
-        email = email.lower()
-        if (UserEmailAddress.objects.filter(email=email).exists()):
-            # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
-            UserEmailAddress.objects.filter(email=email, is_confirmed=False).delete()
-            # If this email address is confirmed, raise an exception.
-            if (UserEmailAddress.objects.filter(email=email).exists()):
-                raise ValidationError(_('This email is already in use.'))
+        email = normalize_email(email=email)
+        validate_email_unique(email=email)
         return email
 
 
@@ -138,7 +133,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
-        if (normalize_username(slug=slug) != username):
+        if (normalize_username(username=slug) != username):
             raise ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 

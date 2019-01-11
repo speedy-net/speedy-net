@@ -769,14 +769,26 @@ class UserEmailAddressTestCaseMixin(object):
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_email_address_without_all_the_required_fields_errors_dict())
+        self.assertEqual(first=Entity.objects.count(), second=0)
+        self.assertEqual(first=User.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_cannot_create_user_email_address_with_invalid_email(self):
+        email_list = ['email', 'email@example', 'email@example.', 'email@.example', 'email@example.com.', 'email@.example.com', 'email@example..com']
         user = DefaultUserFactory()
-        user_email_address = UserEmailAddress(user=user, email='email')
-        with self.assertRaises(ValidationError) as cm:
-            user_email_address.save()
-            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
+        for email in email_list:
+            print(email)######### ~~~~ TODO
+            user_email_address = UserEmailAddress(user=user, email=email)
+            with self.assertRaises(ValidationError) as cm:
+                user_email_address.save()
+                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
+        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_non_unique_confirmed_email_address(self):
         existing_user = DefaultUserFactory()
@@ -787,13 +799,17 @@ class UserEmailAddressTestCaseMixin(object):
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=0)
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_non_unique_confirmed_email_address_uppercase(self):
         existing_user = DefaultUserFactory()
@@ -801,17 +817,20 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL@EXAMPLE.COM')
-        user_email_address.save()  # ~~~~ TODO
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
-        self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
+        self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=0)
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -822,28 +841,78 @@ class UserEmailAddressTestCaseMixin(object):
         user_email_address = UserEmailAddress(user=user, email='email@example.com')
         user_email_address.save()
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+
+    def test_non_unique_unconfirmed_email_address_uppercase(self):
+        # Unconfirmed email address is deleted if another user adds it again.
+        existing_user = DefaultUserFactory()
+        existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
+        user_email_address.save()
+        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+
+    def test_different_unconfirmed_email_addresses_uppercase(self):
+        # Unconfirmed email address is deleted if another user adds it again.
+        existing_user = DefaultUserFactory()
+        existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        user = DefaultUserFactory()
+        user_email_address = UserEmailAddress(user=user, email='EMAIL755@EXAMPLE.COM')
+        user_email_address.save()
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+        user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=2)
+        self.assertEqual(first=User.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_email_gets_converted_to_lowercase_1(self):
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
         user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_email_gets_converted_to_lowercase_2(self):
         user = DefaultUserFactory()
-        user_email_address = UserEmailAddressFactory(user=user, email='EMAIL77@EXAMPLE.COM')
-        self.assertEqual(first=user_email_address.email, second='email77@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        user_email_address = UserEmailAddressFactory(user=user, email='EMAIL75@EXAMPLE.COM')
+        self.assertEqual(first=user_email_address.email, second='email75@example.com')
+        self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=2)
+        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assertEqual(first=Entity.objects.count(), second=1)
+        self.assertEqual(first=User.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
 
 @only_on_sites_with_login

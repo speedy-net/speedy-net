@@ -32,7 +32,7 @@ class NormalizeSlugTestCase(SiteTestCase):
 
 class NormalizeUsernameTestCase(SiteTestCase):
     def test_remove_dashes_dots_and_underscores(self):
-        self.assertEqual(first=normalize_username(slug='this-is-a-slug'), second='thisisaslug')
-        self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
+        self.assertEqual(first=normalize_username(username='this-is-a-slug'), second='thisisaslug')
+        self.assertEqual(first=normalize_username(username='.this_is...a_slug--'), second='thisisaslug')
 
 

@@ -57,7 +57,7 @@ if (django_settings.LOGIN_ENABLED):
         date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(year=1900, month=1, day=1))
         gender = factory.fuzzy.FuzzyChoice(choices=User.GENDER_VALID_VALUES)
         slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
-        username = factory.LazyAttribute(lambda o: normalize_username(slug=o.slug))
+        username = factory.LazyAttribute(lambda o: normalize_username(username=o.slug))
         password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
         _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=tests_settings.USER_PASSWORD)
 

@@ -28,6 +28,9 @@ generate_confirmation_token = generate_regular_udid
 
 
 def normalize_slug(slug):
+    """
+    Normalize the slug.
+    """
     slug = slug.lower()
     slug = re.sub('[^a-zA-Z0-9]{1,}', '-', slug)
     slug = re.sub('^-', '', slug)
@@ -35,8 +38,11 @@ def normalize_slug(slug):
     return slug
 
 
-def normalize_username(slug):
-    slug = normalize_slug(slug=slug)
+def normalize_username(username):
+    """
+    Normalize the username.
+    """
+    slug = normalize_slug(slug=username)
     username = re.sub('[-._]', '', slug)
     return username
 
