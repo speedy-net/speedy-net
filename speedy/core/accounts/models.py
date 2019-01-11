@@ -19,7 +19,51 @@ from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
 from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email_unique, ValidateUserPasswordMixin
-from .mixins import CleanAndValidateAllFieldsMixin # ~~~~ TODO
+
+
+class CleanAndValidateAllFieldsMixin(object):
+    def clean_fields(self, exclude=None):
+        """
+        Allows to have different slug and username validators for Entity and User.
+        """
+        if exclude is None:
+            exclude = []
+
+        self.clean_all_fields(exclude=exclude)
+
+        try:
+            super().clean_fields(exclude=exclude)
+        except ValidationError as e:
+            errors = e.error_dict
+        else:
+            errors = {}
+
+        self.validate_all_fields(errors=errors, exclude=exclude)
+
+    def clean_all_fields(self, exclude=None):
+        pass
+
+    def validate_all_fields(self, errors, exclude=None):
+        for field_name, validators in self.validators.items():
+            f = self._meta.get_field(field_name)
+            if (field_name in exclude):
+                pass
+            else:
+                raw_value = getattr(self, f.attname)
+                if ((f.blank) and (raw_value in f.empty_values)):
+                    pass
+                else:
+                    try:
+                        for validator in validators:
+                            validator(raw_value)
+                        if ((field_name == 'slug') and (hasattr(self, 'validate_slug'))):
+                            self.validate_slug()
+                        if ((field_name == 'email') and (hasattr(self, 'validate_email'))):
+                            self.validate_email()
+                    except ValidationError as e:
+                        errors[f.name] = [e.error_list[0].messages[0]]
+        if (errors):
+            raise ValidationError(errors)
 
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
@@ -173,7 +217,6 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
     first_name = models.CharField(verbose_name=_('first name'), max_length=75)
     last_name = models.CharField(verbose_name=_('last name'), max_length=75)
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
-    # ~~~~ TODO - validate age between 0 and 250 in the model. Don't allow dates in the future or more than 250 years ago (including exactly 250 years).
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
@@ -328,9 +371,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
-# class UserEmailAddress(CleanAndValidateAllFieldsMixin, CleanEmailMixin, TimeStampedModel): # ~~~~ TODO
-class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel): # ~~~~ TODO
-# class UserEmailAddress(TimeStampedModel): # ~~~~ TODO
+class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     id = RegularUDIDField()
     user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
