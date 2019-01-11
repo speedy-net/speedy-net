@@ -29,16 +29,16 @@ class NormalizeSlugTestCase(SiteTestCase):
         self.assertEqual(first=normalize_slug(slug='dots...'), second='dots')
         self.assertEqual(first=normalize_slug(slug='under_score_'), second='under-score')
 
-    def test_raise(self): #### TODO
-        raise Exception
-
+    # def test_raise(self): #### TODO
+    #     raise Exception
+    #
 
 class NormalizeUsernameTestCase(SiteTestCase):
     def test_remove_dashes_dots_and_underscores(self):
         self.assertEqual(first=normalize_username(slug='this-is-a-slug'), second='thisisaslug')
         self.assertEqual(first=normalize_username(slug='.this_is...a_slug--'), second='thisisaslug')
 
-    def test_raise(self): #### TODO
-        raise Exception
-
+    # def test_raise(self): #### TODO
+    #     raise Exception
+    #
 
