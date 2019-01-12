@@ -48,10 +48,10 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=ok_count)
-        self.assertEqual(first=User.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=ok_count)
+        # self.assertEqual(first=User.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
         self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
         self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
@@ -359,10 +359,10 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=ok_count)
-        self.assertEqual(first=User.objects.count(), second=ok_count)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=ok_count)
+        # self.assertEqual(first=User.objects.count(), second=ok_count)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
         self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
         self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
@@ -705,10 +705,10 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
-        self.assertEqual(first=User.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        # self.assertEqual(first=User.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_invalid_date_of_birth_list_fail(self):
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
@@ -727,10 +727,10 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=0)
-        self.assertEqual(first=User.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=0)
+        # self.assertEqual(first=User.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
 
 @only_on_sites_with_login
@@ -780,10 +780,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=0)
-        self.assertEqual(first=User.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=0)
+        # self.assertEqual(first=User.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_cannot_create_user_email_address_with_invalid_email(self):
         email_list = ['email', 'email@example', 'email@example.', 'email@.example', 'email@example.com.', 'email@.example.com', 'email@example..com']
@@ -803,10 +803,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=1)
+        # self.assertEqual(first=User.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_non_unique_confirmed_email_address(self):
         existing_user = DefaultUserFactory()
@@ -831,10 +831,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=2)
-        self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        # self.assertEqual(first=Entity.objects.count(), second=2)
+        # self.assertEqual(first=User.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_non_unique_confirmed_email_address_uppercase(self):
         existing_user = DefaultUserFactory()
@@ -859,10 +859,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=2)
-        self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        # self.assertEqual(first=Entity.objects.count(), second=2)
+        # self.assertEqual(first=User.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -885,10 +885,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=Entity.objects.count(), second=2)
-        self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=2)
+        # self.assertEqual(first=User.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_non_unique_unconfirmed_email_address_uppercase(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -911,10 +911,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=Entity.objects.count(), second=2)
-        self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=2)
+        # self.assertEqual(first=User.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_different_unconfirmed_email_addresses_uppercase(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -937,10 +937,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=2,
         )
-        self.assertEqual(first=Entity.objects.count(), second=2)
-        self.assertEqual(first=User.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=2)
+        # self.assertEqual(first=User.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_email_gets_converted_to_lowercase_1(self):
         user = DefaultUserFactory()
@@ -957,10 +957,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=1)
+        # self.assertEqual(first=User.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_email_gets_converted_to_lowercase_2(self):
         user = DefaultUserFactory()
@@ -976,10 +976,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=1)
+        # self.assertEqual(first=User.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_save_unconfirmed_email_address_5_times(self):
         user = DefaultUserFactory()
@@ -999,10 +999,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
+        # self.assertEqual(first=Entity.objects.count(), second=1)
+        # self.assertEqual(first=User.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=0)
 
     def test_save_confirmed_email_address_5_times(self):
         user = DefaultUserFactory()
@@ -1022,10 +1022,10 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=Entity.objects.count(), second=1)
-        self.assertEqual(first=User.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
+        # self.assertEqual(first=Entity.objects.count(), second=1)
+        # self.assertEqual(first=User.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
+        # self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=1)
 
     def test_cannot_create_user_email_addresses_with_bulk_create(self):
         with self.assertRaises(NotImplementedError) as cm:
