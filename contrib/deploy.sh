@@ -8,6 +8,7 @@ SITES="net match composer mail"
 cd ${DIR}
 git pull
 ${PIP} install -r requirements.txt
+${PIP} uninstall django-debug-toolbar
 
 for site in ${SITES}
 do
