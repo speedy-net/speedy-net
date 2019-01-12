@@ -77,17 +77,17 @@ Then you can run migrations:
     cd speedy/match
     ./manage.py migrate
     cd speedy/core
-    ./manage.py loaddata fixtures/default_sites_local.json
+    ./manage.py load_data fixtures/default_sites_local.json
 
 To run Speedy Net server:
 
     cd speedy/net
-    ./manage.py runserver 8010
+    ./manage.py run_server 8010
 
 To run Speedy Match server:
 
     cd speedy/match
-    ./manage.py runserver 8020
+    ./manage.py run_server 8020
 
 To run Speedy Net tests:
 
@@ -184,16 +184,16 @@ Run migrations and collect static:
 
     cd speedy/net
     ./manage.py migrate
-    ./manage.py collectstatic
+    ./manage.py collect_static
     cd ../match
     ./manage.py migrate
-    ./manage.py collectstatic
+    ./manage.py collect_static
     cd ../composer
     ./manage.py migrate
-    ./manage.py collectstatic
+    ./manage.py collect_static
     cd ../mail
     ./manage.py migrate
-    ./manage.py collectstatic
+    ./manage.py collect_static
 
 Copy sample **nginx** and **uwsgi** configs:
 
@@ -265,7 +265,7 @@ See also [Support Django 2.0 and 2.1 · Issue #472 · deschler/django-modeltrans
 
 To make all migrations, run:
 
-    ./manage_all_sites.sh makemigrations
+    ./manage_all_sites.sh make_migrations
 
 To migrate all sites, run:
 
