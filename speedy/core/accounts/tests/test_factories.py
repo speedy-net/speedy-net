@@ -5,6 +5,8 @@ from datetime import date
 import factory
 import factory.fuzzy
 
+from unittest import TestCase as PythonTestCase #### TODO
+
 from django.conf import settings as django_settings
 from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
@@ -27,8 +29,10 @@ if (django_settings.LOGIN_ENABLED):
             model = UserEmailAddress
 
 
+    # class DefaultUserFactory(factory.DjangoModelFactory, PythonTestCase): # ~~~~ TODO
     # class DefaultUserFactory(factory.DjangoModelFactory, DjangoTestCase): # ~~~~ TODO
     # class DefaultUserFactory(factory.DjangoModelFactory, SiteTestCase):
+    # class DefaultUserFactory(PythonTestCase, factory.DjangoModelFactory): # ~~~~ TODO
     # class DefaultUserFactory(DjangoTestCase, factory.DjangoModelFactory): # ~~~~ TODO
     # class DefaultUserFactory(SiteTestCase, factory.DjangoModelFactory):
     class DefaultUserFactory(factory.DjangoModelFactory):
