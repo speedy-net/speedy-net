@@ -1,6 +1,5 @@
 Django
 django-crispy-forms
-django-debug-toolbar
 django-environ
 django-friendship
 django-modeltranslation

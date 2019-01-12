@@ -1,6 +1,5 @@
 Django>=1.11,<2.0
 django-crispy-forms
-django-debug-toolbar
 django-environ
 django-friendship
 django-modeltranslation

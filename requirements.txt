@@ -1,7 +1,6 @@
 # python==3.5
 Django==1.11.18
 django-crispy-forms==1.6.1
-django-debug-toolbar==1.11
 django-environ==0.4.5
 django-friendship==1.8.0
 django-modeltranslation==0.12.2
