@@ -500,18 +500,18 @@ class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, Spe
         super().setup()
         self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
-        self.other_user_email = UserEmailAddressFactory()
-        self.other_user = self.other_user_email.user
+        self.other_user = ActiveUserFactory()
         self.other_user.set_password(raw_password=self._other_user_password)
         self.other_user.save_user_and_profile()
+        self.other_user_email = UserEmailAddressFactory(user=self.other_user)
         self.inactive_user = InactiveUserFactory()
         self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
         self.assertNotEqual(first=tests_settings.USER_PASSWORD, second=self._other_user_password)
         self.assert_models_count(
             entity_count=3,
             user_count=3,
-            user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-            confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+            confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
             unconfirmed_email_address_count=2,
         )
 
