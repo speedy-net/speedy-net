@@ -92,16 +92,16 @@ To run Speedy Match server:
 To run Speedy Net tests:
 
     cd speedy/net
-    ./manage.py test
+    ./tests_manage.py test
 
 To run Speedy Match tests:
 
     cd speedy/match
-    ./manage.py test
+    ./tests_manage.py test
 
 To run tests with deprecation warnings (in any directory):
 
-    python -W error::DeprecationWarning manage.py test
+    python -W error::DeprecationWarning tests_manage.py test
 
 You need to run both Speedy Net and Speedy Match in parallel in separate console tabs.
 
