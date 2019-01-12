@@ -202,7 +202,7 @@ class SiteProfile(SiteProfileBase):
         try:
             other_profile.validate_profile_and_activate()
         except ValidationError as e:
-            logger.error("get_matching_rank::other_profile.validate_profile_and_activate() failed, other_profile.user.pk={other_user_pk}, other_profile.user.username={other_user_username}, other_profile.user.slug={other_user_slug}, e.message={e_message}".format(other_user_pk=other_profile.user.pk, other_user_username=other_profile.user.username, other_user_slug=other_profile.user.slug, e_message=e.message))
+            logger.error("get_matching_rank::other_profile.validate_profile_and_activate() failed, other_profile.user.pk={other_user_pk}, other_profile.user.username={other_user_username}, other_profile.user.slug={other_user_slug}, e={e}".format(other_user_pk=other_profile.user.pk, other_user_username=other_profile.user.username, other_user_slug=other_profile.user.slug, e=e))
             return self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
