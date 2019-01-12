@@ -19,7 +19,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
-class SpeedyMatchSiteProfileTestCaseMixin(object):
+class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
     _none_list = [None]
     _empty_string_list = [""]
     _empty_values_to_test = _none_list + _empty_string_list
@@ -1020,7 +1020,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(object):
 
 
 @only_on_speedy_match
-class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, SiteTestCase):
+class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1028,7 +1028,7 @@ class SpeedyMatchSiteProfileEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin,
 
 @only_on_speedy_match
 @override_settings(LANGUAGE_CODE='he')
-class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, SiteTestCase):
+class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')

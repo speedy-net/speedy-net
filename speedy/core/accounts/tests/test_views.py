@@ -7,7 +7,7 @@ from django.core import mail
 from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
-from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
@@ -35,10 +35,17 @@ class RedirectMeMixin(object):
 
 
 @only_on_sites_with_login
-class IndexViewTestCase(SiteTestCase):
+class IndexViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -51,10 +58,17 @@ class IndexViewTestCase(SiteTestCase):
 
 
 @only_on_sites_with_login
-class MeViewTestCase(RedirectMeMixin, SiteTestCase):
+class MeViewTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory(slug='markmark')
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -71,12 +85,19 @@ class MeViewTestCase(RedirectMeMixin, SiteTestCase):
 
 
 @only_on_sites_with_login
-class LoginTestCase(RedirectMeMixin, SiteTestCase):
+class LoginTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
@@ -115,7 +136,7 @@ class LoginTestCase(RedirectMeMixin, SiteTestCase):
         self.assert_me_url_redirects_to_login_url()
 
 
-class RegistrationViewTestCaseMixin(object):
+class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.password = get_random_user_password()
@@ -132,6 +153,13 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=self.username, second='user1234')
         self.assertEqual(first=self.slug, second='user-1234')
         self.assertNotEqual(first=self.username, second=self.slug)
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -149,6 +177,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_visitor_can_register(self):
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -188,6 +223,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -203,6 +245,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_non_unique_confirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
         existing_user = existing_user_email.user
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -211,6 +260,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=self.data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict())
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -222,6 +278,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_unique_confirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=True)
         existing_user = existing_user_email.user
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -229,6 +292,13 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
@@ -241,6 +311,13 @@ class RegistrationViewTestCaseMixin(object):
         # Unconfirmed email address is deleted if another user adds it again.
         existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
         existing_user = existing_user_email.user
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -248,6 +325,13 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -259,6 +343,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_unique_unconfirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
         existing_user = existing_user_email.user
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -266,6 +357,13 @@ class RegistrationViewTestCaseMixin(object):
         self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=2,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
@@ -280,6 +378,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict(field_names=self._first_password_field_names))
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -290,6 +395,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict(field_names=self._first_password_field_names))
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -311,6 +423,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_user_gets_email_after_registration(self):
         r = self.client.post(path='/', data=self.data)
         self.assertEqual(first=len(mail.outbox), second=1)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -332,6 +451,13 @@ class RegistrationViewTestCaseMixin(object):
     def test_cannot_register_taken_username(self):
         data = self.data.copy()
         existing_user = ActiveUserFactory(username='username', slug='user-name')
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -341,6 +467,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -354,6 +487,13 @@ class RegistrationViewTestCaseMixin(object):
         data['email'] = 'EMAIL22@EXAMPLE.COM'
         r = self.client.post(path='/', data=data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -369,6 +509,13 @@ class RegistrationViewTestCaseMixin(object):
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._enter_a_valid_email_address_errors_dict())
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -382,6 +529,13 @@ class RegistrationViewTestCaseMixin(object):
             r = self.client.post(path='/', data=data)
             self.assertEqual(first=r.status_code, second=200, msg="{} is a valid date of birth.".format(date_of_birth))
             self.assertDictEqual(d1=r.context['form'].errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
+            self.assert_models_count(
+                entity_count=0,
+                user_count=0,
+                user_email_address_count=0,
+                confirmed_email_address_count=0,
+                unconfirmed_email_address_count=0,
+            )
             self.assertEqual(first=Entity.objects.count(), second=0)
             self.assertEqual(first=User.objects.count(), second=0)
             self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -389,7 +543,7 @@ class RegistrationViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -407,7 +561,7 @@ class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -423,7 +577,7 @@ class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SpeedyCoreAc
         self.assertEqual(first=self.language_code, second='he')
 
 
-class LoginViewTestCaseMixin(object):
+class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     login_url = '/login/'
     _other_user_password = '8' * 8
 
@@ -438,6 +592,13 @@ class LoginViewTestCaseMixin(object):
         self.inactive_user = InactiveUserFactory()
         self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
         self.assertNotEqual(first=tests_settings.USER_PASSWORD, second=self._other_user_password)
+        self.assert_models_count(
+            entity_count=3,
+            user_count=3,
+            user_email_address_count=2,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=3)
         self.assertEqual(first=User.objects.count(), second=3)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id])
@@ -560,7 +721,7 @@ class LoginViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class LoginViewEnglishTestCase(LoginViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -568,18 +729,25 @@ class LoginViewEnglishTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCo
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class LoginViewHebrewTestCase(LoginViewTestCaseMixin, RedirectMeMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class LoginViewHebrewTestCase(LoginViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class LogoutViewTestCase(SiteTestCase):
+class LogoutViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -592,7 +760,7 @@ class LogoutViewTestCase(SiteTestCase):
         self.assertFalse(expr=r.context['user'].is_authenticated)
 
 
-class EditProfileViewTestCaseMixin(object):
+class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     page_url = '/edit-profile/'
 
     def setup(self):
@@ -604,6 +772,13 @@ class EditProfileViewTestCaseMixin(object):
             'gender': 1,
         }
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -769,7 +944,7 @@ class EditProfileViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -787,7 +962,7 @@ class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAcc
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -804,7 +979,7 @@ class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SpeedyCoreAcco
 
 
 @only_on_sites_with_login
-class EditProfilePrivacyViewTestCase(SiteTestCase):
+class EditProfilePrivacyViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/privacy/'
 
     def setup(self):
@@ -812,6 +987,13 @@ class EditProfilePrivacyViewTestCase(SiteTestCase):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -851,13 +1033,20 @@ class EditProfilePrivacyViewTestCase(SiteTestCase):
 
 
 @only_on_sites_with_login
-class EditProfileNotificationsViewTestCase(SiteTestCase):
+class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/notifications/'
 
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -885,7 +1074,7 @@ class EditProfileNotificationsViewTestCase(SiteTestCase):
         self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
 
 
-class EditProfileCredentialsViewTestCaseMixin(object):
+class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     page_url = '/edit-profile/credentials/'
 
     def setup(self):
@@ -893,6 +1082,13 @@ class EditProfileCredentialsViewTestCaseMixin(object):
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -985,7 +1181,7 @@ class EditProfileCredentialsViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -993,14 +1189,14 @@ class EditProfileCredentialsViewEnglishTestCase(EditProfileCredentialsViewTestCa
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class ActivateSiteProfileViewTestCase(SiteTestCase):
+class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/welcome/'
 
     def setup(self):
@@ -1009,6 +1205,13 @@ class ActivateSiteProfileViewTestCase(SiteTestCase):
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
         self.assertEqual(first=self.user.profile.is_active, second=False)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -1039,13 +1242,20 @@ class ActivateSiteProfileViewTestCase(SiteTestCase):
 
 
 @only_on_sites_with_login
-class DeactivateSiteProfileViewTestCase(SiteTestCase):
+class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/deactivate/'
 
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
@@ -1074,12 +1284,19 @@ class DeactivateSiteProfileViewTestCase(SiteTestCase):
         self.assertEqual(first=user.profile.is_active, second=False)
 
 
-class VerifyUserEmailAddressViewTestCaseMixin(object):
+class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
@@ -1112,7 +1329,7 @@ class VerifyUserEmailAddressViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class VerifyUserEmailAddressViewEnglishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class VerifyUserEmailAddressViewEnglishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1120,18 +1337,25 @@ class VerifyUserEmailAddressViewEnglishTestCase(VerifyUserEmailAddressViewTestCa
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class VerifyUserEmailAddressViewHebrewTestCase(VerifyUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class VerifyUserEmailAddressViewHebrewTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
-class AddUserEmailAddressViewTestCaseMixin(object):
+class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
@@ -1148,6 +1372,13 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
 
     def test_non_unique_confirmed_email_address(self):
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         data = {
             'email': self.confirmed_email_address.email,
@@ -1155,12 +1386,26 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         r = self.client.post(path='/edit-profile/emails/add/', data=data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict())
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_non_unique_unconfirmed_email_address(self):
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         data = {
@@ -1169,12 +1414,26 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         r = self.client.post(path='/edit-profile/emails/add/', data=data)
         email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
         self.assertFalse(expr=email_address.is_primary)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
     def test_user_can_add_email_address(self):
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         data = {
             'email': 'email@example.com',
@@ -1189,13 +1448,34 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
         # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=2,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id])
 
     def test_first_email_is_primary(self):
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
         self.confirmed_email_address.delete()
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
         data = {
             'email': 'email@example.com',
@@ -1204,13 +1484,20 @@ class AddUserEmailAddressViewTestCaseMixin(object):
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         email_address = UserEmailAddress.objects.get(email='email@example.com')
         self.assertTrue(expr=email_address.is_primary)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])
 
 
 @only_on_sites_with_login
-class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1218,13 +1505,13 @@ class AddUserEmailAddressViewEnglishTestCase(AddUserEmailAddressViewTestCaseMixi
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
-class SendConfirmationEmailViewTestCaseMixin(object):
+class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1235,6 +1522,13 @@ class SendConfirmationEmailViewTestCaseMixin(object):
         self.other_user_address = UserEmailAddressFactory()
         self.other_user_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_user_address.id)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=3,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id])
@@ -1262,7 +1556,7 @@ class SendConfirmationEmailViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class SendConfirmationEmailViewEnglishTestCase(SendConfirmationEmailViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class SendConfirmationEmailViewEnglishTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1270,13 +1564,13 @@ class SendConfirmationEmailViewEnglishTestCase(SendConfirmationEmailViewTestCase
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class SendConfirmationEmailViewHebrewTestCase(SendConfirmationEmailViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class SendConfirmationEmailViewHebrewTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
-class DeleteUserEmailAddressViewTestCaseMixin(object):
+class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1287,6 +1581,13 @@ class DeleteUserEmailAddressViewTestCaseMixin(object):
         self.other_user_address = UserEmailAddressFactory(is_primary=False)
         self.other_user_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_user_address.id)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=3,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id])
@@ -1316,7 +1617,7 @@ class DeleteUserEmailAddressViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class DeleteUserEmailAddressViewEnglishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class DeleteUserEmailAddressViewEnglishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1324,13 +1625,13 @@ class DeleteUserEmailAddressViewEnglishTestCase(DeleteUserEmailAddressViewTestCa
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class DeleteUserEmailAddressViewHebrewTestCase(DeleteUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class DeleteUserEmailAddressViewHebrewTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
-class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
+class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
@@ -1343,6 +1644,13 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
         self.other_user_address = UserEmailAddressFactory()
         self.other_user_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_user_address.id)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=4,
+            confirmed_email_address_count=2,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 6}[self.site.id])
@@ -1376,7 +1684,7 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class SetPrimaryUserEmailAddressViewEnglishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class SetPrimaryUserEmailAddressViewEnglishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -1384,18 +1692,25 @@ class SetPrimaryUserEmailAddressViewEnglishTestCase(SetPrimaryUserEmailAddressVi
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class SetPrimaryUserEmailAddressViewHebrewTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class SetPrimaryUserEmailAddressViewHebrewTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
 @only_on_sites_with_login
-class PasswordResetViewTestCase(SiteTestCase):
+class PasswordResetViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id])

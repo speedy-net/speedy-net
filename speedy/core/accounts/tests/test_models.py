@@ -8,7 +8,7 @@ from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
@@ -16,7 +16,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.tests.test_factories  import DefaultUserFactory, UserEmailAddressFactory
 
 
-class EntityTestCaseMixin(object):
+class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def create_one_entity(self):
         entity = Entity(slug='zzzzzz', username='zzzzzz')
         entity.save()
@@ -41,6 +41,13 @@ class EntityTestCaseMixin(object):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                 model_save_failures_count += 1
         counts_tuple = (ok_count, model_save_failures_count)
+        self.assert_models_count(
+            entity_count=ok_count,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=ok_count)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -295,7 +302,7 @@ class EntityTestCaseMixin(object):
 
 
 # @only_on_sites_with_login # ~~~~ TODO
-class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EntityEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -303,13 +310,13 @@ class EntityEnglishTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin
 
 # @only_on_sites_with_login # ~~~~ TODO
 @override_settings(LANGUAGE_CODE='he')
-class EntityHebrewTestCase(EntityTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
 
 
-class UserTestCaseMixin(object):
+class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def setup(self):
         super().setup()
         self.password = get_random_user_password()
@@ -345,6 +352,13 @@ class UserTestCaseMixin(object):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                 model_save_failures_count += 1
         counts_tuple = (ok_count, model_save_failures_count)
+        self.assert_models_count(
+            entity_count=ok_count,
+            user_count=ok_count,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=ok_count)
         self.assertEqual(first=User.objects.count(), second=ok_count)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -684,6 +698,13 @@ class UserTestCaseMixin(object):
                 if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)
             self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+        self.assert_models_count(
+            entity_count=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST),
+            user_count=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST),
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
         self.assertEqual(first=User.objects.count(), second=len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST))
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -699,6 +720,13 @@ class UserTestCaseMixin(object):
                 user.save_user_and_profile()
                 # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_date_errors_dict())
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -706,7 +734,7 @@ class UserTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class UserEnglishTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class UserEnglishTestCase(UserTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -723,7 +751,7 @@ class UserEnglishTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, Si
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class UserHebrewTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class UserHebrewTestCase(UserTestCaseMixin, SiteTestCase):
     def setup(self):
         super().setup()
         self.data.update({
@@ -738,13 +766,20 @@ class UserHebrewTestCase(UserTestCaseMixin, SpeedyCoreAccountsLanguageMixin, Sit
         self.assertEqual(first=self.language_code, second='he')
 
 
-class UserEmailAddressTestCaseMixin(object):
+class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     def test_cannot_create_user_email_address_without_all_the_required_fields(self):
         user_email_address = UserEmailAddress()
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_email_address_without_all_the_required_fields_errors_dict())
+        self.assert_models_count(
+            entity_count=0,
+            user_count=0,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=0)
         self.assertEqual(first=User.objects.count(), second=0)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -761,6 +796,13 @@ class UserEmailAddressTestCaseMixin(object):
                 # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
         self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=0,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=0)
@@ -782,6 +824,13 @@ class UserEmailAddressTestCaseMixin(object):
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -803,6 +852,13 @@ class UserEmailAddressTestCaseMixin(object):
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -822,6 +878,13 @@ class UserEmailAddressTestCaseMixin(object):
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -841,6 +904,13 @@ class UserEmailAddressTestCaseMixin(object):
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=0)
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -860,6 +930,13 @@ class UserEmailAddressTestCaseMixin(object):
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=existing_user.email_addresses.count(), second=1)
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=2,
+            user_count=2,
+            user_email_address_count=2,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=2,
+        )
         self.assertEqual(first=Entity.objects.count(), second=2)
         self.assertEqual(first=User.objects.count(), second=2)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=2)
@@ -873,6 +950,13 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -885,6 +969,13 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -901,6 +992,13 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=0,
+            unconfirmed_email_address_count=1,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -917,6 +1015,13 @@ class UserEmailAddressTestCaseMixin(object):
         self.assertEqual(first=user.email_addresses.count(), second=1)
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
         self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_models_count(
+            entity_count=1,
+            user_count=1,
+            user_email_address_count=1,
+            confirmed_email_address_count=1,
+            unconfirmed_email_address_count=0,
+        )
         self.assertEqual(first=Entity.objects.count(), second=1)
         self.assertEqual(first=User.objects.count(), second=1)
         self.assertEqual(first=UserEmailAddress.objects.count(), second=1)
@@ -929,7 +1034,7 @@ class UserEmailAddressTestCaseMixin(object):
 
 
 @only_on_sites_with_login
-class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='en')
@@ -937,7 +1042,7 @@ class UserEmailAddressEnglishTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreA
 
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
-class UserEmailAddressHebrewTestCase(UserEmailAddressTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+class UserEmailAddressHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')

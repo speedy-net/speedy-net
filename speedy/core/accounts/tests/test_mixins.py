@@ -2,6 +2,15 @@ from speedy.core.base.tests.test_mixins import SpeedyCoreBaseLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
+class SpeedyCoreAccountsModelsMixin(object):
+    def assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count):
+        self.assertEqual(first=Entity.objects.count(), second=entity_count)
+        self.assertEqual(first=User.objects.count(), second=user_count)
+        self.assertEqual(first=UserEmailAddress.objects.count(), second=user_email_address_count)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=confirmed_email_address_count)
+        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=False).count(), second=unconfirmed_email_address_count)
+
+
 # class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
 class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
@@ -342,12 +351,5 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
 
     def assert_profile_form_required_fields(self, required_fields):
         self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
-
-    def assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count):
-        self.assertEqual(first=Entity.objects.count(), second=entity_count)
-        self.assertEqual(first=User.objects.count(), second=user_count)
-        self.assertEqual(first=UserEmailAddress.objects.count(), second=user_email_address_count)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=confirmed_email_address_count)
-        self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=False).count(), second=unconfirmed_email_address_count)
 
 
