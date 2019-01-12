@@ -1,4 +1,4 @@
-import inspect
+# import inspect
 import re
 import random
 import string
@@ -78,24 +78,24 @@ def reflection_import(name):
     return klass
 
 
-def conditional_method_or_class(conditional_function):
-    def wrapper(method_or_class):
-        if (inspect.isclass(method_or_class)):
-            # Decorate class
-            if (conditional_function()):
-                return method_or_class
-            else:
-                return
-        else:
-            # Decorate method
-            def inner(*args, **kwargs):
-                if (conditional_function()):
-                    return method_or_class(*args, **kwargs)
-                else:
-                    return
-
-            return inner
-
-    return wrapper
-
-
+# def conditional_method_or_class(conditional_function):
+#     def wrapper(method_or_class):
+#         if (inspect.isclass(method_or_class)):
+#             # Decorate class
+#             if (conditional_function()):
+#                 return method_or_class
+#             else:
+#                 return
+#         else:
+#             # Decorate method
+#             def inner(*args, **kwargs):
+#                 if (conditional_function()):
+#                     return method_or_class(*args, **kwargs)
+#                 else:
+#                     return
+#
+#             return inner
+#
+#     return wrapper
+#
+#
