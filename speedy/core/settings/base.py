@@ -284,3 +284,86 @@ FIXTURE_DIRS = [
 MODELTRANSLATION_ENABLE_FALLBACKS = False
 
 
+# ~~~~ TODO: check if this is good for production!
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+#         'verbose': {
+# #            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+#             'format': '%(asctime)s %(name)s %(levelname)s: %(message)s',
+#             'datefmt': '%Y-%m-%d %H:%M:%S',
+#         },
+#         'simple': {
+#             'format': '%(levelname)s %(message)s'
+#         },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/speedy_django_debug.log',
+            'formatter': 'verbose',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'root': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.template': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'speedy': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        # 'speedy.net': {
+        #     'handlers': ['file', 'mail_admins'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        # 'speedy.match': {
+        #     'handlers': ['file', 'mail_admins'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        # 'speedy.composer': {
+        #     'handlers': ['file', 'mail_admins'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        # 'speedy.mail': {
+        #     'handlers': ['file', 'mail_admins'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+    },
+}
+
+
