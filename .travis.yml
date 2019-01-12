@@ -15,7 +15,7 @@ before_script:
   - psql -c 'create user pguser;' -U postgres
   - psql -c 'alter user pguser createdb; ' -U postgres
 install:
-  - cp env.ini.example env.ini
+  - cp env.ini.tests env.ini
   - pip install -r requirements.txt
   - pip freeze
   - pwd
