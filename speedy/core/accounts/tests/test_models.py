@@ -185,29 +185,17 @@ class EntityTestCaseMixin(object):
         self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
     @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
-    # @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH * 2)) # ~~~~ TODO: remove this line!
     def test_slug_min_length_fail_username_min_length_ok(self):
-        # # ~~~~ TODO: remove all the following lines.
-        # from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
-        # Entity.settings = django_settings.ENTITY_SETTINGS
-        # Entity.validators = {
-        #     'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        #     'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
-        # }
-        # User.settings = django_settings.USER_SETTINGS
-        # User.validators = {
-        #     'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        #     'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
-        #     'date_of_birth': [validate_date_of_birth_in_model],
-        # }
-        #
-        # # from django.conf import settings as django_settings
-        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
-        # # ~~~~ TODO: remove all the above lines.
-        #
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
         test_settings = {
             "expected_counts_tuple": (4, 4),
@@ -546,29 +534,17 @@ class UserTestCaseMixin(object):
         self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
-    # @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH * 2)) # ~~~~ TODO: remove this line!
     def test_slug_min_length_fail_username_min_length_ok(self):
-        # # ~~~~ TODO: remove all the following lines.
-        # from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
-        # Entity.settings = django_settings.ENTITY_SETTINGS
-        # Entity.validators = {
-        #     'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        #     'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
-        # }
-        # User.settings = django_settings.USER_SETTINGS
-        # User.validators = {
-        #     'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        #     'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
-        #     'date_of_birth': [validate_date_of_birth_in_model],
-        # }
-        #
-        # # from django.conf import settings as django_settings
-        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
-        # # ~~~~ TODO: remove all the above lines.
-        #
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
         test_settings = {
             "expected_counts_tuple": (4, 4),

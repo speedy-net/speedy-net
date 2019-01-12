@@ -155,6 +155,14 @@ class UserFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_can_send_friend_request_if_not_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_can_send_friend_request_if_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_can_send_friend_request_if_not_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
             Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
@@ -171,6 +179,14 @@ class UserFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_cannot_send_friend_request_if_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_cannot_send_friend_request_if_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_cannot_send_friend_request_if_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
@@ -241,6 +257,14 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_that_has_received_request_can_accept_it_if_not_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
             Friend.objects.add_friend(from_user=self.other_user, to_user=ActiveUserFactory()).accept()
@@ -255,6 +279,14 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_that_has_received_request_cannot_accept_it_if_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_that_has_received_request_cannot_accept_it_if_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             Friend.objects.add_friend(from_user=self.other_user, to_user=ActiveUserFactory()).accept()
@@ -269,6 +301,14 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
             Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()
@@ -283,6 +323,14 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
+        # ~~~~ TODO: remove all the following lines.
+        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+
+        # from django.conf import settings as django_settings
+        print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: User.settings.MIN_SLUG_LENGTH", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+        # ~~~~ TODO: remove all the above lines.
+
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
         for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             Friend.objects.add_friend(from_user=self.user, to_user=ActiveUserFactory()).accept()

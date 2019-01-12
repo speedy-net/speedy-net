@@ -4,6 +4,7 @@ from datetime import timedelta
 from django.conf import settings as django_settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.db import models, transaction
@@ -18,7 +19,7 @@ from speedy.core.base.utils import normalize_slug, normalize_username, generate_
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
-from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email_unique, ValidateUserPasswordMixin
+from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email_unique
 
 
 class CleanAndValidateAllFieldsMixin(object):
@@ -148,7 +149,7 @@ class UserAccessField(models.PositiveIntegerField):
         super().__init__(*args, **kwargs)
 
 
-class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser):
+class User(PermissionsMixin, Entity, AbstractBaseUser):
     settings = django_settings.USER_SETTINGS
     # settings = speedy_net_global_settings.UserSettings # ~~~~ TODO: remove this line!
 
@@ -244,7 +245,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
         return self.profile.get_name()
 
     def set_password(self, raw_password):
-        self.validate_password(password=raw_password)
+        password_validation.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
 
     def delete(self, *args, **kwargs):

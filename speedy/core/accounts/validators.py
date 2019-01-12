@@ -2,7 +2,6 @@ import logging
 
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
-from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
@@ -206,14 +205,3 @@ def validate_email_unique(email, user_email_address_pk=None):
             raise ValidationError(_('This email is already in use.'))
 
 
-class ValidateUserPasswordMixin(object):
-    def validate_password(self, password):
-        password_validation.validate_password(password=password)
-
-
-# # code for debugging. ~~~~ TODO: remove this line and the following lines.
-# from django.conf import settings as django_settings
-# if (django_settings.DEBUG): # Only for tests
-#     _get_username_validators = get_username_validators
-#     _get_slug_validators = get_slug_validators
-#     from .___validators import get_username_validators, get_slug_validators

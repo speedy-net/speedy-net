@@ -5,7 +5,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
 from django.conf import settings as django_settings
-from django.contrib.auth import forms as auth_forms
+from django.contrib.auth import forms as auth_forms, password_validation
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -17,7 +17,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
 from .utils import normalize_email
-from .validators import validate_date_of_birth_in_forms, validate_email_unique, ValidateUserPasswordMixin
+from .validators import validate_date_of_birth_in_forms, validate_email_unique
 
 
 class CleanEmailMixin(object):
@@ -28,11 +28,11 @@ class CleanEmailMixin(object):
         return email
 
 
-class CleanNewPasswordMixin(ValidateUserPasswordMixin):
+class CleanNewPasswordMixin(object):
     def clean_new_password1(self):
-        password = self.cleaned_data['new_password1']
-        self.validate_password(password=password)
-        return password
+        new_password = self.cleaned_data['new_password1']
+        password_validation.validate_password(password=new_password)
+        return new_password
 
 
 class CleanDateOfBirthMixin(object):
