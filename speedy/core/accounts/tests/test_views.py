@@ -1487,8 +1487,8 @@ class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, Speedy
         self.assert_models_count(
             entity_count=1,
             user_count=1,
-            user_email_address_count=1,
-            confirmed_email_address_count=0,
+            user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+            confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
             unconfirmed_email_address_count=1,
         )
         # self.assertEqual(first=Entity.objects.count(), second=1)
