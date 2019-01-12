@@ -83,7 +83,6 @@ LOGGING = {
 def activate_tests(settings):
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
-        'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],
         'LOGGING': LOGGING,
         'DEBUG': True,
     })
