@@ -308,7 +308,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/speedy_django_debug.log',
+            'filename': '/var/log/speedy_net_django.log',
             'formatter': 'verbose',
         },
         'mail_admins': {
