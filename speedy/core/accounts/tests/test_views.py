@@ -182,10 +182,10 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
         self.assertEqual(first=user.first_name_en, second=self.first_name)
-        # self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.last_name, second=self.last_name)
         self.assertEqual(first=user.last_name_en, second=self.last_name)
-        # self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.username, second=self.username)
         self.assertEqual(first=user.username, second='user1234')
         self.assertEqual(first=user.slug, second=self.slug)
@@ -711,10 +711,10 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
         self.assertEqual(first=user.first_name_en, second=self.first_name)
-        # self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.last_name, second=self.last_name)
         self.assertEqual(first=user.last_name_en, second=self.last_name)
-        # self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
         for (key, value) in self.data.items():
             if (not (key in ['date_of_birth'])):
                 self.assertEqual(first=getattr(user, key), second=value)
@@ -730,10 +730,10 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
         self.assertEqual(first=user.first_name_en, second=self.first_name)
-        # self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.last_name, second=self.last_name)
         self.assertEqual(first=user.last_name_en, second=self.last_name)
-        # self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
 
     def test_required_fields_1(self):
         data = {}
@@ -821,12 +821,12 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
             self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
             user = User.objects.get(pk=self.user.pk)
             # TODO - uncomment these lines
-            # self.assertEqual(first=user.first_name, second=self.first_name)
-            # self.assertEqual(first=user.first_name_en, second=self.first_name)
-            # self.assertEqual(first=user.first_name_he, second=self.first_name)
-            # self.assertEqual(first=user.last_name, second=self.last_name)
-            # self.assertEqual(first=user.last_name_en, second=self.last_name)
-            # self.assertEqual(first=user.last_name_he, second=self.last_name)
+            self.assertEqual(first=user.first_name, second=self.first_name)
+            self.assertEqual(first=user.first_name_en, second=self.first_name)
+            self.assertEqual(first=user.first_name_he, second=self.first_name)
+            self.assertEqual(first=user.last_name, second=self.last_name)
+            self.assertEqual(first=user.last_name_en, second=self.last_name)
+            self.assertEqual(first=user.last_name_he, second=self.last_name)
             for (key, value) in self.data.items():
                 if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)
