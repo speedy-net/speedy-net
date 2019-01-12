@@ -129,7 +129,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     class UserEmailAddressFactory(factory.DjangoModelFactory):
-        user = factory.SubFactory(ActiveUserFactory)
+        user = factory.SubFactory(DefaultUserFactory)
         email = factory.Faker('email')
 
         class Meta:
