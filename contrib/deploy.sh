@@ -14,6 +14,6 @@ for site in ${SITES}
 do
     cd "${DIR}/speedy/${site}"
     ${PY} manage.py migrate
-    ${PY} manage.py collect_static --no-input
+    ${PY} manage.py collectstatic --no-input
     touch "/run/uwsgi/app/speedy_${site}/reload"
 done
