@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 21:17+0200\n"
+"POT-Creation-Date: 2019-01-12 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -313,161 +313,161 @@ msgstr ""
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\models.py:28 .\accounts\models.py:48 .\profiles\widgets.py:41
+#: .\accounts\models.py:32 .\accounts\models.py:52 .\profiles\widgets.py:41
 #: .\profiles\widgets.py:45 .\profiles\widgets.py:49
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:29
+#: .\accounts\models.py:33
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:34
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:35
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:53
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:54
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:55
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:52
+#: .\accounts\models.py:56
 msgid "In a relatioship"
 msgstr ""
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:57
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:54
+#: .\accounts\models.py:58
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:55
+#: .\accounts\models.py:59
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:56
+#: .\accounts\models.py:60
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:69
+#: .\accounts\models.py:73
 msgid "0 hearts"
 msgstr ""
 
-#: .\accounts\models.py:70
+#: .\accounts\models.py:74
 msgid "1 hearts"
 msgstr ""
 
-#: .\accounts\models.py:71
+#: .\accounts\models.py:75
 msgid "2 hearts"
 msgstr ""
 
-#: .\accounts\models.py:72
+#: .\accounts\models.py:76
 msgid "3 hearts"
 msgstr ""
 
-#: .\accounts\models.py:73
+#: .\accounts\models.py:77
 msgid "4 hearts"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:78
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:117
+#: .\accounts\models.py:121
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:122
 msgid "on new likes"
 msgstr ""
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:123
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:124
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:124
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr ""
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:126
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:123
+#: .\accounts\models.py:127
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:128
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:125
+#: .\accounts\models.py:129
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:126 .\accounts\validators.py:53
+#: .\accounts\models.py:130 .\accounts\validators.py:53
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:127 .\accounts\validators.py:58
+#: .\accounts\models.py:131 .\accounts\validators.py:58
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:132
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:133
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:130
+#: .\accounts\models.py:134
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:135
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:136
 msgid "diet match"
 msgstr ""
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:137
 msgid "smoking status match"
 msgstr ""
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:138
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:140
+#: .\accounts\models.py:144
 msgid "Speedy Match Profile"
 msgstr ""
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:145
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:186 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:190 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 

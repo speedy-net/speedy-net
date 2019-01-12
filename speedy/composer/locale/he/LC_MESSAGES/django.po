@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 21:17+0200\n"
+"POT-Creation-Date: 2019-01-12 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: .\accounts\models.py:30 .\compose\models.py:23
 msgid "user"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\accounts\models.py:31
 msgid "indicates if a user has ever logged in to the site"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\accounts\models.py:34
 msgid "Speedy Composer Profile"
@@ -33,43 +33,43 @@ msgstr "פרופילים ספידי קומפוזר"
 
 #: .\compose\models.py:11 .\compose\models.py:32
 msgid "chords template"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:12
 msgid "chords templates"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:18 .\compose\models.py:33
 msgid "accompaniment"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:19
 msgid "accompaniments"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:26 .\compose\models.py:31
 msgid "folder"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:27
 msgid "folders"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:34
 msgid "tempo"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:35
 msgid "public"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:38
 msgid "composition"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\compose\models.py:39
 msgid "compositions"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"

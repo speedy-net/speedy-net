@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 21:18+0200\n"
+"POT-Creation-Date: 2019-01-12 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,17 +561,17 @@ msgstr "דווח/י על תמונה זו"
 #: .\__translations\__translations.html:150
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.html:151
 msgctxt "male"
 msgid "Remove Friend"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.html:152
 msgctxt "other"
 msgid "Remove Friend"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.html:154
 msgctxt "female"
@@ -596,7 +596,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:369
+#: .\__translations\__translations.py:9 .\accounts\models.py:389
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -624,19 +624,19 @@ msgstr ""
 
 #: .\__translations\__translations.py:17
 msgid "Message"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:23 .\templates\base_with_login.html:33
 #: .\templates\friends\base.html:7
@@ -647,19 +647,19 @@ msgstr "חברים/ות"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -863,17 +863,17 @@ msgstr "קרניסט/ית"
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
@@ -1037,77 +1037,77 @@ msgstr ""
 #: .\__translations\__translations.py:121
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:122
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:123
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
 msgid "You already are friends with this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:130
 msgctxt "male"
 msgid "You already are friends with this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:131
 msgctxt "other"
 msgid "You already are friends with this user."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:133
 msgctxt "female"
 msgid "You've cancelled your friend request."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:134
 msgctxt "male"
 msgid "You've cancelled your friend request."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:135
 msgctxt "other"
 msgid "You've cancelled your friend request."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "You have removed this user from friends."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "You have removed this user from friends."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "You have removed this user from friends."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\__translations\__translations.py:141
 #, python-brace-format
@@ -1127,211 +1127,207 @@ msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 
-#: .\accounts\___mixins.py:16 .\accounts\forms.py:32
-msgid "This email is already in use."
-msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
-
-#: .\accounts\forms.py:91
+#: .\accounts\forms.py:86
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:92
+#: .\accounts\forms.py:87
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:100
+#: .\accounts\forms.py:95
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:98
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:179 .\templates\base_with_login.html:83
+#: .\accounts\forms.py:174 .\templates\base_with_login.html:83
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:184 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:179 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:52
 #: .\templates\base_with_login.html:96
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:187 .\templates\base_with_login.html:55
+#: .\accounts\forms.py:182 .\templates\base_with_login.html:55
 #: .\templates\base_with_login.html:93
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:199 .\accounts\forms.py:214
+#: .\accounts\forms.py:194 .\accounts\forms.py:209
 msgid "Submit"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\forms.py:223
+#: .\accounts\forms.py:218
 msgid "Change"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\forms.py:244
+#: .\accounts\forms.py:239
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:256
+#: .\accounts\forms.py:251
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:74
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:30 .\accounts\models.py:31 .\accounts\validators.py:17
+#: .\accounts\models.py:74 .\accounts\models.py:75 .\accounts\validators.py:16
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:75
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:76
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:42 .\im\models.py:89
+#: .\accounts\models.py:86 .\im\models.py:88
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:43
+#: .\accounts\models.py:87
 msgid "entities"
 msgstr "ישויות"
 
-#: .\accounts\models.py:58
+#: .\accounts\models.py:111
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:105
+#: .\accounts\models.py:123
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:121
+#: .\accounts\models.py:139
 msgid "Only me"
 msgstr "רק אני"
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:140
 msgid "Me and my friends"
 msgstr "אני והחברים/ות שלי"
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:142
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\models.py:152
+#: .\accounts\models.py:170
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:153
+#: .\accounts\models.py:171
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:154
+#: .\accounts\models.py:172
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:171
+#: .\accounts\models.py:189
 msgid "Unknown"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\models.py:172
+#: .\accounts\models.py:190
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:173
+#: .\accounts\models.py:191
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:174
+#: .\accounts\models.py:192
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:183
+#: .\accounts\models.py:201
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:184
+#: .\accounts\models.py:202
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:199
+#: .\accounts\models.py:217
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:200
+#: .\accounts\models.py:218
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:201
+#: .\accounts\models.py:219
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:220
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:222
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:208
+#: .\accounts\models.py:225
 msgid "who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:209
+#: .\accounts\models.py:226
 msgid "who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:210
+#: .\accounts\models.py:227
 msgid "on new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:221 .\accounts\models.py:360 .\accounts\models.py:415
+#: .\accounts\models.py:238 .\accounts\models.py:376 .\accounts\models.py:449
 #: .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:222
+#: .\accounts\models.py:239
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:377
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:362
+#: .\accounts\models.py:378
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:379
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:380
 msgid "confirmation token"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\models.py:365
+#: .\accounts\models.py:381
 msgid "confirmation sent"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\models.py:366
+#: .\accounts\models.py:382
 msgid "who can see this email"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\accounts\models.py:370
+#: .\accounts\models.py:390
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:416
+#: .\accounts\models.py:450
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\validators.py:28
+#: .\accounts\validators.py:34
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -1339,7 +1335,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או "
 "מקפים."
 
-#: .\accounts\validators.py:30
+#: .\accounts\validators.py:36
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -1347,7 +1343,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
 "של ספרות. ניתן להוסיף מקפים בין מילים."
 
-#: .\accounts\validators.py:36
+#: .\accounts\validators.py:42
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -1362,7 +1358,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לפחות (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:47
+#: .\accounts\validators.py:53
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -1377,7 +1373,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:58
+#: .\accounts\validators.py:64
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -1390,7 +1386,7 @@ msgstr[0] ""
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל %(show_value)d)."
 
-#: .\accounts\validators.py:69
+#: .\accounts\validators.py:75
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -1405,7 +1401,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:92
+#: .\accounts\validators.py:98
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -1416,14 +1412,14 @@ msgid_plural ""
 msgstr[0] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:102
+#: .\accounts\validators.py:108
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "הסיסמה שלך חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:122
+#: .\accounts\validators.py:128
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -1432,24 +1428,28 @@ msgid_plural ""
 msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
 msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
 
-#: .\accounts\validators.py:132
+#: .\accounts\validators.py:138
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
 msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
-#: .\accounts\validators.py:179 .\accounts\validators.py:188
+#: .\accounts\validators.py:185 .\accounts\validators.py:194
 msgid "Enter a valid date."
 msgstr "יש להזין תאריך חוקי."
 
+#: .\accounts\validators.py:205
+msgid "This email is already in use."
+msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
+
 #: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\accounts\views.py:230
 msgid "Invalid confirmation link."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\accounts\views.py:254 .\accounts\views.py:269
 #, python-brace-format
@@ -1464,9 +1464,9 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\base\models.py:65
+#: .\base\models.py:67
 msgid "ID"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -1478,15 +1478,15 @@ msgstr "השינויים נשמרו."
 
 #: .\blocks\models.py:12
 msgid "blocked user"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\blocks\models.py:17
 msgid "block"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\blocks\models.py:18
 msgid "user blocks"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\blocks\views.py:26
 msgid "You have blocked {}."
@@ -1502,19 +1502,19 @@ msgstr "שלח/י"
 
 #: .\feedback\models.py:15
 msgid "Feedback"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:16
 msgid "Abuse (User)"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:17
 msgid "Abuse (Photo)"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\feedback\models.py:20 .\im\models.py:73
+#: .\feedback\models.py:20 .\im\models.py:72
 msgid "sender"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:21
 msgid "your name"
@@ -1526,7 +1526,7 @@ msgstr "הדואר האלקטרוני שלך"
 
 #: .\feedback\models.py:23
 msgid "type"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:24
 msgid "your message"
@@ -1534,19 +1534,19 @@ msgstr "ההודעה שלך"
 
 #: .\feedback\models.py:26
 msgid "reported entity"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:27
 msgid "reported photo"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:30
 msgid "feedback"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\feedback\models.py:31
 msgid "feedbacks"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\friends\views.py:163
 msgid "Friend request sent."
@@ -1566,67 +1566,67 @@ msgstr "בקשת החברות נדחתה."
 
 #: .\im\models.py:13
 msgid "site"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\im\models.py:14
 msgid "participant 1"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\im\models.py:15
 msgid "participant 2"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\im\models.py:16
 msgid "participants"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\im\models.py:17
 msgid "is group chat"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\im\models.py:18
 msgid "last message"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\im\models.py:24 .\im\models.py:72 .\im\models.py:90
+#: .\im\models.py:23 .\im\models.py:71 .\im\models.py:89
 msgid "chat"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\im\models.py:25
+#: .\im\models.py:24
 msgid "chats"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\im\models.py:74 .\im\models.py:79
+#: .\im\models.py:73 .\im\models.py:78
 msgid "message"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
-#: .\im\models.py:80
+#: .\im\models.py:79
 msgid "messages"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
+
+#: .\im\models.py:94
+msgid "read mark"
+msgstr ""
 
 #: .\im\models.py:95
-msgid "read mark"
-msgstr "_____ # ~~~~ TODO"
-
-#: .\im\models.py:96
 msgid "read marks"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\settings\base.py:227
 msgid "English"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\settings\base.py:228
 msgid "Hebrew"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\403.html:9
 msgid "Permission Denied"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\403.html:12
 msgid "This page is private."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\about\about_base.html:5 .\templates\base.html:146
 #: .\templates\menu\about_mobile_menu_links.html:11
@@ -1635,19 +1635,19 @@ msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:12
 msgid "Welcome to"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:21
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1688,19 +1688,19 @@ msgstr "כתובות דואר אלקטרוני"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
@@ -1779,16 +1779,11 @@ msgid ""
 "& open source. You are invited to sign up now, and grab yourself a username "
 "at Speedy Net."
 msgstr ""
-"_____ # ~~~~ TODO _____ <h2>Welcome to %(site_name)s!</h2>We are working on "
-"the next version of Speedy Net, and a new app for Speedy Net users – Speedy "
-"Match – a new dating/matching app for singles. Speedy Net and Speedy Match "
-"will be free software & open source. You are invited to sign up now, and "
-"grab yourself a username at Speedy Net."
 
 #: .\templates\accounts\registration.html:15
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "_____ # ~~~~ TODO _____ Join %(site_name)s!"
+msgstr ""
 
 #: .\templates\base.html:101
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -1979,7 +1974,7 @@ msgstr "עדיין אין לך הודעות."
 
 #: .\templates\im\message.html:19
 msgid "New"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:17
 msgid ""
@@ -2000,7 +1995,7 @@ msgstr "חסמת את "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
@@ -2022,7 +2017,7 @@ msgstr "הוסף/י לחברים"
 
 #: .\templates\profiles\tools\block_user.html:11
 msgid "Toggle Dropdown"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
@@ -2030,7 +2025,7 @@ msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
@@ -2054,7 +2049,7 @@ msgstr "בטל/י בקשת חברות"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
@@ -2152,15 +2147,15 @@ msgstr "קובץ"
 
 #: .\uploads\models.py:15
 msgid "is stored"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\uploads\models.py:16
 msgid "file_size"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\uploads\models.py:20
 msgid "uploaded files"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #: .\uploads\models.py:45
 msgid "images"
@@ -2168,7 +2163,7 @@ msgstr "תמונות"
 
 #: .\uploads\models.py:46
 msgid "uploaded images"
-msgstr "_____ # ~~~~ TODO"
+msgstr ""
 
 #~ msgid "Password too short."
 #~ msgstr "הסיסמה קצרה מדי."
