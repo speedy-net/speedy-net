@@ -1,3 +1,5 @@
+import logging
+
 from django.db import models
 from django.conf import settings as django_settings
 from django.contrib.postgres.fields import JSONField, ArrayField
@@ -8,6 +10,8 @@ from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 
 from .managers import SiteProfileManager
+
+logger = logging.getLogger(__name__)
 
 
 class SiteProfile(SiteProfileBase):
@@ -195,7 +199,11 @@ class SiteProfile(SiteProfileBase):
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         self.validate_profile_and_activate()
-        other_profile.validate_profile_and_activate()
+        try:
+            other_profile.validate_profile_and_activate()
+        except ValidationError as e:
+            logger.error("other_profile.validate_profile_and_activate() failed, other_profile.pk={other_profile_pk}, other_profile.username={other_profile_username}, other_profile.slug={other_profile_slug}, e.message={e_message}".format(other_profile_pk=other_profile.pk, other_profile_username=other_profile.username, other_profile_slug=other_profile.slug, e_message=e.message))
+            return self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
         if ((self.is_active) and (other_profile.is_active)):

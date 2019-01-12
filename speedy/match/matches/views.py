@@ -9,7 +9,7 @@ from rules.contrib.views import LoginRequiredMixin
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):

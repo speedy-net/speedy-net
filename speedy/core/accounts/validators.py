@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
 
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 def reserved_username_validator(value):
@@ -181,7 +181,7 @@ def age_is_valid_in_forms(age):
 def validate_date_of_birth_in_model(date_of_birth):
     age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_model(age=age))):
-        log.debug("validate_date_of_birth_in_model::age is not valid in model (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
+        logger.debug("validate_date_of_birth_in_model::age is not valid in model (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
         # raise ValidationError(_('Enter a valid date (age can be from 0 to 250 years).')) #### TODO
 
@@ -190,7 +190,7 @@ def validate_date_of_birth_in_model(date_of_birth):
 def validate_date_of_birth_in_forms(date_of_birth):
     age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_forms(age=age))):
-        log.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
+        logger.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
         # raise ValidationError(_('Enter a valid date (age can be from 0 to 180 years).')) #### TODO
 

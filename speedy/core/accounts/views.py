@@ -23,7 +23,7 @@ from speedy.core.base.utils import reflection_import
 from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 @csrf_exempt
@@ -69,9 +69,9 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        log.debug('RegistrationView#form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
+        logger.debug('RegistrationView#form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
         if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
-            log.debug('activating profile, profile: %s', self.object.profile)
+            logger.debug('activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.first().send_confirmation_email()
