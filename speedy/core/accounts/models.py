@@ -55,11 +55,10 @@ class CleanAndValidateAllFieldsMixin(object):
                 else:
                     try:
                         for validator in validators:
-                            validator(raw_value)
-                        if ((field_name == 'slug') and (hasattr(self, 'validate_slug'))):
-                            self.validate_slug()
-                        if ((field_name == 'email') and (hasattr(self, 'validate_email'))):
-                            self.validate_email()
+                            if (isinstance(validator, str)):
+                                getattr(self, validator)()
+                            else:
+                                validator(raw_value)
                     except ValidationError as e:
                         errors[f.name] = [e.error_list[0].messages[0]]
         if (errors):
@@ -75,12 +74,12 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
 
+    objects = EntityManager()
+
     validators = {
         'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True),
+        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
     }
-
-    objects = EntityManager()
 
     class Meta:
         verbose_name = _('entity')
@@ -230,7 +229,7 @@ class User(ValidateUserPasswordMixin, PermissionsMixin, Entity, AbstractBaseUser
 
     validators = {
         'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False),
+        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
         'date_of_birth': [validate_date_of_birth_in_model],
     }
 
@@ -382,7 +381,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     access = UserAccessField(verbose_name=_('who can see this email'), default=UserAccessField.ACCESS_ME)
 
     validators = {
-        'email': [],
+        'email': ["validate_email"],
     }
 
     class Meta:
@@ -410,7 +409,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         self.validate_email_unique()
 
     def validate_email_unique(self):
-        validate_email_unique(self.email, user_email_address_pk=self.pk)
+        validate_email_unique(email=self.email, user_email_address_pk=self.pk)
 
     def _generate_confirmation_token(self):
         return generate_confirmation_token()

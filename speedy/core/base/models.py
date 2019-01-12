@@ -20,9 +20,19 @@ class ManagerMixin(object):
         raise NotImplementedError("bulk_create is not implemented.")
 
 
+class BaseManager(ManagerMixin, models.Manager):
+    pass
+
+
+class BaseUserManager(ManagerMixin, DjangoBaseUserManager):
+    pass
+
+
 # ~~~~ TODO: define a new setting, which will determine if we are using ValidateModelMixin or not.
 # class BaseModel(models.Model): # ~~~~ TODO: remove this line!
 class BaseModel(ValidateModelMixin, models.Model):
+    objects = BaseManager()
+
     def save(self, *args, **kwargs):
         try:
             field = self._meta.get_field('id')
@@ -44,14 +54,6 @@ class TimeStampedModel(BaseModel):
 
     class Meta:
         abstract = True
-
-
-class BaseManager(ManagerMixin, models.Manager):
-    pass
-
-
-class BaseUserManager(ManagerMixin, DjangoBaseUserManager):
-    pass
 
 
 # Never use this class directly. Only use inherited classes below.

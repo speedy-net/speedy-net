@@ -16,7 +16,7 @@ from speedy.match.likes.models import UserLike
 def is_match_profile(user, other_user):
     if (user.is_authenticated):
         match_profile = user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > SpeedyMatchSiteProfile.RANK_0
-        has_message = Chat.on_site.filter((Q(ent1_id=user) & Q(ent2_id=other_user)) | (Q(ent1_id=other_user) & Q(ent2_id=user))).exists()
+        has_message = Chat.objects.filter((Q(ent1_id=user) & Q(ent2_id=other_user)) | (Q(ent1_id=other_user) & Q(ent2_id=user))).exists()
         has_likes = UserLike.objects.filter((Q(from_user=user) & Q(to_user=other_user)) | (Q(from_user=other_user) & Q(to_user=user))).exists()
         has_blocked = Block.objects.has_blocked(blocker=user, blocked=other_user)
         return (is_self(user=user, other_user=other_user)) or (match_profile or has_message or has_likes or has_blocked)

@@ -22,19 +22,19 @@ class ChatManagerTestCase(SiteTestCase):
         self.chat_1_2_3 = ChatFactory(group=(self.user1, self.user2, self.user3))
 
     def test_chats(self):
-        chats = list(Chat.on_site.chats(entity=self.user1))
+        chats = list(Chat.objects.chats(entity=self.user1))
         self.assertListEqual(list1=chats, list2=[self.chat_1_2_3, self.chat_1_2])
-        chats = list(Chat.on_site.chats(entity=self.user3))
+        chats = list(Chat.objects.chats(entity=self.user3))
         self.assertListEqual(list1=chats, list2=[self.chat_1_2_3])
 
     def test_chat_with_two_users_returns_existing_one(self):
-        chat = Chat.on_site.chat_with(ent1=self.user1, ent2=self.user2)
+        chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
         self.assertEqual(first=chat, second=self.chat_1_2)
 
     def test_chat_with_two_users_creates_new_one(self):
         initial_chat_count = Chat.objects.count()
         user4 = ActiveUserFactory()
-        chat = Chat.on_site.chat_with(ent1=self.user1, ent2=user4)
+        chat = Chat.objects.chat_with(ent1=self.user1, ent2=user4)
         self.assertEqual(first=Chat.objects.count(), second=initial_chat_count + 1)
         self.assertIsNotNone(obj=chat.id)
         self.assertEqual(first=chat.participants_count, second=2)
@@ -42,10 +42,10 @@ class ChatManagerTestCase(SiteTestCase):
         self.assertSetEqual(set1=entities_ids, set2={self.user1.id, user4.id})
 
     def test_chat_with_multiple_users_creates_new_one(self):
-        Chat.on_site.group_chat_with(self.user1, self.user2, self.user3)
+        Chat.objects.group_chat_with(self.user1, self.user2, self.user3)
 
     def test_mark_read(self):
-        chat = Chat.on_site.chat_with(ent1=self.user1, ent2=self.user2)
+        chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
         self.assertEqual(first=ReadMark.objects.count(), second=0)
         rmark = chat.mark_read(self.user2)
         self.assertEqual(first=ReadMark.objects.count(), second=1)

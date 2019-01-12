@@ -13,7 +13,7 @@ from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-from speedy.match.accounts import validators, utils
+from speedy.match.accounts import validators as speedy_match_accounts_validators, utils
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
@@ -33,24 +33,24 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileActivationForm(TranslationModelForm):
-    _validators = {
-        'height': [validators.validate_height],
-        'min_age_match': [validators.validate_min_age_match],
-        'max_age_match': [validators.validate_max_age_match],
-        'smoking_status': [validators.validate_smoking_status],
-        'city': [validators.validate_city],
-        'marital_status': [validators.validate_marital_status],
-        'children': [validators.validate_children],
-        'more_children': [validators.validate_more_children],
-        'profile_description': [validators.validate_profile_description],
-        'match_description': [validators.validate_match_description],
-        'gender_to_match': [validators.validate_gender_to_match],
-        'diet_match': [validators.validate_diet_match],
-        'smoking_status_match': [validators.validate_smoking_status_match],
-        'marital_status_match': [validators.validate_marital_status_match],
+    validators = {
+        'height': [speedy_match_accounts_validators.validate_height],
+        'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
+        'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
+        'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
+        'city': [speedy_match_accounts_validators.validate_city],
+        'marital_status': [speedy_match_accounts_validators.validate_marital_status],
+        'children': [speedy_match_accounts_validators.validate_children],
+        'more_children': [speedy_match_accounts_validators.validate_more_children],
+        'profile_description': [speedy_match_accounts_validators.validate_profile_description],
+        'match_description': [speedy_match_accounts_validators.validate_match_description],
+        'gender_to_match': [speedy_match_accounts_validators.validate_gender_to_match],
+        'diet_match': [speedy_match_accounts_validators.validate_diet_match],
+        'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
+        'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
     }
     # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking status and marital status.
-    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'), validators=[validators.validate_diet])
+    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'), validators=[speedy_match_accounts_validators.validate_diet])
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
@@ -94,15 +94,15 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         if ('marital_status_match' in self.fields):
             self.fields['marital_status_match'].widget.choices = self.instance.get_marital_status_match_choices()
         for field_name, field in self.fields.items():
-            if (field_name in self._validators):
-                field.validators.extend(self._validators[field_name])
+            if (field_name in self.validators):
+                field.validators.extend(self.validators[field_name])
                 field.required = True
 
     def clean_photo(self):
         photo = self.files.get('photo')
         if (not (photo)):
             photo = self.instance.user.photo
-        validators.validate_photo(photo=photo)
+        speedy_match_accounts_validators.validate_photo(photo=photo)
         return self.cleaned_data
 
     def clean_gender_to_match(self):
@@ -115,7 +115,7 @@ class SpeedyMatchProfileActivationForm(TranslationModelForm):
         if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
             min_age_match = self.cleaned_data.get('min_age_match')
             max_age_match = self.cleaned_data.get('max_age_match')
-            validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
+            speedy_match_accounts_validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
         return self.cleaned_data
 
     def save(self, commit=True):

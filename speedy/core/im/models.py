@@ -17,8 +17,7 @@ class Chat(TimeStampedModel):
     is_group = models.BooleanField(verbose_name=_('is group chat'), default=False)
     last_message = models.ForeignKey(to='Message', verbose_name=_('last message'), on_delete=models.SET_NULL, blank=True, null=True, related_name='+')
 
-    objects = BaseManager()
-    on_site = ChatManager()
+    objects = ChatManager()
 
     class Meta:
         verbose_name = _('chat')

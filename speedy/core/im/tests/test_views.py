@@ -148,7 +148,7 @@ class SendMessageToUserViewTestCase(SiteTestCase):
         self.assertTemplateUsed(response=r, template_name='im/message_form.html')
 
     def test_user_gets_redirected_to_existing_chat(self):
-        chat = Chat.on_site.chat_with(ent1=self.user1, ent2=self.user2)
+        chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
         self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
         r = self.client.get(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/messages/{}/'.format(self.user2.slug))
