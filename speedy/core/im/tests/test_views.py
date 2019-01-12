@@ -1,7 +1,7 @@
 from time import sleep
 from django.conf import settings as django_settings
 
-from speedy.core.settings import tests as tests_settings
+from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.blocks.models import Block

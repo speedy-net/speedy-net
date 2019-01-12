@@ -6,10 +6,10 @@ import factory
 import factory.fuzzy
 
 from django.conf import settings as django_settings
-# from django.test import TestCase as DjangoTestCase #### TODO
+from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
-from speedy.core.settings import tests as tests_settings
+from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase #### TODO
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User, UserEmailAddress
@@ -48,7 +48,7 @@ if (django_settings.LOGIN_ENABLED):
         # def validate_first_and_last_name_in_all_languages(self, create, extracted, **kwargs):
         #     localizable_fields = UserTranslationOptions.fields
         #     # ~~~~ TODO: use assert
-        #     assert localizable_fields == LocalizedFirstLastNameMixin.get_localizable_fields()
+        #     # assert localizable_fields == LocalizedFirstLastNameMixin.get_localizable_fields()
         #     self.assertEqual(first=localizable_fields, second=LocalizedFirstLastNameMixin.get_localizable_fields())
         #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name'))
         #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name', '1'))####
@@ -67,7 +67,7 @@ if (django_settings.LOGIN_ENABLED):
         #     self.assertEqual(first=self.first_name_he, second=self.first_name)
         #     self.assertEqual(first=self.last_name_en, second=self.last_name)
         #     self.assertEqual(first=self.last_name_he, second=self.last_name)
-        #
+
 
     class InactiveUserFactory(DefaultUserFactory):
         @factory.post_generation

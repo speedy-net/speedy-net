@@ -4,7 +4,7 @@ from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 
-from speedy.core.settings import tests as tests_settings
+from speedy.core.base.test import tests_settings
 
 
 class SiteDiscoverRunner(DiscoverRunner):
