@@ -1,3 +1,4 @@
+import logging
 # import inspect
 import re
 import random
@@ -7,6 +8,9 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 from django.conf import settings as django_settings
+from django.utils import translation
+
+logger = logging.getLogger(__name__)
 
 
 def _generate_udid(length):
@@ -76,6 +80,23 @@ def reflection_import(name):
     mod = getattr(mod, components[-2])
     klass = getattr(mod, components[-1])
     return klass
+
+
+def get_all_field_names(base_field_name):
+    # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
+    field_names = [base_field_name]
+    this_language_code = translation.get_language()
+    all_other_language_codes = [language_code for language_code in django_settings.ALL_LANGUAGE_CODES if (not (language_code == this_language_code))]
+    for language_code in [this_language_code] + all_other_language_codes:
+        field_name_localized = '{}_{}'.format(base_field_name, language_code)
+        field_names.append(field_name_localized)
+    logger.debug("get_all_field_names::base_field_name={base_field_name}, field_names={field_names}".format(
+        base_field_name=base_field_name,
+        field_names=field_names,
+    ))
+    assert (len(field_names) == 3)
+    # print(field_names) # ~~~~ TODO: remove this line!
+    return field_names
 
 
 # def conditional_method_or_class(conditional_function):
