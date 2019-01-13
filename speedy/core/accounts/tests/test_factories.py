@@ -57,20 +57,20 @@ if (django_settings.LOGIN_ENABLED):
         @factory.post_generation
         def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
             # localizable_fields = UserTranslationOptions.fields # ~~~~ TODO: remove this line!
-            localizable_fields = User.LOCALIZABLE_FIELDS
+            # localizable_fields = User.LOCALIZABLE_FIELDS
             # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
             # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
             # _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
             # _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
             # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
-            _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
+            _test_case.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
             # TODO - uncomment these lines
             # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
             # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
             # _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
             # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
             field_name_localized_list = list()
-            for base_field_name in localizable_fields:
+            for base_field_name in User.LOCALIZABLE_FIELDS:
                 for language_code in django_settings.ALL_LANGUAGE_CODES:
                     field_name_localized = '{}_{}'.format(base_field_name, language_code)
                     _test_case.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg="DefaultUserFactory::fields don't match ({field_name_localized}, {base_field_name}), self.pk={self_pk}, self.username={self_username}, self.slug={self_slug}, self.profile.get_name()={self_profile_get_name}".format(
