@@ -11,8 +11,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class FriendBlocksTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user1, to_user=ActiveUserFactory()).accept()
@@ -24,7 +24,7 @@ class FriendBlocksTestCase(SiteTestCase):
         self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
         self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
 
-    def test_setup(self):
+    def test_set_up(self):
         self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
 
     def test_if_no_relation_between_users_nothings_get_affected(self):

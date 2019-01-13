@@ -17,8 +17,8 @@ if (django_settings.LOGIN_ENABLED):
 class UploadViewTestCase(SiteTestCase):
     page_url = '/uploads/upload/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         upload_file = tempfile.NamedTemporaryFile()

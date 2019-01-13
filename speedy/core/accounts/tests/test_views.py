@@ -36,8 +36,8 @@ class RedirectMeMixin(object):
 
 @only_on_sites_with_login
 class IndexViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.assert_models_count(
             entity_count=1,
@@ -55,8 +55,8 @@ class IndexViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
 
 @only_on_sites_with_login
 class MeViewTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory(slug='markmark')
         self.assert_models_count(
             entity_count=1,
@@ -78,8 +78,8 @@ class MeViewTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCas
 
 @only_on_sites_with_login
 class LoginTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -125,8 +125,8 @@ class LoginTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase
 
 
 class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.password = get_random_user_password()
         self.data = {
             'email': 'email@example.com',
@@ -149,7 +149,7 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             unconfirmed_email_address_count=0,
         )
 
-    def setup_required_fields(self):
+    def set_up_required_fields(self):
         self.required_fields = self.data.keys()
         self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
@@ -459,15 +459,15 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
 
 @only_on_sites_with_login
 class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_en': "Doron",
             'last_name_en': "Matalon",
         })
         self.first_name = "Doron"
         self.last_name = "Matalon"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -477,15 +477,15 @@ class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCas
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
 class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_he': "דורון",
             'last_name_he': "מטלון",
         })
         self.first_name = "דורון"
         self.last_name = "מטלון"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -496,8 +496,8 @@ class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, Spe
     login_url = '/login/'
     _other_user_password = '8' * 8
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory(slug='slug.with.dots')
         self.user_email = UserEmailAddressFactory(user=self.user)
         self.other_user = ActiveUserFactory()
@@ -648,8 +648,8 @@ class LoginViewHebrewTestCase(LoginViewTestCaseMixin, SiteTestCase):
 
 @only_on_sites_with_login
 class LogoutViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assert_models_count(
@@ -670,8 +670,8 @@ class LogoutViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
 class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     page_url = '/edit-profile/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.data = {
             'date_of_birth': '1976-06-03',
@@ -690,7 +690,7 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         self.assertEqual(first=len(self.user.username), second=12)
         self.assertEqual(first=len(self.user.slug), second=12)
 
-    def setup_required_fields(self):
+    def set_up_required_fields(self):
         self.required_fields = self.data.keys()
         self.assert_profile_form_required_fields(required_fields=self.required_fields)
 
@@ -848,15 +848,15 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
 
 @only_on_sites_with_login
 class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_en': "Jennifer",
             'last_name_en': "Connelly",
         })
         self.first_name = "Jennifer"
         self.last_name = "Connelly"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -866,15 +866,15 @@ class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase)
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
 class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_he': "ג'ניפר",
             'last_name_he': "קונלי",
         })
         self.first_name = "ג'ניפר"
         self.last_name = "קונלי"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -885,8 +885,8 @@ class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
 class EditProfilePrivacyViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/privacy/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -935,8 +935,8 @@ class EditProfilePrivacyViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase
 class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/notifications/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assert_models_count(
@@ -972,8 +972,8 @@ class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTe
 class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
     page_url = '/edit-profile/credentials/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -1090,8 +1090,8 @@ class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCas
 class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/welcome/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = InactiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assertEqual(first=self.user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
@@ -1132,8 +1132,8 @@ class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCas
 class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/edit-profile/deactivate/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
         self.assert_models_count(
@@ -1168,8 +1168,8 @@ class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestC
 
 
 class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -1223,8 +1223,8 @@ class VerifyUserEmailAddressViewHebrewTestCase(VerifyUserEmailAddressViewTestCas
 
 
 class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -1368,8 +1368,8 @@ class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin
 
 
 class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
@@ -1423,8 +1423,8 @@ class SendConfirmationEmailViewHebrewTestCase(SendConfirmationEmailViewTestCaseM
 
 
 class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
         self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
@@ -1480,8 +1480,8 @@ class DeleteUserEmailAddressViewHebrewTestCase(DeleteUserEmailAddressViewTestCas
 
 
 class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
         self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
@@ -1544,8 +1544,8 @@ class SetPrimaryUserEmailAddressViewHebrewTestCase(SetPrimaryUserEmailAddressVie
 
 @only_on_sites_with_login
 class PasswordResetViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
         self.assert_models_count(

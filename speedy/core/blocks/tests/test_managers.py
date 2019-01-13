@@ -11,8 +11,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class BlockManagerTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 

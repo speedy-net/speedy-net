@@ -10,8 +10,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_speedy_match
 class IndexViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
 
     def test_user_gets_redirected_to_his_matches(self):

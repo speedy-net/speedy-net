@@ -12,8 +12,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class ChatManagerTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         ChatFactory(is_group=True)
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()

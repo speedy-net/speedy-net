@@ -18,8 +18,8 @@ if (django_settings.LOGIN_ENABLED):
 
 
 class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.password = get_random_user_password()
         self.data = {
             'email': 'email@example.com',
@@ -42,7 +42,7 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             unconfirmed_email_address_count=0,
         )
 
-    def setup_required_fields(self):
+    def set_up_required_fields(self):
         self.required_fields = self.data.keys()
         self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
@@ -349,7 +349,7 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
     def test_slug_min_length_fail_username_min_length_ok(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
@@ -410,15 +410,15 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
 
 @only_on_sites_with_login
 class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_en': "Doron",
             'last_name_en': "Matalon",
         })
         self.first_name = "Doron"
         self.last_name = "Matalon"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -428,15 +428,15 @@ class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCas
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
 class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name_he': "דורון",
             'last_name_he': "מטלון",
         })
         self.first_name = "דורון"
         self.last_name = "מטלון"
-        self.setup_required_fields()
+        self.set_up_required_fields()
 
     def validate_all_values(self):
         super().validate_all_values()
@@ -445,8 +445,8 @@ class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase
 
 @only_on_sites_with_login
 class ProfilePrivacyFormTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -457,8 +457,8 @@ class ProfilePrivacyFormTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ProfileNotificationsFormTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
 
     @exclude_on_speedy_match
@@ -471,8 +471,8 @@ class ProfileNotificationsFormTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class PasswordResetFormTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
@@ -501,8 +501,8 @@ class PasswordResetFormTestCase(SiteTestCase):
 
 
 class DeactivationFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
 
     def test_incorrect_password(self):

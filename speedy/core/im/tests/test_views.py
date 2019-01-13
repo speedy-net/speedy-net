@@ -16,8 +16,8 @@ if (django_settings.LOGIN_ENABLED):
 class ChatListViewTestCase(SiteTestCase):
     page_url = '/messages/'
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -39,8 +39,8 @@ class ChatListViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ChatDetailViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -74,8 +74,8 @@ class ChatDetailViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class SendMessageToChatViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()
@@ -118,8 +118,8 @@ class SendMessageToChatViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class SendMessageToUserViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.page_url = '/messages/{}/compose/'.format(self.user2.slug)
@@ -171,8 +171,8 @@ class SendMessageToUserViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class MarkChatAsReadViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.chat = ChatFactory(ent1=self.user1)
         self.messages = []

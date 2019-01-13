@@ -14,17 +14,17 @@ if (django_settings.LOGIN_ENABLED):
 
 
 class FeedbackViewBaseMixin(object):
-    def setup_class(self):
+    def set_up_class(self):
         raise NotImplementedError()
 
     def get_page_url(self):
         raise NotImplementedError()
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         if (django_settings.LOGIN_ENABLED):
             self.user = ActiveUserFactory()
-        self.setup_class()
+        self.set_up_class()
         self.page_url = self.get_page_url()
 
     def check_feedback(self, feedback, expected_sender_id, expected_sender_name, expected_sender_email, expected_text):
@@ -128,7 +128,7 @@ class FeedbackViewBaseMixin(object):
 
 
 class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin):
-    def setup_class(self):
+    def set_up_class(self):
         self.expected_feedback_type = Feedback.TYPE_FEEDBACK
         self.expected_report_entity_id = None
         self.expected_report_file_id = None
@@ -151,7 +151,7 @@ class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMix
 
 
 class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin):
-    def setup_class(self):
+    def set_up_class(self):
         self.other_user = ActiveUserFactory()
         self.expected_feedback_type = Feedback.TYPE_REPORT_ENTITY
         self.expected_report_entity_id = self.other_user.pk
@@ -181,7 +181,7 @@ class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTes
 
 
 class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin):
-    def setup_class(self):
+    def set_up_class(self):
         self.file = FileFactory()
         self.expected_feedback_type = Feedback.TYPE_REPORT_FILE
         self.expected_report_entity_id = None

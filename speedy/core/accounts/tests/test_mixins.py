@@ -253,8 +253,8 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list):
         return {field_name_list[i]: [self._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
 
         # _this_field_is_required_error_message_dict = {'en': '___This field is required.', 'he': 'יש להזין תוכן בשדה זה.___'} # ~~~~ TODO: remove this line!
         _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק.'}

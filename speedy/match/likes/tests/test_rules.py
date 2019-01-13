@@ -12,8 +12,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_speedy_match
 class LikeTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
@@ -38,8 +38,8 @@ class LikeTestCase(SiteTestCase):
 
 @only_on_speedy_match
 class UnlikeTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()
@@ -60,8 +60,8 @@ class UnlikeTestCase(SiteTestCase):
 
 @only_on_speedy_match
 class ViewLikesTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.anon = AnonymousUser()

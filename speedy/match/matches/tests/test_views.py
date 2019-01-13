@@ -15,8 +15,8 @@ class EditViewBaseMixin(object):
     def get_template_name(self):
         raise NotImplementedError()
 
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.page_url = self.get_page_url()
         self.template_name = self.get_template_name()

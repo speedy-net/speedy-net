@@ -190,7 +190,7 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
     def test_slug_min_length_fail_username_min_length_ok(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
@@ -313,8 +313,8 @@ class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
 
 
 class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.password = get_random_user_password()
         self.data = {
             'password': self.password,
@@ -542,7 +542,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
     def test_slug_min_length_fail_username_min_length_ok(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
@@ -719,8 +719,8 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
 @only_on_sites_with_login
 class UserEnglishTestCase(UserTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name': "Doron",
             'last_name': "Matalon",
@@ -736,8 +736,8 @@ class UserEnglishTestCase(UserTestCaseMixin, SiteTestCase):
 @only_on_sites_with_login
 @override_settings(LANGUAGE_CODE='he')
 class UserHebrewTestCase(UserTestCaseMixin, SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.data.update({
             'first_name': "דורון",
             'last_name': "מטלון",

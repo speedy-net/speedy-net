@@ -2,8 +2,8 @@
 
 
 class SpeedyMatchAccountsLanguageMixin(object):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
 
         _a_profile_picture_is_required_error_message_dict = {'en': 'A profile picture is required.', 'he': '_____ # ~~~~ TODO'}
         _please_write_some_text_in_this_field_error_message_dict = {'en': 'Please write some text in this field.', 'he': '_____ # ~~~~ TODO'}

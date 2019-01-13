@@ -14,8 +14,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class UserFriendListViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -39,8 +39,8 @@ class UserFriendListViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ReceivedFriendshipRequestsListView(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -64,8 +64,8 @@ class ReceivedFriendshipRequestsListView(SiteTestCase):
 
 @only_on_sites_with_login
 class SentFriendshipRequestsListView(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -89,8 +89,8 @@ class SentFriendshipRequestsListView(SiteTestCase):
 
 @only_on_sites_with_login
 class UserFriendRequestViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/'.format(self.other_user.slug)
@@ -156,7 +156,7 @@ class UserFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_can_send_friend_request_if_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_can_send_friend_request_if_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -180,7 +180,7 @@ class UserFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_cannot_send_friend_request_if_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_cannot_send_friend_request_if_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -201,8 +201,8 @@ class UserFriendRequestViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class CancelFriendRequestViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/friends/request/cancel/'.format(self.other_user.slug)
@@ -225,8 +225,8 @@ class CancelFriendRequestViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class AcceptFriendRequestViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -258,7 +258,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -280,7 +280,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_cannot_accept_it_if_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -302,7 +302,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -324,7 +324,7 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___setup(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -346,8 +346,8 @@ class AcceptFriendRequestViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class RejectFriendRequestViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         friendship_request = Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
@@ -380,8 +380,8 @@ class RejectFriendRequestViewTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class RemoveFriendViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

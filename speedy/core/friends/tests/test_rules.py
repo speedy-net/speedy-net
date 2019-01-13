@@ -11,8 +11,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class RequestTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -34,8 +34,8 @@ class RequestTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ViewRequestsTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
 
@@ -48,8 +48,8 @@ class ViewRequestsTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class RemoveTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()

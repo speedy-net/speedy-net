@@ -11,8 +11,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_sites_with_login
 class SendMessageTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -30,8 +30,8 @@ class SendMessageTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ViewChatsTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
 
@@ -44,8 +44,8 @@ class ViewChatsTestCase(SiteTestCase):
 
 @only_on_sites_with_login
 class ReadChatTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user1 = ActiveUserFactory()
         self.user2 = ActiveUserFactory()
         self.user3 = ActiveUserFactory()

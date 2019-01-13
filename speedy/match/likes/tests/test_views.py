@@ -12,8 +12,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_speedy_match
 class LikeViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/like/'.format(self.other_user.slug)
@@ -31,8 +31,8 @@ class LikeViewTestCase(SiteTestCase):
 
 @only_on_speedy_match
 class UnlikeViewTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.page_url = '/{}/likes/unlike/'.format(self.other_user.slug)
@@ -49,8 +49,8 @@ class UnlikeViewTestCase(SiteTestCase):
 
 @only_on_speedy_match
 class LikeListViewsTestCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.user = ActiveUserFactory()
         self.other_user = ActiveUserFactory()
         self.default_url = '/{}/likes/'.format(self.user.slug)

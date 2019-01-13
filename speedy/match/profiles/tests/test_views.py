@@ -10,8 +10,8 @@ if (django_settings.LOGIN_ENABLED):
 
 @only_on_speedy_match
 class UserMixinTextCase(SiteTestCase):
-    def setup(self):
-        super().setup()
+    def set_up(self):
+        super().set_up()
         self.factory = RequestFactory()
         self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
         self.other_user = ActiveUserFactory()
