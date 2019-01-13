@@ -228,6 +228,8 @@ LANGUAGES = [
     ('he', _('Hebrew')),
 ]
 
+ALL_LANGUAGE_CODES = [language_code for language_code, language_name in LANGUAGES]
+
 LOCALE_PATHS = [
     str(APP_DIR / 'locale'),
     str(ROOT_DIR / 'speedy/core/locale'),

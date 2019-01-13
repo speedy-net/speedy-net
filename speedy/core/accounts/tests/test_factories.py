@@ -72,7 +72,7 @@ if (django_settings.LOGIN_ENABLED):
         #     # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
         #     field_name_localized_list = list()
         #     for base_field_name in localizable_fields:
-        #         for language_code in _test_case.all_languages_code_list:
+        #         for language_code in django_settings.ALL_LANGUAGE_CODES:
         #             field_name_localized = '{}_{}'.format(base_field_name, language_code)
         #             _test_case.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)
         #             field_name_localized_list.append(field_name_localized)
