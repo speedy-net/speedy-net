@@ -82,6 +82,14 @@ def reflection_import(name):
     return klass
 
 
+def string_is_not_empty(s):
+    if (s in [None, ""]):
+        return False
+    if (isinstance(s, str)):
+        return True
+    return False
+
+
 def get_all_field_names(base_field_name):
     # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
     field_names = [base_field_name]

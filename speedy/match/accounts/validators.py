@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
+from speedy.core.base.utils import string_is_not_empty
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -39,27 +40,27 @@ def validate_photo(photo):
 
 
 def validate_profile_description(profile_description):
-    if (not ((profile_description is not None) and (len(profile_description) > 0))):
+    if (not (string_is_not_empty(profile_description))):
         raise ValidationError(_("Please write some text in this field."))
 
 
 def validate_city(city):
-    if (not ((city is not None) and (len(city) > 0))):
+    if (not (string_is_not_empty(city))):
         raise ValidationError(_("Please write where you live."))
 
 
 def validate_children(children):
-    if (not ((children is not None) and (len(children) > 0))):
+    if (not (string_is_not_empty(children))):
         raise ValidationError(_("Do you have children? How many?"))
 
 
 def validate_more_children(more_children):
-    if (not ((more_children is not None) and (len(more_children) > 0))):
+    if (not (string_is_not_empty(more_children))):
         raise ValidationError(_("Do you want (more) children?"))
 
 
 def validate_match_description(match_description):
-    if (not ((match_description is not None) and (len(match_description) > 0))):
+    if (not (string_is_not_empty(match_description))):
         raise ValidationError(_("Please write some text in this field."))
 
 
