@@ -380,7 +380,7 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
         # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
         self.assertIn(member=self.full_http_host, container=mail.outbox[0].body)
-        for other_full_http_host in self.all_other_full_http_host_list:
+        for other_full_http_host in self.all_other_full_http_hosts:
             self.assertNotIn(member=other_full_http_host, container=mail.outbox[0].body)
 
     def test_cannot_register_taken_username(self):
