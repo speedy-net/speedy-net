@@ -5,14 +5,14 @@ from datetime import date
 import factory
 import factory.fuzzy
 
-from unittest import TestCase as PythonTestCase #### TODO
+# from unittest import TestCase as PythonTestCase #### TODO
 
 from django.conf import settings as django_settings
-from django.test import TestCase as DjangoTestCase #### TODO
+# from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
 from speedy.core.base.test import tests_settings
-from speedy.core.base.test.models import SiteTestCase #### TODO
+# from speedy.core.base.test.models import SiteTestCase #### TODO
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User, UserEmailAddress
 from speedy.core.accounts.translation import UserTranslationOptions #### TODO
@@ -20,6 +20,12 @@ from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
 
 
 if (django_settings.LOGIN_ENABLED):
+
+    # _test_case = PythonTestCase()
+    # _test_case = DjangoTestCase()
+    # _test_case = SiteTestCase()
+    # _test_case.set_up()
+
 
     class UserConfirmedEmailAddressFactory(factory.DjangoModelFactory):
         email = factory.Faker('email')
@@ -53,25 +59,29 @@ if (django_settings.LOGIN_ENABLED):
         #     localizable_fields = UserTranslationOptions.fields
         #     # ~~~~ TODO: use assert
         #     # assert localizable_fields == LocalizedFirstLastNameMixin.get_localizable_fields()
-        #     self.assertEqual(first=localizable_fields, second=LocalizedFirstLastNameMixin.get_localizable_fields())
-        #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name'))
-        #     self.assertEqual(first=localizable_fields, second=('first_name', 'last_name', '1'))####
-        #     # self.assertEqual(first=self.first_name_en, second=self.first_name)
-        #     # self.assertEqual(first=self.first_name_he, second=self.first_name)
-        #     # self.assertEqual(first=self.last_name_en, second=self.last_name)
-        #     # self.assertEqual(first=self.last_name_he, second=self.last_name)
+        #     _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
+        #     _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
+        #     _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
+        #     _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
+        #     # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
+        #     # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
+        #     # TODO - uncomment these lines
+        #     # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
+        #     # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
+        #     # _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
+        #     # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
         #     field_name_localized_list = list()
         #     for base_field_name in localizable_fields:
-        #         for language_code in self.all_languages_code_list:
+        #         for language_code in _test_case.all_languages_code_list:
         #             field_name_localized = '{}_{}'.format(base_field_name, language_code)
-        #             self.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)
+        #             _test_case.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)
         #             field_name_localized_list.append(field_name_localized)
         #     self.assertListEqual(list1=field_name_localized_list, list2=[])
-        #     self.assertEqual(first=self.first_name_en, second=self.first_name)
-        #     self.assertEqual(first=self.first_name_he, second=self.first_name)
-        #     self.assertEqual(first=self.last_name_en, second=self.last_name)
-        #     self.assertEqual(first=self.last_name_he, second=self.last_name)
-
+        #     _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
+        #     _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
+        #     _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
+        #     _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
+        #
 
     class InactiveUserFactory(DefaultUserFactory):
         @factory.post_generation
@@ -97,8 +107,8 @@ if (django_settings.LOGIN_ENABLED):
                 self.profile.more_children = "Yes."
                 self.profile.match_description = "Hi!"
                 self.profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED)
-                # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
-                # self.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
+                _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
+                _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
                 if (self.diet == User.DIET_UNKNOWN):
                     self.diet = random.choice(User.DIET_VALID_VALUES)
                 else:
