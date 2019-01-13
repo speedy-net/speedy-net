@@ -8,7 +8,7 @@ import factory.fuzzy
 # from unittest import TestCase as PythonTestCase #### TODO
 
 from django.conf import settings as django_settings
-# from django.test import TestCase as DjangoTestCase #### TODO
+from django.test import TestCase as DjangoTestCase #### TODO
 from django.contrib.sites.models import Site
 
 from speedy.core.base.test import tests_settings
@@ -22,7 +22,7 @@ from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
 if (django_settings.LOGIN_ENABLED):
 
     # _test_case = PythonTestCase()
-    # _test_case = DjangoTestCase()
+    _test_case = DjangoTestCase()
     # _test_case = SiteTestCase()
     # _test_case.set_up()
 
@@ -54,38 +54,43 @@ if (django_settings.LOGIN_ENABLED):
         class Meta:
             model = User
 
-        # @factory.post_generation
-        # def validate_first_and_last_name_in_all_languages(self, create, extracted, **kwargs):
-        #     localizable_fields = UserTranslationOptions.fields
-        #     # ~~~~ TODO: use assert
-        #     # assert localizable_fields == LocalizedFirstLastNameMixin.get_localizable_fields()
-        #     _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
-        #     _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
-        #     _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
-        #     _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
-        #     # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
-        #     # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
-        #     # TODO - uncomment these lines
-        #     # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
-        #     # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
-        #     # _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
-        #     # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
-        #     field_name_localized_list = list()
-        #     for base_field_name in localizable_fields:
-        #         for language_code in django_settings.ALL_LANGUAGE_CODES:
-        #             field_name_localized = '{}_{}'.format(base_field_name, language_code)
-        #             _test_case.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg=None)
-        #             field_name_localized_list.append(field_name_localized)
-        #     self.assertListEqual(list1=field_name_localized_list, list2=[])
-        #     _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
-        #     _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
-        #     _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
-        #     _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
-        #
+        @factory.post_generation
+        def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
+            localizable_fields = UserTranslationOptions.fields
+            _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
+            _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
+            _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
+            _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
+            # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
+            # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
+            # TODO - uncomment these lines
+            # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
+            # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
+            # _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
+            # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
+            field_name_localized_list = list()
+            for base_field_name in localizable_fields:
+                for language_code in django_settings.ALL_LANGUAGE_CODES:
+                    field_name_localized = '{}_{}'.format(base_field_name, language_code)
+                    _test_case.assertEqual(first=getattr(self, field_name_localized), second=getattr(self, base_field_name), msg="DefaultUserFactory::fields don't match ({field_name_localized}, {base_field_name}), self.pk={self_pk}, self.username={self_username}, self.slug={self_slug}, self.profile.get_name()={self_profile_get_name}".format(
+                        field_name_localized=field_name_localized,
+                        base_field_name=base_field_name,
+                        self_pk=self.pk,
+                        self_username=self.username,
+                        self_slug=self.slug,
+                        self_profile_get_name=self.profile.get_name(),
+                    ))
+                    field_name_localized_list.append(field_name_localized)
+            self.assertListEqual(list1=field_name_localized_list, list2=[])
+            _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
+            _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
+            _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
+            _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
+
 
     class InactiveUserFactory(DefaultUserFactory):
         @factory.post_generation
-        def deactivate_speedy_net_profile(self, create, extracted, **kwargs):
+        def deactivate_speedy_net_profile(self, created, extracted, **kwargs):
             # Deactivate only on speedy.net, speedy.match default is inactive.
             site = Site.objects.get_current()
             if (site.id == django_settings.SPEEDY_NET_SITE_ID):
@@ -94,7 +99,7 @@ if (django_settings.LOGIN_ENABLED):
 
     class ActiveUserFactory(DefaultUserFactory):
         @factory.post_generation
-        def activate_profile(self, create, extracted, **kwargs):
+        def activate_profile(self, created, extracted, **kwargs):
             site = Site.objects.get_current()
             if (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
                 # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.

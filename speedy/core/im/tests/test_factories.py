@@ -17,7 +17,7 @@ if (django_settings.LOGIN_ENABLED):
             model = Chat
 
         @factory.post_generation
-        def group(self, create, extracted, **kwargs):
+        def group(self, created, extracted, **kwargs):
             if (extracted):
                 self.is_group = True
                 for entity in extracted:
