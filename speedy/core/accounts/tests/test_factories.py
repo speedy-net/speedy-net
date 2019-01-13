@@ -56,13 +56,14 @@ if (django_settings.LOGIN_ENABLED):
 
         @factory.post_generation
         def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
-            localizable_fields = UserTranslationOptions.fields
-            _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
-            _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
-            _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
-            _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
+            # localizable_fields = UserTranslationOptions.fields # ~~~~ TODO: remove this line!
+            localizable_fields = User.LOCALIZABLE_FIELDS
+            # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
+            # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
+            # _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
+            # _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
             # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
-            # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
+            _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=('first_name', 'last_name'))
             # TODO - uncomment these lines
             # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
             # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)

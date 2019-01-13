@@ -153,6 +153,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     settings = django_settings.USER_SETTINGS
     # settings = speedy_net_global_settings.UserSettings # ~~~~ TODO: remove this line!
 
+    LOCALIZABLE_FIELDS = ('first_name', 'last_name')
+
     AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
     AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
 

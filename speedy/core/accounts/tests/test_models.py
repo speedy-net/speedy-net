@@ -371,6 +371,9 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         self.assertEqual(first=User.settings.MAX_PASSWORD_LENGTH, second=120)
         self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=800)
 
+    def test_localizable_fields(self):
+        self.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
+
     def test_gender_valid_values(self):
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
         self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 3 + 1)))
