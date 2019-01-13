@@ -1,3 +1,4 @@
+import logging
 import warnings
 from datetime import timedelta
 
@@ -8,6 +9,7 @@ from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.db import models, transaction
+from django.utils import translation
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -20,6 +22,8 @@ from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
 from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email_unique
+
+logger = logging.getLogger(__name__)
 
 
 class CleanAndValidateAllFieldsMixin(object):
@@ -269,6 +273,47 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
         return super().clean_fields(exclude=exclude)
 
+    def clean_all_fields(self, exclude=None):
+        super().clean_all_fields(exclude=exclude)
+
+        for base_field_name in __class__.LOCALIZABLE_FIELDS:
+            self.clean_localizable_field(base_field_name=base_field_name)
+        # self.clean_first_name() # ~~~~ TODO: remove this line!
+        # self.clean_last_name() # ~~~~ TODO: remove this line!
+
+    def get_all_field_names(self, base_field_name):
+        # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
+        field_names = [base_field_name]
+        this_language_code = translation.get_language()
+        all_other_language_codes = [language_code for language_code in django_settings.ALL_LANGUAGE_CODES if (not (language_code == this_language_code))]
+        for language_code in [this_language_code] + all_other_language_codes:
+            field_name_localized = '{}_{}'.format(base_field_name, language_code)
+            field_names.append(field_name_localized)
+        logger.debug("User::get_all_field_names::base_field_name={base_field_name}, field_names={field_names}".format(
+            base_field_name=base_field_name,
+            field_names=field_names,
+        ))
+        assert (len(field_names) == 3)
+        # print(field_names) # ~~~~ TODO: remove this line!
+        return field_names
+
+    def clean_localizable_field(self, base_field_name):
+        # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
+        field_names = self.get_all_field_names(base_field_name=base_field_name)
+        for field_name in field_names:
+            if (getattr(self, field_name) == ""):
+                for _field_name in field_names:
+                    # Check again because maybe this field is already not "".
+                    if (getattr(self, field_name) == ""):
+                        if (not (getattr(self, _field_name) == "")):
+                            setattr(self, field_name, getattr(self, _field_name))
+
+    # def clean_first_name(self): # ~~~~ TODO: remove this line!
+    #     self.clean_localizable_field(base_field_name='first_name')
+    #
+    # def clean_last_name(self): # ~~~~ TODO: remove this line!
+    #     self.clean_localizable_field(base_field_name='last_name')
+    #
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
 
