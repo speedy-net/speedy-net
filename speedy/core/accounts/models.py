@@ -16,7 +16,7 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 # from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings? # ~~~~ TODO: remove this line!
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, get_all_field_names
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
@@ -282,11 +282,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
         field_names = get_all_field_names(base_field_name=base_field_name)
         for field_name in field_names:
-            if (getattr(self, field_name) == ""):
+            if (not (string_is_not_empty(getattr(self, field_name)))):
                 for _field_name in field_names:
-                    # Check again because maybe this field is already not "".
-                    if (getattr(self, field_name) == ""):
-                        if (not (getattr(self, _field_name) == "")):
+                    # Check again because maybe this field is already not empty.
+                    if (not (string_is_not_empty(getattr(self, field_name)))):
+                        if (string_is_not_empty(getattr(self, _field_name))):
                             setattr(self, field_name, getattr(self, _field_name))
 
     def get_absolute_url(self):

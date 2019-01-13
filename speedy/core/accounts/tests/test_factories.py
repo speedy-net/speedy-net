@@ -56,19 +56,11 @@ if (django_settings.LOGIN_ENABLED):
 
         @factory.post_generation
         def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
-            # localizable_fields = UserTranslationOptions.fields # ~~~~ TODO: remove this line!
-            # localizable_fields = User.LOCALIZABLE_FIELDS
-            # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(list(LocalizedFirstLastNameMixin.get_localizable_fields())))
-            # _test_case.assertListEqual(list1=sorted(list(localizable_fields)), list2=sorted(['first_name', 'last_name']))
-            # _test_case.assertSetEqual(set1=set(localizable_fields), set2=set(LocalizedFirstLastNameMixin.get_localizable_fields()))
-            # _test_case.assertSetEqual(set1=set(localizable_fields), set2={'first_name', 'last_name'})
-            # _test_case.assertTupleEqual(tuple1=localizable_fields, tuple2=LocalizedFirstLastNameMixin.get_localizable_fields())
             _test_case.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
-            # TODO - uncomment these lines
-            # _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
-            # _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
-            # _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
-            # _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
+            _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
+            _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
+            _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
+            _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
             field_name_localized_list = list()
             for base_field_name in User.LOCALIZABLE_FIELDS:
                 for language_code in django_settings.ALL_LANGUAGE_CODES:
@@ -82,11 +74,7 @@ if (django_settings.LOGIN_ENABLED):
                         self_profile_get_name=self.profile.get_name(),
                     ))
                     field_name_localized_list.append(field_name_localized)
-            self.assertListEqual(list1=field_name_localized_list, list2=[])
-            _test_case.assertEqual(first=self.first_name_en, second=self.first_name)
-            _test_case.assertEqual(first=self.first_name_he, second=self.first_name)
-            _test_case.assertEqual(first=self.last_name_en, second=self.last_name)
-            _test_case.assertEqual(first=self.last_name_he, second=self.last_name)
+            _test_case.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he'])
 
 
     class InactiveUserFactory(DefaultUserFactory):
@@ -104,7 +92,6 @@ if (django_settings.LOGIN_ENABLED):
             site = Site.objects.get_current()
             if (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
                 # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
-                # ~~~~ TODO: maybe change ".profile" to ".speedy_match_profile"?
                 from speedy.core.uploads.tests.test_factories import UserImageFactory
                 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
                 self.profile.profile_description = "Hi!"
@@ -114,21 +101,14 @@ if (django_settings.LOGIN_ENABLED):
                 self.profile.match_description = "Hi!"
                 self.profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED)
                 _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
-                _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN - 1) # ~~~~ TODO: remove this line!
-                if (self.diet == User.DIET_UNKNOWN):
-                    self.diet = random.choice(User.DIET_VALID_VALUES)
-                else:
-                    raise Exception("Unexpected: diet={}".format(self.diet))
-                # self.diet = random.choice(User.DIET_VALID_VALUES)
-                # self.assertNotEqual(first=self.diet, second=User.DIET_UNKNOWN)
-                if (self.profile.smoking_status == SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN):
-                    self.profile.smoking_status = random.choice(SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
-                else:
-                    raise Exception("Unexpected: smoking_status={}".format(self.profile.smoking_status))
-                if (self.profile.marital_status == SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN):
-                    self.profile.marital_status = random.choice(SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
-                else:
-                    raise Exception("Unexpected: marital_status={}".format(self.profile.marital_status))
+                _test_case.assertEqual(first=self.profile.smoking_status, second=SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN)
+                _test_case.assertEqual(first=self.profile.marital_status, second=SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN)
+                self.diet = random.choice(User.DIET_VALID_VALUES)
+                self.profile.smoking_status = random.choice(SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
+                self.profile.marital_status = random.choice(SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
+                _test_case.assertNotEqual(first=self.diet, second=User.DIET_UNKNOWN)
+                _test_case.assertNotEqual(first=self.profile.smoking_status, second=SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN)
+                _test_case.assertNotEqual(first=self.profile.marital_status, second=SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN)
                 self.profile.gender_to_match = User.GENDER_VALID_VALUES
                 self.photo = UserImageFactory(owner=self)
                 self.profile.activation_step = 9
@@ -140,12 +120,8 @@ if (django_settings.LOGIN_ENABLED):
                     raise Exception("Error messages not as expected, {}".format(error_messages))
                 if (not (step == len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                     raise Exception("Step not as expected, {}".format(step))
-                # print(self.gender, self.diet, self.profile.smoking_status, self.profile.marital_status, self.profile.height) # ~~~~ TODO: remove this line!
-                # print(tests_settings.USER_PASSWORD) # ~~~~ TODO: remove this line!
             else:
                 self.profile.activate()
-                # print(self.gender, self.diet) # ~~~~ TODO: remove this line!
-                # print(tests_settings.USER_PASSWORD) # ~~~~ TODO: remove this line!
 
 
     class UserEmailAddressFactory(factory.DjangoModelFactory):
