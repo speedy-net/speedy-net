@@ -180,13 +180,9 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         self.assertEqual(first=len(entity.id), second=15)
         self.assertTrue(expr=user.check_password(raw_password=self.password))
         self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-        # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
-        self.assertEqual(first=user.first_name_en, second=self.first_name)
-        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.last_name, second=self.last_name)
-        self.assertEqual(first=user.last_name_en, second=self.last_name)
-        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assert_user_first_and_last_name_in_all_languages(user=user)
         self.assertEqual(first=user.username, second=self.username)
         self.assertEqual(first=user.username, second='user1234')
         self.assertEqual(first=user.slug, second=self.slug)
@@ -729,13 +725,9 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
         user = User.objects.get(pk=self.user.pk)
-        # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
-        self.assertEqual(first=user.first_name_en, second=self.first_name)
-        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
         self.assertEqual(first=user.last_name, second=self.last_name)
-        self.assertEqual(first=user.last_name_en, second=self.last_name)
-        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assert_user_first_and_last_name_in_all_languages(user=user)
 
     def test_required_fields_1(self):
         data = {}

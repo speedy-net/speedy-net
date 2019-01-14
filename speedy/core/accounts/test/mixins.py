@@ -1,3 +1,5 @@
+from django.conf import settings as django_settings
+
 from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
@@ -9,6 +11,27 @@ class SpeedyCoreAccountsModelsMixin(object):
         self.assertEqual(first=UserEmailAddress.objects.count(), second=user_email_address_count)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=True).count(), second=confirmed_email_address_count)
         self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=False).count(), second=unconfirmed_email_address_count)
+
+    def assert_user_first_and_last_name_in_all_languages(self, user):
+        self.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
+        self.assertEqual(first=user.first_name_en, second=user.first_name)
+        self.assertEqual(first=user.first_name_he, second=user.first_name)
+        self.assertEqual(first=user.last_name_en, second=user.last_name)
+        self.assertEqual(first=user.last_name_he, second=user.last_name)
+        field_name_localized_list = list()
+        for base_field_name in User.LOCALIZABLE_FIELDS:
+            for language_code in django_settings.ALL_LANGUAGE_CODES:
+                field_name_localized = '{}_{}'.format(base_field_name, language_code)
+                self.assertEqual(first=getattr(user, field_name_localized), second=getattr(user, base_field_name), msg="assert_user_first_and_last_name_in_all_languages::fields don't match ({field_name_localized}, {base_field_name}), user.pk={user_pk}, user.username={user_username}, user.slug={user_slug}, user.profile.get_name()={user_profile_get_name}".format(
+                    field_name_localized=field_name_localized,
+                    base_field_name=base_field_name,
+                    user_pk=user.pk,
+                    user_username=user.username,
+                    user_slug=user.slug,
+                    user_profile_get_name=user.profile.get_name(),
+                ))
+                field_name_localized_list.append(field_name_localized)
+        self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he'])
 
 
 # class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
