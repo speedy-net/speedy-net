@@ -15,8 +15,8 @@ from speedy.core.base.test import tests_settings
 # from speedy.core.base.test.models import SiteTestCase #### TODO
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User, UserEmailAddress
-from speedy.core.accounts.translation import UserTranslationOptions #### TODO
-from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
+# from speedy.core.accounts.translation import UserTranslationOptions #### TODO
+# from speedy.core.accounts.forms import LocalizedFirstLastNameMixin #### TODO
 
 
 if (django_settings.LOGIN_ENABLED):
@@ -92,7 +92,7 @@ if (django_settings.LOGIN_ENABLED):
             site = Site.objects.get_current()
             if (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
                 # ~~~~ TODO: this code is specific for Speedy Match, should not be in core.
-                from speedy.core.uploads.tests.test_factories import UserImageFactory
+                from speedy.core.uploads.test.factories import UserImageFactory
                 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
                 self.profile.profile_description = "Hi!"
                 self.profile.city = "Tel Aviv."

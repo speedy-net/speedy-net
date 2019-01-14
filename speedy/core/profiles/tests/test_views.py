@@ -8,7 +8,7 @@ from speedy.core.accounts.tests.test_views import RedirectMeMixin
 from speedy.core.profiles.views import UserMixin
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import ActiveUserFactory
+    from speedy.core.accounts.test.factories import ActiveUserFactory
 
 
 class UserMixinTestView(UserMixin, generic.View):

@@ -7,13 +7,13 @@ from django.core import mail
 from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
-from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
+from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
 from speedy.core.base.utils import normalize_slug, normalize_username
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.utils import get_random_user_password
-    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
+    from speedy.core.accounts.test.factories  import ActiveUserFactory, UserEmailAddressFactory, InactiveUserFactory
 
 
 class RedirectMeMixin(object):
@@ -673,6 +673,8 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
     def set_up(self):
         super().set_up()
         self.user = ActiveUserFactory()
+        self.original_first_name = self.user.first_name
+        self.original_last_name = self.user.last_name
         self.data = {
             'date_of_birth': '1976-06-03',
             'slug': self.user.slug,
@@ -708,13 +710,12 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         r = self.client.post(path=self.page_url, data=self.data)
         self.assertRedirects(response=r, expected_url=self.page_url)
         user = User.objects.get(pk=self.user.pk)
-        # TODO - uncomment these lines
         self.assertEqual(first=user.first_name, second=self.first_name)
-        self.assertEqual(first=user.first_name_en, second=self.first_name)
-        self.assertEqual(first=user.first_name_he, second=self.first_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.first_name_en, second={'en': self.first_name, 'he': self.original_first_name}[self.language_code])
+        self.assertEqual(first=user.first_name_he, second={'en': self.original_first_name, 'he': self.first_name}[self.language_code])
         self.assertEqual(first=user.last_name, second=self.last_name)
-        self.assertEqual(first=user.last_name_en, second=self.last_name)
-        self.assertEqual(first=user.last_name_he, second=self.last_name) # ~~~~ TODO - uncomment these lines
+        self.assertEqual(first=user.last_name_en, second={'en': self.last_name, 'he': self.original_last_name}[self.language_code])
+        self.assertEqual(first=user.last_name_he, second={'en': self.original_last_name, 'he': self.last_name}[self.language_code])
         for (key, value) in self.data.items():
             if (not (key in ['date_of_birth'])):
                 self.assertEqual(first=getattr(user, key), second=value)
@@ -820,13 +821,12 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
             r = self.client.post(path=self.page_url, data=data)
             self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
             user = User.objects.get(pk=self.user.pk)
-            # TODO - uncomment these lines
             self.assertEqual(first=user.first_name, second=self.first_name)
-            self.assertEqual(first=user.first_name_en, second=self.first_name)
-            self.assertEqual(first=user.first_name_he, second=self.first_name)
+            self.assertEqual(first=user.first_name_en, second={'en': self.first_name, 'he': self.original_first_name}[self.language_code])
+            self.assertEqual(first=user.first_name_he, second={'en': self.original_first_name, 'he': self.first_name}[self.language_code])
             self.assertEqual(first=user.last_name, second=self.last_name)
-            self.assertEqual(first=user.last_name_en, second=self.last_name)
-            self.assertEqual(first=user.last_name_he, second=self.last_name)
+            self.assertEqual(first=user.last_name_en, second={'en': self.last_name, 'he': self.original_last_name}[self.language_code])
+            self.assertEqual(first=user.last_name_he, second={'en': self.original_last_name, 'he': self.last_name}[self.language_code])
             for (key, value) in self.data.items():
                 if (not (key in ['date_of_birth'])):
                     self.assertEqual(first=getattr(user, key), second=value)

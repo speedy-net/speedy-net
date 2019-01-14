@@ -7,7 +7,7 @@ from speedy.core.accounts.models import User
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+    from speedy.core.accounts.test.factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
 @only_on_speedy_net

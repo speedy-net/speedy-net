@@ -5,12 +5,12 @@ from django.core import mail
 from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
-from speedy.core.feedback.tests.test_mixins import SpeedyCoreFeedbackLanguageMixin
+from speedy.core.feedback.test.mixins import SpeedyCoreFeedbackLanguageMixin
 from speedy.core.feedback.models import Feedback
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories  import ActiveUserFactory
-    from speedy.core.uploads.tests.test_factories import FileFactory
+    from speedy.core.accounts.test.factories  import ActiveUserFactory
+    from speedy.core.uploads.test.factories import FileFactory
 
 
 class FeedbackViewBaseMixin(object):

@@ -1,4 +1,4 @@
-from speedy.core.base.tests.test_mixins import SpeedyCoreBaseLanguageMixin
+from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 

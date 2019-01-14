@@ -8,15 +8,15 @@ from django.db.utils import DataError
 
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
-from speedy.core.accounts.tests.test_mixins import SpeedyCoreAccountsLanguageMixin
-from speedy.match.accounts.tests.test_mixins import SpeedyMatchAccountsLanguageMixin
+from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
+from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import utils, validators
 from speedy.core.accounts.models import User
-from speedy.core.uploads.tests.test_factories import UserImageFactory
+from speedy.core.uploads.test.factories import UserImageFactory
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.tests.test_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+    from speedy.core.accounts.test.factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
 class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
