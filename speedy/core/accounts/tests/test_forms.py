@@ -119,7 +119,12 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         self.assertEqual(first=user.username, second='user22')
         self.assertEqual(first=user.slug, second=self.slug)
         self.assertEqual(first=user.slug, second='user-22')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assertEqual(first=user.email_addresses.first().email, second='email@example.com')
         self.assertFalse(expr=user.email_addresses.first().is_confirmed)
         self.assertTrue(expr=user.email_addresses.first().is_primary)
@@ -212,7 +217,12 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         )
         # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
         # existing_user.email_addresses.create(email='email@example.com', is_confirmed=True) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         form = RegistrationForm(language_code=self.language_code, data=self.data)
         form.full_clean()
         self.assertFalse(expr=form.is_valid())
@@ -225,9 +235,19 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -242,7 +262,12 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         )
         # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
         # existing_user.email_addresses.create(email='email@example.com', is_confirmed=False) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         form = RegistrationForm(language_code=self.language_code, data=self.data)
         form.full_clean()
         self.assertTrue(expr=form.is_valid())
@@ -256,11 +281,19 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        # self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        # self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id]) # ~~~~ TODO: remove this line!
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_slug_validation_fails_with_reserved_username(self):
         data = self.data.copy()
@@ -462,7 +495,7 @@ class ProfileNotificationsFormTestCase(SiteTestCase):
         super().set_up()
         self.user = ActiveUserFactory()
 
-    @exclude_on_speedy_match
+    ##### @exclude_on_speedy_match
     def test_has_correct_fields(self):
         form = ProfileNotificationsForm(instance=self.user)
         self.assertListEqual(list1=list(form.fields.keys()), list2=[

@@ -17,7 +17,7 @@ class UserMixinTestView(UserMixin, generic.View):
 
 
 @only_on_sites_with_login
-@exclude_on_speedy_match  # 404s - has to be a match
+##### @exclude_on_speedy_match  # 404s - has to be a match
 class UserMixinTextCase(SiteTestCase):
     def set_up(self):
         super().set_up()

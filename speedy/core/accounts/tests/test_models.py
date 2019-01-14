@@ -676,7 +676,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_valid_date_of_birth_list_ok(self):
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
-            print("test_valid_date_of_birth_list_ok", date_of_birth)
+            # print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['slug'] = 'user-{}'.format(date_of_birth)
             data['date_of_birth'] = date_of_birth
@@ -700,7 +700,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_invalid_date_of_birth_list_fail(self):
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth)
+            # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             user = User(**data)
@@ -775,7 +775,12 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
                 user_email_address.save()
                 # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
-        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         self.assert_models_count(
             entity_count=1,
             user_count=1,
@@ -787,19 +792,44 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     def test_non_unique_confirmed_email_address(self):
         existing_user = DefaultUserFactory()
         existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='email@example.com')
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         self.assert_models_count(
             entity_count=2,
             user_count=2,
@@ -811,19 +841,44 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     def test_non_unique_confirmed_email_address_uppercase(self):
         existing_user = DefaultUserFactory()
         existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL@EXAMPLE.COM')
         with self.assertRaises(ValidationError) as cm:
             user_email_address.save()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         self.assert_models_count(
             entity_count=2,
             user_count=2,
@@ -836,16 +891,41 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         # Unconfirmed email address is deleted if another user adds it again.
         existing_user = DefaultUserFactory()
         existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=False)
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='email@example.com')
         user_email_address.save()
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=2,
             user_count=2,
@@ -858,16 +938,41 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         # Unconfirmed email address is deleted if another user adds it again.
         existing_user = DefaultUserFactory()
         existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
         user_email_address.save()
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=2,
             user_count=2,
@@ -880,16 +985,41 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         # Unconfirmed email address is deleted if another user adds it again.
         existing_user = DefaultUserFactory()
         existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='EMAIL755@EXAMPLE.COM')
         user_email_address.save()
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=2,
             user_count=2,
@@ -903,9 +1033,19 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
         user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email77@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=1,
             user_count=1,
@@ -918,9 +1058,19 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         user = DefaultUserFactory()
         user_email_address = UserEmailAddressFactory(user=user, email='EMAIL75@EXAMPLE.COM')
         self.assertEqual(first=user_email_address.email, second='email75@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=1,
             user_count=1,
@@ -937,9 +1087,19 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             print(user_email_address.pk) ######### ~~~~ TODO
             user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email75@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assert_models_count(
             entity_count=1,
             user_count=1,
@@ -956,9 +1116,19 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             print(user_email_address.pk) ######### ~~~~ TODO
             user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email75@example.com')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         self.assert_models_count(
             entity_count=1,
             user_count=1,

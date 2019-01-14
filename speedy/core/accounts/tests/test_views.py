@@ -187,7 +187,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         self.assertEqual(first=user.username, second='user1234')
         self.assertEqual(first=user.slug, second=self.slug)
         self.assertEqual(first=user.slug, second='user-1234')
-        self.assertEqual(first=user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assertEqual(first=user.email_addresses.first().email, second='email@example.com')
         self.assertFalse(expr=user.email_addresses.first().is_confirmed)
         self.assertTrue(expr=user.email_addresses.first().is_primary)
@@ -226,7 +231,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         r = self.client.post(path='/', data=self.data)
         self.assertEqual(first=r.status_code, second=200)
         self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict())
@@ -237,9 +247,19 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_unique_confirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=True)
@@ -251,7 +271,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assert_models_count(
@@ -261,9 +286,19 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=1,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=1,
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_non_unique_unconfirmed_email_address(self):
         # Unconfirmed email address is deleted if another user adds it again.
@@ -276,7 +311,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assert_models_count(
@@ -286,9 +326,19 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=0) # ~~~~ TODO: remove this line!
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=0,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_unique_unconfirmed_email_address(self):
         existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
@@ -300,7 +350,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=1,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         r = self.client.post(path='/', data=self.data)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)
         self.assert_models_count(
@@ -310,9 +365,19 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count=0,
             unconfirmed_email_address_count=2,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count=1,
+            user_confirmed_email_addresses_count=0,
+            user_unconfirmed_email_addresses_count=1,
+        )
 
     def test_password_too_short(self):
         data = self.data.copy()
@@ -390,7 +455,12 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_unconfirmed_email_addresses_count=0,
+        )
         data['slug'] = 'us-er-na-me'
         r = self.client.post(path='/', data=data)
         self.assertEqual(first=r.status_code, second=200)
@@ -402,9 +472,19 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
             unconfirmed_email_address_count=0,
         )
-        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_unconfirmed_email_addresses_count=0,
+        )
         existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-        self.assertEqual(first=existing_user.email_addresses.count(), second={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+        self.assert_user_email_addresses_count(
+            user=existing_user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_unconfirmed_email_addresses_count=0,
+        )
 
     def test_email_gets_converted_to_lowercase(self):
         data = self.data.copy()
@@ -439,7 +519,7 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
 
     def test_invalid_date_of_birth_list_fail(self):
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
+            # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path='/', data=data)
@@ -808,7 +888,7 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
 
     def test_valid_date_of_birth_list_ok(self):
         for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
+            # print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)
@@ -829,7 +909,7 @@ class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcco
         self.date_of_birth = self.user.date_of_birth
         self.last_name = self.user.last_name
         for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-            print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
+            # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['date_of_birth'] = date_of_birth
             r = self.client.post(path=self.page_url, data=data)
@@ -950,16 +1030,30 @@ class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTe
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
 
-    @exclude_on_speedy_match
+    ##### @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
-        self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
-        data = {
-            'notify_on_message': User.NOTIFICATIONS_OFF,
-        }
-        r = self.client.post(path=self.page_url, data=data)
-        self.assertRedirects(response=r, expected_url=self.page_url)
-        user = User.objects.get(pk=self.user.pk)
-        self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
+        self.assertIn(member=self.site.id, container=[django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID])
+        if (self.site.id == django_settings.SPEEDY_NET_SITE_ID):
+            self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
+            data = {
+                'notify_on_message': User.NOTIFICATIONS_OFF,
+            }
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertRedirects(response=r, expected_url=self.page_url)
+            user = User.objects.get(pk=self.user.pk)
+            self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
+        elif (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
+            self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
+            data = {
+                'notify_on_message': User.NOTIFICATIONS_OFF,
+                'notify_on_like': User.NOTIFICATIONS_OFF,
+            }
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertRedirects(response=r, expected_url=self.page_url)
+            user = User.objects.get(pk=self.user.pk)
+            self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
+            self.assertEqual(first=user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_OFF)
 
 
 class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -1079,6 +1173,7 @@ class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCas
         self.assertEqual(first=self.language_code, second='he')
 
 
+# class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
 @only_on_sites_with_login
 class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
     page_url = '/welcome/'
@@ -1433,6 +1528,12 @@ class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, Spe
             confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
             unconfirmed_email_address_count=2,
         )
+        self.assert_user_email_addresses_count(
+            user=self.user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+            user_unconfirmed_email_addresses_count=1,
+        )
 
     def test_visitor_has_no_access(self):
         self.client.logout()
@@ -1447,14 +1548,24 @@ class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, Spe
         r = self.client.post(path=self.primary_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url))
 
-    @exclude_on_speedy_match
+    ##### @exclude_on_speedy_match
     def test_user_can_delete_email_address(self):
-        self.assertEqual(first=self.user.email_addresses.count(), second=2)
+        self.assert_user_email_addresses_count(
+            user=self.user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+            user_unconfirmed_email_addresses_count=1,
+        )
         r = self.client.post(path=self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
-        self.assertEqual(first=self.user.email_addresses.count(), second=1)
+        self.assert_user_email_addresses_count(
+            user=self.user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+            user_unconfirmed_email_addresses_count=1,
+        )
 
 
 @only_on_sites_with_login
@@ -1506,17 +1617,25 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin,
         r = self.client.post(path=self.unconfirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
 
-    @exclude_on_speedy_match
+    ##### @exclude_on_speedy_match
     def test_user_can_make_confirmed_email_address_primary(self):
-        self.assertEqual(first=self.user.email_addresses.count(), second=3)
-        self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
+        self.assert_user_email_addresses_count(
+            user=self.user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
         r = self.client.post(path=self.confirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
         r = self.client.get(path='/edit-profile/')
         self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
-        self.assertEqual(first=self.user.email_addresses.count(), second=3)
-        self.assertEqual(first=self.user.email_addresses.filter(is_confirmed=True).count(), second=2)
+        self.assert_user_email_addresses_count(
+            user=self.user,
+            user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+            user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+            user_unconfirmed_email_addresses_count=1,
+        )
         self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
 
 

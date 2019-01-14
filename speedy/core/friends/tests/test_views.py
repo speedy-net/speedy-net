@@ -22,7 +22,7 @@ class UserFriendListViewTestCase(SiteTestCase):
         self.user_friends_list_url = '/{}/friends/'.format(self.user.slug)
         self.other_user_friends_list_url = '/{}/friends/'.format(self.other_user.slug)
 
-    @exclude_on_speedy_match
+    # ##### @exclude_on_speedy_match
     def test_visitor_can_open_the_page(self):
         self.client.logout()
         r = self.client.get(path=self.user_friends_list_url)
@@ -47,7 +47,7 @@ class ReceivedFriendshipRequestsListView(SiteTestCase):
         self.page_url = '/{}/friends/received-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/received-requests/'.format(self.other_user.slug)
 
-    @exclude_on_speedy_match
+    # ##### @exclude_on_speedy_match
     def test_visitor_cannot_open_the_page(self):
         self.client.logout()
         r = self.client.get(path=self.page_url)
@@ -72,7 +72,7 @@ class SentFriendshipRequestsListView(SiteTestCase):
         self.page_url = '/{}/friends/sent-requests/'.format(self.user.slug)
         self.other_page_url = '/{}/friends/sent-requests/'.format(self.other_user.slug)
 
-    @exclude_on_speedy_match
+    # ##### @exclude_on_speedy_match
     def test_visitor_cannot_open_the_page(self):
         self.client.logout()
         r = self.client.get(path=self.page_url)
