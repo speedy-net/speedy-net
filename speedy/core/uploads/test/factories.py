@@ -4,7 +4,7 @@ from django.conf import settings as django_settings
 from speedy.core.uploads.models import File, Image
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 if (django_settings.LOGIN_ENABLED):

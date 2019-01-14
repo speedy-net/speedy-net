@@ -7,7 +7,7 @@ from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 @only_on_speedy_match

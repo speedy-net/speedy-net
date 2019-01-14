@@ -6,7 +6,7 @@ from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.blocks.models import Block
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories  import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login

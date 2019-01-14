@@ -9,7 +9,7 @@ from speedy.core.base.test.utils import get_django_settings_class_with_override_
 from speedy.core.accounts.models import User
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories  import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login

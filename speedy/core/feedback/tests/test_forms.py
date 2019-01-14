@@ -7,7 +7,7 @@ from speedy.core.feedback.forms import FeedbackForm
 from speedy.core.feedback.models import Feedback
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 class FeedbackFormTestCase(SpeedyCoreFeedbackLanguageMixin, SiteTestCase):

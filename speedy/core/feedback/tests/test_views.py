@@ -9,7 +9,7 @@ from speedy.core.feedback.test.mixins import SpeedyCoreFeedbackLanguageMixin
 from speedy.core.feedback.models import Feedback
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories  import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
     from speedy.core.uploads.test.factories import FileFactory
 
 

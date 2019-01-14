@@ -10,7 +10,7 @@ from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.uploads.models import Image
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories  import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
 @only_on_sites_with_login

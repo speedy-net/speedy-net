@@ -7,7 +7,7 @@ from speedy.core.im.models import Message, ReadMark
 from speedy.core.im.templatetags import im_tags
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories import ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
     from speedy.core.im.test.factories import ChatFactory
 
 

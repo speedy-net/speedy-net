@@ -14,7 +14,8 @@ from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, Site
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.utils import get_random_user_password
-    from speedy.core.accounts.test.factories  import ActiveUserFactory, UserEmailAddressFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
+    from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
 
 class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):

@@ -16,7 +16,7 @@ from speedy.core.accounts.models import User
 from speedy.core.uploads.test.factories import UserImageFactory
 
 if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+    from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 
 
 class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
