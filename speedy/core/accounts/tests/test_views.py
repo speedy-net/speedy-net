@@ -35,8 +35,7 @@ class RedirectMeMixin(object):
         self.assert_me_url_redirects(expected_url=expected_url)
 
 
-@only_on_sites_with_login
-class IndexViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
     def set_up(self):
         super().set_up()
         self.user = ActiveUserFactory()
@@ -1004,8 +1003,7 @@ class EditProfilePrivacyViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase
         self.assertEqual(first=user.access_dob_year, second=2)
 
 
-@only_on_sites_with_login
-class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+class EditProfileNotificationsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
     page_url = '/edit-profile/notifications/'
 
     def set_up(self):
@@ -1030,30 +1028,8 @@ class EditProfileNotificationsViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTe
         self.assertEqual(first=r.status_code, second=200)
         self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
 
-    ##### @exclude_on_speedy_match
     def test_user_can_save_his_settings(self):
-        self.assertIn(member=self.site.id, container=[django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID])
-        if (self.site.id == django_settings.SPEEDY_NET_SITE_ID):
-            self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
-            data = {
-                'notify_on_message': User.NOTIFICATIONS_OFF,
-            }
-            r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
-            user = User.objects.get(pk=self.user.pk)
-            self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
-        elif (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
-            self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
-            self.assertEqual(first=self.user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
-            data = {
-                'notify_on_message': User.NOTIFICATIONS_OFF,
-                'notify_on_like': User.NOTIFICATIONS_OFF,
-            }
-            r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
-            user = User.objects.get(pk=self.user.pk)
-            self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
-            self.assertEqual(first=user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_OFF)
+        raise NotImplementedError()
 
 
 class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -1173,9 +1149,7 @@ class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCas
         self.assertEqual(first=self.language_code, second='he')
 
 
-# class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
-@only_on_sites_with_login
-class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
     page_url = '/welcome/'
 
     def set_up(self):
@@ -1207,13 +1181,8 @@ class ActivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCas
         if (r.status_code == 200):
             self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
 
-    @exclude_on_speedy_match
     def test_inactive_user_can_request_activation(self):
-        r = self.client.post(path=self.page_url)
-        self.assertRedirects(response=r, expected_url='/', target_status_code=302)
-        user = User.objects.get(pk=self.user.pk)
-        self.assertEqual(first=user.is_active, second=True)
-        self.assertEqual(first=user.profile.is_active, second=True)
+        raise NotImplementedError()
 
 
 @only_on_sites_with_login
@@ -1548,7 +1517,6 @@ class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, Spe
         r = self.client.post(path=self.primary_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url))
 
-    ##### @exclude_on_speedy_match
     def test_user_can_delete_email_address(self):
         self.assert_user_email_addresses_count(
             user=self.user,
@@ -1617,7 +1585,6 @@ class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin,
         r = self.client.post(path=self.unconfirmed_email_address_url)
         self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
 
-    ##### @exclude_on_speedy_match
     def test_user_can_make_confirmed_email_address_primary(self):
         self.assert_user_email_addresses_count(
             user=self.user,
