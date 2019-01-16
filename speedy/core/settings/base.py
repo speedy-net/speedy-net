@@ -49,7 +49,8 @@ USE_SSL = False
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',  # must be before admin
+    'modeltranslation',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,6 +77,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'speedy.core.base.middleware.SessionCookieDomainMiddleware',
     'speedy.core.base.middleware.RemoveExtraSlashesMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,8 +86,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+
     'speedy.core.base.middleware.LocaleDomainMiddleware',
+
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
     # 'speedy.core.accounts.middleware.SiteProfileMiddleware',
 ]
 
@@ -104,6 +109,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+
                 'speedy.core.base.context_processors.active_url_name',
                 'speedy.core.base.context_processors.settings',
                 'speedy.core.base.context_processors.sites',

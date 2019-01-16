@@ -1,7 +1,6 @@
 import json
 
 from django import forms
-from django.conf import settings as django_settings
 
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
