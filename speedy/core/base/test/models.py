@@ -61,14 +61,15 @@ class SiteTestCase(DjangoTestCase):
         }
         self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
         self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
-        self.assertEqual(first=len(django_settings.ALL_LANGUAGE_CODES), second=2)
+        self.assertEqual(first=len(self.all_language_codes), second=2)
         self.assertEqual(first=len(self.all_other_language_codes), second=1)
-        self.assertEqual(first=len(django_settings.ALL_LANGUAGE_CODES), second=len(set(django_settings.ALL_LANGUAGE_CODES)))
+        self.assertEqual(first=len(self.all_language_codes), second=len(set(self.all_language_codes)))
         self.assertEqual(first=len(self.all_other_language_codes), second=len(set(self.all_other_language_codes)))
-        self.assertListEqual(list1=django_settings.ALL_LANGUAGE_CODES, list2=['en', 'he'])
+        self.assertListEqual(list1=self.all_language_codes, list2=['en', 'he'])
         self.assertListEqual(list1=self.all_other_language_codes, list2={'en': ['he'], 'he': ['en']}[self.language_code])
-        self.assertIn(member=self.language_code, container=django_settings.ALL_LANGUAGE_CODES)
-        self.assertSetEqual(set1=set(django_settings.ALL_LANGUAGE_CODES) - {self.language_code}, set2=set(self.all_other_language_codes))
+        self.assertIn(member=self.language_code, container=self.all_language_codes)
+        self.assertNotIn(member=self.language_code, container=self.all_other_language_codes)
+        self.assertSetEqual(set1=set(self.all_language_codes) - {self.language_code}, set2=set(self.all_other_language_codes))
         self.assertEqual(first=self.full_http_host, second='http://{language_code}.{domain}/'.format(language_code=self.language_code, domain=self.site.domain))
         self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(self.all_other_language_codes))
         self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(set(self.all_other_full_http_hosts)))
@@ -85,7 +86,8 @@ class SiteTestCase(DjangoTestCase):
     def set_up(self):
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
         self.language_code = django_settings.LANGUAGE_CODE
-        self.all_other_language_codes = [language_code for language_code in django_settings.ALL_LANGUAGE_CODES if (not (language_code == self.language_code))]
+        self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
+        self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
         self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
         self.all_other_full_http_hosts = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]

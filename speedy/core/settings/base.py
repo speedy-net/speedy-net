@@ -228,7 +228,8 @@ LANGUAGES = [
     ('he', _('Hebrew')),
 ]
 
-ALL_LANGUAGE_CODES = [language_code for language_code, language_name in LANGUAGES]
+# Canceled - we don't need this list, we can just do `for language_code, language_name in django_settings.LANGUAGES`.
+# ALL_LANGUAGE_CODES = [language_code for language_code, language_name in LANGUAGES]
 
 LOCALE_PATHS = [
     str(APP_DIR / 'locale'),

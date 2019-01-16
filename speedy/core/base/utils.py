@@ -94,7 +94,7 @@ def get_all_field_names(base_field_name):
     # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
     field_names = [base_field_name]
     this_language_code = translation.get_language()
-    all_other_language_codes = [language_code for language_code in django_settings.ALL_LANGUAGE_CODES if (not (language_code == this_language_code))]
+    all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == this_language_code))]
     for language_code in [this_language_code] + all_other_language_codes:
         field_name_localized = '{}_{}'.format(base_field_name, language_code)
         field_names.append(field_name_localized)
