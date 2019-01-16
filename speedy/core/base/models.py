@@ -10,7 +10,9 @@ from .validators import regular_udid_validator, small_udid_validator
 
 class ValidateModelMixin(object):
     def save(self, *args, **kwargs):
-        """Call `full_clean` before saving."""
+        """
+        Call `full_clean` before saving.
+        """
         self.full_clean()
         return super().save(*args, **kwargs)
 
