@@ -1,6 +1,12 @@
 from django.contrib import admin
+from speedy.core.accounts.admin import SiteProfileBaseAdmin
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
-admin.site.register(SpeedyNetSiteProfile)
+
+class SpeedyNetSiteProfileAdmin(SiteProfileBaseAdmin):
+    pass
+
+
+admin.site.register(SpeedyNetSiteProfile, SpeedyNetSiteProfileAdmin)
 
 

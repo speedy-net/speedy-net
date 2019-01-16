@@ -8,7 +8,7 @@ class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_net_site_profile'
 
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
-    is_active = models.BooleanField(verbose_name=_('indicates if a user has ever logged in to the site'), default=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = _('Speedy Net Profile')

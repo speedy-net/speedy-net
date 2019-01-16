@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Entity, UserEmailAddress
+from .models import Entity, User, UserEmailAddress
 
 
 class EntityAdmin(admin.ModelAdmin):
@@ -14,6 +14,10 @@ class UserAdmin(admin.ModelAdmin):
 
 class UserEmailAddressAdmin(admin.ModelAdmin):
     pass
+
+
+class SiteProfileBaseAdmin(admin.ModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'user', 'last_visit')
 
 
 admin.site.register(Entity, EntityAdmin)
