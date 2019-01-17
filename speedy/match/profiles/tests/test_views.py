@@ -1,21 +1,10 @@
-from django.conf import settings as django_settings
-from django.test.client import RequestFactory
-
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
-
-if (django_settings.LOGIN_ENABLED):
-    from speedy.core.accounts.test.user_factories import ActiveUserFactory
+from speedy.core.profiles.tests.test_views import UserMixinTextCaseMixin
 
 
 @only_on_speedy_match
-class UserMixinTextCase(SiteTestCase):
-    def set_up(self):
-        super().set_up()
-        self.factory = RequestFactory()
-        self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
-        self.other_user = ActiveUserFactory()
-
+class UserMixinTextCase(UserMixinTextCaseMixin, SiteTestCase):
     def test_redirect_to_login_user_by_username(self):
         r = self.client.get(path='/l-o-o-k_a_t_m-e/')
         self.assertRedirects(response=r, expected_url='/login/?next=/l-o-o-k_a_t_m-e/', status_code=302)
