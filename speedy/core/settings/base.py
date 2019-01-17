@@ -314,11 +314,18 @@ LOGGING = {
 #         },
     },
     'handlers': {
-        'file': {
+        # 'file': {
+        #     'level': 'DEBUG',
+        #     'class': 'logging.FileHandler',
+        #     'filename': '/var/log/speedy_net_django.log',
+        #     'formatter': 'verbose',
+        # },
+        'syslog': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/speedy_net_django.log',
-            'formatter': 'verbose',
+            'class': 'logging.handlers.SysLogHandler',
+            'facility': 'local7',
+            'address': '/dev/log',
+            'formatter': 'verbose'
         },
         'mail_admins': {
             'level': 'ERROR',
@@ -328,47 +335,47 @@ LOGGING = {
     },
     'loggers': {
         'root': {
-            'handlers': ['file', 'mail_admins'],
+            'handlers': ['syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django': {
-            'handlers': ['file', 'mail_admins'],
+            'handlers': ['syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['file', 'mail_admins'],
+            'handlers': ['syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['file', 'mail_admins'],
+            'handlers': ['syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'speedy': {
-            'handlers': ['file', 'mail_admins'],
+            'handlers': ['syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         # 'speedy.net': {
-        #     'handlers': ['file', 'mail_admins'],
+        #     'handlers': ['syslog', 'mail_admins'],
         #     'level': 'DEBUG',
         #     'propagate': True,
         # },
         # 'speedy.match': {
-        #     'handlers': ['file', 'mail_admins'],
+        #     'handlers': ['syslog', 'mail_admins'],
         #     'level': 'DEBUG',
         #     'propagate': True,
         # },
         # 'speedy.composer': {
-        #     'handlers': ['file', 'mail_admins'],
+        #     'handlers': ['syslog', 'mail_admins'],
         #     'level': 'DEBUG',
         #     'propagate': True,
         # },
         # 'speedy.mail': {
-        #     'handlers': ['file', 'mail_admins'],
+        #     'handlers': ['syslog', 'mail_admins'],
         #     'level': 'DEBUG',
         #     'propagate': True,
         # },
