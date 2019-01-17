@@ -3,7 +3,7 @@ from .models import Entity, User, UserEmailAddress
 
 
 class EntityAdmin(admin.ModelAdmin):
-    fields = ('date_created', 'date_updated', 'id', 'username', 'slug', 'photo')
+    # fields = ('date_created', 'date_updated', 'id', 'username', 'slug', 'photo')
     readonly_fields = ('date_created', 'date_updated', 'id', 'username', 'slug', 'photo')
 
 
