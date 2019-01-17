@@ -314,12 +314,6 @@ LOGGING = {
 #         },
     },
     'handlers': {
-        # 'file': {
-        #     'level': 'DEBUG',
-        #     'class': 'logging.FileHandler',
-        #     'filename': '/var/log/speedy_net_django.log',
-        #     'formatter': 'verbose',
-        # },
         'syslog': {
             'level': 'DEBUG',
             'class': 'logging.handlers.SysLogHandler',
