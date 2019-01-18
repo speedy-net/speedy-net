@@ -3,7 +3,7 @@ from django.test.client import RequestFactory
 from django.views import generic
 
 from speedy.core.base.test.models import SiteTestCase
-from speedy.core.base.test.decorators import only_on_sites_with_login, exclude_on_speedy_match
+from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.accounts.tests.test_views import RedirectMeMixin
 from speedy.core.profiles.views import UserMixin
 
