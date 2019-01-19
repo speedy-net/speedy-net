@@ -175,7 +175,7 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy('accounts:activate')
 
     def post(self, request, *args, **kwargs):
-        if (request.user.has_verified_email):
+        if (request.user.has_confirmed_email_or_registered_now):
             return super().post(request=request, *args, **kwargs)
         else:
             return redirect(to=self.get_account_activation_url())

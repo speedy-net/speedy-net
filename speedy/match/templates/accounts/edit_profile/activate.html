@@ -12,7 +12,7 @@
             <div class="page-header">
                 <h1 style="visibility: hidden">X</h1>
             </div>
-            {% if not request.user.has_verified_email %}
+            {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">
                     {% trans 'Please confirm your email address.' context user.get_gender %}
                 </div>

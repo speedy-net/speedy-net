@@ -318,11 +318,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return self.get_first_name()
 
     def has_confirmed_email(self):
-        return self.email_addresses.filter(is_confirmed=True).exists()
+        return (self.email_addresses.filter(is_confirmed=True).exists())
 
     @cached_property
-    def has_verified_email(self):
-        return self.has_confirmed_email() or self.date_created > now() - timedelta(hours=2)
+    def has_confirmed_email_or_registered_now(self):
+        return ((self.has_confirmed_email()) or (self.date_created > now() - timedelta(hours=2)))
 
     def activate(self):
         self.is_active = True
