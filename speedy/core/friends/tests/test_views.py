@@ -321,7 +321,7 @@ class AcceptFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
         self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, fetch_redirect_response=False)
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
         r = self.client.get(path=self.second_user_friends_list_url)
-        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.first_user.get_gender())]) #####-1 TODO
+        self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.second_user.get_gender())]) #####-1 TODO
         self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
 
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
