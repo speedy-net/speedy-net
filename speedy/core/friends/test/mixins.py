@@ -14,7 +14,7 @@ class SpeedyCoreFriendsLanguageMixin(object):
         _friend_request_sent_success_message_dict = {'en': '+++Friend request sent.', 'he': '___'}
         _friend_request_accepted_success_message_dict = {'en': '+++Friend request accepted.', 'he': '___'}
         _friend_request_rejected_success_message_dict = {'en': '+++Friend request rejected.', 'he': '___'}
-        _youve_cancelled_your_friend_request_success_message_dict = {'en': "You've cancelled your friend request.", 'he': '___'}
+        _youve_cancelled_your_friend_request_success_message_dict = {'en': "You've cancelled your friend request.", 'he': 'ביטלת את בקשת החברות שלך.'}
         _you_have_removed_this_user_from_friends_success_message_dict = {'en': '+++You have removed this user from friends.', 'he': '___'}
 
         _friendship_already_requested_error_message_dict = {'en': '+++Friendship already requested.', 'he': '___'}

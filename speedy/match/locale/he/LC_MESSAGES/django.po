@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-12 16:40+0200\n"
+"POT-Creation-Date: 2019-01-21 18:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,237 +310,237 @@ msgctxt "other"
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\forms.py:53
+#: .\accounts\forms.py:52
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:54
+#: .\accounts\forms.py:53
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\models.py:32 .\accounts\models.py:52 .\profiles\widgets.py:41
+#: .\accounts\models.py:34 .\accounts\models.py:54 .\profiles\widgets.py:41
 #: .\profiles\widgets.py:45 .\profiles\widgets.py:49
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:35
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:36
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:35
+#: .\accounts\models.py:37
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:55
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:54
+#: .\accounts\models.py:56
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:55
+#: .\accounts\models.py:57
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:56
+#: .\accounts\models.py:58
 msgid "In a relatioship"
 msgstr ""
 
-#: .\accounts\models.py:57
+#: .\accounts\models.py:59
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:58
+#: .\accounts\models.py:60
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:59
+#: .\accounts\models.py:61
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:60
+#: .\accounts\models.py:62
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:73
+#: .\accounts\models.py:75
 msgid "0 hearts"
 msgstr ""
 
-#: .\accounts\models.py:74
+#: .\accounts\models.py:76
 msgid "1 hearts"
 msgstr ""
 
-#: .\accounts\models.py:75
+#: .\accounts\models.py:77
 msgid "2 hearts"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:78
 msgid "3 hearts"
 msgstr ""
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:79
 msgid "4 hearts"
 msgstr ""
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:80
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:121
+#: .\accounts\models.py:123
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:124
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:123
+#: .\accounts\models.py:125
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:126
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:126
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:126
+#: .\accounts\models.py:128
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:127
+#: .\accounts\models.py:129
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:130
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:131
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:130 .\accounts\validators.py:53
+#: .\accounts\models.py:132 .\accounts\validators.py:54
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:131 .\accounts\validators.py:58
+#: .\accounts\models.py:133 .\accounts\validators.py:59
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:134
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:135
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:136
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:137
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:136
+#: .\accounts\models.py:138
 msgid "diet match"
 msgstr ""
 
-#: .\accounts\models.py:137
+#: .\accounts\models.py:139
 msgid "smoking status match"
 msgstr ""
 
-#: .\accounts\models.py:138
+#: .\accounts\models.py:140
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:144
+#: .\accounts\models.py:146
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:145
+#: .\accounts\models.py:147
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:190 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:192 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
-#: .\accounts\validators.py:38
+#: .\accounts\validators.py:39
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\validators.py:43 .\accounts\validators.py:63
+#: .\accounts\validators.py:44 .\accounts\validators.py:64
 msgid "Please write some text in this field."
 msgstr ""
 
-#: .\accounts\validators.py:48
+#: .\accounts\validators.py:49
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\validators.py:68
+#: .\accounts\validators.py:69
 msgid "Height must be from 1 to 450 cm."
 msgstr "הגובה חייב להיות בין 1 ל-450 ס\"מ."
 
-#: .\accounts\validators.py:73
+#: .\accounts\validators.py:74
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\validators.py:78
+#: .\accounts\validators.py:79
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\validators.py:83
+#: .\accounts\validators.py:84
 msgid "Your marital status is required."
 msgstr ""
 
-#: .\accounts\validators.py:88
+#: .\accounts\validators.py:89
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\validators.py:93
+#: .\accounts\validators.py:94
 msgid "Minimal age to match must be from 0 to 180 years."
 msgstr ""
 
-#: .\accounts\validators.py:98
+#: .\accounts\validators.py:99
 msgid "Maximal age to match must be from 0 to 180 years."
 msgstr ""
 
-#: .\accounts\validators.py:104
+#: .\accounts\validators.py:105
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 
-#: .\accounts\validators.py:110
+#: .\accounts\validators.py:111
 msgid "Please select diet match."
 msgstr ""
 
-#: .\accounts\validators.py:112
+#: .\accounts\validators.py:113
 msgid "At least one diet match option should be 5 hearts."
 msgstr ""
 
-#: .\accounts\validators.py:118
+#: .\accounts\validators.py:119
 msgid "Please select smoking status match."
 msgstr ""
 
-#: .\accounts\validators.py:120
+#: .\accounts\validators.py:121
 msgid "At least one smoking status match option should be 5 hearts."
 msgstr ""
 
-#: .\accounts\validators.py:126
+#: .\accounts\validators.py:127
 msgid "Please select marital status match."
 msgstr ""
 
-#: .\accounts\validators.py:128
+#: .\accounts\validators.py:129
 msgid "At least one marital status match option should be 5 hearts."
 msgstr ""
 
