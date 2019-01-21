@@ -104,6 +104,9 @@ class LimitMaxFriendsMixin(object):
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user=user))
         if (other_user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+            # ~~~~ TODO: this translation may depend also on the other user's gender (it depends on both user genders).
+            # ~~~~ TODO: maybe this translation to Hebrew is not correct and depends on the wrong gender.
+            # ~~~~ TODO: maybe we need different messages in English too, depends on the gender ("them").
             raise ValidationError(pgettext_lazy(context=user.get_gender(), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(other_user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
 
 
