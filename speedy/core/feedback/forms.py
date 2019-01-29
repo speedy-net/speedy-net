@@ -21,10 +21,10 @@ class FeedbackForm(ModelFormWithDefaults):
         else:
             self.fields['sender_name'].required = True
             self.fields['sender_email'].required = True
-            self.helper.add_layout(Row(
-                Div('sender_name', css_class='col-md-6'),
-                Div('sender_email', css_class='col-md-6'),
-            ))
+            # self.helper.add_layout(Row(
+            #     Div('sender_name', css_class='col-md-6'),
+            #     Div('sender_email', css_class='col-md-6'),
+            # ))
             self.helper.add_input(Submit('submit', _('Send')))
 
 
