@@ -1,8 +1,7 @@
-from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, Row
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
-from speedy.core.base.forms import ModelFormWithDefaults
+from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from .models import Feedback
 
 
@@ -13,7 +12,7 @@ class FeedbackForm(ModelFormWithDefaults):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         if (self.defaults.get('sender')):
             del self.fields['sender_name']
             del self.fields['sender_email']

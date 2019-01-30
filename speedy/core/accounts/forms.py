@@ -1,7 +1,6 @@
 from itertools import zip_longest
 
 from crispy_forms.bootstrap import InlineField
-from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
 from django.conf import settings as django_settings
@@ -11,7 +10,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
 
-from speedy.core.base.forms import ModelFormWithDefaults
+from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username
@@ -95,7 +94,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = _('New username')
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', _('Create an account'), css_class='btn-lg btn-arrow-right'))
 
     def save(self, commit=True):
@@ -120,7 +119,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = django_settings.DEFAULT_DATE_FIELD_FORMAT
         self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         # split into two columns
         field_names = list(self.fields.keys())
         self.helper.add_layout(Div(*[
@@ -153,7 +152,7 @@ class ProfileNotificationsForm(forms.ModelForm):
             if (field.name in self._profile_fields):
                 self.fields[field.name] = field.formfield()
                 self.fields[field.name].initial = getattr(self.instance.profile, field.name)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def save(self, commit=True):
@@ -173,7 +172,7 @@ class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
         if ('username' in self.data):
             self.data['username'] = self.data['username'].lower()
         self.fields['username'].label = _('Email or Username')
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_layout(Div(
             'username',
             'password',
@@ -191,7 +190,7 @@ class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
 class PasswordResetForm(auth_forms.PasswordResetForm):
     @property
     def helper(self):
-        helper = FormHelper()
+        helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', _('Submit')))
         return helper
 
@@ -206,7 +205,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.SetPasswordForm):
     @property
     def helper(self):
-        helper = FormHelper()
+        helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', _('Submit')))
         return helper
 
@@ -214,7 +213,7 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_fo
 class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Hidden('_form', 'password'))
         self.helper.add_input(Submit('submit', _('Change')))
 
@@ -227,7 +226,7 @@ class SiteProfileActivationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {site_name} account').format(site_name=_(site.name))))
 
     def save(self, commit=True):
@@ -243,7 +242,7 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
         self.user = kwargs.pop('user')
         super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {site_name} account').format(site_name=_(site.name)), css_class='btn-danger'))
 
     def clean_password(self):
@@ -260,7 +259,7 @@ class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFor
 
     @property
     def helper(self):
-        helper = FormHelper()
+        helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', pgettext_lazy(context=self.defaults['user'].get_gender(), message='Add')))
         return helper
 
@@ -272,7 +271,7 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
 
     @property
     def helper(self):
-        helper = FormHelper()
+        helper = FormHelperWithDefaults()
         helper.form_class = 'form-inline'
         helper.form_action = reverse('accounts:change_email_privacy', kwargs={'pk': self.instance.id})
         helper.field_template = 'bootstrap3/layout/inline_field.html'
@@ -289,7 +288,7 @@ class ProfilePrivacyForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
 

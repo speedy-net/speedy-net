@@ -1,10 +1,10 @@
 from crispy_forms.bootstrap import InlineField
-from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 from django import forms
 from django.urls import reverse
 from django.utils.translation import pgettext_lazy
 
+from speedy.core.base.forms import FormHelperWithDefaults
 from .models import Message
 
 
@@ -19,7 +19,7 @@ class MessageForm(forms.ModelForm):
         self.chat = kwargs.pop('chat', None)
         assert bool(self.from_entity and self.to_entity) != bool(self.from_entity and self.chat)
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         if (self.chat):
             self.helper.form_action = reverse('im:chat_send', kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
         else:

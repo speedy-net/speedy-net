@@ -1,9 +1,9 @@
 from itertools import zip_longest
 
-from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Div, Row, Submit, Field
 from django.utils.translation import pgettext_lazy
 
+from speedy.core.base.forms import FormHelperWithDefaults
 from speedy.match.accounts.forms import SpeedyMatchProfileActivationForm
 
 
@@ -15,7 +15,7 @@ class MatchSettingsMiniForm(SpeedyMatchProfileActivationForm):
 class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelperWithDefaults()
         # split into two columns
         field_names = list(self.fields.keys())
         custom_field_names = ('gender_to_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
