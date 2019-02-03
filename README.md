@@ -2,7 +2,7 @@
 
 Speedy Net is a new social network which will have apps, such as Speedy Match (a dating/matching app for singles) and Speedy Composer and Speedy Mail (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
 
- - Requirements for alpha step 1 - Speedy Net: -
+ - Requirements for alpha step 1 - Speedy Net:
 
     * support English and Hebrew
     * registration
@@ -20,7 +20,7 @@ Speedy Net is a new social network which will have apps, such as Speedy Match (a
     * import all users from PHP/MySQL
     * Users of PHP/MySQL Speedy Net will be able to login with their current username or email, and password
 
- - Requirements for alpha step 1 - Speedy Match: -
+ - Requirements for alpha step 1 - Speedy Match:
 
     * support English and Hebrew
     * registration to Speedy Net
@@ -35,13 +35,13 @@ Speedy Net is a new social network which will have apps, such as Speedy Match (a
     * Every text you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
 
 
- - Requirements for alpha step 2 - Speedy Net: -
+ - Requirements for alpha step 2 - Speedy Net:
 
     * Uploading albums and photos.
     * Creating pages, groups and causes (with or without a username)
     * Liking posts, photos, albums etc.
 
- - Requirements for alpha step 2 - Speedy Match: -
+ - Requirements for alpha step 2 - Speedy Match:
 
     * Search for matches by geographic location (optional)
 
