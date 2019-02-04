@@ -41,7 +41,6 @@ class SpeedyCoreAccountsModelsMixin(object):
 
 # class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
 class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
-    _user_all_the_required_fields_keys = ['first_name', 'last_name', 'username', 'slug', 'password', 'gender', 'date_of_birth']
     _first_password_field_names = ['new_password1']
     _both_password_field_names = ['new_password1', 'new_password2']
 
@@ -77,6 +76,9 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
 
     def _a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(self, email_address):
         return self._a_confirmation_message_was_sent_to_email_address_error_message_to_format.format(email_address=email_address)
+
+    def _user_all_the_required_fields_keys(self):
+        return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'username', 'slug', 'password', 'gender', 'date_of_birth']]
 
     def _registration_form_all_the_required_fields_keys(self):
         return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'last_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
@@ -203,8 +205,9 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         }
         if (value in [None, '']):
             self.assertEqual(first=str_value, second='')
-            errors_dict['first_name'] = [self._this_field_cannot_be_blank_error_message]
-            errors_dict['last_name'] = [self._this_field_cannot_be_blank_error_message]
+            for language_code, language_name in django_settings.LANGUAGES:
+                errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
+                errors_dict['last_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
             errors_dict['password'] = [self._this_field_cannot_be_blank_error_message]
         else:
             self.assertNotEqual(first=str_value, second='')
@@ -365,7 +368,11 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
 
         self.assertSetEqual(set1=set(self._you_cant_change_your_username_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
-        self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys))
+        self.assertNotEqual(first=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), second=set(self._user_all_the_required_fields_keys()))
+        self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=9)
+        self.assertEqual(first=len(set(self._user_all_the_required_fields_keys())), second=7)
+        self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()) - set(self._user_all_the_required_fields_keys())), second=2)
+        self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys()) | {'first_name_en', 'first_name_he', 'last_name_en', 'last_name_he'})
         self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys(), list2=[field_name for field_name in self._registration_form_all_the_required_fields_keys() if (not (field_name in ['email', 'new_password1']))])
         self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_keys()) - {'email', 'new_password1'}, set2=set(self._profile_form_all_the_required_fields_keys()))
         self.assertSetEqual(set1=set(self._profile_form_all_the_required_fields_keys()) | {'email', 'new_password1'}, set2=set(self._registration_form_all_the_required_fields_keys()))

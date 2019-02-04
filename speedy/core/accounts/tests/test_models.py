@@ -325,9 +325,9 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         }
 
     def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
-        user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys})
-        # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
-        # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys}) #### TODO
+        user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys()})
+        # user = User(**{field_name: (str(number) if (field_name in ['username', 'slug', 'date_of_birth']) else number) for field_name in self._user_all_the_required_fields_keys()}) #### TODO
+        # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys()}) #### TODO
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -399,7 +399,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
     def test_cannot_create_user_with_all_the_required_fields_blank(self):
-        user = User(**{field_name: '' for field_name in self._user_all_the_required_fields_keys})
+        user = User(**{field_name: '' for field_name in self._user_all_the_required_fields_keys()})
         with self.assertRaises(ValidationError) as cm:
             user.save_user_and_profile()
             # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -407,7 +407,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_cannot_create_user_with_all_the_required_fields_zero(self):
         self.run_test_cannot_create_user_with_all_the_required_fields_number(number=0)
-        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys()})
         # with self.assertRaises(ValidationError) as cm:
         #     user.save_user_and_profile()
         #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -415,7 +415,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_cannot_create_user_with_all_the_required_fields_minus_one(self):
         self.run_test_cannot_create_user_with_all_the_required_fields_number(number=-1)
-        # user = User(**{field_name: -1 for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: -1 for field_name in self._user_all_the_required_fields_keys()})
         # with self.assertRaises(ValidationError) as cm:
         #     user.save_user_and_profile()
         #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -423,7 +423,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_cannot_create_user_with_all_the_required_fields_ninety_nine(self):
         self.run_test_cannot_create_user_with_all_the_required_fields_number(number=99)
-        # user = User(**{field_name: 99 for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: 99 for field_name in self._user_all_the_required_fields_keys()})
         # with self.assertRaises(ValidationError) as cm:
         #     user.save_user_and_profile()
         #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -431,7 +431,7 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
 
     def test_cannot_create_user_with_all_the_required_fields_one(self):
         self.run_test_cannot_create_user_with_all_the_required_fields_number(number=1, gender_is_valid=True)
-        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys})
+        # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys()})
         # with self.assertRaises(ValidationError) as cm:
         #     user.save_user_and_profile()
         #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
@@ -722,8 +722,8 @@ class UserEnglishTestCase(UserTestCaseMixin, SiteTestCase):
     def set_up(self):
         super().set_up()
         self.data.update({
-            'first_name': "Doron",
-            'last_name': "Matalon",
+            'first_name_en': "Doron",
+            'last_name_en': "Matalon",
         })
         self.first_name = "Doron"
         self.last_name = "Matalon"
@@ -739,8 +739,8 @@ class UserHebrewTestCase(UserTestCaseMixin, SiteTestCase):
     def set_up(self):
         super().set_up()
         self.data.update({
-            'first_name': "דורון",
-            'last_name': "מטלון",
+            'first_name_he': "דורון",
+            'last_name_he': "מטלון",
         })
         self.first_name = "דורון"
         self.last_name = "מטלון"
