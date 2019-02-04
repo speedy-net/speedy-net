@@ -13,6 +13,8 @@ from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
+from translated_fields import TranslatedField
+
 # from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings? # ~~~~ TODO: remove this line!
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
@@ -219,8 +221,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist (eats animals)")),
         )
 
-    first_name = models.CharField(verbose_name=_('first name'), max_length=75)
-    last_name = models.CharField(verbose_name=_('last name'), max_length=75)
+    first_name = TranslatedField(
+        models.CharField(verbose_name=_('first name'), max_length=75)
+    )
+    last_name = TranslatedField(
+        models.CharField(verbose_name=_('last name'), max_length=75)
+    )
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?

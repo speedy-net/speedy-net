@@ -6,6 +6,8 @@ from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import gettext_lazy as _, pgettext_lazy, get_language
 from django.core.exceptions import ValidationError
 
+from translated_fields import TranslatedField
+
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 
@@ -127,11 +129,21 @@ class SiteProfile(SiteProfileBase):
     # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
     smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
     marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
-    profile_description = models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
-    city = models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
-    children = models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True)
-    more_children = models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
-    match_description = models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
+    profile_description = TranslatedField(
+        models.TextField(verbose_name=_('Few words about me'), blank=True, null=True)
+    )
+    city = TranslatedField(
+        models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True)
+    )
+    children = TranslatedField(
+        models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True)
+    )
+    more_children = TranslatedField(
+        models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True)
+    )
+    match_description = TranslatedField(
+        models.TextField(verbose_name=_('My ideal match'), blank=True, null=True)
+    )
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_MATCH_ALLOWED)
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
