@@ -2,7 +2,8 @@ Django
 django-crispy-forms
 django-environ
 django-friendship
-django-modeltranslation
+# django-modeltranslation
+django-translated-fields
 factory-boy
 Faker
 Pillow
