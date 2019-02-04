@@ -49,8 +49,8 @@ USE_SSL = False
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',
-
+    # 'modeltranslation',
+    #
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -290,8 +290,8 @@ FIXTURE_DIRS = [
 
 # SITE_PROFILE_ACTIVATION_FORM = 'speedy.core.accounts.forms.SiteProfileActivationForm'
 #
-MODELTRANSLATION_ENABLE_FALLBACKS = False
-
+# MODELTRANSLATION_ENABLE_FALLBACKS = False
+#
 
 # ~~~~ TODO: check if this is good for production!
 LOGGING = {
