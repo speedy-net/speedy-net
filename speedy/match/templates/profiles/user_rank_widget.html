@@ -1,10 +1,10 @@
 {% load i18n %}
 {% load rules %}
 
-{% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
+{% has_perm 'accounts.view_profile_rank' viewer entity as can_view_profile_rank %}
 
 
-{% if can_view_profile %}
+{% if can_view_profile_rank %}
     <div class="col-sm-8 ml-auto mb-4">
         <div class="card">
             <div class="card-header">
