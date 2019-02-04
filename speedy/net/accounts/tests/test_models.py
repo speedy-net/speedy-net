@@ -13,12 +13,12 @@ if (django_settings.LOGIN_ENABLED):
 @only_on_speedy_net
 class SpeedyNetSiteProfileTestCase(SiteTestCase):
     def get_default_user_doron(self):
-        user = DefaultUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.save_user_and_profile()
         return user
 
     def get_inactive_user_jennifer(self):
-        user = InactiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = InactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.save_user_and_profile()
         return user
 
