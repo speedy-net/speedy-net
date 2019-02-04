@@ -27,13 +27,13 @@ class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, Speed
     _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
 
     def get_default_user_doron(self):
-        user = DefaultUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.save_user_and_profile()
         return user
 
     def get_active_user_jennifer(self):
-        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGETARIAN
         user.save_user_and_profile()
         return user
@@ -1037,7 +1037,7 @@ class SpeedyMatchSiteProfileHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, 
 @only_on_speedy_match
 class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
     def get_active_user_doron(self):
-        user = ActiveUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
+        user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
         user.diet = User.DIET_VEGETARIAN
         user.speedy_match_profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_NO
         user.speedy_match_profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
@@ -1048,7 +1048,7 @@ class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
         return user
 
     def get_active_user_jennifer(self):
-        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
         user.diet = User.DIET_VEGAN
         user.speedy_match_profile.smoking_status = SpeedyMatchSiteProfile.SMOKING_STATUS_YES
         user.speedy_match_profile.marital_status = SpeedyMatchSiteProfile.MARITAL_STATUS_SINGLE
