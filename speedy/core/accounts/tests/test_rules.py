@@ -9,13 +9,13 @@ if (django_settings.LOGIN_ENABLED):
 
 class ViewProfileTestCaseMixin(object):
     def get_active_user_doron(self):
-        user = ActiveUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon", gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", gender=User.GENDER_FEMALE)
         user.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
         user.save_user_and_profile()
         return user
 
     def get_active_user_jennifer(self):
-        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly", gender=User.GENDER_FEMALE)
+        user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", gender=User.GENDER_FEMALE)
         user.save_user_and_profile()
         return user
 

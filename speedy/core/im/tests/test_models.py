@@ -11,12 +11,12 @@ if (django_settings.LOGIN_ENABLED):
 @only_on_sites_with_login
 class ChatTestCase(SiteTestCase):
     def get_active_user_doron(self):
-        user = ActiveUserFactory(first_name="Doron", last_name="Matalon", slug="doron-matalon")
+        user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon")
         user.save_user_and_profile()
         return user
 
     def get_active_user_jennifer(self):
-        user = ActiveUserFactory(first_name="Jennifer", last_name="Connelly", slug="jennifer-connelly")
+        user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly")
         user.save_user_and_profile()
         return user
 

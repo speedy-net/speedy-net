@@ -92,7 +92,7 @@ def string_is_not_empty(s):
 
 def get_all_field_names(base_field_name):
     # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
-    field_names = [base_field_name]
+    field_names = []
     this_language_code = translation.get_language()
     all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == this_language_code))]
     for language_code in [this_language_code] + all_other_language_codes:
@@ -102,7 +102,7 @@ def get_all_field_names(base_field_name):
         base_field_name=base_field_name,
         field_names=field_names,
     ))
-    assert (len(field_names) == 3)
+    assert (len(field_names) == 2)
     # print(field_names) # ~~~~ TODO: remove this line!
     return field_names
 
