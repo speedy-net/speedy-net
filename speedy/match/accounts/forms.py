@@ -5,8 +5,8 @@ from django import forms
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
-from modeltranslation.forms import TranslationModelForm
-
+# from modeltranslation.forms import TranslationModelForm
+#
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
@@ -31,7 +31,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
         return data.get(name)
 
 
-class SpeedyMatchProfileActivationForm(TranslationModelForm):
+class SpeedyMatchProfileActivationForm(forms.ModelForm):
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
