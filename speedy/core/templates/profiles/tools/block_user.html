@@ -12,8 +12,7 @@
     </button>
     <div class="dropdown-menu">
         {% if can_block %}
-            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('
-                    {% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
+            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
                 {% csrf_token %}
                 <button class="dropdown-item" type="submit">
                     {% trans 'Block ' context request.user.get_gender %}{{ user }}
