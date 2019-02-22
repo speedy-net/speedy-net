@@ -3,7 +3,7 @@ Django==1.11.20
 django-crispy-forms==1.7.2
 django-environ==0.4.5
 django-friendship==1.8.0
-django-modeltranslation==0.12.2
+django-modeltranslation==0.13
 factory-boy==2.11.1
 Faker==1.0.2
 Pillow==5.4.1
