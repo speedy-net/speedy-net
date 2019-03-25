@@ -17,6 +17,7 @@ before_script:
 install:
   - cp env.ini.tests env.ini
   - pip install -r requirements.txt
+  - pip install --upgrade virtualenv
   - pip freeze
   - pwd
   - lsb_release -a
