@@ -253,13 +253,7 @@ To upgrade all the requirements (including Django), run:
 
     pip install --upgrade -r requirements-without-versions.txt
 
-Currently all the required packages support Django 2.0 with stable releases, except django-modeltranslation. You can install the latest beta release of django-modeltranslation (which supports Django 2.0) with this command:
-
-    pip install --upgrade --pre django-modeltranslation
-
-But it's not recommended to use non-stable releases, therefore we didn't upgrade Django to 2.0 yet (and we are using the latest stable release of django-modeltranslation which doesn't support Django 2.0).
-
-See also [Support Django 2.0 and 2.1 · Issue #472 · deschler/django-modeltranslation](https://github.com/deschler/django-modeltranslation/issues/472)
+We are still using Django 1.11, but we are going to upgrade Django soon.
 
 ## How to make migrations and migrate
 
