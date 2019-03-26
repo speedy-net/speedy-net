@@ -52,7 +52,7 @@ You can find more details in the specifications.
 
 ## How to setup the project and run locally
 
-First make sure that you're using Python 3.4 or later.
+First make sure that you're using Python 3.5 or later (we recommend the latest Python version).
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
