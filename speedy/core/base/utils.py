@@ -9,6 +9,9 @@ from dateutil.relativedelta import relativedelta
 
 from django.conf import settings as django_settings
 from django.utils import translation
+from django.utils.translation import get_language
+
+from translated_fields import to_attribute as translated_fields_to_attribute
 
 logger = logging.getLogger(__name__)
 
@@ -105,6 +108,11 @@ def get_all_field_names(base_field_name):
     assert (len(field_names) == 2)
     # print(field_names) # ~~~~ TODO: remove this line!
     return field_names
+
+
+def to_attribute(name, language_code=None):
+    language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
+    return translated_fields_to_attribute(name=name, language_code=language_code)
 
 
 # def conditional_method_or_class(conditional_function):

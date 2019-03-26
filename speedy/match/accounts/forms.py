@@ -5,8 +5,8 @@ from django import forms
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
-# from modeltranslation.forms import TranslationModelForm
-#
+from speedy.core.base.utils import to_attribute
+
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
@@ -37,12 +37,12 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
         'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
         'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
-        'city': [speedy_match_accounts_validators.validate_city],
+        to_attribute(name='city'): [speedy_match_accounts_validators.validate_city],
         'marital_status': [speedy_match_accounts_validators.validate_marital_status],
-        'children': [speedy_match_accounts_validators.validate_children],
-        'more_children': [speedy_match_accounts_validators.validate_more_children],
-        'profile_description': [speedy_match_accounts_validators.validate_profile_description],
-        'match_description': [speedy_match_accounts_validators.validate_match_description],
+        to_attribute(name='children'): [speedy_match_accounts_validators.validate_children],
+        to_attribute(name='more_children'): [speedy_match_accounts_validators.validate_more_children],
+        to_attribute(name='profile_description'): [speedy_match_accounts_validators.validate_profile_description],
+        to_attribute(name='match_description'): [speedy_match_accounts_validators.validate_match_description],
         'gender_to_match': [speedy_match_accounts_validators.validate_gender_to_match],
         'diet_match': [speedy_match_accounts_validators.validate_diet_match],
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
@@ -54,14 +54,14 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
 
     class Meta:
         model = SpeedyMatchSiteProfile
-        fields = ('photo', 'profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'match_description', 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
+        fields = ('photo', to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'marital_status', 'gender_to_match', to_attribute(name='match_description'), 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
         widgets = {
-            'profile_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            'children': forms.TextInput(),
-            'more_children': forms.TextInput(),
+            to_attribute(name='profile_description'): forms.Textarea(attrs={'rows': 3, 'cols': 25}),
+            to_attribute(name='children'): forms.TextInput(),
+            to_attribute(name='more_children'): forms.TextInput(),
             'smoking_status': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
-            'match_description': forms.Textarea(attrs={'rows': 3, 'cols': 25}),
+            to_attribute(name='match_description'): forms.Textarea(attrs={'rows': 3, 'cols': 25}),
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
             'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),
             'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_CHOICES),
@@ -71,6 +71,7 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         fields = self.get_fields()
+        print(fields) # ~~~~ TODO: remove this line!
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
