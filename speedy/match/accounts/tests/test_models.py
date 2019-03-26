@@ -106,7 +106,7 @@ class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, Speed
         return default_value
 
     def validate_all_user_values(self, user):
-        all_fields = ['photo', 'profile_description', 'city', 'children', 'more_children', 'match_description', 'height', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'marital_status_match']
+        all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'marital_status_match']]
         _all_fields = []
         for step in utils.get_steps_range():
             fields = utils.get_step_fields_to_validate(step=step)
@@ -418,6 +418,8 @@ class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, Speed
                         else:
                             invalid_values_with_valid_ranks.append(value_to_test)
             values_to_test.extend(valid_values_to_save)
+        else:
+            raise Exception("Unexpected: field_name={}".format(field_name))
         if (valid_values_to_assign is None):
             valid_values_to_assign = values_to_test
         if (invalid_values is None):

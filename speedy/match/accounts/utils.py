@@ -29,15 +29,15 @@ def get_step_fields_to_validate(step):
 def validate_field(field_name, user):
     if (field_name in ['photo']):
         validators.validate_photo(photo=user.photo)
-    elif (field_name in ['profile_description']):
+    elif (field_name in ['profile_description', to_attribute(name='profile_description')]):
         validators.validate_profile_description(profile_description=user.speedy_match_profile.profile_description)
-    elif (field_name in ['city']):
+    elif (field_name in ['city', to_attribute(name='city')]):
         validators.validate_city(city=user.speedy_match_profile.city)
-    elif (field_name in ['children']):
+    elif (field_name in ['children', to_attribute(name='children')]):
         validators.validate_children(children=user.speedy_match_profile.children)
-    elif (field_name in ['more_children']):
+    elif (field_name in ['more_children', to_attribute(name='more_children')]):
         validators.validate_more_children(more_children=user.speedy_match_profile.more_children)
-    elif (field_name in ['match_description']):
+    elif (field_name in ['match_description', to_attribute(name='match_description')]):
         validators.validate_match_description(match_description=user.speedy_match_profile.match_description)
     elif (field_name in ['height']):
         validators.validate_height(height=user.speedy_match_profile.height)
@@ -61,5 +61,7 @@ def validate_field(field_name, user):
         validators.validate_smoking_status_match(smoking_status_match=user.speedy_match_profile.smoking_status_match)
     elif (field_name in ['marital_status_match']):
         validators.validate_marital_status_match(marital_status_match=user.speedy_match_profile.marital_status_match)
+    else:
+        raise Exception("Unexpected: field_name={}".format(field_name))
 
 
