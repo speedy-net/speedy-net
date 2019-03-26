@@ -71,7 +71,7 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         fields = self.get_fields()
-        print(fields) # ~~~~ TODO: remove this line!
+        # print(fields) # ~~~~ TODO: remove this line!
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
