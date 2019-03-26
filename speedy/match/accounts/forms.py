@@ -34,16 +34,16 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 class SpeedyMatchProfileActivationForm(forms.ModelForm):
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
-        'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
-        'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
-        to_attribute(name='city'): [speedy_match_accounts_validators.validate_city],
         'marital_status': [speedy_match_accounts_validators.validate_marital_status],
+        to_attribute(name='profile_description'): [speedy_match_accounts_validators.validate_profile_description],
+        to_attribute(name='city'): [speedy_match_accounts_validators.validate_city],
         to_attribute(name='children'): [speedy_match_accounts_validators.validate_children],
         to_attribute(name='more_children'): [speedy_match_accounts_validators.validate_more_children],
-        to_attribute(name='profile_description'): [speedy_match_accounts_validators.validate_profile_description],
         to_attribute(name='match_description'): [speedy_match_accounts_validators.validate_match_description],
         'gender_to_match': [speedy_match_accounts_validators.validate_gender_to_match],
+        'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
+        'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
         'diet_match': [speedy_match_accounts_validators.validate_diet_match],
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
@@ -56,11 +56,12 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
         model = SpeedyMatchSiteProfile
         fields = ('photo', to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'marital_status', 'gender_to_match', to_attribute(name='match_description'), 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
         widgets = {
-            to_attribute(name='profile_description'): forms.Textarea(attrs={'rows': 3, 'cols': 25}),
-            to_attribute(name='children'): forms.TextInput(),
-            to_attribute(name='more_children'): forms.TextInput(),
             'smoking_status': forms.RadioSelect(),
             'marital_status': forms.RadioSelect(),
+            to_attribute(name='profile_description'): forms.Textarea(attrs={'rows': 3, 'cols': 25}),
+            to_attribute(name='city'): forms.TextInput(),
+            to_attribute(name='children'): forms.TextInput(),
+            to_attribute(name='more_children'): forms.TextInput(),
             to_attribute(name='match_description'): forms.Textarea(attrs={'rows': 3, 'cols': 25}),
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
             'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),

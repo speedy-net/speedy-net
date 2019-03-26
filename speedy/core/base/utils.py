@@ -88,6 +88,8 @@ def reflection_import(name):
 def string_is_not_empty(s):
     if (s in [None, ""]):
         return False
+    # if (s in ["!!!"]): # ~~~~ TODO: remove this line! (for debugging)
+    #     return False   # ~~~~ TODO: remove this line! (for debugging)
     if (isinstance(s, str)):
         return True
     return False
