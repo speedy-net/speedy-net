@@ -6,7 +6,6 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.utils import to_attribute
-
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm

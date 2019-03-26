@@ -1,5 +1,6 @@
 from django.conf import settings as django_settings
 
+from speedy.core.base.utils import to_attribute
 from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
 from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
@@ -376,6 +377,10 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys(), list2=[field_name for field_name in self._registration_form_all_the_required_fields_keys() if (not (field_name in ['email', 'new_password1']))])
         self.assertSetEqual(set1=set(self._registration_form_all_the_required_fields_keys()) - {'email', 'new_password1'}, set2=set(self._profile_form_all_the_required_fields_keys()))
         self.assertSetEqual(set1=set(self._profile_form_all_the_required_fields_keys()) | {'email', 'new_password1'}, set2=set(self._registration_form_all_the_required_fields_keys()))
+        self.assertNotEqual(first=[to_attribute(name='first_name'), to_attribute(name='last_name')], second=['first_name', 'last_name'])
+        self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:2], list2=[to_attribute(name='first_name'), to_attribute(name='last_name')])
+        self.assertListEqual(list1=self._registration_form_all_the_required_fields_keys()[:2], list2=[to_attribute(name='first_name'), to_attribute(name='last_name')])
+        self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys()[:2], list2=[to_attribute(name='first_name'), to_attribute(name='last_name')])
 
     def assert_required_fields_and_errors_dict(self, required_fields, errors_dict):
         self.assertSetEqual(set1=set(errors_dict.keys()), set2=set(required_fields))
