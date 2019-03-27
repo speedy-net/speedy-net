@@ -54,19 +54,19 @@ def normalize_username(username):
     return username
 
 
-def get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
-    try:
-        age = get_age(date_of_birth=date_of_birth)
-    except AttributeError:
-        age = default
-    return age
-
-
 def get_age(date_of_birth):
     today = date.today()
     age = today.year - date_of_birth.year
     if ((today.month, today.day) < (date_of_birth.month, date_of_birth.day)):
         age -= 1
+    return age
+
+
+def get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
+    try:
+        age = get_age(date_of_birth=date_of_birth)
+    except AttributeError:
+        age = default
     return age
 
 
