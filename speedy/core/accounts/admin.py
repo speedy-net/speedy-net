@@ -1,4 +1,7 @@
 from django.contrib import admin
+
+from translated_fields import TranslatedFieldAdmin
+
 from .models import Entity, User, UserEmailAddress
 
 
@@ -7,16 +10,16 @@ class EntityAdmin(admin.ModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id', 'username', 'slug', 'photo')
 
 
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(TranslatedFieldAdmin, admin.ModelAdmin):
     # fields = ('date_created', 'date_updated')
-    readonly_fields = ('date_created', 'date_updated', 'id', 'first_name', 'last_name')
+    readonly_fields = ('date_created', 'date_updated', 'id')
 
 
 class UserEmailAddressAdmin(admin.ModelAdmin):
     pass
 
 
-class SiteProfileBaseAdmin(admin.ModelAdmin):
+class SiteProfileBaseAdmin(TranslatedFieldAdmin, admin.ModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'user', 'last_visit')
 
 
