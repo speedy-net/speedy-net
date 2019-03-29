@@ -7,7 +7,7 @@ from django.db import migrations
 from speedy.core.base.utils import string_is_not_empty
 
 
-def update_names(apps, schema_editor):
+def forwards_func(apps, schema_editor):
     User = apps.get_model("accounts", "User")
     for user in User.objects.all():
         save = False
@@ -23,6 +23,14 @@ def update_names(apps, schema_editor):
             user.save()
 
 
+def backwards_func(apps, schema_editor):
+    User = apps.get_model("accounts", "User")
+    for user in User.objects.all():
+        setattr(user, 'first_name', getattr(user, 'first_name_en'))
+        setattr(user, 'last_name', getattr(user, 'last_name_en'))
+        user.save()
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -30,5 +38,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(update_names),
+        migrations.RunPython(forwards_func, backwards_func),
     ]
