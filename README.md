@@ -64,7 +64,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
 
 Next:
 
-    python -m pip install -U pip
+    python -m pip install --upgrade pip
     pip install -r requirements.txt
     cp env.ini.example env.ini
 
