@@ -82,10 +82,13 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     objects = EntityManager()
 
-    validators = {
-        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
-    }
+    @property
+    def validators(self):
+        validators = {
+            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+        }
+        return validators
 
     class Meta:
         verbose_name = _('entity')
@@ -239,11 +242,14 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     objects = UserManager()
 
-    validators = {
-        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
-        'date_of_birth': [validate_date_of_birth_in_model],
-    }
+    @property
+    def validators(self):
+        validators = {
+            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+            'date_of_birth': [validate_date_of_birth_in_model],
+        }
+        return validators
 
     @property
     def email(self):
@@ -409,9 +415,12 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
     access = UserAccessField(verbose_name=_('who can see this email'), default=UserAccessField.ACCESS_ME)
 
-    validators = {
-        'email': ["validate_email"],
-    }
+    @property
+    def validators(self):
+        validators = {
+            'email': ["validate_email"],
+        }
+        return validators
 
     class Meta:
         verbose_name = _('email address')
