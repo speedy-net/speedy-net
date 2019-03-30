@@ -153,7 +153,7 @@ class UserFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_can_send_friend_request_if_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_can_send_friend_request_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -177,7 +177,7 @@ class UserFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_cannot_send_friend_request_if_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_cannot_send_friend_request_if_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -283,7 +283,7 @@ class AcceptFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -305,7 +305,7 @@ class AcceptFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_cannot_accept_it_if_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -327,7 +327,7 @@ class AcceptFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
@@ -349,7 +349,7 @@ class AcceptFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
     @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
     def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
         # from django.conf import settings as django_settings
         print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####

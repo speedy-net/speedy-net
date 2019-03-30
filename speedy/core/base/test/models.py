@@ -23,23 +23,23 @@ class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
 class SiteTestCase(DjangoTestCase):
     maxDiff = None
 
-    def _1___set_up(self, django_settings): #### ~~~~ TODO: remove this function
-        # ~~~~ TODO: remove all the following lines.
-        from speedy.core.accounts.models import Entity, User
-        from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
-        Entity.settings = django_settings.ENTITY_SETTINGS
-        Entity.validators = {
-            'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-            'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
-        }
-        User.settings = django_settings.USER_SETTINGS
-        User.validators = {
-            'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-            'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
-            'date_of_birth': [validate_date_of_birth_in_model],
-        }
-        # raise Exception
-        # ~~~~ TODO: remove all the above lines.
+    # def _1___set_up(self, django_settings): #### ~~~~ TODO: remove this function
+    #     # ~~~~ TODO: remove all the following lines.
+    #     from speedy.core.accounts.models import Entity, User
+    #     from speedy.core.accounts.validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model
+    #     Entity.settings = django_settings.ENTITY_SETTINGS
+    #     Entity.validators = {
+    #         'username': get_username_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+    #         'slug': get_slug_validators(min_username_length=Entity.settings.MIN_USERNAME_LENGTH, max_username_length=Entity.settings.MAX_USERNAME_LENGTH, min_slug_length=Entity.settings.MIN_SLUG_LENGTH, max_slug_length=Entity.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+    #     }
+    #     User.settings = django_settings.USER_SETTINGS
+    #     User.validators = {
+    #         'username': get_username_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+    #         'slug': get_slug_validators(min_username_length=User.settings.MIN_USERNAME_LENGTH, max_username_length=User.settings.MAX_USERNAME_LENGTH, min_slug_length=User.settings.MIN_SLUG_LENGTH, max_slug_length=User.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+    #         'date_of_birth': [validate_date_of_birth_in_model],
+    #     }
+    #     # raise Exception
+    #     # ~~~~ TODO: remove all the above lines.
 
     def _pre_setup(self):
         super()._pre_setup()
@@ -84,7 +84,7 @@ class SiteTestCase(DjangoTestCase):
         self.assertTrue(expr=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33))
 
     def set_up(self):
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        # self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
         self.language_code = django_settings.LANGUAGE_CODE
         self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
         self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]

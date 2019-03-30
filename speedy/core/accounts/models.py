@@ -245,6 +245,19 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         'date_of_birth': [validate_date_of_birth_in_model],
     }
 
+    # @property
+    # def settings(self):
+    #     return django_settings.USER_SETTINGS
+    #
+    # @property
+    # def validators(self):
+    #     validators = {
+    #         'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+    #         'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+    #         'date_of_birth': [validate_date_of_birth_in_model],
+    #     }
+    #     return validators
+
     @property
     def email(self):
         try:
