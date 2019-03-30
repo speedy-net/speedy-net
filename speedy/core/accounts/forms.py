@@ -253,22 +253,18 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
 
 
 class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFormWithDefaults):
-    class Meta:
-        model = UserEmailAddress
-        fields = ('email',)
-
     @property
     def helper(self):
         helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', pgettext_lazy(context=self.defaults['user'].get_gender(), message='Add')))
         return helper
 
-
-class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
     class Meta:
         model = UserEmailAddress
-        fields = ('access',)
+        fields = ('email',)
 
+
+class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
     @property
     def helper(self):
         helper = FormHelperWithDefaults()
@@ -279,6 +275,10 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
             InlineField('access', css_class='input-sm'),
         )
         return helper
+
+    class Meta:
+        model = UserEmailAddress
+        fields = ('access',)
 
 
 class ProfilePrivacyForm(forms.ModelForm):

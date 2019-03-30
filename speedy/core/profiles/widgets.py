@@ -6,6 +6,10 @@ class Widget(object):
     template_name = None
     permission_required = 'accounts.view_profile'
 
+    @property
+    def html(self):
+        return self.render()
+
     def __init__(self, request, entity, viewer):
         self.request = request
         self.entity = entity
@@ -27,10 +31,6 @@ class Widget(object):
         if (not (self.viewer.has_perm(perm=self.get_permission_required(), obj=self.entity))):
             return ''
         return mark_safe(render_to_string(template_name=self.get_template_name(), context=self.get_context_data(), request=self.request))
-
-    @property
-    def html(self):
-        return self.render()
 
 
 class UserPhotoWidget(Widget):

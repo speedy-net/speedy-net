@@ -15,6 +15,10 @@ class File(TimeStampedModel):
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file_size'), default=0)
 
+    @property
+    def basename(self):
+        return os.path.basename(self.file.name)
+
     class Meta:
         verbose_name = _('file')
         verbose_name_plural = _('uploaded files')
@@ -34,10 +38,6 @@ class File(TimeStampedModel):
     def store(self):
         self.is_stored = True
         self.save(update_fields={'is_stored', 'size'})
-
-    @property
-    def basename(self):
-        return os.path.basename(self.file.name)
 
 
 class Image(File):

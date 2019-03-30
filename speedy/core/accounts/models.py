@@ -245,6 +245,33 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         'date_of_birth': [validate_date_of_birth_in_model],
     }
 
+    @property
+    def email(self):
+        try:
+            return self.email_addresses.get(is_primary=True).email
+        except UserEmailAddress.DoesNotExist:
+            return None
+
+    @property
+    def profile(self):
+        if (not (hasattr(self, '_profile'))):
+            self.refresh_all_profiles()
+        return self._profile
+
+    @property
+    def speedy_net_profile(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_speedy_net_profile'))):
+                self.refresh_all_profiles()
+            return self._speedy_net_profile
+
+    @property
+    def speedy_match_profile(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_speedy_match_profile'))):
+                self.refresh_all_profiles()
+            return self._speedy_match_profile
+
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
@@ -298,13 +325,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_absolute_url(self):
         return reverse('profiles:user', kwargs={'slug': self.slug})
 
-    @property
-    def email(self):
-        try:
-            return self.email_addresses.get(is_primary=True).email
-        except UserEmailAddress.DoesNotExist:
-            return None
-
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         addresses = self.email_addresses.filter(is_primary=True)
         if (not (send_to_unconfirmed)):
@@ -333,26 +353,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def activate(self):
         self.is_active = True
         self.save_user_and_profile()
-
-    @property
-    def profile(self):
-        if (not (hasattr(self, '_profile'))):
-            self.refresh_all_profiles()
-        return self._profile
-
-    @property
-    def speedy_net_profile(self):
-        if (django_settings.LOGIN_ENABLED):
-            if (not (hasattr(self, '_speedy_net_profile'))):
-                self.refresh_all_profiles()
-            return self._speedy_net_profile
-
-    @property
-    def speedy_match_profile(self):
-        if (django_settings.LOGIN_ENABLED):
-            if (not (hasattr(self, '_speedy_match_profile'))):
-                self.refresh_all_profiles()
-            return self._speedy_match_profile
 
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
         if (model is None):
@@ -478,6 +478,10 @@ class SiteProfileBase(TimeStampedModel):
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 
+    @property
+    def is_active_or_superuser(self):
+        return self.is_active or self.user.is_superuser
+
     class Meta:
         abstract = True
 
@@ -507,9 +511,5 @@ class SiteProfileBase(TimeStampedModel):
 
     def call_after_verify_email_address(self):
         raise NotImplementedError("call_after_verify_email_address is not implemented.")
-
-    @property
-    def is_active_or_superuser(self):
-        return self.is_active or self.user.is_superuser
 
 

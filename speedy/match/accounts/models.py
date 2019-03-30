@@ -154,6 +154,10 @@ class SiteProfile(SiteProfileBase):
 
     objects = SiteProfileManager()
 
+    @property
+    def is_active(self):
+        return ((self.user.is_active) and (get_language() in self.get_active_languages()))
+
     class Meta:
         verbose_name = _('Speedy Match Profile')
         verbose_name_plural = _('Speedy Match Profiles')
@@ -250,10 +254,6 @@ class SiteProfile(SiteProfileBase):
             return rank
         else:
             return self.__class__.RANK_0
-
-    @property
-    def is_active(self):
-        return ((self.user.is_active) and (get_language() in self.get_active_languages()))
 
     def deactivate(self):
         self._set_active_languages([])

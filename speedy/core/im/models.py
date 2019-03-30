@@ -19,6 +19,21 @@ class Chat(TimeStampedModel):
 
     objects = ChatManager()
 
+    @property
+    def is_private(self):
+        return (not (self.is_group))
+
+    @property
+    def participants(self):
+        if (self.is_private):
+            return (self.ent1, self.ent2)
+        else:
+            return self.group.order_by('date_created')
+
+    @property
+    def participants_count(self):
+        return len(self.participants)
+
     class Meta:
         verbose_name = _('chat')
         verbose_name_plural = _('chats')
@@ -36,10 +51,6 @@ class Chat(TimeStampedModel):
         self.site = Site.objects.get_current()
         return super().save(*args, **kwargs)
 
-    @property
-    def is_private(self):
-        return (not (self.is_group))
-
     def get_slug(self, current_user: Entity):
         if (self.is_private):
             if (self.ent1_id == current_user.id):
@@ -47,17 +58,6 @@ class Chat(TimeStampedModel):
             elif (self.ent2_id == current_user.id):
                 return self.ent1.slug
         return self.id
-
-    @property
-    def participants(self):
-        if (self.is_private):
-            return (self.ent1, self.ent2)
-        else:
-            return self.group.order_by('date_created')
-
-    @property
-    def participants_count(self):
-        return len(self.participants)
 
     def get_other_participants(self, entity):
         return [p for p in self.participants if (p.id != entity.id)]
