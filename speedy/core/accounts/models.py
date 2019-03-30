@@ -72,7 +72,7 @@ class CleanAndValidateAllFieldsMixin(object):
 
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
-    settings = django_settings.ENTITY_SETTINGS
+    # settings = django_settings.ENTITY_SETTINGS
     # settings = speedy_net_global_settings.EntitySettings # ~~~~ TODO: remove this line!
 
     id = SmallUDIDField()
@@ -82,10 +82,22 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     objects = EntityManager()
 
-    validators = {
-        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
-    }
+    # validators = {
+    #     'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+    #     'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+    # }
+
+    @property
+    def settings(self):
+        return django_settings.ENTITY_SETTINGS
+
+    @property
+    def validators(self):
+        validators = {
+            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+        }
+        return validators
 
     class Meta:
         verbose_name = _('entity')
@@ -122,7 +134,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
 
 class NamedEntity(Entity):
-    settings = django_settings.NAMED_ENTITY_SETTINGS
+    # settings = django_settings.NAMED_ENTITY_SETTINGS
     # settings = speedy_net_global_settings.NamedEntitySettings # ~~~~ TODO: remove this line!
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
@@ -239,11 +251,24 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     objects = UserManager()
 
-    validators = {
-        'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-        'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
-        'date_of_birth': [validate_date_of_birth_in_model],
-    }
+    # validators = {
+    #     'username': get_username_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+    #     'slug': get_slug_validators(min_username_length=settings.MIN_USERNAME_LENGTH, max_username_length=settings.MAX_USERNAME_LENGTH, min_slug_length=settings.MIN_SLUG_LENGTH, max_slug_length=settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+    #     'date_of_birth': [validate_date_of_birth_in_model],
+    # }
+
+    @property
+    def settings(self):
+        return django_settings.USER_SETTINGS
+
+    @property
+    def validators(self):
+        validators = {
+            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+            'date_of_birth': [validate_date_of_birth_in_model],
+        }
+        return validators
 
     @property
     def email(self):
