@@ -1,6 +1,3 @@
-# from speedy.core.accounts.models import Entity, User
-
-
 class SpeedyMatchAccountsLanguageMixin(object):
     def set_up(self):
         super().set_up()

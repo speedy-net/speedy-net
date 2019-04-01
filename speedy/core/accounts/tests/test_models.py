@@ -177,7 +177,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_slug_and_username_min_length_ok_2(self):
-        # from django.conf import settings as django_settings
         print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
         print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
         print("test_slug_and_username_min_length_ok_2: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
@@ -193,7 +192,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         # ~~~~ TODO: remove all the following lines.
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
-        # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
         print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
@@ -532,7 +530,6 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_slug_and_username_min_length_ok_2(self):
-        # from django.conf import settings as django_settings
         print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
         print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
         print("test_slug_and_username_min_length_ok_2: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
@@ -548,7 +545,6 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         # ~~~~ TODO: remove all the following lines.
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
-        # from django.conf import settings as django_settings
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
         print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
         print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
