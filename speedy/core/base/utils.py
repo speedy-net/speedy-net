@@ -1,5 +1,4 @@
 import logging
-# import inspect
 import re
 import random
 import string
@@ -117,24 +116,3 @@ def to_attribute(name, language_code=None):
     return translated_fields_to_attribute(name=name, language_code=language_code)
 
 
-# def conditional_method_or_class(conditional_function):
-#     def wrapper(method_or_class):
-#         if (inspect.isclass(method_or_class)):
-#             # Decorate class
-#             if (conditional_function()):
-#                 return method_or_class
-#             else:
-#                 return
-#         else:
-#             # Decorate method
-#             def inner(*args, **kwargs):
-#                 if (conditional_function()):
-#                     return method_or_class(*args, **kwargs)
-#                 else:
-#                     return
-#
-#             return inner
-#
-#     return wrapper
-#
-#
