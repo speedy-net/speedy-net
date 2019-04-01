@@ -8,7 +8,7 @@ SITES="net match composer mail"
 cd ${DIR}
 git pull
 ${PIP} install -r requirements.txt
-${PIP} uninstall django-debug-toolbar
+${PIP} uninstall django-debug-toolbar django-modeltranslation # ~~~~ TODO: remove this line!
 
 for site in ${SITES}
 do
