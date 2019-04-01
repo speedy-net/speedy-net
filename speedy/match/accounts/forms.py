@@ -125,10 +125,6 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
     def clean_gender_to_match(self):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
 
-    def get_fields(self):
-        # This function is not defined in this base (abstract) form.
-        raise NotImplementedError()
-
     def clean(self):
         if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
             min_age_match = self.cleaned_data.get('min_age_match')
@@ -155,6 +151,10 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
                 self.instance.activation_step = len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
             self.instance.save(update_fields={'activation_step'})
         return self.instance
+
+    def get_fields(self):
+        # This function is not defined in this base (abstract) form.
+        raise NotImplementedError()
 
 
 class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
