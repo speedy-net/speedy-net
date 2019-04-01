@@ -1,5 +1,5 @@
-from importlib import import_module
 import logging
+from importlib import import_module
 from urllib.parse import urlparse
 
 from django.conf import settings as django_settings
