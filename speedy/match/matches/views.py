@@ -7,14 +7,14 @@ from django.utils.translation import gettext_lazy as _
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-from .forms import MatchSettingsMiniForm, MatchSettingsFullForm, AboutMeForm
+from .forms import SpeedyMatchSettingsMiniForm, SpeedyMatchProfileFullMatchForm, SpeedyMatchProfileFullAboutMeForm
 
 logger = logging.getLogger(__name__)
 
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/match_list.html'
-    form_class = MatchSettingsMiniForm
+    form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
     def get_matches(self):
@@ -33,7 +33,7 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
 
 class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/settings/matches.html'
-    form_class = MatchSettingsFullForm
+    form_class = SpeedyMatchProfileFullMatchForm
     success_url = reverse_lazy('matches:list')
 
     def get_object(self, queryset=None):
@@ -47,7 +47,7 @@ class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
 
 class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/settings/about_me.html'
-    form_class = AboutMeForm
+    form_class = SpeedyMatchProfileFullAboutMeForm
     success_url = reverse_lazy('matches:list')
 
     def get_object(self, queryset=None):

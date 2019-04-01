@@ -30,7 +30,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
         return data.get(name)
 
 
-class SpeedyMatchProfileActivationForm(forms.ModelForm):
+class SpeedyMatchProfileBaseForm(forms.ModelForm):
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
@@ -126,7 +126,8 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
 
     def get_fields(self):
-        return utils.get_step_form_fields(step=self.step)
+        # This function is not defined in this base (abstract) form.
+        raise NotImplementedError()
 
     def clean(self):
         if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
@@ -154,6 +155,11 @@ class SpeedyMatchProfileActivationForm(forms.ModelForm):
                 self.instance.activation_step = len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
             self.instance.save(update_fields={'activation_step'})
         return self.instance
+
+
+class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
+    def get_fields(self):
+        return utils.get_step_form_fields(step=self.step)
 
 
 class ProfileNotificationsForm(CoreProfileNotificationsForm):

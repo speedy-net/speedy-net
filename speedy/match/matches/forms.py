@@ -3,16 +3,17 @@ from itertools import zip_longest
 from crispy_forms.layout import Div, Row, Submit, Field
 from django.utils.translation import pgettext_lazy
 
+from speedy.core.base.utils import to_attribute
 from speedy.core.base.forms import FormHelperWithDefaults
-from speedy.match.accounts.forms import SpeedyMatchProfileActivationForm
+from speedy.match.accounts.forms import SpeedyMatchProfileBaseForm
 
 
-class MatchSettingsMiniForm(SpeedyMatchProfileActivationForm):
+class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
     def get_fields(self):
         return ('diet_match', 'min_age_match', 'max_age_match')
 
 
-class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
+class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
@@ -28,12 +29,14 @@ class MatchSettingsFullForm(SpeedyMatchProfileActivationForm):
         ]))
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Save Changes')))
 
+
+class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
-        return ('gender_to_match', 'match_description', 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
+        return ('gender_to_match', to_attribute(name='match_description'), 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
 
 
-class AboutMeForm(MatchSettingsFullForm):
+class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
-        return ('profile_description', 'city', 'height', 'children', 'more_children', 'diet', 'smoking_status', 'marital_status')
+        return (to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'marital_status')
 
 
