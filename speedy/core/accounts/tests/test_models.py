@@ -177,10 +177,10 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_slug_and_username_min_length_ok_2(self):
-        print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
         self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
         test_settings = {
             "expected_counts_tuple": (8, 0),
@@ -192,10 +192,10 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         # ~~~~ TODO: remove all the following lines.
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MIN_SLUG_LENGTH", Entity.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: Entity.settings.MAX_SLUG_LENGTH", Entity.settings.MAX_SLUG_LENGTH)####
         # ~~~~ TODO: remove all the above lines.
 
         self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
@@ -530,10 +530,10 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_slug_and_username_min_length_ok_2(self):
-        print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok_2: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok_2: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
         test_settings = {
             "expected_counts_tuple": (8, 0),
@@ -545,10 +545,10 @@ class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguag
         # ~~~~ TODO: remove all the following lines.
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
         # ~~~~ TODO: remove all the above lines.
 
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
@@ -765,7 +765,7 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         email_list = ['email', 'email@example', 'email@example.', 'email@.example', 'email@example.com.', 'email@.example.com', 'email@example..com']
         user = DefaultUserFactory()
         for email in email_list:
-            print(email) ######### ~~~~ TODO
+            # print(email) ######### ~~~~ TODO
             user_email_address = UserEmailAddress(user=user, email=email)
             with self.assertRaises(ValidationError) as cm:
                 user_email_address.save()
@@ -1079,8 +1079,8 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='email75@example.com')
         for i in range(5):
-            print(i) ######### ~~~~ TODO
-            print(user_email_address.pk) ######### ~~~~ TODO
+            # print(i) ######### ~~~~ TODO
+            # print(user_email_address.pk) ######### ~~~~ TODO
             user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email75@example.com')
         self.assert_user_email_addresses_count(
@@ -1108,8 +1108,8 @@ class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         user = DefaultUserFactory()
         user_email_address = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
         for i in range(5):
-            print(i) ######### ~~~~ TODO
-            print(user_email_address.pk) ######### ~~~~ TODO
+            # print(i) ######### ~~~~ TODO
+            # print(user_email_address.pk) ######### ~~~~ TODO
             user_email_address.save()
         self.assertEqual(first=user_email_address.email, second='email75@example.com')
         self.assert_user_email_addresses_count(

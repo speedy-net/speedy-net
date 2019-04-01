@@ -327,7 +327,7 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     def test_slug_validation_ok(self):
         slug_list = ['a' * 6, '---a--a--a--a--a--a---']
         for slug in slug_list:
-            print(slug) # ~~~~ TODO: remove this line!
+            # print(slug) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['slug'] = slug
             form = RegistrationForm(language_code=self.language_code, data=data)
@@ -355,7 +355,7 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     def test_slug_validation_fails_with_username_too_short(self):
         slug_list = ['a' * 5, 'aa-aa', 'a-a-a-a', '---a--a--a--a---', '---a--a--a--a--a---']
         for slug in slug_list:
-            print(slug) # ~~~~ TODO: remove this line!
+            # print(slug) # ~~~~ TODO: remove this line!
             username_value_length = len(normalize_username(username=slug))
             if (slug in ['a' * 5, '---a--a--a--a--a---']):
                 self.assertEqual(first=username_value_length, second=5)
@@ -405,10 +405,10 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     #     # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
     #
     def test_slug_and_username_min_length_ok(self):
-        print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_and_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_and_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
         test_settings = {
             "expected_counts_tuple": (8, 0),
@@ -420,10 +420,10 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         # ~~~~ TODO: remove all the following lines.
         self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
 
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-        print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
+        # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
         # ~~~~ TODO: remove all the above lines.
 
         self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
@@ -446,7 +446,7 @@ class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
     def test_slug_validation_fails_with_invalid_username_regex(self):
         slug_list = ['0' * 6, '0test1', '1234567890digits', 'aaa', 'aaa 9999', 'aaa-9999', 'aaa+9999']
         for slug in slug_list:
-            print(slug) # ~~~~ TODO: remove this line!
+            # print(slug) # ~~~~ TODO: remove this line!
             data = self.data.copy()
             data['slug'] = slug
             form = RegistrationForm(language_code=self.language_code, data=data)
