@@ -234,11 +234,12 @@ Review and edit these config files, restart servers:
 
 Available settings:
 
-* `ENVIRONMENT` defines which of settings files should be used. They are located in `speedy/net/settings` and `speedy/match/settings`. *Example*: `staging`
+* `ENVIRONMENT` defines which of the settings files should be used. They are located in `speedy/net/settings` and `speedy/match/settings`. *Examples*: `development`, `staging` or `production`.
+* `TESTS_ENVIRONMENT` defines which of the settings files should be used for tests. *Example*: `tests`.
 * `SECRET_KEY` is a random string. [More on Django docs](https://docs.djangoproject.com/en/1.9/ref/settings/#secret-key). *Example*: `s3cr37k3Y***`
 * `DATABASE_URL` contains the settings for default database. *Examples*: look [dj-database-url docs](https://github.com/kennethreitz/dj-database-url#url-schema)
 * `CACHE_URL` contains the settings for default caching backend. *Examples*: look [django-cache-url docs](https://github.com/ghickman/django-cache-url#supported-caches)
-* `SPEEDY_*_SITE_ID` — just leave these as its.
+* `SPEEDY_*_SITE_ID` — just leave these as it is.
 
 Refer to [django-environ documentation](https://django-environ.readthedocs.io/en/latest/) for more information.
 
