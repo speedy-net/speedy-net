@@ -7,7 +7,7 @@ class SpeedyMatchAccountsLanguageMixin(object):
         _please_write_where_you_live_error_message_dict = {'en': 'Please write where you live.', 'he': '_____ # ~~~~ TODO'}
         _do_you_have_children_how_many_error_message_dict = {'en': 'Do you have children? How many?', 'he': '_____ # ~~~~ TODO'}
         _do_you_want_more_children_error_message_dict = {'en': 'Do you want (more) children?', 'he': '_____ # ~~~~ TODO'}
-        _height_must_be_from_1_to_450_cm_error_message_dict = {'en': 'Height must be from 1 to 450 cm.', 'he': 'הגובה חייב להיות בין 1 ל-450 ס"מ.'}
+        _height_must_be_from_1_to_450_cm_error_message_dict = {'en': 'Height must be from 1 to 450 cm.', 'he': 'הגובה חייב להיות בין 1 ל-450 ס"מ.___'}
         _your_diet_is_required_error_message_dict = {'en': 'Your diet is required.', 'he': '_____ # ~~~~ TODO'}
         _your_smoking_status_is_required_error_message_dict = {'en': 'Your smoking status is required.', 'he': '_____ # ~~~~ TODO'}
         _your_marital_status_is_required_error_message_dict = {'en': 'Your marital status is required.', 'he': '_____ # ~~~~ TODO'}
