@@ -10,13 +10,21 @@ from speedy.core.base.test import tests_settings
 class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
-            # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net", "speedy.match"].
+            # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net"].
+            # Due to problems with templates, "speedy.match" label is not added to speedy.net tests, and "speedy.net" label is not added to speedy.match tests. # ~~~~ TODO: fix this bug and enable these labels, although the tests there are skipped.
             test_labels = []
             for label in django_settings.INSTALLED_APPS:
                 if (label.startswith('speedy.')):
                     label_to_test = '.'.join(label.split('.')[:2])
-                    if (not (label_to_test in test_labels)):
-                        test_labels.append(label_to_test)
+                    if (label_to_test == 'speedy.net'):
+                        add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID)
+                    elif (label_to_test == 'speedy.match'):
+                        add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID)
+                    else:
+                        add_this_label = True
+                    if (add_this_label):
+                        if (not (label_to_test in test_labels)):
+                            test_labels.append(label_to_test)
         print(test_labels) # ~~~~ TODO: remove this line!
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
