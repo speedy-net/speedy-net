@@ -47,7 +47,7 @@ class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, Site
     @unittest.skip
     def test_inactive_user_can_request_activation(self):
         # ~~~~ TODO: check if we need this test
-        pass
+        raise NotImplementedError()
 
     # ~~~~ TODO: test when the Speedy Net account is also deactivated.
 
