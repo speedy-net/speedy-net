@@ -7,8 +7,7 @@ from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext as _
 
-from speedy.core.accounts.views import ActivateSiteProfileView as CoreActivateSiteProfileView
-from speedy.core.accounts.views import IndexView as CoreIndexView, EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 from speedy.match.accounts import utils
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -54,7 +53,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         except (ValueError):
             logger.debug("dispatch: kwargs['step']: %s, is not a number")
             logger.debug("dispatch: self.request.user.speedy_match_profile.activation_step: %i" , self.request.user.speedy_match_profile.activation_step)
-            return redirect('accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
+            return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
         return super().dispatch(request=request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -66,16 +65,16 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             return render(request=self.request, template_name=self.template_name, context={})
         if (self.step == 1):
             logger.debug('get: inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
-            return redirect('accounts:edit_profile')
+            return redirect(to='accounts:edit_profile')
         if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
             logger.debug('get: inside "if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
-            return redirect('matches:list')
+            return redirect(to='matches:list')
         logger.debug('get: did not get into "if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):"')
         # else:
         #     step, errors = self.request.user.speedy_match_profile.validate_profile_and_activate()
         #     if (self.request.user.speedy_match_profile.activation_step == 0) and (
         #         step == len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and not self.request.user.has_confirmed_email():
-        #         return redirect(reverse_lazy('accounts:edit_profile_credentials'))
+        #         return redirect(to=reverse_lazy('accounts:edit_profile_credentials'))
         return super().get(request=self.request, *args, **kwargs)
 
     def get_account_activation_url(self):

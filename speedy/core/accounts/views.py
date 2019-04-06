@@ -172,7 +172,8 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
         return super().dispatch(request=request, *args, **kwargs)
 
     def get_account_activation_url(self):
-        return reverse_lazy('accounts:activate')
+        # This function is not defined in this base (abstract) view.
+        raise NotImplementedError()
 
     def post(self, request, *args, **kwargs):
         if (request.user.has_confirmed_email_or_registered_now):

@@ -13,6 +13,9 @@ class SiteProfileMiddleware(MiddlewareMixin):
                 for url in django_settings.DONT_REDIRECT_INACTIVE_USER:
                     if (request.path.startswith(url)):
                         return
-                return redirect(to='accounts:activate')
+                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    return redirect(to='accounts:activate', step=request.user.speedy_match_profile.activation_step)
+                else:
+                    return redirect(to='accounts:activate')
 
 

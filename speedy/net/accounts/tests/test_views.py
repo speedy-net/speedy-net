@@ -37,6 +37,8 @@ class EditProfileNotificationsViewTestCase(EditProfileNotificationsViewTestCaseM
 
 @only_on_speedy_net
 class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
+    redirect_url = '/welcome/'
+
     def test_inactive_user_can_request_activation(self):
         r = self.client.post(path=self.page_url)
         self.assertRedirects(response=r, expected_url='/', target_status_code=302)

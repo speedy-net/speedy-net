@@ -42,6 +42,8 @@ class EditProfileNotificationsViewTestCase(EditProfileNotificationsViewTestCaseM
 
 @only_on_speedy_match
 class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
+    redirect_url = '/registration-step-2/'
+
     @unittest.skip
     def test_inactive_user_can_request_activation(self):
         # ~~~~ TODO: check if we need this test

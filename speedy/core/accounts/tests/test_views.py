@@ -34,6 +34,10 @@ class RedirectMeMixin(object):
         expected_url = '/welcome/'
         self.assert_me_url_redirects(expected_url=expected_url)
 
+    def assert_me_url_redirects_to_registration_step_2_url(self):
+        expected_url = '/registration-step-2/'
+        self.assert_me_url_redirects(expected_url=expected_url)
+
 
 class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
     def set_up(self):
@@ -414,8 +418,8 @@ class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
             r = self.client.get(path='/{}/'.format(self.data['slug']))
         else:
-            self.assertRedirects(response=r, expected_url='/welcome/', fetch_redirect_response=False)
-            r = self.client.get(path='/welcome/')
+            self.assertRedirects(response=r, expected_url='/registration-step-2/', fetch_redirect_response=False)
+            r = self.client.get(path='/registration-step-2/')
         self.assertTrue(expr=r.context['user'].is_authenticated)
         self.assertEqual(first=r.context['user'].username, second='user1234')
         self.assertEqual(first=r.context['user'].slug, second='user-1234')
@@ -682,8 +686,12 @@ class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, Spe
         }
         r = self.client.post(path=self.login_url, data=data)
         self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
-        # Inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
-        self.assert_me_url_redirects_to_welcome_url()
+        if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
+            # Inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
+            self.assert_me_url_redirects_to_welcome_url()
+        else:
+            # Inactive users are redirected to registration step 2 url ('/registration-step-2/') instead of their user profile url.
+            self.assert_me_url_redirects_to_registration_step_2_url()
 
     def test_visitor_cannot_login_using_wrong_email(self):
         data = {
@@ -1151,6 +1159,7 @@ class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCas
 
 class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
     page_url = '/welcome/'
+    redirect_url = None
 
     def set_up(self):
         super().set_up()
@@ -1173,7 +1182,7 @@ class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
 
     def test_inactive_user_has_no_access_to_other_pages(self):
         r = self.client.get(path='/other-page/')
-        self.assertRedirects(response=r, expected_url=self.page_url, fetch_redirect_response=False)
+        self.assertRedirects(response=r, expected_url=self.redirect_url, fetch_redirect_response=False)
 
     def test_inactive_user_can_open_the_page(self):
         r = self.client.get(path=self.page_url)
