@@ -10,7 +10,14 @@ from speedy.core.base.test import tests_settings
 class SiteDiscoverRunner(DiscoverRunner):
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
-            test_labels = [label for label in django_settings.INSTALLED_APPS if (label.startswith('speedy.'))]
+            # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net", "speedy.match"].
+            test_labels = []
+            for label in django_settings.INSTALLED_APPS:
+                if (label.startswith('speedy.')):
+                    label_to_test = '.'.join(label.split('.')[:2])
+                    if (not (label_to_test in test_labels)):
+                        test_labels.append(label_to_test)
+        print(test_labels) # ~~~~ TODO: remove this line!
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
@@ -73,7 +80,7 @@ class SiteTestCase(DjangoTestCase):
         self.assertTrue(expr=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33))
 
     def set_up(self):
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line
         self.language_code = django_settings.LANGUAGE_CODE
         self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
         self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
