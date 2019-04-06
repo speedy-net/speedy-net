@@ -9,7 +9,7 @@ from speedy.core.friends.tests.test_views import UserFriendListViewTestCaseMixin
 class UserFriendListViewTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
     def test_visitor_can_open_the_page(self):
         self.client.logout()
-        r = self.client.get(path=self.user_friends_list_url)
+        r = self.client.get(path=self.first_user_friends_list_url)
         self.assertEqual(first=r.status_code, second=200)
 
     @unittest.skip
