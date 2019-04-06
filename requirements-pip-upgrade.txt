@@ -6,7 +6,7 @@ django-translated-fields
 factory-boy
 Faker
 Pillow
-psycopg2
+psycopg2==2.7.7 # Django<2.2 don't support newer versions more than psycopg2==2.7.7
 python-dateutil
 python-memcached
 pytz
