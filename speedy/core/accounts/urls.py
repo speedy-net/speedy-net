@@ -18,8 +18,6 @@ urlpatterns = [
     url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', auth_views.password_reset_confirm, {'post_reset_redirect': 'accounts:password_reset_complete', 'set_password_form': forms.SetPasswordForm, 'template_name': 'accounts/password_reset/confirm.html'}, name='password_reset_confirm'),
     url(r'^reset-password/complete/$', auth_views.password_reset_complete, {'template_name': 'accounts/password_reset/complete.html'}, name='password_reset_complete'),
 
-    url(r'^welcome/$', views.ActivateSiteProfileView.as_view(), name='activate'),
-
     url(r'^edit-profile/$', views.EditProfileView.as_view(), name='edit_profile'),
     url(r'^edit-profile/privacy/$', views.EditProfilePrivacyView.as_view(), name='edit_profile_privacy'),
     url(r'^edit-profile/credentials/$', views.EditProfileCredentialsView.as_view(), name='edit_profile_credentials'),
