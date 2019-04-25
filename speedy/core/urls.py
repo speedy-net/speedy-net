@@ -12,7 +12,7 @@ urlpatterns = [
 ]
 
 if (django_settings.DEBUG):
-    urlpatterns = static(django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT) + urlpatterns
+    urlpatterns = static(prefix=django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT) + urlpatterns
 
     if ('debug_toolbar' in django_settings.INSTALLED_APPS):
         import debug_toolbar
