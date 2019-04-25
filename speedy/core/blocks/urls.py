@@ -4,9 +4,9 @@ from . import views
 
 app_name = 'speedy.core.blocks'
 urlpatterns = [
-    url(r'^$', views.BlockListView.as_view(), name='list'),
-    url(r'^block/$', views.BlockView.as_view(), name='block'),
-    url(r'^unblock/$', views.UnblockView.as_view(), name='unblock'),
+    url(regex=r'^$', view=views.BlockListView.as_view(), name='list'),
+    url(regex=r'^block/$', view=views.BlockView.as_view(), name='block'),
+    url(regex=r'^unblock/$', view=views.UnblockView.as_view(), name='unblock'),
 ]
 
 

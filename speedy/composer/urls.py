@@ -5,8 +5,8 @@ from speedy.core.urls import urlpatterns
 
 app_name = 'speedy.composer'
 urlpatterns += [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('speedy.composer.main.urls', namespace='main')),
+    url(regex=r'^admin/', view=admin.site.urls),
+    url(regex=r'^', view=include('speedy.composer.main.urls', namespace='main')),
 ]
 
 

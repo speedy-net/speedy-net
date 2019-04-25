@@ -4,12 +4,12 @@ from . import views
 
 app_name = 'speedy.match.likes'
 urlpatterns = [
-    url('^$', views.LikeListDefaultRedirectView.as_view(), name='list'),
-    url('^to/$', views.LikeListToView.as_view(), name='list_to'),
-    url('^from/$', views.LikeListFromView.as_view(), name='list_from'),
-    url('^mutual/$', views.LikeListMutualView.as_view(), name='list_mutual'),
-    url('^like/$', views.LikeView.as_view(), name='like'),
-    url('^unlike/$', views.UnlikeView.as_view(), name='unlike'),
+    url(regex=r'^$', view=views.LikeListDefaultRedirectView.as_view(), name='list'),
+    url(regex=r'^to/$', view=views.LikeListToView.as_view(), name='list_to'),
+    url(regex=r'^from/$', view=views.LikeListFromView.as_view(), name='list_from'),
+    url(regex=r'^mutual/$', view=views.LikeListMutualView.as_view(), name='list_mutual'),
+    url(regex=r'^like/$', view=views.LikeView.as_view(), name='like'),
+    url(regex=r'^unlike/$', view=views.UnlikeView.as_view(), name='unlike'),
 ]
 
 

@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'speedy.core.terms'
 urlpatterns = [
-    url(r'', views.TermsOfServiceView.as_view(), name='terms_of_service'),
+    url(regex=r'', view=views.TermsOfServiceView.as_view(), name='terms_of_service'),
 ]
 
 

@@ -4,11 +4,11 @@ from . import views
 
 app_name = 'speedy.core.im'
 urlpatterns = [
-    url(r'^$', views.ChatListView.as_view(), name='list'),
-    url(r'^(?P<chat_slug>[-._\w]+)/$', views.ChatDetailView.as_view(), name='chat'),
-    url(r'^(?P<chat_slug>[-\w]+)/poll/$', views.ChatPollMessagesView.as_view(), name='chat_poll'),
-    url(r'^(?P<chat_slug>[-\w]+)/send/$', views.SendMessageToChatView.as_view(), name='chat_send'),
-    url(r'^(?P<chat_slug>[-\w]+)/mark-read/$', views.MarkChatAsReadView.as_view(), name='mark_read'),
+    url(regex=r'^$', view=views.ChatListView.as_view(), name='list'),
+    url(regex=r'^(?P<chat_slug>[-._\w]+)/$', view=views.ChatDetailView.as_view(), name='chat'),
+    url(regex=r'^(?P<chat_slug>[-\w]+)/poll/$', view=views.ChatPollMessagesView.as_view(), name='chat_poll'),
+    url(regex=r'^(?P<chat_slug>[-\w]+)/send/$', view=views.SendMessageToChatView.as_view(), name='chat_send'),
+    url(regex=r'^(?P<chat_slug>[-\w]+)/mark-read/$', view=views.MarkChatAsReadView.as_view(), name='mark_read'),
 ]
 
 

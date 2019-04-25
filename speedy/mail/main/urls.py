@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'speedy.mail.main'
 urlpatterns = [
-    url(r'', views.MainPageView.as_view(), name='main_page'),
+    url(regex=r'', view=views.MainPageView.as_view(), name='main_page'),
 ]
 
 

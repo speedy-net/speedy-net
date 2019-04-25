@@ -5,10 +5,10 @@ from django.conf.urls.static import static
 
 app_name = 'speedy.core'
 urlpatterns = [
-    url(r'^about/', include('speedy.core.about.urls', namespace='about')),
-    url(r'^privacy/', include('speedy.core.privacy.urls', namespace='privacy')),
-    url(r'^terms/', include('speedy.core.terms.urls', namespace='terms')),
-    url(r'^contact/', include('speedy.core.feedback.urls', namespace='feedback')),
+    url(regex=r'^about/', view=include('speedy.core.about.urls', namespace='about')),
+    url(regex=r'^privacy/', view=include('speedy.core.privacy.urls', namespace='privacy')),
+    url(regex=r'^terms/', view=include('speedy.core.terms.urls', namespace='terms')),
+    url(regex=r'^contact/', view=include('speedy.core.feedback.urls', namespace='feedback')),
 ]
 
 if (django_settings.DEBUG):
@@ -17,7 +17,7 @@ if (django_settings.DEBUG):
     if ('debug_toolbar' in django_settings.INSTALLED_APPS):
         import debug_toolbar
         urlpatterns += [
-            url(r'^__debug__/', include(debug_toolbar.urls)),
+            url(regex=r'^__debug__/', view=include(debug_toolbar.urls)),
         ]
 
 

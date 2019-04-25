@@ -4,8 +4,8 @@ from . import views
 
 app_name = 'speedy.core.profiles'
 urlpatterns = [
-    url(r'^me/(?P<rest>.*)?$', views.MeView.as_view(), name='me'),
-    url(r'^(?P<slug>[-\._\w]+)/$', views.UserDetailView.as_view(), name='user'),
+    url(regex=r'^me/(?P<rest>.*)?$', view=views.MeView.as_view(), name='me'),
+    url(regex=r'^(?P<slug>[-\._\w]+)/$', view=views.UserDetailView.as_view(), name='user'),
 ]
 
 

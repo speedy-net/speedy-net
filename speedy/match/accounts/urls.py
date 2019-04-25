@@ -5,10 +5,10 @@ from speedy.core.accounts.urls import urlpatterns
 
 app_name = 'speedy.match.accounts'
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^welcome/$', views.ActivateSiteProfileView.as_view(), name='welcome'),
-    url(r'^registration-step-(?P<step>[0-9]+)/$', views.ActivateSiteProfileView.as_view(), name='activate'),
-    url(r'^edit-profile/notifications/$', views.EditProfileNotificationsView.as_view(), name='edit_profile_notifications'),
+    url(regex=r'^$', view=views.IndexView.as_view(), name='index'),
+    url(regex=r'^welcome/$', view=views.ActivateSiteProfileView.as_view(), name='welcome'),
+    url(regex=r'^registration-step-(?P<step>[0-9]+)/$', view=views.ActivateSiteProfileView.as_view(), name='activate'),
+    url(regex=r'^edit-profile/notifications/$', view=views.EditProfileNotificationsView.as_view(), name='edit_profile_notifications'),
 ] + urlpatterns
 
 
