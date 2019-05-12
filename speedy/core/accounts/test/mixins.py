@@ -40,7 +40,6 @@ class SpeedyCoreAccountsModelsMixin(object):
         self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he'])
 
 
-# class ErrorsMixin(object): # ~~~~ TODO: maybe rename class to SpeedyCoreAccountsErrorsMixin? Or SpeedyCoreAccountsLanguageMixin?
 class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
     _first_password_field_names = ['new_password1']
     _both_password_field_names = ['new_password1', 'new_password2']
