@@ -270,11 +270,11 @@ To migrate all sites, run:
 
 To run all tests locally, run:
 
-    ./manage_all_sites.sh test
+    ./run_all_tests.sh
 
 To run all tests locally with deprecation warnings, run:
 
-    ./manage_all_sites_with_deprecation_warnings.sh test
+    ./run_all_tests_with_deprecation_warnings.sh
 
 ## How to make and compile all messages for translation (To Hebrew):
 
