@@ -1,3 +1,5 @@
+import shutil
+
 from django.conf import settings as django_settings
 from django.core.management import call_command
 from django.test import TestCase as DjangoTestCase
@@ -106,5 +108,15 @@ class SiteTestCase(DjangoTestCase):
     def setUp(self):
         super().setUp()
         self.set_up()
+
+    @classmethod
+    def tearDownClass(cls):
+        # Canceled print (prints this line many times, this class is used many times).
+        # print("Deleting temporary files...")
+        try:
+            shutil.rmtree(django_settings.TESTS_MEDIA_ROOT)
+        except OSError:
+            pass
+        super().tearDownClass()
 
 
