@@ -95,7 +95,7 @@ class SiteTestCase(DjangoTestCase):
         self.assertTrue(expr=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33))
 
     def set_up(self):
-        self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line
+        self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
         self.language_code = django_settings.LANGUAGE_CODE
         self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
         self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
