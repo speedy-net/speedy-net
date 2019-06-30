@@ -8,6 +8,10 @@ from speedy.core.base.test import tests_settings
 
 
 class SiteDiscoverRunner(DiscoverRunner):
+    def __init__(self, *args, **kwargs):
+        assert (django_settings.TESTS is True)
+        super().__init__(*args, **kwargs)
+
     def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
         if (not (test_labels)):
             # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net"].
@@ -46,6 +50,7 @@ class SiteTestCase(DjangoTestCase):
         # ~~~~ TODO: remove all the above lines.
 
     def _pre_setup(self):
+        self.assertTrue(expr=django_settings.TESTS)
         super()._pre_setup()
         call_command('loaddata', tests_settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()

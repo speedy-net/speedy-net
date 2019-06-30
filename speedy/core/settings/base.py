@@ -34,6 +34,7 @@ XD_AUTH_SITES = SITES_WITH_LOGIN
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+TESTS = False
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
