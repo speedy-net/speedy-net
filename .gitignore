@@ -1,7 +1,7 @@
 env.ini
 *.sqlite
 .idea/
-.venv
+.venv*
 media/
 .DS_Store
 .volumes
