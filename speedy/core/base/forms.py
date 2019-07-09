@@ -20,3 +20,11 @@ class FormHelperWithDefaults(FormHelper):
     render_unmentioned_fields = True
 
 
+class DeleteUnneededFieldsMixin(object):
+    def delete_unneeded_fields(self):
+        fields = self.get_fields()
+        fields_for_deletion = set(self.fields.keys()) - set(fields)
+        for field_for_deletion in fields_for_deletion:
+            del self.fields[field_for_deletion]
+
+

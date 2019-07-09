@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.utils import to_attribute, update_form_field_choices
+from speedy.core.base.forms import DeleteUnneededFieldsMixin
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
@@ -30,7 +31,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
         return data.get(name)
 
 
-class SpeedyMatchProfileBaseForm(forms.ModelForm):
+class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
@@ -87,11 +88,7 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
-        fields = self.get_fields()
-        # print(fields) # ~~~~ TODO: remove this line!
-        fields_for_deletion = set(self.fields.keys()) - set(fields)
-        for field_for_deletion in fields_for_deletion:
-            del self.fields[field_for_deletion]
+        self.delete_unneeded_fields()
         if ('gender_to_match' in self.fields):
             self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
