@@ -92,6 +92,7 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
+        raise Exception("SpeedyMatchProfileBaseForm::def __init__, {}, {}, {}, {}".format(str(self.fields.keys()), ('diet' in self.fields), ('smoking_status' in self.fields), ('marital_status' in self.fields)))
         if ('gender_to_match' in self.fields):
             self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
