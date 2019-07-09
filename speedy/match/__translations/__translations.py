@@ -28,9 +28,9 @@ pgettext_lazy(context="female", message="Widowed")
 pgettext_lazy(context="male", message="Widowed")
 pgettext_lazy(context="other", message="Widowed")
 
-pgettext_lazy(context="female", message="In a relatioship")
-pgettext_lazy(context="male", message="In a relatioship")
-pgettext_lazy(context="other", message="In a relatioship")
+pgettext_lazy(context="female", message="In a relationship")
+pgettext_lazy(context="male", message="In a relationship")
+pgettext_lazy(context="other", message="In a relationship")
 
 pgettext_lazy(context="female", message="In an open relationship")
 pgettext_lazy(context="male", message="In an open relationship")

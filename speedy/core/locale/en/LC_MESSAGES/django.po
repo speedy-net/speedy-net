@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 16:18+0200\n"
+"POT-Creation-Date: 2019-07-09 21:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -581,7 +581,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:411
+#: .\__translations\__translations.py:9 .\accounts\models.py:426
 msgid "email address"
 msgstr ""
 
@@ -1087,203 +1087,203 @@ msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr ""
 
-#: .\accounts\forms.py:87
+#: .\accounts\forms.py:86
 msgid "Your email"
 msgstr ""
 
-#: .\accounts\forms.py:88
+#: .\accounts\forms.py:87
 msgid "New password"
 msgstr ""
 
-#: .\accounts\forms.py:96
+#: .\accounts\forms.py:95
 msgid "New username"
 msgstr ""
 
-#: .\accounts\forms.py:99
+#: .\accounts\forms.py:98
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:175 .\templates\base_with_login.html:83
+#: .\accounts\forms.py:174 .\templates\base_with_login.html:83
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:180 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:179 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:52
 #: .\templates\base_with_login.html:96
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:183 .\templates\base_with_login.html:55
+#: .\accounts\forms.py:182 .\templates\base_with_login.html:55
 #: .\templates\base_with_login.html:93
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:195 .\accounts\forms.py:210
+#: .\accounts\forms.py:194 .\accounts\forms.py:209
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:219
+#: .\accounts\forms.py:218
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:240
+#: .\accounts\forms.py:239
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:252
+#: .\accounts\forms.py:251
 msgid "Invalid password."
 msgstr ""
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:79
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:77 .\accounts\models.py:78 .\accounts\validators.py:16
+#: .\accounts\models.py:79 .\accounts\models.py:80 .\accounts\validators.py:16
 msgid "This username is already taken."
 msgstr ""
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:80
 msgid "username (slug)"
 msgstr ""
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:81
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:89 .\im\models.py:88
+#: .\accounts\models.py:94 .\im\models.py:88
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:90
+#: .\accounts\models.py:95
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:114
+#: .\accounts\models.py:119
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:126
+#: .\accounts\models.py:131
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:142
+#: .\accounts\models.py:147
 msgid "Only me"
 msgstr ""
 
-#: .\accounts\models.py:143
+#: .\accounts\models.py:148
 msgid "Me and my friends"
 msgstr ""
 
-#: .\accounts\models.py:145
+#: .\accounts\models.py:150
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\models.py:175
+#: .\accounts\models.py:180
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:176
+#: .\accounts\models.py:181
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:177
+#: .\accounts\models.py:182
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:194
+#: .\accounts\models.py:199
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:195
+#: .\accounts\models.py:200
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:196
+#: .\accounts\models.py:201
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:197
+#: .\accounts\models.py:202
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:206
+#: .\accounts\models.py:211
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:212
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:222
+#: .\accounts\models.py:228
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:223
+#: .\accounts\models.py:231
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:224
+#: .\accounts\models.py:233
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:225
+#: .\accounts\models.py:234
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:227
+#: .\accounts\models.py:236
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:230
+#: .\accounts\models.py:239
 msgid "who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:240
 msgid "who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:241
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:243 .\accounts\models.py:398 .\accounts\models.py:471
+#: .\accounts\models.py:282 .\accounts\models.py:410 .\accounts\models.py:486
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:244
+#: .\accounts\models.py:283
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:399
+#: .\accounts\models.py:411
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:400
+#: .\accounts\models.py:412
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:401
+#: .\accounts\models.py:413
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:402
+#: .\accounts\models.py:414
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:403
+#: .\accounts\models.py:415
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:416
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:412
+#: .\accounts\models.py:427
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:472
+#: .\accounts\models.py:487
 msgid "last visit"
 msgstr ""
 
@@ -1389,20 +1389,20 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:230
+#: .\accounts\views.py:231
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:254 .\accounts\views.py:269
+#: .\accounts\views.py:255 .\accounts\views.py:270
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:283
+#: .\accounts\views.py:284
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:298
+#: .\accounts\views.py:299
 msgid "You have made this email address primary."
 msgstr ""
 
@@ -1438,7 +1438,7 @@ msgstr ""
 msgid "You have unblocked {}."
 msgstr ""
 
-#: .\feedback\forms.py:28
+#: .\feedback\forms.py:27
 msgid "Send"
 msgstr ""
 
@@ -1530,11 +1530,11 @@ msgstr ""
 msgid "last message"
 msgstr ""
 
-#: .\im\models.py:23 .\im\models.py:71 .\im\models.py:89
+#: .\im\models.py:38 .\im\models.py:71 .\im\models.py:89
 msgid "chat"
 msgstr ""
 
-#: .\im\models.py:24
+#: .\im\models.py:39
 msgid "chats"
 msgstr ""
 
@@ -1554,11 +1554,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:233
+#: .\settings\base.py:232
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:234
+#: .\settings\base.py:233
 msgid "Hebrew"
 msgstr ""
 
@@ -1652,27 +1652,27 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:46
+#: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:56
+#: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:64
+#: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:66
+#: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:82
+#: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\credentials.html:89
+#: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
 msgstr ""
 
@@ -1937,12 +1937,12 @@ msgid " blocked you."
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:12
-#: .\templates\profiles\user_list_item.html:27
+#: .\templates\profiles\user_list_item.html:26
 msgid "Accept"
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:19
-#: .\templates\profiles\user_list_item.html:32
+#: .\templates\profiles\user_list_item.html:30
 msgid "Reject"
 msgstr ""
 
@@ -1954,27 +1954,27 @@ msgstr ""
 msgid "Toggle Dropdown"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:16
+#: .\templates\profiles\tools\block_user.html:15
 msgid "Are you sure you want to block "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:16
+#: .\templates\profiles\tools\block_user.html:15
 msgid "?"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:19
+#: .\templates\profiles\tools\block_user.html:18
 msgid "Block "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:26
+#: .\templates\profiles\tools\block_user.html:25
 msgid "Unblock "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:31
+#: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:33
+#: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
 msgstr ""
 
@@ -2071,7 +2071,7 @@ msgstr ""
 msgid "owner"
 msgstr ""
 
-#: .\uploads\models.py:14 .\uploads\models.py:19
+#: .\uploads\models.py:14 .\uploads\models.py:23
 msgid "file"
 msgstr ""
 
@@ -2083,7 +2083,7 @@ msgstr ""
 msgid "file_size"
 msgstr ""
 
-#: .\uploads\models.py:20
+#: .\uploads\models.py:24
 msgid "uploaded files"
 msgstr ""
 
