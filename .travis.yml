@@ -15,7 +15,7 @@ before_script:
   - psql -c 'alter user pguser createdb; ' -U postgres
 install:
   - cp env.ini.tests env.ini
-  - pip install -r requirements.txt
+  - pip install --upgrade -r requirements.txt
   - pip freeze
   - pwd
   - lsb_release -a

@@ -65,7 +65,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
 Next:
 
     python -m pip install --upgrade pip
-    pip install -r requirements.txt
+    pip install --upgrade -r requirements.txt
     cp env.ini.example env.ini
 
 You may want to edit [**env.ini**](#envini) to specify database settings, secret keys for third party services or other stuff.
@@ -152,7 +152,7 @@ Clone the project, create a venv, activate it and install required modules using
     python3 -m venv env
     source env/bin/activate
     pip install --upgrade wheel  # resolves "invalid command 'bdist_wheel'"
-    pip install -r requirements.txt
+    pip install --upgrade -r requirements.txt
     pip install psycopg2
 
 Setup a database:
