@@ -85,6 +85,7 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        raise Exception("def __init__ line 87")
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         fields = self.get_fields()
