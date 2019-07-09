@@ -92,20 +92,20 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
-        raise Exception("SpeedyMatchProfileBaseForm::def __init__, {}, {}, {}, {}".format(str(self.fields.keys()), ('diet' in self.fields), ('smoking_status' in self.fields), ('marital_status' in self.fields)))
+        # raise Exception("SpeedyMatchProfileBaseForm::def __init__, {}, {}, {}, {}".format(str(self.fields.keys()), ('diet' in self.fields), ('smoking_status' in self.fields), ('marital_status' in self.fields)))
         if ('gender_to_match' in self.fields):
             self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
-            raise Exception
+            raise Exception("SpeedyMatchProfileBaseForm::def __init__::('diet' in self.fields)")
             self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
             self.fields['diet'].initial = self.instance.user.diet # ~~~~ TODO: diet, smoking_status and marital_status - this line is required if the field is in class User - not in class SpeedyMatchSiteProfile.
         if ('smoking_status' in self.fields):
-            raise Exception
+            raise Exception("SpeedyMatchProfileBaseForm::def __init__::('smoking_status' in self.fields)")
             self.fields['smoking_status'].widget.choices = self.instance.get_smoking_status_choices()
         if ('marital_status' in self.fields):
-            raise Exception
+            raise Exception("SpeedyMatchProfileBaseForm::def __init__::('marital_status' in self.fields)")
             self.fields['marital_status'].widget.choices = self.instance.get_marital_status_choices()
         # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking status and marital status.
         if ('diet_match' in self.fields):
