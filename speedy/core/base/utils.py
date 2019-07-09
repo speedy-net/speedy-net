@@ -116,3 +116,11 @@ def to_attribute(name, language_code=None):
     return translated_fields_to_attribute(name=name, language_code=language_code)
 
 
+def update_form_field_choices(field, choices):
+    """
+    Update both field.choices and field.widget.choices to the same value (list of choices).
+    """
+    field.choices = choices
+    field.widget.choices = choices
+
+
