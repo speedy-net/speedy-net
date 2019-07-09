@@ -31,6 +31,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileBaseForm(forms.ModelForm):
+    fields_with_choices = ('diet', 'smoking_status', 'marital_status', 'diet_match', 'smoking_status_match', 'marital_status_match')
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
@@ -97,19 +98,22 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
-            self.fields['diet'].widget.choices = self.instance.user.get_diet_choices()
+            self.fields['diet'].choices = self.instance.user.get_diet_choices()
             self.fields['diet'].initial = self.instance.user.diet # ~~~~ TODO: diet, smoking_status and marital_status - this line is required if the field is in class User - not in class SpeedyMatchSiteProfile.
         if ('smoking_status' in self.fields):
-            self.fields['smoking_status'].widget.choices = self.instance.get_smoking_status_choices()
+            self.fields['smoking_status'].choices = self.instance.get_smoking_status_choices()
         if ('marital_status' in self.fields):
-            self.fields['marital_status'].widget.choices = self.instance.get_marital_status_choices()
+            self.fields['marital_status'].choices = self.instance.get_marital_status_choices()
         # ~~~~ TODO: diet match choices gender is the desired match gender - either male, female or other. If more than one gender option is selected, then other. Same is for smoking status and marital status.
         if ('diet_match' in self.fields):
-            self.fields['diet_match'].widget.choices = self.instance.get_diet_match_choices()
+            self.fields['diet_match'].choices = self.instance.get_diet_match_choices()
         if ('smoking_status_match' in self.fields):
-            self.fields['smoking_status_match'].widget.choices = self.instance.get_smoking_status_match_choices()
+            self.fields['smoking_status_match'].choices = self.instance.get_smoking_status_match_choices()
         if ('marital_status_match' in self.fields):
-            self.fields['marital_status_match'].widget.choices = self.instance.get_marital_status_match_choices()
+            self.fields['marital_status_match'].choices = self.instance.get_marital_status_match_choices()
+        for field_name, field in self.fields.items():
+            if (field_name in self.fields_with_choices):
+                field.widget.choices = field.choices
         for field_name, field in self.fields.items():
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
