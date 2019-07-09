@@ -149,7 +149,7 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
             self.instance.activation_step = min(activation_step + 1, step)
             if (self.instance.activation_step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
                 self.instance.activation_step = len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-            self.instance.save(update_fields={'activation_step'})
+            self.instance.save(update_fields={to_attribute('activation_step')})
         return self.instance
 
     def get_fields(self):
