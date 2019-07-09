@@ -65,6 +65,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
 Next:
 
     python -m pip install --upgrade pip
+    pip install --upgrade pip setuptools wheel
     pip install --upgrade -r requirements.txt
     cp env.ini.example env.ini
 
@@ -136,7 +137,7 @@ Will compile static files and watch for changes.
     docker-compose up
 
 
-## How to setup a server (Ubuntu 16.04)
+## How to setup a server (Ubuntu 18.04)
 
 Install all dependencies using **apt-get**:
 
@@ -151,9 +152,8 @@ Clone the project, create a venv, activate it and install required modules using
     cd speedy-net/
     python3 -m venv env
     source env/bin/activate
-    pip install --upgrade wheel  # resolves "invalid command 'bdist_wheel'"
+    pip install --upgrade pip setuptools wheel
     pip install --upgrade -r requirements.txt
-    pip install psycopg2
 
 Setup a database:
 
