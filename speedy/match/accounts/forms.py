@@ -31,6 +31,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileBaseForm(forms.ModelForm):
+    fields_with_choices = ('diet', 'smoking_status', 'marital_status', 'diet_match', 'smoking_status_match', 'marital_status_match')
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
@@ -114,6 +115,9 @@ class SpeedyMatchProfileBaseForm(forms.ModelForm):
             self.fields['smoking_status_match'].choices = self.instance.get_smoking_status_match_choices()
         if ('marital_status_match' in self.fields):
             self.fields['marital_status_match'].choices = self.instance.get_marital_status_match_choices()
+        for field_name, field in self.fields.items():
+            if (field_name in self.fields_with_choices):
+                field.widget.choices = field.choices
         for field_name, field in self.fields.items():
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
