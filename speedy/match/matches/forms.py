@@ -32,11 +32,13 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
 
 class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
+        raise Exception("SpeedyMatchProfileFullMatchForm::def get_fields")
         return ('gender_to_match', to_attribute(name='match_description'), 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'marital_status_match')
 
 
 class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
+        raise Exception("SpeedyMatchProfileFullAboutMeForm::def get_fields")
         return (to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'marital_status')
 
 
