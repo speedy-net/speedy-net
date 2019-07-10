@@ -26,5 +26,6 @@ class DeleteUnneededFieldsMixin(object):
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
             del self.fields[field_for_deletion]
+        assert (set(self.fields.keys()) == set(fields))
 
 
