@@ -652,14 +652,6 @@ class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, Speed
         self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 1))
         self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
-    def test_smoking_status_valid_values(self):
-        self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(User.SMOKING_STATUS_UNKNOWN + 1, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)))
-        self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(1, 3 + 1)))
-
-    def test_marital_status_valid_values(self):
-        self.assertListEqual(list1=User.MARITAL_STATUS_VALID_VALUES, list2=list(range(User.MARITAL_STATUS_UNKNOWN + 1, User.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))
-        self.assertListEqual(list1=User.MARITAL_STATUS_VALID_VALUES, list2=list(range(1, 8 + 1)))
-
     def test_rank_valid_values(self):
         self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.RANK_0, SpeedyMatchSiteProfile.RANK_5 + 1)))
         self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(0, 5 + 1)))
