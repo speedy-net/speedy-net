@@ -26,20 +26,20 @@ if (django_settings.LOGIN_ENABLED):
             from speedy.core.uploads.test.factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self.speedy_match_profile.profile_description = "Hi!"
-            self.speedy_match_profile.city = "Tel Aviv."
+            self.city = "Tel Aviv."
             self.speedy_match_profile.children = "One boy."
             self.speedy_match_profile.more_children = "Yes."
             self.speedy_match_profile.match_description = "Hi!"
             self.speedy_match_profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED)
             _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
-            _test_case.assertEqual(first=self.speedy_match_profile.smoking_status, second=SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN)
-            _test_case.assertEqual(first=self.speedy_match_profile.marital_status, second=SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN)
+            _test_case.assertEqual(first=self.smoking_status, second=User.SMOKING_STATUS_UNKNOWN)
+            _test_case.assertEqual(first=self.marital_status, second=User.MARITAL_STATUS_UNKNOWN)
             self.diet = random.choice(User.DIET_VALID_VALUES)
-            self.speedy_match_profile.smoking_status = random.choice(SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES)
-            self.speedy_match_profile.marital_status = random.choice(SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES)
+            self.smoking_status = random.choice(User.SMOKING_STATUS_VALID_VALUES)
+            self.marital_status = random.choice(User.MARITAL_STATUS_VALID_VALUES)
             _test_case.assertNotEqual(first=self.diet, second=User.DIET_UNKNOWN)
-            _test_case.assertNotEqual(first=self.speedy_match_profile.smoking_status, second=SpeedyMatchSiteProfile.SMOKING_STATUS_UNKNOWN)
-            _test_case.assertNotEqual(first=self.speedy_match_profile.marital_status, second=SpeedyMatchSiteProfile.MARITAL_STATUS_UNKNOWN)
+            _test_case.assertNotEqual(first=self.smoking_status, second=User.SMOKING_STATUS_UNKNOWN)
+            _test_case.assertNotEqual(first=self.marital_status, second=User.MARITAL_STATUS_UNKNOWN)
             self.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
             self.photo = UserImageFactory(owner=self)
             self.speedy_match_profile.activation_step = 9

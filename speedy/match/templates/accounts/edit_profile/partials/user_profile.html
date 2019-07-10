@@ -13,8 +13,8 @@
         <span>{{ user.get_age }}</span>
     </div>
     <div class="user-profile-additional-info">
-            {% if user.speedy_match_profile.city %}
-                 <span>{{ user.speedy_match_profile.city }}</span>
+            {% if user.city %}
+                 <span>{{ user.city }}</span>
             {% endif %}
         {% if user.speedy_match_profile.height %}
             , <span>{{ user.speedy_match_profile.height }} {% trans 'cm' %}</span>

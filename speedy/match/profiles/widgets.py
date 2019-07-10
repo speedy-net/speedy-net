@@ -40,12 +40,12 @@ class UserExtraDetailsWidget(Widget):
         diet_list = [str(choice[1]) for choice in User.DIET_CHOICES_WITH_DEFAULT if (choice[0] == diet_code)]
         diet = diet_list[0] if (len(diet_list) == 1) else str(_("Unknown"))
 
-        smoking_status_code = self.entity.speedy_match_profile.smoking_status
-        smoking_status_list = [str(choice[1]) for choice in SpeedyMatchSiteProfile.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
+        smoking_status_code = self.entity.smoking_status
+        smoking_status_list = [str(choice[1]) for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
         smoking_status = smoking_status_list[0] if (len(smoking_status_list) == 1) else str(_("Unknown"))
 
-        marital_status_code = self.entity.speedy_match_profile.marital_status
-        marital_status_list = [str(choice[1]) for choice in SpeedyMatchSiteProfile.MARITAL_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == marital_status_code)]
+        marital_status_code = self.entity.marital_status
+        marital_status_list = [str(choice[1]) for choice in User.MARITAL_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == marital_status_code)]
         marital_status = marital_status_list[0] if (len(marital_status_list) == 1) else str(_("Unknown"))
 
         gender_codes = self.entity.speedy_match_profile.gender_to_match

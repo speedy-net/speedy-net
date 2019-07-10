@@ -23,11 +23,11 @@ def diet_is_valid(diet):
 
 
 def smoking_status_is_valid(smoking_status):
-    return ((smoking_status is not None) and (int(smoking_status) in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES))
+    return ((smoking_status is not None) and (int(smoking_status) in User.SMOKING_STATUS_VALID_VALUES))
 
 
 def marital_status_is_valid(marital_status):
-    return ((marital_status is not None) and (int(marital_status) in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES))
+    return ((marital_status is not None) and (int(marital_status) in User.MARITAL_STATUS_VALID_VALUES))
 
 
 def rank_is_valid(rank):
@@ -114,18 +114,18 @@ def validate_diet_match(diet_match):
 
 
 def validate_smoking_status_match(smoking_status_match):
-    if (not ((set(smoking_status_match.keys()) == {str(smoking_status) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES}) and (all([((str(smoking_status) in smoking_status_match) and (rank_is_valid(rank=smoking_status_match[str(smoking_status)]))) for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES])))):
+    if (not ((set(smoking_status_match.keys()) == {str(smoking_status) for smoking_status in User.SMOKING_STATUS_VALID_VALUES}) and (all([((str(smoking_status) in smoking_status_match) and (rank_is_valid(rank=smoking_status_match[str(smoking_status)]))) for smoking_status in User.SMOKING_STATUS_VALID_VALUES])))):
         # This may be due to values added later.
         raise ValidationError(_("Please select smoking status match."))
-    if (not (max([smoking_status_match[str(smoking_status)] for smoking_status in SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
+    if (not (max([smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
         raise ValidationError(_("At least one smoking status match option should be 5 hearts."))
 
 
 def validate_marital_status_match(marital_status_match):
-    if (not ((set(marital_status_match.keys()) == {str(marital_status) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES}) and (all([((str(marital_status) in marital_status_match) and (rank_is_valid(rank=marital_status_match[str(marital_status)]))) for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES])))):
+    if (not ((set(marital_status_match.keys()) == {str(marital_status) for marital_status in User.MARITAL_STATUS_VALID_VALUES}) and (all([((str(marital_status) in marital_status_match) and (rank_is_valid(rank=marital_status_match[str(marital_status)]))) for marital_status in User.MARITAL_STATUS_VALID_VALUES])))):
         # This may be due to values added later.
         raise ValidationError(_("Please select marital status match."))
-    if (not (max([marital_status_match[str(marital_status)] for marital_status in SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
+    if (not (max([marital_status_match[str(marital_status)] for marital_status in User.MARITAL_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
         raise ValidationError(_("At least one marital status match option should be 5 hearts."))
 
 

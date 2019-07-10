@@ -32,7 +32,7 @@ def validate_field(field_name, user):
     elif (field_name in ['profile_description', to_attribute(name='profile_description')]):
         validators.validate_profile_description(profile_description=user.speedy_match_profile.profile_description)
     elif (field_name in ['city', to_attribute(name='city')]):
-        validators.validate_city(city=user.speedy_match_profile.city)
+        validators.validate_city(city=user.city)
     elif (field_name in ['children', to_attribute(name='children')]):
         validators.validate_children(children=user.speedy_match_profile.children)
     elif (field_name in ['more_children', to_attribute(name='more_children')]):
@@ -44,9 +44,9 @@ def validate_field(field_name, user):
     elif (field_name in ['diet']):
         validators.validate_diet(diet=user.diet)
     elif (field_name in ['smoking_status']):
-        validators.validate_smoking_status(smoking_status=user.speedy_match_profile.smoking_status)
+        validators.validate_smoking_status(smoking_status=user.smoking_status)
     elif (field_name in ['marital_status']):
-        validators.validate_marital_status(marital_status=user.speedy_match_profile.marital_status)
+        validators.validate_marital_status(marital_status=user.marital_status)
     elif (field_name in ['gender_to_match']):
         validators.validate_gender_to_match(gender_to_match=user.speedy_match_profile.gender_to_match)
     elif (field_name in ['min_age_match']):

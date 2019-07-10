@@ -81,8 +81,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             **{to_attribute(name='more_children', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='match_description', language_code=language_code): forms.Textarea(attrs={'rows': 3, 'cols': 25}) for language_code, language_name in django_settings.LANGUAGES},
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
-            'smoking_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.SMOKING_STATUS_VALID_CHOICES),
-            'marital_status_match': CustomJsonWidget(choices=SpeedyMatchSiteProfile.MARITAL_STATUS_VALID_CHOICES),
+            'smoking_status_match': CustomJsonWidget(choices=User.SMOKING_STATUS_VALID_CHOICES),
+            'marital_status_match': CustomJsonWidget(choices=User.MARITAL_STATUS_VALID_CHOICES),
         }
 
     def __init__(self, *args, **kwargs):
@@ -95,11 +95,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
             update_form_field_choices(field=self.fields['diet'], choices=self.instance.user.get_diet_choices())
-            self.fields['diet'].initial = self.instance.user.diet # ~~~~ TODO: diet, smoking_status and marital_status - this line is required if the field is in class User - not in class SpeedyMatchSiteProfile.
+            self.fields['diet'].initial = self.instance.user.diet
         if ('smoking_status' in self.fields):
-            update_form_field_choices(field=self.fields['smoking_status'], choices=self.instance.get_smoking_status_choices())
+            update_form_field_choices(field=self.fields['smoking_status'], choices=self.instance.user.get_smoking_status_choices())
+            self.fields['smoking_status'].initial = self.instance.user.smoking_status
         if ('marital_status' in self.fields):
-            update_form_field_choices(field=self.fields['marital_status'], choices=self.instance.get_marital_status_choices())
+            update_form_field_choices(field=self.fields['marital_status'], choices=self.instance.user.get_marital_status_choices())
+            self.fields['marital_status'].initial = self.instance.user.marital_status
         if ('diet_match' in self.fields):
             update_form_field_choices(field=self.fields['diet_match'], choices=self.instance.get_diet_match_choices())
         if ('smoking_status_match' in self.fields):

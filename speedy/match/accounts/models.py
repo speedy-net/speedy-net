@@ -26,46 +26,6 @@ class SiteProfile(SiteProfileBase):
     HEIGHT_VALID_VALUES = range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1)
     AGE_MATCH_VALID_VALUES = range(settings.MIN_AGE_MATCH_ALLOWED, settings.MAX_AGE_MATCH_ALLOWED + 1)
 
-    SMOKING_STATUS_UNKNOWN = 0
-    SMOKING_STATUS_NO = 1
-    SMOKING_STATUS_SOMETIMES = 2
-    SMOKING_STATUS_YES = 3
-    SMOKING_STATUS_MAX_VALUE_PLUS_ONE = 4
-
-    SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
-        (SMOKING_STATUS_UNKNOWN, _("Unknown")),
-        (SMOKING_STATUS_NO, _("No")),
-        (SMOKING_STATUS_SOMETIMES, _("Sometimes")),
-        (SMOKING_STATUS_YES, _("Yes")),
-    )
-    SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
-    SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
-
-    MARITAL_STATUS_UNKNOWN = 0
-    MARITAL_STATUS_SINGLE = 1
-    MARITAL_STATUS_DIVORCED = 2
-    MARITAL_STATUS_WIDOWED = 3
-    MARITAL_STATUS_IN_RELATIONSHIP = 4
-    MARITAL_STATUS_IN_OPEN_RELATIONSHIP = 5
-    MARITAL_STATUS_COMPLICATED = 6
-    MARITAL_STATUS_SEPARATED = 7
-    MARITAL_STATUS_MARRIED = 8
-    MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
-
-    MARITAL_STATUS_CHOICES_WITH_DEFAULT = (
-        (MARITAL_STATUS_UNKNOWN, _("Unknown")),
-        (MARITAL_STATUS_SINGLE, _("Single")),
-        (MARITAL_STATUS_DIVORCED, _("Divorced")),
-        (MARITAL_STATUS_WIDOWED, _("Widowed")),
-        (MARITAL_STATUS_IN_RELATIONSHIP, _("In a relationship")),
-        (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
-        (MARITAL_STATUS_COMPLICATED, _("It's complicated")),
-        (MARITAL_STATUS_SEPARATED, _("Separated")),
-        (MARITAL_STATUS_MARRIED, _("Married")),
-    )
-    MARITAL_STATUS_VALID_CHOICES = MARITAL_STATUS_CHOICES_WITH_DEFAULT[1:]
-    MARITAL_STATUS_VALID_VALUES = [choice[0] for choice in MARITAL_STATUS_VALID_CHOICES]
-
     RANK_0 = 0
     RANK_1 = 1
     RANK_2 = 2
@@ -93,47 +53,18 @@ class SiteProfile(SiteProfileBase):
 
     @staticmethod
     def smoking_status_match_default():
-        return dict({str(smoking_status): __class__.RANK_5 for smoking_status in __class__.SMOKING_STATUS_VALID_VALUES})
+        return dict({str(smoking_status): __class__.RANK_5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES})
 
     @staticmethod
     def marital_status_match_default():
-        return dict({str(marital_status): __class__.RANK_5 for marital_status in __class__.MARITAL_STATUS_VALID_VALUES})
-
-    @staticmethod
-    def smoking_status_choices(gender):
-        return (
-            # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.SMOKING_STATUS_NO, pgettext_lazy(context=gender, message="No")),
-            (__class__.SMOKING_STATUS_SOMETIMES, pgettext_lazy(context=gender, message="Sometimes")),
-            (__class__.SMOKING_STATUS_YES, pgettext_lazy(context=gender, message="Yes")),
-        )
-
-    @staticmethod
-    def marital_status_choices(gender):
-        return (
-            # (__class__.MARITAL_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.MARITAL_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
-            (__class__.MARITAL_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
-            (__class__.MARITAL_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
-            (__class__.MARITAL_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relationship")),
-            (__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
-            (__class__.MARITAL_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
-            (__class__.MARITAL_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
-            (__class__.MARITAL_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
-        )
+        return dict({str(marital_status): __class__.RANK_5 for marital_status in User.MARITAL_STATUS_VALID_VALUES})
 
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('on new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = models.TextField(verbose_name=_('active languages'), blank=True)
     height = models.SmallIntegerField(verbose_name=_('height'), help_text=_('cm'), blank=True, null=True)
-    # ~~~~ TODO: diet, smoking_status and marital_status - decide which model should contain them - are they relevant also to Speedy Net or only to Speedy Match?
-    smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), blank=True, null=True),
-    )
-    city = TranslatedField(
-        field=models.CharField(verbose_name=_('city or locality'), max_length=255, blank=True, null=True),
     )
     children = TranslatedField(
         field=models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True),
@@ -240,13 +171,13 @@ class SiteProfile(SiteProfileBase):
                 return self.__class__.RANK_0
             if (other_profile.user.diet == User.DIET_UNKNOWN):
                 return self.__class__.RANK_0
-            if (other_profile.smoking_status == self.__class__.SMOKING_STATUS_UNKNOWN):
+            if (other_profile.user.smoking_status == User.SMOKING_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
-            if (other_profile.marital_status == self.__class__.MARITAL_STATUS_UNKNOWN):
+            if (other_profile.user.marital_status == User.MARITAL_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
             diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_5)
-            smoking_status_rank = self.smoking_status_match.get(str(other_profile.smoking_status), self.__class__.RANK_5)
-            marital_status_rank = self.marital_status_match.get(str(other_profile.marital_status), self.__class__.RANK_5)
+            smoking_status_rank = self.smoking_status_match.get(str(other_profile.user.smoking_status), self.__class__.RANK_5)
+            marital_status_rank = self.marital_status_match.get(str(other_profile.user.marital_status), self.__class__.RANK_5)
             rank = min([diet_rank, smoking_status_rank, marital_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
                 other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
@@ -272,19 +203,13 @@ class SiteProfile(SiteProfileBase):
         else:
             return User.GENDERS_DICT.get(User.GENDER_OTHER)
 
-    def get_smoking_status_choices(self):
-        return self.__class__.smoking_status_choices(gender=self.user.get_gender())
-
-    def get_marital_status_choices(self):
-        return self.__class__.marital_status_choices(gender=self.user.get_gender())
-
     def get_diet_match_choices(self):
         return User.diet_choices(gender=self.get_match_gender())
 
     def get_smoking_status_match_choices(self):
-        return self.__class__.smoking_status_choices(gender=self.get_match_gender())
+        return User.smoking_status_choices(gender=self.get_match_gender())
 
     def get_marital_status_match_choices(self):
-        return self.__class__.marital_status_choices(gender=self.get_match_gender())
+        return User.marital_status_choices(gender=self.get_match_gender())
 
 
