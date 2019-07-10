@@ -94,6 +94,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             'marital_status_match': CustomJsonWidget(choices=User.MARITAL_STATUS_VALID_CHOICES),
         }
 
+    @staticmethod
+    def __new__(cls, *args, **kwargs):
+        for language_code, language_name in django_settings.LANGUAGES:
+            setattr(cls, to_attribute(name='city', language_code=language_code), forms.CharField(label=_('city or locality'), max_length=120))
+        return super().__new__(*args, **kwargs)
+
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
