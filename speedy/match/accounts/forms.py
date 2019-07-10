@@ -32,8 +32,15 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
+    user_fields = (
+        'diet',
+        'smoking_status',
+        'marital_status',
+        *(to_attribute(name='city', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
+    )
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
+        'diet': [speedy_match_accounts_validators.validate_diet],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
         'marital_status': [speedy_match_accounts_validators.validate_marital_status],
         **{to_attribute(name='profile_description', language_code=language_code): [speedy_match_accounts_validators.validate_profile_description] for language_code, language_name in django_settings.LANGUAGES},
@@ -49,7 +56,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
     }
     # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking status and marital status.
-    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'), validators=[speedy_match_accounts_validators.validate_diet])
+    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'))
+    smoking_status = forms.ChoiceField(choices=User.SMOKING_STATUS_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My smoking status'))
+    marital_status = forms.ChoiceField(choices=User.MARITAL_STATUS_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My marital status'))
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
@@ -131,14 +140,15 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return self.cleaned_data
 
     def save(self, commit=True):
-        if ((commit) and ('photo' in self.fields)):
-            if (self.files):
-                user_image = Image(owner=self.instance.user, file=self.files['photo'])
-                user_image.save()
-                self.instance.user.photo = user_image
-            self.instance.user.save()
-        if ((commit) and ('diet' in self.fields)):
-            self.instance.user.diet = self.cleaned_data['diet']
+        if (commit):
+            if ('photo' in self.fields):
+                if (self.files):
+                    user_image = Image(owner=self.instance.user, file=self.files['photo'])
+                    user_image.save()
+                    self.instance.user.photo = user_image
+            for field_name in self.user_fields:
+                if (field_name in self.fields):
+                    setattr(self.instance.user, field_name, self.cleaned_data[field_name])
             self.instance.user.save()
         super().save(commit=commit)
         if (commit):
