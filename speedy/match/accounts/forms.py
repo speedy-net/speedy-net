@@ -55,10 +55,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
     }
-    # ~~~~ TODO: diet choices depend on the current user's gender. Also same for smoking status and marital status.
-    diet = forms.ChoiceField(choices=User.DIET_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My diet'))
-    smoking_status = forms.ChoiceField(choices=User.SMOKING_STATUS_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My smoking status'))
-    marital_status = forms.ChoiceField(choices=User.MARITAL_STATUS_VALID_CHOICES, widget=forms.RadioSelect(), label=_('My marital status'))
+    diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
+    smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
+    marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
     city_en = forms.CharField(label=_('city or locality'), max_length=120)
     city_he = forms.CharField(label=_('city or locality'), max_length=120)
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
