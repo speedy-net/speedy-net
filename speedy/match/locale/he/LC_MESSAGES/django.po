@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-11 09:02+0300\n"
+"POT-Creation-Date: 2019-07-11 16:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,23 +147,23 @@ msgid "Unlike"
 msgstr "בטל/י לייק"
 
 #: .\accounts\forms.py:58
-msgid "My diet"
+msgid "Add profile picture"
 msgstr ""
 
 #: .\accounts\forms.py:59
-msgid "My smoking status"
+msgid "My diet"
 msgstr ""
 
 #: .\accounts\forms.py:60
+msgid "My smoking status"
+msgstr ""
+
+#: .\accounts\forms.py:61
 msgid "My marital status"
 msgstr ""
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:62
+#: .\accounts\forms.py:62
 msgid "City or locality"
-msgstr ""
-
-#: .\accounts\forms.py:63
-msgid "Add profile picture"
 msgstr ""
 
 #: .\accounts\models.py:37
