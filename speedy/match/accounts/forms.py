@@ -59,8 +59,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
     marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
-    city_en = forms.CharField(label=_('City or locality'), max_length=120)
-    city_he = forms.CharField(label=_('City or locality'), max_length=120)
+    # city_en = forms.CharField(label=_('City or locality'), max_length=120)
+    # city_he = forms.CharField(label=_('City or locality'), max_length=120)
 
     class Meta:
         model = SpeedyMatchSiteProfile
@@ -164,6 +164,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     def get_fields(self):
         # This function is not defined in this base (abstract) form.
         raise NotImplementedError()
+
+
+for language_code, language_name in django_settings.LANGUAGES:
+    setattr(SpeedyMatchProfileBaseForm, to_attribute(name='city', language_code=language_code), forms.CharField(label=_('City or locality'), max_length=120))
 
 
 class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
