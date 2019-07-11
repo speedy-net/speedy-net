@@ -59,8 +59,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
     marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
-    city_en = forms.CharField(label=_('City or locality'), max_length=120)
-    city_he = forms.CharField(label=_('City or locality'), max_length=120)
+    _city = forms.CharField(label=_('City or locality'), max_length=120)
+    city_en = _city
+    city_he = _city
 
     class Meta:
         model = SpeedyMatchSiteProfile
