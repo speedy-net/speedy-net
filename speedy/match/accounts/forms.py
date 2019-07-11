@@ -55,12 +55,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
     }
+    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
     marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
     city_en = forms.CharField(label=_('City or locality'), max_length=120)
     city_he = forms.CharField(label=_('City or locality'), max_length=120)
-    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
 
     class Meta:
         model = SpeedyMatchSiteProfile
