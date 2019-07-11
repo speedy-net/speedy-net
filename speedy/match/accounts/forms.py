@@ -105,19 +105,19 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
         if ('diet' in self.fields):
             update_form_field_choices(field=self.fields['diet'], choices=self.instance.user.get_diet_choices())
-            self.fields['diet'].initial = self.instance.user.diet
         if ('smoking_status' in self.fields):
             update_form_field_choices(field=self.fields['smoking_status'], choices=self.instance.user.get_smoking_status_choices())
-            self.fields['smoking_status'].initial = self.instance.user.smoking_status
         if ('marital_status' in self.fields):
             update_form_field_choices(field=self.fields['marital_status'], choices=self.instance.user.get_marital_status_choices())
-            self.fields['marital_status'].initial = self.instance.user.marital_status
         if ('diet_match' in self.fields):
             update_form_field_choices(field=self.fields['diet_match'], choices=self.instance.get_diet_match_choices())
         if ('smoking_status_match' in self.fields):
             update_form_field_choices(field=self.fields['smoking_status_match'], choices=self.instance.get_smoking_status_match_choices())
         if ('marital_status_match' in self.fields):
             update_form_field_choices(field=self.fields['marital_status_match'], choices=self.instance.get_marital_status_match_choices())
+        for field_name in self.user_fields:
+            if (field_name in self.fields):
+                self.fields[field_name].initial = getattr(self.instance.user, field_name)
         for field_name, field in self.fields.items():
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
