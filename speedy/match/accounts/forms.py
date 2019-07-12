@@ -59,6 +59,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
     marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
+    # ~~~~ TODO: define all the languages and not just hard-code languages like below.
     _city = forms.CharField(label=_('City or locality'), max_length=120)
     city_en = _city
     city_he = _city
