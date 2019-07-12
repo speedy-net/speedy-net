@@ -1,0 +1,19 @@
+{% extends 'feedback/feedback_base.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+{% load im_tags %}
+{% load rules %}
+
+{% block content %}
+<div class="page-header">
+    <h2>
+        {% blocktrans with site_name=site.name %}Contact Us{% endblocktrans %}
+    </h2>
+</div>
+<div>
+{% blocktrans with site_name=site.name %}If you have any questions, suggestions or are interested in joining the team - please contact us by e-mail.{% endblocktrans %}<br />
+<br />
+{% blocktrans with site_name=site.name %}Uri Rodberg, founder and webmaster: {% endblocktrans %}<a href="mailto:uri@speedy.net">uri@speedy.net</a><br />
+</div>
+{% endblock %}

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-11 16:44+0300\n"
+"POT-Creation-Date: 2019-07-12 23:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1635,7 +1635,7 @@ msgstr ""
 msgid "id contains illegal characters."
 msgstr ""
 
-#: .\base\views.py:49
+#: .\base\views.py:56
 msgid "Changes saved."
 msgstr ""
 
@@ -1968,7 +1968,8 @@ msgstr ""
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base.html:149 .\templates\feedback\feedback_base.html:6
+#: .\templates\base.html:149 .\templates\feedback\contact.html:11
+#: .\templates\feedback\feedback_base.html:6
 #: .\templates\feedback\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
@@ -2061,6 +2062,16 @@ msgstr ""
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
+msgstr ""
+
+#: .\templates\feedback\contact.html:15
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team "
+"- please contact us by e-mail."
+msgstr ""
+
+#: .\templates\feedback\contact.html:17
+msgid "Uri Rodberg, founder and webmaster: "
 msgstr ""
 
 #: .\templates\feedback\feedback_base.html:6

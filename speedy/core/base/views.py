@@ -45,6 +45,13 @@ class StaticTermsOfServiceBaseView(StaticBaseView):
         abstract = True
 
 
+class StaticContactBaseView(StaticBaseView):
+    canonical_full_path = "/contact/"
+
+    class Meta:
+        abstract = True
+
+
 class FormValidMessageMixin(object):
     form_valid_message = _('Changes saved.')
 
