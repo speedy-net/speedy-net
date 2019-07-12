@@ -61,13 +61,13 @@ img.main-image {
 
 @media screen and (max-width: 1080px) {
     img.fb-badge {
-        width: 30%;
+        width: 12%;
         height: auto;
     }
     .wiki-link {
         font-size: 60px;
     }
     .speedy-bottom-badge-link {
-        font-size: 40px;
+        font-size: 28px;
     }
 }
