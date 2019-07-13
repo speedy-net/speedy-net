@@ -41,7 +41,7 @@ td {
     padding: 0px 40px;
 }
 
-.wiki-link {
+.language-link {
     font-size: 40px;
 }
 
@@ -64,7 +64,7 @@ img.main-image {
         width: 12%;
         height: auto;
     }
-    .wiki-link {
+    .language-link {
         font-size: 60px;
     }
     .speedy-bottom-badge-link {
