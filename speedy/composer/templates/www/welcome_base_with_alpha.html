@@ -1,0 +1,46 @@
+{% extends 'base_site.html' %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% comment %}
+# ~~~~ TODO: delete this file!
+# This template is temporary, because Speedy Composer currently doesn't support Hebrew.
+{% endcomment %}
+
+{% block description %}
+    <meta name="description" content="{{ site.name }}" />
+{% endblock %}
+
+{% block viewport %}
+
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-core/css/welcome-base.css' %}" />
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+{% block body %}
+<center>
+    <div id="top-gradient"></div>
+    <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
+    <br />
+    <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
+        <tr>
+            <td dir="ltr">
+                <a class="language-link" href="//en.{{ site.domain }}/" title="English [alpha]" target="_top">English{% block alpha_english %}<span> [alpha]</span>{% endblock %}</a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <img class="main-image" src="{% block splash_src %}{% endblock %}" alt="{{ site.name }}" />
+    <br />
+    <br />
+    <br />
+</center>
+
+{% endblock %}
