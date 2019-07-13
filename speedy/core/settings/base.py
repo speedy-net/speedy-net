@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'speedy.core.base',
+    'speedy.core.about',
+    'speedy.core.privacy',
+    'speedy.core.terms',
     # 'speedy.core.accounts',
     # 'speedy.core.im',
     # 'speedy.core.profiles',

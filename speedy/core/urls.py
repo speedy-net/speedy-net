@@ -8,7 +8,6 @@ urlpatterns = [
     url(regex=r'^about/', view=include('speedy.core.about.urls', namespace='about')),
     url(regex=r'^privacy/', view=include('speedy.core.privacy.urls', namespace='privacy')),
     url(regex=r'^terms/', view=include('speedy.core.terms.urls', namespace='terms')),
-    url(regex=r'^contact/', view=include('speedy.core.feedback.urls', namespace='feedback')),
 ]
 
 if (django_settings.DEBUG):

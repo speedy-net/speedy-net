@@ -26,10 +26,10 @@
                 </button>
             </form>
         {% endif %}
-        <a class="dropdown-item" href="{% url 'feedback:report_entity' user.slug %}">
+        <a class="dropdown-item" href="{% url 'contact:report_entity' user.slug %}">
             {% trans 'Report ' context request.user.get_gender %}{{ user }}</a>
         {% if user.photo %}
-            <a class="dropdown-item" href="{% url 'feedback:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
+            <a class="dropdown-item" href="{% url 'contact:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
         {% endif %}
     </div>
 {% endif %}

@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from speedy.core.urls import urlpatterns
+from speedy.core.urls_without_login import urlpatterns
 
 app_name = 'speedy.composer'
 urlpatterns += [
