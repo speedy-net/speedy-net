@@ -64,16 +64,12 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'speedy.core.base',
+    'speedy.core.accounts',
+    'speedy.core.blocks',
+    'speedy.core.uploads',
     'speedy.core.about',
     'speedy.core.privacy',
     'speedy.core.terms',
-    # 'speedy.core.accounts',
-    # 'speedy.core.im',
-    # 'speedy.core.profiles',
-    # 'speedy.core.friends',
-    # 'speedy.core.blocks',
-    # 'speedy.core.uploads',
-    # 'speedy.core.feedback',
 ]
 
 MIDDLEWARE = [
@@ -186,8 +182,8 @@ AUTHENTICATION_BACKENDS = (
 
 SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 
-# AUTH_USER_MODEL = 'accounts.User'
-#
+AUTH_USER_MODEL = 'accounts.User'
+
 # LOGIN_URL = '/login/'
 #
 # LOGIN_REDIRECT_URL = '/me/'

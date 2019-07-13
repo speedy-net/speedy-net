@@ -5,12 +5,9 @@ LOGIN_ENABLED = True
 
 
 INSTALLED_APPS += [
-    'speedy.core.accounts',
     'speedy.core.profiles',
     'speedy.core.im',
     'speedy.core.friends',
-    'speedy.core.blocks',
-    'speedy.core.uploads',
     'speedy.core.contact_by_form',
 ]
 
@@ -22,8 +19,6 @@ USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
 ]
-
-AUTH_USER_MODEL = 'accounts.User'
 
 LOGIN_URL = '/login/'
 
