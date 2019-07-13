@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-11 16:44+0300\n"
+"POT-Creation-Date: 2019-07-13 08:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1635,7 +1635,7 @@ msgstr ""
 msgid "id contains illegal characters."
 msgstr ""
 
-#: .\base\views.py:49
+#: .\base\views.py:56
 msgid "Changes saved."
 msgstr ""
 
@@ -1659,55 +1659,55 @@ msgstr ""
 msgid "You have unblocked {}."
 msgstr ""
 
-#: .\feedback\forms.py:27
+#: .\contact_by_form\forms.py:27
 msgid "Send"
 msgstr ""
 
-#: .\feedback\models.py:15
+#: .\contact_by_form\models.py:15
 msgid "Feedback"
 msgstr ""
 
-#: .\feedback\models.py:16
+#: .\contact_by_form\models.py:16
 msgid "Abuse (User)"
 msgstr ""
 
-#: .\feedback\models.py:17
+#: .\contact_by_form\models.py:17
 msgid "Abuse (Photo)"
 msgstr ""
 
-#: .\feedback\models.py:20 .\im\models.py:72
+#: .\contact_by_form\models.py:20 .\im\models.py:72
 msgid "sender"
 msgstr ""
 
-#: .\feedback\models.py:21
+#: .\contact_by_form\models.py:21
 msgid "your name"
 msgstr ""
 
-#: .\feedback\models.py:22
+#: .\contact_by_form\models.py:22
 msgid "your email"
 msgstr ""
 
-#: .\feedback\models.py:23
+#: .\contact_by_form\models.py:23
 msgid "type"
 msgstr ""
 
-#: .\feedback\models.py:24
+#: .\contact_by_form\models.py:24
 msgid "your message"
 msgstr ""
 
-#: .\feedback\models.py:26
+#: .\contact_by_form\models.py:26
 msgid "reported entity"
 msgstr ""
 
-#: .\feedback\models.py:27
+#: .\contact_by_form\models.py:27
 msgid "reported photo"
 msgstr ""
 
-#: .\feedback\models.py:30
+#: .\contact_by_form\models.py:30
 msgid "feedback"
 msgstr ""
 
-#: .\feedback\models.py:31
+#: .\contact_by_form\models.py:31
 msgid "feedbacks"
 msgstr ""
 
@@ -1775,11 +1775,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:232
+#: .\settings\base.py:235
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:233
+#: .\settings\base.py:236
 msgid "Hebrew"
 msgstr ""
 
@@ -1968,8 +1968,10 @@ msgstr ""
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base.html:149 .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:14
+#: .\templates\base.html:149 .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:13
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
 msgstr ""
@@ -2055,30 +2057,40 @@ msgstr ""
 msgid "You're not blocking anybody."
 msgstr ""
 
+#: .\templates\contact_by_email\contact_us.html:17
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team "
+"- please contact us by e-mail."
+msgstr ""
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid "Uri Rodberg, founder and webmaster: "
+msgstr ""
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr ""
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr ""
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr ""
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr ""
+
 #: .\templates\core\pagination.html:9
 msgid "Previous"
 msgstr ""
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
-msgstr ""
-
-#: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:10
-msgid "Report a User"
-msgstr ""
-
-#: .\templates\feedback\feedback_base.html:6
-#: .\templates\feedback\feedback_form.html:12
-msgid "Report a Photo"
-msgstr ""
-
-#: .\templates\feedback\feedback_success.html:8
-msgid "Thank You"
-msgstr ""
-
-#: .\templates\feedback\feedback_success.html:11
-msgid "Your feedback was sent to administrators."
 msgstr ""
 
 #: .\templates\friends\base.html:18

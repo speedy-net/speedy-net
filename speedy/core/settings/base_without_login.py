@@ -11,7 +11,8 @@ INSTALLED_APPS += [
     # 'speedy.core.friends', # ~~~~ TODO: remove this line!
     'speedy.core.blocks', # ~~~~ TODO: remove this line!
     'speedy.core.uploads', # ~~~~ TODO: remove this line!
-    'speedy.core.feedback',
+    # 'speedy.core.contact_by_form', # ~~~~ TODO: remove this line!
+    'speedy.core.contact_by_email',
 ]
 
 

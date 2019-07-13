@@ -11,7 +11,7 @@ INSTALLED_APPS += [
     'speedy.core.friends',
     'speedy.core.blocks',
     'speedy.core.uploads',
-    'speedy.core.feedback',
+    'speedy.core.contact_by_form',
 ]
 
 MIDDLEWARE += [

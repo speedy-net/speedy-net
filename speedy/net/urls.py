@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from speedy.core.urls import urlpatterns
+from speedy.core.urls_with_login import urlpatterns
 
 app_name = 'speedy.net'
 urlpatterns += [
