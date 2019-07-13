@@ -136,12 +136,14 @@ if (django_settings.LOGIN_ENABLED):
             return '/contact/'
 
 
+    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
     class FeedbackViewTypeFeedbackEnglishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='en')
 
 
+    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
     @override_settings(LANGUAGE_CODE='he')
     class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
         def validate_all_values(self):

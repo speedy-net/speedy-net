@@ -9,6 +9,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
+    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
     class FeedbackFormTestCase(SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
         def assert_form_text_field(self, form):
             self.assertTrue(expr=form.fields['text'].required)
