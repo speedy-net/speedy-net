@@ -10,6 +10,13 @@ SITE_ID = SPEEDY_COMPOSER_SITE_ID
 
 ROOT_URLCONF = 'speedy.composer.urls'
 
+# ~~~~ TODO: Remove LANGUAGES!
+# Define only English, Hebrew will be redirected to www.
+LANGUAGES = [
+    ('en', _('English')),
+]
+# ~~~~ TODO: Remove LANGUAGES!
+
 # if (LOGIN_ENABLED):
 if (True or LOGIN_ENABLED): # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
