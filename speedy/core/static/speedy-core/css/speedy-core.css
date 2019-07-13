@@ -185,3 +185,12 @@ body.bidi-rtl .navbar-right {
         margin-bottom: 20px;
     }
 }
+
+.direction-ltr {
+    direction: ltr;
+}
+
+.direction-rtl {
+    direction: rtl;
+}
+
