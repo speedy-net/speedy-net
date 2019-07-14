@@ -63,7 +63,7 @@ def jsonify(object):
 
 
 @register.filter
-def keyvalue(dictionary, key):
+def key_value(dictionary, key):
     return dictionary.get(str(key))
 
 

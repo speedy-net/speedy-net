@@ -3,7 +3,7 @@
 <div class="widget-json">
     {% for choice in choices %}
         <div class="widget-group" data-value="{{ choice.0 }}">
-            <input type="checkbox" class="widget-checkbox" {% if value|keyvalue:choice.0  %} checked="checked"}{% endif %}>
+            <input type="checkbox" class="widget-checkbox" {% if value|key_value:choice.0  %} checked="checked"}{% endif %}>
             <span>{{ choice.1 }}</span>
             <span class="choices pull-right flip">
                 <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="1"></i>
