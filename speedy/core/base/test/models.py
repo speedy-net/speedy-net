@@ -31,7 +31,7 @@ class SiteDiscoverRunner(DiscoverRunner):
                     if (add_this_label):
                         if (not (label_to_test in test_labels)):
                             test_labels.append(label_to_test)
-        print(test_labels) # ~~~~ TODO: remove this line!
+        print(test_labels)
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
 
