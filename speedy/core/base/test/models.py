@@ -34,6 +34,11 @@ class SiteDiscoverRunner(DiscoverRunner):
         print(test_labels) # ~~~~ TODO: remove this line!
         return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
+    def run_tests(self, *args, **kwargs): # ~~~~ TODO: remove this function!
+        # Run tests only in Speedy Mail Software. # ~~~~ TODO: remove this function!
+        if (django_settings.SITE_ID == django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID):
+            super().run_tests(*args, **kwargs)
+
 
 class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
     def run_tests(self, *args, **kwargs):
