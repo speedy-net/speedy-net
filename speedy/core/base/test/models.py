@@ -36,7 +36,7 @@ class SiteDiscoverRunner(DiscoverRunner):
 
 
 class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
-    def run_tests(self, test_labels, extra_tests=None, **kwargs):
+    def run_tests(self, *args, **kwargs):
         # We don't run tests on speedy.core
         pass
 
