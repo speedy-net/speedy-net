@@ -41,10 +41,12 @@ class LocaleDomainMiddleware(object):
         site = Site.objects.get_current()
 
         for language_code, language_name in django_settings.LANGUAGES:
-            if (domain == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
-                translation.activate(language_code)
-                request.LANGUAGE_CODE = translation.get_language()
-                return self.get_response(request=request)
+            # Temp commit - disabled language sites in all sites except Speedy Mail Software. # ~~~~ TODO: remove this if!
+            if (site.pk == django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID):
+                if (domain == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
+                    translation.activate(language_code)
+                    request.LANGUAGE_CODE = translation.get_language()
+                    return self.get_response(request=request)
 
         try:
             if (request.path == reverse('accounts:set_session')):
