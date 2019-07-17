@@ -60,20 +60,14 @@ class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, gener
         site = Site.objects.get_current()
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
+        extra_select = {
+            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
+        }
+        qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
         if (site.id == django_settings.SPEEDY_NET_SITE_ID):
-            extra_select = {
-                'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
-            }
-            qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
             return qs
         elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
-            extra_select = {
-                'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
-                'like_exists': 'SELECT COUNT(1) FROM likes_userlike WHERE from_user_id = friendship_friend.from_user_id OR to_user_id=friendship_friend.from_user_id',
-                'messages_exists': 'SELECT COUNT(1) FROM im_chat WHERE ent1_id=friendship_friend.from_user_id OR ent2_id=friendship_friend.from_user_id'
-            }
-            qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0) or u.like_exists or u.messages_exists]
+            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
