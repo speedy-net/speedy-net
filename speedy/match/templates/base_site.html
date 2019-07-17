@@ -18,12 +18,15 @@
 
 {% block navbar_class %}navbar-light bg-speedy-match{% endblock %}
 
-{% block navbar_mobile_menu_top_extra %}
-    <li>
-        <a href="{% url 'likes:list' request.user.slug %}">{% trans 'Likes' %}</a>
-    </li>
+{% block navbar_mobile_menu_top_extra_1 %}
     <li>
         <a href="{% url 'matches:list' %}">{% trans 'Matches' %}</a>
+    </li>
+{% endblock %}
+
+{% block navbar_mobile_menu_top_extra_2 %}
+    <li>
+        <a href="{% url 'likes:list' request.user.slug %}">{% trans 'Likes' %}</a>
     </li>
 {% endblock %}
 
@@ -38,31 +41,36 @@
 {% endblock %}
 
 {% block navbar_brand %}
-    <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}"
-                                          alt="{{ site.name }}"></a>
+    <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}" alt="{{ site.name }}"></a>
 {% endblock %}
-
-{% block user_menu_friends %}{% endblock %}
 
 {% block navbar_left_menu %}
     {% block user_menu %}
-        {{ block.super }}
         {% if request.user.speedy_match_profile.is_active %}
-            <li class="nav-item">
-                <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
-                    <i class="fa fa-fw fa-heart"></i>
-                    {% trans 'Likes' %}
-                </a>
-            </li>
+            {% block user_menu_profile_is_active %}
+                {{ block.super }}
+            {% endblock %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
+
+{% block user_menu_extra_1 %}
             <li class="nav-item">
                 <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
                     <i class="fa fa-fw fa-star" aria-hidden="true"></i>
                     <span>{% trans 'Matches' %}</span>
                 </a>
             </li>
+{% endblock %}
+
+{% block user_menu_extra_2 %}
+            <li class="nav-item">
+                <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
+                    <i class="fa fa-fw fa-heart"></i>
+                    {% trans 'Likes' %}
+                </a>
+            </li>
             {% include 'friends/user_menu_friends.html' %}
-        {% endif %}
-    {% endblock %}
 {% endblock %}
 
 {% block greeting %}
