@@ -96,7 +96,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('id',)
 
     def __str__(self):
-        return '<Entity {}>'.format(self.id)
+        return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
 
     def clean_all_fields(self, exclude=None):
         super().clean_all_fields(exclude=exclude)
@@ -134,7 +134,12 @@ class NamedEntity(Entity):
         abstract = True
 
     def __str__(self):
-        return '<NamedEntity {} - {}>'.format(self.id, self.name)
+        return '<NamedEntity {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
+
+
+class ReservedUsername(Entity):
+    def __str__(self):
+        return '<ReservedUsername {} - username={}>'.format(self.id, self.username, self.slug)
 
 
 class UserAccessField(models.PositiveIntegerField):
