@@ -19,17 +19,11 @@ from .rules import is_self, friend_request_sent, are_friends
 
 
 class FriendsMixin(object):
-    def get_received_friendship_requests(self):
-        return self.user.all_received_friendship_requests
-
-    def get_sent_friendship_requests(self):
-        return self.user.all_sent_friendship_requests
-
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'received_requests': self.get_received_friendship_requests(),
-            'sent_requests': self.get_sent_friendship_requests()
+            'received_requests': self.user.all_received_friendship_requests,
+            'sent_requests': self.user.all_sent_friendship_requests,
         })
         return cd
 
