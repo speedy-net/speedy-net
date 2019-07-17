@@ -345,6 +345,38 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self.refresh_all_profiles()
             return self._speedy_match_profile
 
+    @property
+    def all_received_friendship_requests(self):
+        qs = self.user.friendship_requests_received.all()
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return qs
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            return qs
+        else:
+            raise NotImplementedError()
+
+    @property
+    def received_friendship_requests_count(self):
+        return len(self.all_received_friendship_requests)
+
+    @property
+    def all_sent_friendship_requests(self):
+        qs = self.user.friendship_requests_sent.all()
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return qs
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            return qs
+        else:
+            raise NotImplementedError()
+
+    @property
+    def sent_friendship_requests_count(self):
+        return len(self.all_sent_friendship_requests)
+
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
