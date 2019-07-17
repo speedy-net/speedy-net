@@ -14,13 +14,12 @@
 
         <div class="{% if site == speedy_match %}col-md-7{% else %}col-12{% endif %}">
 
-
             {% if can_view_profile_header %}
                 <div class="row">
                     <div class="col-md">
                         <div class="page-header">
                             <h1>
-                                {{ user }}
+                                {{ user }}{% block user_extra %}{% endblock %}
                             </h1>
                             <div class="text-muted">
                                 {% block user_status %}

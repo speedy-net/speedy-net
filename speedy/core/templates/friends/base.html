@@ -4,9 +4,11 @@
 {% load i18n %}
 {% load rules %}
 
-{% block title %}{% trans 'Friends' %} / {{ block.super }}{% endblock %}
+{% block title %}{{ user }} - {% trans 'Friends' %} / {{ block.super }}{% endblock %}
 
 {% block user_menu_friends_class %}active{% endblock %}
+
+{% block user_extra %} - {% trans 'Friends' %}{% endblock %}
 
 {% block user_content %}
     {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
