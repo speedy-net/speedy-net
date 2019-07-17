@@ -10,7 +10,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class RequestTestCase(SiteTestCase):
+    class RequestRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
@@ -33,7 +33,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class ViewRequestsTestCase(SiteTestCase):
+    class ViewRequestsRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
@@ -47,7 +47,25 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class RemoveTestCase(SiteTestCase):
+    class ViewFriendListRulesTestCaseMixin(object):
+        def set_up(self):
+            super().set_up()
+            self.user = ActiveUserFactory()
+            self.other_user = ActiveUserFactory()
+
+        def test_user_can_view_his_own_friend_list(self):
+            self.assertTrue(expr=self.user.has_perm(perm='friends.view_friend_list', obj=self.user))
+            raise Exception # ~~~~ TODO: remove this line!
+
+        def test_user_can_view_another_user_friend_list(self):
+            raise NotImplementedError()
+
+        def test_user_cannot_view_another_user_friend_list(self):
+            raise NotImplementedError()
+
+
+    @only_on_sites_with_login
+    class RemoveRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()

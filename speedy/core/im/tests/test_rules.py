@@ -10,7 +10,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class SendMessageTestCase(SiteTestCase):
+    class SendMessageRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user1 = ActiveUserFactory()
@@ -29,7 +29,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class ViewChatsTestCase(SiteTestCase):
+    class ViewChatsRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user1 = ActiveUserFactory()
@@ -43,7 +43,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class ReadChatTestCase(SiteTestCase):
+    class ReadChatRulesTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.user1 = ActiveUserFactory()

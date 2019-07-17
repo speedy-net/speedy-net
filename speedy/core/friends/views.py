@@ -52,7 +52,8 @@ class FriendsMixin(object):
         return cd
 
 
-class UserFriendListView(FriendsMixin, UserMixin, generic.TemplateView):
+class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    permission_required = 'friends.view_friend_list'
     template_name = 'friends/friend_list.html'
 
     def get_friends(self):

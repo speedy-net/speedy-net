@@ -7,7 +7,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
-class ViewProfileTestCaseMixin(object):
+class ViewProfileRulesTestCaseMixin(object):
     def get_active_user_doron(self):
         user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", gender=User.GENDER_FEMALE)
         user.speedy_match_profile.gender_to_match = [User.GENDER_MALE]

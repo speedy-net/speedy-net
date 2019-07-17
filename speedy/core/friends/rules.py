@@ -1,5 +1,6 @@
 from friendship.models import Friend
 from rules import predicate, add_perm, is_authenticated
+from django.conf import settings as django_settings
 
 from speedy.core.accounts.base_rules import is_self
 from speedy.core.blocks.rules import there_is_block
@@ -15,12 +16,23 @@ def is_friend(user, other_user):
     return Friend.objects.are_friends(user1=user, user2=other_user)
 
 
+@predicate
+def view_friend_list(user, other_user):
+    # User can view other user's friends only on Speedy Net.
+    # Otherwise (on Speedy Match), user can only view his or her own friends.
+    if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+        return True
+    else:
+        return (is_self(user=user, other_user=other_user))
+
+
 are_friends = is_friend
 
 
 add_perm('friends.request', is_authenticated & ~is_self & ~friend_request_sent & ~is_friend & ~there_is_block)
 add_perm('friends.cancel_request', is_authenticated & friend_request_sent)
 add_perm('friends.view_requests', is_self)
+add_perm('friends.view_friend_list', view_friend_list)
 add_perm('friends.remove', is_authenticated & is_friend)
 
 
