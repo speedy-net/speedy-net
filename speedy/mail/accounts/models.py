@@ -15,7 +15,7 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = _('Speedy Mail Profiles')
 
     def __str__(self):
-        return '{} @ Speedy Mail Software'.format(self.user)
+        return '{} @ Speedy Mail Software'.format(super().__str__())
 
     def activate(self):
         self.is_active = True

@@ -645,7 +645,7 @@ class SiteProfileBase(TimeStampedModel):
         abstract = True
 
     def __str__(self):
-        return '{}'.format(self.user)
+        return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
     def save(self, *args, **kwargs):
         return_value = super().save(*args, **kwargs)

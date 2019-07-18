@@ -35,7 +35,7 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = _('Speedy Composer Profiles')
 
     def __str__(self):
-        return '{} @ Speedy Composer'.format(self.user)
+        return '{} @ Speedy Composer'.format(super().__str__())
 
     def activate(self):
         self.is_active = True

@@ -15,7 +15,7 @@ class SiteProfile(SiteProfileBase):
         verbose_name_plural = _('Speedy Net Profiles')
 
     def __str__(self):
-        return '{} @ Speedy Net'.format(self.user)
+        return '{} @ Speedy Net'.format(super().__str__())
 
     def activate(self):
         self.is_active = True

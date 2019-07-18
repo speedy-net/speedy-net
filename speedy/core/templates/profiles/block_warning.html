@@ -6,8 +6,8 @@
 
 <div class="alert alert-danger">
     {% if you_blocked_other_user %}
-        {% trans 'You blocked ' context user.get_gender %}{{ other }}{% trans '.' %}
+        {% trans 'You blocked ' context user.get_gender %}{{ other.name }}{% trans '.' %}
     {% elif other_user_blocked_you  %}
-        {{ other }}{% trans ' blocked you.' context other.user.get_gender %}
+        {{ other.name }}{% trans ' blocked you.' context other.user.get_gender %}
     {% endif %}
 </div>
