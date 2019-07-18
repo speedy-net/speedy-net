@@ -32,25 +32,10 @@ class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, gener
     permission_required = 'friends.view_friend_list'
     template_name = 'friends/friend_list.html'
 
-    def get_friends(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
-        }
-        qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
-        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            return qs
-        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
-            return qs
-        else:
-            raise NotImplementedError()
-
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'friends': self.get_friends(),
+            'friends': self.user.all_friends,
         })
         return cd
 

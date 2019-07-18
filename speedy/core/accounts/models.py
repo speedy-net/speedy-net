@@ -360,12 +360,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
         }
-        qs = self.user.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
+        qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -381,12 +381,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
         }
-        qs = self.user.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
+        qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -394,6 +394,26 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @property
     def sent_friendship_requests_count(self):
         return len(self.all_sent_friendship_requests)
+
+    @property
+    def all_friends(self):
+        SiteProfile = get_site_profile_model()
+        table_name = SiteProfile._meta.db_table
+        extra_select = {
+            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
+        }
+        qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return qs
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
+            return qs
+        else:
+            raise NotImplementedError()
+
+    @property
+    def friends_count(self):
+        return len(self.all_friends)
 
     class Meta:
         verbose_name = _('user')
@@ -519,10 +539,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return self.__class__.diet_choices(gender=self.get_gender())
 
     def get_smoking_status_choices(self):
-        return self.__class__.smoking_status_choices(gender=self.user.get_gender())
+        return self.__class__.smoking_status_choices(gender=self.get_gender())
 
     def get_marital_status_choices(self):
-        return self.__class__.marital_status_choices(gender=self.user.get_gender())
+        return self.__class__.marital_status_choices(gender=self.get_gender())
 
 
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
