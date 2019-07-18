@@ -37,7 +37,7 @@
                                     <div class="{{ chat.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3 {% if not forloop.last %}mb-3{% endif %}">
                                         <p>
                                             <strong>
-                                                {{ user.user.profile.get_name }}
+                                                {{ user.user.name }}
                                             </strong>
                                             <small>
                                                 {{ chat.last_message.date_created }}

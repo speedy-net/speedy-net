@@ -28,13 +28,13 @@ class SpeedyCoreAccountsModelsMixin(object):
         for base_field_name in User.LOCALIZABLE_FIELDS:
             for language_code, language_name in django_settings.LANGUAGES:
                 field_name_localized = '{}_{}'.format(base_field_name, language_code)
-                self.assertEqual(first=getattr(user, field_name_localized), second=getattr(user, base_field_name), msg="assert_user_first_and_last_name_in_all_languages::fields don't match ({field_name_localized}, {base_field_name}), user.pk={user_pk}, user.username={user_username}, user.slug={user_slug}, user.profile.get_name()={user_profile_get_name}".format(
+                self.assertEqual(first=getattr(user, field_name_localized), second=getattr(user, base_field_name), msg="assert_user_first_and_last_name_in_all_languages::fields don't match ({field_name_localized}, {base_field_name}), user.pk={user_pk}, user.username={user_username}, user.slug={user_slug}, user.name={user_name}".format(
                     field_name_localized=field_name_localized,
                     base_field_name=base_field_name,
                     user_pk=user.pk,
                     user_username=user.username,
                     user_slug=user.slug,
-                    user_profile_get_name=user.profile.get_name(),
+                    user_name=user.name,
                 ))
                 field_name_localized_list.append(field_name_localized)
         self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he'])

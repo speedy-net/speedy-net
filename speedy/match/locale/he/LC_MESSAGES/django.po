@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-13 08:36+0300\n"
+"POT-Creation-Date: 2019-07-18 16:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -339,11 +339,11 @@ msgstr ""
 msgid "to user"
 msgstr ""
 
-#: .\likes\models.py:15
+#: .\likes\models.py:16
 msgid "user like"
 msgstr ""
 
-#: .\likes\models.py:16
+#: .\likes\models.py:17
 msgid "user likes"
 msgstr ""
 
@@ -475,14 +475,14 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23 .\templates\base_site.html:54
+#: .\templates\base_site.html:23 .\templates\base_site.html:61
+msgid "Matches"
+msgstr "התאמות"
+
+#: .\templates\base_site.html:29 .\templates\base_site.html:70
 #: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
 msgid "Likes"
 msgstr "לייקים"
-
-#: .\templates\base_site.html:26 .\templates\base_site.html:60
-msgid "Matches"
-msgstr "התאמות"
 
 #: .\templates\likes\like_list.html:17
 msgid "People I Like"

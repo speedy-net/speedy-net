@@ -327,6 +327,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return validators
 
     @property
+    def name(self):
+        return self.profile.get_name()
+
+    @property
     def email(self):
         try:
             return self.email_addresses.get(is_primary=True).email
@@ -426,7 +430,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def __str__(self):
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
-        return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.profile.get_name(), self.username, self.slug)
+        return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)

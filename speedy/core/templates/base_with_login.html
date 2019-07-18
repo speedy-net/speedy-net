@@ -24,7 +24,7 @@
                     {% block navbar_mobile_menu_top %}
                         {% block navbar_mobile_menu_top_extra_0 %}{% endblock %}
                         <li>
-                            <a href="{% url 'profiles:user' slug=request.user.slug %}">{{ request.user.profile.get_name }}</a>
+                            <a href="{% url 'profiles:user' slug=request.user.slug %}">{{ request.user.name }}</a>
                         </li>
                         {% block navbar_mobile_menu_top_extra_1 %}{% endblock %}
                         <li>
@@ -112,7 +112,7 @@
                 <li class="nav-item">
                     <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
                         <i class="fa fa-fw fa-user"></i>
-                        <span class="label">{{ request.user.profile.get_name }}</span>
+                        <span class="label">{{ request.user.name }}</span>
                     </a>
                 </li>
                 {% block user_menu_extra_1 %}

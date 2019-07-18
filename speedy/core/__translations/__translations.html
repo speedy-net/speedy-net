@@ -71,13 +71,9 @@
 {% trans 'Your feedback was sent to administrators.' context "male" %}
 {% trans 'Your feedback was sent to administrators.' context "other" %}
 
-{% blocktrans context "female" with other_user=other.user %}Send a message to {{ other_user }}{% endblocktrans %}
-{% blocktrans context "male" with other_user=other.user %}Send a message to {{ other_user }}{% endblocktrans %}
-{% blocktrans context "other" with other_user=other.user %}Send a message to {{ other_user }}{% endblocktrans %}
-
-{% blocktrans context "female" with other_user=user %}Send a message to {{ other_user }}{% endblocktrans %}
-{% blocktrans context "male" with other_user=user %}Send a message to {{ other_user }}{% endblocktrans %}
-{% blocktrans context "other" with other_user=user %}Send a message to {{ other_user }}{% endblocktrans %}
+{% blocktrans context "female" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
+{% blocktrans context "male" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
+{% blocktrans context "other" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
 
 {% trans 'Mark All as Read' context "female" %}
 {% trans 'Mark All as Read' context "male" %}
@@ -115,13 +111,13 @@
 {% trans "user's profile on Speedy Net." context "male" %}
 {% trans "user's profile on Speedy Net." context "other" %}
 
-{% blocktrans with user=user context "female" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user=user context "male" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user=user context "other" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
 
-{% blocktrans with user=user context "female" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user=user context "male" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user=user context "other" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "female" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "male" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.name context "other" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
 
 {% trans 'Add to Friends' context "female" %}
 {% trans 'Add to Friends' context "male" %}
