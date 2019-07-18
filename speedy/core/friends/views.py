@@ -19,25 +19,13 @@ from .rules import is_self, friend_request_sent, are_friends
 
 
 class FriendsMixin(object):
-    def get_context_data(self, **kwargs):
-        cd = super().get_context_data(**kwargs)
-        cd.update({
-            'received_requests': self.user.all_received_friendship_requests,
-            'sent_requests': self.user.all_sent_friendship_requests,
-        })
-        return cd
+    pass
 
 
 class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    # ~~~~ TODO: This view will display up to 800 friends on the same page!
     permission_required = 'friends.view_friend_list'
     template_name = 'friends/friend_list.html'
-
-    def get_context_data(self, **kwargs):
-        cd = super().get_context_data(**kwargs)
-        cd.update({
-            'friends': self.user.all_friends,
-        })
-        return cd
 
 
 class ReceivedFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):

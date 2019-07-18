@@ -4,7 +4,7 @@
 
 {% block tab_content %}
     <div class="row">
-        {% for friendship_request in sent_requests %}
+        {% for friendship_request in user.all_sent_friendship_requests %}
             {% include 'profiles/user_list_item.html' with user=friendship_request.to_user %}
         {% empty %}
             <div class="col-12">

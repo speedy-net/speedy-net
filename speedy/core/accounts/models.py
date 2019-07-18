@@ -361,11 +361,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
         }
         qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
+        qs = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [friendship_request for friendship_request in qs if (self.profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -382,11 +383,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
         }
         qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
+        qs = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [friendship_request for friendship_request in qs if (self.profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -403,10 +405,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
         }
         qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
+        qs = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            qs = [u for u in qs if (self.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
+            qs = [friendship for friendship in qs if (self.profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()

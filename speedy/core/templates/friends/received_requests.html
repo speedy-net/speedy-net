@@ -4,8 +4,8 @@
 
 {% block tab_content %}
     <div class="row">
-        {% for friend_request in received_requests %}
-            {% include 'profiles/user_list_item.html' with user=friend_request.from_user %}
+        {% for friendship_request in user.all_received_friendship_requests %}
+            {% include 'profiles/user_list_item.html' with user=friendship_request.from_user %}
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-warning">

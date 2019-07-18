@@ -23,13 +23,13 @@
             <li class="nav-item">
                 <a class="nav-link {% active_class 'friends:received_requests' %}" href="{% url 'friends:received_requests' user.slug %}">
                     {% trans 'Received Requests' %}
-                    <span class="badge badge-primary">{{ received_requests|length }}</span>
+                    <span class="badge badge-primary">{{ user.received_friendship_requests_count }}</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% active_class 'friends:sent_requests' %}" href="{% url 'friends:sent_requests' user.slug %}">
                     {% trans 'Sent Requests' %}
-                    <span class="badge badge-primary">{{ sent_requests|length }}</span>
+                    <span class="badge badge-primary">{{ user.sent_friendship_requests_count }}</span>
                 </a>
             </li>
 

@@ -1,3 +1,5 @@
+import random
+
 from speedy.core.profiles.widgets import Widget
 
 
@@ -5,7 +7,12 @@ class UserFriendsWidget(Widget):
     template_name = 'friends/user_friends_widget.html'
 
     def get_random_friends(self, count):
-        return self.user.friends.order_by('?')[:count]
+        # Select count random friends from the list.
+        # If there are less than count friends, return all of them in random order.
+        all_friends = self.user.all_friends
+        friends_to_return = min(len(all_friends), count)
+        random_friends = random.sample(all_friends, friends_to_return)
+        return random_friends
 
     def get_context_data(self):
         cd = super().get_context_data()
