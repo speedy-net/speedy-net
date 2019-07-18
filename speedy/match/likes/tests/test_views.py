@@ -22,7 +22,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=UserLike.objects.count(), second=0)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=UserLike.objects.count(), second=1)
             like = UserLike.objects.first()
             self.assertEqual(first=like.from_user.id, second=self.user.id)
@@ -43,7 +43,7 @@ if (django_settings.LOGIN_ENABLED):
             UserLike.objects.create(from_user=self.user, to_user=self.other_user)
             self.assertEqual(first=UserLike.objects.count(), second=1)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.other_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
@@ -81,7 +81,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_default_redirect(self):
             r = self.client.get(path=self.default_url)
-            self.assertRedirects(response=r, expected_url=self.to_url)
+            self.assertRedirects(response=r, expected_url=self.to_url, status_code=302, target_status_code=200)
 
         def test_user_can_see_who_he_likes(self):
             r = self.client.get(path=self.to_url)

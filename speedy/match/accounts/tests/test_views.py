@@ -21,7 +21,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_gets_redirected_to_his_matches(self):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path='/')
-            self.assertRedirects(response=r, expected_url='/matches/', target_status_code=200)
+            self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
 
 
     @only_on_speedy_match
@@ -34,7 +34,7 @@ if (django_settings.LOGIN_ENABLED):
                 'notify_on_like': User.NOTIFICATIONS_OFF,
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
             self.assertEqual(first=user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_OFF)

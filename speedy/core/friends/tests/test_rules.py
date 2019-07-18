@@ -55,7 +55,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_can_view_his_own_friend_list(self):
             self.assertTrue(expr=self.user.has_perm(perm='friends.view_friend_list', obj=self.user))
-            raise Exception # ~~~~ TODO: remove this line!
 
         def test_user_can_view_another_user_friend_list(self):
             raise NotImplementedError()

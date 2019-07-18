@@ -30,12 +30,14 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_open_the_page(self):
             raise NotImplementedError()
 
+        def test_user_can_open_other_users_friends_page(self):
+            raise NotImplementedError()
+
+        def test_user_cannot_open_other_users_friends_page(self):
+            raise NotImplementedError()
+
         def test_user_can_open_his_friends_page(self):
             r = self.client.get(path=self.first_user_friends_list_url)
-            self.assertEqual(first=r.status_code, second=200)
-
-        def test_user_can_open_other_users_friends_page(self):
-            r = self.client.get(path=self.second_user_friends_list_url)
             self.assertEqual(first=r.status_code, second=200)
 
 
@@ -52,7 +54,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_open_the_page(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -60,7 +62,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_cannot_open_other_users_requests_page(self):
             r = self.client.get(path=self.other_page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url), status_code=302, target_status_code=200)
 
 
     @only_on_sites_with_login
@@ -76,7 +78,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_open_the_page(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -84,7 +86,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_cannot_open_other_users_requests_page(self):
             r = self.client.get(path=self.other_page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url), status_code=302, target_status_code=200)
 
 
     class UserFriendRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
@@ -99,13 +101,13 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_send_friend_request(self):
             self.client.logout()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_can_send_friend_request(self):
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
             friendship_request = self.second_user.friendship_requests_received.first()
@@ -118,12 +120,12 @@ if (django_settings.LOGIN_ENABLED):
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_cannot_send_friend_request_twice(self):
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
             self.assertIsNone(obj=r.context)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
             self.assertIsNone(obj=r.context)
@@ -137,7 +139,7 @@ if (django_settings.LOGIN_ENABLED):
             Friend.objects.add_friend(from_user=self.first_user, to_user=self.second_user).accept()
             self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.first_user.friendship_requests_received.count(), second=0)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
             self.assertIsNone(obj=r.context)
@@ -148,7 +150,7 @@ if (django_settings.LOGIN_ENABLED):
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_cannot_send_friend_request_to_himself(self):
             r = self.client.post(path=self.same_user_page_url)
-            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.first_user.friendship_requests_received.count(), second=0)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
             self.assertIsNone(obj=r.context)
@@ -170,7 +172,7 @@ if (django_settings.LOGIN_ENABLED):
             for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
                 Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
             friendship_request = self.second_user.friendship_requests_received.first()
@@ -193,7 +195,7 @@ if (django_settings.LOGIN_ENABLED):
             for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
                 Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), fetch_redirect_response=False)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200, fetch_redirect_response=False)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=0)
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
             self.assertIsNone(obj=r.context)
@@ -227,7 +229,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_cancel_friend_request(self):
             self.client.logout()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         def test_user_can_cancel_friend_request(self):
@@ -266,13 +268,13 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_accept_friend_request(self):
             self.client.logout()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         def test_user_cannot_accept_friend_request_he_sent_another_user(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
@@ -280,7 +282,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
             self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user_friends_list_url)
@@ -302,7 +304,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
             self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user_friends_list_url)
@@ -345,7 +347,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
             self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user_friends_list_url)
@@ -400,13 +402,13 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_reject_friend_request(self):
             self.client.logout()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         def test_user_cannot_reject_friend_request_he_sent_another_user(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
@@ -414,7 +416,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=0)
             self.assertIsNone(obj=r.context)
@@ -448,7 +450,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_visitor_has_no_access(self):
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
@@ -456,7 +458,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=Friend.objects.count(), second=1 * 2)
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=Friend.objects.count(), second=0)
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user.get_absolute_url())
@@ -467,7 +469,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=Friend.objects.count(), second=1 * 2)
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.opposite_url)
-            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url())
+            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url(), status_code=302, target_status_code=200)
             self.assertEqual(first=Friend.objects.count(), second=0)
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user.get_absolute_url())

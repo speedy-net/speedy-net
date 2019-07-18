@@ -32,7 +32,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_upload_file(self):
             initial_images_count = Image.objects.count()

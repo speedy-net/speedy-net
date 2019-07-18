@@ -28,7 +28,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_see_a_list_of_his_chats(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
@@ -55,7 +55,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_read_a_chat_he_has_access_to(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
@@ -96,12 +96,12 @@ if (django_settings.LOGIN_ENABLED):
         def test_get_redirects_to_chat_page(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.chat_url)
+            self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)
 
         def test_user_can_write_to_a_chat_he_has_access_to(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url=self.chat_url)
+            self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)
 
         def test_cannot_write_to_a_blocker(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
@@ -130,16 +130,16 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_cannot_send_message_to_self(self):
             self.client.login(username=self.user2.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_see_a_form(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
@@ -151,7 +151,7 @@ if (django_settings.LOGIN_ENABLED):
             chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/messages/{}/'.format(self.user2.slug))
+            self.assertRedirects(response=r, expected_url='/messages/{}/'.format(self.user2.slug), status_code=302, target_status_code=200)
 
         def test_user_can_submit_the_form(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
@@ -160,7 +160,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=Message.objects.count(), second=1)
             message = Message.objects.latest()
             chat = message.chat
-            self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user1)))
+            self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user1)), status_code=302, target_status_code=200)
             self.assertEqual(first=message.text, second='Hi Hi Hi')
             self.assertEqual(first=message.sender.id, second=self.user1.id)
             self.assertEqual(first=chat.last_message, second=message)
@@ -186,13 +186,13 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
         def test_user_can_mark_chat_as_read(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             self.assertLess(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url=self.chat_url)
+            self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)
             self.assertGreater(a=ReadMark.objects.get(entity_id=self.user1.id).date_updated, b=self.messages[1].date_created)
 
 

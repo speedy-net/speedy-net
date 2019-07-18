@@ -20,7 +20,7 @@ if (django_settings.LOGIN_ENABLED):
     class RedirectMeMixin(object):
         def assert_me_url_redirects(self, expected_url):
             r = self.client.get(path='/me/')
-            self.assertRedirects(response=r, expected_url=expected_url)
+            self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
 
         def assert_me_url_redirects_to_login_url(self):
             expected_url = '/login/?next=/me/'
@@ -164,7 +164,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_visitor_can_register(self):
             r = self.client.post(path='/', data=self.data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
@@ -281,7 +281,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_unconfirmed_email_addresses_count=0,
             )
             r = self.client.post(path='/', data=self.data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
@@ -321,7 +321,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_unconfirmed_email_addresses_count=1,
             )
             r = self.client.post(path='/', data=self.data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
@@ -360,7 +360,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_unconfirmed_email_addresses_count=1,
             )
             r = self.client.post(path='/', data=self.data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
@@ -412,13 +412,13 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_is_logged_in_after_registration(self):
             r = self.client.post(path='/', data=self.data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             r = self.client.get(path='/')
             if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
-                self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
                 r = self.client.get(path='/{}/'.format(self.data['slug']))
             else:
-                self.assertRedirects(response=r, expected_url='/registration-step-2/', fetch_redirect_response=False)
+                self.assertRedirects(response=r, expected_url='/registration-step-2/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/registration-step-2/')
             self.assertTrue(expr=r.context['user'].is_authenticated)
             self.assertEqual(first=r.context['user'].username, second='user1234')
@@ -493,7 +493,7 @@ if (django_settings.LOGIN_ENABLED):
             data = self.data.copy()
             data['email'] = 'EMAIL22@EXAMPLE.COM'
             r = self.client.post(path='/', data=data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
@@ -607,7 +607,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
             # Assert expected_url directly once to confirm.
             self.assert_me_url_redirects(expected_url='/slug-with-dots/')
@@ -619,7 +619,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_original_slug(self):
@@ -629,7 +629,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_slug_modified(self):
@@ -639,7 +639,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_slug_uppercase(self):
@@ -649,7 +649,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_email(self):
@@ -658,7 +658,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_email_uppercase(self):
@@ -667,7 +667,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.user)
 
         def test_visitor_can_login_using_other_user_email_and_password(self):
@@ -676,7 +676,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': self._other_user_password,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.other_user)
 
         def test_visitor_still_can_login_if_he_is_not_active_user(self):
@@ -685,7 +685,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.login_url, data=data)
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
                 # Inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
                 self.assert_me_url_redirects_to_welcome_url()
@@ -783,7 +783,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -792,7 +792,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_can_save_his_settings(self):
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.first_name, second=self.first_name)
             self.assertEqual(first=user.first_name_en, second={'en': self.first_name, 'he': self.original_first_name}[self.language_code])
@@ -831,7 +831,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotEqual(first=self.user.slug, second=normalize_slug(slug=new_slug))
             self.assertEqual(first=normalize_username(username=new_slug), second=self.user.username)
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
             self.assertNotEqual(first=user.slug, second=old_slug)
@@ -899,7 +899,7 @@ if (django_settings.LOGIN_ENABLED):
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 r = self.client.post(path=self.page_url, data=data)
-                self.assertRedirects(response=r, expected_url=self.page_url, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
                 user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=user.first_name, second=self.first_name)
                 self.assertEqual(first=user.first_name_en, second={'en': self.first_name, 'he': self.original_first_name}[self.language_code])
@@ -981,7 +981,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -994,7 +994,7 @@ if (django_settings.LOGIN_ENABLED):
                 'access_dob_year': '4',
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.access_dob_day_month, second=2)
             self.assertEqual(first=user.access_dob_year, second=4)
@@ -1005,7 +1005,7 @@ if (django_settings.LOGIN_ENABLED):
                 'access_dob_year': '2',
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.access_dob_day_month, second=4)
             self.assertEqual(first=user.access_dob_year, second=2)
@@ -1029,7 +1029,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -1059,7 +1059,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -1075,7 +1075,7 @@ if (django_settings.LOGIN_ENABLED):
                 'new_password2': new_password,
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertTrue(expr=user.check_password(raw_password=new_password))
             self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
@@ -1178,11 +1178,11 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_inactive_user_has_no_access_to_other_pages(self):
             r = self.client.get(path='/other-page/')
-            self.assertRedirects(response=r, expected_url=self.redirect_url, fetch_redirect_response=False)
+            self.assertRedirects(response=r, expected_url=self.redirect_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
 
         def test_inactive_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -1213,7 +1213,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
@@ -1227,7 +1227,7 @@ if (django_settings.LOGIN_ENABLED):
                 'password': tests_settings.USER_PASSWORD,
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
             self.assertEqual(first=user.profile.is_active, second=False)
@@ -1258,7 +1258,7 @@ if (django_settings.LOGIN_ENABLED):
             email_id = self.confirmed_email_address.id
             token = self.confirmed_email_address.confirmation_token
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
 
@@ -1267,7 +1267,7 @@ if (django_settings.LOGIN_ENABLED):
             email_id = self.unconfirmed_email_address.id
             token = self.unconfirmed_email_address.confirmation_token
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_error_message])
             self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
@@ -1305,7 +1305,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path='/edit-profile/emails/add/')
-            self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/add/')
+            self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/add/', status_code=302, target_status_code=200)
 
         def test_user_can_open_the_page(self):
             r = self.client.get(path='/edit-profile/emails/add/')
@@ -1369,7 +1369,7 @@ if (django_settings.LOGIN_ENABLED):
                 'email': 'email@example.com',
             }
             r = self.client.post(path='/edit-profile/emails/add/', data=data)
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             email_address = UserEmailAddress.objects.get(email='email@example.com')
             self.assertFalse(expr=email_address.is_primary)
             r = self.client.get(path='/edit-profile/')
@@ -1406,7 +1406,7 @@ if (django_settings.LOGIN_ENABLED):
                 'email': 'email@example.com',
             }
             r = self.client.post(path='/edit-profile/emails/add/', data=data)
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             email_address = UserEmailAddress.objects.get(email='email@example.com')
             self.assertTrue(expr=email_address.is_primary)
             self.assert_models_count(
@@ -1455,16 +1455,16 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.unconfirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url), status_code=302, target_status_code=200)
 
         def test_user_has_no_access_to_other_users_address(self):
             r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
 
         def test_user_can_resend_confirmation(self):
             email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
             r = self.client.post(path=self.unconfirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
             self.assertEqual(first=len(mail.outbox), second=1)
@@ -1516,15 +1516,15 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url), status_code=302, target_status_code=200)
 
         def test_user_has_no_access_to_other_users_address(self):
             r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
 
         def test_user_cannot_delete_primary_email_address(self):
             r = self.client.post(path=self.primary_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url), status_code=302, target_status_code=200)
 
         def test_user_can_delete_email_address(self):
             self.assert_user_email_addresses_count(
@@ -1534,7 +1534,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_unconfirmed_email_addresses_count=1,
             )
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
             self.assert_user_email_addresses_count(
@@ -1584,15 +1584,15 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url), status_code=302, target_status_code=200)
 
         def test_user_has_no_access_to_other_users_address(self):
             r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
 
         def test_user_cannot_make_unconfirmed_email_address_primary(self):
             r = self.client.post(path=self.unconfirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url))
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url), status_code=302, target_status_code=200)
 
         def test_user_can_make_confirmed_email_address_primary(self):
             self.assert_user_email_addresses_count(
@@ -1603,7 +1603,7 @@ if (django_settings.LOGIN_ENABLED):
             )
             self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
             self.assert_user_email_addresses_count(
@@ -1653,7 +1653,7 @@ if (django_settings.LOGIN_ENABLED):
                 'email': self.email.email,
             }
             r = self.client.post(path='/reset-password/', data=data)
-            self.assertRedirects(response=r, expected_url='/reset-password/done/')
+            self.assertRedirects(response=r, expected_url='/reset-password/done/', status_code=302, target_status_code=200)
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(self.site.name))
 

@@ -53,7 +53,7 @@ if (django_settings.LOGIN_ENABLED):
         def run_test_visitor_can_submit_form(self, data):
             self.assertEqual(first=Feedback.objects.count(), second=0)
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url='/contact/thank-you/')
+            self.assertRedirects(response=r, expected_url='/contact/thank-you/', status_code=302, target_status_code=200)
             self.assertEqual(first=Feedback.objects.count(), second=1)
             feedback = Feedback.objects.first()
             self.check_feedback(feedback=feedback, expected_sender_id=None, expected_sender_name=data['sender_name'], expected_sender_email=data['sender_email'], expected_text=data['text'])
@@ -107,7 +107,7 @@ if (django_settings.LOGIN_ENABLED):
                 'text': 'Hello',
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url='/contact/thank-you/')
+            self.assertRedirects(response=r, expected_url='/contact/thank-you/', status_code=302, target_status_code=200)
             self.assertEqual(first=Feedback.objects.count(), second=1)
             feedback = Feedback.objects.first()
             self.check_feedback(feedback=feedback, expected_sender_id=self.user.pk, expected_sender_name='', expected_sender_email='', expected_text=data['text'])

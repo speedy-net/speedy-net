@@ -19,7 +19,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_gets_redirected_to_his_profile(self):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path='/')
-            self.assertRedirects(response=r, expected_url='/me/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
 
 
     @only_on_speedy_net
@@ -30,7 +30,7 @@ if (django_settings.LOGIN_ENABLED):
                 'notify_on_message': User.NOTIFICATIONS_OFF,
             }
             r = self.client.post(path=self.page_url, data=data)
-            self.assertRedirects(response=r, expected_url=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
 
@@ -41,7 +41,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_inactive_user_can_request_activation(self):
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/', target_status_code=302)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.is_active, second=True)
             self.assertEqual(first=user.profile.is_active, second=True)

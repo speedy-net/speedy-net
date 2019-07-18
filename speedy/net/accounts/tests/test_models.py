@@ -1,4 +1,6 @@
+import unittest
 from datetime import date
+
 from django.conf import settings as django_settings
 
 from speedy.core.base.test.models import SiteTestCase
@@ -76,16 +78,17 @@ if (django_settings.LOGIN_ENABLED):
             user = self.get_default_user_doron()
             self.assertEqual(first=user.speedy_net_profile.get_name(), second="Doron Matalon")
 
-        def test_call_str_of_user_directly_and_assert_no_exception(self):
+        def test_call_user_name_directly_and_assert_no_exception(self):
             user = self.get_default_user_doron()
-            self.assertEqual(first=str(user), second="Doron Matalon")
+            self.assertEqual(first=user.name, second="Doron Matalon")
 
-        def test_str_of_user_is_the_same_as_get_name_and_get_full_name(self):
+        def test_user_name_is_the_same_as_get_name_and_get_full_name(self):
             for user in [self.get_default_user_doron(), self.get_inactive_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
-                self.assertEqual(first=str(user), second=user.speedy_net_profile.get_name())
-                self.assertEqual(first=str(user), second=user.get_full_name())
-                self.assertEqual(first=str(user), second='{} {}'.format(user.first_name, user.last_name))
-                self.assertNotEqual(first=str(user), second=user.get_first_name())
-                self.assertNotEqual(first=str(user), second='{}'.format(user.first_name))
+                self.assertEqual(first=user.name, second=user.speedy_net_profile.get_name())
+                self.assertEqual(first=user.name, second=user.get_full_name())
+                self.assertEqual(first=user.name, second='{} {}'.format(user.first_name, user.last_name))
+                self.assertNotEqual(first=user.name, second=user.get_first_name())
+                self.assertNotEqual(first=user.name, second='{}'.format(user.first_name))
+                self.assertNotEqual(first=str(user), second=user.name)
 
 

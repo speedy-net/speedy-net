@@ -723,17 +723,18 @@ if (django_settings.LOGIN_ENABLED):
             user = self.get_default_user_doron()
             self.assertEqual(first=user.speedy_match_profile.get_name(), second="Doron")
 
-        def test_call_str_of_user_directly_and_assert_no_exception(self):
+        def test_call_user_name_directly_and_assert_no_exception(self):
             user = self.get_default_user_doron()
-            self.assertEqual(first=str(user), second="Doron")
+            self.assertEqual(first=user.name, second="Doron")
 
-        def test_str_of_user_is_the_same_as_get_name_and_get_first_name(self):
+        def test_user_name_is_the_same_as_get_name_and_get_first_name(self):
             for user in [self.get_default_user_doron(), self.get_active_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
-                self.assertEqual(first=str(user), second=user.speedy_match_profile.get_name())
-                self.assertEqual(first=str(user), second=user.get_first_name())
-                self.assertEqual(first=str(user), second='{}'.format(user.first_name))
-                self.assertNotEqual(first=str(user), second=user.get_full_name())
-                self.assertNotEqual(first=str(user), second='{} {}'.format(user.first_name, user.last_name))
+                self.assertEqual(first=user.name, second=user.speedy_match_profile.get_name())
+                self.assertEqual(first=user.name, second=user.get_first_name())
+                self.assertEqual(first=user.name, second='{}'.format(user.first_name))
+                self.assertNotEqual(first=user.name, second=user.get_full_name())
+                self.assertNotEqual(first=user.name, second='{} {}'.format(user.first_name, user.last_name))
+                self.assertNotEqual(first=str(user), second=user.name)
 
         def test_validate_profile_and_activate_ok(self):
             user = ActiveUserFactory()

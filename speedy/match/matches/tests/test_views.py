@@ -23,7 +23,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_anonymous_has_no_access(self):
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
         def test_user_can_access(self):
             self.client.login(username=self.user.username, password=tests_settings.USER_PASSWORD)

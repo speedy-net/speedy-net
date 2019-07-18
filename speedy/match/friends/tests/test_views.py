@@ -17,6 +17,14 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_cannot_open_the_page(self):
             self.client.logout()
             r = self.client.get(path=self.first_user_friends_list_url)
-            self.assertEqual(first=r.status_code, second=404)
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.first_user_friends_list_url), status_code=302, target_status_code=200)
+
+        @unittest.skip
+        def test_user_can_open_other_users_friends_page(self):
+            raise NotImplementedError()
+
+        def test_user_cannot_open_other_users_friends_page(self):
+            r = self.client.get(path=self.second_user_friends_list_url)
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.second_user_friends_list_url), status_code=302, target_status_code=200)
 
 
