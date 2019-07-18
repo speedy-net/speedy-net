@@ -144,6 +144,20 @@ class ReservedUsername(Entity):
     def __str__(self):
         return '<ReservedUsername {} - username={}>'.format(self.id, self.username, self.slug)
 
+    def clean_fields(self, exclude=None):
+        self.normalize_slug_and_username()
+        self.validate_username_for_slug()
+        self.validate_username_unique()
+        if (not (len(self.username) > 0)):
+            raise ValidationError(_('Username is required.'))
+
+        if exclude is None:
+            exclude = []
+
+        exclude += ['username', 'slug']
+
+        return super().clean_fields(exclude=exclude)
+
 
 class UserAccessField(models.PositiveIntegerField):
     ACCESS_ME = 1
@@ -451,7 +465,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             exclude = []
 
         if (self.is_superuser):
-            exclude = ['username', 'slug']
+            exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)
 
