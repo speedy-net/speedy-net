@@ -35,7 +35,7 @@
         <div class="speedy-mobile-menu-icons pull-right flip">
             <a href="{% url 'likes:list' request.user.slug %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
             <a href="{% url 'im:list' %}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-            <a href="{% url friendship_requests_received_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <a href="{% url request.user.received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
         </div>
     {% endif %}
 {% endblock %}

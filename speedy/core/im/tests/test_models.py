@@ -28,7 +28,7 @@ if (django_settings.LOGIN_ENABLED):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
             chat = ChatFactory(ent1=user_1, ent2=user_2)
-            if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 self.assertEqual(first=str(chat), second='Doron, Jennifer')
             else:
                 self.assertEqual(first=str(chat), second="Doron Matalon, Jennifer Connelly")
@@ -53,7 +53,7 @@ if (django_settings.LOGIN_ENABLED):
             # print("test_str_group_chat: str(chat)=", str(chat)) #### ~~~~ TODO: remove this line!
             self.assertEqual(first=str(chat), second="{}, {}, {}, {}".format(user_1.profile.get_name(), user_2.profile.get_name(), user_3.profile.get_name(), user_4.profile.get_name()))
             self.assertEqual(first=str(chat), second="{}, {}, {}, {}".format(str(user_1), str(user_2), str(user_3), str(user_4)))
-            if (self.site.id == django_settings.SPEEDY_MATCH_SITE_ID):
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 self.assertEqual(first=str(chat), second="Doron, Jennifer, {}, {}".format(user_3.profile.get_name(), user_4.profile.get_name()))
             else:
                 self.assertEqual(first=str(chat), second="Doron Matalon, Jennifer Connelly, {}, {}".format(user_3.profile.get_name(), user_4.profile.get_name()))
