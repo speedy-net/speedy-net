@@ -17,7 +17,7 @@ from translated_fields import TranslatedField
 
 # from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings? # ~~~~ TODO: remove this line!
 from speedy.core.base.mail import send_mail
-from speedy.core.base.models import TimeStampedModel, SmallUDIDField, RegularUDIDField
+from speedy.core.base.models import BaseManager, TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
@@ -96,7 +96,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('id',)
 
     def __str__(self):
-        return '<Entity {}>'.format(self.id)
+        return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
 
     def clean_all_fields(self, exclude=None):
         super().clean_all_fields(exclude=exclude)
@@ -134,7 +134,15 @@ class NamedEntity(Entity):
         abstract = True
 
     def __str__(self):
-        return '<NamedEntity {} - {}>'.format(self.id, self.name)
+        return '<NamedEntity {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
+
+
+class ReservedUsername(Entity):
+    description = models.TextField(verbose_name=_('description'), blank=True)
+    objects = BaseManager()
+
+    def __str__(self):
+        return '<ReservedUsername {} - username={}>'.format(self.id, self.username, self.slug)
 
 
 class UserAccessField(models.PositiveIntegerField):
