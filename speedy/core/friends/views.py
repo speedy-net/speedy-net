@@ -19,35 +19,11 @@ from .rules import is_self, friend_request_sent, are_friends
 
 
 class FriendsMixin(object):
-    def get_received_friendship_requests(self):
-        site = Site.objects.get_current()
-        qs = self.user.friendship_requests_received.all()
-        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
-            return qs
-        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
-            return qs
-        else:
-            raise NotImplementedError()
-
-    def get_sent_friendship_request(self):
-        site = Site.objects.get_current()
-        qs = self.user.friendship_requests_sent.all()
-        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
-            return qs
-        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
-            return qs
-        else:
-            raise NotImplementedError()
-
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'received_requests': self.get_received_friendship_requests(),
-            'sent_requests': self.get_sent_friendship_request()
+            'received_requests': self.user.all_received_friendship_requests,
+            'sent_requests': self.user.all_sent_friendship_requests,
         })
         return cd
 
@@ -57,16 +33,15 @@ class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, gener
     template_name = 'friends/friend_list.html'
 
     def get_friends(self):
-        site = Site.objects.get_current()
         SiteProfile = get_site_profile_model()
         table_name = SiteProfile._meta.db_table
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
         }
         qs = self.user.friends.all().extra(select=extra_select).order_by('-last_visit')
-        if (site.id == django_settings.SPEEDY_NET_SITE_ID):
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
-        elif (site.id == django_settings.SPEEDY_MATCH_SITE_ID):
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             qs = [u for u in qs if (self.user.profile.get_matching_rank(other_profile=u.from_user.profile) > SiteProfile.RANK_0)]
             return qs
         else:
