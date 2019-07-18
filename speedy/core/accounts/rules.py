@@ -1,6 +1,6 @@
 from rules import predicate, add_perm
 
-from speedy.core.accounts.base_rules import is_self
+from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.friends.rules import are_friends
 from speedy.core.blocks.rules import there_is_block
 from .models import UserAccessField
@@ -21,7 +21,7 @@ def _has_access_perm_for_obj(user, other_user, access):
 
 @predicate
 def has_access_perm(user, other_user):
-    return True
+    return is_active(user=user, other_user=other_user)
 
 
 @predicate
@@ -55,13 +55,13 @@ def has_access_perm_for_email_address(user, email_address):
 
 
 add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
-add_perm('accounts.view_profile_username', is_self)
+add_perm('accounts.view_profile_username', has_access_perm & is_self)
 add_perm('accounts.view_profile_header', has_access_perm)
 add_perm('accounts.view_profile_info', has_access_perm)
-add_perm('accounts.view_profile_dob_day_month', has_access_perm_for_dob_day_month)
-add_perm('accounts.view_profile_dob_year', has_access_perm_for_dob_year)
-add_perm('accounts.view_profile_age', has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
-add_perm('accounts.edit_profile', is_self)
+add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_perm_for_dob_day_month)
+add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
+add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
+add_perm('accounts.edit_profile', has_access_perm & is_self)
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
