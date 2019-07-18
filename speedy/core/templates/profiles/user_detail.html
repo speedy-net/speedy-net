@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load thumbnail %}
 
-{% block title %}{{ user }} / {{ block.super }}{% endblock %}
+{% block title %}{{ user.profile.get_name }} / {{ block.super }}{% endblock %}
 
 {% block user_content_info %}
     <div class="row">

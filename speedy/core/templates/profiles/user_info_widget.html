@@ -1,8 +1,8 @@
 {% load i18n %}
 {% load rules %}
 
-{% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
-{% has_perm 'accounts.view_profile_username' viewer entity as can_view_username %}
+{% has_perm 'accounts.view_profile' viewer user as can_view_profile %}
+{% has_perm 'accounts.view_profile_username' viewer user as can_view_username %}
 
 
 <div class="col-sm-8 ml-auto mb-4">
@@ -17,15 +17,15 @@
 
             <tr>
                 <th>{% trans 'Name' %}</th>
-                <td>{{ entity }}</td>
+                <td>{{ user.profile.get_name }}</td>
             </tr>
 
             {% if can_view_username %}
             <tr>
                 <th>{% trans 'Username' %}</th>
                 <td>
-                    <a href="{{ entity.get_absolute_url }}">
-                        {{ entity.slug }}
+                    <a href="{{ user.get_absolute_url }}">
+                        {{ user.slug }}
                     </a>
                 </td>
             </tr>
@@ -33,21 +33,21 @@
 
             <tr>
                 <th>{% trans 'Gender' %}</th>
-                <td>{{ entity.get_gender_display }}</td>
+                <td>{{ user.get_gender_display }}</td>
             </tr>
 
-            {% has_perm 'accounts.view_profile_dob_day_month' viewer entity as can_view_dob_day_month %}
-            {% has_perm 'accounts.view_profile_dob_year' viewer entity as can_view_dob_year %}
-            {% if can_view_profile and entity.date_of_birth %}
+            {% has_perm 'accounts.view_profile_dob_day_month' viewer user as can_view_dob_day_month %}
+            {% has_perm 'accounts.view_profile_dob_year' viewer user as can_view_dob_year %}
+            {% if can_view_profile and user.date_of_birth %}
                 <tr>
                     <th>{% trans 'Birthday' %}</th>
                     <td>
                         {% if can_view_dob_day_month and can_view_dob_year %}
-                            {{ entity.date_of_birth }}
+                            {{ user.date_of_birth }}
                         {% elif can_view_dob_day_month %}
-                            {{ entity.date_of_birth|date:'N j' }}
+                            {{ user.date_of_birth|date:'N j' }}
                         {% elif can_view_dob_year %}
-                            {{ entity.date_of_birth|date:'Y' }}
+                            {{ user.date_of_birth|date:'Y' }}
                         {% else %}
                             <span class="text-muted">{% trans '(hidden)' %}</span>
                         {% endif %}
@@ -55,15 +55,15 @@
                 </tr>
             {% endif %}
 
-            {% has_perm 'accounts.view_profile_age' viewer entity as can_view_profile_age %}
-            {% if can_view_profile and entity.date_of_birth and can_view_profile_age %}
+            {% has_perm 'accounts.view_profile_age' viewer user as can_view_profile_age %}
+            {% if can_view_profile and user.date_of_birth and can_view_profile_age %}
                 <tr>
                     <th>{% trans 'Age' %}</th>
-                    <td>{{ entity.get_age }}</td>
+                    <td>{{ user.get_age }}</td>
                 </tr>
             {% endif %}
 
-            {% for address in entity.email_addresses.all %}
+            {% for address in user.email_addresses.all %}
                 {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
                 {% if can_view_profile and can_view_address %}
                 <tr>

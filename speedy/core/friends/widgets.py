@@ -5,7 +5,7 @@ class UserFriendsWidget(Widget):
     template_name = 'friends/user_friends_widget.html'
 
     def get_random_friends(self, count):
-        return self.entity.friends.order_by('?')[:count]
+        return self.user.friends.order_by('?')[:count]
 
     def get_context_data(self):
         cd = super().get_context_data()

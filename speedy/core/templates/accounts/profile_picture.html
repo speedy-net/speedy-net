@@ -5,7 +5,7 @@
     <a href="{{ user.get_absolute_url }}">
 {% endif %}
 {% thumbnail user.photo.file geometry crop='center' as im %}
-    <img src="{{ im.url }}" alt="{{ user }}" width="{{ im.width }}" height="{{ im.height }}" class="img-fluid {{ html_class }}">
+    <img src="{{ im.url }}" alt="{{ user.profile.get_name }}" width="{{ im.width }}" height="{{ im.height }}" class="img-fluid {{ html_class }}">
 {% empty %}
     <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ width }}" class="img-fluid {{ html_class }}">
 {% endthumbnail %}

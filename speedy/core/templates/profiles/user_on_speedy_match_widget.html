@@ -2,8 +2,8 @@
 
 {% if is_match %}
     <div class="col-sm-12 pull-right">
-        <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_MATCH_DOMAIN }}{% url 'profiles:user' slug=entity.slug %}">
-            {% blocktrans with entity=entity context viewer.get_gender %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+        <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_MATCH_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
+            {% blocktrans with user=user context viewer.get_gender %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
         </a>
     </div>
 {% endif %}

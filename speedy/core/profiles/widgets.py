@@ -10,14 +10,14 @@ class Widget(object):
     def html(self):
         return self.render()
 
-    def __init__(self, request, entity, viewer):
+    def __init__(self, request, user, viewer):
         self.request = request
-        self.entity = entity
+        self.user = user
         self.viewer = viewer
 
     def get_context_data(self):
         return {
-            'entity': self.entity,
+            'user': self.user,
             'viewer': self.viewer,
         }
 
@@ -28,7 +28,7 @@ class Widget(object):
         return self.permission_required
 
     def render(self):
-        if (not (self.viewer.has_perm(perm=self.get_permission_required(), obj=self.entity))):
+        if (not (self.viewer.has_perm(perm=self.get_permission_required(), obj=self.user))):
             return ''
         return mark_safe(render_to_string(template_name=self.get_template_name(), context=self.get_context_data(), request=self.request))
 

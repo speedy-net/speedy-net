@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load rules %}
 
-{% has_perm 'accounts.view_profile' viewer entity as can_view_profile %}
+{% has_perm 'accounts.view_profile' viewer user as can_view_profile %}
 
 
 {% if can_view_profile %}
@@ -17,27 +17,27 @@
 
                 <tr>
                     <th>{% trans 'Profile Description' %}</th>
-                    <td>{{ entity.speedy_match_profile.profile_description }}</td>
+                    <td>{{ user.speedy_match_profile.profile_description }}</td>
                 </tr>
 
                 <tr>
                     <th>{% trans 'City' %}</th>
-                    <td>{{ entity.city }}</td>
+                    <td>{{ user.city }}</td>
                 </tr>
 
                 <tr>
                     <th>{% trans 'Height' %}</th>
-                    <td>{{ entity.speedy_match_profile.height }}</td>
+                    <td>{{ user.speedy_match_profile.height }}</td>
                 </tr>
 
                 <tr>
                     <th>{% trans 'Children' %}</th>
-                    <td>{{ entity.speedy_match_profile.children }}</td>
+                    <td>{{ user.speedy_match_profile.children }}</td>
                 </tr>
 
                 <tr>
                     <th>{% trans 'More Children' %}</th>
-                    <td>{{ entity.speedy_match_profile.more_children }}</td>
+                    <td>{{ user.speedy_match_profile.more_children }}</td>
                 </tr>
 
                 <tr>
@@ -62,7 +62,7 @@
 
                 <tr>
                     <th>{% trans 'My Ideal Match' %}</th>
-                    <td>{{ entity.speedy_match_profile.match_description }}</td>
+                    <td>{{ user.speedy_match_profile.match_description }}</td>
                 </tr>
 
 

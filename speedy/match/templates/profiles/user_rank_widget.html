@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load rules %}
 
-{% has_perm 'accounts.view_profile_rank' viewer entity as can_view_profile_rank %}
+{% has_perm 'accounts.view_profile_rank' viewer user as can_view_profile_rank %}
 
 
 {% if can_view_profile_rank %}
@@ -13,7 +13,7 @@
                 </h5>
             </div>
             <div class="card-body text-center">
-                {% with user=entity %}
+                {% with user=user %}
                     {% if user.speedy_match_profile.rank %}
                         <div>
                             <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>

@@ -12,22 +12,22 @@
     </button>
     <div class="dropdown-menu">
         {% if can_block %}
-            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user }}{% trans '?' %}');">
+            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user.profile.get_name }}{% trans '?' %}');">
                 {% csrf_token %}
                 <button class="dropdown-item" type="submit">
-                    {% trans 'Block ' context request.user.get_gender %}{{ user }}
+                    {% trans 'Block ' context request.user.get_gender %}{{ user.profile.get_name }}
                 </button>
             </form>
         {% elif can_unblock %}
             <form action="{% url 'blocks:unblock' user.slug %}" method="post">
                 {% csrf_token %}
                 <button class="dropdown-item" type="submit">
-                    {% trans 'Unblock ' context request.user.get_gender %}{{ user }}
+                    {% trans 'Unblock ' context request.user.get_gender %}{{ user.profile.get_name }}
                 </button>
             </form>
         {% endif %}
         <a class="dropdown-item" href="{% url 'contact:report_entity' user.slug %}">
-            {% trans 'Report ' context request.user.get_gender %}{{ user }}</a>
+            {% trans 'Report ' context request.user.get_gender %}{{ user.profile.get_name }}</a>
         {% if user.photo %}
             <a class="dropdown-item" href="{% url 'contact:report_file' user.photo.id %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
         {% endif %}

@@ -403,7 +403,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def __str__(self):
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
-        return self.profile.get_name()
+        return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.profile.get_name(), self.username, self.slug)
 
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)

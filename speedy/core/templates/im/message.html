@@ -9,7 +9,7 @@
         <div class="p-3 rounded-lg text-default {{ message.is_unread|yesno:'bg-unread,bg-white' }}">
             <p>
                 <strong>
-                    {{ message.sender.user }}
+                    {{ message.sender.user.profile.get_name }}
                 </strong>
                 <small>
                     {{ message.date_created }}

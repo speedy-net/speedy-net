@@ -1,4 +1,4 @@
-{{ message.sender.user }} has sent you a message.
+{{ message.sender.user.profile.get_name }} has sent you a message.
 {% load im_tags %}
 Read it:
 {{ SITE_URL }}{% url 'im:chat' chat_slug=message.chat|get_chat_slug:user %}

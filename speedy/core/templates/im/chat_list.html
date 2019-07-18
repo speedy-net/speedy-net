@@ -26,18 +26,18 @@
 
                 <div class="bg-primary rounded-lg p-3">
                     {% for chat in chat_list %}
-                        {% get_other_participant chat user as entity %}
+                        {% get_other_participant chat user as other_participant %}
 
                         <a href="{% url 'im:chat' chat_slug=chat|get_chat_slug:user %}">
                             <div class="row no-gutters">
                                 <div class="col-2">
-                                    {% profile_picture entity '128x128' with_link=False html_class="img-fluid rounded-lg" %}
+                                    {% profile_picture other_participant '128x128' with_link=False html_class="img-fluid rounded-lg" %}
                                 </div>
                                 <div class="col-10">
                                     <div class="{{ chat.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3 {% if not forloop.last %}mb-3{% endif %}">
                                         <p>
                                             <strong>
-                                                {{ entity.user }}
+                                                {{ user.user.profile.get_name }}
                                             </strong>
                                             <small>
                                                 {{ chat.last_message.date_created }}

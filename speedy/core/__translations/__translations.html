@@ -115,13 +115,13 @@
 {% trans "user's profile on Speedy Net." context "male" %}
 {% trans "user's profile on Speedy Net." context "other" %}
 
-{% blocktrans with entity=entity context "female" %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with entity=entity context "male" %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with entity=entity context "other" %}{{ entity }} also has a Speedy Match profile. View {{ entity }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user=user context "female" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user=user context "male" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user=user context "other" %}{{ user.profile.get_name }} also has a Speedy Match profile. View {{ user.profile.get_name }}’s profile on Speedy Match.{% endblocktrans %}
 
-{% blocktrans with entity=entity context "female" %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with entity=entity context "male" %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with entity=entity context "other" %}{{ entity }} also has a Speedy Net profile. View {{ entity }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user=user context "female" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user=user context "male" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user=user context "other" %}{{ user.profile.get_name }} also has a Speedy Net profile. View {{ user.profile.get_name }}’s profile on Speedy Net.{% endblocktrans %}
 
 {% trans 'Add to Friends' context "female" %}
 {% trans 'Add to Friends' context "male" %}
