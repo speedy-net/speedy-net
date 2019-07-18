@@ -40,7 +40,7 @@ class Chat(TimeStampedModel):
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
-        return ', '.join(str(ent.user) for ent in self.participants)
+        return ', '.join(str(ent.user.name) for ent in self.participants)
 
     def save(self, *args, **kwargs):
         if (self.is_private):
