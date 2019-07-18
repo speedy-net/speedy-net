@@ -2212,7 +2212,7 @@ msgstr ""
 msgid "Report this photo"
 msgstr ""
 
-#: .\templates\profiles\tools\friend_request_sent.html:7
+#: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friend Request"
 msgstr ""
 

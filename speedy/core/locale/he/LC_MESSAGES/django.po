@@ -2286,7 +2286,7 @@ msgstr "דווח/י על "
 msgid "Report this photo"
 msgstr "דווח/י על תמונה זו"
 
-#: .\templates\profiles\tools\friend_request_sent.html:7
+#: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friend Request"
 msgstr "בטל/י בקשת חברות"
 
