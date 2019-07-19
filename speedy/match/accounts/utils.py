@@ -1,5 +1,5 @@
 from speedy.core.base.utils import to_attribute
-
+from speedy.core.accounts.models import User
 from speedy.match.accounts import validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -11,7 +11,7 @@ def get_steps_range():
 def get_step_form_fields(step):
     form_fields = []
     for field_name in list(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step]):
-        if (not (field_name in SpeedyMatchSiteProfile.LOCALIZABLE_FIELDS)):
+        if (not (field_name in (User.LOCALIZABLE_FIELDS + SpeedyMatchSiteProfile.LOCALIZABLE_FIELDS))):
             form_fields.append(field_name)
         else:
             form_fields.append(to_attribute(name=field_name))

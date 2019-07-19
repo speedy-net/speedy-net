@@ -183,7 +183,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     settings = django_settings.USER_SETTINGS
     # settings = speedy_net_global_settings.UserSettings # ~~~~ TODO: remove this line!
 
-    LOCALIZABLE_FIELDS = ('first_name', 'last_name')
+    LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
+    NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
 
     AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
     AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
@@ -472,7 +473,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def clean_all_fields(self, exclude=None):
         super().clean_all_fields(exclude=exclude)
 
-        for base_field_name in __class__.LOCALIZABLE_FIELDS:
+        for base_field_name in __class__.NAME_LOCALIZABLE_FIELDS:
             self.clean_localizable_field(base_field_name=base_field_name)
 
     def clean_localizable_field(self, base_field_name):

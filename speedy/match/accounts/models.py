@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 class SiteProfile(SiteProfileBase):
     settings = django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS
 
-    LOCALIZABLE_FIELDS = ('profile_description', 'city', 'children', 'more_children', 'match_description')
+    LOCALIZABLE_FIELDS = ('profile_description', 'children', 'more_children', 'match_description')
 
     RELATED_NAME = 'speedy_match_site_profile'
 

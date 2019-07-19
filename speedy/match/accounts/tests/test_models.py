@@ -640,6 +640,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotEqual(first=user.speedy_net_profile.__class__, second=user.profile.__class__)
             self.assertNotEqual(first=user.speedy_net_profile.__class__, second=SpeedyMatchSiteProfile)
 
+        def test_localizable_fields(self):
+            self.assertTupleEqual(tuple1=SpeedyMatchSiteProfile.LOCALIZABLE_FIELDS, tuple2=('profile_description', 'children', 'more_children', 'match_description'))
+
         def test_height_valid_values(self):
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, second=1)
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED, second=450)
