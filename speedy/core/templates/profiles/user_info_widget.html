@@ -39,20 +39,23 @@
             {% has_perm 'accounts.view_profile_dob_day_month' viewer user as can_view_dob_day_month %}
             {% has_perm 'accounts.view_profile_dob_year' viewer user as can_view_dob_year %}
             {% if can_view_profile and user.date_of_birth %}
-                <tr>
-                    <th>{% trans 'Birthday' %}</th>
-                    <td>
-                        {% if can_view_dob_day_month and can_view_dob_year %}
-                            {{ user.date_of_birth }}
-                        {% elif can_view_dob_day_month %}
-                            {{ user.date_of_birth|date:'N j' }}
-                        {% elif can_view_dob_year %}
-                            {{ user.date_of_birth|date:'Y' }}
-                        {% else %}
-                            <span class="text-muted">{% trans '(hidden)' %}</span>
-                        {% endif %}
-                    </td>
-                </tr>
+                {% if can_view_dob_day_month or can_view_dob_year %}
+                    <tr>
+                        <th>{% trans 'Birthday' %}</th>
+                        <td>
+                            {% if can_view_dob_day_month and can_view_dob_year %}
+                                {{ user.date_of_birth }}
+                            {% elif can_view_dob_day_month %}
+                                {{ user.date_of_birth|date:'N j' }}
+                            {% elif can_view_dob_year %}
+                                {{ user.date_of_birth|date:'Y' }}
+                            {% else %}
+                                {% comment %}This option is disabled.{% endcomment %}
+                                <span class="text-muted">{% trans '(hidden)' %}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
             {% endif %}
 
             {% has_perm 'accounts.view_profile_age' viewer user as can_view_profile_age %}

@@ -7,6 +7,7 @@
     {% if form.fields %}
         {% crispy form %}
     {% endif %}
+    {# ~~~~ TODO: Add "Your age will be visible to your matches on Speedy Match." #}
     <p>
         <a href="{% url 'accounts:edit_profile_credentials' %}">
             {% trans 'Change privacy settings of email addresses on your profile.' context request.user.get_gender %}
