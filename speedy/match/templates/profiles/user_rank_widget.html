@@ -12,19 +12,23 @@
                     {% trans 'Match rank' %}
                 </h5>
             </div>
-            <div class="card-body text-center">
-                {% with user=user %}
-                    {% if user.speedy_match_profile.rank %}
-                        <div>
-                            <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                            <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                            <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                            <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                            <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                        </div>
-                    {% endif %}
-                {% endwith %}
-            </div>
+            {% if user.speedy_match_profile.rank %}
+                <div class="card-body text-center">
+                    <div>
+                        <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card-body">
+                    <div>
+                        <span>{% trans 'There is no match.' %}</span>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endif %}

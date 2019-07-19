@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-19 12:14+0300\n"
+"POT-Creation-Date: 2019-07-19 22:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -475,13 +475,14 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23 .\templates\base_site.html:75
-#: .\templates\matches\match_list.html:10
+#: .\templates\base_site.html:23 .\templates\matches\match_list.html:10
+#: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
 msgstr "התאמות"
 
-#: .\templates\base_site.html:29 .\templates\base_site.html:84
-#: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
+#: .\templates\base_site.html:29 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:12
+#: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "לייקים"
 
@@ -599,3 +600,7 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
 msgstr ""
+
+#: .\templates\profiles\user_rank_widget.html:28
+msgid "There is no match."
+msgstr "אין התאמה."
