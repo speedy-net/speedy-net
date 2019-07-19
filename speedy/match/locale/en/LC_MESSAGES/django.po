@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-18 16:04+0300\n"
+"POT-Creation-Date: 2019-07-19 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -450,13 +450,20 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23 .\templates\base_site.html:61
+#: .\templates\base_site.html:23 .\templates\base_site.html:75
+#: .\templates\matches\match_list.html:10
 msgid "Matches"
 msgstr ""
 
-#: .\templates\base_site.html:29 .\templates\base_site.html:70
+#: .\templates\base_site.html:29 .\templates\base_site.html:84
 #: .\templates\likes\like_list.html:6 .\templates\likes\like_list.html:12
 msgid "Likes"
+msgstr ""
+
+#: .\templates\base_site.html:36 .\templates\base_site.html:42
+#: .\templates\matches\settings\base.html:9
+#: .\templates\matches\settings\base.html:20
+msgid "Match Settings"
 msgstr ""
 
 #: .\templates\likes\like_list.html:17
@@ -475,24 +482,24 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\matches\match_list.html:26
+#: .\templates\matches\match_list.html:28
 msgid "Search for your matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:37
+#: .\templates\matches\match_list.html:39
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:48
+#: .\templates\matches\match_list.html:50
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:59
+#: .\templates\matches\match_list.html:60
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:66
+#: .\templates\matches\match_list.html:67
 msgid "Add more options"
 msgstr ""
 
@@ -502,19 +509,15 @@ msgid ""
 "again later."
 msgstr ""
 
-#: .\templates\matches\settings\base.html:15
+#: .\templates\matches\settings\base.html:17
 msgid "Back to Matches"
 msgstr ""
 
-#: .\templates\matches\settings\base.html:18
-msgid "Match Settings"
-msgstr ""
-
-#: .\templates\matches\settings\base.html:24
+#: .\templates\matches\settings\base.html:26
 msgid "Search Settings"
 msgstr ""
 
-#: .\templates\matches\settings\base.html:29
+#: .\templates\matches\settings\base.html:31
 msgid "About Me"
 msgstr ""
 
