@@ -37,15 +37,15 @@
                                     <div class="{{ chat.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3 {% if not forloop.last %}mb-3{% endif %}">
                                         <p>
                                             <strong>
-                                                {{ user.user.name }}
+                                                {{ other_participant.user.name }}
                                             </strong>
                                             <small>
                                                 {{ chat.last_message.date_created }}
                                             </small>
                                             {% if chat.is_unread %}
                                                 <span class="pull-right">
-                                            <i class="fa fa-circle text-primary" title="{% trans 'Unread' %}"></i>
-                                        </span>
+                                                    <i class="fa fa-circle text-primary" title="{% trans 'Unread' %}"></i>
+                                                </span>
                                             {% endif %}
                                         </p>
                                         <p>
@@ -54,11 +54,12 @@
                                                     <small>{% trans 'You:' context request.user.get_gender %}</small>
                                                 </strong>
                                             {% else %}
-                                                {# <i class="fa fa-angle-right text-muted"></i> #}
+                                                <strong>
+                                                    <small>{{ other_participant.user.name }}:</small>
+                                                </strong>
                                             {% endif %}
                                             {{ chat.last_message.text|truncatechars:35 }}
                                         </p>
-
                                     </div>
                                 </div>
                             </div>

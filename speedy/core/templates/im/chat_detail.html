@@ -39,20 +39,20 @@
                 {% include 'profiles/block_warning.html' with user=user other=other %}
             {% endif %}
 
-        <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
-            {% csrf_token %}
-            <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
-        </form>
+            <div class="bg-primary rounded-lg mt-4" data-block="MessageList" data-poll-url="{% url 'im:chat_poll' chat_slug=chat|get_chat_slug:user %}">
+                {% include 'im/message_list_poll.html' %}
+            </div>
 
+            <div style="margin-top: 20px;">{# ~~~~ TODO: define a class CSS #}
+                <form action="{% url 'im:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
+                </form>
+            </div>
 
-        <div class="bg-primary rounded-lg mt-4" data-block="MessageList"
-             data-poll-url="{% url 'im:chat_poll' chat_slug=chat|get_chat_slug:user %}">
-            {% include 'im/message_list_poll.html' %}
+            {% pagination %}
+
         </div>
-
-        {% pagination %}
-
-    </div>
     </div>
 
 {% endblock %}
