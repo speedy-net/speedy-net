@@ -2,6 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 from speedy.core.profiles.widgets import Widget
 from speedy.core.accounts.models import User
+from speedy.match.accounts import validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
@@ -37,8 +38,7 @@ class UserExtraDetailsWidget(Widget):
         cd = super().get_context_data()
 
         diet_code = self.user.diet
-        diet_list = [str(choice[1]) for choice in User.DIET_CHOICES_WITH_DEFAULT if (choice[0] == diet_code)]
-        diet = diet_list[0] if (len(diet_list) == 1) else str(_("Unknown"))
+        diet = self.user.get_diet() if (validators.diet_is_valid(diet=diet_code)) else str(_("Unknown"))
 
         smoking_status_code = self.user.smoking_status
         smoking_status_list = [str(choice[1]) for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
