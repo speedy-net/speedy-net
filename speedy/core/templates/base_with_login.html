@@ -130,7 +130,7 @@
                         <span class="label">{% trans 'Messages' %}</span>
                         {% unread_chats_count request.user as unread_chats %}
                         {% if unread_chats %}
-                            <span class="badge">{{ unread_chats }}</span>
+                            <span class="badge badge-light">{{ unread_chats }}</span>
                         {% endif %}
                     </a>
                 </li>
