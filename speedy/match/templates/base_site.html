@@ -30,7 +30,7 @@
     </li>
 {% endblock %}
 
-{% if request.user.speedy_match_profile.is_active %}
+{% if request.user.profile.is_active %}
     {% block navbar_mobile_menu_top_extra_3 %}
         <li>
             <a href="{% url 'matches:edit_match_settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
@@ -44,47 +44,14 @@
     {% endblock %}
 {% endif %}
 
-{% block navbar_mobile_header_icons %}
-    {% if request.user.is_authenticated %}
-        <div class="speedy-mobile-menu-icons pull-right flip">
-            <a href="{% url 'likes:list' request.user.slug %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-            <a href="{% url 'im:list' %}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-            <a href="{% url request.user.received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-        </div>
-    {% endif %}
-{% endblock %}
+{% if request.user.is_authenticated %}
+    {% block navbar_mobile_header_icons_extra_0 %}
+        <a href="{% url 'likes:list' request.user.slug %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+    {% endblock %}
+{% endif %}
 
 {% block navbar_brand %}
     <a class="navbar-brand" href="/"><img src="{% static 'speedy-match/images/logo-orange.png' %}" alt="{{ site.name }}"></a>
-{% endblock %}
-
-{% block navbar_left_menu %}
-    {% block user_menu %}
-        {% if request.user.speedy_match_profile.is_active %}
-            {% block user_menu_profile_is_active %}
-                {{ block.super }}
-            {% endblock %}
-        {% endif %}
-    {% endblock %}
-{% endblock %}
-
-{% block user_menu_extra_1 %}
-            <li class="nav-item">
-                <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
-                    <i class="fa fa-fw fa-star" aria-hidden="true"></i>
-                    <span>{% trans 'Matches' %}</span>
-                </a>
-            </li>
-{% endblock %}
-
-{% block user_menu_extra_2 %}
-            <li class="nav-item">
-                <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
-                    <i class="fa fa-fw fa-heart"></i>
-                    {% trans 'Likes' %}
-                </a>
-            </li>
-            {% include 'friends/user_menu_friends.html' %}
 {% endblock %}
 
 {% block greeting %}

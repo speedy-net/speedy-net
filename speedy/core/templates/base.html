@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% block site_title %}{{ site_title }}{% endblock %}{% endblock %}</title>
     {% block css %}
-        {% block site_theme %}
+        {% block site_theme %}{# ~~~~ TODO: Speedy Net theme is also used by Speedy Composer and Speedy Mail Software. That's why the theme is in speedy.core #}
             {% if LANGUAGE_BIDI %}
                 <link rel="stylesheet" href="{% static 'themes/speedy-net.rtl.css' %}" />
             {% else %}
@@ -79,7 +79,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav">
-                {% block navbar_left_menu %}{% endblock %}
+                {% block navbar_left_menu %}
+                    {% block navbar_left_user_menu %}
+                        {% if request.user.profile.is_active %}
+                            {% block navbar_left_user_menu_profile_is_active %}
+                                {% include 'menu/user_menu_profile_is_active.html' %}
+                            {% endblock %}
+                        {% endif %}
+                    {% endblock %}
+                {% endblock %}
             </ul>
             <ul class="navbar-nav ml-auto" data-block="HamburgerMenu">
                 {% block login_logout_register %}{% endblock %}
@@ -90,8 +98,7 @@
 
 <div class="container speedy-body-container">
     {% for message in messages %}
-        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible"
-             role="alert">
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             {{ message }}
         </div>
@@ -103,7 +110,6 @@
     {% endif %}
 
     {% block full_content %}
-
         {% if request.user.is_authenticated and request.user.is_active %}
             <div class="row">
                 <div class="col-md-3 hidden-xs">
@@ -116,9 +122,8 @@
                 </div>
                 <div class="col-12 col-md-9">
         {% endif %}
-                    {% block content %}
-                    {% endblock %}
-        {% if request.user.is_authenticated %}
+                    {% block content %}{% endblock %}
+        {% if request.user.is_authenticated and request.user.is_active %}
                 </div>
             </div>
         {% endif %}

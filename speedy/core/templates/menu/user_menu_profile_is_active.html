@@ -1,0 +1,29 @@
+{% load core_tags_and_filters %}
+{% load im_tags %}
+{% load i18n %}
+
+{#{% load core_tags_and_filters %}#}
+{#{% load staticfiles %}#}
+{#{% load i18n %}#}
+
+{% block user_menu_extra_0 %}{% endblock %}
+<li class="nav-item">
+    <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
+        <i class="fa fa-fw fa-user"></i>
+        <span class="label">{{ request.user.name }}</span>
+    </a>
+</li>
+{% block user_menu_extra_1 %}
+    {% include 'friends/user_menu_friends.html' %}
+{% endblock %}
+<li class="nav-item">
+    <a href="{% url 'im:list' %}" class="nav-link {% block user_menu_messages_class %}{% endblock %}">
+        <i class="fa fa-fw fa-comments"></i>
+        <span class="label">{% trans 'Messages' %}</span>
+        {% unread_chats_count request.user as unread_chats %}
+        {% if unread_chats %}
+            <span class="badge badge-light">{{ unread_chats }}</span>
+        {% endif %}
+    </a>
+</li>
+{% block user_menu_extra_2 %}{% endblock %}

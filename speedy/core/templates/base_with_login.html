@@ -16,6 +16,15 @@
                 <span class="icon-bar"></span>
             </button>
             {% block navbar_mobile_header_icons %}
+                {% if request.user.is_authenticated %}
+                    <div class="speedy-mobile-menu-icons pull-right flip">
+                        {% block navbar_mobile_header_icons_extra_0 %}{% endblock %}
+                        <a href="{% url 'im:list' %}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                        {% block navbar_mobile_header_icons_extra_1 %}{% endblock %}
+                        <a href="{% url request.user.received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                        {% block navbar_mobile_header_icons_extra_2 %}{% endblock %}
+                    </div>
+                {% endif %}
             {% endblock %}
         </div>
         <div class="collapse navbar-collapse" id="speedy-navbar-collapse">
@@ -114,27 +123,7 @@
     {% block user_menu %}
         {% if request.user.profile.is_active %}
             {% block user_menu_profile_is_active %}
-                {% block user_menu_extra_0 %}{% endblock %}
-                <li class="nav-item">
-                    <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
-                        <i class="fa fa-fw fa-user"></i>
-                        <span class="label">{{ request.user.name }}</span>
-                    </a>
-                </li>
-                {% block user_menu_extra_1 %}
-                    {% include 'friends/user_menu_friends.html' %}
-                {% endblock %}
-                <li class="nav-item">
-                    <a href="{% url 'im:list' %}" class="nav-link {% block user_menu_messages_class %}{% endblock %}">
-                        <i class="fa fa-fw fa-comments"></i>
-                        <span class="label">{% trans 'Messages' %}</span>
-                        {% unread_chats_count request.user as unread_chats %}
-                        {% if unread_chats %}
-                            <span class="badge badge-light">{{ unread_chats }}</span>
-                        {% endif %}
-                    </a>
-                </li>
-                {% block user_menu_extra_2 %}{% endblock %}
+                {% include 'menu/user_menu_profile_is_active.html' %}
             {% endblock %}
         {% endif %}
     {% endblock %}

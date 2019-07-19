@@ -1,0 +1,25 @@
+{% extends 'menu/user_menu_profile_is_active.html' %}
+
+{% load core_tags_and_filters %}
+{% load im_tags %}
+{% load i18n %}
+
+{% block user_menu_extra_1 %}
+    <li class="nav-item">
+        <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
+            <i class="fa fa-fw fa-star" aria-hidden="true"></i>
+            <span>{% trans 'Matches' %}</span>
+        </a>
+    </li>
+{% endblock %}
+
+{% block user_menu_extra_2 %}
+    <li class="nav-item">
+        <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
+            <i class="fa fa-fw fa-heart"></i>
+            {% trans 'Likes' %}
+        </a>
+    </li>
+    {% include 'friends/user_menu_friends.html' %}
+{% endblock %}
+
