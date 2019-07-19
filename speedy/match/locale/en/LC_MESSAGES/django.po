@@ -98,17 +98,17 @@ msgstr ""
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
-msgid "Match settings"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
-msgid "Match settings"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
-msgid "Match settings"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:34
@@ -507,7 +507,7 @@ msgid "Back to Matches"
 msgstr ""
 
 #: .\templates\matches\settings\base.html:18
-msgid "Match settings"
+msgid "Match Settings"
 msgstr ""
 
 #: .\templates\matches\settings\base.html:24
