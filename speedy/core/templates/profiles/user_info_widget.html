@@ -69,14 +69,14 @@
             {% for address in user.email_addresses.all %}
                 {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
                 {% if can_view_profile and can_view_address %}
-                <tr>
-                    <th>{% trans 'Email' %}</th>
-                    <td>
-                        <a href="mailto:{{ address }}">
-                            {{ address }}
-                        </a>
-                    </td>
-                </tr>
+                    <tr>
+                        <th>{% trans 'Email' %}</th>
+                        <td>
+                            <a href="mailto:{{ address }}">
+                                {{ address }}
+                            </a>
+                        </td>
+                    </tr>
                 {% endif %}
             {% endfor %}
 
