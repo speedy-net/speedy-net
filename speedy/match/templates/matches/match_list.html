@@ -55,8 +55,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <input type="submit" class="btn btn-block btn-primary btn-arrow-right"
-                                   value="{% trans 'Refresh' %}">
+                            <input type="submit" class="btn btn-block btn-primary btn-arrow-right" value="{% trans 'Refresh' %}">
                         </div>
                     </div>
                 </div>
@@ -65,7 +64,6 @@
                 <a href="{% url 'matches:edit_settings' %}" class="btn btn-default">
                     {% trans 'Add more options' %}
                 </a>
-
             </div>
             {{ field.label_tag }}
             {#                    {% crispy_field field %}#}

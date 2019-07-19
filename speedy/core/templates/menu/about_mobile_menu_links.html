@@ -22,6 +22,8 @@
 <li role="separator" class="divider"></li>
 {% block navigate_other_site %}
     {% for other_site in sites %}
-        <li><a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain|remove_1_prefix_from_domain }}{# ~~~~ TODO: This filter [remove_1_prefix_from_domain] is only because we use "1." domains in production. remove this filter! #}">{% trans other_site.name %}</a></li>
+        <li>
+            <a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain|remove_1_prefix_from_domain }}{# ~~~~ TODO: This filter [remove_1_prefix_from_domain] is only because we use "1." domains in production. remove this filter! #}">{% trans other_site.name %}</a>
+        </li>
     {% endfor %}
 {% endblock %}
