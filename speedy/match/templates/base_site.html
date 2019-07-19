@@ -4,7 +4,7 @@
 {% load core_tags_and_filters %}
 {% load staticfiles %}
 
-{% block extracss %}
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}">
 {% endblock %}
 
@@ -33,13 +33,13 @@
 {% if request.user.speedy_match_profile.is_active %}
     {% block navbar_mobile_menu_top_extra_3 %}
         <li>
-            <a href="{% url 'matches:edit_settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
+            <a href="{% url 'matches:edit_match_settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
         </li>
     {% endblock %}
 
     {% block login_logout_register_user_is_authenticated_extra_2 %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'matches:edit_settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
+            <a class="nav-link" href="{% url 'matches:edit_match_settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
         </li>
     {% endblock %}
 {% endif %}
@@ -95,7 +95,7 @@
     {% endblock %}
 {% endblock %}
 
-{% block extrajs %}
+{% block extra_js %}
     <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
 {% endblock %}
 

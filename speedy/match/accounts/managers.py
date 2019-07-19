@@ -15,6 +15,7 @@ class SiteProfileManager(BaseManager):
         qs = [user for user in qs if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0) and (user.speedy_match_profile.is_active))]
 
         qs = sorted(qs, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
+        # ~~~~ TODO: there is no limit on the number of matches in one page!
         return qs
 
 

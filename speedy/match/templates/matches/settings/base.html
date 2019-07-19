@@ -6,6 +6,8 @@
 {% load im_tags %}
 {% load rules %}
 
+{% block title %}{% trans 'Match Settings' context user.get_gender %} / {{ block.super }}{% endblock %}
+
 {% block content %}
     <div class="page-header">
         <h1>
@@ -20,7 +22,7 @@
     </div>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link {% active_class 'matches:edit_settings' %}" href="{% url 'matches:edit_settings' %}">
+            <a class="nav-link {% active_class 'matches:edit_match_settings' %}" href="{% url 'matches:edit_match_settings' %}">
                 {% trans 'Search Settings' %}
             </a>
         </li>
