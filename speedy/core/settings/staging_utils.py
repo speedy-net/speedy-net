@@ -4,7 +4,7 @@ def activate_staging(settings):
         # ('Evgeniy Kirov', 'evgeniy.kirov@initech.co.il'),
     )
     settings.update({
-        'DEFAULT_FROM_EMAIL': 'webmaster@speedy2000.net',
+        'DEFAULT_FROM_EMAIL': 'webmaster@speedy.net.2.speedy-technologies.com',
         'ADMINS': admins,
         'MANAGERS': admins,
         'DEBUG': True,
