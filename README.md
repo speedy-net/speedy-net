@@ -162,7 +162,7 @@ Setup a database:
     createdb -O speedy_net speedy_net
     exit
 
-In **/etc/postgresql/9.5/main/pg_hba.conf** change the line:
+In **/etc/postgresql/10/main/pg_hba.conf** change the line:
 
     host    all             all             127.0.0.1/32            md5
 
