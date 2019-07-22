@@ -21,10 +21,26 @@ install:
   - lsb_release -a
 script:
   - cd speedy/net
-  - python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
+  - python tests_manage.py test speedy.core # python -W error::DeprecationWarning tests_manage.py test speedy.core
+  - python tests_manage.py test speedy.net # python -W error::DeprecationWarning tests_manage.py test speedy.net
+  - python tests_manage.py test speedy.match # python -W error::DeprecationWarning tests_manage.py test speedy.match
+  - python tests_manage.py test speedy.composer # python -W error::DeprecationWarning tests_manage.py test speedy.composer
+  - python tests_manage.py test speedy.mail # python -W error::DeprecationWarning tests_manage.py test speedy.mail
   - cd ../match
-  - python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
+  - python tests_manage.py test speedy.core # python -W error::DeprecationWarning tests_manage.py test speedy.core
+  - python tests_manage.py test speedy.net # python -W error::DeprecationWarning tests_manage.py test speedy.net
+  - python tests_manage.py test speedy.match # python -W error::DeprecationWarning tests_manage.py test speedy.match
+  - python tests_manage.py test speedy.composer # python -W error::DeprecationWarning tests_manage.py test speedy.composer
+  - python tests_manage.py test speedy.mail # python -W error::DeprecationWarning tests_manage.py test speedy.mail
   - cd ../composer
-  - python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
+  - python tests_manage.py test speedy.core # python -W error::DeprecationWarning tests_manage.py test speedy.core
+  - python tests_manage.py test speedy.net # python -W error::DeprecationWarning tests_manage.py test speedy.net
+  - python tests_manage.py test speedy.match # python -W error::DeprecationWarning tests_manage.py test speedy.match
+  - python tests_manage.py test speedy.composer # python -W error::DeprecationWarning tests_manage.py test speedy.composer
+  - python tests_manage.py test speedy.mail # python -W error::DeprecationWarning tests_manage.py test speedy.mail
   - cd ../mail
-  - python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
+  - python tests_manage.py test speedy.core # python -W error::DeprecationWarning tests_manage.py test speedy.core
+  - python tests_manage.py test speedy.net # python -W error::DeprecationWarning tests_manage.py test speedy.net
+  - python tests_manage.py test speedy.match # python -W error::DeprecationWarning tests_manage.py test speedy.match
+  - python tests_manage.py test speedy.composer # python -W error::DeprecationWarning tests_manage.py test speedy.composer
+  - python tests_manage.py test speedy.mail # python -W error::DeprecationWarning tests_manage.py test speedy.mail
