@@ -1,6 +1,12 @@
 {% extends 'base_with_login.html' %}
 
 {% load i18n %}
+{% load core_tags_and_filters %}
+{% load staticfiles %}
 
 {% block navbar_class %}navbar-light bg-speedy-net{% endblock %}
+
+{% block navbar_brand %}
+    <a class="navbar-brand" href="/"><img src="{% static 'speedy-net/images/logo-small.png' %}" alt="{{ site.name }}"></a>
+{% endblock %}
 
