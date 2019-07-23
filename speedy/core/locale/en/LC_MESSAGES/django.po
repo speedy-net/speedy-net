@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-19 22:20+0300\n"
+"POT-Creation-Date: 2019-07-23 19:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1806,7 +1806,8 @@ msgid "Welcome"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:12
-msgid "Welcome to"
+#, python-format
+msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:16
