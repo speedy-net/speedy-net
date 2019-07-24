@@ -41,7 +41,7 @@
             {% if can_view_profile and user.date_of_birth %}
                 {% if can_view_dob_day_month or can_view_dob_year %}
                     <tr>
-                        <th>{% trans 'Birthday' %}</th>
+                        <th>{% trans 'Birth Date' %}</th>
                         <td>
                             {% if can_view_dob_day_month and can_view_dob_year %}
                                 {{ user.date_of_birth }}
