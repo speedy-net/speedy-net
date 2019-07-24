@@ -7,7 +7,8 @@ SITES="net match composer mail"
 
 cd ${DIR}
 git pull
-${PIP} install --upgrade pip setuptools wheel
+${PY} -m pip install --upgrade pip
+${PIP} install --upgrade setuptools wheel
 ${PIP} install --upgrade -r requirements.txt
 ${PIP} uninstall django-debug-toolbar # ~~~~ TODO: remove this line!
 

@@ -65,7 +65,7 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
 Next:
 
     python -m pip install --upgrade pip
-    pip install --upgrade pip setuptools wheel
+    pip install --upgrade setuptools wheel
     pip install --upgrade -r requirements.txt
     cp env.ini.example env.ini
 
@@ -152,7 +152,8 @@ Clone the project, create a venv, activate it and install required modules using
     cd speedy-net/
     python3 -m venv env
     source env/bin/activate
-    pip install --upgrade pip setuptools wheel
+    python -m pip install --upgrade pip
+    pip install --upgrade setuptools wheel
     pip install --upgrade -r requirements.txt
 
 Setup a database:
