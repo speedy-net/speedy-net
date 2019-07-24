@@ -16,32 +16,35 @@ var datepickerOptions = {
     altFormat: 'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
-	  dateFormat: "d MM yy", //"dd/mm/yy",
     minDate: '-180y+1d',
     maxDate: '+0d',
     yearRange: '-180:+0'
 };
-//$.datepicker.regional.en = {
-//	dateFormat: 'MM d yy' };
 
 $.datepicker.regional.he = {
 	closeText: "סגור",
 	prevText: "&#x3C;הקודם",
 	nextText: "הבא&#x3E;",
 	currentText: "היום",
-	monthNames: [ "ינואר","פברואר","מרץ","אפריל","מאי","יוני",
-	"יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר" ],
-	monthNamesShort: [ "ינו","פבר","מרץ","אפר","מאי","יוני",
-	"יולי","אוג","ספט","אוק","נוב","דצמ" ],
-	dayNames: [ "ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת" ],
-	dayNamesShort: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
-	dayNamesMin: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
+	monthNames: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
+	monthNamesShort: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
+	dayNames: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
+	dayNamesShort: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
+	dayNamesMin: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
 	weekHeader: "Wk",
-//	dateFormat: "d MM yy", //"dd/mm/yy",
+	dateFormat: "d בMM yy",
 	firstDay: 0,
 	isRTL: true,
 	showMonthAfterYear: false,
-	yearSuffix: "" };
+	yearSuffix: ""
+};
+
+$.datepicker.regional.en = {
+	monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+	// monthNamesShort: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+	firstDay: 0
+};
 
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
