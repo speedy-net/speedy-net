@@ -279,12 +279,21 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
 
     @staticmethod
-    def diet_choices(gender):
+    def diet_choices_with_description(gender):
         return (
             # (__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan (eats only plants and fungi)")),
             (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian (doesn't eat fish and meat)")),
             (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist (eats animals)")),
+        )
+
+    @staticmethod
+    def diet_choices(gender):
+        return (
+            # (__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan")),
+            (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian")),
+            (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist")),
         )
 
     @staticmethod
@@ -557,8 +566,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_age(self):
         return get_age(date_of_birth=self.date_of_birth)
 
-    def get_diet_choices(self):
-        return self.__class__.diet_choices(gender=self.get_gender())
+    def get_diet_choices_with_description(self):
+        return self.__class__.diet_choices_with_description(gender=self.get_gender())
 
     def get_smoking_status_choices(self):
         return self.__class__.smoking_status_choices(gender=self.get_gender())

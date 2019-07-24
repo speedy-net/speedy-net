@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-23 19:05+0300\n"
+"POT-Creation-Date: 2019-07-24 17:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:591
+#: .\__translations\__translations.py:9 .\accounts\models.py:600
 msgid "email address"
 msgstr ""
 
@@ -1428,88 +1428,88 @@ msgstr ""
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:314
+#: .\accounts\models.py:323
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:317
+#: .\accounts\models.py:326
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:328
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:329
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:330
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:331
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:332
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:325
+#: .\accounts\models.py:334
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:338
 msgid "who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:330
+#: .\accounts\models.py:339
 msgid "who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:331
+#: .\accounts\models.py:340
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:441 .\accounts\models.py:575 .\accounts\models.py:651
+#: .\accounts\models.py:450 .\accounts\models.py:584 .\accounts\models.py:660
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:451
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:576
+#: .\accounts\models.py:585
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:577
+#: .\accounts\models.py:586
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:578
+#: .\accounts\models.py:587
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:579
+#: .\accounts\models.py:588
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:580
+#: .\accounts\models.py:589
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:581
+#: .\accounts\models.py:590
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:592
+#: .\accounts\models.py:601
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:652
+#: .\accounts\models.py:661
 msgid "last visit"
 msgstr ""
 
