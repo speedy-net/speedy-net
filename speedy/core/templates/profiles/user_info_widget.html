@@ -44,14 +44,11 @@
                         <th>{% if can_view_dob_day_month %}{% trans 'Birth Date' %}{% elif can_view_dob_year %}{% trans 'Birth Year' %}{% endif %}</th>
                         <td>
                             {% if can_view_dob_day_month and can_view_dob_year %}
-                                {{ user.date_of_birth }}
+                                {{ user.date_of_birth|date:settings.DATE_FORMAT }}
                             {% elif can_view_dob_day_month %}
-                                {{ user.date_of_birth|date:'N j' }}
+                                {{ user.date_of_birth|date:settings.MONTH_DAY_FORMAT }}
                             {% elif can_view_dob_year %}
-                                {{ user.date_of_birth|date:'Y' }}
-                            {% else %}
-                                {% comment %}This option is disabled.{% endcomment %}
-                                <span class="text-muted">{% trans '(hidden)' %}</span>
+                                {{ user.date_of_birth|date:settings.YEAR_FORMAT }}
                             {% endif %}
                         </td>
                     </tr>
