@@ -68,6 +68,8 @@ if (django_settings.LOGIN_ENABLED):
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 self.assertIn(member=self.full_name, container=r.content.decode())
                 self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+                self.assertNotIn(member=self.birth_date, container=r.content.decode())
+                self.assertNotIn(member=self.birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
@@ -88,6 +90,8 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 raise NotImplementedError()
             self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+            self.assertIn(member=self.birth_date, container=r.content.decode())
+            self.assertNotIn(member=self.birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_date, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
@@ -110,6 +114,8 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 raise NotImplementedError()
             self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+            self.assertIn(member=self.birth_date, container=r.content.decode())
+            self.assertNotIn(member=self.birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_month_day, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
@@ -122,6 +128,8 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.user_profile_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+            self.assertIn(member=self.birth_date, container=r.content.decode())
+            self.assertNotIn(member=self.birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_month_day, container=r.content.decode())
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_date, container=r.content.decode())
@@ -134,6 +142,8 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.user_profile_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+            self.assertNotIn(member=self.birth_date, container=r.content.decode())
+            self.assertIn(member=self.birth_year, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_month_day, container=r.content.decode())
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
@@ -147,6 +157,8 @@ if (django_settings.LOGIN_ENABLED):
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+                self.assertNotIn(member=self.birth_date, container=r.content.decode())
+                self.assertNotIn(member=self.birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_month_day, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
@@ -159,6 +171,8 @@ if (django_settings.LOGIN_ENABLED):
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+                self.assertIn(member=self.birth_date, container=r.content.decode())
+                self.assertNotIn(member=self.birth_year, container=r.content.decode())
                 self.assertIn(member=self.user_birth_month_day, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
@@ -175,6 +189,8 @@ if (django_settings.LOGIN_ENABLED):
     class UserDetailViewEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
+            self.birth_date = "Birth Date"
+            self.birth_year = "Birth Year"
             self.first_name = "Corrin"
             self.last_name = "Gideon"
             self.full_name = "Corrin Gideon"
@@ -199,6 +215,8 @@ if (django_settings.LOGIN_ENABLED):
     class UserDetailViewHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
+            self.birth_date = "תאריך לידה"
+            self.birth_year = "שנת לידה"
             self.first_name = "קורין"
             self.last_name = "גדעון"
             self.full_name = "קורין גדעון"
