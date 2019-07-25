@@ -66,12 +66,27 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_profile_not_logged_in(self):
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                # First, check if the date of birth is not visible.
+                self.assertEqual(first=r.status_code, second=200)
                 self.assertIn(member=self.full_name, container=r.content.decode())
                 self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
                 self.assertNotIn(member=self.birth_date, container=r.content.decode())
                 self.assertNotIn(member=self.birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
+                # Now, check if the date of birth is visible.
+                self.user.access_dob_day_month = UserAccessField.ACCESS_ANYONE
+                self.user.access_dob_year = UserAccessField.ACCESS_ANYONE
+                self.user.save()
+                r = self.client.get(path=self.user_profile_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+                self.assertIn(member=self.birth_date, container=r.content.decode())
+                self.assertNotIn(member=self.birth_year, container=r.content.decode())
+                self.assertIn(member=self.user_birth_year, container=r.content.decode())
+                self.assertIn(member=self.user_birth_date, container=r.content.decode())
+                self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
+                self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
