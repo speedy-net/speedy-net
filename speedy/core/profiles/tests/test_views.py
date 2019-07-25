@@ -108,17 +108,21 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=self.language_code, second='en')
 
 
-    # @only_on_sites_with_login
-    # @override_settings(LANGUAGE_CODE='he')
-    # class UserDetailViewHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
-    #     def set_up(self):
-    #         super().set_up()
-    #         self.first_name = "קורין"
-    #         self.last_name = "גדעון"
-    #         self.full_name = "קורין גדעון"
-    #
-    #     def validate_all_values(self):
-    #         super().validate_all_values()
-    #         self.assertEqual(first=self.language_code, second='he')
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class UserDetailViewHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.first_name = "קורין"
+            self.last_name = "גדעון"
+            self.full_name = "קורין גדעון"
+            self.expected_title = {
+                django_settings.SPEEDY_NET_SITE_ID: "קורין גדעון / ספידי נט [אלפא]",
+                django_settings.SPEEDY_MATCH_SITE_ID: "קורין / ספידי מץ&#39; [אלפא]",
+            }
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
