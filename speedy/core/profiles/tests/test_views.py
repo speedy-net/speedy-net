@@ -180,7 +180,8 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.user_profile_url), status_code=302, target_status_code=200)
+                expected_url = '/login/?next={}'.format(self.user_profile_url)
+                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
             else:
                 raise NotImplementedError()
 
