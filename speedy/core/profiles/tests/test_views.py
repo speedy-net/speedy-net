@@ -64,9 +64,10 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_profile_not_logged_in(self):
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                self.assertIn(member=self.full_name, container=str(r.content))
-                self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=str(r.content))
-                self.assertNotIn(member="1992", container=str(r.content))
+                self.assertIn(member=self.full_name, container=r.content.decode())
+                self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+                self.assertNotIn(member="1992", container=r.content.decode())
+                self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -77,18 +78,18 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.user_profile_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertIn(member=self.first_name, container=str(r.content))
+            self.assertIn(member=self.first_name, container=r.content.decode())
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                self.assertIn(member=self.full_name, container=str(r.content))
+                self.assertIn(member=self.full_name, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertNotIn(member=self.full_name, container=str(r.content))
+                self.assertNotIn(member=self.full_name, container=r.content.decode())
             else:
                 raise NotImplementedError()
-            self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=str(r.content))
-            self.assertIn(member="1992", container=str(r.content))
-            self.assertIn(member="12 September 1992", container=str(r.content))
-            self.assertNotIn(member="1990", container=str(r.content))
-            self.assertNotIn(member="12 September 1990", container=str(r.content))
+            self.assertIn(member="<title>{}</title>".format(self.expected_title[self.site.id]), container=r.content.decode())
+            self.assertIn(member="1992", container=r.content.decode())
+            self.assertIn(member=self.user_birth_date, container=r.content.decode())
+            self.assertNotIn(member="1990", container=r.content.decode())
+            self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
 
 
     @only_on_sites_with_login
@@ -98,6 +99,8 @@ if (django_settings.LOGIN_ENABLED):
             self.first_name = "Corrin"
             self.last_name = "Gideon"
             self.full_name = "Corrin Gideon"
+            self.user_birth_date = "12 September 1992"
+            self.not_user_birth_date = "12 September 1990"
             self.expected_title = {
                 django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
                 django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
@@ -116,6 +119,10 @@ if (django_settings.LOGIN_ENABLED):
             self.first_name = "קורין"
             self.last_name = "גדעון"
             self.full_name = "קורין גדעון"
+            self.user_birth_date = "12 ספטמבר 1992"
+            # self.user_birth_date = "12 בספטמבר 1992" # ~~~~ TODO: this is the correct string!
+            self.not_user_birth_date = "12 ספטמבר 1990"
+            # self.not_user_birth_date = "12 בספטמבר 1990" # ~~~~ TODO: this is the correct string!
             self.expected_title = {
                 django_settings.SPEEDY_NET_SITE_ID: "קורין גדעון / ספידי נט [אלפא]",
                 django_settings.SPEEDY_MATCH_SITE_ID: "קורין / ספידי מץ&#39; [אלפא]",
