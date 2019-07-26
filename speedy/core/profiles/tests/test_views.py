@@ -85,7 +85,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member=self.birth_year, container=r.content.decode())
                 self.assertIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertIn(member=self.user_birth_date, container=r.content.decode())
-                self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
@@ -109,7 +108,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotIn(member=self.birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_date, container=r.content.decode())
-            self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
 
         def test_user_profile_month_day_format_from_friend(self):
@@ -135,7 +133,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_month_day, container=r.content.decode())
-            self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             # Then, check if all the birth date is visible.
             self.user.access_dob_year = UserAccessField.ACCESS_FRIENDS
@@ -149,7 +146,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertIn(member=self.user_birth_date, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_month_day, container=r.content.decode())
-            self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             # Then, check if only the year is visible.
             self.user.access_dob_day_month = UserAccessField.ACCESS_ME
@@ -163,7 +159,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=self.user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_month_day, container=r.content.decode())
-            self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
             self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             # Then logout and check that nothing from the date of birth is visible on Speedy Net.
             # On Speedy Match, the profile is not visible to visitors at all.
@@ -178,7 +173,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_month_day, container=r.content.decode())
-                self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
                 # And then, check if only the day and month are visible again.
                 self.user.access_dob_day_month = UserAccessField.ACCESS_ANYONE
@@ -192,7 +186,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member=self.user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.user_birth_date, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_month_day, container=r.content.decode())
-                self.assertNotIn(member=self.not_user_birth_year, container=r.content.decode())
                 self.assertNotIn(member=self.not_user_birth_date, container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
@@ -215,7 +208,6 @@ if (django_settings.LOGIN_ENABLED):
             self.user_birth_year = "1992"
             self.not_user_birth_date = "12 September 1990"
             self.not_user_birth_month_day = "21 September"
-            self.not_user_birth_year = "1990"
             self.expected_title = {
                 django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
                 django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
@@ -245,7 +237,6 @@ if (django_settings.LOGIN_ENABLED):
             # self.not_user_birth_date = "12 בספטמבר 1990" # ~~~~ TODO: this is the correct string!
             self.not_user_birth_month_day = "21 ספטמבר"
             # self.user_birth_month_day = "21 בספטמבר" # ~~~~ TODO: this is the correct string!
-            self.not_user_birth_year = "1990"
             self.expected_title = {
                 django_settings.SPEEDY_NET_SITE_ID: "קורין גדעון / ספידי נט [אלפא]",
                 django_settings.SPEEDY_MATCH_SITE_ID: "קורין / ספידי מץ&#39; [אלפא]",
