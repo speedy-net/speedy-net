@@ -18,7 +18,7 @@
 
 {% block content %}
     {% get_other_participant chat user as other %}
-    {% has_perm 'messages.send_message' user other as can_send_message %}{# ~~~~ TODO #}
+    {% has_perm 'messages.send_message' user other as can_send_message %}
 
     <div class="row justify-content-center">
 
