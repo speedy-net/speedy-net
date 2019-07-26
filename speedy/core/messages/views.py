@@ -62,6 +62,7 @@ class UserSingleChatMixin(UserChatsMixin):
 
 
 class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
+    template_name = 'messages/chat_list.html'
     paginate_by = 25
 
     def get_queryset(self):
@@ -69,7 +70,7 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
-    template_name = 'core_messages/chat_detail.html'
+    template_name = 'messages/chat_detail.html'
     paginate_by = 25
 
     def dispatch(self, request, *args, **kwargs):
@@ -105,9 +106,9 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
     def get_template_names(self):
         if (self.chat):
-            return 'core_messages/chat_detail.html'
+            return 'messages/chat_detail.html'
         else:
-            return 'core_messages/message_form.html'
+            return 'messages/message_form.html'
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -118,7 +119,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
 
 class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
-    template_name = 'core_messages/message_list_poll.html'
+    template_name = 'messages/message_list_poll.html'
 
     def get_queryset(self):
         since = float(self.request.GET.get('since', 0))
@@ -127,7 +128,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
 
 
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
-    template_name = 'core_messages/chat_detail.html'
+    template_name = 'messages/chat_detail.html'
     form_class = MessageForm
     raise_exception = True
 
@@ -153,7 +154,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
 
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):
     permission_required = 'messages.send_message'
-    template_name = 'core_messages/message_form.html'
+    template_name = 'messages/message_form.html'
     form_class = MessageForm
 
     def get(self, request, *args, **kwargs):

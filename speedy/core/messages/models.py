@@ -103,7 +103,7 @@ def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
     other_participants = instance.chat.get_other_participants(instance.sender)
     for entity in other_participants:
         if (entity.user.notify_on_message == User.NOTIFICATIONS_ON):
-            entity.user.mail_user(template_name_prefix='core_messages/email/new_message', context={
+            entity.user.mail_user(template_name_prefix='messages/email/new_message', context={
                 'message': instance,
             })
 

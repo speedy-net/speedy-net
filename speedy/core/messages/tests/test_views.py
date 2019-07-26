@@ -145,7 +145,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='core_messages/message_form.html')
+            self.assertTemplateUsed(response=r, template_name='messages/message_form.html')
 
         def test_user_gets_redirected_to_existing_chat(self):
             chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
