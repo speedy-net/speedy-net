@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 DATE_FORMAT = 'j F Y'
+DATE_FORMAT = '!!!!! j F Y' # ~~~~ TODO: remove this line!
 MONTH_DAY_FORMAT = 'j F'
 YEAR_FORMAT = 'Y'
 
