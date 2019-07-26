@@ -1,7 +1,7 @@
-from django.contrib.auth.apps import AuthConfig
+from django.apps import AppConfig
 
 
-class SpeedyCoreMessagesConfig(AuthConfig):
+class SpeedyCoreMessagesConfig(AppConfig):
     name = 'speedy.core.messages'
     label = 'core_messages'
 

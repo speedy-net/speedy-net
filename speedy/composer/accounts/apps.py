@@ -1,7 +1,7 @@
-from django.contrib.auth.apps import AuthConfig
+from django.apps import AppConfig
 
 
-class SpeedyComposerAccountsConfig(AuthConfig):
+class SpeedyComposerAccountsConfig(AppConfig):
     name = 'speedy.composer.accounts'
     label = 'composer_accounts'
 

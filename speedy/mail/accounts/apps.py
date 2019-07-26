@@ -1,7 +1,7 @@
-from django.contrib.auth.apps import AuthConfig
+from django.apps import AppConfig
 
 
-class SpeedyMailSoftwareAccountsConfig(AuthConfig):
+class SpeedyMailSoftwareAccountsConfig(AppConfig):
     name = 'speedy.mail.accounts'
     label = 'mail_accounts'
 

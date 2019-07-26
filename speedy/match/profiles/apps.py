@@ -1,7 +1,7 @@
-from django.contrib.auth.apps import AuthConfig
+from django.apps import AppConfig
 
 
-class SpeedyMatchProfilesConfig(AuthConfig):
+class SpeedyMatchProfilesConfig(AppConfig):
     name = 'speedy.match.profiles'
     label = 'match_profiles'
 

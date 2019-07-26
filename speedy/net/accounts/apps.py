@@ -1,7 +1,7 @@
-from django.contrib.auth.apps import AuthConfig
+from django.apps import AppConfig
 
 
-class SpeedyNetAccountsConfig(AuthConfig):
+class SpeedyNetAccountsConfig(AppConfig):
     name = 'speedy.net.accounts'
     label = 'net_accounts'
 
