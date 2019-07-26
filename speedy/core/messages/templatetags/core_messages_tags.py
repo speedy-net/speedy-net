@@ -12,7 +12,7 @@ def get_other_participant(chat, user):
     :type user: speedy.core.accounts.models.User
     """
     assert chat.is_private
-    return chat.get_other_participants(user)[0]
+    return chat.get_other_participants(entity=user)[0]
 
 
 @register.simple_tag
@@ -63,7 +63,7 @@ def get_chat_slug(chat, current_user):
 @register.simple_tag
 def unread_chats_count(entity):
     chat_list = Chat.objects.chats(entity=entity)
-    annotate_chats_with_read_marks(chat_list, entity)
+    annotate_chats_with_read_marks(chat_list=chat_list, entity=entity)
     return len([c for c in chat_list if (c.is_unread)])
 
 
