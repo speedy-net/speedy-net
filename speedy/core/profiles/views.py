@@ -45,7 +45,7 @@ class UserMixin(object):
                     return self.request.user
                 else:
                     raise PermissionDenied()
-            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(username=slug)))
+            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(username=slug)) | Q(id=slug))
 
             # inactive user profiles will have a link to the Speedy Net profile page
             # so the user has to get to the profile page and not a 404
