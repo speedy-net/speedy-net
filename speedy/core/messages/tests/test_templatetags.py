@@ -38,7 +38,7 @@ if (django_settings.LOGIN_ENABLED):
                 sleep(0.1)
 
             def _mark(index):
-                chats[index].mark_read(user1)
+                chats[index].mark_read(entity=user1)
                 sleep(0.1)
 
             _message(2)

@@ -37,7 +37,7 @@ class MessageManager(BaseManager):
         chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
         chat.date_updated = chat.last_message.date_created
         chat.save(update_fields={'last_message', 'date_updated'})
-        chat.mark_read(from_entity)
+        chat.mark_read(entity=from_entity)
         return chat.last_message
 
 

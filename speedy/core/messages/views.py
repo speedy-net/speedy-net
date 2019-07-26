@@ -180,7 +180,7 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         return redirect(to=self.get_success_url())
 
     def post(self, request, *args, **kwargs):
-        self.get_chat().mark_read(self.get_user())
+        self.get_chat().mark_read(entity=self.get_user())
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):

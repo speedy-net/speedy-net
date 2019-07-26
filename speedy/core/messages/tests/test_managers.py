@@ -47,7 +47,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_mark_read(self):
             chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)
             self.assertEqual(first=ReadMark.objects.count(), second=0)
-            rmark = chat.mark_read(self.user2)
+            rmark = chat.mark_read(entity=self.user2)
             self.assertEqual(first=ReadMark.objects.count(), second=1)
             self.assertEqual(first=rmark.chat, second=chat)
             self.assertEqual(first=rmark.entity.id, second=self.user2.id)
