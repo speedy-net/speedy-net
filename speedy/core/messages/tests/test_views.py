@@ -6,10 +6,10 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.blocks.models import Block
-    from speedy.core.im.models import Message, ReadMark, Chat
+    from speedy.core.messages.models import Message, ReadMark, Chat
 
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
-    from speedy.core.im.test.factories import ChatFactory
+    from speedy.core.messages.test.factories import ChatFactory
 
 
     @only_on_sites_with_login
@@ -145,7 +145,7 @@ if (django_settings.LOGIN_ENABLED):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='im/message_form.html')
+            self.assertTemplateUsed(response=r, template_name='core_messages/message_form.html')
 
         def test_user_gets_redirected_to_existing_chat(self):
             chat = Chat.objects.chat_with(ent1=self.user1, ent2=self.user2)

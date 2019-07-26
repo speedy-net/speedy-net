@@ -25,7 +25,7 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
         return Chat.objects.chats(entity=self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
 
     def has_permission(self):
-        return self.request.user.has_perm(perm='im.view_chats', obj=self.user)
+        return self.request.user.has_perm(perm='messages.view_chats', obj=self.user)
 
 
 class UserSingleChatMixin(UserChatsMixin):
@@ -51,7 +51,7 @@ class UserSingleChatMixin(UserChatsMixin):
         return self.get_chat().message_set.select_related('sender__user')
 
     def has_permission(self):
-        return ((super().has_permission()) and (self.request.user.has_perm(perm='im.read_chat', obj=self.chat)))
+        return ((super().has_permission()) and (self.request.user.has_perm(perm='messages.read_chat', obj=self.chat)))
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -69,7 +69,7 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
-    template_name = 'im/chat_detail.html'
+    template_name = 'core_messages/chat_detail.html'
     paginate_by = 25
 
     def dispatch(self, request, *args, **kwargs):
@@ -78,7 +78,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         visited_user = self.get_user_queryset().filter(
             username=normalize_username(username=self.kwargs['chat_slug'])).first()
         if ((visited_user) and (visited_user.slug != self.kwargs['chat_slug'])):
-            return redirect(to=reverse('im:chat', kwargs={'chat_slug': visited_user.slug}))
+            return redirect(to=reverse('messages:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.objects.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
             self.user = visited_user
             self.chat = None
@@ -105,9 +105,9 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
     def get_template_names(self):
         if (self.chat):
-            return 'im/chat_detail.html'
+            return 'core_messages/chat_detail.html'
         else:
-            return 'im/message_form.html'
+            return 'core_messages/message_form.html'
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -118,7 +118,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
 
 class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
-    template_name = 'im/message_list_poll.html'
+    template_name = 'core_messages/message_list_poll.html'
 
     def get_queryset(self):
         since = float(self.request.GET.get('since', 0))
@@ -127,7 +127,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
 
 
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
-    template_name = 'im/chat_detail.html'
+    template_name = 'core_messages/chat_detail.html'
     form_class = MessageForm
     raise_exception = True
 
@@ -143,23 +143,23 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+        return reverse('messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
     def has_permission(self):
         if (self.chat.participants_count != 2):
             return super().has_permission()
-        return self.user.has_perm(perm='im.send_message', obj=self.chat.get_other_participants(entity=self.user)[0])
+        return self.user.has_perm(perm='messages.send_message', obj=self.chat.get_other_participants(entity=self.user)[0])
 
 
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):
-    permission_required = 'im.send_message'
-    template_name = 'im/message_form.html'
+    permission_required = 'messages.send_message'
+    template_name = 'core_messages/message_form.html'
     form_class = MessageForm
 
     def get(self, request, *args, **kwargs):
         existing_chat = Chat.objects.chat_with(ent1=self.request.user, ent2=self.user, create=False)
         if (existing_chat is not None):
-            return redirect(to='im:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
+            return redirect(to='messages:chat', **{'chat_slug': existing_chat.get_slug(current_user=self.request.user)})
         return super().get(request=request, *args, **kwargs)
 
     def get_form_kwargs(self):
@@ -171,7 +171,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
         return kwargs
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'chat_slug': self.object.chat.get_slug(current_user=self.request.user)})
+        return reverse('messages:chat', kwargs={'chat_slug': self.object.chat.get_slug(current_user=self.request.user)})
 
 
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
@@ -183,6 +183,6 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('im:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+        return reverse('messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
 

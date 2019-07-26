@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'speedy.core.accounts',
     'speedy.core.blocks',
     'speedy.core.uploads',
-    'speedy.core.im',
+    'speedy.core.messages',
     'speedy.core.about',
     'speedy.core.privacy',
     'speedy.core.terms',

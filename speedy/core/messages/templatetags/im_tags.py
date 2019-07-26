@@ -2,13 +2,13 @@ from django import template
 
 register = template.Library()
 
-from speedy.core.im.models import ReadMark, Chat
+from speedy.core.messages.models import ReadMark, Chat
 
 
 @register.simple_tag
 def get_other_participant(chat, user):
     """
-    :type chat: speedy.core.im.models.Chat
+    :type chat: speedy.core.messages.models.Chat
     :type user: speedy.core.accounts.models.User
     """
     assert chat.is_private
@@ -18,7 +18,7 @@ def get_other_participant(chat, user):
 @register.simple_tag
 def annotate_chats_with_read_marks(chat_list, entity):
     """
-    :type chat_list: [speedy.core.im.models.Chat]
+    :type chat_list: [speedy.core.messages.models.Chat]
     :type entity: speedy.core.accounts.models.Entity
     """
     rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
@@ -36,7 +36,7 @@ def annotate_chats_with_read_marks(chat_list, entity):
 @register.simple_tag
 def annotate_messages_with_read_marks(message_list, entity):
     """
-    :type message_list: [speedy.core.im.models.Message]
+    :type message_list: [speedy.core.messages.models.Message]
     :type entity: speedy.core.accounts.models.Entity
     """
     chats = set(message.chat for message in message_list)
@@ -53,7 +53,7 @@ def annotate_messages_with_read_marks(message_list, entity):
 @register.filter
 def get_chat_slug(chat, current_user):
     """
-    :type chat: speedy.core.im.models.Chat
+    :type chat: speedy.core.messages.models.Chat
     :type current_user: speedy.core.accounts.models.Entity
     :return: str
     """

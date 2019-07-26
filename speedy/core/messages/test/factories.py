@@ -1,7 +1,7 @@
 import factory
 from django.conf import settings as django_settings
 
-from speedy.core.im.models import Chat
+from speedy.core.messages.models import Chat
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.user_factories import ActiveUserFactory

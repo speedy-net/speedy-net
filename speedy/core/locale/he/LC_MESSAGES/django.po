@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-24 18:24+0300\n"
+"POT-Creation-Date: 2019-07-26 12:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -609,7 +609,7 @@ msgid "Email address:"
 msgstr "כתובת דואר אלקטרוני:"
 
 #: .\__translations\__translations.py:11
-#: .\templates\profiles\user_info_widget.html:74
+#: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "דואר אלקטרוני"
 
@@ -1359,7 +1359,7 @@ msgstr "שם משתמש/ת (slug)"
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:94 .\im\models.py:88
+#: .\accounts\models.py:94 .\messages\models.py:88
 msgid "entity"
 msgstr "ישות"
 
@@ -1745,7 +1745,7 @@ msgstr ""
 msgid "Abuse (Photo)"
 msgstr ""
 
-#: .\contact_by_form\models.py:20 .\im\models.py:72
+#: .\contact_by_form\models.py:20 .\messages\models.py:72
 msgid "sender"
 msgstr ""
 
@@ -1797,59 +1797,59 @@ msgstr "בקשת החברות התקבלה."
 msgid "Friend request rejected."
 msgstr "בקשת החברות נדחתה."
 
-#: .\im\models.py:13
+#: .\messages\models.py:13
 msgid "site"
 msgstr ""
 
-#: .\im\models.py:14
+#: .\messages\models.py:14
 msgid "participant 1"
 msgstr ""
 
-#: .\im\models.py:15
+#: .\messages\models.py:15
 msgid "participant 2"
 msgstr ""
 
-#: .\im\models.py:16
+#: .\messages\models.py:16
 msgid "participants"
 msgstr ""
 
-#: .\im\models.py:17
+#: .\messages\models.py:17
 msgid "is group chat"
 msgstr ""
 
-#: .\im\models.py:18
+#: .\messages\models.py:18
 msgid "last message"
 msgstr ""
 
-#: .\im\models.py:38 .\im\models.py:71 .\im\models.py:89
+#: .\messages\models.py:38 .\messages\models.py:71 .\messages\models.py:89
 msgid "chat"
 msgstr ""
 
-#: .\im\models.py:39
+#: .\messages\models.py:39
 msgid "chats"
 msgstr ""
 
-#: .\im\models.py:73 .\im\models.py:78
+#: .\messages\models.py:73 .\messages\models.py:78
 msgid "message"
 msgstr ""
 
-#: .\im\models.py:79
+#: .\messages\models.py:79
 msgid "messages"
 msgstr ""
 
-#: .\im\models.py:94
+#: .\messages\models.py:94
 msgid "read mark"
 msgstr ""
 
-#: .\im\models.py:95
+#: .\messages\models.py:95
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:134
+#: .\settings\base.py:137
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:135
+#: .\settings\base.py:138
 msgid "Hebrew"
 msgstr ""
 
@@ -2100,9 +2100,10 @@ msgstr "הכרויות און-ליין בחינם"
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:40 .\templates\im\chat_detail.html:16
-#: .\templates\im\chat_list.html:8 .\templates\im\chat_list.html:21
+#: .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active.html:22
+#: .\templates\messages\chat_detail.html:16
+#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
 msgid "Messages"
 msgstr "הודעות"
 
@@ -2194,33 +2195,34 @@ msgstr "אין פה בקשות חברות."
 msgid "See All"
 msgstr "ראה/י הכול"
 
-#: .\templates\im\chat_detail.html:29
+#: .\templates\messages\chat_detail.html:29
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "שיחה עם <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\im\chat_detail.html:35 .\templates\im\message_form.html:9
+#: .\templates\messages\chat_detail.html:35
+#: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "שלח/י הודעה ל%(user_name)s"
 
-#: .\templates\im\chat_detail.html:49
+#: .\templates\messages\chat_detail.html:49
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\im\chat_list.html:47
+#: .\templates\messages\chat_list.html:47
 msgid "Unread"
 msgstr "לא נקראה"
 
-#: .\templates\im\chat_list.html:54
+#: .\templates\messages\chat_list.html:54
 msgid "You:"
 msgstr "את/ה:"
 
-#: .\templates\im\chat_list.html:74
+#: .\templates\messages\chat_list.html:74
 msgid "You have no messages yet."
 msgstr "עדיין אין לך הודעות."
 
-#: .\templates\im\message.html:19
+#: .\templates\messages\message.html:19
 msgid "New"
 msgstr ""
 
@@ -2351,11 +2353,7 @@ msgstr "תאריך לידה"
 msgid "Birth Year"
 msgstr "שנת לידה"
 
-#: .\templates\profiles\user_info_widget.html:55
-msgid "(hidden)"
-msgstr "(מוסתר)"
-
-#: .\templates\profiles\user_info_widget.html:65
+#: .\templates\profiles\user_info_widget.html:61
 msgid "Age"
 msgstr "גיל"
 
@@ -2418,6 +2416,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgid "(hidden)"
+#~ msgstr "(מוסתר)"
 
 #~ msgid "Password too short."
 #~ msgstr "הסיסמה קצרה מדי."

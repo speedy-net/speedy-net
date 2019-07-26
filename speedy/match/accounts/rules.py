@@ -7,7 +7,7 @@ from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.accounts.rules import has_access_perm
 from speedy.core.blocks.rules import is_blocked, there_is_block
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-from speedy.core.im.models import Chat
+from speedy.core.messages.models import Chat
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
 

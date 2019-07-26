@@ -28,7 +28,7 @@
                     {% for chat in chat_list %}
                         {% get_other_participant chat user as other_participant %}
 
-                        <a href="{% url 'im:chat' chat_slug=chat|get_chat_slug:user %}">
+                        <a href="{% url 'messages:chat' chat_slug=chat|get_chat_slug:user %}">
                             <div class="row no-gutters">
                                 <div class="col-2">
                                     {% profile_picture other_participant '128x128' with_link=False html_class="img-fluid rounded-lg" %}
