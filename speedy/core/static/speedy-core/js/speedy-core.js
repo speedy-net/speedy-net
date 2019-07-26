@@ -1,4 +1,4 @@
-function initDatepicker() {
+function init_datepicker() {
     var dobDpElem = this.$("#id_date_of_birth").clone();
     dobDpElem.attr('id', 'id_date_of_birth_dp');
     dobDpElem.attr('name', 'date_of_birth_dp');
@@ -6,12 +6,12 @@ function initDatepicker() {
     this.$("#id_date_of_birth").attr('type','hidden');
     this.$("#id_date_of_birth").removeAttr('class');
     this.$("#id_date_of_birth").removeAttr('required');
-    this.$("#id_date_of_birth_dp").datepicker(datepickerOptions);
+    this.$("#id_date_of_birth_dp").datepicker(datepicker_options);
     var dob = $.datepicker.parseDate('yy-mm-dd', this.$("#id_date_of_birth").val());
     this.$("#id_date_of_birth_dp").datepicker('setDate', dob);
 }
 
-var datepickerOptions = {
+var datepicker_options = {
     altField: "#id_date_of_birth",
     altFormat: 'yy-mm-dd',
     changeMonth: true,
@@ -67,7 +67,7 @@ evil.block('@@RegistrationForm', {
         this.firstNameField = this.$('#id_first_name');
         this.lastNameField = this.$('#id_last_name');
         this.slugChanged = (this.slugField.val() != this._generateSlug());
-        initDatepicker();
+        init_datepicker();
     },
 
     'change on #id_slug': function () {
@@ -86,9 +86,7 @@ evil.block('@@RegistrationForm', {
 
 
 evil.block('@@AccountForm', {
-
-    init: initDatepicker
-
+    init: init_datepicker
 });
 
 
