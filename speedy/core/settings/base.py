@@ -58,6 +58,10 @@ INSTALLED_APPS = [
     'speedy.core.terms',
 ]
 
+FORMAT_MODULE_PATH = [
+    'speedy.core.locale',
+]
+
 MIDDLEWARE = [
     'speedy.core.base.middleware.SessionCookieDomainMiddleware',
     'speedy.core.base.middleware.RemoveExtraSlashesMiddleware',
@@ -129,9 +133,6 @@ SMALL_UDID_LENGTH = 15
 REGULAR_UDID_LENGTH = 20
 
 LANGUAGE_CODE = 'en'
-DATE_FORMAT = 'j F Y'
-MONTH_DAY_FORMAT = 'j F'
-YEAR_FORMAT = 'Y'
 
 LANGUAGES = [
     ('en', _('English')),
