@@ -16,8 +16,8 @@
                 </small>
                 {% if message.is_unread %}
                     <span class="pull-right">
-                            <i class="fa fa-circle text-primary" title="{% trans 'New' %}"></i>
-                        </span>
+                        <i class="fa fa-circle text-primary" title="{% trans 'New' %}"></i>
+                    </span>
                 {% endif %}
             </p>
             {{ message.text|linebreaks|urlizetrunc:50 }}
