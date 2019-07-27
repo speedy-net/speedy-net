@@ -142,7 +142,7 @@ class ReservedUsername(Entity):
     objects = BaseManager()
 
     def __str__(self):
-        return '<ReservedUsername {} - username={}>'.format(self.id, self.username, self.slug)
+        return '<Reserved username {} - username={}>'.format(self.id, self.username, self.slug)
 
     def clean_fields(self, exclude=None):
         self.normalize_slug_and_username()
@@ -154,6 +154,7 @@ class ReservedUsername(Entity):
         if exclude is None:
             exclude = []
 
+        # Reserved username can be less than 6 characters, and any alphanumeric sequence.
         exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)
