@@ -243,6 +243,10 @@ if (django_settings.LOGIN_ENABLED):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='en')
+            self.assertDictEqual(d1=self.expected_title, d2={
+                django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
+                django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+            })
 
 
     @only_on_sites_with_login
@@ -292,5 +296,9 @@ if (django_settings.LOGIN_ENABLED):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='he')
+            self.assertDictEqual(d1=self.expected_title, d2={
+                django_settings.SPEEDY_NET_SITE_ID: "{} / ספידי נט [אלפא]".format(self.full_name),
+                django_settings.SPEEDY_MATCH_SITE_ID: "{} / ספידי מץ' [אלפא]".format(self.first_name),
+            })
 
 

@@ -102,12 +102,12 @@ class SiteTestCase(DjangoTestCase):
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
         self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
         self.all_other_full_http_hosts = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]
-        self.validate_all_values()
-        self.client = self.client_class(HTTP_HOST=self.http_host)
 
     def setUp(self):
         super().setUp()
         self.set_up()
+        self.validate_all_values()
+        self.client = self.client_class(HTTP_HOST=self.http_host)
 
     @classmethod
     def tearDownClass(cls):
