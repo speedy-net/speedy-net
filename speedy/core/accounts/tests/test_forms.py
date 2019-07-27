@@ -371,39 +371,6 @@ if (django_settings.LOGIN_ENABLED):
                 # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
                 # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
-        # def test_slug_validation_fails_with_username_too_short_2(self):  #### TODO
-        #     data = self.data.copy()
-        #     data['slug'] = 'aa-aa'
-        #     form = RegistrationForm(language_code=self.language_code, data=data)
-        #     form.full_clean()
-        #     self.assertFalse(expr=form.is_valid())
-        #     self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
-        #     # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
-        #
-        # def test_slug_validation_fails_with_username_too_short_3(self):  #### TODO
-        #     data = self.data.copy()
-        #     data['slug'] = 'a-a-a-a'
-        #     form = RegistrationForm(language_code=self.language_code, data=data)
-        #     form.full_clean()
-        #     self.assertFalse(expr=form.is_valid())
-        #     self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
-        #     # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
-        #
-        # def test_slug_validation_fails_with_username_too_short_4(self):  #### TODO
-        #     data = self.data.copy()
-        #     data['slug'] = '---a--a--a--a---'
-        #     form = RegistrationForm(language_code=self.language_code, data=data)
-        #     form.full_clean()
-        #     self.assertFalse(expr=form.is_valid())
-        #     self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=4))
-        #     # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
-        #     # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
-        #
         def test_slug_and_username_min_length_ok(self):
             # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
             # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####

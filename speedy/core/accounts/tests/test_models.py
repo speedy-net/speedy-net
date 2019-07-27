@@ -21,7 +21,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     def create_one_entity(self):
         entity = Entity(slug='zzzzzz', username='zzzzzz')
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertEqual(first=entity.username, second='zzzzzz')
         self.assertEqual(first=entity.slug, second='zzzzzz')
         self.assertEqual(first=len(entity.id), second=15)
@@ -33,12 +32,10 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
             entity = Entity(slug=slug_dict["slug"])
             if (slug_dict["slug_length"] >= Entity.settings.MIN_SLUG_LENGTH):
                 entity.save()
-                # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 ok_count += 1
             else:
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
-                    # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                 model_save_failures_count += 1
         counts_tuple = (ok_count, model_save_failures_count)
@@ -62,7 +59,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity()
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=0))
@@ -96,38 +92,32 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
             self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
         with self.assertRaises(ValidationError) as cm:
             new_entity.save()
-            # new_entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
     def test_cannot_create_entity_with_reserved_username(self):
         entity = Entity(slug='webmaster')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
     def test_cannot_create_entity_with_reserved_and_too_short_username(self):
         entity = Entity(slug='mail')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=4))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
     def test_cannot_create_entity_with_existing_username(self):
         entity_1 = Entity(slug='zzzzzz')
         entity_1.save()
-        # entity_1.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         entity_2 = Entity(slug='ZZZ-ZZZ')
         with self.assertRaises(ValidationError) as cm:
             entity_2.save()
-            # entity_2.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
     def test_automatic_creation_of_username_and_id(self):
         entity = Entity(slug='zzzzzz')
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertEqual(first=entity.username, second='zzzzzz')
         self.assertEqual(first=entity.slug, second='zzzzzz')
         self.assertEqual(first=len(entity.id), second=15)
@@ -135,7 +125,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     def test_automatic_creation_of_id(self):
         entity = Entity(slug='zzzzzz', username='zzzzzz')
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertEqual(first=entity.username, second='zzzzzz')
         self.assertEqual(first=entity.slug, second='zzzzzz')
         self.assertEqual(first=len(entity.id), second=15)
@@ -148,10 +137,8 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     def test_create_2_entities_and_assert_different_ids(self):
         entity_1 = Entity(slug='zzzzzz1')
         entity_1.save()
-        # entity_1.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         entity_2 = Entity(slug='ZZZ-ZZZ-2')
         entity_2.save()
-        # entity_2.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertEqual(first=entity_1.username, second='zzzzzz1')
         self.assertEqual(first=entity_2.username, second='zzzzzz2')
         self.assertNotEqual(first=entity_1.username, second=entity_2.username)
@@ -166,7 +153,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='a' * 5, username='a' * 5)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
@@ -174,7 +160,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     def test_slug_and_username_min_length_ok_1(self):
         entity = Entity(slug='a' * 6, username='a' * 6)
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_slug_and_username_min_length_ok_2(self):
         # print("test_slug_and_username_min_length_ok_2: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
@@ -208,7 +193,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='a' * 201, username='z' * 201)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=201))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=201))
@@ -217,7 +201,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='b' * 200, username='b' * 200)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=200))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=200))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=200))
@@ -226,7 +209,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='b' * 121, username='b' * 121)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._entity_username_max_length_fail_errors_dict_by_value_length(value_length=121))
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=121))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=121))
@@ -235,36 +217,30 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='a-' * 120, username='a' * 120)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
     def test_slug_max_length_fail_username_max_length_ok_without_username(self):
         entity = Entity(slug='a-' * 120)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
     def test_slug_and_username_max_length_ok(self):
         entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_star2000_is_valid_username(self):
         entity = Entity(slug='star2000', username='star2000')
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_come2us_is_valid_username(self):
         entity = Entity(slug='come2us', username='come2us')
         entity.save()
-        # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
     def test_000000_is_invalid_username(self):
         entity = Entity(slug='0' * 6, username='0' * 6)
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
@@ -272,7 +248,6 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='0-test-1', username='0test1')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
@@ -280,14 +255,12 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
         entity = Entity(slug='star2001', username='star2000')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
 
     def test_slug_and_username_dont_match_and_invalid(self):
         entity = Entity(slug='0-test-2', username='0test1')
         with self.assertRaises(ValidationError) as cm:
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
         self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
         # self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
@@ -329,7 +302,6 @@ if (django_settings.LOGIN_ENABLED):
             # user = User(**{field_name: str(number) for field_name in self._user_all_the_required_fields_keys()}) #### TODO
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=number, gender_is_valid=gender_is_valid))
 
         def run_test_all_slugs_to_test_list(self, test_settings):
@@ -338,13 +310,11 @@ if (django_settings.LOGIN_ENABLED):
                 if (slug_dict["slug_length"] >= User.settings.MIN_SLUG_LENGTH):
                     user = DefaultUserFactory(slug=slug_dict["slug"])
                     user.save_user_and_profile()
-                    # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                     ok_count += 1
                 else:
                     with self.assertRaises(ValidationError) as cm:
                         user = DefaultUserFactory(slug=slug_dict["slug"])
                         user.save_user_and_profile()
-                        # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                     model_save_failures_count += 1
             counts_tuple = (ok_count, model_save_failures_count)
@@ -403,14 +373,12 @@ if (django_settings.LOGIN_ENABLED):
             user = User()
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
         def test_cannot_create_user_with_all_the_required_fields_blank(self):
             user = User(**{field_name: '' for field_name in self._user_all_the_required_fields_keys()})
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=''))
 
         def test_cannot_create_user_with_all_the_required_fields_zero(self):
@@ -418,7 +386,6 @@ if (django_settings.LOGIN_ENABLED):
             # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys()})
             # with self.assertRaises(ValidationError) as cm:
             #     user.save_user_and_profile()
-            #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
         def test_cannot_create_user_with_all_the_required_fields_minus_one(self):
@@ -426,7 +393,6 @@ if (django_settings.LOGIN_ENABLED):
             # user = User(**{field_name: -1 for field_name in self._user_all_the_required_fields_keys()})
             # with self.assertRaises(ValidationError) as cm:
             #     user.save_user_and_profile()
-            #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
         def test_cannot_create_user_with_all_the_required_fields_ninety_nine(self):
@@ -434,7 +400,6 @@ if (django_settings.LOGIN_ENABLED):
             # user = User(**{field_name: 99 for field_name in self._user_all_the_required_fields_keys()})
             # with self.assertRaises(ValidationError) as cm:
             #     user.save_user_and_profile()
-            #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
         def test_cannot_create_user_with_all_the_required_fields_one(self):
@@ -442,14 +407,12 @@ if (django_settings.LOGIN_ENABLED):
             # user = User(**{field_name: 0 for field_name in self._user_all_the_required_fields_keys()})
             # with self.assertRaises(ValidationError) as cm:
             #     user.save_user_and_profile()
-            #     # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
         def test_cannot_create_user_with_empty_slug(self):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=0))
             self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_max_length_fail_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True))
@@ -459,7 +422,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(gender=User.GENDER_UNKNOWN)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name='gender', value=0))
 
         def test_cannot_create_users_with_bulk_create(self):
@@ -473,35 +435,29 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='webmaster')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
         def test_cannot_create_user_with_reserved_and_too_short_username(self):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='mail')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=4))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
         def test_cannot_create_user_with_existing_username_1(self):
             entity = Entity(slug='zzzzzz')
             entity.save()
-            # entity.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='ZZZ-ZZZ')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
         def test_cannot_create_user_with_existing_username_2(self):
             user_1 = DefaultUserFactory(slug='zzzzzz')
             user_1.save_user_and_profile()
-            # user_1.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             with self.assertRaises(ValidationError) as cm:
                 user_2 = DefaultUserFactory(slug='ZZZ-ZZZ')
                 user_2.save_user_and_profile()
-                # user_2.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
         def test_has_no_confirmed_email(self):
@@ -529,7 +485,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='a' * 5)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_min_length_fail_errors_dict_by_value_length(value_length=5))
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
@@ -537,7 +492,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_slug_and_username_min_length_ok_1(self):
             user = DefaultUserFactory(slug='a' * 6)
             user.save_user_and_profile()
-            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
         def test_slug_and_username_min_length_ok_2(self):
             # print("test_slug_and_username_min_length_ok_2: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
@@ -571,7 +525,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='a' * 201)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_max_length_fail_errors_dict_by_value_length(value_length=201))
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=201))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=201))
@@ -580,7 +533,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='b' * 200)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=200))
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=200))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=200))
@@ -589,7 +541,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='a' * 41)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_username_max_length_fail_errors_dict_by_value_length(value_length=41))
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=41))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=41))
@@ -597,18 +548,15 @@ if (django_settings.LOGIN_ENABLED):
         def test_slug_and_username_max_length_ok(self):
             user = DefaultUserFactory(slug='a' * 40)
             user.save_user_and_profile()
-            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
         def test_star2000_is_valid_username(self):
             user = DefaultUserFactory(slug='star2000', username='star2000')
             user.save_user_and_profile()
-            # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
 
         def test_come2us_is_invalid_username(self):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='come2us', username='come2us')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict())
             self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
@@ -617,7 +565,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='0' * 6, username='0' * 6)
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict())
             self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
@@ -626,7 +573,6 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='0-test-1', username='0test1')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._user_slug_and_username_username_must_start_with_4_or_more_letters_errors_dict())
             self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
@@ -635,14 +581,12 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='star2001', username='star2000')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=User))
 
         def test_slug_and_username_dont_match_and_invalid(self):
             with self.assertRaises(ValidationError) as cm:
                 user = DefaultUserFactory(slug='0-test-2', username='0test1')
                 user.save_user_and_profile()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=User))
@@ -712,7 +656,6 @@ if (django_settings.LOGIN_ENABLED):
                 user = User(**data)
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                    # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_date_errors_dict())
             self.assert_models_count(
                 entity_count=0,
@@ -761,7 +704,6 @@ if (django_settings.LOGIN_ENABLED):
             user_email_address = UserEmailAddress()
             with self.assertRaises(ValidationError) as cm:
                 user_email_address.save()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_email_address_without_all_the_required_fields_errors_dict())
             self.assert_models_count(
                 entity_count=0,
@@ -779,7 +721,6 @@ if (django_settings.LOGIN_ENABLED):
                 user_email_address = UserEmailAddress(user=user, email=email)
                 with self.assertRaises(ValidationError) as cm:
                     user_email_address.save()
-                    # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._enter_a_valid_email_address_errors_dict())
             self.assert_user_email_addresses_count(
                 user=user,
@@ -808,7 +749,6 @@ if (django_settings.LOGIN_ENABLED):
             user_email_address = UserEmailAddress(user=user, email='email@example.com')
             with self.assertRaises(ValidationError) as cm:
                 user_email_address.save()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
             self.assert_user_email_addresses_count(
                 user=existing_user,
@@ -857,7 +797,6 @@ if (django_settings.LOGIN_ENABLED):
             user_email_address = UserEmailAddress(user=user, email='EMAIL@EXAMPLE.COM')
             with self.assertRaises(ValidationError) as cm:
                 user_email_address.save()
-                # user.full_clean() # ~~~~ TODO: remove this line! test should also work without .full_clean()
             self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
             self.assert_user_email_addresses_count(
                 user=existing_user,
