@@ -96,7 +96,8 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('id',)
 
     def __str__(self):
-        return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
+        return '<Entity {} - {}>'.format(self.id, self.slug)
+        # return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
 
     def clean_all_fields(self, exclude=None):
         super().clean_all_fields(exclude=exclude)
@@ -134,7 +135,8 @@ class NamedEntity(Entity):
         abstract = True
 
     def __str__(self):
-        return '<NamedEntity {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
+        return '<NamedEntity {} - {}/{}>'.format(self.id, self.name, self.slug)
+        # return '<NamedEntity {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
 
 class ReservedUsername(Entity):
@@ -142,7 +144,8 @@ class ReservedUsername(Entity):
     objects = BaseManager()
 
     def __str__(self):
-        return '<Reserved username {} - username={}>'.format(self.id, self.username, self.slug)
+        return '<Reserved username {} - {}>'.format(self.id, self.username)
+        # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
         self.normalize_slug_and_username()
@@ -455,7 +458,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def __str__(self):
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
-        return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
+        return '<User {} - {}/{}>'.format(self.id, self.name, self.slug)
+        # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)
@@ -671,7 +675,8 @@ class SiteProfileBase(TimeStampedModel):
         abstract = True
 
     def __str__(self):
-        return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
+        return '<User Profile {} - {}/{}>'.format(self.user.id, self.user.name, self.user.slug)
+        # return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
     def save(self, *args, **kwargs):
         return_value = super().save(*args, **kwargs)
