@@ -474,6 +474,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if exclude is None:
             exclude = []
 
+        # Admin's username can be less than 6 characters (admin).
         if (self.is_superuser):
             exclude += ['username', 'slug']
 
