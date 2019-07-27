@@ -12,7 +12,7 @@ class ENTITY_SETTINGS(object):
     MIN_SLUG_LENGTH = 6
     MAX_SLUG_LENGTH = 200
 
-    UNAVAILABLE_USERNAMES = [
+    RESERVED_USERNAMES = [
         'about',
         'admin',
         'contact',

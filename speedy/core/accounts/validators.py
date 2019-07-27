@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def reserved_username_validator(value):
     from .models import Entity # ~~~~ TODO
-    if (normalize_username(username=value) in [normalize_username(username=reserved) for reserved in Entity.settings.UNAVAILABLE_USERNAMES]):
+    if (normalize_username(username=value) in [normalize_username(username=reserved_username) for reserved_username in Entity.settings.RESERVED_USERNAMES]):
         raise ValidationError(_('This username is already taken.'))
 
 
