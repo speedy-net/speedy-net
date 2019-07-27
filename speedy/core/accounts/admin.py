@@ -10,8 +10,8 @@ class ReservedUsernameAdmin(admin.ModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 
-class UserAdmin(TranslatedFieldAdmin, admin.ModelAdmin):
-    readonly_fields = ('date_created', 'date_updated', 'id', 'is_superuser', 'is_staff')
+class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    pass
 
 
 class UserEmailAddressAdmin(ReadOnlyModelAdmin):
@@ -19,8 +19,8 @@ class UserEmailAddressAdmin(ReadOnlyModelAdmin):
         return True
 
 
-class SiteProfileBaseAdmin(TranslatedFieldAdmin, admin.ModelAdmin):
-    readonly_fields = ('date_created', 'date_updated', 'user', 'last_visit')
+class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    pass
 
 
 admin.site.register(Entity, ReadOnlyModelAdmin)
