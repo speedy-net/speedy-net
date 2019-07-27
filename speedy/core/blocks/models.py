@@ -18,6 +18,9 @@ class Block(TimeStampedModel):
         verbose_name_plural = _('user blocks')
         unique_together = ('blocker', 'blocked')
 
+    def __str__(self):
+        return "User {} blocked {}".format(self.blocker, self.blocked)
+
     def save(self, *args, **kwargs):
         # Ensure users can't block themselves.
         if (self.blocker == self.blocked):
