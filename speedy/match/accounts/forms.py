@@ -157,10 +157,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         if (commit):
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate(commit=False)
-            self.instance.activation_step = min(activation_step + 1, step)
+            if (self.step == activation_step):
+                self.instance.activation_step = min(activation_step + 1, step)
+            else:
+                self.instance.activation_step = min(activation_step, step)
             if (self.instance.activation_step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
                 self.instance.activation_step = len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-                step, errors = self.instance.validate_profile_and_activate(commit=True)
+                self.instance.validate_profile_and_activate(commit=True)
             self.instance.save()
         return self.instance
 
