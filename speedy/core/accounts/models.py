@@ -143,6 +143,11 @@ class ReservedUsername(Entity):
     description = models.TextField(verbose_name=_('description'), blank=True)
     objects = BaseManager()
 
+    def __init__(self, *args, **kwargs):
+        if (('username' in kwargs) and (not ('slug' in kwargs))):
+            kwargs['slug'] = kwargs['username']
+        super().__init__(*args, **kwargs)
+
     def __str__(self):
         return '<Reserved username {} - {}>'.format(self.id, self.username)
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
@@ -555,8 +560,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.save()
             self.profile.save()
             if (django_settings.LOGIN_ENABLED):
-                self.speedy_net_profile.save() # ~~~~ TODO: is this necessary?
-                self.speedy_match_profile.save() # ~~~~ TODO: is this necessary?
+                self.speedy_net_profile.save()  # ~~~~ TODO: is this necessary?
+                self.speedy_match_profile.save()  # ~~~~ TODO: is this necessary?
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
@@ -582,7 +587,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return self.__class__.marital_status_choices(gender=self.get_gender())
 
 
-User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
+User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
 class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
