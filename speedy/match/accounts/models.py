@@ -165,11 +165,7 @@ class SiteProfile(SiteProfileBase):
         return step, error_messages
 
     def call_after_verify_email_address(self):
-        old_step = self.activation_step
-        self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        self.validate_profile_and_activate()
-        self.activation_step = old_step
-        self.user.save_user_and_profile()
+        pass
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         if (self.user.pk == other_profile.user.pk):
