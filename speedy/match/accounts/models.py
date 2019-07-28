@@ -118,6 +118,13 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Match'.format(super().__str__())
 
+    def save(self, *args, **kwargs):
+        if (self.activation_step < 2):
+            self.activation_step = 2
+        if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
+            self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        return super().save(*args, **kwargs)
+
     def _set_active_languages(self, languages):
         languages = sorted(list(set(languages)))
         self.active_languages = ','.join(set(languages))
@@ -202,7 +209,7 @@ class SiteProfile(SiteProfileBase):
 
     def deactivate(self):
         self._set_active_languages([])
-        self.activation_step = 0
+        self.activation_step = 2
         self.user.save_user_and_profile()
 
     def get_name(self):
