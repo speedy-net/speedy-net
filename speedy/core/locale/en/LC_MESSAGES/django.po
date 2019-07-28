@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 14:53+0300\n"
+"POT-Creation-Date: 2019-07-28 09:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:600
+#: .\__translations\__translations.py:9 .\accounts\models.py:606
 msgid "email address"
 msgstr ""
 
@@ -1320,196 +1320,196 @@ msgstr ""
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:120
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:132
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:143
 msgid "description"
 msgstr ""
 
-#: .\accounts\models.py:152
+#: .\accounts\models.py:155
 msgid "Username is required."
 msgstr ""
 
-#: .\accounts\models.py:169
+#: .\accounts\models.py:173
 msgid "Only me"
 msgstr ""
 
-#: .\accounts\models.py:170
+#: .\accounts\models.py:174
 msgid "Me and my friends"
 msgstr ""
 
-#: .\accounts\models.py:172
+#: .\accounts\models.py:176
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:207
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:204
+#: .\accounts\models.py:208
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:209
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:222 .\accounts\models.py:237 .\accounts\models.py:257
+#: .\accounts\models.py:226 .\accounts\models.py:241 .\accounts\models.py:261
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:223
+#: .\accounts\models.py:227
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:224
+#: .\accounts\models.py:228
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:225
+#: .\accounts\models.py:229
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:238
+#: .\accounts\models.py:242
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:239
+#: .\accounts\models.py:243
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:240
+#: .\accounts\models.py:244
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:262
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:263
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:260
+#: .\accounts\models.py:264
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:261
+#: .\accounts\models.py:265
 msgid "In a relationship"
 msgstr ""
 
-#: .\accounts\models.py:262
+#: .\accounts\models.py:266
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:263
+#: .\accounts\models.py:267
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:264
+#: .\accounts\models.py:268
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:265
+#: .\accounts\models.py:269
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:274
+#: .\accounts\models.py:278
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:275
+#: .\accounts\models.py:279
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:327
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:326
+#: .\accounts\models.py:330
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:332
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:333
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:330
+#: .\accounts\models.py:334
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:331
+#: .\accounts\models.py:335
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:332
+#: .\accounts\models.py:336
 msgid "marital status"
 msgstr ""
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:338
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:342
 msgid "who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:339
+#: .\accounts\models.py:343
 msgid "who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:340
+#: .\accounts\models.py:344
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:450 .\accounts\models.py:584 .\accounts\models.py:660
+#: .\accounts\models.py:454 .\accounts\models.py:590 .\accounts\models.py:666
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:451
+#: .\accounts\models.py:455
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:585
+#: .\accounts\models.py:591
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:586
+#: .\accounts\models.py:592
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:587
+#: .\accounts\models.py:593
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:588
+#: .\accounts\models.py:594
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:589
+#: .\accounts\models.py:595
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:590
+#: .\accounts\models.py:596
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:607
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:667
 msgid "last visit"
 msgstr ""
 
@@ -1664,6 +1664,10 @@ msgstr ""
 msgid "You have unblocked {}."
 msgstr ""
 
+#: .\contact_by_form\apps.py:7
+msgid "Contact By Form"
+msgstr ""
+
 #: .\contact_by_form\forms.py:27
 msgid "Send"
 msgstr ""
@@ -1732,6 +1736,10 @@ msgstr ""
 msgid "Friend request rejected."
 msgstr ""
 
+#: .\messages\apps.py:7 .\messages\models.py:79
+msgid "messages"
+msgstr ""
+
 #: .\messages\models.py:13
 msgid "site"
 msgstr ""
@@ -1766,10 +1774,6 @@ msgstr ""
 
 #: .\messages\models.py:73 .\messages\models.py:78
 msgid "message"
-msgstr ""
-
-#: .\messages\models.py:79
-msgid "messages"
 msgstr ""
 
 #: .\messages\models.py:94
@@ -2187,7 +2191,7 @@ msgstr ""
 msgid "Reject"
 msgstr ""
 
-#: .\templates\profiles\tools\add_to_friends.html:28
+#: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
 msgstr ""
 

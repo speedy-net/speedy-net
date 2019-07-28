@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 14:53+0300\n"
+"POT-Creation-Date: 2019-07-28 09:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,17 +104,17 @@ msgstr ""
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Match Settings"
-msgstr ""
+msgstr "הגדרת התאמות"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Match Settings"
-msgstr ""
+msgstr "הגדרת התאמות"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Match Settings"
-msgstr ""
+msgstr "הגדרת התאמות"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
@@ -146,6 +146,10 @@ msgctxt "other"
 msgid "Unlike"
 msgstr "בטל/י לייק"
 
+#: .\accounts\apps.py:7
+msgid "Speedy Match Accounts"
+msgstr ""
+
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
 msgstr ""
@@ -166,100 +170,100 @@ msgstr ""
 msgid "City or locality"
 msgstr ""
 
-#: .\accounts\models.py:37
+#: .\accounts\models.py:38
 msgid "0 hearts"
 msgstr ""
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:39
 msgid "1 hearts"
 msgstr ""
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:40
 msgid "2 hearts"
 msgstr ""
 
-#: .\accounts\models.py:40
+#: .\accounts\models.py:41
 msgid "3 hearts"
 msgstr ""
 
-#: .\accounts\models.py:41
+#: .\accounts\models.py:42
 msgid "4 hearts"
 msgstr ""
 
-#: .\accounts\models.py:42
+#: .\accounts\models.py:43
 msgid "5 hearts"
 msgstr ""
 
-#: .\accounts\models.py:62
+#: .\accounts\models.py:63
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:63
+#: .\accounts\models.py:64
 msgid "on new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:64
+#: .\accounts\models.py:65
 msgid "active languages"
 msgstr ""
 
-#: .\accounts\models.py:65
+#: .\accounts\models.py:66
 msgid "height"
 msgstr ""
 
-#: .\accounts\models.py:65
+#: .\accounts\models.py:66
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:67
+#: .\accounts\models.py:68
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:70 .\accounts\validators.py:54
+#: .\accounts\models.py:71 .\accounts\validators.py:54
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:73 .\accounts\validators.py:59
+#: .\accounts\models.py:74 .\accounts\validators.py:59
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:77
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:79
 msgid "Gender"
 msgstr ""
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:80
 msgid "minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:81
 msgid "maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:81
+#: .\accounts\models.py:82
 msgid "diet match"
 msgstr ""
 
-#: .\accounts\models.py:82
+#: .\accounts\models.py:83
 msgid "smoking status match"
 msgstr ""
 
-#: .\accounts\models.py:83
+#: .\accounts\models.py:84
 msgid "marital status match"
 msgstr ""
 
-#: .\accounts\models.py:95
+#: .\accounts\models.py:116
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:96
+#: .\accounts\models.py:117 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:141 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:175 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -349,7 +353,7 @@ msgstr ""
 
 #: .\matches\views.py:44 .\matches\views.py:58
 msgid "Your match settings were saved."
-msgstr ""
+msgstr "הגדרת ההתאמות שלך נשמרה."
 
 #: .\profiles\widgets.py:41 .\profiles\widgets.py:45 .\profiles\widgets.py:49
 msgid "Unknown"
@@ -490,7 +494,7 @@ msgstr "לייקים"
 #: .\templates\matches\settings\base.html:9
 #: .\templates\matches\settings\base.html:20
 msgid "Match Settings"
-msgstr ""
+msgstr "הגדרת התאמות"
 
 #: .\templates\likes\like_list.html:17
 msgid "People I Like"
