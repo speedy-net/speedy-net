@@ -95,16 +95,12 @@ class SiteProfile(SiteProfileBase):
     def is_active_and_valid(self):
         if (self.is_active):
             step, error_messages = self.validate_profile_and_activate(commit=False)
+            error = False
             if (len(error_messages) > 0):
-                logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug}".format(
-                    step=step,
-                    error_messages=error_messages,
-                    self_user_pk=self.user.pk,
-                    self_user_username=self.user.username,
-                    self_user_slug=self.user.slug,
-                ))
-                return False
+                error = True
             if (not (step == len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+                error = True
+            if (error):
                 logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug}".format(
                     step=step,
                     error_messages=error_messages,
