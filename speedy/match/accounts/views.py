@@ -46,7 +46,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             if (not ('step' in kwargs)):
                 logger.debug("dispatch: 'step' is missing from kwargs, adding it")
                 logger.debug("self.request.user.speedy_match_profile.activation_step: %d", self.request.user.speedy_match_profile.activation_step)
-                kwargs['step'] = self.request.user.speedy_match_profile.activation_step
+                return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
             self.step = int(kwargs['step'])
             logger.debug("dispatch: self.step: %i" , self.step)
         except (ValueError):
