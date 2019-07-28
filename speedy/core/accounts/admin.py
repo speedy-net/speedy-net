@@ -1,3 +1,4 @@
+from django.conf import settings as django_settings
 from django.contrib import admin
 
 from translated_fields import TranslatedFieldAdmin
@@ -27,5 +28,10 @@ admin.site.register(Entity, ReadOnlyModelAdmin)
 admin.site.register(ReservedUsername, ReservedUsernameAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(UserEmailAddress, UserEmailAddressAdmin)
+
+
+if (django_settings.DEBUG):
+    admin.site.unregister(UserEmailAddress)
+    admin.site.register(UserEmailAddress)
 
 

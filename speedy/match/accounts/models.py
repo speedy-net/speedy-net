@@ -112,7 +112,7 @@ class SiteProfile(SiteProfileBase):
     def get_active_languages(self):
         return list(filter(None, (l.strip() for l in self.active_languages.split(','))))
 
-    def validate_profile_and_activate(self):
+    def validate_profile_and_activate(self, commit=True):
         # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
         from speedy.match.accounts import utils
         language_code = get_language()
@@ -129,16 +129,17 @@ class SiteProfile(SiteProfileBase):
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
-            # Profile is valid. Activate in this language.
-            languages = self.get_active_languages()
-            if (not (language_code in languages)):
-                languages.append(language_code)
-                self._set_active_languages(languages=languages)
-                self.user.save_user_and_profile()
-        else:
-            self._deactivate_language(step=self.activation_step)
-            error_messages.append(_("Please confirm your email address."))
+        if (commit):
+            if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
+                # Profile is valid. Activate in this language.
+                languages = self.get_active_languages()
+                if (not (language_code in languages)):
+                    languages.append(language_code)
+                    self._set_active_languages(languages=languages)
+                    self.user.save_user_and_profile()
+            else:
+                self._deactivate_language(step=self.activation_step)
+                error_messages.append(_("Please confirm your email address."))
         return step, error_messages
 
     def call_after_verify_email_address(self):
