@@ -123,18 +123,21 @@ class SiteProfile(SiteProfileBase):
             self.activation_step = 2
         if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
             self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+            self._deactivate_language(step=self.activation_step, commit=False)
         return super().save(*args, **kwargs)
 
     def _set_active_languages(self, languages):
         languages = sorted(list(set(languages)))
         self.active_languages = ','.join(set(languages))
 
-    def _deactivate_language(self, step):
+    def _deactivate_language(self, step, commit=True):
         # Profile is invalid. Deactivate in this language.
         language_code = get_language()
         self._set_active_languages(set(self.get_active_languages()) - {language_code})
         self.activation_step = step
-        self.user.save_user_and_profile()
+        if (commit):
+            self.user.save_user_and_profile()
 
     def get_active_languages(self):
         return list(filter(None, (l.strip() for l in self.active_languages.split(','))))
