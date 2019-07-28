@@ -92,7 +92,6 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             if (self.request.user.has_confirmed_email()):
                 self.request.user.speedy_match_profile.validate_profile_and_activate()
                 if (self.request.user.speedy_match_profile.is_active):
-                    self.display_welcome_message()
                     return reverse_lazy('matches:list')
                 else:
                     return reverse_lazy('accounts:activate', kwargs={'step': self.request.user.speedy_match_profile.activation_step})
@@ -103,7 +102,10 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
     def form_valid(self, form):
         super().form_valid(form=form)
-        return redirect(to=self.get_success_url())
+        success_url = self.get_success_url()
+        if (self.request.user.speedy_match_profile.is_active):
+            self.display_welcome_message()
+        return redirect(to=success_url)
 
 
 class EditProfileNotificationsView(CoreEditProfileNotificationsView):
