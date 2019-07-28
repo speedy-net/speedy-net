@@ -19,7 +19,6 @@
                 {% trans 'Reject' %}
             </button>
         </form>
-
     {% else %}
         <form action="{% url 'friends:request' user.slug %}" method="post" style="display: inline">
             {% csrf_token %}
