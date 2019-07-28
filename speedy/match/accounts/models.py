@@ -172,15 +172,9 @@ class SiteProfile(SiteProfileBase):
         self.user.save_user_and_profile()
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
-        if (not (self.is_active_and_valid)):
-            logger.error('get: inside "if (not (self.is_active_and_valid)):"')
-            return self.__class__.RANK_0
-        if (not (other_profile.is_active_and_valid)):
-            logger.error('get: inside "if (not (other_profile.is_active_and_valid)):"')
-            return self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
-        if ((self.is_active) and (other_profile.is_active)):
+        if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
             if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
@@ -204,6 +198,10 @@ class SiteProfile(SiteProfileBase):
             other_profile.rank = rank
             return rank
         else:
+            if (not (self.is_active_and_valid)):
+                logger.error('get: inside "if (not (self.is_active_and_valid)):"')
+            if (not (other_profile.is_active_and_valid)):
+                logger.error('get: inside "if (not (other_profile.is_active_and_valid)):"')
             return self.__class__.RANK_0
 
     def deactivate(self):
