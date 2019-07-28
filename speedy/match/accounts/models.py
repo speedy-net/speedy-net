@@ -8,6 +8,7 @@ from django.core.exceptions import ValidationError
 
 from translated_fields import TranslatedField
 
+from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 
@@ -213,6 +214,8 @@ class SiteProfile(SiteProfileBase):
     def deactivate(self):
         self._set_active_languages([])
         self.activation_step = 2
+        for language_code, language_name in django_settings.LANGUAGES:
+            setattr(self, to_attribute(name='activation_step', language_code=language_code), 2)
         self.user.save_user_and_profile()
 
     def get_name(self):
