@@ -91,6 +91,30 @@ class SiteProfile(SiteProfileBase):
     def is_active(self):
         return ((self.user.is_active) and (get_language() in self.get_active_languages()))
 
+    @property
+    def is_active_and_valid(self):
+        if (self.is_active):
+            step, error_messages = self.validate_profile_and_activate(commit=False)
+            if (len(error_messages) > 0):
+                logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug}".format(
+                    step=step,
+                    error_messages=error_messages,
+                    self_user_pk=self.user.pk,
+                    self_user_username=self.user.username,
+                    self_user_slug=self.user.slug,
+                ))
+                return False
+            if (not (step == len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+                logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug}".format(
+                    step=step,
+                    error_messages=error_messages,
+                    self_user_pk=self.user.pk,
+                    self_user_username=self.user.username,
+                    self_user_slug=self.user.slug,
+                ))
+                return False
+        return (self.is_active)
+
     class Meta:
         verbose_name = _('Speedy Match Profile')
         verbose_name_plural = _('Speedy Match Profiles')
@@ -125,21 +149,23 @@ class SiteProfile(SiteProfileBase):
                 except ValidationError as e:
                     error_messages.append(str(e))
             if (len(error_messages) > 0):
-                self._deactivate_language(step=step)
+                if (commit):
+                    self._deactivate_language(step=step)
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        if (commit):
-            if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
+        if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
+            if (commit):
                 # Profile is valid. Activate in this language.
                 languages = self.get_active_languages()
                 if (not (language_code in languages)):
                     languages.append(language_code)
                     self._set_active_languages(languages=languages)
                     self.user.save_user_and_profile()
-            else:
+        else:
+            if (commit):
                 self._deactivate_language(step=self.activation_step)
-                error_messages.append(_("Please confirm your email address."))
+            error_messages.append(_("Please confirm your email address."))
         return step, error_messages
 
     def call_after_verify_email_address(self):
@@ -150,16 +176,11 @@ class SiteProfile(SiteProfileBase):
         self.user.save_user_and_profile()
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
-        self.validate_profile_and_activate()
-        try:
-            other_profile.validate_profile_and_activate()
-        except ValidationError as e:
-            logger.error("get_matching_rank::other_profile.validate_profile_and_activate() failed, other_profile.user.pk={other_user_pk}, other_profile.user.username={other_user_username}, other_profile.user.slug={other_user_slug}, e={e}".format(
-                other_user_pk=other_profile.user.pk,
-                other_user_username=other_profile.user.username,
-                other_user_slug=other_profile.user.slug,
-                e=e,
-            ))
+        if (not (self.is_active_and_valid)):
+            logger.error('get: inside "if (not (self.is_active_and_valid)):"')
+            return self.__class__.RANK_0
+        if (not (other_profile.is_active_and_valid)):
+            logger.error('get: inside "if (not (other_profile.is_active_and_valid)):"')
             return self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0

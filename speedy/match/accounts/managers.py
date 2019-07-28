@@ -11,8 +11,7 @@ class SiteProfileManager(BaseManager):
         language_code = get_language()
         qs = User.objects.active(gender__in=user_profile.gender_to_match, date_of_birth__range=age_ranges, speedy_match_site_profile__active_languages__contains=language_code).exclude(pk=user_profile.user_id).distinct()
 
-        # user.speedy_match_profile.is_active may be changed by user_profile.get_matching_rank() so we call it twice to improve performance.
-        qs = [user for user in qs if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0) and (user.speedy_match_profile.is_active))]
+        qs = [user for user in qs if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
 
         qs = sorted(qs, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
         # ~~~~ TODO: there is no limit on the number of matches in one page!
