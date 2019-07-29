@@ -164,11 +164,12 @@ class SiteProfile(SiteProfileBase):
         if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
             if (commit):
                 # Profile is valid. Activate in this language.
+                self.activation_step = step
                 languages = self.get_active_languages()
                 if (not (language_code in languages)):
                     languages.append(language_code)
                     self._set_active_languages(languages=languages)
-                    self.user.save_user_and_profile()
+                self.user.save_user_and_profile()
         else:
             if (commit):
                 self._deactivate_language(step=self.activation_step)

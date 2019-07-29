@@ -42,7 +42,6 @@ if (django_settings.LOGIN_ENABLED):
             _test_case.assertNotEqual(first=self.marital_status, second=User.MARITAL_STATUS_UNKNOWN)
             self.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
             self.photo = UserImageFactory(owner=self)
-            self.speedy_match_profile.activation_step = 9
             email = UserEmailAddressFactory(user=self, is_confirmed=True)
             email.save()
             self.save_user_and_profile()
