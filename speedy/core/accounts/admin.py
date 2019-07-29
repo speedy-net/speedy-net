@@ -16,6 +16,8 @@ class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
 
 
 class UserEmailAddressAdmin(ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
     def has_delete_permission(self, request, obj=None):
         return True
 
@@ -31,7 +33,10 @@ admin.site.register(UserEmailAddress, UserEmailAddressAdmin)
 
 
 if (django_settings.DEBUG):
+    class UserEmailAddressDebugAdmin(admin.ModelAdmin):
+        readonly_fields = ('date_created', 'date_updated', 'id')
+
     admin.site.unregister(UserEmailAddress)
-    admin.site.register(UserEmailAddress)
+    admin.site.register(UserEmailAddress, UserEmailAddressDebugAdmin)
 
 
