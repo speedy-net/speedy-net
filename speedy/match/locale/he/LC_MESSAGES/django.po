@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-28 09:40+0300\n"
+"POT-Creation-Date: 2019-07-29 05:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,67 +16,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\__translations\__translations.html:10
+#: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "People I Like"
 msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "People I Like"
+msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "People I Like"
+msgstr "א/נשים שעשיתי להם לייק"
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
-msgid "People I Like"
-msgstr "א/נשים שעשיתי להם לייק"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
-msgid "People I Like"
-msgstr "א/נשים שעשיתי להם לייק"
+msgid "People Who Like Me"
+msgstr "א/נשים שעשו לי לייק"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
-msgid "People Who Like Me"
-msgstr "א/נשים שעשו לי לייק"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
-msgid "People Who Like Me"
-msgstr "א/נשים שעשו לי לייק"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
-msgid "People Who Like Me"
-msgstr "א/נשים שעשו לי לייק"
+msgid "You have no likes here."
+msgstr "אין פה א/נשים."
 
 #: .\__translations\__translations.html:18
 msgctxt "female"
-msgid "You have no likes here."
-msgstr "אין פה א/נשים."
+msgid "Search for your matches"
+msgstr ""
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
-msgid "You have no likes here."
-msgstr "אין פה א/נשים."
+msgid "Search for your matches"
+msgstr ""
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
-msgid "You have no likes here."
-msgstr "אין פה א/נשים."
+msgid "Search for your matches"
+msgstr ""
 
 #: .\__translations\__translations.html:22
-msgctxt "female"
-msgid "Search for your matches"
-msgstr ""
-
-#: .\__translations\__translations.html:23
-msgctxt "male"
-msgid "Search for your matches"
-msgstr ""
-
-#: .\__translations\__translations.html:24
-msgctxt "other"
-msgid "Search for your matches"
-msgstr ""
-
-#: .\__translations\__translations.html:26
 msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "אין לך עדיין התאמות. נסי להרחיב את טווח החיפוש שלך או חזרי לאתר מאוחר יותר."
 
-#: .\__translations\__translations.html:27
+#: .\__translations\__translations.html:23
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 "אין לך עדיין התאמות. נסה להרחיב את טווח החיפוש שלך או חזור לאתר מאוחר יותר."
 
-#: .\__translations\__translations.html:28
+#: .\__translations\__translations.html:24
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -101,50 +101,65 @@ msgstr ""
 "אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
 "יותר."
 
-#: .\__translations\__translations.html:30
+#: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Match Settings"
 msgstr "הגדרת התאמות"
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Match Settings"
+msgstr "הגדרת התאמות"
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid "Match Settings"
+msgstr "הגדרת התאמות"
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Like"
+msgstr "לייק"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
-msgid "Match Settings"
-msgstr "הגדרת התאמות"
+msgid "Like"
+msgstr "לייק"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
-msgid "Match Settings"
-msgstr "הגדרת התאמות"
+msgid "Like"
+msgstr "לייק"
 
 #: .\__translations\__translations.html:34
-msgctxt "female"
-msgid "Like"
-msgstr "לייק"
-
-#: .\__translations\__translations.html:35
-msgctxt "male"
-msgid "Like"
-msgstr "לייק"
-
-#: .\__translations\__translations.html:36
-msgctxt "other"
-msgid "Like"
-msgstr "לייק"
-
-#: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Unlike"
 msgstr "בטלי לייק"
 
-#: .\__translations\__translations.html:39
+#: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Unlike"
 msgstr "בטל לייק"
 
-#: .\__translations\__translations.html:40
+#: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Unlike"
 msgstr "בטל/י לייק"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Your Matches"
+msgstr "ההתאמות שלך"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Your Matches"
+msgstr "ההתאמות שלך"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Your Matches"
+msgstr "ההתאמות שלך"
 
 #: .\accounts\apps.py:7
 msgid "Speedy Match Accounts"
@@ -479,7 +494,7 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23 .\templates\matches\match_list.html:10
+#: .\templates\base_site.html:23
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
 msgstr "התאמות"
@@ -511,6 +526,10 @@ msgstr "לייקים הדדיים"
 #: .\templates\likes\like_list.html:41
 msgid "You have no likes here."
 msgstr "אין פה א/נשים."
+
+#: .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "ההתאמות שלך"
 
 #: .\templates\matches\match_list.html:28
 msgid "Search for your matches"
