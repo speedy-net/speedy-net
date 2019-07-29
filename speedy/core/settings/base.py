@@ -58,6 +58,10 @@ INSTALLED_APPS = [
     'speedy.core.terms',
 ]
 
+FORMAT_MODULE_PATH = [
+    'speedy.core.locale',
+]
+
 MIDDLEWARE = [
     'speedy.core.base.middleware.SessionCookieDomainMiddleware',
     'speedy.core.base.middleware.RemoveExtraSlashesMiddleware',
@@ -129,6 +133,8 @@ SMALL_UDID_LENGTH = 15
 REGULAR_UDID_LENGTH = 20
 
 LANGUAGE_CODE = 'en'
+
+# ~~~~ TODO: move the following constants to speedy/core/locale/en/formats.py and speedy/core/locale/he/formats.py
 DATE_FORMAT = 'j F Y'
 MONTH_DAY_FORMAT = 'j F'
 YEAR_FORMAT = 'Y'
