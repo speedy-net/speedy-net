@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-30 20:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,20 +33,35 @@ msgstr "אין פה אנשים."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
-msgid "Search for your matches"
-msgstr ""
+msgid "Update matches"
+msgstr "עדכון התאמות"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
-msgid "Search for your matches"
-msgstr ""
+msgid "Update matches"
+msgstr "עדכון התאמות"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
-msgid "Search for your matches"
-msgstr ""
+msgid "Update matches"
+msgstr "עדכון התאמות"
 
 #: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "Add more options"
+msgstr "הוסיפי עוד אפשרויות"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "Add more options"
+msgstr "הוסף עוד אפשרויות"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "Add more options"
+msgstr "הוסף/י עוד אפשרויות"
+
+#: .\__translations\__translations.html:18
 msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -54,7 +69,7 @@ msgid ""
 msgstr ""
 "אין לך עדיין התאמות. נסי להרחיב את טווח החיפוש שלך או חזרי לאתר מאוחר יותר."
 
-#: .\__translations\__translations.html:15
+#: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -62,7 +77,7 @@ msgid ""
 msgstr ""
 "אין לך עדיין התאמות. נסה להרחיב את טווח החיפוש שלך או חזור לאתר מאוחר יותר."
 
-#: .\__translations\__translations.html:16
+#: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
@@ -71,110 +86,194 @@ msgstr ""
 "אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
 "יותר."
 
-#: .\__translations\__translations.html:18
-msgctxt "female"
-msgid "Match Settings"
-msgstr "הגדרת התאמות"
-
-#: .\__translations\__translations.html:19
-msgctxt "male"
-msgid "Match Settings"
-msgstr "הגדרת התאמות"
-
-#: .\__translations\__translations.html:20
-msgctxt "other"
-msgid "Match Settings"
-msgstr "הגדרת התאמות"
-
 #: .\__translations\__translations.html:22
 msgctxt "female"
-msgid "Like"
-msgstr "לייק"
+msgid "Match Settings"
+msgstr "הגדרת התאמות"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
+msgid "Match Settings"
+msgstr "הגדרת התאמות"
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Match Settings"
+msgstr "הגדרת התאמות"
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
 msgid "Like"
 msgstr "לייק"
 
-#: .\__translations\__translations.html:24
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Like"
+msgstr "לייק"
+
+#: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
 msgstr "לייק"
 
-#: .\__translations\__translations.html:26
+#: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
 msgstr "בטלי לייק"
 
-#: .\__translations\__translations.html:27
+#: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
 msgstr "בטל לייק"
 
-#: .\__translations\__translations.html:28
+#: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
 msgstr "בטל/י לייק"
 
-#: .\__translations\__translations.html:30
+#: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
 msgstr "ההתאמות שלך"
 
-#: .\__translations\__translations.html:31
+#: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
 msgstr "ההתאמות שלך"
 
-#: .\__translations\__translations.html:32
+#: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
 msgstr "ההתאמות שלך"
 
-#: .\__translations\__translations.html:34
+#: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
 msgstr "חברות"
 
-#: .\__translations\__translations.html:35
+#: .\__translations\__translations.html:39
 msgctxt "male"
 msgid "Friends"
 msgstr "חברים"
 
-#: .\__translations\__translations.html:36
+#: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\__translations\__translations.html:38
+#: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
 msgstr "החברות שלך"
 
-#: .\__translations\__translations.html:39
+#: .\__translations\__translations.html:43
 msgctxt "male"
 msgid "Your Friends"
 msgstr "החברים שלך"
 
-#: .\__translations\__translations.html:40
+#: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
 msgstr "החברות והחברים שלך"
 
-#: .\__translations\__translations.html:42
+#: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
 msgstr "עדיין אין לך חברות."
 
-#: .\__translations\__translations.html:43
+#: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
 msgstr "עדיין אין לך חברים."
 
-#: .\__translations\__translations.html:44
+#: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
 msgstr "עדיין אין לך חברים/ות."
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid "Add profile picture"
+msgstr "צרפי תמונת פרופיל"
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid "Add profile picture"
+msgstr "צרף תמונת פרופיל"
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid "Add profile picture"
+msgstr "צרפ/י תמונת פרופיל"
+
+#: .\__translations\__translations.py:10
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr "את רוצה (עוד) ילדים?"
+
+#: .\__translations\__translations.py:11
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "אתה רוצה (עוד) ילדים?"
+
+#: .\__translations\__translations.py:12
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr "את/ה רוצה (עוד) ילדים?"
+
+#: .\__translations\__translations.py:14
+#: .\templates\accounts\edit_profile\activate.html:99
+msgctxt "female"
+msgid "My ideal match"
+msgstr "בת הזוג האידיאלית שלי"
+
+#: .\__translations\__translations.py:15
+#: .\templates\accounts\edit_profile\activate.html:105
+msgctxt "male"
+msgid "My ideal match"
+msgstr "בן הזוג האידיאלי שלי"
+
+#: .\__translations\__translations.py:16
+#: .\templates\accounts\edit_profile\activate.html:112
+msgctxt "other"
+msgid "My ideal match"
+msgstr "בן/בת הזוג האידיאלי/ת שלי"
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:100
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr "גיל מינימלי לבת הזוג"
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:106
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr "גיל מינימלי לבן הזוג"
+
+#: .\__translations\__translations.py:20
+#: .\templates\accounts\edit_profile\activate.html:113
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr "גיל מינימלי לבן/בת הזוג"
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:101
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr "גיל מקסימלי לבת הזוג"
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:107
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr "גיל מקסימלי לבן הזוג"
+
+#: .\__translations\__translations.py:24
+#: .\templates\accounts\edit_profile\activate.html:114
+msgctxt "other"
+msgid "Maximal age to match"
+msgstr "גיל מקסימלי לבן/בת הזוג"
 
 #: .\accounts\apps.py:7
 msgid "Speedy Match Accounts"
@@ -182,63 +281,67 @@ msgstr ""
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
-msgstr ""
+msgstr "צרפ/י תמונת פרופיל"
 
 #: .\accounts\forms.py:59
 msgid "My diet"
-msgstr ""
+msgstr "התזונה שלי"
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
-msgstr ""
+msgstr "הרגלי העישון שלי"
 
 #: .\accounts\forms.py:61
 msgid "My marital status"
-msgstr ""
+msgstr "המצב המשפחתי שלי"
 
 #: .\accounts\forms.py:63
 msgid "City or locality"
-msgstr ""
+msgstr "עיר או יישוב"
+
+#: .\accounts\forms.py:126 .\accounts\models.py:79
+msgid "Gender to match"
+msgstr "מין בן/בת הזוג"
 
 #: .\accounts\models.py:38
 msgid "0 hearts"
-msgstr ""
+msgstr "0 לבבות"
 
 #: .\accounts\models.py:39
-msgid "1 hearts"
-msgstr ""
+msgid "one heart"
+msgstr "לב אחד"
 
 #: .\accounts\models.py:40
 msgid "2 hearts"
-msgstr ""
+msgstr "2 לבבות"
 
 #: .\accounts\models.py:41
 msgid "3 hearts"
-msgstr ""
+msgstr "3 לבבות"
 
 #: .\accounts\models.py:42
 msgid "4 hearts"
-msgstr ""
+msgstr "4 לבבות"
 
 #: .\accounts\models.py:43
 msgid "5 hearts"
-msgstr ""
+msgstr "5 לבבות"
 
 #: .\accounts\models.py:63
-msgid "user"
-msgstr ""
+msgid "User"
+msgstr "משתמש/ת"
 
 #: .\accounts\models.py:64
-msgid "on new likes"
+msgid "On new likes"
 msgstr "כאשר יש לייקים חדשים"
 
 #: .\accounts\models.py:65
-msgid "active languages"
-msgstr ""
+msgid "Active languages"
+msgstr "שפות פעילות"
 
-#: .\accounts\models.py:66
-msgid "height"
-msgstr ""
+#: .\accounts\models.py:66 .\templates\profiles\user_extra_info_widget.html:29
+msgid "Height"
+msgstr "גובה"
 
 #: .\accounts\models.py:66
 #: .\templates\accounts\edit_profile\partials\user_profile.html:20
@@ -247,42 +350,38 @@ msgstr "ס\"מ"
 
 #: .\accounts\models.py:68
 msgid "Few words about me"
-msgstr ""
+msgstr "כמה מילים על עצמי"
 
 #: .\accounts\models.py:71 .\accounts\validators.py:54
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "יש לך ילדים? כמה?"
 
 #: .\accounts\models.py:74 .\accounts\validators.py:59
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "את/ה רוצה (עוד) ילדים?"
 
 #: .\accounts\models.py:77
 msgid "My ideal match"
-msgstr ""
-
-#: .\accounts\models.py:79
-msgid "Gender"
-msgstr ""
+msgstr "בן/בת הזוג האידיאלי/ת שלי"
 
 #: .\accounts\models.py:80
-msgid "minimal age to match"
-msgstr ""
+msgid "Minimal age to match"
+msgstr "גיל מינימלי לבן/בת הזוג"
 
 #: .\accounts\models.py:81
-msgid "maximal age to match"
-msgstr ""
+msgid "Maximal age to match"
+msgstr "גיל מקסימלי לבן/בת הזוג"
 
 #: .\accounts\models.py:82
-msgid "diet match"
+msgid "Diet match"
 msgstr ""
 
 #: .\accounts\models.py:83
-msgid "smoking status match"
+msgid "Smoking status match"
 msgstr ""
 
 #: .\accounts\models.py:84
-msgid "marital status match"
+msgid "Marital status match"
 msgstr ""
 
 #: .\accounts\models.py:116
@@ -342,27 +441,27 @@ msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 
 #: .\accounts\validators.py:111
-msgid "Please select diet match."
+msgid "Please select di========et match."
 msgstr ""
 
 #: .\accounts\validators.py:113
-msgid "At least one diet match option should be 5 hearts."
+msgid "At least one di========et match option should be 5 hearts."
 msgstr ""
 
 #: .\accounts\validators.py:119
-msgid "Please select smoking status match."
+msgid "Please select sm======oking status match."
 msgstr ""
 
 #: .\accounts\validators.py:121
-msgid "At least one smoking status match option should be 5 hearts."
+msgid "At least one sm======oking status match option should be 5 hearts."
 msgstr ""
 
 #: .\accounts\validators.py:127
-msgid "Please select marital status match."
+msgid "Please select ma======rital status match."
 msgstr ""
 
 #: .\accounts\validators.py:129
-msgid "At least one marital status match option should be 5 hearts."
+msgid "At least one ma======rital status match option should be 5 hearts."
 msgstr ""
 
 #: .\likes\managers.py:14 .\likes\models.py:30
@@ -549,18 +648,18 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23
+#: .\templates\base_site.html:24
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
 msgstr "התאמות"
 
-#: .\templates\base_site.html:29 .\templates\likes\like_list.html:6
+#: .\templates\base_site.html:30 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:12
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "לייקים"
 
-#: .\templates\base_site.html:36 .\templates\base_site.html:42
+#: .\templates\base_site.html:37 .\templates\base_site.html:43
 #: .\templates\matches\settings\base.html:9
 #: .\templates\matches\settings\base.html:20
 msgid "Match Settings"
@@ -583,25 +682,25 @@ msgid "Your Matches"
 msgstr "ההתאמות שלך"
 
 #: .\templates\matches\match_list.html:28
-msgid "Search for your matches"
-msgstr ""
+msgid "Update matches"
+msgstr "עדכון התאמות"
 
 #: .\templates\matches\match_list.html:39
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
-msgstr ""
+msgstr "תזונה"
 
 #: .\templates\matches\match_list.html:50
 msgid "Age:"
-msgstr ""
+msgstr "גיל:"
 
 #: .\templates\matches\match_list.html:60
 msgid "Refresh"
-msgstr ""
+msgstr "עדכון"
 
 #: .\templates\matches\match_list.html:67
 msgid "Add more options"
-msgstr ""
+msgstr "הוסף/י עוד אפשרויות"
 
 #: .\templates\matches\match_list.html:82
 msgid ""
@@ -647,10 +746,6 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: .\templates\profiles\user_extra_info_widget.html:29
-msgid "Height"
-msgstr ""
-
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Children"
 msgstr ""
@@ -682,6 +777,24 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
+
+#~ msgid "user"
+#~ msgstr "משתמש/ת"
+
+#~ msgid "active languages"
+#~ msgstr "שפות פעילות"
+
+#~ msgid "height"
+#~ msgstr "גובה"
+
+#~ msgid "My ideal girlfriend"
+#~ msgstr "בת הזוג האידיאלית שלי"
+
+#~ msgid "My ideal boyfriend"
+#~ msgstr "בן הזוג האידיאלי שלי"
+
+#~ msgid "Gender"
+#~ msgstr "מין"
 
 #~ msgctxt "female"
 #~ msgid "People I Like"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-30 20:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,14 @@ msgid "Speedy Mail Software Accounts"
 msgstr ""
 
 #: .\accounts\models.py:10
-msgid "user"
-msgstr ""
+msgid "User"
+msgstr "משתמש/ת"
 
-#: .\accounts\models.py:14
+#: .\accounts\models.py:18
 msgid "Speedy Mail Profile"
 msgstr "פרופיל דואר ספידי"
 
-#: .\accounts\models.py:15
+#: .\accounts\models.py:19
 msgid "Speedy Mail Profiles"
 msgstr "פרופילים דואר ספידי"
 
@@ -146,6 +146,9 @@ msgid ""
 msgstr ""
 "תוכנת דואר ספידי תשתמש בשפות Python ו-JavaScript. ספידי נט היא גם תוכנה "
 "חופשית בקוד פתוח. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני."
+
+#~ msgid "user"
+#~ msgstr "משתמש/ת"
 
 #~ msgid "About"
 #~ msgstr "אודות"

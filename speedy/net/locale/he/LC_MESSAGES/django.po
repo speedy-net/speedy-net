@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-30 20:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,14 @@ msgid "Speedy Net Accounts"
 msgstr ""
 
 #: .\accounts\models.py:10
-msgid "user"
+msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:14
+#: .\accounts\models.py:18
 msgid "Speedy Net Profile"
 msgstr "פרופיל ספידי נט"
 
-#: .\accounts\models.py:15
+#: .\accounts\models.py:19
 msgid "Speedy Net Profiles"
 msgstr "פרופילים ספידי נט"
 
@@ -132,6 +132,9 @@ msgstr "מייסד ומנהל ספידי נט וספידי מץ',"
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
+
+#~ msgid "user"
+#~ msgstr "משתמש/ת"
 
 #~ msgid "Save Changes"
 #~ msgstr "שמור/י את השינויים"

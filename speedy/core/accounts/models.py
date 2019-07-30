@@ -344,9 +344,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    access_dob_day_month = UserAccessField(verbose_name=_('who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
-    access_dob_year = UserAccessField(verbose_name=_('who can view my birth year'), default=UserAccessField.ACCESS_ME)
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
+    access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
+    access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
 
     objects = UserManager()
 
@@ -675,7 +675,7 @@ class SiteProfileBase(TimeStampedModel):
     SiteProfile contains site-specific user django_settings.
     """
 
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name='+')
+    user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 

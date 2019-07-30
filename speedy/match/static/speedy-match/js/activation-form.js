@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     $('.activation-form #id_photo').change(function () {
         var file = this.files[0];
         var reader = new FileReader();
@@ -10,18 +10,22 @@ $(document).ready(function(){
         } else {
         }
     });
+
     $('.image-click-zone').click(function(){
         $(this).closest('.activation-form-field').find('#id_photo').click()
     });
+
     $('.widget-json').each(function (index, element) {
         var widget_value = JSON.parse($(element).find('.widget-input').val());
         for (var key in widget_value) {
             $(element).find('.widget-group[data-value="' + key + '"]').find('.widget-choice').slice(0, widget_value[key]).addClass('active')
         }
     });
+
     $('.widget-json').click(function(e) {
         e.stopPropagation();
     });
+
     $('.widget-choice').click(function () {
         if($(this).closest('.widget-group').find('.widget-checkbox').prop('checked')) {
             var json_widget = $(this).closest('.widget-json');
@@ -32,6 +36,7 @@ $(document).ready(function(){
             json_widget.find('.widget-input').val(JSON.stringify(json_widget_value));
         }
     });
+
     $('.widget-checkbox').click(function () {
         var json_widget = $(this).closest('.widget-json');
         var json_widget_value = JSON.parse(json_widget.find('.widget-input').val());
@@ -45,5 +50,4 @@ $(document).ready(function(){
         }
         json_widget.find('.widget-input').val(JSON.stringify(json_widget_value));
     });
-
 });

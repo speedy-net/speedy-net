@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-30 20:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1474,19 +1474,18 @@ msgid "city or locality"
 msgstr ""
 
 #: .\accounts\models.py:347
-msgid "who can view my birth month and day"
+msgid "Who can view my birth month and day"
 msgstr ""
 
 #: .\accounts\models.py:348
-msgid "who can view my birth year"
+msgid "Who can view my birth year"
 msgstr ""
 
 #: .\accounts\models.py:349
-msgid "on new messages"
+msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:466 .\accounts\models.py:602 .\accounts\models.py:678
-#: .\blocks\models.py:11
+#: .\accounts\models.py:466 .\accounts\models.py:602 .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
@@ -1520,6 +1519,10 @@ msgstr ""
 
 #: .\accounts\models.py:619
 msgid "email addresses"
+msgstr ""
+
+#: .\accounts\models.py:678
+msgid "User"
 msgstr ""
 
 #: .\accounts\models.py:679
