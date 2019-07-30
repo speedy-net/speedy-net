@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 11:23+0300\n"
+"POT-Creation-Date: 2019-07-30 13:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -365,7 +365,7 @@ msgstr ""
 msgid "At least one marital status match option should be 5 hearts."
 msgstr ""
 
-#: .\likes\managers.py:14
+#: .\likes\managers.py:14 .\likes\models.py:30
 msgid "Users cannot like themselves."
 msgstr ""
 
@@ -377,19 +377,19 @@ msgstr ""
 msgid "User cannot like a blocked user."
 msgstr ""
 
-#: .\likes\models.py:12
+#: .\likes\models.py:13
 msgid "from user"
 msgstr ""
 
-#: .\likes\models.py:13
+#: .\likes\models.py:14
 msgid "to user"
 msgstr ""
 
-#: .\likes\models.py:19
+#: .\likes\models.py:20
 msgid "user like"
 msgstr ""
 
-#: .\likes\models.py:20
+#: .\likes\models.py:21
 msgid "user likes"
 msgstr ""
 

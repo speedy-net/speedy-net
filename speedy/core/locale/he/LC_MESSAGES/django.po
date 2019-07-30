@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 11:23+0300\n"
+"POT-Creation-Date: 2019-07-30 13:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1309,50 +1309,50 @@ msgctxt "other"
 msgid "Friends"
 msgstr ""
 
-#: .\accounts\forms.py:86
+#: .\accounts\forms.py:94
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:87
+#: .\accounts\forms.py:95
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:95
+#: .\accounts\forms.py:103
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:98
+#: .\accounts\forms.py:106
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:174 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:182 .\templates\base_with_login.html:104
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:179 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:187 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:117
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:182 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:190 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:114
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:194 .\accounts\forms.py:209
+#: .\accounts\forms.py:202 .\accounts\forms.py:217
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:218
+#: .\accounts\forms.py:226
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:239
+#: .\accounts\forms.py:247
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:251
+#: .\accounts\forms.py:259
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -1579,7 +1579,7 @@ msgid ""
 "or dashes."
 msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או "
-"מקפים."
+"מקפים. שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:36
 msgid ""
@@ -1587,7 +1587,7 @@ msgid ""
 "digits. You can add dashes between words."
 msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
-"של ספרות. ניתן להוסיף מקפים בין מילים."
+"של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:42
 #, python-format
@@ -1599,10 +1599,10 @@ msgid_plural ""
 "has %(show_value)d)."
 msgstr[0] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תו אלפאנומרי לפחות (מכיל "
-"%(show_value)d)."
+"%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לפחות (מכיל "
-"%(show_value)d)."
+"%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:53
 #, python-format
@@ -1614,10 +1614,10 @@ msgid_plural ""
 "has %(show_value)d)."
 msgstr[0] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תו אלפאנומרי לכל היותר (מכיל "
-"%(show_value)d)."
+"%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
-"%(show_value)d)."
+"%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:64
 #, python-format
@@ -1722,7 +1722,7 @@ msgstr "id מכיל תווים לא חוקיים."
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
-#: .\blocks\managers.py:14
+#: .\blocks\managers.py:14 .\blocks\models.py:27
 msgid "Users cannot block themselves."
 msgstr ""
 
