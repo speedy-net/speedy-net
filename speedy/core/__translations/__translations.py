@@ -174,9 +174,9 @@ pgettext_lazy(context="female", message="You already are friends with this user.
 pgettext_lazy(context="male", message="You already are friends with this user.")
 pgettext_lazy(context="other", message="You already are friends with this user.")
 
-pgettext_lazy(context="female", message="You've cancelled your friend request.")
-pgettext_lazy(context="male", message="You've cancelled your friend request.")
-pgettext_lazy(context="other", message="You've cancelled your friend request.")
+pgettext_lazy(context="female", message="You've cancelled your friendship request.")
+pgettext_lazy(context="male", message="You've cancelled your friendship request.")
+pgettext_lazy(context="other", message="You've cancelled your friendship request.")
 
 pgettext_lazy(context="female", message="You have removed this user from friends.")
 pgettext_lazy(context="male", message="You have removed this user from friends.")

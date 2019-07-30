@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 20:27+0300\n"
+"POT-Creation-Date: 2019-07-30 21:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1248,17 +1248,17 @@ msgstr ""
 
 #: .\__translations\__translations.py:177
 msgctxt "female"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
 #: .\__translations\__translations.py:178
 msgctxt "male"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
 #: .\__translations\__translations.py:179
 msgctxt "other"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
 #: .\__translations\__translations.py:181
@@ -1522,15 +1522,15 @@ msgstr ""
 
 #: .\accounts\models.py:347
 msgid "Who can view my birth month and day"
-msgstr ""
+msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
 #: .\accounts\models.py:348
 msgid "Who can view my birth year"
-msgstr ""
+msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
 #: .\accounts\models.py:349
 msgid "On new messages"
-msgstr ""
+msgstr "כאשר יש הודעות חדשות"
 
 #: .\accounts\models.py:466 .\accounts\models.py:602 .\blocks\models.py:11
 msgid "user"
@@ -1806,19 +1806,19 @@ msgid "feedbacks"
 msgstr ""
 
 #: .\friends\views.py:109
-msgid "Friend request sent."
+msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
 #: .\friends\views.py:120
-msgid "No friend request."
+msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
 #: .\friends\views.py:150
-msgid "Friend request accepted."
+msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
 #: .\friends\views.py:165
-msgid "Friend request rejected."
+msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
 #: .\messages\apps.py:7 .\messages\models.py:79
@@ -2318,7 +2318,7 @@ msgid "Report this photo"
 msgstr "דווח/י על תמונה זו"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
-msgid "Cancel Friend Request"
+msgid "Cancel Friendship Request"
 msgstr "בטל/י בקשת חברות"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
@@ -2330,8 +2330,8 @@ msgid "Send Message"
 msgstr "שלח/י הודעה"
 
 #: .\templates\profiles\user_base.html:27
-msgid "Friend request sent"
-msgstr "בקשת חברות נשלחה."
+msgid "Friendship request sent"
+msgstr "בקשת חברות נשלחה"
 
 #: .\templates\profiles\user_base.html:30
 msgid "Your friend"
@@ -2441,15 +2441,6 @@ msgstr "תמונות"
 msgid "uploaded images"
 msgstr ""
 
-#~ msgid "who can view my birth month and day"
-#~ msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
-
-#~ msgid "who can view my birth year"
-#~ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
-
-#~ msgid "on new messages"
-#~ msgstr "כאשר יש הודעות חדשות"
-
 #~ msgid "(hidden)"
 #~ msgstr "(מוסתר)"
 
@@ -2470,9 +2461,6 @@ msgstr ""
 
 #~ msgid "other"
 #~ msgstr "אחר/ת"
-
-#~ msgid "Friend Request Sent"
-#~ msgstr "בקשת חברות נשלחה"
 
 #~ msgid "Remove"
 #~ msgstr "הסר/י"

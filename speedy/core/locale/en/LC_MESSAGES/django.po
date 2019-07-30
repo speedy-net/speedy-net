@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 20:27+0300\n"
+"POT-Creation-Date: 2019-07-30 21:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1201,17 +1201,17 @@ msgstr ""
 
 #: .\__translations\__translations.py:177
 msgctxt "female"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:178
 msgctxt "male"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:179
 msgctxt "other"
-msgid "You've cancelled your friend request."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:181
@@ -1741,19 +1741,19 @@ msgid "feedbacks"
 msgstr ""
 
 #: .\friends\views.py:109
-msgid "Friend request sent."
+msgid "Friendship request sent."
 msgstr ""
 
 #: .\friends\views.py:120
-msgid "No friend request."
+msgid "No friendship request."
 msgstr ""
 
 #: .\friends\views.py:150
-msgid "Friend request accepted."
+msgid "Friendship request accepted."
 msgstr ""
 
 #: .\friends\views.py:165
-msgid "Friend request rejected."
+msgid "Friendship request rejected."
 msgstr ""
 
 #: .\messages\apps.py:7 .\messages\models.py:79
@@ -2244,7 +2244,7 @@ msgid "Report this photo"
 msgstr ""
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
-msgid "Cancel Friend Request"
+msgid "Cancel Friendship Request"
 msgstr ""
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
@@ -2256,7 +2256,7 @@ msgid "Send Message"
 msgstr ""
 
 #: .\templates\profiles\user_base.html:27
-msgid "Friend request sent"
+msgid "Friendship request sent"
 msgstr ""
 
 #: .\templates\profiles\user_base.html:30
