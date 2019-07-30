@@ -38,7 +38,7 @@
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-danger">
-                    {% trans 'You have no likes here.' context user.get_gender %}
+                    {% trans 'You have no likes here.' context user.speedy_match_profile.get_like_gender %}
                 </div>
             </div>
         {% endfor %}

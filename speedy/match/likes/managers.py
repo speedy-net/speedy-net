@@ -45,18 +45,4 @@ class UserLikeManager(BaseManager):
         }
         return self.filter(from_user=user, to_user_id__in=who_likes_me).extra(select=extra_select).order_by('-last_visit')
 
-    def get_to_like_gender(self, user):
-        if ({user.speedy_match_profile.get_match_gender()} == {like.to_user.get_gender() for like in self.get_like_list_to_queryset(user=user)} | {user.speedy_match_profile.get_match_gender()}):
-            to_like_gender = user.speedy_match_profile.get_match_gender()
-        else:
-            to_like_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
-        return to_like_gender
-
-    def get_from_like_gender(self, user):
-        if ({user.speedy_match_profile.get_match_gender()} == {like.from_user.get_gender() for like in self.get_like_list_from_queryset(user=user)} | {user.speedy_match_profile.get_match_gender()}):
-            from_like_gender = user.speedy_match_profile.get_match_gender()
-        else:
-            from_like_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
-        return from_like_gender
-
 

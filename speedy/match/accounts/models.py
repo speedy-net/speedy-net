@@ -11,7 +11,7 @@ from translated_fields import TranslatedField
 from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
-
+from speedy.match.likes.models import UserLike
 from .managers import SiteProfileManager
 
 logger = logging.getLogger(__name__)
@@ -225,9 +225,18 @@ class SiteProfile(SiteProfileBase):
 
     def get_match_gender(self):
         if (len(self.gender_to_match) == 1):
-            return User.GENDERS_DICT.get(self.gender_to_match[0])
+            match_gender = User.GENDERS_DICT.get(self.gender_to_match[0])
         else:
-            return User.GENDERS_DICT.get(User.GENDER_OTHER)
+            match_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
+        return match_gender
+
+    def get_like_gender(self):
+        # No need to query the database if len(self.gender_to_match) is not 1.
+        if ((len(self.gender_to_match) == 1) and ({self.get_match_gender()} == {like.to_user.get_gender() for like in UserLike.objects.get_like_list_to_queryset(user=self.user)} | {like.from_user.get_gender() for like in UserLike.objects.get_like_list_from_queryset(user=self.user)} | {self.get_match_gender()})):
+            like_gender = self.get_match_gender()
+        else:
+            like_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
+        return like_gender
 
     def get_diet_match_choices(self):
         return User.diet_choices(gender=self.get_match_gender())

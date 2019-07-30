@@ -22,26 +22,23 @@ class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
-        to_like_gender = UserLike.objects.get_to_like_gender(user=self.user)
-        from_like_gender = UserLike.objects.get_from_like_gender(user=self.user)
+        user_like_gender = self.user.speedy_match_profile.get_like_gender()
         list_to_title = {
             User.GENDER_FEMALE_STRING: _('Girls You Like'),
             User.GENDER_MALE_STRING: _('Boys You Like'),
             User.GENDER_OTHER_STRING: _('People You Like'),
-        }[to_like_gender]
+        }[user_like_gender]
         list_from_title = {
             User.GENDER_FEMALE_STRING: _('Girls Who Like You'),
             User.GENDER_MALE_STRING: _('Boys Who Like You'),
             User.GENDER_OTHER_STRING: _('People Who Like You'),
-        }[from_like_gender]
+        }[user_like_gender]
         list_mutual_title = _('Mutual Likes')
         cd.update({
             'display': self.display,
             'list_to_title': list_to_title,
             'list_from_title': list_from_title,
             'list_mutual_title': list_mutual_title,
-            'to_like_gender': to_like_gender,
-            'from_like_gender': from_like_gender,
         })
         return cd
 
