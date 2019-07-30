@@ -19,10 +19,7 @@ class BlockManager(BaseManager):
         return block
 
     def unblock(self, blocker, blocked):
-        try:
-            return self.get(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
-        except self.model.DoesNotExist:
-            return
+        self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
 
     def has_blocked(self, blocker, blocked):
         return self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).exists()
