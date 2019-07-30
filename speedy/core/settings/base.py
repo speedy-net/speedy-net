@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'speedy.core.blocks',
     'speedy.core.uploads',
     'speedy.core.messages',
+    'speedy.core.profiles',
+    'speedy.core.friends',
     'speedy.core.about',
     'speedy.core.privacy',
     'speedy.core.terms',
