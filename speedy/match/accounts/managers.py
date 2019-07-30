@@ -1,8 +1,8 @@
 from django.utils.translation import get_language
 
-from speedy.core.accounts.models import User
 from speedy.core.base.utils import get_age_ranges_match
 from speedy.core.base.models import BaseManager
+from speedy.core.accounts.models import User
 
 
 class SiteProfileManager(BaseManager):

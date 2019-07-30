@@ -4,8 +4,7 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
-from django.utils.translation import pgettext_lazy
-from django.utils.translation import ugettext as _
+from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 from speedy.match.accounts import utils

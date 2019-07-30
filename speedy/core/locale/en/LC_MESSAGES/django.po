@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-29 05:53+0300\n"
+"POT-Creation-Date: 2019-07-30 07:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -587,7 +587,7 @@ msgid "Email address:"
 msgstr ""
 
 #: .\__translations\__translations.py:11
-#: .\templates\profiles\user_info_widget.html:70
+#: .\templates\profiles\user_info_widget.html:71
 msgid "Email"
 msgstr ""
 
@@ -1784,11 +1784,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:137
+#: .\settings\base.py:145
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:138
+#: .\settings\base.py:146
 msgid "Hebrew"
 msgstr ""
 
@@ -2259,31 +2259,31 @@ msgstr ""
 msgid "user's profile on Speedy Net."
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:12
+#: .\templates\profiles\user_info_widget.html:13
 msgid "Information"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:19
+#: .\templates\profiles\user_info_widget.html:20
 msgid "Name"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:25
+#: .\templates\profiles\user_info_widget.html:26
 msgid "Username"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:35
+#: .\templates\profiles\user_info_widget.html:36
 msgid "Gender"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:44
+#: .\templates\profiles\user_info_widget.html:45
 msgid "Birth Date"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:44
+#: .\templates\profiles\user_info_widget.html:45
 msgid "Birth Year"
 msgstr ""
 
-#: .\templates\profiles\user_info_widget.html:61
+#: .\templates\profiles\user_info_widget.html:62
 msgid "Age"
 msgstr ""
 

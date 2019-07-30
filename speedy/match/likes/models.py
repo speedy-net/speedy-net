@@ -5,12 +5,15 @@ from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.accounts.models import User
+from .managers import UserLikeManager
 
 
 class UserLike(TimeStampedModel):
     from_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('from user'), on_delete=models.CASCADE, related_name='likes_from_user')
     to_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('to user'), on_delete=models.CASCADE, related_name='likes_to_user')
     date_viewed = models.DateTimeField(blank=True, null=True, db_index=True) # May be used later.
+
+    objects = UserLikeManager()
 
     class Meta:
         verbose_name = _('user like')

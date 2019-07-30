@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.base.models import TimeStampedModel
+from speedy.core.accounts.models import SiteProfileBase, User
 
 
 # ~~~~ TODO: Create a node in speedy.core which will be used in all Speedy Net websites. This node should contain a username (which is the slug without dashes), slug and name. Also check that the full path after the domain name is unique in each website. But it doesn't have to be unique across different websites (such as Speedy Net and Speedy Composer).

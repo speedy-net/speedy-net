@@ -14,17 +14,17 @@
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
             <a class="nav-link {% active_class 'likes:list_to' %}" href="{% url 'likes:list_to' user.slug %}">
-                {% trans 'People I Like' context user.get_gender %}
+                {{ list_to_title }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% active_class 'likes:list_from' %}" href="{% url 'likes:list_from' user.slug %}">
-                {% trans 'People Who Like Me' context user.get_gender %}
+                {{ list_from_title }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% active_class 'likes:list_mutual' %}" href="{% url 'likes:list_mutual' user.slug %}">
-                {% trans 'Mutual Likes' %}
+                {{ list_mutual_title }}
             </a>
         </li>
     </ul>

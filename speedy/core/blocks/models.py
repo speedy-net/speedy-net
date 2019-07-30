@@ -2,8 +2,8 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
-from speedy.core.accounts.models import Entity
 from speedy.core.base.models import TimeStampedModel
+from speedy.core.accounts.models import Entity
 from .managers import BlockManager
 
 

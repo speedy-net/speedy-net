@@ -1,10 +1,11 @@
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.views import generic
+from django.utils.translation import gettext_lazy as _
+
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.core.accounts.models import User
-from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.profiles.views import UserMixin
 from .models import UserLike
 
@@ -21,8 +22,26 @@ class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
+        to_like_gender = UserLike.objects.get_to_like_gender(user=self.user)
+        from_like_gender = UserLike.objects.get_from_like_gender(user=self.user)
+        list_to_title = {
+            User.GENDER_FEMALE_STRING: _('Girls You Like'),
+            User.GENDER_MALE_STRING: _('Boys You Like'),
+            User.GENDER_OTHER_STRING: _('People You Like'),
+        }[to_like_gender]
+        list_from_title = {
+            User.GENDER_FEMALE_STRING: _('Girls Who Like You'),
+            User.GENDER_MALE_STRING: _('Boys Who Like You'),
+            User.GENDER_OTHER_STRING: _('People Who Like You'),
+        }[from_like_gender]
+        list_mutual_title = _('Mutual Likes')
         cd.update({
             'display': self.display,
+            'list_to_title': list_to_title,
+            'list_from_title': list_from_title,
+            'list_mutual_title': list_mutual_title,
+            'to_like_gender': to_like_gender,
+            'from_like_gender': from_like_gender,
         })
         return cd
 
@@ -31,50 +50,21 @@ class LikeListToView(LikeListViewBase):
     display = 'to'
 
     def get_queryset(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-
-        # filter out users that are only active in another language
-        liked_user = User.objects.filter(pk__in=UserLike.objects.filter(from_user=self.user).values_list('to_user_id', flat=True))
-        liked_user = [u.pk for u in liked_user if (u.speedy_match_profile.is_active)]
-
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
-        }
-        return UserLike.objects.filter(from_user=self.user).filter(to_user__in=liked_user).extra(select=extra_select).order_by('-last_visit')
+        return UserLike.objects.get_like_list_to_queryset(user=self.user)
 
 
 class LikeListFromView(LikeListViewBase):
     display = 'from'
 
     def get_queryset(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-
-        # filter out users that are only active in another language
-        who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
-        who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
-
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.from_user_id'.format(table_name),
-        }
-        return UserLike.objects.filter(to_user=self.user).filter(from_user__in=who_likes_me).extra(select=extra_select).order_by('-last_visit')
+        return UserLike.objects.get_like_list_from_queryset(user=self.user)
 
 
 class LikeListMutualView(LikeListViewBase):
     display = 'to'
 
     def get_queryset(self):
-        # filter out users that are only active in another language
-        who_likes_me = User.objects.filter(pk__in=UserLike.objects.filter(to_user=self.user).values_list('from_user_id', flat=True))
-        who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
-
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
-        }
-        return UserLike.objects.filter(from_user=self.user, to_user_id__in=who_likes_me).extra(select=extra_select).order_by('-last_visit')
+        return UserLike.objects.get_like_list_mutual_queryset(user=self.user)
 
 
 class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
@@ -86,7 +76,6 @@ class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         UserLike.objects.create(from_user=self.request.user, to_user=self.user)
-        # messages.success(request=request, message=_('You like this user.'))
         return redirect(to=self.user)
 
 
@@ -99,7 +88,6 @@ class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         UserLike.objects.filter(from_user=self.request.user, to_user=self.user).delete()
-        # messages.success(request=request, message=_('You don\'t like this user.'))
         return redirect(to=self.user)
 
 

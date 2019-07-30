@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-29 05:53+0300\n"
+"POT-Creation-Date: 2019-07-30 07:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,141 +17,111 @@ msgstr ""
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
-msgid "People I Like"
+msgid "You have no likes here."
 msgstr ""
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
-msgid "People I Like"
+msgid "You have no likes here."
 msgstr ""
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
-msgid "People I Like"
+msgid "You have no likes here."
 msgstr ""
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
-msgid "People Who Like Me"
+msgid "Search for your matches"
 msgstr ""
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
-msgid "People Who Like Me"
+msgid "Search for your matches"
 msgstr ""
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
-msgid "People Who Like Me"
+msgid "Search for your matches"
 msgstr ""
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
-msgid "You have no likes here."
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
-msgid "You have no likes here."
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
-msgid "You have no likes here."
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:18
 msgctxt "female"
-msgid "Search for your matches"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
-msgid "Search for your matches"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
-msgid "Search for your matches"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
-msgid "Match Settings"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
-msgid "Match Settings"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
-msgid "Match Settings"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
-msgid "Like"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
-msgid "Like"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:32
-msgctxt "other"
-msgid "Like"
-msgstr ""
-
-#: .\__translations\__translations.html:34
-msgctxt "female"
-msgid "Unlike"
-msgstr ""
-
-#: .\__translations\__translations.html:35
-msgctxt "male"
-msgid "Unlike"
-msgstr ""
-
-#: .\__translations\__translations.html:36
-msgctxt "other"
-msgid "Unlike"
-msgstr ""
-
-#: .\__translations\__translations.html:38
-msgctxt "female"
-msgid "Your Matches"
-msgstr ""
-
-#: .\__translations\__translations.html:39
-msgctxt "male"
-msgid "Your Matches"
-msgstr ""
-
-#: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Your Matches"
 msgstr ""
@@ -273,7 +243,7 @@ msgstr ""
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:175 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:176 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -345,20 +315,48 @@ msgstr ""
 msgid "At least one marital status match option should be 5 hearts."
 msgstr ""
 
-#: .\likes\models.py:11
+#: .\likes\models.py:12
 msgid "from user"
 msgstr ""
 
-#: .\likes\models.py:12
+#: .\likes\models.py:13
 msgid "to user"
 msgstr ""
 
-#: .\likes\models.py:16
+#: .\likes\models.py:19
 msgid "user like"
 msgstr ""
 
-#: .\likes\models.py:17
+#: .\likes\models.py:20
 msgid "user likes"
+msgstr ""
+
+#: .\likes\views.py:28
+msgid "Girls You Like"
+msgstr ""
+
+#: .\likes\views.py:29
+msgid "Boys You Like"
+msgstr ""
+
+#: .\likes\views.py:30
+msgid "People You Like"
+msgstr ""
+
+#: .\likes\views.py:33
+msgid "Girls Who Like You"
+msgstr ""
+
+#: .\likes\views.py:34
+msgid "Boys Who Like You"
+msgstr ""
+
+#: .\likes\views.py:35
+msgid "People Who Like You"
+msgstr ""
+
+#: .\likes\views.py:37
+msgid "Mutual Likes"
 msgstr ""
 
 #: .\matches\views.py:44 .\matches\views.py:58
@@ -484,18 +482,6 @@ msgstr ""
 #: .\templates\matches\settings\base.html:9
 #: .\templates\matches\settings\base.html:20
 msgid "Match Settings"
-msgstr ""
-
-#: .\templates\likes\like_list.html:17
-msgid "People I Like"
-msgstr ""
-
-#: .\templates\likes\like_list.html:22
-msgid "People Who Like Me"
-msgstr ""
-
-#: .\templates\likes\like_list.html:27
-msgid "Mutual Likes"
 msgstr ""
 
 #: .\templates\likes\like_list.html:41
