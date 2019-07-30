@@ -79,7 +79,15 @@ class AddAttributesToFieldsMixin(object):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if (field_name in self.attribute_fields):
-                field.widget.attrs.update({'autocomplete': 'off', 'autocorrect': 'off', 'autocapitalize': 'off', 'spellcheck': 'false'})
+                classes = field.widget.attrs.get("class", "")
+                classes = "{} direction-ltr".format(classes).strip()
+                field.widget.attrs.update({
+                    'autocomplete': 'off',
+                    'autocorrect': 'off',
+                    'autocapitalize': 'off',
+                    'spellcheck': 'false',
+                    'class': classes,
+                })
 
 
 class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
