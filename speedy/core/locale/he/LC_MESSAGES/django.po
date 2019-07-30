@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 09:54+0300\n"
+"POT-Creation-Date: 2019-07-30 10:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1293,6 +1293,21 @@ msgstr "ברוך הבא ל{site_name}!"
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
+
+#: .\__translations\__translations.py:189
+msgctxt "female"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:190
+msgctxt "male"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:191
+msgctxt "other"
+msgid "Friends"
+msgstr ""
 
 #: .\accounts\forms.py:86
 msgid "Your email"

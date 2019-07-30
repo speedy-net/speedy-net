@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 09:54+0300\n"
+"POT-Creation-Date: 2019-07-30 10:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -621,7 +621,7 @@ msgstr ""
 #: .\__translations\__translations.py:23 .\accounts\models.py:463
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr ""
+msgstr "חברים/ות"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
@@ -1246,6 +1246,21 @@ msgstr ""
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr ""
+
+#: .\__translations\__translations.py:189
+msgctxt "female"
+msgid "Friends"
+msgstr "חברות"
+
+#: .\__translations\__translations.py:190
+msgctxt "male"
+msgid "Friends"
+msgstr "חברים"
+
+#: .\__translations\__translations.py:191
+msgctxt "other"
+msgid "Friends"
+msgstr "חברים/ות"
 
 #: .\accounts\forms.py:86
 msgid "Your email"
