@@ -41,7 +41,9 @@
                         </li>
                         {% block navbar_mobile_menu_top_extra_2 %}{% endblock %}
                         <li>
-                            <a href="{% url request.user.received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">{% trans 'Friends' %}</a>
+                            <a href="{% url request.user.received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}">
+                                {% include 'menu/friends_trans.html' %}
+                            </a>
                         </li>
                         {% block navbar_mobile_menu_top_extra_3 %}{% endblock %}
                         <li>

@@ -4,7 +4,9 @@
     <li class="nav-item">
         <a href="{% url received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}" class="nav-link {% block user_menu_friends_class %}{% endblock %}">
             <i class="fa fa-fw fa-users"></i>
-            <span class="label">{% trans 'Friends' %}</span>
+            <span class="label">
+                {% include 'menu/friends_trans.html' %}
+            </span>
             {% if received_friendship_requests_count %}
                 <span class="badge badge-light">{{ received_friendship_requests_count }}</span>
             {% endif %}

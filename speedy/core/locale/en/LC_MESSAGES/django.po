@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 07:47+0300\n"
+"POT-Creation-Date: 2019-07-30 09:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -618,10 +618,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\templates\base_with_login.html:44
-#: .\templates\friends\base.html:7 .\templates\friends\base.html:11
-#: .\templates\friends\user_friends_widget.html:13
-#: .\templates\friends\user_menu_friends.html:7
+#: .\__translations\__translations.py:23 .\templates\menu\friends_trans.html:3
 msgid "Friends"
 msgstr ""
 
@@ -1265,18 +1262,18 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:174 .\templates\base_with_login.html:102
+#: .\accounts\forms.py:174 .\templates\base_with_login.html:104
 msgid "Email or Username"
 msgstr ""
 
 #: .\accounts\forms.py:179 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:65
-#: .\templates\base_with_login.html:115
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
+#: .\templates\base_with_login.html:117
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:182 .\templates\base_with_login.html:68
-#: .\templates\base_with_login.html:112
+#: .\accounts\forms.py:182 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:114
 msgid "Forgot your password?"
 msgstr ""
 
@@ -1824,8 +1821,8 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:48 .\templates\base_with_login.html:89
-#: .\templates\base_with_login.html:133
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:91
+#: .\templates\base_with_login.html:135
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr ""
@@ -2045,22 +2042,22 @@ msgstr ""
 msgid "Messages"
 msgstr ""
 
-#: .\templates\base_with_login.html:55 .\templates\base_with_login.html:93
+#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:95
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base_with_login.html:62
+#: .\templates\base_with_login.html:64
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:83
+#: .\templates\base_with_login.html:85
 #, python-format
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
 
-#: .\templates\base_with_login.html:108
+#: .\templates\base_with_login.html:110
 msgid "Password"
 msgstr ""
 
@@ -2104,20 +2101,12 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: .\templates\friends\base.html:20
-msgid "Your Friends"
-msgstr ""
-
 #: .\templates\friends\base.html:25
 msgid "Received Requests"
 msgstr ""
 
 #: .\templates\friends\base.html:31
 msgid "Sent Requests"
-msgstr ""
-
-#: .\templates\friends\friend_list.html:14
-msgid "You don't have any friends yet."
 msgstr ""
 
 #: .\templates\friends\received_requests.html:12
@@ -2127,6 +2116,14 @@ msgstr ""
 
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
+msgstr ""
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
 msgstr ""
 
 #: .\templates\messages\chat_detail.html:29

@@ -11,7 +11,7 @@
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-warning">
-                    {% trans "You don't have any friends yet." %}
+                    {% include 'friends/you_dont_have_any_friends_trans.html' %}
                 </div>
             </div>
         {% endfor %}

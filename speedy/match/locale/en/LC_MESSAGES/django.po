@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 07:47+0300\n"
+"POT-Creation-Date: 2019-07-30 09:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,6 +124,51 @@ msgstr ""
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Your Matches"
+msgstr ""
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Your Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Your Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Your Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:42
+msgctxt "female"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:43
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:44
+msgctxt "other"
+msgid "You don't have any friends yet."
 msgstr ""
 
 #: .\accounts\apps.py:7
@@ -331,31 +376,31 @@ msgstr ""
 msgid "user likes"
 msgstr ""
 
-#: .\likes\views.py:28
+#: .\likes\views.py:27
 msgid "Girls You Like"
 msgstr ""
 
-#: .\likes\views.py:29
+#: .\likes\views.py:28
 msgid "Boys You Like"
 msgstr ""
 
-#: .\likes\views.py:30
+#: .\likes\views.py:29
 msgid "People You Like"
 msgstr ""
 
-#: .\likes\views.py:33
+#: .\likes\views.py:32
 msgid "Girls Who Like You"
 msgstr ""
 
-#: .\likes\views.py:34
+#: .\likes\views.py:33
 msgid "Boys Who Like You"
 msgstr ""
 
-#: .\likes\views.py:35
+#: .\likes\views.py:34
 msgid "People Who Like You"
 msgstr ""
 
-#: .\likes\views.py:37
+#: .\likes\views.py:36
 msgid "Mutual Likes"
 msgstr ""
 
@@ -484,6 +529,14 @@ msgstr ""
 msgid "Match Settings"
 msgstr ""
 
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr ""
+
 #: .\templates\likes\like_list.html:41
 msgid "You have no likes here."
 msgstr ""
@@ -529,6 +582,10 @@ msgstr ""
 
 #: .\templates\matches\settings\base.html:31
 msgid "About Me"
+msgstr ""
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
 msgstr ""
 
 #: .\templates\profiles\tools\like.html:13

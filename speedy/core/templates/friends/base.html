@@ -4,11 +4,11 @@
 {% load i18n %}
 {% load rules %}
 
-{% block title %}{{ user.name }} - {% trans 'Friends' %} / {{ block.super }}{% endblock %}
+{% block title %}{{ user.name }} - {% include 'menu/friends_trans.html' %} / {{ block.super }}{% endblock %}
 
 {% block user_menu_friends_class %}active{% endblock %}
 
-{% block user_extra %} - {% trans 'Friends' %}{% endblock %}
+{% block user_extra %} - {% include 'menu/friends_trans.html' %}{% endblock %}
 
 {% block user_content %}
     {% has_perm 'friends.view_requests' request.user user as can_view_requests %}
@@ -17,7 +17,7 @@
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link {% active_class 'friends:list' %}" href="{% url 'friends:list' user.slug %}">
-                    {% trans 'Your Friends' %}
+                    {% include 'friends/your_friends_trans.html' %}
                 </a>
             </li>
             <li class="nav-item">
