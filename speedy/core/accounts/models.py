@@ -681,7 +681,15 @@ class SiteProfileBase(TimeStampedModel):
 
     @property
     def is_active_or_superuser(self):
-        return self.is_active or self.user.is_superuser
+        return self.user.is_superuser or self.is_active
+
+    @property
+    def is_active_and_valid_or_superuser(self):
+        return self.user.is_superuser or self.is_active_and_valid
+
+    @property
+    def is_active_and_valid(self):
+        raise NotImplementedError("is_active_and_valid is not implemented.")
 
     class Meta:
         abstract = True

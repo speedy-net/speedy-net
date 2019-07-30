@@ -30,6 +30,10 @@ class SiteProfile(SiteProfileBase):
     user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=False)
 
+    @property
+    def is_active_and_valid(self):
+        return (self.is_active)
+
     class Meta:
         verbose_name = _('Speedy Composer Profile')
         verbose_name_plural = _('Speedy Composer Profiles')
