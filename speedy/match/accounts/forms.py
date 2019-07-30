@@ -3,7 +3,7 @@ import json
 from django import forms
 from django.conf import settings as django_settings
 from django.template.loader import render_to_string
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 from speedy.core.base.utils import to_attribute, update_form_field_choices
 from speedy.core.base.forms import DeleteUnneededFieldsMixin
@@ -105,6 +105,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
+            self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
         if ('diet' in self.fields):
             update_form_field_choices(field=self.fields['diet'], choices=self.instance.user.get_diet_choices_with_description())
         if ('smoking_status' in self.fields):
@@ -117,6 +118,16 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             update_form_field_choices(field=self.fields['smoking_status_match'], choices=self.instance.get_smoking_status_match_choices())
         if ('marital_status_match' in self.fields):
             update_form_field_choices(field=self.fields['marital_status_match'], choices=self.instance.get_marital_status_match_choices())
+        if (to_attribute(name='more_children') in self.fields):
+            self.fields[to_attribute(name='more_children')].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Do you want (more) children?')
+        if (to_attribute(name='match_description') in self.fields):
+            self.fields[to_attribute(name='match_description')].label = pgettext_lazy(context=self.instance.get_match_gender(), message='My ideal match')
+        if ('gender_to_match' in self.fields):
+            self.fields['gender_to_match'].label = _('Gender to match')
+        if ('min_age_match' in self.fields):
+            self.fields['min_age_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='minimal age to match')
+        if ('max_age_match' in self.fields):
+            self.fields['max_age_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='maximal age to match')
         for field_name in self.user_fields:
             if (field_name in self.fields):
                 self.fields[field_name].initial = getattr(self.instance.user, field_name)

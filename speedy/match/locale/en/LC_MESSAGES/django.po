@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-30 18:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,143 +32,233 @@ msgstr ""
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Add more options"
 msgstr ""
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Add more options"
 msgstr ""
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
+msgid "Add more options"
+msgstr ""
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
 
-#: .\__translations\__translations.html:18
-msgctxt "female"
-msgid "Match Settings"
-msgstr ""
-
 #: .\__translations\__translations.html:19
 msgctxt "male"
-msgid "Match Settings"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
-msgid "Match Settings"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:40
 msgctxt "other"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
-msgid "You don't have any friends yet."
+msgid "Your Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
-msgid "You don't have any friends yet."
+msgid "Your Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
+msgid "Your Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
 msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:10
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:11
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:12
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:14
+msgctxt "female"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:15
+msgctxt "male"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:16
+msgctxt "other"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:18
+msgctxt "female"
+msgid "minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:19
+msgctxt "male"
+msgid "minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:20
+msgctxt "other"
+msgid "minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:22
+msgctxt "female"
+msgid "maximal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:23
+msgctxt "male"
+msgid "maximal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:24
+msgctxt "other"
+msgid "maximal age to match"
 msgstr ""
 
 #: .\accounts\apps.py:7
@@ -195,12 +285,16 @@ msgstr ""
 msgid "City or locality"
 msgstr ""
 
+#: .\accounts\forms.py:126 .\accounts\models.py:79
+msgid "Gender to match"
+msgstr ""
+
 #: .\accounts\models.py:38
 msgid "0 hearts"
 msgstr ""
 
 #: .\accounts\models.py:39
-msgid "1 hearts"
+msgid "one heart"
 msgstr ""
 
 #: .\accounts\models.py:40
@@ -254,10 +348,6 @@ msgstr ""
 
 #: .\accounts\models.py:77
 msgid "My ideal match"
-msgstr ""
-
-#: .\accounts\models.py:79
-msgid "Gender"
 msgstr ""
 
 #: .\accounts\models.py:80
@@ -558,7 +648,7 @@ msgid "Your Matches"
 msgstr ""
 
 #: .\templates\matches\match_list.html:28
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\templates\matches\match_list.html:39

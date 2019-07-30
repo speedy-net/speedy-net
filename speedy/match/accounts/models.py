@@ -36,7 +36,7 @@ class SiteProfile(SiteProfileBase):
 
     RANK_CHOICES = (
         (RANK_0, _("0 hearts")),
-        (RANK_1, _("1 hearts")),
+        (RANK_1, _("one heart")),
         (RANK_2, _("2 hearts")),
         (RANK_3, _("3 hearts")),
         (RANK_4, _("4 hearts")),
@@ -76,7 +76,7 @@ class SiteProfile(SiteProfileBase):
     match_description = TranslatedField(
         field=models.TextField(verbose_name=_('My ideal match'), blank=True, null=True),
     )
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
+    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     min_age_match = models.SmallIntegerField(verbose_name=_('minimal age to match'), default=settings.MIN_AGE_MATCH_ALLOWED)
     max_age_match = models.SmallIntegerField(verbose_name=_('maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
     diet_match = JSONField(verbose_name=_('diet match'), default=diet_match_default.__func__)
