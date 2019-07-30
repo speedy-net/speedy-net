@@ -54,6 +54,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
+                                {# ~~~~ TODO: remove "his/her" and setup strings in Python! #}
                                 {% trans "This user doesn't match your profile, " context user.get_gender %}{% trans "but you can visit his/her Speedy Net profile. " context user.get_gender %}{% trans "View " context request.user.get_gender %}{% trans "user's profile on Speedy Net." context user.get_gender %}
                             </a>
                         </div>

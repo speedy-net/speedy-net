@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 20:04+0300\n"
+"POT-Creation-Date: 2019-07-30 20:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1297,17 +1297,17 @@ msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 #: .\__translations\__translations.py:189
 msgctxt "female"
 msgid "Friends"
-msgstr ""
+msgstr "חברות"
 
 #: .\__translations\__translations.py:190
 msgctxt "male"
 msgid "Friends"
-msgstr ""
+msgstr "חברים"
 
 #: .\__translations\__translations.py:191
 msgctxt "other"
 msgid "Friends"
-msgstr ""
+msgstr "חברים/ות"
 
 #: .\accounts\forms.py:94
 msgid "Your email"
@@ -2337,19 +2337,19 @@ msgstr "בקשת חברות נשלחה."
 msgid "Your friend"
 msgstr "חבר/ה שלך"
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "This user doesn't match your profile, "
 msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, "
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr "אבל באפשרותך לראות אותו/ה בספידי נט. "
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "View "
 msgstr "צפה/י בפרופיל של "
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "user's profile on Speedy Net."
 msgstr "משתמש/ת זה/זאת בספידי נט."
 
