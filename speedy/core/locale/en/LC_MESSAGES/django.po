@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 09:18+0300\n"
+"POT-Creation-Date: 2019-07-30 09:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:611
+#: .\__translations\__translations.py:9 .\accounts\models.py:618
 msgid "email address"
 msgstr ""
 
@@ -618,7 +618,8 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\templates\menu\friends_trans.html:3
+#: .\__translations\__translations.py:23 .\accounts\models.py:463
+#: .\templates\menu\friends_trans.html:3
 msgid "Friends"
 msgstr ""
 
@@ -1469,44 +1470,44 @@ msgstr ""
 msgid "on new messages"
 msgstr ""
 
-#: .\accounts\models.py:459 .\accounts\models.py:595 .\accounts\models.py:671
+#: .\accounts\models.py:466 .\accounts\models.py:602 .\accounts\models.py:678
 #: .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:460
+#: .\accounts\models.py:467
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:603
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:604
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:605
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:599
+#: .\accounts\models.py:606
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:607
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:608
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:612
+#: .\accounts\models.py:619
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:672
+#: .\accounts\models.py:679
 msgid "last visit"
 msgstr ""
 

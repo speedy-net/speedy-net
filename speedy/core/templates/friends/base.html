@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load rules %}
 
-{% block title %}{{ user.name }} - {% include 'menu/friends_trans.html' %} / {{ block.super }}{% endblock %}
+{% block title %}{{ user.name }} - {{ user.friends_trans }} / {{ block.super }}{% endblock %}
 
 {% block user_menu_friends_class %}active{% endblock %}
 

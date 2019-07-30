@@ -403,7 +403,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [friendship_request for friendship_request in qs if (self.profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [friendship_request for friendship_request in qs if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -425,7 +425,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            qs = [friendship_request for friendship_request in qs if (self.profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            qs = [friendship_request for friendship_request in qs if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -446,7 +446,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return qs
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            qs = [friendship for friendship in qs if (self.profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
+            qs = [friendship for friendship in qs if (self.speedy_match_profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
             return qs
         else:
             raise NotImplementedError()
@@ -454,6 +454,13 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @property
     def friends_count(self):
         return len(self.all_friends)
+
+    @property
+    def friends_trans(self):
+        if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            return pgettext_lazy(context=self.speedy_match_profile.get_match_gender(), message='Friends')
+        else:
+            return _('Friends')
 
     class Meta:
         verbose_name = _('user')
