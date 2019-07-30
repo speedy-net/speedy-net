@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.accounts.models import User
@@ -21,7 +22,13 @@ class UserLike(TimeStampedModel):
         unique_together = ('from_user', 'to_user')
 
     def __str__(self):
-        return '{} to {}'.format(self.from_user, self.to_user)
+        return "User {} likes {}".format(self.from_user, self.to_user)
+
+    def save(self, *args, **kwargs):
+        # Ensure users can't like themselves.
+        if (self.from_user == self.to_user):
+            raise ValidationError(_("Users cannot like themselves."))
+        super().save(*args, **kwargs)
 
 
 @receiver(models.signals.post_save, sender=UserLike)
