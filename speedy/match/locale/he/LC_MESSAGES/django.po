@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 10:25+0300\n"
+"POT-Creation-Date: 2019-07-30 11:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -363,6 +363,18 @@ msgstr ""
 
 #: .\accounts\validators.py:129
 msgid "At least one marital status match option should be 5 hearts."
+msgstr ""
+
+#: .\likes\managers.py:14
+msgid "Users cannot like themselves."
+msgstr ""
+
+#: .\likes\managers.py:17
+msgid "User already likes other user."
+msgstr ""
+
+#: .\likes\managers.py:20
+msgid "User cannot like a blocked user."
 msgstr ""
 
 #: .\likes\models.py:12
