@@ -2,6 +2,6 @@
 
 <div class="col-sm-12 pull-right">
    <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
-        {% blocktrans with user_name=user.name context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+        {% blocktrans with user_name=user.name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
     </a>
 </div>
