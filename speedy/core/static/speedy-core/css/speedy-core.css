@@ -194,3 +194,8 @@ body.bidi-rtl .navbar-right {
     direction: rtl;
 }
 
+.friends-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
