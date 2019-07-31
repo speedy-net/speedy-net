@@ -27,7 +27,7 @@ class SpeedyComposerNode(TimeStampedModel): # ~~~~ TODO: check which class we wa
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_composer_site_profile'
 
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
+    user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=False)
 
     @property

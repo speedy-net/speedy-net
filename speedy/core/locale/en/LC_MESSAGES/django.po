@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-31 12:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:618
+#: .\__translations\__translations.py:9 .\accounts\models.py:638
 msgid "email address"
 msgstr ""
 
@@ -618,10 +618,10 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:463
+#: .\__translations\__translations.py:23 .\accounts\models.py:472
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "חברים/ות"
+msgstr ""
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
@@ -988,165 +988,180 @@ msgstr ""
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
-msgid "Married"
+msgid "Engaged"
 msgstr ""
 
 #: .\__translations\__translations.py:130
 msgctxt "male"
-msgid "Married"
+msgid "Engaged"
 msgstr ""
 
 #: .\__translations\__translations.py:131
 msgctxt "other"
-msgid "Married"
+msgid "Engaged"
 msgstr ""
 
 #: .\__translations\__translations.py:133
 msgctxt "female"
-msgid "Your new password has been saved."
+msgid "Married"
 msgstr ""
 
 #: .\__translations\__translations.py:134
 msgctxt "male"
-msgid "Your new password has been saved."
+msgid "Married"
 msgstr ""
 
 #: .\__translations\__translations.py:135
 msgctxt "other"
-msgid "Your new password has been saved."
+msgid "Married"
 msgstr ""
 
 #: .\__translations\__translations.py:137
 msgctxt "female"
-msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate them any time."
+msgid "Your new password has been saved."
 msgstr ""
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
-"reactivate them any time."
+msgid "Your new password has been saved."
 msgstr ""
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
+msgid "Your new password has been saved."
+msgstr ""
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
 "reactivate them any time."
 msgstr ""
 
-#: .\__translations\__translations.py:141
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-
 #: .\__translations\__translations.py:142
-#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"reactivate them any time."
 msgstr ""
 
 #: .\__translations\__translations.py:143
-#, python-brace-format
 msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+
+#: .\__translations\__translations.py:145
+#, python-brace-format
+msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
 
-#: .\__translations\__translations.py:145
-msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr ""
-
 #: .\__translations\__translations.py:146
+#, python-brace-format
 msgctxt "male"
-msgid "You've already confirmed this email address."
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
 
 #: .\__translations\__translations.py:147
+#, python-brace-format
 msgctxt "other"
-msgid "You've already confirmed this email address."
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
 
 #: .\__translations\__translations.py:149
 msgctxt "female"
-msgid "You've confirmed your email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\__translations\__translations.py:150
 msgctxt "male"
-msgid "You've confirmed your email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\__translations\__translations.py:151
 msgctxt "other"
-msgid "You've confirmed your email address."
+msgid "You've already confirmed this email address."
 msgstr ""
 
 #: .\__translations\__translations.py:153
 msgctxt "female"
-msgid "Send"
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\__translations\__translations.py:154
 msgctxt "male"
-msgid "Send"
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\__translations\__translations.py:155
 msgctxt "other"
-msgid "Send"
+msgid "You've confirmed your email address."
 msgstr ""
 
 #: .\__translations\__translations.py:157
-#, python-brace-format
 msgctxt "female"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+msgid "Send"
 msgstr ""
 
 #: .\__translations\__translations.py:158
-#, python-brace-format
 msgctxt "male"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+msgid "Send"
 msgstr ""
 
 #: .\__translations\__translations.py:159
-#, python-brace-format
 msgctxt "other"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+msgid "Send"
 msgstr ""
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
 msgctxt "male"
 msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+
+#: .\__translations\__translations.py:165
+#, python-brace-format
+msgctxt "female"
+msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 
-#: .\__translations\__translations.py:163
+#: .\__translations\__translations.py:166
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+
+#: .\__translations\__translations.py:167
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -1154,113 +1169,113 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 
-#: .\__translations\__translations.py:165
-msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:166
-msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:167
-msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
 #: .\__translations\__translations.py:169
 msgctxt "female"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:177
 msgctxt "female"
-msgid "You've cancelled your friend request."
+msgid "You already are friends with this user."
 msgstr ""
 
 #: .\__translations\__translations.py:178
 msgctxt "male"
-msgid "You've cancelled your friend request."
+msgid "You already are friends with this user."
 msgstr ""
 
 #: .\__translations\__translations.py:179
 msgctxt "other"
-msgid "You've cancelled your friend request."
+msgid "You already are friends with this user."
 msgstr ""
 
 #: .\__translations\__translations.py:181
 msgctxt "female"
-msgid "You have removed this user from friends."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:182
 msgctxt "male"
-msgid "You have removed this user from friends."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:183
 msgctxt "other"
-msgid "You have removed this user from friends."
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:185
-#, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}!"
+msgid "You have removed this user from friends."
 msgstr ""
 
 #: .\__translations\__translations.py:186
-#, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
+msgid "You have removed this user from friends."
 msgstr ""
 
 #: .\__translations\__translations.py:187
+msgctxt "other"
+msgid "You have removed this user from friends."
+msgstr ""
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr ""
+
+#: .\__translations\__translations.py:190
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr ""
+
+#: .\__translations\__translations.py:191
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr ""
 
-#: .\__translations\__translations.py:189
+#: .\__translations\__translations.py:193
 msgctxt "female"
 msgid "Friends"
-msgstr "חברות"
+msgstr ""
 
-#: .\__translations\__translations.py:190
+#: .\__translations\__translations.py:194
 msgctxt "male"
 msgid "Friends"
-msgstr "חברים"
+msgstr ""
 
-#: .\__translations\__translations.py:191
+#: .\__translations\__translations.py:195
 msgctxt "other"
 msgid "Friends"
-msgstr "חברים/ות"
+msgstr ""
 
 #: .\accounts\forms.py:94
 msgid "Your email"
@@ -1325,204 +1340,219 @@ msgstr ""
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:94 .\messages\models.py:88
+#: .\accounts\models.py:82
+msgid "Special username"
+msgstr ""
+
+#: .\accounts\models.py:95 .\messages\models.py:88
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:95
+#: .\accounts\models.py:96
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:122
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:132
-msgid "name"
-msgstr ""
-
-#: .\accounts\models.py:143
-msgid "description"
-msgstr ""
-
-#: .\accounts\models.py:160
+#: .\accounts\models.py:126
 msgid "Username is required."
 msgstr ""
 
-#: .\accounts\models.py:178
+#: .\accounts\models.py:138
+msgid "name"
+msgstr ""
+
+#: .\accounts\models.py:149
+msgid "description"
+msgstr ""
+
+#: .\accounts\models.py:184
 msgid "Only me"
 msgstr ""
 
-#: .\accounts\models.py:179
+#: .\accounts\models.py:185
 msgid "Me and my friends"
 msgstr ""
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:187
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\models.py:212
+#: .\accounts\models.py:218
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:213
+#: .\accounts\models.py:219
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:214
+#: .\accounts\models.py:220
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:231 .\accounts\models.py:246 .\accounts\models.py:266
+#: .\accounts\models.py:237 .\accounts\models.py:252 .\accounts\models.py:273
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:238
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:239
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:240
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:247
+#: .\accounts\models.py:253
 msgid "No"
 msgstr ""
 
-#: .\accounts\models.py:248
+#: .\accounts\models.py:254
 msgid "Sometimes"
 msgstr ""
 
-#: .\accounts\models.py:249
+#: .\accounts\models.py:255
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:267
+#: .\accounts\models.py:274
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:268
+#: .\accounts\models.py:275
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:276
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:277
 msgid "In a relationship"
 msgstr ""
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:278
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:279
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:273
+#: .\accounts\models.py:280
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:274
+#: .\accounts\models.py:281
+msgid "Engaged"
+msgstr ""
+
+#: .\accounts\models.py:282
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:291
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:292
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:332
+#: .\accounts\models.py:341
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:344
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:337
+#: .\accounts\models.py:346
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:347
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:339
+#: .\accounts\models.py:348
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:340
+#: .\accounts\models.py:349
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:341
-msgid "marital status"
+#: .\accounts\models.py:350
+msgid "relationship status"
 msgstr ""
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:352
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:347
-msgid "who can view my birth month and day"
+#: .\accounts\models.py:356
+msgid "Who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:348
-msgid "who can view my birth year"
+#: .\accounts\models.py:357
+msgid "Who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:349
-msgid "on new messages"
+#: .\accounts\models.py:358
+msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:466 .\accounts\models.py:602 .\accounts\models.py:678
-#: .\blocks\models.py:11
+#: .\accounts\models.py:475 .\accounts\models.py:622 .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:467
+#: .\accounts\models.py:476
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:603
+#: .\accounts\models.py:488
+msgid "Superuser must be equal to staff."
+msgstr ""
+
+#: .\accounts\models.py:623
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:604
+#: .\accounts\models.py:624
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:605
+#: .\accounts\models.py:625
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:606
+#: .\accounts\models.py:626
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:607
+#: .\accounts\models.py:627
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:628
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:639
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:679
+#: .\accounts\models.py:698
+msgid "User"
+msgstr ""
+
+#: .\accounts\models.py:699
 msgid "last visit"
 msgstr ""
 
@@ -1738,19 +1768,19 @@ msgid "feedbacks"
 msgstr ""
 
 #: .\friends\views.py:109
-msgid "Friend request sent."
+msgid "Friendship request sent."
 msgstr ""
 
 #: .\friends\views.py:120
-msgid "No friend request."
+msgid "No friendship request."
 msgstr ""
 
 #: .\friends\views.py:150
-msgid "Friend request accepted."
+msgid "Friendship request accepted."
 msgstr ""
 
 #: .\friends\views.py:165
-msgid "Friend request rejected."
+msgid "Friendship request rejected."
 msgstr ""
 
 #: .\messages\apps.py:7 .\messages\models.py:79
@@ -2241,7 +2271,7 @@ msgid "Report this photo"
 msgstr ""
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
-msgid "Cancel Friend Request"
+msgid "Cancel Friendship Request"
 msgstr ""
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
@@ -2253,26 +2283,26 @@ msgid "Send Message"
 msgstr ""
 
 #: .\templates\profiles\user_base.html:27
-msgid "Friend request sent"
+msgid "Friendship request sent"
 msgstr ""
 
 #: .\templates\profiles\user_base.html:30
 msgid "Your friend"
 msgstr ""
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "This user doesn't match your profile, "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "but you can visit his/her Speedy Net profile. "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "View "
 msgstr ""
 
-#: .\templates\profiles\user_base.html:57
+#: .\templates\profiles\user_base.html:58
 msgid "user's profile on Speedy Net."
 msgstr ""
 

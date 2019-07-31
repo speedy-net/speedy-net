@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 13:38+0300\n"
+"POT-Creation-Date: 2019-07-31 12:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,143 +32,242 @@ msgstr ""
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Add more options"
 msgstr ""
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+msgid "Add more options"
 msgstr ""
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
+msgid "Add more options"
+msgstr ""
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
 
-#: .\__translations\__translations.html:18
-msgctxt "female"
-msgid "Match Settings"
-msgstr ""
-
 #: .\__translations\__translations.html:19
 msgctxt "male"
-msgid "Match Settings"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
-msgid "Match Settings"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
-msgid "Like"
+msgid "Match Settings"
 msgstr ""
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
-msgid "Unlike"
+msgid "Like"
 msgstr ""
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
-msgid "Your Matches"
+msgid "Unlike"
 msgstr ""
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
-msgid "Friends"
+msgid "Your Matches"
 msgstr ""
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:40
 msgctxt "other"
-msgid "Your Friends"
+msgid "Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
-msgid "You don't have any friends yet."
+msgid "Your Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
-msgid "You don't have any friends yet."
+msgid "Your Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
+msgid "Your Friends"
+msgstr ""
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
 msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr ""
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid "Add profile picture"
+msgstr ""
+
+#: .\__translations\__translations.py:10
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:11
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:12
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:14
+#: .\templates\accounts\edit_profile\activate.html:99
+msgctxt "female"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:15
+#: .\templates\accounts\edit_profile\activate.html:105
+msgctxt "male"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:16
+#: .\templates\accounts\edit_profile\activate.html:112
+msgctxt "other"
+msgid "My ideal match"
+msgstr ""
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:100
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:106
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:20
+#: .\templates\accounts\edit_profile\activate.html:113
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:101
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:107
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr ""
+
+#: .\__translations\__translations.py:24
+#: .\templates\accounts\edit_profile\activate.html:114
+msgctxt "other"
+msgid "Maximal age to match"
 msgstr ""
 
 #: .\accounts\apps.py:7
@@ -188,11 +287,15 @@ msgid "My smoking status"
 msgstr ""
 
 #: .\accounts\forms.py:61
-msgid "My marital status"
+msgid "My relationship status"
 msgstr ""
 
 #: .\accounts\forms.py:63
 msgid "City or locality"
+msgstr ""
+
+#: .\accounts\forms.py:126 .\accounts\models.py:79
+msgid "Gender to match"
 msgstr ""
 
 #: .\accounts\models.py:38
@@ -200,7 +303,7 @@ msgid "0 hearts"
 msgstr ""
 
 #: .\accounts\models.py:39
-msgid "1 hearts"
+msgid "one heart"
 msgstr ""
 
 #: .\accounts\models.py:40
@@ -220,19 +323,19 @@ msgid "5 hearts"
 msgstr ""
 
 #: .\accounts\models.py:63
-msgid "user"
+msgid "User"
 msgstr ""
 
 #: .\accounts\models.py:64
-msgid "on new likes"
+msgid "On new likes"
 msgstr ""
 
 #: .\accounts\models.py:65
-msgid "active languages"
+msgid "Active languages"
 msgstr ""
 
-#: .\accounts\models.py:66
-msgid "height"
+#: .\accounts\models.py:66 .\templates\profiles\user_extra_info_widget.html:29
+msgid "Height"
 msgstr ""
 
 #: .\accounts\models.py:66
@@ -256,28 +359,24 @@ msgstr ""
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:79
-msgid "Gender"
-msgstr ""
-
 #: .\accounts\models.py:80
-msgid "minimal age to match"
+msgid "Minimal age to match"
 msgstr ""
 
 #: .\accounts\models.py:81
-msgid "maximal age to match"
+msgid "Maximal age to match"
 msgstr ""
 
 #: .\accounts\models.py:82
-msgid "diet match"
+msgid "Diet match"
 msgstr ""
 
 #: .\accounts\models.py:83
-msgid "smoking status match"
+msgid "Smoking status match"
 msgstr ""
 
 #: .\accounts\models.py:84
-msgid "marital status match"
+msgid "Relationship status match"
 msgstr ""
 
 #: .\accounts\models.py:116
@@ -317,7 +416,7 @@ msgid "Your smoking status is required."
 msgstr ""
 
 #: .\accounts\validators.py:84
-msgid "Your marital status is required."
+msgid "Your relationship status is required."
 msgstr ""
 
 #: .\accounts\validators.py:89
@@ -505,7 +604,16 @@ msgid "Speedy Paz Technologies Ltd."
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:7
+msgid "Registration Step"
+msgstr ""
+
+#: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
+msgstr ""
+
+#: .\templates\accounts\edit_profile\activate.html:13
+#, python-format
+msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:33
@@ -524,18 +632,18 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\base_site.html:23
+#: .\templates\base_site.html:24
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
 msgstr ""
 
-#: .\templates\base_site.html:29 .\templates\likes\like_list.html:6
+#: .\templates\base_site.html:30 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:12
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr ""
 
-#: .\templates\base_site.html:36 .\templates\base_site.html:42
+#: .\templates\base_site.html:37 .\templates\base_site.html:43
 #: .\templates\matches\settings\base.html:9
 #: .\templates\matches\settings\base.html:20
 msgid "Match Settings"
@@ -558,7 +666,7 @@ msgid "Your Matches"
 msgstr ""
 
 #: .\templates\matches\match_list.html:28
-msgid "Search for your matches"
+msgid "Update matches"
 msgstr ""
 
 #: .\templates\matches\match_list.html:39
@@ -620,10 +728,6 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: .\templates\profiles\user_extra_info_widget.html:29
-msgid "Height"
-msgstr ""
-
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Children"
 msgstr ""
@@ -637,7 +741,7 @@ msgid "Smoking"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:54
-msgid "Marital Status"
+msgid "Relationship Status"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:59
@@ -655,6 +759,3 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr ""
-
-#~ msgid "ל"
-#~ msgstr " "

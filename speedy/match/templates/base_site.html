@@ -5,6 +5,7 @@
 {% load staticfiles %}
 
 {% block extra_css %}
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}">
 {% endblock %}
 
@@ -63,6 +64,7 @@
 {% endblock %}
 
 {% block extra_js %}
+    {{ block.super }}
     <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
 {% endblock %}
 

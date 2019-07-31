@@ -4,13 +4,13 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% trans 'Welcome' %} / {{ block.super }}{% endblock %}
+{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' %}{% endif %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-md-10 text-center">
             <div class="page-header">
-                <h1 style="visibility: hidden">X</h1>
+                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
             </div>
             {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">
@@ -71,3 +71,61 @@
         </div>
     </div>
 {% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script>
+        function update_gender_to_match() {
+            if ($('input[type="checkbox"][name="gender_to_match"]').length === 3) {
+                var genders = [];
+                genders[1] = 'female';
+                genders[2] = 'male';
+                genders[3] = 'other';
+                var genders_selected = [];
+                var gender_selected;
+
+                for (var gender = 1; gender <= 3; gender++) {
+                    if ($('input[type="checkbox"][name="gender_to_match"][value="' + gender + '"]').is(":checked")) {
+                        genders_selected.push(genders[gender]);
+                    }
+                }
+                if (genders_selected.length === 1) {
+                    gender_selected = genders_selected[0];
+                } else {
+                    gender_selected = 'other';
+                }
+                switch (gender_selected) {
+                    case 'female':
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "female" %}:');
+                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "female" %}:');
+                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "female" %}:');
+                        break;
+
+                    case 'male':
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "male" %}:');
+                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "male" %}:');
+                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "male" %}:');
+                        break;
+
+                    case 'other':
+                    default:
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "other" %}:');
+                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "other" %}:');
+                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "other" %}:');
+                        break;
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            if ($('input[type="checkbox"][name="gender_to_match"]').length === 3) {
+                update_gender_to_match();
+
+                $('input[type="checkbox"][name="gender_to_match"]').on("change", function () {
+                    update_gender_to_match();
+                });
+            }
+        });
+    </script>
+{% endblock %}
+

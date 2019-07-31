@@ -28,7 +28,7 @@ class UserLike(TimeStampedModel):
         # Ensure users can't like themselves.
         if (self.from_user == self.to_user):
             raise ValidationError(_("Users cannot like themselves."))
-        super().save(*args, **kwargs)
+        return super().save(*args, **kwargs)
 
 
 @receiver(models.signals.post_save, sender=UserLike)

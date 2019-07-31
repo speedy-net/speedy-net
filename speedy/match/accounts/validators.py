@@ -26,8 +26,8 @@ def smoking_status_is_valid(smoking_status):
     return ((smoking_status is not None) and (int(smoking_status) in User.SMOKING_STATUS_VALID_VALUES))
 
 
-def marital_status_is_valid(marital_status):
-    return ((marital_status is not None) and (int(marital_status) in User.MARITAL_STATUS_VALID_VALUES))
+def relationship_status_is_valid(relationship_status):
+    return ((relationship_status is not None) and (int(relationship_status) in User.RELATIONSHIP_STATUS_VALID_VALUES))
 
 
 def rank_is_valid(rank):
@@ -79,9 +79,9 @@ def validate_smoking_status(smoking_status):
         raise ValidationError(_("Your smoking status is required."))
 
 
-def validate_marital_status(marital_status):
-    if (not (marital_status_is_valid(marital_status=marital_status))):
-        raise ValidationError(_("Your marital status is required."))
+def validate_relationship_status(relationship_status):
+    if (not (relationship_status_is_valid(relationship_status=relationship_status))):
+        raise ValidationError(_("Your relationship status is required."))
 
 
 def validate_gender_to_match(gender_to_match):
@@ -121,11 +121,11 @@ def validate_smoking_status_match(smoking_status_match):
         raise ValidationError(_("At least one smoking status match option should be 5 hearts."))
 
 
-def validate_marital_status_match(marital_status_match):
-    if (not ((set(marital_status_match.keys()) == {str(marital_status) for marital_status in User.MARITAL_STATUS_VALID_VALUES}) and (all([((str(marital_status) in marital_status_match) and (rank_is_valid(rank=marital_status_match[str(marital_status)]))) for marital_status in User.MARITAL_STATUS_VALID_VALUES])))):
+def validate_relationship_status_match(relationship_status_match):
+    if (not ((set(relationship_status_match.keys()) == {str(relationship_status) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}) and (all([((str(relationship_status) in relationship_status_match) and (rank_is_valid(rank=relationship_status_match[str(relationship_status)]))) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES])))):
         # This may be due to values added later.
         raise ValidationError(_("Please select marital status match."))
-    if (not (max([marital_status_match[str(marital_status)] for marital_status in User.MARITAL_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
+    if (not (max([relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
         raise ValidationError(_("At least one marital status match option should be 5 hearts."))
 
 

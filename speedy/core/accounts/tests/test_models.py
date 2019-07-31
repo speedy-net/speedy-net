@@ -175,7 +175,7 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
     @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
     def test_slug_min_length_fail_username_min_length_ok(self):
         # ~~~~ TODO: remove all the following lines.
-        self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
+        self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
 
         # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MIN_SLUG_LENGTH)####
         # print("test_slug_min_length_fail_username_min_length_ok: django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH", django_settings.ENTITY_SETTINGS.MAX_SLUG_LENGTH)####
@@ -365,9 +365,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(User.SMOKING_STATUS_UNKNOWN + 1, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)))
             self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(1, 3 + 1)))
 
-        def test_marital_status_valid_values(self):
-            self.assertListEqual(list1=User.MARITAL_STATUS_VALID_VALUES, list2=list(range(User.MARITAL_STATUS_UNKNOWN + 1, User.MARITAL_STATUS_MAX_VALUE_PLUS_ONE)))
-            self.assertListEqual(list1=User.MARITAL_STATUS_VALID_VALUES, list2=list(range(1, 8 + 1)))
+        def test_relationship_status_valid_values(self):
+            self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(User.RELATIONSHIP_STATUS_UNKNOWN + 1, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE)))
+            self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(1, 9 + 1)))
 
         def test_cannot_create_user_without_all_the_required_fields(self):
             user = User()
@@ -444,6 +444,45 @@ if (django_settings.LOGIN_ENABLED):
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=4))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
+        def test_admin_is_invalid_username(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(slug='admin')
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
+            # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+
+        def test_can_create_user_admin_with_special_username(self):
+            user = DefaultUserFactory(slug='admin', special_username=True)
+            user.save_user_and_profile()
+
+        def test_can_create_user_mail_with_special_username(self):
+            user = DefaultUserFactory(slug='mail', special_username=True)
+            user.save_user_and_profile()
+
+        def test_can_create_user_webmaster_with_special_username(self):
+            user = DefaultUserFactory(slug='webmaster', special_username=True)
+            user.save_user_and_profile()
+
+        def test_cannot_create_user_without_a_slug_with_special_username(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(slug='', special_username=True)
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
+
+        def test_cannot_create_user_with_a_username_and_different_slug_with_special_username(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(slug='webmaster', username='webmaster1', special_username=True)
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
+
+        def test_cannot_create_two_users_with_the_same_username_with_special_username(self):
+            user_1 = DefaultUserFactory(slug='admin', special_username=True)
+            user_1.save_user_and_profile()
+            with self.assertRaises(ValidationError) as cm:
+                user_2 = DefaultUserFactory(slug='adm-in', special_username=True)
+                user_2.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
+
         def test_cannot_create_user_with_existing_username_1(self):
             entity = Entity(slug='zzzzzz')
             entity.save()
@@ -507,7 +546,7 @@ if (django_settings.LOGIN_ENABLED):
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
         def test_slug_min_length_fail_username_min_length_ok(self):
             # ~~~~ TODO: remove all the following lines.
-            self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
+            self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
 
             # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
             # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
@@ -762,8 +801,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -810,8 +849,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -857,8 +896,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -904,8 +943,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -951,8 +990,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -984,7 +1023,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1009,7 +1048,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1038,7 +1077,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1067,7 +1106,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
-            user = User.objects.get(pk=user.pk) # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,

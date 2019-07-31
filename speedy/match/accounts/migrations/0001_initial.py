@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('max_age_match', models.SmallIntegerField(default=180, verbose_name='maximal age to match')),
                 ('diet_match', django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.diet_match_default, verbose_name='diet match')),
                 ('smoking_status_match', django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.smoking_status_match_default, verbose_name='smoking status match')),
-                ('marital_status_match', django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.marital_status_match_default, verbose_name='marital status match')),
+                ('marital_status_match', django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.relationship_status_match_default, verbose_name='marital status match')),
                 ('activation_step_en', models.PositiveSmallIntegerField(default=2)),
                 ('activation_step_he', models.PositiveSmallIntegerField(default=2)),
             ],

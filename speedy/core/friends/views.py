@@ -106,7 +106,7 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
                 message = _(message)
             messages.error(request=self.request, message=message)
             return redirect(to=self.user)
-        messages.success(request=request, message=_('Friend request sent.'))
+        messages.success(request=request, message=_('Friendship request sent.'))
         return redirect(to=self.user)
 
 
@@ -117,10 +117,10 @@ class CancelFriendshipRequestView(UserMixin, PermissionRequiredMixin, generic.Vi
         try:
             friendship_request = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
         except FriendshipRequest.DoesNotExist:
-            messages.error(request=request, message=_('No friend request.'))
+            messages.error(request=request, message=_('No friendship request.'))
             return redirect(to=self.user)
         friendship_request.cancel()
-        messages.success(request=request, message=pgettext_lazy(context=request.user.get_gender(), message="You've cancelled your friend request."))
+        messages.success(request=request, message=pgettext_lazy(context=request.user.get_gender(), message="You've cancelled your friendship request."))
         return redirect(to=self.user)
 
 
@@ -147,7 +147,7 @@ class AcceptRejectFriendshipRequestViewBase(UserMixin, PermissionRequiredMixin, 
 
 class AcceptFriendshipRequestView(LimitMaxFriendsMixin, AcceptRejectFriendshipRequestViewBase):
     action = 'accept'
-    message = _('Friend request accepted.')
+    message = _('Friendship request accepted.')
 
     def post(self, request, *args, **kwargs):
         friendship_request = self.get_friendship_request()
@@ -162,7 +162,7 @@ class AcceptFriendshipRequestView(LimitMaxFriendsMixin, AcceptRejectFriendshipRe
 
 class RejectFriendshipRequestView(AcceptRejectFriendshipRequestViewBase):
     action = 'cancel'
-    message = _('Friend request rejected.')
+    message = _('Friendship request rejected.')
 
 
 class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):

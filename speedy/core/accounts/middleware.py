@@ -25,8 +25,8 @@ class SiteProfileMiddleware(MiddlewareMixin):
                             request.user.speedy_match_profile.validate_profile_and_activate()
                             return redirect(to='accounts:edit_profile_emails')
                         else:
-                            return redirect(to='accounts:activate', step=request.user.speedy_match_profile.activation_step)
-                    else:
-                        return redirect(to='accounts:activate')
+                            if (request.user.is_active):
+                                return redirect(to='accounts:activate', step=request.user.speedy_match_profile.activation_step)
+                    return redirect(to='accounts:activate')
 
 

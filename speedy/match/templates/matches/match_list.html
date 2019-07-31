@@ -25,7 +25,7 @@
             {{ form.errors }}
             <div class="row justify-content-center">
                 <div class="col-12 col-md-7">
-                    <strong>{% trans 'Search for your matches' context user.get_gender %}</strong>
+                    <strong>{% trans 'Update matches' context user.get_gender %}</strong>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -64,7 +64,7 @@
             </div>
             <div class="text-center">
                 <a href="{% url 'matches:edit_match_settings' %}" class="btn btn-default">
-                    {% trans 'Add more options' %}
+                    {% trans 'Add more options' context user.get_gender %}
                 </a>
             </div>
             {{ field.label_tag }}

@@ -79,6 +79,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
+    special_username = models.BooleanField(verbose_name=_('Special username'), default=False)
 
     objects = EntityManager()
 
@@ -113,11 +114,16 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     def validate_slug(self):
         self.validate_username_for_slug()
+        self.validate_username_required()
         self.validate_username_unique()
 
     def validate_username_for_slug(self):
         if (not (normalize_username(username=self.slug) == self.username)):
             raise ValidationError(_('Slug does not parse to username.'))
+
+    def validate_username_required(self):
+        if (not (len(self.username) > 0)):
+            raise ValidationError(_('Username is required.'))
 
     def validate_username_unique(self):
         username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
@@ -153,11 +159,11 @@ class ReservedUsername(Entity):
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
+        # ~~~~ TODO: fix models! Exceptions should be 'slug' or 'username' and not '__all__'.
         self.normalize_slug_and_username()
         self.validate_username_for_slug()
+        self.validate_username_required()
         self.validate_username_unique()
-        if (not (len(self.username) > 0)):
-            raise ValidationError(_('Username is required.'))
 
         if exclude is None:
             exclude = []
@@ -251,30 +257,32 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
     SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
 
-    MARITAL_STATUS_UNKNOWN = 0
-    MARITAL_STATUS_SINGLE = 1
-    MARITAL_STATUS_DIVORCED = 2
-    MARITAL_STATUS_WIDOWED = 3
-    MARITAL_STATUS_IN_RELATIONSHIP = 4
-    MARITAL_STATUS_IN_OPEN_RELATIONSHIP = 5
-    MARITAL_STATUS_COMPLICATED = 6
-    MARITAL_STATUS_SEPARATED = 7
-    MARITAL_STATUS_MARRIED = 8
-    MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
+    RELATIONSHIP_STATUS_UNKNOWN = 0
+    RELATIONSHIP_STATUS_SINGLE = 1
+    RELATIONSHIP_STATUS_DIVORCED = 2
+    RELATIONSHIP_STATUS_WIDOWED = 3
+    RELATIONSHIP_STATUS_IN_RELATIONSHIP = 4
+    RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP = 5
+    RELATIONSHIP_STATUS_COMPLICATED = 6
+    RELATIONSHIP_STATUS_SEPARATED = 7
+    RELATIONSHIP_STATUS_ENGAGED = 8
+    RELATIONSHIP_STATUS_MARRIED = 9
+    RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE = 10
 
-    MARITAL_STATUS_CHOICES_WITH_DEFAULT = (
-        (MARITAL_STATUS_UNKNOWN, _("Unknown")),
-        (MARITAL_STATUS_SINGLE, _("Single")),
-        (MARITAL_STATUS_DIVORCED, _("Divorced")),
-        (MARITAL_STATUS_WIDOWED, _("Widowed")),
-        (MARITAL_STATUS_IN_RELATIONSHIP, _("In a relationship")),
-        (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
-        (MARITAL_STATUS_COMPLICATED, _("It's complicated")),
-        (MARITAL_STATUS_SEPARATED, _("Separated")),
-        (MARITAL_STATUS_MARRIED, _("Married")),
+    RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT = (
+        (RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")),
+        (RELATIONSHIP_STATUS_SINGLE, _("Single")),
+        (RELATIONSHIP_STATUS_DIVORCED, _("Divorced")),
+        (RELATIONSHIP_STATUS_WIDOWED, _("Widowed")),
+        (RELATIONSHIP_STATUS_IN_RELATIONSHIP, _("In a relationship")),
+        (RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
+        (RELATIONSHIP_STATUS_COMPLICATED, _("It's complicated")),
+        (RELATIONSHIP_STATUS_SEPARATED, _("Separated")),
+        (RELATIONSHIP_STATUS_ENGAGED, _("Engaged")),
+        (RELATIONSHIP_STATUS_MARRIED, _("Married")),
     )
-    MARITAL_STATUS_VALID_CHOICES = MARITAL_STATUS_CHOICES_WITH_DEFAULT[1:]
-    MARITAL_STATUS_VALID_VALUES = [choice[0] for choice in MARITAL_STATUS_VALID_CHOICES]
+    RELATIONSHIP_STATUS_VALID_CHOICES = RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT[1:]
+    RELATIONSHIP_STATUS_VALID_VALUES = [choice[0] for choice in RELATIONSHIP_STATUS_VALID_CHOICES]
 
     NOTIFICATIONS_OFF = 0
     NOTIFICATIONS_ON = 1
@@ -315,17 +323,18 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         )
 
     @staticmethod
-    def marital_status_choices(gender):
+    def relationship_status_choices(gender):
         return (
-            # (__class__.MARITAL_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.MARITAL_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
-            (__class__.MARITAL_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
-            (__class__.MARITAL_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
-            (__class__.MARITAL_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relationship")),
-            (__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
-            (__class__.MARITAL_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
-            (__class__.MARITAL_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
-            (__class__.MARITAL_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
+            # (__class__.RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.RELATIONSHIP_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
+            (__class__.RELATIONSHIP_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
+            (__class__.RELATIONSHIP_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
+            (__class__.RELATIONSHIP_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relationship")),
+            (__class__.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
+            (__class__.RELATIONSHIP_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
+            (__class__.RELATIONSHIP_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
+            (__class__.RELATIONSHIP_STATUS_ENGAGED, pgettext_lazy(context=gender, message="Engaged")),
+            (__class__.RELATIONSHIP_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
         )
 
     first_name = TranslatedField(
@@ -338,15 +347,15 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
     smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
+    relationship_status = models.SmallIntegerField(verbose_name=_('relationship status'), choices=RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT, default=RELATIONSHIP_STATUS_UNKNOWN)
     city = TranslatedField(
         field=models.CharField(verbose_name=_('city or locality'), max_length=120, blank=True, null=True),
     )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    access_dob_day_month = UserAccessField(verbose_name=_('who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
-    access_dob_year = UserAccessField(verbose_name=_('who can view my birth year'), default=UserAccessField.ACCESS_ME)
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('on new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
+    access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
+    access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
+    notify_on_message = models.PositiveIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
 
     objects = UserManager()
 
@@ -473,6 +482,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return '<User {} - {}/{}>'.format(self.id, self.name, self.slug)
         # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
+    def save(self, *args, **kwargs):
+        # Superuser must be equal to staff.
+        if (not (self.is_superuser == self.is_staff)):
+            raise ValidationError(_("Superuser must be equal to staff."))
+        return super().save(*args, **kwargs)
+
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
@@ -491,8 +506,13 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if exclude is None:
             exclude = []
 
-        # Admin's username can be less than 6 characters (admin).
-        if (self.is_superuser):
+        # If special username is true, don't validate username.
+        if (self.special_username):
+            # ~~~~ TODO: fix models! Exceptions should be 'slug' and not '__all__'.
+            self.normalize_slug_and_username()
+            self.validate_username_for_slug()
+            self.validate_username_required()
+            self.validate_username_unique()
             exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)
@@ -590,8 +610,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_smoking_status_choices(self):
         return self.__class__.smoking_status_choices(gender=self.get_gender())
 
-    def get_marital_status_choices(self):
-        return self.__class__.marital_status_choices(gender=self.get_gender())
+    def get_relationship_status_choices(self):
+        return self.__class__.relationship_status_choices(gender=self.get_gender())
 
 
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
@@ -675,7 +695,7 @@ class SiteProfileBase(TimeStampedModel):
     SiteProfile contains site-specific user django_settings.
     """
 
-    user = models.OneToOneField(to=User, verbose_name=_('user'), primary_key=True, on_delete=models.CASCADE, related_name='+')
+    user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 

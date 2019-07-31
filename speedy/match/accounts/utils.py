@@ -45,8 +45,8 @@ def validate_field(field_name, user):
         validators.validate_diet(diet=user.diet)
     elif (field_name in ['smoking_status']):
         validators.validate_smoking_status(smoking_status=user.smoking_status)
-    elif (field_name in ['marital_status']):
-        validators.validate_marital_status(marital_status=user.marital_status)
+    elif (field_name in ['relationship_status']):
+        validators.validate_relationship_status(relationship_status=user.relationship_status)
     elif (field_name in ['gender_to_match']):
         validators.validate_gender_to_match(gender_to_match=user.speedy_match_profile.gender_to_match)
     elif (field_name in ['min_age_match']):
@@ -59,8 +59,8 @@ def validate_field(field_name, user):
         validators.validate_diet_match(diet_match=user.speedy_match_profile.diet_match)
     elif (field_name in ['smoking_status_match']):
         validators.validate_smoking_status_match(smoking_status_match=user.speedy_match_profile.smoking_status_match)
-    elif (field_name in ['marital_status_match']):
-        validators.validate_marital_status_match(marital_status_match=user.speedy_match_profile.marital_status_match)
+    elif (field_name in ['relationship_status_match']):
+        validators.validate_relationship_status_match(relationship_status_match=user.speedy_match_profile.relationship_status_match)
     else:
         raise Exception("Unexpected: field_name={}".format(field_name))
 

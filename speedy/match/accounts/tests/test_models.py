@@ -82,13 +82,13 @@ if (django_settings.LOGIN_ENABLED):
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
             return test_settings
 
-        def get_marital_status_match_default_test_settings(self):
+        def get_relationship_status_match_default_test_settings(self):
             test_settings = {
-                "field_name": 'marital_status_match',
+                "field_name": 'relationship_status_match',
                 "expected_step": 9,
-                "expected_error_message_keys_and_ranks_invalid": self._please_select_marital_status_match_error_message,
+                "expected_error_message_keys_and_ranks_invalid": self._please_select_relationship_status_match_error_message,
                 # "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"], # ~~~~ TODO
-                "expected_error_message_max_rank_invalid": self._at_least_one_marital_status_match_option_should_be_5_hearts_error_message,
+                "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
                 # "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
@@ -100,14 +100,14 @@ if (django_settings.LOGIN_ENABLED):
                 default_value = SpeedyMatchSiteProfile.diet_match_default()
             elif (field_name in ['smoking_status_match']):
                 default_value = SpeedyMatchSiteProfile.smoking_status_match_default()
-            elif (field_name in ['marital_status_match']):
-                default_value = SpeedyMatchSiteProfile.marital_status_match_default()
+            elif (field_name in ['relationship_status_match']):
+                default_value = SpeedyMatchSiteProfile.relationship_status_match_default()
             else:
                 raise Exception("Unexpected: field_name={}".format(field_name))
             return default_value
 
         def validate_all_user_values(self, user):
-            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'marital_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'marital_status_match']]
+            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
             _all_fields = []
             for step in utils.get_steps_range():
                 fields = utils.get_step_fields_to_validate(step=step)
@@ -226,7 +226,7 @@ if (django_settings.LOGIN_ENABLED):
             expected_test_settings_keys = {"field_name", "test_invalid_values_to_assign", "test_invalid_values_to_save", "expected_step", "expected_counts_tuple"}
             if (field_name in ['min_max_age_to_match']):
                 expected_test_settings_keys.update({"test_invalid_ages", "expected_error_message_min_age_match_and_max_age_match_valid", "expected_error_message_min_age_match_invalid", "expected_error_message_max_age_match_invalid", "expected_error_messages_min_age_match_and_max_age_match_valid", "expected_error_messages_min_age_match_and_max_age_match_invalid", "expected_min_max_age_to_match_error_messages_counts_tuple"})
-            elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                 expected_test_settings_keys.update({"test_invalid_keys", "test_invalid_ranks", "expected_error_message_keys_and_ranks_invalid", "expected_error_messages_keys_and_ranks_invalid", "expected_error_message_max_rank_invalid", "expected_error_messages_max_rank_invalid", "expected_keys_and_ranks_error_messages_counts_tuple"})
             else:
                 expected_test_settings_keys.update({"expected_error_message", "expected_error_messages"})
@@ -262,11 +262,11 @@ if (django_settings.LOGIN_ENABLED):
                 valid_values = User.SMOKING_STATUS_VALID_VALUES
                 self.assertEqual(first=valid_values_to_save, second=[User.SMOKING_STATUS_UNKNOWN] + valid_values)
                 self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
-            elif (field_name in ['marital_status']):
-                values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.MARITAL_STATUS_MAX_VALUE_PLUS_ONE + 10))
-                valid_values_to_save = [choice[0] for choice in User.MARITAL_STATUS_CHOICES_WITH_DEFAULT]
-                valid_values = User.MARITAL_STATUS_VALID_VALUES
-                self.assertEqual(first=valid_values_to_save, second=[User.MARITAL_STATUS_UNKNOWN] + valid_values)
+            elif (field_name in ['relationship_status']):
+                values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE + 10))
+                valid_values_to_save = [choice[0] for choice in User.RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT]
+                valid_values = User.RELATIONSHIP_STATUS_VALID_VALUES
+                self.assertEqual(first=valid_values_to_save, second=[User.RELATIONSHIP_STATUS_UNKNOWN] + valid_values)
                 self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
             elif (field_name in ['gender_to_match']):
                 range_to_test = [User.GENDER_UNKNOWN] + User.GENDER_VALID_VALUES + [User.GENDER_MAX_VALUE_PLUS_ONE]
@@ -360,13 +360,13 @@ if (django_settings.LOGIN_ENABLED):
                     self.assertListEqual(list1=invalid_values, list2=[(value, 180 - value) for value in range(91, 180 + 1)])
                     self.assertEqual(first=invalid_values[0], second=(91, 89))
                     self.assertEqual(first=invalid_values[-1], second=(180, 0))
-            elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                 if (field_name in ['diet_match']):
                     all_keys = User.DIET_VALID_VALUES
                 elif (field_name in ['smoking_status_match']):
                     all_keys = User.SMOKING_STATUS_VALID_VALUES
-                elif (field_name in ['marital_status_match']):
-                    all_keys = User.MARITAL_STATUS_VALID_VALUES
+                elif (field_name in ['relationship_status_match']):
+                    all_keys = User.RELATIONSHIP_STATUS_VALID_VALUES
                 else:
                     raise Exception("Unexpected: field_name={}".format(field_name))
                 all_keys_with_invalid_keys = ["___"] + [all_keys[0] - 1] + all_keys + [all_keys[-1] + 1]
@@ -446,7 +446,7 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 self.assertEqual(first=len(valid_values_to_save), second=len(valid_values_to_assign))
                 self.assertListEqual(list1=valid_values_to_save, list2=valid_values_to_assign)
-            if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            if (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                 self.assertGreater(a=len(invalid_values_with_valid_ranks), b=0)
                 self.assert_list_2_contains_all_elements_in_list_1(list_1=invalid_values_with_valid_ranks, list_2=invalid_values)
             else:
@@ -497,8 +497,8 @@ if (django_settings.LOGIN_ENABLED):
                         user.diet = value_to_assign
                     elif (field_name in ['smoking_status']):
                         user.smoking_status = value_to_assign
-                    elif (field_name in ['marital_status']):
-                        user.marital_status = value_to_assign
+                    elif (field_name in ['relationship_status']):
+                        user.relationship_status = value_to_assign
                     elif (field_name in ['gender_to_match']):
                         user.speedy_match_profile.gender_to_match = value_to_assign
                     elif (field_name in ['min_age_match']):
@@ -512,19 +512,19 @@ if (django_settings.LOGIN_ENABLED):
                         user.speedy_match_profile.diet_match = value_to_assign
                     elif (field_name in ['smoking_status_match']):
                         user.speedy_match_profile.smoking_status_match = value_to_assign
-                    elif (field_name in ['marital_status_match']):
-                        user.speedy_match_profile.marital_status_match = value_to_assign
+                    elif (field_name in ['relationship_status_match']):
+                        user.speedy_match_profile.relationship_status_match = value_to_assign
                     can_save_user_and_profile_set.add(can_save_user_and_profile)
                     if (not (can_save_user_and_profile)):
                         if (field_name in ['height']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True)
-                        elif (field_name in ['diet', 'smoking_status', 'marital_status', 'min_age_match', 'max_age_match']):
+                        elif (field_name in ['diet', 'smoking_status', 'relationship_status', 'min_age_match', 'max_age_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
                         elif (field_name in ['min_max_age_to_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name_list=['min_age_match', 'max_age_match'], value_to_test=value_to_test, null=False)
                         elif (field_name in ['gender_to_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_gender_to_match(user=user, field_name=field_name, value_to_test=value_to_test)
-                        elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+                        elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_jsonfield(user=user, field_name=field_name, value_to_test=value_to_test, blank=False, null=False)
                         else:
                             raise Exception("Unexpected: can_save_user_and_profile={}, value_to_test={}".format(can_save_user_and_profile, value_to_test))
@@ -555,7 +555,7 @@ if (django_settings.LOGIN_ENABLED):
                                         else:
                                             fields_and_error_messages.append((_field_name, "expected_error_message_{}_invalid".format(_field_name)))
                                     error_message_min_age_match_and_max_age_match_invalid_count += 1
-                            elif (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+                            elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                                 if (not (value_to_test in invalid_values_with_valid_ranks)):
                                     expected_error_messages_len = 1
                                     expected_error_messages_key = "expected_error_messages_keys_and_ranks_invalid"
@@ -617,7 +617,7 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 self.assertEqual(first=sum(min_max_age_to_match_error_messages_counts_tuple), second=0)
                 self.assertTupleEqual(tuple1=min_max_age_to_match_error_messages_counts_tuple, tuple2=(0, 0))
-            if (field_name in ['diet_match', 'smoking_status_match', 'marital_status_match']):
+            if (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                 self.assertEqual(first=sum(keys_and_ranks_error_messages_counts_tuple), second=validate_profile_and_activate_failures_count)
                 self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=test_settings["expected_keys_and_ranks_error_messages_counts_tuple"])
             else:
@@ -673,12 +673,12 @@ if (django_settings.LOGIN_ENABLED):
             self.assertSetEqual(set1={smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES}, set2={SpeedyMatchSiteProfile.RANK_5})
             self.assertListEqual(list1=[smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES], list2=[5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES])
 
-        def test_marital_status_match_default(self):
-            marital_status_match = SpeedyMatchSiteProfile.marital_status_match_default()
-            self.assertSetEqual(set1=set(marital_status_match.keys()), set2={str(marital_status) for marital_status in User.MARITAL_STATUS_VALID_VALUES})
-            self.assertSetEqual(set1={marital_status_match[key] for key in marital_status_match}, set2={SpeedyMatchSiteProfile.RANK_5})
-            self.assertSetEqual(set1={marital_status_match[str(marital_status)] for marital_status in User.MARITAL_STATUS_VALID_VALUES}, set2={SpeedyMatchSiteProfile.RANK_5})
-            self.assertListEqual(list1=[marital_status_match[str(marital_status)] for marital_status in User.MARITAL_STATUS_VALID_VALUES], list2=[5 for marital_status in User.MARITAL_STATUS_VALID_VALUES])
+        def test_relationship_status_match_default(self):
+            relationship_status_match = SpeedyMatchSiteProfile.relationship_status_match_default()
+            self.assertSetEqual(set1=set(relationship_status_match.keys()), set2={str(relationship_status) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
+            self.assertSetEqual(set1={relationship_status_match[key] for key in relationship_status_match}, set2={SpeedyMatchSiteProfile.RANK_5})
+            self.assertSetEqual(set1={relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}, set2={SpeedyMatchSiteProfile.RANK_5})
+            self.assertListEqual(list1=[relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES], list2=[5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES])
 
         def test_get_steps_range(self):
             self.assertEqual(first=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
@@ -747,7 +747,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=user.diet, container=User.DIET_VALID_VALUES)
             self.assertIn(member=user.speedy_match_profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
             self.assertIn(member=user.smoking_status, container=User.SMOKING_STATUS_VALID_VALUES)
-            self.assertIn(member=user.marital_status, container=User.MARITAL_STATUS_VALID_VALUES)
+            self.assertIn(member=user.relationship_status, container=User.RELATIONSHIP_STATUS_VALID_VALUES)
             self.assertIn(member=user.speedy_match_profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
             self.assertIn(member=user.speedy_match_profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
             self.assertEqual(first=user.speedy_match_profile.min_age_match, second=SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED)
@@ -871,15 +871,15 @@ if (django_settings.LOGIN_ENABLED):
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-        def test_validate_profile_and_activate_exception_on_marital_status(self):
+        def test_validate_profile_and_activate_exception_on_relationship_status(self):
             test_settings = {
-                "field_name": 'marital_status',
+                "field_name": 'relationship_status',
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": True,
                 "expected_step": 6,
-                "expected_error_message": self._your_marital_status_is_required_error_message,
-                # "expected_error_messages": ["['Your marital status is required.']"], # ~~~~ TODO
-                "expected_counts_tuple": (8, 1, 0, 26),
+                "expected_error_message": self._your_relationship_status_is_required_error_message,
+                # "expected_error_messages": ["['Your relationship status is required.']"], # ~~~~ TODO
+                "expected_counts_tuple": (9, 1, 0, 26),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -993,27 +993,27 @@ if (django_settings.LOGIN_ENABLED):
             })
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-        def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            test_settings = self.get_marital_status_match_default_test_settings()
+        def test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            test_settings = self.get_relationship_status_match_default_test_settings()
             test_settings.update({
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": True,
                 "test_invalid_keys": True,
                 "test_invalid_ranks": True,
-                "expected_counts_tuple": (81, 386, 0, 6),
-                "expected_keys_and_ranks_error_messages_counts_tuple": (221, 165),
+                "expected_counts_tuple": (91, 433, 0, 6),
+                "expected_keys_and_ranks_error_messages_counts_tuple": (248, 185),
             })
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-        def test_validate_profile_and_activate_exception_on_marital_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            test_settings = self.get_marital_status_match_default_test_settings()
+        def test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            test_settings = self.get_relationship_status_match_default_test_settings()
             test_settings.update({
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": False,
                 "test_invalid_keys": False,
                 "test_invalid_ranks": False,
-                "expected_counts_tuple": (81, 165, 0, 0),
-                "expected_keys_and_ranks_error_messages_counts_tuple": (0, 165),
+                "expected_counts_tuple": (91, 185, 0, 0),
+                "expected_keys_and_ranks_error_messages_counts_tuple": (0, 185),
             })
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -1071,8 +1071,8 @@ if (django_settings.LOGIN_ENABLED):
             super().test_validate_profile_and_activate_exception_on_smoking_status()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_marital_status(self):
-            super().test_validate_profile_and_activate_exception_on_marital_status()
+        def test_validate_profile_and_activate_exception_on_relationship_status(self):
+            super().test_validate_profile_and_activate_exception_on_relationship_status()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_validate_profile_and_activate_exception_on_gender_to_match(self):
@@ -1111,12 +1111,12 @@ if (django_settings.LOGIN_ENABLED):
             super().test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_marital_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save()
+        def test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            super().test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_marital_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_marital_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
+        def test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            super().test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
 
 
     @only_on_speedy_match
@@ -1125,7 +1125,7 @@ if (django_settings.LOGIN_ENABLED):
             user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
             user.diet = User.DIET_VEGETARIAN
             user.smoking_status = User.SMOKING_STATUS_NO
-            user.marital_status = User.MARITAL_STATUS_SINGLE
+            user.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
             user.speedy_match_profile.min_age_match = 20
             user.speedy_match_profile.max_age_match = 180
             user.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE]
@@ -1136,7 +1136,7 @@ if (django_settings.LOGIN_ENABLED):
             user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
             user.diet = User.DIET_VEGAN
             user.smoking_status = User.SMOKING_STATUS_YES
-            user.marital_status = User.MARITAL_STATUS_SINGLE
+            user.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
             user.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
             user.save_user_and_profile()
             return user
@@ -1209,10 +1209,10 @@ if (django_settings.LOGIN_ENABLED):
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
             self.assertEqual(first=rank_2, second=0)
 
-        def test_marital_status_match_profile(self):
+        def test_relationship_status_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_2.speedy_match_profile.marital_status_match[str(User.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
+            user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
@@ -1220,11 +1220,11 @@ if (django_settings.LOGIN_ENABLED):
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
             self.assertEqual(first=rank_2, second=5)
 
-        def test_marital_status_doesnt_match_profile(self):
+        def test_relationship_status_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.marital_status = User.MARITAL_STATUS_MARRIED
-            user_2.speedy_match_profile.marital_status_match[str(User.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
+            user_1.relationship_status = User.RELATIONSHIP_STATUS_MARRIED
+            user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
@@ -1260,8 +1260,8 @@ if (django_settings.LOGIN_ENABLED):
             user_2 = self.get_active_user_doron()
             user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_YES): 3, str(User.SMOKING_STATUS_NO): 5, str(User.SMOKING_STATUS_SOMETIMES): 4}
             user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
-            user_1.speedy_match_profile.marital_status_match[str(User.MARITAL_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1
-            user_2.marital_status = User.MARITAL_STATUS_MARRIED
+            user_1.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1
+            user_2.relationship_status = User.RELATIONSHIP_STATUS_MARRIED
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
