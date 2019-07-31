@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 12:35+0300\n"
+"POT-Creation-Date: 2019-07-31 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -592,6 +592,21 @@ msgctxt "other"
 msgid "Send Message"
 msgstr "שלח/י הודעה"
 
+#: .\__translations\__translations.html:154
+msgctxt "female"
+msgid "Welcome"
+msgstr ""
+
+#: .\__translations\__translations.html:155
+msgctxt "male"
+msgid "Welcome"
+msgstr ""
+
+#: .\__translations\__translations.html:156
+msgctxt "other"
+msgid "Welcome"
+msgstr ""
+
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
 msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
@@ -864,48 +879,48 @@ msgstr "קרניסט/ית"
 
 #: .\__translations\__translations.py:89
 msgctxt "female"
-msgid "No"
-msgstr ""
+msgid "Not smoking"
+msgstr "לא מעשנת"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
-msgid "No"
-msgstr ""
+msgid "Not smoking"
+msgstr "לא מעשן"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
-msgid "No"
-msgstr ""
+msgid "Not smoking"
+msgstr "לא מעשנ/ת"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
-msgid "Sometimes"
-msgstr ""
+msgid "Smoking sometimes"
+msgstr "מעשנת לפעמים"
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
-msgid "Sometimes"
-msgstr ""
+msgid "Smoking sometimes"
+msgstr "מעשן לפעמים"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
-msgid "Sometimes"
-msgstr ""
+msgid "Smoking sometimes"
+msgstr "מעשנ/ת לפעמים"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
-msgid "Yes"
-msgstr ""
+msgid "Smoking"
+msgstr "מעשנת"
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
-msgid "Yes"
-msgstr ""
+msgid "Smoking"
+msgstr "מעשן"
 
 #: .\__translations\__translations.py:99
 msgctxt "other"
-msgid "Yes"
-msgstr ""
+msgid "Smoking"
+msgstr "מעשנ/ת"
 
 #: .\__translations\__translations.py:101
 msgctxt "female"
@@ -1219,17 +1234,17 @@ msgstr ""
 #: .\__translations\__translations.py:169
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "את לא יכולה להיות חברה של עצמך."
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "אתה לא יכול להיות חבר של עצמך."
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "את/ה לא יכול/ה להיות חבר/ה של עצמך."
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
@@ -1389,7 +1404,7 @@ msgstr "תמונה"
 
 #: .\accounts\models.py:82
 msgid "Special username"
-msgstr ""
+msgstr "שם משתמש/ת מיוחד"
 
 #: .\accounts\models.py:95 .\messages\models.py:88
 msgid "entity"
@@ -1441,7 +1456,7 @@ msgstr "אחר/ת"
 
 #: .\accounts\models.py:237 .\accounts\models.py:252 .\accounts\models.py:273
 msgid "Unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: .\accounts\models.py:238
 msgid "Vegan (eats only plants and fungi)"
@@ -1456,16 +1471,16 @@ msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
 #: .\accounts\models.py:253
-msgid "No"
-msgstr ""
+msgid "Not smoking"
+msgstr "לא מעשנ/ת"
 
 #: .\accounts\models.py:254
-msgid "Sometimes"
-msgstr ""
+msgid "Smoking sometimes"
+msgstr "מעשנ/ת לפעמים"
 
 #: .\accounts\models.py:255
-msgid "Yes"
-msgstr ""
+msgid "Smoking"
+msgstr "מעשנ/ת"
 
 #: .\accounts\models.py:274
 msgid "Single"
@@ -1533,15 +1548,15 @@ msgstr "תזונה"
 
 #: .\accounts\models.py:349
 msgid "smoking status"
-msgstr ""
+msgstr "הרגלי עישון"
 
 #: .\accounts\models.py:350
 msgid "relationship status"
-msgstr ""
+msgstr "סטטוס מערכת יחסים"
 
 #: .\accounts\models.py:352
 msgid "city or locality"
-msgstr ""
+msgstr "עיר או יישוב"
 
 #: .\accounts\models.py:356
 msgid "Who can view my birth month and day"
@@ -1588,7 +1603,7 @@ msgid "confirmation sent"
 msgstr ""
 
 #: .\accounts\models.py:628
-msgid "who can see this email"
+msgid "Who can see this email"
 msgstr ""
 
 #: .\accounts\models.py:639
@@ -1742,7 +1757,7 @@ msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראש
 
 #: .\base\models.py:69
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -1778,7 +1793,7 @@ msgstr "ביטלת את חסימת {}."
 
 #: .\contact_by_form\apps.py:7
 msgid "Contact By Form"
-msgstr ""
+msgstr "Contact By Form"
 
 #: .\contact_by_form\forms.py:27
 msgid "Send"
@@ -1850,7 +1865,7 @@ msgstr "בקשת החברות נדחתה."
 
 #: .\messages\apps.py:7 .\messages\models.py:79
 msgid "messages"
-msgstr ""
+msgstr "הודעות"
 
 #: .\messages\models.py:13
 msgid "site"
@@ -1898,19 +1913,19 @@ msgstr ""
 
 #: .\settings\base.py:145
 msgid "English"
-msgstr ""
+msgstr "אנגלית"
 
 #: .\settings\base.py:146
 msgid "Hebrew"
-msgstr ""
+msgstr "עברית"
 
 #: .\templates\403.html:9
 msgid "Permission Denied"
-msgstr ""
+msgstr "ההרשאה נדחתה"
 
 #: .\templates\403.html:12
 msgid "This page is private."
-msgstr ""
+msgstr "הדף הזה פרטי."
 
 #: .\templates\about\about_base.html:5 .\templates\base.html:151
 #: .\templates\menu\about_mobile_menu_links.html:11

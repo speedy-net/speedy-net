@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 12:35+0300\n"
+"POT-Creation-Date: 2019-07-31 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -570,6 +570,21 @@ msgctxt "other"
 msgid "Send Message"
 msgstr ""
 
+#: .\__translations\__translations.html:154
+msgctxt "female"
+msgid "Welcome"
+msgstr ""
+
+#: .\__translations\__translations.html:155
+msgctxt "male"
+msgid "Welcome"
+msgstr ""
+
+#: .\__translations\__translations.html:156
+msgctxt "other"
+msgid "Welcome"
+msgstr ""
+
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
 msgstr ""
@@ -838,47 +853,47 @@ msgstr ""
 
 #: .\__translations\__translations.py:89
 msgctxt "female"
-msgid "No"
+msgid "Not smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
-msgid "No"
+msgid "Not smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
-msgid "No"
+msgid "Not smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
-msgid "Sometimes"
+msgid "Smoking sometimes"
 msgstr ""
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
-msgid "Sometimes"
+msgid "Smoking sometimes"
 msgstr ""
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
-msgid "Sometimes"
+msgid "Smoking sometimes"
 msgstr ""
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
-msgid "Yes"
+msgid "Smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
-msgid "Yes"
+msgid "Smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:99
 msgctxt "other"
-msgid "Yes"
+msgid "Smoking"
 msgstr ""
 
 #: .\__translations\__translations.py:101
@@ -1409,15 +1424,15 @@ msgid "Carnist (eats animals)"
 msgstr ""
 
 #: .\accounts\models.py:253
-msgid "No"
+msgid "Not smoking"
 msgstr ""
 
 #: .\accounts\models.py:254
-msgid "Sometimes"
+msgid "Smoking sometimes"
 msgstr ""
 
 #: .\accounts\models.py:255
-msgid "Yes"
+msgid "Smoking"
 msgstr ""
 
 #: .\accounts\models.py:274
@@ -1541,7 +1556,7 @@ msgid "confirmation sent"
 msgstr ""
 
 #: .\accounts\models.py:628
-msgid "who can see this email"
+msgid "Who can see this email"
 msgstr ""
 
 #: .\accounts\models.py:639

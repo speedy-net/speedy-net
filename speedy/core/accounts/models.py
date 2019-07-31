@@ -250,9 +250,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
         (SMOKING_STATUS_UNKNOWN, _("Unknown")),
-        (SMOKING_STATUS_NO, _("No")),
-        (SMOKING_STATUS_SOMETIMES, _("Sometimes")),
-        (SMOKING_STATUS_YES, _("Yes")),
+        (SMOKING_STATUS_NO, _("Not smoking")),
+        (SMOKING_STATUS_SOMETIMES, _("Smoking sometimes")),
+        (SMOKING_STATUS_YES, _("Smoking")),
     )
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
     SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
@@ -317,9 +317,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def smoking_status_choices(gender):
         return (
             # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.SMOKING_STATUS_NO, pgettext_lazy(context=gender, message="No")),
-            (__class__.SMOKING_STATUS_SOMETIMES, pgettext_lazy(context=gender, message="Sometimes")),
-            (__class__.SMOKING_STATUS_YES, pgettext_lazy(context=gender, message="Yes")),
+            (__class__.SMOKING_STATUS_NO, pgettext_lazy(context=gender, message="Not smoking")),
+            (__class__.SMOKING_STATUS_SOMETIMES, pgettext_lazy(context=gender, message="Smoking sometimes")),
+            (__class__.SMOKING_STATUS_YES, pgettext_lazy(context=gender, message="Smoking")),
         )
 
     @staticmethod
@@ -625,7 +625,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
     confirmation_token = models.CharField(verbose_name=_('confirmation token'), max_length=32, blank=True)
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
-    access = UserAccessField(verbose_name=_('who can see this email'), default=UserAccessField.ACCESS_ME)
+    access = UserAccessField(verbose_name=_('Who can see this email'), default=UserAccessField.ACCESS_ME)
 
     @property
     def validators(self):

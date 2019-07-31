@@ -86,17 +86,17 @@ pgettext_lazy(context="female", message='Carnist'),
 pgettext_lazy(context="male", message='Carnist'),
 pgettext_lazy(context="other", message='Carnist'),
 
-pgettext_lazy(context="female", message="No")
-pgettext_lazy(context="male", message="No")
-pgettext_lazy(context="other", message="No")
+pgettext_lazy(context="female", message="Not smoking")
+pgettext_lazy(context="male", message="Not smoking")
+pgettext_lazy(context="other", message="Not smoking")
 
-pgettext_lazy(context="female", message="Sometimes")
-pgettext_lazy(context="male", message="Sometimes")
-pgettext_lazy(context="other", message="Sometimes")
+pgettext_lazy(context="female", message="Smoking sometimes")
+pgettext_lazy(context="male", message="Smoking sometimes")
+pgettext_lazy(context="other", message="Smoking sometimes")
 
-pgettext_lazy(context="female", message="Yes")
-pgettext_lazy(context="male", message="Yes")
-pgettext_lazy(context="other", message="Yes")
+pgettext_lazy(context="female", message="Smoking")
+pgettext_lazy(context="male", message="Smoking")
+pgettext_lazy(context="other", message="Smoking")
 
 pgettext_lazy(context="female", message="Single")
 pgettext_lazy(context="male", message="Single")

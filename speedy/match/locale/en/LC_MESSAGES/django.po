@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 12:35+0300\n"
+"POT-Creation-Date: 2019-07-31 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,6 +186,36 @@ msgctxt "other"
 msgid "You don't have any friends yet."
 msgstr ""
 
+#: .\__translations\__translations.html:50
+msgctxt "female"
+msgid "About me"
+msgstr ""
+
+#: .\__translations\__translations.html:51
+msgctxt "male"
+msgid "About me"
+msgstr ""
+
+#: .\__translations\__translations.html:52
+msgctxt "other"
+msgid "About me"
+msgstr ""
+
+#: .\__translations\__translations.html:54
+msgctxt "female"
+msgid "About my match"
+msgstr ""
+
+#: .\__translations\__translations.html:55
+msgctxt "male"
+msgid "About my match"
+msgstr ""
+
+#: .\__translations\__translations.html:56
+msgctxt "other"
+msgid "About my match"
+msgstr ""
+
 #: .\__translations\__translations.py:6
 msgctxt "female"
 msgid "Add profile picture"
@@ -217,55 +247,55 @@ msgid "Do you want (more) children?"
 msgstr ""
 
 #: .\__translations\__translations.py:14
-#: .\templates\accounts\edit_profile\activate.html:99
+#: .\templates\accounts\edit_profile\activate.html:103
 msgctxt "female"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:15
-#: .\templates\accounts\edit_profile\activate.html:105
+#: .\templates\accounts\edit_profile\activate.html:109
 msgctxt "male"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:16
-#: .\templates\accounts\edit_profile\activate.html:112
+#: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "other"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:18
-#: .\templates\accounts\edit_profile\activate.html:100
+#: .\templates\accounts\edit_profile\activate.html:104
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:19
-#: .\templates\accounts\edit_profile\activate.html:106
+#: .\templates\accounts\edit_profile\activate.html:110
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:20
-#: .\templates\accounts\edit_profile\activate.html:113
+#: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:22
-#: .\templates\accounts\edit_profile\activate.html:101
+#: .\templates\accounts\edit_profile\activate.html:105
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:23
-#: .\templates\accounts\edit_profile\activate.html:107
+#: .\templates\accounts\edit_profile\activate.html:111
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:24
-#: .\templates\accounts\edit_profile\activate.html:114
+#: .\templates\accounts\edit_profile\activate.html:118
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr ""
@@ -616,19 +646,23 @@ msgstr ""
 msgid "Welcome to %(site_name)s"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:33
+#: .\templates\accounts\edit_profile\activate.html:34
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:60
+#: .\templates\accounts\edit_profile\activate.html:36
+msgid "About my match"
+msgstr ""
+
+#: .\templates\accounts\edit_profile\activate.html:64
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:63
+#: .\templates\accounts\edit_profile\activate.html:67
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:69
+#: .\templates\accounts\edit_profile\activate.html:73
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 

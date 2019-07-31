@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 12:35+0300\n"
+"POT-Creation-Date: 2019-07-31 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: .\accounts\apps.py:7
 msgid "Speedy Net Accounts"
-msgstr ""
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\models.py:10
 msgid "User"

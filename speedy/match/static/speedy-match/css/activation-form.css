@@ -42,8 +42,10 @@ body.bidi-rtl .user-profile {
 }
 
 .activation-form-header {
-    margin-top: 40px;
-    color: red;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .user-profile {
@@ -113,8 +115,9 @@ body.bidi-rtl .user-profile {
 }
 
 .activation-form label {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .activation-form label[for=id_photo] {

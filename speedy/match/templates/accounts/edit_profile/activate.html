@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' %}{% endif %} / {{ block.super }}{% endblock %}
+{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="row">
@@ -30,7 +30,11 @@
                         {% endfor %}
                     </div>
                     <div class="activation-form-header text-left flip">
-                        {% trans 'About me' %}
+                        {% if current_step < 7 %}
+                            {% trans 'About me' context user.get_gender %}
+                        {% else %}
+                            {% trans 'About my match' context user.speedy_match_profile.get_match_gender %}
+                        {% endif %}
                     </div>
                     <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form" enctype="multipart/form-data">
                         {% if 0 < request.user.speedy_match_profile.activation_step and request.user.speedy_match_profile.activation_step < 5 %}
