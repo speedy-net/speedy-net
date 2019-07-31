@@ -8,7 +8,7 @@
         {% endif %}
     </div>
     <div class="user-profile-general-info">
-        <span>{{ user.first_name|capfirst }}, </span>
+        <span>{{ user.first_name|truncatechars:25 }}, </span>
         <span>{{ user.get_gender_translated|make_list|first|capfirst }}, </span>
         <span>{{ user.get_age }}</span>
     </div>
