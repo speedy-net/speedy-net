@@ -599,7 +599,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message="Vegetarian"),
             self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message="Carnist"),
         }
-        return diets.get(self.diet)
+        return diets.get(self.diet, "")
 
     def get_smoking_status(self):
         smoking_statuses = {
@@ -607,7 +607,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY: pgettext_lazy(context=self.get_gender(), message="Smoking occasionally"),
             self.__class__.SMOKING_STATUS_SMOKING: pgettext_lazy(context=self.get_gender(), message="Smoking"),
         }
-        return smoking_statuses.get(self.smoking_status)
+        return smoking_statuses.get(self.smoking_status, "")
 
     def get_relationship_status(self):
         relationship_statuses = {
@@ -621,7 +621,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.__class__.RELATIONSHIP_STATUS_ENGAGED: pgettext_lazy(context=self.get_gender(), message="Engaged"),
             self.__class__.RELATIONSHIP_STATUS_MARRIED: pgettext_lazy(context=self.get_gender(), message="Married"),
         }
-        return relationship_statuses.get(self.relationship_status)
+        return relationship_statuses.get(self.relationship_status, "")
 
     def get_age(self):
         return get_age(date_of_birth=self.date_of_birth)
