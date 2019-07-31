@@ -6066,7 +6066,7 @@ html {
     .bg-speedy-match form a {
       color: black; }
   .bg-speedy-match a {
-    color: white; }
+    color: #212529; }
 
 .bg-unread {
   background: #FAE6D8; }
@@ -6278,7 +6278,7 @@ body.with-background {
     background-attachment: fixed;
     min-height: 100vh; }
     body.with-background > .body-inner a {
-      color: #fff; }
+      color: #212529; }
   body.with-background .speedy-body-container .col-md-8 {
     background: url("/static/speedy-match/images/photo.png") bottom left no-repeat;
     background-size: contain; }
