@@ -9,9 +9,7 @@
         {% endif %}
     </div>
     <h5 class="card-title mb-0">
-        {{ user.name|truncatechars:15 }},
-        {{ user.get_age }},
-        {{ user.get_diet }}
+        {{ user.name|truncatechars:15 }}, {{ user.get_age }}{% if user.diet > 0 %}, {{ user.get_diet }}{% endif %}
     </h5>
     {% comment %}
     <div class="user-profile-general-info">
