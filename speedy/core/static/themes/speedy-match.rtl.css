@@ -2693,7 +2693,9 @@ tbody.collapse.show {
   flex-direction: column;
   padding-right: 0;
   margin-bottom: 0;
-  list-style: none; }
+  list-style: none;
+  max-width: 500px;
+}
   .navbar-nav .nav-link {
     padding-left: 0;
     padding-right: 0; }
