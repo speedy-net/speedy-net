@@ -79,6 +79,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
+    special_username = models.BooleanField(verbose_name=_('Special username'), default=False)
 
     objects = EntityManager()
 
@@ -113,11 +114,16 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     def validate_slug(self):
         self.validate_username_for_slug()
+        self.validate_username_required()
         self.validate_username_unique()
 
     def validate_username_for_slug(self):
         if (not (normalize_username(username=self.slug) == self.username)):
             raise ValidationError(_('Slug does not parse to username.'))
+
+    def validate_username_required(self):
+        if (not (len(self.username) > 0)):
+            raise ValidationError(_('Username is required.'))
 
     def validate_username_unique(self):
         username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
@@ -155,9 +161,8 @@ class ReservedUsername(Entity):
     def clean_fields(self, exclude=None):
         self.normalize_slug_and_username()
         self.validate_username_for_slug()
+        self.validate_username_required()
         self.validate_username_unique()
-        if (not (len(self.username) > 0)):
-            raise ValidationError(_('Username is required.'))
 
         if exclude is None:
             exclude = []
@@ -473,6 +478,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return '<User {} - {}/{}>'.format(self.id, self.name, self.slug)
         # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
+    def save(self, *args, **kwargs):
+        # Superuser must be equal to staff.
+        if (not (self.is_superuser == self.is_staff)):
+            raise ValidationError(_("Superuser must be equal to staff."))
+        return super().save(*args, **kwargs)
+
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
@@ -488,11 +499,16 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         """
         Allows to have different slug and username validators for Entity and User.
         """
+        self.normalize_slug_and_username()
+        self.validate_username_for_slug()
+        self.validate_username_required()
+        self.validate_username_unique()
+
         if exclude is None:
             exclude = []
 
-        # Admin's username can be less than 6 characters (admin).
-        if (self.is_superuser):
+        # If special username is true, don't validate username.
+        if (self.special_username):
             exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)

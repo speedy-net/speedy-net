@@ -225,6 +225,7 @@ Review and edit these config files, restart servers:
     u.last_name = 'admin'
     u.is_staff = True
     u.is_superuser = True
+    u.special_username = True
     u.set_password('<PASSWORD>')
     u.save()
 
