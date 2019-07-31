@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 09:20+0300\n"
+"POT-Creation-Date: 2019-07-31 10:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -287,7 +287,7 @@ msgid "My smoking status"
 msgstr ""
 
 #: .\accounts\forms.py:61
-msgid "My marital status"
+msgid "My relationship status"
 msgstr ""
 
 #: .\accounts\forms.py:63
@@ -376,7 +376,7 @@ msgid "Smoking status match"
 msgstr ""
 
 #: .\accounts\models.py:84
-msgid "Marital status match"
+msgid "Relationship status match"
 msgstr ""
 
 #: .\accounts\models.py:116
@@ -416,7 +416,7 @@ msgid "Your smoking status is required."
 msgstr ""
 
 #: .\accounts\validators.py:84
-msgid "Your marital status is required."
+msgid "Your relationship status is required."
 msgstr ""
 
 #: .\accounts\validators.py:89
@@ -741,7 +741,7 @@ msgid "Smoking"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:54
-msgid "Marital Status"
+msgid "Relationship Status"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:59

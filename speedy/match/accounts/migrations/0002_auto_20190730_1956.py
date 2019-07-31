@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='siteprofile',
             name='marital_status_match',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.marital_status_match_default, verbose_name='Marital status match'),
+            field=django.contrib.postgres.fields.jsonb.JSONField(default=speedy.match.accounts.models.SiteProfile.relationship_status_match_default, verbose_name='Marital status match'),
         ),
         migrations.AlterField(
             model_name='siteprofile',

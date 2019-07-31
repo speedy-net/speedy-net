@@ -57,8 +57,8 @@ class SiteProfile(SiteProfileBase):
         return dict({str(smoking_status): __class__.RANK_5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES})
 
     @staticmethod
-    def marital_status_match_default():
-        return dict({str(marital_status): __class__.RANK_5 for marital_status in User.MARITAL_STATUS_VALID_VALUES})
+    def relationship_status_match_default():
+        return dict({str(relationship_status): __class__.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
@@ -81,7 +81,7 @@ class SiteProfile(SiteProfileBase):
     max_age_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
     diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
-    marital_status_match = JSONField(verbose_name=_('Marital status match'), default=marital_status_match_default.__func__)
+    relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
     activation_step = TranslatedField(
         field=models.PositiveSmallIntegerField(default=2),
     )
@@ -193,12 +193,12 @@ class SiteProfile(SiteProfileBase):
                 return self.__class__.RANK_0
             if (other_profile.user.smoking_status == User.SMOKING_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
-            if (other_profile.user.marital_status == User.MARITAL_STATUS_UNKNOWN):
+            if (other_profile.user.relationship_status == User.RELATIONSHIP_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
             diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_5)
             smoking_status_rank = self.smoking_status_match.get(str(other_profile.user.smoking_status), self.__class__.RANK_5)
-            marital_status_rank = self.marital_status_match.get(str(other_profile.user.marital_status), self.__class__.RANK_5)
-            rank = min([diet_rank, smoking_status_rank, marital_status_rank])
+            relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_5)
+            rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
                 other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
                 if (other_user_rank == self.__class__.RANK_0):
@@ -244,7 +244,7 @@ class SiteProfile(SiteProfileBase):
     def get_smoking_status_match_choices(self):
         return User.smoking_status_choices(gender=self.get_match_gender())
 
-    def get_marital_status_match_choices(self):
-        return User.marital_status_choices(gender=self.get_match_gender())
+    def get_relationship_status_match_choices(self):
+        return User.relationship_status_choices(gender=self.get_match_gender())
 
 

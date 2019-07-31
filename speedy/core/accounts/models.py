@@ -257,30 +257,30 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
     SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
 
-    MARITAL_STATUS_UNKNOWN = 0
-    MARITAL_STATUS_SINGLE = 1
-    MARITAL_STATUS_DIVORCED = 2
-    MARITAL_STATUS_WIDOWED = 3
-    MARITAL_STATUS_IN_RELATIONSHIP = 4
-    MARITAL_STATUS_IN_OPEN_RELATIONSHIP = 5
-    MARITAL_STATUS_COMPLICATED = 6
-    MARITAL_STATUS_SEPARATED = 7
-    MARITAL_STATUS_MARRIED = 8
-    MARITAL_STATUS_MAX_VALUE_PLUS_ONE = 9
+    RELATIONSHIP_STATUS_UNKNOWN = 0
+    RELATIONSHIP_STATUS_SINGLE = 1
+    RELATIONSHIP_STATUS_DIVORCED = 2
+    RELATIONSHIP_STATUS_WIDOWED = 3
+    RELATIONSHIP_STATUS_IN_RELATIONSHIP = 4
+    RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP = 5
+    RELATIONSHIP_STATUS_COMPLICATED = 6
+    RELATIONSHIP_STATUS_SEPARATED = 7
+    RELATIONSHIP_STATUS_MARRIED = 8
+    RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE = 9
 
-    MARITAL_STATUS_CHOICES_WITH_DEFAULT = (
-        (MARITAL_STATUS_UNKNOWN, _("Unknown")),
-        (MARITAL_STATUS_SINGLE, _("Single")),
-        (MARITAL_STATUS_DIVORCED, _("Divorced")),
-        (MARITAL_STATUS_WIDOWED, _("Widowed")),
-        (MARITAL_STATUS_IN_RELATIONSHIP, _("In a relationship")),
-        (MARITAL_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
-        (MARITAL_STATUS_COMPLICATED, _("It's complicated")),
-        (MARITAL_STATUS_SEPARATED, _("Separated")),
-        (MARITAL_STATUS_MARRIED, _("Married")),
+    RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT = (
+        (RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")),
+        (RELATIONSHIP_STATUS_SINGLE, _("Single")),
+        (RELATIONSHIP_STATUS_DIVORCED, _("Divorced")),
+        (RELATIONSHIP_STATUS_WIDOWED, _("Widowed")),
+        (RELATIONSHIP_STATUS_IN_RELATIONSHIP, _("In a relationship")),
+        (RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
+        (RELATIONSHIP_STATUS_COMPLICATED, _("It's complicated")),
+        (RELATIONSHIP_STATUS_SEPARATED, _("Separated")),
+        (RELATIONSHIP_STATUS_MARRIED, _("Married")),
     )
-    MARITAL_STATUS_VALID_CHOICES = MARITAL_STATUS_CHOICES_WITH_DEFAULT[1:]
-    MARITAL_STATUS_VALID_VALUES = [choice[0] for choice in MARITAL_STATUS_VALID_CHOICES]
+    RELATIONSHIP_STATUS_VALID_CHOICES = RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT[1:]
+    RELATIONSHIP_STATUS_VALID_VALUES = [choice[0] for choice in RELATIONSHIP_STATUS_VALID_CHOICES]
 
     NOTIFICATIONS_OFF = 0
     NOTIFICATIONS_ON = 1
@@ -321,17 +321,17 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         )
 
     @staticmethod
-    def marital_status_choices(gender):
+    def relationship_status_choices(gender):
         return (
-            # (__class__.MARITAL_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.MARITAL_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
-            (__class__.MARITAL_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
-            (__class__.MARITAL_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
-            (__class__.MARITAL_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relationship")),
-            (__class__.MARITAL_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
-            (__class__.MARITAL_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
-            (__class__.MARITAL_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
-            (__class__.MARITAL_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
+            # (__class__.RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
+            (__class__.RELATIONSHIP_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
+            (__class__.RELATIONSHIP_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
+            (__class__.RELATIONSHIP_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
+            (__class__.RELATIONSHIP_STATUS_IN_RELATIONSHIP, pgettext_lazy(context=gender, message="In a relationship")),
+            (__class__.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
+            (__class__.RELATIONSHIP_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
+            (__class__.RELATIONSHIP_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
+            (__class__.RELATIONSHIP_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
         )
 
     first_name = TranslatedField(
@@ -344,7 +344,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
     diet = models.SmallIntegerField(verbose_name=_('diet'), choices=DIET_CHOICES_WITH_DEFAULT, default=DIET_UNKNOWN)
     smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
-    marital_status = models.SmallIntegerField(verbose_name=_('marital status'), choices=MARITAL_STATUS_CHOICES_WITH_DEFAULT, default=MARITAL_STATUS_UNKNOWN)
+    relationship_status = models.SmallIntegerField(verbose_name=_('relationship status'), choices=RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT, default=RELATIONSHIP_STATUS_UNKNOWN)
     city = TranslatedField(
         field=models.CharField(verbose_name=_('city or locality'), max_length=120, blank=True, null=True),
     )
@@ -607,8 +607,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_smoking_status_choices(self):
         return self.__class__.smoking_status_choices(gender=self.get_gender())
 
-    def get_marital_status_choices(self):
-        return self.__class__.marital_status_choices(gender=self.get_gender())
+    def get_relationship_status_choices(self):
+        return self.__class__.relationship_status_choices(gender=self.get_gender())
 
 
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?

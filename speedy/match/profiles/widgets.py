@@ -44,9 +44,9 @@ class UserExtraDetailsWidget(Widget):
         smoking_status_list = [str(choice[1]) for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
         smoking_status = smoking_status_list[0] if (len(smoking_status_list) == 1) else str(_("Unknown"))
 
-        marital_status_code = self.user.marital_status
-        marital_status_list = [str(choice[1]) for choice in User.MARITAL_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == marital_status_code)]
-        marital_status = marital_status_list[0] if (len(marital_status_list) == 1) else str(_("Unknown"))
+        relationship_status_code = self.user.relationship_status
+        relationship_status_list = [str(choice[1]) for choice in User.RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == relationship_status_code)]
+        relationship_status = relationship_status_list[0] if (len(relationship_status_list) == 1) else str(_("Unknown"))
 
         gender_codes = self.user.speedy_match_profile.gender_to_match
         genders_to_match_list = [str(choice[1]) for choice in User.GENDER_CHOICES if (choice[0] in gender_codes)]
@@ -57,7 +57,7 @@ class UserExtraDetailsWidget(Widget):
         cd.update({
             'diet': diet,
             'smoking_status': smoking_status,
-            'marital_status': marital_status,
+            'relationship_status': relationship_status,
             'gender_to_match': genders_to_match,
         })
         return cd

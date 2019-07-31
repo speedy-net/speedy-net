@@ -35,14 +35,14 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     user_fields = (
         'diet',
         'smoking_status',
-        'marital_status',
+        'relationship_status',
         *(to_attribute(name='city', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
     )
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'diet': [speedy_match_accounts_validators.validate_diet],
         'smoking_status': [speedy_match_accounts_validators.validate_smoking_status],
-        'marital_status': [speedy_match_accounts_validators.validate_marital_status],
+        'relationship_status': [speedy_match_accounts_validators.validate_relationship_status],
         **{to_attribute(name='profile_description', language_code=language_code): [speedy_match_accounts_validators.validate_profile_description] for language_code, language_name in django_settings.LANGUAGES},
         **{to_attribute(name='city', language_code=language_code): [speedy_match_accounts_validators.validate_city] for language_code, language_name in django_settings.LANGUAGES},
         **{to_attribute(name='children', language_code=language_code): [speedy_match_accounts_validators.validate_children] for language_code, language_name in django_settings.LANGUAGES},
@@ -53,12 +53,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
         'diet_match': [speedy_match_accounts_validators.validate_diet_match],
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
-        'marital_status_match': [speedy_match_accounts_validators.validate_marital_status_match],
+        'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
     }
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
-    marital_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My marital status'))
+    relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'))
     # ~~~~ TODO: define all the languages and not just hard-code languages like below.
     _city = forms.CharField(label=_('City or locality'), max_length=120)
     city_en = _city
@@ -75,18 +75,18 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             *(to_attribute(name='more_children', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
             'diet',
             'smoking_status',
-            'marital_status',
+            'relationship_status',
             'gender_to_match',
             *(to_attribute(name='match_description', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
             'min_age_match',
             'max_age_match',
             'diet_match',
             'smoking_status_match',
-            'marital_status_match',
+            'relationship_status_match',
         )
         widgets = {
             'smoking_status': forms.RadioSelect(),
-            'marital_status': forms.RadioSelect(),
+            'relationship_status': forms.RadioSelect(),
             **{to_attribute(name='profile_description', language_code=language_code): forms.Textarea(attrs={'rows': 3, 'cols': 25}) for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='city', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='children', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
@@ -94,7 +94,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             **{to_attribute(name='match_description', language_code=language_code): forms.Textarea(attrs={'rows': 3, 'cols': 25}) for language_code, language_name in django_settings.LANGUAGES},
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
             'smoking_status_match': CustomJsonWidget(choices=User.SMOKING_STATUS_VALID_CHOICES),
-            'marital_status_match': CustomJsonWidget(choices=User.MARITAL_STATUS_VALID_CHOICES),
+            'relationship_status_match': CustomJsonWidget(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
         }
 
     def __init__(self, *args, **kwargs):
@@ -110,14 +110,14 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             update_form_field_choices(field=self.fields['diet'], choices=self.instance.user.get_diet_choices_with_description())
         if ('smoking_status' in self.fields):
             update_form_field_choices(field=self.fields['smoking_status'], choices=self.instance.user.get_smoking_status_choices())
-        if ('marital_status' in self.fields):
-            update_form_field_choices(field=self.fields['marital_status'], choices=self.instance.user.get_marital_status_choices())
+        if ('relationship_status' in self.fields):
+            update_form_field_choices(field=self.fields['relationship_status'], choices=self.instance.user.get_relationship_status_choices())
         if ('diet_match' in self.fields):
             update_form_field_choices(field=self.fields['diet_match'], choices=self.instance.get_diet_match_choices())
         if ('smoking_status_match' in self.fields):
             update_form_field_choices(field=self.fields['smoking_status_match'], choices=self.instance.get_smoking_status_match_choices())
-        if ('marital_status_match' in self.fields):
-            update_form_field_choices(field=self.fields['marital_status_match'], choices=self.instance.get_marital_status_match_choices())
+        if ('relationship_status_match' in self.fields):
+            update_form_field_choices(field=self.fields['relationship_status_match'], choices=self.instance.get_relationship_status_match_choices())
         if (to_attribute(name='more_children') in self.fields):
             self.fields[to_attribute(name='more_children')].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Do you want (more) children?')
         if (to_attribute(name='match_description') in self.fields):

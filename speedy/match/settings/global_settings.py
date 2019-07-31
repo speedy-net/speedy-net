@@ -15,10 +15,10 @@ class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
         ['profile_description', 'city', 'height'],
         ['children', 'more_children'],
         ['diet', 'smoking_status'],
-        ['marital_status'],
+        ['relationship_status'],
         ['gender_to_match', 'match_description', 'min_age_match', 'max_age_match'],
         ['diet_match', 'smoking_status_match'],
-        ['marital_status_match'],
+        ['relationship_status_match'],
     ]
     
 
