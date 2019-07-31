@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% if with_link %}
-    <a href="{{ user.get_absolute_url }}">
+    <a href="{{ user.get_absolute_url }}" title="{{ user.name }}">
 {% endif %}
 {% thumbnail user.photo.file geometry crop='center' as image %}
     <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}">

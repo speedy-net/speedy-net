@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 20:10+0300\n"
+"POT-Creation-Date: 2019-07-31 20:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -621,6 +621,21 @@ msgstr "חבר שלך"
 msgctxt "other"
 msgid "Your friend"
 msgstr "חבר/ה שלך"
+
+#: .\__translations\__translations.html:162
+msgctxt "female"
+msgid "See All"
+msgstr "ראי הכול"
+
+#: .\__translations\__translations.html:163
+msgctxt "male"
+msgid "See All"
+msgstr "ראה הכול"
+
+#: .\__translations\__translations.html:164
+msgctxt "other"
+msgid "See All"
+msgstr "ראה/י הכול"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
