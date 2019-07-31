@@ -499,16 +499,15 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         """
         Allows to have different slug and username validators for Entity and User.
         """
-        self.normalize_slug_and_username()
-        self.validate_username_for_slug()
-        self.validate_username_required()
-        self.validate_username_unique()
-
         if exclude is None:
             exclude = []
 
         # If special username is true, don't validate username.
         if (self.special_username):
+            self.normalize_slug_and_username()
+            self.validate_username_for_slug()
+            self.validate_username_required()
+            self.validate_username_unique()
             exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)
