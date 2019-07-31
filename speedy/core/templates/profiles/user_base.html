@@ -19,7 +19,7 @@
                     <div class="col-md">
                         <div class="page-header">
                             <h1>
-                                {{ user.name|truncatechars:50 }}{% block user_extra %}{% endblock %}
+                                <a href="{% url 'profiles:user' slug=user.slug %}">{{ user.name|truncatechars:50 }}</a>{% block user_extra %}{% endblock %}
                             </h1>
                             <div class="text-muted">
                                 {% block user_status %}
@@ -27,7 +27,7 @@
                                         {% trans 'Friendship request sent' %}
                                     {% endif %}
                                     {% if user_is_friend %}
-                                        {% trans 'Your friend' %}
+                                        {% trans 'Your friend' context user.get_gender %}
                                     {% endif %}
                                 {% endblock %}
                             </div>

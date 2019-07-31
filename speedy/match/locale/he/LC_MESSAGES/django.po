@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 18:56+0300\n"
+"POT-Creation-Date: 2019-07-31 20:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -374,7 +374,6 @@ msgid "Height"
 msgstr "גובה"
 
 #: .\accounts\models.py:66
-#: .\templates\accounts\edit_profile\partials\user_profile.html:20
 msgid "cm"
 msgstr "ס\"מ"
 
@@ -798,7 +797,7 @@ msgid "More Children"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:49
-msgid "Smoking"
+msgid "Smoking Status"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:54
