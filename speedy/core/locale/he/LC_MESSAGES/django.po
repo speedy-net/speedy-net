@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 10:04+0300\n"
+"POT-Creation-Date: 2019-07-31 12:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -600,7 +600,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:635
+#: .\__translations\__translations.py:9 .\accounts\models.py:638
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -642,7 +642,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:469
+#: .\__translations\__translations.py:23 .\accounts\models.py:472
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
 msgstr "חברים/ות"
@@ -910,139 +910,154 @@ msgstr ""
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Single"
-msgstr ""
+msgstr "רווקה"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Single"
-msgstr ""
+msgstr "רווק"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Single"
-msgstr ""
+msgstr "רווק/ה"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Divorced"
-msgstr ""
+msgstr "גרושה"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
 msgid "Divorced"
-msgstr ""
+msgstr "גרוש"
 
 #: .\__translations\__translations.py:107
 msgctxt "other"
 msgid "Divorced"
-msgstr ""
+msgstr "גרוש/ה"
 
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Widowed"
-msgstr ""
+msgstr "אלמנה"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Widowed"
-msgstr ""
+msgstr "אלמן"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Widowed"
-msgstr ""
+msgstr "אלמן/אלמנה"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
 msgid "In a relationship"
-msgstr ""
+msgstr "במערכת יחסים"
 
 #: .\__translations\__translations.py:114
 msgctxt "male"
 msgid "In a relationship"
-msgstr ""
+msgstr "במערכת יחסים"
 
 #: .\__translations\__translations.py:115
 msgctxt "other"
 msgid "In a relationship"
-msgstr ""
+msgstr "במערכת יחסים"
 
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "In an open relationship"
-msgstr ""
+msgstr "במערכת יחסים פתוחה"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "In an open relationship"
-msgstr ""
+msgstr "במערכת יחסים פתוחה"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "In an open relationship"
-msgstr ""
+msgstr "במערכת יחסים פתוחה"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
 msgid "It's complicated"
-msgstr ""
+msgstr "זה מסובך"
 
 #: .\__translations\__translations.py:122
 msgctxt "male"
 msgid "It's complicated"
-msgstr ""
+msgstr "זה מסובך"
 
 #: .\__translations\__translations.py:123
 msgctxt "other"
 msgid "It's complicated"
-msgstr ""
+msgstr "זה מסובך"
 
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "Separated"
-msgstr ""
+msgstr "פרודה"
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Separated"
-msgstr ""
+msgstr "פרוד"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Separated"
-msgstr ""
+msgstr "פרוד/ה"
 
 #: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "Engaged"
+msgstr "מאורסת"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "Engaged"
+msgstr "מאורס"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "Engaged"
+msgstr "מאורס/ת"
+
+#: .\__translations\__translations.py:133
 msgctxt "female"
 msgid "Married"
 msgstr "נשואה"
 
-#: .\__translations\__translations.py:130
+#: .\__translations\__translations.py:134
 msgctxt "male"
 msgid "Married"
 msgstr "נשוי"
 
-#: .\__translations\__translations.py:131
+#: .\__translations\__translations.py:135
 msgctxt "other"
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\__translations\__translations.py:133
+#: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "Your new password has been saved."
 msgstr ""
 
-#: .\__translations\__translations.py:134
+#: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "Your new password has been saved."
 msgstr ""
 
-#: .\__translations\__translations.py:135
+#: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "Your new password has been saved."
 msgstr ""
 
-#: .\__translations\__translations.py:137
+#: .\__translations\__translations.py:141
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1050,7 +1065,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכלי להפעיל אותם בכל זמן שתבחרי."
 
-#: .\__translations\__translations.py:138
+#: .\__translations\__translations.py:142
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1058,7 +1073,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל להפעיל אותם בכל זמן שתבחר."
 
-#: .\__translations\__translations.py:139
+#: .\__translations\__translations.py:143
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts has been deactivated. You can "
@@ -1066,7 +1081,7 @@ msgid ""
 msgstr ""
 "החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן שתבחר/י."
 
-#: .\__translations\__translations.py:141
+#: .\__translations\__translations.py:145
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -1076,7 +1091,7 @@ msgstr ""
 "החשבון שלך ב{site_name} הוקפא. תוכלי להפעיל אותו בכל זמן שתבחרי. החשבון שלך "
 "בספידי נט נשאר פעיל."
 
-#: .\__translations\__translations.py:142
+#: .\__translations\__translations.py:146
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -1086,7 +1101,7 @@ msgstr ""
 "החשבון שלך ב{site_name} הוקפא. תוכל להפעיל אותו בכל זמן שתבחר. החשבון שלך "
 "בספידי נט נשאר פעיל."
 
-#: .\__translations\__translations.py:143
+#: .\__translations\__translations.py:147
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -1096,52 +1111,52 @@ msgstr ""
 "החשבון שלך ב{site_name} הוקפא. תוכל/י להפעיל אותו בכל זמן שתבחר/י. החשבון "
 "שלך בספידי נט נשאר פעיל."
 
-#: .\__translations\__translations.py:145
-msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
-
-#: .\__translations\__translations.py:146
-msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
-
-#: .\__translations\__translations.py:147
-msgctxt "other"
-msgid "You've already confirmed this email address."
-msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
-
 #: .\__translations\__translations.py:149
 msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
+msgid "You've already confirmed this email address."
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.py:150
 msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "כבר אימתת את כתובת הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
 msgid "You've confirmed your email address."
 msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:151
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:155
 msgctxt "other"
 msgid "You've confirmed your email address."
 msgstr "אימתת את כתובת הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:153
+#: .\__translations\__translations.py:157
 msgctxt "female"
 msgid "Send"
 msgstr "שלחי"
 
-#: .\__translations\__translations.py:154
+#: .\__translations\__translations.py:158
 msgctxt "male"
 msgid "Send"
 msgstr "שלח"
 
-#: .\__translations\__translations.py:155
+#: .\__translations\__translations.py:159
 msgctxt "other"
 msgid "Send"
 msgstr "שלח/י"
 
-#: .\__translations\__translations.py:157
+#: .\__translations\__translations.py:161
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -1151,7 +1166,7 @@ msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה."
 
-#: .\__translations\__translations.py:158
+#: .\__translations\__translations.py:162
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -1161,7 +1176,7 @@ msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסר חברים/ות לפני שאתה ממשיך."
 
-#: .\__translations\__translations.py:159
+#: .\__translations\__translations.py:163
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -1171,7 +1186,7 @@ msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסר/י חברים/ות לפני שאת/ה ממשיך/ה."
 
-#: .\__translations\__translations.py:161
+#: .\__translations\__translations.py:165
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -1181,7 +1196,7 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקשי ממנו/ה להסיר חברים/ות לפני שאת ממשיכה."
 
-#: .\__translations\__translations.py:162
+#: .\__translations\__translations.py:166
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -1191,7 +1206,7 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקש ממנו/ה להסיר חברים/ות לפני שאתה ממשיך."
 
-#: .\__translations\__translations.py:163
+#: .\__translations\__translations.py:167
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -1201,110 +1216,110 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקש/י ממנו/ה להסיר חברים/ות לפני שאת/ה ממשיך/ה."
 
-#: .\__translations\__translations.py:165
-msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:166
-msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:167
-msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr ""
-
 #: .\__translations\__translations.py:169
 msgctxt "female"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
-msgid "You already are friends with this user."
+msgid "You already requested friendship from this user."
 msgstr ""
 
 #: .\__translations\__translations.py:177
 msgctxt "female"
+msgid "You already are friends with this user."
+msgstr ""
+
+#: .\__translations\__translations.py:178
+msgctxt "male"
+msgid "You already are friends with this user."
+msgstr ""
+
+#: .\__translations\__translations.py:179
+msgctxt "other"
+msgid "You already are friends with this user."
+msgstr ""
+
+#: .\__translations\__translations.py:181
+msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:178
+#: .\__translations\__translations.py:182
 msgctxt "male"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:179
+#: .\__translations\__translations.py:183
 msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:181
+#: .\__translations\__translations.py:185
 msgctxt "female"
 msgid "You have removed this user from friends."
 msgstr ""
 
-#: .\__translations\__translations.py:182
+#: .\__translations\__translations.py:186
 msgctxt "male"
 msgid "You have removed this user from friends."
 msgstr ""
 
-#: .\__translations\__translations.py:183
+#: .\__translations\__translations.py:187
 msgctxt "other"
 msgid "You have removed this user from friends."
 msgstr ""
 
-#: .\__translations\__translations.py:185
+#: .\__translations\__translations.py:189
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכה הבאה ל{site_name}!"
 
-#: .\__translations\__translations.py:186
+#: .\__translations\__translations.py:190
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
 msgstr "ברוך הבא ל{site_name}!"
 
-#: .\__translations\__translations.py:187
+#: .\__translations\__translations.py:191
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 
-#: .\__translations\__translations.py:189
+#: .\__translations\__translations.py:193
 msgctxt "female"
 msgid "Friends"
 msgstr "חברות"
 
-#: .\__translations\__translations.py:190
+#: .\__translations\__translations.py:194
 msgctxt "male"
 msgid "Friends"
 msgstr "חברים"
 
-#: .\__translations\__translations.py:191
+#: .\__translations\__translations.py:195
 msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
@@ -1424,7 +1439,7 @@ msgstr "זכר"
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:237 .\accounts\models.py:252 .\accounts\models.py:272
+#: .\accounts\models.py:237 .\accounts\models.py:252 .\accounts\models.py:273
 msgid "Unknown"
 msgstr ""
 
@@ -1452,135 +1467,139 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: .\accounts\models.py:273
-msgid "Single"
-msgstr ""
-
 #: .\accounts\models.py:274
-msgid "Divorced"
-msgstr ""
+msgid "Single"
+msgstr "רווק/ה"
 
 #: .\accounts\models.py:275
-msgid "Widowed"
-msgstr ""
+msgid "Divorced"
+msgstr "גרוש/ה"
 
 #: .\accounts\models.py:276
-msgid "In a relationship"
-msgstr ""
+msgid "Widowed"
+msgstr "אלמן/אלמנה"
 
 #: .\accounts\models.py:277
-msgid "In an open relationship"
-msgstr ""
+msgid "In a relationship"
+msgstr "במערכת יחסים"
 
 #: .\accounts\models.py:278
-msgid "It's complicated"
-msgstr ""
+msgid "In an open relationship"
+msgstr "במערכת יחסים פתוחה"
 
 #: .\accounts\models.py:279
-msgid "Separated"
-msgstr ""
+msgid "It's complicated"
+msgstr "זה מסובך"
 
 #: .\accounts\models.py:280
+msgid "Separated"
+msgstr "פרוד/ה"
+
+#: .\accounts\models.py:281
+msgid "Engaged"
+msgstr "מאורס/ת"
+
+#: .\accounts\models.py:282
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:289
+#: .\accounts\models.py:291
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:290
+#: .\accounts\models.py:292
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:341
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:341
+#: .\accounts\models.py:344
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:346
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:347
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:345
+#: .\accounts\models.py:348
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:346
+#: .\accounts\models.py:349
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:347
+#: .\accounts\models.py:350
 msgid "relationship status"
 msgstr ""
 
-#: .\accounts\models.py:349
+#: .\accounts\models.py:352
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:356
 msgid "Who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:354
+#: .\accounts\models.py:357
 msgid "Who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:355
+#: .\accounts\models.py:358
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:472 .\accounts\models.py:619 .\blocks\models.py:11
+#: .\accounts\models.py:475 .\accounts\models.py:622 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:473
+#: .\accounts\models.py:476
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:485
+#: .\accounts\models.py:488
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:623
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:621
+#: .\accounts\models.py:624
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:622
+#: .\accounts\models.py:625
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:623
+#: .\accounts\models.py:626
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:624
+#: .\accounts\models.py:627
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:625
+#: .\accounts\models.py:628
 msgid "who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:639
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:695
+#: .\accounts\models.py:698
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:696
+#: .\accounts\models.py:699
 msgid "last visit"
 msgstr "ביקור אחרון"
 

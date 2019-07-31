@@ -265,8 +265,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP = 5
     RELATIONSHIP_STATUS_COMPLICATED = 6
     RELATIONSHIP_STATUS_SEPARATED = 7
-    RELATIONSHIP_STATUS_MARRIED = 8
-    RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE = 9
+    RELATIONSHIP_STATUS_ENGAGED = 8
+    RELATIONSHIP_STATUS_MARRIED = 9
+    RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE = 10
 
     RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT = (
         (RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")),
@@ -277,6 +278,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         (RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, _("In an open relationship")),
         (RELATIONSHIP_STATUS_COMPLICATED, _("It's complicated")),
         (RELATIONSHIP_STATUS_SEPARATED, _("Separated")),
+        (RELATIONSHIP_STATUS_ENGAGED, _("Engaged")),
         (RELATIONSHIP_STATUS_MARRIED, _("Married")),
     )
     RELATIONSHIP_STATUS_VALID_CHOICES = RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT[1:]
@@ -331,6 +333,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             (__class__.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP, pgettext_lazy(context=gender, message="In an open relationship")),
             (__class__.RELATIONSHIP_STATUS_COMPLICATED, pgettext_lazy(context=gender, message="It's complicated")),
             (__class__.RELATIONSHIP_STATUS_SEPARATED, pgettext_lazy(context=gender, message="Separated")),
+            (__class__.RELATIONSHIP_STATUS_ENGAGED, pgettext_lazy(context=gender, message="Engaged")),
             (__class__.RELATIONSHIP_STATUS_MARRIED, pgettext_lazy(context=gender, message="Married")),
         )
 

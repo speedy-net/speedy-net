@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 10:04+0300\n"
+"POT-Creation-Date: 2019-07-31 12:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -441,27 +441,27 @@ msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 
 #: .\accounts\validators.py:111
-msgid "Please select di========et match."
+msgid "Please select diet match."
 msgstr ""
 
 #: .\accounts\validators.py:113
-msgid "At least one di========et match option should be 5 hearts."
+msgid "At least one diet match option should be 5 hearts."
 msgstr ""
 
 #: .\accounts\validators.py:119
-msgid "Please select sm======oking status match."
+msgid "Please select smoking status match."
 msgstr ""
 
 #: .\accounts\validators.py:121
-msgid "At least one sm======oking status match option should be 5 hearts."
+msgid "At least one smoking status match option should be 5 hearts."
 msgstr ""
 
 #: .\accounts\validators.py:127
-msgid "Please select ma======rital status match."
+msgid "Please select marital status match."
 msgstr ""
 
 #: .\accounts\validators.py:129
-msgid "At least one ma======rital status match option should be 5 hearts."
+msgid "At least one marital status match option should be 5 hearts."
 msgstr ""
 
 #: .\likes\managers.py:14 .\likes\models.py:30

@@ -126,6 +126,10 @@ pgettext_lazy(context="female", message="Separated")
 pgettext_lazy(context="male", message="Separated")
 pgettext_lazy(context="other", message="Separated")
 
+pgettext_lazy(context="female", message="Engaged")
+pgettext_lazy(context="male", message="Engaged")
+pgettext_lazy(context="other", message="Engaged")
+
 pgettext_lazy(context="female", message="Married")
 pgettext_lazy(context="male", message="Married")
 pgettext_lazy(context="other", message="Married")

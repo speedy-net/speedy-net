@@ -108,24 +108,24 @@ def validate_min_max_age_to_match(min_age_match, max_age_match):
 def validate_diet_match(diet_match):
     if (not ((set(diet_match.keys()) == {str(diet) for diet in User.DIET_VALID_VALUES}) and (all([((str(diet) in diet_match) and (rank_is_valid(rank=diet_match[str(diet)]))) for diet in User.DIET_VALID_VALUES])))):
         # This may be due to values added later.
-        raise ValidationError(_("Please select di========et match."))
+        raise ValidationError(_("Please select diet match."))
     if (not (max([diet_match[str(diet)] for diet in User.DIET_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one di========et match option should be 5 hearts."))
+        raise ValidationError(_("At least one diet match option should be 5 hearts."))
 
 
 def validate_smoking_status_match(smoking_status_match):
     if (not ((set(smoking_status_match.keys()) == {str(smoking_status) for smoking_status in User.SMOKING_STATUS_VALID_VALUES}) and (all([((str(smoking_status) in smoking_status_match) and (rank_is_valid(rank=smoking_status_match[str(smoking_status)]))) for smoking_status in User.SMOKING_STATUS_VALID_VALUES])))):
         # This may be due to values added later.
-        raise ValidationError(_("Please select sm======oking status match."))
+        raise ValidationError(_("Please select smoking status match."))
     if (not (max([smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one sm======oking status match option should be 5 hearts."))
+        raise ValidationError(_("At least one smoking status match option should be 5 hearts."))
 
 
 def validate_relationship_status_match(relationship_status_match):
     if (not ((set(relationship_status_match.keys()) == {str(relationship_status) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}) and (all([((str(relationship_status) in relationship_status_match) and (rank_is_valid(rank=relationship_status_match[str(relationship_status)]))) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES])))):
         # This may be due to values added later.
-        raise ValidationError(_("Please select ma======rital status match."))
+        raise ValidationError(_("Please select marital status match."))
     if (not (max([relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one ma======rital status match option should be 5 hearts."))
+        raise ValidationError(_("At least one marital status match option should be 5 hearts."))
 
 

@@ -61,9 +61,9 @@ if (django_settings.LOGIN_ENABLED):
                 "field_name": 'diet_match',
                 "expected_step": 8,
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_diet_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select di========et match.']"], # ~~~~ TODO
+                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one di========et match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be 5 hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -74,9 +74,9 @@ if (django_settings.LOGIN_ENABLED):
                 "field_name": 'smoking_status_match',
                 "expected_step": 8,
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_smoking_status_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select sm======oking status match.']"], # ~~~~ TODO
+                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one sm======oking status match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be 5 hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -87,9 +87,9 @@ if (django_settings.LOGIN_ENABLED):
                 "field_name": 'relationship_status_match',
                 "expected_step": 9,
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_relationship_status_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select ma======rital status match.']"], # ~~~~ TODO
+                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one ma======rital status match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -879,7 +879,7 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_step": 6,
                 "expected_error_message": self._your_relationship_status_is_required_error_message,
                 # "expected_error_messages": ["['Your relationship status is required.']"], # ~~~~ TODO
-                "expected_counts_tuple": (8, 1, 0, 26),
+                "expected_counts_tuple": (9, 1, 0, 26),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1000,8 +1000,8 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "test_invalid_keys": True,
                 "test_invalid_ranks": True,
-                "expected_counts_tuple": (81, 386, 0, 6),
-                "expected_keys_and_ranks_error_messages_counts_tuple": (221, 165),
+                "expected_counts_tuple": (91, 433, 0, 6),
+                "expected_keys_and_ranks_error_messages_counts_tuple": (248, 185),
             })
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
@@ -1012,8 +1012,8 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": False,
                 "test_invalid_keys": False,
                 "test_invalid_ranks": False,
-                "expected_counts_tuple": (81, 165, 0, 0),
-                "expected_keys_and_ranks_error_messages_counts_tuple": (0, 165),
+                "expected_counts_tuple": (91, 185, 0, 0),
+                "expected_keys_and_ranks_error_messages_counts_tuple": (0, 185),
             })
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 

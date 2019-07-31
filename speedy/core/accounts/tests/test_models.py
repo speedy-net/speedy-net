@@ -367,7 +367,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_relationship_status_valid_values(self):
             self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(User.RELATIONSHIP_STATUS_UNKNOWN + 1, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE)))
-            self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(1, 8 + 1)))
+            self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(1, 9 + 1)))
 
         def test_cannot_create_user_without_all_the_required_fields(self):
             user = User()

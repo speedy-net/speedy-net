@@ -195,9 +195,9 @@ class SiteProfile(SiteProfileBase):
                 return self.__class__.RANK_0
             if (other_profile.user.relationship_status == User.RELATIONSHIP_STATUS_UNKNOWN):
                 return self.__class__.RANK_0
-            diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_5)
-            smoking_status_rank = self.smoking_status_match.get(str(other_profile.user.smoking_status), self.__class__.RANK_5)
-            relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_5)
+            diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_0)
+            smoking_status_rank = self.smoking_status_match.get(str(other_profile.user.smoking_status), self.__class__.RANK_0)
+            relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_0)
             rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
                 other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
