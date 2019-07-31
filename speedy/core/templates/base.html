@@ -61,10 +61,10 @@
 <nav class="navbar mb-4 navbar-expand-lg navbar-light {% block navbar_class %}bg-light{% endblock %}">
     <div class="container">
         <div class="dropdown">
-            <button class="btn btn-outline-secondary mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-outline-secondary mr-2" type="button" id="drop-down-menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-th"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="drop-down-menu-button">
                 {% for other_site in sites %}
                     <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain|remove_1_prefix_from_domain }}{# ~~~~ TODO: This filter [remove_1_prefix_from_domain] is only because we use "1." domains in production. remove this filter! #}">{% trans other_site.name %}</a>
                 {% endfor %}

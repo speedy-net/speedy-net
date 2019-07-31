@@ -82,17 +82,17 @@
     {% if request.user.is_authenticated %}
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}
         {% block greeting %}
-            <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:25 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
+            <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:25 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link" title="{% trans 'Your Profile' %}">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
         {% endblock %}
         {% block login_logout_register_user_is_authenticated_extra_1 %}{% endblock %}
         <div class="d-lg-none d-xl-none" data-role="sideMenuPlaceholder"></div>
         {% block login_logout_register_user_is_authenticated_extra_2 %}{% endblock %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
+            <a class="nav-link" href="{% url 'accounts:edit_profile' %}" title="{% trans 'Edit Profile' %}">{% trans 'Edit Profile' %}</a>
         </li>
         {% block login_logout_register_user_is_authenticated_extra_3 %}{% endblock %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
+            <a class="nav-link" href="{% url 'accounts:logout' %}" title="{% trans 'Logout' context request.user.get_gender %}">{% trans 'Logout' context request.user.get_gender %}</a>
         </li>
     {% else %}
         <form class="form" method="post" action="{% url 'accounts:login' %}">
