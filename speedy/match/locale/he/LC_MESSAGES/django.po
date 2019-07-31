@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:14+0300\n"
+"POT-Creation-Date: 2019-07-31 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -768,10 +768,12 @@ msgstr "על עצמי"
 msgid "Friends"
 msgstr "חברים/ות"
 
+#: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
 msgstr "לייק"
 
+#: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
 msgstr ""

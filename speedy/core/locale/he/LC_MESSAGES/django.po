@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:14+0300\n"
+"POT-Creation-Date: 2019-07-31 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2447,6 +2447,7 @@ msgstr "דחה/י"
 msgid "Add to Friends"
 msgstr "הוסף/י לחברים"
 
+#: .\templates\profiles\tools\block_user.html:9
 #: .\templates\profiles\tools\block_user.html:11
 msgid "Toggle Dropdown"
 msgstr ""
@@ -2459,10 +2460,12 @@ msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
 msgid "?"
 msgstr ""
 
+#: .\templates\profiles\tools\block_user.html:17
 #: .\templates\profiles\tools\block_user.html:18
 msgid "Block "
 msgstr "חסום/י את "
 
+#: .\templates\profiles\tools\block_user.html:24
 #: .\templates\profiles\tools\block_user.html:25
 msgid "Unblock "
 msgstr "בטל/י את חסימת "

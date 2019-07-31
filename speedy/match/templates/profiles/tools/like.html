@@ -8,7 +8,7 @@
 {% if can_like %}
     <form action="{% url 'likes:like' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
-        <button class="btn btn-danger" type="submit">
+        <button class="btn btn-danger" type="submit" title="{% trans 'Like' context request.user.get_gender %}">
             <i class="fa fa-heart"></i>
             {% trans 'Like' context request.user.get_gender %}
         </button>
@@ -16,7 +16,7 @@
 {% elif can_unlike %}
     <form action="{% url 'likes:unlike' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
-        <button class="btn btn-default" type="submit">
+        <button class="btn btn-default" type="submit" title="{% trans 'Unlike' context request.user.get_gender %}">
             <i class="fa fa-heart"></i>
             {% trans 'Unlike' context request.user.get_gender %}
         </button>
