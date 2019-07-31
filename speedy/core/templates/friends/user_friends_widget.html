@@ -16,8 +16,8 @@
             <div class="card-body">
                 <div class="row">
                     {% for friendship in friends %}
-                        <div class="col-2">
-                            {% profile_picture friendship.from_user '128x128' html_class="img-responsive" %}
+                        <div class="col-3">
+                            {% profile_picture friendship.from_user '175x175' html_class="img-responsive" %}
                         </div>
                     {% endfor %}
                 </div>
