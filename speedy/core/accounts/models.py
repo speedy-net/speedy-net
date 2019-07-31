@@ -243,16 +243,16 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     DIET_VALID_VALUES = [choice[0] for choice in DIET_VALID_CHOICES]
 
     SMOKING_STATUS_UNKNOWN = 0
-    SMOKING_STATUS_NO = 1
-    SMOKING_STATUS_SOMETIMES = 2
-    SMOKING_STATUS_YES = 3
+    SMOKING_STATUS_NOT_SMOKING = 1
+    SMOKING_STATUS_SMOKING_SOMETIMES = 2
+    SMOKING_STATUS_SMOKING = 3
     SMOKING_STATUS_MAX_VALUE_PLUS_ONE = 4
 
     SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
         (SMOKING_STATUS_UNKNOWN, _("Unknown")),
-        (SMOKING_STATUS_NO, _("Not smoking")),
-        (SMOKING_STATUS_SOMETIMES, _("Smoking sometimes")),
-        (SMOKING_STATUS_YES, _("Smoking")),
+        (SMOKING_STATUS_NOT_SMOKING, _("Not smoking")),
+        (SMOKING_STATUS_SMOKING_SOMETIMES, _("Smoking sometimes")),
+        (SMOKING_STATUS_SMOKING, _("Smoking")),
     )
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
     SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
@@ -317,9 +317,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def smoking_status_choices(gender):
         return (
             # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
-            (__class__.SMOKING_STATUS_NO, pgettext_lazy(context=gender, message="Not smoking")),
-            (__class__.SMOKING_STATUS_SOMETIMES, pgettext_lazy(context=gender, message="Smoking sometimes")),
-            (__class__.SMOKING_STATUS_YES, pgettext_lazy(context=gender, message="Smoking")),
+            (__class__.SMOKING_STATUS_NOT_SMOKING, pgettext_lazy(context=gender, message="Not smoking")),
+            (__class__.SMOKING_STATUS_SMOKING_SOMETIMES, pgettext_lazy(context=gender, message="Smoking sometimes")),
+            (__class__.SMOKING_STATUS_SMOKING, pgettext_lazy(context=gender, message="Smoking")),
         )
 
     @staticmethod
@@ -595,11 +595,33 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def get_diet(self):
         diets = {
-            self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message='Vegan'),
-            self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message='Vegetarian'),
-            self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message='Carnist'),
+            self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message="Vegan"),
+            self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message="Vegetarian"),
+            self.__class__.DIET_CARNIST: pgettext_lazy(context=self.get_gender(), message="Carnist"),
         }
         return diets.get(self.diet)
+
+    def get_smoking_status(self):
+        smoking_statuses = {
+            self.__class__.SMOKING_STATUS_NOT_SMOKING: pgettext_lazy(context=self.get_gender(), message="Not smoking"),
+            self.__class__.SMOKING_STATUS_SMOKING_SOMETIMES: pgettext_lazy(context=self.get_gender(), message="Smoking sometimes"),
+            self.__class__.SMOKING_STATUS_SMOKING: pgettext_lazy(context=self.get_gender(), message="Smoking"),
+        }
+        return smoking_statuses.get(self.smoking_status)
+
+    def get_relationship_status(self):
+        relationship_statuses = {
+            self.__class__.RELATIONSHIP_STATUS_SINGLE: pgettext_lazy(context=self.get_gender(), message="Single"),
+            self.__class__.RELATIONSHIP_STATUS_DIVORCED: pgettext_lazy(context=self.get_gender(), message="Divorced"),
+            self.__class__.RELATIONSHIP_STATUS_WIDOWED: pgettext_lazy(context=self.get_gender(), message="Widowed"),
+            self.__class__.RELATIONSHIP_STATUS_IN_RELATIONSHIP: pgettext_lazy(context=self.get_gender(), message="In a relationship"),
+            self.__class__.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP: pgettext_lazy(context=self.get_gender(), message="In an open relationship"),
+            self.__class__.RELATIONSHIP_STATUS_COMPLICATED: pgettext_lazy(context=self.get_gender(), message="It's complicated"),
+            self.__class__.RELATIONSHIP_STATUS_SEPARATED: pgettext_lazy(context=self.get_gender(), message="Separated"),
+            self.__class__.RELATIONSHIP_STATUS_ENGAGED: pgettext_lazy(context=self.get_gender(), message="Engaged"),
+            self.__class__.RELATIONSHIP_STATUS_MARRIED: pgettext_lazy(context=self.get_gender(), message="Married"),
+        }
+        return relationship_statuses.get(self.relationship_status)
 
     def get_age(self):
         return get_age(date_of_birth=self.date_of_birth)

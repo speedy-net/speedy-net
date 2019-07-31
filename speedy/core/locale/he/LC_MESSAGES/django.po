@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 14:10+0300\n"
+"POT-Creation-Date: 2019-07-31 15:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -615,7 +615,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:638
+#: .\__translations\__translations.py:9 .\accounts\models.py:660
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -1570,7 +1570,7 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:475 .\accounts\models.py:622 .\blocks\models.py:11
+#: .\accounts\models.py:475 .\accounts\models.py:644 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -1582,39 +1582,39 @@ msgstr "משתמשים"
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:623
+#: .\accounts\models.py:645
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:624
+#: .\accounts\models.py:646
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:625
+#: .\accounts\models.py:647
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:626
+#: .\accounts\models.py:648
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:627
+#: .\accounts\models.py:649
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:628
+#: .\accounts\models.py:650
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:639
+#: .\accounts\models.py:661
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:698
+#: .\accounts\models.py:720
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:699
+#: .\accounts\models.py:721
 msgid "last visit"
 msgstr "ביקור אחרון"
 

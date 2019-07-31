@@ -1124,7 +1124,7 @@ if (django_settings.LOGIN_ENABLED):
         def get_active_user_doron(self):
             user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
             user.diet = User.DIET_VEGETARIAN
-            user.smoking_status = User.SMOKING_STATUS_NO
+            user.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
             user.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
             user.speedy_match_profile.min_age_match = 20
             user.speedy_match_profile.max_age_match = 180
@@ -1135,7 +1135,7 @@ if (django_settings.LOGIN_ENABLED):
         def get_active_user_jennifer(self):
             user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
             user.diet = User.DIET_VEGAN
-            user.smoking_status = User.SMOKING_STATUS_YES
+            user.smoking_status = User.SMOKING_STATUS_SMOKING
             user.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
             user.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
             user.save_user_and_profile()
@@ -1200,8 +1200,8 @@ if (django_settings.LOGIN_ENABLED):
         def test_smoking_status_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_YES): 0, str(User.SMOKING_STATUS_NO): 5, str(User.SMOKING_STATUS_SOMETIMES): 0}
-            user_2.smoking_status = User.SMOKING_STATUS_YES
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 0, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 0}
+            user_2.smoking_status = User.SMOKING_STATUS_SMOKING
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
@@ -1235,7 +1235,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_match_profile_rank_3(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_YES): 3, str(User.SMOKING_STATUS_NO): 5, str(User.SMOKING_STATUS_SOMETIMES): 4}
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 4}
             user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
@@ -1258,7 +1258,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_match_profile_rank_1(self):
             user_1 = self.get_active_user_jennifer()
             user_2 = self.get_active_user_doron()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_YES): 3, str(User.SMOKING_STATUS_NO): 5, str(User.SMOKING_STATUS_SOMETIMES): 4}
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 4}
             user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
             user_1.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1
             user_2.relationship_status = User.RELATIONSHIP_STATUS_MARRIED

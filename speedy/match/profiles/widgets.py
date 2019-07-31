@@ -41,12 +41,10 @@ class UserExtraDetailsWidget(Widget):
         diet = self.user.get_diet() if (validators.diet_is_valid(diet=diet_code)) else str(_("Unknown"))
 
         smoking_status_code = self.user.smoking_status
-        smoking_status_list = [str(choice[1]) for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == smoking_status_code)]
-        smoking_status = smoking_status_list[0] if (len(smoking_status_list) == 1) else str(_("Unknown"))
+        smoking_status = self.user.get_smoking_status() if (validators.smoking_status_is_valid(smoking_status=smoking_status_code)) else str(_("Unknown"))
 
         relationship_status_code = self.user.relationship_status
-        relationship_status_list = [str(choice[1]) for choice in User.RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT if (choice[0] == relationship_status_code)]
-        relationship_status = relationship_status_list[0] if (len(relationship_status_list) == 1) else str(_("Unknown"))
+        relationship_status = self.user.get_relationship_status() if (validators.relationship_status_is_valid(relationship_status=relationship_status_code)) else str(_("Unknown"))
 
         gender_codes = self.user.speedy_match_profile.gender_to_match
         genders_to_match_list = [str(choice[1]) for choice in User.GENDER_CHOICES if (choice[0] in gender_codes)]
