@@ -1,4 +1,5 @@
 {% load i18n %}
+
 <div class="user-profile pull-left flip">
     <div class="user-profile-image">
         {% if user.photo %}
@@ -7,6 +8,12 @@
             <i class="fa fa-camera" aria-hidden="true"></i>
         {% endif %}
     </div>
+    <h5 class="card-title mb-0">
+        {{ user.name|truncatechars:15 }},
+        {{ user.get_age }},
+        {{ user.get_diet }}
+    </h5>
+    {% comment %}
     <div class="user-profile-general-info">
         <span>{{ user.first_name|truncatechars:25 }}, </span>
         <span>{{ user.get_gender_translated|make_list|first|capfirst }}, </span>
@@ -31,4 +38,5 @@
             , <span>{{ user.get_diet }}</span>
         {% endif %}
     </div>
+    {% endcomment %}
 </div>
