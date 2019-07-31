@@ -4,13 +4,13 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% trans 'Welcome' %} / {{ block.super }}{% endblock %}
+{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' %}{% endif %} / {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-md-10 text-center">
             <div class="page-header">
-                <h1 style="visibility: hidden">X</h1>
+                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
             </div>
             {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">

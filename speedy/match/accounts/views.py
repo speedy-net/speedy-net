@@ -2,7 +2,7 @@ import logging
 
 from django.contrib import messages
 from django.contrib.sites.models import Site
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
@@ -21,7 +21,7 @@ class IndexView(CoreIndexView):
 
 class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def get_context_data(self, **kwargs):
-        logger.debug('HERE: get_context_data: kwargs: %s', kwargs)
+        # logger.debug('HERE: get_context_data: kwargs: %s', kwargs)
         cd = super().get_context_data(**kwargs)
         cd.update({
             'steps_range': list(utils.get_steps_range()),
@@ -31,7 +31,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return cd
 
     def get_form_kwargs(self):
-        logger.debug('HERE: get_form_kwargs')
+        # logger.debug('HERE: get_form_kwargs')
         kwargs = super().get_form_kwargs()
         kwargs['step'] = self.step
         return kwargs
@@ -40,38 +40,44 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def dispatch(self, request, *args, **kwargs):
         if (not (self.request.user.is_authenticated)):
             return super().dispatch(request=request, *args, **kwargs)
-        logger.debug('HERE: dispatch: args: %s, kwargs: %s', args, kwargs)
-        try:
-            if (not ('step' in kwargs)):
-                logger.debug("dispatch: 'step' is missing from kwargs, adding it")
-                logger.debug("self.request.user.speedy_match_profile.activation_step: %d", self.request.user.speedy_match_profile.activation_step)
+        # logger.debug('HERE: dispatch: args: %s, kwargs: %s', args, kwargs)
+        if (request.user.is_active):
+            try:
+                if (not ('step' in kwargs)):
+                    # logger.debug("dispatch: 'step' is missing from kwargs, adding it")
+                    # logger.debug("self.request.user.speedy_match_profile.activation_step: %d", self.request.user.speedy_match_profile.activation_step)
+                    return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
+                self.step = int(kwargs['step'])
+                # logger.debug("dispatch: self.step: %i", self.step)
+            except (ValueError):
+                # logger.debug("dispatch: kwargs['step']: %s, is not a number")
+                # logger.debug("dispatch: self.request.user.speedy_match_profile.activation_step: %i", self.request.user.speedy_match_profile.activation_step)
                 return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
-            self.step = int(kwargs['step'])
-            logger.debug("dispatch: self.step: %i" , self.step)
-        except (ValueError):
-            logger.debug("dispatch: kwargs['step']: %s, is not a number")
-            logger.debug("dispatch: self.request.user.speedy_match_profile.activation_step: %i" , self.request.user.speedy_match_profile.activation_step)
-            return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
+        else:
+            # logger.debug("request.path", request.path)
+            # logger.debug("reverse('accounts:activate')", reverse('accounts:activate'))
+            if (('step' in kwargs) or (not (request.path == reverse('accounts:activate')))):
+                return redirect(to='accounts:activate')
         return super().dispatch(request=request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         # ~~~~ TODO: redirect all URLs of this view and never use the default URL directly.
-        logger.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
-        logger.debug('get: request.user.is_active ? %s' , request.user.is_active)
+        # logger.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
+        # logger.debug('get: request.user.is_active ? %s', request.user.is_active)
         if (not (request.user.is_active)):
-            logger.debug('get: inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
+            # logger.debug('get: inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
             return render(request=self.request, template_name=self.template_name, context={})
         if (self.step <= 1):
-            logger.debug('get: inside "if (self.step <= 1):" self.template_name: %s', self.template_name)
+            # logger.debug('get: inside "if (self.step <= 1):" self.template_name: %s', self.template_name)
             return redirect(to='accounts:edit_profile')
         if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):
-            logger.debug('get: inside "if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):"')
+            # logger.debug('get: inside "if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):"')
             return redirect(to='matches:list')
         if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
-            logger.debug('get: inside "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
+            # logger.debug('get: inside "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
             step = min(request.user.speedy_match_profile.activation_step, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1)
             return redirect(to='accounts:activate', step=step)
-        logger.debug('get: did not get into "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
+        # logger.debug('get: did not get into "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
         if (request.user.speedy_match_profile.is_active):
             logger.error('get: inside "if (request.user.speedy_match_profile.is_active):"')
         # Step must be an integer from 2 to 9.
