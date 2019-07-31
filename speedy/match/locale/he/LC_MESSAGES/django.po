@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:24+0300\n"
+"POT-Creation-Date: 2019-07-31 21:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -690,6 +690,10 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
+#: .\templates\base_site.html:24 .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "ההתאמות שלך"
+
 #: .\templates\base_site.html:24
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
@@ -700,6 +704,10 @@ msgstr "התאמות"
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "לייקים"
+
+#: .\templates\base_site.html:37 .\templates\base_site.html:43
+msgid "Your Match Settings"
+msgstr ""
 
 #: .\templates\base_site.html:37 .\templates\base_site.html:43
 #: .\templates\matches\settings\base.html:9
@@ -718,10 +726,6 @@ msgstr "החברות והחברים שלך"
 #: .\templates\likes\like_list.html:41
 msgid "You have no likes here."
 msgstr "אין פה אנשים."
-
-#: .\templates\matches\match_list.html:10
-msgid "Your Matches"
-msgstr "ההתאמות שלך"
 
 #: .\templates\matches\match_list.html:28
 msgid "Update matches"

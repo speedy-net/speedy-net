@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:24+0300\n"
+"POT-Creation-Date: 2019-07-31 21:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1993,6 +1993,7 @@ msgstr ""
 #: .\templates\accounts\edit_profile\base.html:10
 #: .\templates\base_with_login.html:50 .\templates\base_with_login.html:91
 #: .\templates\base_with_login.html:135
+#: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
 msgstr ""
@@ -2396,11 +2397,11 @@ msgstr ""
 msgid "Unblock "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:30
+#: .\templates\profiles\tools\block_user.html:29
 msgid "Report "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:32
+#: .\templates\profiles\tools\block_user.html:31
 msgid "Report this photo"
 msgstr ""
 
@@ -2412,6 +2413,7 @@ msgstr ""
 msgid "Remove Friend"
 msgstr ""
 
+#: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
 msgstr ""
