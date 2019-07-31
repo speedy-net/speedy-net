@@ -82,7 +82,7 @@
     {% if request.user.is_authenticated %}
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}
         {% block greeting %}
-            <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:30 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
+            <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:25 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
         {% endblock %}
         {% block login_logout_register_user_is_authenticated_extra_1 %}{% endblock %}
         <div class="d-lg-none d-xl-none" data-role="sideMenuPlaceholder"></div>
