@@ -1200,7 +1200,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_smoking_status_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 0, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 0}
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 0, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 0}
             user_2.smoking_status = User.SMOKING_STATUS_SMOKING
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
@@ -1235,7 +1235,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_match_profile_rank_3(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 4}
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 4}
             user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
@@ -1258,7 +1258,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_match_profile_rank_1(self):
             user_1 = self.get_active_user_jennifer()
             user_2 = self.get_active_user_doron()
-            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_SOMETIMES): 4}
+            user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 4}
             user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
             user_1.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_1
             user_2.relationship_status = User.RELATIONSHIP_STATUS_MARRIED

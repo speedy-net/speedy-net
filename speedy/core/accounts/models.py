@@ -244,14 +244,14 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     SMOKING_STATUS_UNKNOWN = 0
     SMOKING_STATUS_NOT_SMOKING = 1
-    SMOKING_STATUS_SMOKING_SOMETIMES = 2
+    SMOKING_STATUS_SMOKING_OCCASIONALLY = 2
     SMOKING_STATUS_SMOKING = 3
     SMOKING_STATUS_MAX_VALUE_PLUS_ONE = 4
 
     SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
         (SMOKING_STATUS_UNKNOWN, _("Unknown")),
         (SMOKING_STATUS_NOT_SMOKING, _("Not smoking")),
-        (SMOKING_STATUS_SMOKING_SOMETIMES, _("Smoking sometimes")),
+        (SMOKING_STATUS_SMOKING_OCCASIONALLY, _("Smoking occasionally")),
         (SMOKING_STATUS_SMOKING, _("Smoking")),
     )
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
@@ -318,7 +318,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return (
             # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.SMOKING_STATUS_NOT_SMOKING, pgettext_lazy(context=gender, message="Not smoking")),
-            (__class__.SMOKING_STATUS_SMOKING_SOMETIMES, pgettext_lazy(context=gender, message="Smoking sometimes")),
+            (__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY, pgettext_lazy(context=gender, message="Smoking occasionally")),
             (__class__.SMOKING_STATUS_SMOKING, pgettext_lazy(context=gender, message="Smoking")),
         )
 
@@ -604,7 +604,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_smoking_status(self):
         smoking_statuses = {
             self.__class__.SMOKING_STATUS_NOT_SMOKING: pgettext_lazy(context=self.get_gender(), message="Not smoking"),
-            self.__class__.SMOKING_STATUS_SMOKING_SOMETIMES: pgettext_lazy(context=self.get_gender(), message="Smoking sometimes"),
+            self.__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY: pgettext_lazy(context=self.get_gender(), message="Smoking occasionally"),
             self.__class__.SMOKING_STATUS_SMOKING: pgettext_lazy(context=self.get_gender(), message="Smoking"),
         }
         return smoking_statuses.get(self.smoking_status)

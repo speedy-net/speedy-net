@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 18:37+0300\n"
+"POT-Creation-Date: 2019-07-31 18:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -868,17 +868,17 @@ msgstr ""
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
-msgid "Smoking sometimes"
+msgid "Smoking occasionally"
 msgstr ""
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
-msgid "Smoking sometimes"
+msgid "Smoking occasionally"
 msgstr ""
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
-msgid "Smoking sometimes"
+msgid "Smoking occasionally"
 msgstr ""
 
 #: .\__translations\__translations.py:97
@@ -1428,7 +1428,7 @@ msgid "Not smoking"
 msgstr ""
 
 #: .\accounts\models.py:254
-msgid "Smoking sometimes"
+msgid "Smoking occasionally"
 msgstr ""
 
 #: .\accounts\models.py:255

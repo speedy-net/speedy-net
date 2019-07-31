@@ -90,9 +90,9 @@ pgettext_lazy(context="female", message="Not smoking")
 pgettext_lazy(context="male", message="Not smoking")
 pgettext_lazy(context="other", message="Not smoking")
 
-pgettext_lazy(context="female", message="Smoking sometimes")
-pgettext_lazy(context="male", message="Smoking sometimes")
-pgettext_lazy(context="other", message="Smoking sometimes")
+pgettext_lazy(context="female", message="Smoking occasionally")
+pgettext_lazy(context="male", message="Smoking occasionally")
+pgettext_lazy(context="other", message="Smoking occasionally")
 
 pgettext_lazy(context="female", message="Smoking")
 pgettext_lazy(context="male", message="Smoking")
