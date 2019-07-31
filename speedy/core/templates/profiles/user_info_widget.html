@@ -18,7 +18,7 @@
 
             <tr>
                 <th>{% trans 'Name' %}</th>
-                <td>{{ user.name }}</td>
+                <td>{{ user.name|truncatechars:50 }}</td>
             </tr>
 
             {% if can_view_username %}
