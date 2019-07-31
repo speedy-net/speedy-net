@@ -159,6 +159,7 @@ class ReservedUsername(Entity):
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
+        # ~~~~ TODO: fix models! Exceptions should be 'slug' or 'username' and not '__all__'.
         self.normalize_slug_and_username()
         self.validate_username_for_slug()
         self.validate_username_required()
@@ -504,6 +505,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
         # If special username is true, don't validate username.
         if (self.special_username):
+            # ~~~~ TODO: fix models! Exceptions should be 'slug' and not '__all__'.
             self.normalize_slug_and_username()
             self.validate_username_for_slug()
             self.validate_username_required()
