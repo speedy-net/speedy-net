@@ -23,11 +23,11 @@
             {% if received_friendship_request %}
                 <form action="{% url 'friends:accept_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-sm btn-success">{% trans 'Accept' %}</button>
+                    <button type="submit" class="btn btn-sm btn-success" title="{% trans 'Accept Friendship Request' context request.user.get_gender %}">{% trans 'Accept' context request.user.get_gender %}</button>
                 </form>
                 <form action="{% url 'friends:reject_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-sm btn-danger">{% trans 'Reject' %}</button>
+                    <button type="submit" class="btn btn-sm btn-danger" title="{% trans 'Reject Friendship Request' context request.user.get_gender %}">{% trans 'Reject' context request.user.get_gender %}</button>
                 </form>
             {% endif %}
         </div>
