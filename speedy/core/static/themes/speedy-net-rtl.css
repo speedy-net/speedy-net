@@ -460,7 +460,7 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-@media (min-width: 320px) {
+@media (min-width: 350px) {
   .col-sm-6 {
     flex: 0 0 50%;
     max-width: 50%; }
