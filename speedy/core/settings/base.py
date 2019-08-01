@@ -58,6 +58,9 @@ INSTALLED_APPS = [
     'speedy.core.about',
     'speedy.core.privacy',
     'speedy.core.terms',
+    'speedy.net.accounts',
+    'speedy.match.accounts',
+    'speedy.match.likes',
 ]
 
 FORMAT_MODULE_PATH = [
