@@ -9,7 +9,7 @@
         <div class="card-body">
             <a href="{{ user.get_absolute_url }}">
                 <h5 class="card-title mb-0">
-                    {{ user.name }}
+                    {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}{{ user.name|truncatechars:25 }}{% else %}{{ user.name|truncatechars:30 }}{% endif %}
                 </h5>
             </a>
             {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank > 0 %}
