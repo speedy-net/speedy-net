@@ -462,6 +462,12 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
+@media (min-width: 260px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
