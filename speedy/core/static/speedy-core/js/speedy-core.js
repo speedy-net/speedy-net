@@ -110,9 +110,11 @@ evil.block('@@MessageList', {
         var url = this.block.data('poll-url');
         var since = this.$('@message').first().data('timestamp');
         url += '?since=' + since; // ~~~~ TODO: there is a bug with this JavaScript code!
+        /* // ~~~~ TODO: temporarily disabled.
         $.get(url, function (data) {
             $(data).prependTo(this_.block);
         });
+        */
     }
 });
 
