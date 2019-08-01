@@ -4,6 +4,7 @@ from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.friends.rules import are_friends
 from speedy.core.blocks.rules import there_is_block
 from .models import UserAccessField
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
 def _has_access_perm_for_obj(user, other_user, access):
@@ -35,6 +36,14 @@ def has_access_perm_for_dob_year(user, other_user):
 
 
 @predicate
+def view_user_on_speedy_match_widget(user, other_user):
+    if (user.is_authenticated):
+        match_profile = (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > SpeedyMatchSiteProfile.RANK_0)
+        return match_profile
+    return False
+
+
+@predicate
 def is_email_address_owner(user, email_address):
     return user.id == email_address.user_id
 
@@ -63,7 +72,7 @@ add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for
 add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
 add_perm('accounts.edit_profile', has_access_perm & is_self)
 add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
-add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block) # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
+add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)

@@ -1,9 +1,13 @@
+import logging
+
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.profiles.widgets import Widget
 from speedy.core.accounts.models import User
 from speedy.match.accounts import validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+
+logger = logging.getLogger(__name__)
 
 
 class UserRankWidget(Widget):
@@ -16,11 +20,16 @@ class UserOnSpeedyMatchWidget(Widget):
     permission_required = 'accounts.view_user_on_speedy_match_widget'
 
     def is_match(self):
+        # Should be always true. This widget should not be displayed if false.
         if (not (self.viewer.is_authenticated)):
-            return False
-        if (self.viewer == self.user):
-            return False
-        return self.user.speedy_match_profile.get_matching_rank(other_profile=self.viewer.speedy_match_profile) > SpeedyMatchSiteProfile.RANK_0
+            is_match = False
+        elif (self.viewer == self.user):
+            is_match = False
+        else:
+            is_match = (self.user.speedy_match_profile.get_matching_rank(other_profile=self.viewer.speedy_match_profile) > SpeedyMatchSiteProfile.RANK_0)
+        if (not (is_match is True)):
+            logger.error('UserOnSpeedyMatchWidget::get inside "if (not (is_match is True)):", is_match={is_match}, self.viewer={viewer}, self.user={user}'.format(is_match=is_match, viewer=self.viewer, user=self.user))
+        return is_match
 
     def get_context_data(self):
         cd = super().get_context_data()
