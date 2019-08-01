@@ -2,6 +2,18 @@
 
 {% load i18n %}
 
+{% block extra_css %}
+    {{ block.super }}
+
+@media (max-width: 459px) {
+  .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+{% endblock %}
+
 {% block tab_content %}
     <div class="row">
         {% for received_friendship_request in user.all_received_friendship_requests %}
