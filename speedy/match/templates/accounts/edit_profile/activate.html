@@ -31,9 +31,9 @@
                     </div>
                     <div class="activation-form-header text-left flip">
                         {% if current_step < 7 %}
-                            {% trans 'About me' context user.get_gender %}
+                            {% trans 'About me'|title context user.get_gender %}
                         {% else %}
-                            {% trans 'About my match' context user.speedy_match_profile.get_match_gender %}
+                            {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
                         {% endif %}
                     </div>
                     <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form" enctype="multipart/form-data">
