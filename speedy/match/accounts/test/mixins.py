@@ -18,9 +18,9 @@ class SpeedyMatchAccountsLanguageMixin(object):
         _please_select_diet_match_error_message_dict = {'en': 'Please select diet match.', 'he': '_____ # ~~~~ TODO'}
         _please_select_smoking_status_match_error_message_dict = {'en': 'Please select smoking status match.', 'he': '_____ # ~~~~ TODO'}
         _please_select_relationship_status_match_error_message_dict = {'en': 'Please select marital status match.', 'he': '_____ # ~~~~ TODO'}
-        _at_least_one_diet_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one diet match option should be 5 hearts.', 'he': '_____ # ~~~~ TODO'}
-        _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one smoking status match option should be 5 hearts.', 'he': '_____ # ~~~~ TODO'}
-        _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one marital status match option should be 5 hearts.', 'he': '_____ # ~~~~ TODO'}
+        _at_least_one_diet_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one diet match option should be five hearts.', 'he': '_____ # ~~~~ TODO'}
+        _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one smoking status match option should be five hearts.', 'he': '_____ # ~~~~ TODO'}
+        _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict = {'en': 'At least one marital status match option should be five hearts.', 'he': '_____ # ~~~~ TODO'}
 
         self._a_profile_picture_is_required_error_message = _a_profile_picture_is_required_error_message_dict[self.language_code]
         self._please_write_some_text_in_this_field_error_message = _please_write_some_text_in_this_field_error_message_dict[self.language_code]

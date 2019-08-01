@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load thumbnail %}
 {% load user_tags %}
+{% load match_tags_and_filters %}
 
 <div class="col-sm-6 col-md-3 mb-0">
     <div class="text-center">
@@ -12,7 +13,7 @@
                 </h5>
             </a>
             {% if user.speedy_match_profile.rank %}
-                <div>
+                <div title="{{ user.speedy_match_profile.rank|rank_description }}">
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-light{% else %}text-dark{% endif %}"></i>
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-light{% else %}text-dark{% endif %}"></i>
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 3 %}text-light{% else %}text-dark{% endif %}"></i>

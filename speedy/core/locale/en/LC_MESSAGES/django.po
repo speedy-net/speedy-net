@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:53+0300\n"
+"POT-Creation-Date: 2019-08-01 05:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2350,22 +2350,22 @@ msgid " blocked you."
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:10
-#: .\templates\profiles\user_list_item.html:26
+#: .\templates\profiles\user_list_item.html:27
 msgid "Accept Friendship Request"
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:12
-#: .\templates\profiles\user_list_item.html:26
+#: .\templates\profiles\user_list_item.html:27
 msgid "Accept"
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:17
-#: .\templates\profiles\user_list_item.html:30
+#: .\templates\profiles\user_list_item.html:31
 msgid "Reject Friendship Request"
 msgstr ""
 
 #: .\templates\profiles\tools\add_to_friends.html:19
-#: .\templates\profiles\user_list_item.html:30
+#: .\templates\profiles\user_list_item.html:31
 msgid "Reject"
 msgstr ""
 

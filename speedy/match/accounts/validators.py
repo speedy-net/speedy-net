@@ -110,7 +110,7 @@ def validate_diet_match(diet_match):
         # This may be due to values added later.
         raise ValidationError(_("Please select diet match."))
     if (not (max([diet_match[str(diet)] for diet in User.DIET_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one diet match option should be 5 hearts."))
+        raise ValidationError(_("At least one diet match option should be five hearts."))
 
 
 def validate_smoking_status_match(smoking_status_match):
@@ -118,7 +118,7 @@ def validate_smoking_status_match(smoking_status_match):
         # This may be due to values added later.
         raise ValidationError(_("Please select smoking status match."))
     if (not (max([smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one smoking status match option should be 5 hearts."))
+        raise ValidationError(_("At least one smoking status match option should be five hearts."))
 
 
 def validate_relationship_status_match(relationship_status_match):
@@ -126,6 +126,6 @@ def validate_relationship_status_match(relationship_status_match):
         # This may be due to values added later.
         raise ValidationError(_("Please select marital status match."))
     if (not (max([relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES]) == SpeedyMatchSiteProfile.RANK_5)):
-        raise ValidationError(_("At least one marital status match option should be 5 hearts."))
+        raise ValidationError(_("At least one marital status match option should be five hearts."))
 
 

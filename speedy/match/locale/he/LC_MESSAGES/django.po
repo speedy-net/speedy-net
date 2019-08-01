@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 21:53+0300\n"
+"POT-Creation-Date: 2019-08-01 05:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,99 +329,99 @@ msgstr "סטטוס מערכת היחסים שלי"
 msgid "City or locality"
 msgstr "עיר או יישוב"
 
-#: .\accounts\forms.py:126 .\accounts\models.py:79
+#: .\accounts\forms.py:126 .\accounts\models.py:91
 msgid "Gender to match"
 msgstr "מין בן/בת הזוג"
 
-#: .\accounts\models.py:38
-msgid "0 hearts"
-msgstr "0 לבבות"
+#: .\accounts\models.py:38 .\accounts\models.py:66
+msgid "No match"
+msgstr "אין התאמה"
 
-#: .\accounts\models.py:39
-msgid "one heart"
+#: .\accounts\models.py:39 .\accounts\models.py:67
+msgid "One heart"
 msgstr "לב אחד"
 
-#: .\accounts\models.py:40
-msgid "2 hearts"
-msgstr "2 לבבות"
+#: .\accounts\models.py:40 .\accounts\models.py:68
+msgid "Two hearts"
+msgstr "שני לבבות"
 
-#: .\accounts\models.py:41
-msgid "3 hearts"
-msgstr "3 לבבות"
+#: .\accounts\models.py:41 .\accounts\models.py:69
+msgid "Three hearts"
+msgstr "שלושה לבבות"
 
-#: .\accounts\models.py:42
-msgid "4 hearts"
-msgstr "4 לבבות"
+#: .\accounts\models.py:42 .\accounts\models.py:70
+msgid "Four hearts"
+msgstr "ארבעה לבבות"
 
-#: .\accounts\models.py:43
-msgid "5 hearts"
-msgstr "5 לבבות"
+#: .\accounts\models.py:43 .\accounts\models.py:71
+msgid "Five hearts"
+msgstr "חמישה לבבות"
 
-#: .\accounts\models.py:63
+#: .\accounts\models.py:75
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:64
+#: .\accounts\models.py:76
 msgid "On new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:65
+#: .\accounts\models.py:77
 msgid "Active languages"
 msgstr "שפות פעילות"
 
-#: .\accounts\models.py:66 .\templates\profiles\user_extra_info_widget.html:29
+#: .\accounts\models.py:78 .\templates\profiles\user_extra_info_widget.html:29
 msgid "Height"
 msgstr "גובה"
 
-#: .\accounts\models.py:66
+#: .\accounts\models.py:78
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:68
+#: .\accounts\models.py:80
 msgid "Few words about me"
 msgstr "כמה מילים על עצמי"
 
-#: .\accounts\models.py:71 .\accounts\validators.py:54
+#: .\accounts\models.py:83 .\accounts\validators.py:54
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
-#: .\accounts\models.py:74 .\accounts\validators.py:59
+#: .\accounts\models.py:86 .\accounts\validators.py:59
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:89
 msgid "My ideal match"
 msgstr "בן/בת הזוג האידיאלי/ת שלי"
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:92
 msgid "Minimal age to match"
 msgstr "גיל מינימלי לבן/בת הזוג"
 
-#: .\accounts\models.py:81
+#: .\accounts\models.py:93
 msgid "Maximal age to match"
 msgstr "גיל מקסימלי לבן/בת הזוג"
 
-#: .\accounts\models.py:82
+#: .\accounts\models.py:94
 msgid "Diet match"
 msgstr "התאמת תזונה"
 
-#: .\accounts\models.py:83
+#: .\accounts\models.py:95
 msgid "Smoking status match"
 msgstr "התאמת הרגלי עישון"
 
-#: .\accounts\models.py:84
+#: .\accounts\models.py:96
 msgid "Relationship status match"
 msgstr "התאמת סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:116
+#: .\accounts\models.py:128
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:117 .\profiles\apps.py:7
+#: .\accounts\models.py:129 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:176 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:188 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -474,7 +474,7 @@ msgid "Please select diet match."
 msgstr ""
 
 #: .\accounts\validators.py:113
-msgid "At least one diet match option should be 5 hearts."
+msgid "At least one diet match option should be five hearts."
 msgstr ""
 
 #: .\accounts\validators.py:119
@@ -482,7 +482,7 @@ msgid "Please select smoking status match."
 msgstr ""
 
 #: .\accounts\validators.py:121
-msgid "At least one smoking status match option should be 5 hearts."
+msgid "At least one smoking status match option should be five hearts."
 msgstr ""
 
 #: .\accounts\validators.py:127
@@ -490,7 +490,7 @@ msgid "Please select marital status match."
 msgstr ""
 
 #: .\accounts\validators.py:129
-msgid "At least one marital status match option should be 5 hearts."
+msgid "At least one marital status match option should be five hearts."
 msgstr ""
 
 #: .\likes\managers.py:14 .\likes\models.py:30

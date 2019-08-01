@@ -63,7 +63,7 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_diet_match_error_message,
                 # "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -76,7 +76,7 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_smoking_status_match_error_message,
                 # "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -89,7 +89,7 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_error_message_keys_and_ranks_invalid": self._please_select_relationship_status_match_error_message,
                 # "expected_error_messages_keys_and_ranks_invalid": ["['Please select marital status match.']"], # ~~~~ TODO
                 "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be 5 hearts.']"], # ~~~~ TODO
+                # "expected_error_messages_max_rank_invalid": ["['At least one marital status match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]

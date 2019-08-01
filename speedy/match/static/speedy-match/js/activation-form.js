@@ -27,7 +27,8 @@ $(document).ready(function() {
     });
 
     $('.widget-choice').click(function () {
-        if($(this).closest('.widget-group').find('.widget-checkbox').prop('checked')) {
+        $(this).closest('.widget-group').find('.widget-checkbox').prop('checked', true);
+        if ($(this).closest('.widget-group').find('.widget-checkbox').is(":checked")) {
             var json_widget = $(this).closest('.widget-json');
             var json_widget_value = JSON.parse(json_widget.find('.widget-input').val());
             var json_widget_group = $(this).closest('.widget-group');
@@ -41,7 +42,7 @@ $(document).ready(function() {
         var json_widget = $(this).closest('.widget-json');
         var json_widget_value = JSON.parse(json_widget.find('.widget-input').val());
         var json_widget_group = $(this).closest('.widget-group');
-        if($(this).prop('checked')) {
+        if ($(this).is(":checked")) {
             json_widget_value[json_widget_group.data('value')] = 5;
             json_widget_group.find('.widget-choice').addClass('active');
         } else {

@@ -35,12 +35,12 @@ class SiteProfile(SiteProfileBase):
     RANK_5 = 5
 
     RANK_CHOICES = (
-        (RANK_0, _("0 hearts")),
-        (RANK_1, _("one heart")),
-        (RANK_2, _("2 hearts")),
-        (RANK_3, _("3 hearts")),
-        (RANK_4, _("4 hearts")),
-        (RANK_5, _("5 hearts")),
+        (RANK_0, _("No match")),
+        (RANK_1, _("One heart")),
+        (RANK_2, _("Two hearts")),
+        (RANK_3, _("Three hearts")),
+        (RANK_4, _("Four hearts")),
+        (RANK_5, _("Five hearts")),
     )
     RANK_VALID_VALUES = [choice[0] for choice in RANK_CHOICES]
 
@@ -59,6 +59,18 @@ class SiteProfile(SiteProfileBase):
     @staticmethod
     def relationship_status_match_default():
         return dict({str(relationship_status): __class__.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
+
+    @staticmethod
+    def get_rank_description(rank):
+        rank_descriptions = {
+            __class__.RANK_0: _("No match"),
+            __class__.RANK_1: _("One heart"),
+            __class__.RANK_2: _("Two hearts"),
+            __class__.RANK_3: _("Three hearts"),
+            __class__.RANK_4: _("Four hearts"),
+            __class__.RANK_5: _("Five hearts"),
+        }
+        return rank_descriptions.get(rank, "")
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)

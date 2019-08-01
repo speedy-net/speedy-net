@@ -1,8 +1,8 @@
 {% load i18n %}
 {% load rules %}
+{% load match_tags_and_filters %}
 
 {% has_perm 'accounts.view_profile_rank' viewer user as can_view_profile_rank %}
-
 
 {% if can_view_profile_rank %}
     <div class="col-sm-8 ml-auto mb-4">
@@ -14,7 +14,7 @@
             </div>
             {% if user.speedy_match_profile.rank %}
                 <div class="card-body text-center">
-                    <div>
+                    <div title="{{ user.speedy_match_profile.rank|rank_description }}">
                         <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
                         <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
                         <i class="fa fa-heart fa-2x {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>

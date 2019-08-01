@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load thumbnail %}
 {% load user_tags %}
+{% load match_tags_and_filters %}
 
 <div class="col-sm-6 col-md-4 mb-4">
     <div class="card text-center">
@@ -11,13 +12,13 @@
                     {{ user.name }}
                 </h5>
             </a>
-            {% if user.profile.rank %}
-                <div>
-                    <i class="fa fa-heart {% if user.profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+            {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank %}
+                <div title="{{ user.speedy_match_profile.rank|rank_description }}">
+                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
                 </div>
             {% endif %}
             {% if received_friendship_request %}
