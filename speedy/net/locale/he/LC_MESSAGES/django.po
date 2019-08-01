@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 19:05+0300\n"
+"POT-Creation-Date: 2019-08-01 19:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,8 +114,8 @@ msgstr ""
 "המליטה 7 גורים בשנת 1988."
 
 #: .\templates\about\about.html:29
-msgid "Speedy Net is currently in alpha. It was launched on 13th June 2012."
-msgstr "ספידי נט היא כרגע באלפא. היא הושקה ב-13 ביוני 2012."
+msgid "Speedy Net is currently in alpha. It was launched on June 2012."
+msgstr "ספידי נט היא כרגע באלפא. היא הושקה ביוני 2012."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
