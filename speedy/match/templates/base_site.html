@@ -11,9 +11,9 @@
 
 {% block site_theme %}
     {% if LANGUAGE_BIDI %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match.rtl.css' %}"/>
+        <link rel="stylesheet" href="{% static 'themes/speedy-match-rtl.css' %}"/>
     {% else %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match.css' %}"/>
+        <link rel="stylesheet" href="{% static 'themes/speedy-match-ltr.css' %}"/>
     {% endif %}
 {% endblock %}
 

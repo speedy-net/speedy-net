@@ -18,9 +18,9 @@
         <link rel="stylesheet" href="{% static 'speedy-core/css/speedy-core.css' %}" />
         {% block site_theme %}{# ~~~~ TODO: Speedy Net theme is also used by Speedy Composer and Speedy Mail Software. That's why the theme is in speedy.core #}
             {% if LANGUAGE_BIDI %}
-                <link rel="stylesheet" href="{% static 'themes/speedy-net.rtl.css' %}" />
+                <link rel="stylesheet" href="{% static 'themes/speedy-net-rtl.css' %}" />
             {% else %}
-                <link rel="stylesheet" href="{% static 'themes/speedy-net.css' %}" />
+                <link rel="stylesheet" href="{% static 'themes/speedy-net-ltr.css' %}" />
             {% endif %}
         {% endblock %}
         {% block extra_css %}{% endblock %}
