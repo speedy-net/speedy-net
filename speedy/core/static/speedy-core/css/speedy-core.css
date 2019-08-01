@@ -205,6 +205,8 @@ body.bidi-rtl .navbar-right {
         padding-right: 6px !important;
         padding-top: 6px !important;
         padding-bottom: 6px !important;
+        flex: 0 0 33.33333% !important;
+        max-width: 33.33333% !important;
     }
 }
 
