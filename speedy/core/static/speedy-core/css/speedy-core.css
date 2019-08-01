@@ -94,7 +94,7 @@ body.bidi-rtl .navbar-right {
     text-decoration: none;
     font-weight: normal;
     font-size: 13px;
-    color: #3D70A3 !important;
+    /*color: #3D70A3 !important;*/
 }
 
 .footer a::after {
@@ -108,15 +108,15 @@ body.bidi-rtl .navbar-right {
 }
 
 .footer a:visited {
-    color: #3D70A3 !important;
+    /*color: #3D70A3 !important;*/
 }
 
 .footer a:link {
-    color: #3D70A3 !important;
+    /*color: #3D70A3 !important;*/
 }
 
 .footer a:active {
-    color: #3D70A3 !important;
+    /*color: #3D70A3 !important;*/
 }
 
 .footer a:hover {
