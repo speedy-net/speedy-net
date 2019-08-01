@@ -13,7 +13,7 @@ class UserRankWidget(Widget):
 
 class UserOnSpeedyMatchWidget(Widget):
     template_name = 'profiles/user_on_speedy_match_widget.html'
-    permission_required = 'accounts.view_profile_info'
+    permission_required = 'accounts.view_user_on_speedy_match_widget'
 
     def is_match(self):
         if (not (self.viewer.is_authenticated)):

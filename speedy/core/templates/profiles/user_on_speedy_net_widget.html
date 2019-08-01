@@ -2,6 +2,10 @@
 
 <div class="col-sm-12 pull-right">
    <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
-        {% blocktrans with user_name=user.name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+        {% if user == viewer %}
+            {% blocktrans context viewer.get_gender %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
+        {% else %}
+            {% blocktrans with user_name=user.name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+        {% endif %}
     </a>
 </div>
