@@ -157,7 +157,7 @@ body.bidi-rtl .user-profile {
 }
 
 .widget-json-dropdown {
-    min-width: 220px;
+    min-width: 293px;
     padding: 20px;
 }
 
@@ -196,7 +196,7 @@ body.bidi-rtl .user-profile {
     }
 
     .diet-menu.show {
-        width: auto !important;
+        width: 178px !important;
         right: 29px; !important;
         min-width: 0 !important;
     }
