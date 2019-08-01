@@ -12,7 +12,7 @@
                     {{ user.name|truncatechars:15 }}, {{ user.get_age }}, {{ user.get_diet }}
                 </h5>
             </a>
-            {% if user.speedy_match_profile.rank %}
+            {% if user.speedy_match_profile.rank > 0 %}
                 <div title="{{ user.speedy_match_profile.rank|rank_description }}">
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-light{% else %}text-dark{% endif %}"></i>
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-light{% else %}text-dark{% endif %}"></i>

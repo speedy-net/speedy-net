@@ -3,7 +3,7 @@
 {% load user_tags %}
 {% load match_tags_and_filters %}
 
-<div class="col-sm-6 col-md-4 mb-4">
+<div class="col-sm-6 {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}col-md-3{% else %}col-md-4{% endif %} mb-4">
     <div class="card text-center">
         {% profile_picture user '256x256' html_class="card-img-top" %}
         <div class="card-body">
@@ -12,7 +12,7 @@
                     {{ user.name }}
                 </h5>
             </a>
-            {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank %}
+            {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank > 0 %}
                 <div title="{{ user.speedy_match_profile.rank|rank_description }}">
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
                     <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
