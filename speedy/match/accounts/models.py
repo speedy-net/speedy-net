@@ -219,9 +219,9 @@ class SiteProfile(SiteProfileBase):
             return rank
         else:
             if (not (self.is_active_and_valid)):
-                logger.error('get_matching_rank::get inside "if (not (self.is_active_and_valid)):"', self, other_profile)
+                logger.error('get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             if (not (other_profile.is_active_and_valid)):
-                logger.error('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):"', self, other_profile)
+                logger.error('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             return self.__class__.RANK_0
 
     def deactivate(self):
