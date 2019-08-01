@@ -65,21 +65,21 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         # logger.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
         # logger.debug('get: request.user.is_active ? %s', request.user.is_active)
         if (not (request.user.is_active)):
-            # logger.debug('get: inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
+            # logger.debug('get inside "if (not (request.user.is_active)):" self.template_name: %s', self.template_name)
             return render(request=self.request, template_name=self.template_name, context={})
         if (self.step <= 1):
-            # logger.debug('get: inside "if (self.step <= 1):" self.template_name: %s', self.template_name)
+            # logger.debug('get inside "if (self.step <= 1):" self.template_name: %s', self.template_name)
             return redirect(to='accounts:edit_profile')
         if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):
-            # logger.debug('get: inside "if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):"')
+            # logger.debug('get inside "if ((self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)) and (request.user.speedy_match_profile.is_active_and_valid)):"')
             return redirect(to='matches:list')
         if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
-            # logger.debug('get: inside "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
+            # logger.debug('get inside "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
             step = min(request.user.speedy_match_profile.activation_step, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1)
             return redirect(to='accounts:activate', step=step)
         # logger.debug('get: did not get into "if ((self.step > request.user.speedy_match_profile.activation_step) or (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):"')
         if (request.user.speedy_match_profile.is_active):
-            logger.error('get: inside "if (request.user.speedy_match_profile.is_active):"')
+            logger.error('get inside "if (request.user.speedy_match_profile.is_active):"')
         # Step must be an integer from 2 to 9.
         assert (self.step in range(2, 10))
         assert (self.step <= request.user.speedy_match_profile.activation_step)
