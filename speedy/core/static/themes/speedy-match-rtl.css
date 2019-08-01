@@ -6301,7 +6301,8 @@ body.with-background {
 .footer a,
 .footer a:visited,
 .footer a:link,
-.footer a:active {
+.footer a:active,
+a.speedy-bottom-badge-link {
     color: #521b13 !important;
 }
 
