@@ -33,5 +33,6 @@ if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
     remove_perm('accounts.view_profile_age')
     add_perm('accounts.view_profile_age', always_allow)
     add_perm('accounts.view_profile_rank', has_access_perm & ~there_is_block & is_match_profile & ~is_self)
+    add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~there_is_block & is_match_profile)
 
 

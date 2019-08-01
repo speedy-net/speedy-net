@@ -62,6 +62,7 @@ add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_per
 add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
 add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
 add_perm('accounts.edit_profile', has_access_perm & is_self)
+add_perm('accounts.view_user_on_speedy_net_widget', has_access_perm & ~there_is_block)
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
