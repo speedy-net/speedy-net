@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 19:03+0300\n"
+"POT-Creation-Date: 2019-08-01 19:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -638,8 +638,8 @@ msgstr ""
 "המליטה 7 גורים בשנת 1988."
 
 #: .\templates\about\about.html:27
-msgid "Speedy Match is currently in alpha. It was launched on 2017."
-msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה ב-2017."
+msgid "Speedy Match is currently in alpha. It was launched on September 2019."
+msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה בספטמבר 2019."
 
 #: .\templates\about\about.html:29
 msgid "Thank you and good luck,"
