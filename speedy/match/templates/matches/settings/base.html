@@ -23,12 +23,12 @@
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link {% active_class 'matches:edit_match_settings' %}" href="{% url 'matches:edit_match_settings' %}">
-                {% trans 'Search Settings' %}
+                {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% active_class 'matches:edit_about_me' %}" href="{% url 'matches:edit_about_me' %}">
-                {% trans 'About Me' %}
+                {% trans 'About me'|title context user.get_gender %}
             </a>
         </li>
     </ul>

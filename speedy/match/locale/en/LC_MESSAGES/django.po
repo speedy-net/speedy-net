@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 05:57+0300\n"
+"POT-Creation-Date: 2019-08-01 10:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -646,10 +646,12 @@ msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:34
+#: .\templates\matches\settings\base.html:31
 msgid "About me"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:36
+#: .\templates\matches\settings\base.html:26
 msgid "About my match"
 msgstr ""
 
@@ -731,14 +733,6 @@ msgstr ""
 
 #: .\templates\matches\settings\base.html:17
 msgid "Back to Matches"
-msgstr ""
-
-#: .\templates\matches\settings\base.html:26
-msgid "Search Settings"
-msgstr ""
-
-#: .\templates\matches\settings\base.html:31
-msgid "About Me"
 msgstr ""
 
 #: .\templates\menu\friends_trans.html:3

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 05:57+0300\n"
+"POT-Creation-Date: 2019-08-01 10:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -671,10 +671,12 @@ msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:34
+#: .\templates\matches\settings\base.html:31
 msgid "About me"
 msgstr "על עצמי"
 
 #: .\templates\accounts\edit_profile\activate.html:36
+#: .\templates\matches\settings\base.html:26
 msgid "About my match"
 msgstr "על בן/בת הזוג שלי"
 
@@ -760,14 +762,6 @@ msgstr ""
 msgid "Back to Matches"
 msgstr ""
 
-#: .\templates\matches\settings\base.html:26
-msgid "Search Settings"
-msgstr ""
-
-#: .\templates\matches\settings\base.html:31
-msgid "About Me"
-msgstr "על עצמי"
-
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
 msgstr "חברים/ות"
@@ -825,6 +819,36 @@ msgstr ""
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
+
+#~ msgctxt "female"
+#~ msgid "About Me"
+#~ msgstr "על עצמי"
+
+#~ msgctxt "male"
+#~ msgid "About Me"
+#~ msgstr "על עצמי"
+
+#~ msgctxt "other"
+#~ msgid "About Me"
+#~ msgstr "על עצמי"
+
+#~ msgctxt "female"
+#~ msgid "About My Match"
+#~ msgstr "על בת הזוג שלי"
+
+#~ msgctxt "male"
+#~ msgid "About My Match"
+#~ msgstr "על בן הזוג שלי"
+
+#~ msgctxt "other"
+#~ msgid "About My Match"
+#~ msgstr "על בן/בת הזוג שלי"
+
+#~ msgid "About My Match"
+#~ msgstr "על בן/בת הזוג שלי"
+
+#~ msgid "About Me"
+#~ msgstr "על עצמי"
 
 #~ msgid "user"
 #~ msgstr "משתמש/ת"
