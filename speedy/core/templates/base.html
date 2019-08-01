@@ -10,6 +10,12 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% block site_title %}{{ site_title }}{% endblock %}{% endblock %}</title>
     {% block css %}
+        <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendor/jquery-ui-custom/jquery-ui.css' %}" />
+        {% if LANGUAGE_BIDI %}
+            {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}" /> #}
+        {% endif %}
+        <link rel="stylesheet" href="{% static 'speedy-core/css/speedy-core.css' %}" />
         {% block site_theme %}{# ~~~~ TODO: Speedy Net theme is also used by Speedy Composer and Speedy Mail Software. That's why the theme is in speedy.core #}
             {% if LANGUAGE_BIDI %}
                 <link rel="stylesheet" href="{% static 'themes/speedy-net.rtl.css' %}" />
@@ -17,12 +23,6 @@
                 <link rel="stylesheet" href="{% static 'themes/speedy-net.css' %}" />
             {% endif %}
         {% endblock %}
-        <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" />
-        <link rel="stylesheet" href="{% static 'vendor/jquery-ui-custom/jquery-ui.css' %}" />
-        {% if LANGUAGE_BIDI %}
-            {# <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap-rtl.css' %}" /> #}
-        {% endif %}
-        <link rel="stylesheet" href="{% static 'speedy-core/css/speedy-core.css' %}" />
         {% block extra_css %}{% endblock %}
     {% endblock %}
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png" />
