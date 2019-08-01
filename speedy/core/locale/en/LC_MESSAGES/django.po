@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 17:52+0300\n"
+"POT-Creation-Date: 2019-08-01 19:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1822,7 +1822,7 @@ msgstr ""
 msgid "Changes saved."
 msgstr ""
 
-#: .\blocks\managers.py:14 .\blocks\models.py:27
+#: .\blocks\managers.py:15 .\blocks\models.py:27
 msgid "Users cannot block themselves."
 msgstr ""
 
