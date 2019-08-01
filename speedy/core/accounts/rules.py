@@ -1,4 +1,4 @@
-from rules import predicate, add_perm
+from rules import predicate, add_perm, always_deny
 
 from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.friends.rules import are_friends
@@ -62,7 +62,7 @@ add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_per
 add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
 add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
 add_perm('accounts.edit_profile', has_access_perm & is_self)
-add_perm('accounts.view_user_on_speedy_net_widget', has_access_perm & ~there_is_block)
+add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
 add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block) # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
