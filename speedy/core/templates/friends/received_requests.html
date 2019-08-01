@@ -4,14 +4,7 @@
 
 {% block extra_css %}
     {{ block.super }}
-
-@media (max-width: 459px) {
-  .col-sm-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
+    <link rel="stylesheet" href="{% static 'speedy-core/css/received_friendship_requests.css' %}" />
 {% endblock %}
 
 {% block tab_content %}
