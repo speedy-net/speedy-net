@@ -12,7 +12,7 @@ class BlockListView(UserMixin, PermissionRequiredMixin, generic.ListView):
     permission_required = 'accounts.edit_profile'
 
     def get_queryset(self):
-        return Block.objects.filter(blocker=self.user)
+        return Block.objects.get_blocked_list_to_queryset(blocker=self.user)
 
 
 class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
