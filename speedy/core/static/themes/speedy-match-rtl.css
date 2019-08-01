@@ -6275,9 +6275,10 @@ body.with-background {
   color: #fff1cf;
   font-weight: bold; }
   body.with-background > .body-inner {
-    background: url("/static/speedy-match/images/hearts-bg.png") no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    /*background: url("/static/speedy-match/images/hearts-bg.png") no-repeat;*/
+    /*background-size: cover;*/
+    /*background-attachment: fixed;*/
+    background: url("/static/speedy-match/images/hearts-bg.png");
     min-height: 100vh; }
     body.with-background > .body-inner a {
       color: #212529; }
