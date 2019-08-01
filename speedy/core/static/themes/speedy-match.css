@@ -6285,8 +6285,16 @@ body.with-background {
     background: url("/static/speedy-match/images/photo.png") bottom left no-repeat;
     background-size: contain; }
   body.with-background .navbar.bg-speedy-match {
-    background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));
+    /*background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));*/
     font-weight: normal; }
 
 .navbar-nav .nav-link.active {
   color: #fff !important; }
+
+.footer a,
+.footer a:visited,
+.footer a:link,
+.footer a:active {
+    color: #521b13 !important;
+}
+
