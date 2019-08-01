@@ -15,7 +15,6 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 from translated_fields import TranslatedField
 
-# from speedy.net.settings import global_settings as speedy_net_global_settings # ~~~~ TODO: should be in django_settings? # ~~~~ TODO: remove this line!
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import BaseManager, TimeStampedModel, SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
@@ -73,7 +72,6 @@ class CleanAndValidateAllFieldsMixin(object):
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     settings = django_settings.ENTITY_SETTINGS
-    # settings = speedy_net_global_settings.EntitySettings # ~~~~ TODO: remove this line!
 
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -133,7 +131,6 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
 class NamedEntity(Entity):
     settings = django_settings.NAMED_ENTITY_SETTINGS
-    # settings = speedy_net_global_settings.NamedEntitySettings # ~~~~ TODO: remove this line!
 
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
@@ -196,7 +193,6 @@ class UserAccessField(models.PositiveIntegerField):
 
 class User(PermissionsMixin, Entity, AbstractBaseUser):
     settings = django_settings.USER_SETTINGS
-    # settings = speedy_net_global_settings.UserSettings # ~~~~ TODO: remove this line!
 
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
@@ -221,11 +217,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     GENDER_VALID_VALUES = [choice[0] for choice in GENDER_CHOICES]
     GENDERS_DICT = {GENDER_FEMALE: GENDER_FEMALE_STRING, GENDER_MALE: GENDER_MALE_STRING, GENDER_OTHER: GENDER_OTHER_STRING}
-    # print(GENDERS_DICT) # for debugging. # ~~~~ TODO: remove this line!
-    # ALL_GENDERS = [GENDERS_DICT[gender] for gender in GENDER_VALID_VALUES] # ~~~~ TODO: remove this line!
-    # ALL_GENDERS = GENDERS_DICT # ~~~~ TODO: remove this line!
-    # ALL_GENDERS = [__class__.GENDERS_DICT[gender] for gender in __class__.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS? # ~~~~ TODO: remove this line!
-    # ALL_GENDERS = [__class__.GENDERS_DICT[gender] for gender in __class__.GENDER_VALID_VALUES] # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS? # ~~~~ TODO: remove this line!
 
     DIET_UNKNOWN = 0
     DIET_VEGAN = 1
@@ -298,7 +289,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @staticmethod
     def diet_choices_with_description(gender):
         return (
-            # (__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan (eats only plants and fungi)")),
             (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian (doesn't eat fish and meat)")),
             (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist (eats animals)")),
@@ -307,7 +297,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @staticmethod
     def diet_choices(gender):
         return (
-            # (__class__.DIET_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan")),
             (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian")),
             (__class__.DIET_CARNIST, pgettext_lazy(context=gender, message="Carnist")),
@@ -316,7 +305,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @staticmethod
     def smoking_status_choices(gender):
         return (
-            # (__class__.SMOKING_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.SMOKING_STATUS_NOT_SMOKING, pgettext_lazy(context=gender, message="Not smoking")),
             (__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY, pgettext_lazy(context=gender, message="Smoking occasionally")),
             (__class__.SMOKING_STATUS_SMOKING, pgettext_lazy(context=gender, message="Smoking")),
@@ -325,7 +313,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @staticmethod
     def relationship_status_choices(gender):
         return (
-            # (__class__.RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")), # ~~~~ TODO: remove this line!
             (__class__.RELATIONSHIP_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
             (__class__.RELATIONSHIP_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
             (__class__.RELATIONSHIP_STATUS_WIDOWED, pgettext_lazy(context=gender, message="Widowed")),
@@ -524,7 +511,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.clean_localizable_field(base_field_name=base_field_name)
 
     def clean_localizable_field(self, base_field_name):
-        # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
         field_names = get_all_field_names(base_field_name=base_field_name)
         for field_name in field_names:
             if (not (string_is_not_empty(getattr(self, field_name)))):

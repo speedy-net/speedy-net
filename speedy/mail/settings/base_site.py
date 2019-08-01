@@ -1,7 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_without_login import *
 from speedy.core.settings.utils import update_site_paths
-from speedy.net.settings.global_settings import * ########## ~~~~~ TODO
+from speedy.match.settings.global_settings import * # ~~~~ TODO: Maybe we don't need this here? (added because the migrations fail).
+from speedy.net.settings.global_settings import * # ~~~~ TODO: Maybe we don't need this here? (added because the migrations fail).
 from .utils import APP_DIR
 
 update_site_paths(settings=globals())
