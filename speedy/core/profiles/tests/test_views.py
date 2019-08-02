@@ -74,6 +74,10 @@ if (django_settings.LOGIN_ENABLED):
             self.user_profile_url = '/{}/'.format(self.user.slug)
             self.other_user = ActiveUserFactory()
 
+        def deactivate_user(self):
+            self.user.is_active = False
+            self.user.save()
+
         def test_user_profile_not_logged_in(self):
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
@@ -101,6 +105,15 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
             else:
                 raise NotImplementedError()
+            self.deactivate_user()
+            r = self.client.get(path=self.user_profile_url)
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                self.assertEqual(first=r.status_code, second=404)
+            elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                expected_url = '/login/?next={}'.format(self.user_profile_url)
+                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
+            else:
+                raise NotImplementedError()
 
         def test_user_own_profile_logged_in(self):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -119,6 +132,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=escape(self.user_birth_year), container=r.content.decode())
             self.assertIn(member=escape(self.user_birth_date), container=r.content.decode())
             self.assertNotIn(member=escape(self.not_user_birth_date), container=r.content.decode())
+            self.deactivate_user()
+            r = self.client.get(path=self.user_profile_url)
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                self.assertEqual(first=r.status_code, second=404)
+            elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                expected_url = '/welcome/'
+                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
+            else:
+                raise NotImplementedError()
 
         def test_user_profile_month_day_format_from_friend(self):
             # First, check if only the day and month are visible.
@@ -199,6 +221,10 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
             else:
                 raise NotImplementedError()
+            self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
+            self.deactivate_user()
+            r = self.client.get(path=self.user_profile_url)
+            self.assertEqual(first=r.status_code, second=404)
 
 
     @only_on_sites_with_login
