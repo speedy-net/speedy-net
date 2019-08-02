@@ -12,7 +12,7 @@ from .forms import SpeedyMatchSettingsMiniForm, SpeedyMatchProfileFullMatchForm,
 logger = logging.getLogger(__name__)
 
 
-class MatchesListView(LoginRequiredMixin, generic.UpdateView, generic.ListView):
+class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/match_list.html'
     paginate_by = 3 ##
     form_class = SpeedyMatchSettingsMiniForm
