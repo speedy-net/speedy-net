@@ -1,5 +1,6 @@
 {% extends 'friends/base.html' %}
 
+{% load core_tags_and_filters %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -10,7 +11,7 @@
 
 {% block tab_content %}
     <div class="row">
-        {% for received_friendship_request in user.all_received_friendship_requests %}
+        {% for received_friendship_request in received_friendship_requests %}
             {% include 'profiles/user_list_item.html' with user=received_friendship_request.from_user %}
         {% empty %}
             <div class="col-12">
@@ -20,4 +21,5 @@
             </div>
         {% endfor %}
     </div>
+    {% pagination %}
 {% endblock %}

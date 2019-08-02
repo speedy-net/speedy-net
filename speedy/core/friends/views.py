@@ -12,30 +12,61 @@ from friendship.exceptions import AlreadyExistsError, AlreadyFriendsError
 
 from rules.contrib.views import PermissionRequiredMixin
 
+from speedy.core.base.views import PaginationMixin
 from speedy.core.accounts.models import User
-from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.profiles.views import UserMixin
 from .rules import is_self, friendship_request_sent, are_friends
 
 
-class FriendsMixin(object):
-    pass
+class FriendsMixin(PaginationMixin):
+    page_size = 24
+    paginate_by = page_size
 
 
-class UserFriendListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
+class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
     # ~~~~ TODO: This view will display up to 800 friends on the same page!
-    permission_required = 'friends.view_friend_list'
     template_name = 'friends/friend_list.html'
+    permission_required = 'friends.view_friend_list'
+
+    def get_object_list(self):
+        return self.user.all_friends
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'friends': self.page.object_list,
+        })
+        return cd
 
 
-class ReceivedFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
+class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
     template_name = 'friends/received_requests.html'
     permission_required = 'friends.view_requests'
 
+    def get_object_list(self):
+        return self.user.all_received_friendship_requests
 
-class SentFriendshipRequestsListView(FriendsMixin, UserMixin, PermissionRequiredMixin, generic.TemplateView):
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'received_friendship_requests': self.page.object_list,
+        })
+        return cd
+
+
+class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
     template_name = 'friends/sent_requests.html'
     permission_required = 'friends.view_requests'
+
+    def get_object_list(self):
+        return self.user.all_sent_friendship_requests
+
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'sent_friendship_requests': self.page.object_list,
+        })
+        return cd
 
 
 class LimitMaxFriendsMixin(object):

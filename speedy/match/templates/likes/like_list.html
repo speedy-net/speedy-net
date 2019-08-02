@@ -29,7 +29,7 @@
         </li>
     </ul>
     <div class="row">
-        {% for like in object_list %}
+        {% for like in like_list %}
             {% if display == 'from' %}
                 {% include 'profiles/user_list_item.html' with user=like.from_user %}
             {% elif display == 'to' %}

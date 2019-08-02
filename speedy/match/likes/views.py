@@ -40,6 +40,7 @@ class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
             'list_to_title': list_to_title,
             'list_from_title': list_from_title,
             'list_mutual_title': list_mutual_title,
+            'like_list': cd['object_list'],
         })
         return cd
 
