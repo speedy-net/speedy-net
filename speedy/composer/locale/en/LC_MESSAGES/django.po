@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 19:32+0300\n"
+"POT-Creation-Date: 2019-08-02 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,9 +99,9 @@ msgstr ""
 
 #: .\templates\about\about.html:19
 msgid ""
-"Speedy Composer will be free of charge. Speedy Net and Speedy Composer are "
-"free software & open source projects. If you want to help developing Speedy "
-"Composer, please contact me by e-mail."
+"All the features on Speedy Composer will be free of charge. Speedy Net and "
+"Speedy Composer are free software & open source projects. If you want to "
+"help developing Speedy Composer, please contact me by e-mail."
 msgstr ""
 
 #: .\templates\about\about.html:21
