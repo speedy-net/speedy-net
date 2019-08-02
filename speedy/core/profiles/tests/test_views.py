@@ -83,7 +83,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
-                self.assertNotIn(member=escape(self.user_birth_year), container=r.content.decode())
                 self.assertNotIn(member=escape(self.user_birth_date), container=r.content.decode())
                 # Now, check if the date of birth is visible.
                 self.user.access_dob_day_month = UserAccessField.ACCESS_ANYONE
@@ -141,7 +140,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=escape(self.birth_date), container=r.content.decode())
             self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
             self.assertIn(member=escape(self.user_birth_month_day), container=r.content.decode())
-            self.assertNotIn(member=escape(self.user_birth_year), container=r.content.decode())
             self.assertNotIn(member=escape(self.user_birth_date), container=r.content.decode())
             self.assertNotIn(member=escape(self.not_user_birth_month_day), container=r.content.decode())
             self.assertNotIn(member=escape(self.not_user_birth_date), container=r.content.decode())
@@ -181,7 +179,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member=escape(self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
                 self.assertNotIn(member=escape(self.user_birth_month_day), container=r.content.decode())
-                self.assertNotIn(member=escape(self.user_birth_year), container=r.content.decode())
                 self.assertNotIn(member=escape(self.user_birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.not_user_birth_month_day), container=r.content.decode())
                 self.assertNotIn(member=escape(self.not_user_birth_date), container=r.content.decode())
@@ -194,7 +191,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertIn(member=escape(self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
                 self.assertIn(member=escape(self.user_birth_month_day), container=r.content.decode())
-                self.assertNotIn(member=escape(self.user_birth_year), container=r.content.decode())
                 self.assertNotIn(member=escape(self.user_birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.not_user_birth_month_day), container=r.content.decode())
                 self.assertNotIn(member=escape(self.not_user_birth_date), container=r.content.decode())
