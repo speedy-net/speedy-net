@@ -10,20 +10,7 @@ def active_class(context, *url_names):
 
 
 @register.simple_tag(takes_context=True)
-def set_request_param(context, **params):
-    request = context.get('request')
-    if (request):
-        query_dict = request.GET.copy()
-        for k, v in params.items():
-            query_dict[k] = v
-        if (not (query_dict.urlencode() == "")):
-            return "?{}".format(query_dict.urlencode())
-        else:
-            return ""
-
-
-@register.simple_tag(takes_context=True)
-def set_request_page(context, **params):
+def set_request_params(context, **params):
     request = context.get('request')
     if (request):
         query_dict = request.GET.copy()
@@ -32,10 +19,10 @@ def set_request_page(context, **params):
         if ("page" in query_dict):
             if (str(query_dict["page"]) == str(1)):
                 del query_dict["page"]
-        if (not (query_dict.urlencode() == "")):
-            return "?{}".format(query_dict.urlencode())
-        else:
+        if (query_dict.urlencode() == ""):
             return ""
+        else:
+            return "?{}".format(query_dict.urlencode())
 
 
 @register.inclusion_tag('core/pagination.html', takes_context=True)
