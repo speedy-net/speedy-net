@@ -547,7 +547,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
         }
-        qs = self.friendship_requests_received.select_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).all().order_by('-last_visit')
+        qs = self.friendship_requests_received.select_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).all().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         qs = list(qs) # ~~~~ TODO: remove this line!
         for i in range(10): # ~~~~ TODO: remove this line!
             qs = qs + qs # ~~~~ TODO: remove this line!
@@ -568,7 +568,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
         }
-        qs = self.friendship_requests_sent.all().select_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).order_by('-last_visit')
+        qs = self.friendship_requests_sent.all().select_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         qs = list(qs) # ~~~~ TODO: remove this line!
         for i in range(10): # ~~~~ TODO: remove this line!
             qs = qs + qs # ~~~~ TODO: remove this line!
@@ -589,7 +589,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
         }
-        qs = self.friends.all().select_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).order_by('-last_visit')
+        qs = self.friends.all().select_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         qs = list(qs) # ~~~~ TODO: remove this line!
         for i in range(10): # ~~~~ TODO: remove this line!
             qs = qs + qs # ~~~~ TODO: remove this line!
