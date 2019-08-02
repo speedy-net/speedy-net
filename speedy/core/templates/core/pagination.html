@@ -6,7 +6,7 @@
         <ul class="pagination">
             {% if page_obj.has_previous %}
                 <li>
-                    <a href="?{% set_request_param page=page_obj.previous_page_number %}">&larr;&nbsp;{% trans "Previous" %}</a>
+                    <a href="?{% set_request_page page=page_obj.previous_page_number %}">&larr;&nbsp;{% trans "Previous" %}</a>
                 </li>
             {% else %}
                 {% comment %}
@@ -22,13 +22,13 @@
                     </li>
                 {% else %}
                     <li {% if page == page_obj.number %}class="active"{% endif %}>
-                        <a href="?{% set_request_param page=page %}">{{ page }}</a>
+                        <a href="?{% set_request_page page=page %}">{{ page }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
             {% if page_obj.has_next %}
                 <li>
-                    <a href="?{% set_request_param page=page_obj.next_page_number %}">{% trans "Next" %}&nbsp;&rarr;</a>
+                    <a href="?{% set_request_page page=page_obj.next_page_number %}">{% trans "Next" %}&nbsp;&rarr;</a>
                 </li>
             {% else %}
                 {% comment %}

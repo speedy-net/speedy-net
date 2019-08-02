@@ -19,6 +19,19 @@ def set_request_param(context, **params):
         return query_dict.urlencode()
 
 
+@register.simple_tag(takes_context=True)
+def set_request_page(context, **params):
+    request = context.get('request')
+    if (request):
+        query_dict = request.GET.copy()
+        for k, v in params.items():
+            query_dict[k] = v
+        if ("page" in query_dict):
+            if (str(query_dict["page"]) == str(1)):
+                del query_dict["page"]
+        return query_dict.urlencode()
+
+
 @register.inclusion_tag('core/pagination.html', takes_context=True)
 def pagination(context):
     """
