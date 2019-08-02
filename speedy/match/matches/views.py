@@ -17,7 +17,8 @@ logger = logging.getLogger(__name__)
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/match_list.html'
-    paginate_by = 3 ##
+    page_size = 24
+    paginate_by = page_size
     form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
@@ -25,7 +26,7 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
         if (self.request.user.is_authenticated):
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
             page_number = self.request.GET.get('page', 1)
-            paginator = Paginator(matches_list, self.paginate_by)
+            paginator = Paginator(matches_list, self.page_size)
             try:
                 page = paginator.page(page_number)
             except (PageNotAnInteger, EmptyPage):
