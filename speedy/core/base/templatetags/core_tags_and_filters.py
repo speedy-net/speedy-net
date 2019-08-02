@@ -16,7 +16,10 @@ def set_request_param(context, **params):
         query_dict = request.GET.copy()
         for k, v in params.items():
             query_dict[k] = v
-        return query_dict.urlencode()
+        if (query_dict):
+            return "?{}".format(query_dict.urlencode())
+        else:
+            return ""
 
 
 @register.simple_tag(takes_context=True)
@@ -29,7 +32,10 @@ def set_request_page(context, **params):
         if ("page" in query_dict):
             if (str(query_dict["page"]) == str(1)):
                 del query_dict["page"]
-        return query_dict.urlencode()
+        if (query_dict):
+            return "?{}".format(query_dict.urlencode())
+        else:
+            return ""
 
 
 @register.inclusion_tag('core/pagination.html', takes_context=True)
