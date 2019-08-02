@@ -548,6 +548,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
         }
         qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
+        qs = list(qs) # ~~~~ TODO: remove this line!
+        for i in range(10): # ~~~~ TODO: remove this line!
+            qs = qs + qs # ~~~~ TODO: remove this line!
+        qs = qs[:800] # ~~~~ TODO: remove this line!
         received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return received_friendship_requests
@@ -565,6 +569,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
         }
         qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
+        qs = list(qs) # ~~~~ TODO: remove this line!
+        for i in range(10): # ~~~~ TODO: remove this line!
+            qs = qs + qs # ~~~~ TODO: remove this line!
+        qs = qs[:800] # ~~~~ TODO: remove this line!
         sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return sent_friendship_requests
@@ -582,6 +590,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
         }
         qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
+        qs = list(qs) # ~~~~ TODO: remove this line!
+        for i in range(10): # ~~~~ TODO: remove this line!
+            qs = qs + qs # ~~~~ TODO: remove this line!
+        qs = qs[:800] # ~~~~ TODO: remove this line!
         friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return friends
