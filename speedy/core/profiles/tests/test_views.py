@@ -109,6 +109,7 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 self.assertEqual(first=r.status_code, second=404)
+                self.assertNotIn(member="<title>", container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -135,7 +136,9 @@ if (django_settings.LOGIN_ENABLED):
             self.deactivate_user()
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                # ~~~~ TODO: should redirect to '/welcome/'.
                 self.assertEqual(first=r.status_code, second=404)
+                self.assertNotIn(member="<title>", container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/welcome/'
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -258,6 +261,14 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
             self.assertNotIn(member="<title>", container=r.content.decode())
 
+        def test_user_profile_deactivated_user_from_friend(self):
+            Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
+            self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+            self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
+            self.deactivate_user()
+            r = self.client.get(path=self.user_profile_url)
+            self.assertEqual(first=r.status_code, second=404)
+            self.assertNotIn(member="<title>", container=r.content.decode())
 
     @only_on_sites_with_login
     class UserDetailViewEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
