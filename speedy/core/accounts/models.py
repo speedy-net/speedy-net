@@ -547,7 +547,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
         }
-        qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
+        qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit').prefetch_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME))
         received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return received_friendship_requests
@@ -564,7 +564,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
         }
-        qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
+        qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit').prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME))
         sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return sent_friendship_requests
@@ -581,7 +581,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
         }
-        qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
+        qs = self.friends.all().extra(select=extra_select).order_by('-last_visit').prefetch_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME))
         friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return friends
