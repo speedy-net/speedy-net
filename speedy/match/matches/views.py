@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import gettext_lazy as _
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -19,7 +21,17 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('matches:list')
 
     def get_matches(self):
-        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+        matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+        page = self.request.GET.get('page', 1)
+
+        paginator = Paginator(matches_list, self.paginate_by)
+        try:
+            matches_list = paginator.page(page)
+        except PageNotAnInteger:
+            matches_list = paginator.page(1)
+        except EmptyPage:
+            matches_list = paginator.page(paginator.num_pages)
+        return matches_list
         # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:60] # ~~~~ TODO: We need pagination.
         # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:3] # ~~~~ TODO: We need pagination.
 
