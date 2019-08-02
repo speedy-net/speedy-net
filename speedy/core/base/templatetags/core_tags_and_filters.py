@@ -24,7 +24,6 @@ def pagination(context):
     """
     sliced_page_range is [1, None, 4, 5, 6, 7, 8, None, 42]
     """
-
     full_page_range = list(context['paginator'].page_range)
     page_index = context['page_obj'].number - 1
     sliced_page_range = full_page_range[max(page_index - 2, 0):page_index + 3]
