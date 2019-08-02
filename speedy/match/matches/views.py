@@ -18,7 +18,8 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('matches:list')
 
     def get_matches(self):
-        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+        # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:60] # ~~~~ TODO: We need pagination.
 
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
