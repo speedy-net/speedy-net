@@ -222,9 +222,41 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 raise NotImplementedError()
             self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.other_user.speedy_match_profile.min_age_match = 80
+                self.other_user.save_user_and_profile()
+                r = self.client.get(path=self.user_profile_url)
+                self.assertEqual(first=r.status_code, second=404)
+                self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
+                self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
+                self.other_user.speedy_match_profile.min_age_match = 36
+                self.other_user.save_user_and_profile()
+                r = self.client.get(path=self.user_profile_url)
+                if (self.random_choice == 1):
+                    self.assertEqual(first=self.user.slug, second="corrin-gideon")
+                    self.assertEqual(first=r.status_code, second=404)
+                    self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
+                    self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
+                elif (self.random_choice == 2):
+                    self.assertEqual(first=self.user.slug, second="jennifer-connelly")
+                    self.assertEqual(first=r.status_code, second=200)
+                    self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
+                    self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
+                else:
+                    raise NotImplementedError()
+                self.other_user.speedy_match_profile.min_age_match = 12
+                self.other_user.save_user_and_profile()
+                r = self.client.get(path=self.user_profile_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
+                self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
             self.deactivate_user()
             r = self.client.get(path=self.user_profile_url)
             self.assertEqual(first=r.status_code, second=404)
+            self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
+            self.assertNotIn(member="<title>", container=r.content.decode())
 
 
     @only_on_sites_with_login
@@ -246,6 +278,9 @@ if (django_settings.LOGIN_ENABLED):
                     django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
                 }
+                self.expected_title_no_match = {
+                    django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                }
             elif (self.random_choice == 2):
                 self.first_name = "Jennifer"
                 self.last_name = "Connelly"
@@ -258,6 +293,9 @@ if (django_settings.LOGIN_ENABLED):
                 self.expected_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                }
+                self.expected_title_no_match = {
+                    django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
                 }
             else:
                 raise NotImplementedError()
@@ -295,6 +333,9 @@ if (django_settings.LOGIN_ENABLED):
                     django_settings.SPEEDY_NET_SITE_ID: "קורין גדעון / ספידי נט [אלפא]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "קורין / ספידי מץ' [אלפא]",
                 }
+                self.expected_title_no_match = {
+                    django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / ספידי מץ' [אלפא]",
+                }
             elif (self.random_choice == 2):
                 self.first_name = "ג'ניפר"
                 self.last_name = "קונלי"
@@ -311,6 +352,9 @@ if (django_settings.LOGIN_ENABLED):
                 self.expected_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "ג'ניפר קונלי / ספידי נט [אלפא]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "ג'ניפר / ספידי מץ' [אלפא]",
+                }
+                self.expected_title_no_match = {
+                    django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / ספידי מץ' [אלפא]",
                 }
             else:
                 raise NotImplementedError()
