@@ -20,30 +20,25 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
-    def get_matches(self):
-        matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
-        page = self.request.GET.get('page', 1)
-
-        self.paginator = Paginator(matches_list, self.paginate_by)
-        try:
-            matches_list = self.paginator.page(page)
-        except PageNotAnInteger:
-            matches_list = self.paginator.page(1)
-        except EmptyPage:
-            matches_list = self.paginator.page(self.paginator.num_pages)
-        return matches_list
-        # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:60] # ~~~~ TODO: We need pagination.
-        # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:3] # ~~~~ TODO: We need pagination.
-
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
-        matches_list = self.get_matches()
+        matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+        page_number = self.request.GET.get('page', 1)
+        paginator = Paginator(matches_list, self.paginate_by)
+        try:
+            page = paginator.page(page_number)
+        except (PageNotAnInteger, EmptyPage):
+            # Redirect to page 1.
+            page_number = 1
+            page = paginator.page(page_number)
         cd.update({
-            'matches_list': matches_list,
-            'paginator': self.paginator,
+            'paginator': paginator,
+            'page_obj': page,
+            'is_paginated': page.has_other_pages(),
+            'matches_list': page.object_list,
         })
         return cd
 
