@@ -63,7 +63,8 @@ class UserSingleChatMixin(UserChatsMixin):
 
 class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
     template_name = 'messages/chat_list.html'
-    paginate_by = 25
+    page_size = 25
+    paginate_by = page_size
 
     def get_queryset(self):
         return self.get_chat_queryset()
@@ -71,7 +72,8 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
     template_name = 'messages/chat_detail.html'
-    paginate_by = 25
+    page_size = 25
+    paginate_by = page_size
 
     def dispatch(self, request, *args, **kwargs):
         if (not (request.user.is_authenticated)):

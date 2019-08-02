@@ -10,13 +10,19 @@ def active_class(context, *url_names):
 
 
 @register.simple_tag(takes_context=True)
-def set_request_param(context, **params):
+def set_request_params(context, **params):
     request = context.get('request')
     if (request):
         query_dict = request.GET.copy()
         for k, v in params.items():
             query_dict[k] = v
-        return query_dict.urlencode()
+        if ("page" in query_dict):
+            if (str(query_dict["page"]) == str(1)):
+                del query_dict["page"]
+        if (query_dict.urlencode() == ""):
+            return ""
+        else:
+            return "?{}".format(query_dict.urlencode())
 
 
 @register.inclusion_tag('core/pagination.html', takes_context=True)
@@ -24,7 +30,6 @@ def pagination(context):
     """
     sliced_page_range is [1, None, 4, 5, 6, 7, 8, None, 42]
     """
-
     full_page_range = list(context['paginator'].page_range)
     page_index = context['page_obj'].number - 1
     sliced_page_range = full_page_range[max(page_index - 2, 0):page_index + 3]

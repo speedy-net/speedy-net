@@ -4,6 +4,9 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import gettext_lazy as _
+from django.shortcuts import redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -14,12 +17,23 @@ logger = logging.getLogger(__name__)
 
 class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/match_list.html'
+    page_size = 24
+    paginate_by = page_size
     form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
-    def get_matches(self):
-        # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
-        return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:60] # ~~~~ TODO: We need pagination.
+    def dispatch(self, request, *args, **kwargs):
+        if (self.request.user.is_authenticated):
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+            page_number = self.request.GET.get('page', 1)
+            paginator = Paginator(matches_list, self.page_size)
+            try:
+                page = paginator.page(page_number)
+            except (PageNotAnInteger, EmptyPage):
+                return redirect(to='matches:list')
+            self.paginator = paginator
+            self.page = page
+        return super().dispatch(request=request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
@@ -27,7 +41,10 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView):
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
-            'matches': self.get_matches(),
+            'paginator': self.paginator,
+            'page_obj': self.page,
+            'is_paginated': self.page.has_other_pages(),
+            'matches_list': self.page.object_list,
         })
         return cd
 
