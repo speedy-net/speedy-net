@@ -18,7 +18,7 @@ class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
 class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
     permission_required = 'likes.view_likes'
     template_name = 'likes/like_list.html'
-    page_size = 2 ## 24
+    page_size = 24
     paginate_by = page_size
 
     def get_context_data(self, **kwargs):

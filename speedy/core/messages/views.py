@@ -63,7 +63,7 @@ class UserSingleChatMixin(UserChatsMixin):
 
 class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
     template_name = 'messages/chat_list.html'
-    page_size = 2 ## 25
+    page_size = 25
     paginate_by = page_size
 
     def get_queryset(self):
@@ -72,7 +72,7 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
     template_name = 'messages/chat_detail.html'
-    page_size = 2 ## 25
+    page_size = 25
     paginate_by = page_size
 
     def dispatch(self, request, *args, **kwargs):
