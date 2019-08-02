@@ -409,7 +409,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return len(self.sent_friendship_requests)
 
     @property
-    def friends(self):
+    def all_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_friends'))):
                 self.refresh_all_friends_lists()
@@ -417,7 +417,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     @property
     def friends_count(self):
-        return len(self.friends)
+        return len(self.all_friends)
 
     @property
     def friends_trans(self):

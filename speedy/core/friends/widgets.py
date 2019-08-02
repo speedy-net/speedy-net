@@ -9,7 +9,7 @@ class UserFriendsWidget(Widget):
     def get_random_friends(self, count):
         # Select count random friends from the list.
         # If there are less than count friends, return all of them in random order.
-        user_friends = self.user.friends
+        user_friends = self.user.all_friends
         friends_to_return = min(len(user_friends), count)
         random_friends = random.sample(user_friends, friends_to_return)
         return random_friends
