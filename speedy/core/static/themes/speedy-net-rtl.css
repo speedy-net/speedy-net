@@ -3036,6 +3036,11 @@ tbody.collapse.show {
   padding-right: 0;
   list-style: none; }
 
+.pagination li {
+  margin-left:3px;
+  margin-right:3px;
+}
+
 .page-link {
   position: relative;
   display: block;

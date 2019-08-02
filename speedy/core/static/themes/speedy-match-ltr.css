@@ -3160,6 +3160,11 @@ tbody.collapse.show {
   list-style: none;
   border-radius: 0.25rem; }
 
+.pagination li {
+  margin-left:3px;
+  margin-right:3px;
+}
+
 .page-link {
   position: relative;
   display: block;
