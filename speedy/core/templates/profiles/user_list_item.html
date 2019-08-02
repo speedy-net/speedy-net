@@ -12,15 +12,17 @@
                     {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}{{ user.name|truncatechars:25 }}{% else %}{{ user.name|truncatechars:30 }}{% endif %}
                 </h5>
             </a>
-            {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank > 0 %}
-                <div title="{{ user.speedy_match_profile.rank|rank_description }}">
-                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                    <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
-                </div>
-            {% endif %}
+            {% comment %}
+                {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank > 0 %}
+                    <div title="{{ user.speedy_match_profile.rank|rank_description }}">
+                        <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 1 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 2 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 3 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 4 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart {% if user.speedy_match_profile.rank >= 5 %}text-primary{% else %}text-secondary{% endif %}"></i>
+                    </div>
+                {% endif %}
+            {% endcomment %}
             {% if received_friendship_request %}
                 <div style="margin-left:auto; margin-right:auto; display:table; margin-top:10px;">
                     <form action="{% url 'friends:accept_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left" style="margin: 0px 5px;">
