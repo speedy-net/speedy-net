@@ -23,9 +23,6 @@ class MatchesListView(LoginRequiredMixin, generic.UpdateView, generic.ListView):
         # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:60] # ~~~~ TODO: We need pagination.
         # return SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)[:3] # ~~~~ TODO: We need pagination.
 
-    def get_queryset(self):
-        return self.get_matches()
-
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
 
