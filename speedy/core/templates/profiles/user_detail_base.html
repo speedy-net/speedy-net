@@ -3,8 +3,6 @@
 {% load i18n %}
 {% load thumbnail %}
 
-{% block title %}{{ user.name }} / {{ block.super }}{% endblock %}
-
 {% block user_content_info %}
     <div class="row">
         {% for widget in widgets %}
