@@ -16,7 +16,7 @@ def set_request_param(context, **params):
         query_dict = request.GET.copy()
         for k, v in params.items():
             query_dict[k] = v
-        if (query_dict):
+        if (not (query_dict.urlencode() == "")):
             return "?{}".format(query_dict.urlencode())
         else:
             return ""
@@ -32,7 +32,7 @@ def set_request_page(context, **params):
         if ("page" in query_dict):
             if (str(query_dict["page"]) == str(1)):
                 del query_dict["page"]
-        if (query_dict):
+        if (not (query_dict.urlencode() == "")):
             return "?{}".format(query_dict.urlencode())
         else:
             return ""
