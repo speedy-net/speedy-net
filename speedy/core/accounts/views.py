@@ -63,7 +63,7 @@ class IndexView(generic.View):
 
 
 class RegistrationView(FormValidMessageMixin, generic.CreateView):
-    template_name = 'accounts/registration.html'
+    template_name = 'accounts/registration/registration.html'
     form_class = RegistrationForm
     form_valid_message = _("Registration complete. Don't forget to confirm your email.")
 
