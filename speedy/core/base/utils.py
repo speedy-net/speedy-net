@@ -71,9 +71,9 @@ def get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
 
 def get_age_ranges_match(min_age, max_age):
     today = date.today()
-    min_date = today - relativedelta(years=min_age)
-    max_date = today - relativedelta(years=max_age + 1) + relativedelta(days=1)
-    return max_date, min_date
+    max_date = today - relativedelta(years=min_age)
+    min_date = today - relativedelta(years=max_age + 1) + relativedelta(days=1)
+    return min_date, max_date
 
 
 def reflection_import(name):
