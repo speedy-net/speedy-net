@@ -387,69 +387,37 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             return self._speedy_match_profile
 
     @property
-    def all_received_friendship_requests(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
-        }
-        qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
-        received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
-        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            return received_friendship_requests
-        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
-            return received_friendship_requests
-        else:
-            raise NotImplementedError()
+    def received_friendship_requests(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_received_friendship_requests'))):
+                self.refresh_all_friends_lists()
+            return self._received_friendship_requests
 
     @property
     def received_friendship_requests_count(self):
-        return len(self.all_received_friendship_requests)
+        return len(self.received_friendship_requests)
 
     @property
-    def all_sent_friendship_requests(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
-        }
-        qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
-        sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
-        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            return sent_friendship_requests
-        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            sent_friendship_requests = [friendship_request for friendship_request in sent_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
-            return sent_friendship_requests
-        else:
-            raise NotImplementedError()
+    def sent_friendship_requests(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_sent_friendship_requests'))):
+                self.refresh_all_friends_lists()
+            return self._sent_friendship_requests
 
     @property
     def sent_friendship_requests_count(self):
-        return len(self.all_sent_friendship_requests)
+        return len(self.sent_friendship_requests)
 
     @property
-    def all_friends(self):
-        SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
-        }
-        qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
-        friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
-        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            return friends
-        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            friends = [friendship for friendship in friends if (self.speedy_match_profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
-            return friends
-        else:
-            raise NotImplementedError()
+    def friends(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_friends'))):
+                self.refresh_all_friends_lists()
+            return self._friends
 
     @property
     def friends_count(self):
-        return len(self.all_friends)
+        return len(self.friends)
 
     @property
     def friends_trans(self):
@@ -567,6 +535,61 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
             self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
+
+    def refresh_all_friends_lists(self):
+        self._received_friendship_requests = self.get_received_friendship_requests()
+        self._sent_friendship_requests = self.get_sent_friendship_requests()
+        self._friends = self.get_friends()
+
+    def get_received_friendship_requests(self):
+        SiteProfile = get_site_profile_model()
+        table_name = SiteProfile._meta.db_table
+        extra_select = {
+            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.from_user_id'.format(table_name),
+        }
+        qs = self.friendship_requests_received.all().extra(select=extra_select).order_by('-last_visit')
+        received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return received_friendship_requests
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            return received_friendship_requests
+        else:
+            raise NotImplementedError()
+
+    def get_sent_friendship_requests(self):
+        SiteProfile = get_site_profile_model()
+        table_name = SiteProfile._meta.db_table
+        extra_select = {
+            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friendshiprequest.to_user_id'.format(table_name),
+        }
+        qs = self.friendship_requests_sent.all().extra(select=extra_select).order_by('-last_visit')
+        sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return sent_friendship_requests
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            sent_friendship_requests = [friendship_request for friendship_request in sent_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            return sent_friendship_requests
+        else:
+            raise NotImplementedError()
+
+    def get_friends(self):
+        SiteProfile = get_site_profile_model()
+        table_name = SiteProfile._meta.db_table
+        extra_select = {
+            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = friendship_friend.from_user_id'.format(table_name),
+        }
+        qs = self.friends.all().extra(select=extra_select).order_by('-last_visit')
+        friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
+        if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            return friends
+        elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            friends = [friendship for friendship in friends if (self.speedy_match_profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
+            return friends
+        else:
+            raise NotImplementedError()
 
     def save_user_and_profile(self):
         with transaction.atomic():
