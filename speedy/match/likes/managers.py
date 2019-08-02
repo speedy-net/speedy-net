@@ -35,7 +35,7 @@ class UserLikeManager(BaseManager):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
         }
-        return self.filter(from_user=user).filter(to_user__in=liked_users).extra(select=extra_select).order_by('-last_visit')
+        return self.filter(from_user=user).filter(to_user__in=liked_users).extra(select=extra_select).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
 
     def get_like_list_from_queryset(self, user):
         SiteProfile = get_site_profile_model()
@@ -48,7 +48,7 @@ class UserLikeManager(BaseManager):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.from_user_id'.format(table_name),
         }
-        return self.filter(to_user=user).filter(from_user__in=who_likes_me).extra(select=extra_select).order_by('-last_visit')
+        return self.filter(to_user=user).filter(from_user__in=who_likes_me).extra(select=extra_select).prefetch_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
 
     def get_like_list_mutual_queryset(self, user):
         SiteProfile = get_site_profile_model()
@@ -61,6 +61,6 @@ class UserLikeManager(BaseManager):
         extra_select = {
             'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
         }
-        return self.filter(from_user=user, to_user_id__in=who_likes_me).extra(select=extra_select).order_by('-last_visit')
+        return self.filter(from_user=user, to_user_id__in=who_likes_me).extra(select=extra_select).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
 
 
