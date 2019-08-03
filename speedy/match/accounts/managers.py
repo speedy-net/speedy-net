@@ -7,6 +7,7 @@ from speedy.core.accounts.models import User
 
 class SiteProfileManager(BaseManager):
     def get_matches(self, user_profile):
+        user = user_profile.user
         user_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user_profile.min_age_to_match, max_age=user_profile.max_age_to_match)
         language_code = get_language()
@@ -15,16 +16,40 @@ class SiteProfileManager(BaseManager):
             diet__in=user_profile.diet_to_match,
             smoking_status__in=user_profile.smoking_status_to_match,
             relationship_status__in=user_profile.relationship_status_to_match,
-            speedy_match_site_profile__gender_to_match__contains=[user_profile.user.gender],
-            speedy_match_site_profile__diet_to_match__contains=[user_profile.user.diet],
-            speedy_match_site_profile__smoking_status_to_match__contains=[user_profile.user.smoking_status],
-            speedy_match_site_profile__relationship_status_to_match__contains=[user_profile.user.relationship_status],
+            speedy_match_site_profile__gender_to_match__contains=[user.gender],
+            speedy_match_site_profile__diet_to_match__contains=[user.diet],
+            speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
+            speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
             date_of_birth__range=age_ranges,
-            speedy_match_site_profile__min_age_to_match__lte=user_profile.user.get_age(),
-            speedy_match_site_profile__max_age_to_match__gte=user_profile.user.get_age(),
+            speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
+            speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
             speedy_match_site_profile__active_languages__contains=language_code,
         ).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
-        matches_list = [user for user in qs[:2000] if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
+        user_list = qs[:2000]
+        # matches_list = [user for user in user_list if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
+        matches_list = []
+        for other_user in user_list:
+            diet_rank = user_profile.diet_match.get(str(other_user.diet), self.model.RANK_0)
+            smoking_status_rank = user_profile.smoking_status_match.get(str(other_user.smoking_status), self.model.RANK_0)
+            relationship_status_rank = user_profile.relationship_status_match.get(str(other_user.relationship_status), self.model.RANK_0)
+            rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
+            other_diet_rank = other_user.speedy_match_profile.diet_match.get(str(user.diet), self.model.RANK_0)
+            other_smoking_status_rank = other_user.speedy_match_profile.smoking_status_match.get(str(user.smoking_status), self.model.RANK_0)
+            other_relationship_status_rank = other_user.speedy_match_profile.relationship_status_match.get(str(user.relationship_status), self.model.RANK_0)
+            other_user_rank = min([other_diet_rank, other_smoking_status_rank, other_relationship_status_rank])
+            if (other_user_rank == self.model.RANK_0):
+                rank = self.model.RANK_0
+            if (other_user.gender not in user_profile.gender_to_match):
+                rank = self.model.RANK_0
+            if (user.gender not in other_user.speedy_match_profile.gender_to_match):
+                rank = self.model.RANK_0
+            if (not (user_profile.min_age_to_match <= other_user.get_age() <= user_profile.max_age_to_match)):
+                rank = self.model.RANK_0
+            if (not (other_user.speedy_match_profile.min_age_to_match <= user.get_age() <= other_user.speedy_match_profile.max_age_to_match)):
+                rank = self.model.RANK_0
+            if ((other_user.speedy_match_profile.is_active) and (rank > self.model.RANK_0)):
+                other_user.speedy_match_profile.rank = rank
+                matches_list.append(other_user)
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         return matches_list
