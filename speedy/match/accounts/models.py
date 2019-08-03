@@ -194,7 +194,8 @@ class SiteProfile(SiteProfileBase):
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
-        if True: # ---- matches run faster ---- ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
+        # if True: # ---- matches run faster ---- ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
+        if ((self.is_active) and (other_profile.is_active)):
             # ---- matches run faster ---- if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
             # ---- matches run faster ----     return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
