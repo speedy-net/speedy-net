@@ -45,6 +45,10 @@ class SiteProfile(SiteProfileBase):
     RANK_VALID_VALUES = [choice[0] for choice in RANK_CHOICES]
 
     @staticmethod
+    def active_languages_default():
+        return list()
+
+    @staticmethod
     def gender_to_match_default():
         return list()
 
@@ -86,7 +90,11 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-    active_languages = models.TextField(verbose_name=_('Active languages'), blank=True) # ~~~~ TODO: This should be converted to ArrayField of language codes (strings).
+
+
+    active_languages = models.TextField(verbose_name=_('Active languages'), blank=True) #### TODO: remove
+
+    active_languages_1 = ArrayField(models.TextField(), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), blank=True, null=True),
@@ -117,7 +125,7 @@ class SiteProfile(SiteProfileBase):
 
     @property
     def is_active(self):
-        return ((self.user.is_active) and (get_language() in self.get_active_languages()))
+        return ((self.user.is_active) and (get_language() in self.active_languages))
 
     @property
     def is_active_and_valid(self):
@@ -174,19 +182,15 @@ class SiteProfile(SiteProfileBase):
             self.relationship_status_to_match = list()
 
     def _set_active_languages(self, languages):
-        languages = sorted(list(set(languages)))
-        self.active_languages = ','.join(set(languages))
+        self.active_languages = sorted(list(set(languages)))
 
     def _deactivate_language(self, step, commit=True):
         # Profile is invalid. Deactivate in this language.
         language_code = get_language()
-        self._set_active_languages(set(self.get_active_languages()) - {language_code})
+        self._set_active_languages(set(self.active_languages) - {language_code})
         self.activation_step = step
         if (commit):
             self.user.save_user_and_profile()
-
-    def get_active_languages(self):
-        return list(filter(None, (l.strip() for l in self.active_languages.split(','))))
 
     def validate_profile_and_activate(self, commit=True):
         # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
@@ -210,7 +214,7 @@ class SiteProfile(SiteProfileBase):
             if (commit):
                 # Profile is valid. Activate in this language.
                 self.activation_step = step
-                languages = self.get_active_languages()
+                languages = self.active_languages
                 if (not (language_code in languages)):
                     languages.append(language_code)
                     self._set_active_languages(languages=languages)

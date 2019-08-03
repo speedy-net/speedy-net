@@ -685,16 +685,16 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=utils.get_steps_range(), second=range(1, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
             self.assertEqual(first=utils.get_steps_range(), second=range(1, 10))
 
-        def test_get_active_languages(self):
-            p = SpeedyMatchSiteProfile(active_languages='en, he, de')
-            self.assertListEqual(list1=p.get_active_languages(), list2=['en', 'he', 'de'])
+        def test_active_languages(self):
+            p = SpeedyMatchSiteProfile(active_languages=['en', 'he', 'de'])
+            self.assertListEqual(list1=p.active_languages, list2=['en', 'he', 'de'])
             p = SpeedyMatchSiteProfile(active_languages='')
-            self.assertListEqual(list1=p.get_active_languages(), list2=[])
+            self.assertListEqual(list1=p.active_languages, list2=[])
 
         def test_set_active_languages(self):
             p = SpeedyMatchSiteProfile()
             p._set_active_languages(['en', 'he'])
-            self.assertSetEqual(set1=set(p.get_active_languages()), set2={'en', 'he'})
+            self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
 
         def test_call_activate_directly_and_assert_exception(self):
             user = self.get_default_user_doron()
