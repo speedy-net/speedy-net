@@ -29,7 +29,10 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         return matches_list
 
     def get_object_list(self):
-        return self.get_matches_list()
+        if (self.request.method == 'POST'):
+            return []
+        else:
+            return self.get_matches_list()
 
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
