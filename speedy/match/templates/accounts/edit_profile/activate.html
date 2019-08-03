@@ -8,7 +8,7 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-10 text-center">
+        <div class="col-md-10{% if form %} text-center{% endif %}">
             <div class="page-header">
                 <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
             </div>
