@@ -12,6 +12,7 @@ class SiteProfileManager(BaseManager):
         qs = User.objects.active(gender__in=user_profile.gender_to_match, date_of_birth__range=age_ranges, speedy_match_site_profile__active_languages__contains=language_code).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
         u1_list = [user for user in qs if ((user.speedy_match_profile.is_active) and (user_profile._1___get_matching_rank_quick_without_testing(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
         u1_list = sorted(u1_list, key=lambda user: (user.speedy_match_profile._1___rank, user.speedy_match_profile.last_visit), reverse=True)
+        u1_list = u1_list[:1200]
         matches_list = []
         for user in u1_list:
             if (offset - 75 < len(matches_list) < offset + 50):
@@ -21,6 +22,7 @@ class SiteProfileManager(BaseManager):
             if ((user.speedy_match_profile.is_active) and (user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(user)
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
+        matches_list = matches_list[:720]
         return matches_list
 
 
