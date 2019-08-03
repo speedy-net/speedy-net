@@ -90,11 +90,7 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-
-
-    active_languages = models.TextField(verbose_name=_('Active languages'), blank=True) #### TODO: remove
-
-    active_languages_1 = ArrayField(models.TextField(), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
+    active_languages = ArrayField(models.TextField(), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), blank=True, null=True),
