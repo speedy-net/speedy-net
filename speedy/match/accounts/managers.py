@@ -6,7 +6,7 @@ from speedy.core.accounts.models import User
 
 
 class SiteProfileManager(BaseManager):
-    def get_matches(self, user_profile):
+    def get_matches(self, user_profile, offset=0):
         age_ranges = get_age_ranges_match(min_age=user_profile.min_age_match, max_age=user_profile.max_age_match)
         language_code = get_language()
         qs = User.objects.active(gender__in=user_profile.gender_to_match, date_of_birth__range=age_ranges, speedy_match_site_profile__active_languages__contains=language_code).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
@@ -24,7 +24,7 @@ class SiteProfileManager(BaseManager):
         for user in u1_list:
             if ((len(matches_list) < 360) or (len(user_list) < 600)):
                 user_list.append(user)
-                if (len(matches_list) < 100):
+                if (offset - 75 < len(matches_list) < offset + 50):
                     user.speedy_match_profile.rank = user_profile.get_matching_rank(other_profile=user.speedy_match_profile)
                 else:
                     user.speedy_match_profile.rank = user.speedy_match_profile._1___rank#####
