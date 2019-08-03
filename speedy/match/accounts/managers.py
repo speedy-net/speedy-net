@@ -22,7 +22,7 @@ class SiteProfileManager(BaseManager):
             self.model.RANK_5: [],
         }
         for user in u1_list:
-            if ((len(rank_list[self.model.RANK_5]) < 60) or (len(matches_list) < 360) or (len(user_list) < 600)):
+            if ((len(matches_list) < 360) or (len(user_list) < 600)):
                 user_list.append(user)
                 if ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0)):
                     matches_list.append(user)
