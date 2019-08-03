@@ -26,41 +26,29 @@ class UserLikeManager(BaseManager):
 
     def get_like_list_to_queryset(self, user):
         SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
 
         # filter out users that are only active in another language
         liked_users = User.objects.filter(pk__in=self.filter(from_user=user).values_list('to_user_id', flat=True))
         liked_users = [u.pk for u in liked_users if (u.speedy_match_profile.is_active)]
 
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
-        }
-        return self.filter(from_user=user).filter(to_user__in=liked_users).extra(select=extra_select).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
+        return self.filter(from_user=user).filter(to_user__in=liked_users).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_from_queryset(self, user):
         SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
 
         # filter out users that are only active in another language
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.from_user_id'.format(table_name),
-        }
-        return self.filter(to_user=user).filter(from_user__in=who_likes_me).extra(select=extra_select).prefetch_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
+        return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_mutual_queryset(self, user):
         SiteProfile = get_site_profile_model()
-        table_name = SiteProfile._meta.db_table
 
         # filter out users that are only active in another language
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
-        extra_select = {
-            'last_visit': 'SELECT last_visit FROM {} WHERE user_id = likes_userlike.to_user_id'.format(table_name),
-        }
-        return self.filter(from_user=user, to_user_id__in=who_likes_me).extra(select=extra_select).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-last_visit')
+        return self.filter(from_user=user, to_user_id__in=who_likes_me).prefetch_related("to_user", "to_user__{}".format(SiteProfile.RELATED_NAME)).distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
 
