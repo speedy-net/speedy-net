@@ -688,13 +688,21 @@ if (django_settings.LOGIN_ENABLED):
         def test_active_languages(self):
             p = SpeedyMatchSiteProfile(active_languages=['en', 'he', 'de'])
             self.assertListEqual(list1=p.active_languages, list2=['en', 'he', 'de'])
-            p = SpeedyMatchSiteProfile(active_languages='')
+            p = SpeedyMatchSiteProfile(active_languages=[])
             self.assertListEqual(list1=p.active_languages, list2=[])
 
         def test_set_active_languages(self):
             p = SpeedyMatchSiteProfile()
+            self.assertListEqual(list1=p.active_languages, list2=[])
             p._set_active_languages(['en', 'he'])
             self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
+
+        def test_set_active_languages_with_duplicates(self):
+            p = SpeedyMatchSiteProfile()
+            self.assertListEqual(list1=p.active_languages, list2=[])
+            p._set_active_languages(['en', 'he', 'en', 'he'])
+            self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
+            self.assertEqual(first=len(p.active_languages), second=2)
 
         def test_call_activate_directly_and_assert_exception(self):
             user = self.get_default_user_doron()
