@@ -49,8 +49,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         **{to_attribute(name='more_children', language_code=language_code): [speedy_match_accounts_validators.validate_more_children] for language_code, language_name in django_settings.LANGUAGES},
         **{to_attribute(name='match_description', language_code=language_code): [speedy_match_accounts_validators.validate_match_description] for language_code, language_name in django_settings.LANGUAGES},
         'gender_to_match': [speedy_match_accounts_validators.validate_gender_to_match],
-        'min_age_match': [speedy_match_accounts_validators.validate_min_age_match],
-        'max_age_match': [speedy_match_accounts_validators.validate_max_age_match],
+        'min_age_to_match': [speedy_match_accounts_validators.validate_min_age_to_match],
+        'max_age_to_match': [speedy_match_accounts_validators.validate_max_age_to_match],
         'diet_match': [speedy_match_accounts_validators.validate_diet_match],
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
@@ -78,8 +78,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             'relationship_status',
             'gender_to_match',
             *(to_attribute(name='match_description', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
-            'min_age_match',
-            'max_age_match',
+            'min_age_to_match',
+            'max_age_to_match',
             'diet_match',
             'smoking_status_match',
             'relationship_status_match',
@@ -124,10 +124,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.fields[to_attribute(name='match_description')].label = pgettext_lazy(context=self.instance.get_match_gender(), message='My ideal match')
         if ('gender_to_match' in self.fields):
             self.fields['gender_to_match'].label = _('Gender to match')
-        if ('min_age_match' in self.fields):
-            self.fields['min_age_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Minimal age to match')
-        if ('max_age_match' in self.fields):
-            self.fields['max_age_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Maximal age to match')
+        if ('min_age_to_match' in self.fields):
+            self.fields['min_age_to_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Minimal age to match')
+        if ('max_age_to_match' in self.fields):
+            self.fields['max_age_to_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Maximal age to match')
         for field_name in self.user_fields:
             if (field_name in self.fields):
                 self.fields[field_name].initial = getattr(self.instance.user, field_name)
@@ -147,10 +147,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
 
     def clean(self):
-        if (('min_age_match' in self.fields) and ('max_age_match' in self.fields)):
-            min_age_match = self.cleaned_data.get('min_age_match')
-            max_age_match = self.cleaned_data.get('max_age_match')
-            speedy_match_accounts_validators.validate_min_max_age_to_match(min_age_match=min_age_match, max_age_match=max_age_match)
+        if (('min_age_to_match' in self.fields) and ('max_age_to_match' in self.fields)):
+            min_age_to_match = self.cleaned_data.get('min_age_to_match')
+            max_age_to_match = self.cleaned_data.get('max_age_to_match')
+            speedy_match_accounts_validators.validate_min_max_age_to_match(min_age_to_match=min_age_to_match, max_age_to_match=max_age_to_match)
         return self.cleaned_data
 
     def save(self, commit=True):

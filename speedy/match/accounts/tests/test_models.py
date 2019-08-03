@@ -43,17 +43,17 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'min_max_age_to_match',
                 "expected_step": 7,
-                "expected_error_message_min_age_match_and_max_age_match_valid": self._maximal_age_to_match_cant_be_less_than_minimal_age_to_match_error_message,
-                "expected_error_message_min_age_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
-                "expected_error_message_max_age_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
-                # "expected_error_messages_min_age_match_and_max_age_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'], # ~~~~ TODO
-                # "expected_error_messages_min_age_match_and_max_age_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
+                "expected_error_message_min_age_to_match_and_max_age_to_match_valid": self._maximal_age_to_match_cant_be_less_than_minimal_age_to_match_error_message,
+                "expected_error_message_min_age_to_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
+                "expected_error_message_max_age_to_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
+                # "expected_error_messages_min_age_to_match_and_max_age_to_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'], # ~~~~ TODO
+                # "expected_error_messages_min_age_to_match_and_max_age_to_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
             }
-            # test_settings["expected_error_messages_min_age_match_and_max_age_match_valid"] = ['["{expected_error_message_min_age_match_and_max_age_match_valid}"]'.format(expected_error_message_min_age_match_and_max_age_match_valid=test_settings["expected_error_message_min_age_match_and_max_age_match_valid"])] # ~~~~ TODO
-            # test_settings["expected_error_messages_min_age_match_and_max_age_match_valid"] = ["['{expected_error_message_min_age_match_and_max_age_match_valid}']".format(expected_error_message_min_age_match_and_max_age_match_valid=test_settings["expected_error_message_min_age_match_and_max_age_match_valid"])] # ~~~~ TODO
-            test_settings["expected_error_messages_min_age_match_and_max_age_match_valid"] = [({'en': '["{expected_error_message_min_age_match_and_max_age_match_valid}"]', 'he': "['{expected_error_message_min_age_match_and_max_age_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_match_and_max_age_match_valid=test_settings["expected_error_message_min_age_match_and_max_age_match_valid"])]
-            test_settings["expected_error_messages_min_age_match_and_max_age_match_invalid"] = ["['{expected_error_message_min_age_match_invalid}']".format(expected_error_message_min_age_match_invalid=test_settings["expected_error_message_min_age_match_invalid"]), "['{expected_error_message_max_age_match_invalid}']".format(expected_error_message_max_age_match_invalid=test_settings["expected_error_message_max_age_match_invalid"])]
-            # test_settings["expected_error_messages_min_age_match_and_max_age_match_invalid"] = ['["{expected_error_message_min_age_match_invalid}"]'.format(expected_error_message_min_age_match_invalid=test_settings["expected_error_message_min_age_match_invalid"]), '["{expected_error_message_max_age_match_invalid}"]'.format(expected_error_message_max_age_match_invalid=test_settings["expected_error_message_max_age_match_invalid"])] # ~~~~ TODO
+            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = ['["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]'.format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])] # ~~~~ TODO
+            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = ["['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']".format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])] # ~~~~ TODO
+            test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])]
+            test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ["['{expected_error_message_min_age_to_match_invalid}']".format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]), "['{expected_error_message_max_age_to_match_invalid}']".format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"])]
+            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ['["{expected_error_message_min_age_to_match_invalid}"]'.format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]), '["{expected_error_message_max_age_to_match_invalid}"]'.format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"])] # ~~~~ TODO
             return test_settings
 
         def get_diet_match_default_test_settings(self):
@@ -107,7 +107,7 @@ if (django_settings.LOGIN_ENABLED):
             return default_value
 
         def validate_all_user_values(self, user):
-            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_match', 'max_age_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
+            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
             _all_fields = []
             for step in utils.get_steps_range():
                 fields = utils.get_step_fields_to_validate(step=step)
@@ -225,14 +225,14 @@ if (django_settings.LOGIN_ENABLED):
             field_name = test_settings["field_name"]
             expected_test_settings_keys = {"field_name", "test_invalid_values_to_assign", "test_invalid_values_to_save", "expected_step", "expected_counts_tuple"}
             if (field_name in ['min_max_age_to_match']):
-                expected_test_settings_keys.update({"test_invalid_ages", "expected_error_message_min_age_match_and_max_age_match_valid", "expected_error_message_min_age_match_invalid", "expected_error_message_max_age_match_invalid", "expected_error_messages_min_age_match_and_max_age_match_valid", "expected_error_messages_min_age_match_and_max_age_match_invalid", "expected_min_max_age_to_match_error_messages_counts_tuple"})
+                expected_test_settings_keys.update({"test_invalid_ages", "expected_error_message_min_age_to_match_and_max_age_to_match_valid", "expected_error_message_min_age_to_match_invalid", "expected_error_message_max_age_to_match_invalid", "expected_error_messages_min_age_to_match_and_max_age_to_match_valid", "expected_error_messages_min_age_to_match_and_max_age_to_match_invalid", "expected_min_max_age_to_match_error_messages_counts_tuple"})
             elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                 expected_test_settings_keys.update({"test_invalid_keys", "test_invalid_ranks", "expected_error_message_keys_and_ranks_invalid", "expected_error_messages_keys_and_ranks_invalid", "expected_error_message_max_rank_invalid", "expected_error_messages_max_rank_invalid", "expected_keys_and_ranks_error_messages_counts_tuple"})
             else:
                 expected_test_settings_keys.update({"expected_error_message", "expected_error_messages"})
             self.assertSetEqual(set1=set(test_settings.keys()), set2=expected_test_settings_keys)
             ok_count, validate_profile_and_activate_failures_count, model_assign_failures_count, model_save_failures_count = 0, 0, 0, 0
-            error_message_min_age_match_and_max_age_match_valid_count, error_message_min_age_match_and_max_age_match_invalid_count = 0, 0
+            error_message_min_age_to_match_and_max_age_to_match_valid_count, error_message_min_age_to_match_and_max_age_to_match_invalid_count = 0, 0
             error_message_keys_and_ranks_invalid_count, error_message_max_rank_invalid_count = 0, 0
             can_assign_value_set, can_save_user_and_profile_set, value_is_valid_set, value_is_invalid_set = set(), set(), set(), set()
             values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values, invalid_values_with_valid_ranks = None, None, None, None, None, None
@@ -319,18 +319,18 @@ if (django_settings.LOGIN_ENABLED):
                         valid_sets.append(value)
                 # print(valid_sets) # ~~~~ TODO: remove this line!
                 self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
-            elif (field_name in ['min_age_match', 'max_age_match']):
-                values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 10 + 1))
+            elif (field_name in ['min_age_to_match', 'max_age_to_match']):
+                values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1))
                 valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
                 valid_values = SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES
             elif (field_name in ['min_max_age_to_match']):
-                values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
+                values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
                 self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
                 values_to_test = []
                 if (test_settings["test_invalid_values_to_save"]):
                     values_to_test.extend([(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test])
                 if (test_settings["test_invalid_ages"]):
-                    values_to_test.extend([(value, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED - value) for value in range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 10 + 1)])
+                    values_to_test.extend([(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1)])
                     self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
                 else:
                     values_to_test.extend(values_to_test_valid_ages)
@@ -501,13 +501,13 @@ if (django_settings.LOGIN_ENABLED):
                         user.relationship_status = value_to_assign
                     elif (field_name in ['gender_to_match']):
                         user.speedy_match_profile.gender_to_match = value_to_assign
-                    elif (field_name in ['min_age_match']):
-                        user.speedy_match_profile.min_age_match = value_to_assign
-                    elif (field_name in ['max_age_match']):
-                        user.speedy_match_profile.max_age_match = value_to_assign
+                    elif (field_name in ['min_age_to_match']):
+                        user.speedy_match_profile.min_age_to_match = value_to_assign
+                    elif (field_name in ['max_age_to_match']):
+                        user.speedy_match_profile.max_age_to_match = value_to_assign
                     elif (field_name in ['min_max_age_to_match']):
-                        user.speedy_match_profile.min_age_match = value_to_assign[0]
-                        user.speedy_match_profile.max_age_match = value_to_assign[1]
+                        user.speedy_match_profile.min_age_to_match = value_to_assign[0]
+                        user.speedy_match_profile.max_age_to_match = value_to_assign[1]
                     elif (field_name in ['diet_match']):
                         user.speedy_match_profile.diet_match = value_to_assign
                     elif (field_name in ['smoking_status_match']):
@@ -518,10 +518,10 @@ if (django_settings.LOGIN_ENABLED):
                     if (not (can_save_user_and_profile)):
                         if (field_name in ['height']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True)
-                        elif (field_name in ['diet', 'smoking_status', 'relationship_status', 'min_age_match', 'max_age_match']):
+                        elif (field_name in ['diet', 'smoking_status', 'relationship_status', 'min_age_to_match', 'max_age_to_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
                         elif (field_name in ['min_max_age_to_match']):
-                            self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name_list=['min_age_match', 'max_age_match'], value_to_test=value_to_test, null=False)
+                            self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name_list=['min_age_to_match', 'max_age_to_match'], value_to_test=value_to_test, null=False)
                         elif (field_name in ['gender_to_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_gender_to_match(user=user, field_name=field_name, value_to_test=value_to_test)
                         elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
@@ -541,20 +541,20 @@ if (django_settings.LOGIN_ENABLED):
                                 self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
                                 if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES for i in range(2))):
                                     expected_error_messages_len = 1
-                                    expected_error_messages_key = "expected_error_messages_min_age_match_and_max_age_match_valid"
-                                    fields_and_error_messages = [(field_name, "expected_error_message_min_age_match_and_max_age_match_valid")]
-                                    error_message_min_age_match_and_max_age_match_valid_count += 1
+                                    expected_error_messages_key = "expected_error_messages_min_age_to_match_and_max_age_to_match_valid"
+                                    fields_and_error_messages = [(field_name, "expected_error_message_min_age_to_match_and_max_age_to_match_valid")]
+                                    error_message_min_age_to_match_and_max_age_to_match_valid_count += 1
                                 else:
                                     self.assertTrue(expr=test_settings["test_invalid_ages"])
                                     expected_error_messages_len = 2
-                                    expected_error_messages_key = "expected_error_messages_min_age_match_and_max_age_match_invalid"
+                                    expected_error_messages_key = "expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"
                                     fields_and_error_messages = []
-                                    for _field_name in ['min_age_match', 'max_age_match', 'min_max_age_to_match']:
+                                    for _field_name in ['min_age_to_match', 'max_age_to_match', 'min_max_age_to_match']:
                                         if (_field_name in ['min_max_age_to_match']):
                                             fields_and_error_messages.append((_field_name, None))
                                         else:
                                             fields_and_error_messages.append((_field_name, "expected_error_message_{}_invalid".format(_field_name)))
-                                    error_message_min_age_match_and_max_age_match_invalid_count += 1
+                                    error_message_min_age_to_match_and_max_age_to_match_invalid_count += 1
                             elif (field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']):
                                 if (not (value_to_test in invalid_values_with_valid_ranks)):
                                     expected_error_messages_len = 1
@@ -606,7 +606,7 @@ if (django_settings.LOGIN_ENABLED):
             else:
                 self.assertEqual(first=model_save_failures_count, second=0)
             counts_tuple = (ok_count, validate_profile_and_activate_failures_count, model_assign_failures_count, model_save_failures_count)
-            min_max_age_to_match_error_messages_counts_tuple = (error_message_min_age_match_and_max_age_match_valid_count, error_message_min_age_match_and_max_age_match_invalid_count)
+            min_max_age_to_match_error_messages_counts_tuple = (error_message_min_age_to_match_and_max_age_to_match_valid_count, error_message_min_age_to_match_and_max_age_to_match_invalid_count)
             keys_and_ranks_error_messages_counts_tuple = (error_message_keys_and_ranks_invalid_count, error_message_max_rank_invalid_count)
             self.assertEqual(first=sum(counts_tuple), second=len(values_to_test))
             self.assertTupleEqual(tuple1=counts_tuple, tuple2=(len(valid_values), len(valid_values_to_save) - len(valid_values), len(values_to_test) - len(valid_values_to_assign), len(valid_values_to_assign) - len(valid_values_to_save)))
@@ -650,9 +650,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(1, 450 + 1))
 
         def test_age_valid_values(self):
-            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED, second=0)
-            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED, second=180)
-            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=0)
+            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=180)
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
             self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
         def test_rank_valid_values(self):
@@ -748,10 +748,10 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=user.speedy_match_profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
             self.assertIn(member=user.smoking_status, container=User.SMOKING_STATUS_VALID_VALUES)
             self.assertIn(member=user.relationship_status, container=User.RELATIONSHIP_STATUS_VALID_VALUES)
-            self.assertIn(member=user.speedy_match_profile.min_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
-            self.assertIn(member=user.speedy_match_profile.max_age_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
-            self.assertEqual(first=user.speedy_match_profile.min_age_match, second=SpeedyMatchSiteProfile.settings.MIN_AGE_MATCH_ALLOWED)
-            self.assertEqual(first=user.speedy_match_profile.max_age_match, second=SpeedyMatchSiteProfile.settings.MAX_AGE_MATCH_ALLOWED)
+            self.assertIn(member=user.speedy_match_profile.min_age_to_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+            self.assertIn(member=user.speedy_match_profile.max_age_to_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+            self.assertEqual(first=user.speedy_match_profile.min_age_to_match, second=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED)
+            self.assertEqual(first=user.speedy_match_profile.max_age_to_match, second=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED)
             self.validate_all_user_values(user=user)
 
         def test_validate_profile_and_activate_exception_on_photo(self):
@@ -897,9 +897,9 @@ if (django_settings.LOGIN_ENABLED):
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-        def test_validate_profile_and_activate_exception_on_min_age_match(self):
+        def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
             test_settings = {
-                "field_name": 'min_age_match',
+                "field_name": 'min_age_to_match',
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
@@ -910,9 +910,9 @@ if (django_settings.LOGIN_ENABLED):
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
-        def test_validate_profile_and_activate_exception_on_max_age_match(self):
+        def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
             test_settings = {
-                "field_name": 'max_age_match',
+                "field_name": 'max_age_to_match',
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
@@ -1079,12 +1079,12 @@ if (django_settings.LOGIN_ENABLED):
             super().test_validate_profile_and_activate_exception_on_gender_to_match()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_min_age_match(self):
-            super().test_validate_profile_and_activate_exception_on_min_age_match()
+        def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
+            super().test_validate_profile_and_activate_exception_on_min_age_to_match()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_max_age_match(self):
-            super().test_validate_profile_and_activate_exception_on_max_age_match()
+        def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
+            super().test_validate_profile_and_activate_exception_on_max_age_to_match()
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
@@ -1126,8 +1126,8 @@ if (django_settings.LOGIN_ENABLED):
             user.diet = User.DIET_VEGETARIAN
             user.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
             user.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
-            user.speedy_match_profile.min_age_match = 20
-            user.speedy_match_profile.max_age_match = 180
+            user.speedy_match_profile.min_age_to_match = 20
+            user.speedy_match_profile.max_age_to_match = 180
             user.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE]
             user.save_user_and_profile()
             return user
@@ -1188,8 +1188,8 @@ if (django_settings.LOGIN_ENABLED):
         def test_age_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
-            user_1.speedy_match_profile.min_age_match = 20
-            user_1.speedy_match_profile.max_age_match = 30
+            user_1.speedy_match_profile.min_age_to_match = 20
+            user_1.speedy_match_profile.max_age_to_match = 30
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)

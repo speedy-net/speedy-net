@@ -21,7 +21,7 @@ def get_step_form_fields(step):
 
 def get_step_fields_to_validate(step):
     fields = get_step_form_fields(step=step)
-    if (('min_age_match' in fields) or ('max_age_match' in fields)):
+    if (('min_age_to_match' in fields) or ('max_age_to_match' in fields)):
         fields.append('min_max_age_to_match')
     return fields
 
@@ -49,12 +49,12 @@ def validate_field(field_name, user):
         validators.validate_relationship_status(relationship_status=user.relationship_status)
     elif (field_name in ['gender_to_match']):
         validators.validate_gender_to_match(gender_to_match=user.speedy_match_profile.gender_to_match)
-    elif (field_name in ['min_age_match']):
-        validators.validate_min_age_match(min_age_match=user.speedy_match_profile.min_age_match)
-    elif (field_name in ['max_age_match']):
-        validators.validate_max_age_match(max_age_match=user.speedy_match_profile.max_age_match)
+    elif (field_name in ['min_age_to_match']):
+        validators.validate_min_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match)
+    elif (field_name in ['max_age_to_match']):
+        validators.validate_max_age_to_match(max_age_to_match=user.speedy_match_profile.max_age_to_match)
     elif (field_name in ['min_max_age_to_match']):
-        validators.validate_min_max_age_to_match(min_age_match=user.speedy_match_profile.min_age_match, max_age_match=user.speedy_match_profile.max_age_match)
+        validators.validate_min_max_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match, max_age_to_match=user.speedy_match_profile.max_age_to_match)
     elif (field_name in ['diet_match']):
         validators.validate_diet_match(diet_match=user.speedy_match_profile.diet_match)
     elif (field_name in ['smoking_status_match']):

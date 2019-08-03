@@ -10,7 +10,7 @@ from speedy.match.accounts.forms import SpeedyMatchProfileBaseForm
 
 class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
     def get_fields(self):
-        return ('diet_match', 'min_age_match', 'max_age_match')
+        return ('diet_match', 'min_age_to_match', 'max_age_to_match')
 
 
 class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
@@ -32,7 +32,7 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
 
 class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
-        return ('gender_to_match', to_attribute(name='match_description'), 'min_age_match', 'max_age_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
+        return ('gender_to_match', to_attribute(name='match_description'), 'min_age_to_match', 'max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
 
 
 class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):

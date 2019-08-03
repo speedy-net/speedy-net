@@ -89,19 +89,19 @@ def validate_gender_to_match(gender_to_match):
         raise ValidationError(_("Gender to match is required."))
 
 
-def validate_min_age_match(min_age_match):
-    if (not (age_match_is_valid(age_match=min_age_match))):
+def validate_min_age_to_match(min_age_to_match):
+    if (not (age_match_is_valid(age_match=min_age_to_match))):
         raise ValidationError(_("Minimal age to match must be from 0 to 180 years."))
 
 
-def validate_max_age_match(max_age_match):
-    if (not (age_match_is_valid(age_match=max_age_match))):
+def validate_max_age_to_match(max_age_to_match):
+    if (not (age_match_is_valid(age_match=max_age_to_match))):
         raise ValidationError(_("Maximal age to match must be from 0 to 180 years."))
 
 
-def validate_min_max_age_to_match(min_age_match, max_age_match):
-    if ((age_match_is_valid(age_match=min_age_match)) and (age_match_is_valid(age_match=max_age_match))):
-        if (not (min_age_match <= max_age_match)):
+def validate_min_max_age_to_match(min_age_to_match, max_age_to_match):
+    if ((age_match_is_valid(age_match=min_age_to_match)) and (age_match_is_valid(age_match=max_age_to_match))):
+        if (not (min_age_to_match <= max_age_to_match)):
             raise ValidationError(_("Maximal age to match can't be less than minimal age to match."))
 
 

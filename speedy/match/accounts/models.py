@@ -25,7 +25,7 @@ class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_match_site_profile'
 
     HEIGHT_VALID_VALUES = range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1)
-    AGE_MATCH_VALID_VALUES = range(settings.MIN_AGE_MATCH_ALLOWED, settings.MAX_AGE_MATCH_ALLOWED + 1)
+    AGE_MATCH_VALID_VALUES = range(settings.MIN_AGE_TO_MATCH_ALLOWED, settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
     RANK_0 = 0
     RANK_1 = 1
@@ -61,6 +61,18 @@ class SiteProfile(SiteProfileBase):
         return dict({str(relationship_status): __class__.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
 
     @staticmethod
+    def diet_to_match_default():
+        return list()
+
+    @staticmethod
+    def smoking_status_to_match_default():
+        return list()
+
+    @staticmethod
+    def relationship_status_to_match_default():
+        return list()
+
+    @staticmethod
     def get_rank_description(rank):
         rank_descriptions = {
             __class__.RANK_0: _("No match"),
@@ -89,11 +101,14 @@ class SiteProfile(SiteProfileBase):
         field=models.TextField(verbose_name=_('My ideal match'), blank=True, null=True),
     )
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
-    min_age_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=settings.MIN_AGE_MATCH_ALLOWED)
-    max_age_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=settings.MAX_AGE_MATCH_ALLOWED)
+    min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=settings.MIN_AGE_TO_MATCH_ALLOWED)
+    max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=settings.MAX_AGE_TO_MATCH_ALLOWED)
     diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
     relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
+    diet_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Diet to match'), size=len(User.DIET_VALID_VALUES), default=diet_to_match_default.__func__, blank=True, null=True)
+    smoking_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Smoking status to match'), size=len(User.SMOKING_STATUS_VALID_VALUES), default=smoking_status_to_match_default.__func__, blank=True, null=True)
+    relationship_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Relationship status to match'), size=len(User.RELATIONSHIP_STATUS_VALID_VALUES), default=relationship_status_to_match_default.__func__, blank=True, null=True)
     activation_step = TranslatedField(
         field=models.PositiveSmallIntegerField(default=2),
     )
@@ -132,6 +147,7 @@ class SiteProfile(SiteProfileBase):
         return '{} @ Speedy Match'.format(super().__str__())
 
     def save(self, *args, **kwargs):
+        self._set_values_to_match()
         if (self.activation_step < 2):
             self.activation_step = 2
         if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
@@ -139,6 +155,11 @@ class SiteProfile(SiteProfileBase):
         if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
             self._deactivate_language(step=self.activation_step, commit=False)
         return super().save(*args, **kwargs)
+
+    def _set_values_to_match(self):
+        self.diet_to_match = [diet for diet in User.DIET_VALID_VALUES if (self.diet_match[str(diet)] > self.__class__.RANK_0)]
+        self.smoking_status_to_match = [smoking_status for smoking_status in User.SMOKING_STATUS_VALID_VALUES if (self.smoking_status_match[str(smoking_status)] > self.__class__.RANK_0)]
+        self.relationship_status_to_match = [relationship_status for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES if (self.relationship_status_match[str(relationship_status)] > self.__class__.RANK_0)]
 
     def _set_active_languages(self, languages):
         languages = sorted(list(set(languages)))
@@ -199,7 +220,7 @@ class SiteProfile(SiteProfileBase):
                 return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0
-            if (not (self.min_age_match <= other_profile.user.get_age() <= self.max_age_match)):
+            if (not (self.min_age_to_match <= other_profile.user.get_age() <= self.max_age_to_match)):
                 return self.__class__.RANK_0
             if (other_profile.user.diet == User.DIET_UNKNOWN):
                 return self.__class__.RANK_0

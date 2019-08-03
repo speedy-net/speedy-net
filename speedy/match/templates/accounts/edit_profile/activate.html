@@ -101,21 +101,21 @@
                 switch (gender_selected) {
                     case 'female':
                         $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "female" %}:');
-                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "female" %}:');
-                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "female" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "female" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "female" %}:');
                         break;
 
                     case 'male':
                         $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "male" %}:');
-                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "male" %}:');
-                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "male" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "male" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "male" %}:');
                         break;
 
                     case 'other':
                     default:
                         $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "other" %}:');
-                        $('label[for="id_min_age_match"]').html('{% trans 'Minimal age to match' context "other" %}:');
-                        $('label[for="id_max_age_match"]').html('{% trans 'Maximal age to match' context "other" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "other" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "other" %}:');
                         break;
                 }
             }

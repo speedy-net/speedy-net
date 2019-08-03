@@ -226,13 +226,13 @@ if (django_settings.LOGIN_ENABLED):
                 raise NotImplementedError()
             self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.other_user.speedy_match_profile.min_age_match = 80
+                self.other_user.speedy_match_profile.min_age_to_match = 80
                 self.other_user.save_user_and_profile()
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=404)
                 self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                 self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
-                self.other_user.speedy_match_profile.min_age_match = 36
+                self.other_user.speedy_match_profile.min_age_to_match = 36
                 self.other_user.save_user_and_profile()
                 r = self.client.get(path=self.user_profile_url)
                 if (self.random_choice == 1):
@@ -247,7 +247,7 @@ if (django_settings.LOGIN_ENABLED):
                     self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                 else:
                     raise NotImplementedError()
-                self.other_user.speedy_match_profile.min_age_match = 12
+                self.other_user.speedy_match_profile.min_age_to_match = 12
                 self.other_user.save_user_and_profile()
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
