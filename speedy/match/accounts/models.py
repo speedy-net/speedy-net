@@ -86,7 +86,7 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-    active_languages = models.TextField(verbose_name=_('Active languages'), blank=True)
+    active_languages = models.TextField(verbose_name=_('Active languages'), blank=True) # ~~~~ TODO: This should be converted to ArrayField of language codes (strings).
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), blank=True, null=True),
@@ -157,9 +157,21 @@ class SiteProfile(SiteProfileBase):
         return super().save(*args, **kwargs)
 
     def _set_values_to_match(self):
-        self.diet_to_match = [diet for diet in User.DIET_VALID_VALUES if (self.diet_match[str(diet)] > self.__class__.RANK_0)]
-        self.smoking_status_to_match = [smoking_status for smoking_status in User.SMOKING_STATUS_VALID_VALUES if (self.smoking_status_match[str(smoking_status)] > self.__class__.RANK_0)]
-        self.relationship_status_to_match = [relationship_status for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES if (self.relationship_status_match[str(relationship_status)] > self.__class__.RANK_0)]
+        from speedy.match.accounts import utils
+        errors = 0
+        for field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']:
+            try:
+                utils.validate_field(field_name=field_name, user=self.user)
+            except (ValidationError, AttributeError):
+                errors += 1
+        if (errors == 0):
+            self.diet_to_match = [diet for diet in User.DIET_VALID_VALUES if (self.diet_match[str(diet)] > self.__class__.RANK_0)]
+            self.smoking_status_to_match = [smoking_status for smoking_status in User.SMOKING_STATUS_VALID_VALUES if (self.smoking_status_match[str(smoking_status)] > self.__class__.RANK_0)]
+            self.relationship_status_to_match = [relationship_status for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES if (self.relationship_status_match[str(relationship_status)] > self.__class__.RANK_0)]
+        else:
+            self.diet_to_match = list()
+            self.smoking_status_to_match = list()
+            self.relationship_status_to_match = list()
 
     def _set_active_languages(self, languages):
         languages = sorted(list(set(languages)))
