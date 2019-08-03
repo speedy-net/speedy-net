@@ -192,11 +192,13 @@ class SiteProfile(SiteProfileBase):
         pass
 
     def get_matching_rank(self, other_profile, second_call=True) -> int:
+        other_profile.rank = self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
-        if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
-            if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
-                return self.__class__.RANK_0
+        # if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
+        if ((self.is_active) and (other_profile.is_active)):
+            # if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
+            #     return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0
             if (not (self.min_age_match <= other_profile.user.get_age() <= self.max_age_match)):
@@ -215,13 +217,22 @@ class SiteProfile(SiteProfileBase):
                 other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
                 if (other_user_rank == self.__class__.RANK_0):
                     rank = self.__class__.RANK_0
-            other_profile.rank = rank
+                if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
+                    if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
+                        return self.__class__.RANK_0
+                else:
+                    if (not (self.is_active_and_valid)):
+                        logger.warning('get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+                    if (not (other_profile.is_active_and_valid)):
+                        logger.warning('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+                    return self.__class__.RANK_0
+                other_profile.rank = rank
             return rank
         else:
-            if (not (self.is_active_and_valid)):
-                logger.warning('get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
-            if (not (other_profile.is_active_and_valid)):
-                logger.warning('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+            # if (not (self.is_active_and_valid)):
+            #     logger.warning('get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+            # if (not (other_profile.is_active_and_valid)):
+            #     logger.warning('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             return self.__class__.RANK_0
 
     def deactivate(self):
