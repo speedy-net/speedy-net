@@ -67,7 +67,12 @@ class FormValidMessageMixin(object):
 
 class PaginationMixin(object):
     def dispatch(self, request, *args, **kwargs):
-        self.page_number = self.request.GET.get('page', 1)
+        page_number = self.request.GET.get('page', 1)
+        try:
+            page_number = int(page_number)
+        except (TypeError, ValueError):
+            return redirect(to='matches:list')
+        self.page_number = page_number
         object_list = self.get_object_list()
         paginator = Paginator(object_list, self.page_size)
         try:
