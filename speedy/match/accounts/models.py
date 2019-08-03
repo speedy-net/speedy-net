@@ -211,7 +211,7 @@ class SiteProfile(SiteProfileBase):
             relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_0)
             rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
-                other_user_rank = other_profile._1___get_matching_rank(other_profile=self, second_call=False)
+                other_user_rank = other_profile._1___get_matching_rank_quick_without_testing(other_profile=self, second_call=False)
                 if (other_user_rank == self.__class__.RANK_0):
                     rank = self.__class__.RANK_0
                 other_profile._1___rank = rank
