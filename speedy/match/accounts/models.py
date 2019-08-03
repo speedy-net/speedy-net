@@ -191,6 +191,34 @@ class SiteProfile(SiteProfileBase):
     def call_after_verify_email_address(self):
         pass
 
+    def _1___get_matching_rank_quick_without_testing(self, other_profile, second_call=True) -> int:
+        other_profile._1___rank = self.__class__.RANK_0
+        if (self.user.pk == other_profile.user.pk):
+            return self.__class__.RANK_0
+        if ((self.is_active) and (other_profile.is_active)):
+            if (other_profile.user.gender not in self.gender_to_match):
+                return self.__class__.RANK_0
+            if (not (self.min_age_match <= other_profile.user.get_age() <= self.max_age_match)):
+                return self.__class__.RANK_0
+            if (other_profile.user.diet == User.DIET_UNKNOWN):
+                return self.__class__.RANK_0
+            if (other_profile.user.smoking_status == User.SMOKING_STATUS_UNKNOWN):
+                return self.__class__.RANK_0
+            if (other_profile.user.relationship_status == User.RELATIONSHIP_STATUS_UNKNOWN):
+                return self.__class__.RANK_0
+            diet_rank = self.diet_match.get(str(other_profile.user.diet), self.__class__.RANK_0)
+            smoking_status_rank = self.smoking_status_match.get(str(other_profile.user.smoking_status), self.__class__.RANK_0)
+            relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_0)
+            rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
+            if (rank > self.__class__.RANK_0) and (second_call):
+                other_user_rank = other_profile._1___get_matching_rank(other_profile=self, second_call=False)
+                if (other_user_rank == self.__class__.RANK_0):
+                    rank = self.__class__.RANK_0
+                other_profile._1___rank = rank
+            return rank
+        else:
+            return self.__class__.RANK_0
+
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         other_profile.rank = self.__class__.RANK_0
         if (self.user.pk == other_profile.user.pk):
