@@ -24,8 +24,11 @@ class SiteProfileManager(BaseManager):
         for user in u1_list:
             if ((len(matches_list) < 360) or (len(user_list) < 600)):
                 user_list.append(user)
-                if ((len(matches_list) < 100) or ((user.speedy_match_profile.is_active) and (user_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))):
+                if (len(matches_list) < 100):
+                    user.speedy_match_profile.rank = user_profile.get_matching_rank(other_profile=user.speedy_match_profile)
+                else:
                     user.speedy_match_profile.rank = user.speedy_match_profile._1___rank#####
+                if ((user.speedy_match_profile.is_active) and (user.speedy_match_profile.rank > self.model.RANK_0)):
                     matches_list.append(user)
                     rank_list[user.speedy_match_profile.rank].append(user)
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
