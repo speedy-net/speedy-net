@@ -52,7 +52,7 @@ class SiteProfileManager(BaseManager):
             date_of_birth__range=age_ranges,
             speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
             speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
-            speedy_match_site_profile__active_languages__contains=language_code,
+            speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2000]
         blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
