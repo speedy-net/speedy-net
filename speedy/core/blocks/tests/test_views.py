@@ -10,13 +10,13 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class BlockListViewTestCase(SiteTestCase):
+    class BlockedUsersListViewTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.first_user = ActiveUserFactory()
             self.second_user = ActiveUserFactory()
             self.third_user = ActiveUserFactory()
-            self.page_url = '/{}/blocks/'.format(self.first_user.slug)
+            self.page_url = '/{}/blocked-users/'.format(self.first_user.slug)
 
         def test_visitor_has_no_access(self):
             self.client.logout()
@@ -41,7 +41,7 @@ if (django_settings.LOGIN_ENABLED):
             super().set_up()
             self.first_user = ActiveUserFactory()
             self.second_user = ActiveUserFactory()
-            self.page_url = '/{}/blocks/block/'.format(self.second_user.slug)
+            self.page_url = '/{}/block/'.format(self.second_user.slug)
 
         def test_visitor_has_no_access(self):
             self.client.logout()
@@ -70,7 +70,7 @@ if (django_settings.LOGIN_ENABLED):
             super().set_up()
             self.first_user = ActiveUserFactory()
             self.second_user = ActiveUserFactory()
-            self.page_url = '/{}/blocks/unblock/'.format(self.second_user.slug)
+            self.page_url = '/{}/unblock/'.format(self.second_user.slug)
 
         def test_visitor_has_no_access(self):
             self.client.logout()

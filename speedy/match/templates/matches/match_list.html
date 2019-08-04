@@ -7,7 +7,7 @@
 {% load rules %}
 {% load static %}
 
-{% block title %}{% trans 'Your Matches' context user.get_gender %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Your Matches' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block extra_css %}
     {{ block.super }}

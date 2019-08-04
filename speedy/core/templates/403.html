@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}403 / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'This page is private.' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="page-header">

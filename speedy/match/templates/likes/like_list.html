@@ -3,7 +3,7 @@
 {% load core_tags_and_filters %}
 {% load i18n %}
 
-{% block title %}{% trans 'Likes' %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Likes' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block user_menu_likes_class %}active{% endblock %}
 

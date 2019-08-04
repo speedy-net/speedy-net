@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Welcome' context user.get_gender %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Welcome' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="row">

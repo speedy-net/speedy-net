@@ -3,5 +3,5 @@
 {% load i18n %}
 {% load rules %}
 
-{% block title %}{% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}{% if can_view_profile_header %}{{ user.name }}{% else %}{{ user.slug }}{% endif %} / {{ block.super }}{% endblock %}
+{% block title %}{% has_perm 'accounts.view_profile_header' request.user user as can_view_profile_header %}{% if can_view_profile_header %}{{ user.name }}{% else %}{{ user.slug }}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 

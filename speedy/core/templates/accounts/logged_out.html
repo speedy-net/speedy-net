@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans 'Logged Out' %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Logged Out' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="alert alert-success">

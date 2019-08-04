@@ -5,7 +5,7 @@
 {% load core_messages_tags %}
 {% load user_tags %}
 
-{% block title %}{% trans 'Messages' %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block user_menu_messages_class %}active{% endblock %}
 

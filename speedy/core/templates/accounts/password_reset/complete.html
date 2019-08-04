@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans 'Reset Password' %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Reset Password' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="row">

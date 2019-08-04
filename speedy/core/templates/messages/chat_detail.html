@@ -13,8 +13,7 @@
 
 {% block body_class %}with-background{% endblock %}
 
-{% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% trans 'Messages' %} /
-    {{ block.super }}{% endblock %}
+{% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% trans 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     {% get_other_participant chat user as other %}

@@ -6,7 +6,7 @@
 {% load core_messages_tags %}
 {% load rules %}
 
-{% block title %}{% trans 'Match Settings' context user.get_gender %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="page-header">

@@ -2,5 +2,5 @@
 
 {% load i18n %}
 
-{% block title %}{{ user.name }} / {{ block.super }}{% endblock %}
+{% block title %}{{ user.name }} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 

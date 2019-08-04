@@ -8,7 +8,7 @@ from speedy.core.profiles.views import UserMixin
 from .models import Block
 
 
-class BlockListView(UserMixin, PermissionRequiredMixin, generic.ListView):
+class BlockedUsersListView(UserMixin, PermissionRequiredMixin, generic.ListView):
     permission_required = 'accounts.edit_profile'
 
     def get_queryset(self):

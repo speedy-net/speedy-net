@@ -14,9 +14,9 @@ urlpatterns += [
     url(regex=r'^(?P<slug>[-\._\w]+)/friends/', view=include('speedy.core.friends.urls', namespace='friends')),
     url(regex=r'^messages/', view=include('speedy.core.messages.urls_private', namespace='messages')),
     url(regex=r'^messages/(?P<slug>[-\._\w]+)/', view=include('speedy.core.messages.urls_public', namespace='messages_entity')),
-    url(regex=r'^(?P<slug>[-\._\w]+)/blocks/', view=include('speedy.core.blocks.urls', namespace='blocks')),
     url(regex=r'^(?P<slug>[-\._\w]+)/likes/', view=include('speedy.match.likes.urls', namespace='likes')),
     url(regex=r'^uploads/', view=include('speedy.core.uploads.urls', namespace='uploads')),
+    url(regex=r'^(?P<slug>[-\._\w]+)/', view=include('speedy.core.blocks.urls', namespace='blocks')),
     url(regex=r'^', view=include('speedy.match.profiles.urls', namespace='profiles')),
 ]
 

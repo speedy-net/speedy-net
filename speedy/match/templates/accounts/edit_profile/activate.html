@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {{ block.super }}{% endblock %}
+{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="row">
