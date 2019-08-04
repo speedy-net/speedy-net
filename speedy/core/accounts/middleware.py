@@ -6,6 +6,13 @@ from django.utils.deprecation import MiddlewareMixin
 class SiteProfileMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if (request.user.is_authenticated):
+            if ((request.user.is_superuser) or (request.user.is_staff)):
+                redirect_this_user = True
+                for url in django_settings.DONT_REDIRECT_ADMIN:
+                    if (request.path.startswith(url)):
+                        redirect_this_user = False
+                if (redirect_this_user):
+                    return redirect(to='admin:index')
             update_last_visit = True
             for url in django_settings.IGNORE_LAST_VISIT:
                 if (request.path.startswith(url)):
@@ -14,7 +21,7 @@ class SiteProfileMiddleware(MiddlewareMixin):
                 request.user.profile.update_last_visit()
             if (not (request.user.has_confirmed_email_or_registered_now)):
                 request.user.profile.deactivate()
-            if (not (request.user.profile.is_active_and_valid_or_superuser)):
+            if (not (request.user.profile.is_active_and_valid)):
                 redirect_this_user = True
                 for url in django_settings.DONT_REDIRECT_INACTIVE_USER:
                     if (request.path.startswith(url)):

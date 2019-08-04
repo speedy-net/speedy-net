@@ -20,57 +20,59 @@
 
 {% block content %}
     <div class="mb-4 filters">
-        <form action="{% url 'matches:list' %}" method="post" class="">
-            {% csrf_token %}
-            {{ form.errors }}
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-7">
-                    <strong>{% trans 'Update matches' context user.get_gender %}</strong>
+        {% block form %}
+            <form action="{% url 'matches:list' %}" method="post" class="">
+                {% csrf_token %}
+                {{ form.errors }}
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-7">
+                        <strong>{% trans 'Update matches' context user.get_gender %}</strong>
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
+                <div class="row justify-content-center">
 
-                <div class="col-12 col-md-7">
+                    <div class="col-12 col-md-7">
 
-                    <div class="row">
+                        <div class="row">
 
-                        <div class="col">
-                            <button type="button" class="form-control dropdown-toggle" data-toggle="dropdown">
-                                {% trans 'Diet' %} <span class="caret"></span>
-                            </button>
-                            <div class="dropdown-menu diet-menu">
-                                <div class="widget-json-dropdown">
-                                    {% crispy_field form.diet_match %}
+                            <div class="col">
+                                <button type="button" class="form-control dropdown-toggle" data-toggle="dropdown">
+                                    {% trans 'Diet' %} <span class="caret"></span>
+                                </button>
+                                <div class="dropdown-menu diet-menu">
+                                    <div class="widget-json-dropdown">
+                                        {% crispy_field form.diet_match %}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-7">
-                            <div class="row">
-                                <div class="col-3 text-right">
-                                    <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-3 text-right">
+                                        <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
+                                    </div>
+                                    <div class="col-4">{% crispy_field form.min_age_to_match %}</div>
+                                    <div class="col-1">
+                                        <div class="form-control-static mt-1">&ndash;</div>
+                                    </div>
+                                    <div class="col-4">{% crispy_field form.max_age_to_match %}</div>
                                 </div>
-                                <div class="col-4">{% crispy_field form.min_age_to_match %}</div>
-                                <div class="col-1">
-                                    <div class="form-control-static mt-1">&ndash;</div>
-                                </div>
-                                <div class="col-4">{% crispy_field form.max_age_to_match %}</div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <input type="submit" class="btn btn-block btn-primary btn-arrow-right" value="{% trans 'Refresh' %}">
+                            <div class="col">
+                                <input type="submit" class="btn btn-block btn-primary btn-arrow-right" value="{% trans 'Refresh' %}">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center">
-                <a href="{% url 'matches:edit_match_settings' %}" class="btn btn-default">
-                    {% trans 'Add more options' context user.get_gender %}
-                </a>
-            </div>
-            {{ field.label_tag }}
-            {#                    {% crispy_field field %}#}
-            {{ field.errors }}
-        </form>
+                <div class="text-center">
+                    <a href="{% url 'matches:edit_match_settings' %}" class="btn btn-default">
+                        {% trans 'Add more options' context user.get_gender %}
+                    </a>
+                </div>
+                {{ field.label_tag }}
+                {#                    {% crispy_field field %}#}
+                {{ field.errors }}
+            </form>
+        {% endblock %}
     </div>
     <div class="bg-danger rounded-lg p-4">
         <div class="row">

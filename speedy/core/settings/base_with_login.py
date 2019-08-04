@@ -36,6 +36,14 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/set-session/',
 ]
 
+DONT_REDIRECT_ADMIN = [
+    '/admin/',
+    '/logout/',
+    '/media/',
+    '/static/',
+    '/set-session/',
+]
+
 IGNORE_LAST_VISIT = [
     '/set-session/',
 ]

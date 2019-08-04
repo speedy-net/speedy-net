@@ -1,11 +1,12 @@
 from django.utils.translation import get_language
 from django.views import generic
 
+from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
-class AdminMatchesListView(generic.ListView):
+class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     template_name = 'admin/matches/match_list.html'
     page_size = 24
     paginate_by = page_size
