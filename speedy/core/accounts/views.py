@@ -259,6 +259,7 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
     model = UserEmailAddress
     permission_required = 'accounts.confirm_useremailaddress'
     success_url = reverse_lazy('accounts:edit_profile_emails')
+    raise_exception = True
 
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)
@@ -274,6 +275,7 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
     model = UserEmailAddress
     permission_required = 'accounts.delete_useremailaddress'
     success_url = reverse_lazy('accounts:edit_profile_emails')
+    raise_exception = True
 
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)
@@ -288,6 +290,7 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
     model = UserEmailAddress
     permission_required = 'accounts.setprimary_useremailaddress'
     success_url = reverse_lazy('accounts:edit_profile_emails')
+    raise_exception = True
 
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)
@@ -304,6 +307,7 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
     form_class = UserEmailAddressPrivacyForm
     permission_required = 'accounts.change_useremailaddress'
     success_url = reverse_lazy('accounts:edit_profile_emails')
+    raise_exception = True
 
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(self.success_url)

@@ -1455,11 +1455,11 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.unconfirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
         def test_user_has_no_access_to_other_users_address(self):
             r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
         def test_user_can_resend_confirmation(self):
             email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
@@ -1516,31 +1516,126 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url), status_code=302, target_status_code=200)
-
-        def test_user_has_no_access_to_other_users_address(self):
-            r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
-
-        def test_user_cannot_delete_primary_email_address(self):
-            r = self.client.post(path=self.primary_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.primary_address_url), status_code=302, target_status_code=200)
-
-        def test_user_can_delete_email_address(self):
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
             self.assert_user_email_addresses_count(
                 user=self.user,
                 user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
                 user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
                 user_unconfirmed_email_addresses_count=1,
             )
+
+        def test_user_has_no_access_to_other_users_address(self):
+            r = self.client.post(path=self.other_user_address_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
+
+        def test_user_cannot_delete_primary_email_address(self):
+            r = self.client.post(path=self.primary_address_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
+
+        def test_user_cannot_delete_only_confirmed_email_address(self):
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                pass
+            elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk).delete()
+            else:
+                raise NotImplementedError()
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=3,
+                confirmed_email_address_count=1,
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count=2,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=1,
+            )
+            r = self.client.post(path=self.confirmed_email_address_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=3,
+                confirmed_email_address_count=1,
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count=2,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=1,
+            )
+
+        def test_user_can_delete_email_address_if_not_only_confirmed_email_address(self):
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                confirmed_email_address_2 = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
+            elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                pass
+            else:
+                raise NotImplementedError()
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=4,
+                confirmed_email_address_count=2,
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count=3,
+                user_confirmed_email_addresses_count=2,
+                user_unconfirmed_email_addresses_count=1,
+            )
             r = self.client.post(path=self.confirmed_email_address_url)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=3,
+                confirmed_email_address_count=1,
+                unconfirmed_email_address_count=2,
+            )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_addresses_count=2,
+                user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1580,19 +1675,64 @@ if (django_settings.LOGIN_ENABLED):
                 confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
                 unconfirmed_email_address_count=2,
             )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
 
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.post(path=self.confirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.confirmed_email_address_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
 
         def test_user_has_no_access_to_other_users_address(self):
             r = self.client.post(path=self.other_user_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_user_address_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
 
         def test_user_cannot_make_unconfirmed_email_address_primary(self):
             r = self.client.post(path=self.unconfirmed_email_address_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.unconfirmed_email_address_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_unconfirmed_email_addresses_count=1,
+            )
 
         def test_user_can_make_confirmed_email_address_primary(self):
             self.assert_user_email_addresses_count(
@@ -1606,6 +1746,13 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                unconfirmed_email_address_count=2,
+            )
             self.assert_user_email_addresses_count(
                 user=self.user,
                 user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
