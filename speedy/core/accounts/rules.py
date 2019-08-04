@@ -59,6 +59,11 @@ def email_address_is_primary(user, email_address):
 
 
 @predicate
+def email_address_is_only_confirmed_email(user, email_address):
+    return (email_address.is_confirmed) and (email_address.user.email_addresses.filter(is_confirmed=True).count() == 1)
+
+
+@predicate
 def has_access_perm_for_email_address(user, email_address):
     return _has_access_perm_for_obj(user=user, other_user=email_address.user, access=email_address.access)
 
@@ -74,7 +79,7 @@ add_perm('accounts.edit_profile', has_access_perm & is_self)
 add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
 add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
-add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary)
+add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary & ~email_address_is_only_confirmed_email)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
 add_perm('accounts.change_useremailaddress', is_email_address_owner)
 add_perm('accounts.view_useremailaddress', email_address_is_confirmed & has_access_perm_for_email_address)
