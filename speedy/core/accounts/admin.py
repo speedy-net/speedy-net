@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from translated_fields import TranslatedFieldAdmin
 
+from speedy.core.admin import admin_site
 from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Entity, ReservedUsername, User, UserEmailAddress
 
@@ -26,17 +27,17 @@ class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
     pass
 
 
-admin.site.register(Entity, ReadOnlyModelAdmin)
-admin.site.register(ReservedUsername, ReservedUsernameAdmin)
-admin.site.register(User, UserAdmin)
-admin.site.register(UserEmailAddress, UserEmailAddressAdmin)
-
+admin_site.register(Entity, ReadOnlyModelAdmin)
+admin_site.register(ReservedUsername, ReservedUsernameAdmin)
+admin_site.register(User, UserAdmin)
 
 if (django_settings.DEBUG):
     class UserEmailAddressDebugAdmin(admin.ModelAdmin):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
-    admin.site.unregister(UserEmailAddress)
-    admin.site.register(UserEmailAddress, UserEmailAddressDebugAdmin)
+
+    admin_site.register(UserEmailAddress, UserEmailAddressDebugAdmin)
+else:
+    admin_site.register(UserEmailAddress, UserEmailAddressAdmin)
 
 

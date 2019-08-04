@@ -1,6 +1,6 @@
-from django.contrib import admin
+from speedy.core.admin import admin_site
 from speedy.mail.accounts.models import SiteProfile as SpeedyMailSiteProfile
 
-admin.site.register(SpeedyMailSiteProfile)
+admin_site.register(SpeedyMailSiteProfile)
 
 

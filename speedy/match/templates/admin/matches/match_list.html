@@ -1,0 +1,36 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load crispy_forms_field %}
+{% load i18n %}
+{% load core_messages_tags %}
+{% load rules %}
+{% load static %}
+
+{% block title %}{% trans 'Admin - All Matches' context user.get_gender %} / {{ block.super }}{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}" />
+{% endblock %}
+
+{% block user_menu_matches_class %}active{% endblock %}
+
+{% block body_class %}with-background{% endblock %}
+
+{% block content %}
+    <div class="bg-danger rounded-lg p-4">
+        <div class="row">
+            {% for match in matches_list %}
+                {% include 'matches/match_item.html' with user=match %}
+            {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-warning">
+                        {% trans "You don't have any matches yet. Try to broaden your search settings or check again later." context user.get_gender %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% pagination %}
+    </div>
+{% endblock %}

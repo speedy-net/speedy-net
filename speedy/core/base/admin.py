@@ -4,6 +4,8 @@ from django.contrib.auth.models import Group
 
 from friendship.models import Follow, Friend, FriendshipRequest, Block
 
+from speedy.core.admin import admin_site
+
 
 class ReadOnlyModelAdmin(admin.ModelAdmin):
     """
@@ -32,19 +34,19 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
 
 
 admin.site.unregister(Site)
-admin.site.register(Site, ReadOnlyModelAdmin)
+admin_site.register(Site, ReadOnlyModelAdmin)
 
 admin.site.unregister(Group)
-# admin.site.register(Group, ReadOnlyModelAdmin)
+# admin_site.register(Group, ReadOnlyModelAdmin)
 
 admin.site.unregister(Block)
 admin.site.unregister(Follow)
 admin.site.unregister(Friend)
 admin.site.unregister(FriendshipRequest)
-# admin.site.register(Block, ReadOnlyModelAdmin)
-# admin.site.register(Follow, ReadOnlyModelAdmin)
-admin.site.register(Friend, ReadOnlyModelAdmin)
-admin.site.register(FriendshipRequest, ReadOnlyModelAdmin)
+# admin_site.register(Block, ReadOnlyModelAdmin)
+# admin_site.register(Follow, ReadOnlyModelAdmin)
+admin_site.register(Friend, ReadOnlyModelAdmin)
+admin_site.register(FriendshipRequest, ReadOnlyModelAdmin)
 
 
 class Friend1(object):

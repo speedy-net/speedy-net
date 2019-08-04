@@ -1,12 +1,12 @@
 from django.conf.urls import url, include
-from django.contrib import admin
 
+from speedy.core.admin import admin_site
 from speedy.core.urls_with_login import urlpatterns
 
 app_name = 'speedy.net'
 urlpatterns += [
     url(regex=r'^', view=include('speedy.net.accounts.urls', namespace='accounts')),
-    url(regex=r'^admin/', view=admin.site.urls),
+    url(regex=r'^admin/', view=admin_site.urls),
     url(regex=r'^i18n/', view=include('django.conf.urls.i18n')),
 
     # always at the bottom

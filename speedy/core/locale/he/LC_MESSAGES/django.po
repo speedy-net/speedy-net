@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 06:58+0300\n"
+"POT-Creation-Date: 2019-08-04 07:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -735,7 +735,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:646
+#: .\__translations\__translations.py:9 .\accounts\models.py:657
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -744,7 +744,7 @@ msgid "Email address:"
 msgstr "כתובת דואר אלקטרוני:"
 
 #: .\__translations\__translations.py:11
-#: .\templates\profiles\user_info_widget.html:71
+#: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "דואר אלקטרוני"
 
@@ -777,8 +777,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:459
-#: .\templates\menu\friends_trans.html:3
+#: .\__translations\__translations.py:23 .\accounts\models.py:427
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -1690,51 +1689,51 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:462 .\accounts\models.py:630 .\blocks\models.py:11
+#: .\accounts\models.py:430 .\accounts\models.py:641 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:463
+#: .\accounts\models.py:431
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:475
+#: .\accounts\models.py:443
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:631
+#: .\accounts\models.py:642
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:632
+#: .\accounts\models.py:643
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:633
+#: .\accounts\models.py:644
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:634
+#: .\accounts\models.py:645
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:646
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:647
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:647
+#: .\accounts\models.py:658
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:706
+#: .\accounts\models.py:717
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:707
+#: .\accounts\models.py:718
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -1883,7 +1882,7 @@ msgstr "ID"
 msgid "id contains illegal characters."
 msgstr "id מכיל תווים לא חוקיים."
 
-#: .\base\views.py:56
+#: .\base\views.py:57
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
@@ -1967,19 +1966,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:109
+#: .\friends\views.py:140
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:120
+#: .\friends\views.py:151
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:150
+#: .\friends\views.py:181
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:165
+#: .\friends\views.py:196
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -2051,23 +2050,6 @@ msgstr "הדף הזה פרטי."
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
-
-#: .\templates\accounts\edit_profile\activate.html:6
-msgid "Welcome"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\activate.html:12
-#, python-format
-msgid "Welcome to %(site_name)s"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\activate.html:16
-msgid "Please confirm your email address."
-msgstr ""
-
-#: .\templates\accounts\edit_profile\activate.html:21
-msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
@@ -2295,7 +2277,7 @@ msgid "Speedy"
 msgstr "ספידי"
 
 #: .\templates\base_with_login.html:40
-#: .\templates\menu\user_menu_profile_is_active.html:22
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:16
 #: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
 msgid "Messages"
@@ -2372,22 +2354,14 @@ msgstr "בקשות חברות שקיבלת"
 msgid "Sent Requests"
 msgstr "בקשות חברות ששלחת"
 
-#: .\templates\friends\received_requests.html:18
-#: .\templates\friends\sent_requests.html:12
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
 msgstr "אין פה בקשות חברות."
 
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
 msgstr "ראה/י הכול"
-
-#: .\templates\friends\you_dont_have_any_friends_trans.html:3
-msgid "You don't have any friends yet."
-msgstr "עדיין אין לך חברים/ות."
-
-#: .\templates\friends\your_friends_trans.html:3
-msgid "Your Friends"
-msgstr "החברות והחברים שלך"
 
 #: .\templates\messages\chat_detail.html:29
 #, python-format
@@ -2446,22 +2420,22 @@ msgid " blocked you."
 msgstr " חסמ/ה אותך."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
-#: .\templates\profiles\user_list_item.html:28
+#: .\templates\profiles\user_list_item.html:31
 msgid "Accept Friendship Request"
 msgstr "קבל/י הצעת חברות"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
-#: .\templates\profiles\user_list_item.html:30
+#: .\templates\profiles\user_list_item.html:33
 msgid "Accept"
 msgstr "קבל/י"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
-#: .\templates\profiles\user_list_item.html:35
+#: .\templates\profiles\user_list_item.html:38
 msgid "Reject Friendship Request"
 msgstr "דחה/י הצעת חברות"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
-#: .\templates\profiles\user_list_item.html:37
+#: .\templates\profiles\user_list_item.html:40
 msgid "Reject"
 msgstr "דחה/י"
 
@@ -2538,31 +2512,31 @@ msgstr "צפה/י בפרופיל של "
 msgid "user's profile on Speedy Net."
 msgstr "משתמש/ת זה/זאת בספידי נט."
 
-#: .\templates\profiles\user_info_widget.html:13
+#: .\templates\profiles\user_info_widget.html:12
 msgid "Information"
 msgstr "פרטים"
 
-#: .\templates\profiles\user_info_widget.html:20
+#: .\templates\profiles\user_info_widget.html:19
 msgid "Name"
 msgstr "שם"
 
-#: .\templates\profiles\user_info_widget.html:26
+#: .\templates\profiles\user_info_widget.html:25
 msgid "Username"
 msgstr "שם משתמש/ת"
 
-#: .\templates\profiles\user_info_widget.html:36
+#: .\templates\profiles\user_info_widget.html:35
 msgid "Gender"
 msgstr "מין"
 
-#: .\templates\profiles\user_info_widget.html:45
+#: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Date"
 msgstr "תאריך לידה"
 
-#: .\templates\profiles\user_info_widget.html:45
+#: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Year"
 msgstr "שנת לידה"
 
-#: .\templates\profiles\user_info_widget.html:62
+#: .\templates\profiles\user_info_widget.html:61
 msgid "Age"
 msgstr "גיל"
 
@@ -2575,11 +2549,11 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(user_name)s "
 "בספידי מץ'."
 
-#: .\templates\profiles\user_on_speedy_net_widget.html:6
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr "יש לך גם פרופיל בספידי נט. צפה/י בפרופיל שלך בספידי נט."
 
-#: .\templates\profiles\user_on_speedy_net_widget.html:8
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
@@ -2629,6 +2603,12 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr ""
+
+#~ msgid "You don't have any friends yet."
+#~ msgstr "עדיין אין לך חברים/ות."
+
+#~ msgid "Your Friends"
+#~ msgstr "החברות והחברים שלך"
 
 #~ msgid "(hidden)"
 #~ msgstr "(מוסתר)"

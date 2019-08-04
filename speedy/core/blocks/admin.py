@@ -1,9 +1,8 @@
-from django.contrib import admin
-
+from speedy.core.admin import admin_site
 from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Block
 
 
-admin.site.register(Block, ReadOnlyModelAdmin)
+admin_site.register(Block, ReadOnlyModelAdmin)
 
 

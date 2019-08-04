@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 06:58+0300\n"
+"POT-Creation-Date: 2019-08-04 07:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -324,99 +324,111 @@ msgstr ""
 msgid "City or locality"
 msgstr ""
 
-#: .\accounts\forms.py:126 .\accounts\models.py:91
+#: .\accounts\forms.py:126 .\accounts\models.py:107
 msgid "Gender to match"
 msgstr ""
 
-#: .\accounts\models.py:38 .\accounts\models.py:66
+#: .\accounts\models.py:38 .\accounts\models.py:82
 msgid "No match"
 msgstr ""
 
-#: .\accounts\models.py:39 .\accounts\models.py:67
+#: .\accounts\models.py:39 .\accounts\models.py:83
 msgid "One heart"
 msgstr ""
 
-#: .\accounts\models.py:40 .\accounts\models.py:68
+#: .\accounts\models.py:40 .\accounts\models.py:84
 msgid "Two hearts"
 msgstr ""
 
-#: .\accounts\models.py:41 .\accounts\models.py:69
+#: .\accounts\models.py:41 .\accounts\models.py:85
 msgid "Three hearts"
 msgstr ""
 
-#: .\accounts\models.py:42 .\accounts\models.py:70
+#: .\accounts\models.py:42 .\accounts\models.py:86
 msgid "Four hearts"
 msgstr ""
 
-#: .\accounts\models.py:43 .\accounts\models.py:71
+#: .\accounts\models.py:43 .\accounts\models.py:87
 msgid "Five hearts"
 msgstr ""
 
-#: .\accounts\models.py:75
+#: .\accounts\models.py:91
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:76
+#: .\accounts\models.py:92
 msgid "On new likes"
 msgstr ""
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:93
 msgid "Active languages"
 msgstr ""
 
-#: .\accounts\models.py:78 .\templates\profiles\user_extra_info_widget.html:29
+#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:29
 msgid "Height"
 msgstr ""
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:94
 msgid "cm"
 msgstr ""
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:96
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:83 .\accounts\validators.py:54
+#: .\accounts\models.py:99 .\accounts\validators.py:54
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\models.py:86 .\accounts\validators.py:59
+#: .\accounts\models.py:102 .\accounts\validators.py:59
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:89
+#: .\accounts\models.py:105
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:92
+#: .\accounts\models.py:108
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:93
+#: .\accounts\models.py:109
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:94
+#: .\accounts\models.py:110
 msgid "Diet match"
 msgstr ""
 
-#: .\accounts\models.py:95
+#: .\accounts\models.py:111
 msgid "Smoking status match"
 msgstr ""
 
-#: .\accounts\models.py:96
+#: .\accounts\models.py:112
 msgid "Relationship status match"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:113
+msgid "Diet to match"
+msgstr ""
+
+#: .\accounts\models.py:114
+msgid "Smoking status to match"
+msgstr ""
+
+#: .\accounts\models.py:115
+msgid "Relationship status to match"
+msgstr ""
+
+#: .\accounts\models.py:147
 msgid "Speedy Match Profile"
 msgstr ""
 
-#: .\accounts\models.py:129 .\profiles\apps.py:7
+#: .\accounts\models.py:148 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:188 .\templates\accounts\edit_profile\activate.html:17
+#: .\accounts\models.py:221 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -516,35 +528,35 @@ msgstr ""
 msgid "user likes"
 msgstr ""
 
-#: .\likes\views.py:27
+#: .\likes\views.py:28
 msgid "Girls You Like"
 msgstr ""
 
-#: .\likes\views.py:28
+#: .\likes\views.py:29
 msgid "Boys You Like"
 msgstr ""
 
-#: .\likes\views.py:29
+#: .\likes\views.py:30
 msgid "People You Like"
 msgstr ""
 
-#: .\likes\views.py:32
+#: .\likes\views.py:33
 msgid "Girls Who Like You"
 msgstr ""
 
-#: .\likes\views.py:33
+#: .\likes\views.py:34
 msgid "Boys Who Like You"
 msgstr ""
 
-#: .\likes\views.py:34
+#: .\likes\views.py:35
 msgid "People Who Like You"
 msgstr ""
 
-#: .\likes\views.py:36
+#: .\likes\views.py:37
 msgid "Mutual Likes"
 msgstr ""
 
-#: .\matches\views.py:44 .\matches\views.py:58
+#: .\matches\views.py:58 .\matches\views.py:72
 msgid "Your match settings were saved."
 msgstr ""
 
@@ -667,6 +679,17 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
+#: .\templates\admin\matches\match_list.html:10
+msgid "Admin - All Matches"
+msgstr ""
+
+#: .\templates\admin\matches\match_list.html:29
+#: .\templates\matches\match_list.html:82
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+
 #: .\templates\base_site.html:24 .\templates\matches\match_list.html:10
 msgid "Your Matches"
 msgstr ""
@@ -723,12 +746,6 @@ msgstr ""
 
 #: .\templates\matches\match_list.html:67
 msgid "Add more options"
-msgstr ""
-
-#: .\templates\matches\match_list.html:82
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
 msgstr ""
 
 #: .\templates\matches\settings\base.html:17

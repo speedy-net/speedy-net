@@ -1,6 +1,6 @@
-from django.contrib import admin
+from speedy.core.admin import admin_site
 from speedy.composer.accounts.models import SiteProfile as SpeedyComposerSiteProfile
 
-admin.site.register(SpeedyComposerSiteProfile)
+admin_site.register(SpeedyComposerSiteProfile)
 
 
