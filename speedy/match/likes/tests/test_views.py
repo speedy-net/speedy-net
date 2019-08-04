@@ -54,8 +54,8 @@ if (django_settings.LOGIN_ENABLED):
             self.user = ActiveUserFactory()
             self.other_user = ActiveUserFactory()
             self.default_url = '/{}/likes/'.format(self.user.slug)
-            self.to_url = '/{}/likes/to/'.format(self.user.slug)
-            self.from_url = '/{}/likes/from/'.format(self.user.slug)
+            self.to_url = '/{}/likes/people-i-like/'.format(self.user.slug)
+            self.from_url = '/{}/likes/people-who-like-me/'.format(self.user.slug)
             self.mutual_url = '/{}/likes/mutual/'.format(self.user.slug)
             self.to_likes = {
                 UserLikeFactory(from_user=self.user),
