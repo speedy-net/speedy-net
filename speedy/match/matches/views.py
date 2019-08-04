@@ -1,5 +1,6 @@
 import logging
 
+from django.urls import reverse
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
@@ -45,8 +46,13 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         return cd
 
 
+class MatchSettingsDefaultRedirectView(LoginRequiredMixin, generic.RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('matches:edit_match_settings')
+
+
 class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
-    template_name = 'matches/settings/matches.html'
+    template_name = 'matches/settings/about_my_match.html'
     form_class = SpeedyMatchProfileFullMatchForm
     success_url = reverse_lazy('matches:list')
 

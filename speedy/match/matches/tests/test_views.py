@@ -35,10 +35,10 @@ if (django_settings.LOGIN_ENABLED):
     @only_on_speedy_match
     class EditMatchSettingsViewTestCase(EditViewBaseMixin, SiteTestCase):
         def get_page_url(self):
-            return '/matches/settings/'
+            return '/matches/settings/about-my-match/'
 
         def get_template_name(self):
-            return 'matches/settings/matches.html'
+            return 'matches/settings/about_my_match.html'
 
 
     @only_on_speedy_match

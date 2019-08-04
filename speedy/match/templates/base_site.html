@@ -34,13 +34,13 @@
 {% if request.user.profile.is_active %}
     {% block navbar_mobile_menu_top_extra_3 %}
         <li>
-            <a href="{% url 'matches:edit_match_settings' %}" title="{% trans 'Your Match Settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
+            <a href="{% url 'matches:settings' %}" title="{% trans 'Your Match Settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
         </li>
     {% endblock %}
 
     {% block login_logout_register_user_is_authenticated_extra_2 %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'matches:edit_match_settings' %}" title="{% trans 'Your Match Settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
+            <a class="nav-link" href="{% url 'matches:settings' %}" title="{% trans 'Your Match Settings' %}">{% trans 'Match Settings' context request.user.get_gender %}</a>
         </li>
     {% endblock %}
 {% endif %}
