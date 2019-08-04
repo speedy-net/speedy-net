@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 07:28+0300\n"
+"POT-Creation-Date: 2019-08-04 10:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -679,15 +679,8 @@ msgstr ""
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
-#: .\templates\admin\matches\match_list.html:10
+#: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr ""
-
-#: .\templates\admin\matches\match_list.html:29
-#: .\templates\matches\match_list.html:82
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
 msgstr ""
 
 #: .\templates\base_site.html:24 .\templates\matches\match_list.html:10
@@ -727,25 +720,31 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\matches\match_list.html:28
+#: .\templates\matches\match_list.html:29
 msgid "Update matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:39
+#: .\templates\matches\match_list.html:40
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:50
+#: .\templates\matches\match_list.html:51
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:60
+#: .\templates\matches\match_list.html:61
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:67
+#: .\templates\matches\match_list.html:68
 msgid "Add more options"
+msgstr ""
+
+#: .\templates\matches\match_list.html:84
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
 msgstr ""
 
 #: .\templates\matches\settings\base.html:17

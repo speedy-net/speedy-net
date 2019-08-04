@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 07:28+0300\n"
+"POT-Creation-Date: 2019-08-04 10:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -415,15 +415,15 @@ msgstr "התאמת סטטוס מערכת יחסים"
 
 #: .\accounts\models.py:113
 msgid "Diet to match"
-msgstr ""
+msgstr "התאמת תזונה"
 
 #: .\accounts\models.py:114
 msgid "Smoking status to match"
-msgstr ""
+msgstr "התאמת הרגלי עישון"
 
 #: .\accounts\models.py:115
 msgid "Relationship status to match"
-msgstr ""
+msgstr "התאמת סטטוס מערכת יחסים"
 
 #: .\accounts\models.py:147
 msgid "Speedy Match Profile"
@@ -435,19 +435,19 @@ msgstr "פרופילים ספידי מץ'"
 
 #: .\accounts\models.py:221 .\templates\accounts\edit_profile\activate.html:17
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: .\accounts\validators.py:39
 msgid "A profile picture is required."
-msgstr ""
+msgstr "נדרשת תמונת פרופיל."
 
 #: .\accounts\validators.py:44 .\accounts\validators.py:64
 msgid "Please write some text in this field."
-msgstr ""
+msgstr "אנא כתוב/י טקסט בשדה זה."
 
 #: .\accounts\validators.py:49
 msgid "Please write where you live."
-msgstr ""
+msgstr "אנא כתוב/י איפה את/ה גר/ה."
 
 #: .\accounts\validators.py:69
 msgid "Height must be from 1 to 450 cm."
@@ -455,83 +455,84 @@ msgstr "הגובה חייב להיות בין 1 ל-450 ס\"מ."
 
 #: .\accounts\validators.py:74
 msgid "Your diet is required."
-msgstr ""
+msgstr "התזונה שלך נדרשת."
 
 #: .\accounts\validators.py:79
 msgid "Your smoking status is required."
-msgstr ""
+msgstr "הרגלי העישון שלך נדרשים."
 
 #: .\accounts\validators.py:84
 msgid "Your relationship status is required."
-msgstr ""
+msgstr "סטטוס מערכת היחסים שלך נדרש"
 
 #: .\accounts\validators.py:89
 msgid "Gender to match is required."
-msgstr ""
+msgstr "מין בן/בת הזוג שלך נדרש"
 
 #: .\accounts\validators.py:94
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "הגיל המינימלי לבן/בת הזוג חייב להיות בין 0 ל- 180 שנה."
 
 #: .\accounts\validators.py:99
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "הגיל המקסימלי לבן/בת הזוג חייב להיות בין 0 ל- 180 שנה."
 
 #: .\accounts\validators.py:105
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
+"הגיל המקסימלי לבן/בת הזוג לא יכול להיות פחות מהגיל המינימלי לבן/בת הזוג."
 
 #: .\accounts\validators.py:111
 msgid "Please select diet match."
-msgstr ""
+msgstr "אנא בחר/י התאמת תזונה."
 
 #: .\accounts\validators.py:113
 msgid "At least one diet match option should be five hearts."
-msgstr ""
+msgstr "לפחות אפשרות אחת להתאמת תזונה צריכה להיות חמישה לבבות."
 
 #: .\accounts\validators.py:119
 msgid "Please select smoking status match."
-msgstr ""
+msgstr "אנא בחר/י התאמת הרגלי עישון."
 
 #: .\accounts\validators.py:121
 msgid "At least one smoking status match option should be five hearts."
-msgstr ""
+msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צריכה להיות חמישה לבבות."
 
 #: .\accounts\validators.py:127
 msgid "Please select marital status match."
-msgstr ""
+msgstr "אנא בחר/י התאמת סטטוס מערכת יחסים."
 
 #: .\accounts\validators.py:129
 msgid "At least one marital status match option should be five hearts."
-msgstr ""
+msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
 #: .\likes\managers.py:14 .\likes\models.py:30
 msgid "Users cannot like themselves."
-msgstr ""
+msgstr "משתמשים לא יכולים לעשות לייק לעצמם."
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr ""
+msgstr "המשתמש כבר עשה לייק למשתמש האחר"
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
-msgstr ""
+msgstr "המשתמש לא יכול לעשות לייק למשתמש חסום."
 
 #: .\likes\models.py:13
 msgid "from user"
-msgstr ""
+msgstr "from user"
 
 #: .\likes\models.py:14
 msgid "to user"
-msgstr ""
+msgstr "to user"
 
 #: .\likes\models.py:20
 msgid "user like"
-msgstr ""
+msgstr "user like"
 
 #: .\likes\models.py:21
 msgid "user likes"
-msgstr ""
+msgstr "user likes"
 
 #: .\likes\views.py:28
 msgid "Girls You Like"
@@ -567,11 +568,11 @@ msgstr "הגדרת ההתאמות שלך נשמרה."
 
 #: .\profiles\widgets.py:50 .\profiles\widgets.py:53 .\profiles\widgets.py:56
 msgid "Unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: .\profiles\widgets.py:61
 msgid "None"
-msgstr ""
+msgstr "אין"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
@@ -671,16 +672,16 @@ msgstr "ספידי פז טכנולוגיות בע\"מ."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
-msgstr ""
+msgstr "הרשמה שלב"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
-msgstr ""
+msgstr "ברוכים הבאים"
 
 #: .\templates\accounts\edit_profile\activate.html:13
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "ברוכים הבאים ל%(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:34
 #: .\templates\matches\settings\base.html:31
@@ -694,28 +695,19 @@ msgstr "על בן/בת הזוג שלי"
 
 #: .\templates\accounts\edit_profile\activate.html:64
 msgid "Back"
-msgstr ""
+msgstr "לשלב הקודם"
 
 #: .\templates\accounts\edit_profile\activate.html:67
 msgid "Next step"
-msgstr ""
+msgstr "לשלב הבא"
 
 #: .\templates\accounts\edit_profile\activate.html:73
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
+msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס/י לדף זה כדי להפעיל אותו."
 
-#: .\templates\admin\matches\match_list.html:10
+#: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr ""
-
-#: .\templates\admin\matches\match_list.html:29
-#: .\templates\matches\match_list.html:82
-msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
-msgstr ""
-"אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
-"יותר."
+msgstr "אדמין - כל ההתאמות"
 
 #: .\templates\base_site.html:24 .\templates\matches\match_list.html:10
 msgid "Your Matches"
@@ -734,7 +726,7 @@ msgstr "לייקים"
 
 #: .\templates\base_site.html:37 .\templates\base_site.html:43
 msgid "Your Match Settings"
-msgstr ""
+msgstr "הגדרת ההתאמות שלך"
 
 #: .\templates\base_site.html:37 .\templates\base_site.html:43
 #: .\templates\matches\settings\base.html:9
@@ -754,30 +746,38 @@ msgstr "החברות והחברים שלך"
 msgid "You have no likes here."
 msgstr "אין פה אנשים."
 
-#: .\templates\matches\match_list.html:28
+#: .\templates\matches\match_list.html:29
 msgid "Update matches"
 msgstr "עדכון התאמות"
 
-#: .\templates\matches\match_list.html:39
+#: .\templates\matches\match_list.html:40
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr "תזונה"
 
-#: .\templates\matches\match_list.html:50
+#: .\templates\matches\match_list.html:51
 msgid "Age:"
 msgstr "גיל:"
 
-#: .\templates\matches\match_list.html:60
+#: .\templates\matches\match_list.html:61
 msgid "Refresh"
 msgstr "עדכון"
 
-#: .\templates\matches\match_list.html:67
+#: .\templates\matches\match_list.html:68
 msgid "Add more options"
 msgstr "הוסף/י עוד אפשרויות"
 
+#: .\templates\matches\match_list.html:84
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
+"יותר."
+
 #: .\templates\matches\settings\base.html:17
 msgid "Back to Matches"
-msgstr ""
+msgstr "חזרה להתאמות"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
@@ -791,7 +791,7 @@ msgstr "לייק"
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr ""
+msgstr "בטל/י לייק"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"

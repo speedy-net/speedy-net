@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans 'Admin - All Matches' context user.get_gender %} / {{ block.super }}{% endblock %}
+{% block title %}{% trans 'Admin - All Matches' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block form %}{% endblock %}
 
