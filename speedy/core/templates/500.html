@@ -1,0 +1,6 @@
+{% extends 'base_site.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Internal server error'|title %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+

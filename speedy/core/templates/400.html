@@ -1,0 +1,6 @@
+{% extends 'base_site.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Bad request'|title %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+
