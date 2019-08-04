@@ -1,13 +1,13 @@
-from django.contrib import admin
+from django.contrib import admin as django_admin
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 
 from friendship.models import Follow, Friend, FriendshipRequest, Block
 
-from speedy.core.admin import admin_site
+from speedy.core import admin
 
 
-class ReadOnlyModelAdmin(admin.ModelAdmin):
+class ReadOnlyModelAdmin(django_admin.ModelAdmin):
     """
     ModelAdmin class that prevents modifications through the admin.
 
@@ -33,20 +33,20 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
         return False
 
 
-admin.site.unregister(Site)
-admin_site.register(Site, ReadOnlyModelAdmin)
+django_admin.site.unregister(Site)
+admin.site.register(Site, ReadOnlyModelAdmin)
 
-admin.site.unregister(Group)
-# admin_site.register(Group, ReadOnlyModelAdmin)
+django_admin.site.unregister(Group)
+# admin.site.register(Group, ReadOnlyModelAdmin)
 
-admin.site.unregister(Block)
-admin.site.unregister(Follow)
-admin.site.unregister(Friend)
-admin.site.unregister(FriendshipRequest)
-# admin_site.register(Block, ReadOnlyModelAdmin)
-# admin_site.register(Follow, ReadOnlyModelAdmin)
-admin_site.register(Friend, ReadOnlyModelAdmin)
-admin_site.register(FriendshipRequest, ReadOnlyModelAdmin)
+django_admin.site.unregister(Block)
+django_admin.site.unregister(Follow)
+django_admin.site.unregister(Friend)
+django_admin.site.unregister(FriendshipRequest)
+# admin.site.register(Block, ReadOnlyModelAdmin)
+# admin.site.register(Follow, ReadOnlyModelAdmin)
+admin.site.register(Friend, ReadOnlyModelAdmin)
+admin.site.register(FriendshipRequest, ReadOnlyModelAdmin)
 
 
 class Friend1(object):

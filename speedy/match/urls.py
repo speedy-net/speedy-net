@@ -1,13 +1,13 @@
 from django.conf.urls import url, include
 
-from speedy.match.admin import admin_site
+from speedy.match import admin
 from speedy.core.urls_with_login import urlpatterns
 
 app_name = 'speedy.match'
 urlpatterns += [
     url(regex=r'^matches/', view=include('speedy.match.matches.urls', namespace='matches')),
     url(regex=r'^', view=include('speedy.match.accounts.urls', namespace='accounts')),
-    url(regex=r'^admin/', view=admin_site.urls),
+    url(regex=r'^admin/', view=admin.site.urls),
     url(regex=r'^i18n/', view=include('django.conf.urls.i18n')),
 
     # always at the bottom

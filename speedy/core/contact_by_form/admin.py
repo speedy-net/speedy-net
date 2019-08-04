@@ -1,8 +1,8 @@
-from speedy.core.admin import admin_site
+from speedy.core import admin
 from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Feedback
 
 
-admin_site.register(Feedback, ReadOnlyModelAdmin)
+admin.site.register(Feedback, ReadOnlyModelAdmin)
 
 
