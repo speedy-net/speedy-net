@@ -701,6 +701,9 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         self.is_confirmed = True
         self.save(update_fields={'is_confirmed'})
         if (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1):
+            # If this user doesn't have a confirmed primary email address, make this one primary.
+            if (UserEmailAddress.objects.filter(user=self.user, is_primary=True, is_confirmed=True).count() == 0):
+                self.make_primary()
             self.user.profile.call_after_verify_email_address()
 
     def make_primary(self):
