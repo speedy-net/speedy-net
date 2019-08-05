@@ -6,7 +6,7 @@
         <ul class="pagination">
             {% if page_obj.has_previous %}
                 <li>
-                    <a href="{{ request.path }}{% set_request_params page=page_obj.previous_page_number %}">&larr;&nbsp;{% trans "Previous" %}</a>
+                    <a href="{{ request.path }}{% set_request_params page=page_obj.previous_page_number %}">{{ LANGUAGE_BIDI|yesno:'&rarr;&nbsp;,&larr;&nbsp;'|safe }}{% trans "Previous" %}</a>
                 </li>
             {% else %}
                 {% comment %}
@@ -28,7 +28,7 @@
             {% endfor %}
             {% if page_obj.has_next %}
                 <li>
-                    <a href="{{ request.path }}{% set_request_params page=page_obj.next_page_number %}">{% trans "Next" %}&nbsp;&rarr;</a>
+                    <a href="{{ request.path }}{% set_request_params page=page_obj.next_page_number %}">{% trans "Next" %}{{ LANGUAGE_BIDI|yesno:'&nbsp;&larr;,&nbsp;&rarr;'|safe }}</a>
                 </li>
             {% else %}
                 {% comment %}
