@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-10{% if form %} text-center{% endif %}">
             <div class="page-header">
-                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
+                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site_name %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
             </div>
             {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">
