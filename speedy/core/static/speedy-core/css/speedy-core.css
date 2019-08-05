@@ -39,23 +39,24 @@ body.bidi-rtl .navbar-right {
     float: left;
 }
 
-.navbar-speedy-net .username-area, .navbar-inverse .username-area{
+.navbar-speedy-net .username-area, .navbar-inverse .username-area {
     float: left;
     margin-right: 20px;
 }
 
-.navbar-speedy-net .password-area, .navbar-inverse .password-area{
+.navbar-speedy-net .password-area, .navbar-inverse .password-area {
     float: left;
 }
 
-.navbar-speedy-net .password-area .text-input-div, .navbar-inverse .password-area .text-input-div{
+.navbar-speedy-net .password-area .text-input-div, .navbar-inverse .password-area .text-input-div {
     float: left;
 }
+
 .navbar-inverse .password-area .forgot-password-div a {
     color: black;
 }
 
-.navbar-speedy-net .submit-button-div, .navbar-inverse .submit-button-div{
+.navbar-speedy-net .submit-button-div, .navbar-inverse .submit-button-div {
     float: left;
     margin: 22px 0 0 20px;
 }
@@ -152,9 +153,11 @@ body.bidi-rtl .navbar-right {
         z-index: 20;
         top: 0;
     }
-    .navbar-speedy-net #speedy-navbar-collapse{
+
+    .navbar-speedy-net #speedy-navbar-collapse {
         background-color: #b2cafa;
     }
+
     .navbar .navbar-toggle .icon-bar, .navbar .navbar-toggle:hover .icon-bar {
         background-color: black;
     }
@@ -171,15 +174,20 @@ body.bidi-rtl .navbar-right {
         overflow-y: auto;
         z-index: 20;
     }
+
     #speedy-navbar-collapse .nav.navbar-nav {
         margin: 12px 0;
     }
+
+    /*
     .speedy-body-container {
         margin-top: 65px;
     }
+    */
     .page-header {
         margin: 0;
     }
+
     .page-header h1 {
         font-size: 20px;
         margin-bottom: 20px;
