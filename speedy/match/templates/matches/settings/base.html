@@ -8,6 +8,13 @@
 
 {% block title %}{% trans 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
+{% block extra_css %}
+    {{ block.super }}
+    {% if form %}
+        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <div class="page-header">
         <h1>

@@ -162,9 +162,11 @@ body.bidi-rtl .user-profile {
 }
 
 @media screen and (max-width: 767px) {
+    /*
     .page-header {
         display: none;
     }
+    */
 
     .activation-step-wrapper {
         padding-top: 15px;
