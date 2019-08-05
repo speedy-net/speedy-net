@@ -1,10 +1,11 @@
 {% extends 'base_site.html' %}
 
 {% load core_tags_and_filters %}
+{% load core_messages_tags %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-{% load core_messages_tags %}
 {% load rules %}
+{% load static %}
 
 {% block title %}{% trans 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
