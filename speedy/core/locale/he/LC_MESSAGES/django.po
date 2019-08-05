@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 06:24+0300\n"
+"POT-Creation-Date: 2019-08-05 06:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2059,15 +2059,15 @@ msgstr ""
 
 #: .\templates\_400.html:12 .\templates\_404.html:12 .\templates\_500.html:12
 msgid " "
-msgstr ""
+msgstr " "
 
-#: .\templates\_403.html:5 .\templates\_403.html:12
-msgid "This page is private."
-msgstr "הדף הזה פרטי."
-
-#: .\templates\_403.html:9
+#: .\templates\_403.html:5 .\templates\_403.html:9
 msgid "Permission denied"
 msgstr "ההרשאה נדחתה"
+
+#: .\templates\_403.html:12
+msgid "This page is private."
+msgstr "הדף הזה פרטי."
 
 #: .\templates\_404.html:5 .\templates\_404.html:9
 msgid "Page not found"
@@ -2229,11 +2229,11 @@ msgstr "זה בחינם וכולם יכולים להצטרף!"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr ""
+msgstr "אדמין - כל המשתמשים"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr ""
+msgstr "אין משתמשים."
 
 #: .\templates\base.html:108
 msgid "You haven't confirmed your email address. Please check your inbox."
