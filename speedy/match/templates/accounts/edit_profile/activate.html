@@ -6,6 +6,11 @@
 
 {% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-md-10{% if form %} text-center{% endif %}">

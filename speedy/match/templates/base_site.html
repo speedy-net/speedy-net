@@ -4,11 +4,6 @@
 {% load core_tags_and_filters %}
 {% load staticfiles %}
 
-{% block extra_css %}
-    {{ block.super }}
-    <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
-{% endblock %}
-
 {% block site_theme %}
     {% if LANGUAGE_BIDI %}
         <link rel="stylesheet" href="{% static 'themes/speedy-match-rtl.css' %}" />

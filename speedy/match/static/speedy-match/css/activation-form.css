@@ -105,7 +105,7 @@ body.bidi-rtl .user-profile {
     padding: 0;
 }
 
-.activation-form-field ul label{
+.activation-form-field ul label {
     font-weight: normal;
     font-size: 15px;
 }
@@ -161,29 +161,36 @@ body.bidi-rtl .user-profile {
     padding: 20px;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
     .page-header {
         display: none;
     }
+
     .activation-step-wrapper {
         padding-top: 15px;
     }
+
     .activation-step {
         font-size: 19px;
         width: 28px;
     }
+
     .activation-form-header {
         margin-top: 20px;
     }
+
     .user-profile {
         display: none;
     }
+
     .activation-form-fileds {
         width: auto;
     }
+
     .image-click-zone {
         width: auto;
     }
+
     .widget-group .choices {
         width: auto;
         text-align: left;
@@ -191,13 +198,14 @@ body.bidi-rtl .user-profile {
         display: block;
         margin-bottom: 1em;
     }
+
     .activation-form-field textarea, .activation-form-field input {
         width: auto;
     }
 
     .diet-menu.show {
         width: 178px !important;
-        right: 29px; !important;
+        right: 29px !important;
         min-width: 0 !important;
     }
 }
