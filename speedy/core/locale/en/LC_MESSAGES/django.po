@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 10:15+0300\n"
+"POT-Creation-Date: 2019-08-05 06:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1697,11 +1697,11 @@ msgstr ""
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:717
+#: .\accounts\models.py:720
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:718
+#: .\accounts\models.py:721
 msgid "last visit"
 msgstr ""
 
@@ -1811,16 +1811,16 @@ msgstr ""
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:254 .\accounts\views.py:269
+#: .\accounts\views.py:254 .\accounts\views.py:270
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:283
+#: .\accounts\views.py:285
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:298
+#: .\accounts\views.py:301
 msgid "You have made this email address primary."
 msgstr ""
 
@@ -1988,12 +1988,28 @@ msgstr ""
 msgid "Hebrew"
 msgstr ""
 
-#: .\templates\403.html:9
-msgid "Permission Denied"
+#: .\templates\_400.html:5 .\templates\_400.html:9
+msgid "Bad request"
 msgstr ""
 
-#: .\templates\403.html:12
+#: .\templates\_400.html:12 .\templates\_404.html:12 .\templates\_500.html:12
+msgid " "
+msgstr ""
+
+#: .\templates\_403.html:5 .\templates\_403.html:12
 msgid "This page is private."
+msgstr ""
+
+#: .\templates\_403.html:9
+msgid "Permission denied"
+msgstr ""
+
+#: .\templates\_404.html:5 .\templates\_404.html:9
+msgid "Page not found"
+msgstr ""
+
+#: .\templates\_500.html:5 .\templates\_500.html:9
+msgid "Internal server error"
 msgstr ""
 
 #: .\templates\about\about_base.html:5 .\templates\base.html:151
@@ -2028,6 +2044,7 @@ msgid "Emails & Password"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:37
+#: .\templates\blocks\block_list.html:5
 msgid "Blocked Users"
 msgstr ""
 
@@ -2145,6 +2162,14 @@ msgstr ""
 msgid "It's free and anyone can join!"
 msgstr ""
 
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr ""
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr ""
+
 #: .\templates\base.html:108
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
@@ -2251,7 +2276,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: .\templates\blocks\block_list.html:12
+#: .\templates\blocks\block_list.html:14
 msgid "You're not blocking anybody."
 msgstr ""
 
@@ -2308,18 +2333,18 @@ msgstr ""
 msgid "See All"
 msgstr ""
 
-#: .\templates\messages\chat_detail.html:29
+#: .\templates\messages\chat_detail.html:28
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr ""
 
-#: .\templates\messages\chat_detail.html:35
+#: .\templates\messages\chat_detail.html:34
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr ""
 
-#: .\templates\messages\chat_detail.html:49
+#: .\templates\messages\chat_detail.html:48
 msgid "Mark All as Read"
 msgstr ""
 

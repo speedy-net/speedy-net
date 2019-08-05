@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 10:15+0300\n"
+"POT-Creation-Date: 2019-08-05 06:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -556,7 +556,7 @@ msgstr ""
 msgid "Mutual Likes"
 msgstr ""
 
-#: .\matches\views.py:58 .\matches\views.py:72
+#: .\matches\views.py:64 .\matches\views.py:78
 msgid "Your match settings were saved."
 msgstr ""
 
