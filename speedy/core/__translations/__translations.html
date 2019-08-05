@@ -191,3 +191,7 @@
 {% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context "male" %}
 {% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context "other" %}
 
+{% blocktrans with site_name=site_name context "female" %}Welcome to {{ site_name }}{% endblocktrans %}
+{% blocktrans with site_name=site_name context "male" %}Welcome to {{ site_name }}{% endblocktrans %}
+{% blocktrans with site_name=site_name context "other" %}Welcome to {{ site_name }}{% endblocktrans %}
+

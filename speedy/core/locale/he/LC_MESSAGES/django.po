@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 06:39+0300\n"
+"POT-Creation-Date: 2019-08-05 18:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -741,6 +741,24 @@ msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס לד
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס/י לדף זה כדי להפעיל אותו."
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "ברוכה הבאה ל%(site_name)s"
+
+#: .\__translations\__translations.html:195
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "ברוך הבא ל%(site_name)s"
+
+#: .\__translations\__translations.html:196
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "ברוכ/ה הבא/ה ל%(site_name)s"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
