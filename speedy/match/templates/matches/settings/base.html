@@ -21,7 +21,7 @@
         <h1>
             <div class="pull-right">
                 <a href="{% url 'matches:list' %}" class="btn btn-default">
-                    <i class="fa fa-arrow-left"></i>
+                    <i class="fa {{ LANGUAGE_BIDI|yesno:'fa-arrow-right,fa-arrow-left'|safe }}"></i>
                     {% trans 'Back to Matches' %}
                 </a>
             </div>
