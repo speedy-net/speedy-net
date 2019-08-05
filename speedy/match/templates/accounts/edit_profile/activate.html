@@ -6,9 +6,15 @@
 
 {% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
+{% comment %}
+    activation-form.css contains code which should not be displayed if there is no form. Such as hiding page-header.
+{% endcomment %}
+
 {% block extra_css %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+    {% if form %}
+        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+    {% endif %}
 {% endblock %}
 
 {% block content %}
