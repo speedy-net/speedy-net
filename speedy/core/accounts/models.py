@@ -12,6 +12,7 @@ from django.db import models, transaction
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
 
@@ -492,10 +493,14 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return reverse('profiles:user', kwargs={'slug': self.slug})
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
+        site = Site.objects.get_current()
         addresses = self.email_addresses.filter(is_primary=True)
         if (not (send_to_unconfirmed)):
             addresses = addresses.filter(is_confirmed=True)
         addresses = list(addresses)
+        context.update({
+            'site_name': _(site.name),
+        })
         if (addresses):
             return addresses[0].mail(template_name_prefix=template_name_prefix, context=context)
         return False

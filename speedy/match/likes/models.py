@@ -37,7 +37,7 @@ def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
         return
     user = instance.to_user
     if (user.speedy_match_profile.notify_on_like == User.NOTIFICATIONS_ON):
-        user.mail_user('email/likes/like', {
+        user.mail_user(template_name_prefix='email/likes/like', context={
             'like': instance,
         })
 
