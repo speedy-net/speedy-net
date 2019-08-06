@@ -698,7 +698,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return send_mail(to=[self.email], template_name_prefix=template_name_prefix, context=context)
 
     def send_confirmation_email(self):
-        msg_count = self.mail('email/accounts/verify_email')
+        msg_count = self.mail(template_name_prefix='email/accounts/confirm_email')
         self.confirmation_sent += 1
         self.save(update_fields={'confirmation_sent'})
         return msg_count

@@ -1,1 +1,0 @@
-{% load i18n %}Confirm your email address on {{ site_name|safe }}

@@ -1,1 +1,0 @@
-{% load i18n %}Account Activation on {{ site_name|safe }}

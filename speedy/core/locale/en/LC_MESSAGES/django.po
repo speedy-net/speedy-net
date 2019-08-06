@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 10:59+0300\n"
+"POT-Creation-Date: 2019-08-06 11:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -766,6 +766,51 @@ msgstr ""
 #: .\__translations\__translations.html:204
 msgctxt "other"
 msgid "Read it:"
+msgstr ""
+
+#: .\__translations\__translations.html:206
+msgctxt "female"
+msgid "Confirm your email address on "
+msgstr ""
+
+#: .\__translations\__translations.html:207
+msgctxt "male"
+msgid "Confirm your email address on "
+msgstr ""
+
+#: .\__translations\__translations.html:208
+msgctxt "other"
+msgid "Confirm your email address on "
+msgstr ""
+
+#: .\__translations\__translations.html:210
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr ""
+
+#: .\__translations\__translations.html:211
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr ""
+
+#: .\__translations\__translations.html:212
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr ""
+
+#: .\__translations\__translations.html:214
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr ""
+
+#: .\__translations\__translations.html:215
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr ""
+
+#: .\__translations\__translations.html:216
+msgctxt "other"
+msgid "Use this link to change your password:"
 msgstr ""
 
 #: .\__translations\__translations.py:7
@@ -2377,6 +2422,22 @@ msgstr ""
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
+msgstr ""
+
+#: .\templates\email\accounts\confirm_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr ""
+
+#: .\templates\email\accounts\confirm_email_subject.txt:1
+msgid "Confirm your email address on "
+msgstr ""
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr ""
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+msgid "Password Reset on "
 msgstr ""
 
 #: .\templates\email\messages\new_message_body.txt:1

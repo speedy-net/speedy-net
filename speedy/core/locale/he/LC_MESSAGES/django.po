@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 10:59+0300\n"
+"POT-Creation-Date: 2019-08-06 11:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,17 +82,17 @@ msgstr ""
 #: .\__translations\__translations.html:18
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "אמתי בבקשה את כתובת הדואר האלקטרוני שלך."
+msgstr "אשרי בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "אמת בבקשה את כתובת הדואר האלקטרוני שלך."
+msgstr "אשר בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
+msgstr "אשר/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -789,6 +789,51 @@ msgstr "קרא אותה:"
 msgctxt "other"
 msgid "Read it:"
 msgstr "קרא/י אותה:"
+
+#: .\__translations\__translations.html:206
+msgctxt "female"
+msgid "Confirm your email address on "
+msgstr "אשרי את כתובת הדואר האלקטרוני שלך ב"
+
+#: .\__translations\__translations.html:207
+msgctxt "male"
+msgid "Confirm your email address on "
+msgstr "אשר את כתובת הדואר האלקטרוני שלך ב"
+
+#: .\__translations\__translations.html:208
+msgctxt "other"
+msgid "Confirm your email address on "
+msgstr "אשר/י את כתובת הדואר האלקטרוני שלך ב"
+
+#: .\__translations\__translations.html:210
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "השתמשי בקישור זה כדי להפעיל את חשבונך:"
+
+#: .\__translations\__translations.html:211
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "השתמש בקישור זה כדי להפעיל את חשבונך:"
+
+#: .\__translations\__translations.html:212
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
+
+#: .\__translations\__translations.html:214
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "השתמשי בקישור זה כדי לשנות את הסיסמה שלך:"
+
+#: .\__translations\__translations.html:215
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "השתמש בקישור זה כדי לשנות את הסיסמה שלך:"
+
+#: .\__translations\__translations.html:216
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -2448,6 +2493,22 @@ msgstr "הקודם"
 #: .\templates\core\pagination.html:32
 msgid "Next"
 msgstr "הבא"
+
+#: .\templates\email\accounts\confirm_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
+
+#: .\templates\email\accounts\confirm_email_subject.txt:1
+msgid "Confirm your email address on "
+msgstr "אשר/י את כתובת הדואר האלקטרוני שלך ב"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+msgid "Password Reset on "
+msgstr "איפוס סיסמא ב"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
