@@ -1,1 +1,1 @@
-{% load i18n %}{% trans "Someone liked you on " context like.from_user.get_gender %}{{ site_name }}
+{% load i18n %}{% trans "Someone liked you on " context like.from_user.get_gender %}{{ site_name|safe }}

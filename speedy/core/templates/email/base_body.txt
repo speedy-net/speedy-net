@@ -1,5 +1,5 @@
 {% block content %}{% endblock %}
 
 --
-{{ site_name }}
+{{ site_name|safe }}
 {{ SITE_MAIN_URL }}/
