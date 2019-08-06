@@ -27,6 +27,15 @@ body.bidi-rtl .navbar-right {
     float: left !important;
 }
 
+body.bidi-ltr .pull-left {
+    float: left !important;
+}
+
+body.bidi-ltr .pull-right,
+body.bidi-ltr .navbar-right {
+    float: right !important;
+}
+
 .bg-speedy-net {
     background-color: #b2cafa;
 }
