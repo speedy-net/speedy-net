@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 18:57+0300\n"
+"POT-Creation-Date: 2019-08-06 19:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,8 +73,8 @@ msgstr ""
 #: .\templates\about\about.html:23
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find matching partners, it only takes a few minutes. <a "
-"href=\"/\" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 
 #: .\templates\about\about.html:25
@@ -144,7 +144,7 @@ msgstr ""
 #: .\templates\main\main_page.html:15
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find matching partners, it only takes a few minutes."
+"Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
 
 #: .\templates\menu\friends_trans.html:3
