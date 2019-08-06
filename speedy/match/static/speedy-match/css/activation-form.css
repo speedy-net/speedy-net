@@ -196,7 +196,7 @@ body.bidi-rtl .user-profile {
     .widget-group .choices {
         width: auto;
         text-align: left;
-        float: none;
+        /* float: none; */
         display: block;
         margin-bottom: 1em;
     }
