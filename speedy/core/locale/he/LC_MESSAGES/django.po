@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 11:27+0300\n"
+"POT-Creation-Date: 2019-08-06 11:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -822,15 +822,30 @@ msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
 
 #: .\__translations\__translations.html:214
 msgctxt "female"
+msgid "Use this link to confirm your email address:"
+msgstr "השתמשי בקישור זה כדי לאשר את כתובת הדואר האלקטרוני שלך:"
+
+#: .\__translations\__translations.html:215
+msgctxt "male"
+msgid "Use this link to confirm your email address:"
+msgstr "השתמש בקישור זה כדי לאשר את כתובת הדואר האלקטרוני שלך:"
+
+#: .\__translations\__translations.html:216
+msgctxt "other"
+msgid "Use this link to confirm your email address:"
+msgstr "השתמש/י בקישור זה כדי לאשר את כתובת הדואר האלקטרוני שלך:"
+
+#: .\__translations\__translations.html:218
+msgctxt "female"
 msgid "Use this link to change your password:"
 msgstr "השתמשי בקישור זה כדי לשנות את הסיסמה שלך:"
 
-#: .\__translations\__translations.html:215
+#: .\__translations\__translations.html:219
 msgctxt "male"
 msgid "Use this link to change your password:"
 msgstr "השתמש בקישור זה כדי לשנות את הסיסמה שלך:"
 
-#: .\__translations\__translations.html:216
+#: .\__translations\__translations.html:220
 msgctxt "other"
 msgid "Use this link to change your password:"
 msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:"
@@ -843,7 +858,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:663
+#: .\__translations\__translations.py:9 .\accounts\models.py:664
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -1812,7 +1827,7 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:431 .\accounts\models.py:647 .\blocks\models.py:11
+#: .\accounts\models.py:431 .\accounts\models.py:648 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -1824,39 +1839,39 @@ msgstr "משתמשים"
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:648
+#: .\accounts\models.py:649
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:649
+#: .\accounts\models.py:650
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:650
+#: .\accounts\models.py:651
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:651
+#: .\accounts\models.py:652
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:652
+#: .\accounts\models.py:653
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:653
+#: .\accounts\models.py:654
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:665
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:726
+#: .\accounts\models.py:732
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:727
+#: .\accounts\models.py:733
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2494,13 +2509,18 @@ msgstr "הקודם"
 msgid "Next"
 msgstr "הבא"
 
-#: .\templates\email\accounts\confirm_email_body.txt:5
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
 msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
 
-#: .\templates\email\accounts\confirm_email_subject.txt:1
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
 msgstr "אשר/י את כתובת הדואר האלקטרוני שלך ב"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to confirm your email address:"
+msgstr "השתמש/י בקישור זה כדי לאשר את כתובת הדואר האלקטרוני שלך:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 11:27+0300\n"
+"POT-Creation-Date: 2019-08-06 11:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -800,15 +800,30 @@ msgstr ""
 
 #: .\__translations\__translations.html:214
 msgctxt "female"
-msgid "Use this link to change your password:"
+msgid "Use this link to confirm your email address:"
 msgstr ""
 
 #: .\__translations\__translations.html:215
 msgctxt "male"
-msgid "Use this link to change your password:"
+msgid "Use this link to confirm your email address:"
 msgstr ""
 
 #: .\__translations\__translations.html:216
+msgctxt "other"
+msgid "Use this link to confirm your email address:"
+msgstr ""
+
+#: .\__translations\__translations.html:218
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr ""
+
+#: .\__translations\__translations.html:219
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr ""
+
+#: .\__translations\__translations.html:220
 msgctxt "other"
 msgid "Use this link to change your password:"
 msgstr ""
@@ -821,7 +836,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:663
+#: .\__translations\__translations.py:9 .\accounts\models.py:664
 msgid "email address"
 msgstr ""
 
@@ -1765,7 +1780,7 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:431 .\accounts\models.py:647 .\blocks\models.py:11
+#: .\accounts\models.py:431 .\accounts\models.py:648 .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
@@ -1777,39 +1792,39 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:648
+#: .\accounts\models.py:649
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:649
+#: .\accounts\models.py:650
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:650
+#: .\accounts\models.py:651
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:651
+#: .\accounts\models.py:652
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:652
+#: .\accounts\models.py:653
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:653
+#: .\accounts\models.py:654
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:665
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:726
+#: .\accounts\models.py:732
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:727
+#: .\accounts\models.py:733
 msgid "last visit"
 msgstr ""
 
@@ -2424,12 +2439,17 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: .\templates\email\accounts\confirm_email_body.txt:5
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
 msgstr ""
 
-#: .\templates\email\accounts\confirm_email_subject.txt:1
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
+msgstr ""
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to confirm your email address:"
 msgstr ""
 
 #: .\templates\email\accounts\password_reset_body.txt:5
