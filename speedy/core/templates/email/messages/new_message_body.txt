@@ -1,4 +1,4 @@
-{{ message.sender.user.name }} has sent you a message.
-{% load core_messages_tags %}
+{% load i18n %}{% load core_messages_tags %}{{ message.sender.user.name }} has sent you a message.
+
 Read it:
 {{ SITE_URL }}{% url 'messages:chat' chat_slug=message.chat|get_chat_slug:user %}

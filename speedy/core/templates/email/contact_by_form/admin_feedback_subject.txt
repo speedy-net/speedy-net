@@ -1,1 +1,1 @@
-{{ site_name|safe }}: {{ feedback|safe }}
+{% load i18n %}{{ site_name|safe }}: {{ feedback|safe }}
