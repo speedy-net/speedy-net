@@ -500,6 +500,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         addresses = list(addresses)
         context.update({
             'site_name': _(site.name),
+            'user': self,
         })
         if (addresses):
             return addresses[0].mail(template_name_prefix=template_name_prefix, context=context)

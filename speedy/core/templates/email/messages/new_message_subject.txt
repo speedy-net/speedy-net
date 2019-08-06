@@ -1,1 +1,1 @@
-{% load i18n %}You have a new message on {{ site_name|safe }}
+{% load i18n %}{% trans "You have a new message on " %}{{ site_name|safe }}

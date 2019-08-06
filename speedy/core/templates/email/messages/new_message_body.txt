@@ -1,4 +1,4 @@
-{% load i18n %}{% load core_messages_tags %}{{ message.sender.user.name }} has sent you a message.
+{% load i18n %}{% load core_messages_tags %}{{ message.sender.user.name }} {% trans "has sent you a message." context message.sender.user.get_gender %}
 
-Read it:
+{% trans "Read it:" context user.get_gender %}
 {{ SITE_URL }}{% url 'messages:chat' chat_slug=message.chat|get_chat_slug:user %}

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 10:16+0300\n"
+"POT-Creation-Date: 2019-08-06 10:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -738,6 +738,36 @@ msgctxt "other"
 msgid "Welcome to %(site_name)s"
 msgstr ""
 
+#: .\__translations\__translations.html:198
+msgctxt "female"
+msgid "has sent you a message."
+msgstr ""
+
+#: .\__translations\__translations.html:199
+msgctxt "male"
+msgid "has sent you a message."
+msgstr ""
+
+#: .\__translations\__translations.html:200
+msgctxt "other"
+msgid "has sent you a message."
+msgstr ""
+
+#: .\__translations\__translations.html:202
+msgctxt "female"
+msgid "Read it:"
+msgstr ""
+
+#: .\__translations\__translations.html:203
+msgctxt "male"
+msgid "Read it:"
+msgstr ""
+
+#: .\__translations\__translations.html:204
+msgctxt "other"
+msgid "Read it:"
+msgstr ""
+
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
 msgstr ""
@@ -746,7 +776,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:662
+#: .\__translations\__translations.py:9 .\accounts\models.py:663
 msgid "email address"
 msgstr ""
 
@@ -1690,7 +1720,7 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:431 .\accounts\models.py:646 .\blocks\models.py:11
+#: .\accounts\models.py:431 .\accounts\models.py:647 .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
@@ -1702,39 +1732,39 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:647
+#: .\accounts\models.py:648
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:648
+#: .\accounts\models.py:649
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:649
+#: .\accounts\models.py:650
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:650
+#: .\accounts\models.py:651
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:651
+#: .\accounts\models.py:652
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:652
+#: .\accounts\models.py:653
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:664
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:725
+#: .\accounts\models.py:726
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:726
+#: .\accounts\models.py:727
 msgid "last visit"
 msgstr ""
 
@@ -2347,6 +2377,18 @@ msgstr ""
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
+msgstr ""
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr ""
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr ""
+
+#: .\templates\email\messages\new_message_subject.txt:1
+msgid "You have a new message on "
 msgstr ""
 
 #: .\templates\friends\base.html:25
