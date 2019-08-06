@@ -146,6 +146,10 @@ body.bidi-rtl .navbar-right {
 }
 
 @media screen and (max-width: 767px) {
+    .desktop-only {
+        display: none;
+    }
+
     .navbar {
         position: fixed;
         top: 0;

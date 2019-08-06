@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 15:08+0300\n"
+"POT-Creation-Date: 2019-08-06 18:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2263,28 +2263,6 @@ msgstr ""
 msgid "Email with password reset instructions has been sent."
 msgstr ""
 
-#: .\templates\accounts\registration\registration_base.html:12
-#, python-format
-msgid "Welcome to %(site_name)s!"
-msgstr ""
-
-#: .\templates\accounts\registration\registration_base.html:14
-msgid ""
-"We are working on the next version of Speedy Net, and a new app for Speedy "
-"Net users – Speedy Match – a new dating/matching app for singles. Speedy Net "
-"and Speedy Match will be free software & open source. You are invited to "
-"sign up now, and grab yourself a username at Speedy Net."
-msgstr ""
-
-#: .\templates\accounts\registration\registration_base.html:18
-#, python-format
-msgid "Join %(site_name)s!"
-msgstr ""
-
-#: .\templates\accounts\registration\registration_base.html:21
-msgid "It's free and anyone can join!"
-msgstr ""
-
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
 msgstr ""
@@ -2487,6 +2465,20 @@ msgstr ""
 
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
+msgstr ""
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr ""
+
+#: .\templates\main\main_page_base.html:20
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr ""
+
+#: .\templates\main\main_page_base.html:23
+msgid "It's free and anyone can join!"
 msgstr ""
 
 #: .\templates\messages\chat_detail.html:28

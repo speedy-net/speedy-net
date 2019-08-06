@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 15:08+0300\n"
+"POT-Creation-Date: 2019-08-06 18:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,27 +126,34 @@ msgstr ""
 "title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי "
 "המליטה 7 גורים בשנת 1988."
 
-#: .\templates\about\about.html:23 .\templates\main\main_page.html:19
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
 msgstr "תודה ובהצלחה,"
 
-#: .\templates\about\about.html:24 .\templates\main\main_page.html:20
+#: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
 msgstr "אורי רודברג"
 
-#: .\templates\about\about.html:25 .\templates\main\main_page.html:21
+#: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
 msgstr "מייסד ומנהל ספידי נט וספידי קומפוזר,"
 
-#: .\templates\about\about.html:26 .\templates\main\main_page.html:22
+#: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
 msgstr "ספידי פז טכנולוגיות בע\"מ."
 
-#: .\templates\main\main_page.html:11
+#: .\templates\main\main_page.html:9
+msgid ""
+"We are currently looking for volunteers to help us convert Speedy Composer "
+"to Python."
+msgstr ""
+"אנחנו מחפשים כיום מתנדבים שיעזרו לנו להמיר את ספידי קומפוזר לשפת Python."
+
+#: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Composer!"
 msgstr "ברוכים הבאים לספידי קומפוזר!"
 
-#: .\templates\main\main_page.html:15
+#: .\templates\main\main_page.html:19
 msgid ""
 "Thank you for your interest in Speedy Composer. Speedy Composer is an "
 "automated application for composing melodies for Speedy Net members. We "
@@ -166,7 +173,7 @@ msgstr ""
 "כל המנגינות שהולחנו על-ידי ספידי קומפוזר, וכשהאתר ייפתח מחדש נעלה אותן לאתר "
 "החדש."
 
-#: .\templates\main\main_page.html:17
+#: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 15:08+0300\n"
+"POT-Creation-Date: 2019-08-06 18:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -624,15 +624,16 @@ msgstr ""
 msgid "About Speedy Match"
 msgstr ""
 
-#: .\templates\about\about.html:15
+#: .\templates\about\about.html:15 .\templates\main\main_page.html:11
 msgid ""
 "<a href=\"http://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a> is a new dating/matching app for singles who are members of Speedy Net. "
-"With Speedy Match you can find matching people for dating and communicate "
-"with them online. You can add people as friends on Speedy Net, like people "
-"and send them messages. Speedy Match is open to free registration for people "
-"from all countries and ages (no age limit!). It is currently available in "
-"two languages - English and Hebrew."
+"a> is a new dating/matching app for singles who are members of <a href="
+"\"http://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy "
+"Match you can find matching people for dating and communicate with them "
+"online. You can add people as friends on Speedy Net, like people and send "
+"them messages. Speedy Match is open to free registration for people from all "
+"countries and ages (no age limit!). It is currently available in two "
+"languages - English and Hebrew."
 msgstr ""
 
 #: .\templates\about\about.html:17
@@ -775,6 +776,19 @@ msgstr ""
 
 #: .\templates\likes\like_list.html:41
 msgid "You have no likes here."
+msgstr ""
+
+#: .\templates\main\main_page.html:7
+msgid ""
+"Speedy Match is a new dating/matching app for singles who are members of "
+"Speedy Net. With Speedy Match you can find matching people for dating and "
+"communicate with them online."
+msgstr ""
+
+#: .\templates\main\main_page.html:13
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find matching partners, it only takes a few minutes."
 msgstr ""
 
 #: .\templates\matches\match_list.html:32

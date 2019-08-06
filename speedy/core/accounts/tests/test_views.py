@@ -54,7 +54,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_gets_registration_page(self):
             r = self.client.get(path='/')
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='accounts/registration/registration.html')
+            self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
 
     @only_on_sites_with_login
@@ -160,7 +160,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_can_see_registration_page(self):
             r = self.client.get(path='/')
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='accounts/registration/registration.html')
+            self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
         def test_visitor_can_register(self):
             r = self.client.post(path='/', data=self.data)

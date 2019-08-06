@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 15:08+0300\n"
+"POT-Creation-Date: 2019-08-06 18:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,27 +111,33 @@ msgid ""
 "for many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 
-#: .\templates\about\about.html:23 .\templates\main\main_page.html:19
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
 msgstr ""
 
-#: .\templates\about\about.html:24 .\templates\main\main_page.html:20
+#: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
 msgstr ""
 
-#: .\templates\about\about.html:25 .\templates\main\main_page.html:21
+#: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
 msgstr ""
 
-#: .\templates\about\about.html:26 .\templates\main\main_page.html:22
+#: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
 msgstr ""
 
-#: .\templates\main\main_page.html:11
-msgid "Welcome to Speedy Composer!"
+#: .\templates\main\main_page.html:9
+msgid ""
+"We are currently looking for volunteers to help us convert Speedy Composer "
+"to Python."
 msgstr ""
 
 #: .\templates\main\main_page.html:15
+msgid "Welcome to Speedy Composer!"
+msgstr ""
+
+#: .\templates\main\main_page.html:19
 msgid ""
 "Thank you for your interest in Speedy Composer. Speedy Composer is an "
 "automated application for composing melodies for Speedy Net members. We "
@@ -144,7 +150,7 @@ msgid ""
 "the new site."
 msgstr ""
 
-#: .\templates\main\main_page.html:17
+#: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "

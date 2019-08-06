@@ -5,6 +5,10 @@
 {% load core_messages_tags %}
 {% load rules %}
 
+{% block description %}
+    <meta name="description" content="{% blocktrans with site_name=site_name %}We are currently looking for volunteers to help us convert Speedy Composer to Python.{% endblocktrans %}" />
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
     <h1>
