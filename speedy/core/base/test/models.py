@@ -73,10 +73,10 @@ class SiteTestCase(DjangoTestCase):
             django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
         }
         site_name_dict = {
-            django_settings.SPEEDY_NET_SITE_ID: {'en': 'Speedy Net', 'he': 'ספידי נט1'}[self.language_code],
-            django_settings.SPEEDY_MATCH_SITE_ID: {'en': 'Speedy Match', 'he': 'ספידי נט1'}[self.language_code],
-            django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': 'Speedy Composer', 'he': 'ספידי נט1'}[self.language_code],
-            django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': 'Speedy Mail Software', 'he': 'ספידי נט1'}[self.language_code],
+            django_settings.SPEEDY_NET_SITE_ID: {'en': "Speedy Net", 'he': "ספידי נט"}[self.language_code],
+            django_settings.SPEEDY_MATCH_SITE_ID: {'en': "Speedy Match", 'he': "ספידי מץ'"}[self.language_code],
+            django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'he': "ספידי קומפוזר"}[self.language_code],
+            django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[self.language_code],
         }
         self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
         self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
