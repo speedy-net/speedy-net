@@ -494,6 +494,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         site = Site.objects.get_current()
+        context = context or {}
         addresses = self.email_addresses.filter(is_primary=True)
         if (not (send_to_unconfirmed)):
             addresses = addresses.filter(is_confirmed=True)
@@ -690,10 +691,12 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return generate_confirmation_token()
 
     def mail(self, template_name_prefix, context=None):
+        site = Site.objects.get_current()
         context = context or {}
         context.update({
-            'email_address': self,
+            'site_name': _(site.name),
             'user': self.user,
+            'email_address': self,
         })
         return send_mail(to=[self.email], template_name_prefix=template_name_prefix, context=context)
 
