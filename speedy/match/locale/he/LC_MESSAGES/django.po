@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 09:07+0300\n"
+"POT-Creation-Date: 2019-08-06 09:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -235,6 +235,21 @@ msgstr "מין בן הזוג"
 msgctxt "other"
 msgid "Gender to match"
 msgstr "מין בן/בת הזוג"
+
+#: .\__translations\__translations.html:62
+msgctxt "female"
+msgid "Someone liked you on "
+msgstr "מישהי עשתה לך לייק ב"
+
+#: .\__translations\__translations.html:63
+msgctxt "male"
+msgid "Someone liked you on "
+msgstr "מישהו עשה לך לייק ב"
+
+#: .\__translations\__translations.html:64
+msgctxt "other"
+msgid "Someone liked you on "
+msgstr "מישהו עשה לך לייק ב"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -752,6 +767,10 @@ msgstr "הגדרת ההתאמות שלך"
 #: .\templates\matches\settings\base.html:28
 msgid "Match Settings"
 msgstr "הגדרת התאמות"
+
+#: .\templates\email\likes\like_subject.txt:1
+msgid "Someone liked you on "
+msgstr "מישהו עשה לך לייק ב"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
