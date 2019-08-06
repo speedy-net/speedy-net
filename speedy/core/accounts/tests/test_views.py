@@ -441,7 +441,10 @@ if (django_settings.LOGIN_ENABLED):
             email_address = UserEmailAddress.objects.get(email='email@example.com')
             self.assertFalse(expr=email.is_confirmed)
             self.assertEqual(first=email.confirmation_sent, second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
+            self.assertEqual(first=mail.outbox[0].subject, second={
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message,
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message,
+            }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
             self.assertIn(member=self.full_http_host, container=mail.outbox[0].body)
@@ -1375,7 +1378,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
             self.assertEqual(first=len(mail.outbox), second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
+            self.assertEqual(first=mail.outbox[0].subject, second={
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message,
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message,
+            }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
             self.assert_models_count(
@@ -1468,7 +1474,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path='/edit-profile/')
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
             self.assertEqual(first=len(mail.outbox), second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='Confirm your email address on {}'.format(self.site.name))
+            self.assertEqual(first=mail.outbox[0].subject, second={
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message,
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message,
+            }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email).confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
 
@@ -1778,7 +1787,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class PasswordResetViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+    class PasswordResetViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
@@ -1802,7 +1811,22 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path='/reset-password/', data=data)
             self.assertRedirects(response=r, expected_url='/reset-password/done/', status_code=302, target_status_code=200)
             self.assertEqual(first=len(mail.outbox), second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(self.site.name))
+            self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(self.site_name))
+
+
+    @only_on_sites_with_login
+    class PasswordResetViewEnglishTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class PasswordResetViewHebrewTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
     # ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")

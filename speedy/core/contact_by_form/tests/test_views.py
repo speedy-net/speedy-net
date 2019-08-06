@@ -112,7 +112,7 @@ if (django_settings.LOGIN_ENABLED):
             feedback = Feedback.objects.first()
             self.check_feedback(feedback=feedback, expected_sender_id=self.user.pk, expected_sender_name='', expected_sender_email='', expected_text=data['text'])
             self.assertEqual(first=len(mail.outbox), second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site.name, str(feedback)))
+            self.assertEqual(first=mail.outbox[0].subject, second='{}: {}'.format(self.site_name, str(feedback)))
 
         @only_on_sites_with_login
         def test_user_cannot_submit_form_without_all_the_required_fields(self):

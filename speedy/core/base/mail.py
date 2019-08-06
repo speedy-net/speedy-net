@@ -6,6 +6,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils import translation
+from django.utils.translation import gettext_lazy as _
 
 RenderedMail = namedtuple('RenderedMail', 'subject body_plain body_html')
 
@@ -71,6 +72,11 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
+    site = Site.objects.get_current()
+    context = context or {}
+    context.update({
+        'site_name': _(site.name),
+    })
     return send_mail(to=[a[1] for a in django_settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
 
 

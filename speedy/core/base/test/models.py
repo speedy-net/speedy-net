@@ -5,6 +5,7 @@ from django.core.management import call_command
 from django.test import TestCase as DjangoTestCase
 from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
+from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.test import tests_settings
 
@@ -56,6 +57,7 @@ class SiteTestCase(DjangoTestCase):
         super()._pre_setup()
         call_command('loaddata', tests_settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()
+        self.site_name = _(self.site.name)
 
     def validate_all_values(self):
         site_id_dict = {
@@ -70,8 +72,15 @@ class SiteTestCase(DjangoTestCase):
             django_settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
             django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
         }
+        site_name_dict = {
+            django_settings.SPEEDY_NET_SITE_ID: {'en': 'Speedy Net', 'he': 'ספידי נט1'}[self.language_code],
+            django_settings.SPEEDY_MATCH_SITE_ID: {'en': 'Speedy Match', 'he': 'ספידי נט1'}[self.language_code],
+            django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': 'Speedy Composer', 'he': 'ספידי נט1'}[self.language_code],
+            django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': 'Speedy Mail Software', 'he': 'ספידי נט1'}[self.language_code],
+        }
         self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
         self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
+        self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
         self.assertEqual(first=len(self.all_language_codes), second=2)
         self.assertEqual(first=len(self.all_other_language_codes), second=1)
         self.assertEqual(first=len(self.all_language_codes), second=len(set(self.all_language_codes)))
