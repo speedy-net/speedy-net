@@ -442,8 +442,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=email.is_confirmed)
             self.assertEqual(first=email.confirmation_sent, second=1)
             self.assertEqual(first=mail.outbox[0].subject, second={
-                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message_dict_by_gender[user.get_gender()],
-                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message_dict_by_gender[user.get_gender()],
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[user.get_gender()],
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
@@ -1379,8 +1379,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assertEqual(first=mail.outbox[0].subject, second={
-                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message_dict_by_gender[self.user.get_gender()],
-                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message_dict_by_gender[self.user.get_gender()],
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.user.get_gender()],
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[self.user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
@@ -1475,8 +1475,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assertEqual(first=mail.outbox[0].subject, second={
-                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_message_dict_by_gender[self.user.get_gender()],
-                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_message_dict_by_gender[self.user.get_gender()],
+                django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.user.get_gender()],
+                django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[self.user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
             # self.assertIn(member=UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email).confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
@@ -1811,7 +1811,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path='/reset-password/', data=data)
             self.assertRedirects(response=r, expected_url='/reset-password/done/', status_code=302, target_status_code=200)
             self.assertEqual(first=len(mail.outbox), second=1)
-            self.assertEqual(first=mail.outbox[0].subject, second='Password Reset on {}'.format(self.site_name))
+            self.assertEqual(first=mail.outbox[0].subject, second={
+                django_settings.SPEEDY_NET_SITE_ID: self._password_reset_on_speedy_net_subject,
+                django_settings.SPEEDY_MATCH_SITE_ID: self._password_reset_on_speedy_match_subject,
+            }[self.site.id])
 
 
     @only_on_sites_with_login
