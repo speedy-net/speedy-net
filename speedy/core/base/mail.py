@@ -60,6 +60,11 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
 
 
 def send_mail(to, template_name_prefix, context=None, **kwargs):
+    site = Site.objects.get_current()
+    context = context or {}
+    context.update({
+        'site_name': _(site.name),
+    })
     rendered = render_mail(template_name_prefix, context)
     msg = EmailMultiAlternatives(
         subject=rendered.subject,
@@ -72,11 +77,6 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
-    site = Site.objects.get_current()
-    context = context or {}
-    context.update({
-        'site_name': _(site.name),
-    })
     return send_mail(to=[a[1] for a in django_settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
 
 

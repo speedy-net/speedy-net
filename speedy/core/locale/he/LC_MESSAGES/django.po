@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 13:38+0300\n"
+"POT-Creation-Date: 2019-08-06 15:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2528,7 +2528,7 @@ msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה של
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 msgid "Password Reset on "
-msgstr "איפוס סיסמא ב"
+msgstr "איפוס סיסמה ב"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
