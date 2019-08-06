@@ -1,1 +1,1 @@
-{{ SITE_NAME }}: {{ feedback|safe }}
+{{ site_name }}: {{ feedback|safe }}

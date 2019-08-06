@@ -1,1 +1,1 @@
-You have a new message on {{ SITE_NAME }}
+You have a new message on {{ site_name }}

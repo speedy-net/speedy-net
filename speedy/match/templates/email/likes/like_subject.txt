@@ -1,1 +1,1 @@
-{% load i18n %}{% trans "Someone liked you on " context like.from_user.get_gender %}{{ SITE_NAME }}
+{% load i18n %}{% trans "Someone liked you on " context like.from_user.get_gender %}{{ site_name }}
