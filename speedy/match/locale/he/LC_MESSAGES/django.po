@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 08:59+0300\n"
+"POT-Creation-Date: 2019-08-06 09:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,6 +220,21 @@ msgstr "על בן הזוג שלי"
 msgctxt "other"
 msgid "About my match"
 msgstr "על בן/בת הזוג שלי"
+
+#: .\__translations\__translations.html:58
+msgctxt "female"
+msgid "Gender to match"
+msgstr "מין בת הזוג"
+
+#: .\__translations\__translations.html:59
+msgctxt "male"
+msgid "Gender to match"
+msgstr "מין בן הזוג"
+
+#: .\__translations\__translations.html:60
+msgctxt "other"
+msgid "Gender to match"
+msgstr "מין בן/בת הזוג"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"

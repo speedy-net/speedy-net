@@ -31,7 +31,7 @@
                         <td>{{ user.speedy_match_profile.children }}</td>
                     </tr>
                     <tr>
-                        <th>{% trans 'Do you want (more) children?' %}</th>
+                        <th>{% trans 'Do you want (more) children?' context user.get_gender %}</th>
                         <td>{{ user.speedy_match_profile.more_children }}</td>
                     </tr>
                     <tr>
@@ -47,7 +47,7 @@
                         <td>{{ relationship_status }}</td>
                     </tr>
                     <tr>
-                        <th>{% trans 'Gender to match' %}</th>
+                        <th>{% trans 'Gender to match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ gender_to_match }}</td>
                     </tr>
                     <tr>
