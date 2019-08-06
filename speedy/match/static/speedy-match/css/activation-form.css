@@ -213,9 +213,11 @@ body.bidi-rtl .widget-group span.choice-text {
         width: auto;
     }
 
+    /*
     .diet-menu.show {
         width: 178px !important;
         right: 29px !important;
         min-width: 0 !important;
     }
+    */
 }
