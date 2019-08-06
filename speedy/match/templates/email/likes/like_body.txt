@@ -1,3 +1,3 @@
-{{ like.from_user.name }} likes you.
+{{ like.from_user.name }} {% trans "likes you." context like.from_user.get_gender %}
 
 {{ SITE_URL }}{% url 'likes:list_from' user.slug %}

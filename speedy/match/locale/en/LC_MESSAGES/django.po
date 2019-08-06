@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 09:37+0300\n"
+"POT-Creation-Date: 2019-08-06 10:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,6 +244,21 @@ msgstr ""
 #: .\__translations\__translations.html:64
 msgctxt "other"
 msgid "Someone liked you on "
+msgstr ""
+
+#: .\__translations\__translations.html:66
+msgctxt "female"
+msgid "likes you."
+msgstr ""
+
+#: .\__translations\__translations.html:67
+msgctxt "male"
+msgid "likes you."
+msgstr ""
+
+#: .\__translations\__translations.html:68
+msgctxt "other"
+msgid "likes you."
 msgstr ""
 
 #: .\__translations\__translations.py:6
@@ -740,6 +755,10 @@ msgstr ""
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:28
 msgid "Match Settings"
+msgstr ""
+
+#: .\templates\email\likes\like_body.txt:1
+msgid "likes you."
 msgstr ""
 
 #: .\templates\email\likes\like_subject.txt:1

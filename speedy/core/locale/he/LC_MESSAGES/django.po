@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 09:37+0300\n"
+"POT-Creation-Date: 2019-08-06 10:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -768,7 +768,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:657
+#: .\__translations\__translations.py:9 .\accounts\models.py:662
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -810,7 +810,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:427
+#: .\__translations\__translations.py:23 .\accounts\models.py:428
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -1553,235 +1553,235 @@ msgstr "הסיסמה שלך"
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:78
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:77 .\accounts\models.py:78 .\accounts\validators.py:16
+#: .\accounts\models.py:78 .\accounts\models.py:79 .\accounts\validators.py:16
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:79
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:80
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:81
 msgid "Special username"
 msgstr "שם משתמש/ת מיוחד"
 
-#: .\accounts\models.py:93 .\messages\models.py:88
+#: .\accounts\models.py:94 .\messages\models.py:88
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:94
+#: .\accounts\models.py:95
 msgid "entities"
 msgstr "ישויות"
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:121
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:125
 msgid "Username is required."
 msgstr "שם המשתמש/ת נדרש."
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:136
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:146
+#: .\accounts\models.py:147
 msgid "description"
 msgstr "תיאור"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:182
 msgid "Only me"
 msgstr "רק אני"
 
-#: .\accounts\models.py:182
+#: .\accounts\models.py:183
 msgid "Me and my friends"
 msgstr "אני והחברים/ות שלי"
 
-#: .\accounts\models.py:184
+#: .\accounts\models.py:185
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\models.py:214
+#: .\accounts\models.py:215
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:215
+#: .\accounts\models.py:216
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:216
+#: .\accounts\models.py:217
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:228 .\accounts\models.py:243 .\accounts\models.py:264
+#: .\accounts\models.py:229 .\accounts\models.py:244 .\accounts\models.py:265
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: .\accounts\models.py:229
+#: .\accounts\models.py:230
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:230
+#: .\accounts\models.py:231
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:232
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:244
+#: .\accounts\models.py:245
 msgid "Not smoking"
 msgstr "לא מעשנ/ת"
 
-#: .\accounts\models.py:245
+#: .\accounts\models.py:246
 msgid "Smoking occasionally"
 msgstr "מעשנ/ת מדי פעם"
 
-#: .\accounts\models.py:246
+#: .\accounts\models.py:247
 msgid "Smoking"
 msgstr "מעשנ/ת"
 
-#: .\accounts\models.py:265
+#: .\accounts\models.py:266
 msgid "Single"
 msgstr "רווק/ה"
 
-#: .\accounts\models.py:266
+#: .\accounts\models.py:267
 msgid "Divorced"
 msgstr "גרוש/ה"
 
-#: .\accounts\models.py:267
+#: .\accounts\models.py:268
 msgid "Widowed"
 msgstr "אלמן/אלמנה"
 
-#: .\accounts\models.py:268
+#: .\accounts\models.py:269
 msgid "In a relationship"
 msgstr "במערכת יחסים"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:270
 msgid "In an open relationship"
 msgstr "במערכת יחסים פתוחה"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:271
 msgid "It's complicated"
 msgstr "זה מסובך"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:272
 msgid "Separated"
 msgstr "פרוד/ה"
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:273
 msgid "Engaged"
 msgstr "מאורס/ת"
 
-#: .\accounts\models.py:273
+#: .\accounts\models.py:274
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:282
+#: .\accounts\models.py:283
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:284
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:329
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:331
+#: .\accounts\models.py:332
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:333
+#: .\accounts\models.py:334
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:335
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:336
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:336
+#: .\accounts\models.py:337
 msgid "smoking status"
 msgstr "הרגלי עישון"
 
-#: .\accounts\models.py:337
+#: .\accounts\models.py:338
 msgid "relationship status"
 msgstr "סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:339
+#: .\accounts\models.py:340
 msgid "city or locality"
 msgstr "עיר או יישוב"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:344
 msgid "Who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:345
 msgid "Who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:345
+#: .\accounts\models.py:346
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:430 .\accounts\models.py:641 .\blocks\models.py:11
+#: .\accounts\models.py:431 .\accounts\models.py:646 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:431
+#: .\accounts\models.py:432
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:443
+#: .\accounts\models.py:444
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:642
+#: .\accounts\models.py:647
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:643
+#: .\accounts\models.py:648
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:644
+#: .\accounts\models.py:649
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:645
+#: .\accounts\models.py:650
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:646
+#: .\accounts\models.py:651
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:647
+#: .\accounts\models.py:652
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:663
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:720
+#: .\accounts\models.py:725
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:721
+#: .\accounts\models.py:726
 msgid "last visit"
 msgstr "ביקור אחרון"
 
