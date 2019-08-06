@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 08:39+0300\n"
+"POT-Creation-Date: 2019-08-06 08:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -325,11 +325,12 @@ msgstr "הרגלי העישון שלי"
 msgid "My relationship status"
 msgstr "סטטוס מערכת היחסים שלי"
 
-#: .\accounts\forms.py:63
+#: .\accounts\forms.py:63 .\templates\profiles\user_extra_info_widget.html:22
 msgid "City or locality"
 msgstr "עיר או יישוב"
 
 #: .\accounts\forms.py:126 .\accounts\models.py:107
+#: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "מין בן/בת הזוג"
 
@@ -369,7 +370,7 @@ msgstr "כאשר יש לייקים חדשים"
 msgid "Active languages"
 msgstr "שפות פעילות"
 
-#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:29
+#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "גובה"
 
@@ -382,14 +383,16 @@ msgid "Few words about me"
 msgstr "כמה מילים על עצמי"
 
 #: .\accounts\models.py:99 .\accounts\validators.py:54
+#: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
 #: .\accounts\models.py:102 .\accounts\validators.py:59
+#: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
 
-#: .\accounts\models.py:105
+#: .\accounts\models.py:105 .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "בן/בת הזוג האידיאלי/ת שלי"
 
@@ -685,6 +688,7 @@ msgstr "ברוכים הבאים ל%(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:45
 #: .\templates\matches\settings\base.html:39
+#: .\templates\profiles\user_extra_info_widget.html:18
 msgid "About me"
 msgstr "על עצמי"
 
@@ -751,7 +755,7 @@ msgid "Update matches"
 msgstr "עדכון התאמות"
 
 #: .\templates\matches\match_list.html:43
-#: .\templates\profiles\user_extra_info_widget.html:44
+#: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "תזונה"
 
@@ -797,41 +801,17 @@ msgstr "בטל/י לייק"
 msgid "More Information"
 msgstr "פרטים נוספים"
 
-#: .\templates\profiles\user_extra_info_widget.html:19
-msgid "Profile Description"
-msgstr ""
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
+msgstr "הרגלי עישון"
 
-#: .\templates\profiles\user_extra_info_widget.html:24
-msgid "City"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:34
-msgid "Children"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:39
-msgid "More Children"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:49
-msgid "Smoking Status"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:54
-msgid "Relationship Status"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:59
-msgid "Gender To Match"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:64
-msgid "My Ideal Match"
-msgstr ""
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
+msgstr "סטטוס מערכת יחסים"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr ""
+msgstr "דרגת התאמה"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."

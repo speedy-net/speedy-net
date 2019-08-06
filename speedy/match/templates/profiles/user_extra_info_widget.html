@@ -14,57 +14,46 @@
             </div>
             <table class="table">
                 <tbody>
-
                     <tr>
-                        <th>{% trans 'Profile Description' %}</th>
+                        <th>{% trans 'About me' %}</th>
                         <td>{{ user.speedy_match_profile.profile_description }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'City' %}</th>
+                        <th>{% trans 'City or locality' %}</th>
                         <td>{{ user.city }}</td>
                     </tr>
-
                     <tr>
                         <th>{% trans 'Height' %}</th>
                         <td>{{ user.speedy_match_profile.height }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'Children' %}</th>
+                        <th>{% trans 'Do you have children? How many?' %}</th>
                         <td>{{ user.speedy_match_profile.children }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'More Children' %}</th>
+                        <th>{% trans 'Do you want (more) children?' %}</th>
                         <td>{{ user.speedy_match_profile.more_children }}</td>
                     </tr>
-
                     <tr>
                         <th>{% trans 'Diet' %}</th>
                         <td>{{ diet }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'Smoking Status' %}</th>
+                        <th>{% trans 'Smoking status' %}</th>
                         <td>{{ smoking_status }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'Relationship Status' %}</th>
+                        <th>{% trans 'Relationship status' %}</th>
                         <td>{{ relationship_status }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'Gender To Match' %}</th>
+                        <th>{% trans 'Gender to match' %}</th>
                         <td>{{ gender_to_match }}</td>
                     </tr>
-
                     <tr>
-                        <th>{% trans 'My Ideal Match' %}</th>
+                        <th>{% trans 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ user.speedy_match_profile.match_description }}</td>
                     </tr>
-
                 </tbody>
             </table>
         </div>

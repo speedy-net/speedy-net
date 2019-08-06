@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 08:39+0300\n"
+"POT-Creation-Date: 2019-08-06 08:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -320,11 +320,12 @@ msgstr ""
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:63
+#: .\accounts\forms.py:63 .\templates\profiles\user_extra_info_widget.html:22
 msgid "City or locality"
 msgstr ""
 
 #: .\accounts\forms.py:126 .\accounts\models.py:107
+#: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
 
@@ -364,7 +365,7 @@ msgstr ""
 msgid "Active languages"
 msgstr ""
 
-#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:29
+#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr ""
 
@@ -377,14 +378,16 @@ msgid "Few words about me"
 msgstr ""
 
 #: .\accounts\models.py:99 .\accounts\validators.py:54
+#: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\accounts\models.py:102 .\accounts\validators.py:59
+#: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\models.py:105
+#: .\accounts\models.py:105 .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr ""
 
@@ -659,6 +662,7 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:45
 #: .\templates\matches\settings\base.html:39
+#: .\templates\profiles\user_extra_info_widget.html:18
 msgid "About me"
 msgstr ""
 
@@ -725,7 +729,7 @@ msgid "Update matches"
 msgstr ""
 
 #: .\templates\matches\match_list.html:43
-#: .\templates\profiles\user_extra_info_widget.html:44
+#: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr ""
 
@@ -769,36 +773,12 @@ msgstr ""
 msgid "More Information"
 msgstr ""
 
-#: .\templates\profiles\user_extra_info_widget.html:19
-msgid "Profile Description"
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
 msgstr ""
 
-#: .\templates\profiles\user_extra_info_widget.html:24
-msgid "City"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:34
-msgid "Children"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:39
-msgid "More Children"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:49
-msgid "Smoking Status"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:54
-msgid "Relationship Status"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:59
-msgid "Gender To Match"
-msgstr ""
-
-#: .\templates\profiles\user_extra_info_widget.html:64
-msgid "My Ideal Match"
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
 msgstr ""
 
 #: .\templates\profiles\user_rank_widget.html:12
