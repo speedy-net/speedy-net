@@ -310,8 +310,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
         _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
         _username_is_required_error_message_dict = {'en': 'Username is required.', 'he': 'שם המשתמש/ת נדרש.'}
-        _confirm_your_email_address_on_speedy_net_message_dict = {'en': 'Confirm your email address on Speedy Net', 'he': 'Confirm your email address on Speedy Net!!!'}
-        _confirm_your_email_address_on_speedy_match_message_dict = {'en': 'Confirm your email address on Speedy Match', 'he': 'Confirm your email address on Speedy Match!!!'}
 
         _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
         _value_must_be_an_integer_error_message_to_format_dict = {'en': "'{value}' value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
@@ -330,6 +328,22 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
                 User.GENDER_FEMALE_STRING: "לא ניתן לשנות שם משתמשת.",
                 User.GENDER_MALE_STRING: "לא ניתן לשנות שם משתמש.",
                 User.GENDER_OTHER_STRING: "לא ניתן לשנות שם משתמש/ת.",
+            },
+        }
+        _confirm_your_email_address_on_speedy_net_message_dict_by_gender = {
+            'en': {gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
+            'he': {
+                User.GENDER_FEMALE_STRING: "אשרי את כתובת הדואר האלקטרוני שלך בספידי נט",
+                User.GENDER_MALE_STRING: "אשר את כתובת הדואר האלקטרוני שלך בספידי נט",
+                User.GENDER_OTHER_STRING: "אשר/י את כתובת הדואר האלקטרוני שלך בספידי נט",
+            },
+        }
+        _confirm_your_email_address_on_speedy_match_message_dict_by_gender = {
+            'en': {gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
+            'he': {
+                User.GENDER_FEMALE_STRING: "אשרי את כתובת הדואר האלקטרוני שלך בספידי מץ'",
+                User.GENDER_MALE_STRING: "אשר את כתובת הדואר האלקטרוני שלך בספידי מץ'",
+                User.GENDER_OTHER_STRING: "אשר/י את כתובת הדואר האלקטרוני שלך בספידי מץ'",
             },
         }
 
@@ -356,8 +370,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         self._the_email_address_was_deleted_error_message = _the_email_address_was_deleted_error_message_dict[self.language_code]
         self._you_have_changed_your_primary_email_address_error_message = _you_have_changed_your_primary_email_address_error_message_dict[self.language_code]
         self._username_is_required_error_message = _username_is_required_error_message_dict[self.language_code]
-        self._confirm_your_email_address_on_speedy_net_message = _confirm_your_email_address_on_speedy_net_message_dict[self.language_code]
-        self._confirm_your_email_address_on_speedy_match_message = _confirm_your_email_address_on_speedy_match_message_dict[self.language_code]
 
         self._value_is_not_a_valid_choice_error_message_to_format = _value_is_not_a_valid_choice_error_message_to_format_dict[self.language_code]
         self._value_must_be_an_integer_error_message_to_format = _value_must_be_an_integer_error_message_to_format_dict[self.language_code]
@@ -371,8 +383,12 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         self._a_confirmation_message_was_sent_to_email_address_error_message_to_format = _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict[self.language_code]
 
         self._you_cant_change_your_username_error_message_dict_by_gender = _you_cant_change_your_username_error_message_dict_by_gender[self.language_code]
+        self._confirm_your_email_address_on_speedy_net_message_dict_by_gender = _confirm_your_email_address_on_speedy_net_message_dict_by_gender[self.language_code]
+        self._confirm_your_email_address_on_speedy_match_message_dict_by_gender = _confirm_your_email_address_on_speedy_match_message_dict_by_gender[self.language_code]
 
         self.assertSetEqual(set1=set(self._you_cant_change_your_username_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+        self.assertSetEqual(set1=set(self._confirm_your_email_address_on_speedy_net_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+        self.assertSetEqual(set1=set(self._confirm_your_email_address_on_speedy_match_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
         self.assertNotEqual(first=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), second=set(self._user_all_the_required_fields_keys()))
         self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=9)
