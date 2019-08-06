@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 18:49+0300\n"
+"POT-Creation-Date: 2019-08-06 08:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1398,17 +1398,17 @@ msgstr ""
 
 #: .\__translations\__translations.py:185
 msgctxt "female"
-msgid "You have removed this user from friends."
+msgid "You have removed this user from your friends."
 msgstr ""
 
 #: .\__translations\__translations.py:186
 msgctxt "male"
-msgid "You have removed this user from friends."
+msgid "You have removed this user from your friends."
 msgstr ""
 
 #: .\__translations\__translations.py:187
 msgctxt "other"
-msgid "You have removed this user from friends."
+msgid "You have removed this user from your friends."
 msgstr ""
 
 #: .\__translations\__translations.py:189
@@ -1442,6 +1442,21 @@ msgstr ""
 #: .\__translations\__translations.py:195
 msgctxt "other"
 msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:197
+msgctxt "female"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr ""
+
+#: .\__translations\__translations.py:198
+msgctxt "male"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr ""
+
+#: .\__translations\__translations.py:199
+msgctxt "other"
+msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
 #: .\accounts\forms.py:94
@@ -1825,20 +1840,20 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:230
+#: .\accounts\views.py:233
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:254 .\accounts\views.py:270
+#: .\accounts\views.py:257 .\accounts\views.py:273
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:285
+#: .\accounts\views.py:288
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:301
+#: .\accounts\views.py:304
 msgid "You have made this email address primary."
 msgstr ""
 
@@ -2566,7 +2581,7 @@ msgid "is stored"
 msgstr ""
 
 #: .\uploads\models.py:16
-msgid "file_size"
+msgid "file size"
 msgstr ""
 
 #: .\uploads\models.py:24

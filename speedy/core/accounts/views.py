@@ -67,6 +67,9 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
     form_class = RegistrationForm
     form_valid_message = _("Registration complete. Don't forget to confirm your email.")
 
+    def get_form_valid_message(self, form):
+        return pgettext_lazy(context=self.object.get_gender(), message="Registration complete. Don't forget to confirm your email.")
+
     def form_valid(self, form):
         self.object = form.save()
         logger.debug('RegistrationView#form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)

@@ -182,9 +182,9 @@ pgettext_lazy(context="female", message="You've cancelled your friendship reques
 pgettext_lazy(context="male", message="You've cancelled your friendship request.")
 pgettext_lazy(context="other", message="You've cancelled your friendship request.")
 
-pgettext_lazy(context="female", message="You have removed this user from friends.")
-pgettext_lazy(context="male", message="You have removed this user from friends.")
-pgettext_lazy(context="other", message="You have removed this user from friends.")
+pgettext_lazy(context="female", message="You have removed this user from your friends.")
+pgettext_lazy(context="male", message="You have removed this user from your friends.")
+pgettext_lazy(context="other", message="You have removed this user from your friends.")
 
 pgettext_lazy(context="female", message='Welcome to {site_name}!')
 pgettext_lazy(context="male", message='Welcome to {site_name}!')
@@ -193,5 +193,9 @@ pgettext_lazy(context="other", message='Welcome to {site_name}!')
 pgettext_lazy(context="female", message='Friends')
 pgettext_lazy(context="male", message='Friends')
 pgettext_lazy(context="other", message='Friends')
+
+pgettext_lazy(context="female", message="Registration complete. Don't forget to confirm your email.")
+pgettext_lazy(context="male", message="Registration complete. Don't forget to confirm your email.")
+pgettext_lazy(context="other", message="Registration complete. Don't forget to confirm your email.")
 
 

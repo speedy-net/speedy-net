@@ -13,7 +13,7 @@ class File(TimeStampedModel):
     owner = models.ForeignKey(to='accounts.Entity', verbose_name=_('owner'), on_delete=models.SET_NULL, blank=True, null=True)
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
-    size = models.PositiveIntegerField(verbose_name=_('file_size'), default=0)
+    size = models.PositiveIntegerField(verbose_name=_('file size'), default=0)
 
     @property
     def basename(self):

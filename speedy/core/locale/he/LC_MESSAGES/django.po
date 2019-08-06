@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 18:49+0300\n"
+"POT-Creation-Date: 2019-08-06 08:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -365,7 +365,7 @@ msgstr "המשתמש הזה לא מתאים לפרופיל שלך, "
 #: .\__translations\__translations.html:100
 msgctxt "other"
 msgid "This user doesn't match your profile, "
-msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, "
+msgstr "המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, "
 
 #: .\__translations\__translations.html:102
 msgctxt "female"
@@ -796,19 +796,19 @@ msgstr ""
 
 #: .\__translations\__translations.py:17
 msgid "Message"
-msgstr ""
+msgstr "הודעה"
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr ""
+msgstr "בקשת חברות"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr ""
+msgstr "בקשות חברות"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr ""
+msgstr "חבר/ה"
 
 #: .\__translations\__translations.py:23 .\accounts\models.py:427
 msgid "Friends"
@@ -816,19 +816,19 @@ msgstr "חברים/ות"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr ""
+msgstr "Following Relationship"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr ""
+msgstr "Following Relationships"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
-msgstr ""
+msgstr "Blocker Relationship"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr ""
+msgstr "Blocked Relationships"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -1212,17 +1212,17 @@ msgstr "נשוי/נשואה"
 #: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "הסיסמה החדשה שלך נשמרה."
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "הסיסמה החדשה שלך נשמרה."
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "הסיסמה החדשה שלך נשמרה."
 
 #: .\__translations\__translations.py:141
 msgctxt "female"
@@ -1401,32 +1401,32 @@ msgstr "את/ה לא יכול/ה להיות חבר/ה של עצמך."
 #: .\__translations\__translations.py:173
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "כבר ביקשת חברות מהמשתמשת הזאת."
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "כבר ביקשת חברות מהמשתמש הזה."
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "כבר ביקשת חברות מהמשתמש/ת הזאת."
 
 #: .\__translations\__translations.py:177
 msgctxt "female"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "את/ה כבר חבר/ה של המשתמשת הזאת."
 
 #: .\__translations\__translations.py:178
 msgctxt "male"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "את/ה כבר חבר/ה של המשתמש הזה."
 
 #: .\__translations\__translations.py:179
 msgctxt "other"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "את/ה כבר חבר/ה של המשתמש/ת הזאת."
 
 #: .\__translations\__translations.py:181
 msgctxt "female"
@@ -1445,18 +1445,18 @@ msgstr "ביטלת את בקשת החברות שלך."
 
 #: .\__translations\__translations.py:185
 msgctxt "female"
-msgid "You have removed this user from friends."
-msgstr ""
+msgid "You have removed this user from your friends."
+msgstr "הסרת את המשתמשת הזאת מהחברים שלך."
 
 #: .\__translations\__translations.py:186
 msgctxt "male"
-msgid "You have removed this user from friends."
-msgstr ""
+msgid "You have removed this user from your friends."
+msgstr "הסרת את המשתמש הזה מהחברים שלך."
 
 #: .\__translations\__translations.py:187
 msgctxt "other"
-msgid "You have removed this user from friends."
-msgstr ""
+msgid "You have removed this user from your friends."
+msgstr "הסרת את המשתמש/ת הזאת מהחברים שלך."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1491,6 +1491,21 @@ msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
+#: .\__translations\__translations.py:197
+msgctxt "female"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr "הרשמה הושלמה. אל תשכחי לאשר את הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:198
+msgctxt "male"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr "הרשמה הושלמה. אל תשכח לאשר את הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:199
+msgctxt "other"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr "הרשמה הושלמה. אל תשכח/י לאשר את הדואר האלקטרוני שלך."
+
 #: .\accounts\forms.py:94
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
@@ -1524,11 +1539,11 @@ msgstr "שכחת את הסיסמה שלך?"
 
 #: .\accounts\forms.py:202 .\accounts\forms.py:217
 msgid "Submit"
-msgstr ""
+msgstr "שלח/י"
 
 #: .\accounts\forms.py:226
 msgid "Change"
-msgstr ""
+msgstr "שנה/י"
 
 #: .\accounts\forms.py:247
 msgid "Your password"
@@ -1580,7 +1595,7 @@ msgstr "שם"
 
 #: .\accounts\models.py:146
 msgid "description"
-msgstr ""
+msgstr "תיאור"
 
 #: .\accounts\models.py:181
 msgid "Only me"
@@ -1732,7 +1747,7 @@ msgstr "משתמשים"
 
 #: .\accounts\models.py:443
 msgid "Superuser must be equal to staff."
-msgstr ""
+msgstr "Superuser must be equal to staff."
 
 #: .\accounts\models.py:642
 msgid "email"
@@ -1748,15 +1763,15 @@ msgstr "ראשי"
 
 #: .\accounts\models.py:645
 msgid "confirmation token"
-msgstr ""
+msgstr "confirmation token"
 
 #: .\accounts\models.py:646
 msgid "confirmation sent"
-msgstr ""
+msgstr "confirmation sent"
 
 #: .\accounts\models.py:647
 msgid "Who can see this email"
-msgstr ""
+msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
 #: .\accounts\models.py:658
 msgid "email addresses"
@@ -1888,22 +1903,22 @@ msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
 #: .\accounts\views.py:68
 msgid "Registration complete. Don't forget to confirm your email."
-msgstr ""
+msgstr "הרשמה הושלמה. אל תשכח/י לאשר את הדואר האלקטרוני שלך."
 
-#: .\accounts\views.py:230
+#: .\accounts\views.py:233
 msgid "Invalid confirmation link."
-msgstr ""
+msgstr "קישור אישור לא חוקי."
 
-#: .\accounts\views.py:254 .\accounts\views.py:270
+#: .\accounts\views.py:257 .\accounts\views.py:273
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-{email_address}"
 
-#: .\accounts\views.py:285
+#: .\accounts\views.py:288
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:301
+#: .\accounts\views.py:304
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
@@ -1921,19 +1936,19 @@ msgstr "השינויים נשמרו."
 
 #: .\blocks\managers.py:15 .\blocks\models.py:27
 msgid "Users cannot block themselves."
-msgstr ""
+msgstr "משתמשים לא יכולים לחסום את עצמם."
 
 #: .\blocks\models.py:12
 msgid "blocked user"
-msgstr ""
+msgstr "blocked user"
 
 #: .\blocks\models.py:17
 msgid "block"
-msgstr ""
+msgstr "block"
 
 #: .\blocks\models.py:18
 msgid "user blocks"
-msgstr ""
+msgstr "user blocks"
 
 #: .\blocks\views.py:26
 msgid "You have blocked {}."
@@ -1953,19 +1968,19 @@ msgstr "שלח/י"
 
 #: .\contact_by_form\models.py:15
 msgid "Feedback"
-msgstr ""
+msgstr "פידבק"
 
 #: .\contact_by_form\models.py:16
 msgid "Abuse (User)"
-msgstr ""
+msgstr "Abuse (User)"
 
 #: .\contact_by_form\models.py:17
 msgid "Abuse (Photo)"
-msgstr ""
+msgstr "Abuse (Photo)"
 
 #: .\contact_by_form\models.py:20 .\messages\models.py:72
 msgid "sender"
-msgstr ""
+msgstr "שולח/ת"
 
 #: .\contact_by_form\models.py:21
 msgid "your name"
@@ -1977,7 +1992,7 @@ msgstr "הדואר האלקטרוני שלך"
 
 #: .\contact_by_form\models.py:23
 msgid "type"
-msgstr ""
+msgstr "type"
 
 #: .\contact_by_form\models.py:24
 msgid "your message"
@@ -1985,19 +2000,19 @@ msgstr "ההודעה שלך"
 
 #: .\contact_by_form\models.py:26
 msgid "reported entity"
-msgstr ""
+msgstr "reported entity"
 
 #: .\contact_by_form\models.py:27
 msgid "reported photo"
-msgstr ""
+msgstr "reported photo"
 
 #: .\contact_by_form\models.py:30
 msgid "feedback"
-msgstr ""
+msgstr "פידבק"
 
 #: .\contact_by_form\models.py:31
 msgid "feedbacks"
-msgstr ""
+msgstr "פידבקים"
 
 #: .\friends\views.py:140
 msgid "Friendship request sent."
@@ -2021,47 +2036,47 @@ msgstr "הודעות"
 
 #: .\messages\models.py:13
 msgid "site"
-msgstr ""
+msgstr "אתר"
 
 #: .\messages\models.py:14
 msgid "participant 1"
-msgstr ""
+msgstr "משתתפ/ת 1"
 
 #: .\messages\models.py:15
 msgid "participant 2"
-msgstr ""
+msgstr "משתתפ/ת 2"
 
 #: .\messages\models.py:16
 msgid "participants"
-msgstr ""
+msgstr "משתתפים"
 
 #: .\messages\models.py:17
 msgid "is group chat"
-msgstr ""
+msgstr "is group chat"
 
 #: .\messages\models.py:18
 msgid "last message"
-msgstr ""
+msgstr "הודעה אחרונה"
 
 #: .\messages\models.py:38 .\messages\models.py:71 .\messages\models.py:89
 msgid "chat"
-msgstr ""
+msgstr "צ'ט"
 
 #: .\messages\models.py:39
 msgid "chats"
-msgstr ""
+msgstr "צ'טים"
 
 #: .\messages\models.py:73 .\messages\models.py:78
 msgid "message"
-msgstr ""
+msgstr "הודעה"
 
 #: .\messages\models.py:94
 msgid "read mark"
-msgstr ""
+msgstr "read mark"
 
 #: .\messages\models.py:95
 msgid "read marks"
-msgstr ""
+msgstr "read marks"
 
 #: .\settings\base.py:148
 msgid "English"
@@ -2073,7 +2088,7 @@ msgstr "עברית"
 
 #: .\templates\_400.html:5 .\templates\_400.html:9
 msgid "Bad request"
-msgstr ""
+msgstr "בקשה לא טובה"
 
 #: .\templates\_400.html:12 .\templates\_404.html:12 .\templates\_500.html:12
 msgid " "
@@ -2089,11 +2104,11 @@ msgstr "הדף הזה פרטי."
 
 #: .\templates\_404.html:5 .\templates\_404.html:9
 msgid "Page not found"
-msgstr ""
+msgstr "הדף לא נמצא"
 
 #: .\templates\_500.html:5 .\templates\_500.html:9
 msgid "Internal server error"
-msgstr ""
+msgstr "שגיאת שרת פנימית"
 
 #: .\templates\about\about_base.html:5 .\templates\base.html:151
 #: .\templates\menu\about_mobile_menu_links.html:11
@@ -2141,19 +2156,19 @@ msgstr "כתובות דואר אלקטרוני"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr ""
+msgstr "כתובת"
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
-msgstr ""
+msgstr "הוספה"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr ""
+msgstr "נראות"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr ""
+msgstr "פעולות"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
@@ -2450,7 +2465,7 @@ msgstr "עדיין אין לך הודעות."
 
 #: .\templates\messages\message.html:19
 msgid "New"
-msgstr ""
+msgstr "חדשה"
 
 #: .\templates\privacy\privacy_policy.html:17
 msgid ""
@@ -2471,7 +2486,7 @@ msgstr "חסמת את "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr ""
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
@@ -2505,7 +2520,7 @@ msgstr "הוסף/י לחברים"
 #: .\templates\profiles\tools\block_user.html:9
 #: .\templates\profiles\tools\block_user.html:11
 msgid "Toggle Dropdown"
-msgstr ""
+msgstr "החלף/י את התפריט הנפתח"
 
 #: .\templates\profiles\tools\block_user.html:15
 msgid "Are you sure you want to block "
@@ -2513,7 +2528,7 @@ msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
 
 #: .\templates\profiles\tools\block_user.html:15
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:17
 #: .\templates\profiles\tools\block_user.html:18
@@ -2556,7 +2571,7 @@ msgstr "חבר/ה שלך"
 
 #: .\templates\profiles\user_base.html:58
 msgid "This user doesn't match your profile, "
-msgstr "המשתמש/ת הזה/הזאת לא מתאימ/ה לפרופיל שלך, "
+msgstr "המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, "
 
 #: .\templates\profiles\user_base.html:58
 msgid "but you can visit his/her Speedy Net profile. "
@@ -2644,15 +2659,15 @@ msgstr "קובץ"
 
 #: .\uploads\models.py:15
 msgid "is stored"
-msgstr ""
+msgstr "is stored"
 
 #: .\uploads\models.py:16
-msgid "file_size"
-msgstr ""
+msgid "file size"
+msgstr "גודל קובץ"
 
 #: .\uploads\models.py:24
 msgid "uploaded files"
-msgstr ""
+msgstr "uploaded files"
 
 #: .\uploads\models.py:45
 msgid "images"
@@ -2660,7 +2675,7 @@ msgstr "תמונות"
 
 #: .\uploads\models.py:46
 msgid "uploaded images"
-msgstr ""
+msgstr "uploaded images"
 
 #~ msgid "You don't have any friends yet."
 #~ msgstr "עדיין אין לך חברים/ות."

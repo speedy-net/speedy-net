@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 18:49+0300\n"
+"POT-Creation-Date: 2019-08-06 08:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -684,12 +684,12 @@ msgid "Welcome to %(site_name)s"
 msgstr "ברוכים הבאים ל%(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:45
-#: .\templates\matches\settings\base.html:31
+#: .\templates\matches\settings\base.html:39
 msgid "About me"
 msgstr "על עצמי"
 
 #: .\templates\accounts\edit_profile\activate.html:47
-#: .\templates\matches\settings\base.html:26
+#: .\templates\matches\settings\base.html:34
 msgid "About my match"
 msgstr "על בן/בת הזוג שלי"
 
@@ -729,8 +729,8 @@ msgid "Your Match Settings"
 msgstr "הגדרת ההתאמות שלך"
 
 #: .\templates\base_site.html:32 .\templates\base_site.html:38
-#: .\templates\matches\settings\base.html:9
-#: .\templates\matches\settings\base.html:20
+#: .\templates\matches\settings\base.html:10
+#: .\templates\matches\settings\base.html:28
 msgid "Match Settings"
 msgstr "הגדרת התאמות"
 
@@ -746,28 +746,28 @@ msgstr "החברות והחברים שלך"
 msgid "You have no likes here."
 msgstr "אין פה אנשים."
 
-#: .\templates\matches\match_list.html:29
+#: .\templates\matches\match_list.html:32
 msgid "Update matches"
 msgstr "עדכון התאמות"
 
-#: .\templates\matches\match_list.html:40
+#: .\templates\matches\match_list.html:43
 #: .\templates\profiles\user_extra_info_widget.html:44
 msgid "Diet"
 msgstr "תזונה"
 
-#: .\templates\matches\match_list.html:51
+#: .\templates\matches\match_list.html:54
 msgid "Age:"
 msgstr "גיל:"
 
-#: .\templates\matches\match_list.html:61
+#: .\templates\matches\match_list.html:64
 msgid "Refresh"
 msgstr "עדכון"
 
-#: .\templates\matches\match_list.html:68
+#: .\templates\matches\match_list.html:71
 msgid "Add more options"
 msgstr "הוסף/י עוד אפשרויות"
 
-#: .\templates\matches\match_list.html:84
+#: .\templates\matches\match_list.html:87
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
@@ -775,7 +775,7 @@ msgstr ""
 "אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר "
 "יותר."
 
-#: .\templates\matches\settings\base.html:17
+#: .\templates\matches\settings\base.html:25
 msgid "Back to Matches"
 msgstr "חזרה להתאמות"
 
