@@ -11,6 +11,9 @@
             <h1>
                 {% blocktrans with site_name=site_name %}Welcome to {{ site_name }}!{% endblocktrans %}
             </h1>
+            <h5>
+                {% block main_page_h5 %}{% endblock %}
+            </h5>
             {% blocktrans with site_name=site_name %}We are working on the next version of Speedy Net, and a new app for Speedy Net users – Speedy Match – a new dating/matching app for singles. Speedy Net and Speedy Match will be free software & open source. You are invited to sign up now, and grab yourself a username at Speedy Net.{% endblocktrans %}
         </div>
         <div class="col-md-4" data-block="RegistrationForm">
