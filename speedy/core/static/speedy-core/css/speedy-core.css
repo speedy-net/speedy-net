@@ -18,15 +18,6 @@
     font-weight: 300;
 }
 
-body.bidi-rtl .pull-left {
-    float: right !important;
-}
-
-body.bidi-rtl .pull-right,
-body.bidi-rtl .navbar-right {
-    float: left !important;
-}
-
 body.bidi-ltr .pull-left {
     float: left !important;
 }
@@ -34,6 +25,15 @@ body.bidi-ltr .pull-left {
 body.bidi-ltr .pull-right,
 body.bidi-ltr .navbar-right {
     float: right !important;
+}
+
+body.bidi-rtl .pull-left {
+    float: right !important;
+}
+
+body.bidi-rtl .pull-right,
+body.bidi-rtl .navbar-right {
+    float: left !important;
 }
 
 .bg-speedy-net {

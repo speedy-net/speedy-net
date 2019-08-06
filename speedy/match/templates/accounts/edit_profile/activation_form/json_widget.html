@@ -5,7 +5,7 @@
     {% for choice in choices %}
         <div class="widget-group" data-value="{{ choice.0 }}">
             <input type="checkbox" class="widget-checkbox" {% if value|key_value:choice.0  %} checked="checked"}{% endif %}>
-            <span>{{ choice.1 }}</span>
+            <span class="choice-text">{{ choice.1 }}</span>
             <span class="choices pull-right flip">
                 <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="1" title="{{ 1|rank_description }}"></i>
                 <i class="fa fa-heart widget-choice" aria-hidden="true" data-value="2" title="{{ 2|rank_description }}"></i>

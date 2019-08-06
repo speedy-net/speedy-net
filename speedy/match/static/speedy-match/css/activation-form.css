@@ -161,6 +161,14 @@ body.bidi-rtl .user-profile {
     padding: 20px;
 }
 
+body.bidi-ltr .widget-group span.choice-text {
+    padding-right: 20px;
+}
+
+body.bidi-rtl .widget-group span.choice-text {
+    padding-left: 20px;
+}
+
 @media screen and (max-width: 767px) {
     /*
     .page-header {
@@ -185,7 +193,7 @@ body.bidi-rtl .user-profile {
         display: none;
     }
 
-    .activation-form-fileds {
+    .activation-form-fields {
         width: auto;
     }
 
