@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 19:17+0300\n"
+"POT-Creation-Date: 2019-08-07 10:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -419,7 +419,7 @@ msgstr "שפות פעילות"
 msgid "Height"
 msgstr "גובה"
 
-#: .\accounts\models.py:94
+#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "ס\"מ"
 
@@ -610,7 +610,7 @@ msgstr "אנשים שעשו לך לייק"
 msgid "Mutual Likes"
 msgstr "לייקים הדדיים"
 
-#: .\matches\views.py:64 .\matches\views.py:78
+#: .\matches\views.py:68 .\matches\views.py:82
 msgid "Your match settings were saved."
 msgstr "הגדרת ההתאמות שלך נשמרה."
 

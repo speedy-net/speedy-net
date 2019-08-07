@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 19:17+0300\n"
+"POT-Creation-Date: 2019-08-07 10:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2104,19 +2104,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:140
+#: .\friends\views.py:149
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:151
+#: .\friends\views.py:160
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:181
+#: .\friends\views.py:190
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:196
+#: .\friends\views.py:205
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
