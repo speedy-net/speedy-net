@@ -11,30 +11,4 @@
     <h5 class="card-title mb-0">
         {{ user.name|truncatechars:18 }}, {{ user.get_age }}{% if user.diet > 0 %}, {{ user.get_diet }}{% endif %}
     </h5>
-    {% comment %}
-    <div class="user-profile-general-info">
-        <span>{{ user.first_name|truncatechars:25 }}, </span>
-        <span>{{ user.get_gender_translated|make_list|first|capfirst }}, </span>
-        <span>{{ user.get_age }}</span>
-    </div>
-    <div class="user-profile-additional-info">
-        {% if user.city %}
-             <span>{{ user.city }}</span>
-        {% endif %}
-        {% if user.speedy_match_profile.height %}
-            , <span>{{ user.speedy_match_profile.height }} {% trans 'cm' %}</span>
-        {% endif %}
-    </div>
-    <div class="user-profile-more-info">
-        {% if user.speedy_match_profile.children %}
-            <span>{{ user.speedy_match_profile.children }}</span>
-        {% endif %}
-        {% if user.speedy_match_profile.more_children %}
-            , <span>{{ user.speedy_match_profile.more_children }}</span>
-        {% endif %}
-        {% if user.get_diet %}
-            , <span>{{ user.get_diet }}</span>
-        {% endif %}
-    </div>
-    {% endcomment %}
 </div>
