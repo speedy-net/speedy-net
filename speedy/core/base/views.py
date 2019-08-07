@@ -66,6 +66,9 @@ class FormValidMessageMixin(object):
 
 
 class PaginationMixin(object):
+    def redirect_on_exception(self):
+        raise NotImplementedError()
+
     def dispatch(self, request, *args, **kwargs):
         object_list = self.get_object_list()
         page_number = self.request.GET.get('page', 1)
@@ -73,7 +76,7 @@ class PaginationMixin(object):
         try:
             page = paginator.page(page_number)
         except (PageNotAnInteger, EmptyPage):
-            return redirect(to='matches:list')
+            return self.redirect_on_exception()
         self.paginator = paginator
         self.page = page
         return super().dispatch(request=request, *args, **kwargs)

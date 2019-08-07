@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
+from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 
 from rules.contrib.views import LoginRequiredMixin
@@ -21,6 +22,9 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
     paginate_by = page_size
     form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
+
+    def redirect_on_exception(self):
+        return redirect(to='matches:list')
 
     def get_matches_list(self):
         if (self.request.user.is_authenticated):

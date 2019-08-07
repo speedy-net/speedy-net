@@ -28,6 +28,9 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
     template_name = 'friends/friend_list.html'
     permission_required = 'friends.view_friend_list'
 
+    def redirect_on_exception(self):
+        return redirect(to='friends:list', slug=self.user.slug)
+
     def get_object_list(self):
         return self.user.get_friends()
 
@@ -43,6 +46,9 @@ class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Fri
     template_name = 'friends/received_requests.html'
     permission_required = 'friends.view_requests'
 
+    def redirect_on_exception(self):
+        return redirect(to='friends:received_requests', slug=self.user.slug)
+
     def get_object_list(self):
         return self.user.get_received_friendship_requests()
 
@@ -57,6 +63,9 @@ class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Fri
 class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
     template_name = 'friends/sent_requests.html'
     permission_required = 'friends.view_requests'
+
+    def redirect_on_exception(self):
+        return redirect(to='friends:sent_requests', slug=self.user.slug)
 
     def get_object_list(self):
         return self.user.get_sent_friendship_requests()
