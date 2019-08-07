@@ -36,7 +36,6 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         kwargs['step'] = self.step
         return kwargs
 
-    # ~~~~ TODO: Read about dispatch and request lifecycle to understand why 'step' is wrong
     def dispatch(self, request, *args, **kwargs):
         if (not (self.request.user.is_authenticated)):
             return super().dispatch(request=request, *args, **kwargs)
