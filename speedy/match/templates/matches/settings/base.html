@@ -42,6 +42,7 @@
     </ul>
     <br>
     {% block tab_content %}
+        {{ form.errors }}{% comment %} # ~~~~ TODO: this line is only for debugging! Not all the form errors are visible in the form! {% endcomment %}
         {% crispy form %}
     {% endblock %}
 {% endblock %}
