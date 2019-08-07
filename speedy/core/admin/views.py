@@ -1,6 +1,7 @@
 from django.views import generic
 
 from speedy.core.admin.mixins import OnlyAdminMixin
+from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -12,7 +13,8 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     paginate_by = page_size
 
     def get_queryset(self):
-        qs = User.objects.active().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-speedy_net_site_profile__last_visit')
+        SiteProfile = get_site_profile_model()
+        qs = User.objects.active().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):
