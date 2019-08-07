@@ -1,9 +1,12 @@
+import logging
 from datetime import timedelta
 
 from django.core.management import BaseCommand
 from django.utils.timezone import now
 
 from speedy.core.accounts.models import User
+
+logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
@@ -13,6 +16,7 @@ class Command(BaseCommand):
         for user in users:
             if (not (user.is_staff)):
                 if (not (user.has_confirmed_email())):
+                    logger.warning("Deleting user {} - no confirmed email. Registered on {}.".format(user, user.date_created))
                     user.delete()
 
 
