@@ -4,6 +4,7 @@ from speedy.core.base.utils import get_age_ranges_match
 from speedy.core.base.models import BaseManager
 from speedy.core.accounts.models import User
 from speedy.core.blocks.models import Block
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
 class SiteProfileManager(BaseManager):
@@ -53,7 +54,7 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
             speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
             speedy_match_site_profile__active_languages__contains=[language_code],
-        ).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
+        ).exclude(pk=user_profile.user_id).prefetch_related(self.model.RELATED_NAME, SpeedyNetSiteProfile.RELATED_NAME).distinct().order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2000]
         blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
