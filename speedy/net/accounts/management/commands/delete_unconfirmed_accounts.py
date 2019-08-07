@@ -11,8 +11,9 @@ class Command(BaseCommand):
         emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=10))).exclude(user__is_staff=True)
 
         for email in emails:
-            has_confirmed_email = email.user.email_addresses.filter(is_confirmed=True).exists()
-            if (not (has_confirmed_email)):
-                email.user.delete()
+            user = email.user
+            if (not (user.is_staff)):
+                if (not (user.has_confirmed_email())):
+                    user.delete()
 
 
