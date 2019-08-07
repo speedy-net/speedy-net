@@ -6300,6 +6300,12 @@ body.with-background {
     /*background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));*/
     font-weight: normal; }
 
+@media (max-width: 1020px) {
+  body.with-background .speedy-body-container .col-md-8 {
+    background-size: contain;
+  }
+}
+
 .navbar-nav .nav-link.active {
   color: #fff !important; }
 
