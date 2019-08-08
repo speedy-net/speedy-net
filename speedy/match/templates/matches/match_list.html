@@ -24,20 +24,16 @@
 {% block content %}
     <div class="mb-4 filters">
         {% block form %}
-            <form action="{% url 'matches:list' %}" method="post" class="">
+            <form action="{% url 'matches:edit_match_settings' %}" method="post" class="">
                 {% csrf_token %}
-                {{ form.errors }}
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-7">
                         <strong>{% trans 'Update matches' context user.get_gender %}</strong>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-
                     <div class="col-12 col-md-7">
-
                         <div class="row">
-
                             <div class="col">
                                 <button type="button" class="form-control dropdown-toggle" data-toggle="dropdown">
                                     {% trans 'Diet' %} <span class="caret"></span>
@@ -71,9 +67,20 @@
                         {% trans 'Add more options' context user.get_gender %}
                     </a>
                 </div>
-                {{ field.label_tag }}
-                {#                    {% crispy_field field %}#}
-                {{ field.errors }}
+                <div class="hidden">
+                    {% for field in form %}
+                        {% if field.name in form_hidden_fields %}
+                            <div class="activation-form-field text-left flip">
+                                {{ field.errors }}
+                                <div>
+                                    {{ field.label_tag }}
+                                </div>
+                                {{ field }}
+                                {{ field.help_text }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </form>
         {% endblock %}
     </div>

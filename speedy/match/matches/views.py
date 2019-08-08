@@ -23,6 +23,11 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
     form_class = SpeedyMatchSettingsMiniForm
     success_url = reverse_lazy('matches:list')
 
+    def dispatch(self, request, *args, **kwargs):
+        if (request.method == 'POST'):
+            return redirect(to='matches:edit_match_settings')
+        return super().dispatch(request=request, *args, **kwargs)
+
     def redirect_on_exception(self):
         return redirect(to='matches:list')
 
@@ -46,6 +51,7 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         cd = super().get_context_data(**kwargs)
         cd.update({
             'matches_list': self.page.object_list,
+            'form_hidden_fields': list(self.form_class().get_hidden_fields()),
         })
         return cd
 

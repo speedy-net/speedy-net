@@ -135,6 +135,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
                 field.required = True
+        # visible_fields = self.get_visible_fields()
+        # for field_name, field in self.fields.items():
+        #     if (not (field_name in visible_fields)):
+        #         field.widget = forms.HiddenInput()
 
     def clean_photo(self):
         photo = self.files.get('photo')
@@ -182,13 +186,23 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         # This function is not defined in this base (abstract) form.
         raise NotImplementedError()
 
+    def get_visible_fields(self):
+        # This function is not defined in this base (abstract) form.
+        raise NotImplementedError()
+
+    def get_hidden_fields(self):
+        fields = self.get_fields()
+        visible_fields = self.get_visible_fields()
+        return (field_name for field_name in fields if (not (field_name in visible_fields)))
+
 
 class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
     def get_fields(self):
         return utils.get_step_form_fields(step=self.step)
 
+    def get_visible_fields(self):
+        return self.get_fields()
+
 
 class ProfileNotificationsForm(CoreProfileNotificationsForm):
     _profile_fields = ("notify_on_like",)
-
-

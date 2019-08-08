@@ -10,6 +10,9 @@ from speedy.match.accounts.forms import SpeedyMatchProfileBaseForm
 
 class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
     def get_fields(self):
+        return ('gender_to_match', to_attribute(name='match_description'), 'min_age_to_match', 'max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
+
+    def get_visible_fields(self):
         return ('diet_match', 'min_age_to_match', 'max_age_to_match')
 
 
@@ -35,9 +38,15 @@ class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
         return ('gender_to_match', to_attribute(name='match_description'), 'min_age_to_match', 'max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
 
+    def get_visible_fields(self):
+        return self.get_fields()
+
 
 class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
     def get_fields(self):
         return (to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'relationship_status')
+
+    def get_visible_fields(self):
+        return self.get_fields()
 
 
