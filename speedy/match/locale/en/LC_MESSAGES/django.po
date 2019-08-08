@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 10:09+0300\n"
+"POT-Creation-Date: 2019-08-08 15:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -369,7 +369,66 @@ msgstr ""
 msgid "City or locality"
 msgstr ""
 
-#: .\accounts\forms.py:126 .\accounts\models.py:107
+#: .\accounts\forms.py:101
+msgid "Your height is required."
+msgstr ""
+
+#: .\accounts\forms.py:104 .\accounts\validators.py:74
+msgid "Your diet is required."
+msgstr ""
+
+#: .\accounts\forms.py:107 .\accounts\validators.py:79
+msgid "Your smoking status is required."
+msgstr ""
+
+#: .\accounts\forms.py:110 .\accounts\validators.py:84
+msgid "Your relationship status is required."
+msgstr ""
+
+#: .\accounts\forms.py:113 .\accounts\forms.py:125 .\accounts\validators.py:44
+#: .\accounts\validators.py:64
+msgid "Please write some text in this field."
+msgstr ""
+
+#: .\accounts\forms.py:116 .\accounts\validators.py:49
+msgid "Please write where you live."
+msgstr ""
+
+#: .\accounts\forms.py:119 .\accounts\models.py:99 .\accounts\validators.py:54
+#: .\templates\profiles\user_extra_info_widget.html:30
+msgid "Do you have children? How many?"
+msgstr ""
+
+#: .\accounts\forms.py:122 .\accounts\models.py:102 .\accounts\validators.py:59
+#: .\templates\profiles\user_extra_info_widget.html:34
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\accounts\forms.py:128 .\accounts\validators.py:89
+msgid "Gender to match is required."
+msgstr ""
+
+#: .\accounts\forms.py:131
+msgid "Minimal age to match is required."
+msgstr ""
+
+#: .\accounts\forms.py:134
+msgid "Maximal age to match is required."
+msgstr ""
+
+#: .\accounts\forms.py:137 .\accounts\validators.py:111
+msgid "Diet match is required."
+msgstr ""
+
+#: .\accounts\forms.py:140 .\accounts\validators.py:119
+msgid "Smoking status match is required."
+msgstr ""
+
+#: .\accounts\forms.py:143 .\accounts\validators.py:127
+msgid "Relationship status match is required."
+msgstr ""
+
+#: .\accounts\forms.py:173 .\accounts\models.py:107
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -420,16 +479,6 @@ msgstr ""
 
 #: .\accounts\models.py:96
 msgid "Few words about me"
-msgstr ""
-
-#: .\accounts\models.py:99 .\accounts\validators.py:54
-#: .\templates\profiles\user_extra_info_widget.html:30
-msgid "Do you have children? How many?"
-msgstr ""
-
-#: .\accounts\models.py:102 .\accounts\validators.py:59
-#: .\templates\profiles\user_extra_info_widget.html:34
-msgid "Do you want (more) children?"
 msgstr ""
 
 #: .\accounts\models.py:105 .\templates\profiles\user_extra_info_widget.html:54
@@ -484,32 +533,8 @@ msgstr ""
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\validators.py:44 .\accounts\validators.py:64
-msgid "Please write some text in this field."
-msgstr ""
-
-#: .\accounts\validators.py:49
-msgid "Please write where you live."
-msgstr ""
-
 #: .\accounts\validators.py:69
 msgid "Height must be from 1 to 450 cm."
-msgstr ""
-
-#: .\accounts\validators.py:74
-msgid "Your diet is required."
-msgstr ""
-
-#: .\accounts\validators.py:79
-msgid "Your smoking status is required."
-msgstr ""
-
-#: .\accounts\validators.py:84
-msgid "Your relationship status is required."
-msgstr ""
-
-#: .\accounts\validators.py:89
-msgid "Gender to match is required."
 msgstr ""
 
 #: .\accounts\validators.py:94
@@ -524,28 +549,16 @@ msgstr ""
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 
-#: .\accounts\validators.py:111
-msgid "Please select diet match."
-msgstr ""
-
 #: .\accounts\validators.py:113
 msgid "At least one diet match option should be five hearts."
-msgstr ""
-
-#: .\accounts\validators.py:119
-msgid "Please select smoking status match."
 msgstr ""
 
 #: .\accounts\validators.py:121
 msgid "At least one smoking status match option should be five hearts."
 msgstr ""
 
-#: .\accounts\validators.py:127
-msgid "Please select marital status match."
-msgstr ""
-
 #: .\accounts\validators.py:129
-msgid "At least one marital status match option should be five hearts."
+msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
 #: .\likes\managers.py:14 .\likes\models.py:30

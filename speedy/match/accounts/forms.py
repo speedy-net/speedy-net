@@ -96,6 +96,53 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             'smoking_status_match': CustomJsonWidget(choices=User.SMOKING_STATUS_VALID_CHOICES),
             'relationship_status_match': CustomJsonWidget(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
         }
+        error_messages = {
+            'height': {
+                'required': _("Your height is required."),
+            },
+            'diet': {
+                'required': _("Your diet is required."),
+            },
+            'smoking_status': {
+                'required': _("Your smoking status is required."),
+            },
+            'relationship_status': {
+                'required': _("Your relationship status is required."),
+            },
+            **{to_attribute(name='profile_description', language_code=language_code): {
+                'required': _("Please write some text in this field."),
+            } for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='city', language_code=language_code): {
+                'required': _("Please write where you live."),
+            } for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='children', language_code=language_code): {
+                'required': _("Do you have children? How many?"),
+            } for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='more_children', language_code=language_code): {
+                'required': _("Do you want (more) children?"),
+            } for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='match_description', language_code=language_code): {
+                'required': _("Please write some text in this field."),
+            } for language_code, language_name in django_settings.LANGUAGES},
+            'gender_to_match': {
+                'required': _("Gender to match is required."),
+            },
+            'min_age_to_match': {
+                'required': _("Minimal age to match is required."),
+            },
+            'max_age_to_match': {
+                'required': _("Maximal age to match is required."),
+            },
+            'diet_match': {
+                'required': _("Diet match is required."),
+            },
+            'smoking_status_match': {
+                'required': _("Smoking status match is required."),
+            },
+            'relationship_status_match': {
+                'required': _("Relationship status match is required."),
+            },
+        }
 
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
