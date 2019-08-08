@@ -125,7 +125,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 'required': _("Who is your ideal partner?"),
             } for language_code, language_name in django_settings.LANGUAGES},
             'gender_to_match': {
-                'required': _("Gender to match is required."),
+                'required': _("Gender to match is required."),  # ~~~~ TODO: not working.
             },
             'min_age_to_match': {
                 'required': _("Minimal age to match is required."),
@@ -249,3 +249,5 @@ class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
 
 class ProfileNotificationsForm(CoreProfileNotificationsForm):
     _profile_fields = ("notify_on_like",)
+
+
