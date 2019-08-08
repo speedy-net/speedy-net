@@ -135,10 +135,6 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
                 field.required = True
-        # visible_fields = self.get_visible_fields()
-        # for field_name, field in self.fields.items():
-        #     if (not (field_name in visible_fields)):
-        #         field.widget = forms.HiddenInput()
 
     def clean_photo(self):
         photo = self.files.get('photo')
