@@ -87,11 +87,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         widgets = {
             'smoking_status': forms.RadioSelect(),
             'relationship_status': forms.RadioSelect(),
-            **{to_attribute(name='profile_description', language_code=language_code): forms.Textarea(attrs={'rows': 3, 'cols': 25}) for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='profile_description', language_code=language_code): forms.Textarea(attrs={'rows': 6, 'cols': 40}) for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='city', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='children', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='more_children', language_code=language_code): forms.TextInput() for language_code, language_name in django_settings.LANGUAGES},
-            **{to_attribute(name='match_description', language_code=language_code): forms.Textarea(attrs={'rows': 3, 'cols': 25}) for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='match_description', language_code=language_code): forms.Textarea(attrs={'rows': 6, 'cols': 40}) for language_code, language_name in django_settings.LANGUAGES},
             'diet_match': CustomJsonWidget(choices=User.DIET_VALID_CHOICES),
             'smoking_status_match': CustomJsonWidget(choices=User.SMOKING_STATUS_VALID_CHOICES),
             'relationship_status_match': CustomJsonWidget(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
