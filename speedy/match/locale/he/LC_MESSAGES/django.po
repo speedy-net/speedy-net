@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 16:06+0300\n"
+"POT-Creation-Date: 2019-08-08 17:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -388,7 +388,7 @@ msgstr "הרגלי העישון שלך נדרשים."
 
 #: .\accounts\forms.py:110 .\accounts\validators.py:84
 msgid "Your relationship status is required."
-msgstr "סטטוס מערכת היחסים שלך נדרש"
+msgstr "סטטוס מערכת היחסים שלך נדרש."
 
 #: .\accounts\forms.py:113 .\accounts\validators.py:44
 msgid "Please write a few words about yourself."

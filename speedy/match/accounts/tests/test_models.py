@@ -46,24 +46,17 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_error_message_min_age_to_match_and_max_age_to_match_valid": self._maximal_age_to_match_cant_be_less_than_minimal_age_to_match_error_message,
                 "expected_error_message_min_age_to_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
                 "expected_error_message_max_age_to_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
-                # "expected_error_messages_min_age_to_match_and_max_age_to_match_valid": ['["Maximal age to match can\'t be less than minimal age to match."]'], # ~~~~ TODO
-                # "expected_error_messages_min_age_to_match_and_max_age_to_match_invalid": ["['Minimal age to match must be from 0 to 180 years.']", "['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
             }
-            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = ['["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]'.format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])] # ~~~~ TODO
-            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = ["['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']".format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])] # ~~~~ TODO
             test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"])]
             test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ["['{expected_error_message_min_age_to_match_invalid}']".format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]), "['{expected_error_message_max_age_to_match_invalid}']".format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"])]
-            # test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ['["{expected_error_message_min_age_to_match_invalid}"]'.format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]), '["{expected_error_message_max_age_to_match_invalid}"]'.format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"])] # ~~~~ TODO
             return test_settings
 
         def get_diet_match_default_test_settings(self):
             test_settings = {
                 "field_name": 'diet_match',
                 "expected_step": 8,
-                "expected_error_message_keys_and_ranks_invalid": self._please_select_diet_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select diet match.']"], # ~~~~ TODO
+                "expected_error_message_keys_and_ranks_invalid": self.diet_match_is_required_error_message,
                 "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one diet match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -73,10 +66,8 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'smoking_status_match',
                 "expected_step": 8,
-                "expected_error_message_keys_and_ranks_invalid": self._please_select_smoking_status_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select smoking status match.']"], # ~~~~ TODO
+                "expected_error_message_keys_and_ranks_invalid": self.smoking_status_match_is_required_error_message,
                 "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one smoking status match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -86,10 +77,8 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'relationship_status_match',
                 "expected_step": 9,
-                "expected_error_message_keys_and_ranks_invalid": self._please_select_relationship_status_match_error_message,
-                # "expected_error_messages_keys_and_ranks_invalid": ["['Please select relationship status match.']"], # ~~~~ TODO
+                "expected_error_message_keys_and_ranks_invalid": self.relationship_status_match_is_required_error_message,
                 "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
-                # "expected_error_messages_max_rank_invalid": ["['At least one relationship status match option should be five hearts.']"], # ~~~~ TODO
             }
             test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"])]
             test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"])]
@@ -778,7 +767,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": False,
                 "expected_step": 2,
                 "expected_error_message": self._a_profile_picture_is_required_error_message,
-                # "expected_error_messages": ["['A profile picture is required.']"], # ~~~~ TODO
                 "expected_counts_tuple": (1, 1, 26, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -790,8 +778,7 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": False,
                 "expected_step": 3,
-                "expected_error_message": self._please_write_some_text_in_this_field_error_message,
-                # "expected_error_messages": ["['Please write some text in this field.']"], # ~~~~ TODO
+                "expected_error_message": self._please_write_a_few_words_about_yourself_error_message,
                 "expected_counts_tuple": (5, 2, 0, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -804,7 +791,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": False,
                 "expected_step": 3,
                 "expected_error_message": self._please_write_where_you_live_error_message,
-                # "expected_error_messages": ["['Please write where you live.']"], # ~~~~ TODO
                 "expected_counts_tuple": (5, 2, 0, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -817,7 +803,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": False,
                 "expected_step": 4,
                 "expected_error_message": self._do_you_have_children_how_many_error_message,
-                # "expected_error_messages": ["['Do you have children? How many?']"], # ~~~~ TODO
                 "expected_counts_tuple": (5, 2, 0, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -830,7 +815,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": False,
                 "expected_step": 4,
                 "expected_error_message": self._do_you_want_more_children_error_message,
-                # "expected_error_messages": ["['Do you want (more) children?']"], # ~~~~ TODO
                 "expected_counts_tuple": (5, 2, 0, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -842,8 +826,7 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_assign": False,
                 "test_invalid_values_to_save": False,
                 "expected_step": 7,
-                "expected_error_message": self._please_write_some_text_in_this_field_error_message,
-                # "expected_error_messages": ["['Please write some text in this field.']"], # ~~~~ TODO
+                "expected_error_message": self._who_is_your_ideal_partner_error_message,
                 "expected_counts_tuple": (5, 2, 0, 0),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -856,7 +839,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 3,
                 "expected_error_message": self._height_must_be_from_1_to_450_cm_error_message,
-                # "expected_error_messages": ["['Height must be from 1 to 450 cm.']"], # ~~~~ TODO
                 "expected_counts_tuple": (450, 22, 0, 5),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -869,7 +851,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 5,
                 "expected_error_message": self._your_diet_is_required_error_message,
-                # "expected_error_messages": ["['Your diet is required.']"], # ~~~~ TODO
                 "expected_counts_tuple": (3, 1, 0, 26),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -882,7 +863,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 5,
                 "expected_error_message": self._your_smoking_status_is_required_error_message,
-                # "expected_error_messages": ["['Your smoking status is required.']"], # ~~~~ TODO
                 "expected_counts_tuple": (3, 1, 0, 26),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -895,7 +875,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 6,
                 "expected_error_message": self._your_relationship_status_is_required_error_message,
-                # "expected_error_messages": ["['Your relationship status is required.']"], # ~~~~ TODO
                 "expected_counts_tuple": (9, 1, 0, 26),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -908,7 +887,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
                 "expected_error_message": self._gender_to_match_is_required_error_message,
-                # "expected_error_messages": ["['Gender to match is required.']"], # ~~~~ TODO
                 "expected_counts_tuple": (23, 153, 0, 39),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -921,7 +899,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
                 "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
-                # "expected_error_messages": ["['Minimal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
                 "expected_counts_tuple": (181, 20, 0, 6),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -934,7 +911,6 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
                 "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
-                # "expected_error_messages": ["['Maximal age to match must be from 0 to 180 years.']"], # ~~~~ TODO
                 "expected_counts_tuple": (181, 20, 0, 6),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
@@ -1048,92 +1024,6 @@ if (django_settings.LOGIN_ENABLED):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='he')
-
-        # ~~~~ TODO: remove all the following functions. These tests fail only in Hebrew but pass in English.
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_photo(self):
-            super().test_validate_profile_and_activate_exception_on_photo()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_profile_description(self):
-            super().test_validate_profile_and_activate_exception_on_profile_description()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_city(self):
-            super().test_validate_profile_and_activate_exception_on_city()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_children(self):
-            super().test_validate_profile_and_activate_exception_on_children()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_more_children(self):
-            super().test_validate_profile_and_activate_exception_on_more_children()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_match_description(self):
-            super().test_validate_profile_and_activate_exception_on_match_description()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_height(self):
-            super().test_validate_profile_and_activate_exception_on_height()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_diet(self):
-            super().test_validate_profile_and_activate_exception_on_diet()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_smoking_status(self):
-            super().test_validate_profile_and_activate_exception_on_smoking_status()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_relationship_status(self):
-            super().test_validate_profile_and_activate_exception_on_relationship_status()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_gender_to_match(self):
-            super().test_validate_profile_and_activate_exception_on_gender_to_match()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
-            super().test_validate_profile_and_activate_exception_on_min_age_to_match()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
-            super().test_validate_profile_and_activate_exception_on_max_age_to_match()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save()
-
-        @unittest.expectedFailure # ~~~~ TODO: fix this test!
-        def test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
-            super().test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save()
 
 
     @only_on_speedy_match
