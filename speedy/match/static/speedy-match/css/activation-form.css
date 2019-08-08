@@ -169,8 +169,9 @@ body.bidi-rtl .widget-group span.choice-text {
     padding-left: 20px;
 }
 
+form p strong,
 form span strong,
-form p strong {
+ul.errorlist li {
     font-size: 22px;
 }
 
