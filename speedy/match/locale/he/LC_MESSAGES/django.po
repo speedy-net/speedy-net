@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 15:49+0300\n"
+"POT-Creation-Date: 2019-08-08 16:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -390,10 +390,9 @@ msgstr "הרגלי העישון שלך נדרשים."
 msgid "Your relationship status is required."
 msgstr "סטטוס מערכת היחסים שלך נדרש"
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:125 .\accounts\validators.py:44
-#: .\accounts\validators.py:64
-msgid "Please write some text in this field."
-msgstr "אנא כתוב/י טקסט בשדה זה."
+#: .\accounts\forms.py:113 .\accounts\validators.py:44
+msgid "Please write a few words about yourself."
+msgstr "אנא כתוב/י כמה מילים על עצמך."
 
 #: .\accounts\forms.py:116 .\accounts\validators.py:49
 msgid "Please write where you live."
@@ -408,6 +407,10 @@ msgstr "יש לך ילדים? כמה?"
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
+
+#: .\accounts\forms.py:125 .\accounts\validators.py:64
+msgid "Who is your ideal partner?"
+msgstr "מיהו בן או בת הזוג האידיאלי/ת שלך?"
 
 #: .\accounts\forms.py:128 .\accounts\validators.py:89
 msgid "Gender to match is required."
@@ -902,6 +905,9 @@ msgstr "דרגת התאמה"
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
+
+#~ msgid "Please write some text in this field."
+#~ msgstr "אנא כתוב/י טקסט בשדה זה."
 
 #~ msgid "Please select diet match."
 #~ msgstr "אנא בחר/י התאמת תזונה."

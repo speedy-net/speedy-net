@@ -110,7 +110,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 'required': _("Your relationship status is required."),
             },
             **{to_attribute(name='profile_description', language_code=language_code): {
-                'required': _("Please write some text in this field."),
+                'required': _("Please write a few words about yourself."),
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='city', language_code=language_code): {
                 'required': _("Please write where you live."),
@@ -122,7 +122,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 'required': _("Do you want (more) children?"),
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='match_description', language_code=language_code): {
-                'required': _("Please write some text in this field."),
+                'required': _("Who is your ideal partner?"),
             } for language_code, language_name in django_settings.LANGUAGES},
             'gender_to_match': {
                 'required': _("Gender to match is required."),

@@ -41,7 +41,7 @@ def validate_photo(photo):
 
 def validate_profile_description(profile_description):
     if (not (string_is_not_empty(profile_description))):
-        raise ValidationError(_("Please write some text in this field."))
+        raise ValidationError(_("Please write a few words about yourself."))
 
 
 def validate_city(city):
@@ -61,7 +61,7 @@ def validate_more_children(more_children):
 
 def validate_match_description(match_description):
     if (not (string_is_not_empty(match_description))):
-        raise ValidationError(_("Please write some text in this field."))
+        raise ValidationError(_("Who is your ideal partner?"))
 
 
 def validate_height(height):

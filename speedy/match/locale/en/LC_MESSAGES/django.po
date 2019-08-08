@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 15:49+0300\n"
+"POT-Creation-Date: 2019-08-08 16:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -385,9 +385,8 @@ msgstr ""
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:125 .\accounts\validators.py:44
-#: .\accounts\validators.py:64
-msgid "Please write some text in this field."
+#: .\accounts\forms.py:113 .\accounts\validators.py:44
+msgid "Please write a few words about yourself."
 msgstr ""
 
 #: .\accounts\forms.py:116 .\accounts\validators.py:49
@@ -402,6 +401,10 @@ msgstr ""
 #: .\accounts\forms.py:122 .\accounts\models.py:102 .\accounts\validators.py:59
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\accounts\forms.py:125 .\accounts\validators.py:64
+msgid "Who is your ideal partner?"
 msgstr ""
 
 #: .\accounts\forms.py:128 .\accounts\validators.py:89
