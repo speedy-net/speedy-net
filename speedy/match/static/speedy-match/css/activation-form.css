@@ -169,6 +169,11 @@ body.bidi-rtl .widget-group span.choice-text {
     padding-left: 20px;
 }
 
+form span strong,
+form p strong {
+    font-size: 22px;
+}
+
 @media screen and (max-width: 767px) {
     /*
     .page-header {

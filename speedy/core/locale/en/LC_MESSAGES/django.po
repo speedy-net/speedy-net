@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-07 10:07+0300\n"
+"POT-Creation-Date: 2019-08-08 10:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -836,7 +836,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:664
+#: .\__translations\__translations.py:9 .\accounts\models.py:673
 msgid "email address"
 msgstr ""
 
@@ -1780,7 +1780,7 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:431 .\accounts\models.py:648 .\blocks\models.py:11
+#: .\accounts\models.py:431 .\accounts\models.py:657 .\blocks\models.py:11
 msgid "user"
 msgstr ""
 
@@ -1792,39 +1792,39 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:649
+#: .\accounts\models.py:658
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:650
+#: .\accounts\models.py:659
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:651
+#: .\accounts\models.py:660
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:652
+#: .\accounts\models.py:661
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:653
+#: .\accounts\models.py:662
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:654
+#: .\accounts\models.py:663
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:674
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:732
+#: .\accounts\models.py:741
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:733
+#: .\accounts\models.py:742
 msgid "last visit"
 msgstr ""
 

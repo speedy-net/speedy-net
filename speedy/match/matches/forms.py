@@ -20,6 +20,7 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
+        self.helper.error_text_inline = False
         # split into two columns
         custom_field_names = ('gender_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
         self.helper.add_layout(Div(*[

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-07 10:06+0300\n"
+"POT-Creation-Date: 2019-08-08 10:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -604,7 +604,7 @@ msgstr ""
 msgid "Mutual Likes"
 msgstr ""
 
-#: .\matches\views.py:68 .\matches\views.py:82
+#: .\matches\views.py:74 .\matches\views.py:88
 msgid "Your match settings were saved."
 msgstr ""
 
@@ -791,28 +791,28 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
 
-#: .\templates\matches\match_list.html:32
+#: .\templates\matches\match_list.html:31
 msgid "Update matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:43
+#: .\templates\matches\match_list.html:39
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:54
+#: .\templates\matches\match_list.html:50
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:64
+#: .\templates\matches\match_list.html:60
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:71
+#: .\templates\matches\match_list.html:67
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:87
+#: .\templates\matches\match_list.html:94
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."

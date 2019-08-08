@@ -16,8 +16,8 @@
             </label>
         {% endif %}
 
-        {{ field }}
-
         {% include 'bootstrap4/layout/help_text_and_errors.html' %}
+
+        {{ field }}
     </{% if tag %}{{ tag }}{% else %}div{% endif %}>
 {% endif %}

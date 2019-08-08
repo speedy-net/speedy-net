@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-07 10:06+0300\n"
+"POT-Creation-Date: 2019-08-08 10:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -519,11 +519,11 @@ msgstr "מין בן/בת הזוג שלך נדרש"
 
 #: .\accounts\validators.py:94
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "הגיל המינימלי לבן/בת הזוג חייב להיות בין 0 ל- 180 שנה."
+msgstr "הגיל המינימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה."
 
 #: .\accounts\validators.py:99
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "הגיל המקסימלי לבן/בת הזוג חייב להיות בין 0 ל- 180 שנה."
+msgstr "הגיל המקסימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה."
 
 #: .\accounts\validators.py:105
 msgid "Maximal age to match can't be less than minimal age to match."
@@ -610,7 +610,7 @@ msgstr "אנשים שעשו לך לייק"
 msgid "Mutual Likes"
 msgstr "לייקים הדדיים"
 
-#: .\matches\views.py:68 .\matches\views.py:82
+#: .\matches\views.py:74 .\matches\views.py:88
 msgid "Your match settings were saved."
 msgstr "הגדרת ההתאמות שלך נשמרה."
 
@@ -823,28 +823,28 @@ msgstr ""
 "כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי מץ' "
 "למצוא בני זוג מתאימים, זה לוקח רק כמה דקות."
 
-#: .\templates\matches\match_list.html:32
+#: .\templates\matches\match_list.html:31
 msgid "Update matches"
 msgstr "עדכון התאמות"
 
-#: .\templates\matches\match_list.html:43
+#: .\templates\matches\match_list.html:39
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "תזונה"
 
-#: .\templates\matches\match_list.html:54
+#: .\templates\matches\match_list.html:50
 msgid "Age:"
 msgstr "גיל:"
 
-#: .\templates\matches\match_list.html:64
+#: .\templates\matches\match_list.html:60
 msgid "Refresh"
 msgstr "עדכון"
 
-#: .\templates\matches\match_list.html:71
+#: .\templates\matches\match_list.html:67
 msgid "Add more options"
 msgstr "הוסף/י עוד אפשרויות"
 
-#: .\templates\matches\match_list.html:87
+#: .\templates\matches\match_list.html:94
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
