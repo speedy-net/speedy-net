@@ -60,10 +60,10 @@
                             {% endif %}
                             {% for field in form %}
                                 <div class="activation-form-field text-left flip">
-                                    {{ field.errors }}
                                     <div>
                                         {{ field.label_tag }}
                                     </div>
+                                    {{ field.errors }}
                                     {{ field }}
                                     {{ field.help_text }}
                                 </div>

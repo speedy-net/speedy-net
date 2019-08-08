@@ -71,10 +71,10 @@
                     {% for field in form %}
                         {% if field.name in form_hidden_fields %}
                             <div class="activation-form-field text-left flip">
-                                {{ field.errors }}
                                 <div>
                                     {{ field.label_tag }}
                                 </div>
+                                {{ field.errors }}
                                 {{ field }}
                                 {{ field.help_text }}
                             </div>
