@@ -116,6 +116,9 @@ class SiteProfile(SiteProfileBase):
     activation_step = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_('Activation step'), default=2),
     )
+    number_of_matches = TranslatedField(
+        field=models.PositiveSmallIntegerField(verbose_name=_("Number of matches on last user's search"), default=None, blank=True, null=True),
+    )
 
     objects = SiteProfileManager()
 

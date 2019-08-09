@@ -66,6 +66,9 @@ class SiteProfileManager(BaseManager):
                 matches_list.append(other_user)
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
+        # Save number of matches in this language in user's profile.
+        user_profile.number_of_matches = len(matches_list)
+        user_profile.save()
         return matches_list
 
 

@@ -35,16 +35,40 @@
                     <td>{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_he }}</td>
                 </tr>
                 <tr>
-                    <td>Last visit Speedy Net</td>
+                    <td>Speedy Net last visit</td>
                     <td>{{ user.speedy_net_profile.last_visit }}</td>
                 </tr>
                 <tr>
-                    <td>Last visit Speedy Match</td>
+                    <td>Speedy Match last visit</td>
                     <td>{{ user.speedy_match_profile.last_visit }}</td>
                 </tr>
                 <tr>
                     <td>Date of birth</td>
                     <td>{{ user.date_of_birth }}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{ user.gender }},{{ user.get_gender }}</td>
+                </tr>
+                <tr>
+                    <td>Diet</td>
+                    <td>{{ user.diet }},{{ user.get_diet|default:"Unknown" }}</td>
+                </tr>
+                <tr>
+                    <td>Smoking status</td>
+                    <td>{{ user.smoking_status }},{{ user.get_smoking_status|default:"Unknown" }}</td>
+                </tr>
+                <tr>
+                    <td>Relationship status</td>
+                    <td>{{ user.relationship_status }},{{ user.get_relationship_status|default:"Unknown" }}</td>
+                </tr>
+                <tr>
+                    <td>Speedy Match - Gender to match</td>
+                    <td>{{ user.speedy_match_profile.gender_to_match }},{{ user.speedy_match_profile.get_match_gender }}</td>
+                </tr>
+                <tr>
+                    <td>Speedy Match - Number of matches on last user's search (en,he)</td>
+                    <td>{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
                 </tr>
             </table>
         </div>
