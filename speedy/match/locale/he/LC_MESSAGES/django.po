@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 07:35+0300\n"
+"POT-Creation-Date: 2019-08-09 15:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -524,6 +524,10 @@ msgstr "התאמת הרגלי עישון"
 #: .\accounts\models.py:115
 msgid "Relationship status to match"
 msgstr "התאמת סטטוס מערכת יחסים"
+
+#: .\accounts\models.py:117
+msgid "Activation step"
+msgstr "Activation step"
 
 #: .\accounts\models.py:147
 msgid "Speedy Match Profile"

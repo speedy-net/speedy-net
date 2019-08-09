@@ -114,7 +114,7 @@ class SiteProfile(SiteProfileBase):
     smoking_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Smoking status to match'), size=len(User.SMOKING_STATUS_VALID_VALUES), default=smoking_status_to_match_default.__func__, blank=True, null=True)
     relationship_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Relationship status to match'), size=len(User.RELATIONSHIP_STATUS_VALID_VALUES), default=relationship_status_to_match_default.__func__, blank=True, null=True)
     activation_step = TranslatedField(
-        field=models.PositiveSmallIntegerField(default=2),
+        field=models.PositiveSmallIntegerField(verbose_name=_('Activation step'), default=2),
     )
 
     objects = SiteProfileManager()

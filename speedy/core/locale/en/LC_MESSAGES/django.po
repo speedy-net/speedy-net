@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 07:35+0300\n"
+"POT-Creation-Date: 2019-08-09 15:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2103,11 +2103,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:148
+#: .\settings\base.py:149
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:149
+#: .\settings\base.py:150
 msgid "Hebrew"
 msgstr ""
 
