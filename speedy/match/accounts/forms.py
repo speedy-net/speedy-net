@@ -101,19 +101,19 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 'required': _("Your height is required."),
             },
             'diet': {
-                'required': _("Your diet is required."),
+                'required': _("Your diet is required."),  # ~~~~ TODO: not working.
             },
             'smoking_status': {
-                'required': _("Your smoking status is required."),
+                'required': _("Your smoking status is required."),  # ~~~~ TODO: not working.
             },
             'relationship_status': {
-                'required': _("Your relationship status is required."),
+                'required': _("Your relationship status is required."),  # ~~~~ TODO: not working.
             },
             **{to_attribute(name='profile_description', language_code=language_code): {
                 'required': _("Please write a few words about yourself."),
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='city', language_code=language_code): {
-                'required': _("Please write where you live."),
+                'required': _("Please write where you live."),  # ~~~~ TODO: not working.
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='children', language_code=language_code): {
                 'required': _("Do you have children? How many?"),
