@@ -79,7 +79,7 @@
                         <td>Email addresses</td>
                         <td>
                             {% for email in user.email_addresses.all %}
-                                {{ email.email }}, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}
+                                {{ email.email }}, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
                                 {% if not forloop.first %}<br />{% endif %}
                             {% empty %}
                                 (none)
