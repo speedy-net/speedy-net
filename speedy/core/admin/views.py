@@ -19,8 +19,10 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
+        show_details = not(self.request.GET.get('details') == "none")
         cd.update({
             'users_list': cd['object_list'],
+            'show_details': show_details,
         })
         return cd
 
