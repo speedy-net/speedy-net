@@ -12,6 +12,29 @@
                     {{ user.name }}, {{ user.get_age }}, {{ user.get_diet }}
                 </h5>
             </a>
+            <br />
+            <table>
+                <tr>
+                    <td>Registered on </td>
+                    <td>{{ user.date_created|date }}</td>
+                </tr>
+                <tr>
+                    <td>Has confirmed email address </td>
+                    <td>{{ user.has_confirmed_email }}</td>
+                </tr>
+                <tr>
+                    <td>Active on Speedy Net </td>
+                    <td>{{ user.is_active }}&amp;{{ user.speedy_net_profile.is_active }}</td>
+                </tr>
+                <tr>
+                    <td>Active languages on Speedy Match </td>
+                    <td>{{ user.speedy_match_profile.active_languages }}</td>
+                </tr>
+                <tr>
+                    <td>Date of birth </td>
+                    <td>{{ user.date_of_birth }}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
