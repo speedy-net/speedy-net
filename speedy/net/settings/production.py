@@ -3,4 +3,6 @@ from speedy.core.settings.production_utils import activate_production
 
 activate_production(settings=globals())
 
+DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
+SERVER_EMAIL = 'webmaster+production-server@speedy.net'
 

@@ -27,6 +27,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
+SERVER_EMAIL = 'webmaster+server@speedy.net'
 
 ADMINS = MANAGERS = (
     ('Uri Rodberg', 'webmaster@speedy.net'),

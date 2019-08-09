@@ -6,6 +6,7 @@ def activate_staging(settings):
     )
     settings.update({
         'DEFAULT_FROM_EMAIL': 'webmaster@speedy.net.2.speedy-technologies.com',
+        'SERVER_EMAIL': 'webmaster+staging-server@speedy.net.2.speedy-technologies.com',
         'ADMINS': admins,
         'MANAGERS': admins,
         'DEBUG': True,
