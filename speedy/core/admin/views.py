@@ -9,7 +9,7 @@ from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     template_name = 'admin/users_list.html'
-    page_size = 24
+    page_size = 96
     paginate_by = page_size
 
     def get_queryset(self):
