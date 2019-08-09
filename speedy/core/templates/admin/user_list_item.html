@@ -74,6 +74,17 @@
                     <td>Speedy Match - Number of matches on last user's search (en,he)</td>
                     <td>{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
                 </tr>
+                <tr>
+                    <td>Email addresses</td>
+                    <td>
+                        {% for email in user.email_addresses.all %}
+                            {{ email.email }}, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}
+                            {% if not forloop.first %}<br />{% endif %}
+                        {% empty %}
+                            (none)
+                        {% endfor %}
+                    <td>
+                </tr>
             </table>
         </div>
     </div>
