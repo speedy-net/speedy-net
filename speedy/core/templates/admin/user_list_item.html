@@ -17,7 +17,7 @@
                 <table>
                     <tr>
                         <td>Registered on</td>
-                        <td>{{ user.date_created|date }}</td>
+                        <td><span style="color: black; font-weight: bold">{{ user.date_created|date }}</span></td>
                     </tr>
                     <tr>
                         <td>Has confirmed email address</td>
@@ -45,7 +45,7 @@
                     </tr>
                     <tr>
                         <td>Date of birth</td>
-                        <td>{{ user.date_of_birth }}</td>
+                        <td><span style="color: blue; font-weight: bold">{{ user.date_of_birth }}</span></td>
                     </tr>
                     <tr>
                         <td>Gender</td>
@@ -53,15 +53,15 @@
                     </tr>
                     <tr>
                         <td>Diet</td>
-                        <td>{{ user.diet }},{{ user.get_diet|default:"Unknown" }}</td>
+                        <td>{{ user.diet }},<span style="color: blue; font-weight: bold">{{ user.get_diet|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <td>Smoking status</td>
-                        <td>{{ user.smoking_status }},{{ user.get_smoking_status|default:"Unknown" }}</td>
+                        <td>{{ user.smoking_status }},<span style="color: blue; font-weight: bold">{{ user.get_smoking_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <td>Relationship status</td>
-                        <td>{{ user.relationship_status }},{{ user.get_relationship_status|default:"Unknown" }}</td>
+                        <td>{{ user.relationship_status }},<span style="color: blue; font-weight: bold">{{ user.get_relationship_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <td>Speedy Match - Gender to match</td>
@@ -79,7 +79,7 @@
                         <td>Email addresses</td>
                         <td>
                             {% for email in user.email_addresses.all %}
-                                {{ email.email }}, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
+                                <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
                                 {% if not forloop.first %}<br />{% endif %}
                             {% empty %}
                                 (none)
