@@ -69,7 +69,7 @@
                 </div>
                 <div class="hidden">
                     {% for field in form %}
-                        {% if field.name in form_hidden_fields %}
+                        {% if field.name in form.get_hidden_fields %}
                             <div class="activation-form-field text-left flip">
                                 <div>
                                     {{ field.label_tag }}
