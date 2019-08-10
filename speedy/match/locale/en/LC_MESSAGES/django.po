@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-10 07:41+0300\n"
+"POT-Creation-Date: 2019-08-10 08:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,103 +276,133 @@ msgctxt "other"
 msgid "Add profile picture"
 msgstr ""
 
-#: .\__translations\__translations.py:10 .\__translations\__translations.py:34
-msgctxt "female"
-msgid "Do you want (more) children?"
-msgstr ""
-
-#: .\__translations\__translations.py:11 .\__translations\__translations.py:35
-msgctxt "male"
-msgid "Do you want (more) children?"
-msgstr ""
-
-#: .\__translations\__translations.py:12 .\__translations\__translations.py:36
-msgctxt "other"
-msgid "Do you want (more) children?"
-msgstr ""
-
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:10
 #: .\templates\accounts\edit_profile\activate.html:114
 msgctxt "female"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:11
 #: .\templates\accounts\edit_profile\activate.html:120
 msgctxt "male"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:12
 #: .\templates\accounts\edit_profile\activate.html:127
 msgctxt "other"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:14
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:15
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:20
+#: .\__translations\__translations.py:16
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:23
+#: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:20
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:26
+#: .\__translations\__translations.py:22
 msgctxt "female"
 msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:23
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:24
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:26
+msgctxt "female"
+msgid "Please write where you live."
 msgstr ""
 
 #: .\__translations\__translations.py:27
 msgctxt "male"
-msgid "Please write a few words about yourself."
+msgid "Please write where you live."
 msgstr ""
 
 #: .\__translations\__translations.py:28
 msgctxt "other"
-msgid "Please write a few words about yourself."
+msgid "Please write where you live."
 msgstr ""
 
 #: .\__translations\__translations.py:30
 msgctxt "female"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\__translations\__translations.py:31
 msgctxt "male"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\__translations\__translations.py:32
 msgctxt "other"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
+msgstr ""
+
+#: .\__translations\__translations.py:34
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:35
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:36
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr ""
+
+#: .\__translations\__translations.py:38
+msgctxt "female"
+msgid "Who is your ideal partner?"
+msgstr ""
+
+#: .\__translations\__translations.py:39
+msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr ""
+
+#: .\__translations\__translations.py:40
+msgctxt "other"
+msgid "Who is your ideal partner?"
 msgstr ""
 
 #: .\accounts\apps.py:7
@@ -465,7 +495,7 @@ msgstr ""
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:181 .\accounts\models.py:107
+#: .\accounts\forms.py:184 .\accounts\models.py:107
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""

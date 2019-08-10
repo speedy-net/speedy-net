@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-10 07:41+0300\n"
+"POT-Creation-Date: 2019-08-10 08:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,19 @@ msgstr "פרופילים ספידי קומפוזר"
 
 #: .\compose\models.py:11 .\compose\models.py:32
 msgid "chords template"
-msgstr ""
+msgstr "chords template"
 
 #: .\compose\models.py:12
 msgid "chords templates"
-msgstr ""
+msgstr "chords templates"
 
 #: .\compose\models.py:18 .\compose\models.py:33
 msgid "accompaniment"
-msgstr ""
+msgstr "accompaniment"
 
 #: .\compose\models.py:19
 msgid "accompaniments"
-msgstr ""
+msgstr "accompaniments"
 
 #: .\compose\models.py:23
 msgid "user"
@@ -54,27 +54,27 @@ msgstr "משתמש/ת"
 
 #: .\compose\models.py:26 .\compose\models.py:31
 msgid "folder"
-msgstr ""
+msgstr "folder"
 
 #: .\compose\models.py:27
 msgid "folders"
-msgstr ""
+msgstr "folders"
 
 #: .\compose\models.py:34
 msgid "tempo"
-msgstr ""
+msgstr "tempo"
 
 #: .\compose\models.py:35
 msgid "public"
-msgstr ""
+msgstr "public"
 
 #: .\compose\models.py:38
 msgid "composition"
-msgstr ""
+msgstr "composition"
 
 #: .\compose\models.py:39
 msgid "compositions"
-msgstr ""
+msgstr "compositions"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"
