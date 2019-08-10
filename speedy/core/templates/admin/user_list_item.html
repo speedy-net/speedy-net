@@ -80,7 +80,7 @@
                         <td>
                             {% for email in user.email_addresses.all %}
                                 <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
-                                {% if not forloop.first %}<br />{% endif %}
+                                {% if not forloop.last %}<br />{% endif %}
                             {% empty %}
                                 (none)
                             {% endfor %}
