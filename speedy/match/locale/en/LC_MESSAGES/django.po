@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 16:52+0300\n"
+"POT-Creation-Date: 2019-08-10 07:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,17 +276,17 @@ msgctxt "other"
 msgid "Add profile picture"
 msgstr ""
 
-#: .\__translations\__translations.py:10
+#: .\__translations\__translations.py:10 .\__translations\__translations.py:34
 msgctxt "female"
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:11 .\__translations\__translations.py:35
 msgctxt "male"
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:12 .\__translations\__translations.py:36
 msgctxt "other"
 msgid "Do you want (more) children?"
 msgstr ""
@@ -345,6 +345,36 @@ msgctxt "other"
 msgid "Maximal age to match"
 msgstr ""
 
+#: .\__translations\__translations.py:26
+msgctxt "female"
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:27
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:28
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:30
+msgctxt "female"
+msgid "Please write where you live."
+msgstr ""
+
+#: .\__translations\__translations.py:31
+msgctxt "male"
+msgid "Please write where you live."
+msgstr ""
+
+#: .\__translations\__translations.py:32
+msgctxt "other"
+msgid "Please write where you live."
+msgstr ""
+
 #: .\accounts\apps.py:7
 msgid "Speedy Match Accounts"
 msgstr ""
@@ -353,85 +383,89 @@ msgstr ""
 msgid "Add profile picture"
 msgstr ""
 
+#: .\accounts\forms.py:58 .\accounts\forms.py:102 .\accounts\validators.py:39
+msgid "A profile picture is required."
+msgstr ""
+
 #: .\accounts\forms.py:59
 msgid "My diet"
+msgstr ""
+
+#: .\accounts\forms.py:59 .\accounts\forms.py:108 .\accounts\validators.py:74
+msgid "Your diet is required."
 msgstr ""
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
 msgstr ""
 
+#: .\accounts\forms.py:60 .\accounts\forms.py:111 .\accounts\validators.py:79
+msgid "Your smoking status is required."
+msgstr ""
+
 #: .\accounts\forms.py:61
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:63 .\templates\profiles\user_extra_info_widget.html:22
-msgid "City or locality"
-msgstr ""
-
-#: .\accounts\forms.py:101
-msgid "Your height is required."
-msgstr ""
-
-#: .\accounts\forms.py:104 .\accounts\validators.py:74
-msgid "Your diet is required."
-msgstr ""
-
-#: .\accounts\forms.py:107 .\accounts\validators.py:79
-msgid "Your smoking status is required."
-msgstr ""
-
-#: .\accounts\forms.py:110 .\accounts\validators.py:84
+#: .\accounts\forms.py:61 .\accounts\forms.py:114 .\accounts\validators.py:84
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:113 .\accounts\validators.py:44
-msgid "Please write a few words about yourself."
+#: .\accounts\forms.py:62 .\accounts\forms.py:132 .\accounts\validators.py:89
+msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:116 .\accounts\validators.py:49
+#: .\accounts\forms.py:64 .\templates\profiles\user_extra_info_widget.html:22
+msgid "City or locality"
+msgstr ""
+
+#: .\accounts\forms.py:64 .\accounts\forms.py:120 .\accounts\validators.py:49
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:119 .\accounts\models.py:99 .\accounts\validators.py:54
+#: .\accounts\forms.py:105
+msgid "Your height is required."
+msgstr ""
+
+#: .\accounts\forms.py:117 .\accounts\validators.py:44
+msgid "Please write a few words about yourself."
+msgstr ""
+
+#: .\accounts\forms.py:123 .\accounts\models.py:99 .\accounts\validators.py:54
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:122 .\accounts\models.py:102 .\accounts\validators.py:59
+#: .\accounts\forms.py:126 .\accounts\models.py:102 .\accounts\validators.py:59
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:125 .\accounts\validators.py:64
+#: .\accounts\forms.py:129 .\accounts\validators.py:64
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:128 .\accounts\validators.py:89
-msgid "Gender to match is required."
-msgstr ""
-
-#: .\accounts\forms.py:131
+#: .\accounts\forms.py:135
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:134
+#: .\accounts\forms.py:138
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:137 .\accounts\validators.py:111
+#: .\accounts\forms.py:141 .\accounts\validators.py:111
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:140 .\accounts\validators.py:119
+#: .\accounts\forms.py:144 .\accounts\validators.py:119
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:143 .\accounts\validators.py:127
+#: .\accounts\forms.py:147 .\accounts\validators.py:127
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:173 .\accounts\models.py:107
+#: .\accounts\forms.py:181 .\accounts\models.py:107
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -538,10 +572,6 @@ msgstr ""
 
 #: .\accounts\models.py:224 .\templates\accounts\edit_profile\activate.html:28
 msgid "Please confirm your email address."
-msgstr ""
-
-#: .\accounts\validators.py:39
-msgid "A profile picture is required."
 msgstr ""
 
 #: .\accounts\validators.py:69

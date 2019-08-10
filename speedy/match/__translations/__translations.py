@@ -23,4 +23,16 @@ pgettext_lazy(context="female", message='Maximal age to match')
 pgettext_lazy(context="male", message='Maximal age to match')
 pgettext_lazy(context="other", message='Maximal age to match')
 
+pgettext_lazy(context="female", message="Please write a few words about yourself.")
+pgettext_lazy(context="male", message="Please write a few words about yourself.")
+pgettext_lazy(context="other", message="Please write a few words about yourself.")
+
+pgettext_lazy(context="female", message="Please write where you live.")
+pgettext_lazy(context="male", message="Please write where you live.")
+pgettext_lazy(context="other", message="Please write where you live.")
+
+pgettext_lazy(context="female", message="Do you want (more) children?")
+pgettext_lazy(context="male", message="Do you want (more) children?")
+pgettext_lazy(context="other", message="Do you want (more) children?")
+
 
