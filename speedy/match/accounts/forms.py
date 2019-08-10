@@ -55,12 +55,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
     }
-    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'))
-    diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'))
-    smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'))
-    relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'))
+    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
+    diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
+    smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
+    relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
     # ~~~~ TODO: define all the languages and not just hard-code languages like below.
-    _city = forms.CharField(label=_('City or locality'), max_length=120)
+    _city = forms.CharField(label=_('City or locality'), max_length=120, error_messages={'required': _("Please write where you live.")})
     city_en = _city
     city_he = _city
 
@@ -97,23 +97,26 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             'relationship_status_match': CustomJsonWidget(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
         }
         error_messages = {
+            'photo': {
+                'required': _("A profile picture is required."),
+            },
             'height': {
                 'required': _("Your height is required."),
             },
             'diet': {
-                'required': _("Your diet is required."),  # ~~~~ TODO: not working.
+                'required': _("Your diet is required."),
             },
             'smoking_status': {
-                'required': _("Your smoking status is required."),  # ~~~~ TODO: not working.
+                'required': _("Your smoking status is required."),
             },
             'relationship_status': {
-                'required': _("Your relationship status is required."),  # ~~~~ TODO: not working.
+                'required': _("Your relationship status is required."),
             },
             **{to_attribute(name='profile_description', language_code=language_code): {
                 'required': _("Please write a few words about yourself."),
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='city', language_code=language_code): {
-                'required': _("Please write where you live."),  # ~~~~ TODO: not working.
+                'required': _("Please write where you live."),
             } for language_code, language_name in django_settings.LANGUAGES},
             **{to_attribute(name='children', language_code=language_code): {
                 'required': _("Do you have children? How many?"),
@@ -125,7 +128,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 'required': _("Who is your ideal partner?"),
             } for language_code, language_name in django_settings.LANGUAGES},
             'gender_to_match': {
-                'required': _("Gender to match is required."),  # ~~~~ TODO: not working.
+                'required': _("Gender to match is required."),
             },
             'min_age_to_match': {
                 'required': _("Minimal age to match is required."),
@@ -149,7 +152,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.delete_unneeded_fields()
         if ('gender_to_match' in self.fields):
-            self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple)
+            self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")})
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
             self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
