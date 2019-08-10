@@ -11,6 +11,7 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     template_name = 'admin/users_list.html'
     page_size = 96
     paginate_by = page_size
+    show_details = False
 
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
@@ -19,11 +20,14 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
-        show_details = not(self.request.GET.get('details') == "none")
         cd.update({
             'users_list': cd['object_list'],
-            'show_details': show_details,
+            'show_details': self.show_details,
         })
         return cd
+
+
+class AdminUsersWithDetailsListView(AdminUsersListView):
+    show_details = True
 
 

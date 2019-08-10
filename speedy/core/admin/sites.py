@@ -9,6 +9,7 @@ class AdminSite(DjangoAdminSite):
         urls = super().get_urls()
         urls += [
             url(regex=r'^users/$', view=views.AdminUsersListView.as_view(), name='users_list'),
+            url(regex=r'^users/with-details/$', view=views.AdminUsersWithDetailsListView.as_view(), name='users_with_details_list'),
         ]
         return urls
 
