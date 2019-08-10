@@ -1,6 +1,6 @@
 # python==3.6
 Django==1.11.23
-django-crispy-forms==1.6.1 # Newer versions don't work with Speedy Net.
+django-crispy-forms==1.7.2
 django-environ==0.4.5
 django-friendship==1.8.1
 django-translated-fields==0.8.0

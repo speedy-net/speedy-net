@@ -1497,7 +1497,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .invalid-feedback {
-  display: none;
+  /*display: none;*/
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
