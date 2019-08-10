@@ -104,6 +104,19 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_can_send_friendship_request(self):
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
+            friendship_request = self.second_user.friendship_requests_received.first()
+            self.assertEqual(first=friendship_request.from_user, second=self.first_user)
+            self.assertEqual(first=friendship_request.to_user, second=self.second_user)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message]) ###### TODO
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_can_send_friendship_request(self):
             r = self.client.post(path=self.page_url)
@@ -116,6 +129,22 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user.get_absolute_url())
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message]) ###### TODO
+
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_cannot_send_friendship_request_twice(self):
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
+            self.assertIsNone(obj=r.context)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_already_requested_error_message]) ###### TODO
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Friendship already requested"])#### # ~~~~ TODO: remove this line!
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_cannot_send_friendship_request_twice(self):
@@ -133,6 +162,20 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_already_requested_error_message]) ###### TODO
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Friendship already requested"])#### # ~~~~ TODO: remove this line!
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_cannot_send_friendship_request_to_a_friend(self):
+            self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            Friend.objects.add_friend(from_user=self.first_user, to_user=self.second_user).accept()
+            self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.first_user.friendship_requests_received.count(), second=0)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.first_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._users_are_already_friends_error_message]) ###### TODO
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users are already friends"])#### # ~~~~ TODO: remove this line!
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_cannot_send_friendship_request_to_a_friend(self):
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
@@ -147,6 +190,17 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._users_are_already_friends_error_message]) ###### TODO
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users are already friends"])#### # ~~~~ TODO: remove this line!
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_cannot_send_friendship_request_to_himself(self):
+            r = self.client.post(path=self.same_user_page_url)
+            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.first_user.friendship_requests_received.count(), second=0)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.first_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._users_cannot_be_friends_with_themselves_error_message]) ###### TODO
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users cannot be friends with themselves"])#### # ~~~~ TODO: remove this line!
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_cannot_send_friendship_request_to_himself(self):
             r = self.client.post(path=self.same_user_page_url)
@@ -157,6 +211,30 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.first_user.get_absolute_url())
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._users_cannot_be_friends_with_themselves_error_message]) ###### TODO
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=["Users cannot be friends with themselves"])#### # ~~~~ TODO: remove this line!
+
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+        def test______user_can_send_friendship_request_if_not_maximum(self):
+            # ~~~~ TODO: remove all the following lines.
+            self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
+
+            # print("test_user_can_send_friendship_request_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # print("test_user_can_send_friendship_request_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # ~~~~ TODO: remove all the above lines.
+
+            self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+            for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
+                Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
+            self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=1)
+            friendship_request = self.second_user.friendship_requests_received.first()
+            self.assertEqual(first=friendship_request.from_user, second=self.first_user)
+            self.assertEqual(first=friendship_request.to_user, second=self.second_user)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message]) ###### TODO
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
@@ -277,6 +355,17 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_that_has_received_request_can_accept_it(self):
+            self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
+            self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
+            self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user_friends_list_url)
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message]) ###### TODO
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_that_has_received_request_can_accept_it(self):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
@@ -287,6 +376,28 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user_friends_list_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message]) ###### TODO
+
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+        def test______user_that_has_received_request_can_accept_it_if_not_maximum(self):
+            # ~~~~ TODO: remove all the following lines.
+            self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
+
+            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # ~~~~ TODO: remove all the above lines.
+
+            self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+            for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
+                Friend.objects.add_friend(from_user=self.second_user, to_user=ActiveUserFactory()).accept()
+            self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
+            self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
+            self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user_friends_list_url)
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message]) ###### TODO
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
@@ -330,6 +441,16 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.second_user_friends_list_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.second_user.get_gender())]) #####-1 TODO
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+        def test______user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
+            # ~~~~ TODO: remove all the following lines.
+            self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
+
+            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
+            # ~~~~ TODO: remove all the above lines.
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
@@ -411,6 +532,18 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_that_has_received_request_can_reject_it(self):
+            self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
+            self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user_friends_list_url, status_code=302, target_status_code=200)
+            self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+            self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=0)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user_friends_list_url)
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_rejected_success_message]) ###### TODO
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_that_has_received_request_can_reject_it(self):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
@@ -453,6 +586,17 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
             self.assertIsNone(obj=r.context)
 
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______user_can_remove_other_user(self):
+            self.assertEqual(first=Friend.objects.count(), second=1 * 2)
+            self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.second_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=Friend.objects.count(), second=0)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_removed_this_user_from_friends_success_message]) ###### TODO
+
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_user_can_remove_other_user(self):
             self.assertEqual(first=Friend.objects.count(), second=1 * 2)
@@ -463,6 +607,17 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=self.second_user.get_absolute_url())
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_removed_this_user_from_friends_success_message]) ###### TODO
+
+        # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
+        def test______other_user_can_remove_first_user(self):
+            self.assertEqual(first=Friend.objects.count(), second=1 * 2)
+            self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
+            r = self.client.post(path=self.opposite_url)
+            self.assertRedirects(response=r, expected_url=self.first_user.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=Friend.objects.count(), second=0)
+            self.assertIsNone(obj=r.context)
+            r = self.client.get(path=self.second_user.get_absolute_url())
+            ##### self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_removed_this_user_from_friends_success_message]) ###### TODO
 
         @unittest.expectedFailure # ~~~~ TODO: fix this test!
         def test_other_user_can_remove_first_user(self):
