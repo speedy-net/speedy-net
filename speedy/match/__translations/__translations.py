@@ -7,10 +7,6 @@ pgettext_lazy(context="female", message='Add profile picture')
 pgettext_lazy(context="male", message='Add profile picture')
 pgettext_lazy(context="other", message='Add profile picture')
 
-pgettext_lazy(context="female", message='Do you want (more) children?')
-pgettext_lazy(context="male", message='Do you want (more) children?')
-pgettext_lazy(context="other", message='Do you want (more) children?')
-
 pgettext_lazy(context="female", message='My ideal match')
 pgettext_lazy(context="male", message='My ideal match')
 pgettext_lazy(context="other", message='My ideal match')
@@ -31,8 +27,16 @@ pgettext_lazy(context="female", message="Please write where you live.")
 pgettext_lazy(context="male", message="Please write where you live.")
 pgettext_lazy(context="other", message="Please write where you live.")
 
+pgettext_lazy(context="female", message="Do you have children? How many?")
+pgettext_lazy(context="male", message="Do you have children? How many?")
+pgettext_lazy(context="other", message="Do you have children? How many?")
+
 pgettext_lazy(context="female", message="Do you want (more) children?")
 pgettext_lazy(context="male", message="Do you want (more) children?")
 pgettext_lazy(context="other", message="Do you want (more) children?")
+
+pgettext_lazy(context="female", message="Who is your ideal partner?")
+pgettext_lazy(context="male", message="Who is your ideal partner?")
+pgettext_lazy(context="other", message="Who is your ideal partner?")
 
 

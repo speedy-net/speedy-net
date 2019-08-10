@@ -7,7 +7,7 @@ class SpeedyMatchAccountsLanguageMixin(object):
         _please_write_where_you_live_error_message_dict = {'en': "Please write where you live.", 'he': "אנא כתוב/י איפה את/ה גר/ה."}
         _do_you_have_children_how_many_error_message_dict = {'en': "Do you have children? How many?", 'he': "יש לך ילדים? כמה?"}
         _do_you_want_more_children_error_message_dict = {'en': "Do you want (more) children?", 'he': "את/ה רוצה (עוד) ילדים?"}
-        _who_is_your_ideal_partner_error_message_dict = {'en': "Who is your ideal partner?", 'he': "מיהו בן או בת הזוג האידיאלי/ת שלך?"}
+        _who_is_your_ideal_partner_error_message_dict = {'en': "Who is your ideal partner?", 'he': "מי בן או בת הזוג האידיאלי/ת שלך?"}
         _height_must_be_from_1_to_450_cm_error_message_dict = {'en': "Height must be from 1 to 450 cm.", 'he': 'הגובה חייב להיות בין 1 ל-450 ס"מ.'}
         _your_diet_is_required_error_message_dict = {'en': "Your diet is required.", 'he': "התזונה שלך נדרשת."}
         _your_smoking_status_is_required_error_message_dict = {'en': "Your smoking status is required.", 'he': "הרגלי העישון שלך נדרשים."}
