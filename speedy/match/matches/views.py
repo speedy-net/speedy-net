@@ -51,7 +51,7 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         cd = super().get_context_data(**kwargs)
         cd.update({
             'matches_list': self.page.object_list,
-            'form_hidden_fields': list(self.form_class().get_hidden_fields()),
+            'form_hidden_fields': list(self.get_form().get_hidden_fields()),
         })
         return cd
 
