@@ -59,6 +59,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
     relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
+    gender_to_match = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")})
     # ~~~~ TODO: define all the languages and not just hard-code languages like below.
     _city = forms.CharField(label=_('City or locality'), max_length=120, error_messages={'required': _("Please write where you live.")})
     city_en = _city
@@ -151,8 +152,6 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         self.delete_unneeded_fields()
-        if ('gender_to_match' in self.fields):
-            self.fields['gender_to_match'] = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")})
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
             self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
