@@ -331,15 +331,11 @@ if (django_settings.LOGIN_ENABLED):
                 self.first_name = "קורין"
                 self.last_name = "גדעון"
                 self.full_name = "קורין גדעון"
-                self.user_birth_date = "12 ספטמבר 1992"
-                # self.user_birth_date = "12 בספטמבר 1992" # ~~~~ TODO: this is the correct string!
-                self.user_birth_month_day = "12 ספטמבר"
-                # self.user_birth_month_day = "12 בספטמבר" # ~~~~ TODO: this is the correct string!
+                self.user_birth_date = "12 בספטמבר 1992"
+                self.user_birth_month_day = "12 בספטמבר"
                 self.user_birth_year = "1992"
-                self.not_user_birth_date = "12 ספטמבר 1990"
-                # self.not_user_birth_date = "12 בספטמבר 1990" # ~~~~ TODO: this is the correct string!
-                self.not_user_birth_month_day = "21 ספטמבר"
-                # self.user_birth_month_day = "21 בספטמבר" # ~~~~ TODO: this is the correct string!
+                self.not_user_birth_date = "12 בספטמבר 1990"
+                self.not_user_birth_month_day = "21 בספטמבר"
                 self.expected_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "קורין גדעון / ספידי נט [אלפא]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "קורין / ספידי מץ' [אלפא]",
@@ -351,15 +347,11 @@ if (django_settings.LOGIN_ENABLED):
                 self.first_name = "ג'ניפר"
                 self.last_name = "קונלי"
                 self.full_name = "ג'ניפר קונלי"
-                self.user_birth_date = "31 ינואר 1978"
-                # self.user_birth_date = "31 בינואר 1978" # ~~~~ TODO: this is the correct string!
-                self.user_birth_month_day = "31 ינואר"
-                # self.user_birth_month_day = "31 בינואר" # ~~~~ TODO: this is the correct string!
+                self.user_birth_date = "31 בינואר 1978"
+                self.user_birth_month_day = "31 בינואר"
                 self.user_birth_year = "1978"
-                self.not_user_birth_date = "31 ינואר 1990"
-                # self.not_user_birth_date = "31 בינואר 1990" # ~~~~ TODO: this is the correct string!
-                self.not_user_birth_month_day = "30 ינואר"
-                # self.user_birth_month_day = "30 בינואר" # ~~~~ TODO: this is the correct string!
+                self.not_user_birth_date = "31 בינואר 1990"
+                self.not_user_birth_month_day = "30 בינואר"
                 self.expected_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "ג'ניפר קונלי / ספידי נט [אלפא]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "ג'ניפר / ספידי מץ' [אלפא]",
