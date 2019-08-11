@@ -10,9 +10,10 @@ urlpatterns = [
     url(regex=r'^terms/', view=include('speedy.core.terms.urls', namespace='terms')),
 ]
 
-if (django_settings.DEBUG):
-    urlpatterns = static(prefix=django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT) + urlpatterns
+# ~~~~ TODO: I'm not sure if it's a good idea to upload user images to the same server in production.
+urlpatterns = static(prefix=django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT) + urlpatterns
 
+if (django_settings.DEBUG):
     if ('debug_toolbar' in django_settings.INSTALLED_APPS):
         import debug_toolbar
         urlpatterns += [
