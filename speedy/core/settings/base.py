@@ -140,11 +140,6 @@ REGULAR_UDID_LENGTH = 20
 
 LANGUAGE_CODE = 'en'
 
-# ~~~~ TODO: move the following constants to speedy/core/locale/en/formats.py and speedy/core/locale/he/formats.py
-DATE_FORMAT = 'j F Y'
-MONTH_DAY_FORMAT = 'j F'
-YEAR_FORMAT = 'Y'
-
 LANGUAGES = [
     ('en', _('English')),
     ('he', _('Hebrew')),
