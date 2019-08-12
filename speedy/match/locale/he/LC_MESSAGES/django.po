@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-10 08:06+0300\n"
+"POT-Creation-Date: 2019-08-12 16:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -694,7 +694,7 @@ msgstr "אנשים שעשו לך לייק"
 msgid "Mutual Likes"
 msgstr "לייקים הדדיים"
 
-#: .\matches\views.py:74 .\matches\views.py:88
+#: .\matches\views.py:73 .\matches\views.py:87
 msgid "Your match settings were saved."
 msgstr "הגדרת ההתאמות שלך נשמרה."
 
@@ -786,8 +786,8 @@ msgstr ""
 "המליטה 7 גורים בשנת 1988."
 
 #: .\templates\about\about.html:27
-msgid "Speedy Match is currently in alpha. It was launched on September 2019."
-msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה בספטמבר 2019."
+msgid "Speedy Match is currently in alpha. It was launched in August 2019."
+msgstr "ספידי מץ' היא כרגע באלפא. היא הושקה באוגוסט 2019."
 
 #: .\templates\about\about.html:29
 msgid "Thank you and good luck,"
