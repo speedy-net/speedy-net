@@ -156,6 +156,11 @@ Clone the project, create a venv, activate it and install required modules using
     pip install --upgrade setuptools wheel
     pip install --upgrade -r requirements.txt
 
+You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
+
+    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
+    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.7.7
+
 Setup a database:
 
     sudo -i -u postgres
