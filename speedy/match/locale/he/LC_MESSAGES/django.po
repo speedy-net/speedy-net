@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 11:27+0300\n"
+"POT-Creation-Date: 2019-08-13 16:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -891,8 +891,8 @@ msgid "You have no likes here."
 msgstr "אין פה אנשים."
 
 #: .\templates\main\main_page.html:6
-msgid "dating for vegans and vegetarians"
-msgstr "הכרויות לטבעונים ולצמחונים"
+msgid "free dating for singles"
+msgstr "הכרויות לפנויות/פנויים בחינם"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -977,6 +977,9 @@ msgstr "דרגת התאמה"
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
+
+#~ msgid "dating for vegans and vegetarians"
+#~ msgstr "הכרויות לטבעונים ולצמחונים"
 
 #~ msgid "Please write some text in this field."
 #~ msgstr "אנא כתוב/י טקסט בשדה זה."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 11:27+0300\n"
+"POT-Creation-Date: 2019-08-13 16:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2339,15 +2339,15 @@ msgstr ""
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:171
+#: .\templates\base.html:176
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:172
+#: .\templates\base.html:177
 msgid "Free Online Dating"
 msgstr ""
 
-#: .\templates\base.html:193 .\templates\base.html:195
+#: .\templates\base.html:199 .\templates\base.html:201
 msgid "Speedy"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 11:27+0300\n"
+"POT-Creation-Date: 2019-08-13 16:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,7 +863,7 @@ msgid "You have no likes here."
 msgstr ""
 
 #: .\templates\main\main_page.html:6
-msgid "dating for vegans and vegetarians"
+msgid "free dating for singles"
 msgstr ""
 
 #: .\templates\main\main_page.html:9
