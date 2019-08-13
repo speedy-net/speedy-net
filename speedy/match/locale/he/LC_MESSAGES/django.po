@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-12 16:07+0300\n"
+"POT-Creation-Date: 2019-08-13 11:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -714,7 +714,7 @@ msgstr "ספידי מץ' [אלפא]"
 msgid "About Speedy Match"
 msgstr "אודות ספידי מץ'"
 
-#: .\templates\about\about.html:15 .\templates\main\main_page.html:11
+#: .\templates\about\about.html:15 .\templates\main\main_page.html:13
 msgid ""
 "<a href=\"http://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching app for singles who are members of <a href="
@@ -890,7 +890,11 @@ msgstr "החברות והחברים שלך"
 msgid "You have no likes here."
 msgstr "אין פה אנשים."
 
-#: .\templates\main\main_page.html:7
+#: .\templates\main\main_page.html:6
+msgid "dating for vegans and vegetarians"
+msgstr "הכרויות לטבעונים ולצמחונים"
+
+#: .\templates\main\main_page.html:9
 msgid ""
 "Speedy Match is a new dating/matching app for singles who are members of "
 "Speedy Net. With Speedy Match you can find matching people for dating and "
@@ -899,7 +903,7 @@ msgstr ""
 "ספידי מץ' היא אפליקציית הכרויות/התאמות לפנויות/פנויים חברי ספידי נט. עם "
 "ספידי מץ' אתם יכולים למצוא בנות זוג ובני זוג מתאימים ולתקשר איתם און-ליין."
 
-#: .\templates\main\main_page.html:13
+#: .\templates\main\main_page.html:15
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
