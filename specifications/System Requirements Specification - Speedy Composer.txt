@@ -63,4 +63,4 @@ In the future, we will also develop an application for composing melodies on per
 Best Regards,
 Uri Rodberg
 E-mail: uri@speedy.net
-Website: http://www.speedysoftware.com/uri/en/
+Website: http://www.speedysoft.com/uri/en/

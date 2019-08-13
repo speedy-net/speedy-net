@@ -226,4 +226,4 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 Best Regards,
 Uri Rodberg
 E-mail: uri@speedy.net
-Website: http://www.speedysoftware.com/uri/en/
+Website: http://www.speedysoft.com/uri/en/
