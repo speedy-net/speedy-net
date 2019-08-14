@@ -208,7 +208,7 @@ LOGGING = {
             'formatter': 'verbose'
         },
         'mail_admins': {
-            'level': 'WARNING',
+            'level': 'INFO',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'verbose',
         },
