@@ -1,3 +1,4 @@
+import logging
 from itertools import zip_longest
 
 from crispy_forms.bootstrap import InlineField
@@ -17,6 +18,8 @@ from speedy.core.base.utils import normalize_username
 from .models import User, UserEmailAddress
 from .utils import normalize_email
 from .validators import validate_date_of_birth_in_forms, validate_email_unique
+
+logger = logging.getLogger(__name__)
 
 
 class CleanEmailMixin(object):
@@ -113,7 +116,10 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
                 setattr(user, self.get_localized_field(base_field_name=loc_field, language_code=language_code), self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language_code=self.language_code)])
         if (commit):
             user.save()
-            user.email_addresses.create(email=self.cleaned_data['email'], is_confirmed=False, is_primary=True)
+            email = self.cleaned_data['email']
+            user.email_addresses.create(email=email, is_confirmed=False, is_primary=True)
+            site = Site.objects.get_current()
+            logger.info('New user on {site_name}, user={user}, email={email}'.format(site_name=_(site.name), user=user, email=email))
         return user
 
 
