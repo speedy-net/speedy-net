@@ -160,6 +160,10 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             if (not (self.instance.gender == user.gender)):
                 site = Site.objects.get_current()
                 logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender}'.format(site_name=_(site.name), user=self.instance, new_gender=self.instance.gender, old_gender=user.gender))
+            if (not (self.instance.username == user.username)):
+                # Error - users can't change their username.
+                site = Site.objects.get_current()
+                logger.error('User changed username on {site_name}, user={user}, new username={new_username}, old username={old_username}'.format(site_name=_(site.name), user=self.instance, new_username=self.instance.username, old_username=user.username))
         return super().save(commit=commit)
 
 
