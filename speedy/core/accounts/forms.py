@@ -151,6 +151,18 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             raise ValidationError(pgettext_lazy(context=self.instance.get_gender(), message="You can't change your username."))
         return slug
 
+    def save(self, commit=True):
+        if (commit):
+            date_of_birth = self.cleaned_data.get('date_of_birth')
+            if (not (date_of_birth == self.instance.date_of_birth)):
+                site = Site.objects.get_current()
+                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth}'.format(site_name=_(site.name), user=self.instance, new_date_of_birth=date_of_birth, old_date_of_birth=self.instance.date_of_birth))
+            gender = self.cleaned_data.get('gender')
+            if (not (gender == self.instance.gender)):
+                site = Site.objects.get_current()
+                logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender}'.format(site_name=_(site.name), user=self.instance, new_gender=gender, old_gender=self.instance.gender))
+        return super().save(commit=commit)
+
 
 class ProfileNotificationsForm(forms.ModelForm):
     _profile_model = get_site_profile_model(profile_model=None)
