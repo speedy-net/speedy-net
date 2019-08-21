@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 16:54+0300\n"
+"POT-Creation-Date: 2019-08-21 14:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1549,50 +1549,50 @@ msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\forms.py:94
+#: .\accounts\forms.py:99
 msgid "Your email"
 msgstr ""
 
-#: .\accounts\forms.py:95
+#: .\accounts\forms.py:100
 msgid "New password"
 msgstr ""
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:108
 msgid "New username"
 msgstr ""
 
-#: .\accounts\forms.py:106
+#: .\accounts\forms.py:111
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:182 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:205 .\templates\base_with_login.html:104
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:187 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:210 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:117
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:190 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:213 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:114
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:202 .\accounts\forms.py:217
+#: .\accounts\forms.py:225 .\accounts\forms.py:240
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:226
+#: .\accounts\forms.py:249
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:247
+#: .\accounts\forms.py:270
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:259
+#: .\accounts\forms.py:282
 msgid "Invalid password."
 msgstr ""
 
