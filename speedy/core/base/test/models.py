@@ -90,10 +90,10 @@ class SiteTestCase(DjangoTestCase):
         self.assertIn(member=self.language_code, container=self.all_language_codes)
         self.assertNotIn(member=self.language_code, container=self.all_other_language_codes)
         self.assertSetEqual(set1=set(self.all_language_codes) - {self.language_code}, set2=set(self.all_other_language_codes))
-        self.assertEqual(first=self.full_http_host, second='http://{language_code}.{domain}/'.format(language_code=self.language_code, domain=self.site.domain))
+        self.assertEqual(first=self.full_http_host, second='https://{language_code}.{domain}/'.format(language_code=self.language_code, domain=self.site.domain))
         self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(self.all_other_language_codes))
         self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(set(self.all_other_full_http_hosts)))
-        self.assertListEqual(list1=self.all_other_full_http_hosts, list2={'en': ['http://he.{domain}/'.format(domain=self.site.domain)], 'he': ['http://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
+        self.assertListEqual(list1=self.all_other_full_http_hosts, list2={'en': ['https://he.{domain}/'.format(domain=self.site.domain)], 'he': ['https://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
         # print("tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
         # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
         # print("tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
@@ -109,8 +109,8 @@ class SiteTestCase(DjangoTestCase):
         self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
         self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
         self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
-        self.full_http_host = 'http://{http_host}/'.format(http_host=self.http_host)
-        self.all_other_full_http_hosts = ['http://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]
+        self.full_http_host = 'https://{http_host}/'.format(http_host=self.http_host)
+        self.all_other_full_http_hosts = ['https://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]
         self.client = self.client_class(HTTP_HOST=self.http_host)
 
     def setUp(self):
