@@ -6290,6 +6290,7 @@ body.with-background {
     /*background-size: cover;*/
     /*background-attachment: fixed;*/
     background: url("/static/speedy-match/images/hearts-bg.png");
+    background-position-y: 64px;
     min-height: 100vh; }
     body.with-background > .body-inner a {
       color: #212529; }
