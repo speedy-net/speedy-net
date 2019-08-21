@@ -76,14 +76,16 @@ class LocalizedFirstLastNameMixin(object):
 
 
 class AddAttributesToFieldsMixin(object):
-    attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
+    ltr_attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
+    attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password', 'date_of_birth']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if (field_name in self.attribute_fields):
                 classes = field.widget.attrs.get("class", "")
-                classes = "{} direction-ltr".format(classes).strip()
+                if (field_name in self.ltr_attribute_fields):
+                    classes = "{} direction-ltr".format(classes).strip()
                 field.widget.attrs.update({
                     'autocomplete': 'off',
                     'autocorrect': 'off',
