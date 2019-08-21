@@ -33,7 +33,7 @@ ADMINS = MANAGERS = (
     ('Uri Rodberg', 'webmaster@speedy.net'),
 )
 
-USE_SSL = False
+USE_SSL = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
