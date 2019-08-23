@@ -145,9 +145,17 @@ body.bidi-rtl .navbar-right {
     padding-top: 10px;
 }
 
+.logo-small {
+    height: 48px;
+}
+
 @media screen and (max-width: 767px) {
     .desktop-only {
         display: none;
+    }
+
+    .logo-small {
+        height: 45px;
     }
 
     .navbar {
