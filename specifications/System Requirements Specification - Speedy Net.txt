@@ -55,7 +55,7 @@ Speedy Net is a new social network which will have apps, such as Speedy Match (a
 * profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
 * Looking for men, women or both
 * Writing some text about yourself - who you are, what you prefer etc.
-* Which personal attributes are valid (from 0 to 5. 0 - invalid (no match). 5 - 5 stars match)
+* Which personal attributes are valid (from 0 to 5. 0 - invalid (no match). 5 - 5 hearts match)
 * Searching for matching people (who use Speedy Match in the same language)
 * Sending/receiving private messages (Speedy Net)
 * friendship requests (Speedy Net)
