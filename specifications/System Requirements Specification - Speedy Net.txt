@@ -134,7 +134,7 @@ User requirements:
 
 Here are the System Requirements Specification for Speedy Net.
 
-This website will operate on http://www.speedy.net/ .
+This website will operate on https://www.speedy.net/ .
 
 Programming language: Python 3.5.
 
