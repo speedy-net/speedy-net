@@ -136,11 +136,11 @@ Here are the System Requirements Specification for Speedy Net.
 
 This website will operate on https://www.speedy.net/ .
 
-Programming language: Python 3.5.
+Programming language: Python 3.6.
 
 Database: PostgreSQL. We will use foreign keys in the database (if the database becomes bigger, this can be changed). We should build the database tables to be able to handle many users, such as hundreds of millions of users.
 
-Frameworks: Django 1.9, jQuery.
+Frameworks: Django 1.11, jQuery.
 
 Speedy Net is a social network website, an alternative to Facebook. Registration will be open to any person without limitation (all ages from 0 to 150 will be accepted). People will be able to connect to their family relatives and friends, send messages, create pages, groups, causes and events, write on the walls of their friends and relatives (pages, groups and causes will have a wall too), create photo albums and share with their friends, like pages or join groups and causes, tag photos, and each time a user likes a page or joins a group or cause or adds new photos or tags a photo, a message/notification will be sent to the friends and relatives involved. People will also be able to create pages for pets, such as dogs and cats.
 
