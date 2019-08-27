@@ -369,11 +369,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_slug_min_length_fail_username_min_length_ok(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
-
-            # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-            # print("test_slug_min_length_fail_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-            # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-            # print("test_slug_min_length_fail_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)

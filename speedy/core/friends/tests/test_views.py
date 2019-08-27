@@ -217,9 +217,6 @@ if (django_settings.LOGIN_ENABLED):
         def test______user_can_send_friendship_request_if_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_can_send_friendship_request_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_can_send_friendship_request_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -241,9 +238,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_can_send_friendship_request_if_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_can_send_friendship_request_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_can_send_friendship_request_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -264,9 +258,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_cannot_send_friendship_request_if_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_cannot_send_friendship_request_if_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_cannot_send_friendship_request_if_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -382,9 +373,6 @@ if (django_settings.LOGIN_ENABLED):
         def test______user_that_has_received_request_can_accept_it_if_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -404,9 +392,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_can_accept_it_if_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -425,9 +410,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_cannot_accept_it_if_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_cannot_accept_it_if_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -447,9 +429,6 @@ if (django_settings.LOGIN_ENABLED):
         def test______user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
         @unittest.expectedFailure  # ~~~~ TODO: fix this test!
@@ -457,9 +436,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_can_accept_it_if_other_not_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
@@ -478,9 +454,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
             # ~~~~ TODO: remove all the following lines.
             self._1___set_up(django_settings=django_settings)  #### ~~~~ TODO: remove this line!
-
-            # print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED", django_settings.USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
-            # print("test_user_that_has_received_request_cannot_accept_it_if_other_maximum: User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED", User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)####
             # ~~~~ TODO: remove all the above lines.
 
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
