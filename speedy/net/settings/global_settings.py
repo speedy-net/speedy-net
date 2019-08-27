@@ -4,7 +4,6 @@
 # ~~~~ TODO: move to speedy.core?
 
 
-# class EntitySettings(object):
 class ENTITY_SETTINGS(object):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
@@ -52,13 +51,11 @@ class ENTITY_SETTINGS(object):
     ]
 
 
-# class NamedEntitySettings(object):
 class NAMED_ENTITY_SETTINGS(object):
     MIN_NAME_LENGTH = 1 # ~~~~ TODO: too short?
     MAX_NAME_LENGTH = 200
 
 
-# class UserSettings(object):
 class USER_SETTINGS(object):
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
