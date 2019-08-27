@@ -192,7 +192,6 @@ class SiteProfile(SiteProfileBase):
             self.user.save_user_and_profile()
 
     def validate_profile_and_activate(self, commit=True):
-        # ~~~~ TODO: all the error messages in this function may depend on the current user's (or other user's) gender.
         from speedy.match.accounts import utils
         language_code = get_language()
         error_messages = []

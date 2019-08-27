@@ -87,15 +87,12 @@ def reflection_import(name):
 def string_is_not_empty(s):
     if (s in [None, ""]):
         return False
-    # if (s in ["!!!"]): # ~~~~ TODO: remove this line! (for debugging)
-    #     return False   # ~~~~ TODO: remove this line! (for debugging)
     if (isinstance(s, str)):
         return True
     return False
 
 
 def get_all_field_names(base_field_name):
-    # raise Exception(base_field_name)############ # ~~~~ TODO: remove this line!
     field_names = []
     this_language_code = translation.get_language()
     all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == this_language_code))]
@@ -107,7 +104,6 @@ def get_all_field_names(base_field_name):
         field_names=field_names,
     ))
     assert (len(field_names) == 2)
-    # print(field_names) # ~~~~ TODO: remove this line!
     return field_names
 
 

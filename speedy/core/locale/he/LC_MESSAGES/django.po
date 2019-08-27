@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-22 12:12+0300\n"
+"POT-Creation-Date: 2019-08-27 09:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1596,50 +1596,50 @@ msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאשר את הדואר האלקטרוני שלך."
 
-#: .\accounts\forms.py:99
+#: .\accounts\forms.py:98
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:100
+#: .\accounts\forms.py:99
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:108
+#: .\accounts\forms.py:107
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:110
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:205 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:204 .\templates\base_with_login.html:104
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:210 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:209 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:117
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:213 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:212 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:114
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:225 .\accounts\forms.py:240
+#: .\accounts\forms.py:224 .\accounts\forms.py:239
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:249
+#: .\accounts\forms.py:248
 msgid "Change"
 msgstr "שנה/י"
 
-#: .\accounts\forms.py:270
+#: .\accounts\forms.py:269
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:282
+#: .\accounts\forms.py:281
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -1983,11 +1983,11 @@ msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
 msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
-#: .\accounts\validators.py:185 .\accounts\validators.py:194
+#: .\accounts\validators.py:184 .\accounts\validators.py:191
 msgid "Enter a valid date."
 msgstr "יש להזין תאריך חוקי."
 
-#: .\accounts\validators.py:205
+#: .\accounts\validators.py:201
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
@@ -2012,7 +2012,7 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\base\models.py:69
+#: .\base\models.py:67
 msgid "ID"
 msgstr "ID"
 
@@ -2292,7 +2292,11 @@ msgstr "הוסף/י חדשה"
 msgid "Change Password"
 msgstr "שנה/י סיסמה"
 
-#: .\templates\accounts\edit_profile\privacy.html:13
+#: .\templates\accounts\edit_profile\privacy.html:11
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "הגיל שלך יהיה גלוי להתאמות שלך בספידי מץ'."
+
+#: .\templates\accounts\edit_profile\privacy.html:15
 msgid "Change privacy settings of email addresses on your profile."
 msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 

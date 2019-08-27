@@ -30,8 +30,6 @@ class BaseUserManager(ManagerMixin, DjangoBaseUserManager):
     pass
 
 
-# ~~~~ TODO: define a new setting, which will determine if we are using ValidateModelMixin or not.
-# class BaseModel(models.Model): # ~~~~ TODO: remove this line!
 class BaseModel(ValidateModelMixin, models.Model):
     objects = BaseManager()
 

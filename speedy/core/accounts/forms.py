@@ -64,7 +64,6 @@ class LocalizedFirstLastNameMixin(object):
 
     @staticmethod
     def get_localizable_fields():
-        # return ('first_name', 'last_name') # ~~~~ TODO: remove this line!
         return User.NAME_LOCALIZABLE_FIELDS
 
     def get_localized_field(self, base_field_name, language_code):

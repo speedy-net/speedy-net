@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 def reserved_username_validator(value):
-    from .models import Entity # ~~~~ TODO
+    from .models import Entity
     if (normalize_username(username=value) in [normalize_username(username=reserved_username) for reserved_username in Entity.settings.RESERVED_USERNAMES]):
         raise ValidationError(_('This username is already taken.'))
 
@@ -87,7 +87,7 @@ class PasswordMinLengthValidator:
     """
     def __init__(self, min_length=None):
         if (min_length is None):
-            from .models import User # ~~~~ TODO
+            from .models import User
             min_length = User.settings.MIN_PASSWORD_LENGTH
         self.min_length = min_length
 
@@ -117,7 +117,7 @@ class PasswordMaxLengthValidator:
     """
     def __init__(self, max_length=None):
         if (max_length is None):
-            from .models import User # ~~~~ TODO
+            from .models import User
             max_length = User.settings.MAX_PASSWORD_LENGTH
         self.max_length = max_length
 
@@ -168,35 +168,31 @@ def get_slug_validators(min_username_length, max_username_length, min_slug_lengt
 
 
 def age_is_valid_in_model(age):
-    from .models import User # ~~~~ TODO
+    from .models import User
     return (age in User.AGE_VALID_VALUES_IN_MODEL)
 
 
 def age_is_valid_in_forms(age):
-    from .models import User # ~~~~ TODO
+    from .models import User
     return (age in User.AGE_VALID_VALUES_IN_FORMS)
 
 
-# ~~~~ TODO: create tests for this validator.
 def validate_date_of_birth_in_model(date_of_birth):
     age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_model(age=age))):
         logger.debug("validate_date_of_birth_in_model::age is not valid in model (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
-        # raise ValidationError(_('Enter a valid date (age can be from 0 to 250 years).')) #### TODO
 
 
-# ~~~~ TODO: create tests for this validator.
 def validate_date_of_birth_in_forms(date_of_birth):
     age = get_age_or_default(date_of_birth=date_of_birth)
     if (not (age_is_valid_in_forms(age=age))):
         logger.debug("validate_date_of_birth_in_forms::age is not valid in forms (date_of_birth={date_of_birth}, age={age})".format(date_of_birth=date_of_birth, age=age))
         raise ValidationError(_('Enter a valid date.'))
-        # raise ValidationError(_('Enter a valid date (age can be from 0 to 180 years).')) #### TODO
 
 
 def validate_email_unique(email, user_email_address_pk=None):
-    from .models import UserEmailAddress # ~~~~ TODO
+    from .models import UserEmailAddress
     if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
         # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
         UserEmailAddress.objects.filter(email=email, is_confirmed=False).exclude(pk=user_email_address_pk).delete()

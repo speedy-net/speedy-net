@@ -34,7 +34,6 @@ class TestsDynamicSettings(object):
             (today - relativedelta(years=max_age_allowed) + relativedelta(days=1)).isoformat(),
         ]
         valid_date_of_birth_list = sorted(list(set(valid_date_of_birth_list)))
-        # print("valid_date_of_birth_list (max_age_allowed={})".format(max_age_allowed), valid_date_of_birth_list, len(valid_date_of_birth_list), len(set(valid_date_of_birth_list))) # ~~~~ TODO: remove this line!
         return valid_date_of_birth_list
 
     @staticmethod
@@ -76,7 +75,6 @@ class TestsDynamicSettings(object):
             '',
         ]
         invalid_date_of_birth_list = sorted(list(set(invalid_date_of_birth_list)))
-        # print("invalid_date_of_birth_list (max_age_allowed={})".format(max_age_allowed), invalid_date_of_birth_list, len(invalid_date_of_birth_list), len(set(invalid_date_of_birth_list))) # ~~~~ TODO: remove this line!
         return invalid_date_of_birth_list
 
 
@@ -108,8 +106,6 @@ class OVERRIDE_USER_SETTINGS(object):
 
 
 if (django_settings.LOGIN_ENABLED):
-    # ~~~~ TODO: move to base test.
-    # ~~~~ TODO: maybe move to tests settings.
     # Generate a new random password for each test.
     USER_PASSWORD = get_random_user_password()
     # USER_PASSWORD = 'vjha9c4q44zs'

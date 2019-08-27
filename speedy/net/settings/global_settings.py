@@ -91,7 +91,6 @@ class USER_SETTINGS(object):
 AUTH_PASSWORD_VALIDATORS = USER_SETTINGS.PASSWORD_VALIDATORS
 
 
-# ~~~~ TODO: move to django_settings.
 DATE_FIELD_FORMATS = [
     '%Y-%m-%d',  # '2006-10-25'
 ]

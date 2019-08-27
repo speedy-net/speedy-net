@@ -60,7 +60,6 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return super().dispatch(request=request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        # ~~~~ TODO: redirect all URLs of this view and never use the default URL directly.
         # logger.debug('HERE: get: kwargs: %s, self.step: %i', kwargs, self.step)
         # logger.debug('get: request.user.is_active ? %s', request.user.is_active)
         if (not (request.user.is_active)):
