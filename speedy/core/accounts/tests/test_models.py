@@ -801,8 +801,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -849,8 +849,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -896,8 +896,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -943,8 +943,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -990,8 +990,8 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk)  # ~~~~ TODO: remove this line!
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -1023,7 +1023,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1048,7 +1048,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1077,7 +1077,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
@@ -1106,7 +1106,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
-            user = User.objects.get(pk=user.pk)  # ~~~~ TODO: remove this line!
+            user = User.objects.get(pk=user.pk)
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
