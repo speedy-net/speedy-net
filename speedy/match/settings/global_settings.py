@@ -1,6 +1,5 @@
 # Used also by Speedy Net.
 
-# class SpeedyMatchSiteProfileSettings(object):
 class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
     MIN_HEIGHT_ALLOWED = 1 # In cm.
     MAX_HEIGHT_ALLOWED = 450 # In cm.
