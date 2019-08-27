@@ -13,12 +13,6 @@ if (django_settings.LOGIN_ENABLED):
     class FeedbackFormTestCase(SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
         def assert_form_text_field(self, form):
             self.assertTrue(expr=form.fields['text'].required)
-            # print(form.fields['text']) # ~~~~ TODO: remove this line!
-            # print(form.fields['text'].widget) # ~~~~ TODO: remove this line!
-            # print(form.fields['text'].required) # ~~~~ TODO: remove this line!
-            # print(form.fields['text'].disabled) # ~~~~ TODO: remove this line!
-            # print(form.fields['text'].widget.is_required) # ~~~~ TODO: remove this line!
-            # print(form.fields['text'].widget.is_hidden) # ~~~~ TODO: remove this line!
 
         def test_feedback_form_for_visitor_displays_name_and_email(self):
             defaults = {

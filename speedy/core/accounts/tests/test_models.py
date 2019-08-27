@@ -665,7 +665,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_valid_date_of_birth_list_ok(self):
             for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
-                # print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['slug'] = 'user-{}'.format(date_of_birth)
                 data['date_of_birth'] = date_of_birth
@@ -689,7 +688,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_invalid_date_of_birth_list_fail(self):
             for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
-                # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 user = User(**data)

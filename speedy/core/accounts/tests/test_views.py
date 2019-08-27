@@ -256,7 +256,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -295,7 +295,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -335,7 +335,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -374,7 +374,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -446,7 +446,6 @@ if (django_settings.LOGIN_ENABLED):
                 django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
-            # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
             self.assertIn(member=self.full_http_host, container=mail.outbox[0].body)
             for other_full_http_host in self.all_other_full_http_hosts:
                 self.assertNotIn(member=other_full_http_host, container=mail.outbox[0].body)
@@ -484,7 +483,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
@@ -525,7 +524,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_invalid_date_of_birth_list_fail(self):
             for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-                # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 r = self.client.post(path='/', data=data)
@@ -838,7 +836,6 @@ if (django_settings.LOGIN_ENABLED):
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
             self.assertNotEqual(first=user.slug, second=old_slug)
-            # print("run_test_user_can_change_his_slug", old_slug, normalize_username(username=old_slug), new_slug, normalize_username(username=new_slug), user.slug, normalize_username(username=user.slug)) # ~~~~ TODO: remove this line!
 
         def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
             self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -874,7 +871,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotEqual(first=user.slug, second=new_slug)
             self.assertEqual(first=user.username, second=normalize_username(username=old_slug))
             self.assertNotEqual(first=user.username, second=normalize_username(username=new_slug))
-            # print("run_test_user_cannot_change_his_username", old_slug, normalize_username(username=old_slug), new_slug, normalize_username(username=new_slug), user.slug, normalize_username(username=user.slug)) # ~~~~ TODO: remove this line!
 
         def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
             self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
@@ -898,7 +894,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_valid_date_of_birth_list_ok(self):
             for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-                # print("test_valid_date_of_birth_list_ok", date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 r = self.client.post(path=self.page_url, data=data)
@@ -919,7 +914,6 @@ if (django_settings.LOGIN_ENABLED):
             self.date_of_birth = self.user.date_of_birth
             self.last_name = self.user.last_name
             for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-                # print("test_invalid_date_of_birth_list_fail", date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 r = self.client.post(path=self.page_url, data=data)
@@ -1383,7 +1377,6 @@ if (django_settings.LOGIN_ENABLED):
                 django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[self.user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
-            # self.assertIn(member=UserEmailAddress.objects.get(email='email@example.com').confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
@@ -1479,7 +1472,6 @@ if (django_settings.LOGIN_ENABLED):
                 django_settings.SPEEDY_MATCH_SITE_ID: self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender[self.user.get_gender()],
             }[self.site.id])
             self.assertIn(member=email_address.confirmation_token, container=mail.outbox[0].body)
-            # self.assertIn(member=UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email).confirmation_token, container=mail.outbox[0].body) # ~~~~ TODO: remove this line!
 
 
     @only_on_sites_with_login

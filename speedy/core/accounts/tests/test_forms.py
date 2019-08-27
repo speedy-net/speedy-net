@@ -194,8 +194,6 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
-            # for field in required_fields:
-            #     self.assertEqual(first=form.errors[field][0], second=self._this_field_is_required_error_message) # ~~~~ TODO: remove this line!
 
         def test_required_fields_1(self):
             data = {}
@@ -215,8 +213,6 @@ if (django_settings.LOGIN_ENABLED):
                 confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
-            # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
-            # existing_user.email_addresses.create(email='email@example.com', is_confirmed=True) # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -227,7 +223,6 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._this_email_is_already_in_use_errors_dict())
-            # self.assertEqual(first=form.errors['email'][0], second=self._this_email_is_already_in_use_error_message) # ~~~~ TODO: remove this line!
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
@@ -241,7 +236,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -260,8 +255,6 @@ if (django_settings.LOGIN_ENABLED):
                 confirmed_email_address_count=0,
                 unconfirmed_email_address_count=1,
             )
-            # existing_user = ActiveUserFactory() # ~~~~ TODO: remove this line!
-            # existing_user.email_addresses.create(email='email@example.com', is_confirmed=False) # ~~~~ TODO: remove this line!
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
@@ -273,7 +266,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2={})
             user = form.save()
-            # self.assertEqual(first=form.errors['email'][0], second=self._this_email_is_already_in_use_error_message) # ~~~~ TODO: remove this line!
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
@@ -287,7 +279,7 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
-            existing_user = User.objects.get(pk=existing_user.pk) # ~~~~ TODO: remove this line!
+            existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
@@ -302,7 +294,6 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
-            # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
         def test_slug_validation_fails_with_reserved_and_too_short_username(self):
             data = self.data.copy()
@@ -311,8 +302,6 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
-            # self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
-            # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
         def test_slug_validation_fails_with_username_already_taken(self):
             ActiveUserFactory(slug='validslug')
@@ -322,12 +311,10 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
-            # self.assertEqual(first=form.errors['slug'][0], second=self._this_username_is_already_taken_error_message) # ~~~~ TODO: remove this line!
 
         def test_slug_validation_ok(self):
             slug_list = ['a' * 6, '---a--a--a--a--a--a---']
             for slug in slug_list:
-                # print(slug) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['slug'] = slug
                 form = RegistrationForm(language_code=self.language_code, data=data)
@@ -355,7 +342,6 @@ if (django_settings.LOGIN_ENABLED):
         def test_slug_validation_fails_with_username_too_short(self):
             slug_list = ['a' * 5, 'aa-aa', 'a-a-a-a', '---a--a--a--a---', '---a--a--a--a--a---']
             for slug in slug_list:
-                # print(slug) # ~~~~ TODO: remove this line!
                 username_value_length = len(normalize_username(username=slug))
                 if (slug in ['a' * 5, '---a--a--a--a--a---']):
                     self.assertEqual(first=username_value_length, second=5)
@@ -367,9 +353,6 @@ if (django_settings.LOGIN_ENABLED):
                 form.full_clean()
                 self.assertFalse(expr=form.is_valid())
                 self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=username_value_length))
-                # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=5))
-                # self.assertDictEqual(d1=form.errors, d2=self._user_slug_min_length_fail_errors_dict_by_value_length(value_length=5))
-                # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=5)) # ~~~~ TODO: remove this line!
 
         def test_slug_and_username_min_length_ok(self):
             # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
@@ -406,23 +389,16 @@ if (django_settings.LOGIN_ENABLED):
             form.full_clean()
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=201))
-            # self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_value_length=201))
-            # self.assertDictEqual(d1=form.errors, d2=self._user_slug_max_length_fail_errors_dict_by_value_length(value_length=201))
-            # self.assertEqual(first=form.errors['slug'][0], second=self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=200, value_length=201)) # ~~~~ TODO: remove this line!
 
         def test_slug_validation_fails_with_invalid_username_regex(self):
             slug_list = ['0' * 6, '0test1', '1234567890digits', 'aaa', 'aaa 9999', 'aaa-9999', 'aaa+9999']
             for slug in slug_list:
-                # print(slug) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['slug'] = slug
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
                 self.assertFalse(expr=form.is_valid(), msg="{} is a valid slug.".format(slug))
                 self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True), msg='"{}" - Unexpected error messages.'.format(slug))
-                # self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True))
-                # self.assertDictEqual(d1=form.errors, d2=self._user_slug_username_must_start_with_4_or_more_letters_errors_dict())
-                # self.assertEqual(first=form.errors['slug'][0], second=self._user_username_must_start_with_4_or_more_letters_error_message) # ~~~~ TODO: remove this line!
 
         def test_cannot_register_invalid_email(self):
             data = self.data.copy()
@@ -434,7 +410,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_invalid_date_of_birth_list_fail(self):
             for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
-                # print(date_of_birth) # ~~~~ TODO: remove this line!
                 data = self.data.copy()
                 data['date_of_birth'] = date_of_birth
                 form = RegistrationForm(language_code=self.language_code, data=data)

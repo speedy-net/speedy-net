@@ -176,13 +176,10 @@ if (django_settings.LOGIN_ENABLED):
             if (isinstance(value_to_test, str)):
                 with self.assertRaises(DataError) as cm:
                     user.save_user_and_profile()
-                # print(str(cm.exception)) # ~~~~ TODO: remove this line!
                 self.assertIn(member='malformed array literal: ""', container=str(cm.exception))
             else:
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                # print(str(cm.exception)) # ~~~~ TODO: remove this line!
-                # print(dict(cm.exception)) # ~~~~ TODO: remove this line!
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_list_length(field_name=field_name, list_length=len(value_to_test)))
 
         def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
@@ -208,8 +205,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def run_test_validate_profile_and_activate_exception(self, test_settings):
             user = ActiveUserFactory()
-            # print(test_settings.keys()) # ~~~~ TODO: remove this line!
-            # print(set(test_settings.keys())) # ~~~~ TODO: remove this line!
             self.assertIn(member="field_name", container=test_settings.keys())
             field_name = test_settings["field_name"]
             expected_test_settings_keys = {"field_name", "test_invalid_values_to_assign", "test_invalid_values_to_save", "expected_step", "expected_counts_tuple"}
@@ -306,7 +301,6 @@ if (django_settings.LOGIN_ENABLED):
                 for value in [set(gender_to_match) for gender_to_match in valid_values]:
                     if (value not in valid_sets):
                         valid_sets.append(value)
-                # print(valid_sets) # ~~~~ TODO: remove this line!
                 self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
             elif (field_name in ['min_age_to_match', 'max_age_to_match']):
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1))
@@ -401,7 +395,6 @@ if (django_settings.LOGIN_ENABLED):
                         max_rank_is_valid = (max(item) == 5)
                         self.assertEqual(first=all_ranks_are_valid, second=all(validators.rank_is_valid(rank=value) for value in item))
                         self.assertEqual(first=max_rank_is_valid, second=(max(item) == SpeedyMatchSiteProfile.RANK_5))
-                        # print(item, value_to_test, max(item), all_ranks_are_valid, max_rank_is_valid) # ~~~~ TODO: remove this line!
                         if (all_ranks_are_valid):
                             if (max_rank_is_valid):
                                 valid_values.append(value_to_test)
@@ -414,12 +407,6 @@ if (django_settings.LOGIN_ENABLED):
                 valid_values_to_assign = values_to_test
             if (invalid_values is None):
                 invalid_values = [value for value in values_to_test if (value not in valid_values)]
-            # print(len(values_to_test)) # ~~~~ TODO: remove this line!
-            # print(values_to_test) # ~~~~ TODO: remove this line!
-            # print(len(valid_values_to_save)) # ~~~~ TODO: remove this line!
-            # print(valid_values_to_save) # ~~~~ TODO: remove this line!
-            # print(len(valid_values)) # ~~~~ TODO: remove this line!
-            # print(valid_values) # ~~~~ TODO: remove this line!
             self.assert_valid_values_ok(values_to_test=values_to_test, valid_values_to_assign=valid_values_to_assign, valid_values_to_save=valid_values_to_save, valid_values=valid_values, invalid_values=invalid_values)
             if (field_name in ['photo']):
                 self.assertTrue(expr=test_settings["test_invalid_values_to_assign"])
@@ -447,7 +434,6 @@ if (django_settings.LOGIN_ENABLED):
                 value_is_invalid = (value_to_test in invalid_values)
                 self.assertEqual(first=value_is_valid, second=(not (value_is_invalid)))
                 can_assign_value_set.add(can_assign_value)
-                # print(value_to_test) # ~~~~ TODO: remove this line!
                 if (field_name in ['photo']):
                     user.photo = None
                     if (value_to_test == UserImageFactory):
@@ -525,7 +511,6 @@ if (django_settings.LOGIN_ENABLED):
                         step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
                         if (not (value_is_valid)):
                             self.assertEqual(first=step, second=test_settings["expected_step"])
-                            # print(error_messages) # ~~~~ TODO: remove this line!
                             if (field_name in ['min_max_age_to_match']):
                                 self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
                                 if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES for i in range(2))):
