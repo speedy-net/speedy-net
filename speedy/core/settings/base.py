@@ -179,6 +179,12 @@ FIXTURE_DIRS = [
     str(ROOT_DIR / 'speedy/core/fixtures')
 ]
 
+DATE_FIELD_FORMATS = [
+    '%Y-%m-%d',  # '2006-10-25'
+]
+
+DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
+
 # ~~~~ TODO: check if this is good for production!
 LOGGING = {
     'version': 1,
