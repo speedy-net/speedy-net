@@ -600,8 +600,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.save()
             self.profile.save()
             if (django_settings.LOGIN_ENABLED):
-                self.speedy_net_profile.save()  # ~~~~ TODO: is this necessary?
-                self.speedy_match_profile.save()  # ~~~~ TODO: is this necessary?
+                self.speedy_net_profile.save()
+                self.speedy_match_profile.save()
 
     def get_gender(self):
         return self.__class__.GENDERS_DICT.get(self.gender)
