@@ -6,10 +6,10 @@ var rtlcss = require('gulp-rtlcss');
 function buildTheme(name) {
     return gulp.src('./themes/' + name + '/index.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(rename(name + '.css'))
+        .pipe(rename(name + '-ltr.css'))
         .pipe(gulp.dest('./speedy/core/static/themes/'))
         .pipe(rtlcss())
-        .pipe(rename({suffix: '.rtl'}))
+        .pipe(rename(name + '-rtl.css'))
         .pipe(gulp.dest('./speedy/core/static/themes/'));
 }
 
