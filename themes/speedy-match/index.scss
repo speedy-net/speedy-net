@@ -197,8 +197,7 @@ body.with-background {
 
     > .body-inner {
         background: url('/static/speedy-match/images/hearts-bg.png') no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+        background-position-y: 64px;
         min-height: 100vh;
 
         a {
@@ -209,7 +208,7 @@ body.with-background {
 
     .speedy-body-container .col-md-8 {
         background: url('/static/speedy-match/images/photo.png') bottom left no-repeat;
-        background-size: contain;
+        background-size: 630px;
     }
 
     .navbar.bg-speedy-match {
@@ -218,6 +217,23 @@ body.with-background {
     }
 }
 
+@media (max-width: 1020px) {
+    body.with-background {
+        .speedy-body-container .col-md-8 {
+            background-size: contain;
+        }
+    }
+}
+
 .navbar-nav .nav-link.active {
     color: $white !important;
 }
+
+.footer a,
+.footer a:visited,
+.footer a:link,
+.footer a:active,
+a.speedy-bottom-badge-link {
+    color: #521b13 !important;
+}
+
