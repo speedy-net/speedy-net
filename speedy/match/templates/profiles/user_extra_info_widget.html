@@ -16,11 +16,11 @@
                 <tbody>
                     <tr>
                         <th>{% trans 'About me' %}</th>
-                        <td>{{ user.speedy_match_profile.profile_description }}</td>
+                        <td>{{ user.speedy_match_profile.profile_description|linebreaksbr }}</td>
                     </tr>
                     <tr>
                         <th>{% trans 'City or locality' %}</th>
-                        <td>{{ user.city }}</td>
+                        <td>{{ user.city|linebreaksbr }}</td>
                     </tr>
                     <tr>
                         <th>{% trans 'Height' %}</th>
@@ -28,11 +28,11 @@
                     </tr>
                     <tr>
                         <th>{% trans 'Do you have children? How many?' %}</th>
-                        <td>{{ user.speedy_match_profile.children }}</td>
+                        <td>{{ user.speedy_match_profile.children|linebreaksbr }}</td>
                     </tr>
                     <tr>
                         <th>{% trans 'Do you want (more) children?' context user.get_gender %}</th>
-                        <td>{{ user.speedy_match_profile.more_children }}</td>
+                        <td>{{ user.speedy_match_profile.more_children|linebreaksbr }}</td>
                     </tr>
                     <tr>
                         <th>{% trans 'Diet' %}</th>
@@ -52,7 +52,7 @@
                     </tr>
                     <tr>
                         <th>{% trans 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
-                        <td>{{ user.speedy_match_profile.match_description }}</td>
+                        <td>{{ user.speedy_match_profile.match_description|linebreaksbr }}</td>
                     </tr>
                 </tbody>
             </table>
