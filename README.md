@@ -58,7 +58,6 @@ Then, you'll want to create a virtualenv and activate. You create virtualenv onc
 
     pip install virtualenv # (as administrator)
     virtualenv .venv
-    .venv\Scripts\activate.bat  # Windows cmd (not recommended)
     source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
