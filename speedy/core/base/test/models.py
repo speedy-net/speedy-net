@@ -55,7 +55,7 @@ class SiteTestCase(DjangoTestCase):
     def _pre_setup(self):
         self.assertTrue(expr=django_settings.TESTS)
         super()._pre_setup()
-        call_command('loaddata', tests_settings.SITES_FIXTURE, verbosity=0)
+        call_command('load_data', tests_settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()
         self.site_name = _(self.site.name)
 
