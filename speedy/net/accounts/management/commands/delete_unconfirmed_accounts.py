@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=10)), confirmation_sent__gte=2).exclude(user__is_staff=True)
-
         for email in emails:
             user = email.user
             if (not (user.is_staff)):
@@ -22,7 +21,6 @@ class Command(BaseCommand):
                         email.delete()
 
         users = User.objects.filter(date_created__lte=(now() - timedelta(days=10))).exclude(is_staff=True)
-
         for user in users:
             if (not (user.is_staff)):
                 if (user.date_created <= now() - timedelta(days=10)):
