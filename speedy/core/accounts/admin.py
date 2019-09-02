@@ -13,7 +13,10 @@ class ReservedUsernameAdmin(django_admin.ModelAdmin):
 
 
 class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
-    pass
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+    def has_delete_permission(self, request, obj=None):
+        return True
 
 
 class UserEmailAddressAdmin(ReadOnlyModelAdmin):
