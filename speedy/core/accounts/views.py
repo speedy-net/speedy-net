@@ -33,6 +33,8 @@ def set_session(request):
     """
     response = HttpResponse('')
     origin = request.META.get('HTTP_ORIGIN')
+    if isinstance(origin, bytes):
+        origin = origin.decode()
     netloc = urlparse(origin).netloc
     valid_origin = any(netloc.endswith('.' + site.domain) for site in Site.objects.all().order_by("pk"))
     if (not (valid_origin)):
