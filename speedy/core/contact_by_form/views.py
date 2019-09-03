@@ -1,8 +1,5 @@
-from urllib import parse
-
 from django.conf import settings as django_settings
 from django.urls import reverse_lazy
-from django.urls import resolve, Resolver404
 from django.http import Http404
 from django.views import generic
 
