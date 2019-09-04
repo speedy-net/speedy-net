@@ -5,7 +5,7 @@
 {% block title %}{% trans 'Blocked Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block tab_content %}
-    <div class="row">
+    <div class="row flex-wrap">
         {% for block in block_list %}
             {% include 'profiles/user_list_item.html' with user=block.blocked.user %}
         {% empty %}

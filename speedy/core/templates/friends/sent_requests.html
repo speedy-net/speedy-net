@@ -4,7 +4,7 @@
 {% load i18n %}
 
 {% block tab_content %}
-    <div class="row">
+    <div class="row flex-wrap">
         {% for sent_friendship_request in sent_friendship_requests %}
             {% include 'profiles/user_list_item.html' with user=sent_friendship_request.to_user %}
         {% empty %}
