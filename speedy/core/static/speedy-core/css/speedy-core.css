@@ -243,5 +243,9 @@ body.bidi-rtl .navbar-right {
         flex: 0 0 33.33333% !important;
         max-width: 33.33333% !important;
     }
+
+    .row {
+        flex-wrap: wrap;
+    }
 }
 
