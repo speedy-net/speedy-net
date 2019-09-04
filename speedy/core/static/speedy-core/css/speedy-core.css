@@ -230,6 +230,10 @@ body.bidi-rtl .navbar-right {
     padding-bottom: 10px !important;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 @media screen and (max-width: 767px) {
     .friends-col {
         padding-left: 6px !important;

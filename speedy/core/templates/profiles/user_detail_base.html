@@ -4,7 +4,7 @@
 {% load thumbnail %}
 
 {% block user_content_info %}
-    <div class="row">
+    <div class="row flex-wrap">
         {% for widget in widgets %}
             {{ widget.html }}
         {% endfor %}
