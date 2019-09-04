@@ -22,7 +22,7 @@
 
             {% if can_view_username %}
             <tr>
-                <th nowrap="nowrap">{% trans 'Username' %}</th>
+                <th nowrap="nowrap">{% trans 'Username' context user.get_gender %}</th>
                 <td>
                     <a href="{{ user.get_absolute_url }}">
                         {{ user.slug }}
