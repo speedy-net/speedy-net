@@ -217,6 +217,7 @@ LOGGING = {
             'level': 'INFO',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'verbose',
+            'include_html': True,
         },
     },
     'loggers': {
