@@ -127,6 +127,7 @@ Then:
 
 Will compile static files and watch for changes.
 
+**Please notice** - gulp doesn't work if you have spaces in folder names in your directory tree. All file and folder names cannot contain spaces.
 
 ## How to setup the project and run locally (with docker-compose)
 
