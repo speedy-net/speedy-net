@@ -22,6 +22,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-rtlcss": "^1.0.0",
     "gulp-sass": "^4.0.1",
-    "natives": "^1.1.6"
+    "natives": "^1.1.6",
+    "node-sass": "^4.12.0"
   }
 }

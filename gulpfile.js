@@ -3,6 +3,8 @@ var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var rtlcss = require('gulp-rtlcss');
 
+sass.compiler = require('node-sass');
+
 function buildTheme(name) {
     return gulp.src('./themes/' + name + '/index.scss')
         .pipe(sass().on('error', sass.logError))
