@@ -25,8 +25,9 @@ gulp.task('build:speedy-match', function () {
 
 gulp.task('build', ['build:speedy-net', 'build:speedy-match']);
 
-gulp.task('watch', function () {
-    return gulp.watch('./themes/**/*', ['build']);
-});
+// gulp.task('watch', function () {
+//     return gulp.watch('./themes/**/*', ['build']);
+// });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build']);
+

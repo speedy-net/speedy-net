@@ -114,18 +114,17 @@ Use the following URLs to access the websites:
 
 ### Build frontend
 
-The project uses Bootstrap 4 with [gulp.js](https://gulpjs.com). `css` are compiled from `scss`
+The project uses Bootstrap 4 with [gulp.js](https://gulpjs.com). `css` are compiled from `scss`.
 
 You need to setup [Node](https://nodejs.org/en/) with [npm](https://www.npmjs.com). To install build tools run:
 
-    npm install --global gulp-cli
     npm install
 
 Then:
 
     gulp
 
-Will compile static files and watch for changes.
+Will compile static files.
 
 **Please notice** - gulp doesn't work if you have spaces in folder names in your directory tree. All file and folder names cannot contain spaces.
 
