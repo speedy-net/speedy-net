@@ -210,6 +210,11 @@ Remove default **nginx** config:
 
      sudo rm /etc/nginx/sites-enabled/default
 
+Install **systemd** service to create required directories on boot:
+
+    sudo cp contrib/prepare-uwsgi.service /lib/systemd/system/
+    sudo systemctl enable prepare-uwsgi
+
 Review and edit these config files, restart servers:
 
     sudo service uwsgi restart

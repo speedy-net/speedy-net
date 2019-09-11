@@ -1,0 +1,18 @@
+[Unit]
+Description=Create /run/uwsgi/app/* directories
+
+[Service]
+Type=oneshot
+ExecStart=/bin/mkdir /run/uwsgi
+ExecStart=/bin/mkdir /run/uwsgi/app
+ExecStart=/bin/mkdir /run/uwsgi/app/speedy_net
+ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_net
+ExecStart=/bin/mkdir /run/uwsgi/app/speedy_match
+ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_match
+ExecStart=/bin/mkdir /run/uwsgi/app/speedy_mail
+ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_mail
+ExecStart=/bin/mkdir /run/uwsgi/app/speedy_composer
+ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_composer
+
+[Install]
+WantedBy=basic.target
