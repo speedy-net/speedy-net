@@ -20,9 +20,9 @@
     "bootstrap": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-cli": "^2.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-rtlcss": "^1.0.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-rtlcss": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "natives": "^1.1.6",
     "node-sass": "^4.12.0"
   }
