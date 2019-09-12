@@ -11,5 +11,6 @@ WORKDIR /app
 ADD . /app
 
 RUN pip install --upgrade -r requirements.txt
+RUN pip install django-debug-toolbar
 
 ENTRYPOINT ["./docker-entrypoint.sh"]

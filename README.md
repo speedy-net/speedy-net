@@ -77,7 +77,7 @@ Then you can run migrations:
     cd speedy/match
     ./manage.py migrate
     cd speedy/core
-    ./manage.py load_data fixtures/default_sites_local.json
+    ./manage.py load_data speedy/core/fixtures/default_sites_local.json
 
 To run Speedy Net server:
 
@@ -130,10 +130,9 @@ Will compile static files.
 
 ## How to setup the project and run locally (with docker-compose)
 
-    mkdir .volumes
-    mkdir .volumes/postgres
-    chmod 700 .volumes/postgres
     docker-compose up
+    docker-compose run --rm match all migrate
+    docker-compose run --rm net load_data speedy/core/fixtures/default_sites_local.json
 
 
 ## How to setup a server (Ubuntu 18.04)

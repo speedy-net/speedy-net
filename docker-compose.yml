@@ -87,7 +87,10 @@ services:
       - POSTGRES_USER=speedy
       - POSTGRES_DB=speedy
     volumes:
-      - ./.volumes/postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
 
   memcached:
     image: memcached:1.4-alpine
+
+volumes:
+  postgres: {}
