@@ -109,12 +109,10 @@ evil.block('@@MessageList', {
         var this_ = this;
         var url = this.block.data('poll-url');
         var since = this.$('@message').first().data('timestamp');
-        url += '?since=' + since; // ~~~~ TODO: there is a bug with this JavaScript code!
-        /* // ~~~~ TODO: temporarily disabled.
+        url += '?since=' + since;
         $.get(url, function (data) {
             $(data).prependTo(this_.block);
         });
-        */
     }
 });
 

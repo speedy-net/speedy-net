@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load user_tags %}
 
-<div class="row no-gutters {% if message.is_unread %}border-primary{% endif %} py-3 pr-3">
+<div class="row no-gutters {% if message.is_unread %}border-primary{% endif %} py-3 pr-3" data-role="message" data-timestamp="{{ message.date_created|date:"U.u" }}">
     <div class="col-2 px-3">
         {% profile_picture message.sender '128x128' html_class="img-fluid rounded-lg" %}
     </div>
