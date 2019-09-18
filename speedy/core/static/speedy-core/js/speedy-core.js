@@ -99,19 +99,19 @@ evil.block('@@AutoForm', {
 
 evil.block('@@MessageList', {
     init: function () {
-        var this_ = this;
+        var _this = this;
         window.setInterval(function () {
-            this_.poll();
+            _this.poll();
         }, 5000);
     },
 
     poll: function () {
-        var this_ = this;
+        var _this = this;
         var url = this.block.data('poll-url');
         var since = this.$('@message').first().data('timestamp');
         url += '?since=' + since;
         $.get(url, function (data) {
-            $(data).prependTo(this_.block);
+            $(data).prependTo(_this.block);
         });
     }
 });
@@ -138,7 +138,7 @@ evil.block('@@Uploader', {
     },
 
     startUpload: function (file) {
-        var this_ = this;
+        var _this = this;
         this.progressState();
         var data = new FormData();
         data.append('file', file);
@@ -153,28 +153,28 @@ evil.block('@@Uploader', {
                 if (xhr.upload) {
                     xhr.upload.addEventListener('progress', function (evt) {
                         var percent = Math.round(evt.loaded / evt.total * 100);
-                        this_.progressBar.css('width', percent + '%');
+                        _this.progressBar.css('width', percent + '%');
                         if (percent == 100) {
-                            this_.progressBar.addClass('active');
-                            this_.progress.addClass('progress-striped');
+                            _this.progressBar.addClass('active');
+                            _this.progress.addClass('progress-striped');
                         } else {
-                            this_.progressBar.removeClass('active');
-                            this_.progress.removeClass('progress-striped');
+                            _this.progressBar.removeClass('active');
+                            _this.progress.removeClass('progress-striped');
                         }
                     }, false);
                 }
                 return xhr;
             }
         }).done(function (data, textStatus, jqXHR) {
-            this_.boundState();
-            this_.filename.text(data.files[0].name);
-            this_.realInput.val(data.files[0].uuid);
+            _this.boundState();
+            _this.filename.text(data.files[0].name);
+            _this.realInput.val(data.files[0].uuid);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             var data = jqXHR.responseJSON;
             for (var errorField in data) {
                 if (data.hasOwnProperty(errorField)) {
                     alert(data[errorField]);
-                    this_.blankState();
+                    _this.blankState();
                     break;
                 }
             }
