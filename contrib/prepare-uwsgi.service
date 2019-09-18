@@ -9,10 +9,10 @@ ExecStart=/bin/mkdir /run/uwsgi/app/speedy_net
 ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_net
 ExecStart=/bin/mkdir /run/uwsgi/app/speedy_match
 ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_match
-ExecStart=/bin/mkdir /run/uwsgi/app/speedy_mail
-ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_mail
 ExecStart=/bin/mkdir /run/uwsgi/app/speedy_composer
 ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_composer
+ExecStart=/bin/mkdir /run/uwsgi/app/speedy_mail
+ExecStart=/bin/chown ubuntu:ubuntu /run/uwsgi/app/speedy_mail
 
 [Install]
 WantedBy=basic.target
