@@ -77,7 +77,7 @@ Then you can run migrations:
     cd speedy/match
     ./manage.py migrate
     cd speedy/core
-    ./manage.py load_data speedy/core/fixtures/default_sites_local.json
+    ./manage.py load_data fixtures/default_sites_local.json
 
 To run Speedy Net server:
 
