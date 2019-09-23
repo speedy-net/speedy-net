@@ -185,10 +185,9 @@ DATE_FIELD_FORMATS = [
 
 DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
 
-# ~~~~ TODO: check if this is good for production!
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
@@ -196,7 +195,12 @@ LOGGING = {
         'simple': {
             'format': '%(levelname)s %(message)s'
         },
-#         'verbose': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        },
+        #         'verbose': {
 # #            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
 #             'format': '%(asctime)s %(name)s %(levelname)s: %(message)s',
 #             'datefmt': '%Y-%m-%d %H:%M:%S',
@@ -205,67 +209,74 @@ LOGGING = {
 #             'format': '%(levelname)s %(message)s'
 #         },
     },
-    'handlers': {
-        'syslog': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.SysLogHandler',
-            'facility': 'local7',
-            'address': '/dev/log',
-            'formatter': 'verbose'
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         },
-        'mail_admins': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
+    'handlers': {
+        'console': {  # for development
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+            'filters': ['require_debug_true'],
+        },
+        'django.server': {  # for development
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        'file': {  # for staging and production
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR / 'logs' / 'speedy.log'),
+            'when': 'midnight',
+            'backupCount': 60,
+            'formatter': 'verbose',
+            'filters': ['require_debug_false'],
+        },
+        'mail_admins': {  # for staging and production
             'level': 'INFO',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'verbose',
             'include_html': True,
+            'filters': ['require_debug_false'],
         },
     },
     'loggers': {
         'root': {
-            'handlers': ['syslog', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django': {
-            'handlers': ['syslog', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['syslog', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['syslog', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False,
         },
         'speedy': {
-            'handlers': ['syslog', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
-        # 'speedy.net': {
-        #     'handlers': ['syslog', 'mail_admins'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
-        # 'speedy.match': {
-        #     'handlers': ['syslog', 'mail_admins'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
-        # 'speedy.composer': {
-        #     'handlers': ['syslog', 'mail_admins'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
-        # 'speedy.mail': {
-        #     'handlers': ['syslog', 'mail_admins'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
     },
 }
 
