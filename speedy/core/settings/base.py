@@ -236,14 +236,12 @@ LOGGING = {
             'when': 'W6',
             'backupCount': 12,
             'formatter': 'verbose',
-            'filters': ['require_debug_false'],
         },
         'mail_admins': {  # for staging and production
             'level': 'INFO',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'verbose',
             'include_html': True,
-            'filters': ['require_debug_false'],
         },
     },
     'loggers': {
