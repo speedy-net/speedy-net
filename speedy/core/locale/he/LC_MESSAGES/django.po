@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-04 09:26+0300\n"
+"POT-Creation-Date: 2019-09-24 11:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2006,24 +2006,24 @@ msgstr "יש להזין תאריך חוקי."
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\views.py:70
+#: .\accounts\views.py:72
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאשר את הדואר האלקטרוני שלך."
 
-#: .\accounts\views.py:235
+#: .\accounts\views.py:237
 msgid "Invalid confirmation link."
 msgstr "קישור אישור לא חוקי."
 
-#: .\accounts\views.py:259 .\accounts\views.py:275
+#: .\accounts\views.py:261 .\accounts\views.py:277
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-{email_address}"
 
-#: .\accounts\views.py:290
+#: .\accounts\views.py:292
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:306
+#: .\accounts\views.py:308
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
@@ -2191,11 +2191,19 @@ msgstr "אנגלית"
 msgid "Hebrew"
 msgstr "עברית"
 
+#: .\templates\404.html:5 .\templates\404.html:9
+msgid "Page not found"
+msgstr "הדף לא נמצא"
+
+#: .\templates\404.html:12
+msgid "Speedy is sorry, but the page is not found."
+msgstr "ספידי מצטערת, אבל הדף לא נמצא."
+
 #: .\templates\_400.html:5 .\templates\_400.html:9
 msgid "Bad request"
 msgstr "בקשה לא טובה"
 
-#: .\templates\_400.html:12 .\templates\_404.html:12 .\templates\_500.html:12
+#: .\templates\_400.html:12 .\templates\_500.html:12
 msgid " "
 msgstr " "
 
@@ -2206,10 +2214,6 @@ msgstr "ההרשאה נדחתה"
 #: .\templates\_403.html:12
 msgid "This page is private."
 msgstr "הדף הזה פרטי."
-
-#: .\templates\_404.html:5 .\templates\_404.html:9
-msgid "Page not found"
-msgstr "הדף לא נמצא"
 
 #: .\templates\_500.html:5 .\templates\_500.html:9
 msgid "Internal server error"
