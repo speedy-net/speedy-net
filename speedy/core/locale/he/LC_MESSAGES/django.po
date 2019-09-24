@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 11:16+0300\n"
+"POT-Creation-Date: 2019-09-24 12:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2191,14 +2191,6 @@ msgstr "אנגלית"
 msgid "Hebrew"
 msgstr "עברית"
 
-#: .\templates\404.html:5 .\templates\404.html:9
-msgid "Page not found"
-msgstr "הדף לא נמצא"
-
-#: .\templates\404.html:12
-msgid "Speedy is sorry, but the page is not found."
-msgstr "ספידי מצטערת, אבל הדף לא נמצא."
-
 #: .\templates\_400.html:5 .\templates\_400.html:9
 msgid "Bad request"
 msgstr "בקשה לא טובה"
@@ -2212,8 +2204,16 @@ msgid "Permission denied"
 msgstr "ההרשאה נדחתה"
 
 #: .\templates\_403.html:12
-msgid "This page is private."
-msgstr "הדף הזה פרטי."
+msgid "Speedy is sorry, but this page is private."
+msgstr "ספידי מצטערת, אבל הדף הזה פרטי."
+
+#: .\templates\_404.html:5 .\templates\_404.html:9
+msgid "Page not found"
+msgstr "הדף לא נמצא"
+
+#: .\templates\_404.html:12
+msgid "Speedy is sorry, but the page is not found."
+msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 
 #: .\templates\_500.html:5 .\templates\_500.html:9
 msgid "Internal server error"
@@ -2814,6 +2814,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid "This page is private."
+#~ msgstr "הדף הזה פרטי."
 
 #~ msgid "You don't have any friends yet."
 #~ msgstr "עדיין אין לך חברים/ות."
