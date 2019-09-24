@@ -233,7 +233,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': '/var/log/django/speedy.log',
-            'when': 'W',
+            'when': 'W6',
             'backupCount': 12,
             'formatter': 'verbose',
             'filters': ['require_debug_false'],
