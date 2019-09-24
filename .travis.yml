@@ -19,6 +19,7 @@ install:
   - pip freeze
   - pwd
   - lsb_release -a
+  - mkdir -p /var/log/django
 script:
   - cd speedy/net
   - python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
