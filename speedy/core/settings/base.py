@@ -246,23 +246,23 @@ LOGGING = {
     },
     'loggers': {
         'root': {
-            'handlers': ['console', 'mail_admins'],  # Disabled 'file' # Was: 'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'DEBUG',
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'INFO',
             'propagate': True,
         },
         'django': {
-            'handlers': ['console', 'mail_admins'],  # Disabled 'file' # Was: 'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'DEBUG',
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'INFO',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['console', 'mail_admins'],  # Disabled 'file' # Was: 'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'DEBUG',
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'INFO',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['console', 'mail_admins'],  # Disabled 'file' # Was: 'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'DEBUG',
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'INFO',
             'propagate': True,
         },
         'django.server': {
@@ -271,7 +271,7 @@ LOGGING = {
             'propagate': False,
         },
         'speedy': {
-            'handlers': ['console', 'mail_admins'],  # Disabled 'file' # Was: 'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
