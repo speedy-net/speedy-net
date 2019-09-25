@@ -99,7 +99,8 @@ def get_all_field_names(base_field_name):
     for language_code in [this_language_code] + all_other_language_codes:
         field_name_localized = '{}_{}'.format(base_field_name, language_code)
         field_names.append(field_name_localized)
-    logger.debug("get_all_field_names::base_field_name={base_field_name}, field_names={field_names}".format(
+    logger.debug("get_all_field_names::this_language_code={this_language_code}, base_field_name={base_field_name}, field_names={field_names}".format(
+        this_language_code=this_language_code,
         base_field_name=base_field_name,
         field_names=field_names,
     ))
