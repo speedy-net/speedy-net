@@ -76,9 +76,9 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        logger.debug('RegistrationView#form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
+        logger.debug('RegistrationView::form_valid(): django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION: %s', django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION)
         if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
-            logger.debug('activating profile, profile: %s', self.object.profile)
+            logger.debug('RegistrationView::form_valid(): activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
         user.email_addresses.first().send_confirmation_email()
