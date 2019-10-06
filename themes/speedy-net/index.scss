@@ -67,6 +67,13 @@ $input-color: $black;
 
 $enable-rounded: false;
 
+@media (min-width: 350px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 html, body {
@@ -94,5 +101,22 @@ html {
 .footer a:link,
 .footer a:active {
     color: #3D70A3 !important;
+}
+
+.pagination li {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.navbar-nav {
+    max-width: 500px;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.row {
+    flex-wrap: nowrap;
 }
 

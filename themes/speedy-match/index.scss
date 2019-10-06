@@ -69,6 +69,13 @@ $enable-shadows: false;
 //$border-radius-sm: 0;
 $border-radius-lg: 10px;
 
+@media (min-width: 350px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 html, body {
@@ -89,6 +96,7 @@ html {
 
     form {
         color: black;
+
         a {
             color: black;
         }
@@ -141,27 +149,27 @@ html {
 }
 
 .rounded-lg {
-  border-radius: $border-radius-lg !important;
+    border-radius: $border-radius-lg !important;
 }
 
 .rounded-lg-top {
-  border-top-left-radius: $border-radius-lg !important;
-  border-top-right-radius: $border-radius-lg !important;
+    border-top-left-radius: $border-radius-lg !important;
+    border-top-right-radius: $border-radius-lg !important;
 }
 
 .rounded-lg-right {
-  border-top-right-radius: $border-radius-lg !important;
-  border-bottom-right-radius: $border-radius-lg !important;
+    border-top-right-radius: $border-radius-lg !important;
+    border-bottom-right-radius: $border-radius-lg !important;
 }
 
 .rounded-lg-bottom {
-  border-bottom-right-radius: $border-radius-lg !important;
-  border-bottom-left-radius: $border-radius-lg !important;
+    border-bottom-right-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
 }
 
 .rounded-lg-left {
-  border-top-left-radius: $border-radius-lg !important;
-  border-bottom-left-radius: $border-radius-lg !important;
+    border-top-left-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
 }
 
 
@@ -196,7 +204,7 @@ body.with-background {
     font-weight: bold;
 
     > .body-inner {
-        background: url('/static/speedy-match/images/hearts-bg.png') no-repeat;
+        background: url('/static/speedy-match/images/hearts-bg.png');
         background-position-y: 64px;
         min-height: 100vh;
 
@@ -207,12 +215,13 @@ body.with-background {
     }
 
     .speedy-body-container .col-md-8 {
-        background: url('/static/speedy-match/images/photo.png') bottom left no-repeat;
+        background: url('/static/speedy-match/images/photo.png') no-repeat;
+        background-position: bottom left;
         background-size: 630px;
     }
 
     .navbar.bg-speedy-match {
-        background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));
+        /* background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0)); */
         font-weight: normal;
     }
 }
@@ -235,5 +244,23 @@ body.with-background {
 .footer a:active,
 a.speedy-bottom-badge-link {
     color: #521b13 !important;
+}
+
+.pagination li {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.navbar-nav {
+    max-width: 500px;
+}
+
+.invalid-feedback {
+    display: block;
+    color: #000000;
+}
+
+.row {
+    flex-wrap: nowrap;
 }
 
