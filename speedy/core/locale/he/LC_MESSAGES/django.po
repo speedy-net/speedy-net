@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 12:50+0300\n"
+"POT-Creation-Date: 2019-10-06 19:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2067,9 +2067,13 @@ msgstr "ביטלת את חסימת {}."
 msgid "Contact By Form"
 msgstr "Contact By Form"
 
-#: .\contact_by_form\forms.py:27
+#: .\contact_by_form\forms.py:30
 msgid "Send"
 msgstr "שלח/י"
+
+#: .\contact_by_form\forms.py:36
+msgid "Please contact us by e-mail."
+msgstr "אנא צרו איתנו קשר באמצעות הדואר האלקטרוני."
 
 #: .\contact_by_form\models.py:15
 msgid "Feedback"
@@ -2219,7 +2223,7 @@ msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:151
+#: .\templates\about\about_base.html:5 .\templates\base.html:153
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
@@ -2237,7 +2241,7 @@ msgstr "עריכת פרופיל"
 msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:152
+#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:154
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
@@ -2359,28 +2363,28 @@ msgstr "אדמין - כל המשתמשים"
 msgid "No users."
 msgstr "אין משתמשים."
 
-#: .\templates\base.html:108
+#: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:152 .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\base.html:154 .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base.html:153 .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base.html:153 .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base.html:154 .\templates\contact_by_email\contact_us.html:8
+#: .\templates\base.html:156 .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:14
@@ -2388,55 +2392,55 @@ msgstr "תנאים"
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:157
+#: .\templates\base.html:159
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:158
+#: .\templates\base.html:160
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:161
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:162
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:161
+#: .\templates\base.html:163
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:166
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:165
+#: .\templates\base.html:167
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:166
+#: .\templates\base.html:168
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:167
+#: .\templates\base.html:169
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:170
+#: .\templates\base.html:172
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:176
+#: .\templates\base.html:178
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:177
+#: .\templates\base.html:179
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: .\templates\base.html:199 .\templates\base.html:201
+#: .\templates\base.html:201 .\templates\base.html:203
 msgid "Speedy"
 msgstr "ספידי"
 
