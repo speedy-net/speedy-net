@@ -249,3 +249,9 @@ body.bidi-rtl .navbar-right {
     }
 }
 
+.speedy-404-background {
+    display: table;
+    margin: auto;
+    max-width: 100%;
+}
+
