@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-07 14:54+0300\n"
+"POT-Creation-Date: 2019-10-07 15:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2195,6 +2195,14 @@ msgstr "אנגלית"
 msgid "Hebrew"
 msgstr "עברית"
 
+#: .\templates\400.html:5 .\templates\400.html:9
+msgid "Bad request"
+msgstr "בקשה לא טובה"
+
+#: .\templates\400.html:12 .\templates\500.html:12
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr "ספידי מצטערת, אבל איננו יכולים לטפל בבקשתך."
+
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
 msgstr "ההרשאה נדחתה"
@@ -2211,15 +2219,7 @@ msgstr "הדף לא נמצא"
 msgid "Speedy is sorry, but the page is not found."
 msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 
-#: .\templates\_400.html:5 .\templates\_400.html:9
-msgid "Bad request"
-msgstr "בקשה לא טובה"
-
-#: .\templates\_400.html:12 .\templates\_500.html:12
-msgid " "
-msgstr " "
-
-#: .\templates\_500.html:5 .\templates\_500.html:9
+#: .\templates\500.html:5 .\templates\500.html:9
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
@@ -2818,6 +2818,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid " "
+#~ msgstr " "
 
 #~ msgid "This page is private."
 #~ msgstr "הדף הזה פרטי."
