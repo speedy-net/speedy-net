@@ -9,7 +9,7 @@ def activate_staging(settings):
         'SERVER_EMAIL': 'webmaster+staging-server@speedy.net.2.speedy-technologies.com',
         'ADMINS': admins,
         'MANAGERS': admins,
-        'DEBUG': True,
+        # 'DEBUG': True,
     })
 
 

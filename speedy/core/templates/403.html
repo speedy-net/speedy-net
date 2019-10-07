@@ -1,6 +1,7 @@
 {% extends 'base_site.html' %}
 
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% trans 'Permission denied'|title %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
@@ -8,6 +9,7 @@
     <div class="page-header">
         <h1>{% trans 'Permission denied'|title %}</h1>
     </div>
+    <img class="speedy-404-background" src="{% static 'speedy-core/images/speedy-404-background.png' %}" alt="" />
     <div class="alert alert-danger">
         {% trans 'Speedy is sorry, but this page is private.' %}
     </div>
