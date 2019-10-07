@@ -109,7 +109,8 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.user_profile_url)
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 self.assertEqual(first=r.status_code, second=404)
-                self.assertNotIn(member="<title>", container=r.content.decode())
+                self.assertIn(member="<title>{}</title>".format(escape(self.expected_404_title[self.site.id])), container=r.content.decode())
+                self.assertIn(member=escape(self.expected_404_speedy_is_sorry), container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/login/?next={}'.format(self.user_profile_url)
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -138,7 +139,8 @@ if (django_settings.LOGIN_ENABLED):
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 # ~~~~ TODO: should redirect to '/welcome/'.
                 self.assertEqual(first=r.status_code, second=404)
-                self.assertNotIn(member="<title>", container=r.content.decode())
+                self.assertIn(member="<title>{}</title>".format(escape(self.expected_404_title[self.site.id])), container=r.content.decode())
+                self.assertIn(member=escape(self.expected_404_speedy_is_sorry), container=r.content.decode())
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 expected_url = '/welcome/'
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -259,7 +261,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
-            self.assertNotIn(member="<title>", container=r.content.decode())
+            self.assertIn(member="<title>{}</title>".format(escape(self.expected_404_title[self.site.id])), container=r.content.decode())
+            self.assertIn(member=escape(self.expected_404_speedy_is_sorry), container=r.content.decode())
 
         def test_user_profile_deactivated_user_from_friend(self):
             Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
@@ -268,7 +271,8 @@ if (django_settings.LOGIN_ENABLED):
             self.deactivate_user()
             r = self.client.get(path=self.user_profile_url)
             self.assertEqual(first=r.status_code, second=404)
-            self.assertNotIn(member="<title>", container=r.content.decode())
+            self.assertIn(member="<title>{}</title>".format(escape(self.expected_404_title[self.site.id])), container=r.content.decode())
+            self.assertIn(member=escape(self.expected_404_speedy_is_sorry), container=r.content.decode())
 
     @only_on_sites_with_login
     class UserDetailViewEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
@@ -310,6 +314,11 @@ if (django_settings.LOGIN_ENABLED):
                 }
             else:
                 raise NotImplementedError()
+            self.expected_404_title = {
+                django_settings.SPEEDY_NET_SITE_ID: "Page Not Found / Speedy Net [alpha]",
+                django_settings.SPEEDY_MATCH_SITE_ID: "Page Not Found / Speedy Match [alpha]",
+            }
+            self.expected_404_speedy_is_sorry = 'Speedy is sorry, but the page is not found.'
 
         def validate_all_values(self):
             super().validate_all_values()
@@ -361,6 +370,11 @@ if (django_settings.LOGIN_ENABLED):
                 }
             else:
                 raise NotImplementedError()
+            self.expected_404_title = {
+                django_settings.SPEEDY_NET_SITE_ID: "הדף לא נמצא / ספידי נט [אלפא]",
+                django_settings.SPEEDY_MATCH_SITE_ID: "הדף לא נמצא / ספידי מץ' [אלפא]",
+            }
+            self.expected_404_speedy_is_sorry = 'ספידי מצטערת, אבל הדף לא נמצא.'
 
         def validate_all_values(self):
             super().validate_all_values()
