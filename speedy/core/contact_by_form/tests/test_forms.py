@@ -1,4 +1,5 @@
 from django.conf import settings as django_settings
+from django.test import override_settings
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.models import SiteTestCase
@@ -9,8 +10,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
-    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
-    class FeedbackFormTestCase(SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackFormTestCaseMixin(SpeedyCoreFeedbackLanguageMixin):
         def assert_form_text_field(self, form):
             self.assertTrue(expr=form.fields['text'].required)
 
@@ -32,6 +32,49 @@ if (django_settings.LOGIN_ENABLED):
             form = FeedbackForm(defaults=defaults, data=data)
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._feedback_form_all_the_required_fields_are_required_errors_dict(user_is_logged_in=False))
+
+        def test_visitor_cannot_submit_form_with_not_allowed_string_1(self):
+            defaults = {
+                'type': Feedback.TYPE_FEEDBACK,
+            }
+            data = {
+                'sender_name': "A",
+                'sender_email': "test@example.com",
+                'text': """
+                    Best regards
+                    Mike
+                    monkeydigital.co@gmail.com
+                """,
+            }
+            form = FeedbackForm(defaults=defaults, data=data)
+            self.assertFalse(expr=form.is_valid())
+            self.assertDictEqual(d1=form.errors, d2=self._please_contact_us_by_email_errors_dict())
+
+        def test_visitor_cannot_submit_form_with_not_allowed_string_2(self):
+            defaults = {
+                'type': Feedback.TYPE_FEEDBACK,
+            }
+            data = {
+                'sender_name': "A",
+                'sender_email': "test@example.com",
+                'text': """
+                    We will increase your Website TF in 30 days (Majestic SEO – Trust Flow) or we will refund you every cent. 100% Money back guarantee
+                    
+                    We offer Guaranteed TF 20 and TF 30
+                    
+                    Majestic Trust Flow is the most important SEO metric since the dissapearance of Google Page Rank.
+                    Ensure confidence and trust in your website having a high Trust Flow score
+                    
+                    More details about our service can be found here:
+                    https://monkeydigital.co/product/trust-flow-seo-package/
+                    
+                    Best regards
+                    Mike
+                """,
+            }
+            form = FeedbackForm(defaults=defaults, data=data)
+            self.assertFalse(expr=form.is_valid())
+            self.assertDictEqual(d1=form.errors, d2=self._please_contact_us_by_email_errors_dict())
 
         @only_on_sites_with_login
         def test_feedback_form_for_user_doesnt_require_name_and_email(self):
@@ -78,5 +121,20 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=feedback.report_entity_id, second=other_user.pk)
             self.assertIsNone(obj=feedback.report_file)
             self.assertEqual(first=feedback.text, second=data['text'])
+
+
+    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+    class FeedbackFormEnglishTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+    @override_settings(LANGUAGE_CODE='he')
+    class FeedbackFormHebrewTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
