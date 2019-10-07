@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-06 19:26+0300\n"
+"POT-Creation-Date: 2019-10-07 14:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2130,28 +2130,28 @@ msgstr ""
 msgid "Hebrew"
 msgstr ""
 
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr ""
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr ""
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr ""
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr ""
+
 #: .\templates\_400.html:5 .\templates\_400.html:9
 msgid "Bad request"
 msgstr ""
 
 #: .\templates\_400.html:12 .\templates\_500.html:12
 msgid " "
-msgstr ""
-
-#: .\templates\_403.html:5 .\templates\_403.html:9
-msgid "Permission denied"
-msgstr ""
-
-#: .\templates\_403.html:12
-msgid "Speedy is sorry, but this page is private."
-msgstr ""
-
-#: .\templates\_404.html:5 .\templates\_404.html:9
-msgid "Page not found"
-msgstr ""
-
-#: .\templates\_404.html:12
-msgid "Speedy is sorry, but the page is not found."
 msgstr ""
 
 #: .\templates\_500.html:5 .\templates\_500.html:9
