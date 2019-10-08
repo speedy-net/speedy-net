@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-07 15:59+0300\n"
+"POT-Creation-Date: 2019-10-08 14:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2130,11 +2130,11 @@ msgstr ""
 msgid "Hebrew"
 msgstr ""
 
-#: .\templates\400.html:5 .\templates\400.html:9
+#: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
 msgstr ""
 
-#: .\templates\400.html:12 .\templates\500.html:12
+#: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
 msgstr ""
 
@@ -2154,7 +2154,7 @@ msgstr ""
 msgid "Speedy is sorry, but the page is not found."
 msgstr ""
 
-#: .\templates\500.html:5 .\templates\500.html:9
+#: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
 msgstr ""
 
