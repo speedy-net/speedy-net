@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 14:03+0300\n"
+"POT-Creation-Date: 2019-10-09 07:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,17 +217,17 @@ msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרו
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "את לא חוסמת אף אחד"
+msgstr "את לא חוסמת אף אחד."
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "אתה לא חוסם אף אחד"
+msgstr "אתה לא חוסם אף אחד."
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "את/ה לא חוסם/ת אף אחד"
+msgstr "את/ה לא חוסם/ת אף אחד."
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
