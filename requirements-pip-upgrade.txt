@@ -5,7 +5,7 @@ django-friendship
 django-translated-fields
 factory-boy
 Faker
-Pillow==5.3.0 # Pillow versions above 5.3.0 raise a DeprecationWarning in Python 3.6 and 3.7 if run with deprecation warnings enabled.
+Pillow
 psycopg2==2.7.7 # psycopg2 versions above 2.7.7 are not supported in Django versions below 2.2.
 python-dateutil
 python-memcached
