@@ -26,7 +26,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_other_user_has_no_access(self):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
         def test_user_has_access(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
@@ -51,7 +51,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_cannot_block_self(self):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
         def test_user_can_block_other_user(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
