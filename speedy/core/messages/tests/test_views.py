@@ -137,9 +137,9 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_cannot_send_message_to_self(self):
             self.client.login(username=self.user2.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
             r = self.client.post(path=self.page_url, data=self.data)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
         def test_user_can_see_a_form(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)

@@ -62,7 +62,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_cannot_open_other_users_requests_page(self):
             r = self.client.get(path=self.other_page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
 
     @only_on_sites_with_login
@@ -86,7 +86,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_cannot_open_other_users_requests_page(self):
             r = self.client.get(path=self.other_page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.other_page_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
 
     class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
@@ -343,8 +343,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_cannot_accept_friendship_request_he_sent_another_user(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
-            self.assertIsNone(obj=r.context)
+            self.assertEqual(first=r.status_code, second=403)
 
         # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
         def test______user_that_has_received_request_can_accept_it(self):
@@ -502,8 +501,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_cannot_reject_friendship_request_he_sent_another_user(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
-            self.assertIsNone(obj=r.context)
+            self.assertEqual(first=r.status_code, second=403)
 
         # Like the following test, without the lines that are known to fail. # ~~~~ TODO: fix the following test and remove this test!
         def test______user_that_has_received_request_can_reject_it(self):

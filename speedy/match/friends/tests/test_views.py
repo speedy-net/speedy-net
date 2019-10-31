@@ -25,6 +25,6 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_user_cannot_open_other_users_friends_page(self):
             r = self.client.get(path=self.second_user_friends_list_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.second_user_friends_list_url), status_code=302, target_status_code=200)
+            self.assertEqual(first=r.status_code, second=403)
 
 
