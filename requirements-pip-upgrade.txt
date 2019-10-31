@@ -1,4 +1,4 @@
-Django>=1.11,<2.0
+Django>=1.11,<2.2
 django-crispy-forms
 django-environ
 django-friendship
