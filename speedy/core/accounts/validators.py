@@ -2,7 +2,7 @@ import logging
 
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
-from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
 
@@ -38,7 +38,7 @@ def generate_regex_validator(allow_dashes, allow_letters_after_digits):
 
 
 class UsernameMinLengthValidator(MinLengthValidator):
-    message = ngettext_lazy(
+    message = ngettext(
         singular='Username must contain at least %(limit_value)d alphanumeric character (it has %(show_value)d).',
         plural='Username must contain at least %(limit_value)d alphanumeric characters (it has %(show_value)d).',
         number='limit_value',
@@ -49,7 +49,7 @@ class UsernameMinLengthValidator(MinLengthValidator):
 
 
 class UsernameMaxLengthValidator(MaxLengthValidator):
-    message = ngettext_lazy(
+    message = ngettext(
         singular='Username must contain at most %(limit_value)d alphanumeric character (it has %(show_value)d).',
         plural='Username must contain at most %(limit_value)d alphanumeric characters (it has %(show_value)d).',
         number='limit_value',
@@ -60,7 +60,7 @@ class UsernameMaxLengthValidator(MaxLengthValidator):
 
 
 class SlugMinLengthValidator(MinLengthValidator):
-    message = ngettext_lazy(
+    message = ngettext(
         singular='Username must contain at least %(limit_value)d character (it has %(show_value)d).',
         plural='Username must contain at least %(limit_value)d characters (it has %(show_value)d).',
         number='limit_value',
@@ -71,7 +71,7 @@ class SlugMinLengthValidator(MinLengthValidator):
 
 
 class SlugMaxLengthValidator(MaxLengthValidator):
-    message = ngettext_lazy(
+    message = ngettext(
         singular='Username must contain at most %(limit_value)d character (it has %(show_value)d).',
         plural='Username must contain at most %(limit_value)d characters (it has %(show_value)d).',
         number='limit_value',
@@ -94,7 +94,7 @@ class PasswordMinLengthValidator:
     def validate(self, password, user=None):
         if len(password) < self.min_length:
             raise ValidationError(
-                ngettext_lazy(
+                ngettext(
                     singular="This password is too short. It must contain at least %(min_length)d character.",
                     plural="This password is too short. It must contain at least %(min_length)d characters.",
                     number=self.min_length,
@@ -104,7 +104,7 @@ class PasswordMinLengthValidator:
             )
 
     def get_help_text(self):
-        return ngettext_lazy(
+        return ngettext(
             singular="Your password must contain at least %(min_length)d character.",
             plural="Your password must contain at least %(min_length)d characters.",
             number=self.min_length,
@@ -124,7 +124,7 @@ class PasswordMaxLengthValidator:
     def validate(self, password, user=None):
         if len(password) > self.max_length:
             raise ValidationError(
-                ngettext_lazy(
+                ngettext(
                     singular="This password is too long. It must contain at most %(max_length)d character.",
                     plural="This password is too long. It must contain at most %(max_length)d characters.",
                     number=self.max_length,
@@ -134,7 +134,7 @@ class PasswordMaxLengthValidator:
             )
 
     def get_help_text(self):
-        return ngettext_lazy(
+        return ngettext(
             singular="Your password must contain at most %(max_length)d character.",
             plural="Your password must contain at most %(max_length)d characters.",
             number=self.max_length,

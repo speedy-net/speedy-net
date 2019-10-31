@@ -1,6 +1,6 @@
 # This file is only for ./make_all_messages.sh, it is not used otherwise.
 
-from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
+from django.utils.translation import gettext_lazy as _, ngettext, pgettext_lazy
 
 
 # from django
@@ -30,7 +30,7 @@ _('Blocked Relationships')
 
 
 # from django
-ngettext_lazy(
+ngettext(
     singular='List contains %(show_value)d item, it should contain no more than %(limit_value)d.',
     plural='List contains %(show_value)d items, it should contain no more than %(limit_value)d.',
     number='limit_value'
