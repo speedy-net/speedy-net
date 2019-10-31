@@ -7,7 +7,7 @@ from .models import Feedback
 
 
 class FeedbackForm(ModelFormWithDefaults):
-    _not_allowed_strings = ["monkeydigital.co@gmail.com", "https://monkeydigital.co/"]
+    _not_allowed_strings = ["monkeydigital.co@gmail.com", "https://monkeydigital.co/", "support@monkeydigital.co", "https://www.monkeydigital.co/"]
 
     class Meta:
         model = Feedback
