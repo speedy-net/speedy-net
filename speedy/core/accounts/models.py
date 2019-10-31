@@ -329,7 +329,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         field=models.CharField(verbose_name=_('first name'), max_length=75),
     )
     last_name = TranslatedField(
-        field=models.CharField(verbose_name=_('last name'), max_length=75),
+        field=models.CharField(verbose_name=_('last name'), max_length=150),
     )
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
