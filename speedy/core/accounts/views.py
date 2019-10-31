@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 from django.conf import settings as django_settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, views as auth_views, REDIRECT_FIELD_NAME, update_session_auth_hash
+from django.contrib.auth import login as auth_login, update_session_auth_hash
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.http import HttpResponse
@@ -12,15 +12,13 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _, get_language, pgettext_lazy
 from django.views import generic
-from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
 from speedy.core.base.utils import reflection_import
-from .forms import RegistrationForm, LoginForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
+from .forms import RegistrationForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
 
 logger = logging.getLogger(__name__)
@@ -92,19 +90,6 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
             'language_code': get_language(),
         })
         return kwargs
-
-
-@sensitive_post_parameters()
-@never_cache
-def login(request, template_name='accounts/login.html', redirect_field_name=REDIRECT_FIELD_NAME, authentication_form=LoginForm, extra_context=None):
-    response = auth_views.login(
-        request=request,
-        template_name=template_name,
-        redirect_field_name=redirect_field_name,
-        authentication_form=authentication_form,
-        extra_context=extra_context,
-    )
-    return response
 
 
 class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):

@@ -10,13 +10,13 @@ urlpatterns = [
 
     url(regex=r'^set-session/$', view=views.set_session, name='set_session'),
 
-    url(regex=r'^login/$', view=views.login, name='login'),
-    url(regex=r'^logout/$', view=auth_views.logout, name='logout', kwargs={'template_name': 'accounts/logged_out.html'}),
+    url(regex=r'^login/$', view=auth_views.LoginView.as_view(template_name='accounts/login.html', authentication_form=forms.LoginForm, extra_context=None), name='login'),
+    url(regex=r'^logout/$', view=auth_views.LogoutView.as_view(template_name='accounts/logged_out.html'), name='logout'),
 
-    url(regex=r'^reset-password/$', view=auth_views.password_reset, kwargs={'post_reset_redirect': 'accounts:password_reset_done', 'template_name': 'accounts/password_reset/form.html', 'password_reset_form': forms.PasswordResetForm}, name='password_reset'),
+    url(regex=r'^reset-password/$', view=auth_views.PasswordResetView.as_view(template_name='accounts/password_reset/form.html', post_reset_redirect='accounts:password_reset_done', password_reset_form=forms.PasswordResetForm), name='password_reset'),
     url(regex=r'^reset-password/done/$', view=generic.TemplateView.as_view(template_name='accounts/password_reset/done.html'), name='password_reset_done'),
-    url(regex=r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', view=auth_views.password_reset_confirm, kwargs={'post_reset_redirect': 'accounts:password_reset_complete', 'set_password_form': forms.SetPasswordForm, 'template_name': 'accounts/password_reset/confirm.html'}, name='password_reset_confirm'),
-    url(regex=r'^reset-password/complete/$', view=auth_views.password_reset_complete, kwargs={'template_name': 'accounts/password_reset/complete.html'}, name='password_reset_complete'),
+    url(regex=r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', view=auth_views.PasswordResetConfirmView.as_view(template_name='accounts/password_reset/confirm.html', post_reset_redirect='accounts:password_reset_complete', set_password_form=forms.SetPasswordForm), name='password_reset_confirm'),
+    url(regex=r'^reset-password/complete/$', view=auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset/complete.html'), name='password_reset_complete'),
 
     url(regex=r'^edit-profile/$', view=views.EditProfileView.as_view(), name='edit_profile'),
     url(regex=r'^edit-profile/privacy/$', view=views.EditProfilePrivacyView.as_view(), name='edit_profile_privacy'),
