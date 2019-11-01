@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/speedy-net/speedy-net#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "gulp": "^3.9.1",
     "gulp-cli": "^2.2.0",
     "gulp-rename": "^1.4.0",
