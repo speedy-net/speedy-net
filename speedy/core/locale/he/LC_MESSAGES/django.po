@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 07:54+0300\n"
+"POT-Creation-Date: 2019-11-01 06:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2006,24 +2006,24 @@ msgstr "יש להזין תאריך חוקי."
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\views.py:72
+#: .\accounts\views.py:70
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאשר את הדואר האלקטרוני שלך."
 
-#: .\accounts\views.py:237
+#: .\accounts\views.py:222
 msgid "Invalid confirmation link."
 msgstr "קישור אישור לא חוקי."
 
-#: .\accounts\views.py:261 .\accounts\views.py:277
+#: .\accounts\views.py:246 .\accounts\views.py:262
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-{email_address}"
 
-#: .\accounts\views.py:292
+#: .\accounts\views.py:277
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:308
+#: .\accounts\views.py:293
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
