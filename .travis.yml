@@ -6,7 +6,7 @@ python:
 sudo: required
 dist: bionic
 addons:
-  postgresql: "9.6"
+  postgresql: "10.10"
 services:
   - postgresql
 before_script:
