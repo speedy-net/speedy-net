@@ -108,9 +108,9 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 		Zip: [write text]
 		Neighborhood: [write text]
 		Website: [select one or more URL]
-		
+
 - The user's time zone will also be saved to the database.
-		
+
 - When viewing a profile, only non-empty fields will be visible. When editing a profile, all fields will be visible to edit.
 
 - The user can select his relatives (if they are on Speedy Net they will have to confirm).
@@ -127,7 +127,7 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 	Photos
 	Notes
 	Friends
-	
+
 - The main website will have the following options:
 	News Feed
 	Messages
@@ -177,14 +177,14 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 		Select Guests [from friends and relatives]
 		Public event [checkbox - default is checked]
 		Show the guest list on the event page [checkbox - default is checked]
-		
+
 - The URL of an event will be en.speedy.net/events/[event number], where event number will be a random number of 15 decimal digits. We may change it to use slugs later.
 
 - Each user will be able to set the following options for an event:
 	- Attending
 	- Maybe Attending
 	- Not Attending
-	
+
 - A user ID, page ID, group ID, cause ID or event ID will also be random with 15 decimal digits.
 
 - An album ID or photo ID will be random with 20 decimal digits.
@@ -220,10 +220,10 @@ Database: MySQL with the InnoDB storage engine. We will use foreign keys in the 
 	- Caption: (text)
 	- Tags: sorted from left to right. (multiple tags for one photo are permitted).
 	- One photo per album will be the album cover.
-	
+
 - In tags, the same person can't be tagged in the same picture more than once (if they are on Speedy Net). But two tags with the same name are allowed (if two people have the same name).
 
 Best Regards,
 Uri Rodberg
 E-mail: uri@speedy.net
-Website: http://www.speedysoft.com/uri/en/
+Website: https://www.speedysoft.com/uri/en/

@@ -53,7 +53,7 @@ System Requirements Specification: You need to download the files from SourceFor
 21. Users and compositons from the PHP/MySQL website will be converted to the new Python/PostgreSQL website.
 
 You can find more details and examples of melodies composed by this project on this website:
-http://www.speedysoftware.com/composer/
+https://www.speedysoftware.com/composer/
 
 There is also a project on SourceForge, where you can download the MATLAB source files & project files:
 https://sourceforge.net/projects/speedycomposer/
@@ -63,4 +63,4 @@ In the future, we will also develop an application for composing melodies on per
 Best Regards,
 Uri Rodberg
 E-mail: uri@speedy.net
-Website: http://www.speedysoft.com/uri/en/
+Website: https://www.speedysoft.com/uri/en/
