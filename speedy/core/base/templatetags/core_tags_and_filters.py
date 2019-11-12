@@ -56,12 +56,6 @@ def convert_en_to_www(value):
         return value
 
 
-# ~~~~ TODO: This filter is only because we use "1." domains in production. remove this filter!
-@register.filter
-def remove_1_prefix_from_domain(value):
-    return value.replace("1.", "")
-
-
 @register.filter
 def jsonify(object):
     return json.dumps(object)

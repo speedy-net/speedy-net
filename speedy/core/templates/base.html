@@ -68,7 +68,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="drop-down-menu-button">
                 {% for other_site in sites %}
-                    <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain|remove_1_prefix_from_domain }}{# ~~~~ TODO: This filter [remove_1_prefix_from_domain] is only because we use "1." domains in production. remove this filter! #}">{% trans other_site.name %}</a>
+                    <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% trans other_site.name %}</a>
                 {% endfor %}
 
             </div>
