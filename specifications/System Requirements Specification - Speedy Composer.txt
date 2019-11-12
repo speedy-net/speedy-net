@@ -4,21 +4,21 @@ Here are the System Requirements Specification for Speedy Composer.
 
 Programming language: Python, PostgreSQL, MATLAB & Octave.
 
-Website: http://en.speedycomposer.com/
+Website: https://en.speedycomposer.com/
 
-Logo: Will be similar to the logo of http://en.speedycomposer.com/ .
+Logo: Will be similar to the logo of https://en.speedycomposer.com/ .
 
 Graphics: No need to use graphics, just plain white pages and logo.
 
 System Requirements Specification: You need to download the files from SourceForge [https://sourceforge.net/projects/speedycomposer/], then translate the composition program (compose.m) into PHP, using the neural networks saved from MATLAB (networks.mat).  Here are the requirements for the website:
 
-1. Users will be able to register using username (alphanumeric, at least 4 characters, must start with a letter), password (alphanumeric, at least 4 characters, different than username), confirm password, and (optional) e-mail address (like registering to Wikipedia). [registering will be via http://en.speedy.net/ - under construction].
+1. Users will be able to register using username (alphanumeric, at least 4 characters, must start with a letter), password (alphanumeric, at least 4 characters, different than username), confirm password, and (optional) e-mail address (like registering to Wikipedia). [registering will be via https://en.speedy.net/ - under construction].
 
-2. Users who are already registered, will be able to login from the main page [http://en.speedycomposer.com/ or http://en.speedy.net/].
+2. Users who are already registered, will be able to login from the main page [https://en.speedycomposer.com/ or https://en.speedy.net/].
 
-3. PostgreSQL database will be used for saving usernames, an encrypted hash of the password, and e-mail address.  The password itself will not be saved to the database. [registering will be via http://en.speedy.net/ - under construction].
+3. PostgreSQL database will be used for saving usernames, an encrypted hash of the password, and e-mail address.  The password itself will not be saved to the database. [registering will be via https://en.speedy.net/ - under construction].
 
-4. If the user forgets his or her password, a new password will be generated and sent via e-mail (user will enter his username or e-mail address). [will be via http://en.speedy.net/ - under construction].
+4. If the user forgets his or her password, a new password will be generated and sent via e-mail (user will enter his username or e-mail address). [will be via https://en.speedy.net/ - under construction].
 
 5. For each user, a folder named "My Compositions" will be generated. The user will be able to rename the default folder or create new folders.
 
@@ -26,7 +26,7 @@ System Requirements Specification: You need to download the files from SourceFor
 
 7. When users press the "Compose!" button on the website (after selecting a folder), the user will be shown a small rotating icon ("composition in progress"), and then the composition will be generated using AJAX, and saved as a MIDI file to the user's default folder, or the folder selected (the user will enter the folder before composing the melody). The name of the melody file will be "Composition #1", and then "Composition #2" etc.
 
-8. Users will select "public" or "private" for each composition (the default will be private).  The composed melody will be downloadable (in MIDI format or MP3 format) by the user, and if the composition is public it will be downloadable by anyone from the user's directory.  For example, if username is "aaaa", then composition URL will be something like "http://en.speedycomposer.com/aaaa/my-compositions/composition-1/" (with all letters lowercase, using underlines instead of spaces and with "#" characters ignored).
+8. Users will select "public" or "private" for each composition (the default will be private).  The composed melody will be downloadable (in MIDI format or MP3 format) by the user, and if the composition is public it will be downloadable by anyone from the user's directory.  For example, if username is "aaaa", then composition URL will be something like "https://en.speedycomposer.com/aaaa/my-compositions/composition-1/" (with all letters lowercase, using underlines instead of spaces and with "#" characters ignored).
 
 9. After composing a melody, the melody will play automatically for the user, and the user will be able to download it in MIDI format or MP3 format.
 
@@ -40,7 +40,7 @@ System Requirements Specification: You need to download the files from SourceFor
 
 14. Users will be able to move a melody to another folder.
 
-15. Users will be able to change password or e-mail address.  Change of username will not be permitted. [will be via http://en.speedy.net/ - under construction].
+15. Users will be able to change password or e-mail address.  Change of username will not be permitted. [will be via https://en.speedy.net/ - under construction].
 
 16. Users will be able to delete compositions or folders (after a warning).
 

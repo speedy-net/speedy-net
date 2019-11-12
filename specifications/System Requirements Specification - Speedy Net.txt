@@ -240,7 +240,7 @@ Speedy Match is a dating/matching app for singles. Speedy Composer is a melody c
 
 45. [In the future, a user may be able to set aliases, for example if my name in spanish is Uri Even-Jen, then I will be able to select urievenjen as an additional username, which will be identical to urirodberg and its default language can be spanish. The limit of up to 5 or 10 usernames per person will remain here.]
 
-The temporary URL for the website during development will be http://en.speedy2000.net/ . When the website is ready we will move to http://en.speedy.net/ .
+The temporary URL for the website during development will be http://en.speedy2000.net/ . When the website is ready we will move to https://en.speedy.net/ .
 
 The revenues of Speedy Net will be mainly from advertisements. We will not publish advertisements of meat or unhealthy food or beverages or products that were tested on animals.
 
