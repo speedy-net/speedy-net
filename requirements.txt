@@ -1,5 +1,5 @@
 # python==3.6
-Django==2.1.13
+Django==2.1.14
 django-crispy-forms==1.7.2
 django-environ==0.4.5
 django-friendship==1.8.1
