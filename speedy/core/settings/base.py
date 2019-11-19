@@ -231,10 +231,8 @@ LOGGING = {
         },
         'file': {  # for staging and production
             'level': 'DEBUG',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'class': 'logging.handlers.WatchedFileHandler',
             'filename': '/var/log/django/speedy.log',
-            'when': 'W6',
-            'backupCount': 12,
             'formatter': 'verbose',
         },
         'mail_admins': {  # for staging and production

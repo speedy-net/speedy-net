@@ -205,6 +205,11 @@ Copy sample **nginx** and **uwsgi** configs:
     sudo cp contrib/uwsgi/*.ini /etc/uwsgi/apps-enabled/
     sudo cp contrib/nginx/*.conf /etc/nginx/sites-enabled/
 
+Copy **logrotate** config:
+
+    sudo cp contrib/logrotate.d/speedy /etc/logrotate.d/
+    sudo chmod 644 /etc/logrotate.d/speedy
+
 Remove default **nginx** config:
 
      sudo rm /etc/nginx/sites-enabled/default

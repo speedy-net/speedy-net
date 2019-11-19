@@ -1,0 +1,9 @@
+/var/log/django/speedy.log
+{
+    weekly
+    rotate 24
+    create
+    dateext
+    dateyesterday
+    su ubuntu ubuntu
+}
