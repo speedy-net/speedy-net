@@ -72,8 +72,9 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user_profile.number_of_matches = len(matches_list)
         user_profile.save()
-        logger.debug("SiteProfileManager::get_matches:user={user}, number_of_matches={number_of_matches}".format(
+        logger.debug("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}".format(
             user=user,
+            language_code=language_code,
             number_of_matches=len(matches_list),
         ))
         return matches_list
