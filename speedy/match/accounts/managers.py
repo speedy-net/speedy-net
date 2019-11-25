@@ -1,3 +1,4 @@
+import logging
 from django.utils.translation import get_language
 
 from speedy.core.base.utils import get_age_ranges_match
@@ -5,6 +6,8 @@ from speedy.core.base.models import BaseManager
 from speedy.core.accounts.models import User
 from speedy.core.blocks.models import Block
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+
+logger = logging.getLogger(__name__)
 
 
 class SiteProfileManager(BaseManager):
@@ -69,6 +72,10 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user_profile.number_of_matches = len(matches_list)
         user_profile.save()
+        logger.debug("SiteProfileManager::get_matches:user={user}, number_of_matches={number_of_matches}".format(
+            user=user,
+            number_of_matches=len(matches_list),
+        ))
         return matches_list
 
 
