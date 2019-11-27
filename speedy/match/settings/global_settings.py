@@ -1,11 +1,11 @@
 # Used also by Speedy Net.
 
 class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
-    MIN_HEIGHT_ALLOWED = 1 # In cm.
-    MAX_HEIGHT_ALLOWED = 450 # In cm.
+    MIN_HEIGHT_ALLOWED = 1  # In cm.
+    MAX_HEIGHT_ALLOWED = 450  # In cm.
 
-    MIN_AGE_TO_MATCH_ALLOWED = 0 # In years.
-    MAX_AGE_TO_MATCH_ALLOWED = 180 # In years.
+    MIN_AGE_TO_MATCH_ALLOWED = 0  # In years.
+    MAX_AGE_TO_MATCH_ALLOWED = 180  # In years.
 
     SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS = [
         [],  # There's no step 0

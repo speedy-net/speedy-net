@@ -331,6 +331,21 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=User.settings.MIN_PASSWORD_LENGTH, second=8)
             self.assertEqual(first=User.settings.MAX_PASSWORD_LENGTH, second=120)
             self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=800)
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_MODEL, second=range(User.settings.MIN_AGE_ALLOWED_IN_MODEL, User.settings.MAX_AGE_ALLOWED_IN_MODEL))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_MODEL, second=range(0, 250))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_FORMS, second=range(User.settings.MIN_AGE_ALLOWED_IN_FORMS, User.settings.MAX_AGE_ALLOWED_IN_FORMS))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_FORMS, second=range(0, 180))
+
+        @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_AGE_ALLOWED_IN_MODEL=tests_settings.OVERRIDE_USER_SETTINGS.MIN_AGE_ALLOWED_IN_MODEL, MAX_AGE_ALLOWED_IN_MODEL=tests_settings.OVERRIDE_USER_SETTINGS.MAX_AGE_ALLOWED_IN_MODEL, MIN_AGE_ALLOWED_IN_FORMS=tests_settings.OVERRIDE_USER_SETTINGS.MIN_AGE_ALLOWED_IN_FORMS, MAX_AGE_ALLOWED_IN_FORMS=tests_settings.OVERRIDE_USER_SETTINGS.MAX_AGE_ALLOWED_IN_FORMS))
+        def test_model_settings_with_override_settings(self):
+            self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_MODEL, second=2)
+            self.assertEqual(first=User.settings.MAX_AGE_ALLOWED_IN_MODEL, second=240)
+            self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_FORMS, second=2)
+            self.assertEqual(first=User.settings.MAX_AGE_ALLOWED_IN_FORMS, second=178)
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_MODEL, second=range(User.settings.MIN_AGE_ALLOWED_IN_MODEL, User.settings.MAX_AGE_ALLOWED_IN_MODEL))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_MODEL, second=range(2, 240))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_FORMS, second=range(User.settings.MIN_AGE_ALLOWED_IN_FORMS, User.settings.MAX_AGE_ALLOWED_IN_FORMS))
+            self.assertEqual(first=User.AGE_VALID_VALUES_IN_FORMS, second=range(2, 178))
 
         def test_localizable_fields(self):
             self.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name', 'city'))

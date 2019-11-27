@@ -104,10 +104,16 @@ class OVERRIDE_USER_SETTINGS(object):
     MIN_SLUG_LENGTH = 60
     MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
+    MIN_AGE_ALLOWED_IN_MODEL = 2  # In years.
+    MAX_AGE_ALLOWED_IN_MODEL = 240  # In years.
+
+    MIN_AGE_ALLOWED_IN_FORMS = 2  # In years.
+    MAX_AGE_ALLOWED_IN_FORMS = 178  # In years.
+
 
 class OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
-    MIN_AGE_TO_MATCH_ALLOWED = 2 # In years.
-    MAX_AGE_TO_MATCH_ALLOWED = 178 # In years.
+    MIN_AGE_TO_MATCH_ALLOWED = 2  # In years.
+    MAX_AGE_TO_MATCH_ALLOWED = 178  # In years.
 
 
 if (django_settings.LOGIN_ENABLED):
