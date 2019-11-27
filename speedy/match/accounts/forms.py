@@ -198,7 +198,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         photo = self.files.get('photo')
         if (not (photo)):
             photo = self.instance.user.photo
-        speedy_match_accounts_validators.validate_photo(photo=photo)
+        speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo)
         return self.cleaned_data
 
     def clean_gender_to_match(self):

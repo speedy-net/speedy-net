@@ -1,9 +1,15 @@
+import logging
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.template.loader import render_to_string
 
 from speedy.core.base.utils import string_is_not_empty
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.core.uploads.models import Image
+
+logger = logging.getLogger(__name__)
 
 
 def height_is_valid(height):
@@ -37,6 +43,32 @@ def rank_is_valid(rank):
 def validate_photo(photo):
     if (not (photo)):
         raise ValidationError(_("A profile picture is required."))
+
+
+def validate_photo_for_user(user, photo):
+    validate_photo(photo=photo)
+    user._photo = user.photo
+    photo_is_valid = False
+    try:
+        user_image = Image(owner=user, file=photo)
+        user_image.save()
+        user.photo = user_image
+        profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
+        logger.debug('validate_photo_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
+            user=user,
+            profile_picture_html=profile_picture_html,
+        ))
+        if (not ('speedy-core/images/user.svg' in profile_picture_html)):
+            photo_is_valid = True
+    except:
+        photo_is_valid = False
+    user.photo = user._photo
+    try:
+        user_image.delete()
+    except:
+        pass
+    if (not (photo_is_valid)):
+        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
 def validate_profile_description(profile_description):
