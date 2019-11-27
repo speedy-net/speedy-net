@@ -105,6 +105,11 @@ class OVERRIDE_USER_SETTINGS(object):
     MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
 
+class OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
+    MIN_AGE_TO_MATCH_ALLOWED = 2 # In years.
+    MAX_AGE_TO_MATCH_ALLOWED = 178 # In years.
+
+
 if (django_settings.LOGIN_ENABLED):
     # Generate a new random password for each test.
     USER_PASSWORD = get_random_user_password()

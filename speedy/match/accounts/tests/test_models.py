@@ -7,12 +7,14 @@ from django.test import override_settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
+from speedy.core.base.test import tests_settings
 from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_speedy_match
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
     from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
+    from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
     from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
     from speedy.match.accounts import utils, validators
     from speedy.core.accounts.models import User
@@ -629,6 +631,13 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
             self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
+        @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
+        def test_age_valid_values_with_override_settings(self):
+            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=2)
+            self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=178)
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(2, 178 + 1))
+
         def test_rank_valid_values(self):
             self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.RANK_0, SpeedyMatchSiteProfile.RANK_5 + 1)))
             self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(0, 5 + 1)))
@@ -889,6 +898,19 @@ if (django_settings.LOGIN_ENABLED):
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
+        @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
+        def test_validate_profile_and_activate_exception_on_min_age_to_match_with_override_settings(self):
+            test_settings = {
+                "field_name": 'min_age_to_match',
+                "test_invalid_values_to_assign": False,
+                "test_invalid_values_to_save": True,
+                "expected_step": 7,
+                "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
+                "expected_counts_tuple": (177, 22, 0, 6),
+            }
+            test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
+            self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
         def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
             test_settings = {
                 "field_name": 'max_age_to_match',
@@ -897,6 +919,19 @@ if (django_settings.LOGIN_ENABLED):
                 "expected_step": 7,
                 "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
                 "expected_counts_tuple": (181, 20, 0, 6),
+            }
+            test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
+            self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+
+        @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
+        def test_validate_profile_and_activate_exception_on_max_age_to_match_with_override_settings(self):
+            test_settings = {
+                "field_name": 'max_age_to_match',
+                "test_invalid_values_to_assign": False,
+                "test_invalid_values_to_save": True,
+                "expected_step": 7,
+                "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
+                "expected_counts_tuple": (177, 22, 0, 6),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
