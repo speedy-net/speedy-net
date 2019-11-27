@@ -1,9 +1,17 @@
+import string
+import random
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.template.loader import render_to_string
+from django.utils.timezone import now
 
 from speedy.core.base.utils import string_is_not_empty
+from speedy.core.base.models import SmallUDIDField
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+from speedy.core.uploads.models import Image
+# from speedy.core.accounts.templatetags.user_tags import profile_picture
 
 
 def height_is_valid(height):
@@ -37,7 +45,34 @@ def rank_is_valid(rank):
 def validate_photo(photo):
     if (not (photo)):
         raise ValidationError(_("A profile picture is required."))
-
+    # try:
+    # user = User.objects.get(slug="user-500000001566146")
+    user = User()
+    user.first_name = "test"
+    user.last_name = "test"
+    user.id = SmallUDIDField.id_generator()
+    while (User.objects.filter(id=user.id).exists()):
+        user.id = SmallUDIDField.id_generator()
+    user.slug = "user-{}".format(user.id)
+    user.set_password(''.join(random.choice(string.digits + string.ascii_lowercase) for _i in range(20)))
+    user.gender = User.GENDER_OTHER
+    user.date_of_birth = now()
+    user.save()
+    user_image = Image(owner=user, file=photo)
+    user_image.save()
+    user.photo = user_image
+    # user.photo = Image(owner=user, file=photo)
+    # user.save()
+    profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.info('profile_picture_html={}'.format(profile_picture_html))
+    # user_image.delete()
+    # user.delete()
+    if ('speedy-core/images/user.svg' in profile_picture_html):
+        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
+    # except Exception:
+    #     raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 def validate_profile_description(profile_description):
     if (not (string_is_not_empty(profile_description))):
