@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 18:12+0200\n"
+"POT-Creation-Date: 2019-11-27 09:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -466,12 +466,12 @@ msgstr "הגובה שלך נדרש."
 msgid "Please write a few words about yourself."
 msgstr "אנא כתוב/י כמה מילים על עצמך."
 
-#: .\accounts\forms.py:123 .\accounts\models.py:99 .\accounts\validators.py:54
+#: .\accounts\forms.py:123 .\accounts\models.py:103 .\accounts\validators.py:54
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
-#: .\accounts\forms.py:126 .\accounts\models.py:102 .\accounts\validators.py:59
+#: .\accounts\forms.py:126 .\accounts\models.py:106 .\accounts\validators.py:59
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
@@ -500,114 +500,114 @@ msgstr "התאמת הרגלי העישון נדרשת."
 msgid "Relationship status match is required."
 msgstr "התאמת סטטוס מערכת היחסים נדרשת."
 
-#: .\accounts\forms.py:184 .\accounts\models.py:107
+#: .\accounts\forms.py:184 .\accounts\models.py:111
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "מין בן/בת הזוג"
 
-#: .\accounts\models.py:38 .\accounts\models.py:82
+#: .\accounts\models.py:34 .\accounts\models.py:86
 msgid "No match"
 msgstr "אין התאמה"
 
-#: .\accounts\models.py:39 .\accounts\models.py:83
+#: .\accounts\models.py:35 .\accounts\models.py:87
 msgid "One heart"
 msgstr "לב אחד"
 
-#: .\accounts\models.py:40 .\accounts\models.py:84
+#: .\accounts\models.py:36 .\accounts\models.py:88
 msgid "Two hearts"
 msgstr "שני לבבות"
 
-#: .\accounts\models.py:41 .\accounts\models.py:85
+#: .\accounts\models.py:37 .\accounts\models.py:89
 msgid "Three hearts"
 msgstr "שלושה לבבות"
 
-#: .\accounts\models.py:42 .\accounts\models.py:86
+#: .\accounts\models.py:38 .\accounts\models.py:90
 msgid "Four hearts"
 msgstr "ארבעה לבבות"
 
-#: .\accounts\models.py:43 .\accounts\models.py:87
+#: .\accounts\models.py:39 .\accounts\models.py:91
 msgid "Five hearts"
 msgstr "חמישה לבבות"
 
-#: .\accounts\models.py:91
+#: .\accounts\models.py:95
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:92
+#: .\accounts\models.py:96
 msgid "On new likes"
 msgstr "כאשר יש לייקים חדשים"
 
-#: .\accounts\models.py:93
+#: .\accounts\models.py:97
 msgid "Active languages"
 msgstr "שפות פעילות"
 
-#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:26
+#: .\accounts\models.py:98 .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "גובה"
 
-#: .\accounts\models.py:94 .\templates\profiles\user_extra_info_widget.html:27
+#: .\accounts\models.py:98 .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "ס\"מ"
 
-#: .\accounts\models.py:96
+#: .\accounts\models.py:100
 msgid "Few words about me"
 msgstr "כמה מילים על עצמי"
 
-#: .\accounts\models.py:105 .\templates\profiles\user_extra_info_widget.html:54
+#: .\accounts\models.py:109 .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "בן/בת הזוג האידיאלי/ת שלי"
 
-#: .\accounts\models.py:108
+#: .\accounts\models.py:112
 msgid "Minimal age to match"
 msgstr "גיל מינימלי לבן/בת הזוג"
 
-#: .\accounts\models.py:109
+#: .\accounts\models.py:113
 msgid "Maximal age to match"
 msgstr "גיל מקסימלי לבן/בת הזוג"
 
-#: .\accounts\models.py:110
+#: .\accounts\models.py:114
 msgid "Diet match"
 msgstr "התאמת תזונה"
 
-#: .\accounts\models.py:111
+#: .\accounts\models.py:115
 msgid "Smoking status match"
 msgstr "התאמת הרגלי עישון"
 
-#: .\accounts\models.py:112
+#: .\accounts\models.py:116
 msgid "Relationship status match"
 msgstr "התאמת סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:117
 msgid "Diet to match"
 msgstr "התאמת תזונה"
 
-#: .\accounts\models.py:114
+#: .\accounts\models.py:118
 msgid "Smoking status to match"
 msgstr "התאמת הרגלי עישון"
 
-#: .\accounts\models.py:115
+#: .\accounts\models.py:119
 msgid "Relationship status to match"
 msgstr "התאמת סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:117
+#: .\accounts\models.py:121
 msgid "Activation step"
 msgstr "Activation step"
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:124
 msgid "Number of matches on last user's search"
 msgstr "Number of matches on last user's search"
 
-#: .\accounts\models.py:150
+#: .\accounts\models.py:166
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:151 .\profiles\apps.py:7
+#: .\accounts\models.py:167 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:223 .\templates\accounts\edit_profile\activate.html:28
+#: .\accounts\models.py:239 .\templates\accounts\edit_profile\activate.html:28
 msgid "Please confirm your email address."
-msgstr "אשר/י בבקשה את כתובת הדואר האלקטרוני שלך."
+msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
 #: .\accounts\validators.py:69
 msgid "Height must be from 1 to 450 cm."

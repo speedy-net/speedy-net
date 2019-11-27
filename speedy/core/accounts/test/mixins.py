@@ -335,17 +335,17 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         _confirm_your_email_address_on_speedy_net_subject_dict_by_gender = {
             'en': {gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
             'he': {
-                User.GENDER_FEMALE_STRING: "אשרי את כתובת הדואר האלקטרוני שלך בספידי נט",
-                User.GENDER_MALE_STRING: "אשר את כתובת הדואר האלקטרוני שלך בספידי נט",
-                User.GENDER_OTHER_STRING: "אשר/י את כתובת הדואר האלקטרוני שלך בספידי נט",
+                User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי נט",
+                User.GENDER_MALE_STRING: "אמת את כתובת הדואר האלקטרוני שלך בספידי נט",
+                User.GENDER_OTHER_STRING: "אמת/י את כתובת הדואר האלקטרוני שלך בספידי נט",
             },
         }
         _confirm_your_email_address_on_speedy_match_subject_dict_by_gender = {
             'en': {gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
             'he': {
-                User.GENDER_FEMALE_STRING: "אשרי את כתובת הדואר האלקטרוני שלך בספידי מץ'",
-                User.GENDER_MALE_STRING: "אשר את כתובת הדואר האלקטרוני שלך בספידי מץ'",
-                User.GENDER_OTHER_STRING: "אשר/י את כתובת הדואר האלקטרוני שלך בספידי מץ'",
+                User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי מץ'",
+                User.GENDER_MALE_STRING: "אמת את כתובת הדואר האלקטרוני שלך בספידי מץ'",
+                User.GENDER_OTHER_STRING: "אמת/י את כתובת הדואר האלקטרוני שלך בספידי מץ'",
             },
         }
 

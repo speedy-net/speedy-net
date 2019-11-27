@@ -2,6 +2,6 @@
 
 {% load i18n %}
 
-{% block content %}{% trans "Use this link to confirm your email address:" context user.get_gender %}
+{% block content %}{% trans "Use this link to verify your email address:" context user.get_gender %}
 
 {{ SITE_URL }}{% url 'accounts:verify_email' pk=email_address.pk token=email_address.confirmation_token %}{% endblock %}
