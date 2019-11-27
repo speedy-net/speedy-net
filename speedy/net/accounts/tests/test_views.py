@@ -1,10 +1,9 @@
 from django.conf import settings as django_settings
 
-from speedy.core.base.test import tests_settings
-from speedy.core.base.test.models import SiteTestCase
-from speedy.core.base.test.decorators import only_on_speedy_net
-
 if (django_settings.LOGIN_ENABLED):
+    from speedy.core.base.test import tests_settings
+    from speedy.core.base.test.models import SiteTestCase
+    from speedy.core.base.test.decorators import only_on_speedy_net
     from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin
     from speedy.core.accounts.models import User
     from speedy.core.accounts.test.user_factories import ActiveUserFactory

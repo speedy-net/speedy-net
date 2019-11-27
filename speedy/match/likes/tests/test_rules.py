@@ -1,10 +1,9 @@
 from django.conf import settings as django_settings
 from django.contrib.auth.models import AnonymousUser
 
-from speedy.core.base.test.models import SiteTestCase
-from speedy.core.base.test.decorators import only_on_speedy_match
-
 if (django_settings.LOGIN_ENABLED):
+    from speedy.core.base.test.models import SiteTestCase
+    from speedy.core.base.test.decorators import only_on_speedy_match
     from speedy.core.blocks.models import Block
     from speedy.match.likes.models import UserLike
     from speedy.core.accounts.test.user_factories import ActiveUserFactory

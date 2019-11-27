@@ -1,4 +1,3 @@
-import unittest
 import itertools
 from datetime import date
 
@@ -7,11 +6,10 @@ from django.test import override_settings
 from django.core.exceptions import ValidationError
 from django.db.utils import DataError
 
-from speedy.core.base.test import tests_settings
-from speedy.core.base.test.models import SiteTestCase
-from speedy.core.base.test.decorators import only_on_speedy_match
-
 if (django_settings.LOGIN_ENABLED):
+    from speedy.core.base.test import tests_settings
+    from speedy.core.base.test.models import SiteTestCase
+    from speedy.core.base.test.decorators import only_on_speedy_match
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
     from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
     from speedy.core.base.test.utils import get_django_settings_class_with_override_settings

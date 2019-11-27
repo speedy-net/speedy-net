@@ -11,7 +11,6 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
     from speedy.core.base.utils import normalize_slug, normalize_username
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
-
     from speedy.core.base.test.utils import get_random_user_password
     from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory
     from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
