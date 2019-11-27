@@ -367,10 +367,6 @@ if (django_settings.LOGIN_ENABLED):
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
         def test_slug_min_length_fail_username_min_length_ok(self):
-            # ~~~~ TODO: remove all the following lines.
-            self._1___set_up(django_settings=django_settings) #### ~~~~ TODO: remove this line!
-            # ~~~~ TODO: remove all the above lines.
-
             self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
             test_settings = {
                 "expected_counts_tuple": (4, 4),

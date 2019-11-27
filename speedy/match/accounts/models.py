@@ -3,7 +3,8 @@ import logging
 from django.db import models
 from django.conf import settings as django_settings
 from django.contrib.postgres.fields import JSONField, ArrayField
-from django.utils.translation import gettext_lazy as _, pgettext_lazy, get_language
+from django.utils.translation import gettext_lazy as _, get_language
+from django.utils.decorators import classproperty
 from django.core.exceptions import ValidationError
 
 from translated_fields import TranslatedField
@@ -18,14 +19,9 @@ logger = logging.getLogger(__name__)
 
 
 class SiteProfile(SiteProfileBase):
-    settings = django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS
-
     LOCALIZABLE_FIELDS = ('profile_description', 'children', 'more_children', 'match_description')
 
     RELATED_NAME = 'speedy_match_site_profile'
-
-    HEIGHT_VALID_VALUES = range(settings.MIN_HEIGHT_ALLOWED, settings.MAX_HEIGHT_ALLOWED + 1)
-    AGE_MATCH_VALID_VALUES = range(settings.MIN_AGE_TO_MATCH_ALLOWED, settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
     RANK_0 = 0
     RANK_1 = 1
@@ -51,6 +47,14 @@ class SiteProfile(SiteProfileBase):
     @staticmethod
     def gender_to_match_default():
         return list()
+
+    @staticmethod
+    def min_age_to_match_default():
+        return __class__.settings.MIN_AGE_TO_MATCH_ALLOWED
+
+    @staticmethod
+    def max_age_to_match_default():
+        return __class__.settings.MAX_AGE_TO_MATCH_ALLOWED
 
     @staticmethod
     def diet_match_default():
@@ -105,8 +109,8 @@ class SiteProfile(SiteProfileBase):
         field=models.TextField(verbose_name=_('My ideal match'), blank=True, null=True),
     )
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
-    min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=settings.MIN_AGE_TO_MATCH_ALLOWED)
-    max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=settings.MAX_AGE_TO_MATCH_ALLOWED)
+    min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=min_age_to_match_default.__func__)
+    max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=max_age_to_match_default.__func__)
     diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
     relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
@@ -121,6 +125,18 @@ class SiteProfile(SiteProfileBase):
     )
 
     objects = SiteProfileManager()
+
+    @classproperty
+    def settings(cls):
+        return django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS
+
+    @classproperty
+    def HEIGHT_VALID_VALUES(cls):
+        return range(cls.settings.MIN_HEIGHT_ALLOWED, cls.settings.MAX_HEIGHT_ALLOWED + 1)
+
+    @classproperty
+    def AGE_MATCH_VALID_VALUES(cls):
+        return range(cls.settings.MIN_AGE_TO_MATCH_ALLOWED, cls.settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
     @property
     def is_active(self):

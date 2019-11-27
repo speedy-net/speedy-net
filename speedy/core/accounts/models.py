@@ -12,6 +12,7 @@ from django.db import models, transaction
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.decorators import classproperty
 from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
@@ -72,8 +73,6 @@ class CleanAndValidateAllFieldsMixin(object):
 
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
-    settings = django_settings.ENTITY_SETTINGS
-
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -82,11 +81,15 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     objects = EntityManager()
 
-    @property
-    def validators(self):
+    @classproperty
+    def settings(cls):
+        return django_settings.ENTITY_SETTINGS
+
+    @classproperty
+    def validators(cls):
         validators = {
-            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+            'username': get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
         }
         return validators
 
@@ -131,9 +134,11 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
 
 class NamedEntity(Entity):
-    settings = django_settings.NAMED_ENTITY_SETTINGS
-
     name = models.CharField(verbose_name=_('name'), max_length=255)
+
+    @classproperty
+    def settings(cls):
+        return django_settings.NAMED_ENTITY_SETTINGS
 
     class Meta:
         abstract = True
@@ -193,13 +198,8 @@ class UserAccessField(models.PositiveIntegerField):
 
 
 class User(PermissionsMixin, Entity, AbstractBaseUser):
-    settings = django_settings.USER_SETTINGS
-
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
-
-    AGE_VALID_VALUES_IN_MODEL = range(settings.MIN_AGE_ALLOWED_IN_MODEL, settings.MAX_AGE_ALLOWED_IN_MODEL)
-    AGE_VALID_VALUES_IN_FORMS = range(settings.MIN_AGE_ALLOWED_IN_FORMS, settings.MAX_AGE_ALLOWED_IN_FORMS)
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
@@ -347,11 +347,23 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     objects = UserManager()
 
-    @property
-    def validators(self):
+    @classproperty
+    def settings(cls):
+        return django_settings.USER_SETTINGS
+
+    @classproperty
+    def AGE_VALID_VALUES_IN_MODEL(cls):
+        return range(cls.settings.MIN_AGE_ALLOWED_IN_MODEL, cls.settings.MAX_AGE_ALLOWED_IN_MODEL)
+
+    @classproperty
+    def AGE_VALID_VALUES_IN_FORMS(cls):
+        return range(cls.settings.MIN_AGE_ALLOWED_IN_FORMS, cls.settings.MAX_AGE_ALLOWED_IN_FORMS)
+
+    @classproperty
+    def validators(cls):
         validators = {
-            'username': get_username_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-            'slug': get_slug_validators(min_username_length=self.settings.MIN_USERNAME_LENGTH, max_username_length=self.settings.MAX_USERNAME_LENGTH, min_slug_length=self.settings.MIN_SLUG_LENGTH, max_slug_length=self.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+            'username': get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
             'date_of_birth': [validate_date_of_birth_in_model],
         }
         return validators
@@ -662,8 +674,8 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     confirmation_sent = models.IntegerField(verbose_name=_('confirmation sent'), default=0)
     access = UserAccessField(verbose_name=_('Who can see this email'), default=UserAccessField.ACCESS_ME)
 
-    @property
-    def validators(self):
+    @classproperty
+    def validators(cls):
         validators = {
             'email': ["validate_email"],
         }
