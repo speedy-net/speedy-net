@@ -32,12 +32,14 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
+    # Fields from the User model.
     user_fields = (
         'diet',
         'smoking_status',
         'relationship_status',
         *(to_attribute(name='city', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
     )
+    # Fields validators.
     validators = {
         'height': [speedy_match_accounts_validators.validate_height],
         'diet': [speedy_match_accounts_validators.validate_diet],
@@ -55,6 +57,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'smoking_status_match': [speedy_match_accounts_validators.validate_smoking_status_match],
         'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
     }
+    # Fields who are not in the SpeedyMatchSiteProfile model.
     photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
@@ -151,7 +154,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
+        # Delete unneeded fields from the form.
         self.delete_unneeded_fields()
+        # Update fields attributes according to the user's gender and language.
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
             self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
@@ -186,9 +191,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.fields['min_age_to_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Minimal age to match')
         if ('max_age_to_match' in self.fields):
             self.fields['max_age_to_match'].label = pgettext_lazy(context=self.instance.get_match_gender(), message='Maximal age to match')
+        # Update the initial value of fields from the User model.
         for field_name in self.user_fields:
             if (field_name in self.fields):
                 self.fields[field_name].initial = getattr(self.instance.user, field_name)
+        # Update the fields validators.
         for field_name, field in self.fields.items():
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])

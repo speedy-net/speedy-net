@@ -22,6 +22,11 @@ class FormHelperWithDefaults(FormHelper):
 
 class DeleteUnneededFieldsMixin(object):
     def delete_unneeded_fields(self):
+        """
+        Delete unneeded fields from the form.
+
+        The needed fields are received from `self.get_fields()`.
+        """
         fields = self.get_fields()
         fields_for_deletion = set(self.fields.keys()) - set(fields)
         for field_for_deletion in fields_for_deletion:
