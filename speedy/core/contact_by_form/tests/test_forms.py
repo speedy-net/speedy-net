@@ -45,6 +45,7 @@ if (django_settings.LOGIN_ENABLED):
                     Mike
                     monkeydigital.co@gmail.com
                 """,
+                'no_bots': '17',
             }
             form = FeedbackForm(defaults=defaults, data=data)
             self.assertFalse(expr=form.is_valid())
@@ -71,6 +72,7 @@ if (django_settings.LOGIN_ENABLED):
                     Best regards
                     Mike
                 """,
+                'no_bots': '17',
             }
             form = FeedbackForm(defaults=defaults, data=data)
             self.assertFalse(expr=form.is_valid())

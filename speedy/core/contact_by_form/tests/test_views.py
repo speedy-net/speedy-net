@@ -63,6 +63,7 @@ if (django_settings.LOGIN_ENABLED):
                 'sender_name': 'Yarden Harel',
                 'sender_email': 'yarden@example.com',
                 'text': 'Hello',
+                'no_bots': '17',
             }
             self.run_test_visitor_can_submit_form(data=data)
 
@@ -71,6 +72,7 @@ if (django_settings.LOGIN_ENABLED):
                 'sender_name': 'Mike',
                 'sender_email': 'mike@example.com',
                 'text': "I personally don't like this user.",
+                'no_bots': ' 17 ',
             }
             self.run_test_visitor_can_submit_form(data=data)
 
@@ -80,6 +82,32 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path=self.page_url, data=data)
             self.assertEqual(first=r.status_code, second=200)
             self.assertDictEqual(d1=r.context['form'].errors, d2=self._feedback_form_all_the_required_fields_are_required_errors_dict(user_is_logged_in=False))
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+
+        def test_visitor_cannot_submit_form_without_no_bots_17_1(self):
+            data = {
+                'sender_name': 'Yarden Harel',
+                'sender_email': 'yarden@example.com',
+                'text': 'Hello',
+                'no_bots': '16',
+            }
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._feedback_form_no_bots_is_not_17_errors_dict())
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+
+        def test_visitor_cannot_submit_form_without_no_bots_17_2(self):
+            data = {
+                'sender_name': 'Mike',
+                'sender_email': 'mike@example.com',
+                'text': "I personally don't like this user.",
+                'no_bots': ' ',
+            }
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._feedback_form_no_bots_is_required_errors_dict())
             self.assertEqual(first=Feedback.objects.count(), second=0)
 
         @only_on_sites_with_login
