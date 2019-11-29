@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-28 06:55+0200\n"
+"POT-Creation-Date: 2019-11-29 07:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2067,13 +2067,21 @@ msgstr "ביטלת את חסימת {}."
 msgid "Contact By Form"
 msgstr "Contact By Form"
 
-#: .\contact_by_form\forms.py:30
+#: .\contact_by_form\forms.py:13
+msgid "Type the number \"17\""
+msgstr "הקלד/הקלידי את המספר \"17\""
+
+#: .\contact_by_form\forms.py:34
 msgid "Send"
 msgstr "שלח/י"
 
-#: .\contact_by_form\forms.py:36
+#: .\contact_by_form\forms.py:40
 msgid "Please contact us by e-mail."
 msgstr "אנא צרו איתנו קשר באמצעות הדואר האלקטרוני."
+
+#: .\contact_by_form\forms.py:46
+msgid "Not 17."
+msgstr "לא 17."
 
 #: .\contact_by_form\models.py:15
 msgid "Feedback"
@@ -2446,7 +2454,7 @@ msgstr "ספידי"
 
 #: .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
-#: .\templates\messages\chat_detail.html:16
+#: .\templates\messages\chat_detail.html:15
 #: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
 msgid "Messages"
 msgstr "הודעות"
@@ -2578,18 +2586,18 @@ msgstr "הצטרפו ל%(site_name)s!"
 msgid "It's free and anyone can join!"
 msgstr "זה בחינם וכולם יכולים להצטרף!"
 
-#: .\templates\messages\chat_detail.html:28
+#: .\templates\messages\chat_detail.html:27
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "שיחה עם <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\messages\chat_detail.html:34
+#: .\templates\messages\chat_detail.html:33
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "שלח/י הודעה ל%(user_name)s"
 
-#: .\templates\messages\chat_detail.html:48
+#: .\templates\messages\chat_detail.html:47
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
@@ -2635,22 +2643,22 @@ msgid " blocked you."
 msgstr " חסמ/ה אותך."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
-#: .\templates\profiles\user_list_item.html:31
+#: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
 msgstr "קבל/י הצעת חברות"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
-#: .\templates\profiles\user_list_item.html:33
+#: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
 msgstr "קבל/י"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
-#: .\templates\profiles\user_list_item.html:38
+#: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
 msgstr "דחה/י הצעת חברות"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
-#: .\templates\profiles\user_list_item.html:40
+#: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
 msgstr "דחה/י"
 
