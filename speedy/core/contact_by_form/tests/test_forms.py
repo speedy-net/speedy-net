@@ -33,51 +33,6 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=form.is_valid())
             self.assertDictEqual(d1=form.errors, d2=self._feedback_form_all_the_required_fields_are_required_errors_dict(user_is_logged_in=False))
 
-        def test_visitor_cannot_submit_form_with_not_allowed_string_1(self):
-            defaults = {
-                'type': Feedback.TYPE_FEEDBACK,
-            }
-            data = {
-                'sender_name': "A",
-                'sender_email': "test@example.com",
-                'text': """
-                    Best regards
-                    Mike
-                    monkeydigital.co@gmail.com
-                """,
-                'no_bots': '17',
-            }
-            form = FeedbackForm(defaults=defaults, data=data)
-            self.assertFalse(expr=form.is_valid())
-            self.assertDictEqual(d1=form.errors, d2=self._please_contact_us_by_email_errors_dict())
-
-        def test_visitor_cannot_submit_form_with_not_allowed_string_2(self):
-            defaults = {
-                'type': Feedback.TYPE_FEEDBACK,
-            }
-            data = {
-                'sender_name': "A",
-                'sender_email': "test@example.com",
-                'text': """
-                    We will increase your Website TF in 30 days (Majestic SEO – Trust Flow) or we will refund you every cent. 100% Money back guarantee
-                    
-                    We offer Guaranteed TF 20 and TF 30
-                    
-                    Majestic Trust Flow is the most important SEO metric since the dissapearance of Google Page Rank.
-                    Ensure confidence and trust in your website having a high Trust Flow score
-                    
-                    More details about our service can be found here:
-                    https://monkeydigital.co/product/trust-flow-seo-package/
-                    
-                    Best regards
-                    Mike
-                """,
-                'no_bots': '17',
-            }
-            form = FeedbackForm(defaults=defaults, data=data)
-            self.assertFalse(expr=form.is_valid())
-            self.assertDictEqual(d1=form.errors, d2=self._please_contact_us_by_email_errors_dict())
-
         @only_on_sites_with_login
         def test_feedback_form_for_user_doesnt_require_name_and_email(self):
             user = ActiveUserFactory()
