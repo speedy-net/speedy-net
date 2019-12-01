@@ -6,7 +6,7 @@
             {% if user == viewer %}
                 {% blocktrans context viewer.get_gender %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
             {% else %}
-                {% blocktrans with user_name=user.name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+                {% blocktrans with user_name=user.first_name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
             {% endif %}
         </a>
     </div>

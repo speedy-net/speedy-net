@@ -3,7 +3,7 @@
 {% if is_match %}
     <div class="col-sm-12 pull-right">
         <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_MATCH_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
-            {% blocktrans with user_name=user.name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+            {% blocktrans with user_name=user.first_name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
         </a>
     </div>
 {% endif %}
