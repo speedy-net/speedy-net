@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-29 07:36+0200\n"
+"POT-Creation-Date: 2019-12-01 11:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -418,7 +418,7 @@ msgstr "Speedy Match Accounts"
 msgid "Add profile picture"
 msgstr "צרפ/י תמונת פרופיל"
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:105 .\accounts\validators.py:45
+#: .\accounts\forms.py:61 .\accounts\forms.py:100 .\accounts\validators.py:45
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
@@ -426,7 +426,7 @@ msgstr "נדרשת תמונת פרופיל."
 msgid "My diet"
 msgstr "התזונה שלי"
 
-#: .\accounts\forms.py:62 .\accounts\forms.py:111 .\accounts\validators.py:109
+#: .\accounts\forms.py:62 .\accounts\forms.py:106 .\accounts\validators.py:109
 msgid "Your diet is required."
 msgstr "התזונה שלך נדרשת."
 
@@ -434,7 +434,7 @@ msgstr "התזונה שלך נדרשת."
 msgid "My smoking status"
 msgstr "הרגלי העישון שלי"
 
-#: .\accounts\forms.py:63 .\accounts\forms.py:114 .\accounts\validators.py:114
+#: .\accounts\forms.py:63 .\accounts\forms.py:109 .\accounts\validators.py:114
 msgid "Your smoking status is required."
 msgstr "הרגלי העישון שלך נדרשים."
 
@@ -442,65 +442,65 @@ msgstr "הרגלי העישון שלך נדרשים."
 msgid "My relationship status"
 msgstr "סטטוס מערכת היחסים שלי"
 
-#: .\accounts\forms.py:64 .\accounts\forms.py:117 .\accounts\validators.py:119
+#: .\accounts\forms.py:64 .\accounts\forms.py:112 .\accounts\validators.py:119
 msgid "Your relationship status is required."
 msgstr "סטטוס מערכת היחסים שלך נדרש."
 
-#: .\accounts\forms.py:65 .\accounts\forms.py:135 .\accounts\validators.py:124
+#: .\accounts\forms.py:65 .\accounts\forms.py:130 .\accounts\validators.py:124
 msgid "Gender to match is required."
 msgstr "מין בן/בת הזוג שלך נדרש."
 
-#: .\accounts\forms.py:67 .\templates\profiles\user_extra_info_widget.html:22
-msgid "City or locality"
-msgstr "עיר או יישוב"
-
-#: .\accounts\forms.py:67 .\accounts\forms.py:123 .\accounts\validators.py:84
-msgid "Please write where you live."
-msgstr "אנא כתוב/י איפה את/ה גר/ה."
-
-#: .\accounts\forms.py:108
+#: .\accounts\forms.py:103
 msgid "Your height is required."
 msgstr "הגובה שלך נדרש."
 
-#: .\accounts\forms.py:120 .\accounts\validators.py:79
+#: .\accounts\forms.py:115 .\accounts\validators.py:79
 msgid "Please write a few words about yourself."
 msgstr "אנא כתוב/י כמה מילים על עצמך."
 
-#: .\accounts\forms.py:126 .\accounts\models.py:103 .\accounts\validators.py:89
+#: .\accounts\forms.py:118 .\accounts\forms.py:153 .\accounts\validators.py:84
+msgid "Please write where you live."
+msgstr "אנא כתוב/י איפה את/ה גר/ה."
+
+#: .\accounts\forms.py:121 .\accounts\models.py:103 .\accounts\validators.py:89
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
-#: .\accounts\forms.py:129 .\accounts\models.py:106 .\accounts\validators.py:94
+#: .\accounts\forms.py:124 .\accounts\models.py:106 .\accounts\validators.py:94
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
 
-#: .\accounts\forms.py:132 .\accounts\validators.py:99
+#: .\accounts\forms.py:127 .\accounts\validators.py:99
 msgid "Who is your ideal partner?"
 msgstr "מי בן או בת הזוג האידיאלי/ת שלך?"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:133
 msgid "Minimal age to match is required."
 msgstr "הגיל המינימלי לבן/בת הזוג נדרש."
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:136
 msgid "Maximal age to match is required."
 msgstr "הגיל המקסימלי לבן/בת הזוג נדרש."
 
-#: .\accounts\forms.py:144 .\accounts\validators.py:146
+#: .\accounts\forms.py:139 .\accounts\validators.py:146
 msgid "Diet match is required."
 msgstr "התאמת התזונה נדרשת."
 
-#: .\accounts\forms.py:147 .\accounts\validators.py:154
+#: .\accounts\forms.py:142 .\accounts\validators.py:154
 msgid "Smoking status match is required."
 msgstr "התאמת הרגלי העישון נדרשת."
 
-#: .\accounts\forms.py:150 .\accounts\validators.py:162
+#: .\accounts\forms.py:145 .\accounts\validators.py:162
 msgid "Relationship status match is required."
 msgstr "התאמת סטטוס מערכת היחסים נדרשת."
 
-#: .\accounts\forms.py:189 .\accounts\models.py:111
+#: .\accounts\forms.py:153 .\templates\profiles\user_extra_info_widget.html:22
+msgid "City or locality"
+msgstr "עיר או יישוב"
+
+#: .\accounts\forms.py:186 .\accounts\models.py:111
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "מין בן/בת הזוג"

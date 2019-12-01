@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-29 07:36+0200\n"
+"POT-Creation-Date: 2019-12-01 11:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2006,15 +2006,15 @@ msgstr ""
 msgid "Type the number \"17\""
 msgstr ""
 
-#: .\contact_by_form\forms.py:34
+#: .\contact_by_form\forms.py:38
 msgid "Send"
 msgstr ""
 
-#: .\contact_by_form\forms.py:40
+#: .\contact_by_form\forms.py:44
 msgid "Please contact us by e-mail."
 msgstr ""
 
-#: .\contact_by_form\forms.py:46
+#: .\contact_by_form\forms.py:50
 msgid "Not 17."
 msgstr ""
 
