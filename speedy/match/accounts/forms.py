@@ -63,17 +63,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
     relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
     gender_to_match = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")})
-    # ~~~~ TODO: define all the languages and not just hard-code languages like below.
-    _city = forms.CharField(label=_('City or locality'), max_length=120, error_messages={'required': _("Please write where you live.")})
-    city_en = _city
-    city_he = _city
 
     class Meta:
         model = SpeedyMatchSiteProfile
         fields = (
             'photo',
             *(to_attribute(name='profile_description', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
-            *(to_attribute(name='city', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
             'height',
             *(to_attribute(name='children', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
             *(to_attribute(name='more_children', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
@@ -154,6 +149,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
+        # Create the localized city field dynamically.
+        self.fields[to_attribute(name='city')] = forms.CharField(label=_('City or locality'), max_length=120, error_messages={'required': _("Please write where you live.")})
         # Delete unneeded fields from the form.
         self.delete_unneeded_fields()
         # Update fields attributes according to the user's gender and language.
@@ -200,6 +197,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
                 field.required = True
+        # Rearrange the form fields.
+        self.order_fields(field_order=self.get_fields())
 
     def clean_photo(self):
         photo = self.files.get('photo')
