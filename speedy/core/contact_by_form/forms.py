@@ -1,4 +1,4 @@
-from crispy_forms.layout import Submit, Div, Row
+from crispy_forms.layout import Submit, Div, Row, MultiWidgetField
 
 from django import forms
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -27,9 +27,13 @@ class FeedbackForm(ModelFormWithDefaults):
         else:
             self.fields['sender_name'].required = True
             self.fields['sender_email'].required = True
-            self.helper.add_layout(Row(
-                Div('sender_name', css_class='col-md-6'),
-                Div('sender_email', css_class='col-md-6'),
+            self.helper.add_layout(MultiWidgetField(
+                Row(
+                    Div('sender_name', css_class='col-md-6'),
+                    Div('sender_email', css_class='col-md-6'),
+                ),
+                'text',
+                'no_bots',
             ))
             self.helper.add_input(Submit('submit', _('Send')))
 
