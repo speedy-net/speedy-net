@@ -111,13 +111,13 @@
 {% trans "user's profile on Speedy Net." context "male" %}
 {% trans "user's profile on Speedy Net." context "other" %}
 
-{% blocktrans with user_name=user.name context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user_name=user.name context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user_name=user.name context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
 
-{% blocktrans with user_name=user.name context "female" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user_name=user.name context "male" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user_name=user.name context "other" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktrans with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
 
 {% blocktrans context "female" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
 {% blocktrans context "male" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
