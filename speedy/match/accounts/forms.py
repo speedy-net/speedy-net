@@ -197,7 +197,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (field_name in self.validators):
                 field.validators.extend(self.validators[field_name])
                 field.required = True
-        # Rearrange the form fields.
+        # Rearrange the fields.
         self.order_fields(field_order=self.get_fields())
 
     def clean_photo(self):
