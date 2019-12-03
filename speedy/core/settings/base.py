@@ -140,6 +140,14 @@ REGULAR_UDID_LENGTH = 20
 
 LANGUAGE_CODE = 'en'
 
+DATE_FORMAT = 'j F Y'
+MONTH_DAY_FORMAT = 'j F'
+YEAR_FORMAT = 'Y'
+
+FORMAT_SETTINGS = (
+    'YEAR_FORMAT',
+)
+
 LANGUAGES = [
     ('en', _('English')),
     ('he', _('Hebrew')),
