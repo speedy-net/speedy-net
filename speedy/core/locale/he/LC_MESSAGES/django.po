@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-01 20:42+0200\n"
+"POT-Creation-Date: 2019-12-03 07:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1611,6 +1611,10 @@ msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
 
+#: .\accounts\apps.py:7
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core Accounts"
+
 #: .\accounts\forms.py:98
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
@@ -2027,6 +2031,10 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
+#: .\base\apps.py:9
+msgid "Speedy Core Base App"
+msgstr "Speedy Core Base App"
+
 #: .\base\models.py:67
 msgid "ID"
 msgstr "ID"
@@ -2147,8 +2155,11 @@ msgstr "בקשת החברות התקבלה."
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
-#: .\messages\apps.py:7 .\messages\models.py:79
-msgid "messages"
+#: .\messages\apps.py:7 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:15
+#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
+msgid "Messages"
 msgstr "הודעות"
 
 #: .\messages\models.py:13
@@ -2187,6 +2198,10 @@ msgstr "צ'טים"
 msgid "message"
 msgstr "הודעה"
 
+#: .\messages\models.py:79
+msgid "messages"
+msgstr "הודעות"
+
 #: .\messages\models.py:94
 msgid "read mark"
 msgstr "read mark"
@@ -2195,11 +2210,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:144
+#: .\settings\base.py:152
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:145
+#: .\settings\base.py:153
 msgid "Hebrew"
 msgstr "עברית"
 
@@ -2451,13 +2466,6 @@ msgstr "הכרויות און-ליין בחינם"
 #: .\templates\base.html:201 .\templates\base.html:203
 msgid "Speedy"
 msgstr "ספידי"
-
-#: .\templates\base_with_login.html:40
-#: .\templates\menu\user_menu_profile_is_active_base.html:16
-#: .\templates\messages\chat_detail.html:15
-#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
-msgid "Messages"
-msgstr "הודעות"
 
 #: .\templates\base_with_login.html:57 .\templates\base_with_login.html:95
 msgid "Logout"

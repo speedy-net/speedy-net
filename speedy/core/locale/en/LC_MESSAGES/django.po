@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-01 20:42+0200\n"
+"POT-Creation-Date: 2019-12-03 07:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1564,6 +1564,10 @@ msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
+#: .\accounts\apps.py:7
+msgid "Speedy Core Accounts"
+msgstr ""
+
 #: .\accounts\forms.py:98
 msgid "Your email"
 msgstr ""
@@ -1962,6 +1966,10 @@ msgstr ""
 msgid "You have made this email address primary."
 msgstr ""
 
+#: .\base\apps.py:9
+msgid "Speedy Core Base App"
+msgstr ""
+
 #: .\base\models.py:67
 msgid "ID"
 msgstr ""
@@ -2082,8 +2090,11 @@ msgstr ""
 msgid "Friendship request rejected."
 msgstr ""
 
-#: .\messages\apps.py:7 .\messages\models.py:79
-msgid "messages"
+#: .\messages\apps.py:7 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:15
+#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
+msgid "Messages"
 msgstr ""
 
 #: .\messages\models.py:13
@@ -2122,6 +2133,10 @@ msgstr ""
 msgid "message"
 msgstr ""
 
+#: .\messages\models.py:79
+msgid "messages"
+msgstr ""
+
 #: .\messages\models.py:94
 msgid "read mark"
 msgstr ""
@@ -2130,11 +2145,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:144
+#: .\settings\base.py:152
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:145
+#: .\settings\base.py:153
 msgid "Hebrew"
 msgstr ""
 
@@ -2384,13 +2399,6 @@ msgstr ""
 
 #: .\templates\base.html:201 .\templates\base.html:203
 msgid "Speedy"
-msgstr ""
-
-#: .\templates\base_with_login.html:40
-#: .\templates\menu\user_menu_profile_is_active_base.html:16
-#: .\templates\messages\chat_detail.html:15
-#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
-msgid "Messages"
 msgstr ""
 
 #: .\templates\base_with_login.html:57 .\templates\base_with_login.html:95
