@@ -137,12 +137,14 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         self.helper = FormHelperWithDefaults()
         # split into two columns
         field_names = list(self.fields.keys())
-        self.helper.add_layout(Div(*[
-            Row(*[
-                Div(field, css_class='col-md-6')
-                for field in pair])
-            for pair in zip_longest(field_names[::2], field_names[1::2])
-        ]))
+        self.helper.add_layout(
+            Div(*[
+                Row(*[
+                    Div(field, css_class='col-md-6')
+                    for field in pair])
+                for pair in zip_longest(field_names[::2], field_names[1::2])
+            ]),
+        )
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def clean_slug(self):
@@ -203,15 +205,17 @@ class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
             self.data['username'] = self.data['username'].lower()
         self.fields['username'].label = _('Email or Username')
         self.helper = FormHelperWithDefaults()
-        self.helper.add_layout(Div(
-            'username',
-            'password',
-            Submit('submit', _('Login')),
-            HTML('<a class="btn btn-link" href="{link}">{text}</a>'.format(
-                link=reverse('accounts:password_reset'),
-                text=_('Forgot your password?'),
-            )),
-        ))
+        self.helper.add_layout(
+            Div(
+                'username',
+                'password',
+                Submit('submit', _('Login')),
+                HTML('<a class="btn btn-link" href="{link}">{text}</a>'.format(
+                    link=reverse('accounts:password_reset'),
+                    text=_('Forgot your password?'),
+                )),
+            ),
+        )
 
     def confirm_login_allowed(self, user):
         return None
