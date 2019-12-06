@@ -26,7 +26,7 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
         self.helper.add_layout(
             Div(*[
                 Row(*[
-                    # a little hack that forces display of custom widgets
+                    # A little hack that forces display of custom widgets
                     Div(Field(field, template='%s/speedy_match_custom_field.html') if (field in custom_field_names) else field, css_class='col-md-6')
                     for field in pair
                 ])
