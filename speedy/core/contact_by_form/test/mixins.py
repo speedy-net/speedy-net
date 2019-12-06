@@ -23,7 +23,7 @@ class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def set_up(self):
         super().set_up()
 
-        _please_contact_us_by_email_error_message_dict = {'en': 'Please contact us by e-mail.', 'he': 'אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.'}
+        _please_contact_us_by_email_error_message_dict = {'en': 'Please contact us by email.', 'he': 'אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.'}
         _not_17_error_message_dict = {'en': 'Not 17.', 'he': 'לא 17.'}
 
         self._please_contact_us_by_email_error_message = _please_contact_us_by_email_error_message_dict[self.language_code]

@@ -43,7 +43,7 @@ class FeedbackForm(ModelFormWithDefaults):
         text = self.cleaned_data.get('text')
         for not_allowed_string in self._not_allowed_strings:
             if (not_allowed_string in text):
-                raise ValidationError(_("Please contact us by e-mail."))
+                raise ValidationError(_("Please contact us by email."))
         return text
 
     def clean_no_bots(self):
