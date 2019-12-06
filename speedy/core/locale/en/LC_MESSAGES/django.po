@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-03 07:06+0200\n"
+"POT-Creation-Date: 2019-12-06 10:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1584,34 +1584,34 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:204 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:206 .\templates\base_with_login.html:104
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:209 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:212 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:117
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:212 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:215 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:114
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:224 .\accounts\forms.py:239
+#: .\accounts\forms.py:228 .\accounts\forms.py:243
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:248
+#: .\accounts\forms.py:252
 msgid "Change"
 msgstr ""
 
-#: .\accounts\forms.py:269
+#: .\accounts\forms.py:273
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:281
+#: .\accounts\forms.py:285
 msgid "Invalid password."
 msgstr ""
 
@@ -2014,15 +2014,15 @@ msgstr ""
 msgid "Type the number \"17\""
 msgstr ""
 
-#: .\contact_by_form\forms.py:38
+#: .\contact_by_form\forms.py:40
 msgid "Send"
 msgstr ""
 
-#: .\contact_by_form\forms.py:44
+#: .\contact_by_form\forms.py:46
 msgid "Please contact us by e-mail."
 msgstr ""
 
-#: .\contact_by_form\forms.py:50
+#: .\contact_by_form\forms.py:52
 msgid "Not 17."
 msgstr ""
 
