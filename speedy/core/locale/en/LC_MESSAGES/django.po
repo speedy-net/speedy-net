@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-06 14:30+0200\n"
+"POT-Creation-Date: 2019-12-08 07:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2564,6 +2564,26 @@ msgid ""
 "encrypted on our database."
 msgstr ""
 
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to "
+"share with your email address and your date of birth. If you signed up for "
+"Speech Match, your Speech Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings."
+msgstr ""
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"If you have deactivated your account on Speedy Net or Speech Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
 msgstr ""
@@ -2720,6 +2740,15 @@ msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
 "pornography. You are not allowed to use Speedy Net to send spam."
+msgstr ""
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet "
+"or talk on the phone with people you met on the site, the responsibility for "
+"the results of the meeting or phone call is yours."
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6
