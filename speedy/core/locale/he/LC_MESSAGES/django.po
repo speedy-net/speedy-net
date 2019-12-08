@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 07:38+0200\n"
+"POT-Creation-Date: 2019-12-08 07:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2824,6 +2824,14 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:17
 msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr ""
+"האתר באלפא, ייתכן שיהיו תקלות באתר. הנהלת האתר אינה אחראית על תקלות שיהיו "
+"באתר."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
 "pornography. You are not allowed to use Speedy Net to send spam."
@@ -2832,7 +2840,7 @@ msgstr ""
 "הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
 "בספידי נט בשביל לשלוח הודעות ספאם."
 
-#: .\templates\terms\terms_of_service.html:19
+#: .\templates\terms\terms_of_service.html:21
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
