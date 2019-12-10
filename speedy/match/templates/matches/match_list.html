@@ -99,3 +99,12 @@
         {% pagination %}
     </div>
 {% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    {# <!-- Event snippet for Speedy Match - active user conversion page --> #}
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-1011575750/uUZcCIr637YBEMbXreID'});
+    </script>
+{% endblock %}
+
