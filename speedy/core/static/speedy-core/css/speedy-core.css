@@ -259,3 +259,9 @@ body.bidi-rtl .navbar-right {
     font-size: 1.25rem;
 }
 
+@media (max-width: 1020px) {
+    h5 {
+        font-size: 22px;
+    }
+}
+

@@ -6310,6 +6310,10 @@ body.with-background {
   body.with-background .speedy-body-container .col-md-8 h5 {
     padding-bottom: 75%;
   }
+
+  h5 {
+    font-size: 22px;
+  }
 }
 
 .navbar-nav .nav-link.active {

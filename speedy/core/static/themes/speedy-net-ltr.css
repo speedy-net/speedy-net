@@ -5919,3 +5919,9 @@ html {
     color: #3D70A3 !important;
 }
 
+@media (max-width: 1020px) {
+  h5 {
+    font-size: 22px;
+  }
+}
+
