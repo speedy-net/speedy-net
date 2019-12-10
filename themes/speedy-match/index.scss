@@ -230,6 +230,12 @@ body.with-background {
     body.with-background {
         .speedy-body-container .col-md-8 {
             background-size: contain;
+            margin-bottom: 25px;
+            min-height: 700px;
+        }
+
+        .speedy-body-container .col-md-8 h5 {
+            padding-bottom: 75%;
         }
     }
 }
