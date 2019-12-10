@@ -6,8 +6,6 @@ from django.conf.urls.static import static
 app_name = 'speedy.core'
 urlpatterns = [
     url(regex=r'^about/', view=include('speedy.core.about.urls', namespace='about')),
-    url(regex=r'^privacy/', view=include('speedy.core.privacy.urls', namespace='privacy')),
-    url(regex=r'^terms/', view=include('speedy.core.terms.urls', namespace='terms')),
 ]
 
 if (django_settings.DEBUG):
