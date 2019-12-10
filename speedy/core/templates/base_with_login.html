@@ -150,3 +150,11 @@
     </script>
 {% endblock %}
 
+{% block privacy_policy_link %}
+    <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+{% endblock %}
+
+{% block terms_of_service_link %}
+    <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
+{% endblock %}
+
