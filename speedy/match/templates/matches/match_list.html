@@ -106,16 +106,34 @@
     <script>
       gtag('event', 'conversion', {'send_to': 'AW-1011575750/uUZcCIr637YBEMbXreID'});
     </script>
-    {% if matches_list|length >= 1 %}
+    {% if paginator.count >= 1 %}
         {# <!-- Event snippet for Speedy Match - active user - at least one match conversion page --> #}
         <script>
           gtag('event', 'conversion', {'send_to': 'AW-1011575750/2jfgCJ_197YBEMbXreID'});
         </script>
     {% endif %}
-    {% if matches_list|length >= 5 %}
+    {% if paginator.count >= 5 %}
         {# <!-- Event snippet for Speedy Match - active user - at least 5 matches conversion page --> #}
         <script>
           gtag('event', 'conversion', {'send_to': 'AW-1011575750/BJP_CKDa67YBEMbXreID'});
+        </script>
+    {% endif %}
+    {% if paginator.count >= 24 %}
+        {# <!-- Event snippet for Speedy Match - active user - at least 24 matches conversion page --> #}
+        <script>
+          gtag('event', 'conversion', {'send_to': 'AW-1011575750/Jva0CLeE-LYBEMbXreID'});
+        </script>
+    {% endif %}
+    {% if paginator.count >= 60 %}
+        {# <!-- Event snippet for Speedy Match - active user - at least 60 matches conversion page --> #}
+        <script>
+          gtag('event', 'conversion', {'send_to': 'AW-1011575750/682gCJbrgbcBEMbXreID'});
+        </script>
+    {% endif %}
+    {% if paginator.count >= 720 %}
+        {# <!-- Event snippet for Speedy Match - active user - at least 720 matches conversion page --> #}
+        <script>
+          gtag('event', 'conversion', {'send_to': 'AW-1011575750/_g4wCPTygbcBEMbXreID'});
         </script>
     {% endif %}
 {% endblock %}
