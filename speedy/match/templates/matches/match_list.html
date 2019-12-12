@@ -106,6 +106,18 @@
     <script>
       gtag('event', 'conversion', {'send_to': 'AW-1011575750/uUZcCIr637YBEMbXreID'});
     </script>
+    {% if LANGUAGE_CODE == "he" %}
+        {# <!-- Event snippet for Speedy Match - active user - in Hebrew conversion page --> #}
+        <script>
+          gtag('event', 'conversion', {'send_to': 'AW-1011575750/qHeICMP8mrcBEMbXreID'});
+        </script>
+    {% endif %}
+    {% if LANGUAGE_CODE == "en" %}
+        {# <!-- Event snippet for Speedy Match - active user - in English conversion page --> #}
+        <script>
+          gtag('event', 'conversion', {'send_to': 'AW-1011575750/SkZVCNL8mrcBEMbXreID'});
+        </script>
+    {% endif %}
     {% if paginator.count >= 1 %}
         {# <!-- Event snippet for Speedy Match - active user - at least one match conversion page --> #}
         <script>
