@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 07:50+0200\n"
+"POT-Creation-Date: 2019-12-13 10:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1599,12 +1599,8 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:228 .\accounts\forms.py:243
+#: .\accounts\forms.py:228
 msgid "Submit"
-msgstr ""
-
-#: .\accounts\forms.py:252
-msgid "Change"
 msgstr ""
 
 #: .\accounts\forms.py:273
@@ -2145,11 +2141,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:152
+#: .\settings\base.py:157
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:153
+#: .\settings\base.py:158
 msgid "Hebrew"
 msgstr ""
 
@@ -2199,7 +2195,8 @@ msgstr ""
 msgid "Profile Info"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:154
+#: .\templates\accounts\edit_profile\base.html:21
+#: .\templates\base_with_login.html:167
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2325,22 +2322,6 @@ msgstr ""
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:154 .\templates\menu\about_mobile_menu_links.html:14
-#: .\templates\privacy\privacy_policy.html:8
-#: .\templates\privacy\privacy_policy.html:13
-msgid "Privacy Policy"
-msgstr ""
-
-#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
-#: .\templates\terms\terms_of_service.html:8
-#: .\templates\terms\terms_of_service.html:13
-msgid "Terms of Service"
-msgstr ""
-
-#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
-msgid "Terms"
-msgstr ""
-
 #: .\templates\base.html:156 .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
@@ -2418,6 +2399,25 @@ msgstr ""
 
 #: .\templates\base_with_login.html:110
 msgid "Password"
+msgstr ""
+
+#: .\templates\base_with_login.html:167
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:13
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\templates\base_with_login.html:171
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:13
+msgid "Terms of Service"
+msgstr ""
+
+#: .\templates\base_with_login.html:171
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
 msgstr ""
 
 #: .\templates\blocks\block_list.html:14

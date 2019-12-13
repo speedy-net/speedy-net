@@ -240,7 +240,7 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_fo
     @property
     def helper(self):
         helper = FormHelperWithDefaults()
-        helper.add_input(Submit('submit', _('Submit')))
+        helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Change Password')))
         return helper
 
 
@@ -249,7 +249,7 @@ class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
         self.helper.add_input(Hidden('_form', 'password'))
-        self.helper.add_input(Submit('submit', _('Change')))
+        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Change Password')))
 
 
 class SiteProfileActivationForm(forms.ModelForm):

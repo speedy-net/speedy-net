@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 07:50+0200\n"
+"POT-Creation-Date: 2019-12-13 10:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1646,13 +1646,9 @@ msgstr "כניסה"
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:228 .\accounts\forms.py:243
+#: .\accounts\forms.py:228
 msgid "Submit"
 msgstr "שלח/י"
-
-#: .\accounts\forms.py:252
-msgid "Change"
-msgstr "שנה/י"
 
 #: .\accounts\forms.py:273
 msgid "Your password"
@@ -2210,11 +2206,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:152
+#: .\settings\base.py:157
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:153
+#: .\settings\base.py:158
 msgid "Hebrew"
 msgstr "עברית"
 
@@ -2264,7 +2260,8 @@ msgstr "עריכת פרופיל"
 msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
-#: .\templates\accounts\edit_profile\base.html:21 .\templates\base.html:154
+#: .\templates\accounts\edit_profile\base.html:21
+#: .\templates\base_with_login.html:167
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
@@ -2391,22 +2388,6 @@ msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:154 .\templates\menu\about_mobile_menu_links.html:14
-#: .\templates\privacy\privacy_policy.html:8
-#: .\templates\privacy\privacy_policy.html:13
-msgid "Privacy Policy"
-msgstr "מדיניות פרטיות"
-
-#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
-#: .\templates\terms\terms_of_service.html:8
-#: .\templates\terms\terms_of_service.html:13
-msgid "Terms of Service"
-msgstr "תנאי שימוש"
-
-#: .\templates\base.html:155 .\templates\menu\about_mobile_menu_links.html:17
-msgid "Terms"
-msgstr "תנאים"
-
 #: .\templates\base.html:156 .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
@@ -2487,6 +2468,25 @@ msgstr ""
 #: .\templates\base_with_login.html:110
 msgid "Password"
 msgstr "סיסמה"
+
+#: .\templates\base_with_login.html:167
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:13
+msgid "Privacy Policy"
+msgstr "מדיניות פרטיות"
+
+#: .\templates\base_with_login.html:171
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:13
+msgid "Terms of Service"
+msgstr "תנאי שימוש"
+
+#: .\templates\base_with_login.html:171
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "תנאים"
 
 #: .\templates\blocks\block_list.html:14
 msgid "You're not blocking anybody."
@@ -2884,6 +2884,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid "Change"
+#~ msgstr "שנה/י"
 
 #~ msgid " "
 #~ msgstr " "
