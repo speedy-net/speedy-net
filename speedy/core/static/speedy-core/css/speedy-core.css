@@ -149,6 +149,28 @@ body.bidi-rtl .navbar-right {
     height: 48px;
 }
 
+.navbar .vegan-friendly-logo-small {
+    display: none;
+}
+
+.footer .vegan-friendly-logo-small {
+    height: 97px;
+}
+
+@media screen and (min-width: 1280px) {
+    .navbar .vegan-friendly-logo-small {
+        height: 97px;
+        display: table;
+        margin: auto;
+    }
+
+    body.user-is-not-authenticated .logo-small {
+        height: 72px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .desktop-only {
         display: none;
