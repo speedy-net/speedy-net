@@ -59,12 +59,12 @@
                 {% for other_site in sites %}
                     <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% trans other_site.name %}</a>
                 {% endfor %}
-
             </div>
         </div>
         {% block navbar_brand %}
             <a class="navbar-brand" href="/" title="{% trans site.name %}">{% trans site.name %}</a>
         {% endblock %}
+        {% block navbar_vegan_friendly_logo %}{% endblock %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-text" aria-controls="navbar-text" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -175,6 +175,11 @@
                             <a href="https://ubuntu.com/" title="Ubuntu">Ubuntu</a>
                         </p>
                     </div>
+                    {% block footer_vegan_friendly_logo %}
+                        <div class="col-md-2">
+                            <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% trans "A vegan friendly website" %}" title="{% trans "A vegan friendly website" %}" />
+                        </div>
+                    {% endblock %}
                 </div>
             </div>
         {% endblock %}

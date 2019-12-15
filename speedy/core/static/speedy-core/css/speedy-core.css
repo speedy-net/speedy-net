@@ -146,7 +146,9 @@ body.bidi-rtl .navbar-right {
 }
 
 .logo-small {
-    height: 48px;
+    height: 72px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 767px) {
@@ -263,5 +265,15 @@ body.bidi-rtl .navbar-right {
     h5 {
         font-size: 22px;
     }
+}
+
+.navbar .vegan-friendly-logo-small {
+    height: 97px;
+    display: table;
+    margin: auto;
+}
+
+.footer .vegan-friendly-logo-small {
+    height: 97px;
 }
 
