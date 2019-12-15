@@ -1,3 +1,7 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /google*
+
+User-agent: MJ12bot
+Disallow: /
+
