@@ -117,7 +117,7 @@ class EditProfileNotificationsView(LoginRequiredMixin, FormValidMessageMixin, ge
         return self.request.user
 
 
-class EditProfileCredentialsView(LoginRequiredMixin, FormValidMessageMixin, generic.FormView):
+class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
     template_name = 'accounts/edit_profile/credentials.html'
     success_url = reverse_lazy('accounts:edit_profile_credentials')
     form_class = PasswordChangeForm
