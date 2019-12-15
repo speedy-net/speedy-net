@@ -10,7 +10,7 @@
 
 {% block user_menu_messages_class %}active{% endblock %}
 
-{% block body_class %}with-background{% endblock %}
+{% block body_class %}{{ block.super }} with-background{% endblock %}
 
 {% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% trans 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 

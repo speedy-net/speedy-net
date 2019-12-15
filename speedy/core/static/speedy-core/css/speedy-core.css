@@ -145,7 +145,13 @@ body.bidi-rtl .navbar-right {
     padding-top: 10px;
 }
 
-.logo-small {
+body.user-is-not-authenticated .logo-small {
+    height: 72px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body.user-is-authenticated .logo-small {
     height: 48px;
 }
 
@@ -263,5 +269,15 @@ body.bidi-rtl .navbar-right {
     h5 {
         font-size: 22px;
     }
+}
+
+.navbar .vegan-friendly-logo-small {
+    height: 97px;
+    display: table;
+    margin: auto;
+}
+
+.footer .vegan-friendly-logo-small {
+    height: 97px;
 }
 
