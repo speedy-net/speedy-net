@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-13 10:38+0200\n"
+"POT-Creation-Date: 2019-12-15 20:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1631,18 +1631,18 @@ msgstr "שם משתמש/ת חדש"
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:206 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:206 .\templates\base_with_login.html:108
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
 #: .\accounts\forms.py:212 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:117
+#: .\templates\base_with_login.html:121
 msgid "Login"
 msgstr "כניסה"
 
 #: .\accounts\forms.py:215 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:114
+#: .\templates\base_with_login.html:118
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -2242,15 +2242,15 @@ msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:153
+#: .\templates\about\about_base.html:5 .\templates\base.html:142
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:91
-#: .\templates\base_with_login.html:135
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:95
+#: .\templates\base_with_login.html:139
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2261,7 +2261,7 @@ msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
 #: .\templates\accounts\edit_profile\base.html:21
-#: .\templates\base_with_login.html:167
+#: .\templates\base_with_login.html:171
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
@@ -2383,12 +2383,12 @@ msgstr "אדמין - כל המשתמשים"
 msgid "No users."
 msgstr "אין משתמשים."
 
-#: .\templates\base.html:110
+#: .\templates\base.html:99
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:156 .\templates\contact_by_email\contact_us.html:8
+#: .\templates\base.html:145 .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:14
@@ -2396,59 +2396,63 @@ msgstr ""
 msgid "Contact Us"
 msgstr "צרו קשר"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:148
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:149
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:161
+#: .\templates\base.html:150
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:151
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:163
+#: .\templates\base.html:152
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:166
+#: .\templates\base.html:155
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:167
+#: .\templates\base.html:156
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:168
+#: .\templates\base.html:157
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:169
+#: .\templates\base.html:158
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:172
+#: .\templates\base.html:161
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:178
+#: .\templates\base.html:167
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:179
+#: .\templates\base.html:168
 msgid "Free Online Dating"
 msgstr "הכרויות און-ליין בחינם"
 
-#: .\templates\base.html:201 .\templates\base.html:203
+#: .\templates\base.html:180 .\templates\base_with_login.html:82
+msgid "A vegan friendly website"
+msgstr "אתר ידידותי לטבעונים"
+
+#: .\templates\base.html:195 .\templates\base.html:197
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:95
+#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:99
 msgid "Logout"
 msgstr "התנתק/י"
 
@@ -2456,7 +2460,7 @@ msgstr "התנתק/י"
 msgid "Home"
 msgstr "דף הבית"
 
-#: .\templates\base_with_login.html:85
+#: .\templates\base_with_login.html:89
 #, python-format
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
@@ -2465,25 +2469,25 @@ msgstr ""
 "היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "ברוכ/ה השב/ה ל%(site_name)s!"
 
-#: .\templates\base_with_login.html:110
+#: .\templates\base_with_login.html:114
 msgid "Password"
 msgstr "סיסמה"
 
-#: .\templates\base_with_login.html:167
+#: .\templates\base_with_login.html:171
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base_with_login.html:171
+#: .\templates\base_with_login.html:175
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base_with_login.html:171
+#: .\templates\base_with_login.html:175
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
