@@ -6289,7 +6289,7 @@ body.with-background {
     /*background-size: cover;*/
     /*background-attachment: fixed;*/
     background: url("/static/speedy-match/images/hearts-bg.png");
-    background-position-y: 64px;
+    /*background-position-y: 64px;*/
     min-height: 100vh; }
     body.with-background > .body-inner a {
       color: #212529; }
@@ -6299,6 +6299,14 @@ body.with-background {
   body.with-background .navbar.bg-speedy-match {
     /*background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0));*/
     font-weight: normal; }
+
+body.user-is-not-authenticated.with-background > .body-inner {
+  background-position-y: 105px;
+}
+
+body.user-is-authenticated.with-background > .body-inner {
+  background-position-y: 64px;
+}
 
 @media (max-width: 1020px) {
   body.with-background .speedy-body-container .col-md-8 {
