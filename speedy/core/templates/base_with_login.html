@@ -78,6 +78,14 @@
     </div>
 {% endblock %}
 
+{% block navbar_vegan_friendly_logo %}
+    {% if not request.user.is_authenticated %}
+        <div class="navbar-vegan-friendly-logo">
+            <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% trans "A vegan friendly website" %}" title="{% trans "A vegan friendly website" %}" />
+        </div>
+    {% endif %}
+{% endblock %}
+
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}

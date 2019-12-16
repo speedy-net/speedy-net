@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-13 10:38+0200\n"
+"POT-Creation-Date: 2019-12-15 21:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1584,18 +1584,18 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:206 .\templates\base_with_login.html:104
+#: .\accounts\forms.py:206 .\templates\base_with_login.html:112
 msgid "Email or Username"
 msgstr ""
 
 #: .\accounts\forms.py:212 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:117
+#: .\templates\base_with_login.html:125
 msgid "Login"
 msgstr ""
 
 #: .\accounts\forms.py:215 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:114
+#: .\templates\base_with_login.html:122
 msgid "Forgot your password?"
 msgstr ""
 
@@ -2177,15 +2177,15 @@ msgstr ""
 msgid "Internal server error"
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base.html:153
+#: .\templates\about\about_base.html:5 .\templates\base.html:142
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:91
-#: .\templates\base_with_login.html:135
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:99
+#: .\templates\base_with_login.html:143
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2196,7 +2196,7 @@ msgid "Profile Info"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\base.html:21
-#: .\templates\base_with_login.html:167
+#: .\templates\base_with_login.html:175
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2318,11 +2318,11 @@ msgstr ""
 msgid "No users."
 msgstr ""
 
-#: .\templates\base.html:110
+#: .\templates\base.html:99
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:156 .\templates\contact_by_email\contact_us.html:8
+#: .\templates\base.html:145 .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:14
@@ -2330,59 +2330,63 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: .\templates\base.html:159
+#: .\templates\base.html:148
 msgid "Speedy Net"
 msgstr ""
 
-#: .\templates\base.html:160
+#: .\templates\base.html:149
 msgid "Speedy Match"
 msgstr ""
 
-#: .\templates\base.html:161
+#: .\templates\base.html:150
 msgid "Speedy Composer"
 msgstr ""
 
-#: .\templates\base.html:162
+#: .\templates\base.html:151
 msgid "Speedy Mail Software"
 msgstr ""
 
-#: .\templates\base.html:163
+#: .\templates\base.html:152
 msgid "Speedy Net Blog"
 msgstr ""
 
-#: .\templates\base.html:166
+#: .\templates\base.html:155
 msgid "Speedy Net's Shop"
 msgstr ""
 
-#: .\templates\base.html:167
+#: .\templates\base.html:156
 msgid "Speedy Match's Shop"
 msgstr ""
 
-#: .\templates\base.html:168
+#: .\templates\base.html:157
 msgid "Speedy Composer's Shop"
 msgstr ""
 
-#: .\templates\base.html:169
+#: .\templates\base.html:158
 msgid "Speedy S-logo Shop"
 msgstr ""
 
-#: .\templates\base.html:172
+#: .\templates\base.html:161
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:178
+#: .\templates\base.html:167
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:179
+#: .\templates\base.html:168
 msgid "Free Online Dating"
 msgstr ""
 
-#: .\templates\base.html:201 .\templates\base.html:203
+#: .\templates\base.html:180 .\templates\base_with_login.html:84
+msgid "A vegan friendly website"
+msgstr ""
+
+#: .\templates\base.html:195 .\templates\base.html:197
 msgid "Speedy"
 msgstr ""
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:95
+#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:103
 msgid "Logout"
 msgstr ""
 
@@ -2390,32 +2394,32 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:85
+#: .\templates\base_with_login.html:93
 #, python-format
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
 
-#: .\templates\base_with_login.html:110
+#: .\templates\base_with_login.html:118
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:167
+#: .\templates\base_with_login.html:175
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base_with_login.html:171
+#: .\templates\base_with_login.html:179
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base_with_login.html:171
+#: .\templates\base_with_login.html:179
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr ""

@@ -19,7 +19,7 @@
 
 {% block user_menu_matches_class %}active{% endblock %}
 
-{% block body_class %}with-background{% endblock %}
+{% block body_class %}{{ block.super }} with-background{% endblock %}
 
 {% block content %}
     <div class="mb-4 filters">
