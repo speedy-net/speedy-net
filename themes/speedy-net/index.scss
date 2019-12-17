@@ -120,6 +120,12 @@ html {
     flex-wrap: nowrap;
 }
 
+@media screen and (max-width: 767px) {
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 1020px) {
     h5 {
         font-size: 22px;

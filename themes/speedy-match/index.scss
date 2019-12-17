@@ -286,6 +286,12 @@ a.speedy-bottom-badge-link {
     flex-wrap: nowrap;
 }
 
+@media screen and (max-width: 767px) {
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
 body.bidi-ltr .navbar-vegan-friendly-logo {
     width: 190px;
 }
