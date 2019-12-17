@@ -126,3 +126,11 @@ html {
     }
 }
 
+body.bidi-ltr .navbar-vegan-friendly-logo {
+    width: 240px;
+}
+
+body.bidi-rtl .navbar-vegan-friendly-logo {
+    width: 257px;
+}
+
