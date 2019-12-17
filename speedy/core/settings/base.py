@@ -182,6 +182,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = str(ROOT_DIR / 'media')
 
+FILE_UPLOAD_MAX_MEMORY_SIZE = int(15 * 1024 * 1024)  # 15 MB
+
 THUMBNAIL_DEBUG = True
 
 THUMBNAIL_DUMMY = True
