@@ -8,7 +8,6 @@ from . import views
 
 app_name = 'speedy.core.accounts'
 urlpatterns = [
-
     url(regex=r'^set-session/$', view=views.set_session, name='set_session'),
 
     url(regex=r'^login/$', view=auth_views.LoginView.as_view(template_name='accounts/login.html', authentication_form=forms.LoginForm, extra_context=None), name='login'),
