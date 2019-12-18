@@ -10,6 +10,10 @@ from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
 
 from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
@@ -229,11 +233,50 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         return helper
 
     def get_users(self, email):
+        """
+        Given an email, return matching user(s) who should receive a reset.
+        """
         email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email.lower())
-        return {e.user for e in email_addresses if (e.user.has_usable_password())}
+        return {e.user for e in email_addresses if ((e.email == email.lower()) and (e.user.has_usable_password()))}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
+        """
+        Send a django.core.mail.EmailMultiAlternatives to `to_email`.
+        """
         send_mail(to=[to_email], template_name_prefix='email/accounts/password_reset', context=context)
+
+    def save(self, domain_override=None, subject_template_name='registration/password_reset_subject.txt', email_template_name='registration/password_reset_email.html', use_https=False, token_generator=default_token_generator, from_email=None, request=None, html_email_template_name=None, extra_email_context=None):
+        """
+        Generate a one-use only link for resetting password and send it to the user.
+        """
+        email = self.cleaned_data["email"]
+        site = Site.objects.get_current()
+        users_list = self.get_users(email)
+        logger.info("PasswordResetForm::User submitted form, site_name={site_name}, email={email}, matching_users={matching_users}".format(site_name=_(site.name), email=email, matching_users=len(users_list)))
+        for user in users_list:
+            if not domain_override:
+                current_site = get_current_site(request)
+                site_name = current_site.name
+                domain = current_site.domain
+            else:
+                site_name = domain = domain_override
+            user_email_list = [e.email for e in user.email_addresses.all() if (e.email == email.lower())]
+            if (len(user_email_list) == 1):
+                user_email = user_email_list[0]
+                logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email}".format(site_name=_(site_name), user=user, user_email=user_email))
+                context = {
+                    'email': user_email,
+                    'domain': domain,
+                    'site_name': site_name,
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+                    'user': user,
+                    'token': token_generator.make_token(user),
+                    'protocol': 'https' if use_https else 'http',
+                    **(extra_email_context or {}),
+                }
+                self.send_mail(subject_template_name, email_template_name, context, from_email, user_email, html_email_template_name=html_email_template_name)
+            else:
+                logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email}".format(site_name=_(site_name), user=user, email=email))
 
 
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.SetPasswordForm):
