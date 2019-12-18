@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-15 21:24+0200\n"
+"POT-Creation-Date: 2019-12-18 07:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -418,7 +418,7 @@ msgstr "Speedy Match Accounts"
 msgid "Add profile picture"
 msgstr "צרפ/י תמונת פרופיל"
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:100 .\accounts\validators.py:45
+#: .\accounts\forms.py:61 .\accounts\forms.py:100 .\accounts\validators.py:46
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
@@ -426,7 +426,7 @@ msgstr "נדרשת תמונת פרופיל."
 msgid "My diet"
 msgstr "התזונה שלי"
 
-#: .\accounts\forms.py:62 .\accounts\forms.py:106 .\accounts\validators.py:109
+#: .\accounts\forms.py:62 .\accounts\forms.py:106 .\accounts\validators.py:106
 msgid "Your diet is required."
 msgstr "התזונה שלך נדרשת."
 
@@ -434,7 +434,7 @@ msgstr "התזונה שלך נדרשת."
 msgid "My smoking status"
 msgstr "הרגלי העישון שלי"
 
-#: .\accounts\forms.py:63 .\accounts\forms.py:109 .\accounts\validators.py:114
+#: .\accounts\forms.py:63 .\accounts\forms.py:109 .\accounts\validators.py:111
 msgid "Your smoking status is required."
 msgstr "הרגלי העישון שלך נדרשים."
 
@@ -442,11 +442,11 @@ msgstr "הרגלי העישון שלך נדרשים."
 msgid "My relationship status"
 msgstr "סטטוס מערכת היחסים שלי"
 
-#: .\accounts\forms.py:64 .\accounts\forms.py:112 .\accounts\validators.py:119
+#: .\accounts\forms.py:64 .\accounts\forms.py:112 .\accounts\validators.py:116
 msgid "Your relationship status is required."
 msgstr "סטטוס מערכת היחסים שלך נדרש."
 
-#: .\accounts\forms.py:65 .\accounts\forms.py:130 .\accounts\validators.py:124
+#: .\accounts\forms.py:65 .\accounts\forms.py:130 .\accounts\validators.py:121
 msgid "Gender to match is required."
 msgstr "מין בן/בת הזוג שלך נדרש."
 
@@ -454,25 +454,25 @@ msgstr "מין בן/בת הזוג שלך נדרש."
 msgid "Your height is required."
 msgstr "הגובה שלך נדרש."
 
-#: .\accounts\forms.py:115 .\accounts\validators.py:79
+#: .\accounts\forms.py:115 .\accounts\validators.py:76
 msgid "Please write a few words about yourself."
 msgstr "אנא כתוב/י כמה מילים על עצמך."
 
-#: .\accounts\forms.py:118 .\accounts\forms.py:153 .\accounts\validators.py:84
+#: .\accounts\forms.py:118 .\accounts\forms.py:153 .\accounts\validators.py:81
 msgid "Please write where you live."
 msgstr "אנא כתוב/י איפה את/ה גר/ה."
 
-#: .\accounts\forms.py:121 .\accounts\models.py:103 .\accounts\validators.py:89
+#: .\accounts\forms.py:121 .\accounts\models.py:103 .\accounts\validators.py:86
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
-#: .\accounts\forms.py:124 .\accounts\models.py:106 .\accounts\validators.py:94
+#: .\accounts\forms.py:124 .\accounts\models.py:106 .\accounts\validators.py:91
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
 
-#: .\accounts\forms.py:127 .\accounts\validators.py:99
+#: .\accounts\forms.py:127 .\accounts\validators.py:96
 msgid "Who is your ideal partner?"
 msgstr "מי בן או בת הזוג האידיאלי/ת שלך?"
 
@@ -484,15 +484,15 @@ msgstr "הגיל המינימלי לבן/בת הזוג נדרש."
 msgid "Maximal age to match is required."
 msgstr "הגיל המקסימלי לבן/בת הזוג נדרש."
 
-#: .\accounts\forms.py:139 .\accounts\validators.py:146
+#: .\accounts\forms.py:139 .\accounts\validators.py:143
 msgid "Diet match is required."
 msgstr "התאמת התזונה נדרשת."
 
-#: .\accounts\forms.py:142 .\accounts\validators.py:154
+#: .\accounts\forms.py:142 .\accounts\validators.py:151
 msgid "Smoking status match is required."
 msgstr "התאמת הרגלי העישון נדרשת."
 
-#: .\accounts\forms.py:145 .\accounts\validators.py:162
+#: .\accounts\forms.py:145 .\accounts\validators.py:159
 msgid "Relationship status match is required."
 msgstr "התאמת סטטוס מערכת היחסים נדרשת."
 
@@ -609,7 +609,13 @@ msgstr "פרופילים ספידי מץ'"
 msgid "Please confirm your email address."
 msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
-#: .\accounts\validators.py:74
+#: .\accounts\validators.py:48
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 15 MB."
+msgstr ""
+"גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
+
+#: .\accounts\validators.py:71
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -617,32 +623,32 @@ msgstr ""
 "אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
 "מתקבלים."
 
-#: .\accounts\validators.py:104
+#: .\accounts\validators.py:101
 msgid "Height must be from 1 to 450 cm."
 msgstr "הגובה חייב להיות בין 1 ל-450 ס\"מ."
 
-#: .\accounts\validators.py:129
+#: .\accounts\validators.py:126
 msgid "Minimal age to match must be from 0 to 180 years."
 msgstr "הגיל המינימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה."
 
-#: .\accounts\validators.py:134
+#: .\accounts\validators.py:131
 msgid "Maximal age to match must be from 0 to 180 years."
 msgstr "הגיל המקסימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה."
 
-#: .\accounts\validators.py:140
+#: .\accounts\validators.py:137
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 "הגיל המקסימלי לבן/בת הזוג לא יכול להיות פחות מהגיל המינימלי לבן/בת הזוג."
 
-#: .\accounts\validators.py:148
+#: .\accounts\validators.py:145
 msgid "At least one diet match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת תזונה צריכה להיות חמישה לבבות."
 
-#: .\accounts\validators.py:156
+#: .\accounts\validators.py:153
 msgid "At least one smoking status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צריכה להיות חמישה לבבות."
 
-#: .\accounts\validators.py:164
+#: .\accounts\validators.py:161
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 

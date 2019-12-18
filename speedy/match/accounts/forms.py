@@ -203,7 +203,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     def clean_photo(self):
         photo = self.files.get('photo')
         if (photo):
-            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo)
+            user_image = Image(owner=self.instance.user, file=photo)
+            user_image.save()
+            self.instance.user._new_photo = user_image
+            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
         else:
             photo = self.instance.user.photo
             speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
@@ -222,10 +225,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     def save(self, commit=True):
         if (commit):
             if ('photo' in self.fields):
-                if (self.files):
-                    user_image = Image(owner=self.instance.user, file=self.files['photo'])
-                    user_image.save()
-                    self.instance.user.photo = user_image
+                photo = self.files.get('photo')
+                if (photo):
+                    self.instance.user.photo = self.instance.user._new_photo
             for field_name in self.user_fields:
                 if (field_name in self.fields):
                     setattr(self.instance.user, field_name, self.cleaned_data[field_name])
