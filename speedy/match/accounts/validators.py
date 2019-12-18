@@ -1,5 +1,6 @@
 import logging
 
+from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.template.loader import render_to_string
@@ -43,18 +44,18 @@ def rank_is_valid(rank):
 def validate_photo(photo):
     if (not (photo)):
         raise ValidationError(_("A profile picture is required."))
+    # if (photo._size > django_settings.MAX_PHOTO_SIZE):
+    #     raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
 
 
-def validate_photo_for_user(user, photo, test_new_photo=True):
+def validate_photo_for_user(user, photo, test_new_photo):
     validate_photo(photo=photo)
     if (test_new_photo):
         user._photo = user.photo
     photo_is_valid = False
     try:
         if (test_new_photo):
-            user_image = Image(owner=user, file=photo)
-            user_image.save()
-            user.photo = user_image
+            user.photo = user._new_photo
         profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
         logger.debug('validate_photo_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
             user=user,
@@ -66,10 +67,6 @@ def validate_photo_for_user(user, photo, test_new_photo=True):
         photo_is_valid = False
     if (test_new_photo):
         user.photo = user._photo
-        try:
-            user_image.delete()
-        except:
-            pass
     if (not (photo_is_valid)):
         raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
