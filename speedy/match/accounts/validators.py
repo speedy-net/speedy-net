@@ -44,8 +44,8 @@ def rank_is_valid(rank):
 def validate_photo(photo):
     if (not (photo)):
         raise ValidationError(_("A profile picture is required."))
-    # if (photo._size > django_settings.MAX_PHOTO_SIZE):
-    #     raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
+    if (photo.size > django_settings.MAX_PHOTO_SIZE):
+        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
 
 
 def validate_photo_for_user(user, photo, test_new_photo):
