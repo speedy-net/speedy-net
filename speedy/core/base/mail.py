@@ -29,7 +29,6 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
     context.update({
         'SITE_URL': '{protocol}://{language_code}.{domain}'.format(**params),
         'SITE_MAIN_URL': '{protocol}://www.{domain}'.format(**params),
-        'SITE_NAME': site.name,
     })
 
     # render subject
