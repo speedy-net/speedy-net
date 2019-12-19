@@ -266,12 +266,12 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
                 logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email}".format(site_name=_(site_name), user=user, user_email=user_email))
                 context = {
                     'email': user_email,
-                    'domain': domain,
-                    'site_name': site_name,
+                    'domain': domain,  # Taken from Django; not used.
+                    'site_name': site_name,  # Taken from Django; not used.
                     'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                     'user': user,
                     'token': token_generator.make_token(user),
-                    'protocol': 'https' if use_https else 'http',
+                    'protocol': 'https' if use_https else 'http',  # Taken from Django; not used.
                     **(extra_email_context or {}),
                 }
                 self.send_mail(subject_template_name, email_template_name, context, from_email, user_email, html_email_template_name=html_email_template_name)
