@@ -9,6 +9,6 @@
         {% endif %}
     </div>
     <h5 class="card-title mb-0">
-        {{ user.name|truncatechars:18 }}, {{ user.get_age }}{% if user.diet > 0 %}, {{ user.get_diet }}{% endif %}
+        {{ user.name|truncatechars:18 }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{% if user.diet > 0 %}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}{% endif %}
     </h5>
 </div>

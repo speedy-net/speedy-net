@@ -8,7 +8,7 @@
         <div class="card-body">
             <a href="{{ user.get_absolute_url }}">
                 <h5 class="card-title mb-0">
-                    {{ user.name }}, {{ user.get_age }}, {{ user.get_diet }}
+                    {{ user.name }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
                 </h5>
             </a>
             {% if show_details %}
