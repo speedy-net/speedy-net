@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-18 07:41+0200\n"
+"POT-Creation-Date: 2019-12-20 06:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1582,31 +1582,49 @@ msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 
 #: .\__translations\__translations.py:193
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "ברוכה הבאה ל{site_name}! החשבון שלך פעיל עכשיו."
+
+#: .\__translations\__translations.py:194
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "ברוך הבא ל{site_name}! החשבון שלך פעיל עכשיו."
+
+#: .\__translations\__translations.py:195
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "ברוכ/ה הבא/ה ל{site_name}! החשבון שלך פעיל עכשיו."
+
+#: .\__translations\__translations.py:197
 msgctxt "female"
 msgid "Friends"
 msgstr "חברות"
 
-#: .\__translations\__translations.py:194
+#: .\__translations\__translations.py:198
 msgctxt "male"
 msgid "Friends"
 msgstr "חברים"
 
-#: .\__translations\__translations.py:195
+#: .\__translations\__translations.py:199
 msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\__translations\__translations.py:197
+#: .\__translations\__translations.py:201
 msgctxt "female"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכחי לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:198
+#: .\__translations\__translations.py:202
 msgctxt "male"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:199
+#: .\__translations\__translations.py:203
 msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
@@ -1615,46 +1633,46 @@ msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר הא�
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
-#: .\accounts\forms.py:98
+#: .\accounts\forms.py:102
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:99
+#: .\accounts\forms.py:103
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:107
+#: .\accounts\forms.py:111
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:110
+#: .\accounts\forms.py:114
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:206 .\templates\base_with_login.html:112
+#: .\accounts\forms.py:210 .\templates\base_with_login.html:112
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:212 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:216 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:125
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:215 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:219 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:122
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:228
+#: .\accounts\forms.py:232
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:273
+#: .\accounts\forms.py:316
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:285
+#: .\accounts\forms.py:328
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 

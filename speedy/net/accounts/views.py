@@ -1,4 +1,8 @@
+from django.contrib import messages
+from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
+from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView
 
@@ -10,5 +14,16 @@ class IndexView(CoreIndexView):
 class ActivateSiteProfileView(CoreActivateSiteProfileView):
     def get_account_activation_url(self):
         return reverse_lazy('accounts:activate')
+
+    def display_welcome_message(self):
+        site = Site.objects.get_current()
+        messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {site_name}! Your account is now active.').format(site_name=_(site.name)))
+
+    def form_valid(self, form):
+        super().form_valid(form=form)
+        success_url = self.get_success_url()
+        if (self.request.user.speedy_net_profile.is_active):
+            self.display_welcome_message()
+        return redirect(to=success_url)
 
 

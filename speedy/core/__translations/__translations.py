@@ -190,6 +190,10 @@ pgettext_lazy(context="female", message='Welcome to {site_name}!')
 pgettext_lazy(context="male", message='Welcome to {site_name}!')
 pgettext_lazy(context="other", message='Welcome to {site_name}!')
 
+pgettext_lazy(context="female", message='Welcome to {site_name}! Your account is now active.')
+pgettext_lazy(context="male", message='Welcome to {site_name}! Your account is now active.')
+pgettext_lazy(context="other", message='Welcome to {site_name}! Your account is now active.')
+
 pgettext_lazy(context="female", message='Friends')
 pgettext_lazy(context="male", message='Friends')
 pgettext_lazy(context="other", message='Friends')
