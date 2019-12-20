@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-20 06:29+0200\n"
+"POT-Creation-Date: 2019-12-20 13:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1963,20 +1963,20 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:222
+#: .\accounts\views.py:223
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:246 .\accounts\views.py:262
+#: .\accounts\views.py:247 .\accounts\views.py:263
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:277
+#: .\accounts\views.py:278
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:293
+#: .\accounts\views.py:294
 msgid "You have made this email address primary."
 msgstr ""
 
