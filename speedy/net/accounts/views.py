@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
@@ -5,6 +7,8 @@ from django.shortcuts import redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView
+
+logger = logging.getLogger(__name__)
 
 
 class IndexView(CoreIndexView):
@@ -24,6 +28,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         success_url = self.get_success_url()
         if (self.request.user.speedy_net_profile.is_active):
             self.display_welcome_message()
+            site = Site.objects.get_current()
+            logger.info('User {user} activated their account on {site_name}.'.format(site_name=_(site.name), user=self.request.user))
         return redirect(to=success_url)
 
 

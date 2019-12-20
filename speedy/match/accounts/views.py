@@ -108,6 +108,8 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         success_url = self.get_success_url()
         if (self.request.user.speedy_match_profile.is_active):
             self.display_welcome_message()
+            site = Site.objects.get_current()
+            logger.info('User {user} activated their account on {site_name}.'.format(site_name=_(site.name), user=self.request.user))
         return redirect(to=success_url)
 
 
