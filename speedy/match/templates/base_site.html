@@ -73,3 +73,19 @@
     <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
 {% endblock %}
 
+{% block speedy_software_link %}
+    {% if LANGUAGE_CODE == "he" %}
+        {% comment %}
+            # We don't display the link (too many links).
+        {% endcomment %}
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block facebook_link %}
+    {% if LANGUAGE_CODE == "he" %}
+        <a href="https://www.facebook.com/he.speedy.match/" title="ספידי מץ' בפייסבוק">ספידי מץ' בפייסבוק</a>
+    {% endif %}
+{% endblock %}
+

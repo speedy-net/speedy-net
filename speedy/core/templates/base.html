@@ -158,15 +158,16 @@
                             <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
                         </p>
                         <p>
-                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                            {% block speedy_software_link %}<a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>{% endblock %}
                             {% if LANGUAGE_CODE == "he" %}
                                 <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
                                 <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
                                 <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
                             {% else %}
                                 <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
-                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="{% trans "Free Online Dating" %}" rel="nofollow">{% trans "Free Online Dating" %}</a>
+                                {% block free_online_dating_link %}<a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="{% trans "Free Online Dating" %}" rel="nofollow">{% trans "Free Online Dating" %}</a>{% endblock %}
                             {% endif %}
+                            {% block facebook_link %}{% endblock %}
                         </p>
                         <p class="direction-ltr">
                             <a href="https://www.python.org/" title="Python">Python</a>
@@ -206,10 +207,7 @@
 </div>
 
 {% block js %}
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="{% static 'vendor/jquery-ui-custom/jquery-ui.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
