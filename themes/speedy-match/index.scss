@@ -300,6 +300,14 @@ body.bidi-rtl .navbar-vegan-friendly-logo {
     width: 206px;
 }
 
+@media screen and (min-width: 768px) {
+    body.with-background {
+        .row.total-number-of-active-members {
+            padding: 0px 20px;
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .row.total-number-of-active-members {
         max-width: 90%;
