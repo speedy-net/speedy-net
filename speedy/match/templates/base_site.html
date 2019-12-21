@@ -83,9 +83,14 @@
     {% endif %}
 {% endblock %}
 
+{% block free_online_dating_link %}{% endblock %}
+
 {% block facebook_link %}
     {% if LANGUAGE_CODE == "he" %}
         <a href="https://www.facebook.com/he.speedy.match/" title="ספידי מץ' בפייסבוק">ספידי מץ' בפייסבוק</a>
+    {% endif %}
+    {% if LANGUAGE_CODE == "en" %}
+        <a href="https://www.facebook.com/en.speedy.match/" title="Speedy Match on Facebook">Speedy Match on Facebook</a>
     {% endif %}
 {% endblock %}
 
