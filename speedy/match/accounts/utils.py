@@ -79,7 +79,7 @@ def get_total_number_of_active_members_text():
         speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
     ).count()
     # We only display this information on the website if the numbers are at least 500 and 50.
-    if ((total_number_of_active_members >= 500) and (total_number_of_active_members_in_the_last_week >= 50)):
+    if ((total_number_of_active_members >= 0) and (total_number_of_active_members_in_the_last_week >= 0)):
         total_number_of_active_members_text = _("The total number of active members on the site is {total_number_of_active_members}, of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week.").format(
             total_number_of_active_members=total_number_of_active_members,
             total_number_of_active_members_in_the_last_week=total_number_of_active_members_in_the_last_week,
