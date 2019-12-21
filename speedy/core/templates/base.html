@@ -157,15 +157,14 @@
                             <a href="https://www.cafepress.com/speedycomposer" title="{% trans "Speedy Composer's Shop" %}">{% trans "Speedy Composer's Shop" %}</a>
                             <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
                         </p>
+                        {% block footer_extra_links %}{% endblock %}
                         <p>
-                            {% block speedy_software_link %}<a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>{% endblock %}
+                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
                             {% if LANGUAGE_CODE == "he" %}
-                                <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
-                                <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
-                                <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
+                                {% block hebrew_extra_links %}{% endblock %}
                             {% else %}
-                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
-                                {% block free_online_dating_link %}<a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="{% trans "Free Online Dating" %}" rel="nofollow">{% trans "Free Online Dating" %}</a>{% endblock %}
+                                {% block english_extra_links %}{% endblock %}
                             {% endif %}
                             {% block facebook_link %}{% endblock %}
                         </p>
