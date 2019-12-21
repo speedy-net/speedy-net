@@ -3,13 +3,22 @@
 {% load i18n %}
 {% load core_tags_and_filters %}
 
-{% block hebrew_extra_links %}
-    <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
-    <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
-    <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
+{% block footer_extra_links %}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
+            <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
+            <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
+        </p>
+    {% endif %}
 {% endblock %}
 
-{% block english_extra_links %}
-    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="{% trans "Free Online Dating" %}" rel="nofollow">{% trans "Free Online Dating" %}</a>
+{% block facebook_link %}
+    {% if LANGUAGE_CODE == "en" %}
+        <a href="https://www.facebook.com/en.speedy.net/" title="Speedy Net on Facebook">Speedy Net on Facebook</a>
+    {% endif %}
+    {% if LANGUAGE_CODE == "he" %}
+        <a href="https://www.facebook.com/he.speedy.net/" title="ספידי נט בפייסבוק">ספידי נט בפייסבוק</a>
+    {% endif %}
 {% endblock %}
 
