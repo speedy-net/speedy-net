@@ -90,7 +90,7 @@ body.bidi-rtl .navbar-right {
     text-align: center;
     /* border-top: 1px solid #B2CAFA; */
     clear: both;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1;
     position: relative;
 }
@@ -103,7 +103,7 @@ body.bidi-rtl .navbar-right {
 .footer a {
     text-decoration: none;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 15px;
     /*color: #3D70A3 !important;*/
 }
 

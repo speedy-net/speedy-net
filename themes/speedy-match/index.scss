@@ -293,11 +293,11 @@ a.speedy-bottom-badge-link {
 }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-    width: 190px;
+    width: 150px;
 }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-    width: 206px;
+    width: 200px;
 }
 
 @media screen and (min-width: 768px) {
@@ -318,5 +318,16 @@ body.bidi-rtl .navbar-vegan-friendly-logo {
 .row.total-number-of-active-members h5 {
     margin-top: 20px;
     color: black;
+}
+
+body,
+h6,
+.h6,
+.form-control,
+.btn,
+.dropdown-menu,
+.input-group-text,
+.popover-header {
+    font-size: 1.0715rem;
 }
 

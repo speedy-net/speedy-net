@@ -133,10 +133,21 @@ html {
 }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-    width: 240px;
+    width: 194px;
 }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-    width: 257px;
+    width: 246px;
+}
+
+body,
+h6,
+.h6,
+.form-control,
+.btn,
+.dropdown-menu,
+.input-group-text,
+.popover-header {
+    font-size: 1.0715rem;
 }
 
