@@ -149,7 +149,6 @@
                             <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% trans "Speedy Match" %}">{% trans "Speedy Match" %}</a>
                             <a href="https://{{ LANGUAGE_CODE }}.speedycomposer.com/" title="{% trans "Speedy Composer" %}">{% trans "Speedy Composer" %}</a>
                             <a href="https://{{ LANGUAGE_CODE }}.speedy-mail-software.com/" title="{% trans "Speedy Mail Software" %}">{% trans "Speedy Mail Software" %}</a>
-                            <a href="https://{{ LANGUAGE_CODE }}.speedysoft.com/blog/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
                         </p>
                         <p>
                             <a href="https://www.cafepress.com/speedynet" title="{% trans "Speedy Net's Shop" %}">{% trans "Speedy Net's Shop" %}</a>
@@ -157,8 +156,8 @@
                             <a href="https://www.cafepress.com/speedycomposer" title="{% trans "Speedy Composer's Shop" %}">{% trans "Speedy Composer's Shop" %}</a>
                             <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
                         </p>
-                        {% block footer_extra_links %}{% endblock %}
                         <p>
+                            <a href="https://{{ LANGUAGE_CODE }}.speedysoft.com/blog/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
                             <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
                             <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
                             {% if LANGUAGE_CODE == "he" %}
@@ -168,6 +167,7 @@
                             {% endif %}
                             {% block facebook_link %}{% endblock %}
                         </p>
+                        {% block footer_extra_links %}{% endblock %}
                         <p class="direction-ltr">
                             <a href="https://www.python.org/" title="Python">Python</a>
                             <a href="https://www.djangoproject.com/" title="Django">Django</a>
