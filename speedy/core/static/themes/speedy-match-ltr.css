@@ -6339,3 +6339,12 @@ body.bidi-ltr .navbar-vegan-friendly-logo {
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
   width: 206px; }
+
+@media screen and (max-width: 767px) {
+  .row.total-number-of-active-members {
+    max-width: 90%;
+    margin: auto; } }
+
+.row.total-number-of-active-members h5 {
+  margin-top: 20px;
+  color: black; }

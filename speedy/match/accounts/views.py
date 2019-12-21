@@ -6,7 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
-from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView, EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.core.accounts.views import RegistrationView as CoreRegistrationView, IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView, EditProfileNotificationsView as CoreEditProfileNotificationsView
 from speedy.match.accounts import utils
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -15,8 +15,18 @@ from .forms import ProfileNotificationsForm
 logger = logging.getLogger(__name__)
 
 
+class RegistrationView(CoreRegistrationView):
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'total_number_of_active_members_text': utils.get_total_number_of_active_members_text(),
+        })
+        return cd
+
+
 class IndexView(CoreIndexView):
     registered_redirect_to = 'matches:list'
+    registration_view = RegistrationView
 
 
 class ActivateSiteProfileView(CoreActivateSiteProfileView):

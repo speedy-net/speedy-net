@@ -1,3 +1,8 @@
+from datetime import timedelta
+
+from django.utils.translation import get_language, gettext_lazy as _
+from django.utils.timezone import now
+
 from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import User
 from speedy.match.accounts import validators
@@ -62,5 +67,25 @@ def validate_field(field_name, user):
         validators.validate_relationship_status_match(relationship_status_match=user.speedy_match_profile.relationship_status_match)
     else:
         raise Exception("Unexpected: field_name={}".format(field_name))
+
+
+def get_total_number_of_active_members_text():
+    language_code = get_language()
+    total_number_of_active_members = User.objects.active(
+        speedy_match_site_profile__active_languages__contains=[language_code],
+    ).count()
+    total_number_of_active_members_in_the_last_week = User.objects.active(
+        speedy_match_site_profile__active_languages__contains=[language_code],
+        speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
+    ).count()
+    # We only display this information on the website if the numbers are at least 500 and 50.
+    if ((total_number_of_active_members >= 500) and (total_number_of_active_members_in_the_last_week >= 50)):
+        total_number_of_active_members_text = _("The total number of active members on the site is {total_number_of_active_members}, of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week.").format(
+            total_number_of_active_members=total_number_of_active_members,
+            total_number_of_active_members_in_the_last_week=total_number_of_active_members_in_the_last_week,
+        )
+    else:
+        total_number_of_active_members_text = ""
+    return total_number_of_active_members_text
 
 

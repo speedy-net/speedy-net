@@ -54,16 +54,6 @@ def set_session(request):
     return response
 
 
-class IndexView(generic.View):
-    registered_redirect_to = 'profiles:me' # The default.
-
-    def dispatch(self, request, *args, **kwargs):
-        if (self.request.user.is_authenticated):
-            return redirect(to=self.registered_redirect_to)
-        else:
-            return RegistrationView.as_view()(request=request, *args, **kwargs)
-
-
 class RegistrationView(FormValidMessageMixin, generic.CreateView):
     template_name = 'main/main_page.html'
     form_class = RegistrationForm
@@ -90,6 +80,17 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
             'language_code': get_language(),
         })
         return kwargs
+
+
+class IndexView(generic.View):
+    registered_redirect_to = 'profiles:me'  # The default.
+    registration_view = RegistrationView
+
+    def dispatch(self, request, *args, **kwargs):
+        if (self.request.user.is_authenticated):
+            return redirect(to=self.registered_redirect_to)
+        else:
+            return self.registration_view.as_view()(request=request, *args, **kwargs)
 
 
 class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
