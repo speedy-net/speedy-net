@@ -10,6 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from rules.contrib.views import LoginRequiredMixin
 
 from speedy.core.base.views import PaginationMixin
+from speedy.match.accounts import utils
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from .forms import SpeedyMatchSettingsMiniForm, SpeedyMatchProfileFullMatchForm, SpeedyMatchProfileFullAboutMeForm
 
@@ -51,6 +52,7 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         cd = super().get_context_data(**kwargs)
         cd.update({
             'matches_list': self.page.object_list,
+            'total_number_of_active_members_text': utils.get_total_number_of_active_members_text(),
         })
         return cd
 

@@ -98,6 +98,15 @@
         </div>
         {% pagination %}
     </div>
+    {% if total_number_of_active_members_text %}
+        {% block total_number_of_active_members_block %}
+            <div class="row total-number-of-active-members">
+                <h5>
+                    {{ total_number_of_active_members_text }}
+                </h5>
+            </div>
+        {% endblock %}
+    {% endif %}
 {% endblock %}
 
 {% block extra_js %}
