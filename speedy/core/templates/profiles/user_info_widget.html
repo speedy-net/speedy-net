@@ -15,67 +15,69 @@
         <table class="table">
             <tbody>
 
-            <tr>
-                <th nowrap="nowrap">{% trans 'Name' %}</th>
-                <td>{{ user.name|truncatechars:50 }}</td>
-            </tr>
-
-            {% if can_view_username %}
-            <tr>
-                <th nowrap="nowrap">{% trans 'Username' context user.get_gender %}</th>
-                <td>
-                    <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
-                        {{ user.slug }}
-                    </a>
-                </td>
-            </tr>
-            {% endif %}
-
-            <tr>
-                <th nowrap="nowrap">{% trans 'Gender' %}</th>
-                <td>{{ user.get_gender_display }}</td>
-            </tr>
-
-            {% has_perm 'accounts.view_profile_dob_day_month' viewer user as can_view_dob_day_month %}
-            {% has_perm 'accounts.view_profile_dob_year' viewer user as can_view_dob_year %}
-            {% if can_view_profile and user.date_of_birth %}
-                {% if can_view_dob_day_month or can_view_dob_year %}
-                    <tr>
-                        <th nowrap="nowrap">{% if can_view_dob_day_month %}{% trans 'Birth Date' %}{% elif can_view_dob_year %}{% trans 'Birth Year' %}{% endif %}</th>
-                        <td>
-                            {% if can_view_dob_day_month and can_view_dob_year %}
-                                {{ user.date_of_birth|date:"DATE_FORMAT" }}
-                            {% elif can_view_dob_day_month %}
-                                {{ user.date_of_birth|date:"MONTH_DAY_FORMAT" }}
-                            {% elif can_view_dob_year %}
-                                {{ user.date_of_birth|date:"YEAR_FORMAT" }}
-                            {% endif %}
-                        </td>
-                    </tr>
-                {% endif %}
-            {% endif %}
-
-            {% has_perm 'accounts.view_profile_age' viewer user as can_view_profile_age %}
-            {% if can_view_profile and user.date_of_birth and can_view_profile_age %}
                 <tr>
-                    <th nowrap="nowrap">{% trans 'Age' %}</th>
-                    <td>{{ user.get_age }}</td>
+                    <th nowrap="nowrap">{% trans 'Name' %}</th>
+                    <td>{{ user.name|truncatechars:50 }}</td>
                 </tr>
-            {% endif %}
 
-            {% for address in user.email_addresses.all %}
-                {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
-                {% if can_view_profile and can_view_address %}
+                {% if can_view_username %}
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Email' %}</th>
+                        <th nowrap="nowrap">{% trans 'Username' context user.get_gender %}</th>
                         <td>
-                            <a href="mailto:{{ address }}">
-                                {{ address }}
+                            <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
+                                {{ user.slug }}
                             </a>
                         </td>
                     </tr>
                 {% endif %}
-            {% endfor %}
+
+                <tr>
+                    <th nowrap="nowrap">{% trans 'Gender' %}</th>
+                    <td>{{ user.get_gender_display }}</td>
+                </tr>
+
+                {% has_perm 'accounts.view_profile_dob_day_month' viewer user as can_view_dob_day_month %}
+                {% has_perm 'accounts.view_profile_dob_year' viewer user as can_view_dob_year %}
+                {% if can_view_profile and user.date_of_birth %}
+                    {% if can_view_dob_day_month or can_view_dob_year %}
+                        <tr>
+                            <th nowrap="nowrap">{% if can_view_dob_day_month %}{% trans 'Birth Date' %}{% elif can_view_dob_year %}{% trans 'Birth Year' %}{% endif %}</th>
+                            <td>
+                                {% if can_view_dob_day_month and can_view_dob_year %}
+                                    {{ user.date_of_birth|date:"DATE_FORMAT" }}
+                                {% elif can_view_dob_day_month %}
+                                    {{ user.date_of_birth|date:"MONTH_DAY_FORMAT" }}
+                                {% elif can_view_dob_year %}
+                                    {{ user.date_of_birth|date:"YEAR_FORMAT" }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+
+                {% has_perm 'accounts.view_profile_age' viewer user as can_view_profile_age %}
+                {% if can_view_profile and user.date_of_birth and can_view_profile_age %}
+                    <tr>
+                        <th nowrap="nowrap">{% trans 'Age' %}</th>
+                        <td>{{ user.get_age }}</td>
+                    </tr>
+                {% endif %}
+
+                {% for address in user.email_addresses.all %}
+                    {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
+                    {% if can_view_profile and can_view_address %}
+                        <tr>
+                            <th nowrap="nowrap">{% trans 'Email' %}</th>
+                            <td>
+                                <a href="mailto:{{ address }}">
+                                    {{ address }}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+
+                {% block admin_extra_info %}{% endblock %}
 
             </tbody>
         </table>

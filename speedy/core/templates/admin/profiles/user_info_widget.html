@@ -1,0 +1,15 @@
+{% extends 'profiles/user_info_widget.html' %}
+
+{% block admin_extra_info %}
+    {% if request.user.is_superuser and request.user.is_staff %}
+        <tr>
+            <th nowrap="nowrap">ID</th>
+            <td>
+                <a href="{{ admin_user_prefix }}/{{ user.pk }}/">
+                    {{ user.pk }}
+                </a>
+            </td>
+        </tr>
+    {% endif %}
+{% endblock %}
+

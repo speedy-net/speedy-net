@@ -1,4 +1,5 @@
 from django.conf import settings as django_settings
+from django.utils.module_loading import import_string
 from django.views import generic
 
 from speedy.core.admin.mixins import OnlyAdminMixin
@@ -39,5 +40,16 @@ class AdminUsersWithDetailsListView(AdminUsersListView):
 
 class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
     template_name = 'admin/profiles/user_detail.html'
+    admin_widgets = {
+        'speedy.core.profiles.widgets.UserInfoWidget': 'speedy.core.profiles.admin.widgets.AdminUserInfoWidget',
+    }
 
+    def get_widgets(self):
+        widgets = []
+        for widget_path in django_settings.USER_PROFILE_WIDGETS:
+            if (widget_path in self.admin_widgets):
+                widget_path = self.admin_widgets[widget_path]
+            widget_class = import_string(widget_path)
+            widgets.append(widget_class(**self.get_widget_kwargs()))
+        return widgets
 
