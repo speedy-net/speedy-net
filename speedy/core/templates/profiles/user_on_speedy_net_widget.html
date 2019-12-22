@@ -2,7 +2,7 @@
 
 {% if is_active_and_there_is_no_block %}
     <div class="col-sm-12 pull-right">
-       <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
+       <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}/8888888{{ admin_user_prefix|default:"zzzzz" }}{% url 'profiles:user' slug=user.slug %}">
             {% if user == viewer %}
                 {% blocktrans context viewer.get_gender %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
             {% else %}

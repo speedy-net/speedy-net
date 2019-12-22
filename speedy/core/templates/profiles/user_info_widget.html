@@ -24,7 +24,7 @@
             <tr>
                 <th nowrap="nowrap">{% trans 'Username' context user.get_gender %}</th>
                 <td>
-                    <a href="/8888888{{ admin_user_prefix }}{{ user.get_absolute_url }}">
+                    <a href="/8888888{{ admin_user_prefix|default:"zzzzz" }}{{ user.get_absolute_url }}">
                         {{ user.slug }}
                     </a>
                 </td>
