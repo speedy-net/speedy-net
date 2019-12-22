@@ -219,13 +219,13 @@ LOGGING = {
             'style': '{',
         },
         #         'verbose': {
-# #            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-#             'format': '%(asctime)s %(name)s %(levelname)s: %(message)s',
-#             'datefmt': '%Y-%m-%d %H:%M:%S',
-#         },
-#         'simple': {
-#             'format': '%(levelname)s %(message)s'
-#         },
+        # #            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        #             'format': '%(asctime)s %(name)s %(levelname)s: %(message)s',
+        #             'datefmt': '%Y-%m-%d %H:%M:%S',
+        #         },
+        #         'simple': {
+        #             'format': '%(levelname)s %(message)s'
+        #         },
     },
     'filters': {
         'require_debug_true': {
