@@ -4,7 +4,7 @@
 
 {% block user_menu_extra_0 %}{% endblock %}
 <li class="nav-item">
-    <a href="{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
+    <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
         <i class="fa fa-fw fa-user"></i>
         <span class="label">{{ request.user.name|truncatechars:25 }}</span>
     </a>

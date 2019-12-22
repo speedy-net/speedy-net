@@ -19,7 +19,7 @@
                     <div class="col-md">
                         <div class="page-header">
                             <h1>
-                                <a href="{% url 'profiles:user' slug=user.slug %}">{{ user.name|truncatechars:50 }}</a>{% block user_extra %}{% endblock %}
+                                <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=user.slug %}">{{ user.name|truncatechars:50 }}</a>{% block user_extra %}{% endblock %}
                             </h1>
                             <div class="text-muted">
                                 {% block user_status %}
@@ -53,7 +53,7 @@
                 {% else %}
                     <div class="row">
                         <div class="col-sm-12">
-                            <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'profiles:user' slug=user.slug %}">
+                            <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{{ admin_user_prefix }}{% url 'profiles:user' slug=user.slug %}">
                                 {# ~~~~ TODO: remove "his/her" and setup strings in Python! #}
                                 {% trans "This user doesn't match your profile, " context user.get_gender %}{% trans "but you can visit his/her Speedy Net profile. " context user.get_gender %}{% trans "View " context request.user.get_gender %}{% trans "user's profile on Speedy Net." context user.get_gender %}
                             </a>
