@@ -4,7 +4,7 @@
 {% if with_link %}
     <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}" title="{{ user.name }}">
 {% endif %}
-{% thumbnail user.photo.file geometry crop='center' as image %}
+{% thumbnail user.photo.file geometry crop='center 20%' as image %}
     <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}" />
 {% empty %}
     <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ width }}" class="img-fluid {{ html_class }}" />
