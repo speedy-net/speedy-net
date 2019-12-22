@@ -49,16 +49,16 @@ def speedy_match_domain(request):
     }
 
 
-def add_admin_prefix(request):
+def admin_prefix(request):
     import logging
     logger = logging.getLogger(__name__)
-    logger.info('add_admin_prefix:: request.user={request_user}, request.user.is_superuser={is_superuser}, request.user.is_staff={is_staff}'.format(request_user=request.user, is_superuser=request.user.is_superuser, is_staff=request.user.is_staff))
+    logger.info('admin_prefix:: request.user={request_user}, request.user.is_superuser={is_superuser}, request.user.is_staff={is_staff}'.format(request_user=request.user, is_superuser=request.user.is_superuser, is_staff=request.user.is_staff))
     if ((request.user.is_superuser) or (request.user.is_staff)):
-        admin_prefix = "/admin"
+        admin_user_prefix = "/admin/user"
     else:
-        admin_prefix = ""
+        admin_user_prefix = ""
     return {
-        'admin_prefix': admin_prefix,
+        'admin_user_prefix': admin_user_prefix,
     }
 
 

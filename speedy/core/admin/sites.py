@@ -6,13 +6,13 @@ from . import views
 
 class AdminSite(DjangoAdminSite):
     def get_urls(self):
-        urls = super().get_urls()
-        urls += [
+        urlpatterns = super().get_urls()
+        urlpatterns += [
             url(regex=r'^users/$', view=views.AdminUsersListView.as_view(), name='users_list'),
             url(regex=r'^users/with-details/$', view=views.AdminUsersWithDetailsListView.as_view(), name='users_with_details_list'),
-            url(regex=r'^(?P<slug>[-\._\w]+)/$', view=views.AdminUserDetailView.as_view(), name='user'),
+            url(regex=r'^user/(?P<slug>[-\._\w]+)/$', view=views.AdminUserDetailView.as_view(), name='user'),
         ]
-        return urls
+        return urlpatterns
 
 
 admin_site = AdminSite()

@@ -6,11 +6,11 @@ from . import views
 
 class AdminSite(CoreAdminSite):
     def get_urls(self):
-        urls = super().get_urls()
-        urls += [
+        urlpatterns = super().get_urls()
+        urlpatterns += [
             url(regex=r'^matches/$', view=views.AdminMatchesListView.as_view(), name='matches_list'),
         ]
-        return urls
+        return urlpatterns
 
 
 admin_site = AdminSite()

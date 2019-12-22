@@ -107,7 +107,7 @@ TEMPLATES = [
                 'speedy.core.base.context_processors.sites',
                 'speedy.core.base.context_processors.speedy_net_domain',
                 'speedy.core.base.context_processors.speedy_match_domain',
-                'speedy.core.base.context_processors.add_admin_prefix',
+                'speedy.core.base.context_processors.admin_prefix',
             ],
         },
     },
