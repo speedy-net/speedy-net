@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 06:30+0200\n"
+"POT-Creation-Date: 2019-12-22 05:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -664,6 +664,23 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
+#: .\admin\views.py:36
+#, python-brace-format
+msgid ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week, {total_number_of_active_members_in_the_last_month} members "
+"entered the site in the last month, and "
+"{total_number_of_active_members_in_the_last_four_months} members entered the "
+"site in the last four months."
+msgstr ""
+"אדמין: מספר החברים הפעילים באתר הוא {total_number_of_active_members}, מתוכם "
+"{total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע "
+"האחרון, {total_number_of_active_members_in_the_last_month} חברים נכנסו לאתר "
+"בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
+"חברים נכנסו לאתר בארבעת החודשים האחרונים."
+
 #: .\likes\managers.py:14 .\likes\models.py:30
 msgid "Users cannot like themselves."
 msgstr "משתמשים לא יכולים לעשות לייק לעצמם."
@@ -724,7 +741,7 @@ msgstr "לייקים הדדיים"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match Matches"
 
-#: .\matches\views.py:73 .\matches\views.py:87
+#: .\matches\views.py:75 .\matches\views.py:89
 msgid "Your match settings were saved."
 msgstr "הגדרת ההתאמות שלך נשמרה."
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 06:30+0200\n"
+"POT-Creation-Date: 2019-12-22 05:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2430,37 +2430,33 @@ msgstr "ספידי קומפוזר"
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:152
-msgid "Speedy Net Blog"
-msgstr "ספידי נט בלוג"
-
-#: .\templates\base.html:155
+#: .\templates\base.html:154
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:156
+#: .\templates\base.html:155
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:157
+#: .\templates\base.html:156
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:158
+#: .\templates\base.html:157
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
+
+#: .\templates\base.html:160
+msgid "Speedy Net Blog"
+msgstr "ספידי נט בלוג"
 
 #: .\templates\base.html:161
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:167
+#: .\templates\base.html:162
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
-
-#: .\templates\base.html:168
-msgid "Free Online Dating"
-msgstr "הכרויות אונליין בחינם"
 
 #: .\templates\base.html:180 .\templates\base_with_login.html:84
 msgid "A vegan friendly website"
@@ -2906,6 +2902,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid "Free Online Dating"
+#~ msgstr "הכרויות אונליין בחינם"
 
 #~ msgid "Change"
 #~ msgstr "שנה/י"
