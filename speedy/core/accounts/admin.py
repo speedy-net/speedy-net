@@ -8,6 +8,13 @@ from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Entity, ReservedUsername, User, UserEmailAddress
 
 
+class EntityAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+    def has_delete_permission(self, request, obj=None):
+        return True
+
+
 class ReservedUsernameAdmin(django_admin.ModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
 
@@ -27,10 +34,11 @@ class UserEmailAddressAdmin(ReadOnlyModelAdmin):
 
 
 class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
-    pass
+    def has_delete_permission(self, request, obj=None):
+        return True
 
 
-admin.site.register(Entity, ReadOnlyModelAdmin)
+admin.site.register(Entity, EntityAdmin)
 admin.site.register(ReservedUsername, ReservedUsernameAdmin)
 admin.site.register(User, UserAdmin)
 
