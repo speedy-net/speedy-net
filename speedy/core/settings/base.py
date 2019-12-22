@@ -62,6 +62,9 @@ INSTALLED_APPS = [
     'speedy.net.accounts',
     'speedy.match.accounts',
     'speedy.match.likes',
+
+    'speedy.composer.accounts',
+    'speedy.mail.accounts',
 ]
 
 FORMAT_MODULE_PATH = [

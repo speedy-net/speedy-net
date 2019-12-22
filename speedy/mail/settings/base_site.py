@@ -14,7 +14,7 @@ ROOT_URLCONF = 'speedy.mail.urls'
 # if (LOGIN_ENABLED):
 if (True or LOGIN_ENABLED): # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
-        'speedy.mail.accounts',
+        # 'speedy.mail.accounts',
     ]
 
     AUTH_SITE_PROFILE_MODEL = 'mail_accounts.SiteProfile'
