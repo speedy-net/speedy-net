@@ -1,4 +1,4 @@
-from speedy.net import admin
+from speedy.core import admin
 from speedy.core.accounts.admin import SiteProfileBaseAdmin
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
