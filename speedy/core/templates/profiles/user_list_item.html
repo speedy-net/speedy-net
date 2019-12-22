@@ -6,7 +6,7 @@
     <div class="card text-center">
         {% profile_picture user '256x256' html_class="card-img-top" %}
         <div class="card-body">
-            <a href="{{ user.get_absolute_url }}">
+            <a href="/8888888{{ admin_prefix }}{{ user.get_absolute_url }}">
                 <h5 class="card-title mb-0">
                     {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}{{ user.name|truncatechars:25 }}{% else %}{{ user.name|truncatechars:30 }}{% endif %}
                 </h5>

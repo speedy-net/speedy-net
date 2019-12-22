@@ -10,6 +10,7 @@ class AdminSite(DjangoAdminSite):
         urls += [
             url(regex=r'^users/$', view=views.AdminUsersListView.as_view(), name='users_list'),
             url(regex=r'^users/with-details/$', view=views.AdminUsersWithDetailsListView.as_view(), name='users_with_details_list'),
+            url(regex=r'^(?P<slug>[-\._\w]+)/$', view=views.AdminUserDetailView.as_view(), name='user'),
         ]
         return urls
 

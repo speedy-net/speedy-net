@@ -108,7 +108,6 @@ class UserDetailView(UserMixin, generic.TemplateView):
         cd.update({
             'widgets': self.get_widgets(),
         })
-
         return cd
 
 

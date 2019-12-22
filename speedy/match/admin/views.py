@@ -16,7 +16,8 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     page_size = 96
     paginate_by = page_size
 
-    def get_total_number_of_active_members_text(self):
+    @staticmethod
+    def get_total_number_of_active_members_text():
         language_code = get_language()
         total_number_of_active_members = User.objects.active(
             speedy_match_site_profile__active_languages__contains=[language_code],
