@@ -1,5 +1,6 @@
 {% extends 'main/main_page_base.html' %}
 
+{% load core_tags_and_filters %}
 {% load crispy_forms_tags %}
 {% load i18n %}
 
@@ -20,6 +21,19 @@
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; - הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block footer_extra_links_5 %}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="אתרי הכרויות">אתרי הכרויות</a>
+        </p>
+    {% endif %}
+    {% if LANGUAGE_CODE == "en" %}
+        <p>
+            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.club/" title="{% trans "Free Online Dating" %}">{% trans "Free Online Dating" %}</a>
         </p>
     {% endif %}
 {% endblock %}
