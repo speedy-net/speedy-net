@@ -10,14 +10,6 @@
     <a class="navbar-brand" href="/" title="{% trans site.name %}"><img class="logo-small" src="{% static 'speedy-net/images/' %}logo-small-alpha-{{ LANGUAGE_CODE }}.png" alt="{% trans site.name %}" /></a>
 {% endblock %}
 
-{% block footer_extra_links_2 %}
-    {% if LANGUAGE_CODE == "he" %}
-        <p>
-            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; - הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
-        </p>
-    {% endif %}
-{% endblock %}
-
 {% block facebook_link %}
     {% if LANGUAGE_CODE == "en" %}
         <a href="https://www.facebook.com/en.speedy.net/" title="Speedy Net on Facebook">Speedy Net on Facebook</a>

@@ -16,3 +16,11 @@
     <br />
 {% endblock %}
 
+{% block footer_extra_links_2 %}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; - הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
