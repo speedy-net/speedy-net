@@ -14,6 +14,7 @@ ROOT_URLCONF = 'speedy.mail.urls'
 # if (LOGIN_ENABLED):
 if (True or LOGIN_ENABLED):  # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
+        'speedy.core.contact_by_form',  # For admin - for deleting users.
         'speedy.composer.accounts',  # For admin - for deleting users.
         'speedy.mail.accounts',
     ]
