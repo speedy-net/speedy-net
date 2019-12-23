@@ -3,12 +3,13 @@
 {% load i18n %}
 {% load core_tags_and_filters %}
 
-{% block footer_extra_links_4 %}
+{% block footer_extra_links_3 %}
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
             <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
             <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
+            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; - הכרויות בספידי">להכיר בספידי</a>
         </p>
     {% endif %}
 {% endblock %}
