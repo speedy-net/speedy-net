@@ -25,7 +25,7 @@ def set_request_params(context, **params):
             return "?{}".format(query_dict.urlencode())
 
 
-@register.inclusion_tag('core/pagination.html', takes_context=True)
+@register.inclusion_tag(filename='core/pagination.html', takes_context=True)
 def pagination(context):
     """
     sliced_page_range is [1, None, 4, 5, 6, 7, 8, None, 42]
