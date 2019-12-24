@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
 
 from django.utils.translation import get_language, gettext_lazy as _
 from django.utils.timezone import now
@@ -42,6 +42,38 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         )
         return total_number_of_active_members_text
 
+    @staticmethod
+    def get_total_number_of_active_members_date_registered_text():
+        language_code = get_language()
+        total_number_of_active_members_registered_in_the_last_week = User.objects.active(
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__gte=now() - timedelta(days=7),
+        ).count()
+        total_number_of_active_members_registered_in_the_last_month = User.objects.active(
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__gte=now() - timedelta(days=30),
+        ).count()
+        total_number_of_active_members_registered_in_the_last_four_months = User.objects.active(
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__gte=now() - timedelta(days=120),
+        ).count()
+        total_number_of_active_members_registered_more_than_four_months_ago = User.objects.active(
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__lte=now() - timedelta(days=120),
+        ).count()
+        total_number_of_active_members_registered_before_2019_08_01 = User.objects.active(
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
+        ).count()
+        total_number_of_active_members_date_registered_text = _("Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.").format(
+            total_number_of_active_members_registered_in_the_last_week=total_number_of_active_members_registered_in_the_last_week,
+            total_number_of_active_members_registered_in_the_last_month=total_number_of_active_members_registered_in_the_last_month,
+            total_number_of_active_members_registered_in_the_last_four_months=total_number_of_active_members_registered_in_the_last_four_months,
+            total_number_of_active_members_registered_more_than_four_months_ago=total_number_of_active_members_registered_more_than_four_months_ago,
+            total_number_of_active_members_registered_before_2019_08_01=total_number_of_active_members_registered_before_2019_08_01,
+        )
+        return total_number_of_active_members_date_registered_text
+
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         language_code = get_language()
@@ -55,6 +87,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         cd.update({
             'matches_list': cd['object_list'],
             'total_number_of_active_members_text': self.get_total_number_of_active_members_text(),
+            'total_number_of_active_members_date_registered_text': self.get_total_number_of_active_members_date_registered_text(),
         })
         return cd
 

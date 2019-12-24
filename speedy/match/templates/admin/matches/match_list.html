@@ -8,3 +8,19 @@
 
 {% block google_conversions %}{% endblock %}
 
+{% block total_number_of_active_members_block %}
+    {% if total_number_of_active_members_text %}
+        <div class="row total-number-of-active-members">
+            <h5>
+                {{ total_number_of_active_members_text }}
+            </h5>
+        </div>
+    {% endif %}
+    {% if total_number_of_active_members_date_registered_text %}
+        <div class="row total-number-of-active-members">
+            <h5>
+                {{ total_number_of_active_members_date_registered_text }}
+            </h5>
+        </div>
+    {% endif %}
+{% endblock %}
