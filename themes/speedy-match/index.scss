@@ -302,20 +302,23 @@ body.bidi-rtl .navbar-vegan-friendly-logo {
 
 @media screen and (min-width: 768px) {
     body.with-background {
-        .row.total-number-of-active-members {
+        .row.total-number-of-active-members,
+        .row.total-number-of-members {
             padding: 0px 20px;
         }
     }
 }
 
 @media screen and (max-width: 767px) {
-    .row.total-number-of-active-members {
+    .row.total-number-of-active-members,
+    .row.total-number-of-members {
         max-width: 90%;
         margin: auto;
     }
 }
 
-.row.total-number-of-active-members h5 {
+.row.total-number-of-active-members h5,
+.row.total-number-of-members h5 {
     margin-top: 20px;
     color: black;
 }

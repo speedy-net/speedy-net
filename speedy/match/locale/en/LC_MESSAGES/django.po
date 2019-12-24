@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-24 07:57+0200\n"
+"POT-Creation-Date: 2019-12-24 09:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -602,15 +602,6 @@ msgstr ""
 
 #: .\accounts\models.py:239 .\templates\accounts\edit_profile\activate.html:28
 msgid "Please confirm your email address."
-msgstr ""
-
-#: .\accounts\utils.py:83
-#, python-brace-format
-msgid ""
-"The total number of active members on the site is "
-"{total_number_of_active_members}, of which "
-"{total_number_of_active_members_in_the_last_week} members entered the site "
-"in the last week."
 msgstr ""
 
 #: .\accounts\validators.py:48
