@@ -292,6 +292,21 @@ a.speedy-bottom-badge-link {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        flex-basis: 100%;
+        order: -1;
+
+        .logo-small {
+            display: table;
+            height: auto;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+    }
+}
+
 body.bidi-ltr .navbar-vegan-friendly-logo {
     flex-grow: 100;
 }

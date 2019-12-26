@@ -5928,6 +5928,17 @@ html {
   .row {
     flex-wrap: wrap; } }
 
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    flex-basis: 100%;
+    order: -1; }
+    .navbar-brand .logo-small {
+      display: table;
+      height: auto;
+      width: 100%;
+      max-width: 500px;
+      margin: auto; } }
+
 @media (max-width: 1020px) {
   h5 {
     font-size: 22px; } }
