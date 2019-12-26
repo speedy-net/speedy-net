@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-24 09:45+0200\n"
+"POT-Creation-Date: 2019-12-26 05:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2798,6 +2798,20 @@ msgid ""
 "is not responsible for user activity outside the site. If you choose to meet "
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
+msgstr ""
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"After signing up for the site you are asked to verify your email address via "
+"a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
 msgstr ""
 
 #: .\templates\uploads\file_input.html:6
