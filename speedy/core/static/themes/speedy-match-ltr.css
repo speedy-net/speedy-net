@@ -6335,10 +6335,10 @@ a.speedy-bottom-badge-link {
     flex-wrap: wrap; } }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-  width: 150px; }
+  flex-grow: 100; }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-  width: 200px; }
+  flex-grow: 100; }
 
 @media screen and (min-width: 768px) {
   body.with-background .row.total-number-of-active-members,

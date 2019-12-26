@@ -133,11 +133,11 @@ html {
 }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-    width: 194px;
+    flex-grow: 100;
 }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-    width: 246px;
+    flex-grow: 100;
 }
 
 body,
