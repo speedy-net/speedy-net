@@ -224,3 +224,16 @@ $(document).ready(function() {
     $(".form-control-danger").addClass("is-invalid"); // A hack to work with django-crispy-forms 1.6.1.
 });
 
+var isRTL = $.datepicker.regional[$('html').attr('lang')].isRTL;
+if (isRTL) {
+    Popper.Defaults.modifiers.computeStyleRTL = {
+        enabled: true,
+        order: 851, // computeStyle order: 850
+        fn: (data) => {
+            var left = -Math.floor(data.popper.left); // RTL
+            var top = Math.floor(data.popper.top);
+            data.styles['transform'] = `translate3d(${left}px, ${top}px, 0)`;
+            return data;
+        }
+    };
+}
