@@ -6346,10 +6346,14 @@ a.speedy-bottom-badge-link {
       margin: auto; } }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-  flex-grow: 100; }
+  flex-grow: 1; }
+  body.bidi-ltr .navbar-vegan-friendly-logo ~ .navbar-collapse {
+    flex-grow: 0; }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-  flex-grow: 100; }
+  flex-grow: 1; }
+  body.bidi-rtl .navbar-vegan-friendly-logo ~ .navbar-collapse {
+    flex-grow: 0; }
 
 @media screen and (min-width: 768px) {
   body.with-background .row.total-number-of-active-members,

@@ -5944,10 +5944,14 @@ html {
     font-size: 22px; } }
 
 body.bidi-ltr .navbar-vegan-friendly-logo {
-  flex-grow: 100; }
+  flex-grow: 1; }
+  body.bidi-ltr .navbar-vegan-friendly-logo ~ .navbar-collapse {
+    flex-grow: 0; }
 
 body.bidi-rtl .navbar-vegan-friendly-logo {
-  flex-grow: 100; }
+  flex-grow: 1; }
+  body.bidi-rtl .navbar-vegan-friendly-logo ~ .navbar-collapse {
+    flex-grow: 0; }
 
 body,
 h6,
