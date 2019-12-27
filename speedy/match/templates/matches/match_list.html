@@ -44,19 +44,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-7">
+                            <div class="col-12 col-md-7 mt-1 mt-md-0">
                                 <div class="row">
                                     <div class="col-3 text-right">
                                         <div class="form-control-static mt-1">{% trans 'Age:' %}</div>
                                     </div>
-                                    <div class="col-4">{% crispy_field form.min_age_to_match %}</div>
-                                    <div class="col-1">
+                                    <div class="col-4 d-flex justify-content-center">
+                                        {% crispy_field form.min_age_to_match %}
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center">
                                         <div class="form-control-static mt-1">&ndash;</div>
                                     </div>
-                                    <div class="col-4">{% crispy_field form.max_age_to_match %}</div>
+                                    <div class="col-4 d-flex justify-content-center">
+                                        {% crispy_field form.max_age_to_match %}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mt-1 mt-md-0">
                                 <input type="submit" class="btn btn-block btn-primary btn-arrow-right" value="{% trans 'Refresh' %}">
                             </div>
                         </div>
