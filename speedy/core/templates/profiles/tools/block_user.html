@@ -6,6 +6,7 @@
 
 
 {% if can_block or can_unblock %}
+<div class="dropdown d-inline">
     <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% trans 'Toggle Dropdown' %}">
         <span class="fa fa-ellipsis-h"></span>
         <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
@@ -31,4 +32,5 @@
             <a class="dropdown-item" href="{% url 'contact:report_file' user.photo.id %}" title="{% trans 'Report this photo' context request.user.get_gender %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
         {% endif %}
     </div>
+</div>
 {% endif %}
