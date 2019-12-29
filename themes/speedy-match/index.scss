@@ -307,6 +307,10 @@ a.speedy-bottom-badge-link {
     }
 }
 
+body.bidi-ltr .dropdown-menu {
+    left: auto;
+}
+
 body.bidi-ltr .navbar-vegan-friendly-logo {
     flex-grow: 1;
 
