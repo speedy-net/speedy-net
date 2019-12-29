@@ -46,7 +46,7 @@ class Chat(TimeStampedModel):
         if (self.is_private):
             assert self.ent1
             assert self.ent2
-            assert self.ent1 != self.ent2
+            assert (not (self.ent1 == self.ent2))
             assert self.group.count() == 0
         self.site = Site.objects.get_current()
         return super().save(*args, **kwargs)
@@ -60,7 +60,8 @@ class Chat(TimeStampedModel):
         return self.id
 
     def get_other_participants(self, entity):
-        return [p for p in self.participants if (p.id != entity.id)]
+        assert (entity.id in [p.id for p in self.participants])
+        return [p for p in self.participants if (not (p.id == entity.id))]
 
     def mark_read(self, entity):
         return ReadMark.objects.mark(self, entity)
