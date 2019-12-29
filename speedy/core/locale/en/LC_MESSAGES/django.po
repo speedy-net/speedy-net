@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-26 06:06+0200\n"
+"POT-Creation-Date: 2019-12-29 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1649,7 +1649,7 @@ msgstr ""
 msgid "Special username"
 msgstr ""
 
-#: .\accounts\models.py:97 .\messages\models.py:88
+#: .\accounts\models.py:97 .\messages\models.py:89
 msgid "entity"
 msgstr ""
 
@@ -1698,6 +1698,7 @@ msgid "Other"
 msgstr ""
 
 #: .\accounts\models.py:229 .\accounts\models.py:244 .\accounts\models.py:265
+#: .\messages\models.py:43 .\messages\models.py:85
 msgid "Unknown"
 msgstr ""
 
@@ -2077,7 +2078,7 @@ msgstr ""
 msgid "Abuse (Photo)"
 msgstr ""
 
-#: .\contact_by_form\models.py:20 .\messages\models.py:72
+#: .\contact_by_form\models.py:20 .\messages\models.py:73
 msgid "sender"
 msgstr ""
 
@@ -2160,7 +2161,7 @@ msgstr ""
 msgid "last message"
 msgstr ""
 
-#: .\messages\models.py:38 .\messages\models.py:71 .\messages\models.py:89
+#: .\messages\models.py:38 .\messages\models.py:72 .\messages\models.py:90
 msgid "chat"
 msgstr ""
 
@@ -2168,19 +2169,19 @@ msgstr ""
 msgid "chats"
 msgstr ""
 
-#: .\messages\models.py:73 .\messages\models.py:78
+#: .\messages\models.py:74 .\messages\models.py:79
 msgid "message"
 msgstr ""
 
-#: .\messages\models.py:79
+#: .\messages\models.py:80
 msgid "messages"
 msgstr ""
 
-#: .\messages\models.py:94
+#: .\messages\models.py:95
 msgid "read mark"
 msgstr ""
 
-#: .\messages\models.py:95
+#: .\messages\models.py:96
 msgid "read marks"
 msgstr ""
 
@@ -2664,34 +2665,34 @@ msgstr ""
 msgid "Add to Friends"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:9
-#: .\templates\profiles\tools\block_user.html:11
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:15
+#: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:15
+#: .\templates\profiles\tools\block_user.html:16
 msgid "?"
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:17
 #: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:24
 #: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:29
+#: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
 msgstr ""
 
-#: .\templates\profiles\tools\block_user.html:31
+#: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
 msgstr ""
 

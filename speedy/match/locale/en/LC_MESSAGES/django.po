@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-26 06:06+0200\n"
+"POT-Creation-Date: 2019-12-29 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -936,15 +936,15 @@ msgstr ""
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:60
+#: .\templates\matches\match_list.html:64
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:67
+#: .\templates\matches\match_list.html:71
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:94
+#: .\templates\matches\match_list.html:98
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."

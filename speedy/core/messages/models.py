@@ -40,7 +40,7 @@ class Chat(TimeStampedModel):
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
-        return ', '.join(str(ent.user.name) for ent in self.participants)
+        return ', '.join(str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants)
 
     def save(self, *args, **kwargs):
         if (self.is_private):
@@ -82,7 +82,7 @@ class Message(TimeStampedModel):
         get_latest_by = 'date_created'
 
     def __str__(self):
-        return '{}: {}'.format(self.sender.user, self.text[:140])
+        return '{}: {}'.format(self.sender.user if self.sender else str(_("Unknown")), self.text[:140])
 
 
 class ReadMark(TimeStampedModel):
