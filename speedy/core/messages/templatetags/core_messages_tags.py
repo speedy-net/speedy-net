@@ -12,7 +12,9 @@ def get_other_participant(chat, user):
     :type user: speedy.core.accounts.models.User
     """
     assert chat.is_private
-    return chat.get_other_participants(entity=user)[0]
+    other_participants = chat.get_other_participants(entity=user)
+    assert (len(other_participants) == 1)
+    return other_participants[0]
 
 
 @register.simple_tag
