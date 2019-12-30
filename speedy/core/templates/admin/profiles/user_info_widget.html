@@ -3,7 +3,7 @@
 {% block admin_extra_info %}
     {% if request.user.is_superuser and request.user.is_staff %}
         <tr>
-            <th nowrap="nowrap">ID</th>
+            <th class="user-profile-th">ID</th>
             <td>
                 <a href="{{ admin_user_prefix }}/{{ user.pk }}/">
                     {{ user.pk }}

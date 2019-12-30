@@ -292,3 +292,12 @@ body.bidi-rtl .navbar-right {
     }
 }
 
+.user-profile-th {
+    width: 33.33%;
+}
+
+.user-profile-table th,
+.user-profile-table td {
+    padding-bottom: 6px !important;
+}
+

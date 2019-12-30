@@ -12,46 +12,46 @@
                     {% trans 'More Information' %}
                 </h5>
             </div>
-            <table class="table">
+            <table class="user-profile-table table">
                 <tbody>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'About me' %}</th>
+                        <th class="user-profile-th">{% trans 'About me' %}</th>
                         <td>{{ user.speedy_match_profile.profile_description|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'City or locality' %}</th>
+                        <th class="user-profile-th">{% trans 'City or locality' %}</th>
                         <td>{{ user.city|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Height' %}</th>
+                        <th class="user-profile-th">{% trans 'Height' %}</th>
                         <td>{{ user.speedy_match_profile.height }} {% trans 'cm' %}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Do you have children? How many?' %}</th>
+                        <th class="user-profile-th">{% trans 'Do you have children? How many?' %}</th>
                         <td>{{ user.speedy_match_profile.children|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Do you want (more) children?' context user.get_gender %}</th>
+                        <th class="user-profile-th">{% trans 'Do you want (more) children?' context user.get_gender %}</th>
                         <td>{{ user.speedy_match_profile.more_children|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Diet' %}</th>
+                        <th class="user-profile-th">{% trans 'Diet' %}</th>
                         <td>{{ diet }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Smoking status' %}</th>
+                        <th class="user-profile-th">{% trans 'Smoking status' %}</th>
                         <td>{{ smoking_status }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Relationship status' %}</th>
+                        <th class="user-profile-th">{% trans 'Relationship status' %}</th>
                         <td>{{ relationship_status }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'Gender to match' context user.speedy_match_profile.get_match_gender %}</th>
+                        <th class="user-profile-th">{% trans 'Gender to match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ gender_to_match }}</td>
                     </tr>
                     <tr>
-                        <th nowrap="nowrap">{% trans 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
+                        <th class="user-profile-th">{% trans 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ user.speedy_match_profile.match_description|linebreaksbr }}</td>
                     </tr>
                 </tbody>
