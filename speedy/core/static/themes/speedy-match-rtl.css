@@ -4431,12 +4431,6 @@ button.bg-dark:focus {
 .embed-responsive-1by1::before {
   padding-top: 100%; }
 
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 .flex-row {
   flex-direction: row !important; }
 
@@ -4457,21 +4451,6 @@ button.bg-dark:focus {
 
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse !important; }
-
-.flex-fill {
-  flex: 1 1 auto !important; }
-
-.flex-grow-0 {
-  flex-grow: 0 !important; }
-
-.flex-grow-1 {
-  flex-grow: 1 !important; }
-
-.flex-shrink-0 {
-  flex-shrink: 0 !important; }
-
-.flex-shrink-1 {
-  flex-shrink: 1 !important; }
 
 .justify-content-start {
   justify-content: flex-start !important; }
@@ -4554,16 +4533,6 @@ button.bg-dark:focus {
     flex-wrap: nowrap !important; }
   .flex-sm-wrap-reverse {
     flex-wrap: wrap-reverse !important; }
-  .flex-sm-fill {
-    flex: 1 1 auto !important; }
-  .flex-sm-grow-0 {
-    flex-grow: 0 !important; }
-  .flex-sm-grow-1 {
-    flex-grow: 1 !important; }
-  .flex-sm-shrink-0 {
-    flex-shrink: 0 !important; }
-  .flex-sm-shrink-1 {
-    flex-shrink: 1 !important; }
   .justify-content-sm-start {
     justify-content: flex-start !important; }
   .justify-content-sm-end {
@@ -4624,16 +4593,6 @@ button.bg-dark:focus {
     flex-wrap: nowrap !important; }
   .flex-md-wrap-reverse {
     flex-wrap: wrap-reverse !important; }
-  .flex-md-fill {
-    flex: 1 1 auto !important; }
-  .flex-md-grow-0 {
-    flex-grow: 0 !important; }
-  .flex-md-grow-1 {
-    flex-grow: 1 !important; }
-  .flex-md-shrink-0 {
-    flex-shrink: 0 !important; }
-  .flex-md-shrink-1 {
-    flex-shrink: 1 !important; }
   .justify-content-md-start {
     justify-content: flex-start !important; }
   .justify-content-md-end {
@@ -4694,16 +4653,6 @@ button.bg-dark:focus {
     flex-wrap: nowrap !important; }
   .flex-lg-wrap-reverse {
     flex-wrap: wrap-reverse !important; }
-  .flex-lg-fill {
-    flex: 1 1 auto !important; }
-  .flex-lg-grow-0 {
-    flex-grow: 0 !important; }
-  .flex-lg-grow-1 {
-    flex-grow: 1 !important; }
-  .flex-lg-shrink-0 {
-    flex-shrink: 0 !important; }
-  .flex-lg-shrink-1 {
-    flex-shrink: 1 !important; }
   .justify-content-lg-start {
     justify-content: flex-start !important; }
   .justify-content-lg-end {
@@ -4764,16 +4713,6 @@ button.bg-dark:focus {
     flex-wrap: nowrap !important; }
   .flex-xl-wrap-reverse {
     flex-wrap: wrap-reverse !important; }
-  .flex-xl-fill {
-    flex: 1 1 auto !important; }
-  .flex-xl-grow-0 {
-    flex-grow: 0 !important; }
-  .flex-xl-grow-1 {
-    flex-grow: 1 !important; }
-  .flex-xl-shrink-0 {
-    flex-shrink: 0 !important; }
-  .flex-xl-shrink-1 {
-    flex-shrink: 1 !important; }
   .justify-content-xl-start {
     justify-content: flex-start !important; }
   .justify-content-xl-end {
@@ -6116,6 +6055,12 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 .flex-row {
   flex-direction: row !important; }
 
