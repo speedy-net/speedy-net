@@ -171,15 +171,22 @@
     </script>
 {% endblock %}
 
-{% block privacy_policy_link %}
-    <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+{% block footer_extra_links_0 %}
+    <p>
+        <a href="//www.{{ site.domain }}/" class="black">{% trans site.name %}, {% now 'Y' %}</a>
+    </p>
 {% endblock %}
 
-{% block terms_of_service_link %}
-    <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
+{% block footer_extra_links_1 %}
+    <p>
+        <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
+        <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+        <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
+        <a href="{% url 'contact:contact_us' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+    </p>
 {% endblock %}
 
-{% block footer_extra_links_4 %}
+{% block footer_extra_links_5 %}
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>

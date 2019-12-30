@@ -3,7 +3,15 @@
 {% load i18n %}
 {% load core_tags_and_filters %}
 
-{% block footer_extra_links_3 %}
+{% block footer_extra_links_1 %}
+    <p>
+        <a href="//www.{{ site.domain }}/" class="black">{% trans site.name %}, {% now 'Y' %}</a>
+        <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
+        <a href="{% url 'contact:contact_us' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+    </p>
+{% endblock %}
+
+{% block footer_extra_links_4 %}
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
