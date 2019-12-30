@@ -217,7 +217,8 @@ body.with-background {
     .speedy-body-container .col-md-8 {
         background: url('/static/speedy-match/images/photo.png') no-repeat;
         background-position: bottom left;
-        background-size: 630px;
+        /* background-size: 630px; */
+        background-size: 590px;
     }
 
     .navbar.bg-speedy-match {

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-30 07:39+0200\n"
+"POT-Creation-Date: 2019-12-30 14:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -980,6 +980,11 @@ msgstr ""
 "ספידי מץ' הוא אתר הכרויות/התאמות למטרות רומנטיות לפנויות/פנויים חברי ספידי "
 "נט. עם ספידי מץ' אתם יכולים למצוא בנות זוג ובני זוג מתאימים ולשוחח איתם "
 "אונליין. האתר הוא ידידותי לטבעונים ולצמחונים."
+
+#: .\templates\main\main_page.html:13
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
+msgstr "מחפשת חבר? מחפש חברה? בואו להכיר בספידי! "
 
 #: .\templates\main\main_page.html:15
 msgid ""
