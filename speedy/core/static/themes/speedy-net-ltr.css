@@ -6349,3 +6349,6 @@ h6,
 .input-group-text,
 .popover-header {
   font-size: 1.0715rem; }
+
+.dropdown-menu {
+  width: min-content; }

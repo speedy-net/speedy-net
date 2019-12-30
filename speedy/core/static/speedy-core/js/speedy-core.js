@@ -233,7 +233,6 @@ if (isRTL) {
             var left = -Math.floor(data.popper.left); // RTL
             var top = Math.floor(data.popper.top);
             data.styles['transform'] = `translate3d(${left}px, ${top}px, 0)`;
-            data.styles['width'] = data.popper.width;
             return data;
         }
     };
