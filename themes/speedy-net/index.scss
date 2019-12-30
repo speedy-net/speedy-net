@@ -75,6 +75,7 @@ $enable-rounded: false;
 }
 
 @import "./node_modules/bootstrap/scss/bootstrap";
+@import "./themes/bootstrap/scss/utilities/_flex";
 
 html, body {
     direction: ltr;
