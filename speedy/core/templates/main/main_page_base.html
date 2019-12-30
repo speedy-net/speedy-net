@@ -27,3 +27,15 @@
     </div>
     {% block total_number_of_active_members_block %}{% endblock %}
 {% endblock %}
+
+{% block footer_extra_links_4 %}
+    {{ block.super }}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://www.vegan-friendly.co.il/" title="ויגן פרנדלי">ויגן פרנדלי</a>
+            <a href="https://vegansontop.co.il/" title="טבעוניות נהנות יותר">טבעוניות נהנות יותר</a>
+            <a href="http://teavon.co.il/" title="תיאבון בריא">תיאבון בריא</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
