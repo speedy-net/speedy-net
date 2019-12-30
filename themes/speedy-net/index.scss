@@ -152,15 +152,7 @@ body.bidi-ltr .dropdown-menu {
     left: auto;
 }
 
-body.bidi-ltr .navbar-vegan-friendly-logo {
-    flex-grow: 1;
-
-    ~ .navbar-collapse {
-        flex-grow: 0;
-    }
-}
-
-body.bidi-rtl .navbar-vegan-friendly-logo {
+.navbar-vegan-friendly-logo {
     flex-grow: 1;
 
     ~ .navbar-collapse {
