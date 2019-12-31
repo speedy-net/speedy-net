@@ -7,6 +7,7 @@
     /* background-color: transparent; */
     /* color: #212529; */
     /* font-size: 18px; */
+    min-width: 80px;
 }
 
 .diet-menu.show {
