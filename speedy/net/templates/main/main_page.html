@@ -31,6 +31,10 @@
 {% endblock %}
 
 {% block extra_python_django_links %}
+    {% if LANGUAGE_CODE == "he" %}
+        </p>
+        <p class="direction-ltr">
+    {% endif %}
     <a href="https://www.google.com/" title="Google">Google</a>
     <a href="https://www.google.com/gmail/" title="Gmail">Gmail</a>
 {% endblock %}
