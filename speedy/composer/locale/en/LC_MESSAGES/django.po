@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-30 16:11+0200\n"
+"POT-Creation-Date: 2019-12-31 04:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,9 +106,9 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"Speedy Composer is named after <a href=\"https://www.facebook.com/"
-"speedyevenchen\" title=\"Speedy\">Speedy</a>, a female dog that was with us "
-"for many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:23
