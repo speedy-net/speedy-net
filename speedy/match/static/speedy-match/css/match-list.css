@@ -19,6 +19,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .age-row > div {
+        flex-basis: 0;
+    }
+
     .diet-button {
         width: 80px;
     }
