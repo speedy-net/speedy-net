@@ -20,8 +20,12 @@
 {% endblock %}
 
 {% block body %}
+<font face="Comic Sans MS, Arial">
 <center>
     <div id="top-gradient"></div>
+    <h1 style="
+        font-size: 50px;
+    ">Happy new year 2020!</h1>
     <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
     <br />
     <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
@@ -40,5 +44,5 @@
     <br />
     <br />
 </center>
-
+</font>
 {% endblock %}
