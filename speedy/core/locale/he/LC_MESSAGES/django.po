@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-31 04:50+0200\n"
+"POT-Creation-Date: 2019-12-31 11:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1649,18 +1649,18 @@ msgstr "שם משתמש/ת חדש"
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:210 .\templates\base_with_login.html:112
+#: .\accounts\forms.py:210 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
 #: .\accounts\forms.py:216 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:125
+#: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr "כניסה"
 
 #: .\accounts\forms.py:219 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:122
+#: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -2300,7 +2300,7 @@ msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:182
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:184
 #: .\templates\base_without_login.html:9
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2308,8 +2308,8 @@ msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\base.html:6
 #: .\templates\accounts\edit_profile\base.html:10
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:99
-#: .\templates\base_with_login.html:143
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:101
+#: .\templates\base_with_login.html:145
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2320,7 +2320,7 @@ msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
 #: .\templates\accounts\edit_profile\base.html:21
-#: .\templates\base_with_login.html:183
+#: .\templates\base_with_login.html:185
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
@@ -2491,15 +2491,16 @@ msgstr "ספידי תוכנה"
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:179 .\templates\base_with_login.html:84
+#: .\templates\base.html:180 .\templates\base.html:181
+#: .\templates\base_with_login.html:84 .\templates\base_with_login.html:85
 msgid "A vegan friendly website"
 msgstr "אתר ידידותי לטבעונים"
 
-#: .\templates\base.html:194 .\templates\base.html:196
+#: .\templates\base.html:197 .\templates\base.html:199
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:103
+#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:105
 msgid "Logout"
 msgstr "התנתק/י"
 
@@ -2507,7 +2508,7 @@ msgstr "התנתק/י"
 msgid "Home"
 msgstr "דף הבית"
 
-#: .\templates\base_with_login.html:93
+#: .\templates\base_with_login.html:95
 #, python-format
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
@@ -2516,30 +2517,30 @@ msgstr ""
 "היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "ברוכ/ה השב/ה ל%(site_name)s!"
 
-#: .\templates\base_with_login.html:118
+#: .\templates\base_with_login.html:120
 msgid "Password"
 msgstr "סיסמה"
 
-#: .\templates\base_with_login.html:183
+#: .\templates\base_with_login.html:185
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base_with_login.html:184
+#: .\templates\base_with_login.html:186
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base_with_login.html:184
+#: .\templates\base_with_login.html:186
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base_with_login.html:185 .\templates\base_without_login.html:10
+#: .\templates\base_with_login.html:187 .\templates\base_without_login.html:10
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
