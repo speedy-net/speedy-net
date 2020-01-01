@@ -224,7 +224,7 @@ $(document).ready(function() {
     $(".form-control-danger").addClass("is-invalid"); // A hack to work with django-crispy-forms 1.6.1.
 });
 
-var isRTL = $.datepicker.regional[$('html').attr('lang')].isRTL;
+var isRTL = $("body").hasClass("bidi-rtl");
 if (isRTL) {
     Popper.Defaults.modifiers.preventOverflowRTL = {
         enabled: true,
