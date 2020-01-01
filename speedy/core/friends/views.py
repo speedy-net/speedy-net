@@ -168,11 +168,14 @@ class AcceptRejectFriendshipRequestViewBase(UserMixin, PermissionRequiredMixin, 
     permission_required = 'friends.view_requests'
 
     def get_redirect_url(self):
+        if (hasattr(self, '_user_who_sent_the_request')):
+            return self._user_who_sent_the_request.get_absolute_url()
         return reverse('friends:list', kwargs={'slug': self.request.user.slug})
 
     def get_friendship_request(self):
         if (not (hasattr(self, '_friendship_request'))):
             self._friendship_request = get_object_or_404(self.user.friendship_requests_received, pk=self.kwargs.get('friendship_request_id'))
+            self._user_who_sent_the_request = self._friendship_request.from_user
         return self._friendship_request
 
     def get(self, request, *args, **kwargs):
