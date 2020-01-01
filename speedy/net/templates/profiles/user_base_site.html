@@ -1,0 +1,12 @@
+{% extends 'profiles/user_base.html' %}
+
+{% load i18n %}
+
+{% block user_status %}
+    {% if user_is_friend %}
+        {% trans 'Your friend' context user.get_gender %}
+    {% elif friendship_request_sent %}
+        {% trans 'Friendship request sent' %}
+    {% endif %}
+{% endblock %}
+

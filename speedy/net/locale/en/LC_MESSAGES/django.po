@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-31 11:36+0200\n"
+"POT-Creation-Date: 2020-01-01 06:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,4 +155,12 @@ msgstr ""
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
 msgstr ""

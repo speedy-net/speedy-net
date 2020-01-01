@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-31 11:36+0200\n"
+"POT-Creation-Date: 2020-01-01 06:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -265,6 +265,36 @@ msgstr "מחבב אותך."
 msgctxt "other"
 msgid "likes you."
 msgstr "מחבב/ת אותך."
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr "מחבבת אותך"
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr "מחבב אותך"
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr "מחבב/ת אותך"
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr "את מחבבת את"
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr "אתה מחבב את"
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
+msgstr "את/ה מחבב/ת את"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -1043,6 +1073,22 @@ msgstr "לייק"
 msgid "Unlike"
 msgstr "בטל/י לייק"
 
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "חבר/ה שלך"
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr "בקשת חברות נשלחה"
+
+#: .\templates\profiles\user_base_site.html:11
+msgid "likes you"
+msgstr "מחבב/ת אותך"
+
+#: .\templates\profiles\user_base_site.html:13
+msgid "You like"
+msgstr "את/ה מחבב/ת את"
+
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
 msgstr "פרטים נוספים"
@@ -1062,6 +1108,9 @@ msgstr "דרגת התאמה"
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
+
+#~ msgid "."
+#~ msgstr "."
 
 #~ msgid "Free online dating for singles"
 #~ msgstr "הכרויות לפנויות/פנויים אונליין בחינם"

@@ -8,9 +8,12 @@ from django.views import generic
 from friendship.models import FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
-from speedy.core.friends.rules import friendship_request_sent, are_friends
+from speedy.core.friends.rules import friendship_request_sent, friendship_request_received, are_friends
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User
+
+if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+    from speedy.match.likes.rules import you_like_user, user_likes_you
 
 
 class UserMixin(object):
@@ -65,15 +68,21 @@ class UserMixin(object):
             'user': self.user,
         })
         if (self.request.user.is_authenticated):
-            try:
-                friendship_request_received = FriendshipRequest.objects.get(from_user=self.user, to_user=self.request.user)
-            except FriendshipRequest.DoesNotExist:
-                friendship_request_received = False
             cd.update({
                 'user_is_friend': are_friends(user=self.request.user, other_user=self.user),
                 'friendship_request_sent': friendship_request_sent(user=self.request.user, other_user=self.user),
-                'friendship_request_received': friendship_request_received,
+                'friendship_request_received': friendship_request_received(user=self.request.user, other_user=self.user),
             })
+            if (cd['friendship_request_received']):
+                friendship_request_received_id = FriendshipRequest.objects.get(from_user=self.user, to_user=self.request.user).pk
+                cd.update({
+                    'friendship_request_received_id': friendship_request_received_id,
+                })
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                cd.update({
+                    'you_like_user': you_like_user(user=self.request.user, other_user=self.user),
+                    'user_likes_you': user_likes_you(user=self.request.user, other_user=self.user),
+                })
         return cd
 
 

@@ -12,6 +12,11 @@ def friendship_request_sent(user, other_user):
 
 
 @predicate
+def friendship_request_received(user, other_user):
+    return user.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user=other_user)]
+
+
+@predicate
 def is_friend(user, other_user):
     return Friend.objects.are_friends(user1=user, user2=other_user)
 

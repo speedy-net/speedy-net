@@ -5,14 +5,14 @@
 
 {% if can_friendship_request %}
     {% if friendship_request_received %}
-        <form action="{% url 'friends:accept_request' request.user.slug friendship_request_received.pk %}" method="post" style="display: inline">
+        <form action="{% url 'friends:accept_request' request.user.slug friendship_request_received_id %}" method="post" style="display: inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-success" title="{% trans 'Accept Friendship Request' context request.user.get_gender %}" style="min-width: 70px;">
                 <i class="fa fa-check"></i>
                 {% trans 'Accept' context request.user.get_gender %}
             </button>
         </form>
-        <form action="{% url 'friends:reject_request' request.user.slug friendship_request_received.pk %}" method="post" style="display: inline">
+        <form action="{% url 'friends:reject_request' request.user.slug friendship_request_received_id %}" method="post" style="display: inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger" title="{% trans 'Reject Friendship Request' context request.user.get_gender %}" style="min-width: 70px;">
                 <i class="fa fa-times"></i>

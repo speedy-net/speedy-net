@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-31 11:36+0200\n"
+"POT-Creation-Date: 2020-01-01 06:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,6 +259,36 @@ msgstr ""
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
+msgstr ""
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr ""
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr ""
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr ""
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr ""
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr ""
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
 msgstr ""
 
 #: .\__translations\__translations.py:6
@@ -980,6 +1010,22 @@ msgstr ""
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:11
+msgid "likes you"
+msgstr ""
+
+#: .\templates\profiles\user_base_site.html:13
+msgid "You like"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:12
