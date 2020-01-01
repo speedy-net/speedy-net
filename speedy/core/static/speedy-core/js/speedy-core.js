@@ -226,6 +226,24 @@ $(document).ready(function() {
 
 var isRTL = $.datepicker.regional[$('html').attr('lang')].isRTL;
 if (isRTL) {
+    Popper.Defaults.modifiers.preventOverflowRTL = {
+        enabled: true,
+        order: 301, // preventOverflow order: 300
+        fn: (data) => {
+            var preventOverflow = data.instance.modifiers.find(modifier => modifier.name == 'preventOverflow');
+            var isOverflowLeft = data.popper.width > data.offsets.reference.width + Math.abs(preventOverflow.boundaries.left);
+            if (isOverflowLeft) {
+                left = Math.floor(preventOverflow.boundaries.left);
+                data.styles['left'] = left;
+                data.styles['right'] = 'auto';
+            } else {
+                data.styles['left'] = '';
+                data.styles['right'] = '';
+            }
+            return data;
+        }
+    };
+
     Popper.Defaults.modifiers.computeStyleRTL = {
         enabled: true,
         order: 851, // computeStyle order: 850
