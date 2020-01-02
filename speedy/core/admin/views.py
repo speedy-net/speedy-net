@@ -57,7 +57,7 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
         ).count()
         total_number_of_members_registered_more_than_four_months_ago = User.objects.filter(
             date_created__lte=now() - timedelta(days=120),
-    ).count()
+        ).count()
         total_number_of_members_registered_before_2019_08_01 = User.objects.filter(
             date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
         ).count()
@@ -94,6 +94,7 @@ class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
     template_name = 'admin/profiles/user_detail.html'
     admin_widgets = {
         'speedy.core.profiles.widgets.UserInfoWidget': 'speedy.core.profiles.admin.widgets.AdminUserInfoWidget',
+        'speedy.match.profiles.widgets.UserRankWidget': None,
     }
 
     def get_widgets(self):
@@ -101,7 +102,9 @@ class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
         for widget_path in django_settings.USER_PROFILE_WIDGETS:
             if (widget_path in self.admin_widgets):
                 widget_path = self.admin_widgets[widget_path]
-            widget_class = import_string(widget_path)
-            widgets.append(widget_class(**self.get_widget_kwargs()))
+            if (not (widget_path is None)):
+                widget_class = import_string(widget_path)
+                widgets.append(widget_class(**self.get_widget_kwargs()))
         return widgets
+
 
