@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-02 07:56+0200\n"
+"POT-Creation-Date: 2020-01-02 10:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2443,8 +2443,8 @@ msgid "Email with password reset instructions has been sent."
 msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
 
 #: .\templates\admin\profiles\user_info_widget.html:10
-msgid "Admin"
-msgstr "אדמין"
+msgid "Admin Information"
+msgstr "אדמין: פרטים"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
@@ -2969,6 +2969,9 @@ msgstr "תמונות"
 #: .\uploads\models.py:46
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid "Admin"
+#~ msgstr "אדמין"
 
 #~ msgid "Free Online Dating"
 #~ msgstr "הכרויות אונליין בחינם"
