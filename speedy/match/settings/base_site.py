@@ -33,4 +33,9 @@ USER_PROFILE_WIDGETS += [
     'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
 ]
 
+ADMIN_USER_PROFILE_WIDGETS += [
+    'speedy.match.profiles.widgets.UserExtraDetailsWidget',
+    'speedy.net.profiles.widgets.UserOnSpeedyNetWidget',
+]
+
 

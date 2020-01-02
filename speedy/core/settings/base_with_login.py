@@ -18,6 +18,12 @@ USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserInfoWidget',
 ]
 
+ADMIN_USER_PROFILE_WIDGETS = [
+    'speedy.core.profiles.widgets.UserPhotoWidget',
+    'speedy.core.profiles.widgets.UserInfoWidget',
+    'speedy.core.profiles.admin.widgets.AdminUserInfoWidget',
+]
+
 LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/me/'

@@ -1,15 +1,100 @@
-{% extends 'profiles/user_info_widget.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load rules %}
 
-{% block admin_extra_info %}
-    {% if request.user.is_superuser and request.user.is_staff %}
-        <tr>
-            <th class="user-profile-th">ID</th>
-            <td>
-                <a href="{{ admin_user_prefix }}/{{ user.pk }}/">
-                    {{ user.pk }}
-                </a>
-            </td>
-        </tr>
-    {% endif %}
-{% endblock %}
+{% if request.user.is_superuser and request.user.is_staff %}
+    <div class="col-sm-8 ml-auto mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    {% trans 'Admin' %}
+                </h5>
+            </div>
+            <table class="user-profile-table table">
+                <tbody>
 
+                    <tr>
+                        <th class="user-profile-th">ID</th>
+                        <td>
+                            <a href="{{ admin_user_prefix }}/{{ user.pk }}/">
+                                {{ user.pk }}
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Registered on</th>
+                        <td><span style="color: black; font-weight: bold">{{ user.date_created|date }}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Has confirmed email address</th>
+                        <td>{{ user.has_confirmed_email }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Active on Speedy Net</th>
+                        <td>{{ user.is_active }}&amp;{{ user.speedy_net_profile.is_active }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Active languages on Speedy Match</th>
+                        <td>{{ user.speedy_match_profile.active_languages }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Match Activation step (en,he)</th>
+                        <td>{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_he }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Net last visit</th>
+                        <td>{{ user.speedy_net_profile.last_visit }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Match last visit</th>
+                        <td>{{ user.speedy_match_profile.last_visit }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Date of birth</th>
+                        <td><span style="color: blue; font-weight: bold">{{ user.date_of_birth }}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Gender</th>
+                        <td>{{ user.gender }},{{ user.get_gender }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Diet</th>
+                        <td>{{ user.diet }},<span style="color: blue; font-weight: bold">{{ user.get_diet|default:"Unknown" }}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Smoking status</th>
+                        <td>{{ user.smoking_status }},<span style="color: blue; font-weight: bold">{{ user.get_smoking_status|default:"Unknown" }}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Relationship status</th>
+                        <td>{{ user.relationship_status }},<span style="color: blue; font-weight: bold">{{ user.get_relationship_status|default:"Unknown" }}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Match - Gender to match</th>
+                        <td>{{ user.speedy_match_profile.gender_to_match }},{{ user.speedy_match_profile.get_match_gender }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Match - Minimal, Maximal age to match</th>
+                        <td>{{ user.speedy_match_profile.min_age_to_match }},{{ user.speedy_match_profile.max_age_to_match }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Speedy Match - Number of matches on last user's search (en,he)</th>
+                        <td>{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Email addresses</th>
+                        <td>
+                            {% for email in user.email_addresses.all %}
+                                <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
+                                {% if not forloop.last %}<br />{% endif %}
+                            {% empty %}
+                                (none)
+                            {% endfor %}
+                        <td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endif %}

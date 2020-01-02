@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-01 06:52+0200\n"
+"POT-Creation-Date: 2020-01-02 07:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2441,6 +2441,10 @@ msgstr "איפוס סיסמה נכשל. קישור לא תקין."
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
 msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
+
+#: .\templates\admin\profiles\user_info_widget.html:10
+msgid "Admin"
+msgstr "אדמין"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"

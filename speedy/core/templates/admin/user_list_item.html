@@ -15,67 +15,67 @@
                 <br />
                 <table>
                     <tr>
-                        <td>Registered on</td>
+                        <th>Registered on</th>
                         <td><span style="color: black; font-weight: bold">{{ user.date_created|date }}</span></td>
                     </tr>
                     <tr>
-                        <td>Has confirmed email address</td>
+                        <th>Has confirmed email address</th>
                         <td>{{ user.has_confirmed_email }}</td>
                     </tr>
                     <tr>
-                        <td>Active on Speedy Net</td>
+                        <th>Active on Speedy Net</th>
                         <td>{{ user.is_active }}&amp;{{ user.speedy_net_profile.is_active }}</td>
                     </tr>
                     <tr>
-                        <td>Active languages on Speedy Match</td>
+                        <th>Active languages on Speedy Match</th>
                         <td>{{ user.speedy_match_profile.active_languages }}</td>
                     </tr>
                     <tr>
-                        <td>Speedy Match Activation step (en,he)</td>
+                        <th>Speedy Match Activation step (en,he)</th>
                         <td>{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_he }}</td>
                     </tr>
                     <tr>
-                        <td>Speedy Net last visit</td>
+                        <th>Speedy Net last visit</th>
                         <td>{{ user.speedy_net_profile.last_visit }}</td>
                     </tr>
                     <tr>
-                        <td>Speedy Match last visit</td>
+                        <th>Speedy Match last visit</th>
                         <td>{{ user.speedy_match_profile.last_visit }}</td>
                     </tr>
                     <tr>
-                        <td>Date of birth</td>
+                        <th>Date of birth</th>
                         <td><span style="color: blue; font-weight: bold">{{ user.date_of_birth }}</span></td>
                     </tr>
                     <tr>
-                        <td>Gender</td>
+                        <th>Gender</th>
                         <td>{{ user.gender }},{{ user.get_gender }}</td>
                     </tr>
                     <tr>
-                        <td>Diet</td>
+                        <th>Diet</th>
                         <td>{{ user.diet }},<span style="color: blue; font-weight: bold">{{ user.get_diet|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
-                        <td>Smoking status</td>
+                        <th>Smoking status</th>
                         <td>{{ user.smoking_status }},<span style="color: blue; font-weight: bold">{{ user.get_smoking_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
-                        <td>Relationship status</td>
+                        <th>Relationship status</th>
                         <td>{{ user.relationship_status }},<span style="color: blue; font-weight: bold">{{ user.get_relationship_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
-                        <td>Speedy Match - Gender to match</td>
+                        <th>Speedy Match - Gender to match</th>
                         <td>{{ user.speedy_match_profile.gender_to_match }},{{ user.speedy_match_profile.get_match_gender }}</td>
                     </tr>
                     <tr>
-                        <td>Speedy Match - Minimal, Maximal age to match</td>
+                        <th>Speedy Match - Minimal, Maximal age to match</th>
                         <td>{{ user.speedy_match_profile.min_age_to_match }},{{ user.speedy_match_profile.max_age_to_match }}</td>
                     </tr>
                     <tr>
-                        <td>Speedy Match - Number of matches on last user's search (en,he)</td>
+                        <th>Speedy Match - Number of matches on last user's search (en,he)</th>
                         <td>{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
                     </tr>
                     <tr>
-                        <td>Email addresses</td>
+                        <th>Email addresses</th>
                         <td>
                             {% for email in user.email_addresses.all %}
                                 <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
