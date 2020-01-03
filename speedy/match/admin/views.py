@@ -79,7 +79,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         language_code = get_language()
         qs = User.objects.active(
             speedy_match_site_profile__active_languages__contains=[language_code],
-        ).prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        ).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):

@@ -2,7 +2,6 @@ from django.db.models import Q
 
 from speedy.core.base.models import BaseManager, BaseUserManager
 from speedy.core.base.utils import normalize_username
-from speedy.core.accounts.utils import get_site_profile_model
 
 
 class EntityManager(BaseManager):
@@ -24,8 +23,9 @@ class UserManager(BaseUserManager):
         return email
 
     def get_queryset(self):
-        site_profile_model = get_site_profile_model()
-        return super().get_queryset().select_related(site_profile_model.RELATED_NAME)
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+        return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME, "email_addresses").distinct()
 
     def get_by_natural_key(self, username):
         return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))

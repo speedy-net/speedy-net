@@ -75,9 +75,9 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         if (self.request.GET.get('order_by') == 'number_of_friends'):
-            qs = User.objects.all().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by(F('{}__{}'.format(SpeedyNetSiteProfile.RELATED_NAME, to_attribute(name='number_of_friends'))).desc(nulls_last=True), '-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+            qs = User.objects.all().order_by(F('{}__{}'.format(SpeedyNetSiteProfile.RELATED_NAME, to_attribute(name='number_of_friends'))).desc(nulls_last=True), '-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         else:
-            qs = User.objects.all().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+            qs = User.objects.all().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):
