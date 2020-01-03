@@ -52,12 +52,14 @@ class SiteProfile(SiteProfileBase):
     def update_last_visit(self):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             site = Site.objects.get_current()
+            previous_number_of_friends = self.number_of_friends
             self.number_of_friends = self.user.friends_count
-            logger.info('SpeedyNetSiteProfile::update_last_visit::User {user} has {number_of_friends} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, number_of_friends=self.number_of_friends))
-            if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
-                logger.warning('SpeedyNetSiteProfile::update_last_visit::User {user} has more than {number_of_friends} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20))
-            if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
-                logger.error('SpeedyNetSiteProfile::update_last_visit::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+            if (not (self.number_of_friends == previous_number_of_friends)):
+                logger.info('SpeedyNetSiteProfile::update_last_visit::User {user} has {number_of_friends} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, number_of_friends=self.number_of_friends))
+                if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
+                    logger.warning('SpeedyNetSiteProfile::update_last_visit::User {user} has more than {number_of_friends} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20))
+                if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+                    logger.error('SpeedyNetSiteProfile::update_last_visit::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name}.'.format(site_name=_(site.name), user=self.user, MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         return super().update_last_visit()
 
 
