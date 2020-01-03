@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-03 07:35+0200\n"
+"POT-Creation-Date: 2020-01-03 07:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2370,6 +2370,10 @@ msgstr ""
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
+msgstr ""
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
 msgstr ""
 
 #: .\templates\admin\friends\user_friends_widget.html:25

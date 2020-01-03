@@ -10,7 +10,7 @@
                     {% trans 'See All' context request.user.get_gender %}
                 </a>
                 <h5 class="card-title mb-0">
-                    {% trans 'Admin - Friends' %} ({{ user.name }} has {{ user.friends_count }} friends)
+                    {% trans 'Admin - Friends' %} ({{ user.friends_count }} {% trans 'friends' %})
                 </h5>
             </div>
             <div class="card-body">
