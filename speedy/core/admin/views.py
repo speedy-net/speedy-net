@@ -5,7 +5,9 @@ from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import now
 from django.views import generic
+from django.db.models import F
 
+from speedy.core.base.utils import to_attribute
 from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
@@ -72,7 +74,10 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
 
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
-        qs = User.objects.all().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        if (self.request.GET.get('order_by') == 'number_of_friends'):
+            qs = User.objects.all().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by(F('{}__{}'.format(SpeedyNetSiteProfile.RELATED_NAME, to_attribute(name='number_of_friends'))).desc(nulls_last=True), '-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        else:
+            qs = User.objects.all().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct().order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):
