@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-02 10:59+0200\n"
+"POT-Creation-Date: 2020-01-03 07:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2442,6 +2442,19 @@ msgstr "איפוס סיסמה נכשל. קישור לא תקין."
 msgid "Email with password reset instructions has been sent."
 msgstr "נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה."
 
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "ראה/י הכול"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "אדמין: חברים/ות"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "אין חברים/ות עדיין."
+
 #: .\templates\admin\profiles\user_info_widget.html:10
 msgid "Admin Information"
 msgstr "אדמין: פרטים"
@@ -2648,10 +2661,6 @@ msgstr "בקשות חברות ששלחת"
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
 msgstr "אין פה בקשות חברות."
-
-#: .\templates\friends\user_friends_widget.html:10
-msgid "See All"
-msgstr "ראה/י הכול"
 
 #: .\templates\main\main_page_base.html:12
 #, python-format

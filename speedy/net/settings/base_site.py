@@ -35,6 +35,7 @@ USER_PROFILE_WIDGETS += [
 
 ADMIN_USER_PROFILE_WIDGETS += [
     'speedy.core.friends.widgets.UserFriendsWidget',
+    'speedy.core.friends.admin.widgets.AdminUserFriendsWidget',
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
 ]
 

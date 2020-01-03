@@ -1,0 +1,31 @@
+{% load i18n %}
+
+{% load user_tags %}
+
+{% if request.user.is_superuser and request.user.is_staff %}
+    <div class="col-sm-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'friends:list' user.slug %}" class="pull-right">
+                    {% trans 'See All' context request.user.get_gender %}
+                </a>
+                <h5 class="card-title mb-0">
+                    {% trans 'Admin - Friends' %} ({{ user.name }} has {{ user.friends_count }} friends)
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row flex-wrap">
+                    {% if user.friends_count %}
+                        {% for friendship in friends %}
+                            <div class="col-2 friends-col">
+                                {% profile_picture friendship.from_user '175x175' html_class="img-responsive" %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% trans 'No friends yet.' %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

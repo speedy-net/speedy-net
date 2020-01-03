@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-02 10:59+0200\n"
+"POT-Creation-Date: 2020-01-03 07:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2363,6 +2363,19 @@ msgstr ""
 msgid "Email with password reset instructions has been sent."
 msgstr ""
 
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr ""
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr ""
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr ""
+
 #: .\templates\admin\profiles\user_info_widget.html:10
 msgid "Admin Information"
 msgstr ""
@@ -2563,10 +2576,6 @@ msgstr ""
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr ""
-
-#: .\templates\friends\user_friends_widget.html:10
-msgid "See All"
 msgstr ""
 
 #: .\templates\main\main_page_base.html:12
