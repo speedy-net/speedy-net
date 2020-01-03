@@ -433,6 +433,17 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return len(self.all_friends)
 
     @property
+    def all_speedy_net_friends(self):
+        if (django_settings.LOGIN_ENABLED):
+            if (not (hasattr(self, '_speedy_net_friends'))):
+                self.refresh_all_friends_lists()
+            return self._speedy_net_friends
+
+    @property
+    def speedy_net_friends_count(self):
+        return len(self.all_speedy_net_friends)
+
+    @property
     def friends_trans(self):
         if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             return pgettext_lazy(context=self.speedy_match_profile.get_match_gender(), message='Friends')
@@ -559,6 +570,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         self._received_friendship_requests = self.get_received_friendship_requests()
         self._sent_friendship_requests = self.get_sent_friendship_requests()
         self._friends = self.get_friends()
+        self._speedy_net_friends = self.get_speedy_net_friends()
 
     def get_received_friendship_requests(self):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
@@ -591,6 +603,15 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             return sent_friendship_requests
         else:
             raise NotImplementedError()
+
+    def get_speedy_net_friends(self):
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+
+        SiteProfile = get_site_profile_model()
+        qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        friends = [friendship for friendship in qs if (friendship.from_user.speedy_net_profile.is_active)]
+        return friends
 
     def get_friends(self):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
