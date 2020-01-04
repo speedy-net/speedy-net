@@ -236,7 +236,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
         """
         Given an email, return matching user(s) who should receive a reset.
         """
-        email_addresses = UserEmailAddress.objects.select_related('user').filter(email__iexact=email.lower())
+        email_addresses = UserEmailAddress.objects.prefetch_related('user').filter(email__iexact=email.lower())
         return {e.user for e in email_addresses if ((e.email == email.lower()) and (e.user.has_usable_password()))}
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):

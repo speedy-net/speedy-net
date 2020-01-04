@@ -22,7 +22,7 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
             return self.handle_no_permission()
 
     def get_chat_queryset(self):
-        return Chat.objects.chats(entity=self.get_user()).select_related('ent1__user', 'ent2__user', 'last_message')
+        return Chat.objects.chats(entity=self.get_user()).prefetch_related('ent1__user', 'ent2__user', 'last_message')
 
     def has_permission(self):
         return self.request.user.has_perm(perm='messages.view_chats', obj=self.user)
@@ -48,7 +48,7 @@ class UserSingleChatMixin(UserChatsMixin):
             raise Http404()
 
     def get_messages_queryset(self):
-        return self.get_chat().message_set.select_related('sender__user')
+        return self.get_chat().message_set.prefetch_related('sender__user')
 
     def has_permission(self):
         return ((super().has_permission()) and (self.request.user.has_perm(perm='messages.read_chat', obj=self.chat)))
