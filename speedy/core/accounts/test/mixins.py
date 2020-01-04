@@ -17,6 +17,10 @@ class SpeedyCoreAccountsModelsMixin(object):
         self.assertEqual(first=user.email_addresses.count(), second=user_email_addresses_count)
         self.assertEqual(first=user.email_addresses.filter(is_confirmed=True).count(), second=user_confirmed_email_addresses_count)
         self.assertEqual(first=user.email_addresses.filter(is_confirmed=False).count(), second=user_unconfirmed_email_addresses_count)
+        if (user_confirmed_email_addresses_count > 0):
+            self.assertEqual(first=user.has_confirmed_email, second=True)
+        else:
+            self.assertEqual(first=user.has_confirmed_email, second=False)
 
     def assert_user_first_and_last_name_in_all_languages(self, user):
         self.assertTupleEqual(tuple1=User.NAME_LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
