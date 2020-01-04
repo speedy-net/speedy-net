@@ -509,13 +509,13 @@ if (django_settings.LOGIN_ENABLED):
             user = DefaultUserFactory()
             UserEmailAddressFactory(user=user, is_confirmed=False)
             UserEmailAddressFactory(user=user, is_confirmed=False)
-            self.assertFalse(expr=user.has_confirmed_email())
+            self.assertFalse(expr=user.has_confirmed_email)
 
         def test_has_a_confirmed_email(self):
             user = DefaultUserFactory()
             UserEmailAddressFactory(user=user, is_confirmed=False)
             UserEmailAddressFactory(user=user, is_confirmed=True)
-            self.assertTrue(expr=user.has_confirmed_email())
+            self.assertTrue(expr=user.has_confirmed_email)
 
         def test_user_id_length(self):
             user = DefaultUserFactory()

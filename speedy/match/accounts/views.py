@@ -102,7 +102,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
 
     def get_success_url(self):
         if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
-            if (self.request.user.has_confirmed_email()):
+            if (self.request.user.has_confirmed_email):
                 self.request.user.speedy_match_profile.validate_profile_and_activate()
                 if (self.request.user.speedy_match_profile.is_active):
                     return reverse_lazy('matches:list')
