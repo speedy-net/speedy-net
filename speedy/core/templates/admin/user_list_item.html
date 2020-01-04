@@ -15,6 +15,14 @@
                 <br />
                 <table>
                     <tr>
+                        <th>ID</th>
+                        <td>
+                            <a href="{{ admin_user_prefix }}/{{ user.pk }}/">
+                                {{ user.pk }}
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Registered on</th>
                         <td><span style="color: black; font-weight: bold">{{ user.date_created|date }}</span></td>
                     </tr>
@@ -87,7 +95,8 @@
                     </tr>
                     <tr>
                         <th>Friends</th>
-                        <td>{{ user.friends_count }} friends on {{ site_name }}{% if not site.pk == 1 %} / {{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %} ({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>
+                        {% comment %}<td>{{ user.friends_count }} friends on {{ site_name }}{% if not site.pk == 1 %} / {{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %} ({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>{% endcomment %}
+                        <td>({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>
                     </tr>
                 </table>
             {% endif %}
