@@ -97,7 +97,7 @@ class ReadMark(TimeStampedModel):
         get_latest_by = 'date_created'
 
 
-@receiver(models.signals.post_save, sender=Message)
+@receiver(signal=models.signals.post_save, sender=Message)
 def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
     if (not (created)):
         return

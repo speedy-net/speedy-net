@@ -31,7 +31,7 @@ class UserLike(TimeStampedModel):
         return super().save(*args, **kwargs)
 
 
-@receiver(models.signals.post_save, sender=UserLike)
+@receiver(signal=models.signals.post_save, sender=UserLike)
 def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
     if (not (created)):
         return
