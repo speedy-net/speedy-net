@@ -3,7 +3,7 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
 
-from speedy.core.base.models import TimeStampedModel, RegularUDIDField
+from speedy.core.base.models import TimeStampedModel, RegularUDIDField, BaseManager
 from speedy.core.accounts.models import Entity, User
 from .managers import ChatManager, MessageManager, ReadMarkManager
 
@@ -18,6 +18,7 @@ class Chat(TimeStampedModel):
     last_message = models.ForeignKey(to='Message', verbose_name=_('last message'), on_delete=models.SET_NULL, blank=True, null=True, related_name='+')
 
     objects = ChatManager()
+    all_sites_objects = BaseManager()
 
     @property
     def is_private(self):

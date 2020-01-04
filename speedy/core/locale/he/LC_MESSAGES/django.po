@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-03 09:29+0200\n"
+"POT-Creation-Date: 2020-01-04 15:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -881,7 +881,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:685
+#: .\__translations\__translations.py:9 .\accounts\models.py:714
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -923,7 +923,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:440
+#: .\__translations\__translations.py:23 .\accounts\models.py:453
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -1684,236 +1684,236 @@ msgstr "הסיסמה שלך"
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
-#: .\accounts\models.py:77
+#: .\accounts\models.py:78
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:77 .\accounts\models.py:78 .\accounts\validators.py:16
+#: .\accounts\models.py:78 .\accounts\models.py:79 .\accounts\validators.py:16
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:79
 msgid "username (slug)"
 msgstr "שם משתמש/ת (slug)"
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:80
 msgid "photo"
 msgstr "תמונה"
 
-#: .\accounts\models.py:80
+#: .\accounts\models.py:81
 msgid "Special username"
 msgstr "שם משתמש/ת מיוחד"
 
-#: .\accounts\models.py:97 .\messages\models.py:89
+#: .\accounts\models.py:98 .\messages\models.py:90
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:98
+#: .\accounts\models.py:99
 msgid "entities"
 msgstr "ישויות"
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:125
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:129
 msgid "Username is required."
 msgstr "שם המשתמש/ת נדרש."
 
-#: .\accounts\models.py:137
+#: .\accounts\models.py:138
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:152
+#: .\accounts\models.py:153
 msgid "description"
 msgstr "תיאור"
 
-#: .\accounts\models.py:187
+#: .\accounts\models.py:188
 msgid "Only me"
 msgstr "רק אני"
 
-#: .\accounts\models.py:188
+#: .\accounts\models.py:189
 msgid "Me and my friends"
 msgstr "אני והחברים/ות שלי"
 
-#: .\accounts\models.py:190
+#: .\accounts\models.py:191
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\models.py:215
+#: .\accounts\models.py:216
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:216
+#: .\accounts\models.py:217
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:217
+#: .\accounts\models.py:218
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:229 .\accounts\models.py:244 .\accounts\models.py:265
-#: .\messages\models.py:43 .\messages\models.py:85
+#: .\accounts\models.py:230 .\accounts\models.py:245 .\accounts\models.py:266
+#: .\messages\models.py:44 .\messages\models.py:86
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: .\accounts\models.py:230
+#: .\accounts\models.py:231
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:232
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:233
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:245
+#: .\accounts\models.py:246
 msgid "Not smoking"
 msgstr "לא מעשנ/ת"
 
-#: .\accounts\models.py:246
+#: .\accounts\models.py:247
 msgid "Smoking occasionally"
 msgstr "מעשנ/ת מדי פעם"
 
-#: .\accounts\models.py:247
+#: .\accounts\models.py:248
 msgid "Smoking"
 msgstr "מעשנ/ת"
 
-#: .\accounts\models.py:266
+#: .\accounts\models.py:267
 msgid "Single"
 msgstr "רווק/ה"
 
-#: .\accounts\models.py:267
+#: .\accounts\models.py:268
 msgid "Divorced"
 msgstr "גרוש/ה"
 
-#: .\accounts\models.py:268
+#: .\accounts\models.py:269
 msgid "Widowed"
 msgstr "אלמן/אלמנה"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:270
 msgid "In a relationship"
 msgstr "במערכת יחסים"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:271
 msgid "In an open relationship"
 msgstr "במערכת יחסים פתוחה"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:272
 msgid "It's complicated"
 msgstr "זה מסובך"
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:273
 msgid "Separated"
 msgstr "פרוד/ה"
 
-#: .\accounts\models.py:273
+#: .\accounts\models.py:274
 msgid "Engaged"
 msgstr "מאורס/ת"
 
-#: .\accounts\models.py:274
+#: .\accounts\models.py:275
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:284
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:285
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:330
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:332
+#: .\accounts\models.py:333
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:335
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:336
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:336
+#: .\accounts\models.py:337
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:337
+#: .\accounts\models.py:338
 msgid "smoking status"
 msgstr "הרגלי עישון"
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:339
 msgid "relationship status"
 msgstr "סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:340
+#: .\accounts\models.py:341
 msgid "city or locality"
 msgstr "עיר או יישוב"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:346
 msgid "Who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:345
+#: .\accounts\models.py:347
 msgid "Who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:346
+#: .\accounts\models.py:348
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:443 .\accounts\models.py:669 .\blocks\models.py:11
+#: .\accounts\models.py:456 .\accounts\models.py:698 .\blocks\models.py:11
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:444
+#: .\accounts\models.py:457
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:456
+#: .\accounts\models.py:477
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:670
+#: .\accounts\models.py:699
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:671
+#: .\accounts\models.py:700
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:672
+#: .\accounts\models.py:701
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:673
+#: .\accounts\models.py:702
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:674
+#: .\accounts\models.py:703
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:675
+#: .\accounts\models.py:704
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:686
+#: .\accounts\models.py:715
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:752
+#: .\accounts\models.py:781
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:753
+#: .\accounts\models.py:782
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2054,7 +2054,7 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\admin\views.py:39
+#: .\admin\views.py:41
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2070,7 +2070,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_four_months} חברים נכנסו לאתר בארבעת "
 "החודשים האחרונים."
 
-#: .\admin\views.py:64
+#: .\admin\views.py:66
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2165,7 +2165,7 @@ msgstr "Abuse (User)"
 msgid "Abuse (Photo)"
 msgstr "Abuse (Photo)"
 
-#: .\contact_by_form\models.py:20 .\messages\models.py:73
+#: .\contact_by_form\models.py:20 .\messages\models.py:74
 msgid "sender"
 msgstr "שולח/ת"
 
@@ -2248,27 +2248,27 @@ msgstr "is group chat"
 msgid "last message"
 msgstr "הודעה אחרונה"
 
-#: .\messages\models.py:38 .\messages\models.py:72 .\messages\models.py:90
+#: .\messages\models.py:39 .\messages\models.py:73 .\messages\models.py:91
 msgid "chat"
 msgstr "צ'ט"
 
-#: .\messages\models.py:39
+#: .\messages\models.py:40
 msgid "chats"
 msgstr "צ'טים"
 
-#: .\messages\models.py:74 .\messages\models.py:79
+#: .\messages\models.py:75 .\messages\models.py:80
 msgid "message"
 msgstr "הודעה"
 
-#: .\messages\models.py:80
+#: .\messages\models.py:81
 msgid "messages"
 msgstr "הודעות"
 
-#: .\messages\models.py:95
+#: .\messages\models.py:96
 msgid "read mark"
 msgstr "read mark"
 
-#: .\messages\models.py:96
+#: .\messages\models.py:97
 msgid "read marks"
 msgstr "read marks"
 
