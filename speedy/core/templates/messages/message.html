@@ -11,6 +11,7 @@
                 <strong>
                     {{ message.sender.user.name }}
                 </strong>
+                {{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}
                 <small>
                     {{ message.date_created }}
                 </small>

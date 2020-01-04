@@ -39,6 +39,7 @@
                                             <strong>
                                                 {{ other_participant.user.name }}
                                             </strong>
+                                            {{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}
                                             <small>
                                                 {{ chat.last_message.date_created }}
                                             </small>
