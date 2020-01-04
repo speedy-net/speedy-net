@@ -28,7 +28,7 @@ class SiteProfileMiddleware(MiddlewareMixin):
                         redirect_this_user = False
                 if (redirect_this_user):
                     if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                        if ((request.user.speedy_match_profile.is_active) and (not (request.user.has_confirmed_email()))):
+                        if ((request.user.speedy_match_profile.is_active) and (not (request.user.has_confirmed_email))):
                             request.user.speedy_match_profile.validate_profile_and_activate()
                             return redirect(to='accounts:edit_profile_emails')
                         else:

@@ -752,6 +752,36 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=user.speedy_match_profile.max_age_to_match, second=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED)
             self.validate_all_user_values(user=user)
 
+        def test_deleting_email_addresses_deactivates_user(self):
+            user = ActiveUserFactory()
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=1)
+            self.assertEqual(first=len(user.email_addresses.all()), second=1)
+            self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=1)
+            user.email_addresses.filter(is_confirmed=True).delete()
+            self.assertEqual(first=len(user.email_addresses.all()), second=0)
+            self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=0)
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
+
+        def test_unconfirming_email_addresses_deactivates_user(self):
+            user = ActiveUserFactory()
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=1)
+            self.assertEqual(first=len(user.email_addresses.all()), second=1)
+            self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=1)
+            email = user.email_addresses.filter(is_confirmed=True).first()
+            email.is_confirmed = False
+            email.save()
+            self.assertEqual(first=len(user.email_addresses.all()), second=1)
+            self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=0)
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
+
         def test_validate_profile_and_activate_exception_on_photo(self):
             test_settings = {
                 "field_name": 'photo',
