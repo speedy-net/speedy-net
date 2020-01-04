@@ -9,6 +9,7 @@ from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.db import models, transaction
+from django.dispatch import receiver
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -341,6 +342,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
     access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
     notify_on_message = models.PositiveIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
@@ -461,6 +463,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return '<User {} - {}/{}>'.format(self.id, self.name, self.slug)
         # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
+    def _update_has_confirmed_email_field(self):
+        self.has_confirmed_email = self.email_addresses.filter(is_confirmed=True).exists()
+        self.save_user_and_profile()
+
     def save(self, *args, **kwargs):
         # Superuser must be equal to staff.
         if (not (self.is_superuser == self.is_staff)):
@@ -539,12 +545,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def get_short_name(self):
         return self.get_first_name()
 
-    def has_confirmed_email(self):
-        return (self.email_addresses.filter(is_confirmed=True).exists())
-
     @cached_property
     def has_confirmed_email_or_registered_now(self):
-        return ((self.has_confirmed_email()) or (self.date_created > now() - timedelta(hours=2)))
+        return ((self.has_confirmed_email) or (self.date_created > now() - timedelta(hours=2)))
 
     def activate(self):
         self.is_active = True
@@ -743,7 +746,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return send_mail(to=[self.email], template_name_prefix=template_name_prefix, context=context)
 
     def send_confirmation_email(self):
-        if (self.user.has_confirmed_email()):
+        if (self.user.has_confirmed_email):
             msg_count = self.mail(template_name_prefix='email/accounts/confirm_second_email')
         else:
             msg_count = self.mail(template_name_prefix='email/accounts/confirm_first_email')
@@ -808,5 +811,15 @@ class SiteProfileBase(TimeStampedModel):
 
     def call_after_verify_email_address(self):
         raise NotImplementedError("call_after_verify_email_address is not implemented.")
+
+
+@receiver(signal=models.signals.post_save, sender=UserEmailAddress)
+def update_user_has_confirmed_email_field_after_saving_email_address(sender, instance: UserEmailAddress, **kwargs):
+    instance.user._update_has_confirmed_email_field()
+
+
+@receiver(signal=models.signals.post_delete, sender=UserEmailAddress)
+def update_user_has_confirmed_email_field_after_deleting_email_address(sender, instance: UserEmailAddress, **kwargs):
+    instance.user._update_has_confirmed_email_field()
 
 

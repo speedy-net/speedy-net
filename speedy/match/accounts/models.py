@@ -177,6 +177,8 @@ class SiteProfile(SiteProfileBase):
             self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
         if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
             self._deactivate_language(step=self.activation_step, commit=False)
+        if ((len(self.active_languages) > 0) and (not (self.user.has_confirmed_email))):
+            self._set_active_languages([])
         return super().save(*args, **kwargs)
 
     def _set_values_to_match(self):
@@ -224,7 +226,7 @@ class SiteProfile(SiteProfileBase):
                 return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        if ((self.user.has_confirmed_email()) and (step >= self.activation_step)):
+        if ((self.user.has_confirmed_email) and (step >= self.activation_step)):
             if (commit):
                 # Profile is valid. Activate in this language.
                 self.activation_step = step
