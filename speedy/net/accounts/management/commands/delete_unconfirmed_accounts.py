@@ -26,7 +26,10 @@ class Command(BaseCommand):
                 if (user.date_created <= now() - timedelta(days=14)):
                     user._update_has_confirmed_email_field()
                     if (not (user.has_confirmed_email)):
-                        logger.warning("Deleting user {} - no confirmed email. Registered on {}.".format(user, user.date_created))
-                        user.delete()
+                        try:
+                            logger.warning("Deleting user {} - no confirmed email. Registered on {}.".format(user, user.date_created))
+                            user.delete()
+                        except Exception as e:
+                            logger.error("Can't delete user {} - exception {}.".format(user, e))
 
 
