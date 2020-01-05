@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 15:06+0200\n"
+"POT-Creation-Date: 2020-01-05 04:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2695,19 +2695,19 @@ msgstr "שלח/י הודעה ל%(user_name)s"
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\messages\chat_list.html:47
+#: .\templates\messages\chat_list.html:48
 msgid "Unread"
 msgstr "לא נקראה"
 
-#: .\templates\messages\chat_list.html:54
+#: .\templates\messages\chat_list.html:55
 msgid "You:"
 msgstr "את/ה:"
 
-#: .\templates\messages\chat_list.html:74
+#: .\templates\messages\chat_list.html:75
 msgid "You have no messages yet."
 msgstr "עדיין אין לך הודעות."
 
-#: .\templates\messages\message.html:19
+#: .\templates\messages\message.html:20
 msgid "New"
 msgstr "חדשה"
 

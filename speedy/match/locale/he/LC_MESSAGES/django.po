@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 15:06+0200\n"
+"POT-Creation-Date: 2020-01-05 04:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1077,17 +1077,19 @@ msgstr "בטל/י לייק"
 msgid "Your friend"
 msgstr "חבר/ה שלך"
 
-#: .\templates\profiles\user_base_site.html:9
-msgid "Friendship request sent"
-msgstr "בקשת חברות נשלחה"
-
-#: .\templates\profiles\user_base_site.html:11
+#: .\templates\profiles\user_base_site.html:10
+#: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
 msgstr "מחבב/ת אותך"
 
-#: .\templates\profiles\user_base_site.html:13
+#: .\templates\profiles\user_base_site.html:12
+#: .\templates\profiles\user_base_site.html:18
 msgid "You like"
 msgstr "את/ה מחבב/ת את"
+
+#: .\templates\profiles\user_base_site.html:14
+msgid "Friendship request sent"
+msgstr "בקשת חברות נשלחה"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
