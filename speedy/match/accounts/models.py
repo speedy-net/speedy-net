@@ -95,7 +95,7 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-    active_languages = ArrayField(models.CharField(max_length=2), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
+    active_languages = ArrayField(base_field=models.CharField(max_length=2, choices=django_settings.LANGUAGES), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
@@ -109,15 +109,15 @@ class SiteProfile(SiteProfileBase):
     match_description = TranslatedField(
         field=models.TextField(verbose_name=_('My ideal match'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
-    gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
+    gender_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=min_age_to_match_default.__func__)
     max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=max_age_to_match_default.__func__)
     diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
     relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
-    diet_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Diet to match'), size=len(User.DIET_VALID_VALUES), default=diet_to_match_default.__func__, blank=True, null=True)
-    smoking_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Smoking status to match'), size=len(User.SMOKING_STATUS_VALID_VALUES), default=smoking_status_to_match_default.__func__, blank=True, null=True)
-    relationship_status_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Relationship status to match'), size=len(User.RELATIONSHIP_STATUS_VALID_VALUES), default=relationship_status_to_match_default.__func__, blank=True, null=True)
+    diet_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Diet to match'), size=len(User.DIET_VALID_VALUES), default=diet_to_match_default.__func__, blank=True, null=True)
+    smoking_status_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Smoking status to match'), size=len(User.SMOKING_STATUS_VALID_VALUES), default=smoking_status_to_match_default.__func__, blank=True, null=True)
+    relationship_status_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Relationship status to match'), size=len(User.RELATIONSHIP_STATUS_VALID_VALUES), default=relationship_status_to_match_default.__func__, blank=True, null=True)
     activation_step = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_('Activation step'), default=2),
     )

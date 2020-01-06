@@ -693,12 +693,30 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=p.active_languages, list2=[])
             self.assertEqual(first=len(p.active_languages), second=0)
 
-        def test_set_active_languages(self):
+        def test_set_active_languages_1(self):
             p = SpeedyMatchSiteProfile()
             self.assertListEqual(list1=p.active_languages, list2=[])
             p._set_active_languages(['en', 'he'])
             self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
             self.assertEqual(first=len(p.active_languages), second=2)
+
+        def test_set_active_languages_2(self):
+            user = self.get_active_user_jennifer()
+            user.speedy_match_profile._set_active_languages(['en', 'he'])
+            user.save_user_and_profile()
+            self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2={'en', 'he'})
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=2)
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+
+        def test_set_active_languages_3(self):
+            user = self.get_active_user_jennifer()
+            user.speedy_match_profile._set_active_languages([])
+            user.save_user_and_profile()
+            self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2=set())
+            self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
         def test_set_active_languages_with_duplicates(self):
             p = SpeedyMatchSiteProfile()
@@ -712,6 +730,27 @@ if (django_settings.LOGIN_ENABLED):
             p._set_active_languages(['en', 'he', 'en', 'he1'])
             self.assertNotEqual(first=set(p.active_languages), second={'en', 'he'})
             self.assertNotEqual(first=len(p.active_languages), second=2)
+
+        def test_set_active_languages_with_an_unsupported_language_1(self):
+            user = self.get_active_user_jennifer()
+            user.speedy_match_profile._set_active_languages(['en', 'he', 'de'])
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=1, value="'de'"))
+
+        def test_set_active_languages_with_an_unsupported_language_2(self):
+            user = self.get_active_user_jennifer()
+            user.speedy_match_profile._set_active_languages(['en', 'he', 'en', 'he1'])
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=3, value="'he1'"))
+
+        def test_set_active_languages_with_an_unsupported_language_3(self):
+            user = self.get_active_user_jennifer()
+            user.speedy_match_profile._set_active_languages(['en', 'he', 'en1', 'he2'])
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=2, value="'en1'"))
 
         def test_call_activate_directly_and_assert_exception(self):
             user = self.get_default_user_doron()

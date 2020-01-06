@@ -1,4 +1,10 @@
 class SpeedyMatchAccountsLanguageMixin(object):
+    def _item_in_the_array_did_not_validate_error_message_by_index(self, index):
+        return self._item_in_the_array_did_not_validate_error_message_to_format.format(index=index)
+
+    def _active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(self, index, value):
+        return {'active_languages': ["{}{}".format(self._item_in_the_array_did_not_validate_error_message_by_index(index=index), self._value_is_not_a_valid_choice_error_message_by_value(value=value))]}
+
     def set_up(self):
         super().set_up()
 
@@ -23,6 +29,8 @@ class SpeedyMatchAccountsLanguageMixin(object):
         _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict = {'en': "At least one smoking status match option should be five hearts.", 'he': "לפחות אפשרות אחת להתאמת הרגלי עישון צריכה להיות חמישה לבבות."}
         _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict = {'en': "At least one relationship status match option should be five hearts.", 'he': "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."}
 
+        _item_in_the_array_did_not_validate_error_message_to_format_dict = {'en': "Item {index} in the array did not validate: ", 'he': "Item {index} in the array did not validate: "}
+
         self._a_profile_picture_is_required_error_message = _a_profile_picture_is_required_error_message_dict[self.language_code]
         self._please_write_a_few_words_about_yourself_error_message = _please_write_a_few_words_about_yourself_error_message_dict[self.language_code]
         self._please_write_where_you_live_error_message = _please_write_where_you_live_error_message_dict[self.language_code]
@@ -43,5 +51,7 @@ class SpeedyMatchAccountsLanguageMixin(object):
         self._at_least_one_diet_match_option_should_be_5_hearts_error_message = _at_least_one_diet_match_option_should_be_5_hearts_error_message_dict[self.language_code]
         self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message = _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
         self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message = _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
+
+        self._item_in_the_array_did_not_validate_error_message_to_format = _item_in_the_array_did_not_validate_error_message_to_format_dict[self.language_code]
 
 
