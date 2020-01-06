@@ -2,6 +2,7 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import MaxLengthValidator
 
 from speedy.core.base.models import TimeStampedModel, RegularUDIDField, BaseManager
 from speedy.core.accounts.models import Entity, User
@@ -72,7 +73,7 @@ class Message(TimeStampedModel):
     id = RegularUDIDField()
     chat = models.ForeignKey(to=Chat, verbose_name=_('chat'), on_delete=models.SET_NULL, blank=True, null=True)
     sender = models.ForeignKey(to=Entity, verbose_name=_('sender'), on_delete=models.PROTECT, blank=True, null=True)
-    text = models.TextField(verbose_name=_('message'))
+    text = models.TextField(verbose_name=_('message'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)])
 
     objects = MessageManager()
 

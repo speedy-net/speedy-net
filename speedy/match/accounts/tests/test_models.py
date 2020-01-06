@@ -10,6 +10,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_speedy_match
+    from speedy.core.base.utils import to_attribute
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
     from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
     from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
@@ -26,6 +27,10 @@ if (django_settings.LOGIN_ENABLED):
         _empty_values_to_test = _none_list + _empty_string_list
         _non_int_string_values_to_test = ["Tel Aviv.", "One boy.", "Yes.", "Hi!"]
         _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
+        _valid_string_values_to_test_max_length_120 = _valid_string_values_to_test + ["a" * 60, "a" * 120]
+        _too_long_string_values_to_test_max_length_120 = ["a" * 121, "b" * 200, "a" * 5000, "a" * 50000, "a" * 50001, "a" * 100000, "b" * 1000000]
+        _valid_string_values_to_test_max_length_50000 = _valid_string_values_to_test + ["a" * 60, "a" * 120, "a" * 121, "b" * 200, "a" * 5000, "a" * 50000]
+        _too_long_string_values_to_test_max_length_50000 = ["a" * 50001, "a" * 100000, "b" * 1000000]
 
         def get_default_user_doron(self):
             user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
@@ -172,6 +177,11 @@ if (django_settings.LOGIN_ENABLED):
                 else:
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
 
+        def save_user_and_profile_and_assert_exceptions_for_string(self, user, field_name, value_to_test, max_length):
+            with self.assertRaises(ValidationError) as cm:
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(field_name=field_name, max_length=max_length, value_length=len(value_to_test)))
+
         def save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test):
             if (isinstance(value_to_test, str)):
                 with self.assertRaises(DataError) as cm:
@@ -225,11 +235,16 @@ if (django_settings.LOGIN_ENABLED):
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, 10 + 1)) + valid_values
                 valid_values_to_assign = self._none_list + valid_values
                 valid_values_to_save = valid_values_to_assign
-            elif (field_name in ['profile_description', 'city', 'children', 'more_children', 'match_description']):
-                values_to_test = self._empty_values_to_test + self._valid_string_values_to_test
-                valid_values_to_save = values_to_test
-                invalid_values = self._empty_values_to_test
-                valid_values = self._valid_string_values_to_test
+            elif (field_name in ['city']):
+                values_to_test = self._empty_values_to_test + self._valid_string_values_to_test_max_length_120 + self._too_long_string_values_to_test_max_length_120
+                valid_values_to_save = self._empty_values_to_test + self._valid_string_values_to_test_max_length_120
+                invalid_values = self._empty_values_to_test + self._too_long_string_values_to_test_max_length_120
+                valid_values = self._valid_string_values_to_test_max_length_120
+            elif (field_name in ['profile_description', 'children', 'more_children', 'match_description']):
+                values_to_test = self._empty_values_to_test + self._valid_string_values_to_test_max_length_50000 + self._too_long_string_values_to_test_max_length_50000
+                valid_values_to_save = self._empty_values_to_test + self._valid_string_values_to_test_max_length_50000
+                invalid_values = self._empty_values_to_test + self._too_long_string_values_to_test_max_length_50000
+                valid_values = self._valid_string_values_to_test_max_length_50000
             elif (field_name in ['height']):
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 10 + 1))
                 valid_values_to_save = self._none_list + [value for value in values_to_test if (isinstance(value, int))]
@@ -493,6 +508,10 @@ if (django_settings.LOGIN_ENABLED):
                     if (not (can_save_user_and_profile)):
                         if (field_name in ['height']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True)
+                        elif (field_name in ['city']):
+                            self.save_user_and_profile_and_assert_exceptions_for_string(user=user, field_name=to_attribute(name=field_name), value_to_test=value_to_test, max_length=120)
+                        elif (field_name in ['profile_description', 'children', 'more_children', 'match_description']):
+                            self.save_user_and_profile_and_assert_exceptions_for_string(user=user, field_name=to_attribute(name=field_name), value_to_test=value_to_test, max_length=50000)
                         elif (field_name in ['diet', 'smoking_status', 'relationship_status', 'min_age_to_match', 'max_age_to_match']):
                             self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
                         elif (field_name in ['min_max_age_to_match']):
@@ -818,10 +837,10 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'profile_description',
                 "test_invalid_values_to_assign": False,
-                "test_invalid_values_to_save": False,
+                "test_invalid_values_to_save": True,
                 "expected_step": 3,
                 "expected_error_message": self._please_write_a_few_words_about_yourself_error_message,
-                "expected_counts_tuple": (5, 2, 0, 0),
+                "expected_counts_tuple": (11, 2, 0, 3),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -830,10 +849,10 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'city',
                 "test_invalid_values_to_assign": False,
-                "test_invalid_values_to_save": False,
+                "test_invalid_values_to_save": True,
                 "expected_step": 3,
                 "expected_error_message": self._please_write_where_you_live_error_message,
-                "expected_counts_tuple": (5, 2, 0, 0),
+                "expected_counts_tuple": (7, 2, 0, 7),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -842,10 +861,10 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'children',
                 "test_invalid_values_to_assign": False,
-                "test_invalid_values_to_save": False,
+                "test_invalid_values_to_save": True,
                 "expected_step": 4,
                 "expected_error_message": self._do_you_have_children_how_many_error_message,
-                "expected_counts_tuple": (5, 2, 0, 0),
+                "expected_counts_tuple": (11, 2, 0, 3),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -854,10 +873,10 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'more_children',
                 "test_invalid_values_to_assign": False,
-                "test_invalid_values_to_save": False,
+                "test_invalid_values_to_save": True,
                 "expected_step": 4,
                 "expected_error_message": self._do_you_want_more_children_error_message,
-                "expected_counts_tuple": (5, 2, 0, 0),
+                "expected_counts_tuple": (11, 2, 0, 3),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -866,10 +885,10 @@ if (django_settings.LOGIN_ENABLED):
             test_settings = {
                 "field_name": 'match_description',
                 "test_invalid_values_to_assign": False,
-                "test_invalid_values_to_save": False,
+                "test_invalid_values_to_save": True,
                 "expected_step": 7,
                 "expected_error_message": self._who_is_your_ideal_partner_error_message,
-                "expected_counts_tuple": (5, 2, 0, 0),
+                "expected_counts_tuple": (11, 2, 0, 3),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)

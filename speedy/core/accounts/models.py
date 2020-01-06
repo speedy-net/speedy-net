@@ -7,6 +7,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
+from django.core.validators import MaxLengthValidator
 from django.urls import reverse
 from django.db import models, transaction
 from django.dispatch import receiver
@@ -150,7 +151,7 @@ class NamedEntity(Entity):
 
 
 class ReservedUsername(Entity):
-    description = models.TextField(verbose_name=_('description'), blank=True)
+    description = models.TextField(verbose_name=_('description'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True)
     objects = BaseManager()
 
     def __init__(self, *args, **kwargs):

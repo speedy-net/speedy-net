@@ -6,6 +6,7 @@ from django.contrib.postgres.fields import JSONField, ArrayField
 from django.utils.translation import gettext_lazy as _, get_language
 from django.utils.decorators import classproperty
 from django.core.exceptions import ValidationError
+from django.core.validators import MaxLengthValidator
 
 from translated_fields import TranslatedField
 
@@ -94,19 +95,19 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-    active_languages = ArrayField(models.TextField(), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
+    active_languages = ArrayField(models.CharField(max_length=2), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
-        field=models.TextField(verbose_name=_('Few words about me'), blank=True, null=True),
+        field=models.TextField(verbose_name=_('Few words about me'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
     children = TranslatedField(
-        field=models.TextField(verbose_name=_('Do you have children? How many?'), blank=True, null=True),
+        field=models.TextField(verbose_name=_('Do you have children? How many?'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
     more_children = TranslatedField(
-        field=models.TextField(verbose_name=_('Do you want (more) children?'), blank=True, null=True),
+        field=models.TextField(verbose_name=_('Do you want (more) children?'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
     match_description = TranslatedField(
-        field=models.TextField(verbose_name=_('My ideal match'), blank=True, null=True),
+        field=models.TextField(verbose_name=_('My ideal match'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
     gender_to_match = ArrayField(models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
     min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=min_age_to_match_default.__func__)

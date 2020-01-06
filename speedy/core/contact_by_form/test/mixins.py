@@ -20,6 +20,9 @@ class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin):
     def _please_contact_us_by_email_errors_dict(self):
         return {'text': [self._please_contact_us_by_email_error_message]}
 
+    def _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length):
+        return {'text': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=50000, value_length=value_length)]}
+
     def set_up(self):
         super().set_up()
 

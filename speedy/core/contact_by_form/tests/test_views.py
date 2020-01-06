@@ -76,6 +76,15 @@ if (django_settings.LOGIN_ENABLED):
             }
             self.run_test_visitor_can_submit_form(data=data)
 
+        def test_visitor_can_submit_form_3(self):
+            data = {
+                'sender_name': 'Mike',
+                'sender_email': 'mike@example.com',
+                'text': "a" * 50000,
+                'no_bots': '17',
+            }
+            self.run_test_visitor_can_submit_form(data=data)
+
         def test_visitor_cannot_submit_form_without_all_the_required_fields(self):
             data = {}
             self.assertEqual(first=Feedback.objects.count(), second=0)
@@ -108,6 +117,32 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path=self.page_url, data=data)
             self.assertEqual(first=r.status_code, second=200)
             self.assertDictEqual(d1=r.context['form'].errors, d2=self._feedback_form_no_bots_is_required_errors_dict())
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+
+        def test_visitor_cannot_submit_form_with_text_too_long_1(self):
+            data = {
+                'sender_name': 'Mike',
+                'sender_email': 'mike@example.com',
+                'text': "a" * 50001,
+                'no_bots': '17',
+            }
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(value_length=50001))
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+
+        def test_visitor_cannot_submit_form_with_text_too_long_2(self):
+            data = {
+                'sender_name': 'Mike',
+                'sender_email': 'mike@example.com',
+                'text': "b" * 1000000,
+                'no_bots': '17',
+            }
+            self.assertEqual(first=Feedback.objects.count(), second=0)
+            r = self.client.post(path=self.page_url, data=data)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertDictEqual(d1=r.context['form'].errors, d2=self._ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(value_length=1000000))
             self.assertEqual(first=Feedback.objects.count(), second=0)
 
         @only_on_sites_with_login

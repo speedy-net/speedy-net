@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import MaxLengthValidator
 
 from speedy.core.base.mail import mail_managers
 from speedy.core.base.models import TimeStampedModel
@@ -21,7 +22,7 @@ class Feedback(TimeStampedModel):
     sender_name = models.CharField(verbose_name=_('your name'), max_length=255, blank=True)
     sender_email = models.EmailField(verbose_name=_('your email'), blank=True)
     type = models.PositiveIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
-    text = models.TextField(verbose_name=_('your message'))
+    text = models.TextField(verbose_name=_('your message'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)])
     if (True or django_settings.LOGIN_ENABLED): # ~~~~ TODO: fix this model to work with sites without login.
         report_entity = models.ForeignKey(to='accounts.Entity', verbose_name=_('reported entity'), on_delete=models.SET_NULL, blank=True, null=True, related_name='complaints')
         report_file = models.ForeignKey(to='uploads.File', verbose_name=_('reported photo'), on_delete=models.SET_NULL, blank=True, null=True, related_name='complaints')
