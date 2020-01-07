@@ -183,14 +183,22 @@ if (django_settings.LOGIN_ENABLED):
             self.assertDictEqual(d1=dict(cm.exception), d2=self._ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(field_name=field_name, max_length=max_length, value_length=len(value_to_test)))
 
         def save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test):
-            if (isinstance(value_to_test, str)):
-                with self.assertRaises(DataError) as cm:
+            if (value_to_test is None):
+                with self.assertRaises(TypeError) as cm:
                     user.save_user_and_profile()
-                self.assertIn(member='malformed array literal: ""', container=str(cm.exception))
+                self.assertEqual(first=str(cm.exception), second="'NoneType' object is not iterable")
             else:
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2=self._list_contains_items_it_should_contain_no_more_than_3_errors_dict_by_field_name_and_list_length(field_name=field_name, list_length=len(value_to_test)))
+                index = None
+                value = None
+                val = sorted(list(set(value_to_test)))
+                for i in range(len(val)):
+                    if (index is None):
+                        if (not (validators.gender_is_valid(gender=val[i]))):
+                            index = i + 1
+                            value = val[i]
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name=field_name, index=index, value=value))
 
         def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
             with self.assertRaises(ValidationError) as cm:
@@ -289,20 +297,23 @@ if (django_settings.LOGIN_ENABLED):
                                 values_to_test.extend(product[3:8])
                     else:
                         values_to_test.extend([([i] + [item for j in range(10) for item in User.GENDER_VALID_VALUES])[:n] for i in range_to_test])
-                valid_values_to_save = self._none_list + [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) <= len(User.GENDER_VALID_VALUES)))]
-                valid_values = [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(gender_to_match) > 0) and (len(gender_to_match) == len(set(gender_to_match))) and (all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)))]
-                for value in [[1], [2], [3], (1,), (2,), (3,), [1, 2], [1, 3], [2, 3], (1, 2), (1, 3), [1, 2, 3], (1, 2, 3)]:
+                valid_values_to_save = self._empty_string_list + [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(set(gender_to_match)) <= len(User.GENDER_VALID_VALUES)) and (all(validators.gender_is_valid(gender=gender) for gender in gender_to_match)))]
+                valid_values = [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(set(gender_to_match)) > 0) and (all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)))]
+                for value in [[1], [2], [3], (1,), (2,), (3,), [1, 2], [1, 3], [2, 3], (1, 2), (1, 3), [1, 2, 3], (1, 2, 3), [1, 2, 3, 1, 2, 3], (1, 2, 3, 1, 2, 3), [1, 2, 1], [1, 2, 1, 2]]:
                     for val in [value, list(value)]:
                         self.assertIn(member=val, container=values_to_test)
                         self.assertIn(member=val, container=valid_values)
-                for value in [[], (), [1, 2, 3, 1, 2, 3], (1, 2, 3, 1, 2, 3), [1, 2, 1], [1, 2, 1, 2], [0], [4], (0,), (4,), [0, 1], [1, 2, 0], [1, 2, 4], [4, 1, 2, 3]]:
+                        self.assertIn(member=val, container=valid_values_to_save)
+                for value in [[], ()]:
                     for val in [value, list(value)]:
                         self.assertIn(member=val, container=values_to_test)
                         self.assertNotIn(member=val, container=valid_values)
-                        if (len(val) <= 3):
-                            self.assertIn(member=val, container=valid_values_to_save)
-                        else:
-                            self.assertNotIn(member=val, container=valid_values_to_save)
+                        self.assertIn(member=val, container=valid_values_to_save)
+                for value in [[0], [4], (0,), (4,), [0, 1], [1, 2, 0], [1, 2, 4], [4, 1, 2, 3]]:
+                    for val in [value, list(value)]:
+                        self.assertIn(member=val, container=values_to_test)
+                        self.assertNotIn(member=val, container=valid_values)
+                        self.assertNotIn(member=val, container=valid_values_to_save)
                 for value in valid_values:
                     self.assertIn(member=value, container=values_to_test)
                 invalid_values = [value for value in values_to_test if (value not in valid_values)]
@@ -311,11 +322,13 @@ if (django_settings.LOGIN_ENABLED):
                     self.assertNotIn(member=value, container=valid_values)
                 for value in [[i, i] for i in User.GENDER_VALID_VALUES] + [[i, i, i] for i in User.GENDER_VALID_VALUES] + [[i, i, 1] for i in User.GENDER_VALID_VALUES]:
                     self.assertIn(member=value, container=values_to_test)
-                    self.assertIn(member=value, container=invalid_values)
-                valid_sets = list()
+                    self.assertIn(member=value, container=valid_values)
+                valid_sets_dict = {str(i): list() for i in range(1, 4)}
                 for value in [set(gender_to_match) for gender_to_match in valid_values]:
-                    if (value not in valid_sets):
-                        valid_sets.append(value)
+                    key = str(len(value))
+                    if (value not in valid_sets_dict[key]):
+                        valid_sets_dict[key].append(value)
+                valid_sets = sum([valid_sets_dict[str(i)] for i in range(1, 4)], [])
                 self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
             elif (field_name in ['min_age_to_match', 'max_age_to_match']):
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1))
@@ -696,13 +709,13 @@ if (django_settings.LOGIN_ENABLED):
         def test_set_active_languages_1(self):
             p = SpeedyMatchSiteProfile()
             self.assertListEqual(list1=p.active_languages, list2=[])
-            p._set_active_languages(['en', 'he'])
+            p._set_active_languages(languages=['en', 'he'])
             self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
             self.assertEqual(first=len(p.active_languages), second=2)
 
         def test_set_active_languages_2(self):
             user = self.get_active_user_jennifer()
-            user.speedy_match_profile._set_active_languages(['en', 'he'])
+            user.speedy_match_profile._set_active_languages(languages=['en', 'he'])
             user.save_user_and_profile()
             self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2={'en', 'he'})
             self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=2)
@@ -711,7 +724,7 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_set_active_languages_3(self):
             user = self.get_active_user_jennifer()
-            user.speedy_match_profile._set_active_languages([])
+            user.speedy_match_profile._set_active_languages(languages=[])
             user.save_user_and_profile()
             self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2=set())
             self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
@@ -721,36 +734,36 @@ if (django_settings.LOGIN_ENABLED):
         def test_set_active_languages_with_duplicates(self):
             p = SpeedyMatchSiteProfile()
             self.assertListEqual(list1=p.active_languages, list2=[])
-            p._set_active_languages(['en', 'he', 'en', 'he'])
+            p._set_active_languages(languages=['en', 'he', 'en', 'he'])
             self.assertSetEqual(set1=set(p.active_languages), set2={'en', 'he'})
             self.assertEqual(first=len(p.active_languages), second=2)
 
         def test_set_active_languages_with_typo(self):
             p = SpeedyMatchSiteProfile()
-            p._set_active_languages(['en', 'he', 'en', 'he1'])
+            p._set_active_languages(languages=['en', 'he', 'en', 'he1'])
             self.assertNotEqual(first=set(p.active_languages), second={'en', 'he'})
             self.assertNotEqual(first=len(p.active_languages), second=2)
 
         def test_set_active_languages_with_an_unsupported_language_1(self):
             user = self.get_active_user_jennifer()
-            user.speedy_match_profile._set_active_languages(['en', 'he', 'de'])
+            user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'de'])
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=1, value="'de'"))
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=1, value="'de'"))
 
         def test_set_active_languages_with_an_unsupported_language_2(self):
             user = self.get_active_user_jennifer()
-            user.speedy_match_profile._set_active_languages(['en', 'he', 'en', 'he1'])
+            user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'en', 'he1'])
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=3, value="'he1'"))
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=3, value="'he1'"))
 
         def test_set_active_languages_with_an_unsupported_language_3(self):
             user = self.get_active_user_jennifer()
-            user.speedy_match_profile._set_active_languages(['en', 'he', 'en1', 'he2'])
+            user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'en1', 'he2'])
             with self.assertRaises(ValidationError) as cm:
                 user.save_user_and_profile()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(index=2, value="'en1'"))
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=2, value="'en1'"))
 
         def test_call_activate_directly_and_assert_exception(self):
             user = self.get_default_user_doron()
@@ -987,7 +1000,7 @@ if (django_settings.LOGIN_ENABLED):
                 "test_invalid_values_to_save": True,
                 "expected_step": 7,
                 "expected_error_message": self._gender_to_match_is_required_error_message,
-                "expected_counts_tuple": (23, 153, 0, 39),
+                "expected_counts_tuple": (77, 5, 0, 133),
             }
             test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
             self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)

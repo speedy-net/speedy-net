@@ -2,8 +2,8 @@ class SpeedyMatchAccountsLanguageMixin(object):
     def _item_in_the_array_did_not_validate_error_message_by_index(self, index):
         return self._item_in_the_array_did_not_validate_error_message_to_format.format(index=index)
 
-    def _active_languages_item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_index_and_value(self, index, value):
-        return {'active_languages': ["{}{}".format(self._item_in_the_array_did_not_validate_error_message_by_index(index=index), self._value_is_not_a_valid_choice_error_message_by_value(value=value))]}
+    def _item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(self, field_name, index, value):
+        return {field_name: ["{}{}".format(self._item_in_the_array_did_not_validate_error_message_by_index(index=index), self._value_is_not_a_valid_choice_error_message_by_value(value=value))]}
 
     def set_up(self):
         super().set_up()

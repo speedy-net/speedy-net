@@ -95,7 +95,14 @@ class SiteProfile(SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
-    active_languages = ArrayField(base_field=models.CharField(max_length=2, choices=django_settings.LANGUAGES), verbose_name=_('Active languages'), size=len(django_settings.LANGUAGES), default=active_languages_default.__func__, blank=True, null=True)
+    active_languages = ArrayField(
+        base_field=models.CharField(max_length=2, choices=django_settings.LANGUAGES),
+        verbose_name=_('Active languages'),
+        size=len(django_settings.LANGUAGES),
+        default=active_languages_default.__func__,
+        blank=True,
+        null=True,
+    )
     height = models.SmallIntegerField(verbose_name=_('Height'), help_text=_('cm'), blank=True, null=True)
     profile_description = TranslatedField(
         field=models.TextField(verbose_name=_('Few words about me'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
@@ -109,15 +116,43 @@ class SiteProfile(SiteProfileBase):
     match_description = TranslatedField(
         field=models.TextField(verbose_name=_('My ideal match'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True, null=True),
     )
-    gender_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Gender to match'), size=len(User.GENDER_VALID_VALUES), default=gender_to_match_default.__func__, blank=True, null=True)
+    gender_to_match = ArrayField(
+        base_field=models.SmallIntegerField(choices=User.GENDER_CHOICES),
+        verbose_name=_('Gender to match'),
+        size=len(User.GENDER_VALID_VALUES),
+        default=gender_to_match_default.__func__,
+        blank=True,
+        null=True,
+    )
     min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=min_age_to_match_default.__func__)
     max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=max_age_to_match_default.__func__)
     diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
     smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
     relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
-    diet_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Diet to match'), size=len(User.DIET_VALID_VALUES), default=diet_to_match_default.__func__, blank=True, null=True)
-    smoking_status_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Smoking status to match'), size=len(User.SMOKING_STATUS_VALID_VALUES), default=smoking_status_to_match_default.__func__, blank=True, null=True)
-    relationship_status_to_match = ArrayField(base_field=models.SmallIntegerField(), verbose_name=_('Relationship status to match'), size=len(User.RELATIONSHIP_STATUS_VALID_VALUES), default=relationship_status_to_match_default.__func__, blank=True, null=True)
+    diet_to_match = ArrayField(
+        base_field=models.SmallIntegerField(choices=User.DIET_VALID_CHOICES),
+        verbose_name=_('Diet to match'),
+        size=len(User.DIET_VALID_VALUES),
+        default=diet_to_match_default.__func__,
+        blank=True,
+        null=True,
+    )
+    smoking_status_to_match = ArrayField(
+        base_field=models.SmallIntegerField(choices=User.SMOKING_STATUS_VALID_CHOICES),
+        verbose_name=_('Smoking status to match'),
+        size=len(User.SMOKING_STATUS_VALID_VALUES),
+        default=smoking_status_to_match_default.__func__,
+        blank=True,
+        null=True,
+    )
+    relationship_status_to_match = ArrayField(
+        base_field=models.SmallIntegerField(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
+        verbose_name=_('Relationship status to match'),
+        size=len(User.RELATIONSHIP_STATUS_VALID_VALUES),
+        default=relationship_status_to_match_default.__func__,
+        blank=True,
+        null=True,
+    )
     activation_step = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_('Activation step'), default=2),
     )
@@ -179,11 +214,13 @@ class SiteProfile(SiteProfileBase):
         if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
             self._deactivate_language(step=self.activation_step, commit=False)
         if ((len(self.active_languages) > 0) and (not (self.user.has_confirmed_email))):
-            self._set_active_languages([])
+            self._set_active_languages(languages=[])
         return super().save(*args, **kwargs)
 
     def _set_values_to_match(self):
         from speedy.match.accounts import utils
+        self._set_active_languages(languages=self.active_languages)
+        self.gender_to_match = sorted(list(set(self.gender_to_match)))
         errors = 0
         for field_name in ['diet_match', 'smoking_status_match', 'relationship_status_match']:
             try:
@@ -205,7 +242,7 @@ class SiteProfile(SiteProfileBase):
     def _deactivate_language(self, step, commit=True):
         # Profile is invalid. Deactivate in this language.
         language_code = get_language()
-        self._set_active_languages(set(self.active_languages) - {language_code})
+        self._set_active_languages(languages=set(self.active_languages) - {language_code})
         self.activation_step = step
         if (commit):
             self.user.save_user_and_profile()
@@ -279,7 +316,7 @@ class SiteProfile(SiteProfileBase):
             return self.__class__.RANK_0
 
     def deactivate(self):
-        self._set_active_languages([])
+        self._set_active_languages(languages=[])
         self.activation_step = 2
         for language_code, language_name in django_settings.LANGUAGES:
             setattr(self, to_attribute(name='activation_step', language_code=language_code), 2)
