@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 04:10+0200\n"
+"POT-Creation-Date: 2020-01-07 04:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1314,21 +1314,21 @@ msgstr ""
 #: .\__translations\__translations.py:141
 msgctxt "female"
 msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
 
 #: .\__translations\__translations.py:142
 msgctxt "male"
 msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
 
 #: .\__translations\__translations.py:143
 msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts has been deactivated. You can "
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
 

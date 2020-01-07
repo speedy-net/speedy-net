@@ -138,9 +138,9 @@ pgettext_lazy(context="female", message='Your new password has been saved.')
 pgettext_lazy(context="male", message='Your new password has been saved.')
 pgettext_lazy(context="other", message='Your new password has been saved.')
 
-pgettext_lazy(context="female", message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate them any time.')
-pgettext_lazy(context="male", message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate them any time.')
-pgettext_lazy(context="other", message='Your Speedy Net and Speedy Match accounts has been deactivated. You can reactivate them any time.')
+pgettext_lazy(context="female", message='Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.')
+pgettext_lazy(context="male", message='Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.')
+pgettext_lazy(context="other", message='Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.')
 
 pgettext_lazy(context="female", message='Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.')
 pgettext_lazy(context="male", message='Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.')
