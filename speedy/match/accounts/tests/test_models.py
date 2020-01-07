@@ -333,9 +333,9 @@ if (django_settings.LOGIN_ENABLED):
             elif (field_name in ['min_age_to_match', 'max_age_to_match']):
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1))
                 valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
-                valid_values = SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES
+                valid_values = SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES
             elif (field_name in ['min_max_age_to_match']):
-                values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES]
+                values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES]
                 self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
                 values_to_test = []
                 if (test_settings["test_invalid_values_to_save"]):
@@ -545,7 +545,7 @@ if (django_settings.LOGIN_ENABLED):
                             self.assertEqual(first=step, second=test_settings["expected_step"])
                             if (field_name in ['min_max_age_to_match']):
                                 self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
-                                if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES for i in range(2))):
+                                if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES for i in range(2))):
                                     expected_error_messages_len = 1
                                     expected_error_messages_key = "expected_error_messages_min_age_to_match_and_max_age_to_match_valid"
                                     fields_and_error_messages = [(field_name, "expected_error_message_min_age_to_match_and_max_age_to_match_valid")]
@@ -658,15 +658,15 @@ if (django_settings.LOGIN_ENABLED):
         def test_age_valid_values(self):
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=0)
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=180)
-            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
-            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(0, 180 + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(0, 180 + 1))
 
         @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
         def test_age_valid_values_with_override_settings(self):
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=2)
             self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=178)
-            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
-            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES, second=range(2, 178 + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
+            self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(2, 178 + 1))
 
         def test_rank_valid_values(self):
             self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.RANK_0, SpeedyMatchSiteProfile.RANK_5 + 1)))
@@ -817,8 +817,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIn(member=user.speedy_match_profile.height, container=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES)
             self.assertIn(member=user.smoking_status, container=User.SMOKING_STATUS_VALID_VALUES)
             self.assertIn(member=user.relationship_status, container=User.RELATIONSHIP_STATUS_VALID_VALUES)
-            self.assertIn(member=user.speedy_match_profile.min_age_to_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
-            self.assertIn(member=user.speedy_match_profile.max_age_to_match, container=SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+            self.assertIn(member=user.speedy_match_profile.min_age_to_match, container=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES)
+            self.assertIn(member=user.speedy_match_profile.max_age_to_match, container=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES)
             self.assertEqual(first=user.speedy_match_profile.min_age_to_match, second=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED)
             self.assertEqual(first=user.speedy_match_profile.max_age_to_match, second=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED)
             self.validate_all_user_values(user=user)

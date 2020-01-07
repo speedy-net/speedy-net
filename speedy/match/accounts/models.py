@@ -171,7 +171,7 @@ class SiteProfile(SiteProfileBase):
         return range(cls.settings.MIN_HEIGHT_ALLOWED, cls.settings.MAX_HEIGHT_ALLOWED + 1)
 
     @classproperty
-    def AGE_MATCH_VALID_VALUES(cls):
+    def AGE_TO_MATCH_VALID_VALUES(cls):
         return range(cls.settings.MIN_AGE_TO_MATCH_ALLOWED, cls.settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
     @property

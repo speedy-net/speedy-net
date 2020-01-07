@@ -17,8 +17,8 @@ def height_is_valid(height):
     return ((height is not None) and (height in SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES))
 
 
-def age_match_is_valid(age_match):
-    return (age_match in SpeedyMatchSiteProfile.AGE_MATCH_VALID_VALUES)
+def age_to_match_is_valid(age_to_match):
+    return (age_to_match in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES)
 
 
 def gender_is_valid(gender):
@@ -122,17 +122,17 @@ def validate_gender_to_match(gender_to_match):
 
 
 def validate_min_age_to_match(min_age_to_match):
-    if (not (age_match_is_valid(age_match=min_age_to_match))):
+    if (not (age_to_match_is_valid(age_to_match=min_age_to_match))):
         raise ValidationError(_("Minimal age to match must be from 0 to 180 years."))
 
 
 def validate_max_age_to_match(max_age_to_match):
-    if (not (age_match_is_valid(age_match=max_age_to_match))):
+    if (not (age_to_match_is_valid(age_to_match=max_age_to_match))):
         raise ValidationError(_("Maximal age to match must be from 0 to 180 years."))
 
 
 def validate_min_max_age_to_match(min_age_to_match, max_age_to_match):
-    if ((age_match_is_valid(age_match=min_age_to_match)) and (age_match_is_valid(age_match=max_age_to_match))):
+    if ((age_to_match_is_valid(age_to_match=min_age_to_match)) and (age_to_match_is_valid(age_to_match=max_age_to_match))):
         if (not (min_age_to_match <= max_age_to_match)):
             raise ValidationError(_("Maximal age to match can't be less than minimal age to match."))
 
