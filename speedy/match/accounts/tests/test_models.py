@@ -298,7 +298,7 @@ if (django_settings.LOGIN_ENABLED):
                     else:
                         values_to_test.extend([([i] + [item for j in range(10) for item in User.GENDER_VALID_VALUES])[:n] for i in range_to_test])
                 valid_values_to_save = self._empty_string_list + [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(set(gender_to_match)) <= len(User.GENDER_VALID_VALUES)) and (all(validators.gender_is_valid(gender=gender) for gender in gender_to_match)))]
-                valid_values = [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(set(gender_to_match)) > 0) and (all(gender in User.GENDER_VALID_VALUES for gender in gender_to_match)))]
+                valid_values = [gender_to_match for gender_to_match in values_to_test if ((isinstance(gender_to_match, (list, tuple))) and (len(set(gender_to_match)) > 0) and (all(validators.gender_is_valid(gender=gender) for gender in gender_to_match)))]
                 for value in [[1], [2], [3], (1,), (2,), (3,), [1, 2], [1, 3], [2, 3], (1, 2), (1, 3), [1, 2, 3], (1, 2, 3), [1, 2, 3, 1, 2, 3], (1, 2, 3, 1, 2, 3), [1, 2, 1], [1, 2, 1, 2]]:
                     for val in [value, list(value)]:
                         self.assertIn(member=val, container=values_to_test)
