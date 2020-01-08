@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 04:31+0200\n"
+"POT-Creation-Date: 2020-01-08 14:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2512,20 +2512,24 @@ msgstr "החנות של ספידי S-לוגו"
 msgid "Speedy Net Blog"
 msgstr "ספידי נט בלוג"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:160
+msgid "Speedy Paz"
+msgstr "ספידי פז"
+
+#: .\templates\base.html:162
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:164
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:180 .\templates\base.html:181
+#: .\templates\base.html:184 .\templates\base.html:185
 #: .\templates\base_with_login.html:84 .\templates\base_with_login.html:85
 msgid "A vegan friendly website"
 msgstr "אתר ידידותי לטבעונים"
 
-#: .\templates\base.html:197 .\templates\base.html:199
+#: .\templates\base.html:201 .\templates\base.html:203
 msgid "Speedy"
 msgstr "ספידי"
 

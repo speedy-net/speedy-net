@@ -156,7 +156,11 @@
                         {% block footer_extra_links_4 %}{% endblock %}
                         <p>
                             <a href="https://{{ LANGUAGE_CODE }}.speedysoft.com/blog/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
-                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                            {% if LANGUAGE_CODE == "he" %}
+                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy-paz.com" title="{% trans "Speedy Paz" %}">{% trans "Speedy Paz" %}</a>
+                            {% else %}
+                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                            {% endif %}
                             <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysale.com/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
                             {% if LANGUAGE_CODE == "he" %}
                                 {% block hebrew_extra_links %}{% endblock %}

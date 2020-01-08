@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 04:31+0200\n"
+"POT-Creation-Date: 2020-01-08 14:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,7 +153,7 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
 
-#: .\templates\main\main_page.html:46
+#: .\templates\main\main_page.html:47
 msgid "Free Online Dating"
 msgstr ""
 
