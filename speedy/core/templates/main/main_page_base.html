@@ -39,3 +39,12 @@
     {% endif %}
 {% endblock %}
 
+{% block footer_extra_links_6 %}
+    {{ block.super }}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
