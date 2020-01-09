@@ -39,10 +39,10 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
         ).count()
         total_number_of_members_text = _("Admin: The total number of members on the site is {total_number_of_members}, of which {total_number_of_members_in_the_last_week} members entered the site in the last week, {total_number_of_members_in_the_last_month} members entered the site in the last month, and {total_number_of_members_in_the_last_four_months} members entered the site in the last four months.").format(
-            total_number_of_members=total_number_of_members,
-            total_number_of_members_in_the_last_week=total_number_of_members_in_the_last_week,
-            total_number_of_members_in_the_last_month=total_number_of_members_in_the_last_month,
-            total_number_of_members_in_the_last_four_months=total_number_of_members_in_the_last_four_months,
+            total_number_of_members='{:,}'.format(total_number_of_members),
+            total_number_of_members_in_the_last_week='{:,}'.format(total_number_of_members_in_the_last_week),
+            total_number_of_members_in_the_last_month='{:,}'.format(total_number_of_members_in_the_last_month),
+            total_number_of_members_in_the_last_four_months='{:,}'.format(total_number_of_members_in_the_last_four_months),
         )
         return total_number_of_members_text
 
@@ -64,11 +64,11 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
             date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
         ).count()
         total_number_of_members_date_registered_text = _("Admin: {total_number_of_members_registered_in_the_last_week} members registered in the last week. {total_number_of_members_registered_in_the_last_month} members registered in the last month. {total_number_of_members_registered_in_the_last_four_months} members registered in the last four months. {total_number_of_members_registered_more_than_four_months_ago} members registered more than four months ago. {total_number_of_members_registered_before_2019_08_01} members registered before 1 August 2019.").format(
-            total_number_of_members_registered_in_the_last_week=total_number_of_members_registered_in_the_last_week,
-            total_number_of_members_registered_in_the_last_month=total_number_of_members_registered_in_the_last_month,
-            total_number_of_members_registered_in_the_last_four_months=total_number_of_members_registered_in_the_last_four_months,
-            total_number_of_members_registered_more_than_four_months_ago=total_number_of_members_registered_more_than_four_months_ago,
-            total_number_of_members_registered_before_2019_08_01=total_number_of_members_registered_before_2019_08_01,
+            total_number_of_members_registered_in_the_last_week='{:,}'.format(total_number_of_members_registered_in_the_last_week),
+            total_number_of_members_registered_in_the_last_month='{:,}'.format(total_number_of_members_registered_in_the_last_month),
+            total_number_of_members_registered_in_the_last_four_months='{:,}'.format(total_number_of_members_registered_in_the_last_four_months),
+            total_number_of_members_registered_more_than_four_months_ago='{:,}'.format(total_number_of_members_registered_more_than_four_months_ago),
+            total_number_of_members_registered_before_2019_08_01='{:,}'.format(total_number_of_members_registered_before_2019_08_01),
         )
         return total_number_of_members_date_registered_text
 
