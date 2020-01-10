@@ -18,6 +18,7 @@
 {% endblock %}
 
 {% block footer_extra_links_3 %}
+    {{ block.super }}
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; – הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
@@ -38,7 +39,7 @@
 {% block footer_extra_links_6 %}
     {% if LANGUAGE_CODE == "he" %}
         <p>
-            <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
+            <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
             <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.info/" title="אתרי הכרויות">אתרי הכרויות</a>
         </p>
     {% endif %}
