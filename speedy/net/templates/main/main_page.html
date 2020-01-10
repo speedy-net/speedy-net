@@ -18,8 +18,12 @@
 {% endblock %}
 
 {% block footer_extra_links_3 %}
-    {{ block.super }}
     {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
+            <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
+            <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
+        </p>
         <p>
             <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; – הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
         </p>

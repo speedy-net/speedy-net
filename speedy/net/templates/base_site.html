@@ -26,6 +26,18 @@
             <a href="https://www.veganfriendly.co.il/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
             <a href="https://www.etgar21.info/" title="האתגר הטבעוני">האתגר הטבעוני</a>
             <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
+            <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block footer_extra_links_5 %}
+    {{ block.super }}
+    {% if LANGUAGE_CODE == "he" %}
+        <p>
+            <a href="https://www.vegan-friendly.co.il/" title="ויגן פרנדלי">ויגן פרנדלי</a>
+            <a href="https://vegansontop.co.il/" title="טבעוניות נהנות יותר">טבעוניות נהנות יותר</a>
+            <a href="http://teavon.co.il/" title="תיאבון בריא">תיאבון בריא</a>
         </p>
     {% endif %}
 {% endblock %}
