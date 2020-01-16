@@ -69,7 +69,12 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
             logger.debug('RegistrationView::form_valid(): activating profile, profile: %s', self.object.profile)
             self.object.profile.activate()
         user = form.instance
-        user.email_addresses.first().send_confirmation_email()
+        email_addresses = user.email_addresses.all()
+        if (not (len(email_addresses) == 1)):
+            site = Site.objects.get_current()
+            logger.error("RegistrationView::form_valid::User has {len_email_addresses} email addresses, site_name={site_name}, user={user}".format(len_email_addresses=len(email_addresses), site_name=_(site.name), user=user))
+        for email_address in email_addresses:
+            email_address.send_confirmation_email()
         user.backend = django_settings.DEFAULT_AUTHENTICATION_BACKEND
         auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
