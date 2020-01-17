@@ -22,6 +22,9 @@ def _has_access_perm_for_obj(user, other_user, access):
 
 @predicate
 def has_access_perm(user, other_user):
+    if (user.is_authenticated):
+        if ((user.is_staff) and (user.is_superuser)):
+            return True
     return is_active(user=user, other_user=other_user)
 
 
@@ -38,6 +41,8 @@ def has_access_perm_for_dob_year(user, other_user):
 @predicate
 def view_user_on_speedy_match_widget(user, other_user):
     if (user.is_authenticated):
+        if ((user.is_staff) and (user.is_superuser)):
+            return True
         match_profile = (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > SpeedyMatchSiteProfile.RANK_0)
         return match_profile
     return False

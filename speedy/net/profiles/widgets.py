@@ -12,6 +12,9 @@ class UserOnSpeedyNetWidget(Widget):
 
     def is_active_and_there_is_no_block(self):
         # Should be always true. This widget should not be displayed if false.
+        if (self.viewer.is_authenticated):
+            if ((self.viewer.is_staff) and (self.viewer.is_superuser)):
+                return True
         if (not (self.viewer.is_authenticated)):
             is_active_and_there_is_no_block = False  # This widget appears only for authenticated users on Speedy Match.
         else:

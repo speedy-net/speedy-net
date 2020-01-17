@@ -38,6 +38,9 @@ class UserMixin(object):
         return super().dispatch(request=request, *args, **kwargs)
 
     def get_user_queryset(self):
+        if (self.request.user.is_authenticated):
+            if ((self.request.user.is_staff) and (self.request.user.is_superuser)):
+                return User.objects.get_queryset()
         return User.objects.active()
 
     def get_user(self):

@@ -21,6 +21,9 @@ class UserOnSpeedyMatchWidget(Widget):
 
     def is_match(self):
         # Should be always true. This widget should not be displayed if false.
+        if (self.viewer.is_authenticated):
+            if ((self.viewer.is_staff) and (self.viewer.is_superuser)):
+                return True
         if (not (self.viewer.is_authenticated)):
             is_match = False
         elif (self.viewer == self.user):
