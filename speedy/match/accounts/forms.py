@@ -1,9 +1,11 @@
+import logging
 import json
 
 from django import forms
 from django.conf import settings as django_settings
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.contrib.sites.models import Site
 
 from speedy.core.base.utils import to_attribute, update_form_field_choices
 from speedy.core.base.forms import DeleteUnneededFieldsMixin
@@ -13,6 +15,8 @@ from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNo
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import validators as speedy_match_accounts_validators, utils
+
+logger = logging.getLogger(__name__)
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
@@ -224,6 +228,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
 
     def save(self, commit=True):
         if (commit):
+            user_profile = SpeedyMatchSiteProfile.objects.get(pk=self.instance.pk)
+            if (not (self.instance.height == user_profile.height)):
+                site = Site.objects.get_current()
+                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height}'.format(site_name=_(site.name), user=self.instance.user, new_height=self.instance.height, old_height=user_profile.height))
             if ('photo' in self.fields):
                 photo = self.files.get('photo')
                 if (photo):
