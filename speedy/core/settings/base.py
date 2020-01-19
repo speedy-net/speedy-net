@@ -68,7 +68,7 @@ FORMAT_MODULE_PATH = [
     'speedy.core.locale',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'speedy.core.base.middleware.SessionCookieDomainMiddleware',
     'speedy.core.base.middleware.RemoveExtraSlashesMiddleware',
 

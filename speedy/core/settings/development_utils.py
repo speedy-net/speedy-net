@@ -71,7 +71,7 @@ LOGGING = {
 def activate_development(settings):
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
-        'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],
+        'MIDDLEWARE_CLASSES': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE_CLASSES'],
         'INSTALLED_APPS': settings['INSTALLED_APPS'] + ['debug_toolbar'],
         'LOGGING': LOGGING,
         'CSRF_COOKIE_SECURE': False,

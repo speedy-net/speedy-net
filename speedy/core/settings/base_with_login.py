@@ -9,7 +9,7 @@ INSTALLED_APPS += [
     'speedy.mail.accounts',  # For admin - for deleting users.
 ]
 
-MIDDLEWARE += [
+MIDDLEWARE_CLASSES += [
     'speedy.core.accounts.middleware.SiteProfileMiddleware',
 ]
 
