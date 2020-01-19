@@ -6,6 +6,7 @@ from django.test import override_settings
 from django.test.client import RequestFactory
 from django.views import generic
 from django.utils.html import escape
+from django.contrib.auth.models import AnonymousUser
 
 from friendship.models import Friend
 
@@ -33,7 +34,9 @@ if (django_settings.LOGIN_ENABLED):
             self.other_user = ActiveUserFactory()
 
         def test_find_user_by_exact_slug(self):
-            view = UserMixinTestView.as_view()(self.factory.get('/look-at-me/some-page/'), slug='look-at-me')
+            request = self.factory.get('/look-at-me/some-page/')
+            request.user = AnonymousUser()
+            view = UserMixinTestView.as_view()(request=request, slug='look-at-me')
             self.assertEqual(first=view.get_user().id, second=self.user.id)
 
 
