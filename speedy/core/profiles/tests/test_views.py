@@ -44,7 +44,6 @@ if (django_settings.LOGIN_ENABLED):
     class LoggedInUserTestCase(RedirectMeMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
-            self.factory = RequestFactory()
             self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
             self.other_user = ActiveUserFactory()
 
