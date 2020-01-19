@@ -30,7 +30,7 @@ if (django_settings.LOGIN_ENABLED):
             self.speedy_match_profile.children = "One boy."
             self.speedy_match_profile.more_children = "Yes."
             self.speedy_match_profile.match_description = "Hi!"
-            self.speedy_match_profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED)
+            self.speedy_match_profile.height = random.randint(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)
             _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
             _test_case.assertEqual(first=self.smoking_status, second=User.SMOKING_STATUS_UNKNOWN)
             _test_case.assertEqual(first=self.relationship_status, second=User.RELATIONSHIP_STATUS_UNKNOWN)

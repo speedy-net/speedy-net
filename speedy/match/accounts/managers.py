@@ -1,11 +1,11 @@
 import logging
+
 from django.utils.translation import get_language
 
 from speedy.core.base.utils import get_age_ranges_match
 from speedy.core.base.models import BaseManager
 from speedy.core.accounts.models import User
 from speedy.core.blocks.models import Block
-from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +23,8 @@ class SiteProfileManager(BaseManager):
             if (not (user_profile.min_age_to_match <= other_user.get_age() <= user_profile.max_age_to_match)):
                 return self.model.RANK_0
             if (not (other_user.speedy_match_profile.min_age_to_match <= user.get_age() <= other_user.speedy_match_profile.max_age_to_match)):
+                return self.model.RANK_0
+            if (not ((self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH) and (self.model.settings.MIN_HEIGHT_TO_MATCH <= other_user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH))):
                 return self.model.RANK_0
             if (other_user.pk in blocked_users_ids):
                 return self.model.RANK_0
@@ -56,6 +58,7 @@ class SiteProfileManager(BaseManager):
             date_of_birth__range=age_ranges,
             speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
             speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
+            speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(pk=user_profile.user_id).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2000]

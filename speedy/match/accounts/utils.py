@@ -72,10 +72,12 @@ def validate_field(field_name, user):
 def get_total_number_of_active_members_text():
     language_code = get_language()
     total_number_of_active_members_in_the_last_four_months = User.objects.active(
+        speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
         speedy_match_site_profile__active_languages__contains=[language_code],
         speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
     ).count()
     total_number_of_active_members_in_the_last_week = User.objects.active(
+        speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
         speedy_match_site_profile__active_languages__contains=[language_code],
         speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
     ).count()

@@ -288,6 +288,8 @@ class SiteProfile(SiteProfileBase):
         if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
             if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
+            if (not ((__class__.settings.MIN_HEIGHT_TO_MATCH <= self.height <= __class__.settings.MAX_HEIGHT_TO_MATCH) and (__class__.settings.MIN_HEIGHT_TO_MATCH <= other_profile.height <= __class__.settings.MAX_HEIGHT_TO_MATCH))):
+                return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0
             if (not (self.min_age_to_match <= other_profile.user.get_age() <= self.max_age_to_match)):

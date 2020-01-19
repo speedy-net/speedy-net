@@ -12,7 +12,6 @@ from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
-from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
     from speedy.match.profiles.views import UserDetailView
