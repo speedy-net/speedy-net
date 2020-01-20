@@ -3,9 +3,16 @@
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
 
+_('My height in centimeters')
+
+
 pgettext_lazy(context="female", message='Add profile picture')
 pgettext_lazy(context="male", message='Add profile picture')
 pgettext_lazy(context="other", message='Add profile picture')
+
+pgettext_lazy(context="female", message='My height in centimeters')
+pgettext_lazy(context="male", message='My height in centimeters')
+pgettext_lazy(context="other", message='My height in centimeters')
 
 pgettext_lazy(context="female", message='My ideal match')
 pgettext_lazy(context="male", message='My ideal match')

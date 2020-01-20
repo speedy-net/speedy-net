@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 14:01+0200\n"
+"POT-Creation-Date: 2020-01-20 07:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1972,24 +1972,24 @@ msgstr ""
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
 
-#: .\accounts\views.py:224
+#: .\accounts\views.py:229
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:248 .\accounts\views.py:264
+#: .\accounts\views.py:253 .\accounts\views.py:269
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:279
+#: .\accounts\views.py:284
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:295
+#: .\accounts\views.py:300
 msgid "You have made this email address primary."
 msgstr ""
 
-#: .\admin\views.py:41
+#: .\admin\views.py:40
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2000,7 +2000,7 @@ msgid ""
 "in the last four months."
 msgstr ""
 
-#: .\admin\views.py:66
+#: .\admin\views.py:65
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "

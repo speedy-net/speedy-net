@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 14:00+0200\n"
+"POT-Creation-Date: 2020-01-20 07:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -292,145 +292,164 @@ msgid "You like"
 msgstr ""
 
 #: .\__translations\__translations.py:6
+msgid "My height in centimeters"
+msgstr ""
+
+#: .\__translations\__translations.py:9
 msgctxt "female"
 msgid "Add profile picture"
 msgstr ""
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:10
 msgctxt "male"
 msgid "Add profile picture"
 msgstr ""
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:11
 msgctxt "other"
 msgid "Add profile picture"
 msgstr ""
 
-#: .\__translations\__translations.py:10
+#: .\__translations\__translations.py:13
+msgctxt "female"
+msgid "My height in centimeters"
+msgstr ""
+
+#: .\__translations\__translations.py:14
+msgctxt "male"
+msgid "My height in centimeters"
+msgstr ""
+
+#: .\__translations\__translations.py:15
+msgctxt "other"
+msgid "My height in centimeters"
+msgstr ""
+
+#: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:114
 msgctxt "female"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:120
 msgctxt "male"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:127
 msgctxt "other"
 msgid "My ideal match"
 msgstr ""
 
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:23
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:20
+#: .\__translations\__translations.py:27
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:29
 msgctxt "female"
 msgid "Please write a few words about yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:23
-msgctxt "male"
-msgid "Please write a few words about yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:24
-msgctxt "other"
-msgid "Please write a few words about yourself."
-msgstr ""
-
-#: .\__translations\__translations.py:26
-msgctxt "female"
-msgid "Please write where you live."
-msgstr ""
-
-#: .\__translations\__translations.py:27
-msgctxt "male"
-msgid "Please write where you live."
-msgstr ""
-
-#: .\__translations\__translations.py:28
-msgctxt "other"
-msgid "Please write where you live."
 msgstr ""
 
 #: .\__translations\__translations.py:30
-msgctxt "female"
-msgid "Do you have children? How many?"
+msgctxt "male"
+msgid "Please write a few words about yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:31
-msgctxt "male"
-msgid "Do you have children? How many?"
+msgctxt "other"
+msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\__translations\__translations.py:32
-msgctxt "other"
-msgid "Do you have children? How many?"
+#: .\__translations\__translations.py:33
+msgctxt "female"
+msgid "Please write where you live."
 msgstr ""
 
 #: .\__translations\__translations.py:34
+msgctxt "male"
+msgid "Please write where you live."
+msgstr ""
+
+#: .\__translations\__translations.py:35
+msgctxt "other"
+msgid "Please write where you live."
+msgstr ""
+
+#: .\__translations\__translations.py:37
+msgctxt "female"
+msgid "Do you have children? How many?"
+msgstr ""
+
+#: .\__translations\__translations.py:38
+msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr ""
+
+#: .\__translations\__translations.py:39
+msgctxt "other"
+msgid "Do you have children? How many?"
+msgstr ""
+
+#: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\__translations\__translations.py:35
+#: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\__translations\__translations.py:36
+#: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\__translations\__translations.py:38
+#: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\__translations\__translations.py:40
+#: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Who is your ideal partner?"
 msgstr ""
@@ -439,93 +458,93 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:61
+#: .\accounts\forms.py:65
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:100 .\accounts\validators.py:46
+#: .\accounts\forms.py:65 .\accounts\forms.py:104 .\accounts\validators.py:46
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:62
+#: .\accounts\forms.py:66
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:62 .\accounts\forms.py:106 .\accounts\validators.py:106
+#: .\accounts\forms.py:66 .\accounts\forms.py:110 .\accounts\validators.py:106
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\forms.py:63
+#: .\accounts\forms.py:67
 msgid "My smoking status"
 msgstr ""
 
-#: .\accounts\forms.py:63 .\accounts\forms.py:109 .\accounts\validators.py:111
+#: .\accounts\forms.py:67 .\accounts\forms.py:113 .\accounts\validators.py:111
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\forms.py:64
+#: .\accounts\forms.py:68
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:64 .\accounts\forms.py:112 .\accounts\validators.py:116
+#: .\accounts\forms.py:68 .\accounts\forms.py:116 .\accounts\validators.py:116
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:65 .\accounts\forms.py:130 .\accounts\validators.py:121
+#: .\accounts\forms.py:69 .\accounts\forms.py:134 .\accounts\validators.py:121
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:107
 msgid "Your height is required."
 msgstr ""
 
-#: .\accounts\forms.py:115 .\accounts\validators.py:76
+#: .\accounts\forms.py:119 .\accounts\validators.py:76
 msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\accounts\forms.py:118 .\accounts\forms.py:153 .\accounts\validators.py:81
+#: .\accounts\forms.py:122 .\accounts\forms.py:157 .\accounts\validators.py:81
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:121 .\accounts\models.py:111 .\accounts\validators.py:86
+#: .\accounts\forms.py:125 .\accounts\models.py:111 .\accounts\validators.py:86
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:124 .\accounts\models.py:114 .\accounts\validators.py:91
+#: .\accounts\forms.py:128 .\accounts\models.py:114 .\accounts\validators.py:91
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:127 .\accounts\validators.py:96
+#: .\accounts\forms.py:131 .\accounts\validators.py:96
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:133
+#: .\accounts\forms.py:137
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:136
+#: .\accounts\forms.py:140
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:139 .\accounts\validators.py:143
+#: .\accounts\forms.py:143 .\accounts\validators.py:143
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:142 .\accounts\validators.py:151
+#: .\accounts\forms.py:146 .\accounts\validators.py:151
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:145 .\accounts\validators.py:159
+#: .\accounts\forms.py:149 .\accounts\validators.py:159
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:153 .\templates\profiles\user_extra_info_widget.html:22
+#: .\accounts\forms.py:157 .\templates\profiles\user_extra_info_widget.html:22
 msgid "City or locality"
 msgstr ""
 
-#: .\accounts\forms.py:186 .\accounts\models.py:121
+#: .\accounts\forms.py:192 .\accounts\models.py:121
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -634,7 +653,7 @@ msgstr ""
 msgid "Please confirm your email address."
 msgstr ""
 
-#: .\accounts\utils.py:84
+#: .\accounts\utils.py:86
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -682,7 +701,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:37
+#: .\admin\views.py:40
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -694,7 +713,7 @@ msgid ""
 "site in the last four months."
 msgstr ""
 
-#: .\admin\views.py:68
+#: .\admin\views.py:76
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -773,11 +792,11 @@ msgstr ""
 msgid "Your match settings were saved."
 msgstr ""
 
-#: .\profiles\widgets.py:50 .\profiles\widgets.py:53 .\profiles\widgets.py:56
+#: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
 msgid "Unknown"
 msgstr ""
 
-#: .\profiles\widgets.py:61
+#: .\profiles\widgets.py:64
 msgid "None"
 msgstr ""
 

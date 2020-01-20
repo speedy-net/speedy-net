@@ -161,6 +161,8 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         if ('photo' in self.fields):
             self.fields['photo'].widget.attrs['user'] = self.instance.user
             self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
+        if ('height' in self.fields):
+            self.fields['height'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='My height in centimeters')
         if ('diet' in self.fields):
             update_form_field_choices(field=self.fields['diet'], choices=self.instance.user.get_diet_choices_with_description())
         if ('smoking_status' in self.fields):
