@@ -1,4 +1,4 @@
-from datetime import timedelta, datetime, timezone
+from datetime import timedelta, datetime, timezone, date
 
 from django.conf import settings as django_settings
 from django.utils.module_loading import import_string
@@ -69,6 +69,18 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
             total_number_of_members_registered_more_than_four_months_ago='{:,}'.format(total_number_of_members_registered_more_than_four_months_ago),
             total_number_of_members_registered_before_2019_08_01='{:,}'.format(total_number_of_members_registered_before_2019_08_01),
         )
+        total_number_of_members_date_registered_text += "\n"
+        today = date.today()
+        for year in range(2010, today.year + 2):
+            total_number_of_members_registered_in_year = User.objects.filter(
+                date_created__gte=datetime.strptime('{year}-01-01 00:00:00'.format(year=year), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
+                date_created__lt=datetime.strptime('{year}-01-01 00:00:00'.format(year=year + 1), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
+            ).count()
+            total_number_of_members_date_registered_text += "\n"
+            total_number_of_members_date_registered_text += _("Admin: {total_number_of_members_registered_in_year} members registered in {year}.").format(
+                total_number_of_members_registered_in_year='{:,}'.format(total_number_of_members_registered_in_year),
+                year=year,
+            )
         return total_number_of_members_date_registered_text
 
     def get_queryset(self):
