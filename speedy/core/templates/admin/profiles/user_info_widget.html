@@ -23,7 +23,7 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Registered on</th>
-                        <td><span style="color: black; font-weight: bold">{{ user.date_created|date }}</span></td>
+                        <td><span style="color: black; font-weight: bold;">{{ user.date_created|date }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Has confirmed email address</th>
@@ -35,11 +35,15 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Active languages on Speedy Match</th>
-                        <td>{{ user.speedy_match_profile.active_languages }}</td>
+                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.active_languages }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Match Activation step (en,he)</th>
                         <td>{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_he }}</td>
+                    </tr>
+                    <tr>
+                        <th class="user-profile-th">Height</th>
+                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.height }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Net last visit</th>
@@ -51,7 +55,7 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Date of birth</th>
-                        <td><span style="color: blue; font-weight: bold">{{ user.date_of_birth }}</span></td>
+                        <td><span style="color: blue; font-weight: bold;">{{ user.date_of_birth }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Gender</th>
@@ -59,15 +63,15 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Diet</th>
-                        <td>{{ user.diet }},<span style="color: blue; font-weight: bold">{{ user.get_diet|default:"Unknown" }}</span></td>
+                        <td>{{ user.diet }},<span style="color: blue; font-weight: bold;">{{ user.get_diet|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Smoking status</th>
-                        <td>{{ user.smoking_status }},<span style="color: blue; font-weight: bold">{{ user.get_smoking_status|default:"Unknown" }}</span></td>
+                        <td>{{ user.smoking_status }},<span style="color: blue; font-weight: bold;">{{ user.get_smoking_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Relationship status</th>
-                        <td>{{ user.relationship_status }},<span style="color: blue; font-weight: bold">{{ user.get_relationship_status|default:"Unknown" }}</span></td>
+                        <td>{{ user.relationship_status }},<span style="color: blue; font-weight: bold;">{{ user.get_relationship_status|default:"Unknown" }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Match - Gender to match</th>
@@ -85,7 +89,7 @@
                         <th class="user-profile-th">Email addresses</th>
                         <td>
                             {% for email in user.email_addresses.all %}
-                                <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
+                                <a href="mailto:{{ email.email }}"><span style="color: blue; font-weight: bold;">{{ email.email }}</span></a>, primary={{ email.is_primary }}, confirmed={{ email.is_confirmed }}, added on {{ email.date_created|date }}
                                 {% if not forloop.last %}<br />{% endif %}
                             {% empty %}
                                 (none)
