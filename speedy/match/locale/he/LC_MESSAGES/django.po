@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:31+0200\n"
+"POT-Creation-Date: 2020-01-20 14:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -731,7 +731,7 @@ msgstr ""
 "בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
 "חברים נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:76
+#: .\admin\views.py:73
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -756,7 +756,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:93
+#: .\admin\views.py:90
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "

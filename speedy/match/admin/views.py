@@ -43,11 +43,6 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             total_number_of_active_members_in_the_last_month='{:,}'.format(total_number_of_active_members_in_the_last_month),
             total_number_of_active_members_in_the_last_four_months='{:,}'.format(total_number_of_active_members_in_the_last_four_months),
         )
-        return total_number_of_active_members_text
-
-    @staticmethod
-    def get_total_number_of_active_members_date_registered_text():
-        language_code = get_language()
         total_number_of_active_members_registered_in_the_last_week = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__active_languages__contains=[language_code],
@@ -73,14 +68,16 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
         ).count()
-        total_number_of_active_members_date_registered_text = _("Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.").format(
+        total_number_of_active_members_text += "\n"
+        total_number_of_active_members_text += "\n"
+        total_number_of_active_members_text += _("Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.").format(
             total_number_of_active_members_registered_in_the_last_week='{:,}'.format(total_number_of_active_members_registered_in_the_last_week),
             total_number_of_active_members_registered_in_the_last_month='{:,}'.format(total_number_of_active_members_registered_in_the_last_month),
             total_number_of_active_members_registered_in_the_last_four_months='{:,}'.format(total_number_of_active_members_registered_in_the_last_four_months),
             total_number_of_active_members_registered_more_than_four_months_ago='{:,}'.format(total_number_of_active_members_registered_more_than_four_months_ago),
             total_number_of_active_members_registered_before_2019_08_01='{:,}'.format(total_number_of_active_members_registered_before_2019_08_01),
         )
-        total_number_of_active_members_date_registered_text += "\n"
+        total_number_of_active_members_text += "\n"
         today = date.today()
         for year in range(2010, today.year + 2):
             total_number_of_active_members_registered_in_year = User.objects.active(
@@ -89,12 +86,12 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 date_created__gte=datetime.strptime('{year}-01-01 00:00:00'.format(year=year), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
                 date_created__lt=datetime.strptime('{year}-01-01 00:00:00'.format(year=year + 1), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
             ).count()
-            total_number_of_active_members_date_registered_text += "\n"
-            total_number_of_active_members_date_registered_text += _("Admin: {total_number_of_active_members_registered_in_year} active members registered in {year}.").format(
+            total_number_of_active_members_text += "\n"
+            total_number_of_active_members_text += _("Admin: {total_number_of_active_members_registered_in_year} active members registered in {year}.").format(
                 total_number_of_active_members_registered_in_year='{:,}'.format(total_number_of_active_members_registered_in_year),
                 year=year,
             )
-        return total_number_of_active_members_date_registered_text
+        return total_number_of_active_members_text
 
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
@@ -110,7 +107,6 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         cd.update({
             'matches_list': cd['object_list'],
             'total_number_of_active_members_text': self.get_total_number_of_active_members_text(),
-            'total_number_of_active_members_date_registered_text': self.get_total_number_of_active_members_date_registered_text(),
         })
         return cd
 
