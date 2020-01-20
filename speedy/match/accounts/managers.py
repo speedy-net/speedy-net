@@ -80,6 +80,13 @@ class SiteProfileManager(BaseManager):
             language_code=language_code,
             number_of_matches=len(matches_list),
         ))
+        if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user_profile.height <= 85)):
+            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, height={height}".format(
+                user=user,
+                language_code=language_code,
+                number_of_matches=len(matches_list),
+                height=user_profile.height,
+            ))
         return matches_list
 
 
