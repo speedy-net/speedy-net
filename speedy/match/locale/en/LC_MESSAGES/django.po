@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:14+0200\n"
+"POT-Creation-Date: 2020-01-20 14:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -726,6 +726,13 @@ msgid ""
 "members registered more than four months ago. "
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
+msgstr ""
+
+#: .\admin\views.py:93
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
 msgstr ""
 
 #: .\likes\managers.py:14 .\likes\models.py:30

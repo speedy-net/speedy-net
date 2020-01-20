@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:14+0200\n"
+"POT-Creation-Date: 2020-01-20 14:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -755,6 +755,15 @@ msgstr ""
 "פעילים נרשמו לאתר לפני יותר מארבעה חודשים. "
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
+
+#: .\admin\views.py:93
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
+msgstr ""
+"אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים "
+"נרשמו לאתר בשנת {year}."
 
 #: .\likes\managers.py:14 .\likes\models.py:30
 msgid "Users cannot like themselves."
