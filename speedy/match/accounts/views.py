@@ -120,6 +120,13 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             self.display_welcome_message()
             site = Site.objects.get_current()
             logger.info('User {user} activated their account on {site_name}.'.format(site_name=_(site.name), user=self.request.user))
+            if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.request.user.speedy_match_profile.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
+                self.request.user.speedy_match_profile.not_allowed_to_use_speedy_match = True
+                self.request.user.save_user_and_profile()
+                logger.warning('User {user} is not allowed to use Speedy Match (height={height}).'.format(
+                    user=self.request.user,
+                    height=self.request.user.speedy_match_profile.height,
+                ))
         return redirect(to=success_url)
 
 
