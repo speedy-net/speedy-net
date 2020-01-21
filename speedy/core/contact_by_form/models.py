@@ -21,7 +21,7 @@ class Feedback(TimeStampedModel):
     sender = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('sender'), on_delete=models.SET_NULL, blank=True, null=True, related_name='+')
     sender_name = models.CharField(verbose_name=_('your name'), max_length=255, blank=True)
     sender_email = models.EmailField(verbose_name=_('your email'), blank=True)
-    type = models.PositiveIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
+    type = models.SmallIntegerField(verbose_name=_('type'), choices=TYPE_CHOICES)
     text = models.TextField(verbose_name=_('your message'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)])
     if (True or django_settings.LOGIN_ENABLED): # ~~~~ TODO: fix this model to work with sites without login.
         report_entity = models.ForeignKey(to='accounts.Entity', verbose_name=_('reported entity'), on_delete=models.SET_NULL, blank=True, null=True, related_name='complaints')

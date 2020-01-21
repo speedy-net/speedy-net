@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <th>Active languages on Speedy Match</th>
-                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.active_languages }}</span></td>
+                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height and not user.speedy_match_profile.not_allowed_to_use_speedy_match %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.active_languages }}</span></td>
                     </tr>
                     <tr>
                         <th>Speedy Match Activation step (en,he)</th>
@@ -44,7 +44,11 @@
                     </tr>
                     <tr>
                         <th>Height</th>
-                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.height }}</span></td>
+                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height and not user.speedy_match_profile.not_allowed_to_use_speedy_match %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.height }}</span></td>
+                    </tr>
+                    <tr>
+                        <th>Not allowed to use Speedy Match</th>
+                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height and not user.speedy_match_profile.not_allowed_to_use_speedy_match %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.not_allowed_to_use_speedy_match }}</span></td>
                     </tr>
                     <tr>
                         <th>Speedy Net last visit</th>

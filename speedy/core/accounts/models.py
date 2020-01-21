@@ -179,7 +179,7 @@ class ReservedUsername(Entity):
         return super().clean_fields(exclude=exclude)
 
 
-class UserAccessField(models.PositiveIntegerField):
+class UserAccessField(models.SmallIntegerField):
     ACCESS_ME = 1
     ACCESS_FRIENDS = 2
     ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS = 3
@@ -346,7 +346,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
     access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
-    notify_on_message = models.PositiveIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
+    notify_on_message = models.SmallIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
 
     objects = UserManager()
 

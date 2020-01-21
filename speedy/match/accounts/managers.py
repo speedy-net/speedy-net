@@ -26,6 +26,8 @@ class SiteProfileManager(BaseManager):
                 return self.model.RANK_0
             if (not ((self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH) and (self.model.settings.MIN_HEIGHT_TO_MATCH <= other_user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH))):
                 return self.model.RANK_0
+            if (user.speedy_match_profile.not_allowed_to_use_speedy_match or other_user.speedy_match_profile.not_allowed_to_use_speedy_match):
+                return self.model.RANK_0
             if (other_user.pk in blocked_users_ids):
                 return self.model.RANK_0
             if (other_user.pk in blocking_users_ids):
@@ -59,6 +61,7 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
             speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(pk=user_profile.user_id).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2000]
@@ -80,12 +83,13 @@ class SiteProfileManager(BaseManager):
             language_code=language_code,
             number_of_matches=len(matches_list),
         ))
-        if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user_profile.height <= 85)):
-            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, height={height}".format(
+        if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user_profile.height <= 85) or (user_profile.not_allowed_to_use_speedy_match)):
+            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
                 user=user,
                 language_code=language_code,
                 number_of_matches=len(matches_list),
                 height=user_profile.height,
+                not_allowed_to_use_speedy_match=user_profile.not_allowed_to_use_speedy_match,
             ))
         return matches_list
 

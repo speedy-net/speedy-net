@@ -94,7 +94,7 @@ class SiteProfile(SiteProfileBase):
         return rank_descriptions.get(rank, "")
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
-    notify_on_like = models.PositiveIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
+    notify_on_like = models.SmallIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = ArrayField(
         base_field=models.CharField(max_length=2, choices=django_settings.LANGUAGES),
         verbose_name=_('Active languages'),
@@ -159,6 +159,7 @@ class SiteProfile(SiteProfileBase):
     number_of_matches = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_("Number of matches on last user's search"), default=None, blank=True, null=True),
     )
+    not_allowed_to_use_speedy_match = models.BooleanField(default=False)  # If set to True, user will have no matches.
 
     objects = SiteProfileManager()
 
@@ -289,6 +290,8 @@ class SiteProfile(SiteProfileBase):
             if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
             if (not ((__class__.settings.MIN_HEIGHT_TO_MATCH <= self.height <= __class__.settings.MAX_HEIGHT_TO_MATCH) and (__class__.settings.MIN_HEIGHT_TO_MATCH <= other_profile.height <= __class__.settings.MAX_HEIGHT_TO_MATCH))):
+                return self.__class__.RANK_0
+            if (self.not_allowed_to_use_speedy_match or other_profile.not_allowed_to_use_speedy_match):
                 return self.__class__.RANK_0
             if (other_profile.user.gender not in self.gender_to_match):
                 return self.__class__.RANK_0

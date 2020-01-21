@@ -20,20 +20,24 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         language_code = get_language()
         total_number_of_active_members = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).count()
         total_number_of_active_members_in_the_last_week = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
         ).count()
         total_number_of_active_members_in_the_last_month = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
         ).count()
         total_number_of_active_members_in_the_last_four_months = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
         ).count()
@@ -45,26 +49,31 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         )
         total_number_of_active_members_registered_in_the_last_week = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__gte=now() - timedelta(days=7),
         ).count()
         total_number_of_active_members_registered_in_the_last_month = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__gte=now() - timedelta(days=30),
         ).count()
         total_number_of_active_members_registered_in_the_last_four_months = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__gte=now() - timedelta(days=120),
         ).count()
         total_number_of_active_members_registered_more_than_four_months_ago = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__lte=now() - timedelta(days=120),
         ).count()
         total_number_of_active_members_registered_before_2019_08_01 = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
         ).count()
@@ -82,6 +91,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         for year in range(2010, today.year + 2):
             total_number_of_active_members_registered_in_year = User.objects.active(
                 speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
                 speedy_match_site_profile__active_languages__contains=[language_code],
                 date_created__gte=datetime.strptime('{year}-01-01 00:00:00'.format(year=year), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
                 date_created__lt=datetime.strptime('{year}-01-01 00:00:00'.format(year=year + 1), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
@@ -98,6 +108,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         language_code = get_language()
         qs = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs

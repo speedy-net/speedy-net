@@ -1266,6 +1266,28 @@ if (django_settings.LOGIN_ENABLED):
                 rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
                 self.assertEqual(first=rank_2, second=expected_rank)
 
+        def test_not_allowed_to_use_speedy_match(self):
+            user_1 = self.get_active_user_doron()
+            user_2 = self.get_active_user_jennifer()
+            user_1.save_user_and_profile()
+            user_2.save_user_and_profile()
+            rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
+            rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_2, second=5)
+            user_1.speedy_match_profile.not_allowed_to_use_speedy_match = True
+            user_1.save_user_and_profile()
+            rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
+            rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_2, second=0)
+            user_1.speedy_match_profile.not_allowed_to_use_speedy_match = False
+            user_1.save_user_and_profile()
+            rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
+            rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_2, second=5)
+
         def test_smoking_status_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
