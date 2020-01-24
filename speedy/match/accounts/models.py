@@ -328,7 +328,7 @@ class SiteProfile(SiteProfileBase):
         self.user.save_user_and_profile()
 
     def get_name(self):
-        # Speedy Match name is user's first name.
+        # Speedy Match name is the user's first name.
         return self.user.get_first_name()
 
     def get_match_gender(self):
