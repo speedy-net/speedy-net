@@ -19,7 +19,7 @@ def redirect_to_www(site: Site) -> HttpResponseBase:
 
 
 def language_selector(request: HttpRequest) -> HttpResponseBase:
-    translation.activate('en')
+    translation.activate(language='en')
     request.LANGUAGE_CODE = translation.get_language()
     return render(request=request, template_name='www/welcome.html')
 
@@ -42,7 +42,7 @@ class LocaleDomainMiddleware(object):
 
         for language_code, language_name in django_settings.LANGUAGES:
             if (domain == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
-                translation.activate(language_code)
+                translation.activate(language=language_code)
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
