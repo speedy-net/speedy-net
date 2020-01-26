@@ -46,6 +46,15 @@ class LocaleDomainMiddleware(object):
                 request.LANGUAGE_CODE = translation.get_language()
                 return self.get_response(request=request)
 
+        if ((not (domain == domain.replace("-", ""))) and (site.domain == site.domain.replace("-", ""))):
+            for language_code, language_name in django_settings.LANGUAGES:
+                if (domain.replace("-", "") == "{language_code}.{domain}".format(language_code=language_code, domain=site.domain)):
+                    url = '//{domain}{path}'.format(
+                        domain=domain.replace("-", ""),
+                        path=request.get_full_path(),
+                    )
+                    return redirect(to=url, permanent=(not (django_settings.DEBUG)))
+
         try:
             if (request.path == reverse('accounts:set_session')):
                 return self.get_response(request=request)
