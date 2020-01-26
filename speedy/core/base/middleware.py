@@ -18,7 +18,7 @@ def redirect_to_www(site: Site) -> HttpResponseBase:
     return redirect(to=url, permanent=(not (django_settings.DEBUG)))
 
 
-def language_selector(request: HttpRequest) -> HttpResponseBase:
+def show_www_template(request: HttpRequest) -> HttpResponseBase:
     translation.activate(language='en')
     request.LANGUAGE_CODE = translation.get_language()
     return render(request=request, template_name='www/welcome.html')
@@ -83,7 +83,7 @@ class LocaleDomainMiddleware(object):
         if (not (request.get_full_path() == '/')):
             return redirect_to_www(site=site)
 
-        return language_selector(request=request)
+        return show_www_template(request=request)
 
 
 class SessionCookieDomainMiddleware(object):
