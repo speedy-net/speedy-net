@@ -191,6 +191,8 @@ THUMBNAIL_DEBUG = True
 
 THUMBNAIL_DUMMY = True
 
+THUMBNAIL_FORMAT = 'PNG'
+
 TEST_RUNNER = 'speedy.core.base.test.models.SiteDiscoverRunner'
 
 FIXTURE_DIRS = [
