@@ -268,7 +268,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
                     'email': user_email,
                     'domain': domain,  # Taken from Django; not used.
                     'site_name': site_name,  # Taken from Django; not used.
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                     'user': user,
                     'token': token_generator.make_token(user),
                     'protocol': 'https' if use_https else 'http',  # Taken from Django; not used.
