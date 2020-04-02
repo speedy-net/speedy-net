@@ -1,8 +1,0 @@
-Uri Rodberg <uri@speedy.net> - https://github.com/uri-rodberg
-Evgeniy Kirov <evgeniy.kirov@initech.co.il> - https://github.com/kirov
-Gleb Tocarenco <gleb.tocarenco@gmail.com> - https://github.com/Gleb-Tocarenco
-Aaron Chong <aaronjhchong@hotmail.com> - https://github.com/acjh
-Shay Acrich <shaya@initech.co.il> - https://github.com/shay-initech
-Asaf Gery <asaf.gery@gmail.com> - https://github.com/asafg
-Dima Orman <dima.orman@initech.co.il> - https://github.com/dimaorman
-Dima Mitgartz <dima@initech.co.il> - https://github.com/dima-initech
