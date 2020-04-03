@@ -6679,6 +6679,12 @@ body.with-background {
     /* background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0)); */
     font-weight: normal; }
 
+body.bidi-ltr.with-background .speedy-body-container .col-md-8 {
+  min-height: 711px; }
+
+body.bidi-rtl.with-background .speedy-body-container .col-md-8 {
+  min-height: 685px; }
+
 body.user-is-not-authenticated.with-background > .body-inner {
   background-position-y: 105px; }
 
