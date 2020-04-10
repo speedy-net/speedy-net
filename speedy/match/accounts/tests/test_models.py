@@ -166,7 +166,7 @@ if (django_settings.LOGIN_ENABLED):
             if ((null == True) and (value_to_test in self._empty_string_list)):
                 with self.assertRaises(ValueError) as cm:
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="invalid literal for int() with base 10: ''")
+                self.assertEqual(first=str(cm.exception), second="Field '{field_name}' expected a number but got ''.".format(field_name=field_name))
             else:
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
