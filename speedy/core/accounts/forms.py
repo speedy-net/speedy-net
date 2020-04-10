@@ -1,5 +1,6 @@
 import logging
 from itertools import zip_longest
+from collections import OrderedDict
 
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
@@ -52,6 +53,7 @@ class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
         self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
+        self.fields = OrderedDict(self.fields)
         for loc_field in reversed(self.get_localized_fields()):
             self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
             self.fields[loc_field].required = True
