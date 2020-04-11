@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:56+0200\n"
+"POT-Creation-Date: 2020-04-11 11:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -641,19 +641,19 @@ msgstr ""
 msgid "Number of matches on last user's search"
 msgstr ""
 
-#: .\accounts\models.py:202
+#: .\accounts\models.py:203
 msgid "Speedy Match Profile"
 msgstr ""
 
-#: .\accounts\models.py:203 .\profiles\apps.py:7
+#: .\accounts\models.py:204 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:279 .\templates\accounts\edit_profile\activate.html:28
+#: .\accounts\models.py:280 .\templates\accounts\edit_profile\activate.html:28
 msgid "Please confirm your email address."
 msgstr ""
 
-#: .\accounts\utils.py:86
+#: .\accounts\utils.py:88
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -701,7 +701,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:40
+#: .\admin\views.py:44
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -713,7 +713,7 @@ msgid ""
 "site in the last four months."
 msgstr ""
 
-#: .\admin\views.py:73
+#: .\admin\views.py:82
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -728,7 +728,7 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:90
+#: .\admin\views.py:100
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "

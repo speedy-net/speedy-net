@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:56+0200\n"
+"POT-Creation-Date: 2020-04-11 11:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -646,19 +646,19 @@ msgstr "Activation step"
 msgid "Number of matches on last user's search"
 msgstr "Number of matches on last user's search"
 
-#: .\accounts\models.py:202
+#: .\accounts\models.py:203
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:203 .\profiles\apps.py:7
+#: .\accounts\models.py:204 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:279 .\templates\accounts\edit_profile\activate.html:28
+#: .\accounts\models.py:280 .\templates\accounts\edit_profile\activate.html:28
 msgid "Please confirm your email address."
 msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
-#: .\accounts\utils.py:86
+#: .\accounts\utils.py:88
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -714,7 +714,7 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
-#: .\admin\views.py:40
+#: .\admin\views.py:44
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -731,7 +731,7 @@ msgstr ""
 "בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
 "חברים נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:73
+#: .\admin\views.py:82
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -756,7 +756,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:90
+#: .\admin\views.py:100
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "

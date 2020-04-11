@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 14:56+0200\n"
+"POT-Creation-Date: 2020-04-11 11:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1641,46 +1641,46 @@ msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר הא�
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
-#: .\accounts\forms.py:102
+#: .\accounts\forms.py:103
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:104
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:112
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:114
+#: .\accounts\forms.py:115
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:210 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:211 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:216 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:217 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:219 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:220 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:232
+#: .\accounts\forms.py:233
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:316
+#: .\accounts\forms.py:317
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:328
+#: .\accounts\forms.py:329
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
