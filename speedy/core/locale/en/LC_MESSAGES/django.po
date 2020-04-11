@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:07+0300\n"
+"POT-Creation-Date: 2020-04-11 18:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -351,502 +351,442 @@ msgid " blocked you."
 msgstr ""
 
 #: .\__translations\__translations.html:100
+#, python-format
 msgctxt "female"
-msgid "This user doesn't match your profile, "
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 msgstr ""
 
 #: .\__translations\__translations.html:101
+#, python-format
 msgctxt "male"
-msgid "This user doesn't match your profile, "
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 msgstr ""
 
 #: .\__translations\__translations.html:102
+#, python-format
 msgctxt "other"
-msgid "This user doesn't match your profile, "
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 msgstr ""
 
 #: .\__translations\__translations.html:104
+#, python-format
 msgctxt "female"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "but you can visit her Speedy Net profile. "
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
 
 #: .\__translations\__translations.html:105
+#, python-format
 msgctxt "male"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "but you can visit his Speedy Net profile. "
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
 
 #: .\__translations\__translations.html:106
+#, python-format
 msgctxt "other"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "but you can visit his/her Speedy Net profile. "
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
-msgid "View "
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
-msgid "View "
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
-msgid "View "
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
-msgid "user's profile on Speedy Net."
+msgid "Add to Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
-msgid "user's profile on Speedy Net."
+msgid "Add to Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
-msgid "user's profile on Speedy Net."
+msgid "Add to Friends"
 msgstr ""
 
 #: .\__translations\__translations.html:116
-#, python-format
 msgctxt "female"
-msgid ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+msgid "Are you sure you want to block "
 msgstr ""
 
 #: .\__translations\__translations.html:117
-#, python-format
 msgctxt "male"
-msgid ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+msgid "Are you sure you want to block "
 msgstr ""
 
 #: .\__translations\__translations.html:118
-#, python-format
 msgctxt "other"
-msgid ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+msgid "Are you sure you want to block "
 msgstr ""
 
 #: .\__translations\__translations.html:120
-#, python-format
 msgctxt "female"
-msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+msgid "Block "
 msgstr ""
 
 #: .\__translations\__translations.html:121
-#, python-format
 msgctxt "male"
-msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+msgid "Block "
 msgstr ""
 
 #: .\__translations\__translations.html:122
-#, python-format
 msgctxt "other"
-msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+msgid "Block "
 msgstr ""
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
-msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgid "Unblock "
 msgstr ""
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
-msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgid "Unblock "
 msgstr ""
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
-msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgid "Unblock "
 msgstr ""
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
-msgid "Add to Friends"
+msgid "Report "
 msgstr ""
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
-msgid "Add to Friends"
+msgid "Report "
 msgstr ""
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
-msgid "Add to Friends"
+msgid "Report "
 msgstr ""
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
-msgid "Are you sure you want to block "
+msgid "Report this photo"
 msgstr ""
 
 #: .\__translations\__translations.html:133
 msgctxt "male"
-msgid "Are you sure you want to block "
+msgid "Report this photo"
 msgstr ""
 
 #: .\__translations\__translations.html:134
 msgctxt "other"
-msgid "Are you sure you want to block "
+msgid "Report this photo"
 msgstr ""
 
 #: .\__translations\__translations.html:136
 msgctxt "female"
-msgid "Block "
+msgid "Remove Friend"
 msgstr ""
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
-msgid "Block "
+msgid "Remove Friend"
 msgstr ""
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
-msgid "Block "
+msgid "Remove Friend"
 msgstr ""
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
-msgid "Unblock "
+msgid "Cancel Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
-msgid "Unblock "
+msgid "Cancel Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
-msgid "Unblock "
+msgid "Cancel Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
-msgid "Report "
+msgid "Accept"
 msgstr ""
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
-msgid "Report "
+msgid "Accept"
 msgstr ""
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
-msgid "Report "
+msgid "Accept"
 msgstr ""
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
-msgid "Report this photo"
+msgid "Reject"
 msgstr ""
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
-msgid "Report this photo"
+msgid "Reject"
 msgstr ""
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
-msgid "Report this photo"
+msgid "Reject"
 msgstr ""
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
-msgid "Remove Friend"
+msgid "Accept Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
-msgid "Remove Friend"
+msgid "Accept Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
-msgid "Remove Friend"
+msgid "Accept Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
-msgid "Cancel Friendship Request"
+msgid "Reject Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
-msgid "Cancel Friendship Request"
+msgid "Reject Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
-msgid "Cancel Friendship Request"
+msgid "Reject Friendship Request"
 msgstr ""
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
-msgid "Accept"
+msgid "Send Message"
 msgstr ""
 
 #: .\__translations\__translations.html:161
 msgctxt "male"
-msgid "Accept"
+msgid "Send Message"
 msgstr ""
 
 #: .\__translations\__translations.html:162
 msgctxt "other"
-msgid "Accept"
+msgid "Send Message"
 msgstr ""
 
 #: .\__translations\__translations.html:164
 msgctxt "female"
-msgid "Reject"
+msgid "Welcome"
 msgstr ""
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
-msgid "Reject"
+msgid "Welcome"
 msgstr ""
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
-msgid "Reject"
+msgid "Welcome"
 msgstr ""
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
-msgid "Accept Friendship Request"
+msgid "Your friend"
 msgstr ""
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
-msgid "Accept Friendship Request"
+msgid "Your friend"
 msgstr ""
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
-msgid "Accept Friendship Request"
+msgid "Your friend"
 msgstr ""
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
-msgid "Reject Friendship Request"
+msgid "See All"
 msgstr ""
 
 #: .\__translations\__translations.html:173
 msgctxt "male"
-msgid "Reject Friendship Request"
+msgid "See All"
 msgstr ""
 
 #: .\__translations\__translations.html:174
 msgctxt "other"
-msgid "Reject Friendship Request"
+msgid "See All"
 msgstr ""
 
 #: .\__translations\__translations.html:176
 msgctxt "female"
-msgid "Send Message"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
-msgid "Send Message"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
-msgid "Send Message"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 
 #: .\__translations\__translations.html:180
+#, python-format
 msgctxt "female"
-msgid "Welcome"
+msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\__translations\__translations.html:181
+#, python-format
 msgctxt "male"
-msgid "Welcome"
+msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\__translations\__translations.html:182
+#, python-format
 msgctxt "other"
-msgid "Welcome"
+msgid "Welcome to %(site_name)s"
 msgstr ""
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
-msgid "Your friend"
+msgid "has sent you a message."
 msgstr ""
 
 #: .\__translations\__translations.html:185
 msgctxt "male"
-msgid "Your friend"
+msgid "has sent you a message."
 msgstr ""
 
 #: .\__translations\__translations.html:186
 msgctxt "other"
-msgid "Your friend"
+msgid "has sent you a message."
 msgstr ""
 
 #: .\__translations\__translations.html:188
 msgctxt "female"
-msgid "See All"
+msgid "Read it:"
 msgstr ""
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
-msgid "See All"
+msgid "Read it:"
 msgstr ""
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
-msgid "See All"
+msgid "Read it:"
 msgstr ""
 
 #: .\__translations\__translations.html:192
 msgctxt "female"
-msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgid "Confirm your email address on "
 msgstr ""
 
 #: .\__translations\__translations.html:193
 msgctxt "male"
-msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgid "Confirm your email address on "
 msgstr ""
 
 #: .\__translations\__translations.html:194
 msgctxt "other"
-msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgid "Confirm your email address on "
 msgstr ""
 
 #: .\__translations\__translations.html:196
-#, python-format
 msgctxt "female"
-msgid "Welcome to %(site_name)s"
+msgid "Use this link to activate your account:"
 msgstr ""
 
 #: .\__translations\__translations.html:197
-#, python-format
 msgctxt "male"
-msgid "Welcome to %(site_name)s"
+msgid "Use this link to activate your account:"
 msgstr ""
 
 #: .\__translations\__translations.html:198
-#, python-format
 msgctxt "other"
-msgid "Welcome to %(site_name)s"
+msgid "Use this link to activate your account:"
 msgstr ""
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
-msgid "has sent you a message."
+msgid "Use this link to verify your email address:"
 msgstr ""
 
 #: .\__translations\__translations.html:201
 msgctxt "male"
-msgid "has sent you a message."
+msgid "Use this link to verify your email address:"
 msgstr ""
 
 #: .\__translations\__translations.html:202
 msgctxt "other"
-msgid "has sent you a message."
+msgid "Use this link to verify your email address:"
 msgstr ""
 
 #: .\__translations\__translations.html:204
 msgctxt "female"
-msgid "Read it:"
+msgid "Use this link to change your password:"
 msgstr ""
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
-msgid "Read it:"
+msgid "Use this link to change your password:"
 msgstr ""
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
-msgid "Read it:"
+msgid "Use this link to change your password:"
 msgstr ""
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
-msgid "Confirm your email address on "
+msgid "Username"
 msgstr ""
 
 #: .\__translations\__translations.html:209
 msgctxt "male"
-msgid "Confirm your email address on "
+msgid "Username"
 msgstr ""
 
 #: .\__translations\__translations.html:210
-msgctxt "other"
-msgid "Confirm your email address on "
-msgstr ""
-
-#: .\__translations\__translations.html:212
-msgctxt "female"
-msgid "Use this link to activate your account:"
-msgstr ""
-
-#: .\__translations\__translations.html:213
-msgctxt "male"
-msgid "Use this link to activate your account:"
-msgstr ""
-
-#: .\__translations\__translations.html:214
-msgctxt "other"
-msgid "Use this link to activate your account:"
-msgstr ""
-
-#: .\__translations\__translations.html:216
-msgctxt "female"
-msgid "Use this link to verify your email address:"
-msgstr ""
-
-#: .\__translations\__translations.html:217
-msgctxt "male"
-msgid "Use this link to verify your email address:"
-msgstr ""
-
-#: .\__translations\__translations.html:218
-msgctxt "other"
-msgid "Use this link to verify your email address:"
-msgstr ""
-
-#: .\__translations\__translations.html:220
-msgctxt "female"
-msgid "Use this link to change your password:"
-msgstr ""
-
-#: .\__translations\__translations.html:221
-msgctxt "male"
-msgid "Use this link to change your password:"
-msgstr ""
-
-#: .\__translations\__translations.html:222
-msgctxt "other"
-msgid "Use this link to change your password:"
-msgstr ""
-
-#: .\__translations\__translations.html:224
-msgctxt "female"
-msgid "Username"
-msgstr ""
-
-#: .\__translations\__translations.html:225
-msgctxt "male"
-msgid "Username"
-msgstr ""
-
-#: .\__translations\__translations.html:226
 msgctxt "other"
 msgid "Username"
 msgstr ""
@@ -1427,198 +1367,345 @@ msgstr ""
 
 #: .\__translations\__translations.py:165
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"This user already has {0} friends. She can't have more than {1} friends on "
+"Speedy Net. Please ask her to remove friends before you proceed."
 
 #: .\__translations\__translations.py:166
 #, python-brace-format
-msgctxt "male"
+msgctxt "female_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"This user already has {0} friends. He can't have more than {1} friends on "
+"Speedy Net. Please ask him to remove friends before you proceed."
 
 #: .\__translations\__translations.py:167
 #, python-brace-format
-msgctxt "other"
+msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+
+#: .\__translations\__translations.py:168
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"This user already has {0} friends. She can't have more than {1} friends on "
+"Speedy Net. Please ask her to remove friends before you proceed."
 
 #: .\__translations\__translations.py:169
-msgctxt "female"
-msgid "You cannot be friends with yourself."
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"This user already has {0} friends. He can't have more than {1} friends on "
+"Speedy Net. Please ask him to remove friends before you proceed."
 
 #: .\__translations\__translations.py:170
-msgctxt "male"
-msgid "You cannot be friends with yourself."
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:171
-msgctxt "other"
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"This user already has {0} friends. She can't have more than {1} friends on "
+"Speedy Net. Please ask her to remove friends before you proceed."
+
+#: .\__translations\__translations.py:172
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"This user already has {0} friends. He can't have more than {1} friends on "
+"Speedy Net. Please ask him to remove friends before you proceed."
+
+#: .\__translations\__translations.py:173
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+
+#: .\__translations\__translations.py:175
+msgctxt "female"
 msgid "You cannot be friends with yourself."
 msgstr ""
 
-#: .\__translations\__translations.py:173
-msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr ""
-
-#: .\__translations\__translations.py:174
+#: .\__translations\__translations.py:176
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr ""
-
-#: .\__translations\__translations.py:175
-msgctxt "other"
-msgid "You already requested friendship from this user."
+msgid "You cannot be friends with yourself."
 msgstr ""
 
 #: .\__translations\__translations.py:177
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr ""
+
+#: .\__translations\__translations.py:179
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr ""
+
+#: .\__translations\__translations.py:180
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr ""
+
+#: .\__translations\__translations.py:181
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr ""
+
+#: .\__translations\__translations.py:183
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:178
+#: .\__translations\__translations.py:184
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:179
+#: .\__translations\__translations.py:185
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:180
+#: .\__translations\__translations.py:186
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:181
+#: .\__translations\__translations.py:187
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:182
+#: .\__translations\__translations.py:188
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:183
+#: .\__translations\__translations.py:189
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:184
+#: .\__translations\__translations.py:190
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:185
+#: .\__translations\__translations.py:191
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr ""
 
-#: .\__translations\__translations.py:187
-msgctxt "female"
-msgid "You've cancelled your friendship request."
-msgstr ""
-
-#: .\__translations\__translations.py:188
-msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr ""
-
-#: .\__translations\__translations.py:189
-msgctxt "other"
-msgid "You've cancelled your friendship request."
-msgstr ""
-
-#: .\__translations\__translations.py:191
-msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr ""
-
-#: .\__translations\__translations.py:192
-msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr ""
-
 #: .\__translations\__translations.py:193
-msgctxt "other"
-msgid "You have removed this user from your friends."
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr ""
+
+#: .\__translations\__translations.py:194
+msgctxt "male"
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:195
-#, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr ""
-
-#: .\__translations\__translations.py:196
-#, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}!"
+msgctxt "other"
+msgid "You've cancelled your friendship request."
 msgstr ""
 
 #: .\__translations\__translations.py:197
-#, python-brace-format
-msgctxt "other"
-msgid "Welcome to {site_name}!"
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr ""
+
+#: .\__translations\__translations.py:198
+msgctxt "male"
+msgid "You have removed this user from your friends."
 msgstr ""
 
 #: .\__translations\__translations.py:199
-#, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr ""
-
-#: .\__translations\__translations.py:200
-#, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
+msgctxt "other"
+msgid "You have removed this user from your friends."
 msgstr ""
 
 #: .\__translations\__translations.py:201
 #, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr ""
+
+#: .\__translations\__translations.py:202
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr ""
+
+#: .\__translations\__translations.py:203
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr ""
+
+#: .\__translations\__translations.py:205
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr ""
+
+#: .\__translations\__translations.py:206
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr ""
+
+#: .\__translations\__translations.py:207
+#, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr ""
 
-#: .\__translations\__translations.py:203
-msgctxt "female"
-msgid "Friends"
-msgstr ""
-
-#: .\__translations\__translations.py:204
-msgctxt "male"
-msgid "Friends"
-msgstr ""
-
-#: .\__translations\__translations.py:205
-msgctxt "other"
-msgid "Friends"
-msgstr ""
-
-#: .\__translations\__translations.py:207
-msgctxt "female"
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr ""
-
-#: .\__translations\__translations.py:208
-msgctxt "male"
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr ""
-
 #: .\__translations\__translations.py:209
+msgctxt "female"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:210
+msgctxt "male"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:211
+msgctxt "other"
+msgid "Friends"
+msgstr ""
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr ""
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "Registration complete. Don't forget to confirm your email."
+msgstr ""
+
+#: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr ""
+
+#: .\__translations\__translations.py:217
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit her Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:218
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit his Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:219
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:220
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit her Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:221
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit his Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:222
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:223
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit her Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:224
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit his Speedy Net "
+"profile. View user's profile on Speedy Net."
+
+#: .\__translations\__translations.py:225
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\accounts\apps.py:7
 msgid "Speedy Core Accounts"
@@ -2159,19 +2246,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:150
+#: .\friends\views.py:147
 msgid "Friendship request sent."
 msgstr ""
 
-#: .\friends\views.py:161
+#: .\friends\views.py:158
 msgid "No friendship request."
 msgstr ""
 
-#: .\friends\views.py:194
+#: .\friends\views.py:191
 msgid "Friendship request accepted."
 msgstr ""
 
-#: .\friends\views.py:209
+#: .\friends\views.py:206
 msgid "Friendship request rejected."
 msgstr ""
 
@@ -2776,22 +2863,6 @@ msgstr ""
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
-msgstr ""
-
-#: .\templates\profiles\user_base.html:51
-msgid "This user doesn't match your profile, "
-msgstr ""
-
-#: .\templates\profiles\user_base.html:51
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr ""
-
-#: .\templates\profiles\user_base.html:51
-msgid "View "
-msgstr ""
-
-#: .\templates\profiles\user_base.html:51
-msgid "user's profile on Speedy Net."
 msgstr ""
 
 #: .\templates\profiles\user_info_widget.html:12

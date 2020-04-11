@@ -4,10 +4,12 @@ from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
 from django.utils.module_loading import import_string
+from django.utils.translation import pgettext_lazy
 from django.views import generic
 from friendship.models import FriendshipRequest
 from rules.contrib.views import LoginRequiredMixin
 
+from speedy.core.base.utils import get_both_genders_context_from_users
 from speedy.core.friends.rules import friendship_request_sent, friendship_request_received, are_friends
 from speedy.core.base.utils import normalize_username
 from speedy.core.accounts.models import User
@@ -85,6 +87,7 @@ class UserMixin(object):
                 cd.update({
                     'you_like_user': you_like_user(user=self.request.user, other_user=self.user),
                     'user_likes_you': user_likes_you(user=self.request.user, other_user=self.user),
+                    'this_user_doesnt_match_your_profile_message': pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=self.user), message="This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net."),
                 })
         return cd
 

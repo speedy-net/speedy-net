@@ -97,22 +97,6 @@
 {% trans ' blocked you.' context "male" %}
 {% trans ' blocked you.' context "other" %}
 
-{% trans "This user doesn't match your profile, " context "female" %}
-{% trans "This user doesn't match your profile, " context "male" %}
-{% trans "This user doesn't match your profile, " context "other" %}
-
-{% trans "but you can visit his/her Speedy Net profile. " context "female" %}
-{% trans "but you can visit his/her Speedy Net profile. " context "male" %}
-{% trans "but you can visit his/her Speedy Net profile. " context "other" %}
-
-{% trans "View " context "female" %}
-{% trans "View " context "male" %}
-{% trans "View " context "other" %}
-
-{% trans "user's profile on Speedy Net." context "female" %}
-{% trans "user's profile on Speedy Net." context "male" %}
-{% trans "user's profile on Speedy Net." context "other" %}
-
 {% blocktrans with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
 {% blocktrans with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
 {% blocktrans with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}

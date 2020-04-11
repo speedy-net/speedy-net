@@ -144,7 +144,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=self.first_user.friendship_requests_sent.count(), second=0)
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
-            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_are_friends_with_this_user_error_message_dict_by_gender[get_both_genders_context_from_users(you=self.first_user, user=self.second_user)]])
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders[get_both_genders_context_from_users(user=self.first_user, other_user=self.second_user)]])
 
         def test_user_cannot_send_friendship_request_to_himself(self):
             r = self.client.post(path=self.same_user_page_url)
@@ -330,7 +330,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.get(path=expected_url)
-            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_gender(other_user_number_of_friends=4, gender=self.first_user.get_gender())])
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(other_user_number_of_friends=4, both_genders=get_both_genders_context_from_users(user=self.second_user, other_user=self.first_user))])
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
 
 

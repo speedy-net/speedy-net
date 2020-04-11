@@ -121,12 +121,12 @@ def update_form_field_choices(field, choices):
     field.widget.choices = choices
 
 
-def get_both_genders_context_from_genders(you_gender, user_gender):
-    both_genders_context = "{}_{}".format(you_gender, user_gender)
+def get_both_genders_context_from_genders(user_gender, other_user_gender):
+    both_genders_context = "{}_{}".format(user_gender, other_user_gender)
     return both_genders_context
 
 
-def get_both_genders_context_from_users(you, user):
-    return get_both_genders_context_from_genders(you_gender=you.get_gender(), user_gender= user.get_gender())
+def get_both_genders_context_from_users(user, other_user):
+    return get_both_genders_context_from_genders(user_gender=user.get_gender(), other_user_gender=other_user.get_gender())
 
 

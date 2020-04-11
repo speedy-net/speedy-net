@@ -210,7 +210,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     success_url = reverse_lazy('accounts:edit_profile_emails')
 
     def get_success_url(self):
-        # If user came from Speedy Match and his/her Email address is confirmed, redirect to Matches page.
+        # If user came from Speedy Match and their Email address is confirmed, redirect to Matches page.
         if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             if (self.request.user.email_addresses.filter(is_confirmed=True).count() == 1):
                 return reverse_lazy('matches:list')

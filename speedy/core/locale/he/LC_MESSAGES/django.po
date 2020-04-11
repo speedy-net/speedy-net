@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:07+0300\n"
+"POT-Creation-Date: 2020-04-11 18:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -361,66 +361,6 @@ msgid " blocked you."
 msgstr " חסמ/ה אותך."
 
 #: .\__translations\__translations.html:100
-msgctxt "female"
-msgid "This user doesn't match your profile, "
-msgstr "המשתמשת הזאת לא מתאימה לפרופיל שלך, "
-
-#: .\__translations\__translations.html:101
-msgctxt "male"
-msgid "This user doesn't match your profile, "
-msgstr "המשתמש הזה לא מתאים לפרופיל שלך, "
-
-#: .\__translations\__translations.html:102
-msgctxt "other"
-msgid "This user doesn't match your profile, "
-msgstr "המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, "
-
-#: .\__translations\__translations.html:104
-msgctxt "female"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "אבל באפשרותך לראות אותה בספידי נט. "
-
-#: .\__translations\__translations.html:105
-msgctxt "male"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "אבל באפשרותך לראות אותו בספידי נט. "
-
-#: .\__translations\__translations.html:106
-msgctxt "other"
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "אבל באפשרותך לראות אותו/ה בספידי נט. "
-
-#: .\__translations\__translations.html:108
-msgctxt "female"
-msgid "View "
-msgstr "צפי בפרופיל של "
-
-#: .\__translations\__translations.html:109
-msgctxt "male"
-msgid "View "
-msgstr "צפה בפרופיל של "
-
-#: .\__translations\__translations.html:110
-msgctxt "other"
-msgid "View "
-msgstr "צפה/י בפרופיל של "
-
-#: .\__translations\__translations.html:112
-msgctxt "female"
-msgid "user's profile on Speedy Net."
-msgstr "משתמשת זאת בספידי נט."
-
-#: .\__translations\__translations.html:113
-msgctxt "male"
-msgid "user's profile on Speedy Net."
-msgstr "משתמש זה בספידי נט."
-
-#: .\__translations\__translations.html:114
-msgctxt "other"
-msgid "user's profile on Speedy Net."
-msgstr "משתמש/ת זה/זאת בספידי נט."
-
-#: .\__translations\__translations.html:116
 #, python-format
 msgctxt "female"
 msgid ""
@@ -430,7 +370,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי מץ'. צפי בפרופיל של %(user_name)s בספידי "
 "מץ'."
 
-#: .\__translations\__translations.html:117
+#: .\__translations\__translations.html:101
 #, python-format
 msgctxt "male"
 msgid ""
@@ -440,7 +380,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי מץ'. צפה בפרופיל של %(user_name)s בספידי "
 "מץ'."
 
-#: .\__translations\__translations.html:118
+#: .\__translations\__translations.html:102
 #, python-format
 msgctxt "other"
 msgid ""
@@ -450,7 +390,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(user_name)s "
 "בספידי מץ'."
 
-#: .\__translations\__translations.html:120
+#: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
@@ -460,7 +400,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפי בפרופיל של %(user_name)s בספידי "
 "נט."
 
-#: .\__translations\__translations.html:121
+#: .\__translations\__translations.html:105
 #, python-format
 msgctxt "male"
 msgid ""
@@ -470,7 +410,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפה בפרופיל של %(user_name)s בספידי "
 "נט."
 
-#: .\__translations\__translations.html:122
+#: .\__translations\__translations.html:106
 #, python-format
 msgctxt "other"
 msgid ""
@@ -480,395 +420,395 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי "
 "נט."
 
-#: .\__translations\__translations.html:124
+#: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr "יש לך גם פרופיל בספידי נט. צפי בפרופיל שלך בספידי נט."
 
-#: .\__translations\__translations.html:125
+#: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr "יש לך גם פרופיל בספידי נט. צפה בפרופיל שלך בספידי נט."
 
-#: .\__translations\__translations.html:126
+#: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr "יש לך גם פרופיל בספידי נט. צפה/י בפרופיל שלך בספידי נט."
 
-#: .\__translations\__translations.html:128
+#: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
 msgstr "הוסיפי לחברים/ות"
 
-#: .\__translations\__translations.html:129
+#: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
 msgstr "הוסף לחברים/ות"
 
-#: .\__translations\__translations.html:130
+#: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
 msgstr "הוסף/י לחברים/ות"
 
-#: .\__translations\__translations.html:132
+#: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
 msgstr "האם את בטוחה שברצונך לחסום את "
 
-#: .\__translations\__translations.html:133
+#: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
 msgstr "האם אתה בטוח שברצונך לחסום את "
 
-#: .\__translations\__translations.html:134
+#: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
 msgstr "האם את/ה בטוח/ה שברצונך לחסום את "
 
-#: .\__translations\__translations.html:136
+#: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
 msgstr "חסמי את "
 
-#: .\__translations\__translations.html:137
+#: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
 msgstr "חסום את "
 
-#: .\__translations\__translations.html:138
+#: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
 msgstr "חסום/י את "
 
-#: .\__translations\__translations.html:140
+#: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
 msgstr "בטלי את חסימת "
 
-#: .\__translations\__translations.html:141
+#: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
 msgstr "בטל את חסימת "
 
-#: .\__translations\__translations.html:142
+#: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
 msgstr "בטל/י את חסימת "
 
-#: .\__translations\__translations.html:144
+#: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
 msgstr "דווחי על "
 
-#: .\__translations\__translations.html:145
+#: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
 msgstr "דווח על "
 
-#: .\__translations\__translations.html:146
+#: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
 msgstr "דווח/י על "
 
-#: .\__translations\__translations.html:148
+#: .\__translations\__translations.html:132
 msgctxt "female"
 msgid "Report this photo"
 msgstr "דווחי על תמונה זו"
 
-#: .\__translations\__translations.html:149
+#: .\__translations\__translations.html:133
 msgctxt "male"
 msgid "Report this photo"
 msgstr "דווח על תמונה זו"
 
-#: .\__translations\__translations.html:150
+#: .\__translations\__translations.html:134
 msgctxt "other"
 msgid "Report this photo"
 msgstr "דווח/י על תמונה זו"
 
-#: .\__translations\__translations.html:152
+#: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
 msgstr "בטלי חברות"
 
-#: .\__translations\__translations.html:153
+#: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
 msgstr "בטל חברות"
 
-#: .\__translations\__translations.html:154
+#: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
 msgstr "בטל/י חברות"
 
-#: .\__translations\__translations.html:156
+#: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
 msgstr "בטלי בקשת חברות"
 
-#: .\__translations\__translations.html:157
+#: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
 msgstr "בטל בקשת חברות"
 
-#: .\__translations\__translations.html:158
+#: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
 msgstr "בטל/י בקשת חברות"
 
-#: .\__translations\__translations.html:160
+#: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
 msgstr "קבלי"
 
-#: .\__translations\__translations.html:161
+#: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
 msgstr "קבל"
 
-#: .\__translations\__translations.html:162
+#: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
 msgstr "קבל/י"
 
-#: .\__translations\__translations.html:164
+#: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
 msgstr "דחי"
 
-#: .\__translations\__translations.html:165
+#: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
 msgstr "דחה"
 
-#: .\__translations\__translations.html:166
+#: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
 msgstr "דחה/י"
 
-#: .\__translations\__translations.html:168
+#: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
 msgstr "קבלי הצעת חברות"
 
-#: .\__translations\__translations.html:169
+#: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
 msgstr "קבל הצעת חברות"
 
-#: .\__translations\__translations.html:170
+#: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
 msgstr "קבל/י הצעת חברות"
 
-#: .\__translations\__translations.html:172
+#: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
 msgstr "דחי הצעת חברות"
 
-#: .\__translations\__translations.html:173
+#: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
 msgstr "דחה הצעת חברות"
 
-#: .\__translations\__translations.html:174
+#: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
 msgstr "דחה/י הצעת חברות"
 
-#: .\__translations\__translations.html:176
+#: .\__translations\__translations.html:160
 msgctxt "female"
 msgid "Send Message"
 msgstr "שלחי הודעה"
 
-#: .\__translations\__translations.html:177
+#: .\__translations\__translations.html:161
 msgctxt "male"
 msgid "Send Message"
 msgstr "שלח הודעה"
 
-#: .\__translations\__translations.html:178
+#: .\__translations\__translations.html:162
 msgctxt "other"
 msgid "Send Message"
 msgstr "שלח/י הודעה"
 
-#: .\__translations\__translations.html:180
+#: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
 msgstr "ברוכה הבאה"
 
-#: .\__translations\__translations.html:181
+#: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
 msgstr "ברוך הבא"
 
-#: .\__translations\__translations.html:182
+#: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
 msgstr "ברוכ/ה הבא/ה"
 
-#: .\__translations\__translations.html:184
+#: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
 msgstr "חברה שלך"
 
-#: .\__translations\__translations.html:185
+#: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
 msgstr "חבר שלך"
 
-#: .\__translations\__translations.html:186
+#: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
 msgstr "חבר/ה שלך"
 
-#: .\__translations\__translations.html:188
+#: .\__translations\__translations.html:172
 msgctxt "female"
 msgid "See All"
 msgstr "ראי הכול"
 
-#: .\__translations\__translations.html:189
+#: .\__translations\__translations.html:173
 msgctxt "male"
 msgid "See All"
 msgstr "ראה הכול"
 
-#: .\__translations\__translations.html:190
+#: .\__translations\__translations.html:174
 msgctxt "other"
 msgid "See All"
 msgstr "ראה/י הכול"
 
-#: .\__translations\__translations.html:192
+#: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr "החשבון שלך בספידי נט אינו פעיל. היכנסי לדף זה כדי להפעיל אותו."
 
-#: .\__translations\__translations.html:193
+#: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס לדף זה כדי להפעיל אותו."
 
-#: .\__translations\__translations.html:194
+#: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס/י לדף זה כדי להפעיל אותו."
 
-#: .\__translations\__translations.html:196
+#: .\__translations\__translations.html:180
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
 msgstr "ברוכה הבאה ל%(site_name)s"
 
-#: .\__translations\__translations.html:197
+#: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
 msgstr "ברוך הבא ל%(site_name)s"
 
-#: .\__translations\__translations.html:198
+#: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
 msgstr "ברוכ/ה הבא/ה ל%(site_name)s"
 
-#: .\__translations\__translations.html:200
+#: .\__translations\__translations.html:184
 msgctxt "female"
 msgid "has sent you a message."
 msgstr "שלחה לך הודעה."
 
-#: .\__translations\__translations.html:201
+#: .\__translations\__translations.html:185
 msgctxt "male"
 msgid "has sent you a message."
 msgstr "שלח לך הודעה."
 
-#: .\__translations\__translations.html:202
+#: .\__translations\__translations.html:186
 msgctxt "other"
 msgid "has sent you a message."
 msgstr "שלח/ה לך הודעה."
 
-#: .\__translations\__translations.html:204
+#: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
 msgstr "קראי אותה:"
 
-#: .\__translations\__translations.html:205
+#: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
 msgstr "קרא אותה:"
 
-#: .\__translations\__translations.html:206
+#: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
 msgstr "קרא/י אותה:"
 
-#: .\__translations\__translations.html:208
+#: .\__translations\__translations.html:192
 msgctxt "female"
 msgid "Confirm your email address on "
 msgstr "אמתי את כתובת הדואר האלקטרוני שלך ב"
 
-#: .\__translations\__translations.html:209
+#: .\__translations\__translations.html:193
 msgctxt "male"
 msgid "Confirm your email address on "
 msgstr "אמת את כתובת הדואר האלקטרוני שלך ב"
 
-#: .\__translations\__translations.html:210
+#: .\__translations\__translations.html:194
 msgctxt "other"
 msgid "Confirm your email address on "
 msgstr "אמת/י את כתובת הדואר האלקטרוני שלך ב"
 
-#: .\__translations\__translations.html:212
+#: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
 msgstr "השתמשי בקישור זה כדי להפעיל את חשבונך:"
 
-#: .\__translations\__translations.html:213
+#: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
 msgstr "השתמש בקישור זה כדי להפעיל את חשבונך:"
 
-#: .\__translations\__translations.html:214
+#: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
 msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
 
-#: .\__translations\__translations.html:216
+#: .\__translations\__translations.html:200
 msgctxt "female"
 msgid "Use this link to verify your email address:"
 msgstr "השתמשי בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:"
 
-#: .\__translations\__translations.html:217
+#: .\__translations\__translations.html:201
 msgctxt "male"
 msgid "Use this link to verify your email address:"
 msgstr "השתמש בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:"
 
-#: .\__translations\__translations.html:218
+#: .\__translations\__translations.html:202
 msgctxt "other"
 msgid "Use this link to verify your email address:"
 msgstr "השתמש/י בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:"
 
-#: .\__translations\__translations.html:220
+#: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
 msgstr "השתמשי בקישור זה כדי לשנות את הסיסמה שלך:"
 
-#: .\__translations\__translations.html:221
+#: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
 msgstr "השתמש בקישור זה כדי לשנות את הסיסמה שלך:"
 
-#: .\__translations\__translations.html:222
+#: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
 msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:"
 
-#: .\__translations\__translations.html:224
+#: .\__translations\__translations.html:208
 msgctxt "female"
 msgid "Username"
 msgstr "שם משתמשת"
 
-#: .\__translations\__translations.html:225
+#: .\__translations\__translations.html:209
 msgctxt "male"
 msgid "Username"
 msgstr "שם משתמש"
 
-#: .\__translations\__translations.html:226
+#: .\__translations\__translations.html:210
 msgctxt "other"
 msgid "Username"
 msgstr "שם משתמש/ת"
@@ -1468,7 +1408,27 @@ msgstr ""
 
 #: .\__translations\__translations.py:165
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקשי ממנה להסיר חברים/ות לפני שאת ממשיכה."
+
+#: .\__translations\__translations.py:166
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקשי ממנו להסיר חברים/ות לפני שאת ממשיכה."
+
+#: .\__translations\__translations.py:167
+#, python-brace-format
+msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1476,9 +1436,29 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקשי ממנו/ה להסיר חברים/ות לפני שאת ממשיכה."
 
-#: .\__translations\__translations.py:166
+#: .\__translations\__translations.py:168
 #, python-brace-format
-msgctxt "male"
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקש ממנה להסיר חברים/ות לפני שאתה ממשיך."
+
+#: .\__translations\__translations.py:169
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקש ממנו להסיר חברים/ות לפני שאתה ממשיך."
+
+#: .\__translations\__translations.py:170
+#, python-brace-format
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1486,9 +1466,29 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקש ממנו/ה להסיר חברים/ות לפני שאתה ממשיך."
 
-#: .\__translations\__translations.py:167
+#: .\__translations\__translations.py:171
 #, python-brace-format
-msgctxt "other"
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקש/י ממנה להסיר חברים/ות לפני שאת/ה ממשיך/ה."
+
+#: .\__translations\__translations.py:172
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות "
+"וחברים בספידי נט. אנא בקש/י ממנו להסיר חברים/ות לפני שאת/ה ממשיך/ה."
+
+#: .\__translations\__translations.py:173
+#, python-brace-format
+msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1496,176 +1496,257 @@ msgstr ""
 "למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות "
 "וחברים בספידי נט. אנא בקש/י ממנו/ה להסיר חברים/ות לפני שאת/ה ממשיך/ה."
 
-#: .\__translations\__translations.py:169
+#: .\__translations\__translations.py:175
 msgctxt "female"
 msgid "You cannot be friends with yourself."
 msgstr "את לא יכולה להיות חברה של עצמך."
 
-#: .\__translations\__translations.py:170
+#: .\__translations\__translations.py:176
 msgctxt "male"
 msgid "You cannot be friends with yourself."
 msgstr "אתה לא יכול להיות חבר של עצמך."
 
-#: .\__translations\__translations.py:171
+#: .\__translations\__translations.py:177
 msgctxt "other"
 msgid "You cannot be friends with yourself."
 msgstr "את/ה לא יכול/ה להיות חבר/ה של עצמך."
 
-#: .\__translations\__translations.py:173
+#: .\__translations\__translations.py:179
 msgctxt "female"
 msgid "You already requested friendship from this user."
 msgstr "כבר ביקשת חברות מהמשתמשת הזאת."
 
-#: .\__translations\__translations.py:174
+#: .\__translations\__translations.py:180
 msgctxt "male"
 msgid "You already requested friendship from this user."
 msgstr "כבר ביקשת חברות מהמשתמש הזה."
 
-#: .\__translations\__translations.py:175
+#: .\__translations\__translations.py:181
 msgctxt "other"
 msgid "You already requested friendship from this user."
 msgstr "כבר ביקשת חברות מהמשתמש/ת הזאת."
 
-#: .\__translations\__translations.py:177
+#: .\__translations\__translations.py:183
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "את כבר חברה של המשתמשת הזאת."
 
-#: .\__translations\__translations.py:178
+#: .\__translations\__translations.py:184
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "את כבר חברה של המשתמש הזה."
 
-#: .\__translations\__translations.py:179
+#: .\__translations\__translations.py:185
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "את כבר חברה של המשתמש/ת הזאת."
 
-#: .\__translations\__translations.py:180
+#: .\__translations\__translations.py:186
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "אתה כבר חבר של המשתמשת הזאת."
 
-#: .\__translations\__translations.py:181
+#: .\__translations\__translations.py:187
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "אתה כבר חבר של המשתמש הזה."
 
-#: .\__translations\__translations.py:182
+#: .\__translations\__translations.py:188
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "אתה כבר חבר של המשתמש/ת הזאת."
 
-#: .\__translations\__translations.py:183
+#: .\__translations\__translations.py:189
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמשת הזאת."
 
-#: .\__translations\__translations.py:184
+#: .\__translations\__translations.py:190
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמש הזה."
 
-#: .\__translations\__translations.py:185
+#: .\__translations\__translations.py:191
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמש/ת הזאת."
 
-#: .\__translations\__translations.py:187
+#: .\__translations\__translations.py:193
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:188
+#: .\__translations\__translations.py:194
 msgctxt "male"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:189
+#: .\__translations\__translations.py:195
 msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:191
+#: .\__translations\__translations.py:197
 msgctxt "female"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמשת הזאת מהחברים שלך."
 
-#: .\__translations\__translations.py:192
+#: .\__translations\__translations.py:198
 msgctxt "male"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמש הזה מהחברים שלך."
 
-#: .\__translations\__translations.py:193
+#: .\__translations\__translations.py:199
 msgctxt "other"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמש/ת הזאת מהחברים שלך."
 
-#: .\__translations\__translations.py:195
+#: .\__translations\__translations.py:201
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכה הבאה ל{site_name}!"
 
-#: .\__translations\__translations.py:196
+#: .\__translations\__translations.py:202
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
 msgstr "ברוך הבא ל{site_name}!"
 
-#: .\__translations\__translations.py:197
+#: .\__translations\__translations.py:203
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 
-#: .\__translations\__translations.py:199
+#: .\__translations\__translations.py:205
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוכה הבאה ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:200
+#: .\__translations\__translations.py:206
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוך הבא ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:201
+#: .\__translations\__translations.py:207
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוכ/ה הבא/ה ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:203
+#: .\__translations\__translations.py:209
 msgctxt "female"
 msgid "Friends"
 msgstr "חברות"
 
-#: .\__translations\__translations.py:204
+#: .\__translations\__translations.py:210
 msgctxt "male"
 msgid "Friends"
 msgstr "חברים"
 
-#: .\__translations\__translations.py:205
+#: .\__translations\__translations.py:211
 msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\__translations\__translations.py:207
+#: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכחי לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:208
+#: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
+
+#: .\__translations\__translations.py:217
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפי "
+"בפרופיל של משתמשת זאת בספידי נט."
+
+#: .\__translations\__translations.py:218
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפי "
+"בפרופיל של משתמש זה בספידי נט."
+
+#: .\__translations\__translations.py:219
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. "
+"צפי בפרופיל של משתמש/ת זה/זאת בספידי נט."
+
+#: .\__translations\__translations.py:220
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה "
+"בפרופיל של משתמשת זאת בספידי נט."
+
+#: .\__translations\__translations.py:221
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפה "
+"בפרופיל של משתמש זה בספידי נט."
+
+#: .\__translations\__translations.py:222
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. "
+"צפה בפרופיל של משתמש/ת זה/זאת בספידי נט."
+
+#: .\__translations\__translations.py:223
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה/י "
+"בפרופיל של משתמשת זאת בספידי נט."
+
+#: .\__translations\__translations.py:224
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפה/י "
+"בפרופיל של משתמש זה בספידי נט."
+
+#: .\__translations\__translations.py:225
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. "
+"צפה/י בפרופיל של משתמש/ת זה/זאת בספידי נט."
 
 #: .\accounts\apps.py:7
 msgid "Speedy Core Accounts"
@@ -2240,19 +2321,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:150
+#: .\friends\views.py:147
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:161
+#: .\friends\views.py:158
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:194
+#: .\friends\views.py:191
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:209
+#: .\friends\views.py:206
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -2876,22 +2957,6 @@ msgstr "בטל/י חברות"
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
 msgstr "שלח/י הודעה"
-
-#: .\templates\profiles\user_base.html:51
-msgid "This user doesn't match your profile, "
-msgstr "המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, "
-
-#: .\templates\profiles\user_base.html:51
-msgid "but you can visit his/her Speedy Net profile. "
-msgstr "אבל באפשרותך לראות אותו/ה בספידי נט. "
-
-#: .\templates\profiles\user_base.html:51
-msgid "View "
-msgstr "צפה/י בפרופיל של "
-
-#: .\templates\profiles\user_base.html:51
-msgid "user's profile on Speedy Net."
-msgstr "משתמש/ת זה/זאת בספידי נט."
 
 #: .\templates\profiles\user_info_widget.html:12
 msgid "Information"
