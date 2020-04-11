@@ -12,6 +12,7 @@ from friendship.exceptions import AlreadyExistsError, AlreadyFriendsError
 
 from rules.contrib.views import PermissionRequiredMixin
 
+from speedy.core.base.utils import get_both_genders_context_from_users
 from speedy.core.base.views import PaginationMixin
 from speedy.core.accounts.models import User
 from speedy.core.profiles.views import UserMixin
@@ -96,14 +97,14 @@ class LimitMaxFriendsMixin(object):
 class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin, generic.View):
     permission_required = 'friends.request'
 
-    def _you_cannot_be_friends_with_yourself_error_message(self, user):
-        return pgettext_lazy(context=user.get_gender(), message="You cannot be friends with yourself.")
+    def _you_cannot_be_friends_with_yourself_error_message(self, you):
+        return pgettext_lazy(context=you.get_gender(), message="You cannot be friends with yourself.")
 
-    def _you_already_requested_friendship_from_this_user_error_message(self, user):
+    def _you_already_requested_friendship_from_this_user_error_message(self, you, user):
         return pgettext_lazy(context=user.get_gender(), message="You already requested friendship from this user.")
 
-    def _you_already_are_friends_with_this_user_error_message(self, user):
-        return pgettext_lazy(context=user.get_gender(), message="You already are friends with this user.")
+    def _you_already_are_friends_with_this_user_error_message(self, you, user):
+        return pgettext_lazy(context=get_both_genders_context_from_users(you=you, user=user), message="You already are friends with this user.")
 
     def get(self, request, *args, **kwargs):
         return redirect(to=self.user)
@@ -112,13 +113,13 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
         self.user = self.get_user()
         if (request.user.is_authenticated):
             if (is_self(user=request.user, other_user=self.user)):
-                messages.error(request=request, message=self._you_cannot_be_friends_with_yourself_error_message(user=request.user))
+                messages.error(request=request, message=self._you_cannot_be_friends_with_yourself_error_message(you=request.user))
                 return redirect(to=self.user)
             if (friendship_request_sent(user=request.user, other_user=self.user)):
-                messages.warning(request=request, message=self._you_already_requested_friendship_from_this_user_error_message(user=request.user))
+                messages.warning(request=request, message=self._you_already_requested_friendship_from_this_user_error_message(you=request.user, user=self.user))
                 return redirect(to=self.user)
             if (are_friends(user=request.user, other_user=self.user)):
-                messages.warning(request=request, message=self._you_already_are_friends_with_this_user_error_message(user=request.user))
+                messages.warning(request=request, message=self._you_already_are_friends_with_this_user_error_message(you=request.user, user=self.user))
                 return redirect(to=self.user)
         return super().dispatch(request=request, *args, **kwargs)
 
@@ -133,9 +134,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
             Friend.objects.add_friend(from_user=request.user, to_user=self.user)
         except (ValidationError, AlreadyExistsError, AlreadyFriendsError) as e:
             message_dict = {
-                "Users cannot be friends with themselves.": self._you_cannot_be_friends_with_yourself_error_message(user=request.user),
-                "Users are already friends.": self._you_already_are_friends_with_this_user_error_message(user=request.user),
-                "Friendship already requested.": self._you_already_requested_friendship_from_this_user_error_message(user=request.user),
+                "Users cannot be friends with themselves.": self._you_cannot_be_friends_with_yourself_error_message(you=request.user),
+                "Users are already friends.": self._you_already_are_friends_with_this_user_error_message(you=request.user, user=self.user),
+                "Friendship already requested.": self._you_already_requested_friendship_from_this_user_error_message(you=request.user, user=self.user),
             }
             for key in message_dict.keys():
                 message_dict[key.replace(".", "")] = message_dict[key]
@@ -216,7 +217,7 @@ class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
 
     def post(self, request, *args, **kwargs):
         Friend.objects.remove_friend(from_user=self.request.user, to_user=self.user)
-        messages.success(request=request, message=pgettext_lazy(context=request.user.get_gender(), message="You have removed this user from your friends."))
+        messages.success(request=request, message=pgettext_lazy(context=self.user.get_gender(), message="You have removed this user from your friends."))
         return redirect(to=self.user)
 
 

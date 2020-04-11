@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 11:28+0300\n"
+"POT-Creation-Date: 2020-04-11 16:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1527,112 +1527,142 @@ msgid "You already requested friendship from this user."
 msgstr "כבר ביקשת חברות מהמשתמש/ת הזאת."
 
 #: .\__translations\__translations.py:177
-msgctxt "female"
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "את כבר חברה של המשתמשת הזאת."
+
+#: .\__translations\__translations.py:178
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "את כבר חברה של המשתמש הזה."
+
+#: .\__translations\__translations.py:179
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "את כבר חברה של המשתמש/ת הזאת."
+
+#: .\__translations\__translations.py:180
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "אתה כבר חבר של המשתמשת הזאת."
+
+#: .\__translations\__translations.py:181
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "אתה כבר חבר של המשתמש הזה."
+
+#: .\__translations\__translations.py:182
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "אתה כבר חבר של המשתמש/ת הזאת."
+
+#: .\__translations\__translations.py:183
+msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמשת הזאת."
 
-#: .\__translations\__translations.py:178
-msgctxt "male"
+#: .\__translations\__translations.py:184
+msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמש הזה."
 
-#: .\__translations\__translations.py:179
-msgctxt "other"
+#: .\__translations\__translations.py:185
+msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "את/ה כבר חבר/ה של המשתמש/ת הזאת."
 
-#: .\__translations\__translations.py:181
+#: .\__translations\__translations.py:187
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:182
+#: .\__translations\__translations.py:188
 msgctxt "male"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:183
+#: .\__translations\__translations.py:189
 msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "ביטלת את בקשת החברות שלך."
 
-#: .\__translations\__translations.py:185
+#: .\__translations\__translations.py:191
 msgctxt "female"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמשת הזאת מהחברים שלך."
 
-#: .\__translations\__translations.py:186
+#: .\__translations\__translations.py:192
 msgctxt "male"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמש הזה מהחברים שלך."
 
-#: .\__translations\__translations.py:187
+#: .\__translations\__translations.py:193
 msgctxt "other"
 msgid "You have removed this user from your friends."
 msgstr "הסרת את המשתמש/ת הזאת מהחברים שלך."
 
-#: .\__translations\__translations.py:189
+#: .\__translations\__translations.py:195
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכה הבאה ל{site_name}!"
 
-#: .\__translations\__translations.py:190
+#: .\__translations\__translations.py:196
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
 msgstr "ברוך הבא ל{site_name}!"
 
-#: .\__translations\__translations.py:191
+#: .\__translations\__translations.py:197
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "ברוכ/ה הבא/ה ל{site_name}!"
 
-#: .\__translations\__translations.py:193
+#: .\__translations\__translations.py:199
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוכה הבאה ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:194
+#: .\__translations\__translations.py:200
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוך הבא ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:195
+#: .\__translations\__translations.py:201
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "ברוכ/ה הבא/ה ל{site_name}! החשבון שלך פעיל עכשיו."
 
-#: .\__translations\__translations.py:197
+#: .\__translations\__translations.py:203
 msgctxt "female"
 msgid "Friends"
 msgstr "חברות"
 
-#: .\__translations\__translations.py:198
+#: .\__translations\__translations.py:204
 msgctxt "male"
 msgid "Friends"
 msgstr "חברים"
 
-#: .\__translations\__translations.py:199
+#: .\__translations\__translations.py:205
 msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\__translations\__translations.py:201
+#: .\__translations\__translations.py:207
 msgctxt "female"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכחי לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:202
+#: .\__translations\__translations.py:208
 msgctxt "male"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח לאמת את הדואר האלקטרוני שלך."
 
-#: .\__translations\__translations.py:203
+#: .\__translations\__translations.py:209
 msgctxt "other"
 msgid "Registration complete. Don't forget to confirm your email."
 msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
@@ -2210,19 +2240,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:149
+#: .\friends\views.py:150
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:160
+#: .\friends\views.py:161
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:193
+#: .\friends\views.py:194
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:208
+#: .\friends\views.py:209
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
