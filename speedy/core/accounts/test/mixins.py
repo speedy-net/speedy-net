@@ -31,7 +31,7 @@ class SpeedyCoreAccountsModelsMixin(object):
         field_name_localized_list = list()
         for base_field_name in User.NAME_LOCALIZABLE_FIELDS:
             for language_code, language_name in django_settings.LANGUAGES:
-                field_name_localized = '{}_{}'.format(base_field_name, language_code)
+                field_name_localized = to_attribute(name=base_field_name, language_code=language_code)
                 self.assertEqual(first=getattr(user, field_name_localized), second=getattr(user, base_field_name), msg="assert_user_first_and_last_name_in_all_languages::fields don't match ({field_name_localized}, {base_field_name}), user.pk={user_pk}, user.username={user_username}, user.slug={user_slug}, user.name={user_name}".format(
                     field_name_localized=field_name_localized,
                     base_field_name=base_field_name,

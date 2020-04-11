@@ -18,7 +18,7 @@ from django.utils.http import urlsafe_base64_encode
 from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
-from speedy.core.base.utils import normalize_username
+from speedy.core.base.utils import normalize_username, to_attribute
 from .models import User, UserEmailAddress
 from .utils import normalize_email
 from .validators import validate_date_of_birth_in_forms, validate_email_unique
@@ -71,7 +71,7 @@ class LocalizedFirstLastNameMixin(object):
         return User.NAME_LOCALIZABLE_FIELDS
 
     def get_localized_field(self, base_field_name, language_code):
-        return '{}_{}'.format(base_field_name, language_code or self.language_code)
+        return to_attribute(name=base_field_name, language_code=language_code or self.language_code)
 
     def get_localized_fields(self, language=None):
         loc_fields = self.get_localizable_fields()

@@ -92,12 +92,17 @@ def string_is_not_empty(s):
     return False
 
 
+def to_attribute(name, language_code=None):
+    language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
+    return translated_fields_to_attribute(name=name, language_code=language_code)
+
+
 def get_all_field_names(base_field_name):
     field_names = []
     this_language_code = translation.get_language()
     all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == this_language_code))]
     for language_code in [this_language_code] + all_other_language_codes:
-        field_name_localized = '{}_{}'.format(base_field_name, language_code)
+        field_name_localized = to_attribute(name=base_field_name, language_code=language_code)
         field_names.append(field_name_localized)
     logger.debug("get_all_field_names::this_language_code={this_language_code}, base_field_name={base_field_name}, field_names={field_names}".format(
         this_language_code=this_language_code,
@@ -106,11 +111,6 @@ def get_all_field_names(base_field_name):
     ))
     assert (len(field_names) == 2)
     return field_names
-
-
-def to_attribute(name, language_code=None):
-    language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
-    return translated_fields_to_attribute(name=name, language_code=language_code)
 
 
 def update_form_field_choices(field, choices):
