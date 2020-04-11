@@ -52,11 +52,12 @@ class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
         self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
-        for loc_field in reversed(self.get_localized_fields()):
+        localized_fields = self.get_localized_fields()
+        for loc_field in localized_fields:
             self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
             self.fields[loc_field].required = True
-            self.fields.move_to_end(loc_field, last=False)
             self.initial[loc_field] = getattr(self.instance, loc_field, '')
+        self.order_fields(field_order=localized_fields)
 
     def save(self, commit=True):
         instance = super().save(commit=False)
