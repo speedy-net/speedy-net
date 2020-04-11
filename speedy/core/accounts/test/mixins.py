@@ -323,7 +323,9 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'he': 'הודעת אימות נשלחה ל-{email_address}'}
 
         _you_cant_change_your_username_error_message_dict_by_gender = {
-            'en': {gender: "You can't change your username." for gender in User.ALL_GENDERS},
+            'en': {
+                **{gender: "You can't change your username." for gender in User.ALL_GENDERS},
+            },
             'he': {
                 User.GENDER_FEMALE_STRING: "לא ניתן לשנות שם משתמשת.",
                 User.GENDER_MALE_STRING: "לא ניתן לשנות שם משתמש.",
@@ -331,7 +333,9 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             },
         }
         _confirm_your_email_address_on_speedy_net_subject_dict_by_gender = {
-            'en': {gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
+            'en': {
+                **{gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
+            },
             'he': {
                 User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי נט",
                 User.GENDER_MALE_STRING: "אמת את כתובת הדואר האלקטרוני שלך בספידי נט",
@@ -339,7 +343,9 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
             },
         }
         _confirm_your_email_address_on_speedy_match_subject_dict_by_gender = {
-            'en': {gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
+            'en': {
+                **{gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
+            },
             'he': {
                 User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי מץ'",
                 User.GENDER_MALE_STRING: "אמת את כתובת הדואר האלקטרוני שלך בספידי מץ'",
