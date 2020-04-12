@@ -115,6 +115,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         def test_user_cannot_send_friendship_request_twice(self):
             r = self.client.post(path=self.page_url)
@@ -125,6 +127,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
             r = self.client.post(path=self.page_url)
             self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
             self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=1)
@@ -132,6 +136,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender[self.second_user.get_gender()]])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         def test_user_cannot_send_friendship_request_to_a_friend(self):
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
@@ -145,6 +151,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders[get_both_genders_context_from_users(user=self.first_user, other_user=self.second_user)]])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         def test_user_cannot_send_friendship_request_to_himself(self):
             r = self.client.post(path=self.same_user_page_url)
@@ -155,6 +163,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_cannot_be_friends_with_yourself_error_message_dict_by_gender[self.first_user.get_gender()]])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         def test_user_can_send_friendship_request_if_not_maximum(self):
@@ -172,6 +182,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_sent_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         def test_user_cannot_send_friendship_request_if_maximum(self):
@@ -186,6 +198,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.first_user.get_gender())])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
 
     @only_on_sites_with_login
@@ -225,6 +239,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_cancelled_your_friendship_request_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
 
     @only_on_sites_with_login
@@ -272,6 +288,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         def test_user_that_has_received_request_can_accept_it_if_not_maximum(self):
@@ -287,6 +305,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
@@ -301,6 +321,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.second_user.get_gender())])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
@@ -317,6 +339,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
         def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
@@ -331,6 +355,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(other_user_number_of_friends=4, both_genders=get_both_genders_context_from_users(user=self.second_user, other_user=self.first_user))])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
             self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
 
 
@@ -380,6 +406,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_rejected_success_message])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
 
     @only_on_sites_with_login
@@ -421,6 +449,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_removed_this_user_from_friends_success_message_dict_by_gender[self.second_user.get_gender()]])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
         def test_other_user_can_remove_first_user(self):
             self.assertEqual(first=Friend.objects.count(), second=1 * 2)
@@ -432,6 +462,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertIsNone(obj=r.context)
             r = self.client.get(path=expected_url)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_removed_this_user_from_friends_success_message_dict_by_gender[self.first_user.get_gender()]])
+            r = self.client.get(path=expected_url)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
 
     @only_on_sites_with_login
