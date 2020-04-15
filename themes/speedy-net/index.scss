@@ -110,6 +110,10 @@ html {
     font-weight: bold;
 }
 
+.pagination {
+    color: $blue;
+}
+
 .pagination li.active,
 .pagination li.active a {
     color: $black;

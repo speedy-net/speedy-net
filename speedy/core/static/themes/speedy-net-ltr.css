@@ -6304,6 +6304,9 @@ html {
   margin-right: 3px;
   font-weight: bold; }
 
+.pagination {
+  color: #3D70A3; }
+
 .pagination li.active,
 .pagination li.active a {
   color: #000; }

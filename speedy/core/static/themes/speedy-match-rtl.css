@@ -6716,9 +6716,15 @@ a.speedy-bottom-badge-link {
   margin-left: 3px;
   font-weight: bold; }
 
+body:not(.with-background) .pagination {
+  color: #ff1c32; }
+
 body:not(.with-background) .pagination li.active,
 body:not(.with-background) .pagination li.active a {
   color: #000; }
+
+body.with-background .pagination {
+  color: #212529; }
 
 body.with-background .pagination li.active,
 body.with-background .pagination li.active a {

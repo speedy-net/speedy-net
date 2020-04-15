@@ -289,6 +289,10 @@ a.speedy-bottom-badge-link {
 }
 
 body:not(.with-background) {
+    .pagination {
+        color: $red;
+    }
+
     .pagination li.active,
     .pagination li.active a {
         color: $black;
@@ -296,6 +300,10 @@ body:not(.with-background) {
 }
 
 body.with-background {
+    .pagination {
+        color: #212529;
+    }
+
     .pagination li.active,
     .pagination li.active a {
         color: $light-orange;
