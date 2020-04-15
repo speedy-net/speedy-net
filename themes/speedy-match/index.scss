@@ -285,6 +285,21 @@ a.speedy-bottom-badge-link {
 .pagination li {
     margin-left: 3px;
     margin-right: 3px;
+    font-weight: bold;
+}
+
+body:not(.with-background) {
+    .pagination li.active,
+    .pagination li.active a {
+        color: $black;
+    }
+}
+
+body.with-background {
+    .pagination li.active,
+    .pagination li.active a {
+        color: $light-orange;
+    }
 }
 
 .navbar-nav {
@@ -371,3 +386,4 @@ h6,
 .dropdown-menu {
     width: min-content;
 }
+

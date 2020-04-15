@@ -107,6 +107,12 @@ html {
 .pagination li {
     margin-left: 3px;
     margin-right: 3px;
+    font-weight: bold;
+}
+
+.pagination li.active,
+.pagination li.active a {
+    color: $black;
 }
 
 .navbar-nav {
@@ -175,3 +181,4 @@ h6,
 .dropdown-menu {
     width: min-content;
 }
+
