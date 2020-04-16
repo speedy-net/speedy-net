@@ -25,7 +25,6 @@ class FriendsMixin(PaginationMixin):
 
 
 class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
-    # ~~~~ TODO: This view will display up to 800 friends on the same page!
     template_name = 'friends/friend_list.html'
     permission_required = 'friends.view_friend_list'
 
