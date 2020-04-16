@@ -19,7 +19,7 @@ class UserFriendsWidget(Widget):
     def get_context_data(self):
         cd = super().get_context_data()
         cd.update({
-            'friends': self.get_random_friends(count=6)
+            'friends': self.get_random_friends(count=6),
         })
         return cd
 

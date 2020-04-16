@@ -10,12 +10,12 @@
                     {% trans 'See All' context request.user.get_gender %}
                 </a>
                 <h5 class="card-title mb-0">
-                    {% trans 'Admin - Friends' %} ({{ user.friends_count }} {% trans 'friends' %})
+                    {% trans 'Admin - Friends' %} ({{ friends_count }} {% trans 'friends' %})
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row flex-wrap">
-                    {% if user.friends_count %}
+                    {% if friends_count %}
                         {% for friendship in friends %}
                             <div class="col-2 friends-col">
                                 {% profile_picture friendship.from_user '175x175' html_class="img-responsive" %}
