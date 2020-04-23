@@ -1,10 +1,9 @@
 /var/log/django/speedy.log
 {
     weekly
-    rotate 24
+    rotate 16
     create
     dateext
-    dateyesterday
     missingok
     su ubuntu ubuntu
 }
