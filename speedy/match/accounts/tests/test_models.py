@@ -4,7 +4,6 @@ from datetime import date
 from django.conf import settings as django_settings
 from django.test import override_settings
 from django.core.exceptions import ValidationError
-from django.db.utils import DataError
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
