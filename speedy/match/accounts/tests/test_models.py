@@ -1204,8 +1204,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=0)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
             self.assertEqual(first=rank_2, second=0)
 
         def test_gender_match_profile_different_gender(self):
@@ -1214,8 +1214,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
 
         def test_gender_match_profile_same_gender(self):
@@ -1227,8 +1227,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
 
         def test_age_doesnt_match_profile(self):
@@ -1239,31 +1239,67 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=0)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
             self.assertEqual(first=rank_2, second=0)
 
         def test_height_doesnt_match_profile(self):
             user_1 = self.get_active_user_doron()
             user_2 = self.get_active_user_jennifer()
+            user_1.speedy_match_profile.height = 176
+            user_2.speedy_match_profile.height = 170
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
-            for height in [1, 5, 6, 19, 20, 100, 150, 160, 170, 180, 190, 200, 210, 320, 321, 400, 450]:
+            for height in [1, 5, 6, 19, 20, 100, 120, 150, 160, 170, 180, 190, 200, 210, 220, 250, 320, 321, 400, 450]:
                 user_1.speedy_match_profile.height = height
                 user_1.save_user_and_profile()
                 if (height in [1, 5, 6, 19, 321, 400, 450]):
                     expected_rank = 0
-                elif (height in [20, 100, 150, 160, 170, 180, 190, 200, 210, 320]):
+                elif (height in [20, 100, 120, 150, 160, 170, 180, 190, 200, 210, 220, 250, 320]):
                     expected_rank = 5
                 else:
                     raise NotImplementedError()
+                if (20 <= height <= 320):
+                    self.assertEqual(first=expected_rank, second=5)
+                else:
+                    self.assertEqual(first=expected_rank, second=0)
                 rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-                self.assertEqual(first=rank_1, second=expected_rank)
                 rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+                self.assertEqual(first=rank_1, second=expected_rank)
+                self.assertEqual(first=rank_2, second=expected_rank)
+
+        @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_HEIGHT_TO_MATCH=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_HEIGHT_TO_MATCH, MAX_HEIGHT_TO_MATCH=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_HEIGHT_TO_MATCH))
+        def test_height_doesnt_match_profile_with_override_settings(self):
+            user_1 = self.get_active_user_doron()
+            user_2 = self.get_active_user_jennifer()
+            user_1.speedy_match_profile.height = 176
+            user_2.speedy_match_profile.height = 170
+            user_1.save_user_and_profile()
+            user_2.save_user_and_profile()
+            rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+            rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
+            self.assertEqual(first=rank_2, second=5)
+            for height in [1, 5, 6, 19, 20, 100, 120, 150, 160, 170, 180, 190, 200, 210, 220, 250, 320, 321, 400, 450]:
+                user_1.speedy_match_profile.height = height
+                user_1.save_user_and_profile()
+                if (height in [1, 5, 6, 19, 20, 100, 250, 320, 321, 400, 450]):
+                    expected_rank = 0
+                elif (height in [120, 150, 160, 170, 180, 190, 200, 210, 220]):
+                    expected_rank = 5
+                else:
+                    raise NotImplementedError()
+                if (120 <= height <= 220):
+                    self.assertEqual(first=expected_rank, second=5)
+                else:
+                    self.assertEqual(first=expected_rank, second=0)
+                rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+                rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+                self.assertEqual(first=rank_1, second=expected_rank)
                 self.assertEqual(first=rank_2, second=expected_rank)
 
         def test_not_allowed_to_use_speedy_match(self):
@@ -1272,20 +1308,20 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
             user_1.speedy_match_profile.not_allowed_to_use_speedy_match = True
             user_1.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=0)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
             self.assertEqual(first=rank_2, second=0)
             user_1.speedy_match_profile.not_allowed_to_use_speedy_match = False
             user_1.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
 
         def test_smoking_status_doesnt_match_profile(self):
@@ -1296,8 +1332,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=0)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
             self.assertEqual(first=rank_2, second=0)
 
         def test_relationship_status_match_profile(self):
@@ -1307,8 +1343,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=5)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
 
         def test_relationship_status_doesnt_match_profile(self):
@@ -1319,8 +1355,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=0)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=0)
             self.assertEqual(first=rank_2, second=0)
 
         def test_match_profile_rank_3(self):
@@ -1331,8 +1367,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=3)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=3)
             self.assertEqual(first=rank_2, second=5)
 
         def test_match_profile_rank_4(self):
@@ -1342,8 +1378,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=4)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=4)
             self.assertEqual(first=rank_2, second=5)
 
         def test_match_profile_rank_1(self):
@@ -1356,8 +1392,7 @@ if (django_settings.LOGIN_ENABLED):
             user_1.save_user_and_profile()
             user_2.save_user_and_profile()
             rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
-            self.assertEqual(first=rank_1, second=1)
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+            self.assertEqual(first=rank_1, second=1)
             self.assertEqual(first=rank_2, second=5)
-
 

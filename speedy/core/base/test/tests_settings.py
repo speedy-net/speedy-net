@@ -115,6 +115,9 @@ class OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
     MIN_AGE_TO_MATCH_ALLOWED = 2  # In years.
     MAX_AGE_TO_MATCH_ALLOWED = 178  # In years.
 
+    MIN_HEIGHT_TO_MATCH = 120  # In cm.
+    MAX_HEIGHT_TO_MATCH = 220  # In cm.
+
 
 if (django_settings.LOGIN_ENABLED):
     # Generate a new random password for each test.
