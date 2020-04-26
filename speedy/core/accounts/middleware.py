@@ -1,6 +1,12 @@
+import logging
+
 from django.conf import settings as django_settings
 from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
+from django.contrib.sites.models import Site
+from django.utils.translation import gettext_lazy as _
+
+logger = logging.getLogger(__name__)
 
 
 class SiteProfileMiddleware(MiddlewareMixin):
@@ -20,7 +26,11 @@ class SiteProfileMiddleware(MiddlewareMixin):
             if (update_last_visit):
                 request.user.profile.update_last_visit()
             if (not (request.user.has_confirmed_email_or_registered_now)):
+                _user_is_active = (request.user.is_active or request.user.profile.is_active)
                 request.user.profile.deactivate()
+                if (not (_user_is_active == (request.user.is_active or request.user.profile.is_active))):
+                    site = Site.objects.get_current()
+                    logger.info('User {user} was deactivated on {site_name} - no confirmed email.'.format(site_name=_(site.name), user=request.user))
             if (not (request.user.profile.is_active_and_valid)):
                 redirect_this_user = True
                 for url in django_settings.DONT_REDIRECT_INACTIVE_USER:
