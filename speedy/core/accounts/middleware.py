@@ -26,11 +26,12 @@ class SiteProfileMiddleware(MiddlewareMixin):
             if (update_last_visit):
                 request.user.profile.update_last_visit()
             if (not (request.user.has_confirmed_email_or_registered_now)):
-                _user_is_active = (request.user.is_active or request.user.profile.is_active)
-                request.user.profile.deactivate()
-                if (not (_user_is_active == (request.user.is_active or request.user.profile.is_active))):
-                    site = Site.objects.get_current()
-                    logger.info('User {user} was deactivated on {site_name} - no confirmed email.'.format(site_name=_(site.name), user=request.user))
+                if (not ((request.user.is_superuser) or (request.user.is_staff))):
+                    _user_is_active = (request.user.is_active or request.user.speedy_net_profile.is_active)
+                    request.user.speedy_net_profile.deactivate()
+                    if (not (_user_is_active == (request.user.is_active or request.user.speedy_net_profile.is_active))):
+                        speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
+                        logger.info('User {user} was deactivated on {site_name} - no confirmed email.'.format(site_name=_(speedy_net_site.name), user=request.user))
             if (not (request.user.profile.is_active_and_valid)):
                 redirect_this_user = True
                 for url in django_settings.DONT_REDIRECT_INACTIVE_USER:
