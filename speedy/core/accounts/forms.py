@@ -19,9 +19,10 @@ from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username, to_attribute
+from speedy.core.uploads.models import Image
 from .models import User, UserEmailAddress
 from .utils import normalize_email
-from .validators import validate_date_of_birth_in_forms, validate_email_unique
+from . import validators as speedy_core_accounts_validators
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +31,7 @@ class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
         email = normalize_email(email=email)
-        validate_email_unique(email=email)
+        speedy_core_accounts_validators.validate_email_unique(email=email)
         return email
 
 
@@ -44,7 +45,7 @@ class CleanNewPasswordMixin(object):
 class CleanDateOfBirthMixin(object):
     def clean_date_of_birth(self):
         date_of_birth = self.cleaned_data['date_of_birth']
-        validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
+        speedy_core_accounts_validators.validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
         return date_of_birth
 
 
@@ -152,6 +153,19 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         )
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
+    def clean_photo(self):
+        photo = self.files.get('photo')
+        if (photo):
+            user_image = Image(owner=self.instance, file=photo)
+            user_image.save()
+            self.instance._new_photo = user_image
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=True)
+        else:
+            if (self.instance.photo):
+                photo = self.instance.photo
+                speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=False)
+        return self.cleaned_data.get('photo')
+
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
@@ -161,6 +175,10 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     def save(self, commit=True):
         if (commit):
+            if ('photo' in self.fields):
+                photo = self.files.get('photo')
+                if (photo):
+                    self.instance.photo = self.instance._new_photo
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()

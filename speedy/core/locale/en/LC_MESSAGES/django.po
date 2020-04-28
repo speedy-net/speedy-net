@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 13:39+0300\n"
+"POT-Creation-Date: 2020-04-28 12:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1711,46 +1711,46 @@ msgstr ""
 msgid "Speedy Core Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:104
 msgid "Your email"
 msgstr ""
 
-#: .\accounts\forms.py:104
+#: .\accounts\forms.py:105
 msgid "New password"
 msgstr ""
 
-#: .\accounts\forms.py:112
+#: .\accounts\forms.py:113
 msgid "New username"
 msgstr ""
 
-#: .\accounts\forms.py:115
+#: .\accounts\forms.py:116
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:211 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:229 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:217 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:235 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:220 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:238 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:233
+#: .\accounts\forms.py:251
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:317
+#: .\accounts\forms.py:335
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:329
+#: .\accounts\forms.py:347
 msgid "Invalid password."
 msgstr ""
 
@@ -1758,7 +1758,7 @@ msgstr ""
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:79 .\accounts\models.py:80 .\accounts\validators.py:16
+#: .\accounts\models.py:79 .\accounts\models.py:80 .\accounts\validators.py:18
 msgid "This username is already taken."
 msgstr ""
 
@@ -1987,19 +1987,19 @@ msgstr ""
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\validators.py:34
+#: .\accounts\validators.py:36
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
 
-#: .\accounts\validators.py:36
+#: .\accounts\validators.py:38
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\validators.py:42
+#: .\accounts\validators.py:44
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2010,7 +2010,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:53
+#: .\accounts\validators.py:55
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2021,7 +2021,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:64
+#: .\accounts\validators.py:66
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2032,7 +2032,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:75
+#: .\accounts\validators.py:77
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2043,7 +2043,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:98
+#: .\accounts\validators.py:100
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2054,14 +2054,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:108
+#: .\accounts\validators.py:110
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:128
+#: .\accounts\validators.py:130
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2070,19 +2070,34 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:138
+#: .\accounts\validators.py:140
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:184 .\accounts\validators.py:191
+#: .\accounts\validators.py:186 .\accounts\validators.py:193
 msgid "Enter a valid date."
 msgstr ""
 
-#: .\accounts\validators.py:201
+#: .\accounts\validators.py:203
 msgid "This email is already in use."
+msgstr ""
+
+#: .\accounts\validators.py:208
+msgid "A profile picture is required."
+msgstr ""
+
+#: .\accounts\validators.py:210
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 15 MB."
+msgstr ""
+
+#: .\accounts\validators.py:233
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats "
+"are accepted."
 msgstr ""
 
 #: .\accounts\views.py:60

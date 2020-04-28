@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from .utils import generate_regular_udid, generate_small_udid
-from .validators import regular_udid_validator, small_udid_validator
+from . import validators as speedy_core_base_validators
 
 
 class ValidateModelMixin(object):
@@ -81,7 +81,7 @@ class SmallUDIDField(UDIDField):
         given_kwargs = kwargs
         defaults = {
             'max_length': django_settings.SMALL_UDID_LENGTH,
-            'validators': [small_udid_validator],
+            'validators': [speedy_core_base_validators.small_udid_validator],
         }
         kwargs = defaults
         kwargs.update(given_kwargs)
@@ -95,7 +95,7 @@ class RegularUDIDField(UDIDField):
         given_kwargs = kwargs
         defaults = {
             'max_length': django_settings.REGULAR_UDID_LENGTH,
-            'validators': [regular_udid_validator],
+            'validators': [speedy_core_base_validators.regular_udid_validator],
         }
         kwargs = defaults
         kwargs.update(given_kwargs)

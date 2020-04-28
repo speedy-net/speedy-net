@@ -12,7 +12,7 @@ from speedy.core.base.forms import DeleteUnneededFieldsMixin
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
 from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
-
+from speedy.core.accounts import validators as speedy_core_accounts_validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import validators as speedy_match_accounts_validators, utils
 
@@ -212,11 +212,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_image = Image(owner=self.instance.user, file=photo)
             user_image.save()
             self.instance.user._new_photo = user_image
-            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
         else:
             photo = self.instance.user.photo
-            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
-        return self.cleaned_data
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
+        return self.cleaned_data.get('photo')
 
     def clean_gender_to_match(self):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
