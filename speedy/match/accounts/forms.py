@@ -54,7 +54,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
     }
     # Fields who are not in the SpeedyMatchSiteProfile model.
-    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
+    profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
     relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
@@ -63,7 +63,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     class Meta:
         model = SpeedyMatchSiteProfile
         fields = (
-            'photo',
+            'profile_picture',
             *(to_attribute(name='profile_description', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
             'height',
             *(to_attribute(name='children', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES),
@@ -92,7 +92,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             'relationship_status_match': CustomJsonWidget(choices=User.RELATIONSHIP_STATUS_VALID_CHOICES),
         }
         error_messages = {
-            'photo': {
+            'profile_picture': {
                 'required': _("A profile picture is required."),
             },
             'height': {
@@ -150,9 +150,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         # Delete unneeded fields from the form.
         self.delete_unneeded_fields()
         # Update fields attributes according to the user's gender and language.
-        if ('photo' in self.fields):
-            self.fields['photo'].widget.attrs['user'] = self.instance.user
-            self.fields['photo'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
+        if ('profile_picture' in self.fields):
+            self.fields['profile_picture'].widget.attrs['user'] = self.instance.user
+            self.fields['profile_picture'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Add profile picture')
         if ('height' in self.fields):
             self.fields['height'].label = pgettext_lazy(context=self.instance.user.get_gender(), message='My height in centimeters')
         if ('diet' in self.fields):
@@ -199,16 +199,16 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         self.order_fields(field_order=self.get_fields())
 
     def clean_photo(self):
-        photo = self.files.get('photo')
-        if (photo):
-            user_image = Image(owner=self.instance.user, file=photo)
+        profile_picture = self.files.get('profile_picture')
+        if (profile_picture):
+            user_image = Image(owner=self.instance.user, file=profile_picture)
             user_image.save()
             self.instance.user._new_photo = user_image
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=profile_picture, test_new_photo=True)
         else:
-            photo = self.instance.user.photo
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
-        return self.cleaned_data.get('photo')
+            profile_picture = self.instance.user.photo
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=profile_picture, test_new_photo=False)
+        return self.cleaned_data.get('profile_picture')
 
     def clean_gender_to_match(self):
         return [int(value) for value in self.cleaned_data['gender_to_match']]
@@ -226,9 +226,9 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (not (self.instance.height == user_profile.height)):
                 site = Site.objects.get_current()
                 logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height}'.format(site_name=_(site.name), user=self.instance.user, new_height=self.instance.height, old_height=user_profile.height))
-            if ('photo' in self.fields):
-                photo = self.files.get('photo')
-                if (photo):
+            if ('profile_picture' in self.fields):
+                profile_picture = self.files.get('profile_picture')
+                if (profile_picture):
                     self.instance.user.photo = self.instance.user._new_photo
             for field_name in self.user_fields:
                 if (field_name in self.fields):

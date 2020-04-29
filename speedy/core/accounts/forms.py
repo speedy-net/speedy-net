@@ -141,19 +141,19 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
 
 
 class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
-    photo = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Update your profile picture'), error_messages={'required': _("A profile picture is required.")})
+    profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Update your profile picture'), error_messages={'required': _("A profile picture is required.")})
 
     class Meta:
         model = User
-        fields = ('slug', 'gender', 'date_of_birth', 'photo')
+        fields = ('slug', 'gender', 'date_of_birth', 'profile_picture')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = django_settings.DEFAULT_DATE_FIELD_FORMAT
-        self.fields['photo'].widget.attrs['user'] = self.instance
-        self.fields['photo'].label = pgettext_lazy(context=self.instance.get_gender(), message='Update your profile picture')
+        self.fields['profile_picture'].widget.attrs['user'] = self.instance
+        self.fields['profile_picture'].label = pgettext_lazy(context=self.instance.get_gender(), message='Update your profile picture')
         self.helper = FormHelperWithDefaults()
         # split into two columns
         field_names = list(self.fields.keys())
@@ -170,18 +170,18 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
     def get_field_pairs(self):
         return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('photo', ))
 
-    # def clean_photo(self):
-    #     photo = self.files.get('photo')
-    #     if (photo):
-    #         user_image = Image(owner=self.instance, file=photo)
-    #         user_image.save()
-    #         self.instance._new_photo = user_image
-    #         speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=True)
-    #     else:
-    #         if (self.instance.photo):
-    #             photo = self.instance.photo
-    #             speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=False)
-    #     return self.cleaned_data.get('photo')
+    def clean_photo(self):
+        profile_picture = self.files.get('profile_picture')
+        if (profile_picture):
+            user_image = Image(owner=self.instance, file=profile_picture)
+            user_image.save()
+            self.instance._new_photo = user_image
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=profile_picture, test_new_photo=True)
+        else:
+            if (self.instance.photo):
+                profile_picture = self.instance.photo
+                speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=profile_picture, test_new_photo=False)
+        return self.cleaned_data.get('profile_picture')
 
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
@@ -192,10 +192,10 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     def save(self, commit=True):
         if (commit):
-            # if ('photo' in self.fields):
-            #     photo = self.files.get('photo')
-            #     if (photo):
-            #         self.instance.photo = self.instance._new_photo
+            if ('profile_picture' in self.fields):
+                profile_picture = self.files.get('profile_picture')
+                if (profile_picture):
+                    self.instance.photo = self.instance._new_photo
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()
