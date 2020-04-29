@@ -1,5 +1,3 @@
-from itertools import zip_longest
-
 from crispy_forms.layout import Div, Row, Submit, Field
 from django.utils.translation import pgettext_lazy
 

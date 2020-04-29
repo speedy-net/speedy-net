@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 13:39+0300\n"
+"POT-Creation-Date: 2020-04-29 16:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -326,55 +326,55 @@ msgid "My height in centimeters"
 msgstr ""
 
 #: .\__translations\__translations.py:17
-#: .\templates\accounts\edit_profile\activate.html:114
+#: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:18
-#: .\templates\accounts\edit_profile\activate.html:120
+#: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:19
-#: .\templates\accounts\edit_profile\activate.html:127
+#: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
 msgstr ""
 
 #: .\__translations\__translations.py:21
-#: .\templates\accounts\edit_profile\activate.html:115
+#: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:22
-#: .\templates\accounts\edit_profile\activate.html:121
+#: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:23
-#: .\templates\accounts\edit_profile\activate.html:128
+#: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:25
-#: .\templates\accounts\edit_profile\activate.html:116
+#: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:26
-#: .\templates\accounts\edit_profile\activate.html:122
+#: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr ""
 
 #: .\__translations\__translations.py:27
-#: .\templates\accounts\edit_profile\activate.html:129
+#: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr ""
@@ -458,93 +458,93 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:57
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:65 .\accounts\forms.py:104 .\accounts\validators.py:46
+#: .\accounts\forms.py:57 .\accounts\forms.py:96
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:66
+#: .\accounts\forms.py:58
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:66 .\accounts\forms.py:110 .\accounts\validators.py:106
+#: .\accounts\forms.py:58 .\accounts\forms.py:102 .\accounts\validators.py:73
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\forms.py:67
+#: .\accounts\forms.py:59
 msgid "My smoking status"
 msgstr ""
 
-#: .\accounts\forms.py:67 .\accounts\forms.py:113 .\accounts\validators.py:111
+#: .\accounts\forms.py:59 .\accounts\forms.py:105 .\accounts\validators.py:78
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\forms.py:68
+#: .\accounts\forms.py:60
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:68 .\accounts\forms.py:116 .\accounts\validators.py:116
+#: .\accounts\forms.py:60 .\accounts\forms.py:108 .\accounts\validators.py:83
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:69 .\accounts\forms.py:134 .\accounts\validators.py:121
+#: .\accounts\forms.py:61 .\accounts\forms.py:126 .\accounts\validators.py:88
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:107
+#: .\accounts\forms.py:99
 msgid "Your height is required."
 msgstr ""
 
-#: .\accounts\forms.py:119 .\accounts\validators.py:76
+#: .\accounts\forms.py:111 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\accounts\forms.py:122 .\accounts\forms.py:157 .\accounts\validators.py:81
+#: .\accounts\forms.py:114 .\accounts\forms.py:149 .\accounts\validators.py:48
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:125 .\accounts\models.py:111 .\accounts\validators.py:86
+#: .\accounts\forms.py:117 .\accounts\models.py:111 .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:128 .\accounts\models.py:114 .\accounts\validators.py:91
+#: .\accounts\forms.py:120 .\accounts\models.py:114 .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:131 .\accounts\validators.py:96
+#: .\accounts\forms.py:123 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:137
+#: .\accounts\forms.py:129
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:140
+#: .\accounts\forms.py:132
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:143 .\accounts\validators.py:143
+#: .\accounts\forms.py:135 .\accounts\validators.py:110
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:146 .\accounts\validators.py:151
+#: .\accounts\forms.py:138 .\accounts\validators.py:118
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:149 .\accounts\validators.py:159
+#: .\accounts\forms.py:141 .\accounts\validators.py:126
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:157 .\templates\profiles\user_extra_info_widget.html:22
+#: .\accounts\forms.py:149 .\templates\profiles\user_extra_info_widget.html:22
 msgid "City or locality"
 msgstr ""
 
-#: .\accounts\forms.py:192 .\accounts\models.py:121
+#: .\accounts\forms.py:184 .\accounts\models.py:121
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -649,11 +649,11 @@ msgstr ""
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:280 .\templates\accounts\edit_profile\activate.html:28
+#: .\accounts\models.py:280 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr ""
 
-#: .\accounts\utils.py:88
+#: .\accounts\utils.py:89
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -662,42 +662,31 @@ msgid ""
 "in the last week."
 msgstr ""
 
-#: .\accounts\validators.py:48
-msgid ""
-"This picture's file size is too big. The maximal file size allowed is 15 MB."
-msgstr ""
-
-#: .\accounts\validators.py:71
-msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
-msgstr ""
-
-#: .\accounts\validators.py:101
+#: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
 msgstr ""
 
-#: .\accounts\validators.py:126
+#: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
 msgstr ""
 
-#: .\accounts\validators.py:131
+#: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
 msgstr ""
 
-#: .\accounts\validators.py:137
+#: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
 
-#: .\accounts\validators.py:145
+#: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
 msgstr ""
 
-#: .\accounts\validators.py:153
+#: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be five hearts."
 msgstr ""
 
-#: .\accounts\validators.py:161
+#: .\accounts\validators.py:128
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
@@ -893,31 +882,31 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:24
+#: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:45
+#: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\matches\settings\base.html:39
 #: .\templates\profiles\user_extra_info_widget.html:18
 msgid "About me"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:47
+#: .\templates\accounts\edit_profile\activate.html:48
 #: .\templates\matches\settings\base.html:34
 msgid "About my match"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:75
+#: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:78
+#: .\templates\accounts\edit_profile\activate.html:79
 msgid "Next step"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\activate.html:84
+#: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 

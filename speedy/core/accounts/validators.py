@@ -1,8 +1,10 @@
 import logging
 
+from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.template.loader import render_to_string
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
 
@@ -199,5 +201,35 @@ def validate_email_unique(email, user_email_address_pk=None):
         # If this email address is confirmed, raise an exception.
         if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
             raise ValidationError(_('This email is already in use.'))
+
+
+def validate_profile_picture(profile_picture):
+    if (not (profile_picture)):
+        raise ValidationError(_("A profile picture is required."))
+    if (profile_picture.size > django_settings.MAX_PHOTO_SIZE):
+        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
+
+
+def validate_profile_picture_for_user(user, profile_picture, test_new_profile_picture):
+    validate_profile_picture(profile_picture=profile_picture)
+    if (test_new_profile_picture):
+        user._photo = user.photo
+    photo_is_valid = False
+    try:
+        if (test_new_profile_picture):
+            user.photo = user._new_profile_picture
+        profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
+        logger.debug('validate_profile_picture_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
+            user=user,
+            profile_picture_html=profile_picture_html,
+        ))
+        if (not ('speedy-core/images/user.svg' in profile_picture_html)):
+            photo_is_valid = True
+    except:
+        photo_is_valid = False
+    if (test_new_profile_picture):
+        user.photo = user._photo
+    if (not (photo_is_valid)):
+        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
