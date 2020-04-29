@@ -170,18 +170,18 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
     def get_field_pairs(self):
         return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('photo', ))
 
-    def clean_photo(self):
-        photo = self.files.get('photo')
-        if (photo):
-            user_image = Image(owner=self.instance, file=photo)
-            user_image.save()
-            self.instance._new_photo = user_image
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=True)
-        else:
-            if (self.instance.photo):
-                photo = self.instance.photo
-                speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=False)
-        return self.cleaned_data.get('photo')
+    # def clean_photo(self):
+    #     photo = self.files.get('photo')
+    #     if (photo):
+    #         user_image = Image(owner=self.instance, file=photo)
+    #         user_image.save()
+    #         self.instance._new_photo = user_image
+    #         speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=True)
+    #     else:
+    #         if (self.instance.photo):
+    #             photo = self.instance.photo
+    #             speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=photo, test_new_photo=False)
+    #     return self.cleaned_data.get('photo')
 
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
@@ -192,10 +192,10 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     def save(self, commit=True):
         if (commit):
-            if ('photo' in self.fields):
-                photo = self.files.get('photo')
-                if (photo):
-                    self.instance.photo = self.instance._new_photo
+            # if ('photo' in self.fields):
+            #     photo = self.files.get('photo')
+            #     if (photo):
+            #         self.instance.photo = self.instance._new_photo
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()
