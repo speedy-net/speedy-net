@@ -1,14 +1,11 @@
 import logging
 
-from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-from django.template.loader import render_to_string
 
 from speedy.core.base.utils import string_is_not_empty
 from speedy.core.accounts.models import User
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-from speedy.core.uploads.models import Image
 
 logger = logging.getLogger(__name__)
 
@@ -39,36 +36,6 @@ def relationship_status_is_valid(relationship_status):
 
 def rank_is_valid(rank):
     return (rank in SpeedyMatchSiteProfile.RANK_VALID_VALUES)
-
-
-def validate_photo(photo):
-    if (not (photo)):
-        raise ValidationError(_("A profile picture is required."))
-    if (photo.size > django_settings.MAX_PHOTO_SIZE):
-        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
-
-
-def validate_photo_for_user(user, photo, test_new_photo):
-    validate_photo(photo=photo)
-    if (test_new_photo):
-        user._photo = user.photo
-    photo_is_valid = False
-    try:
-        if (test_new_photo):
-            user.photo = user._new_photo
-        profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
-        logger.debug('validate_photo_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
-            user=user,
-            profile_picture_html=profile_picture_html,
-        ))
-        if (not ('speedy-core/images/user.svg' in profile_picture_html)):
-            photo_is_valid = True
-    except:
-        photo_is_valid = False
-    if (test_new_photo):
-        user.photo = user._photo
-    if (not (photo_is_valid)):
-        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
 def validate_profile_description(profile_description):

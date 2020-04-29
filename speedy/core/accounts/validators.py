@@ -1,8 +1,10 @@
 import logging
 
+from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.template.loader import render_to_string
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
 
@@ -199,5 +201,35 @@ def validate_email_unique(email, user_email_address_pk=None):
         # If this email address is confirmed, raise an exception.
         if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
             raise ValidationError(_('This email is already in use.'))
+
+
+def validate_photo(photo):
+    if (not (photo)):
+        raise ValidationError(_("A profile picture is required."))
+    if (photo.size > django_settings.MAX_PHOTO_SIZE):
+        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
+
+
+def validate_photo_for_user(user, photo, test_new_photo):
+    validate_photo(photo=photo)
+    if (test_new_photo):
+        user._photo = user.photo
+    photo_is_valid = False
+    try:
+        if (test_new_photo):
+            user.photo = user._new_photo
+        profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
+        logger.debug('validate_photo_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
+            user=user,
+            profile_picture_html=profile_picture_html,
+        ))
+        if (not ('speedy-core/images/user.svg' in profile_picture_html)):
+            photo_is_valid = True
+    except:
+        photo_is_valid = False
+    if (test_new_photo):
+        user.photo = user._photo
+    if (not (photo_is_valid)):
+        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
