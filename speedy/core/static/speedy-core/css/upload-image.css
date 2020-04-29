@@ -1,0 +1,29 @@
+.image-click-zone {
+    width: 325px;
+    height: 215px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    background-position: center center;
+    background-size: 100%;
+}
+
+.image-click-zone.uploaded .fa-camera {
+    display: none;
+}
+
+.image-click-zone .fa-camera {
+    font-size: 150px;
+    top: 35px;
+    left: 50%;
+    margin-left: -80px;
+    position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+    .image-click-zone {
+        width: auto;
+    }
+}
+
