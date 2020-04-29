@@ -99,7 +99,7 @@ class IndexView(generic.View):
 
 
 class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
-    template_name = 'accounts/edit_profile/account.html'
+    template_name = 'accounts/edit_profile/profile.html'
     success_url = reverse_lazy('accounts:edit_profile')
     form_class = ProfileForm
 

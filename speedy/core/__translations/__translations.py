@@ -42,6 +42,10 @@ pgettext_lazy(context="female", message='username (slug)')
 pgettext_lazy(context="male", message='username (slug)')
 pgettext_lazy(context="other", message='username (slug)')
 
+pgettext_lazy(context="female", message='Update your profile picture')
+pgettext_lazy(context="male", message='Update your profile picture')
+pgettext_lazy(context="other", message='Update your profile picture')
+
 pgettext_lazy(context="female", message='Save Changes')
 pgettext_lazy(context="male", message='Save Changes')
 pgettext_lazy(context="other", message='Save Changes')

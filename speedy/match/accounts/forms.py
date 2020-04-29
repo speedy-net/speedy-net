@@ -11,20 +11,12 @@ from speedy.core.base.utils import to_attribute, update_form_field_choices
 from speedy.core.base.forms import DeleteUnneededFieldsMixin
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
-from speedy.core.accounts.forms import ProfileNotificationsForm as CoreProfileNotificationsForm
-
+from speedy.core.accounts.forms import CustomPhotoWidget, ProfileNotificationsForm as CoreProfileNotificationsForm
+from speedy.core.accounts import validators as speedy_core_accounts_validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import validators as speedy_match_accounts_validators, utils
 
 logger = logging.getLogger(__name__)
-
-
-class CustomPhotoWidget(forms.widgets.Widget):
-    def render(self, name, value, attrs=None, renderer=None):
-        return render_to_string(template_name='accounts/edit_profile/activation_form/photo_widget.html', context={
-            'name': name,
-            'user_photo': self.attrs['user'].photo,
-        })
 
 
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
@@ -212,11 +204,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_image = Image(owner=self.instance.user, file=photo)
             user_image.save()
             self.instance.user._new_photo = user_image
-            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=True)
         else:
             photo = self.instance.user.photo
-            speedy_match_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
-        return self.cleaned_data
+            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=photo, test_new_photo=False)
+        return self.cleaned_data.get('photo')
 
     def clean_gender_to_match(self):
         return [int(value) for value in self.cleaned_data['gender_to_match']]

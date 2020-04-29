@@ -1,20 +1,4 @@
 $(document).ready(function() {
-    $('.activation-form #id_photo').change(function () {
-        var file = this.files[0];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-           $('.image-click-zone').css('background-image', 'url("' + reader.result + '")').addClass('uploaded');
-        };
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-        }
-    });
-
-    $('.image-click-zone').click(function(){
-        $(this).closest('.activation-form-field').find('#id_photo').click()
-    });
-
     $('.widget-json').each(function (index, element) {
         var widget_value = JSON.parse($(element).find('.widget-input').val());
         for (var key in widget_value) {
@@ -52,3 +36,4 @@ $(document).ready(function() {
         json_widget.find('.widget-input').val(JSON.stringify(json_widget_value));
     });
 });
+

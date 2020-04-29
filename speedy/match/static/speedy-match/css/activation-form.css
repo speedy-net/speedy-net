@@ -78,10 +78,6 @@ body.bidi-rtl .user-profile {
     font-weight: bold;
 }
 
-.activation-form #id_photo {
-    display: none;
-}
-
 .activation-form {
     margin: 20px 0;
 }
@@ -122,29 +118,6 @@ body.bidi-rtl .user-profile {
 
 .activation-form label[for=id_photo] {
     margin-bottom: 15px;
-}
-
-.image-click-zone {
-    width: 325px;
-    height: 215px;
-    background-color: #CCCCCC;
-    border-radius: 10px;
-    position: relative;
-    margin: auto;
-    background-position: center center;
-    background-size: 100%;
-}
-
-.image-click-zone.uploaded .fa-camera {
-    display: none;
-}
-
-.image-click-zone .fa-camera {
-    font-size: 150px;
-    top: 35px;
-    left: 50%;
-    margin-left: -80px;
-    position: absolute;
 }
 
 .widget-choice {
@@ -203,10 +176,6 @@ ul.errorlist li {
         width: auto;
     }
 
-    .image-click-zone {
-        width: auto;
-    }
-
     .widget-group .choices {
         width: auto;
         text-align: left;
@@ -227,3 +196,4 @@ ul.errorlist li {
     }
     */
 }
+

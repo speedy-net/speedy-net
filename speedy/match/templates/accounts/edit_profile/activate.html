@@ -13,6 +13,7 @@
 {% block extra_css %}
     {{ block.super }}
     {% if form %}
+        <link rel="stylesheet" href="{% static 'speedy-core/css/upload-image.css' %}" />
         <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
     {% endif %}
 {% endblock %}
@@ -59,7 +60,7 @@
                                 {{ form.non_field_errors }}
                             {% endif %}
                             {% for field in form %}
-                                <div class="activation-form-field text-left flip">
+                                <div class="activation-form-field form-field text-left flip">
                                     <div>
                                         {{ field.label_tag }}
                                     </div>

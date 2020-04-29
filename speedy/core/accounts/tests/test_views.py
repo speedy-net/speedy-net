@@ -788,7 +788,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_can_open_the_page(self):
             r = self.client.get(path=self.page_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/account.html')
+            self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
 
         def test_user_can_save_his_settings(self):
             r = self.client.post(path=self.page_url, data=self.data)

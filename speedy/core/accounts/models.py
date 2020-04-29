@@ -25,7 +25,7 @@ from speedy.core.base.utils import normalize_slug, normalize_username, generate_
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
-from .validators import get_username_validators, get_slug_validators, validate_date_of_birth_in_model, validate_email_unique
+from . import validators as speedy_core_accounts_validators
 
 logger = logging.getLogger(__name__)
 
@@ -90,8 +90,8 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     @classproperty
     def validators(cls):
         validators = {
-            'username': get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
-            'slug': get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
+            'username': speedy_core_accounts_validators.get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
+            'slug': speedy_core_accounts_validators.get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
         }
         return validators
 
@@ -365,9 +365,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     @classproperty
     def validators(cls):
         validators = {
-            'username': get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
-            'slug': get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
-            'date_of_birth': [validate_date_of_birth_in_model],
+            'username': speedy_core_accounts_validators.get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
+            'slug': speedy_core_accounts_validators.get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
+            'date_of_birth': [speedy_core_accounts_validators.validate_date_of_birth_in_model],
         }
         return validators
 
@@ -736,7 +736,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         self.validate_email_unique()
 
     def validate_email_unique(self):
-        validate_email_unique(email=self.email, user_email_address_pk=self.pk)
+        speedy_core_accounts_validators.validate_email_unique(email=self.email, user_email_address_pk=self.pk)
 
     def _generate_confirmation_token(self):
         return generate_confirmation_token()

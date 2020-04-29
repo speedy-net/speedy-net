@@ -1,0 +1,6 @@
+<div{% if user_photo %} style="background-image: url({{ user_photo.file.url }})"{% endif %} class="image-click-zone{% if user_photo %} uploaded{% endif %}">
+    <i class="fa fa-camera" aria-hidden="true"></i>
+</div>
+<div class="user-photo-input-wrapper">
+    <input type="file" accept="image/*" name="{{ name }}" id="id_{{ name }}">
+</div>
