@@ -168,7 +168,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def get_field_pairs(self):
-        return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', 'gender'), ('date_of_birth', ), ('photo', ))
+        return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('photo', ))
 
     def clean_photo(self):
         photo = self.files.get('photo')
