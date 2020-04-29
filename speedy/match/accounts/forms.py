@@ -198,7 +198,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         # Rearrange the fields.
         self.order_fields(field_order=self.get_fields())
 
-    def clean_photo(self):
+    def clean_profile_picture(self):
         profile_picture = self.files.get('profile_picture')
         if (profile_picture):
             user_image = Image(owner=self.instance.user, file=profile_picture)

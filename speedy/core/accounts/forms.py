@@ -170,7 +170,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
     def get_field_pairs(self):
         return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('photo', ))
 
-    def clean_photo(self):
+    def clean_profile_picture(self):
         profile_picture = self.files.get('profile_picture')
         if (profile_picture):
             user_image = Image(owner=self.instance, file=profile_picture)

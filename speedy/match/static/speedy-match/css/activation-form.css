@@ -116,7 +116,7 @@ body.bidi-rtl .user-profile {
     text-decoration: underline;
 }
 
-.activation-form label[for=id_photo] {
+.activation-form label[for=id_profile_picture] {
     margin-bottom: 15px;
 }
 

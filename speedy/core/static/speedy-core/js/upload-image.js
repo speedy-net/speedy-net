@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.user-photo-input-wrapper #id_photo').change(function() {
+    $('.user-photo-input-wrapper #id_profile_picture').change(function() {
         var file = this.files[0];
         var reader = new FileReader();
         reader.onloadend = function () {
@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     $('.image-click-zone').click(function() {
-        $('.user-photo-input-wrapper #id_photo').click()
+        $('.user-photo-input-wrapper #id_profile_picture').click()
     });
 });
 

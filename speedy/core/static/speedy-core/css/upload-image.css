@@ -21,7 +21,7 @@
     position: absolute;
 }
 
-.user-photo-input-wrapper #id_photo {
+.user-photo-input-wrapper #id_profile_picture {
     display: none;
 }
 
