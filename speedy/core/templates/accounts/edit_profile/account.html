@@ -2,6 +2,13 @@
 
 {% load crispy_forms_tags %}
 
+{% block extra_css %}
+    {{ block.super }}
+    {% if form %}
+        <link rel="stylesheet" href="{% static 'speedy-core/css/upload-image.css' %}" />
+    {% endif %}
+{% endblock %}
+
 {% block tab_content %}
     <div data-block="AccountForm">
         {% crispy form %}
