@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 from speedy.core.profiles.widgets import Widget
 from speedy.core.accounts.models import User
-from speedy.match.accounts import validators
+from speedy.match.accounts import validators as speedy_match_accounts_validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 logger = logging.getLogger(__name__)
@@ -50,13 +50,13 @@ class UserExtraDetailsWidget(Widget):
         cd = super().get_context_data()
 
         diet_code = self.user.diet
-        diet = self.user.get_diet() if (validators.diet_is_valid(diet=diet_code)) else str(_("Unknown"))
+        diet = self.user.get_diet() if (speedy_match_accounts_validators.diet_is_valid(diet=diet_code)) else str(_("Unknown"))
 
         smoking_status_code = self.user.smoking_status
-        smoking_status = self.user.get_smoking_status() if (validators.smoking_status_is_valid(smoking_status=smoking_status_code)) else str(_("Unknown"))
+        smoking_status = self.user.get_smoking_status() if (speedy_match_accounts_validators.smoking_status_is_valid(smoking_status=smoking_status_code)) else str(_("Unknown"))
 
         relationship_status_code = self.user.relationship_status
-        relationship_status = self.user.get_relationship_status() if (validators.relationship_status_is_valid(relationship_status=relationship_status_code)) else str(_("Unknown"))
+        relationship_status = self.user.get_relationship_status() if (speedy_match_accounts_validators.relationship_status_is_valid(relationship_status=relationship_status_code)) else str(_("Unknown"))
 
         gender_codes = self.user.speedy_match_profile.gender_to_match
         genders_to_match_list = [str(choice[1]) for choice in User.GENDER_CHOICES if (choice[0] in gender_codes)]

@@ -14,14 +14,16 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
+from django.template.loader import render_to_string
 
 from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
 from speedy.core.base.utils import normalize_username, to_attribute
+from speedy.core.uploads.models import Image
 from .models import User, UserEmailAddress
 from .utils import normalize_email
-from .validators import validate_date_of_birth_in_forms, validate_email_unique
+from . import validators as speedy_core_accounts_validators
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +32,7 @@ class CleanEmailMixin(object):
     def clean_email(self):
         email = self.cleaned_data['email']
         email = normalize_email(email=email)
-        validate_email_unique(email=email)
+        speedy_core_accounts_validators.validate_email_unique(email=email)
         return email
 
 
@@ -44,7 +46,7 @@ class CleanNewPasswordMixin(object):
 class CleanDateOfBirthMixin(object):
     def clean_date_of_birth(self):
         date_of_birth = self.cleaned_data['date_of_birth']
-        validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
+        speedy_core_accounts_validators.validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
         return date_of_birth
 
 
@@ -80,23 +82,32 @@ class LocalizedFirstLastNameMixin(object):
 
 
 class AddAttributesToFieldsMixin(object):
-    ltr_attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
     attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password', 'date_of_birth']
+    ltr_attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if (field_name in self.attribute_fields):
-                classes = field.widget.attrs.get("class", "")
-                if (field_name in self.ltr_attribute_fields):
-                    classes = "{} direction-ltr".format(classes).strip()
-                field.widget.attrs.update({
+                field_widget_attrs_update_dict = {
                     'autocomplete': 'off',
                     'autocorrect': 'off',
                     'autocapitalize': 'off',
                     'spellcheck': 'false',
-                    'class': classes,
-                })
+                }
+                if (field_name in self.ltr_attribute_fields):
+                    field_widget_classes = field.widget.attrs.get("class", "")
+                    field_widget_classes = "{} direction-ltr".format(field_widget_classes).strip()
+                    field_widget_attrs_update_dict['class'] = field_widget_classes
+                field.widget.attrs.update(field_widget_attrs_update_dict)
+
+
+class CustomPhotoWidget(forms.widgets.Widget):
+    def render(self, name, value, attrs=None, renderer=None):
+        return render_to_string(template_name='accounts/edit_profile/widgets/photo_widget.html', context={
+            'name': name,
+            'user_photo': self.attrs['user'].photo,
+        })
 
 
 class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
@@ -130,15 +141,19 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
 
 
 class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+    profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Update your profile picture'), error_messages={'required': _("A profile picture is required.")})
+
     class Meta:
         model = User
-        fields = ('date_of_birth', 'photo', 'slug', 'gender')
+        fields = ('slug', 'gender', 'date_of_birth', 'profile_picture')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
         self.fields['date_of_birth'].widget.format = django_settings.DEFAULT_DATE_FIELD_FORMAT
-        self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
+        self.fields['profile_picture'].widget.attrs['user'] = self.instance
+        self.fields['profile_picture'].label = pgettext_lazy(context=self.instance.get_gender(), message='Update your profile picture')
         self.helper = FormHelperWithDefaults()
         # split into two columns
         field_names = list(self.fields.keys())
@@ -147,10 +162,26 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                 Row(*[
                     Div(field, css_class='col-md-6')
                     for field in pair])
-                for pair in zip_longest(field_names[::2], field_names[1::2])
+                for pair in self.get_field_pairs()
             ]),
         )
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+
+    def get_field_pairs(self):
+        return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('profile_picture', ))
+
+    def clean_profile_picture(self):
+        profile_picture = self.files.get('profile_picture')
+        if (profile_picture):
+            user_image = Image(owner=self.instance, file=profile_picture)
+            user_image.save()
+            self.instance._new_profile_picture = user_image
+            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=True)
+        else:
+            if (self.instance.photo):
+                profile_picture = self.instance.photo
+                speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=False)
+        return self.cleaned_data.get('profile_picture')
 
     def clean_slug(self):
         slug = self.cleaned_data.get('slug')
@@ -161,6 +192,10 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     def save(self, commit=True):
         if (commit):
+            if ('profile_picture' in self.fields):
+                profile_picture = self.files.get('profile_picture')
+                if (profile_picture):
+                    self.instance.photo = self.instance._new_profile_picture
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()

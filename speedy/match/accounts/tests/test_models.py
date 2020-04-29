@@ -100,7 +100,7 @@ if (django_settings.LOGIN_ENABLED):
             return default_value
 
         def validate_all_user_values(self, user):
-            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['photo', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
+            all_fields = [field_name.format(language_code=self.language_code) for field_name in ['profile_picture', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
             _all_fields = []
             for step in utils.get_steps_range():
                 fields = utils.get_step_fields_to_validate(step=step)
@@ -237,7 +237,7 @@ if (django_settings.LOGIN_ENABLED):
             error_message_keys_and_ranks_invalid_count, error_message_max_rank_invalid_count = 0, 0
             can_assign_value_set, can_save_user_and_profile_set, value_is_valid_set, value_is_invalid_set = set(), set(), set(), set()
             values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values, invalid_values_with_valid_ranks = None, None, None, None, None, None
-            if (field_name in ['photo']):
+            if (field_name in ['profile_picture']):
                 valid_values = [UserImageFactory]
                 values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, 10 + 1)) + valid_values
                 valid_values_to_assign = self._none_list + valid_values
@@ -435,7 +435,7 @@ if (django_settings.LOGIN_ENABLED):
             if (invalid_values is None):
                 invalid_values = [value for value in values_to_test if (value not in valid_values)]
             self.assert_valid_values_ok(values_to_test=values_to_test, valid_values_to_assign=valid_values_to_assign, valid_values_to_save=valid_values_to_save, valid_values=valid_values, invalid_values=invalid_values)
-            if (field_name in ['photo']):
+            if (field_name in ['profile_picture']):
                 self.assertTrue(expr=test_settings["test_invalid_values_to_assign"])
             else:
                 self.assertFalse(expr=test_settings["test_invalid_values_to_assign"])
@@ -461,7 +461,7 @@ if (django_settings.LOGIN_ENABLED):
                 value_is_invalid = (value_to_test in invalid_values)
                 self.assertEqual(first=value_is_valid, second=(not (value_is_invalid)))
                 can_assign_value_set.add(can_assign_value)
-                if (field_name in ['photo']):
+                if (field_name in ['profile_picture']):
                     user.photo = None
                     if (value_to_test == UserImageFactory):
                         value_to_assign = UserImageFactory(owner=user)
@@ -470,7 +470,7 @@ if (django_settings.LOGIN_ENABLED):
                 else:
                     value_to_assign = value_to_test
                 if (not (can_assign_value)):
-                    if (field_name in ['photo']):
+                    if (field_name in ['profile_picture']):
                         with self.assertRaises(ValueError) as cm:
                             user.photo = value_to_assign
                         self.assertEqual(first=str(cm.exception), second='Cannot assign "{0}{1}{0}": "User.photo" must be a "Image" instance.'.format("'" if (isinstance(value_to_assign, str)) else '', value_to_assign))
@@ -481,7 +481,7 @@ if (django_settings.LOGIN_ENABLED):
                         raise Exception("Unexpected: can_assign_value={}, value_to_test={}".format(can_assign_value, value_to_test))
                     model_assign_failures_count += 1
                 else:
-                    if (field_name in ['photo']):
+                    if (field_name in ['profile_picture']):
                         user.photo = value_to_assign
                     elif (field_name in ['profile_description']):
                         user.speedy_match_profile.profile_description = value_to_assign
@@ -872,9 +872,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
             self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
-        def test_validate_profile_and_activate_exception_on_photo(self):
+        def test_validate_profile_and_activate_exception_on_profile_picture(self):
             test_settings = {
-                "field_name": 'photo',
+                "field_name": 'profile_picture',
                 "test_invalid_values_to_assign": True,
                 "test_invalid_values_to_save": False,
                 "expected_step": 2,

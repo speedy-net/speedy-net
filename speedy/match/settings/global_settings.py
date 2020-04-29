@@ -13,7 +13,7 @@ class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
     SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS = [
         [],  # There's no step 0
         [],  # Step 1 = registration form
-        ['photo'],
+        ['profile_picture'],
         ['profile_description', 'city', 'height'],
         ['children', 'more_children'],
         ['diet', 'smoking_status'],

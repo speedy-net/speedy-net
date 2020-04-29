@@ -5,7 +5,8 @@ from django.utils.timezone import now
 
 from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import User
-from speedy.match.accounts import validators
+from speedy.core.accounts import validators as speedy_core_accounts_validators
+from speedy.match.accounts import validators as speedy_match_accounts_validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
@@ -31,40 +32,40 @@ def get_step_fields_to_validate(step):
 
 
 def validate_field(field_name, user):
-    if (field_name in ['photo']):
-        validators.validate_photo(photo=user.photo)
+    if (field_name in ['profile_picture']):
+        speedy_core_accounts_validators.validate_profile_picture(profile_picture=user.photo)
     elif (field_name in ['profile_description', to_attribute(name='profile_description')]):
-        validators.validate_profile_description(profile_description=user.speedy_match_profile.profile_description)
+        speedy_match_accounts_validators.validate_profile_description(profile_description=user.speedy_match_profile.profile_description)
     elif (field_name in ['city', to_attribute(name='city')]):
-        validators.validate_city(city=user.city)
+        speedy_match_accounts_validators.validate_city(city=user.city)
     elif (field_name in ['children', to_attribute(name='children')]):
-        validators.validate_children(children=user.speedy_match_profile.children)
+        speedy_match_accounts_validators.validate_children(children=user.speedy_match_profile.children)
     elif (field_name in ['more_children', to_attribute(name='more_children')]):
-        validators.validate_more_children(more_children=user.speedy_match_profile.more_children)
+        speedy_match_accounts_validators.validate_more_children(more_children=user.speedy_match_profile.more_children)
     elif (field_name in ['match_description', to_attribute(name='match_description')]):
-        validators.validate_match_description(match_description=user.speedy_match_profile.match_description)
+        speedy_match_accounts_validators.validate_match_description(match_description=user.speedy_match_profile.match_description)
     elif (field_name in ['height']):
-        validators.validate_height(height=user.speedy_match_profile.height)
+        speedy_match_accounts_validators.validate_height(height=user.speedy_match_profile.height)
     elif (field_name in ['diet']):
-        validators.validate_diet(diet=user.diet)
+        speedy_match_accounts_validators.validate_diet(diet=user.diet)
     elif (field_name in ['smoking_status']):
-        validators.validate_smoking_status(smoking_status=user.smoking_status)
+        speedy_match_accounts_validators.validate_smoking_status(smoking_status=user.smoking_status)
     elif (field_name in ['relationship_status']):
-        validators.validate_relationship_status(relationship_status=user.relationship_status)
+        speedy_match_accounts_validators.validate_relationship_status(relationship_status=user.relationship_status)
     elif (field_name in ['gender_to_match']):
-        validators.validate_gender_to_match(gender_to_match=user.speedy_match_profile.gender_to_match)
+        speedy_match_accounts_validators.validate_gender_to_match(gender_to_match=user.speedy_match_profile.gender_to_match)
     elif (field_name in ['min_age_to_match']):
-        validators.validate_min_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match)
+        speedy_match_accounts_validators.validate_min_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match)
     elif (field_name in ['max_age_to_match']):
-        validators.validate_max_age_to_match(max_age_to_match=user.speedy_match_profile.max_age_to_match)
+        speedy_match_accounts_validators.validate_max_age_to_match(max_age_to_match=user.speedy_match_profile.max_age_to_match)
     elif (field_name in ['min_max_age_to_match']):
-        validators.validate_min_max_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match, max_age_to_match=user.speedy_match_profile.max_age_to_match)
+        speedy_match_accounts_validators.validate_min_max_age_to_match(min_age_to_match=user.speedy_match_profile.min_age_to_match, max_age_to_match=user.speedy_match_profile.max_age_to_match)
     elif (field_name in ['diet_match']):
-        validators.validate_diet_match(diet_match=user.speedy_match_profile.diet_match)
+        speedy_match_accounts_validators.validate_diet_match(diet_match=user.speedy_match_profile.diet_match)
     elif (field_name in ['smoking_status_match']):
-        validators.validate_smoking_status_match(smoking_status_match=user.speedy_match_profile.smoking_status_match)
+        speedy_match_accounts_validators.validate_smoking_status_match(smoking_status_match=user.speedy_match_profile.smoking_status_match)
     elif (field_name in ['relationship_status_match']):
-        validators.validate_relationship_status_match(relationship_status_match=user.speedy_match_profile.relationship_status_match)
+        speedy_match_accounts_validators.validate_relationship_status_match(relationship_status_match=user.speedy_match_profile.relationship_status_match)
     else:
         raise Exception("Unexpected: field_name={}".format(field_name))
 
