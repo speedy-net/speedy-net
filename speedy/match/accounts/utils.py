@@ -32,8 +32,8 @@ def get_step_fields_to_validate(step):
 
 
 def validate_field(field_name, user):
-    if (field_name in ['photo']):
-        speedy_core_accounts_validators.validate_profile_picture(photo=user.photo)
+    if (field_name in ['profile_picture']):
+        speedy_core_accounts_validators.validate_profile_picture(profile_picture=user.photo)
     elif (field_name in ['profile_description', to_attribute(name='profile_description')]):
         speedy_match_accounts_validators.validate_profile_description(profile_description=user.speedy_match_profile.profile_description)
     elif (field_name in ['city', to_attribute(name='city')]):
