@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
     def render(self, name, value, attrs=None, renderer=None):
-        return render_to_string(template_name='accounts/edit_profile/activation_form/json_widget.html', context={'choices': self.choices, 'name': name, 'value': json.loads(value)})
+        return render_to_string(template_name='accounts/edit_profile/widgets/json_widget.html', context={'choices': self.choices, 'name': name, 'value': json.loads(value)})
 
     def value_from_datadict(self, data, files, name):
         return data.get(name)

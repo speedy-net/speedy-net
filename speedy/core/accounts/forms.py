@@ -104,7 +104,7 @@ class AddAttributesToFieldsMixin(object):
 
 class CustomPhotoWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None, renderer=None):
-        return render_to_string(template_name='accounts/edit_profile/activation_form/photo_widget.html', context={
+        return render_to_string(template_name='accounts/edit_profile/widgets/photo_widget.html', context={
             'name': name,
             'user_photo': self.attrs['user'].photo,
         })
