@@ -168,19 +168,19 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
 
     def get_field_pairs(self):
-        return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('photo', ))
+        return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug', ), ('gender', 'date_of_birth'), ('profile_picture', ))
 
     def clean_profile_picture(self):
         profile_picture = self.files.get('profile_picture')
         if (profile_picture):
             user_image = Image(owner=self.instance, file=profile_picture)
             user_image.save()
-            self.instance._new_photo = user_image
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=profile_picture, test_new_photo=True)
+            self.instance._new_profile_picture = user_image
+            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=True)
         else:
             if (self.instance.photo):
                 profile_picture = self.instance.photo
-                speedy_core_accounts_validators.validate_photo_for_user(user=self.instance, photo=profile_picture, test_new_photo=False)
+                speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=False)
         return self.cleaned_data.get('profile_picture')
 
     def clean_slug(self):
@@ -195,7 +195,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             if ('profile_picture' in self.fields):
                 profile_picture = self.files.get('profile_picture')
                 if (profile_picture):
-                    self.instance.photo = self.instance._new_photo
+                    self.instance.photo = self.instance._new_profile_picture
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()

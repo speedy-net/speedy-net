@@ -203,11 +203,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         if (profile_picture):
             user_image = Image(owner=self.instance.user, file=profile_picture)
             user_image.save()
-            self.instance.user._new_photo = user_image
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=profile_picture, test_new_photo=True)
+            self.instance.user._new_profile_picture = user_image
+            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=True)
         else:
             profile_picture = self.instance.user.photo
-            speedy_core_accounts_validators.validate_photo_for_user(user=self.instance.user, photo=profile_picture, test_new_photo=False)
+            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=False)
         return self.cleaned_data.get('profile_picture')
 
     def clean_gender_to_match(self):
@@ -229,7 +229,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if ('profile_picture' in self.fields):
                 profile_picture = self.files.get('profile_picture')
                 if (profile_picture):
-                    self.instance.user.photo = self.instance.user._new_photo
+                    self.instance.user.photo = self.instance.user._new_profile_picture
             for field_name in self.user_fields:
                 if (field_name in self.fields):
                     setattr(self.instance.user, field_name, self.cleaned_data[field_name])
