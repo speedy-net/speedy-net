@@ -21,6 +21,10 @@
     position: absolute;
 }
 
+.user-photo-input-wrapper #id_photo {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
     .image-click-zone {
         width: auto;

@@ -78,10 +78,6 @@ body.bidi-rtl .user-profile {
     font-weight: bold;
 }
 
-.activation-form #id_photo {
-    display: none;
-}
-
 .activation-form {
     margin: 20px 0;
 }
