@@ -85,7 +85,7 @@ evil.block('@@RegistrationForm', {
 });
 
 
-evil.block('@@AccountForm', {
+evil.block('@@ProfileForm', {
     init: init_datepicker
 });
 

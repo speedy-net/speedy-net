@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     $('.image-click-zone').click(function() {
-        $(this).closest('.form-field').find('#id_photo').click()
+        $('.user-photo-input-wrapper #id_photo').click()
     });
 });
 

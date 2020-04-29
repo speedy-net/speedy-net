@@ -11,21 +11,7 @@
 {% endblock %}
 
 {% block tab_content %}
-    <div data-block="AccountForm">
-{#        {% crispy form %}#}
-        {% csrf_token %}
-        {% if form.non_field_errors %}
-            {{ form.non_field_errors }}
-        {% endif %}
-        {% for field in form %}
-            <div class="profile-form-field form-field text-left flip">
-                <div>
-                    {{ field.label_tag }}
-                </div>
-                {{ field.errors }}
-                {{ field }}
-                {{ field.help_text }}
-            </div>
-        {% endfor %}
+    <div data-block="ProfileForm">
+        {% crispy form %}
     </div>
 {% endblock %}
