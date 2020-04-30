@@ -244,6 +244,15 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             self.instance.user.save()
         super().save(commit=commit)
         if (commit):
+            if (not (self.instance.not_allowed_to_use_speedy_match)):
+                if (self.instance.activation_step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
+                    if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.instance.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
+                        self.instance.not_allowed_to_use_speedy_match = True
+                        self.instance.save()
+                        logger.warning('User {user} is not allowed to use Speedy Match (height={height}).'.format(
+                            user=self.instance.user,
+                            height=self.instance.height,
+                        ))
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate(commit=False)
             if (self.step == activation_step):
