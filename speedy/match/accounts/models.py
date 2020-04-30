@@ -263,6 +263,10 @@ class SiteProfile(SiteProfileBase):
                 if (commit):
                     self._deactivate_language(step=step)
                 return step, error_messages
+        # Check if the user is not allowed to use Speedy Match.
+        if (self.not_allowed_to_use_speedy_match):
+            step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1
+            return step, error_messages
         # Registration form is complete. Check if the user has a confirmed email address.
         step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
         if ((self.user.has_confirmed_email) and (step >= self.activation_step)):

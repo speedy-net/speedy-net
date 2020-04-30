@@ -106,7 +106,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
             if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.request.user.speedy_match_profile.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
                 self.request.user.speedy_match_profile.not_allowed_to_use_speedy_match = True
                 self.request.user.save_user_and_profile()
-                logger.warning('User {user} is not allowed to use Speedy Match (height={height}).'.format(
+                logger.error('User {user} is not allowed to use Speedy Match (height={height}).'.format(
                     user=self.request.user,
                     height=self.request.user.speedy_match_profile.height,
                 ))
