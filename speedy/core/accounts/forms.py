@@ -103,6 +103,8 @@ class AddAttributesToFieldsMixin(object):
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
+    needs_multipart_form = True
+
     def render(self, name, value, attrs=None, renderer=None):
         return render_to_string(template_name='accounts/edit_profile/widgets/photo_widget.html', context={
             'name': name,
