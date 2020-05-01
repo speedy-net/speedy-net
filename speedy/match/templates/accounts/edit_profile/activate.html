@@ -48,7 +48,7 @@
                             {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
                         {% endif %}
                     </div>
-                    <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form"{% if current_step == 2 %} enctype="multipart/form-data"{% endif %}>
+                    <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
                         {% if 0 < current_step and current_step < 7 %}
                             {% include 'accounts/edit_profile/partials/user_profile.html' %}
                             <div class="activation-form-fields pull-right flip">
