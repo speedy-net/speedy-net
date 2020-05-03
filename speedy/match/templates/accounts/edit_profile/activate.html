@@ -49,7 +49,7 @@
                         {% endif %}
                     </div>
                     <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-                        {% if 0 < current_step and current_step < 7 %}
+                        {% if 3 <= current_step and current_step < 7 %}
                             {% include 'accounts/edit_profile/partials/user_profile.html' %}
                             <div class="activation-form-fields pull-right flip">
                         {% else %}
