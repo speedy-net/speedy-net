@@ -1,17 +1,17 @@
 # python==3.6
 asgiref==3.2.7
-Django==3.0.5
+Django==3.0.6
 django-crispy-forms==1.9.0
 django-environ==0.4.5
 django-friendship==1.9.1
 django-translated-fields==0.8.0
 factory-boy==2.12.0
-Faker==4.0.2
-Pillow==7.1.1
+Faker==4.0.3
+Pillow==7.1.2
 psycopg2==2.8.5
 python-dateutil==2.8.1
 python-memcached==1.59
-pytz==2019.3
+pytz==2020.1
 rules==2.2
 six==1.14.0
 sorl-thumbnail==12.6.3
