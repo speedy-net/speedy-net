@@ -1,4 +1,5 @@
 import logging
+from PIL import Image
 
 from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
@@ -7,7 +8,6 @@ from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from django.template.loader import render_to_string
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
-
 
 logger = logging.getLogger(__name__)
 
@@ -87,6 +87,7 @@ class PasswordMinLengthValidator:
     """
     Validate whether the password is of a minimum length.
     """
+
     def __init__(self, min_length=None):
         if (min_length is None):
             from .models import User
@@ -117,6 +118,7 @@ class PasswordMaxLengthValidator:
     """
     Validate whether the password is of a maximum length.
     """
+
     def __init__(self, max_length=None):
         if (max_length is None):
             from .models import User
@@ -224,7 +226,10 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
             profile_picture_html=profile_picture_html,
         ))
         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
-            photo_is_valid = True
+            if (Image.open(user.photo.file).is_animated):
+                photo_is_valid = False
+            else:
+                photo_is_valid = True
     except Exception as e:
         photo_is_valid = False
         logger.error('validate_profile_picture_for_user::user={user}, Exception={e}'.format(
