@@ -225,8 +225,12 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
         ))
         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
             photo_is_valid = True
-    except:
+    except Exception as e:
         photo_is_valid = False
+        logger.error('validate_profile_picture_for_user::user={user}, Exception={e}'.format(
+            user=user,
+            e=str(e),
+        ))
     if (test_new_profile_picture):
         user.photo = user._photo
     if (not (photo_is_valid)):
