@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.core.terms'
 urlpatterns = [
-    url(regex=r'', view=views.TermsOfServiceView.as_view(), name='terms_of_service'),
+    re_path(route=r'', view=views.TermsOfServiceView.as_view(), name='terms_of_service'),
 ]
 
 

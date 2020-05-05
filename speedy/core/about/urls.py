@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.core.about'
 urlpatterns = [
-    url(regex=r'', view=views.AboutView.as_view(), name='about'),
+    re_path(route=r'', view=views.AboutView.as_view(), name='about'),
 ]
 
 

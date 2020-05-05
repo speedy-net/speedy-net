@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.composer.main'
 urlpatterns = [
-    url(regex=r'', view=views.MainPageView.as_view(), name='main_page'),
+    re_path(route=r'', view=views.MainPageView.as_view(), name='main_page'),
 ]
 
 

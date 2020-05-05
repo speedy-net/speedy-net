@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.core.contact_by_email'
 urlpatterns = [
-    url(regex=r'^$', view=views.ContactUsView.as_view(), name='contact_us'),
+    re_path(route=r'^$', view=views.ContactUsView.as_view(), name='contact_us'),
 ]

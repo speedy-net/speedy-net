@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.core.privacy'
 urlpatterns = [
-    url(regex=r'', view=views.PrivacyPolicyView.as_view(), name='privacy_policy'),
+    re_path(route=r'', view=views.PrivacyPolicyView.as_view(), name='privacy_policy'),
 ]
 
 

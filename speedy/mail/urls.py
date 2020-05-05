@@ -1,12 +1,12 @@
-from django.conf.urls import url, include
+from django.urls import re_path, include
 
 from speedy.core import admin
 from speedy.core.urls_without_login import urlpatterns
 
 app_name = 'speedy.mail'
 urlpatterns += [
-    url(regex=r'^admin/', view=admin.site.urls),
-    url(regex=r'^', view=include('speedy.mail.main.urls', namespace='main')),
+    re_path(route=r'^admin/', view=admin.site.urls),
+    re_path(route=r'^', view=include('speedy.mail.main.urls', namespace='main')),
 ]
 
 
