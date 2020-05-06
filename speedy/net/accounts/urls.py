@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
 
-import speedy.core.base.path_converters
 from speedy.core.accounts.urls import urlpatterns
 from speedy.core.accounts import views as core_views
 

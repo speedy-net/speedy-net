@@ -1,7 +1,6 @@
 from django.contrib.admin import AdminSite as DjangoAdminSite
 from django.urls import path
 
-import speedy.core.base.path_converters
 from . import views
 
 

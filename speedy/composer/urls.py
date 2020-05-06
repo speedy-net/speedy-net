@@ -1,6 +1,5 @@
 from django.urls import path, include
 
-import speedy.core.base.path_converters
 from speedy.core import admin
 from speedy.core.urls_without_login import urlpatterns
 

@@ -1,8 +1,9 @@
 from django.conf import settings as django_settings
 from django.urls import path, include
-
-import speedy.core.base.path_converters
 from django.conf.urls.static import static
+
+# Define and register Speedy Core path converters.
+import speedy.core.base.path_converters
 
 app_name = 'speedy.core'
 urlpatterns = [

@@ -1,3 +1,5 @@
+# Define and register Speedy Core path converters.
+
 from django.urls import register_converter
 
 

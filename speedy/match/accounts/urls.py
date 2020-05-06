@@ -1,6 +1,5 @@
 from django.urls import path
 
-import speedy.core.base.path_converters
 from . import views
 from speedy.core.accounts.urls import urlpatterns
 
