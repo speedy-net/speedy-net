@@ -1,5 +1,5 @@
 from speedy.core.admin.sites import AdminSite as CoreAdminSite
-from django.urls import re_path
+from django.urls import path
 
 from . import views
 
@@ -8,7 +8,7 @@ class AdminSite(CoreAdminSite):
     def get_urls(self):
         urlpatterns = super().get_urls()
         urlpatterns += [
-            re_path(route=r'^matches/$', view=views.AdminMatchesListView.as_view(), name='matches_list'),
+            path(route='matches/', view=views.AdminMatchesListView.as_view(), name='matches_list'),
         ]
         return urlpatterns
 
