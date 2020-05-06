@@ -220,8 +220,19 @@ window.speedy.setSession = function (domain, key) {
     });
 };
 
+function syncProfilePicturePlaceholdersHeight() {
+    var images = $('.profile-picture img:not(.placeholder)');
+    if (images.length === 0) {
+        return;
+    }
+    $('.profile-picture img.placeholder').css('height', images[0].height);
+}
+
 $(document).ready(function() {
     $(".form-control-danger").addClass("is-invalid"); // A hack to work with django-crispy-forms 1.6.1.
+
+    document.addEventListener('DOMSubtreeModified', syncProfilePicturePlaceholdersHeight);
+    window.addEventListener('resize', syncProfilePicturePlaceholdersHeight);
 });
 
 var isRTL = $("body").hasClass("bidi-rtl");
