@@ -6,7 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
-from speedy.core.accounts.views import RegistrationView as CoreRegistrationView, IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView, EditProfileNotificationsView as CoreEditProfileNotificationsView
+from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.match.accounts import utils
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -15,7 +15,7 @@ from .forms import ProfileNotificationsForm
 logger = logging.getLogger(__name__)
 
 
-class RegistrationView(CoreRegistrationView):
+class RegistrationView(speedy_core_accounts_views.RegistrationView):
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
@@ -24,12 +24,12 @@ class RegistrationView(CoreRegistrationView):
         return cd
 
 
-class IndexView(CoreIndexView):
+class IndexView(speedy_core_accounts_views.IndexView):
     registered_redirect_to = 'matches:list'
     registration_view = RegistrationView
 
 
-class ActivateSiteProfileView(CoreActivateSiteProfileView):
+class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
@@ -113,7 +113,7 @@ class ActivateSiteProfileView(CoreActivateSiteProfileView):
         return redirect(to=success_url)
 
 
-class EditProfileNotificationsView(CoreEditProfileNotificationsView):
+class EditProfileNotificationsView(speedy_core_accounts_views.EditProfileNotificationsView):
     form_class = ProfileNotificationsForm
 
 

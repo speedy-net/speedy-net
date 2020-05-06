@@ -1,10 +1,10 @@
-from django.contrib.admin import AdminSite as DjangoAdminSite
+from django.contrib import admin as django_admin
 from django.urls import path
 
 from . import views
 
 
-class AdminSite(DjangoAdminSite):
+class AdminSite(django_admin.AdminSite):
     def get_urls(self):
         urlpatterns = super().get_urls()
         urlpatterns += [

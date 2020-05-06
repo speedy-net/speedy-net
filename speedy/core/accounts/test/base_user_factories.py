@@ -5,7 +5,7 @@ import factory
 import factory.fuzzy
 
 from django.conf import settings as django_settings
-from django.test import TestCase as DjangoTestCase
+from django import test as django_test
 
 from speedy.core.base.test import tests_settings
 from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
@@ -14,7 +14,7 @@ from speedy.core.accounts.models import User
 
 
 if (django_settings.LOGIN_ENABLED):
-    class DjangoTestCaseWithMixin(SpeedyCoreAccountsModelsMixin, DjangoTestCase):
+    class DjangoTestCaseWithMixin(SpeedyCoreAccountsModelsMixin, django_test.TestCase):
         pass
 
 
