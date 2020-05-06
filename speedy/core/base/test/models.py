@@ -2,7 +2,7 @@ import shutil
 
 from django.conf import settings as django_settings
 from django.core.management import call_command
-from django.test import TestCase as DjangoTestCase
+from django import test as django_test
 from django.test.runner import DiscoverRunner
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
@@ -42,7 +42,7 @@ class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
         pass
 
 
-class SiteTestCase(DjangoTestCase):
+class SiteTestCase(django_test.TestCase):
     maxDiff = None
 
     def _pre_setup(self):

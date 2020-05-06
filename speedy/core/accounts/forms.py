@@ -5,7 +5,7 @@ from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
 from django import forms
 from django.conf import settings as django_settings
-from django.contrib.auth import forms as auth_forms, password_validation
+from django.contrib.auth import forms as django_auth_forms, password_validation
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -239,7 +239,7 @@ class ProfileNotificationsForm(forms.ModelForm):
         return r
 
 
-class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
+class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data = self.data.copy()
@@ -263,7 +263,7 @@ class LoginForm(AddAttributesToFieldsMixin, auth_forms.AuthenticationForm):
         return None
 
 
-class PasswordResetForm(auth_forms.PasswordResetForm):
+class PasswordResetForm(django_auth_forms.PasswordResetForm):
     @property
     def helper(self):
         helper = FormHelperWithDefaults()
@@ -317,7 +317,7 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
                 logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email}".format(site_name=_(site_name), user=user, email=email))
 
 
-class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.SetPasswordForm):
+class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.SetPasswordForm):
     @property
     def helper(self):
         helper = FormHelperWithDefaults()
@@ -325,7 +325,7 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_fo
         return helper
 
 
-class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, auth_forms.PasswordChangeForm):
+class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.PasswordChangeForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()

@@ -6,16 +6,16 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
-from speedy.core.accounts.views import IndexView as CoreIndexView, ActivateSiteProfileView as CoreActivateSiteProfileView
+from speedy.core.accounts import views as speedy_core_accounts_views
 
 logger = logging.getLogger(__name__)
 
 
-class IndexView(CoreIndexView):
+class IndexView(speedy_core_accounts_views.IndexView):
     registered_redirect_to = 'profiles:me'
 
 
-class ActivateSiteProfileView(CoreActivateSiteProfileView):
+class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
     def get_account_activation_url(self):
         return reverse_lazy('accounts:activate')
 

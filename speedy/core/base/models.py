@@ -1,6 +1,6 @@
 from django.conf import settings as django_settings
 from django.core.exceptions import FieldDoesNotExist
-from django.contrib.auth.models import BaseUserManager as DjangoBaseUserManager
+from django.contrib.auth import models as django_auth_models
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -26,7 +26,7 @@ class BaseManager(ManagerMixin, models.Manager):
     pass
 
 
-class BaseUserManager(ManagerMixin, DjangoBaseUserManager):
+class BaseUserManager(ManagerMixin, django_auth_models.BaseUserManager):
     pass
 
 
