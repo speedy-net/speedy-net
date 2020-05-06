@@ -34,4 +34,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path='/l-o-o-k_a_t_m-e-1/')
             self.assertEqual(first=r.status_code, second=404)
 
+        def test_user_slug_with_invalid_characters_doesnt_work(self):
+            paths_to_test = ['/look-at-me,/', '/look-at-me(/', '/look-at-me)/', '/look-at-me=/', '/look-at-me$/']
+            for path in paths_to_test:
+                r = self.client.get(path=path)
+                self.assertEqual(first=r.status_code, second=404, msg="{} didn't return 404.".format(path))
+
 
