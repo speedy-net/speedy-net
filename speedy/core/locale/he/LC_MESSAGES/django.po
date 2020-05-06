@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 16:39+0300\n"
+"POT-Creation-Date: 2020-05-06 18:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1767,54 +1767,54 @@ msgstr ""
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
-#: .\accounts\forms.py:114
+#: .\accounts\forms.py:116
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:115
+#: .\accounts\forms.py:117
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:123
+#: .\accounts\forms.py:125
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:126
+#: .\accounts\forms.py:128
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:144
+#: .\accounts\forms.py:146
 msgid "Update your profile picture"
 msgstr "עדכנ/י את תמונת הפרופיל שלך"
 
-#: .\accounts\forms.py:144 .\accounts\validators.py:208
+#: .\accounts\forms.py:146 .\accounts\validators.py:210
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
-#: .\accounts\forms.py:246 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:248 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:252 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:254 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:255 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:257 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:268
+#: .\accounts\forms.py:270
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:352
+#: .\accounts\forms.py:354
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:364
+#: .\accounts\forms.py:366
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -2125,7 +2125,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:100
+#: .\accounts\validators.py:101
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2136,14 +2136,14 @@ msgid_plural ""
 msgstr[0] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:110
+#: .\accounts\validators.py:111
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "הסיסמה שלך חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:130
+#: .\accounts\validators.py:132
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2152,28 +2152,28 @@ msgid_plural ""
 msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
 msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
 
-#: .\accounts\validators.py:140
+#: .\accounts\validators.py:142
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
 msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
-#: .\accounts\validators.py:186 .\accounts\validators.py:193
+#: .\accounts\validators.py:188 .\accounts\validators.py:195
 msgid "Enter a valid date."
 msgstr "יש להזין תאריך חוקי."
 
-#: .\accounts\validators.py:203
+#: .\accounts\validators.py:205
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\validators.py:210
+#: .\accounts\validators.py:212
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 15 MB."
 msgstr ""
 "גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
 
-#: .\accounts\validators.py:233
+#: .\accounts\validators.py:244
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."

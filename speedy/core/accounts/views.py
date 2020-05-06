@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 from django.conf import settings as django_settings
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, update_session_auth_hash
+from django.contrib.auth import login as django_auth_login, views as django_auth_views, update_session_auth_hash
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.http import HttpResponse
@@ -76,7 +76,7 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
         for email_address in email_addresses:
             email_address.send_confirmation_email()
         user.backend = django_settings.DEFAULT_AUTHENTICATION_BACKEND
-        auth_login(request=self.request, user=user)
+        django_auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
 
     def get_form_kwargs(self):

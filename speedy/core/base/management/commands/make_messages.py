@@ -1,7 +1,7 @@
-from django.core.management.commands.makemessages import Command as MakeMessagesCommand
+from django.core.management.commands import makemessages
 
 
-class Command(MakeMessagesCommand):
+class Command(makemessages.Command):
     msgmerge_options = ['-q', '--previous', '--no-fuzzy-matching']
 
 

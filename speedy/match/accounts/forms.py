@@ -11,8 +11,7 @@ from speedy.core.base.utils import to_attribute, update_form_field_choices
 from speedy.core.base.forms import DeleteUnneededFieldsMixin
 from speedy.core.uploads.models import Image
 from speedy.core.accounts.models import User
-from speedy.core.accounts.forms import CustomPhotoWidget, ProfileNotificationsForm as CoreProfileNotificationsForm
-from speedy.core.accounts import validators as speedy_core_accounts_validators
+from speedy.core.accounts import forms as speedy_core_accounts_forms, validators as speedy_core_accounts_validators
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from speedy.match.accounts import validators as speedy_match_accounts_validators, utils
 
@@ -54,7 +53,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         'relationship_status_match': [speedy_match_accounts_validators.validate_relationship_status_match],
     }
     # Fields who are not in the SpeedyMatchSiteProfile model.
-    profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
+    profile_picture = forms.ImageField(required=False, widget=speedy_core_accounts_forms.CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
     diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
     smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
     relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
@@ -279,7 +278,7 @@ class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
         return self.get_fields()
 
 
-class ProfileNotificationsForm(CoreProfileNotificationsForm):
+class ProfileNotificationsForm(speedy_core_accounts_forms.ProfileNotificationsForm):
     _profile_fields = ("notify_on_like",)
 
 
