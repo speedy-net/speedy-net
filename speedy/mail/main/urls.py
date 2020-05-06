@@ -1,11 +1,10 @@
-from django.urls import path
+from django.urls import re_path
 
 from . import views
 
 app_name = 'speedy.mail.main'
 urlpatterns = [
-    path(route='', view=views.MainPageView.as_view(), name='main_page'),
-    path(route='<path:rest>', view=views.MainPageView.as_view(), name='main_page'),
+    re_path(route=r'', view=views.MainPageView.as_view(), name='main_page'),
 ]
 
 
