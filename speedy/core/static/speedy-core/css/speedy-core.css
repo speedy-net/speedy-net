@@ -283,8 +283,10 @@ body.bidi-rtl .navbar-right {
 .profile-picture .placeholder-wrapper > img {
     position: absolute;
     top: 0;
-    left: 0;
-    max-height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
 }
 
 .speedy-404-background {
