@@ -406,7 +406,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def received_friendship_requests(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_received_friendship_requests'))):
-                self.refresh_all_friends_lists()
+                self._received_friendship_requests = self.get_received_friendship_requests()
             return self._received_friendship_requests
 
     @property
@@ -417,7 +417,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def sent_friendship_requests(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_sent_friendship_requests'))):
-                self.refresh_all_friends_lists()
+                self._sent_friendship_requests = self.get_sent_friendship_requests()
             return self._sent_friendship_requests
 
     @property
@@ -428,7 +428,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def all_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_friends'))):
-                self.refresh_all_friends_lists()
+                self._friends = self.get_friends()
             return self._friends
 
     @property
@@ -439,7 +439,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def all_speedy_net_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_friends'))):
-                self.refresh_all_friends_lists()
+                self._speedy_net_friends = self.get_speedy_net_friends()
             return self._speedy_net_friends
 
     @property
@@ -575,18 +575,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
             self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
 
-    def refresh_all_friends_lists(self):
-        self._received_friendship_requests = self.get_received_friendship_requests()
-        self._sent_friendship_requests = self.get_sent_friendship_requests()
-        self._friends = self.get_friends()
-        self._speedy_net_friends = self.get_speedy_net_friends()
-
     def get_received_friendship_requests(self):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
         SiteProfile = get_site_profile_model()
-        qs = self.friendship_requests_received.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        qs = self.friendship_requests_received.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return received_friendship_requests
@@ -602,7 +596,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
         SiteProfile = get_site_profile_model()
-        qs = self.friendship_requests_sent.all().prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        qs = self.friendship_requests_sent.all().prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'to_user__photo').distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return sent_friendship_requests
@@ -618,7 +612,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
         SiteProfile = get_site_profile_model()
-        qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         friends = [friendship for friendship in qs if (friendship.from_user.speedy_net_profile.is_active)]
         return friends
 
@@ -627,7 +621,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
         SiteProfile = get_site_profile_model()
-        qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return friends
