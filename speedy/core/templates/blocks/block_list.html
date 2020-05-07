@@ -1,5 +1,6 @@
 {% extends 'accounts/edit_profile/base.html' %}
 
+{% load core_tags_and_filters %}
 {% load i18n %}
 
 {% block title %}{% trans 'Blocked Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
@@ -16,5 +17,5 @@
             </div>
         {% endfor %}
     </div>
-
+    {% pagination %}
 {% endblock %}

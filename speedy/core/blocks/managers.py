@@ -29,7 +29,7 @@ class BlockManager(BaseManager):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
 
     def get_blocked_list_to_queryset(self, blocker):
-        # filter out users that are only active in another language
+        # filter out users that are only active in another language.
         blocked_users = User.objects.filter(pk__in=self.filter(blocker=blocker).values_list('blocked_id', flat=True))
         blocked_users = [u.pk for u in blocked_users if (u.profile.is_active)]
 
