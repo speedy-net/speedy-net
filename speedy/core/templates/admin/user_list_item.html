@@ -103,7 +103,7 @@
                     </tr>
                     <tr>
                         <th>Friends</th>
-                        {% comment %}<td>{{ user.friends_count }} friends on {{ site_name }}{% if not site.pk == settings.SPEEDY_NET_SITE_ID %} / {{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %} ({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>{% endcomment %}
+                        {% comment %}<td>{{ user.friends_count }} friends on {{ site_name }}{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / {{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %} ({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>{% endcomment %}
                         <td>({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>
                     </tr>
                 </table>
