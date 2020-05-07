@@ -23,9 +23,9 @@ class BlockManager(BaseManager):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
 
     def has_blocked(self, blocker, blocked):
-        if (not (blocker.blocked_entities.all()._result_cache is None)):
+        if (blocker.blocked_entities.all()._result_cache is not None):
             return (blocked in blocker.blocked_entities.all())
-        if (not (blocked.blocking_entities.all()._result_cache is None)):
+        if (blocked.blocking_entities.all()._result_cache is not None):
             return (blocker in blocked.blocking_entities.all())
         return (blocked in blocker.blocked_entities.all())
 
