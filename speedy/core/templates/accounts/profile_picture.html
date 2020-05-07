@@ -1,7 +1,7 @@
 {% load thumbnail %}
 {% load static %}
 
-<div class="profile-picture">
+<div class="profile-picture" style="max-width: {{ width }}px;">
     {% if with_link %}
         <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}" title="{{ user.name }}">
     {% endif %}
