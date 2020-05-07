@@ -23,7 +23,11 @@ class BlockManager(BaseManager):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
 
     def has_blocked(self, blocker, blocked):
-        return self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).exists()
+        if (not (blocker.blocked_entities.all()._result_cache is None)):
+            return (blocked in blocker.blocked_entities.all())
+        if (not (blocked.blocking_entities.all()._result_cache is None)):
+            return (blocker in blocked.blocking_entities.all())
+        return (blocked in blocker.blocked_entities.all())
 
     def there_is_block(self, user_1, user_2):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
