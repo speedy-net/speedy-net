@@ -276,6 +276,12 @@ body.bidi-rtl .navbar-right {
     }
 }
 
+.profile-picture .placeholder {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
 .speedy-404-background {
     display: table;
     margin: auto;

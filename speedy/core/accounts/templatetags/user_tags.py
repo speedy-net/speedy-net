@@ -19,6 +19,7 @@ def profile_picture(context, user, geometry, with_link=True, html_class=''):
         'geometry': geometry,
         'width': width,
         'height': height,
+        'aspect_ratio': float(height) / float(width) * 100,
         'with_link': with_link,
         'html_class': html_class,
     })
