@@ -279,7 +279,7 @@ body.bidi-rtl .navbar-right {
 .profile-picture .placeholder {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: contain;
 }
 
 .speedy-404-background {
