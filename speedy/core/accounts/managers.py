@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
     def get_queryset(self):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-        return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME).distinct()
+        return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME, 'photo', 'blocked_entities', 'blocking_entities').distinct()
 
     def get_by_natural_key(self, username):
         return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
