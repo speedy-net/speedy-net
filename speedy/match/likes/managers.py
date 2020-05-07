@@ -34,7 +34,7 @@ class UserLikeManager(BaseManager):
         liked_users = User.objects.filter(pk__in=self.filter(from_user=user).values_list('to_user_id', flat=True))
         liked_users = [u.pk for u in liked_users if (u.speedy_match_profile.is_active)]
 
-        return self.filter(from_user=user).filter(to_user__in=liked_users).prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        return self.filter(from_user=user).filter(to_user__in=liked_users).prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'to_user__photo').distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_from_queryset(self, user):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
@@ -46,7 +46,7 @@ class UserLikeManager(BaseManager):
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
-        return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_mutual_queryset(self, user):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
@@ -58,6 +58,6 @@ class UserLikeManager(BaseManager):
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
-        return self.filter(from_user=user, to_user_id__in=who_likes_me).prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME)).distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        return self.filter(from_user=user, to_user_id__in=who_likes_me).prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'to_user__photo').distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
 
