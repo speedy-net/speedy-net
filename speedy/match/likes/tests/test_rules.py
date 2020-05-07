@@ -26,7 +26,11 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_can_like(self):
             self.assertTrue(expr=self.user.has_perm(perm='likes.like', obj=self.other_user))
 
-        def test_user_cannot_like_if_blocked(self):
+        def test_user_cannot_like_other_user_if_blocked(self):
+            Block.objects.block(blocker=self.user, blocked=self.other_user)
+            self.assertFalse(expr=self.user.has_perm(perm='likes.like', obj=self.other_user))
+
+        def test_user_cannot_like_other_user_if_blocking(self):
             Block.objects.block(blocker=self.other_user, blocked=self.user)
             self.assertFalse(expr=self.user.has_perm(perm='likes.like', obj=self.other_user))
 

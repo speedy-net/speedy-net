@@ -106,15 +106,15 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path=self.page_url, data=self.data)
             self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)
 
-        def test_cannot_write_to_a_blocker(self):
+        def test_cannot_write_to_other_user_if_blocked(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
-            Block.objects.block(blocker=self.user2, blocked=self.user1)
+            Block.objects.block(blocker=self.user1, blocked=self.user2)
             r = self.client.post(path=self.page_url, data=self.data)
             self.assertEqual(first=r.status_code, second=403)
 
-        def test_cannot_write_to_a_blocked(self):
+        def test_cannot_write_to_other_user_if_blocking(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
-            Block.objects.block(blocker=self.user1, blocked=self.user2)
+            Block.objects.block(blocker=self.user2, blocked=self.user1)
             r = self.client.post(path=self.page_url, data=self.data)
             self.assertEqual(first=r.status_code, second=403)
 
