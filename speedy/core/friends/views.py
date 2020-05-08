@@ -14,7 +14,7 @@ from speedy.core.base.utils import get_both_genders_context_from_users
 from speedy.core.base.views import PaginationMixin
 from speedy.core.accounts.models import User
 from speedy.core.profiles.views import UserMixin
-from .rules import is_self, friendship_request_sent, are_friends
+from .rules import is_self, friendship_request_sent, friendship_request_received, are_friends
 
 
 class FriendsMixin(PaginationMixin):
@@ -114,6 +114,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
                 return redirect(to=self.user)
             if (friendship_request_sent(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_requested_friendship_from_this_user_error_message(user=request.user, other_user=self.user))
+                return redirect(to=self.user)
+            if (friendship_request_received(user=request.user, other_user=self.user)):
+                messages.warning(request=request, message=self._this_user_already_requested_friendship_from_you_error_message(user=request.user, other_user=self.user))
                 return redirect(to=self.user)
             if (are_friends(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_are_friends_with_this_user_error_message(user=request.user, other_user=self.user))
