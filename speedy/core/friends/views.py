@@ -115,6 +115,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
             if (friendship_request_sent(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_requested_friendship_from_this_user_error_message(user=request.user, other_user=self.user))
                 return redirect(to=self.user)
+            if (friendship_request_sent(user=self.user, other_user=request.user)):
+                messages.warning(request=request, message=self._this_user_already_requested_friendship_from_you_error_message(user=request.user, other_user=self.user))
+                return redirect(to=self.user)
             if (are_friends(user=request.user, other_user=self.user)):
                 messages.warning(request=request, message=self._you_already_are_friends_with_this_user_error_message(user=request.user, other_user=self.user))
                 return redirect(to=self.user)
