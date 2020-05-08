@@ -127,6 +127,10 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
             messages.error(request=self.request, message=e.message)
             return redirect(to=self.user)
         try:
+            if (FriendshipRequest.objects.filter(from_user=request.user, to_user=self.user).exists()):
+                raise AlreadyExistsError("Friendship already requested.")
+            if (FriendshipRequest.objects.filter(from_user=self.user, to_user=request.user).exists()):
+                raise AlreadyExistsError("Friendship already requested.")
             Friend.objects.add_friend(from_user=request.user, to_user=self.user)
         except (ValidationError, AlreadyExistsError, AlreadyFriendsError) as e:
             message_dict = {
