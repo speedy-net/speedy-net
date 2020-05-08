@@ -1,6 +1,4 @@
-from django.conf import settings as django_settings
 from django.contrib import messages
-from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.shortcuts import redirect, get_object_or_404
@@ -140,7 +138,10 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
             }
             for key in list(message_dict.keys()):
                 message_dict[key.replace(".", "")] = message_dict[key]
-            message = e.message
+            if (isinstance(e, ValidationError)):
+                message = e.message
+            else:
+                message = str(e)
             if (message in message_dict):
                 message = message_dict[message]
             else:
