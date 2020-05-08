@@ -97,6 +97,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
     def _you_already_requested_friendship_from_this_user_error_message(self, user, other_user):
         return pgettext_lazy(context=other_user.get_gender(), message="You already requested friendship from this user.")
 
+    def _this_user_already_requested_friendship_from_you_error_message(self, user, other_user):
+        return pgettext_lazy(context=other_user.get_gender(), message="This user already requested friendship from you.")
+
     def _you_already_are_friends_with_this_user_error_message(self, user, other_user):
         return pgettext_lazy(context=get_both_genders_context_from_users(user=user, other_user=other_user), message="You already are friends with this user.")
 
@@ -126,9 +129,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
             return redirect(to=self.user)
         try:
             if (FriendshipRequest.objects.filter(from_user=request.user, to_user=self.user).exists()):
-                raise AlreadyExistsError("Friendship already requested.")
+                raise AlreadyExistsError(self._you_already_requested_friendship_from_this_user_error_message(user=request.user, other_user=self.user))
             if (FriendshipRequest.objects.filter(from_user=self.user, to_user=request.user).exists()):
-                raise AlreadyExistsError("Friendship already requested.")
+                raise AlreadyExistsError(self._this_user_already_requested_friendship_from_you_error_message(user=request.user, other_user=self.user))
             Friend.objects.add_friend(from_user=request.user, to_user=self.user)
         except (ValidationError, AlreadyExistsError, AlreadyFriendsError) as e:
             message_dict = {

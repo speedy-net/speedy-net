@@ -24,7 +24,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
             self.assertFalse(expr=self.other_user.has_perm(perm='friends.request', obj=self.user))
 
-        def test_user_cannot_send_request_to_himself(self):
+        def test_user_cannot_send_request_to_themself(self):
             self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.user))
 
         def test_user_cannot_send_second_request(self):
@@ -77,7 +77,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_other_user_can_remove_user(self):
             self.assertTrue(expr=self.other_user.has_perm(perm='friends.remove', obj=self.user))
 
-        def test_user_cannot_remove_himself(self):
+        def test_user_cannot_remove_themself(self):
             self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.user))
 
         def test_user_cannot_remove_other_user_if_not_friends(self):

@@ -82,12 +82,12 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.default_url)
             self.assertRedirects(response=r, expected_url=self.to_url, status_code=302, target_status_code=200)
 
-        def test_user_can_see_who_he_likes(self):
+        def test_user_can_see_who_they_like(self):
             r = self.client.get(path=self.to_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertSetEqual(set1=set(r.context['object_list']), set2=self.to_likes)
 
-        def test_user_can_see_who_likes_him(self):
+        def test_user_can_see_who_likes_them(self):
             r = self.client.get(path=self.from_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertSetEqual(set1=set(r.context['object_list']), set2=self.from_likes)

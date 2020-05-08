@@ -60,7 +60,7 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.page_url)
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
-        def test_user_can_read_a_chat_he_has_access_to(self):
+        def test_user_can_read_a_chat_they_have_access_to(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
             self.assertEqual(first=r.status_code, second=200)
@@ -101,7 +101,7 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.page_url)
             self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)
 
-        def test_user_can_write_to_a_chat_he_has_access_to(self):
+        def test_user_can_write_to_a_chat_they_have_access_to(self):
             self.client.login(username=self.user1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.post(path=self.page_url, data=self.data)
             self.assertRedirects(response=r, expected_url=self.chat_url, status_code=302, target_status_code=200)

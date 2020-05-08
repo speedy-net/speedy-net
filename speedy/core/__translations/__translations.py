@@ -184,6 +184,10 @@ pgettext_lazy(context="female", message="You already requested friendship from t
 pgettext_lazy(context="male", message="You already requested friendship from this user.")
 pgettext_lazy(context="other", message="You already requested friendship from this user.")
 
+pgettext_lazy(context="female", message="This user already requested friendship from you.")
+pgettext_lazy(context="male", message="This user already requested friendship from you.")
+pgettext_lazy(context="other", message="This user already requested friendship from you.")
+
 pgettext_lazy(context="female_female", message="You already are friends with this user.")
 pgettext_lazy(context="female_male", message="You already are friends with this user.")
 pgettext_lazy(context="female_other", message="You already are friends with this user.")

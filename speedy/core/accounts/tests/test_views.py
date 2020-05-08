@@ -679,7 +679,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
             self.assert_me_url_redirects_to_user_profile_url(user=self.other_user)
 
-        def test_visitor_still_can_login_if_he_is_not_active_user(self):
+        def test_visitor_still_can_login_if_they_are_not_active_user(self):
             data = {
                 'username': self.inactive_user.slug,
                 'password': tests_settings.USER_PASSWORD,

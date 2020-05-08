@@ -39,6 +39,17 @@ class SpeedyCoreFriendsLanguageMixin(object):
             },
         }
 
+        _this_user_already_requested_friendship_from_you_error_message_dict_by_gender = {
+            'en': {
+                **{gender: "This user already requested friendship from you." for gender in User.ALL_GENDERS},
+            },
+            'he': {
+                User.GENDER_FEMALE_STRING: "המשתמשת הזאת כבר ביקשה ממך חברות.",
+                User.GENDER_MALE_STRING: "המשתמש הזה כבר ביקש ממך חברות.",
+                User.GENDER_OTHER_STRING: "המשתמש/ת הזאת כבר ביקש/ה ממך חברות.",
+            },
+        }
+
         _you_already_are_friends_with_this_user_error_message_dict_by_both_genders = {
             'en': {
                 **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "You already are friends with this user." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -104,6 +115,7 @@ class SpeedyCoreFriendsLanguageMixin(object):
 
         self._you_have_removed_this_user_from_friends_success_message_dict_by_gender = _you_have_removed_this_user_from_friends_success_message_dict_by_gender[self.language_code]
         self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender = _you_already_requested_friendship_from_this_user_error_message_dict_by_gender[self.language_code]
+        self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender = _this_user_already_requested_friendship_from_you_error_message_dict_by_gender[self.language_code]
         self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders = _you_already_are_friends_with_this_user_error_message_dict_by_both_genders[self.language_code]
         self._you_cannot_be_friends_with_yourself_error_message_dict_by_gender = _you_cannot_be_friends_with_yourself_error_message_dict_by_gender[self.language_code]
         self._you_already_have_friends_error_message_to_format_dict_by_gender = _you_already_have_friends_error_message_to_format_dict_by_gender[self.language_code]
@@ -111,6 +123,7 @@ class SpeedyCoreFriendsLanguageMixin(object):
 
         self.assertSetEqual(set1=set(self._you_have_removed_this_user_from_friends_success_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
         self.assertSetEqual(set1=set(self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+        self.assertSetEqual(set1=set(self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
         self.assertSetEqual(set1=set(self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders.keys()), set2={get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender) for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS})
         self.assertSetEqual(set1=set(self._you_cannot_be_friends_with_yourself_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
         self.assertSetEqual(set1=set(self._you_already_have_friends_error_message_to_format_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
@@ -118,9 +131,10 @@ class SpeedyCoreFriendsLanguageMixin(object):
 
         self.assertEqual(first=len(set(self._you_have_removed_this_user_from_friends_success_message_dict_by_gender.keys())), second=3)
         self.assertEqual(first=len(set(self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender.keys())), second=3)
-        self.assertEqual(first=len(set(self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders.keys())), second=9)
+        self.assertEqual(first=len(set(self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender.keys())), second=3)
+        self.assertEqual(first=len(set(self._you_already_are_friends_with_this_user_error_message_dict_by_both_genders.keys())), second=3**2)
         self.assertEqual(first=len(set(self._you_cannot_be_friends_with_yourself_error_message_dict_by_gender.keys())), second=3)
         self.assertEqual(first=len(set(self._you_already_have_friends_error_message_to_format_dict_by_gender.keys())), second=3)
-        self.assertEqual(first=len(set(self._this_user_already_has_friends_error_message_to_format_dict_by_both_genders.keys())), second=9)
+        self.assertEqual(first=len(set(self._this_user_already_has_friends_error_message_to_format_dict_by_both_genders.keys())), second=3**2)
 
 
