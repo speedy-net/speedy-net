@@ -138,7 +138,7 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
                 "Users are already friends.": self._you_already_are_friends_with_this_user_error_message(user=request.user, other_user=self.user),
                 "Friendship already requested.": self._you_already_requested_friendship_from_this_user_error_message(user=request.user, other_user=self.user),
             }
-            for key in message_dict.keys():
+            for key in list(message_dict.keys()):
                 message_dict[key.replace(".", "")] = message_dict[key]
             message = e.message
             if (message in message_dict):
