@@ -53,3 +53,11 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
         'expire_time': expire_time,
     }
     return cache.set(key, wrapped_value, timeout=timeout, version=version)
+
+
+def cache_delete_many(keys, version=None):
+    """
+    :type keys: list[str]
+    :type version: int
+    """
+    cache.delete_many(keys, version=version)
