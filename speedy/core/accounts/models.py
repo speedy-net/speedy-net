@@ -585,7 +585,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return received_friendship_requests
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+            from django.db.models import query
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+            query.prefetch_related_objects([self], 'blocked_entities', 'blocking_entities')
             received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             return received_friendship_requests
         else:
