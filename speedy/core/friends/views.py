@@ -50,6 +50,9 @@ class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Fri
     def get_object_list(self):
         return self.user.get_received_friendship_requests()
 
+    def get_object_list_paged(self, start, stop):
+        return self.user.get_received_friendship_requests(start=start, stop=stop)
+
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({

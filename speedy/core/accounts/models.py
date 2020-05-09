@@ -22,7 +22,7 @@ from translated_fields import TranslatedField
 from speedy.core import cache_manager
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import BaseManager, TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import TimeInSeconds, normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
+from speedy.core.base.utils import PreExecutedPaginatorObjectList, TimeInSeconds, normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
@@ -583,7 +583,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
             self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
 
-    def get_received_friendship_requests(self):
+    def get_received_friendship_requests(self, start=None, stop=None):
+        assert start is None or stop is not None
+
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -597,6 +599,16 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             from django.db.models import query
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             query.prefetch_related_objects([self], 'blocked_entities', 'blocking_entities')
+            if start is not None:
+                cached_received_friendship_requests_count = cache_manager.cache_get(self.received_friendship_requests_count_cache_key)
+                if cached_received_friendship_requests_count is not None:
+                    paged_received_friendship_requests = []
+                    for friendship_request in received_friendship_requests:
+                        if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0):
+                            paged_received_friendship_requests.append(friendship_request)
+                            if len(paged_received_friendship_requests) >= stop:
+                                break
+                    return PreExecutedPaginatorObjectList(start, stop, paged_received_friendship_requests, count=cached_received_friendship_requests_count)
             received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
             cache_manager.cache_set(self.received_friendship_requests_count_cache_key, len(received_friendship_requests), timeout=TimeInSeconds.ONE_DAY)
             return received_friendship_requests

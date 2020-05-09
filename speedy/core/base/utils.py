@@ -15,6 +15,31 @@ from translated_fields import to_attribute as translated_fields_to_attribute
 logger = logging.getLogger(__name__)
 
 
+class PreExecutedPaginatorObjectList(object):
+    """
+    To be used as the object_list argument of django.core.paginator.Paginator#__init__.
+
+    See:
+    - speedy.core.base.views.PaginationMixin#dispatch
+
+    Sample usage:
+    - speedy.core.accounts.models.User#get_received_friendship_requests
+    - speedy.core.friends.views.ReceivedFriendshipRequestsListView#get_object_list_paged
+    """
+    def __init__(self, start, stop, result, count=None):
+        self._start = start
+        self._stop = stop
+        self._result = result
+        self._count = count if count is not None else len(result)
+
+    def __getitem__(self, k):
+        assert isinstance(k, slice) and k.start == self._start and k.stop <= self._stop
+        return self._result[k.start:k.stop]
+
+    def count(self):
+        return self._count
+
+
 class TimeInSeconds(object):
     ONE_MINUTE = 60
     ONE_HOUR = 3600
