@@ -233,10 +233,10 @@ class ProfileNotificationsForm(forms.ModelForm):
         for field_name in self.fields.keys():
             if (field_name in self._profile_fields):
                 setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
-        r = super().save(commit=commit)
+        return_value = super().save(commit=commit)
         if (commit):
             self.instance.profile.save()
-        return r
+        return return_value
 
 
 class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm):
