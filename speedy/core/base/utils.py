@@ -15,6 +15,12 @@ from translated_fields import to_attribute as translated_fields_to_attribute
 logger = logging.getLogger(__name__)
 
 
+class TimeInSeconds(object):
+    ONE_MINUTE = 60
+    ONE_HOUR = 3600
+    ONE_DAY = 86400
+
+
 def _generate_udid(length):
     digits = string.digits
     digits_without_zero = digits[1:]
