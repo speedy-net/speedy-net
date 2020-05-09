@@ -70,8 +70,15 @@ class PaginationMixin(object):
         raise NotImplementedError()
 
     def dispatch(self, request, *args, **kwargs):
-        object_list = self.get_object_list()
         page_number = self.request.GET.get('page', 1)
+
+        if hasattr(self, 'get_object_list_paged'):
+            start = (page_number - 1) * self.page_size
+            stop = start + self.page_size
+            object_list = self.get_object_list_paged(start, stop)
+        else:
+            object_list = self.get_object_list()
+
         paginator = Paginator(object_list, self.page_size)
         try:
             page = paginator.page(page_number)
