@@ -3,6 +3,7 @@ from friendship.models import Friend
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
+from speedy.core import cache_manager
 from speedy.core.base.models import BaseManager
 from speedy.core.accounts.models import User
 
@@ -17,10 +18,12 @@ class BlockManager(BaseManager):
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
         Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
         UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
+        cache_manager.cache_delete_many([blocker.received_friendship_requests_count_cache_key, blocked.received_friendship_requests_count_cache_key])
         return block
 
     def unblock(self, blocker, blocked):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
+        cache_manager.cache_delete_many([blocker.received_friendship_requests_count_cache_key, blocked.received_friendship_requests_count_cache_key])
 
     def has_blocked(self, blocker, blocked):
         if (blocker.blocked_entities.all()._result_cache is not None):
