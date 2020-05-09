@@ -19,9 +19,10 @@ from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
 
+from speedy.core import cache_manager
 from speedy.core.base.mail import send_mail
 from speedy.core.base.models import BaseManager, TimeStampedModel, SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
+from speedy.core.base.utils import TimeInSeconds, normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .utils import get_site_profile_model, normalize_email
@@ -371,6 +372,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         }
         return validators
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._received_friendship_requests_count_cache_key = '{}.{}'.format('received_friendship_requests_count', self.id) if self.id else None
+
     @property
     def name(self):
         return self.profile.get_name()
@@ -411,6 +416,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     @property
     def received_friendship_requests_count(self):
+        received_friendship_requests_count = cache_manager.cache_get(self._received_friendship_requests_count_cache_key, sliding_timeout=TimeInSeconds.ONE_HOUR)
+        if received_friendship_requests_count is not None:
+            return received_friendship_requests_count
         return len(self.received_friendship_requests)
 
     @property
@@ -583,12 +591,14 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         qs = self.friendship_requests_received.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         received_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+            cache_manager.cache_set(self._received_friendship_requests_count_cache_key, len(received_friendship_requests), timeout=TimeInSeconds.ONE_DAY)
             return received_friendship_requests
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from django.db.models import query
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
             query.prefetch_related_objects([self], 'blocked_entities', 'blocking_entities')
             received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            cache_manager.cache_set(self._received_friendship_requests_count_cache_key, len(received_friendship_requests), timeout=TimeInSeconds.ONE_DAY)
             return received_friendship_requests
         else:
             raise NotImplementedError()
