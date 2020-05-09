@@ -9,6 +9,8 @@ from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
 
+from speedy.core.blocks import managers as block_managers
+
 
 def redirect_to_www(site: Site) -> HttpResponseBase:
     url = '//www.{domain}{path}'.format(
@@ -123,3 +125,14 @@ class RemoveExtraSlashesMiddleware(object):
         return self.get_response(request=request)
 
 
+class EnsureCachesMiddleware(object):
+    """
+    Ensure caches for current user.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request: HttpRequest) -> HttpResponseBase:
+        block_managers.ensure_caches(request.user)
+        return self.get_response(request=request)
