@@ -276,6 +276,10 @@ body.bidi-rtl .navbar-right {
     }
 }
 
+.profile-picture {
+    margin: auto;
+}
+
 .profile-picture .placeholder-wrapper {
     position: relative;
 }
