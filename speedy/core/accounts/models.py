@@ -100,6 +100,9 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         verbose_name_plural = _('entities')
         ordering = ('id',)
 
+    def __eq__(self, obj):
+        return isinstance(obj, Entity) and obj.id == self.id
+
     def __str__(self):
         return '<Entity {} - {}>'.format(self.id, self.slug)
         # return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
