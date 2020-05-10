@@ -134,6 +134,8 @@ class EnsureCachesMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        if not request.user.is_anonymous:
+        if (request.user.is_authenticated):
             block_managers.ensure_caches(request.user)
         return self.get_response(request=request)
+
+
