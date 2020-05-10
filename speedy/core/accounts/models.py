@@ -103,6 +103,9 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     def __eq__(self, obj):
         return isinstance(obj, Entity) and obj.id == self.id
 
+    def __hash__(self):
+        return super().__hash__()
+
     def __str__(self):
         return '<Entity {} - {}>'.format(self.id, self.slug)
         # return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
