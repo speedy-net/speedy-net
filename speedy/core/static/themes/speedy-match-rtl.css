@@ -6767,7 +6767,10 @@ body.bidi-ltr .dropdown-menu {
 @media screen and (min-width: 768px) {
   body.with-background .row.total-number-of-active-members,
   body.with-background .row.total-number-of-members {
-    padding: 0px 20px; } }
+    padding: 0px 20px; }
+  .col-10 {
+    flex: unset;
+    max-width: none; } }
 
 @media screen and (max-width: 767px) {
   .row.total-number-of-active-members,

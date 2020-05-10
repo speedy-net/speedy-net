@@ -364,6 +364,11 @@ body.bidi-ltr .dropdown-menu {
             padding: 0px 20px;
         }
     }
+
+    .col-10 {
+        flex: unset;
+        max-width: none;
+    }
 }
 
 @media screen and (max-width: 767px) {

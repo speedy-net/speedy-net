@@ -171,6 +171,13 @@ body.bidi-ltr .dropdown-menu {
     }
 }
 
+@media screen and (min-width: 768px) {
+    .col-10 {
+        flex: unset;
+        max-width: none;
+    }
+}
+
 body,
 h6,
 .h6,
