@@ -23,6 +23,8 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
         return default
 
     if wrapped_value['expire_time'] is not None and sliding_timeout:
+        if sliding_timeout == DEFAULT_TIMEOUT:
+            sliding_timeout = cache.default_timeout
         now = time.time()
         ttl = wrapped_value['expire_time'] - now
         if ttl < sliding_timeout:
