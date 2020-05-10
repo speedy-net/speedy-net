@@ -100,8 +100,15 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         verbose_name_plural = _('entities')
         ordering = ('id',)
 
-    def __eq__(self, obj):
-        return isinstance(obj, Entity) and obj.id == self.id
+    def __eq__(self, other):
+        if not isinstance(other, Entity):
+            return False
+        # Skip the following check from django.db.models.Model
+        # if self._meta.concrete_model != other._meta.concrete_model:
+        #     return False
+        if self.pk is None:
+            return self is other
+        return self.pk == other.pk
 
     def __hash__(self):
         return super().__hash__()
