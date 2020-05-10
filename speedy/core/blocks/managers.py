@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from speedy.core.base import cache_manager
 from speedy.core.base.cache_manager import DEFAULT_TIMEOUT
 from speedy.core.base.models import BaseManager
-from speedy.core.accounts.models import User
+from speedy.core.accounts.models import Entity, User
 
 CACHE_TYPES = {
     'blocked': 'speedy-bo-%s',
@@ -41,12 +41,17 @@ def ensure_caches(user):
     """
     from django.db.models import query
 
+    if not isinstance(user, Entity):
+        return
+
     blocked_key = cache_key('blocked', user.pk)
     blocked_entities = cache_manager.cache_get(blocked_key, sliding_timeout=DEFAULT_TIMEOUT)
     if (blocked_entities is None):
         query.prefetch_related_objects([user], 'blocked_entities')
         cache_manager.cache_set(blocked_key, user._prefetched_objects_cache['blocked_entities'])
     else:
+        if not hasattr(user, '_prefetched_objects_cache'):
+            user._prefetched_objects_cache = {}
         user._prefetched_objects_cache['blocked_entities'] = blocked_entities
 
     blocking_key = cache_key('blocking', user.pk)
@@ -55,6 +60,8 @@ def ensure_caches(user):
         query.prefetch_related_objects([user], 'blocking_entities')
         cache_manager.cache_set(blocking_key, user._prefetched_objects_cache['blocking_entities'])
     else:
+        if not hasattr(user, '_prefetched_objects_cache'):
+            user._prefetched_objects_cache = {}
         user._prefetched_objects_cache['blocking_entities'] = blocking_entities
 
 
@@ -70,12 +77,22 @@ class BlockManager(BaseManager):
         UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
         bust_cache('blocked', blocker.pk)
         bust_cache('blocking', blocked.pk)
+        if hasattr(blocker, '_prefetched_objects_cache'):
+            blocker._prefetched_objects_cache.pop('blocked_entities', None)
+        if hasattr(blocked, '_prefetched_objects_cache'):
+            blocked._prefetched_objects_cache.pop('blocking_entities', None)
+        ensure_caches(blocker)
         return block
 
     def unblock(self, blocker, blocked):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
         bust_cache('blocked', blocker.pk)
         bust_cache('blocking', blocked.pk)
+        if hasattr(blocker, '_prefetched_objects_cache'):
+            blocker._prefetched_objects_cache.pop('blocked_entities', None)
+        if hasattr(blocked, '_prefetched_objects_cache'):
+            blocked._prefetched_objects_cache.pop('blocking_entities', None)
+        ensure_caches(blocker)
 
     def has_blocked(self, blocker, blocked):
         if (blocker.blocked_entities.all()._result_cache is not None):
