@@ -3,8 +3,59 @@ from friendship.models import Friend
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
+from speedy.core.base import cache_manager
+from speedy.core.base.cache_manager import DEFAULT_TIMEOUT
 from speedy.core.base.models import BaseManager
 from speedy.core.accounts.models import User
+
+CACHE_TYPES = {
+    'blocked': 'speedy-bo-%s',
+    'blocking': 'speedy-bd-%s',
+}
+
+BUST_CACHES = {
+    'blocked': ['blocked'],
+    'blocking': ['blocking'],
+}
+
+
+def cache_key(type, user_pk):
+    """
+    Build the cache key for a particular type of cached value.
+    """
+    return CACHE_TYPES[type] % user_pk
+
+
+def bust_cache(type, user_pk):
+    """
+    Bust the cache for a given type, can bust multiple caches.
+    """
+    bust_keys = BUST_CACHES[type]
+    keys = [CACHE_TYPES[k] % user_pk for k in bust_keys]
+    cache_manager.cache_delete_many(keys)
+
+
+def ensure_caches(user):
+    """
+    Ensure the cache for a given type.
+    """
+    from django.db.models import query
+
+    blocked_key = cache_key('blocked', user.pk)
+    blocked_entities = cache_manager.cache_get(blocked_key, sliding_timeout=DEFAULT_TIMEOUT)
+    if (blocked_entities is None):
+        query.prefetch_related_objects([user], 'blocked_entities')
+        cache_manager.cache_set(blocked_key, user._prefetched_objects_cache['blocked_entities'])
+    else:
+        user._prefetched_objects_cache['blocked_entities'] = blocked_entities
+
+    blocking_key = cache_key('blocking', user.pk)
+    blocking_entities = cache_manager.cache_get(blocking_key, sliding_timeout=DEFAULT_TIMEOUT)
+    if (blocking_entities is None):
+        query.prefetch_related_objects([user], 'blocking_entities')
+        cache_manager.cache_set(blocking_key, user._prefetched_objects_cache['blocking_entities'])
+    else:
+        user._prefetched_objects_cache['blocking_entities'] = blocking_entities
 
 
 class BlockManager(BaseManager):
@@ -17,10 +68,14 @@ class BlockManager(BaseManager):
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
         Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
         UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
+        bust_cache('blocked', blocker.pk)
+        bust_cache('blocking', blocked.pk)
         return block
 
     def unblock(self, blocker, blocked):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
+        bust_cache('blocked', blocker.pk)
+        bust_cache('blocking', blocked.pk)
 
     def has_blocked(self, blocker, blocked):
         if (blocker.blocked_entities.all()._result_cache is not None):
