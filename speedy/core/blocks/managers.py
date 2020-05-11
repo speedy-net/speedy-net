@@ -95,7 +95,8 @@ class BlockManager(BaseManager):
             return any(blocked.pk == block.blocked_id for block in blocker.blocked_entities.all())
         if (blocked.blocking_entities.all()._result_cache is not None):
             return any(blocker.pk == block.blocker_id for block in blocked.blocking_entities.all())
-        return self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).exists()
+        ensure_caches(user=blocker)
+        return any(blocked.pk == block.blocked_id for block in blocker.blocked_entities.all())
 
     def there_is_block(self, user_1, user_2):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
