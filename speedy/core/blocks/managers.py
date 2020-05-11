@@ -105,7 +105,7 @@ class BlockManager(BaseManager):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
-        # filter out users that are only active in another language.
+        # Filter out users that are only active in another language.
         blocked_users = User.objects.filter(pk__in=self.filter(blocker=blocker).values_list('blocked_id', flat=True))
         blocked_users = [u.pk for u in blocked_users if (u.profile.is_active)]
 
