@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-08 10:09+0300\n"
+"POT-Creation-Date: 2020-05-11 19:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -799,7 +799,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:715
+#: .\__translations\__translations.py:9 .\accounts\models.py:713
 msgid "email address"
 msgstr ""
 
@@ -1977,7 +1977,7 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:457 .\accounts\models.py:699 .\blocks\models.py:11
+#: .\accounts\models.py:457 .\accounts\models.py:697 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
@@ -1989,39 +1989,39 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:700
+#: .\accounts\models.py:698
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:701
+#: .\accounts\models.py:699
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:702
+#: .\accounts\models.py:700
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:703
+#: .\accounts\models.py:701
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:704
+#: .\accounts\models.py:702
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:705
+#: .\accounts\models.py:703
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:716
+#: .\accounts\models.py:714
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:782
+#: .\accounts\models.py:780
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:783
+#: .\accounts\models.py:781
 msgid "last visit"
 msgstr ""
 
@@ -2203,19 +2203,19 @@ msgstr ""
 msgid "Changes saved."
 msgstr ""
 
-#: .\blocks\managers.py:15 .\blocks\models.py:27
+#: .\blocks\managers.py:81 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr ""
 
-#: .\blocks\models.py:12
+#: .\blocks\models.py:16
 msgid "blocked user"
 msgstr ""
 
-#: .\blocks\models.py:17
+#: .\blocks\models.py:21
 msgid "block"
 msgstr ""
 
-#: .\blocks\models.py:18
+#: .\blocks\models.py:22
 msgid "user blocks"
 msgstr ""
 
@@ -2295,19 +2295,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:154
+#: .\friends\views.py:157
 msgid "Friendship request sent."
 msgstr ""
 
-#: .\friends\views.py:165
+#: .\friends\views.py:168
 msgid "No friendship request."
 msgstr ""
 
-#: .\friends\views.py:198
+#: .\friends\views.py:201
 msgid "Friendship request accepted."
 msgstr ""
 
-#: .\friends\views.py:213
+#: .\friends\views.py:216
 msgid "Friendship request rejected."
 msgstr ""
 
@@ -2366,11 +2366,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:158
+#: .\settings\base.py:159
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:159
+#: .\settings\base.py:160
 msgid "Hebrew"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-08 10:09+0300\n"
+"POT-Creation-Date: 2020-05-11 19:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -821,7 +821,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:715
+#: .\__translations\__translations.py:9 .\accounts\models.py:713
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -2018,7 +2018,7 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:457 .\accounts\models.py:699 .\blocks\models.py:11
+#: .\accounts\models.py:457 .\accounts\models.py:697 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -2030,39 +2030,39 @@ msgstr "משתמשים"
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:700
+#: .\accounts\models.py:698
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:701
+#: .\accounts\models.py:699
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:702
+#: .\accounts\models.py:700
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:703
+#: .\accounts\models.py:701
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:704
+#: .\accounts\models.py:702
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:705
+#: .\accounts\models.py:703
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:716
+#: .\accounts\models.py:714
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:782
+#: .\accounts\models.py:780
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:783
+#: .\accounts\models.py:781
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2281,19 +2281,19 @@ msgstr "id מכיל תווים לא חוקיים."
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
-#: .\blocks\managers.py:15 .\blocks\models.py:27
+#: .\blocks\managers.py:81 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "משתמשים לא יכולים לחסום את עצמם."
 
-#: .\blocks\models.py:12
+#: .\blocks\models.py:16
 msgid "blocked user"
 msgstr "blocked user"
 
-#: .\blocks\models.py:17
+#: .\blocks\models.py:21
 msgid "block"
 msgstr "block"
 
-#: .\blocks\models.py:18
+#: .\blocks\models.py:22
 msgid "user blocks"
 msgstr "user blocks"
 
@@ -2373,19 +2373,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:154
+#: .\friends\views.py:157
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:165
+#: .\friends\views.py:168
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:198
+#: .\friends\views.py:201
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:213
+#: .\friends\views.py:216
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -2444,11 +2444,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:158
+#: .\settings\base.py:159
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:159
+#: .\settings\base.py:160
 msgid "Hebrew"
 msgstr "עברית"
 
