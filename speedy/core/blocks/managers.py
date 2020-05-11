@@ -102,10 +102,13 @@ class BlockManager(BaseManager):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
 
     def get_blocked_list_to_queryset(self, blocker):
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+
         # filter out users that are only active in another language.
         blocked_users = User.objects.filter(pk__in=self.filter(blocker=blocker).values_list('blocked_id', flat=True))
         blocked_users = [u.pk for u in blocked_users if (u.profile.is_active)]
 
-        return self.filter(blocker=blocker).filter(blocked__in=blocked_users).order_by('-date_created')
+        return self.filter(blocker=blocker).filter(blocked__in=blocked_users).prefetch_related("blocked", "blocked__user", "blocked__user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "blocked__user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), "blocked__user__photo").order_by('-date_created')
 
 
