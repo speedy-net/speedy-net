@@ -34,7 +34,7 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
 
     def get_matches_list(self):
         if (self.request.user.is_authenticated):
-            matches_list = SpeedyMatchSiteProfile.objects.get_matches(self.request.user.speedy_match_profile)
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.request.user)
         else:
             matches_list = []
         return matches_list

@@ -598,8 +598,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return received_friendship_requests
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.from_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            from_list = [friendship_request.from_user_id for friendship_request in received_friendship_requests]
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
+            received_friendship_requests = [friendship_request for friendship_request in received_friendship_requests if (friendship_request.from_user in matches_list)]
             return received_friendship_requests
         else:
             raise NotImplementedError()
@@ -614,8 +615,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return sent_friendship_requests
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            sent_friendship_requests = [friendship_request for friendship_request in sent_friendship_requests if (self.speedy_match_profile.get_matching_rank(other_profile=friendship_request.to_user.profile) > SpeedyMatchSiteProfile.RANK_0)]
+            from_list = [friendship_request.to_user_id for friendship_request in sent_friendship_requests]
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
+            sent_friendship_requests = [friendship_request for friendship_request in sent_friendship_requests if (friendship_request.to_user in matches_list)]
             return sent_friendship_requests
         else:
             raise NotImplementedError()
@@ -639,7 +641,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             return friends
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-            friends = [friendship for friendship in friends if (self.speedy_match_profile.get_matching_rank(other_profile=friendship.from_user.profile) > SiteProfile.RANK_0)]
+            from_list = [friendship.from_user_id for friendship in friends]
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
+            friends = [friendship for friendship in friends if (friendship.from_user in matches_list)]
             return friends
         else:
             raise NotImplementedError()
