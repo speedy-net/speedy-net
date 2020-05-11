@@ -101,7 +101,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('id',)
 
     # def __eq__(self, other):
-    #     if not isinstance(other, Entity):
+    #     if (not (isinstance(other, Entity))):
     #         return False
     #     # Skip the following check from django.db.models.Model
     #     # if self._meta.concrete_model != other._meta.concrete_model:

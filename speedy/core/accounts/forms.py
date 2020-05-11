@@ -292,7 +292,7 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
         users_list = self.get_users(email)
         logger.info("PasswordResetForm::User submitted form, site_name={site_name}, email={email}, matching_users={matching_users}".format(site_name=_(site.name), email=email, matching_users=len(users_list)))
         for user in users_list:
-            if not domain_override:
+            if (not (domain_override)):
                 current_site = get_current_site(request)
                 site_name = current_site.name
                 domain = current_site.domain
