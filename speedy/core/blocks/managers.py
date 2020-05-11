@@ -95,12 +95,12 @@ class BlockManager(BaseManager):
         ensure_caches(blocker)
 
     def has_blocked(self, blocker, blocked):
-        if not isinstance(blocker, Entity) or not isinstance(blocked, Entity):
+        if ((not (isinstance(blocker, Entity))) or (not (isinstance(blocked, Entity)))):
             return False
         if (blocker.blocked_entities.all()._result_cache is not None):
-            return any(blocked == block.blocked for block in blocker.blocked_entities.all())
+            return any(blocked.pk == block.blocked.pk for block in blocker.blocked_entities.all())
         if (blocked.blocking_entities.all()._result_cache is not None):
-            return any(blocker == block.blocker for block in blocked.blocking_entities.all())
+            return any(blocker.pk == block.blocker.pk for block in blocked.blocking_entities.all())
         return self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).exists()
 
     def there_is_block(self, user_1, user_2):
