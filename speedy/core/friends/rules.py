@@ -24,7 +24,7 @@ def is_friend(user, other_user):
 @predicate
 def view_friend_list(user, other_user):
     # User can view other user's friends only on Speedy Net.
-    # Otherwise (on Speedy Match), user can only view his or her own friends.
+    # Otherwise (on Speedy Match), user can only view their own friends.
     if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
         return True
     else:
