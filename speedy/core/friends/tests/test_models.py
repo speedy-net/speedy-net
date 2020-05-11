@@ -26,25 +26,57 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_set_up(self):
             self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
 
-        def test_if_no_relation_between_users_nothings_get_affected(self):
+        def test_if_no_relation_between_users_nothing_get_affected(self):
             Block.objects.block(blocker=self.user1, blocked=self.user2)
             self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
             self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+            Block.objects.unblock(blocker=self.user1, blocked=self.user2)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
 
-        def test_if_user1_blocked_user2_requests_got_removed(self):
+        def test_if_user1_blocked_user2_request_is_removed(self):
             Friend.objects.add_friend(from_user=self.user1, to_user=self.user2)
             self.assert_counters(user=self.user1, requests=1, sent_requests=2, friends=1)
             self.assert_counters(user=self.user2, requests=1, sent_requests=0, friends=0)
             Block.objects.block(blocker=self.user1, blocked=self.user2)
             self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
             self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+            Block.objects.unblock(blocker=self.user1, blocked=self.user2)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
 
-        def test_if_user1_blocked_user2_friendship_got_removed(self):
+        def test_if_user2_blocked_user1_request_is_removed(self):
+            Friend.objects.add_friend(from_user=self.user1, to_user=self.user2)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=2, friends=1)
+            self.assert_counters(user=self.user2, requests=1, sent_requests=0, friends=0)
+            Block.objects.block(blocker=self.user2, blocked=self.user1)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+            Block.objects.unblock(blocker=self.user2, blocked=self.user1)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+
+        def test_if_user1_blocked_user2_friendship_is_removed(self):
             Friend.objects.add_friend(from_user=self.user1, to_user=self.user2).accept()
             self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=2)
             self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=1)
             Block.objects.block(blocker=self.user1, blocked=self.user2)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+            Block.objects.unblock(blocker=self.user1, blocked=self.user2)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+
+        def test_if_user2_blocked_user1_friendship_is_removed(self):
+            Friend.objects.add_friend(from_user=self.user1, to_user=self.user2).accept()
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=2)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=1)
+            Block.objects.block(blocker=self.user2, blocked=self.user1)
+            self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
+            self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
+            Block.objects.unblock(blocker=self.user2, blocked=self.user1)
             self.assert_counters(user=self.user1, requests=1, sent_requests=1, friends=1)
             self.assert_counters(user=self.user2, requests=0, sent_requests=0, friends=0)
 

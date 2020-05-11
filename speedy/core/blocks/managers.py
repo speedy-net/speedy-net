@@ -1,5 +1,3 @@
-from friendship.models import Friend
-
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
@@ -79,15 +77,10 @@ class BlockManager(BaseManager):
         ensure_caches(user=blocker)
 
     def block(self, blocker, blocked):
-        from speedy.match.likes.models import UserLike
-
         if (blocker == blocked):
             raise ValidationError(_("Users cannot block themselves."))
 
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
-        if ((isinstance(blocker, User))) and (isinstance(blocked, User)):
-            Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
-            UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
         self._update_caches(blocker=blocker, blocked=blocked)
         return block
 
