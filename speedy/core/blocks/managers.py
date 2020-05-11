@@ -1,5 +1,6 @@
 from friendship.models import Friend
 
+from django.conf import settings as django_settings
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
@@ -41,7 +42,7 @@ def ensure_caches(user):
     """
     from django.db.models import query
 
-    if not isinstance(user, Entity):
+    if (not (isinstance(user, Entity))):
         return
 
     blocked_key = cache_key('blocked', user.pk)
@@ -50,7 +51,7 @@ def ensure_caches(user):
         query.prefetch_related_objects([user], 'blocked_entities')
         cache_manager.cache_set(blocked_key, user._prefetched_objects_cache['blocked_entities'])
     else:
-        if not hasattr(user, '_prefetched_objects_cache'):
+        if (not (hasattr(user, '_prefetched_objects_cache'))):
             user._prefetched_objects_cache = {}
         user._prefetched_objects_cache['blocked_entities'] = blocked_entities
 
@@ -60,12 +61,24 @@ def ensure_caches(user):
         query.prefetch_related_objects([user], 'blocking_entities')
         cache_manager.cache_set(blocking_key, user._prefetched_objects_cache['blocking_entities'])
     else:
-        if not hasattr(user, '_prefetched_objects_cache'):
+        if (not (hasattr(user, '_prefetched_objects_cache'))):
             user._prefetched_objects_cache = {}
         user._prefetched_objects_cache['blocking_entities'] = blocking_entities
 
 
 class BlockManager(BaseManager):
+    def _update_caches(self, blocker, blocked):
+        """
+        Update caches after block or unblock.
+        """
+        bust_cache('blocked', blocker.pk)
+        bust_cache('blocking', blocked.pk)
+        if hasattr(blocker, '_prefetched_objects_cache'):
+            blocker._prefetched_objects_cache.pop('blocked_entities', None)
+        if hasattr(blocked, '_prefetched_objects_cache'):
+            blocked._prefetched_objects_cache.pop('blocking_entities', None)
+        ensure_caches(user=blocker)
+
     def block(self, blocker, blocked):
         from speedy.match.likes.models import UserLike
 
@@ -73,26 +86,15 @@ class BlockManager(BaseManager):
             raise ValidationError(_("Users cannot block themselves."))
 
         block, created = self.get_or_create(blocker=blocker, blocked=blocked)
-        Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
-        UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
-        bust_cache('blocked', blocker.pk)
-        bust_cache('blocking', blocked.pk)
-        if hasattr(blocker, '_prefetched_objects_cache'):
-            blocker._prefetched_objects_cache.pop('blocked_entities', None)
-        if hasattr(blocked, '_prefetched_objects_cache'):
-            blocked._prefetched_objects_cache.pop('blocking_entities', None)
-        ensure_caches(blocker)
+        if ((isinstance(blocker, django_settings.AUTH_USER_MODEL))) and (isinstance(blocked, django_settings.AUTH_USER_MODEL)):
+            Friend.objects.remove_friend(from_user=blocker, to_user=blocked)
+            UserLike.objects.remove_like(from_user=blocker, to_user=blocked)
+        self._update_caches(blocker=blocker, blocked=blocked)
         return block
 
     def unblock(self, blocker, blocked):
         self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
-        bust_cache('blocked', blocker.pk)
-        bust_cache('blocking', blocked.pk)
-        if hasattr(blocker, '_prefetched_objects_cache'):
-            blocker._prefetched_objects_cache.pop('blocked_entities', None)
-        if hasattr(blocked, '_prefetched_objects_cache'):
-            blocked._prefetched_objects_cache.pop('blocking_entities', None)
-        ensure_caches(blocker)
+        self._update_caches(blocker=blocker, blocked=blocked)
 
     def has_blocked(self, blocker, blocked):
         if ((not (isinstance(blocker, Entity))) or (not (isinstance(blocked, Entity)))):

@@ -15,7 +15,7 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
     :type version: int
     :type sliding_timeout: int
     """
-    if not USE_CACHE:
+    if (not (USE_CACHE)):
         return None
 
     wrapped_value = cache.get(key, default=DEFAULT_VALUE, version=version)
@@ -40,7 +40,7 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
     :type timeout: int
     :type version: int
     """
-    if not USE_CACHE:
+    if (not (USE_CACHE)):
         return
 
     expire_time = None
@@ -63,3 +63,5 @@ def cache_delete_many(keys, version=None):
     :type version: int
     """
     cache.delete_many(keys, version=version)
+
+
