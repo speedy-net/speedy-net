@@ -1,3 +1,5 @@
+from time import sleep
+
 from django.conf import settings as django_settings
 
 if (django_settings.LOGIN_ENABLED):
@@ -23,6 +25,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=User.objects.count(), second=5)
 
         def test_blocked_users_dont_appear_in_matches_list(self):
+            """
+            Test that blocked and blocking users don't appear in matches list.
+            """
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertTrue(self.user_2 in matches_list)
@@ -71,6 +76,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=User.objects.count(), second=5)
 
         def test_gender_doesnt_match_profile_in_matches_list(self):
+            """
+            Test that users with non-matching genders don't appear in matches list.
+            """
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertTrue(self.user_4 in matches_list)
@@ -102,5 +110,34 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(self.user_2 not in matches_list)
             self.assertTrue(self.user_3 in matches_list)
             self.assertTrue(self.user_4 not in matches_list)
+
+        def test_matches_list_sorted_by_speedy_match_last_visit(self):
+            """
+            Test that SpeedyMatchSiteProfile.objects.get_matches() returns a matches list sorted by Speedy Match last visit time (if all ranks are equal).
+            Speedy Net last visit time is ignored.
+            """
+            sleep(0.2)
+            self.user_2.profile.update_last_visit()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list[:1], second=[self.user_2])
+            sleep(0.1)
+            self.user_3.speedy_match_profile.update_last_visit()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list[:2], second=[self.user_3, self.user_2])
+            sleep(0.1)
+            self.user_4.speedy_net_profile.update_last_visit()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list[:2], second=[self.user_3, self.user_2])
+            sleep(0.1)
+            self.user_4.speedy_match_profile.update_last_visit()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list, second=[self.user_4, self.user_3, self.user_2, self.user_5])
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list, second=[self.user_4, self.user_3, self.user_2, self.user_1])
 
 
