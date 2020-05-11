@@ -278,6 +278,7 @@ body.bidi-rtl .navbar-right {
 
 .profile-picture {
     margin: auto;
+    width: 100%;
 }
 
 .profile-picture .placeholder-wrapper {
