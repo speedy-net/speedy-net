@@ -121,23 +121,96 @@ if (django_settings.LOGIN_ENABLED):
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertEqual(first=matches_list[:1], second=[self.user_2])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 5, 5])
             sleep(0.1)
             self.user_3.speedy_match_profile.update_last_visit()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertEqual(first=matches_list[:2], second=[self.user_3, self.user_2])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 5, 5])
             sleep(0.1)
             self.user_4.speedy_net_profile.update_last_visit()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertEqual(first=matches_list[:2], second=[self.user_3, self.user_2])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 5, 5])
             sleep(0.1)
             self.user_4.speedy_match_profile.update_last_visit()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertEqual(first=matches_list, second=[self.user_4, self.user_3, self.user_2, self.user_5])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 5, 5])
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertEqual(first=matches_list, second=[self.user_4, self.user_3, self.user_2, self.user_1])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 5, 5])
+
+        def test_matches_list_sorted_by_rank(self):
+            sleep(0.2)
+            self.user_3.speedy_match_profile.update_last_visit()
+            self.user_1.diet = User.DIET_VEGAN
+            self.user_2.diet = User.DIET_VEGETARIAN
+            self.user_3.diet = User.DIET_CARNIST
+            self.user_4.diet = User.DIET_VEGAN
+            self.user_5.diet = User.DIET_CARNIST
+            self.user_1.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
+            self.user_2.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
+            self.user_3.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
+            self.user_4.smoking_status = User.SMOKING_STATUS_SMOKING_OCCASIONALLY
+            self.user_5.smoking_status = User.SMOKING_STATUS_SMOKING
+            self.user_1.relationship_status = User.RELATIONSHIP_STATUS_SINGLE
+            self.user_2.relationship_status = User.RELATIONSHIP_STATUS_DIVORCED
+            self.user_3.relationship_status = User.RELATIONSHIP_STATUS_WIDOWED
+            self.user_4.relationship_status = User.RELATIONSHIP_STATUS_MARRIED
+            self.user_5.relationship_status = User.RELATIONSHIP_STATUS_IN_RELATIONSHIP
+            self.user_5.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 2, str(User.DIET_VEGETARIAN): 4, str(User.DIET_CARNIST): 5}
+            self.user_5.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 1, str(User.SMOKING_STATUS_SMOKING): 0}
+            self.user_5.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_3
+            self.user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_IN_RELATIONSHIP)] = SpeedyMatchSiteProfile.RANK_2
+            self.user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP)] = SpeedyMatchSiteProfile.RANK_1
+            self.user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
+            self.user_1.save_user_and_profile()
+            self.user_2.save_user_and_profile()
+            self.user_3.save_user_and_profile()
+            self.user_4.save_user_and_profile()
+            self.user_5.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list, second=[self.user_3, self.user_2, self.user_1, self.user_4])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 4, 2, 1])
+            self.user_5.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 5, str(User.DIET_VEGETARIAN): 4, str(User.DIET_CARNIST): 2}
+            self.user_5.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertEqual(first=matches_list, second=[self.user_1, self.user_2, self.user_3, self.user_4])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 4, 2, 1])
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertEqual(first=matches_list, second=[self.user_3, self.user_1, self.user_5])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 2])
+            self.user_5.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_DIVORCED)] = SpeedyMatchSiteProfile.RANK_0
+            self.user_5.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=2)
+            self.assertEqual(first=matches_list, second=[self.user_3, self.user_1])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5])
+            self.user_4.relationship_status = User.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP
+            self.user_4.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertEqual(first=matches_list, second=[self.user_3, self.user_1, self.user_4])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 5, 1])
+            self.user_3.relationship_status = User.RELATIONSHIP_STATUS_IN_OPEN_RELATIONSHIP
+            self.user_3.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertEqual(first=matches_list, second=[self.user_1, self.user_3, self.user_4])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 1, 1])
+            sleep(0.01)
+            self.user_4.speedy_match_profile.update_last_visit()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertEqual(first=matches_list, second=[self.user_1, self.user_4, self.user_3])
+            self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 1, 1])
 
 
