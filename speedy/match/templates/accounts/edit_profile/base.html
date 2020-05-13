@@ -1,0 +1,20 @@
+{% extends 'accounts/edit_profile/core_base.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+
+{% block edit_profile_links_1 %}
+    {% if request.user.profile.is_active %}
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'matches:edit_about_me' %}" href="{% url 'matches:edit_about_me' %}">
+                {% trans 'About me'|title context user.get_gender %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'matches:edit_match_settings' %}" href="{% url 'matches:edit_match_settings' %}">
+                {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
+            </a>
+        </li>
+    {% endif %}
+{% endblock %}
+
