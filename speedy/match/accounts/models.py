@@ -290,6 +290,9 @@ class SiteProfile(SiteProfileBase):
     def get_matching_rank(self, other_profile, second_call=True) -> int:
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
+        self.user._get_matching_rank_calls = getattr(self.user, "_get_matching_rank_calls", 0) + 1
+        if (self.user._get_matching_rank_calls >= 5):
+            logger.debug('get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self.user._get_matching_rank_calls, self=self, other_profile=other_profile))
         if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
             if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
