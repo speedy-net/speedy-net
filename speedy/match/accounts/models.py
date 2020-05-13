@@ -287,12 +287,12 @@ class SiteProfile(SiteProfileBase):
     def call_after_verify_email_address(self):
         pass
 
-    def get_matching_rank(self, other_profile, second_call=True) -> int:
-        if (self.user.pk == other_profile.user.pk):
-            return self.__class__.RANK_0
+    def _get_matching_rank(self, other_profile, second_call=True) -> int:
         self.user._get_matching_rank_calls = getattr(self.user, "_get_matching_rank_calls", 0) + 1
         if (self.user._get_matching_rank_calls >= 5):
-            logger.debug('get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self.user._get_matching_rank_calls, self=self, other_profile=other_profile))
+            logger.debug('_get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self.user._get_matching_rank_calls, self=self, other_profile=other_profile))
+        if (self.user.pk == other_profile.user.pk):
+            return self.__class__.RANK_0
         if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
             if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
                 return self.__class__.RANK_0
@@ -315,17 +315,30 @@ class SiteProfile(SiteProfileBase):
             relationship_status_rank = self.relationship_status_match.get(str(other_profile.user.relationship_status), self.__class__.RANK_0)
             rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
             if (rank > self.__class__.RANK_0) and (second_call):
-                other_user_rank = other_profile.get_matching_rank(other_profile=self, second_call=False)
+                other_user_rank = other_profile._get_matching_rank(other_profile=self, second_call=False)
                 if (other_user_rank == self.__class__.RANK_0):
                     rank = self.__class__.RANK_0
-            other_profile.rank = rank
             return rank
         else:
             if (not (self.is_active_and_valid)):
-                logger.debug('get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+                logger.debug('_get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             if (not (other_profile.is_active_and_valid)):
-                logger.debug('get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+                logger.debug('_get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             return self.__class__.RANK_0
+
+    def get_matching_rank(self, other_profile) -> int:
+        if (self.user.pk == other_profile.user.pk):
+            return self.__class__.RANK_0
+        rank_dict = getattr(self, "_rank_dict", {})
+        if (other_profile.user.pk in rank_dict):
+            rank = rank_dict[other_profile.user.pk]
+        else:
+            rank = self._get_matching_rank(other_profile=other_profile)
+            rank_dict[other_profile.user.pk] = rank
+            self._rank_dict = rank_dict
+        other_profile.rank = rank
+        self.rank = self.__class__.RANK_0
+        return rank
 
     def deactivate(self):
         self._set_active_languages(languages=[])
