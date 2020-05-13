@@ -454,6 +454,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         else:
             return _('Friends')
 
+    @cached_property
+    def has_confirmed_email_or_registered_now(self):
+        return ((self.has_confirmed_email) or (self.date_created > now() - timedelta(hours=2)))
+
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
@@ -551,10 +555,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def get_short_name(self):
         return self.get_first_name()
-
-    @cached_property
-    def has_confirmed_email_or_registered_now(self):
-        return ((self.has_confirmed_email) or (self.date_created > now() - timedelta(hours=2)))
 
     def activate(self):
         self.is_active = True
