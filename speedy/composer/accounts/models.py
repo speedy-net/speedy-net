@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
@@ -30,7 +31,7 @@ class SiteProfile(SiteProfileBase):
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=False)
 
-    @property
+    @cached_property
     def is_active_and_valid(self):
         return (self.is_active)
 

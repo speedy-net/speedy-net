@@ -3,6 +3,7 @@ import logging
 from django.db import models
 from django.conf import settings as django_settings
 from django.contrib.postgres.fields import JSONField, ArrayField
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, get_language
 from django.utils.decorators import classproperty
 from django.core.exceptions import ValidationError
@@ -175,11 +176,11 @@ class SiteProfile(SiteProfileBase):
     def AGE_TO_MATCH_VALID_VALUES(cls):
         return range(cls.settings.MIN_AGE_TO_MATCH_ALLOWED, cls.settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
-    @property
+    @cached_property
     def is_active(self):
         return ((self.user.is_active) and (get_language() in self.active_languages))
 
-    @property
+    @cached_property
     def is_active_and_valid(self):
         if (self.is_active):
             step, error_messages = self.validate_profile_and_activate(commit=False)
@@ -241,6 +242,10 @@ class SiteProfile(SiteProfileBase):
 
     def _set_active_languages(self, languages):
         self.active_languages = sorted(list(set(languages)))
+        if hasattr(self, "is_active"):
+            delattr(self, "is_active")
+        if hasattr(self, "is_active_and_valid"):
+            delattr(self, "is_active_and_valid")
 
     def _deactivate_language(self, step, commit=True):
         # Profile is invalid. Deactivate in this language.

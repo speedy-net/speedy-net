@@ -2,6 +2,7 @@ import logging
 
 from django.db import models
 from django.conf import settings as django_settings
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from django.contrib.sites.models import Site
 
@@ -21,7 +22,7 @@ class SiteProfile(SiteProfileBase):
         field=models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=None, blank=True, null=True),
     )
 
-    @property
+    @cached_property
     def is_active_and_valid(self):
         return (self.is_active)
 
