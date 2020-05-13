@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 19:20+0300\n"
+"POT-Creation-Date: 2020-05-13 17:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -799,7 +799,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:713
+#: .\__translations\__translations.py:9 .\accounts\models.py:753
 msgid "email address"
 msgstr ""
 
@@ -1977,7 +1977,7 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:457 .\accounts\models.py:697 .\blocks\models.py:15
+#: .\accounts\models.py:457 .\accounts\models.py:737 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
@@ -1989,39 +1989,39 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:698
+#: .\accounts\models.py:738
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:699
+#: .\accounts\models.py:739
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:700
+#: .\accounts\models.py:740
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:701
+#: .\accounts\models.py:741
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:702
+#: .\accounts\models.py:742
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:703
+#: .\accounts\models.py:743
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:714
+#: .\accounts\models.py:754
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:780
+#: .\accounts\models.py:820
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:781
+#: .\accounts\models.py:821
 msgid "last visit"
 msgstr ""
 
@@ -2219,11 +2219,11 @@ msgstr ""
 msgid "user blocks"
 msgstr ""
 
-#: .\blocks\views.py:28
+#: .\blocks\views.py:19
 msgid "You have blocked {}."
 msgstr ""
 
-#: .\blocks\views.py:40
+#: .\blocks\views.py:31
 msgid "You have unblocked {}."
 msgstr ""
 
@@ -2408,8 +2408,8 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:6
-#: .\templates\accounts\edit_profile\base.html:10
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:10
 #: .\templates\base_with_login.html:50 .\templates\base_with_login.html:101
 #: .\templates\base_with_login.html:145
 #: .\templates\profiles\tools\edit_profile.html:4
@@ -2417,30 +2417,25 @@ msgstr ""
 msgid "Edit Profile"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:16
+#: .\templates\accounts\edit_profile\core_base.html:17
 msgid "Profile Info"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:21
+#: .\templates\accounts\edit_profile\core_base.html:23
 #: .\templates\base_with_login.html:185
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:26
+#: .\templates\accounts\edit_profile\core_base.html:29
 msgid "Notifications"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:31
+#: .\templates\accounts\edit_profile\core_base.html:35
 msgid "Emails & Password"
 msgstr ""
 
-#: .\templates\accounts\edit_profile\base.html:37
-#: .\templates\blocks\block_list.html:6
-msgid "Blocked Users"
-msgstr ""
-
-#: .\templates\accounts\edit_profile\base.html:42
+#: .\templates\accounts\edit_profile\core_base.html:43
 msgid "Deactivate Account"
 msgstr ""
 
@@ -2671,6 +2666,10 @@ msgstr ""
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
+msgstr ""
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
 msgstr ""
 
 #: .\templates\blocks\block_list.html:15

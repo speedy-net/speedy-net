@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 19:20+0300\n"
+"POT-Creation-Date: 2020-05-13 17:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,19 @@ msgstr ""
 msgid "Speedy Net Accounts"
 msgstr ""
 
-#: .\accounts\models.py:18
+#: .\accounts\models.py:19
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:21
+#: .\accounts\models.py:22
 msgid "Number of friends on last user's visit"
 msgstr ""
 
-#: .\accounts\models.py:29
+#: .\accounts\models.py:30
 msgid "Speedy Net Profile"
 msgstr ""
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:31
 msgid "Speedy Net Profiles"
 msgstr ""
 
@@ -129,6 +129,10 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\activate.html:21
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
 msgstr ""
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3

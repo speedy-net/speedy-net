@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 19:20+0300\n"
+"POT-Creation-Date: 2020-05-13 17:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Speedy Composer Accounts"
 msgstr "Speedy Composer Accounts"
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:31
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:39
 msgid "Speedy Composer Profile"
 msgstr "פרופיל ספידי קומפוזר"
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:40
 msgid "Speedy Composer Profiles"
 msgstr "פרופילים ספידי קומפוזר"
 

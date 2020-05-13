@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 19:20+0300\n"
+"POT-Creation-Date: 2020-05-13 17:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 msgid "Speedy Net Accounts"
 msgstr "Speedy Net Accounts"
 
-#: .\accounts\models.py:18
+#: .\accounts\models.py:19
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:21
+#: .\accounts\models.py:22
 msgid "Number of friends on last user's visit"
 msgstr "Number of friends on last user's visit"
 
-#: .\accounts\models.py:29
+#: .\accounts\models.py:30
 msgid "Speedy Net Profile"
 msgstr "פרופיל ספידי נט"
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:31
 msgid "Speedy Net Profiles"
 msgstr "פרופילים ספידי נט"
 
@@ -153,6 +153,10 @@ msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני של�
 #: .\templates\accounts\edit_profile\activate.html:21
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr "החשבון שלך בספידי נט אינו פעיל. היכנס/י לדף זה כדי להפעיל אותו."
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
+msgstr "משתמשים חסומים"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -349,9 +353,6 @@ msgstr "בקשת חברות נשלחה"
 
 #~ msgid "About"
 #~ msgstr "אודות"
-
-#~ msgid "Blocked Users"
-#~ msgstr "משתמשים חסומים"
 
 #~ msgid "Privacy"
 #~ msgstr "פרטיות"
