@@ -58,8 +58,9 @@ class UserMixin(object):
             if (len(users) == 1):
                 user = users[0]
                 # Users have cached properties, so we don't want to load them to memory twice.
-                if (user == self.request.user):
-                    user = self.request.user
+                if (self.request.user.is_authenticated):
+                    if (user == self.request.user):
+                        user = self.request.user
             else:
                 raise Http404()
         return user
