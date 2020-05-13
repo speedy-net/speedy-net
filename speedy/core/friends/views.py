@@ -162,9 +162,10 @@ class CancelFriendshipRequestView(UserMixin, PermissionRequiredMixin, generic.Vi
     permission_required = 'friends.cancel_request'
 
     def post(self, request, *args, **kwargs):
-        try:
-            friendship_request = FriendshipRequest.objects.get(from_user=self.request.user, to_user=self.user)
-        except FriendshipRequest.DoesNotExist:
+        friendship_requests = FriendshipRequest.objects.filter(from_user=self.request.user, to_user=self.user)
+        if (len(friendship_requests) == 1):
+            friendship_request = friendship_requests[0]
+        else:
             messages.error(request=request, message=_('No friendship request.'))
             return redirect(to=self.user)
         friendship_request.cancel()

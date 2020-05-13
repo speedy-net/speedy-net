@@ -11,6 +11,12 @@ class EntityManager(BaseManager):
     def get_by_slug(self, slug):
         return self.get_by_username(username=slug)
 
+    def filter_by_username(self, username):
+        return self.filter(username=normalize_username(username=username))
+
+    def filter_by_slug(self, slug):
+        return self.filter_by_username(username=slug)
+
 
 class UserManager(BaseUserManager):
     @classmethod

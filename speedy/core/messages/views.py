@@ -39,12 +39,13 @@ class UserSingleChatMixin(UserChatsMixin):
     def get_chat(self):
         slug = self.kwargs['chat_slug']
         user = self.get_user()
-        try:
-            q_id = Q(id=slug)
-            q_slug_1 = Q(ent1__slug=slug, ent2_id=user.id)
-            q_slug_2 = Q(ent1_id=user.id, ent2__slug=slug)
-            return self.get_chat_queryset().filter(q_id | q_slug_1 | q_slug_2)[0]
-        except (IndexError, Chat.DoesNotExist):
+        q_id = Q(id=slug)
+        q_slug_1 = Q(ent1__slug=slug, ent2_id=user.id)
+        q_slug_2 = Q(ent1_id=user.id, ent2__slug=slug)
+        chats = self.get_chat_queryset().filter(q_id | q_slug_1 | q_slug_2)
+        if (len(chats) == 1):
+            return chats[0]
+        else:
             raise Http404()
 
     def get_messages_queryset(self):

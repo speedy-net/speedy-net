@@ -24,10 +24,11 @@ class FeedbackView(generic.CreateView):
             slug = self.kwargs.get('report_entity_slug')
             if (self.get_type() != Feedback.TYPE_REPORT_ENTITY):
                 return None
-            try:
-                self.report_entity = True
-                return Entity.objects.get_by_slug(slug=slug)
-            except Entity.DoesNotExist:
+            self.report_entity = True
+            entities = Entity.objects.filter_by_slug(slug=slug)
+            if (len(entities) == 1):
+                return entities[0]
+            else:
                 raise Http404()
         else:
             return None
@@ -37,10 +38,11 @@ class FeedbackView(generic.CreateView):
             report_file_id = self.kwargs.get('report_file_id')
             if (self.get_type() != Feedback.TYPE_REPORT_FILE):
                 return None
-            try:
-                self.report_file = True
-                return File.objects.get(pk=report_file_id)
-            except (File.DoesNotExist, ValueError):
+            self.report_file = True
+            files = File.objects.filter(pk=report_file_id)
+            if (len(files) == 1):
+                return files[0]
+            else:
                 raise Http404()
         else:
             return None

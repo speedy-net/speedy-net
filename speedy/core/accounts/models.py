@@ -377,9 +377,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     @cached_property
     def email(self):
-        try:
-            return self.email_addresses.get(is_primary=True).email
-        except UserEmailAddress.DoesNotExist:
+        emails = self.email_addresses.filter(is_primary=True)
+        if (len(emails) == 1):
+            return emails[0].email
+        else:
             return None
 
     @cached_property
