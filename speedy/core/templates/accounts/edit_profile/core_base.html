@@ -1,0 +1,53 @@
+{% extends 'base_site.html' %}
+
+{% load core_tags_and_filters %}
+{% load i18n %}
+
+{% block title %}{% trans 'Edit Profile' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>{% trans 'Edit Profile' %}</h1>
+    </div>
+
+    <ul class="nav nav-tabs">
+        {% block edit_profile_links_0 %}{% endblock %}
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile' %}" href="{% url 'accounts:edit_profile' %}">
+                {% trans 'Profile Info' %}
+            </a>
+        </li>
+        {% block edit_profile_links_1 %}{% endblock %}
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_privacy' %}" href="{% url 'accounts:edit_profile_privacy' %}">
+                {% trans 'Privacy' %}
+            </a>
+        </li>
+        {% block edit_profile_links_2 %}{% endblock %}
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_notifications' %}" href="{% url 'accounts:edit_profile_notifications' %}">
+                {% trans 'Notifications' %}
+            </a>
+        </li>
+        {% block edit_profile_links_3 %}{% endblock %}
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile_credentials' %}" href="{% url 'accounts:edit_profile_credentials' %}">
+                {% trans 'Emails & Password' %}
+            </a>
+        </li>
+        {% block edit_profile_links_4 %}{% endblock %}
+        {% if request.user.profile.is_active %}
+            {% block edit_profile_links_5 %}{% endblock %}
+            <li class="nav-item">
+                <a class="nav-link {% active_class 'accounts:deactivate_profile' %}" href="{% url 'accounts:deactivate_profile' %}">
+                    {% trans 'Deactivate Account' context request.user.get_gender %}
+                </a>
+            </li>
+            {% block edit_profile_links_6 %}{% endblock %}
+        {% endif %}
+        {% block edit_profile_links_7 %}{% endblock %}
+    </ul>
+    <br>
+    {% block tab_content %}{% endblock %}
+
+{% endblock %}
