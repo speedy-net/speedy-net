@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 class SiteProfileManager(BaseManager):
-    # Same function as user.speedy_match_profile.get_matching_rank(other_profile=user.speedy_match_profile), but more optimized.
+    # Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
         if (user.pk == other_user.pk):
             return self.model.RANK_0
