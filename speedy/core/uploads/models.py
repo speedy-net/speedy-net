@@ -1,6 +1,7 @@
 import os
 
 from django.db import models
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel, RegularUDIDField
@@ -15,7 +16,7 @@ class File(TimeStampedModel):
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file size'), default=0)
 
-    @property
+    @cached_property
     def basename(self):
         return os.path.basename(self.file.name)
 

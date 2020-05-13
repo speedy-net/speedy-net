@@ -1,6 +1,7 @@
 from django.contrib.sites.models import Site
 from django.db import models
 from django.dispatch import receiver
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MaxLengthValidator
 
@@ -21,18 +22,18 @@ class Chat(TimeStampedModel):
     objects = ChatManager()
     all_sites_objects = BaseManager()
 
-    @property
+    @cached_property
     def is_private(self):
         return (not (self.is_group))
 
-    @property
+    @cached_property
     def participants(self):
         if (self.is_private):
             return (self.ent1, self.ent2)
         else:
             return self.group.order_by('date_created')
 
-    @property
+    @cached_property
     def participants_count(self):
         return len(self.participants)
 

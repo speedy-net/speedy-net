@@ -371,82 +371,82 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         }
         return validators
 
-    @property
+    @cached_property
     def name(self):
         return self.profile.get_name()
 
-    @property
+    @cached_property
     def email(self):
         try:
             return self.email_addresses.get(is_primary=True).email
         except UserEmailAddress.DoesNotExist:
             return None
 
-    @property
+    @cached_property
     def profile(self):
         if (not (hasattr(self, '_profile'))):
             self.refresh_all_profiles()
         return self._profile
 
-    @property
+    @cached_property
     def speedy_net_profile(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_profile'))):
                 self.refresh_all_profiles()
             return self._speedy_net_profile
 
-    @property
+    @cached_property
     def speedy_match_profile(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_match_profile'))):
                 self.refresh_all_profiles()
             return self._speedy_match_profile
 
-    @property
+    @cached_property
     def received_friendship_requests(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_received_friendship_requests'))):
                 self._received_friendship_requests = self.get_received_friendship_requests()
             return self._received_friendship_requests
 
-    @property
+    @cached_property
     def received_friendship_requests_count(self):
         return len(self.received_friendship_requests)
 
-    @property
+    @cached_property
     def sent_friendship_requests(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_sent_friendship_requests'))):
                 self._sent_friendship_requests = self.get_sent_friendship_requests()
             return self._sent_friendship_requests
 
-    @property
+    @cached_property
     def sent_friendship_requests_count(self):
         return len(self.sent_friendship_requests)
 
-    @property
+    @cached_property
     def all_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_friends'))):
                 self._friends = self.get_friends()
             return self._friends
 
-    @property
+    @cached_property
     def friends_count(self):
         return len(self.all_friends)
 
-    @property
+    @cached_property
     def all_speedy_net_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_friends'))):
                 self._speedy_net_friends = self.get_speedy_net_friends()
             return self._speedy_net_friends
 
-    @property
+    @cached_property
     def speedy_net_friends_count(self):
         return len(self.all_speedy_net_friends)
 
-    @property
+    @cached_property
     def friends_trans(self):
         if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             return pgettext_lazy(context=self.speedy_match_profile.get_match_gender(), message='Friends')
@@ -821,7 +821,7 @@ class SiteProfileBase(TimeStampedModel):
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)
     is_active = True
 
-    @property
+    @cached_property
     def is_active_and_valid(self):
         raise NotImplementedError("is_active_and_valid is not implemented.")
 
