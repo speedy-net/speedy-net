@@ -52,6 +52,10 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
+        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
+        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
+        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
+        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         qs = User.objects.active(
             gender__in=user.speedy_match_profile.gender_to_match,
             diet__in=user.speedy_match_profile.diet_to_match,
@@ -67,12 +71,10 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
-        ).exclude(pk=user.pk).order_by('-speedy_match_site_profile__last_visit')
+        ).exclude(
+            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2000]
-        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
-        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
-        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
-        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         # matches_list = [user for user in user_list if ((user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
@@ -108,6 +110,10 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
+        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
+        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
+        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
+        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         qs = User.objects.active(
             pk__in=from_list,
             gender__in=user.speedy_match_profile.gender_to_match,
@@ -124,12 +130,10 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
-        ).exclude(pk=user.pk).order_by('-speedy_match_site_profile__last_visit')
+        ).exclude(
+            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs
-        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
-        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
-        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
-        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
