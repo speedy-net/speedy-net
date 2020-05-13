@@ -75,7 +75,7 @@ class SiteProfileManager(BaseManager):
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
-        # matches_list = [user for user in user_list if ((user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
+        # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
@@ -142,6 +142,7 @@ class SiteProfileManager(BaseManager):
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs
+        # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
