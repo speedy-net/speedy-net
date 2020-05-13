@@ -29,7 +29,7 @@ class File(TimeStampedModel):
         super().__init__(*args, **kwargs)
 
     def __str__(self):
-        return self.basename
+        return '{} (owner={})'.format(self.basename, self.owner)
 
     def save(self, *args, **kwargs):
         self.size = self.file.size
