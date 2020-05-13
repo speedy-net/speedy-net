@@ -207,6 +207,8 @@ class SiteProfile(SiteProfileBase):
         return '{} @ Speedy Match'.format(super().__str__())
 
     def save(self, *args, **kwargs):
+        if hasattr(self, "_rank_dict"):
+            delattr(self, "_rank_dict")
         self._set_values_to_match()
         if (self.activation_step < 2):
             self.activation_step = 2
@@ -288,9 +290,9 @@ class SiteProfile(SiteProfileBase):
         pass
 
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
-        self.user._get_matching_rank_calls = getattr(self.user, "_get_matching_rank_calls", 0) + 1
-        if (self.user._get_matching_rank_calls >= 5):
-            logger.debug('_get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self.user._get_matching_rank_calls, self=self, other_profile=other_profile))
+        self._get_matching_rank_calls = getattr(self, "_get_matching_rank_calls", 0) + 1
+        if (self._get_matching_rank_calls >= 5):
+            logger.debug('_get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self._get_matching_rank_calls, self=self, other_profile=other_profile))
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
         if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
