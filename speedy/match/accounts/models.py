@@ -322,10 +322,12 @@ class SiteProfile(SiteProfileBase):
                     rank = self.__class__.RANK_0
             return rank
         else:
-            if (not (self.is_active_and_valid)):
-                logger.debug('_get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
-            if (not (other_profile.is_active_and_valid)):
-                logger.debug('_get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+            if (self.is_active):
+                if (not (self.is_active_and_valid)):
+                    logger.error('_get_matching_rank::get inside "if (not (self.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
+            if (other_profile.is_active):
+                if (not (other_profile.is_active_and_valid)):
+                    logger.error('_get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             return self.__class__.RANK_0
 
     def get_matching_rank(self, other_profile) -> int:
