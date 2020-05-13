@@ -11,6 +11,9 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     class BlockedUsersListViewTestCase(SiteTestCase):
+        """
+        Test view in Speedy Net. Speedy Match should always return 404.
+        """
         def set_up(self):
             super().set_up()
             self.first_user = ActiveUserFactory()
@@ -21,18 +24,27 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            else:
+                self.assertEqual(first=r.status_code, second=404)
 
         def test_other_user_has_no_access(self):
             self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertEqual(first=r.status_code, second=403)
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                self.assertEqual(first=r.status_code, second=403)
+            else:
+                self.assertEqual(first=r.status_code, second=404)
 
         def test_user_has_access(self):
             self.client.login(username=self.first_user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='blocks/block_list.html')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='blocks/block_list.html')
+            else:
+                self.assertEqual(first=r.status_code, second=404)
 
 
     @only_on_sites_with_login
