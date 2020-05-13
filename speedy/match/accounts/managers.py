@@ -86,6 +86,14 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(other_user)
+        if (not (len(matches_list) == len(user_list))):
+            # This is an error. All users should have ranks more than 0.
+            logger.error('SiteProfileManager::get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                user=user,
+                language_code=language_code,
+                number_of_users=len(user_list),
+                number_of_matches=len(matches_list),
+            ))
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
@@ -144,6 +152,14 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(other_user)
+        if (not (len(matches_list) == len(user_list))):
+            # This is an error. All users should have ranks more than 0.
+            logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                user=user,
+                language_code=language_code,
+                number_of_users=len(user_list),
+                number_of_matches=len(matches_list),
+            ))
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
         return matches_list
 
