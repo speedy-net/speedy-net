@@ -30,7 +30,7 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
         return redirect(to='friends:list', slug=self.user.slug)
 
     def get_object_list(self):
-        return self.user.get_friends()
+        return self.user.all_friends
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -48,7 +48,7 @@ class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Fri
         return redirect(to='friends:received_requests', slug=self.user.slug)
 
     def get_object_list(self):
-        return self.user.get_received_friendship_requests()
+        return self.user.received_friendship_requests
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
@@ -66,7 +66,7 @@ class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Friends
         return redirect(to='friends:sent_requests', slug=self.user.slug)
 
     def get_object_list(self):
-        return self.user.get_sent_friendship_requests()
+        return self.user.sent_friendship_requests
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
