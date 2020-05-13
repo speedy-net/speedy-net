@@ -47,7 +47,7 @@ class SiteProfileManager(BaseManager):
         """
         Get matches from database.
 
-        Checks only last logged in 2,000 users who match this user (including blocked and blocking users), and return up to 720 users.
+        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
         """
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
@@ -74,7 +74,7 @@ class SiteProfileManager(BaseManager):
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
-        user_list = qs[:2000]
+        user_list = qs[:2400]
         # matches_list = [user for user in user_list if ((user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
