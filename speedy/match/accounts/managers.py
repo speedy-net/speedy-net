@@ -52,6 +52,10 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
+        logger.debug("SiteProfileManager::get_matches:start:user={user}, language_code={language_code}".format(
+            user=user,
+            language_code=language_code,
+        ))
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
@@ -99,7 +103,7 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}".format(
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_matches={number_of_matches}".format(
             user=user,
             language_code=language_code,
             number_of_matches=len(matches_list),
@@ -118,6 +122,10 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
+        logger.debug("SiteProfileManager::get_matches_from_list:start:user={user}, language_code={language_code}".format(
+            user=user,
+            language_code=language_code,
+        ))
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
@@ -155,13 +163,21 @@ class SiteProfileManager(BaseManager):
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
-            logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+            logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
                 user=user,
                 language_code=language_code,
+                from_list_len=len(from_list),
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
         matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
+        logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
+            user=user,
+            language_code=language_code,
+            from_list_len=len(from_list),
+            number_of_users=len(user_list),
+            number_of_matches=len(matches_list),
+        ))
         return matches_list
 
 
