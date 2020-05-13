@@ -40,29 +40,29 @@ class UserMixin(object):
         return super().dispatch(request=request, *args, **kwargs)
 
     def get_user_queryset(self):
+        # If the viewer is not admin, show only active users.
         if (self.request.user.is_authenticated):
             if ((self.request.user.is_staff) and (self.request.user.is_superuser)):
                 return User.objects.get_queryset()
         return User.objects.active()
 
     def get_user(self):
-        try:
-            slug = self.kwargs.get(self.user_slug_kwarg)
-            if ((self.use_request_user()) or (slug == 'me')):
-                if (self.request.user.is_authenticated):
-                    return self.request.user
-                else:
-                    raise PermissionDenied()
-            user = self.get_user_queryset().get(Q(slug=slug) | Q(username=normalize_username(username=slug)) | Q(id=slug))
-
-            # inactive user profiles will have a link to the Speedy Net profile page
-            # so the user has to get to the profile page and not a 404
-            # if (not (user.profile.is_active)):
-            #     raise Http404('This user is not active on this site.')
-
-            return user
-        except User.DoesNotExist:
-            raise Http404()
+        slug = self.kwargs.get(self.user_slug_kwarg)
+        if ((self.use_request_user()) or (slug == 'me')):
+            if (self.request.user.is_authenticated):
+                user = self.request.user
+            else:
+                raise PermissionDenied()
+        else:
+            users = self.get_user_queryset().filter(Q(slug=slug) | Q(username=normalize_username(username=slug)) | Q(id=slug))
+            if (len(users) == 1):
+                user = users[0]
+                # Users have cached properties, so we don't want to load them to memory twice.
+                if (user == self.request.user):
+                    user = self.request.user
+            else:
+                raise Http404()
+        return user
 
     def get_permission_object(self):
         return self.get_user()
