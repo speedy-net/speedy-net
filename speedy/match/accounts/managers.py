@@ -76,6 +76,8 @@ class SiteProfileManager(BaseManager):
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
+        debug_matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
+        debug_ranks_list = [other_user.speedy_match_profile.rank for other_user in debug_matches_list]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
@@ -86,6 +88,9 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(other_user)
+        matches_ranks_list = [other_user.speedy_match_profile.rank for other_user in matches_list]
+        assert(debug_matches_list == matches_list)
+        assert(debug_ranks_list == matches_ranks_list)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
             logger.error('SiteProfileManager::get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
@@ -143,6 +148,8 @@ class SiteProfileManager(BaseManager):
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
+        debug_matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
+        debug_ranks_list = [other_user.speedy_match_profile.rank for other_user in debug_matches_list]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
@@ -153,6 +160,9 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(other_user)
+        matches_ranks_list = [other_user.speedy_match_profile.rank for other_user in matches_list]
+        assert(debug_matches_list == matches_list)
+        assert(debug_ranks_list == matches_ranks_list)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
             logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
