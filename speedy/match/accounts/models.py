@@ -2,10 +2,11 @@ import logging
 
 from django.db import models
 from django.conf import settings as django_settings
-from django.contrib.postgres.fields import JSONField, ArrayField
+from django.db.models import JSONField
+from django.contrib.postgres.fields import ArrayField
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, get_language
-from django.utils.decorators import classproperty
+from django.utils.functional import classproperty
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 
