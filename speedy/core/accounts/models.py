@@ -12,9 +12,8 @@ from django.urls import reverse
 from django.db import models, transaction
 from django.dispatch import receiver
 from django.utils.timezone import now
-from django.utils.functional import cached_property
+from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
-from django.utils.functional import classproperty
 from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
