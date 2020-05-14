@@ -14,7 +14,7 @@ from django.dispatch import receiver
 from django.utils.timezone import now
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
-from django.utils.decorators import classproperty
+from django.utils.functional import classproperty
 from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
