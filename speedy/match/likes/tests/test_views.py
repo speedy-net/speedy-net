@@ -185,6 +185,18 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=len(r.context['object_list']), second=5)
             self.assertNotEqual(first={like.from_user for like in r.context['object_list']}, second=self.from_likes)
             self.assertSetEqual(set1={like.from_user for like in r.context['object_list']}, set2=from_likes)
+            Block.objects.block(blocker=self.user_4, blocked=self.user_1)
+            r = self.client.get(path=self.from_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=len(r.context['object_list']), second=4)
+            self.assertNotEqual(first={like.from_user for like in r.context['object_list']}, second=from_likes)
+            self.assertSetEqual(set1={like.from_user for like in r.context['object_list']}, set2=self.from_likes)
+            Block.objects.unblock(blocker=self.user_4, blocked=self.user_1)
+            r = self.client.get(path=self.from_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=len(r.context['object_list']), second=4)
+            self.assertNotEqual(first={like.from_user for like in r.context['object_list']}, second=from_likes)
+            self.assertSetEqual(set1={like.from_user for like in r.context['object_list']}, set2=self.from_likes)
 
         def test_user_can_see_mutual_likes(self):
             r = self.client.get(path=self.mutual_url)
