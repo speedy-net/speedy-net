@@ -33,7 +33,7 @@
                     {% block navbar_mobile_menu_top %}
                         {% block navbar_mobile_menu_top_extra_0 %}{% endblock %}
                         <li>
-                            <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=request.user.slug %}">{{ request.user.name }}</a>
+                            <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=request.user.slug %}">{{ request.user.first_name }}</a>
                         </li>
                         {% block navbar_mobile_menu_top_extra_1 %}{% endblock %}
                         <li>

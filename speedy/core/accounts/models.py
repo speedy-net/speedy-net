@@ -376,6 +376,14 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return self.profile.get_name()
 
     @cached_property
+    def full_name(self):
+        return self.get_full_name()
+
+    @cached_property
+    def short_name(self):
+        return self.get_short_name()
+
+    @cached_property
     def email(self):
         emails = self.email_addresses.filter(is_primary=True)
         if (len(emails) == 1):

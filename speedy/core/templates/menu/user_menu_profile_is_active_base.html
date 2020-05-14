@@ -6,7 +6,7 @@
 <li class="nav-item">
     <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
         <i class="fa fa-fw fa-user"></i>
-        <span class="label">{{ request.user.name|truncatechars:25 }}</span>
+        <span class="label">{{ request.user.first_name|truncatechars:25 }}</span>
     </a>
 </li>
 {% block user_menu_extra_1 %}{% endblock %}
