@@ -30,7 +30,7 @@ class UserLikeManager(BaseManager):
 
         SiteProfile = get_site_profile_model()
 
-        # filter out users that are only active in another language
+        # Filter out users that are only active in another language.
         liked_users = User.objects.filter(pk__in=self.filter(from_user=user).values_list('to_user_id', flat=True))
         liked_users = [u.pk for u in liked_users if (u.speedy_match_profile.is_active)]
 
@@ -42,9 +42,13 @@ class UserLikeManager(BaseManager):
 
         SiteProfile = get_site_profile_model()
 
-        # filter out users that are only active in another language
+        # Filter out users that are only active in another language.
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
+
+        # Filter out users I blocked.
+        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
+        who_likes_me = [pk for pk in who_likes_me if (not (pk in blocked_users_ids))]
 
         return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
@@ -54,7 +58,7 @@ class UserLikeManager(BaseManager):
 
         SiteProfile = get_site_profile_model()
 
-        # filter out users that are only active in another language
+        # Filter out users that are only active in another language.
         who_likes_me = User.objects.filter(pk__in=self.filter(to_user=user).values_list('from_user_id', flat=True))
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
