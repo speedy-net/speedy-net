@@ -13,7 +13,7 @@ from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.utils import get_random_user_password
-    from speedy.core.accounts.test.user_factories import DefaultUserFactory
+    from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
     from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
 
@@ -698,6 +698,28 @@ if (django_settings.LOGIN_ENABLED):
                 confirmed_email_address_count=0,
                 unconfirmed_email_address_count=0,
             )
+
+        def test_user_names_in_both_websites(self):
+            for user in [DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
+                self.assertEqual(first=user.full_name, second=user.get_full_name())
+                self.assertEqual(first=user.full_name, second='{} {}'.format(user.first_name, user.last_name))
+                self.assertEqual(first=user.short_name, second=user.get_first_name())
+                self.assertEqual(first=user.short_name, second=user.get_short_name())
+                self.assertEqual(first=user.short_name, second='{}'.format(user.first_name))
+                self.assertEqual(first=user.full_name, second=user.speedy_net_profile.get_name())
+                self.assertEqual(first=user.short_name, second=user.speedy_match_profile.get_name())
+                self.assertEqual(first=str(user.first_name), second=user.speedy_match_profile.get_name())
+                self.assertNotEqual(first=user.full_name, second=user.short_name)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.name, second=user.get_full_name())
+                    self.assertEqual(first=user.name, second=user.speedy_net_profile.get_name())
+                    self.assertNotEqual(first=user.name, second=user.speedy_match_profile.get_name())
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.name, second=user.get_first_name())
+                    self.assertEqual(first=user.name, second=user.speedy_match_profile.get_name())
+                    self.assertNotEqual(first=user.name, second=user.speedy_net_profile.get_name())
+                else:
+                    raise NotImplementedError()
 
 
     @only_on_sites_with_login
