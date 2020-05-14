@@ -328,7 +328,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         )
 
     first_name = TranslatedField(
-        field=models.CharField(verbose_name=_('first name'), max_length=75),
+        field=models.CharField(verbose_name=_('first name'), max_length=150),
     )
     last_name = TranslatedField(
         field=models.CharField(verbose_name=_('last name'), max_length=150),
