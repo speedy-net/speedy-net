@@ -10,7 +10,7 @@ from django.conf import settings as django_settings
 from django.utils import translation
 from django.utils.translation import get_language
 
-from translated_fields import to_attribute as translated_fields_to_attribute
+import translated_fields
 
 logger = logging.getLogger(__name__)
 
@@ -94,7 +94,7 @@ def string_is_not_empty(s):
 
 def to_attribute(name, language_code=None):
     language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
-    return translated_fields_to_attribute(name=name, language_code=language_code)
+    return translated_fields.to_attribute(name=name, language_code=language_code)
 
 
 def get_all_field_names(base_field_name):
