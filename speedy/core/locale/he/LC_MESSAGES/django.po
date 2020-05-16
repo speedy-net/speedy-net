@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 19:22+0300\n"
+"POT-Creation-Date: 2020-05-16 05:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -821,7 +821,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:754
+#: .\__translations\__translations.py:9 .\accounts\models.py:762
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -863,7 +863,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:455
+#: .\__translations\__translations.py:23 .\accounts\models.py:463
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -2018,51 +2018,51 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:458 .\accounts\models.py:738 .\blocks\models.py:15
+#: .\accounts\models.py:470 .\accounts\models.py:746 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:459
+#: .\accounts\models.py:471
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:479
+#: .\accounts\models.py:491
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:739
+#: .\accounts\models.py:747
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:740
+#: .\accounts\models.py:748
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:741
+#: .\accounts\models.py:749
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:742
+#: .\accounts\models.py:750
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:743
+#: .\accounts\models.py:751
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:744
+#: .\accounts\models.py:752
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:755
+#: .\accounts\models.py:763
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:821
+#: .\accounts\models.py:829
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:822
+#: .\accounts\models.py:830
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2207,7 +2207,7 @@ msgstr "קישור אימות לא חוקי."
 #: .\accounts\views.py:253 .\accounts\views.py:269
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "הודעת אימות נשלחה ל-{email_address}"
+msgstr "הודעת אימות נשלחה ל-‎{email_address}‎‎"
 
 #: .\accounts\views.py:284
 msgid "The email address was deleted."
