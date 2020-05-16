@@ -1,15 +1,18 @@
+import random
 from time import sleep
 
 from django.conf import settings as django_settings
+from django.test import override_settings
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_speedy_match
-    from speedy.match.likes.models import UserLike
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory
     from speedy.core.blocks.models import Block
     from speedy.core.accounts.models import User
-    from speedy.core.accounts.test.user_factories import ActiveUserFactory
+    from speedy.match.likes.models import UserLike
+    from speedy.match.likes.test.mixins import SpeedyMatchLikesLanguageMixin
 
 
     @only_on_speedy_match
@@ -49,8 +52,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
-    @only_on_speedy_match
-    class LikeListViewsTestCase(SiteTestCase):
+    class LikeListViewsTestCaseMixin(SpeedyMatchLikesLanguageMixin):
         def set_up(self):
             super().set_up()
             self.user_1 = ActiveUserFactory()
@@ -97,6 +99,23 @@ if (django_settings.LOGIN_ENABLED):
             self.user_2.profile.update_last_visit()
             sleep(0.01)
             self.user_3.profile.update_last_visit()
+
+        def _test_all_like_list_views_contain_strings(self, strings):
+            r = self.client.get(path=self.to_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=len(r.context['object_list']), second=5)
+            for string in strings:
+                self.assertIn(member=string, container=r.content.decode())
+            r = self.client.get(path=self.from_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=len(r.context['object_list']), second=4)
+            for string in strings:
+                self.assertIn(member=string, container=r.content.decode())
+            r = self.client.get(path=self.mutual_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=len(r.context['object_list']), second=2)
+            for string in strings:
+                self.assertIn(member=string, container=r.content.decode())
 
         def test_visitor_has_no_access(self):
             self.client.logout()
@@ -234,5 +253,70 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=len(r.context['object_list']), second=2)
             self.assertNotEqual(first={like.to_user for like in r.context['object_list']}, second=mutual_likes)
             self.assertSetEqual(set1={like.to_user for like in r.context['object_list']}, set2=self.mutual_likes)
+
+        def test_like_list_views_titles(self):
+            self._test_all_like_list_views_contain_strings(strings=[
+                self._list_to_title_dict_by_gender[User.GENDER_OTHER_STRING],
+                self._list_from_title_dict_by_gender[User.GENDER_OTHER_STRING],
+                self._list_mutual_title,
+            ])
+            user_99 = User.objects.get(slug="user-99")
+            user_97 = User.objects.get(slug="user-97")
+            gender_count_dict = {
+                User.GENDER_FEMALE_STRING: 0,
+                User.GENDER_MALE_STRING: 0,
+                User.GENDER_OTHER_STRING: 0,
+            }
+            for gender in User.GENDER_VALID_VALUES:
+                for user in [self.user_3, self.user_2, self.user_5, User.objects.get(slug="user-98"), User.objects.get(slug="user-96")]:
+                    user.gender = gender
+                    user.save_user_and_profile()
+                if (gender == User.GENDER_OTHER):
+                    two_genders = [random.choice([User.GENDER_FEMALE, User.GENDER_MALE]), gender]
+                else:
+                    two_genders = [User.GENDER_FEMALE, User.GENDER_MALE]
+                for gender_to_match in [User.GENDER_VALID_VALUES, [gender], two_genders]:
+                    self.user_1.speedy_match_profile.gender_to_match = gender_to_match
+                    self.user_1.save_user_and_profile()
+                    for gender_99 in User.GENDER_VALID_VALUES:
+                        for gender_97 in User.GENDER_VALID_VALUES:
+                            user_99.gender = gender_99
+                            user_97.gender = gender_97
+                            user_99.save_user_and_profile()
+                            user_97.save_user_and_profile()
+                            if ((gender in [User.GENDER_FEMALE, User.GENDER_MALE]) and (gender_to_match == [gender]) and (len({user_99.gender, user_97.gender, self.user_2.gender}) == 1)):
+                                gender_string = self.user_2.get_gender()
+                                self.assertIn(member=gender_string, container=[User.GENDER_FEMALE_STRING, User.GENDER_MALE_STRING])
+                                self.assertEqual(first=gender_string, second=User.GENDERS_DICT.get(gender))
+                            else:
+                                gender_string = User.GENDER_OTHER_STRING
+                                self.assertEqual(first=gender_string, second=User.GENDERS_DICT.get(User.GENDER_OTHER))
+                            self._test_all_like_list_views_contain_strings(strings=[
+                                self._list_to_title_dict_by_gender[gender_string],
+                                self._list_from_title_dict_by_gender[gender_string],
+                                self._list_mutual_title,
+                            ])
+                            gender_count_dict[gender_string] += 1
+            expected_gender_count_dict = {
+                User.GENDER_FEMALE_STRING: 1,
+                User.GENDER_MALE_STRING: 1,
+                User.GENDER_OTHER_STRING: 79,
+            }
+            self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
+
+
+    @only_on_speedy_match
+    class LikeListViewsEnglishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_speedy_match
+    @override_settings(LANGUAGE_CODE='he')
+    class LikeListViewsHebrewTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
