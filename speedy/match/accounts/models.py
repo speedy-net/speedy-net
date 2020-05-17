@@ -369,7 +369,7 @@ class SiteProfile(SiteProfileBase):
 
     def get_like_gender(self):
         # No need to query the database if len(self.gender_to_match) is not 1.
-        if ((len(self.gender_to_match) == 1) and ({self.get_match_gender()} == {like.to_user.get_gender() for like in UserLike.objects.get_like_list_to_queryset(user=self.user)} | {like.from_user.get_gender() for like in UserLike.objects.get_like_list_from_queryset(user=self.user)} | {self.get_match_gender()})):
+        if ((len(self.gender_to_match) == 1) and ({self.get_match_gender()} == {like.to_user.get_gender() for like in UserLike.objects.filter(from_user=self.user).prefetch_related("to_user").distinct()} | {like.from_user.get_gender() for like in UserLike.objects.filter(to_user=self.user).prefetch_related("from_user").distinct()} | {self.get_match_gender()})):
             like_gender = self.get_match_gender()
         else:
             like_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
