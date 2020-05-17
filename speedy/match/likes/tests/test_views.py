@@ -103,17 +103,17 @@ if (django_settings.LOGIN_ENABLED):
         def _test_all_like_list_views_contain_strings(self, strings):
             r = self.client.get(path=self.to_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertEqual(first=len(r.context['object_list']), second=5)
+            self.assertEqual(first=len(r.context['object_list']), second=len(self.to_likes))
             for string in strings:
                 self.assertIn(member=string, container=r.content.decode())
             r = self.client.get(path=self.from_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertEqual(first=len(r.context['object_list']), second=4)
+            self.assertEqual(first=len(r.context['object_list']), second=len(self.from_likes))
             for string in strings:
                 self.assertIn(member=string, container=r.content.decode())
             r = self.client.get(path=self.mutual_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertEqual(first=len(r.context['object_list']), second=2)
+            self.assertEqual(first=len(r.context['object_list']), second=len(self.mutual_likes))
             for string in strings:
                 self.assertIn(member=string, container=r.content.decode())
 
@@ -301,6 +301,53 @@ if (django_settings.LOGIN_ENABLED):
                 User.GENDER_FEMALE_STRING: 1,
                 User.GENDER_MALE_STRING: 1,
                 User.GENDER_OTHER_STRING: 79,
+            }
+            self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
+
+        def test_like_list_views_titles_with_empty_lists(self):
+            for user in User.objects.all().exclude(pk=self.user_1.pk):
+                user.delete()
+            self.user_2 = None
+            self.user_3 = None
+            self.user_4 = None
+            self.user_5 = None
+            self.mutual_likes = set()
+            self.to_likes = set()
+            self.from_likes = set()
+            self._test_all_like_list_views_contain_strings(strings=[
+                self._list_to_title_dict_by_gender[User.GENDER_OTHER_STRING],
+                self._list_from_title_dict_by_gender[User.GENDER_OTHER_STRING],
+                self._list_mutual_title,
+            ])
+            gender_count_dict = {
+                User.GENDER_FEMALE_STRING: 0,
+                User.GENDER_MALE_STRING: 0,
+                User.GENDER_OTHER_STRING: 0,
+            }
+            for gender in User.GENDER_VALID_VALUES:
+                if (gender == User.GENDER_OTHER):
+                    two_genders = [random.choice([User.GENDER_FEMALE, User.GENDER_MALE]), gender]
+                else:
+                    two_genders = [User.GENDER_FEMALE, User.GENDER_MALE]
+                for gender_to_match in [User.GENDER_VALID_VALUES, [gender], two_genders]:
+                    self.user_1.speedy_match_profile.gender_to_match = gender_to_match
+                    self.user_1.save_user_and_profile()
+                    if ((gender in [User.GENDER_FEMALE, User.GENDER_MALE]) and (gender_to_match == [gender])):
+                        gender_string = User.GENDERS_DICT.get(gender)
+                        self.assertIn(member=gender_string, container=[User.GENDER_FEMALE_STRING, User.GENDER_MALE_STRING])
+                    else:
+                        gender_string = User.GENDER_OTHER_STRING
+                        self.assertEqual(first=gender_string, second=User.GENDERS_DICT.get(User.GENDER_OTHER))
+                    self._test_all_like_list_views_contain_strings(strings=[
+                        self._list_to_title_dict_by_gender[gender_string],
+                        self._list_from_title_dict_by_gender[gender_string],
+                        self._list_mutual_title,
+                    ])
+                    gender_count_dict[gender_string] += 1
+            expected_gender_count_dict = {
+                User.GENDER_FEMALE_STRING: 1,
+                User.GENDER_MALE_STRING: 1,
+                User.GENDER_OTHER_STRING: 7,
             }
             self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
 
