@@ -414,18 +414,18 @@ if (django_settings.LOGIN_ENABLED):
         def test_cannot_delete_users_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 User.objects.all().exclude(pk=self.user_1.pk).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 User.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
 
         def test_cannot_delete_likes_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 UserLike.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 UserLike.objects.filter(from_user=self.user_1, to_user=self.user_3).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
 
 
     @only_on_speedy_match

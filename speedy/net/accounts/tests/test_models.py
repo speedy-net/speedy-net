@@ -89,4 +89,12 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertNotEqual(first=user.name, second='{}'.format(user.first_name))
                 self.assertNotEqual(first=str(user), second=user.name)
 
+        def test_cannot_delete_site_profiles_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                SpeedyNetSiteProfile.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                SpeedyNetSiteProfile.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+
 
