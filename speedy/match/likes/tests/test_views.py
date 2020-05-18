@@ -23,7 +23,7 @@ if (django_settings.LOGIN_ENABLED):
             self.user_2 = ActiveUserFactory()
             self.page_url = '/{}/likes/like/'.format(self.user_2.slug)
 
-        def test_can_like(self):
+        def test_user_can_like(self):
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=UserLike.objects.count(), second=0)
             r = self.client.post(path=self.page_url)
@@ -32,6 +32,42 @@ if (django_settings.LOGIN_ENABLED):
             like = UserLike.objects.first()
             self.assertEqual(first=like.from_user.id, second=self.user_1.id)
             self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+
+        def test_user_cannot_like_self(self):
+            self.client.login(username=self.user_2.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+
+        def test_user_cannot_like_other_user_if_blocked(self):
+            Block.objects.block(blocker=self.user_1, blocked=self.user_2)
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+
+        def test_user_cannot_like_other_user_if_blocking(self):
+            Block.objects.block(blocker=self.user_2, blocked=self.user_1)
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+
+        def test_user_cannot_like_twice(self):
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=UserLike.objects.count(), second=1)
+            like = UserLike.objects.first()
+            self.assertEqual(first=like.from_user.id, second=self.user_1.id)
+            self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertEqual(first=UserLike.objects.count(), second=1)
 
 
     @only_on_speedy_match
@@ -42,13 +78,32 @@ if (django_settings.LOGIN_ENABLED):
             self.user_2 = ActiveUserFactory()
             self.page_url = '/{}/likes/unlike/'.format(self.user_2.slug)
 
-        def test_can_unlike(self):
+        def test_user_can_unlike(self):
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=UserLike.objects.count(), second=0)
-            UserLike.objects.create(from_user=self.user_1, to_user=self.user_2)
+            UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
             self.assertEqual(first=UserLike.objects.count(), second=1)
             r = self.client.post(path=self.page_url)
             self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+
+        def test_user_cannot_unlike_if_doesnt_like(self):
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+
+        def test_user_cannot_unlike_twice(self):
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
+            self.assertEqual(first=UserLike.objects.count(), second=1)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=403)
             self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
@@ -73,10 +128,6 @@ if (django_settings.LOGIN_ENABLED):
             UserLike.objects.add_like(from_user=ActiveUserFactory(slug="user-96"), to_user=self.user_1)
             UserLike.objects.add_like(from_user=self.user_5, to_user=self.user_1)
             UserLike.objects.add_like(from_user=self.user_2, to_user=self.user_1)
-            self.mutual_likes = {
-                self.user_2,
-                self.user_5,
-            }
             self.to_likes = {
                 User.objects.get(slug="user-99"),
                 User.objects.get(slug="user-98"),
@@ -90,6 +141,10 @@ if (django_settings.LOGIN_ENABLED):
                 self.user_2,
                 self.user_5,
             }
+            self.mutual_likes = {
+                self.user_2,
+                self.user_5,
+            }
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             sleep(0.02)
             self.user_5.profile.update_last_visit()
@@ -99,6 +154,7 @@ if (django_settings.LOGIN_ENABLED):
             self.user_2.profile.update_last_visit()
             sleep(0.01)
             self.user_3.profile.update_last_visit()
+            self.assertEqual(first=UserLike.objects.count(), second=9)
 
         def _test_all_like_list_views_contain_strings(self, strings):
             r = self.client.get(path=self.to_url)
@@ -136,6 +192,7 @@ if (django_settings.LOGIN_ENABLED):
             to_likes = set(self.to_likes)
             UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_4)
             to_likes.add(self.user_4)
+            self.assertEqual(first=UserLike.objects.count(), second=10)
             r = self.client.get(path=self.to_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertEqual(first=len(r.context['object_list']), second=6)
@@ -178,6 +235,7 @@ if (django_settings.LOGIN_ENABLED):
             from_likes = set(self.from_likes)
             UserLike.objects.add_like(from_user=self.user_4, to_user=self.user_1)
             from_likes.add(self.user_4)
+            self.assertEqual(first=UserLike.objects.count(), second=10)
             r = self.client.get(path=self.from_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertEqual(first=len(r.context['object_list']), second=5)
@@ -227,6 +285,7 @@ if (django_settings.LOGIN_ENABLED):
             UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_4)
             UserLike.objects.add_like(from_user=self.user_4, to_user=self.user_1)
             mutual_likes.add(self.user_4)
+            self.assertEqual(first=UserLike.objects.count(), second=11)
             r = self.client.get(path=self.mutual_url)
             self.assertEqual(first=r.status_code, second=200)
             self.assertEqual(first=len(r.context['object_list']), second=3)
@@ -311,9 +370,10 @@ if (django_settings.LOGIN_ENABLED):
             self.user_3 = None
             self.user_4 = None
             self.user_5 = None
-            self.mutual_likes = set()
             self.to_likes = set()
             self.from_likes = set()
+            self.mutual_likes = set()
+            self.assertEqual(first=UserLike.objects.count(), second=0)
             self._test_all_like_list_views_contain_strings(strings=[
                 self._list_to_title_dict_by_gender[User.GENDER_OTHER_STRING],
                 self._list_from_title_dict_by_gender[User.GENDER_OTHER_STRING],

@@ -35,7 +35,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=self.user.has_perm(perm='likes.like', obj=self.other_user))
 
         def test_user_cannot_like_twice(self):
-            UserLike.objects.create(from_user=self.user, to_user=self.other_user)
+            UserLike.objects.add_like(from_user=self.user, to_user=self.other_user)
             self.assertFalse(expr=self.user.has_perm(perm='likes.like', obj=self.other_user))
 
 
@@ -57,7 +57,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=self.user.has_perm(perm='likes.unlike', obj=self.other_user))
 
         def test_user_can_unlike_if_likes(self):
-            UserLike.objects.create(from_user=self.user, to_user=self.other_user)
+            UserLike.objects.add_like(from_user=self.user, to_user=self.other_user)
             self.assertTrue(expr=self.user.has_perm(perm='likes.unlike', obj=self.other_user))
 
 
