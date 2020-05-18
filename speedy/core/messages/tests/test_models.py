@@ -69,31 +69,31 @@ if (django_settings.LOGIN_ENABLED):
         def test_cannot_delete_chats_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.all_sites_objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.all_sites_objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_delete_messages_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 Message.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Message.objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_delete_readmarks_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 ReadMark.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 ReadMark.objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete!!! is not implemented.")
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
