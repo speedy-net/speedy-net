@@ -500,8 +500,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             warnings.warn('Can’t delete staff user.')
             return False
         else:
-            self.email_addresses.all().delete()
-            return super().delete(*args, **kwargs)
+            with transaction.atomic():
+                for user_email_address in self.email_addresses.all():
+                    user_email_address.delete()
+                return_value = super().delete(*args, **kwargs)
+            return return_value
 
     def clean_fields(self, exclude=None):
         """

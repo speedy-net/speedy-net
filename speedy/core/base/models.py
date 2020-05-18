@@ -8,6 +8,11 @@ from .utils import generate_regular_udid, generate_small_udid
 from . import validators as speedy_core_base_validators
 
 
+class QuerySet(models.query.QuerySet):
+    def delete(self):
+        raise NotImplementedError("delete is not implemented.")
+
+
 class ValidateModelMixin(object):
     def save(self, *args, **kwargs):
         """
@@ -20,6 +25,12 @@ class ValidateModelMixin(object):
 class ManagerMixin(object):
     def bulk_create(self, *args, **kwargs):
         raise NotImplementedError("bulk_create is not implemented.")
+
+    def get_queryset(self):
+        """
+        Use our own QuerySet model without method .delete().
+        """
+        return QuerySet(model=self.model, using=self._db, hints=self._hints)
 
 
 class BaseManager(ManagerMixin, models.Manager):

@@ -72,6 +72,11 @@ class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLangu
             Entity.objects.bulk_create([entity_1, entity_2])
         self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
+    def test_cannot_delete_entities_with_queryset_delete(self):
+        with self.assertRaises(NotImplementedError) as cm:
+            Entity.objects.all().delete()
+        self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
     def test_cannot_create_entity_with_an_invalid_id(self):
         old_entity = self.create_one_entity()
         old_entity_id = old_entity.id
@@ -436,6 +441,11 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(NotImplementedError) as cm:
                 User.objects.bulk_create([user_1, user_2])
             self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
+
+        def test_cannot_delete_users_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                User.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_create_user_with_reserved_username(self):
             with self.assertRaises(ValidationError) as cm:
@@ -1142,6 +1152,11 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(NotImplementedError) as cm:
                 UserEmailAddress.objects.bulk_create([])
             self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
+
+        def test_cannot_delete_user_email_addresses_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                UserEmailAddress.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
     @only_on_sites_with_login

@@ -85,7 +85,8 @@ class BlockManager(BaseManager):
         return block
 
     def unblock(self, blocker, blocked):
-        self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
+        for block in self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk):
+            block.delete()
         self._update_caches(blocker=blocker, blocked=blocked)
 
     def has_blocked(self, blocker, blocked):

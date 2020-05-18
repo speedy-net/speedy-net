@@ -22,7 +22,8 @@ class UserLikeManager(BaseManager):
         self.create(from_user=from_user, to_user=to_user)
 
     def remove_like(self, from_user, to_user):
-        self.filter(from_user=from_user, to_user=to_user).delete()
+        for like in self.filter(from_user=from_user, to_user=to_user):
+            like.delete()
 
     def get_like_list_to_queryset(self, user):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile

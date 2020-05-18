@@ -199,7 +199,8 @@ def validate_email_unique(email, user_email_address_pk=None):
     from .models import UserEmailAddress
     if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
         # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
-        UserEmailAddress.objects.filter(email=email, is_confirmed=False).exclude(pk=user_email_address_pk).delete()
+        for user_email_address in UserEmailAddress.objects.filter(email=email, is_confirmed=False).exclude(pk=user_email_address_pk):
+            user_email_address.delete()
         # If this email address is confirmed, raise an exception.
         if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
             raise ValidationError(_('This email is already in use.'))
