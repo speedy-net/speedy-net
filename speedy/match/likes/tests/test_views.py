@@ -364,8 +364,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
 
         def test_like_list_views_titles_with_empty_lists(self):
-            for user in User.objects.all().exclude(pk=self.user_1.pk):
-                user.delete()
+            User.objects.all().exclude(pk=self.user_1.pk).delete()
             self.user_2 = None
             self.user_3 = None
             self.user_4 = None
