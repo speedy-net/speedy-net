@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
-from speedy.core.base.models import BaseManager
+from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
 
@@ -22,7 +22,8 @@ class UserLikeManager(BaseManager):
         self.create(from_user=from_user, to_user=to_user)
 
     def remove_like(self, from_user, to_user):
-        self.filter(from_user=from_user, to_user=to_user).delete()
+        for like in self.filter(from_user=from_user, to_user=to_user):
+            like.delete()
 
     def get_like_list_to_queryset(self, user):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile

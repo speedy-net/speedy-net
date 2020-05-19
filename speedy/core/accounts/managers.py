@@ -1,6 +1,6 @@
 from django.db.models import Q
 
-from speedy.core.base.models import BaseManager, BaseUserManager
+from speedy.core.base.managers import BaseManager, BaseUserManager
 from speedy.core.base.utils import normalize_username
 
 

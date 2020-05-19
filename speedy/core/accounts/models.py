@@ -20,10 +20,13 @@ from django.contrib.sites.models import Site
 from translated_fields import TranslatedField
 
 from speedy.core.base.mail import send_mail
-from speedy.core.base.models import BaseManager, TimeStampedModel, SmallUDIDField, RegularUDIDField
+from speedy.core.base.managers import BaseManager
+from speedy.core.base.models import TimeStampedModel
+from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
+from .fields import UserAccessField
 from .utils import get_site_profile_model, normalize_email
 from . import validators as speedy_core_accounts_validators
 
@@ -177,26 +180,6 @@ class ReservedUsername(Entity):
         exclude += ['username', 'slug']
 
         return super().clean_fields(exclude=exclude)
-
-
-class UserAccessField(models.SmallIntegerField):
-    ACCESS_ME = 1
-    ACCESS_FRIENDS = 2
-    ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS = 3
-    ACCESS_ANYONE = 4
-
-    ACCESS_CHOICES = (
-        (ACCESS_ME, _('Only me')),
-        (ACCESS_FRIENDS, _('Me and my friends')),
-        # (ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS, _('Me, my friends and friends of my friends')),
-        (ACCESS_ANYONE, _('Anyone')),
-    )
-
-    def __init__(self, *args, **kwargs):
-        kwargs.update({
-            'choices': self.ACCESS_CHOICES,
-        })
-        super().__init__(*args, **kwargs)
 
 
 class User(PermissionsMixin, Entity, AbstractBaseUser):
@@ -500,8 +483,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             warnings.warn('Can’t delete staff user.')
             return False
         else:
-            self.email_addresses.all().delete()
-            return super().delete(*args, **kwargs)
+            with transaction.atomic():
+                for user_email_address in self.email_addresses.all():
+                    user_email_address.delete()
+                return_value = super().delete(*args, **kwargs)
+            return return_value
 
     def clean_fields(self, exclude=None):
         """

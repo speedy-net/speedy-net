@@ -51,4 +51,12 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.') ###### TODO
             self.assertListEqual(list1=list(cm.exception), list2=['Users cannot block themselves.']) ###### TODO
 
+        def test_cannot_delete_blocks_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Block.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Block.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
 

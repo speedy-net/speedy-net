@@ -9,7 +9,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
-    from speedy.core.uploads.models import Image
+    from speedy.core.uploads.models import File, Image
 
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
@@ -53,4 +53,19 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=image.size, second=14)
             self.assertEqual(first=image.owner_id, second=self.user.id)
 
+        def test_cannot_delete_files_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                File.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                File.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+        def test_cannot_delete_images_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Image.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Image.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 

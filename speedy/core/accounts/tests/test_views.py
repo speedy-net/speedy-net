@@ -1569,7 +1569,8 @@ if (django_settings.LOGIN_ENABLED):
             if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                 pass
             elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk).delete()
+                for user_email_address in self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk):
+                    user_email_address.delete()
             else:
                 raise NotImplementedError()
             self.assert_models_count(
@@ -1638,6 +1639,17 @@ if (django_settings.LOGIN_ENABLED):
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=1,
             )
+
+        def test_cannot_delete_user_email_addresses_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                self.user.email_addresses.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                self.user.email_addresses.filter(is_confirmed=True).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
     @only_on_sites_with_login

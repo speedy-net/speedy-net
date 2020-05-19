@@ -3,9 +3,8 @@ import logging
 from django.utils.translation import get_language
 
 from speedy.core.base.utils import get_age_ranges_match
-from speedy.core.base.models import BaseManager
+from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import User
-from speedy.core.blocks.models import Block
 
 logger = logging.getLogger(__name__)
 

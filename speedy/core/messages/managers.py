@@ -1,7 +1,7 @@
 from django.contrib.sites.models import Site
 from django.db.models import Q
 
-from speedy.core.base.models import BaseManager
+from speedy.core.base.managers import BaseManager
 
 
 class ChatManager(BaseManager):

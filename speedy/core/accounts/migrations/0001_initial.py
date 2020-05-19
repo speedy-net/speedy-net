@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.base.models.SmallUDIDField(db_index=True, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters.', regex='^[1-9][0-9]{14}$')], verbose_name='ID')),
+                ('id', speedy.core.base.fields.SmallUDIDField(db_index=True, max_length=15, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters.', regex='^[1-9][0-9]{14}$')], verbose_name='ID')),
                 ('username', models.CharField(error_messages={'unique': 'This username is already taken.'}, max_length=255, unique=True, verbose_name='username')),
                 ('slug', models.CharField(error_messages={'unique': 'This username is already taken.'}, max_length=255, unique=True, verbose_name='username (slug)')),
                 ('special_username', models.BooleanField(default=False, verbose_name='Special username')),
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('date_created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('date_updated', models.DateTimeField(auto_now=True, db_index=True)),
-                ('id', speedy.core.base.models.RegularUDIDField(db_index=True, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters.', regex='^[1-9][0-9]{19}$')], verbose_name='ID')),
+                ('id', speedy.core.base.fields.RegularUDIDField(db_index=True, max_length=20, primary_key=True, serialize=False, unique=True, validators=[django.core.validators.RegexValidator(message='id contains illegal characters.', regex='^[1-9][0-9]{19}$')], verbose_name='ID')),
                 ('email', models.EmailField(max_length=254, unique=True, verbose_name='email')),
                 ('is_confirmed', models.BooleanField(default=False, verbose_name='is confirmed')),
                 ('is_primary', models.BooleanField(default=False, verbose_name='is primary')),

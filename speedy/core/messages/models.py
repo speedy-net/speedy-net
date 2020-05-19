@@ -4,7 +4,9 @@ from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MaxLengthValidator
 
-from speedy.core.base.models import TimeStampedModel, RegularUDIDField, BaseManager
+from speedy.core.base.managers import BaseManager
+from speedy.core.base.models import TimeStampedModel
+from speedy.core.base.fields import RegularUDIDField
 from speedy.core.accounts.models import Entity, User
 from .managers import ChatManager, MessageManager, ReadMarkManager
 

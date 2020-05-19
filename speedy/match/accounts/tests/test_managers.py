@@ -213,4 +213,12 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=matches_list, second=[self.user_1, self.user_4, self.user_3])
             self.assertEqual(first=[u.speedy_match_profile.rank for u in matches_list], second=[5, 1, 1])
 
+        def test_cannot_delete_site_profiles_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                SpeedyMatchSiteProfile.objects.all().delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                SpeedyMatchSiteProfile.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
 

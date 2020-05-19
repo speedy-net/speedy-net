@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 
 from speedy.core.base import cache_manager
 from speedy.core.base.cache_manager import DEFAULT_TIMEOUT
-from speedy.core.base.models import BaseManager
+from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import Entity, User
 
 CACHE_TYPES = {
@@ -85,7 +85,8 @@ class BlockManager(BaseManager):
         return block
 
     def unblock(self, blocker, blocked):
-        self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk).delete()
+        for block in self.filter(blocker__pk=blocker.pk, blocked__pk=blocked.pk):
+            block.delete()
         self._update_caches(blocker=blocker, blocked=blocked)
 
     def has_blocked(self, blocker, blocked):

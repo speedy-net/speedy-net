@@ -837,7 +837,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=1)
             self.assertEqual(first=len(user.email_addresses.all()), second=1)
             self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=1)
-            user.email_addresses.filter(is_confirmed=True).delete()
+            for user_email_address in user.email_addresses.filter(is_confirmed=True):
+                user_email_address.delete()
             self.assertEqual(first=len(user.email_addresses.all()), second=0)
             self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=0)
             self.assertEqual(first=user.has_confirmed_email, second=False)
