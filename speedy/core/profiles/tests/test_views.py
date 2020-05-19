@@ -14,7 +14,8 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
-    from speedy.core.accounts.models import UserAccessField, User
+    from speedy.core.accounts.models import User
+    from speedy.core.accounts.fields import UserAccessField
     from speedy.core.accounts.tests.test_views import RedirectMeMixin
     from speedy.core.profiles.views import UserMixin
 

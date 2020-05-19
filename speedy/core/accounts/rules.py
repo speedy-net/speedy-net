@@ -3,7 +3,7 @@ from rules import predicate, add_perm, always_deny
 from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.friends.rules import are_friends
 from speedy.core.blocks.rules import there_is_block
-from .models import UserAccessField
+from .fields import UserAccessField
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
