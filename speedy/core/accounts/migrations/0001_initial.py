@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
                 ('is_primary', models.BooleanField(default=False, verbose_name='is primary')),
                 ('confirmation_token', models.CharField(blank=True, max_length=32, verbose_name='confirmation token')),
                 ('confirmation_sent', models.IntegerField(default=0, verbose_name='confirmation sent')),
-                ('access', speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can see this email')),
+                ('access', speedy.core.accounts.fields.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can see this email')),
             ],
             options={
                 'verbose_name': 'email address',
@@ -75,8 +75,8 @@ class Migration(migrations.Migration):
                 ('city_he', models.CharField(blank=True, max_length=120, null=True, verbose_name='city or locality')),
                 ('is_active', models.BooleanField(default=True)),
                 ('is_staff', models.BooleanField(default=False)),
-                ('access_dob_day_month', speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can view my birth month and day')),
-                ('access_dob_year', speedy.core.accounts.models.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can view my birth year')),
+                ('access_dob_day_month', speedy.core.accounts.fields.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can view my birth month and day')),
+                ('access_dob_year', speedy.core.accounts.fields.UserAccessField(choices=[(1, 'Only me'), (2, 'Me and my friends'), (4, 'Anyone')], default=1, verbose_name='Who can view my birth year')),
                 ('notify_on_message', models.PositiveIntegerField(choices=[(1, 'Notify me'), (0, "Don't notify me")], default=1, verbose_name='On new messages')),
             ],
             options={
