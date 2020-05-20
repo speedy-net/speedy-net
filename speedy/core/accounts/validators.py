@@ -95,7 +95,7 @@ class PasswordMinLengthValidator:
         self.min_length = min_length
 
     def validate(self, password, user=None):
-        if len(password) < self.min_length:
+        if (len(password) < self.min_length):
             raise ValidationError(
                 ngettext_lazy(
                     singular="This password is too short. It must contain at least %(min_length)d character.",
@@ -126,7 +126,7 @@ class PasswordMaxLengthValidator:
         self.max_length = max_length
 
     def validate(self, password, user=None):
-        if len(password) > self.max_length:
+        if (len(password) > self.max_length):
             raise ValidationError(
                 ngettext_lazy(
                     singular="This password is too long. It must contain at most %(max_length)d character.",

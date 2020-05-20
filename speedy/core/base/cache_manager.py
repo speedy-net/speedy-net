@@ -19,15 +19,15 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
         return None
 
     wrapped_value = cache.get(key, default=DEFAULT_VALUE, version=version)
-    if wrapped_value is DEFAULT_VALUE:
+    if (wrapped_value is DEFAULT_VALUE):
         return default
 
-    if wrapped_value['expire_time'] is not None and sliding_timeout:
-        if sliding_timeout == DEFAULT_TIMEOUT:
+    if (wrapped_value['expire_time'] is not None and sliding_timeout):
+        if (sliding_timeout == DEFAULT_TIMEOUT):
             sliding_timeout = cache.default_timeout
         now = time.time()
         ttl = wrapped_value['expire_time'] - now
-        if ttl < sliding_timeout:
+        if (ttl < sliding_timeout):
             cache_set(key, wrapped_value['value'], timeout=sliding_timeout, version=version)
 
     return wrapped_value['value']
@@ -44,8 +44,8 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
         return
 
     expire_time = None
-    if timeout is not None:
-        if timeout == DEFAULT_TIMEOUT:
+    if (timeout is not None):
+        if (timeout == DEFAULT_TIMEOUT):
             timeout = cache.default_timeout
         now = time.time()
         expire_time = now + timeout
