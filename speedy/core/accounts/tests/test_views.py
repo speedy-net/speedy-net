@@ -1645,6 +1645,9 @@ if (django_settings.LOGIN_ENABLED):
                 self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
+                self.user.email_addresses.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
                 self.user.email_addresses.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:

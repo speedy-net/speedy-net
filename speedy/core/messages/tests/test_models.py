@@ -66,7 +66,10 @@ if (django_settings.LOGIN_ENABLED):
             chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
             self.assertEqual(first=chat.get_slug(current_user=user_1), second=chat.id)
 
-        def test_cannot_delete_chats_with_queryset_delete(self):
+        def test_cannot_delete_chats_with_queryset_delete_1(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Chat.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -74,26 +77,49 @@ if (django_settings.LOGIN_ENABLED):
                 Chat.objects.filter(pk=1).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
+                Chat.objects.all().exclude(pk=2).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+        def test_cannot_delete_chats_with_queryset_delete_2(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Chat.all_sites_objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
                 Chat.all_sites_objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Chat.all_sites_objects.filter(pk=1).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Chat.all_sites_objects.all().exclude(pk=2).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_delete_messages_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Message.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Message.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Message.objects.filter(pk=1).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Message.objects.all().exclude(pk=2).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_delete_readmarks_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                ReadMark.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 ReadMark.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 ReadMark.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                ReadMark.objects.all().exclude(pk=2).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 

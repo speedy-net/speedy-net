@@ -55,17 +55,29 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_cannot_delete_files_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
+                File.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
                 File.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 File.objects.filter(pk=1).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                File.objects.all().exclude(pk=2).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
         def test_cannot_delete_images_with_queryset_delete(self):
+            with self.assertRaises(NotImplementedError) as cm:
+                Image.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Image.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Image.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Image.objects.all().exclude(pk=2).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 

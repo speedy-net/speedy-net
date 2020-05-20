@@ -11,6 +11,9 @@ class ManagerMixin(object):
     def bulk_create(self, *args, **kwargs):
         raise NotImplementedError("bulk_create is not implemented.")
 
+    def delete(self):
+        raise NotImplementedError("delete is not implemented.")
+
     def get_queryset(self):
         """
         Use our own QuerySet model without method .delete().

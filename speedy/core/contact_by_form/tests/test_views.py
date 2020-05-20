@@ -190,10 +190,16 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_cannot_delete_feedbacks_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
+                Feedback.objects.delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
                 Feedback.objects.all().delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
             with self.assertRaises(NotImplementedError) as cm:
                 Feedback.objects.filter(pk=1).delete()
+            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+            with self.assertRaises(NotImplementedError) as cm:
+                Feedback.objects.all().exclude(pk=2).delete()
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
