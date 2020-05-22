@@ -1,4 +1,4 @@
-[![Services Health](https://speedy-net.montastic.io/badge)](https://speedy-net.montastic.io)
+[![Services Health](https://speedy-net.montastic.io/badge)](https://speedy-net.montastic.io) [![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
 
 # Speedy Net / Speedy Match
 
@@ -49,8 +49,6 @@
 
 
 You can find more details in the specifications.
-
-[![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
 
 ## How to setup the project and run locally
 
