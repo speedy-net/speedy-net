@@ -203,6 +203,7 @@ class SiteProfile(SiteProfileBase):
     class Meta:
         verbose_name = _('Speedy Match Profile')
         verbose_name_plural = _('Speedy Match Profiles')
+        ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
         return '{} @ Speedy Match'.format(super().__str__())

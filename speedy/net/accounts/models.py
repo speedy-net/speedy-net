@@ -29,6 +29,7 @@ class SiteProfile(SiteProfileBase):
     class Meta:
         verbose_name = _('Speedy Net Profile')
         verbose_name_plural = _('Speedy Net Profiles')
+        ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
         return '{} @ Speedy Net'.format(super().__str__())

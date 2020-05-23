@@ -18,6 +18,7 @@ class SiteProfile(SiteProfileBase):
     class Meta:
         verbose_name = _('Speedy Mail Profile')
         verbose_name_plural = _('Speedy Mail Profiles')
+        ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
         return '{} @ Speedy Mail Software'.format(super().__str__())
