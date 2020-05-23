@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
 from django.conf import settings as django_settings
@@ -11,6 +11,7 @@ class TestsDynamicSettings(object):
     @staticmethod
     def valid_date_of_birth_list(max_age_allowed):
         today = date.today()
+        end_of_tests_date = (datetime.now() + relativedelta(hours=1.5)).date()
         valid_date_of_birth_list = [
             '1904-02-29',
             '1980-01-31',
@@ -31,7 +32,7 @@ class TestsDynamicSettings(object):
             '{}-12-31'.format(today.year - 1),
             today.isoformat(),
             (today - relativedelta(days=1)).isoformat(),
-            (today - relativedelta(years=max_age_allowed) + relativedelta(days=1)).isoformat(),
+            (end_of_tests_date - relativedelta(years=max_age_allowed) + relativedelta(days=1)).isoformat(),
         ]
         valid_date_of_birth_list = sorted(list(set(valid_date_of_birth_list)))
         return valid_date_of_birth_list
@@ -39,6 +40,7 @@ class TestsDynamicSettings(object):
     @staticmethod
     def invalid_date_of_birth_list(max_age_allowed):
         today = date.today()
+        end_of_tests_date = (datetime.now() + relativedelta(hours=1.5)).date()
         invalid_date_of_birth_list = [
             '1900-02-29',
             '1901-02-29',
@@ -60,11 +62,11 @@ class TestsDynamicSettings(object):
             '999-01-01',
             '0001-01-01',
             '0999-01-01',
-            '{}-01-01'.format(today.year + 1),
-            '{}-12-31'.format(today.year + 1),
+            '{}-01-01'.format(end_of_tests_date.year + 1),
+            '{}-12-31'.format(end_of_tests_date.year + 1),
             '{}-01-01'.format(today.year - 1 - max_age_allowed),
             '{}-12-31'.format(today.year - 1 - max_age_allowed),
-            (today + relativedelta(days=1)).isoformat(),
+            (end_of_tests_date + relativedelta(days=1)).isoformat(),
             (today - relativedelta(years=max_age_allowed)).isoformat(),
             date(year=1, month=1, day=1).isoformat(),
             date(year=9999, month=12, day=31).isoformat(),
