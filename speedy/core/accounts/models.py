@@ -452,7 +452,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
-        ordering = ('-last_login', 'id')
+        ordering = ('-speedy_net_site_profile__last_visit', 'id')
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
