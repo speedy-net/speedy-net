@@ -34,7 +34,7 @@
                                     {% profile_picture other_participant '100x100' with_link=False html_class="img-fluid rounded-lg" %}
                                 </div>
                                 <div class="col-10">
-                                    <div class="{{ chat.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3 {% if not forloop.last %}mb-3{% endif %}">
+                                    <div class="{{ chat.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3{% if not forloop.last %} mb-3{% endif %}">
                                         <p>
                                             <strong>
                                                 {{ other_participant.user.name }}
