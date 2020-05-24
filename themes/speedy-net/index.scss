@@ -65,7 +65,12 @@ $theme-colors: (
 
 $input-color: $black;
 
-$enable-rounded: false;
+$enable-gradients: false;
+$enable-shadows: false;
+
+//$border-radius: 0;
+//$border-radius-sm: 0;
+$border-radius-lg: 10px;
 
 @media (min-width: 350px) {
     .col-sm-6 {
@@ -96,6 +101,31 @@ html {
 .hidden {
     display: none;
 }
+
+.rounded-lg {
+    border-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-top {
+    border-top-left-radius: $border-radius-lg !important;
+    border-top-right-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-right {
+    border-top-right-radius: $border-radius-lg !important;
+    border-bottom-right-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-bottom {
+    border-bottom-right-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
+}
+
+.rounded-lg-left {
+    border-top-left-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
+}
+
 
 .footer a,
 .footer a:visited,
