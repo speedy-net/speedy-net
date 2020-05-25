@@ -1,10 +1,9 @@
 from django.conf import settings as django_settings
-from django.contrib import admin as django_admin
 
 from translated_fields import TranslatedFieldAdmin
 
 from speedy.core import admin
-from speedy.core.base.admin import ReadOnlyModelAdmin
+from speedy.core.base.admin import ModelAdmin, ReadOnlyModelAdmin
 from .models import Entity, ReservedUsername, User, UserEmailAddress
 
 
@@ -15,7 +14,7 @@ class EntityAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
         return True
 
 
-class ReservedUsernameAdmin(django_admin.ModelAdmin):
+class ReservedUsernameAdmin(ModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 
@@ -43,7 +42,7 @@ admin.site.register(ReservedUsername, ReservedUsernameAdmin)
 admin.site.register(User, UserAdmin)
 
 if (django_settings.DEBUG):
-    class UserEmailAddressDebugAdmin(django_admin.ModelAdmin):
+    class UserEmailAddressDebugAdmin(ModelAdmin):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
 

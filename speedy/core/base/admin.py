@@ -7,7 +7,11 @@ from friendship.models import Follow, Friend, FriendshipRequest, Block
 from speedy.core import admin
 
 
-class ReadOnlyModelAdmin(django_admin.ModelAdmin):
+class ModelAdmin(django_admin.ModelAdmin):
+    list_per_page = 250
+
+
+class ReadOnlyModelAdmin(ModelAdmin):
     """
     ModelAdmin class that prevents modifications through the admin.
 
