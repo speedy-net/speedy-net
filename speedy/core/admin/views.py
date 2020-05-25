@@ -27,16 +27,17 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
 
     @staticmethod
     def get_total_number_of_members_text():
+        SiteProfile = get_site_profile_model()
         total_number_of_members = User.objects.all().count()
-        total_number_of_members_in_the_last_week = User.objects.filter(
-            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
-        ).count()
-        total_number_of_members_in_the_last_month = User.objects.filter(
-            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
-        ).count()
-        total_number_of_members_in_the_last_four_months = User.objects.filter(
-            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
-        ).count()
+        total_number_of_members_in_the_last_week = User.objects.filter(**{
+            "{}__last_visit__gte".format(SiteProfile.RELATED_NAME): now() - timedelta(days=7),
+        }).count()
+        total_number_of_members_in_the_last_month = User.objects.filter(**{
+            "{}__last_visit__gte".format(SiteProfile.RELATED_NAME): now() - timedelta(days=30),
+        }).count()
+        total_number_of_members_in_the_last_four_months = User.objects.filter(**{
+            "{}__last_visit__gte".format(SiteProfile.RELATED_NAME): now() - timedelta(days=120),
+        }).count()
         total_number_of_members_text = _("Admin: The total number of members on the site is {total_number_of_members}, of which {total_number_of_members_in_the_last_week} members entered the site in the last week, {total_number_of_members_in_the_last_month} members entered the site in the last month, and {total_number_of_members_in_the_last_four_months} members entered the site in the last four months.").format(
             total_number_of_members='{:,}'.format(total_number_of_members),
             total_number_of_members_in_the_last_week='{:,}'.format(total_number_of_members_in_the_last_week),
