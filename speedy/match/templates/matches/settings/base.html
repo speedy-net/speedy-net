@@ -39,6 +39,11 @@
                 {% trans 'About me'|title context user.get_gender %}
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link {% active_class 'accounts:edit_profile' %}" href="{% url 'accounts:edit_profile' %}">
+                {% trans 'Profile Info' %}
+            </a>
+        </li>
     </ul>
     <br>
     {% block tab_content %}
