@@ -54,13 +54,13 @@ def set_session(request):
     return response
 
 
-class RegistrationView(FormValidMessageMixin, generic.CreateView):
+class RegistrationView(generic.CreateView):
     template_name = 'main/main_page.html'
     form_class = RegistrationForm
-    form_valid_message = _("Registration complete. Don't forget to confirm your email.")
+    # form_valid_message = _("Registration complete. Don't forget to confirm your email.")
 
-    def get_form_valid_message(self, form):
-        return pgettext_lazy(context=self.object.get_gender(), message="Registration complete. Don't forget to confirm your email.")
+    # def get_form_valid_message(self, form):
+    #     return pgettext_lazy(context=self.object.get_gender(), message="Registration complete. Don't forget to confirm your email.")
 
     def form_valid(self, form):
         self.object = form.save()

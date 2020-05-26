@@ -218,9 +218,9 @@ pgettext_lazy(context="female", message='Friends')
 pgettext_lazy(context="male", message='Friends')
 pgettext_lazy(context="other", message='Friends')
 
-pgettext_lazy(context="female", message="Registration complete. Don't forget to confirm your email.")
-pgettext_lazy(context="male", message="Registration complete. Don't forget to confirm your email.")
-pgettext_lazy(context="other", message="Registration complete. Don't forget to confirm your email.")
+# pgettext_lazy(context="female", message="Registration complete. Don't forget to confirm your email.")
+# pgettext_lazy(context="male", message="Registration complete. Don't forget to confirm your email.")
+# pgettext_lazy(context="other", message="Registration complete. Don't forget to confirm your email.")
 
 pgettext_lazy(context="female_female", message="This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.")
 pgettext_lazy(context="female_male", message="This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.")

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-24 18:49+0300\n"
+"POT-Creation-Date: 2020-05-26 10:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1682,21 +1682,6 @@ msgctxt "other"
 msgid "Friends"
 msgstr "חברים/ות"
 
-#: .\__translations\__translations.py:221
-msgctxt "female"
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr "הרשמה הושלמה. אל תשכחי לאמת את הדואר האלקטרוני שלך."
-
-#: .\__translations\__translations.py:222
-msgctxt "male"
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr "הרשמה הושלמה. אל תשכח לאמת את הדואר האלקטרוני שלך."
-
-#: .\__translations\__translations.py:223
-msgctxt "other"
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
-
 #: .\__translations\__translations.py:225
 msgctxt "female_female"
 msgid ""
@@ -2196,10 +2181,6 @@ msgstr ""
 "אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
 "מתקבלים."
 
-#: .\accounts\views.py:60
-msgid "Registration complete. Don't forget to confirm your email."
-msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
-
 #: .\accounts\views.py:229
 msgid "Invalid confirmation link."
 msgstr "קישור אימות לא חוקי."
@@ -2217,7 +2198,7 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\admin\views.py:40
+#: .\admin\views.py:41
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2233,7 +2214,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_four_months} חברים נכנסו לאתר בארבעת "
 "החודשים האחרונים."
 
-#: .\admin\views.py:63
+#: .\admin\views.py:64
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2256,7 +2237,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני "
 "1 באוגוסט 2019."
 
-#: .\admin\views.py:78
+#: .\admin\views.py:79
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -3141,6 +3122,21 @@ msgstr "תמונות"
 #: .\uploads\models.py:47
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgctxt "female"
+#~ msgid "Registration complete. Don't forget to confirm your email."
+#~ msgstr "הרשמה הושלמה. אל תשכחי לאמת את הדואר האלקטרוני שלך."
+
+#~ msgctxt "male"
+#~ msgid "Registration complete. Don't forget to confirm your email."
+#~ msgstr "הרשמה הושלמה. אל תשכח לאמת את הדואר האלקטרוני שלך."
+
+#~ msgctxt "other"
+#~ msgid "Registration complete. Don't forget to confirm your email."
+#~ msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
+
+#~ msgid "Registration complete. Don't forget to confirm your email."
+#~ msgstr "הרשמה הושלמה. אל תשכח/י לאמת את הדואר האלקטרוני שלך."
 
 #~ msgid "Admin"
 #~ msgstr "אדמין"
