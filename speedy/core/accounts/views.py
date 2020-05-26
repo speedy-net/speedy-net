@@ -79,13 +79,6 @@ class RegistrationView(FormValidMessageMixin, generic.CreateView):
         django_auth_login(request=self.request, user=user)
         return HttpResponseRedirect('/')
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.update({
-            'language_code': get_language(),
-        })
-        return kwargs
-
 
 class IndexView(generic.View):
     registered_redirect_to = 'profiles:me'  # The default.
@@ -102,13 +95,6 @@ class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateV
     template_name = 'accounts/edit_profile/profile.html'
     success_url = reverse_lazy('accounts:edit_profile')
     form_class = ProfileForm
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.update({
-            'language_code': get_language(),
-        })
-        return kwargs
 
     def get_object(self, queryset=None):
         return self.request.user
