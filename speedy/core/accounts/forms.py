@@ -1,5 +1,4 @@
 import logging
-from itertools import zip_longest
 
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
@@ -52,6 +51,7 @@ class CleanDateOfBirthMixin(object):
 
 class LocalizedFirstLastNameMixin(object):
     def __init__(self, *args, **kwargs):
+        assert ('language_code' in kwargs)
         self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
         localized_fields = self.get_localized_fields()
