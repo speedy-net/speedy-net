@@ -1254,15 +1254,15 @@ if (django_settings.LOGIN_ENABLED):
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
             self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
-            for height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 220, 250, 320, 321, 400, 450]:
+            for height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320, 321, 400, 450]:
                 # Save both users to delete rank cache.
                 user_1.speedy_match_profile.height = height
                 user_1.save_user_and_profile()
                 user_2.save_user_and_profile()
                 if (with_override_settings):
-                    if (height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 250, 320, 321, 400, 450]):
+                    if (height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]):
                         expected_rank = 0
-                    elif (height in [120, 150, 160, 170, 180, 190, 200, 210, 220]):
+                    elif (height in [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]):
                         expected_rank = 5
                     else:
                         raise NotImplementedError()
@@ -1273,7 +1273,7 @@ if (django_settings.LOGIN_ENABLED):
                 else:
                     if (height in [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]):
                         expected_rank = 0
-                    elif (height in [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 220, 250, 320]):
+                    elif (height in [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]):
                         expected_rank = 5
                     else:
                         raise NotImplementedError()
