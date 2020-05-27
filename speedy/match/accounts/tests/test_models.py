@@ -1254,25 +1254,31 @@ if (django_settings.LOGIN_ENABLED):
             rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
             self.assertEqual(first=rank_1, second=5)
             self.assertEqual(first=rank_2, second=5)
-            for height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320, 321, 400, 450]:
+            values_to_test = [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320, 321, 400, 450]
+            if (with_override_settings):
+                expected_rank_5_values = [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]
+                expected_rank_0_values = [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]
+            else:
+                expected_rank_5_values = [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]
+                expected_rank_0_values = [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]
+            for height in values_to_test:
                 # Save both users to delete rank cache.
                 user_1.speedy_match_profile.height = height
                 user_1.save_user_and_profile()
                 user_2.save_user_and_profile()
                 if (with_override_settings):
-                    if (120 <= height <= 220):
-                        expected_rank = 5
-                        self.assertTrue(expr=(height in [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]))
-                    else:
-                        expected_rank = 0
-                        self.assertTrue(expr=(height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]))
+                    expected_rank_is_5 = (120 <= height <= 220)
                 else:
-                    if (61 <= height <= 320):
-                        expected_rank = 5
-                        self.assertTrue(expr=(height in [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]))
-                    else:
-                        expected_rank = 0
-                        self.assertTrue(expr=(height in [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]))
+                    expected_rank_is_5 = (61 <= height <= 320)
+                if (expected_rank_is_5):
+                    expected_rank = 5
+                    self.assertTrue(expr=(height in expected_rank_5_values))
+                    self.assertFalse(expr=(height in expected_rank_0_values))
+                else:
+                    expected_rank = 0
+                    self.assertTrue(expr=(height in expected_rank_0_values))
+                    self.assertFalse(expr=(height in expected_rank_5_values))
+                self.assertListEqual(list1=sorted(expected_rank_5_values + expected_rank_0_values), list2=values_to_test)
                 rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
                 rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
                 self.assertEqual(first=rank_1, second=expected_rank)
