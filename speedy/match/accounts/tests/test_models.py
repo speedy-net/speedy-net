@@ -1260,27 +1260,19 @@ if (django_settings.LOGIN_ENABLED):
                 user_1.save_user_and_profile()
                 user_2.save_user_and_profile()
                 if (with_override_settings):
-                    if (height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]):
-                        expected_rank = 0
-                    elif (height in [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]):
-                        expected_rank = 5
-                    else:
-                        raise NotImplementedError()
                     if (120 <= height <= 220):
-                        self.assertEqual(first=expected_rank, second=5)
-                    else:
-                        self.assertEqual(first=expected_rank, second=0)
-                else:
-                    if (height in [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]):
-                        expected_rank = 0
-                    elif (height in [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]):
                         expected_rank = 5
+                        self.assertTrue(expr=(height in [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]))
                     else:
-                        raise NotImplementedError()
+                        expected_rank = 0
+                        self.assertTrue(expr=(height in [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]))
+                else:
                     if (61 <= height <= 320):
-                        self.assertEqual(first=expected_rank, second=5)
+                        expected_rank = 5
+                        self.assertTrue(expr=(height in [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]))
                     else:
-                        self.assertEqual(first=expected_rank, second=0)
+                        expected_rank = 0
+                        self.assertTrue(expr=(height in [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]))
                 rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
                 rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
                 self.assertEqual(first=rank_1, second=expected_rank)
