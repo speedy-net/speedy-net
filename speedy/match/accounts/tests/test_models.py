@@ -1256,11 +1256,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=rank_2, second=5)
             values_to_test = [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320, 321, 400, 450]
             if (with_override_settings):
-                expected_rank_5_values = [120, 150, 160, 170, 180, 190, 200, 210, 219, 220]
-                expected_rank_0_values = [1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450]
+                expected_rank_5_values = [height for height in values_to_test if (120 <= height <= 220)]
+                expected_rank_0_values = [height for height in values_to_test if (not (120 <= height <= 220))]
+                self.assertListEqual(list1=expected_rank_5_values, list2=[120, 150, 160, 170, 180, 190, 200, 210, 219, 220])
+                self.assertListEqual(list1=expected_rank_0_values, list2=[1, 5, 6, 19, 20, 59, 60, 61, 100, 118, 119, 221, 250, 320, 321, 400, 450])
             else:
-                expected_rank_5_values = [61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320]
-                expected_rank_0_values = [1, 5, 6, 19, 20, 59, 60, 321, 400, 450]
+                expected_rank_5_values = [height for height in values_to_test if (61 <= height <= 320)]
+                expected_rank_0_values = [height for height in values_to_test if (not (61 <= height <= 320))]
+                self.assertListEqual(list1=expected_rank_5_values, list2=[61, 100, 118, 119, 120, 150, 160, 170, 180, 190, 200, 210, 219, 220, 221, 250, 320])
+                self.assertListEqual(list1=expected_rank_0_values, list2=[1, 5, 6, 19, 20, 59, 60, 321, 400, 450])
             self.assertListEqual(list1=sorted(expected_rank_5_values + expected_rank_0_values), list2=values_to_test)
             for height in values_to_test:
                 # Save both users to delete rank cache.
