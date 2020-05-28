@@ -261,15 +261,13 @@ Refer to [django-environ documentation](https://django-environ.readthedocs.io/en
 
 ## How to upgrade required packages
 
-To upgrade all the requirements (with Django>=1.11,<2.0), run:
+To upgrade all the requirements (with Django>=3.0,<3.1), run:
 
     pip install --upgrade -r requirements-pip-upgrade.txt
 
 To upgrade all the requirements (including Django), run:
 
     pip install --upgrade -r requirements-without-versions.txt
-
-We are still using Django 1.11, but we are going to upgrade Django soon.
 
 ## How to make migrations and migrate
 
