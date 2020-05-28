@@ -97,7 +97,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
@@ -169,7 +169,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda user: (user.speedy_match_profile.rank, user.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
             user=user,
             language_code=language_code,
