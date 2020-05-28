@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 10:29+0300\n"
+"POT-Creation-Date: 2020-05-28 16:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -994,6 +994,15 @@ msgstr "הגדרת התאמות"
 msgid "likes you."
 msgstr "מחבב/ת אותך."
 
+#: .\templates\email\likes\like_body.txt:6
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את "
+"הגדרות ההתראות שלך או לבטל את הסכמתך:"
+
 #: .\templates\email\likes\like_subject.txt:1
 msgid "Someone likes you on "
 msgstr "מישהו עשה לך לייק ב"
@@ -1077,7 +1086,7 @@ msgstr "חזרה להתאמות"
 
 #: .\templates\matches\settings\base.html:44
 msgid "Profile Info"
-msgstr ""
+msgstr "פרטי פרופיל"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"

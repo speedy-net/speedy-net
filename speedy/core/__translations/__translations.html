@@ -209,3 +209,7 @@
 {% trans 'Username' context "male" %}
 {% trans 'Username' context "other" %}
 
+{% blocktrans with site_name=site_name context "female" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
+{% blocktrans with site_name=site_name context "male" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
+{% blocktrans with site_name=site_name context "other" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
+

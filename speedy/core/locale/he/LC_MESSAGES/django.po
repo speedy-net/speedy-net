@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 10:29+0300\n"
+"POT-Creation-Date: 2020-05-28 16:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -812,6 +812,36 @@ msgstr "שם משתמש"
 msgctxt "other"
 msgid "Username"
 msgstr "שם משתמש/ת"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"את רשומה לקבלת התראות מסוג זה מ%(site_name)s. היכנסי לדף זה כדי לשנות את "
+"הגדרות ההתראות שלך או לבטל את הסכמתך:"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"אתה רשום לקבלת התראות מסוג זה מ%(site_name)s. היכנס לדף זה כדי לשנות את "
+"הגדרות ההתראות שלך או לבטל את הסכמתך:"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את "
+"הגדרות ההתראות שלך או לבטל את הסכמתך:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -2804,6 +2834,15 @@ msgstr "שלח/ה לך הודעה."
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
 msgstr "קרא/י אותה:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את "
+"הגדרות ההתראות שלך או לבטל את הסכמתך:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 msgid "You have a new message on "

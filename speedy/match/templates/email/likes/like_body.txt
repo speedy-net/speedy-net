@@ -1,3 +1,8 @@
 {% load i18n %}{{ like.from_user.name }} {% trans "likes you." context like.from_user.get_gender %}
 
 {{ SITE_URL }}{% url 'likes:list_from' user.slug %}
+
+---------------------------------------------------------------------------------------------------
+{% blocktrans with site_name=site_name context user.get_gender %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
+
+{{ SITE_URL }}{% url 'accounts:edit_profile_notifications' %}
