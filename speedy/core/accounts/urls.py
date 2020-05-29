@@ -8,7 +8,7 @@ app_name = 'speedy.core.accounts'
 urlpatterns = [
     path(route='set-session/', view=views.set_session, name='set_session'),
 
-    path(route='login/', view=views.django_auth_views.LoginView.as_view(template_name='accounts/login.html', authentication_form=forms.LoginForm, extra_context=None), name='login'),
+    path(route='login/', view=views.django_auth_views.LoginView.as_view(template_name='accounts/login.html', authentication_form=forms.LoginForm, extra_context=None, redirect_authenticated_user=True), name='login'),
     path(route='logout/', view=views.django_auth_views.LogoutView.as_view(template_name='accounts/logged_out.html'), name='logout'),
 
     path(route='reset-password/', view=views.django_auth_views.PasswordResetView.as_view(template_name='accounts/password_reset/form.html', form_class=forms.PasswordResetForm, success_url=reverse_lazy('accounts:password_reset_done')), name='password_reset'),
