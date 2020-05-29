@@ -422,6 +422,17 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(expr=r.context['user'].is_authenticated)
             self.assertEqual(first=r.context['user'].username, second='user1234')
             self.assertEqual(first=r.context['user'].slug, second='user-1234')
+            self.assertTrue(expr=r.context['user'].is_active)
+            self.assertTrue(expr=r.context['user'].speedy_net_profile.is_active)
+            self.assertFalse(expr=r.context['user'].speedy_match_profile.is_active)
+            if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
+                self.assertTrue(expr=r.context['user'].profile.is_active)
+                self.assertEqual(first=r.context['user'].profile, second=r.context['user'].speedy_net_profile)
+                self.assertNotEqual(first=r.context['user'].profile, second=r.context['user'].speedy_match_profile)
+            else:
+                self.assertFalse(expr=r.context['user'].profile.is_active)
+                self.assertEqual(first=r.context['user'].profile, second=r.context['user'].speedy_match_profile)
+                self.assertNotEqual(first=r.context['user'].profile, second=r.context['user'].speedy_net_profile)
 
         def test_user_gets_email_after_registration(self):
             r = self.client.post(path='/', data=self.data)
