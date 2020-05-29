@@ -57,6 +57,7 @@ def set_session(request):
 class RegistrationView(generic.CreateView):
     template_name = 'main/main_page.html'
     form_class = RegistrationForm
+
     # form_valid_message = _("Registration complete. Don't forget to confirm your email.")
 
     # def get_form_valid_message(self, form):
@@ -93,7 +94,10 @@ class IndexView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
         if (self.request.user.is_authenticated):
-            return redirect(to=self.registered_redirect_to)
+            if (self.registered_redirect_to == 'profiles:me'):
+                return redirect(to=self.request.user.get_absolute_url())
+            else:
+                return redirect(to=self.registered_redirect_to)
         else:
             return self.registration_view.as_view()(request=request, *args, **kwargs)
 

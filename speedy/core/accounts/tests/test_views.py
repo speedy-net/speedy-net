@@ -414,7 +414,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
             r = self.client.get(path='/')
             if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
-                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
+                self.assertRedirects(response=r, expected_url='/{}/'.format(self.data['slug']), status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/{}/'.format(self.data['slug']))
             else:
                 self.assertRedirects(response=r, expected_url='/registration-step-2/', status_code=302, target_status_code=200, fetch_redirect_response=False)
