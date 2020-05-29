@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class IndexView(speedy_core_accounts_views.IndexView):
-    registered_redirect_to = 'profiles:me'
+    redirect_authenticated_users_to = 'profiles:me'
 
 
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):

@@ -89,15 +89,16 @@ class RegistrationView(generic.CreateView):
 
 
 class IndexView(generic.View):
-    registered_redirect_to = 'profiles:me'  # The default.
+    redirect_authenticated_users_to = 'profiles:me'  # The default.
     registration_view = RegistrationView
 
     def dispatch(self, request, *args, **kwargs):
         if (self.request.user.is_authenticated):
-            if (self.registered_redirect_to == 'profiles:me'):
+            if (self.redirect_authenticated_users_to == 'profiles:me'):
+                # If redirect_authenticated_users_to == 'profiles:me', redirect to user's profile directly and not via /me/.
                 return redirect(to=self.request.user.get_absolute_url())
             else:
-                return redirect(to=self.registered_redirect_to)
+                return redirect(to=self.redirect_authenticated_users_to)
         else:
             return self.registration_view.as_view()(request=request, *args, **kwargs)
 

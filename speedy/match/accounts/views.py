@@ -25,7 +25,7 @@ class RegistrationView(speedy_core_accounts_views.RegistrationView):
 
 
 class IndexView(speedy_core_accounts_views.IndexView):
-    registered_redirect_to = 'matches:list'
+    redirect_authenticated_users_to = 'matches:list'
     registration_view = RegistrationView
 
 
