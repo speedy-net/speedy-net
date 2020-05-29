@@ -18,7 +18,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_gets_redirected_to_his_profile(self):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path='/')
-            self.assertRedirects(response=r, expected_url='/{}/'.format(self.user.slug), status_code=302, target_status_code=200)
+            self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
 
 
     @only_on_speedy_net
