@@ -107,18 +107,18 @@
     {% else %}
         <form class="form" method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
-            <input name="next" type="hidden" value="{{ request.get_full_path }}">
+            <input name="next" type="hidden" value="{{ request.get_full_path }}" />
             <div class="row">
                 <div class="col-auto">
                     <label>
                         {% trans 'Email or Username' %}
-                        <input name="username" type="text" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <input type="text" name="username" autocapitalize="off" autocomplete="off" maxlength="255" autocorrect="off" spellcheck="false" class="direction-ltr textinput textInput form-control" required />
                     </label>
                 </div>
                 <div class="col-auto">
                     <label>
                         {% trans 'Password' %}
-                        <input name="password" type="password" class="form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="direction-ltr textinput textInput form-control" required />
                     </label>
                     <br>
                     <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
