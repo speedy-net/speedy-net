@@ -433,6 +433,9 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertFalse(expr=r.context['user'].profile.is_active)
                 self.assertEqual(first=r.context['user'].profile, second=r.context['user'].speedy_match_profile)
                 self.assertNotEqual(first=r.context['user'].profile, second=r.context['user'].speedy_net_profile)
+            self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step, second=2)
+            self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_en, second=2)
+            self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_he, second=2)
 
         def test_user_gets_email_after_registration(self):
             r = self.client.post(path='/', data=self.data)
