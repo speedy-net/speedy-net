@@ -18,7 +18,7 @@ from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
 from speedy.core.base.utils import reflection_import
-from .forms import RegistrationForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
+from .forms import LoginForm, PasswordResetForm, SetPasswordForm, RegistrationForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
 
 logger = logging.getLogger(__name__)
@@ -52,6 +52,37 @@ def set_session(request):
     response['Access-Control-Allow-Origin'] = origin
     response['Access-Control-Allow-Credentials'] = 'true'
     return response
+
+
+class LoginView(django_auth_views.LoginView):
+    template_name = 'accounts/login.html'
+    authentication_form = LoginForm
+    extra_context = None
+    redirect_authenticated_user = True
+
+
+class LogoutView(django_auth_views.LogoutView):
+    template_name = 'accounts/logged_out.html'
+
+
+class PasswordResetView(django_auth_views.PasswordResetView):
+    template_name = 'accounts/password_reset/form.html'
+    form_class = PasswordResetForm
+    success_url = reverse_lazy('accounts:password_reset_done')
+
+
+class PasswordResetDoneView(generic.TemplateView):
+    template_name = 'accounts/password_reset/done.html'
+
+
+class PasswordResetConfirmView(django_auth_views.PasswordResetConfirmView):
+    template_name = 'accounts/password_reset/confirm.html'
+    form_class = SetPasswordForm
+    success_url = reverse_lazy('accounts:password_reset_complete')
+
+
+class PasswordResetCompleteView(django_auth_views.PasswordResetCompleteView):
+    template_name = 'accounts/password_reset/complete.html'
 
 
 class RegistrationView(generic.CreateView):
@@ -208,6 +239,10 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         messages.success(request=self.request, message=message)
         logger.info('User {user} deactivated their account on {site_name}.'.format(site_name=_(site.name), user=user))
         return super().form_valid(form=form)
+
+
+class EditProfileEmailsView(generic.RedirectView):
+    pattern_name = 'accounts:edit_profile_credentials'
 
 
 class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.View):
