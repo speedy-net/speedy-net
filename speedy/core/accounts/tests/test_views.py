@@ -1269,7 +1269,10 @@ if (django_settings.LOGIN_ENABLED):
             token = self.confirmed_email_address.confirmation_token
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
-            r = self.client.get(path='/edit-profile/')
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
 
         def test_unconfirmed_email_link_confirms_email(self):
@@ -1278,7 +1281,10 @@ if (django_settings.LOGIN_ENABLED):
             token = self.unconfirmed_email_address.confirmation_token
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
-            r = self.client.get(path='/edit-profile/')
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_error_message])
             self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
 
@@ -1380,10 +1386,13 @@ if (django_settings.LOGIN_ENABLED):
             }
             r = self.client.post(path='/edit-profile/emails/add/', data=data)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
             email_address = UserEmailAddress.objects.get(email='email@example.com')
             self.assertFalse(expr=email_address.is_primary)
-            r = self.client.get(path='/edit-profile/')
-            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assertEqual(first=mail.outbox[0].subject, second={
                 django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.user.get_gender()],
@@ -1419,6 +1428,10 @@ if (django_settings.LOGIN_ENABLED):
             }
             r = self.client.post(path='/edit-profile/emails/add/', data=data)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             email_address = UserEmailAddress.objects.get(email='email@example.com')
             self.assertTrue(expr=email_address.is_primary)
             self.assert_models_count(
@@ -1477,7 +1490,10 @@ if (django_settings.LOGIN_ENABLED):
             email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
             r = self.client.post(path=self.unconfirmed_email_address_url)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
-            r = self.client.get(path='/edit-profile/')
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assertEqual(first=mail.outbox[0].subject, second={
@@ -1638,7 +1654,10 @@ if (django_settings.LOGIN_ENABLED):
             )
             r = self.client.post(path=self.confirmed_email_address_url)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
-            r = self.client.get(path='/edit-profile/')
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
             self.assert_models_count(
                 entity_count=2,
@@ -1773,7 +1792,10 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
             r = self.client.post(path=self.confirmed_email_address_url)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
-            r = self.client.get(path='/edit-profile/')
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
             self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
             self.assert_models_count(
                 entity_count=2,
