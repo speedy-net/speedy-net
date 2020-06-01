@@ -3,7 +3,7 @@ function init_datepicker() {
     dobDpElem.attr('id', 'id_date_of_birth_dp');
     dobDpElem.attr('name', 'date_of_birth_dp');
     this.$("#id_date_of_birth").after(dobDpElem);
-    this.$("#id_date_of_birth").attr('type','hidden');
+    this.$("#id_date_of_birth").attr('type', 'hidden');
     this.$("#id_date_of_birth").removeAttr('class');
     this.$("#id_date_of_birth").removeAttr('required');
     this.$("#id_date_of_birth_dp").datepicker(datepicker_options);
@@ -22,28 +22,28 @@ var datepicker_options = {
 };
 
 $.datepicker.regional.he = {
-	closeText: "סגור",
-	prevText: "&#x3C;הקודם",
-	nextText: "הבא&#x3E;",
-	currentText: "היום",
-	monthNames: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
-	monthNamesShort: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
-	dayNames: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
-	dayNamesShort: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
-	dayNamesMin: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
-	weekHeader: "Wk",
-	dateFormat: "d בMM yy",
-	firstDay: 0,
-	isRTL: true,
-	showMonthAfterYear: false,
-	yearSuffix: ""
+    closeText: "סגור",
+    prevText: "&#x3C;הקודם",
+    nextText: "הבא&#x3E;",
+    currentText: "היום",
+    monthNames: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
+    monthNamesShort: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
+    dayNames: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
+    dayNamesShort: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
+    dayNamesMin: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "שבת"],
+    weekHeader: "Wk",
+    dateFormat: "d בMM yy",
+    firstDay: 0,
+    isRTL: true,
+    showMonthAfterYear: false,
+    yearSuffix: ""
 };
 
 $.datepicker.regional.en = {
-	monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-	// monthNamesShort: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    // monthNamesShort: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     dateFormat: "d MM yy",
-	firstDay: 0
+    firstDay: 0
 };
 
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
@@ -220,7 +220,7 @@ window.speedy.setSession = function (domain, key) {
     });
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
     $(".form-control-danger").addClass("is-invalid"); // A hack to work with django-crispy-forms 1.6.1.
 });
 
