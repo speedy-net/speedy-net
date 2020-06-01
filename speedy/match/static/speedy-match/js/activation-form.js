@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('.widget-json').each(function (index, element) {
         var widget_value = JSON.parse($(element).find('.widget-input').val());
         for (var key in widget_value) {
@@ -6,7 +6,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.widget-json').click(function(e) {
+    $('.widget-json').click(function (e) {
         e.stopPropagation();
     });
 
