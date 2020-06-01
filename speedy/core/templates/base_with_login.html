@@ -152,11 +152,15 @@
     {# <!-- Global site tag (gtag.js) - Google Ads: 1011575750 --> #}
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1011575750"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'AW-1011575750');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'AW-1011575750');
     </script>
 {% endblock %}
 
