@@ -129,6 +129,13 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
         since += 0.0001
         return self.get_messages_queryset().filter(date_created__gt=datetime.fromtimestamp(since))
 
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'ajax_view': True,
+        })
+        return cd
+
 
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     template_name = 'messages/chat_detail.html'

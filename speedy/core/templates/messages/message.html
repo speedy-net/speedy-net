@@ -6,7 +6,7 @@
         {% profile_picture message.sender '100x100' html_class="img-fluid rounded-lg" %}
     </div>
     <div class="col-10">
-        <div class="{{ message.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3{% if not forloop.last %} mb-3{% endif %}">
+        <div class="{{ message.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3{% if ajax_view or not forloop.last %} mb-3{% endif %}">
             <p>
                 <strong>
                     {{ message.sender.user.name }}
