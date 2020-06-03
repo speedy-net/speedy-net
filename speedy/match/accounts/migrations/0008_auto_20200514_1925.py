@@ -7,7 +7,7 @@ import speedy.match.accounts.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('match_accounts', '0006_auto_20200121_1731'),
+        ('match_accounts', '0007_auto_20200523_1852'),
     ]
 
     operations = [
