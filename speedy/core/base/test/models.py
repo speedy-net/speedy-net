@@ -47,10 +47,11 @@ class SiteTestCase(django_test.TestCase):
 
     def _pre_setup(self):
         self.assertTrue(expr=django_settings.TESTS)
-        super()._pre_setup()
+        return_value = super()._pre_setup()
         call_command('load_data', tests_settings.SITES_FIXTURE, verbosity=0)
         self.site = Site.objects.get_current()
         self.site_name = _(self.site.name)
+        return return_value
 
     def validate_all_values(self):
         site_id_dict = {
@@ -106,9 +107,10 @@ class SiteTestCase(django_test.TestCase):
         self.client = self.client_class(HTTP_HOST=self.http_host)
 
     def setUp(self):
-        super().setUp()
+        return_value = super().setUp()
         self.set_up()
         self.validate_all_values()
+        return return_value
 
     @classmethod
     def tearDownClass(cls):
@@ -118,6 +120,6 @@ class SiteTestCase(django_test.TestCase):
             shutil.rmtree(django_settings.TESTS_MEDIA_ROOT)
         except OSError:
             pass
-        super().tearDownClass()
+        return super().tearDownClass()
 
 
