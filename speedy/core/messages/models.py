@@ -68,7 +68,7 @@ class Chat(TimeStampedModel):
         return [p for p in self.participants if (not (p.id == entity.id))]
 
     def mark_read(self, entity):
-        return ReadMark.objects.mark(self, entity)
+        return ReadMark.objects.mark(chat=self, entity=entity)
 
 
 class Message(TimeStampedModel):
