@@ -23,15 +23,15 @@ def annotate_chats_with_read_marks(chat_list, entity):
     :type chat_list: [speedy.core.messages.models.Chat]
     :type entity: speedy.core.accounts.models.Entity
     """
-    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
+    read_marks = {read_mark.chat_id: read_mark for read_mark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
     for chat in chat_list:
-        rmark = rmarks.get(chat.id)
+        read_mark = read_marks.get(chat.id)
         if (chat.last_message is None):
             chat.is_unread = False
-        elif (rmark is None):
+        elif (read_mark is None):
             chat.is_unread = True
         else:
-            chat.is_unread = chat.last_message.date_created > rmark.date_updated
+            chat.is_unread = chat.last_message.date_created > read_mark.date_updated
     return ''
 
 
@@ -42,13 +42,13 @@ def annotate_messages_with_read_marks(message_list, entity):
     :type entity: speedy.core.accounts.models.Entity
     """
     chats = set(message.chat for message in message_list)
-    rmarks = {rmark.chat_id: rmark for rmark in ReadMark.objects.filter(chat__in=chats, entity=entity)}
+    read_marks = {read_mark.chat_id: read_mark for read_mark in ReadMark.objects.filter(chat__in=chats, entity=entity)}
     for message in message_list:
-        rmark = rmarks.get(message.chat_id)
-        if (rmark is None):
+        read_mark = read_marks.get(message.chat_id)
+        if (read_mark is None):
             message.is_unread = True
         else:
-            message.is_unread = message.date_created > rmark.date_updated
+            message.is_unread = message.date_created > read_mark.date_updated
     return ''
 
 

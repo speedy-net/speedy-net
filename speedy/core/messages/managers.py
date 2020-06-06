@@ -44,9 +44,9 @@ class MessageManager(BaseManager):
 
 class ReadMarkManager(BaseManager):
     def mark(self, chat, entity):
-        rmark, created = self.get_or_create(chat=chat, entity=entity)
+        read_mark, created = self.get_or_create(chat=chat, entity=entity)
         if (not (created)):
-            rmark.save(update_fields={'date_updated'})
-        return rmark
+            read_mark.save(update_fields={'date_updated'})
+        return read_mark
 
 

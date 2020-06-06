@@ -48,10 +48,10 @@ if (django_settings.LOGIN_ENABLED):
         def test_mark_read(self):
             chat = Chat.objects.chat_with(ent1=self.user_1, ent2=self.user_2)
             self.assertEqual(first=ReadMark.objects.count(), second=0)
-            rmark = chat.mark_read(entity=self.user_2)
+            read_mark = chat.mark_read(entity=self.user_2)
             self.assertEqual(first=ReadMark.objects.count(), second=1)
-            self.assertEqual(first=rmark.chat, second=chat)
-            self.assertEqual(first=rmark.entity.id, second=self.user_2.id)
+            self.assertEqual(first=read_mark.chat, second=chat)
+            self.assertEqual(first=read_mark.entity.id, second=self.user_2.id)
 
 
     @only_on_sites_with_login
@@ -74,9 +74,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=message.sender_id, second=user_1.id)
             self.assertEqual(first=message.text, second='Hello')
             self.assertEqual(first=ReadMark.objects.count(), second=1)
-            rmark = ReadMark.objects.latest()
-            self.assertEqual(first=rmark.chat, second=chat)
-            self.assertEqual(first=rmark.entity_id, second=user_1.id)
+            read_mark = ReadMark.objects.latest()
+            self.assertEqual(first=read_mark.chat, second=chat)
+            self.assertEqual(first=read_mark.entity_id, second=user_1.id)
 
         def test_sending_message_to_existing_chat(self):
             user_1 = ActiveUserFactory()
@@ -89,9 +89,9 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=message.sender_id, second=user_1.id)
             self.assertEqual(first=message.text, second='Hello2')
             self.assertEqual(first=ReadMark.objects.count(), second=1)
-            rmark = ReadMark.objects.latest()
-            self.assertEqual(first=rmark.chat, second=chat)
-            self.assertEqual(first=rmark.entity_id, second=user_1.id)
+            read_mark = ReadMark.objects.latest()
+            self.assertEqual(first=read_mark.chat, second=chat)
+            self.assertEqual(first=read_mark.entity_id, second=user_1.id)
 
 
     @only_on_sites_with_login
@@ -100,14 +100,14 @@ if (django_settings.LOGIN_ENABLED):
             user = ActiveUserFactory()
             chat = ChatFactory(ent1=user)
             self.assertEqual(first=ReadMark.objects.count(), second=0)
-            rmark = ReadMark.objects.mark(chat, user)
+            read_mark = ReadMark.objects.mark(chat, user)
             self.assertEqual(first=ReadMark.objects.count(), second=1)
-            self.assertEqual(first=rmark.chat, second=chat)
-            self.assertEqual(first=rmark.entity.id, second=user.id)
-            old_rmark = rmark
+            self.assertEqual(first=read_mark.chat, second=chat)
+            self.assertEqual(first=read_mark.entity.id, second=user.id)
+            old_read_mark = read_mark
             sleep(1)
-            rmark = ReadMark.objects.mark(chat, user)
-            self.assertEqual(first=rmark.id, second=old_rmark.id)
-            self.assertGreater(a=rmark.date_updated, b=old_rmark.date_updated)
+            read_mark = ReadMark.objects.mark(chat, user)
+            self.assertEqual(first=read_mark.id, second=old_read_mark.id)
+            self.assertGreater(a=read_mark.date_updated, b=old_read_mark.date_updated)
 
 
