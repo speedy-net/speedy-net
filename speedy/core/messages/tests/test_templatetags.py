@@ -18,8 +18,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1 = ActiveUserFactory()
             user_2 = ActiveUserFactory()
             chat = ChatFactory(ent1=user_1, ent2=user_2)
-            self.assertEqual(first=core_messages_tags.get_other_participant(chat, user_1).id, second=user_2.id)
-            self.assertEqual(first=core_messages_tags.get_other_participant(chat, user_2).id, second=user_1.id)
+            self.assertEqual(first=core_messages_tags.get_other_participant(chat=chat, user=user_1).id, second=user_2.id)
+            self.assertEqual(first=core_messages_tags.get_other_participant(chat=chat, user=user_2).id, second=user_1.id)
 
 
     @only_on_sites_with_login
@@ -50,7 +50,7 @@ if (django_settings.LOGIN_ENABLED):
             _mark(4)
             _message(4)
 
-            output = core_messages_tags.annotate_chats_with_read_marks(chats, user_1)
+            output = core_messages_tags.annotate_chats_with_read_marks(chat_list=chats, entity=user_1)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=chats[0].is_unread)
             self.assertFalse(expr=chats[1].is_unread)
