@@ -32,3 +32,10 @@
     {% endif %}
 {% endblock %}
 
+{% block extra_python_django_links %}
+    {% if LANGUAGE_CODE == "en" %}
+        <a href="https://www.digitalocean.com/" title="DigitalOcean – The developer cloud">DigitalOcean</a>
+        <a href="https://aws.amazon.com/" title="Amazon Web Services (AWS) – Cloud Computing Services">AWS</a>
+    {% endif %}
+{% endblock %}
+
