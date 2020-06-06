@@ -72,13 +72,13 @@ if (django_settings.LOGIN_ENABLED):
             ]
             self.assertEqual(first=ReadMark.objects.count(), second=2)
 
-            output = core_messages_tags.annotate_messages_with_read_marks(messages, user_1)
+            output = core_messages_tags.annotate_messages_with_read_marks(message_list=messages, entity=user_1)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=messages[0].is_unread)
             self.assertFalse(expr=messages[1].is_unread)
             self.assertTrue(expr=messages[2].is_unread)
 
-            output = core_messages_tags.annotate_messages_with_read_marks(messages, user_2)
+            output = core_messages_tags.annotate_messages_with_read_marks(message_list=messages, entity=user_2)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=messages[0].is_unread)
             self.assertFalse(expr=messages[1].is_unread)
