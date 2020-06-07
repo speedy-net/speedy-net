@@ -12,7 +12,8 @@ from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     template_name = 'admin/matches/match_list.html'
-    page_size = 96
+    # page_size = 96
+    page_size = 250
     paginate_by = page_size
 
     @staticmethod

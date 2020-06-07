@@ -21,7 +21,8 @@ else:
 
 class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     template_name = 'admin/users_list.html'
-    page_size = 96
+    # page_size = 96
+    page_size = 250
     paginate_by = page_size
     show_details = False
 
