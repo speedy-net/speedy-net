@@ -20,6 +20,7 @@ class UserLike(TimeStampedModel):
         verbose_name = _('user like')
         verbose_name_plural = _('user likes')
         unique_together = ('from_user', 'to_user')
+        ordering = ('-date_created',)
 
     def __str__(self):
         return "User {} likes {}".format(self.from_user, self.to_user)

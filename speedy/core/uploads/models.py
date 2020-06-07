@@ -23,6 +23,7 @@ class File(TimeStampedModel):
     class Meta:
         verbose_name = _('file')
         verbose_name_plural = _('uploaded files')
+        ordering = ('-date_created',)
 
     def __init__(self, *args, **kwargs):
         if (not (kwargs.get('id'))):
@@ -45,5 +46,6 @@ class Image(File):
     class Meta:
         verbose_name = _('images')
         verbose_name_plural = _('uploaded images')
+        ordering = ('-date_created',)
 
 
