@@ -1,3 +1,4 @@
+import logging
 from collections import namedtuple
 
 from django.conf import settings as django_settings
@@ -7,6 +8,8 @@ from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
+
+logger = logging.getLogger(__name__)
 
 RenderedMail = namedtuple('RenderedMail', 'subject body_plain body_html')
 
@@ -59,20 +62,28 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
 
 
 def send_mail(to, template_name_prefix, context=None, **kwargs):
-    site = Site.objects.get_current()
-    context = context or {}
-    context.update({
-        'site_name': _(site.name),
-    })
-    rendered = render_mail(template_name_prefix, context)
-    msg = EmailMultiAlternatives(
-        subject=rendered.subject,
-        body=rendered.body_plain,
-        to=to,
-        **kwargs
-    )
-    msg.attach_alternative(rendered.body_html, 'text/html')
-    return msg.send()
+    # Sending mail may fail. If it fails, log the error and continue.
+    try:
+        site = Site.objects.get_current()
+        context = context or {}
+        context.update({
+            'site_name': _(site.name),
+        })
+        rendered = render_mail(template_name_prefix, context)
+        msg = EmailMultiAlternatives(
+            subject=rendered.subject,
+            body=rendered.body_plain,
+            to=to,
+            **kwargs
+        )
+        msg.attach_alternative(rendered.body_html, 'text/html')
+        return msg.send()
+    except Exception as e:
+        logger.error('send_mail::to={to}, template_name_prefix={template_name_prefix}, Exception={e}'.format(
+            to=to,
+            template_name_prefix=template_name_prefix,
+            e=str(e),
+        ))
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
