@@ -104,13 +104,12 @@ class ReadMark(TimeStampedModel):
 
 @receiver(signal=models.signals.post_save, sender=Message)
 def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
-    if (not (created)):
-        return
-    other_participants = instance.chat.get_other_participants(entity=instance.sender)
-    for entity in other_participants:
-        if (entity.user.notify_on_message == User.NOTIFICATIONS_ON):
-            entity.user.mail_user(template_name_prefix='email/messages/new_message', context={
-                'message': instance,
-            })
+    if (created):
+        other_participants = instance.chat.get_other_participants(entity=instance.sender)
+        for entity in other_participants:
+            if (entity.user.notify_on_message == User.NOTIFICATIONS_ON):
+                entity.user.mail_user(template_name_prefix='email/messages/new_message', context={
+                    'message': instance,
+                })
 
 
