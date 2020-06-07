@@ -164,6 +164,7 @@ if (django_settings.LOGIN_ENABLED):
 
         @only_on_sites_with_login
         def test_user_can_submit_form(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=Feedback.objects.count(), second=0)
             data = {
@@ -179,6 +180,7 @@ if (django_settings.LOGIN_ENABLED):
 
         @only_on_sites_with_login
         def test_user_cannot_submit_form_without_all_the_required_fields(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=Feedback.objects.count(), second=0)
             data = {}
