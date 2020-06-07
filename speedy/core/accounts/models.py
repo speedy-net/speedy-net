@@ -157,6 +157,9 @@ class ReservedUsername(Entity):
     description = models.TextField(verbose_name=_('description'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True)
     objects = BaseManager()
 
+    class Meta:
+        ordering = ('username',)
+
     def __init__(self, *args, **kwargs):
         if (('username' in kwargs) and (not ('slug' in kwargs))):
             kwargs['slug'] = kwargs['username']
