@@ -438,6 +438,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_he, second=2)
 
         def test_user_gets_email_after_registration(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             r = self.client.post(path='/', data=self.data)
             self.assertEqual(first=len(mail.outbox), second=1)
             self.assert_models_count(
@@ -1374,6 +1375,7 @@ if (django_settings.LOGIN_ENABLED):
             )
 
         def test_user_can_add_email_address(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
@@ -1487,6 +1489,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=r.status_code, second=403)
 
         def test_user_can_resend_confirmation(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
             r = self.client.post(path=self.unconfirmed_email_address_url)
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
@@ -1847,6 +1850,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=r.status_code, second=200)
 
         def test_visitor_can_reset_password(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
             data = {
                 'email': self.email.email,
             }

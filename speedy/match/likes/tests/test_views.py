@@ -3,6 +3,7 @@ from time import sleep
 
 from django.conf import settings as django_settings
 from django.test import override_settings
+from django.core import mail
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
@@ -23,7 +24,10 @@ if (django_settings.LOGIN_ENABLED):
             self.user_2 = ActiveUserFactory()
             self.page_url = '/{}/likes/like/'.format(self.user_2.slug)
 
-        def test_user_can_like(self):
+        def test_user_can_like_and_other_user_gets_notified_on_like(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.assertEqual(first=self.user_1.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=UserLike.objects.count(), second=0)
             r = self.client.post(path=self.page_url)
@@ -32,6 +36,24 @@ if (django_settings.LOGIN_ENABLED):
             like = UserLike.objects.first()
             self.assertEqual(first=like.from_user.id, second=self.user_1.id)
             self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+            self.assertEqual(first=len(mail.outbox), second=1)
+            self.assertEqual(first=mail.outbox[0].subject, second='Someone likes you on @@ {}'.format(self.site_name))
+
+        def test_user_can_like_and_other_user_doesnt_get_notified_on_like(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.user_2.speedy_match_profile.notify_on_like = User.NOTIFICATIONS_OFF
+            self.user_2.save_user_and_profile()
+            self.assertEqual(first=self.user_1.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_OFF)
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=UserLike.objects.count(), second=1)
+            like = UserLike.objects.first()
+            self.assertEqual(first=like.from_user.id, second=self.user_1.id)
+            self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+            self.assertEqual(first=len(mail.outbox), second=0)
 
         def test_user_cannot_like_self(self):
             self.client.login(username=self.user_2.slug, password=tests_settings.USER_PASSWORD)
