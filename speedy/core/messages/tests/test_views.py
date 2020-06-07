@@ -2,12 +2,14 @@ from time import sleep
 
 from django.conf import settings as django_settings
 from django.test import override_settings
+from django.core import mail
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.messages.test.mixins import SpeedyCoreMessagesLanguageMixin
+    from speedy.core.accounts.models import User
     from speedy.core.blocks.models import Block
     from speedy.core.messages.models import Message, ReadMark, Chat
 
@@ -155,7 +157,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.page_url)
             self.assertRedirects(response=r, expected_url='/messages/{}/'.format(self.user_2.slug), status_code=302, target_status_code=200)
 
-        def test_user_can_submit_the_form_1(self):
+        def test_user_can_submit_the_form_and_other_user_gets_notified_on_message_1(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_ON)
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=Message.objects.count(), second=0)
             r = self.client.post(path=self.page_url, data=self.data)
@@ -169,8 +174,13 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
             self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
             self.assertTrue(expr=chat.is_private)
+            self.assertEqual(first=len(mail.outbox), second=1)
+            self.assertEqual(first=mail.outbox[0].subject, second='You have a new message on @@ {}'.format(self.site_name))
 
-        def test_user_can_submit_the_form_2(self):
+        def test_user_can_submit_the_form_and_other_user_gets_notified_on_message_2(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_ON)
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=Message.objects.count(), second=0)
             data = self.data.copy()
@@ -186,6 +196,29 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
             self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
             self.assertTrue(expr=chat.is_private)
+            self.assertEqual(first=len(mail.outbox), second=1)
+            self.assertEqual(first=mail.outbox[0].subject, second='You have a new message on @@ {}'.format(self.site_name))
+
+        def test_user_can_submit_the_form_and_other_user_doesnt_get_notified_on_message(self):
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.user_2.notify_on_message = User.NOTIFICATIONS_OFF
+            self.user_2.save_user_and_profile()
+            self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_OFF)
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=Message.objects.count(), second=0)
+            r = self.client.post(path=self.page_url, data=self.data)
+            self.assertEqual(first=Message.objects.count(), second=1)
+            message = Message.objects.latest()
+            chat = message.chat
+            self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user_1)), status_code=302, target_status_code=200)
+            self.assertEqual(first=message.text, second='Hi Hi Hi')
+            self.assertEqual(first=message.sender.id, second=self.user_1.id)
+            self.assertEqual(first=chat.last_message, second=message)
+            self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
+            self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
+            self.assertTrue(expr=chat.is_private)
+            self.assertEqual(first=len(mail.outbox), second=0)
 
         def test_user_cannot_submit_the_form_with_text_too_long_1(self):
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
