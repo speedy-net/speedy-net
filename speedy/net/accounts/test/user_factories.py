@@ -6,6 +6,7 @@ from django.conf import settings as django_settings
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
+    from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
 
     class InactiveUserFactory(DefaultUserFactory):
@@ -17,6 +18,8 @@ if (django_settings.LOGIN_ENABLED):
     class ActiveUserFactory(DefaultUserFactory):
         @factory.post_generation
         def activate_profile(self, created, extracted, **kwargs):
+            email = UserEmailAddressFactory(user=self, is_confirmed=True, is_primary=True)
+            email.save()
             self.speedy_net_profile.activate()
 
 
