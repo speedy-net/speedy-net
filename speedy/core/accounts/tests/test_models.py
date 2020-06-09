@@ -809,6 +809,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -826,6 +827,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -837,12 +839,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -851,12 +855,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -874,6 +880,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -885,12 +892,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -899,12 +908,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -923,6 +934,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -932,12 +944,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -946,12 +960,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -970,6 +986,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -979,12 +996,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -993,12 +1012,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1017,6 +1038,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1026,12 +1048,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1040,12 +1064,14 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1065,6 +1091,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1072,6 +1099,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1090,6 +1118,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1097,6 +1126,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1112,13 +1142,12 @@ if (django_settings.LOGIN_ENABLED):
             user = DefaultUserFactory()
             user_email_address = UserEmailAddress(user=user, email='email75@example.com')
             for i in range(5):
-                # print(i) ######### ~~~~ TODO
-                # print(user_email_address.pk) ######### ~~~~ TODO
                 user_email_address.save()
             self.assertEqual(first=user_email_address.email, second='email75@example.com')
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1126,6 +1155,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1141,13 +1171,12 @@ if (django_settings.LOGIN_ENABLED):
             user = DefaultUserFactory()
             user_email_address = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
             for i in range(5):
-                # print(i) ######### ~~~~ TODO
-                # print(user_email_address.pk) ######### ~~~~ TODO
                 user_email_address.save()
             self.assertEqual(first=user_email_address.email, second='email75@example.com')
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -1155,6 +1184,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )

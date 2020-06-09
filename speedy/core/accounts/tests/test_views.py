@@ -45,8 +45,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
 
@@ -64,8 +64,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
 
@@ -89,8 +89,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=3,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=1,
             )
 
@@ -192,6 +192,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -236,6 +237,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -252,6 +254,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -259,6 +262,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -276,6 +280,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -291,6 +296,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -298,6 +304,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -316,6 +323,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -331,6 +339,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -338,6 +347,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -355,6 +365,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -370,6 +381,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -377,6 +389,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -470,14 +483,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=existing_user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             data['slug'] = 'us-er-na-me'
@@ -487,21 +501,23 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
             self.assert_user_email_addresses_count(
                 user=existing_user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
             existing_user = User.objects.get(pk=existing_user.pk)
             self.assert_user_email_addresses_count(
                 user=existing_user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
 
@@ -605,8 +621,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=3,
                 user_count=3,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=4,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=2,
             )
 
@@ -754,8 +770,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
 
@@ -783,8 +799,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
             self.assertEqual(first=self.user.username, second=self.user.slug)
@@ -984,8 +1000,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1032,8 +1048,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1062,8 +1078,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1216,8 +1232,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1253,8 +1269,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=3,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=1,
             )
 
@@ -1309,13 +1325,14 @@ if (django_settings.LOGIN_ENABLED):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
-            self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+            self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.confirmed_email_address.make_primary()
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1333,8 +1350,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
             data = {
@@ -1346,8 +1363,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 
@@ -1356,8 +1373,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=3,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=1,
             )
             data = {
@@ -1369,8 +1386,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=3,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=1,
             )
 
@@ -1379,8 +1396,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
             data = {
@@ -1404,8 +1421,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=3,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=1,
             )
 
@@ -1413,16 +1430,16 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
             self.confirmed_email_address.delete()
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=0,
             )
             data = {
@@ -1439,8 +1456,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 0, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=1,
                 unconfirmed_email_address_count=1,
             )
 
@@ -1474,8 +1491,8 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=4,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=2,
             )
 
@@ -1525,9 +1542,11 @@ if (django_settings.LOGIN_ENABLED):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
+            self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
             self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
             self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
-            self.primary_address = UserEmailAddressFactory(user=self.user, is_primary=True)
+            self.primary_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.primary_address.make_primary()
             self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
             self.other_user_address = UserEmailAddressFactory(is_primary=False)
             self.other_user_address_url = '/edit-profile/emails/{}/delete/'.format(self.other_user_address.id)
@@ -1535,14 +1554,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1553,14 +1573,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1570,14 +1591,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1587,25 +1609,21 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
         def test_user_cannot_delete_only_confirmed_email_address(self):
-            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                pass
-            elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                for user_email_address in self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk):
-                    user_email_address.delete()
-            else:
-                raise NotImplementedError()
+            for user_email_address in self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk):
+                user_email_address.delete()
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
@@ -1616,6 +1634,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=self.user,
                 user_email_addresses_count=2,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1631,6 +1650,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=self.user,
                 user_email_addresses_count=2,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -1645,14 +1665,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count=4,
-                confirmed_email_address_count=2,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 6, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count=3,
-                user_confirmed_email_addresses_count=2,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 5, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
                 user_unconfirmed_email_addresses_count=1,
             )
             r = self.client.post(path=self.confirmed_email_address_url)
@@ -1665,14 +1686,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count=3,
-                confirmed_email_address_count=1,
+                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 5, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
+                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count=2,
-                user_confirmed_email_addresses_count=1,
+                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1714,7 +1736,8 @@ if (django_settings.LOGIN_ENABLED):
             self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
             self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
             self.confirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.confirmed_email_address.id)
-            self.primary_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+            self.primary_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.primary_address.make_primary()
             self.primary_address_url = '/edit-profile/emails/{}/delete/'.format(self.primary_address.id)
             self.other_user_address = UserEmailAddressFactory()
             self.other_user_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.other_user_address.id)
@@ -1722,14 +1745,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1740,14 +1764,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1757,14 +1782,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
@@ -1774,22 +1800,24 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
 
         def test_user_can_make_confirmed_email_address_primary(self):
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
             self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
@@ -1803,14 +1831,15 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_models_count(
                 entity_count=2,
                 user_count=2,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 5}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_address_count=5,
+                confirmed_email_address_count=3,
                 unconfirmed_email_address_count=2,
             )
             self.assert_user_email_addresses_count(
                 user=self.user,
-                user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id],
-                user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id],
+                user_email_addresses_count=4,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=3,
                 user_unconfirmed_email_addresses_count=1,
             )
             self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
@@ -1836,12 +1865,13 @@ if (django_settings.LOGIN_ENABLED):
         def set_up(self):
             super().set_up()
             self.user = ActiveUserFactory()
-            self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+            self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.email.make_primary()
             self.assert_models_count(
                 entity_count=1,
                 user_count=1,
-                user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
-                confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id],
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 

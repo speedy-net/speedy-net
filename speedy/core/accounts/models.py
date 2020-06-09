@@ -858,6 +858,8 @@ class SiteProfileBase(TimeStampedModel):
 @receiver(signal=models.signals.post_save, sender=UserEmailAddress)
 def update_user_has_confirmed_email_field_after_saving_email_address(sender, instance: UserEmailAddress, **kwargs):
     instance.user._update_has_confirmed_email_field()
+    if ((instance.user.email_addresses.filter(is_primary=True).count() == 0) and (instance.user.email_addresses.count() == 1)):
+        instance.make_primary()
 
 
 @receiver(signal=models.signals.post_delete, sender=UserEmailAddress)

@@ -122,6 +122,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -216,6 +217,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -233,6 +235,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -240,6 +243,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=1,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -258,6 +262,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=1,
             )
@@ -276,6 +281,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -283,6 +289,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_user_email_addresses_count(
                 user=existing_user,
                 user_email_addresses_count=0,
+                user_primary_email_addresses_count=0,
                 user_confirmed_email_addresses_count=0,
                 user_unconfirmed_email_addresses_count=0,
             )
@@ -450,7 +457,8 @@ if (django_settings.LOGIN_ENABLED):
             super().set_up()
             self.user = ActiveUserFactory()
             self.other_user = ActiveUserFactory()
-            self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+            self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.primary_email.make_primary()
             self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
             self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
             self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)
@@ -471,7 +479,8 @@ if (django_settings.LOGIN_ENABLED):
             super().set_up()
             self.user = ActiveUserFactory()
             self.other_user = ActiveUserFactory()
-            self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=True)
+            self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+            self.primary_email.make_primary()
             self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
             self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
             self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)

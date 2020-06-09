@@ -18,8 +18,9 @@ if (django_settings.LOGIN_ENABLED):
     class ActiveUserFactory(DefaultUserFactory):
         @factory.post_generation
         def activate_profile(self, created, extracted, **kwargs):
-            email = UserEmailAddressFactory(user=self, is_confirmed=True, is_primary=True)
+            email = UserEmailAddressFactory(user=self, is_confirmed=True)
             email.save()
+            email.make_primary()
             self.speedy_net_profile.activate()
 
 
