@@ -205,7 +205,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
-    class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin):
+    class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
         def set_up_class(self):
             self.expected_feedback_type = Feedback.TYPE_FEEDBACK
             self.expected_report_entity_id = None
@@ -216,7 +216,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
-    class FeedbackViewTypeFeedbackEnglishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeFeedbackEnglishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='en')
@@ -224,13 +224,13 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
     @override_settings(LANGUAGE_CODE='he')
-    class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='he')
 
 
-    class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin):
+    class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
         def set_up_class(self):
             self.other_user = ActiveUserFactory()
             self.expected_feedback_type = Feedback.TYPE_REPORT_ENTITY
@@ -246,7 +246,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class FeedbackViewTypeReportEntityEnglishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeReportEntityEnglishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='en')
@@ -254,13 +254,13 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='he')
 
 
-    class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin):
+    class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
         def set_up_class(self):
             self.file = FileFactory()
             self.expected_feedback_type = Feedback.TYPE_REPORT_FILE
@@ -276,7 +276,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class FeedbackViewTypeReportFileEnglishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeReportFileEnglishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='en')
@@ -284,7 +284,7 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class FeedbackViewTypeReportFileHebrewTestCase(FeedbackViewTypeReportFileTestCaseMixin, SpeedyCoreFeedbackLanguageMixin, SiteTestCase):
+    class FeedbackViewTypeReportFileHebrewTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
         def validate_all_values(self):
             super().validate_all_values()
             self.assertEqual(first=self.language_code, second='he')

@@ -31,16 +31,29 @@ class SpeedyMatchLikesLanguageMixin(object):
                 User.GENDER_OTHER_STRING: "אנשים שעשו לך לייק",
             },
         }
+        _someone_likes_you_on_speedy_match_subject_dict_by_gender = {
+            'en': {
+                **{gender: "Someone likes you on Speedy Match" for gender in User.ALL_GENDERS},
+            },
+            'he': {
+                User.GENDER_FEMALE_STRING: "מישהי עשתה לך לייק בספידי מץ'",
+                User.GENDER_MALE_STRING: "מישהו עשה לך לייק בספידי מץ'",
+                User.GENDER_OTHER_STRING: "מישהו עשה לך לייק בספידי מץ'",
+            },
+        }
 
         self._list_mutual_title = _list_mutual_title_dict[self.language_code]
 
         self._list_to_title_dict_by_gender = _list_to_title_dict_by_gender[self.language_code]
         self._list_from_title_dict_by_gender = _list_from_title_dict_by_gender[self.language_code]
+        self._someone_likes_you_on_speedy_match_subject_dict_by_gender = _someone_likes_you_on_speedy_match_subject_dict_by_gender[self.language_code]
 
         self.assertSetEqual(set1=set(self._list_to_title_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
         self.assertSetEqual(set1=set(self._list_from_title_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+        self.assertSetEqual(set1=set(self._someone_likes_you_on_speedy_match_subject_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
         self.assertEqual(first=len(set(self._list_to_title_dict_by_gender.keys())), second=3)
         self.assertEqual(first=len(set(self._list_from_title_dict_by_gender.keys())), second=3)
+        self.assertEqual(first=len(set(self._someone_likes_you_on_speedy_match_subject_dict_by_gender.keys())), second=3)
 
 

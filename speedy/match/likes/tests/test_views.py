@@ -3,27 +3,54 @@ from time import sleep
 
 from django.conf import settings as django_settings
 from django.test import override_settings
+from django.core import mail
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_speedy_match
+    from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
+    from speedy.match.likes.test.mixins import SpeedyMatchLikesLanguageMixin
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
     from speedy.core.blocks.models import Block
     from speedy.core.accounts.models import User
     from speedy.match.likes.models import UserLike
-    from speedy.match.likes.test.mixins import SpeedyMatchLikesLanguageMixin
 
 
-    @only_on_speedy_match
-    class LikeViewTestCase(SiteTestCase):
+    class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin):
         def set_up(self):
             super().set_up()
             self.user_1 = ActiveUserFactory()
             self.user_2 = ActiveUserFactory()
             self.page_url = '/{}/likes/like/'.format(self.user_2.slug)
 
-        def test_user_can_like(self):
+        def test_user_can_like_and_other_user_gets_notified_on_like(self):
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
+                unconfirmed_email_address_count=0,
+            )
+            self.user_1 = User.objects.get(pk=self.user_1.pk)
+            self.assert_user_email_addresses_count(
+                user=self.user_1,
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=0,
+            )
+            self.user_2 = User.objects.get(pk=self.user_2.pk)
+            self.assert_user_email_addresses_count(
+                user=self.user_2,
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=0,
+            )
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.assertEqual(first=self.user_1.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             self.assertEqual(first=UserLike.objects.count(), second=0)
             r = self.client.post(path=self.page_url)
@@ -32,6 +59,47 @@ if (django_settings.LOGIN_ENABLED):
             like = UserLike.objects.first()
             self.assertEqual(first=like.from_user.id, second=self.user_1.id)
             self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+            self.assertEqual(first=len(mail.outbox), second=1)
+            self.assertEqual(first=mail.outbox[0].subject, second=self._someone_likes_you_on_speedy_match_subject_dict_by_gender[self.user_1.get_gender()])
+
+        def test_user_can_like_and_other_user_doesnt_get_notified_on_like(self):
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
+                unconfirmed_email_address_count=0,
+            )
+            self.user_1 = User.objects.get(pk=self.user_1.pk)
+            self.assert_user_email_addresses_count(
+                user=self.user_1,
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=0,
+            )
+            self.user_2 = User.objects.get(pk=self.user_2.pk)
+            self.assert_user_email_addresses_count(
+                user=self.user_2,
+                user_email_addresses_count=1,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=0,
+            )
+            self.assertEqual(first=len(mail.outbox), second=0)
+            self.user_2.speedy_match_profile.notify_on_like = User.NOTIFICATIONS_OFF
+            self.user_2.save_user_and_profile()
+            self.assertEqual(first=self.user_1.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
+            self.assertEqual(first=self.user_2.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_OFF)
+            self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=UserLike.objects.count(), second=0)
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
+            self.assertEqual(first=UserLike.objects.count(), second=1)
+            like = UserLike.objects.first()
+            self.assertEqual(first=like.from_user.id, second=self.user_1.id)
+            self.assertEqual(first=like.to_user.id, second=self.user_2.id)
+            self.assertEqual(first=len(mail.outbox), second=0)
 
         def test_user_cannot_like_self(self):
             self.client.login(username=self.user_2.slug, password=tests_settings.USER_PASSWORD)
@@ -68,6 +136,21 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.post(path=self.page_url)
             self.assertEqual(first=r.status_code, second=403)
             self.assertEqual(first=UserLike.objects.count(), second=1)
+
+
+    @only_on_speedy_match
+    class LikeViewEnglishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_speedy_match
+    @override_settings(LANGUAGE_CODE='he')
+    class LikeViewHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
     @only_on_speedy_match
