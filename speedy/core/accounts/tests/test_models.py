@@ -801,7 +801,6 @@ if (django_settings.LOGIN_ENABLED):
             email_list = ['email', 'email@example', 'email@example.', 'email@.example', 'email@example.com.', 'email@.example.com', 'email@example..com']
             user = DefaultUserFactory()
             for email in email_list:
-                # print(email) ######### ~~~~ TODO
                 user_email_address = UserEmailAddress(user=user, email=email)
                 with self.assertRaises(ValidationError) as cm:
                     user_email_address.save()
@@ -1193,6 +1192,92 @@ if (django_settings.LOGIN_ENABLED):
                 user_count=1,
                 user_email_address_count=1,
                 confirmed_email_address_count=1,
+                unconfirmed_email_address_count=0,
+            )
+
+        def test_confirming_the_first_email_address_makes_it_primary(self):
+            user = DefaultUserFactory()
+            user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=False)
+            user_email_address_1.save()
+            user_email_address_2 = UserEmailAddress(user=user, email='email76@example.com', is_confirmed=False)
+            user_email_address_2.save()
+            user_email_address_1 = UserEmailAddress.objects.get(pk=user_email_address_1.pk)
+            user_email_address_2 = UserEmailAddress.objects.get(pk=user_email_address_2.pk)
+            self.assertEqual(first=user_email_address_1.is_confirmed, second=False)
+            self.assertEqual(first=user_email_address_1.is_primary, second=True)
+            self.assertEqual(first=user_email_address_2.is_confirmed, second=False)
+            self.assertEqual(first=user_email_address_2.is_primary, second=False)
+            user = User.objects.get(pk=user.pk)
+            self.assert_user_email_addresses_count(
+                user=user,
+                user_email_addresses_count=2,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=0,
+                user_unconfirmed_email_addresses_count=2,
+            )
+            user_email_address_2.verify()
+            user_email_address_1 = UserEmailAddress.objects.get(pk=user_email_address_1.pk)
+            user_email_address_2 = UserEmailAddress.objects.get(pk=user_email_address_2.pk)
+            self.assertEqual(first=user_email_address_1.is_confirmed, second=False)
+            self.assertEqual(first=user_email_address_1.is_primary, second=False)
+            self.assertEqual(first=user_email_address_2.is_confirmed, second=True)
+            self.assertEqual(first=user_email_address_2.is_primary, second=True)
+            user = User.objects.get(pk=user.pk)
+            self.assert_user_email_addresses_count(
+                user=user,
+                user_email_addresses_count=2,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=1,
+            )
+            self.assert_models_count(
+                entity_count=1,
+                user_count=1,
+                user_email_address_count=2,
+                confirmed_email_address_count=1,
+                unconfirmed_email_address_count=1,
+            )
+
+        def test_confirming_the_second_email_address_doesnt_make_it_primary(self):
+            user = DefaultUserFactory()
+            user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
+            user_email_address_1.save()
+            user_email_address_2 = UserEmailAddress(user=user, email='email76@example.com', is_confirmed=False)
+            user_email_address_2.save()
+            user_email_address_1 = UserEmailAddress.objects.get(pk=user_email_address_1.pk)
+            user_email_address_2 = UserEmailAddress.objects.get(pk=user_email_address_2.pk)
+            self.assertEqual(first=user_email_address_1.is_confirmed, second=True)
+            self.assertEqual(first=user_email_address_1.is_primary, second=True)
+            self.assertEqual(first=user_email_address_2.is_confirmed, second=False)
+            self.assertEqual(first=user_email_address_2.is_primary, second=False)
+            user = User.objects.get(pk=user.pk)
+            self.assert_user_email_addresses_count(
+                user=user,
+                user_email_addresses_count=2,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=1,
+                user_unconfirmed_email_addresses_count=1,
+            )
+            user_email_address_2.verify()
+            user_email_address_1 = UserEmailAddress.objects.get(pk=user_email_address_1.pk)
+            user_email_address_2 = UserEmailAddress.objects.get(pk=user_email_address_2.pk)
+            self.assertEqual(first=user_email_address_1.is_confirmed, second=True)
+            self.assertEqual(first=user_email_address_1.is_primary, second=True)
+            self.assertEqual(first=user_email_address_2.is_confirmed, second=True)
+            self.assertEqual(first=user_email_address_2.is_primary, second=False)
+            user = User.objects.get(pk=user.pk)
+            self.assert_user_email_addresses_count(
+                user=user,
+                user_email_addresses_count=2,
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=2,
+                user_unconfirmed_email_addresses_count=0,
+            )
+            self.assert_models_count(
+                entity_count=1,
+                user_count=1,
+                user_email_address_count=2,
+                confirmed_email_address_count=2,
                 unconfirmed_email_address_count=0,
             )
 
