@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 16:32+0300\n"
+"POT-Creation-Date: 2020-06-13 05:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -690,7 +690,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:44
+#: .\admin\views.py:45
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -702,7 +702,7 @@ msgid ""
 "site in the last four months."
 msgstr ""
 
-#: .\admin\views.py:82
+#: .\admin\views.py:83
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -717,14 +717,14 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:100
+#: .\admin\views.py:101
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
 
-#: .\likes\managers.py:14 .\likes\models.py:30
+#: .\likes\managers.py:14 .\likes\models.py:31
 msgid "Users cannot like themselves."
 msgstr ""
 

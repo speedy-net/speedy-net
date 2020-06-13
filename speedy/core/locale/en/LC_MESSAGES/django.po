@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 16:32+0300\n"
+"POT-Creation-Date: 2020-06-13 05:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:748
+#: .\__translations\__translations.py:9 .\accounts\models.py:751
 msgid "email address"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:446
+#: .\__translations\__translations.py:23 .\accounts\models.py:449
 msgid "Friends"
 msgstr ""
 
@@ -1857,180 +1857,180 @@ msgstr ""
 msgid "description"
 msgstr ""
 
-#: .\accounts\models.py:200
+#: .\accounts\models.py:203
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:201
+#: .\accounts\models.py:204
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:202
+#: .\accounts\models.py:205
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:214 .\accounts\models.py:229 .\accounts\models.py:250
+#: .\accounts\models.py:217 .\accounts\models.py:232 .\accounts\models.py:253
 #: .\messages\models.py:47 .\messages\models.py:89
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:215
+#: .\accounts\models.py:218
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:216
+#: .\accounts\models.py:219
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:217
+#: .\accounts\models.py:220
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:230
+#: .\accounts\models.py:233
 msgid "Not smoking"
 msgstr ""
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:234
 msgid "Smoking occasionally"
 msgstr ""
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:235
 msgid "Smoking"
 msgstr ""
 
-#: .\accounts\models.py:251
+#: .\accounts\models.py:254
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:252
+#: .\accounts\models.py:255
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:253
+#: .\accounts\models.py:256
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:257
 msgid "In a relationship"
 msgstr ""
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:258
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:259
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:260
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:261
 msgid "Engaged"
 msgstr ""
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:262
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:268
+#: .\accounts\models.py:271
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:272
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:314
+#: .\accounts\models.py:317
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:317
+#: .\accounts\models.py:320
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:322
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:323
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:324
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:325
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:326
 msgid "relationship status"
 msgstr ""
 
-#: .\accounts\models.py:325
+#: .\accounts\models.py:328
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:330
+#: .\accounts\models.py:333
 msgid "Who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:331
+#: .\accounts\models.py:334
 msgid "Who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:332
+#: .\accounts\models.py:335
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:453 .\accounts\models.py:732 .\blocks\models.py:15
+#: .\accounts\models.py:456 .\accounts\models.py:735 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:454
+#: .\accounts\models.py:457
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:474
+#: .\accounts\models.py:477
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:733
+#: .\accounts\models.py:736
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:734
+#: .\accounts\models.py:737
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:735
+#: .\accounts\models.py:738
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:736
+#: .\accounts\models.py:739
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:737
+#: .\accounts\models.py:740
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:738
+#: .\accounts\models.py:741
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:749
+#: .\accounts\models.py:752
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:815
+#: .\accounts\models.py:818
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:816
+#: .\accounts\models.py:819
 msgid "last visit"
 msgstr ""
 
@@ -2143,24 +2143,24 @@ msgid ""
 "are accepted."
 msgstr ""
 
-#: .\accounts\views.py:229
+#: .\accounts\views.py:270
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:253 .\accounts\views.py:269
+#: .\accounts\views.py:294 .\accounts\views.py:310
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:284
+#: .\accounts\views.py:325
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:300
+#: .\accounts\views.py:341
 msgid "You have made this email address primary."
 msgstr ""
 
-#: .\admin\views.py:41
+#: .\admin\views.py:42
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2171,7 +2171,7 @@ msgid ""
 "in the last four months."
 msgstr ""
 
-#: .\admin\views.py:64
+#: .\admin\views.py:65
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2185,7 +2185,7 @@ msgid ""
 "before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:79
+#: .\admin\views.py:80
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2407,7 +2407,7 @@ msgstr ""
 msgid "Internal server error"
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:184
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:188
 #: .\templates\base_without_login.html:9
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2427,7 +2427,7 @@ msgid "Profile Info"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:23
-#: .\templates\base_with_login.html:185
+#: .\templates\base_with_login.html:189
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2645,26 +2645,26 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:185
+#: .\templates\base_with_login.html:189
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base_with_login.html:186
+#: .\templates\base_with_login.html:190
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base_with_login.html:186
+#: .\templates\base_with_login.html:190
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base_with_login.html:187 .\templates\base_without_login.html:10
+#: .\templates\base_with_login.html:191 .\templates\base_without_login.html:10
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6
@@ -2830,7 +2830,9 @@ msgid ""
 "share with your email address and your date of birth. If you signed up for "
 "Speech Match, your Speech Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
-"you match them according to their settings."
+"you match them according to their settings. Your profile on Speech Match "
+"will not appear on Google and is not visible to people who is not registered "
+"to the site."
 msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:21
@@ -3031,10 +3033,10 @@ msgstr ""
 msgid "uploaded files"
 msgstr ""
 
-#: .\uploads\models.py:46
+#: .\uploads\models.py:47
 msgid "images"
 msgstr ""
 
-#: .\uploads\models.py:47
+#: .\uploads\models.py:48
 msgid "uploaded images"
 msgstr ""
