@@ -15,6 +15,11 @@ if (django_settings.LOGIN_ENABLED):
         def get_page_url(self):
             raise NotImplementedError()
 
+        def assert_permission_denied(self, r):
+            self.assertEqual(first=r.status_code, second=403)
+            self.assertIn(member="<h1>{}</h1>".format(escape(self._permission_denied_h1)), container=r.content.decode())
+            self.assertIn(member=escape(self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+
         def set_up(self):
             super().set_up()
             self.user_1 = ActiveUserFactory()
@@ -25,23 +30,17 @@ if (django_settings.LOGIN_ENABLED):
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
-            self.assertEqual(first=r.status_code, second=403)
-            self.assertIn(member="<h1>{}</h1>".format(escape(self._permission_denied_h1)), container=r.content.decode())
-            self.assertIn(member=escape(self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+            self.assert_permission_denied(r=r)
 
         def test_user_1_has_no_access(self):
             self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertEqual(first=r.status_code, second=403)
-            self.assertIn(member="<h1>{}</h1>".format(escape(self._permission_denied_h1)), container=r.content.decode())
-            self.assertIn(member=escape(self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+            self.assert_permission_denied(r=r)
 
         def test_user_2_has_no_access(self):
             self.client.login(username=self.user_2.slug, password=tests_settings.USER_PASSWORD)
             r = self.client.get(path=self.page_url)
-            self.assertEqual(first=r.status_code, second=403)
-            self.assertIn(member="<h1>{}</h1>".format(escape(self._permission_denied_h1)), container=r.content.decode())
-            self.assertIn(member=escape(self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+            self.assert_permission_denied(r=r)
 
         def test_admin_has_access(self):
             self.client.login(username=self.user_3.slug, password=tests_settings.USER_PASSWORD)
@@ -50,6 +49,36 @@ if (django_settings.LOGIN_ENABLED):
             self.assertNotIn(member="<h1>{}</h1>".format(escape(self._permission_denied_h1)), container=r.content.decode())
             self.assertNotIn(member=escape(self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
             return r
+
+
+    class AdminMainPageViewTestCaseMixin(AdminViewBaseMixin):
+        def get_page_url(self):
+            return '/admin/'
+
+        def assert_permission_denied(self, r):
+            self.assertRedirects(response=r, expected_url='/admin/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertNotIn(member=escape({'en': "Speedy Net Profiles", 'he': "פרופילים ספידי נט"}[self.language_code]), container=r.content.decode())
+            self.assertNotIn(member=escape({'en': "Speedy Match Profiles", 'he': "פרופילים ספידי מץ'"}[self.language_code]), container=r.content.decode())
+
+        def test_admin_has_access(self):
+            r = super().test_admin_has_access()
+            self.assertIn(member=escape({'en': "Speedy Net Profiles", 'he': "פרופילים ספידי נט"}[self.language_code]), container=r.content.decode())
+            self.assertIn(member=escape({'en': "Speedy Match Profiles", 'he': "פרופילים ספידי מץ'"}[self.language_code]), container=r.content.decode())
+
+
+    @only_on_sites_with_login
+    class AdminMainPageViewEnglishTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class AdminMainPageViewHebrewTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
 
 
     class AdminUsersListViewTestCaseMixin(AdminViewBaseMixin):
