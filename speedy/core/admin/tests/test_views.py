@@ -57,13 +57,13 @@ if (django_settings.LOGIN_ENABLED):
 
         def assert_permission_denied(self, r):
             self.assertRedirects(response=r, expected_url='/admin/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
-            self.assertNotIn(member=escape({'en': "Speedy Net Profiles", 'he': "פרופילים ספידי נט"}[self.language_code]), container=r.content.decode())
-            self.assertNotIn(member=escape({'en': "Speedy Match Profiles", 'he': "פרופילים ספידי מץ'"}[self.language_code]), container=r.content.decode())
+            self.assertNotIn(member=escape(self._speedy_net_profiles), container=r.content.decode())
+            self.assertNotIn(member=escape(self._speedy_match_profiles), container=r.content.decode())
 
         def test_admin_has_access(self):
             r = super().test_admin_has_access()
-            self.assertIn(member=escape({'en': "Speedy Net Profiles", 'he': "פרופילים ספידי נט"}[self.language_code]), container=r.content.decode())
-            self.assertIn(member=escape({'en': "Speedy Match Profiles", 'he': "פרופילים ספידי מץ'"}[self.language_code]), container=r.content.decode())
+            self.assertIn(member=escape(self._speedy_net_profiles), container=r.content.decode())
+            self.assertIn(member=escape(self._speedy_match_profiles), container=r.content.decode())
 
 
     @only_on_sites_with_login
