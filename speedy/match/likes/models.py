@@ -33,7 +33,7 @@ class UserLike(TimeStampedModel):
 
 
 @receiver(signal=models.signals.post_save, sender=UserLike)
-def mail_user_on_new_message(sender, instance: UserLike, created, **kwargs):
+def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
     if (created):
         user = instance.to_user
         if (user.speedy_match_profile.notify_on_like == User.NOTIFICATIONS_ON):
