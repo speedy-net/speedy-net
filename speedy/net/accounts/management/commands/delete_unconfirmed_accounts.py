@@ -20,10 +20,10 @@ class Command(BaseCommand):
                         logger.warning("Deleting email {} of user {} - unconfirmed. Confirmation sent {} times, Added on {}.".format(email, user, email.confirmation_sent, email.date_created))
                         email.delete()
 
-        users = User.objects.filter(date_created__lte=(now() - timedelta(days=14)), has_confirmed_email=False).exclude(is_staff=True)
+        users = User.objects.filter(date_created__lte=(now() - timedelta(days=14)), date_created__gte=(now() - timedelta(days=18)), has_confirmed_email=False).exclude(is_staff=True)
         for user in users:
             if (not (user.is_staff)):
-                if (user.date_created <= now() - timedelta(days=14)):
+                if ((user.date_created <= now() - timedelta(days=14)) and (user.date_created >= now() - timedelta(days=18))):
                     user._update_has_confirmed_email_field()
                     if (not (user.has_confirmed_email)):
                         try:
