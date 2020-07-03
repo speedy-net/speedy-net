@@ -258,6 +258,8 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
 
     def get(self, request, *args, **kwargs):
         email_address = self.get_object()
+        if (not (email_address.user == self.request.user)):
+            return redirect(to='accounts:logout')
         assert (email_address.user == self.request.user)
         token = self.kwargs.get('token')
         if (email_address.is_confirmed):
