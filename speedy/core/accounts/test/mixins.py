@@ -310,7 +310,8 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית.'}
         _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
         _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'he': 'כבר אימתת את כתובת הדואר האלקטרוני שלך.'}
-        _youve_confirmed_your_email_address_error_message_dict = {'en': "You've confirmed your email address.", 'he': 'אימתת את כתובת הדואר האלקטרוני שלך.'}
+        _invalid_confirmation_link_error_message_dict = {'en': "Invalid confirmation link.", 'he': 'קישור אימות לא חוקי.'}
+        _youve_confirmed_your_email_address_message_dict = {'en': "You've confirmed your email address.", 'he': 'אימתת את כתובת הדואר האלקטרוני שלך.'}
         _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
         _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
         _username_is_required_error_message_dict = {'en': 'Username is required.', 'he': 'שם המשתמש/ת נדרש.'}
@@ -375,7 +376,8 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         self._user_username_must_start_with_4_or_more_letters_error_message = _user_username_must_start_with_4_or_more_letters_error_message_dict[self.language_code]
         self._slug_does_not_parse_to_username_error_message = _slug_does_not_parse_to_username_error_message_dict[self.language_code]
         self._youve_already_confirmed_this_email_address_error_message = _youve_already_confirmed_this_email_address_error_message_dict[self.language_code]
-        self._youve_confirmed_your_email_address_error_message = _youve_confirmed_your_email_address_error_message_dict[self.language_code]
+        self._invalid_confirmation_link_error_message = _invalid_confirmation_link_error_message_dict[self.language_code]
+        self._youve_confirmed_your_email_address_message = _youve_confirmed_your_email_address_message_dict[self.language_code]
         self._the_email_address_was_deleted_error_message = _the_email_address_was_deleted_error_message_dict[self.language_code]
         self._you_have_changed_your_primary_email_address_error_message = _you_have_changed_your_primary_email_address_error_message_dict[self.language_code]
         self._username_is_required_error_message = _username_is_required_error_message_dict[self.language_code]

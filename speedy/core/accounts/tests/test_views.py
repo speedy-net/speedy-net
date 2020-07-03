@@ -1281,6 +1281,13 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path='/edit-profile/emails/verify/{}/'.format(token))
             self.assertEqual(first=r.status_code, second=404)
 
+        def test_wrong_email_id_gives_404(self):
+            self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+            email_id = "111"
+            token = self.unconfirmed_email_address.confirmation_token
+            r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
+            self.assertEqual(first=r.status_code, second=404)
+
         def test_not_authenticated_user_redirects_to_login(self):
             self.client.logout()
             email_id = self.unconfirmed_email_address.id
@@ -1288,10 +1295,10 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
             self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=200)
 
-        def test_confirmed_email_link_redirects_to_edit_profile(self):
+        def test_confirmed_email_error_message(self):
             self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
             email_id = self.confirmed_email_address.id
-            token = self.confirmed_email_address.confirmation_token
+            token = "222"
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
             r = self.client.get(path='/edit-profile/emails/')
@@ -1310,7 +1317,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
             r = self.client.get(path='/edit-profile/credentials/')
             self.assertEqual(first=r.status_code, second=200)
-            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_error_message])
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message])
             self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
 
         def test_wrong_user_login_redirects_to_logout(self):
@@ -1323,6 +1330,19 @@ if (django_settings.LOGIN_ENABLED):
             self.assertRedirects(response=r, expected_url='/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=302, fetch_redirect_response=False)
             r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
             self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=200)
+
+        def test_wrong_confirmation_token_error_message(self):
+            self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+            email_id = self.unconfirmed_email_address.id
+            token = "222"
+            r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
+            self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+            r = self.client.get(path='/edit-profile/emails/')
+            self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+            r = self.client.get(path='/edit-profile/credentials/')
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._invalid_confirmation_link_error_message])
+            self.assertFalse(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
 
 
     @only_on_sites_with_login
