@@ -109,7 +109,7 @@ class RegistrationView(generic.CreateView):
             email_address.send_confirmation_email()
         user.backend = django_settings.DEFAULT_AUTHENTICATION_BACKEND
         django_auth_login(request=self.request, user=user)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect(redirect_to='/')
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -270,7 +270,7 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
                 messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="You've confirmed your email address."))
             else:
                 messages.error(request=self.request, message=_('Invalid confirmation link.'))
-        return HttpResponseRedirect(self.get_success_url())
+        return HttpResponseRedirect(redirect_to=self.get_success_url())
 
 
 class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
@@ -304,13 +304,13 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.send_confirmation_email()
         messages.success(request=self.request, message=_('A confirmation message was sent to {email_address}').format(email_address=email_address.email))
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
 
 class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
@@ -320,7 +320,7 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
     def delete(self, *args, **kwargs):
         response = super().delete(*args, **kwargs)
@@ -335,13 +335,13 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
     def post(self, request, *args, **kwargs):
         email_address = self.get_object()
         email_address.make_primary()
         messages.success(request=self.request, message=_('You have made this email address primary.'))
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
 
 class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateView):
@@ -352,7 +352,7 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
     raise_exception = True
 
     def get(self, request, *args, **kwargs):
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(redirect_to=self.success_url)
 
 
 class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
