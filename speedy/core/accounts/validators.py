@@ -228,8 +228,7 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
         ))
         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
             with Image.open(user.photo.file) as image:
-                # if (image.is_animated):  # ~~~~ TODO: this line should replace the following line.
-                if (getattr(image, "is_animated", False)):  # ~~~~ TODO: remove this line!
+                if (getattr(image, "is_animated", False)):
                     photo_is_valid = False
                 else:
                     photo_is_valid = True
