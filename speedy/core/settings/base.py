@@ -297,4 +297,5 @@ LOGGING = {
     },
 }
 
+DEFAULT_HASHING_ALGORITHM = 'sha1'  # ~~~~ TODO: temporary setting; remove this line after Django 3.1 works properly.
 
