@@ -16,3 +16,5 @@ six
 sorl-thumbnail
 sqlparse
 text-unidecode
+contextvars  # Not needed in Python>=3.7
+immutables  # Not needed in Python>=3.7
