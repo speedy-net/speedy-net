@@ -5,8 +5,6 @@ LOGIN_ENABLED = True
 
 INSTALLED_APPS += [
     'speedy.core.contact_by_form',
-    'speedy.composer.accounts',  # For admin - for deleting users.
-    'speedy.mail.accounts',  # For admin - for deleting users.
 ]
 
 MIDDLEWARE += [

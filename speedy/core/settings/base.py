@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'speedy.net.accounts',
     'speedy.match.accounts',
     'speedy.match.likes',
+    'speedy.composer.accounts',  # For admin - for deleting users.
+    'speedy.mail.accounts',  # For admin - for deleting users.
 ]
 
 FORMAT_MODULE_PATH = [
