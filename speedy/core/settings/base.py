@@ -136,7 +136,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_AGE = int(60 * 60 * 24 * 365.25 * 30)  # ~ 30 years
 
 CSRF_COOKIE_SECURE = True
@@ -299,4 +299,5 @@ LOGGING = {
     },
 }
 
+DEFAULT_HASHING_ALGORITHM = 'sha1'  # ~~~~ TODO: temporary setting; remove this line after Django 3.1 works properly.
 
