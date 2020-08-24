@@ -18,7 +18,7 @@ if (django_settings.LOGIN_ENABLED):
 
         @factory.post_generation
         def group(self, created, extracted, **kwargs):
-            if (extracted):
+            if (extracted is not None):
                 self.is_group = True
                 for entity in extracted:
                     self.group.add(entity)
