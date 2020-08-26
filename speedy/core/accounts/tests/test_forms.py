@@ -362,10 +362,6 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=username_value_length))
 
         def test_slug_and_username_min_length_ok(self):
-            # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MIN_SLUG_LENGTH", django_settings.USER_SETTINGS.MIN_SLUG_LENGTH)####
-            # print("test_slug_and_username_min_length_ok: django_settings.USER_SETTINGS.MAX_SLUG_LENGTH", django_settings.USER_SETTINGS.MAX_SLUG_LENGTH)####
-            # print("test_slug_and_username_min_length_ok: User.settings.MIN_SLUG_LENGTH", User.settings.MIN_SLUG_LENGTH)####
-            # print("test_slug_and_username_min_length_ok: User.settings.MAX_SLUG_LENGTH", User.settings.MAX_SLUG_LENGTH)####
             self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
             test_settings = {
                 "expected_counts_tuple": (8, 0),
