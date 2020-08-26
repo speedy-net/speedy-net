@@ -485,6 +485,13 @@ if (django_settings.LOGIN_ENABLED):
             self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
             # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
+        def test_doron_is_invalid_username(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(slug='doron')
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
+            # self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+
         def test_can_create_user_admin_with_special_username(self):
             user = DefaultUserFactory(slug='admin', special_username=True)
             user.save_user_and_profile()
@@ -495,6 +502,14 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_can_create_user_webmaster_with_special_username(self):
             user = DefaultUserFactory(slug='webmaster', special_username=True)
+            user.save_user_and_profile()
+
+        def test_can_create_user_doron_with_special_username(self):
+            user = DefaultUserFactory(slug='doron', special_username=True)
+            user.save_user_and_profile()
+
+        def test_can_create_user_jennifer_with_special_username(self):
+            user = DefaultUserFactory(slug='jennifer', special_username=True)
             user.save_user_and_profile()
 
         def test_cannot_create_user_without_a_slug_with_special_username(self):
@@ -615,6 +630,10 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_star2000_is_valid_username(self):
             user = DefaultUserFactory(slug='star2000', username='star2000')
+            user.save_user_and_profile()
+
+        def test_jennifer_is_valid_username(self):
+            user = DefaultUserFactory(slug='jennifer')
             user.save_user_and_profile()
 
         def test_come2us_is_invalid_username(self):
