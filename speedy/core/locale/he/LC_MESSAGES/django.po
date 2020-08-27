@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 05:19+0300\n"
+"POT-Creation-Date: 2020-08-27 09:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2203,7 +2203,7 @@ msgid ""
 msgstr ""
 "גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
 
-#: .\accounts\validators.py:245
+#: .\accounts\validators.py:244
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2211,20 +2211,20 @@ msgstr ""
 "אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
 "מתקבלים."
 
-#: .\accounts\views.py:270
+#: .\accounts\views.py:272
 msgid "Invalid confirmation link."
 msgstr "קישור אימות לא חוקי."
 
-#: .\accounts\views.py:294 .\accounts\views.py:310
+#: .\accounts\views.py:296 .\accounts\views.py:312
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-‎{email_address}‎‎"
 
-#: .\accounts\views.py:325
+#: .\accounts\views.py:327
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:341
+#: .\accounts\views.py:343
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
@@ -2384,19 +2384,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:157
+#: .\friends\views.py:163
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:169
+#: .\friends\views.py:175
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:202
+#: .\friends\views.py:208
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:217
+#: .\friends\views.py:223
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -2455,11 +2455,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:159
+#: .\settings\base.py:161
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:160
+#: .\settings\base.py:162
 msgid "Hebrew"
 msgstr "עברית"
 

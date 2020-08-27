@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 05:19+0300\n"
+"POT-Creation-Date: 2020-08-27 09:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2137,26 +2137,26 @@ msgid ""
 "This picture's file size is too big. The maximal file size allowed is 15 MB."
 msgstr ""
 
-#: .\accounts\validators.py:245
+#: .\accounts\validators.py:244
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
 
-#: .\accounts\views.py:270
+#: .\accounts\views.py:272
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:294 .\accounts\views.py:310
+#: .\accounts\views.py:296 .\accounts\views.py:312
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:325
+#: .\accounts\views.py:327
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:341
+#: .\accounts\views.py:343
 msgid "You have made this email address primary."
 msgstr ""
 
@@ -2300,19 +2300,19 @@ msgstr ""
 msgid "feedbacks"
 msgstr ""
 
-#: .\friends\views.py:157
+#: .\friends\views.py:163
 msgid "Friendship request sent."
 msgstr ""
 
-#: .\friends\views.py:169
+#: .\friends\views.py:175
 msgid "No friendship request."
 msgstr ""
 
-#: .\friends\views.py:202
+#: .\friends\views.py:208
 msgid "Friendship request accepted."
 msgstr ""
 
-#: .\friends\views.py:217
+#: .\friends\views.py:223
 msgid "Friendship request rejected."
 msgstr ""
 
@@ -2371,11 +2371,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:159
+#: .\settings\base.py:161
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:160
+#: .\settings\base.py:162
 msgid "Hebrew"
 msgstr ""
 
