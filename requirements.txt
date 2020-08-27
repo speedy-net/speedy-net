@@ -1,5 +1,5 @@
 # python==3.6
--e git://github.com/speedy-net/django.git@3.0.9a#egg=django # installed from Speedy Net fork. # ~~~~ TODO: When we upgrade Django to 3.1.*, this will not be necessary.
+-e git://github.com/speedy-net/django.git@3.0.6a#egg=django # installed from Speedy Net fork. # ~~~~ TODO: When we upgrade Django to 3.1.*, this will not be necessary.
 asgiref==3.2.10
 django-crispy-forms==1.9.2
 django-environ==0.4.5
