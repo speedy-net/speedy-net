@@ -80,12 +80,18 @@ class LimitMaxFriendsMixin(object):
     def check_own_friends(self):
         user_number_of_friends = len(Friend.objects.friends(user=self.request.user))
         if (user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
-            raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+            raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(
+                '{:,}'.format(user_number_of_friends),
+                '{:,}'.format(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
+            ))
 
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user=user))
         if (other_user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
-            raise ValidationError(pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=user), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(other_user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+            raise ValidationError(pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=user), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(
+                '{:,}'.format(other_user_number_of_friends),
+                '{:,}'.format(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
+            ))
 
 
 class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin, generic.View):
