@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 09:41+0300\n"
+"POT-Creation-Date: 2020-09-01 13:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:751
+#: .\__translations\__translations.py:9 .\accounts\models.py:750
 msgid "email address"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:449
+#: .\__translations\__translations.py:23 .\accounts\models.py:448
 msgid "Friends"
 msgstr ""
 
@@ -1813,224 +1813,224 @@ msgstr ""
 msgid "Invalid password."
 msgstr ""
 
-#: .\accounts\models.py:82
+#: .\accounts\models.py:81
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:82 .\accounts\models.py:83 .\accounts\validators.py:18
+#: .\accounts\models.py:81 .\accounts\models.py:82 .\accounts\validators.py:18
 msgid "This username is already taken."
 msgstr ""
 
-#: .\accounts\models.py:83
+#: .\accounts\models.py:82
 msgid "username (slug)"
 msgstr ""
 
-#: .\accounts\models.py:84
+#: .\accounts\models.py:83
 msgid "photo"
 msgstr ""
 
-#: .\accounts\models.py:85
+#: .\accounts\models.py:84
 msgid "Special username"
 msgstr ""
 
-#: .\accounts\models.py:102 .\messages\models.py:93
+#: .\accounts\models.py:101 .\messages\models.py:93
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:102
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:128
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:132
 msgid "Username is required."
 msgstr ""
 
-#: .\accounts\models.py:142
+#: .\accounts\models.py:141
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:157
+#: .\accounts\models.py:156
 msgid "description"
 msgstr ""
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:202
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:204
+#: .\accounts\models.py:203
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:204
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:217 .\accounts\models.py:232 .\accounts\models.py:253
+#: .\accounts\models.py:216 .\accounts\models.py:231 .\accounts\models.py:252
 #: .\messages\models.py:47 .\messages\models.py:89
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:218
+#: .\accounts\models.py:217
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:219
+#: .\accounts\models.py:218
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:220
+#: .\accounts\models.py:219
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:232
 msgid "Not smoking"
 msgstr ""
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:233
 msgid "Smoking occasionally"
 msgstr ""
 
-#: .\accounts\models.py:235
+#: .\accounts\models.py:234
 msgid "Smoking"
 msgstr ""
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:253
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:254
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:255
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:256
 msgid "In a relationship"
 msgstr ""
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:257
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:258
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:260
+#: .\accounts\models.py:259
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:261
+#: .\accounts\models.py:260
 msgid "Engaged"
 msgstr ""
 
-#: .\accounts\models.py:262
+#: .\accounts\models.py:261
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:270
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:271
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:317
+#: .\accounts\models.py:316
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:319
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:321
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:322
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:323
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:325
+#: .\accounts\models.py:324
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:326
+#: .\accounts\models.py:325
 msgid "relationship status"
 msgstr ""
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:327
 msgid "city or locality"
 msgstr ""
 
-#: .\accounts\models.py:333
+#: .\accounts\models.py:332
 msgid "Who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:333
 msgid "Who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:334
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:456 .\accounts\models.py:735 .\blocks\models.py:15
+#: .\accounts\models.py:455 .\accounts\models.py:734 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:457
+#: .\accounts\models.py:456
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:477
+#: .\accounts\models.py:476
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:736
+#: .\accounts\models.py:735
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:737
+#: .\accounts\models.py:736
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:738
+#: .\accounts\models.py:737
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:739
+#: .\accounts\models.py:738
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:740
+#: .\accounts\models.py:739
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:741
+#: .\accounts\models.py:740
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:752
+#: .\accounts\models.py:751
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:818
+#: .\accounts\models.py:817
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:819
+#: .\accounts\models.py:818
 msgid "last visit"
 msgstr ""
 
