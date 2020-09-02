@@ -10,7 +10,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
 
 
-    class UserEmailAddressFactory(factory.DjangoModelFactory):
+    class UserEmailAddressFactory(factory.django.DjangoModelFactory):
         user = factory.SubFactory(DefaultUserFactory)
         email = factory.LazyAttribute(lambda o: '{id}@example.speedy.net'.format(id=generate_random_id()).lower())
 

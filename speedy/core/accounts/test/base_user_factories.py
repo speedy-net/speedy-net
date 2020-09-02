@@ -21,7 +21,7 @@ if (django_settings.LOGIN_ENABLED):
     _test_case_with_mixin = DjangoTestCaseWithMixin()
 
 
-    class DefaultUserFactory(factory.DjangoModelFactory):
+    class DefaultUserFactory(factory.django.DjangoModelFactory):
         first_name_en = factory.Faker('first_name')
         last_name_en = factory.Faker('last_name')
         date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(year=1900, month=1, day=1))

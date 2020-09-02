@@ -9,7 +9,7 @@ if (django_settings.LOGIN_ENABLED):
 
 if (django_settings.LOGIN_ENABLED):
 
-    class FileFactory(factory.DjangoModelFactory):
+    class FileFactory(factory.django.DjangoModelFactory):
         owner = factory.SubFactory(ActiveUserFactory)
         file = factory.django.FileField()
 
@@ -17,7 +17,7 @@ if (django_settings.LOGIN_ENABLED):
             model = File
 
 
-    class UserImageFactory(factory.DjangoModelFactory):
+    class UserImageFactory(factory.django.DjangoModelFactory):
         file = factory.django.ImageField()
 
         class Meta:

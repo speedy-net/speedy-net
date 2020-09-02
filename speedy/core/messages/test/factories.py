@@ -9,7 +9,7 @@ if (django_settings.LOGIN_ENABLED):
 
 if (django_settings.LOGIN_ENABLED):
 
-    class ChatFactory(factory.DjangoModelFactory):
+    class ChatFactory(factory.django.DjangoModelFactory):
         ent1 = factory.SubFactory(ActiveUserFactory)
         ent2 = factory.SubFactory(ActiveUserFactory)
 
