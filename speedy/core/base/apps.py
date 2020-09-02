@@ -2,6 +2,7 @@ from django.utils.translation import gettext_lazy as _
 from django.apps import AppConfig
 
 from speedy.core.patches import locale_patches
+from speedy.core.patches import session_patches
 
 
 class SpeedyCoreBaseConfig(AppConfig):
@@ -11,5 +12,6 @@ class SpeedyCoreBaseConfig(AppConfig):
 
     def ready(self):
         locale_patches.patch()
+        session_patches.patch()
 
 
