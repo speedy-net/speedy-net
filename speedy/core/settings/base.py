@@ -67,7 +67,7 @@ INSTALLED_APPS = [
 ]
 
 FORMAT_MODULE_PATH = [
-    'speedy.core.locale',
+    'speedy.core.formats',
 ]
 
 MIDDLEWARE = [
