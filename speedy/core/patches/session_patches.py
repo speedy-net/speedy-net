@@ -3,10 +3,12 @@ from django.contrib.auth.hashers import PBKDF2PasswordHasher
 
 def patch():
     def must_update(self, encoded):
+        # Update the stored password only if the iterations diff is at least 250,000.
         algorithm, iterations, salt, hash = encoded.split('$', 3)
-        if int(iterations) == 180000:  # Django 3.0.6
-            extra_iterations = self.iterations - int(iterations)
-            return extra_iterations < 0  # Can harden_runtime
-        return int(iterations) != self.iterations
+        iterations_diff = abs(self.iterations - int(iterations))
+        return ((int(iterations) != self.iterations) and (iterations_diff >= 250000))
 
+    PBKDF2PasswordHasher.iterations = 180000  # Django 3.0.x
     PBKDF2PasswordHasher.must_update = must_update
+
+
