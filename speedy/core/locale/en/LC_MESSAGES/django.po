@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-01 13:39+0300\n"
+"POT-Creation-Date: 2020-09-05 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2192,7 +2192,7 @@ msgid ""
 "{year}."
 msgstr ""
 
-#: .\base\apps.py:9
+#: .\base\apps.py:10
 msgid "Speedy Core Base App"
 msgstr ""
 
