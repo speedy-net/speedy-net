@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 06:34+0300\n"
+"POT-Creation-Date: 2020-09-11 17:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -658,7 +658,7 @@ msgstr ""
 msgid "Please confirm your email address."
 msgstr ""
 
-#: .\accounts\utils.py:89
+#: .\accounts\utils.py:88
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
