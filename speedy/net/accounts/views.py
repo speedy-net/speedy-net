@@ -7,12 +7,23 @@ from django.shortcuts import redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts import views as speedy_core_accounts_views
+from speedy.net.accounts import utils
 
 logger = logging.getLogger(__name__)
 
 
+class RegistrationView(speedy_core_accounts_views.RegistrationView):
+    def get_context_data(self, **kwargs):
+        cd = super().get_context_data(**kwargs)
+        cd.update({
+            'total_number_of_active_members_text': utils.get_total_number_of_active_members_text(),
+        })
+        return cd
+
+
 class IndexView(speedy_core_accounts_views.IndexView):
     redirect_authenticated_users_to = 'profiles:me'
+    registration_view = RegistrationView
 
 
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):

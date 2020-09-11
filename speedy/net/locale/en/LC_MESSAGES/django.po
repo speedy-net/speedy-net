@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-05 05:21+0300\n"
+"POT-Creation-Date: 2020-09-11 06:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,15 @@ msgstr ""
 
 #: .\accounts\models.py:31
 msgid "Speedy Net Profiles"
+msgstr ""
+
+#: .\accounts\utils.py:22
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
 msgstr ""
 
 #: .\settings\base_site.py:12
@@ -157,7 +166,7 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
 
-#: .\templates\main\main_page.html:63
+#: .\templates\main\main_page.html:73
 msgid "Free Online Dating"
 msgstr ""
 

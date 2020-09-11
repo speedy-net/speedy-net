@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-05 05:21+0300\n"
+"POT-Creation-Date: 2020-09-11 06:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2319,7 +2319,8 @@ msgstr ""
 #: .\messages\apps.py:7 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:15
-#: .\templates\messages\chat_list.html:8 .\templates\messages\chat_list.html:21
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:21
 msgid "Messages"
 msgstr ""
 

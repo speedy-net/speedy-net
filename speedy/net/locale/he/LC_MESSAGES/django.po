@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-05 05:21+0300\n"
+"POT-Creation-Date: 2020-09-11 06:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,19 @@ msgstr "פרופיל ספידי נט"
 #: .\accounts\models.py:31
 msgid "Speedy Net Profiles"
 msgstr "פרופילים ספידי נט"
+
+#: .\accounts\utils.py:22
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"מספר החברים הפעילים באתר הוא "
+"{total_number_of_active_members_in_the_last_four_months}, מתוכם "
+"{total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע "
+"האחרון."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -185,7 +198,7 @@ msgstr ""
 "כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט "
 "למצוא חברות וחברים, זה לוקח רק כמה דקות."
 
-#: .\templates\main\main_page.html:63
+#: .\templates\main\main_page.html:73
 msgid "Free Online Dating"
 msgstr "הכרויות אונליין בחינם"
 

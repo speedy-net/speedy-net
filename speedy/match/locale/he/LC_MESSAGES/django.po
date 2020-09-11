@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-05 05:21+0300\n"
+"POT-Creation-Date: 2020-09-11 06:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,12 +511,14 @@ msgstr "אנא כתוב/י כמה מילים על עצמך."
 msgid "Please write where you live."
 msgstr "אנא כתוב/י איפה את/ה גר/ה."
 
-#: .\accounts\forms.py:116 .\accounts\models.py:112 .\accounts\validators.py:53
+#: .\accounts\forms.py:116 .\accounts\models.py:112
+#: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "יש לך ילדים? כמה?"
 
-#: .\accounts\forms.py:119 .\accounts\models.py:115 .\accounts\validators.py:58
+#: .\accounts\forms.py:119 .\accounts\models.py:115
+#: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "את/ה רוצה (עוד) ילדים?"
@@ -590,11 +592,13 @@ msgstr "כאשר יש לייקים חדשים"
 msgid "Active languages"
 msgstr "שפות פעילות"
 
-#: .\accounts\models.py:107 .\templates\profiles\user_extra_info_widget.html:26
+#: .\accounts\models.py:107
+#: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "גובה"
 
-#: .\accounts\models.py:107 .\templates\profiles\user_extra_info_widget.html:27
+#: .\accounts\models.py:107
+#: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "ס\"מ"
 
@@ -602,7 +606,8 @@ msgstr "ס\"מ"
 msgid "Few words about me"
 msgstr "כמה מילים על עצמי"
 
-#: .\accounts\models.py:118 .\templates\profiles\user_extra_info_widget.html:54
+#: .\accounts\models.py:118
+#: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "בן/בת הזוג האידיאלי/ת שלי"
 
