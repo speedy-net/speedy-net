@@ -115,10 +115,10 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         )
         annotate_dict = dict()
         if (self.request.GET.get('likes_from_user')):
-            annotate_dict["likes_from_user_count"] = Count('likes_from_user')
+            annotate_dict["likes_from_user_count"] = Count('likes_from_user', distinct=True)
             filter_dict["likes_from_user_count__gte"] = int(self.request.GET.get('likes_from_user'))
         if (self.request.GET.get('likes_to_user')):
-            annotate_dict["likes_to_user_count"] = Count('likes_to_user')
+            annotate_dict["likes_to_user_count"] = Count('likes_to_user', distinct=True)
             filter_dict["likes_to_user_count__gte"] = int(self.request.GET.get('likes_to_user'))
         qs = User.objects.active().annotate(**annotate_dict).filter(**filter_dict).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
