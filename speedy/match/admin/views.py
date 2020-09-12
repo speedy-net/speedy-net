@@ -3,6 +3,7 @@ from datetime import timedelta, datetime, timezone, date
 from django.utils.translation import get_language, gettext_lazy as _
 from django.utils.timezone import now
 from django.views import generic
+from django.db.models import Count
 
 from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.utils import get_site_profile_model
@@ -107,11 +108,19 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         language_code = get_language()
-        qs = User.objects.active(
+        filter_dict = dict(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
-        ).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        )
+        annotate_dict = dict()
+        if (self.request.GET.get('likes_from_user')):
+            annotate_dict["likes_from_user_count"] = Count('likes_from_user')
+            filter_dict["likes_from_user_count__gte"] = int(self.request.GET.get('likes_from_user'))
+        if (self.request.GET.get('likes_to_user')):
+            annotate_dict["likes_to_user_count"] = Count('likes_to_user')
+            filter_dict["likes_to_user_count__gte"] = int(self.request.GET.get('likes_to_user'))
+        qs = User.objects.active().annotate(**annotate_dict).filter(**filter_dict).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):
