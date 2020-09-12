@@ -113,14 +113,14 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
         )
-        annotate_dict = dict()
+        annotate_list = list()
         if (self.request.GET.get('likes_from_user')):
-            annotate_dict["likes_from_user_count"] = Count('likes_from_user', distinct=True)
-            filter_dict["likes_from_user_count__gte"] = int(self.request.GET.get('likes_from_user'))
+            annotate_list.append(Count('likes_from_user', distinct=True))
+            filter_dict["likes_from_user__count__gte"] = int(self.request.GET.get('likes_from_user'))
         if (self.request.GET.get('likes_to_user')):
-            annotate_dict["likes_to_user_count"] = Count('likes_to_user', distinct=True)
-            filter_dict["likes_to_user_count__gte"] = int(self.request.GET.get('likes_to_user'))
-        qs = User.objects.active().annotate(**annotate_dict).filter(**filter_dict).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+            annotate_list.append(Count('likes_to_user', distinct=True))
+            filter_dict["likes_to_user__count__gte"] = int(self.request.GET.get('likes_to_user'))
+        qs = User.objects.active().annotate(*annotate_list).filter(**filter_dict).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         return qs
 
     def get_context_data(self, **kwargs):
