@@ -104,6 +104,10 @@
                         <th class="user-profile-th">Friends</th>
                         <td>{{ user.friends_count }} friends on {{ site_name }}{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / {{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %} ({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_he }})</td>
                     </tr>
+                    <tr>
+                        <th>Likes (Speedy Match)</th>
+                        <td>({{ user.likes_from_user.count }} likes from {{ user.name|truncatechars:50 }} / {{ user.likes_to_user.count }} likes to {{ user.name|truncatechars:50 }})</td>
+                    </tr>
 
                 </tbody>
             </table>
