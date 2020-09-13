@@ -92,7 +92,7 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 other_user.likes_to_user_count = other_user.likes_to_user.count()
-                if (other_user.likes_to_user_count >= 10):
+                if (other_user.likes_to_user_count >= 10) or ((now() - other_user.date_created).days < 15) or ((now() - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.likes_months_offset = 0
                 elif (other_user.likes_to_user_count >= 3):
                     other_user.likes_months_offset = 1
