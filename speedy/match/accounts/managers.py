@@ -77,6 +77,8 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).prefetch_related(
+            "likes_to_user",
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
@@ -89,6 +91,13 @@ class SiteProfileManager(BaseManager):
                 blocking_users_ids=blocking_users_ids,
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
+                other_user.likes_to_user_count = other_user.likes_to_user.count()
+                if (other_user.likes_to_user_count >= 10):
+                    other_user.likes_months_offset = 0
+                elif (other_user.likes_to_user_count >= 3):
+                    other_user.likes_months_offset = 1
+                else:
+                    other_user.likes_months_offset = 2
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
@@ -98,7 +107,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-int((now() - u.speedy_match_profile.last_visit).days / 30), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-(u.likes_months_offset + int((now() - u.speedy_match_profile.last_visit).days / 30)), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)

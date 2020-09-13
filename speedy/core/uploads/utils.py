@@ -1,5 +1,3 @@
-
-
 def uuid_dir(instance, filename):
     str_id = str(instance.id)
     return '/'.join([
