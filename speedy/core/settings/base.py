@@ -196,6 +196,8 @@ THUMBNAIL_DUMMY = True
 
 THUMBNAIL_FORMAT = 'PNG'
 
+THUMBNAIL_CACHE_TIMEOUT = int(60 * 60 * 24 * 90)  # 90 days
+
 TEST_RUNNER = 'speedy.core.base.test.models.SiteDiscoverRunner'
 
 FIXTURE_DIRS = [
