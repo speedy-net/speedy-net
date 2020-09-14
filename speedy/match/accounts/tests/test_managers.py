@@ -235,7 +235,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
             today = date.today()
             self.user_4.date_of_birth = today - relativedelta(years=20)
-            self.user_4.speedy_match_profile.height = 130
+            self.user_4.speedy_match_profile.height = 115
             self.user_4.save_user_and_profile()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
             self.assertEqual(first=len(matches_list), second=3)

@@ -112,7 +112,7 @@ class SiteProfileManager(BaseManager):
                         else:
                             other_user.speedy_match_profile._likes_months_offset += 1
                         if (other_user.get_age() >= 18):
-                            if (135 <= other_user.speedy_match_profile.height <= 235):
+                            if (120 <= other_user.speedy_match_profile.height <= 235):
                                 other_user.speedy_match_profile._likes_months_offset += 0
                             else:
                                 other_user.speedy_match_profile._likes_months_offset += 1
