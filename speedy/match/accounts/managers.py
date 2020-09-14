@@ -104,20 +104,20 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._likes_months_offset += 1
                     else:
                         other_user.speedy_match_profile._likes_months_offset += 2
-                if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
-                    other_user.speedy_match_profile._likes_months_offset += 0
-                else:
-                    if (other_user.speedy_match_profile._friends_count >= 20):
+                    if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                         other_user.speedy_match_profile._likes_months_offset += 0
                     else:
-                        other_user.speedy_match_profile._likes_months_offset += 1
-                    if (other_user.get_age() >= 18):
-                        if (135 <= other_user.speedy_match_profile.height <= 235):
+                        if (other_user.speedy_match_profile._friends_count >= 20):
                             other_user.speedy_match_profile._likes_months_offset += 0
                         else:
                             other_user.speedy_match_profile._likes_months_offset += 1
-                    else:
-                        other_user.speedy_match_profile._likes_months_offset += 0
+                        if (other_user.get_age() >= 18):
+                            if (135 <= other_user.speedy_match_profile.height <= 235):
+                                other_user.speedy_match_profile._likes_months_offset += 0
+                            else:
+                                other_user.speedy_match_profile._likes_months_offset += 1
+                        else:
+                            other_user.speedy_match_profile._likes_months_offset += 0
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
