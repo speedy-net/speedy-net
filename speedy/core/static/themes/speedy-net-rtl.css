@@ -6499,7 +6499,8 @@ html {
   max-width: 500px; }
 
 .invalid-feedback {
-  display: block; }
+  display: block;
+  font-size: 90%; }
 
 .row {
   flex-wrap: nowrap; }

@@ -6735,6 +6735,7 @@ body.with-background .pagination li.active a {
 
 .invalid-feedback {
   display: block;
+  font-size: 90%;
   color: #000000; }
 
 .row {
