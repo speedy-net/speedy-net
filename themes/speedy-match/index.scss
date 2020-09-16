@@ -406,3 +406,7 @@ strong {
     font-weight: bold;
 }
 
+input:required {
+    box-shadow: none;
+}
+
