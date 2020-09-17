@@ -1,4 +1,4 @@
-[![Services Health](https://speedy-net.montastic.io/badge)](https://speedy-net.montastic.io) [![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
+[![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
 
 # Speedy Net / Speedy Match
 
