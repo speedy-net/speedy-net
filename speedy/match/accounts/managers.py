@@ -133,6 +133,10 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._likes_months_offset += 1
                     elif (s < 12):
                         other_user.speedy_match_profile._likes_months_offset += 2
+                if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
+                    other_user.speedy_match_profile._likes_months_offset -= 1
+                if (other_user.speedy_match_profile._likes_months_offset < 0):
+                    other_user.speedy_match_profile._likes_months_offset = 0
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
