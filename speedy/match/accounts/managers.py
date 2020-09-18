@@ -1,4 +1,5 @@
 import logging
+from datetime import date
 
 from django.utils.translation import get_language
 from django.utils.timezone import now
@@ -121,6 +122,17 @@ class SiteProfileManager(BaseManager):
                                 other_user.speedy_match_profile._likes_months_offset += 0
                             else:
                                 other_user.speedy_match_profile._likes_months_offset += 1
+                if ((now() - other_user.speedy_match_profile.last_visit).days < 10):
+                    other_user.speedy_match_profile._likes_months_offset += 0
+                else:
+                    today = date.today()
+                    s = (sum(map(int, list(other_user.id))) + (today.day * 7) + (today.month * 11)) % 12
+                    if (s < 5):
+                        other_user.speedy_match_profile._likes_months_offset += 0
+                    elif (s < 9):
+                        other_user.speedy_match_profile._likes_months_offset += 1
+                    elif (s < 12):
+                        other_user.speedy_match_profile._likes_months_offset += 2
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
