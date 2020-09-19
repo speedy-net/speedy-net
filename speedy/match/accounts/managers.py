@@ -145,6 +145,14 @@ class SiteProfileManager(BaseManager):
                     other_user.speedy_match_profile._user_last_visit_offset -= 1
                 if (other_user.speedy_match_profile._user_last_visit_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_offset = 0
+                # Generate a random number which changes each day, but doesn't change when reloading the page.
+                s = (sum(map(int, list(other_user.id))) + (today.day * 17) + (today.month * 19)) % 77
+                if (s in [24, 48, 72]):
+                    other_user.speedy_match_profile._user_last_visit_offset -= 6
+                elif (s in [25, 49, 73]):
+                    other_user.speedy_match_profile._user_last_visit_offset -= 2
+                else:
+                    other_user.speedy_match_profile._user_last_visit_offset -= 0
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
@@ -154,7 +162,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-(u.speedy_match_profile._user_last_visit_offset + int((_now - u.speedy_match_profile.last_visit).days / 40)), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-max([(u.speedy_match_profile._user_last_visit_offset + int((_now - u.speedy_match_profile.last_visit).days / 40)), 0]), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
