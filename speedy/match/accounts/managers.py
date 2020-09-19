@@ -85,6 +85,8 @@ class SiteProfileManager(BaseManager):
         user_list = qs[:2400]
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
+        today = date.today()
+        _now = now()
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
                 user=user,
@@ -96,15 +98,18 @@ class SiteProfileManager(BaseManager):
                 other_user.speedy_match_profile._likes_to_user_count = len(other_user.likes_to_user.all())
                 other_user.speedy_match_profile._friends_count = len(other_user.friends.all())
                 other_user.speedy_match_profile._likes_months_offset = 0
-                if ((now() - other_user.date_created).days < 15) or ((now() - other_user.speedy_match_profile.last_visit).days < 5):
+                if ((_now - other_user.date_created).days < 15) or ((_now - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.speedy_match_profile._likes_months_offset += 0
                 else:
-                    if (other_user.speedy_match_profile._likes_to_user_count >= 10):
+                    if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((_now - other_user.speedy_match_profile.last_visit).days < 20):
                         other_user.speedy_match_profile._likes_months_offset += 0
-                    elif (other_user.speedy_match_profile._likes_to_user_count >= 3):
-                        other_user.speedy_match_profile._likes_months_offset += 1
                     else:
-                        other_user.speedy_match_profile._likes_months_offset += 2
+                        if (other_user.speedy_match_profile._likes_to_user_count >= 10):
+                            other_user.speedy_match_profile._likes_months_offset += 0
+                        elif (other_user.speedy_match_profile._likes_to_user_count >= 3):
+                            other_user.speedy_match_profile._likes_months_offset += 1
+                        else:
+                            other_user.speedy_match_profile._likes_months_offset += 2
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                         other_user.speedy_match_profile._likes_months_offset += 0
                     else:
@@ -122,17 +127,20 @@ class SiteProfileManager(BaseManager):
                                 other_user.speedy_match_profile._likes_months_offset += 0
                             else:
                                 other_user.speedy_match_profile._likes_months_offset += 1
-                if ((now() - other_user.speedy_match_profile.last_visit).days < 10):
+                if ((_now - other_user.speedy_match_profile.last_visit).days < 10):
                     other_user.speedy_match_profile._likes_months_offset += 0
                 else:
-                    today = date.today()
-                    s = (sum(map(int, list(other_user.id))) + (today.day * 7) + (today.month * 11)) % 12
-                    if (s < 5):
+                    if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((_now - other_user.speedy_match_profile.last_visit).days < 20):
                         other_user.speedy_match_profile._likes_months_offset += 0
-                    elif (s < 9):
-                        other_user.speedy_match_profile._likes_months_offset += 1
-                    elif (s < 12):
-                        other_user.speedy_match_profile._likes_months_offset += 2
+                    else:
+                        # Generate a random number which changes each day, but doesn't change when reloading the page.
+                        s = (sum(map(int, list(other_user.id))) + (today.day * 7) + (today.month * 11)) % 12
+                        if (s < 5):
+                            other_user.speedy_match_profile._likes_months_offset += 0
+                        elif (s < 9):
+                            other_user.speedy_match_profile._likes_months_offset += 1
+                        elif (s < 12):
+                            other_user.speedy_match_profile._likes_months_offset += 2
                 if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                     other_user.speedy_match_profile._likes_months_offset -= 1
                 if (other_user.speedy_match_profile._likes_months_offset < 0):
@@ -146,7 +154,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-(u.speedy_match_profile._likes_months_offset + int((now() - u.speedy_match_profile.last_visit).days / 30)), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-(u.speedy_match_profile._likes_months_offset + int((_now - u.speedy_match_profile.last_visit).days / 30)), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
@@ -200,6 +208,7 @@ class SiteProfileManager(BaseManager):
         user_list = qs
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
+        _now = now()
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
                 user=user,
@@ -218,7 +227,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-int((now() - u.speedy_match_profile.last_visit).days / 30), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-int((_now - u.speedy_match_profile.last_visit).days / 30), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
             user=user,
             language_code=language_code,
