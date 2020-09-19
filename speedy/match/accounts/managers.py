@@ -97,62 +97,62 @@ class SiteProfileManager(BaseManager):
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 other_user.speedy_match_profile._likes_to_user_count = len(other_user.likes_to_user.all())
                 other_user.speedy_match_profile._friends_count = len(other_user.friends.all())
-                other_user.speedy_match_profile._user_last_visit_offset = 0
+                other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
                 if ((_now - other_user.date_created).days < 15) or ((_now - other_user.speedy_match_profile.last_visit).days < 5):
-                    other_user.speedy_match_profile._user_last_visit_offset += 0
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((_now - other_user.speedy_match_profile.last_visit).days < 20):
-                        other_user.speedy_match_profile._user_last_visit_offset += 0
+                        other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         if (other_user.speedy_match_profile._likes_to_user_count >= 10):
-                            other_user.speedy_match_profile._user_last_visit_offset += 0
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                         elif (other_user.speedy_match_profile._likes_to_user_count >= 3):
-                            other_user.speedy_match_profile._user_last_visit_offset += 1
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         else:
-                            other_user.speedy_match_profile._user_last_visit_offset += 2
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
-                        other_user.speedy_match_profile._user_last_visit_offset += 0
+                        other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         if (other_user.speedy_match_profile._friends_count >= 20):
-                            other_user.speedy_match_profile._user_last_visit_offset += 0
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                         else:
-                            other_user.speedy_match_profile._user_last_visit_offset += 1
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         if (other_user.get_age() >= 18):
                             if (120 <= other_user.speedy_match_profile.height <= 235):
-                                other_user.speedy_match_profile._user_last_visit_offset += 0
+                                other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                             else:
-                                other_user.speedy_match_profile._user_last_visit_offset += 1
+                                other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         else:
                             if (50 <= other_user.speedy_match_profile.height <= 235):
-                                other_user.speedy_match_profile._user_last_visit_offset += 0
+                                other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                             else:
-                                other_user.speedy_match_profile._user_last_visit_offset += 1
+                                other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                 if ((_now - other_user.speedy_match_profile.last_visit).days < 10):
-                    other_user.speedy_match_profile._user_last_visit_offset += 0
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((_now - other_user.speedy_match_profile.last_visit).days < 20):
-                        other_user.speedy_match_profile._user_last_visit_offset += 0
+                        other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         # Generate a random number which changes each day, but doesn't change when reloading the page.
                         s = (sum(map(int, list(other_user.id))) + (today.day * 7) + (today.month * 11)) % 12
                         if (s < 5):
-                            other_user.speedy_match_profile._user_last_visit_offset += 0
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                         elif (s < 9):
-                            other_user.speedy_match_profile._user_last_visit_offset += 1
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         elif (s < 12):
-                            other_user.speedy_match_profile._user_last_visit_offset += 2
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                 if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
-                    other_user.speedy_match_profile._user_last_visit_offset -= 1
-                if (other_user.speedy_match_profile._user_last_visit_offset < 0):
-                    other_user.speedy_match_profile._user_last_visit_offset = 0
+                    other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
+                if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
+                    other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 # Generate a random number which changes each day, but doesn't change when reloading the page.
                 s = (sum(map(int, list(other_user.id))) + (today.day * 17) + (today.month * 19)) % 77
                 if (s in [24, 48, 72]):
-                    other_user.speedy_match_profile._user_last_visit_offset -= 6
+                    other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
                 elif (s in [25, 49, 73]):
-                    other_user.speedy_match_profile._user_last_visit_offset -= 2
+                    other_user.speedy_match_profile._user_last_visit_days_offset -= 2 * 30
                 else:
-                    other_user.speedy_match_profile._user_last_visit_offset -= 0
+                    other_user.speedy_match_profile._user_last_visit_days_offset -= 0 * 30
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
             # This is an error. All users should have ranks more than 0.
@@ -162,7 +162,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-max([(u.speedy_match_profile._user_last_visit_offset + int((_now - u.speedy_match_profile.last_visit).days / 40)), 0]), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-int(max([((_now - u.speedy_match_profile.last_visit).days + u.speedy_match_profile._user_last_visit_days_offset), 0]) / 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
