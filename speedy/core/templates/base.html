@@ -128,47 +128,55 @@
         {% block footer %}
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <p>
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                <a href="//{{ language.code }}.{{ site.domain }}{{ request.path }}{% set_request_params page=1 %}" title="{{ language.name_local }}">{{ language.name_local }}</a>
-                            {% endfor %}
-                        </p>
-                    </div>
+                    {% block footer_language_links %}
+                        <div class="col-md-2">
+                            <p>
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <a href="//{{ language.code }}.{{ site.domain }}{{ request.path }}{% set_request_params page=1 %}" title="{{ language.name_local }}">{{ language.name_local }}</a>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    {% endblock %}
                     <div class="col-md-8 text-center">
                         {% block footer_extra_links_0 %}{% endblock %}
                         {% block footer_extra_links_1 %}{% endblock %}
                         {% block footer_extra_links_2 %}{% endblock %}
-                        <p>
-                            <a href="https://{{ LANGUAGE_CODE }}.speedy.net/" title="{% trans "Speedy Net" %}">{% trans "Speedy Net" %}</a>
-                            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% trans "Speedy Match" %}{% if LANGUAGE_CODE == "he" %} – הכרויות בספידי{% endif %}">{% trans "Speedy Match" %}</a>
-                            <a href="https://{{ LANGUAGE_CODE }}.speedycomposer.com/" title="{% trans "Speedy Composer" %}">{% trans "Speedy Composer" %}</a>
-                            <a href="https://{{ LANGUAGE_CODE }}.speedy-mail-software.com/" title="{% trans "Speedy Mail Software" %}">{% trans "Speedy Mail Software" %}</a>
-                        </p>
+                        {% block footer_links_1 %}
+                            <p>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedy.net/" title="{% trans "Speedy Net" %}">{% trans "Speedy Net" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% trans "Speedy Match" %}{% if LANGUAGE_CODE == "he" %} – הכרויות בספידי{% endif %}">{% trans "Speedy Match" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedycomposer.com/" title="{% trans "Speedy Composer" %}">{% trans "Speedy Composer" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedy-mail-software.com/" title="{% trans "Speedy Mail Software" %}">{% trans "Speedy Mail Software" %}</a>
+                            </p>
+                        {% endblock %}
                         {% block footer_extra_links_3 %}{% endblock %}
-                        <p>
-                            <a href="https://www.cafepress.com/speedynet" title="{% trans "Speedy Net's Shop" %}">{% trans "Speedy Net's Shop" %}</a>
-                            <a href="https://www.cafepress.com/speedymatch" title="{% trans "Speedy Match's Shop" %}">{% trans "Speedy Match's Shop" %}</a>
-                            <a href="https://www.cafepress.com/speedycomposer" title="{% trans "Speedy Composer's Shop" %}">{% trans "Speedy Composer's Shop" %}</a>
-                            <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
-                        </p>
+                        {% block footer_links_2 %}
+                            <p>
+                                <a href="https://www.cafepress.com/speedynet" title="{% trans "Speedy Net's Shop" %}">{% trans "Speedy Net's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedymatch" title="{% trans "Speedy Match's Shop" %}">{% trans "Speedy Match's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedycomposer" title="{% trans "Speedy Composer's Shop" %}">{% trans "Speedy Composer's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
+                            </p>
+                        {% endblock %}
                         {% block footer_extra_links_4 %}{% endblock %}
-                        <p>
-                            <a href="https://{{ LANGUAGE_CODE }}.blog.speedy.net/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
-                            {% if LANGUAGE_CODE == "he" %}
-                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy-paz.com" title="{% trans "Speedy Paz" %}">{% trans "Speedy Paz" %}</a>
-                            {% else %}
-                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
-                            {% endif %}
-                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy.sale/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
-                            {% if LANGUAGE_CODE == "he" %}
-                                {% block hebrew_extra_links %}{% endblock %}
-                            {% else %}
-                                {% block english_extra_links %}{% endblock %}
-                            {% endif %}
-                            {% block facebook_link %}{% endblock %}
-                        </p>
+                        {% block footer_links_3 %}
+                            <p>
+                                <a href="https://{{ LANGUAGE_CODE }}.blog.speedy.net/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
+                                {% if LANGUAGE_CODE == "he" %}
+                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy-paz.com" title="{% trans "Speedy Paz" %}">{% trans "Speedy Paz" %}</a>
+                                {% else %}
+                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                                {% endif %}
+                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy.sale/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
+                                {% if LANGUAGE_CODE == "he" %}
+                                    {% block hebrew_extra_links %}{% endblock %}
+                                {% else %}
+                                    {% block english_extra_links %}{% endblock %}
+                                {% endif %}
+                                {% block facebook_link %}{% endblock %}
+                            </p>
+                        {% endblock %}
                         {% block footer_extra_links_5 %}{% endblock %}
                         <p class="direction-ltr">
                             <a href="https://www.python.org/" title="Python">Python</a>

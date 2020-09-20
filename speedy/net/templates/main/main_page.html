@@ -27,15 +27,19 @@
     {% endif %}
 {% endblock %}
 
+{% block footer_links_2 %}
+    {% if LANGUAGE_CODE == "en" %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block footer_extra_links_3 %}
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://he.vegan-friendly.club/vegans-with-conscience/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
             <a href="https://www.etgar21.info/" title="אתגר הטבעונות">אתגר הטבעונות</a>
             <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
-        </p>
-        <p>
-            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="ספידי מץ&#39; – הכרויות בספידי">מחפשת חבר? מחפש חברה? בואו להכיר בספידי!</a>
+            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="מחפשת חבר? מחפש חברה? בואו להכיר בספידי!">להכיר בספידי</a>
         </p>
     {% endif %}
     {% if LANGUAGE_CODE == "en" %}
