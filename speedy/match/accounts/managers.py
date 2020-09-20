@@ -135,23 +135,23 @@ class SiteProfileManager(BaseManager):
                     else:
                         # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                         s = (sum(map(int, list(other_user.id))) + (int(datetime_now.hour / 4) * 99) + (datetime_now.day * 7) + (datetime_now.month * 11) + (datetime_now.year * 1)) % 12
-                        if (s < 5):
-                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
-                        elif (s < 9):
+                        if (s in {0, 4, 8, 10}):  # 4/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
-                        elif (s < 12):
+                        elif (s in {2, 6, 11}):  # 3/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
+                        else:  # 5/12
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                 s = (sum(map(int, list(other_user.id))) + (int(datetime_now.hour / 4) * 99) + (datetime_now.day * 17) + (datetime_now.month * 19) + (datetime_now.year * 1)) % 77
-                if (s in [24, 48, 72]):
+                if (s in {24, 48, 72}):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
-                elif (s in [25, 49, 73]):
+                elif (s in {25, 49, 73}):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 2 * 30
-                else:
+                else:  # 71/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 0 * 30
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
