@@ -24,6 +24,8 @@ if (django_settings.LOGIN_ENABLED):
     class DefaultUserFactory(factory.django.DjangoModelFactory):
         first_name_en = factory.Faker('first_name')
         last_name_en = factory.Faker('last_name')
+        first_name_he = factory.LazyAttribute(lambda o: o.first_name_en)
+        last_name_he = factory.LazyAttribute(lambda o: o.last_name_en)
         date_of_birth = factory.fuzzy.FuzzyDate(start_date=date(year=1900, month=1, day=1))
         gender = factory.fuzzy.FuzzyChoice(choices=User.GENDER_VALID_VALUES)
         slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)

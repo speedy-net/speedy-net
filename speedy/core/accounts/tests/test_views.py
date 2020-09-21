@@ -9,7 +9,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-    from speedy.core.base.utils import normalize_slug, normalize_username
+    from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
     from speedy.core.base.test.utils import get_random_user_password
     from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory
@@ -153,7 +153,7 @@ if (django_settings.LOGIN_ENABLED):
             )
 
         def set_up_required_fields(self):
-            self.required_fields = self.data.keys()
+            self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
             self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
         def test_visitor_can_see_registration_page(self):
@@ -569,7 +569,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class RegistrationViewEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+    class RegistrationViewWithLastNameEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -587,7 +587,7 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class RegistrationViewHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+    class RegistrationViewWithLastNameHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -596,6 +596,41 @@ if (django_settings.LOGIN_ENABLED):
             })
             self.first_name = "דורון"
             self.last_name = "מטלון"
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
+
+
+    @only_on_sites_with_login
+    class RegistrationViewWithoutLastNameEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_en': "Doron",
+                'last_name_en': "",
+            })
+            self.first_name = "Doron"
+            self.last_name = ""
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class RegistrationViewWithoutLastNameHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_he': "דורון",
+                'last_name_he': "",
+            })
+            self.first_name = "דורון"
+            self.last_name = ""
             self.set_up_required_fields()
 
         def validate_all_values(self):
@@ -808,7 +843,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=len(self.user.slug), second=12)
 
         def set_up_required_fields(self):
-            self.required_fields = self.data.keys()
+            self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
             self.assert_profile_form_required_fields(required_fields=self.required_fields)
 
         def test_visitor_has_no_access(self):
@@ -954,7 +989,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class EditProfileViewEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+    class EditProfileViewWithLastNameEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -972,7 +1007,7 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class EditProfileViewHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+    class EditProfileViewWithLastNameHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -981,6 +1016,41 @@ if (django_settings.LOGIN_ENABLED):
             })
             self.first_name = "ג'ניפר"
             self.last_name = "קונלי"
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
+
+
+    @only_on_sites_with_login
+    class EditProfileViewWithoutLastNameEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_en': "Jennifer",
+                'last_name_en': "",
+            })
+            self.first_name = "Jennifer"
+            self.last_name = ""
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class EditProfileViewWithoutLastNameHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_he': "ג'ניפר",
+                'last_name_he': "",
+            })
+            self.first_name = "ג'ניפר"
+            self.last_name = ""
             self.set_up_required_fields()
 
         def validate_all_values(self):

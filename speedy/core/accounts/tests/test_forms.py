@@ -9,7 +9,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-    from speedy.core.base.utils import normalize_slug, normalize_username
+    from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
     from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm
 
@@ -44,7 +44,7 @@ if (django_settings.LOGIN_ENABLED):
             )
 
         def set_up_required_fields(self):
-            self.required_fields = self.data.keys()
+            self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
             self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
         def run_test_all_slugs_to_test_list(self, test_settings):
@@ -413,7 +413,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class RegistrationFormEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+    class RegistrationFormWithLastNameEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -431,7 +431,7 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class RegistrationFormHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+    class RegistrationFormWithLastNameHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -440,6 +440,41 @@ if (django_settings.LOGIN_ENABLED):
             })
             self.first_name = "דורון"
             self.last_name = "מטלון"
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
+
+
+    @only_on_sites_with_login
+    class RegistrationFormWithoutLastNameEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_en': "Doron",
+                'last_name_en': "",
+            })
+            self.first_name = "Doron"
+            self.last_name = ""
+            self.set_up_required_fields()
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class RegistrationFormWithoutLastNameHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_he': "דורון",
+                'last_name_he': "",
+            })
+            self.first_name = "דורון"
+            self.last_name = ""
             self.set_up_required_fields()
 
         def validate_all_values(self):

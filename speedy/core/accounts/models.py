@@ -22,7 +22,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_empty, get_all_field_names
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .fields import UserAccessField
@@ -187,6 +187,7 @@ class ReservedUsername(Entity):
 class User(PermissionsMixin, Entity, AbstractBaseUser):
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
+    NAME_REQUIRED_LOCALIZABLE_FIELDS = NAME_LOCALIZABLE_FIELDS[:1]
 
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
@@ -316,7 +317,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         field=models.CharField(verbose_name=_('first name'), max_length=150),
     )
     last_name = TranslatedField(
-        field=models.CharField(verbose_name=_('last name'), max_length=150),
+        field=models.CharField(verbose_name=_('last name'), max_length=150, blank=True),
     )
     gender = models.SmallIntegerField(verbose_name=_('I am'), choices=GENDER_CHOICES)
     date_of_birth = models.DateField(verbose_name=_('date of birth'))
@@ -518,11 +519,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def clean_localizable_field(self, base_field_name):
         field_names = get_all_field_names(base_field_name=base_field_name)
         for field_name in field_names:
-            if (not (string_is_not_empty(getattr(self, field_name)))):
+            if (not (string_is_not_none(getattr(self, field_name)))):
                 for _field_name in field_names:
-                    # Check again because maybe this field is already not empty.
-                    if (not (string_is_not_empty(getattr(self, field_name)))):
-                        if (string_is_not_empty(getattr(self, _field_name))):
+                    # Check again because maybe this field changed.
+                    if (not (string_is_not_none(getattr(self, field_name)))):
+                        if (string_is_not_none(getattr(self, _field_name))):
                             setattr(self, field_name, getattr(self, _field_name))
 
     def get_absolute_url(self):

@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.conf import settings as django_settings
 from django.test import override_settings
+from django.db.utils import IntegrityError
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import tests_settings
@@ -338,6 +339,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_localizable_fields(self):
             self.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name', 'city'))
             self.assertTupleEqual(tuple1=User.NAME_LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
+            self.assertTupleEqual(tuple1=User.NAME_REQUIRED_LOCALIZABLE_FIELDS, tuple2=('first_name',))
 
         def test_gender_valid_values(self):
             self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
@@ -531,6 +533,37 @@ if (django_settings.LOGIN_ENABLED):
             user = DefaultUserFactory(slug='a' * 6)
             user.save_user_and_profile()
 
+        def test_first_name_is_not_optional(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(first_name_en="")
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
+
+        def test_first_name_is_none(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(first_name_en=None, first_name_he=None)
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
+
+        def test_last_name_is_optional(self):
+            user = DefaultUserFactory(last_name_en="")
+            user.save_user_and_profile()
+            self.assertEqual(first=user.last_name, second="")
+            self.assertEqual(first=user.last_name_en, second="")
+            self.assertEqual(first=user.last_name_he, second="")
+
+        def test_last_name_is_none(self):
+            with self.assertRaises(IntegrityError) as cm:
+                user = DefaultUserFactory(last_name_en=None, last_name_he=None)
+                user.save_user_and_profile()
+            self.assertIn(member='null value in column "last_name_en" violates not-null constraint', container=str(cm.exception))
+
+        def test_first_name_and_last_name_are_long(self):
+            with self.assertRaises(ValidationError) as cm:
+                user = DefaultUserFactory(first_name_en="a" * 200, last_name_en="b" * 200)
+                user.save_user_and_profile()
+            self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he']})
+
         def test_slug_and_username_min_length_ok_2(self):
             self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
             test_settings = {
@@ -699,7 +732,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_sites_with_login
-    class UserEnglishTestCase(UserTestCaseMixin, SiteTestCase):
+    class UserWithLastNameEnglishTestCase(UserTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
@@ -716,12 +749,45 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_sites_with_login
     @override_settings(LANGUAGE_CODE='he')
-    class UserHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+    class UserWithLastNameHebrewTestCase(UserTestCaseMixin, SiteTestCase):
         def set_up(self):
             super().set_up()
             self.data.update({
                 'first_name_he': "דורון",
                 'last_name_he': "מטלון",
+            })
+            self.first_name = "דורון"
+            self.last_name = "מטלון"
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='he')
+
+
+    @only_on_sites_with_login
+    class UserWithoutLastNameEnglishTestCase(UserTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_en': "Doron",
+                'last_name_en': "",
+            })
+            self.first_name = "Doron"
+            self.last_name = "Matalon"
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='en')
+
+
+    @only_on_sites_with_login
+    @override_settings(LANGUAGE_CODE='he')
+    class UserWithoutLastNameHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+        def set_up(self):
+            super().set_up()
+            self.data.update({
+                'first_name_he': "דורון",
+                'last_name_he': "",
             })
             self.first_name = "דורון"
             self.last_name = "מטלון"
