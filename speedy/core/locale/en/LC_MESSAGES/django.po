@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 17:07+0300\n"
+"POT-Creation-Date: 2020-09-21 06:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2570,60 +2570,60 @@ msgstr ""
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:144
+#: .\templates\base.html:147
 msgid "Speedy Net"
 msgstr ""
 
-#: .\templates\base.html:145
+#: .\templates\base.html:148
 msgid "Speedy Match"
 msgstr ""
 
-#: .\templates\base.html:146
+#: .\templates\base.html:149
 msgid "Speedy Composer"
 msgstr ""
 
-#: .\templates\base.html:147
+#: .\templates\base.html:150
 msgid "Speedy Mail Software"
 msgstr ""
 
-#: .\templates\base.html:151
+#: .\templates\base.html:156
 msgid "Speedy Net's Shop"
 msgstr ""
 
-#: .\templates\base.html:152
+#: .\templates\base.html:157
 msgid "Speedy Match's Shop"
 msgstr ""
 
-#: .\templates\base.html:153
+#: .\templates\base.html:158
 msgid "Speedy Composer's Shop"
 msgstr ""
 
-#: .\templates\base.html:154
+#: .\templates\base.html:159
 msgid "Speedy S-logo Shop"
 msgstr ""
 
-#: .\templates\base.html:158
+#: .\templates\base.html:165
 msgid "Speedy Net Blog"
 msgstr ""
 
-#: .\templates\base.html:160
+#: .\templates\base.html:167
 msgid "Speedy Paz"
 msgstr ""
 
-#: .\templates\base.html:162
+#: .\templates\base.html:169
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:164
+#: .\templates\base.html:171
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:184 .\templates\base.html:185
+#: .\templates\base.html:192 .\templates\base.html:193
 #: .\templates\base_with_login.html:84 .\templates\base_with_login.html:85
 msgid "A vegan friendly website"
 msgstr ""
 
-#: .\templates\base.html:201 .\templates\base.html:203
+#: .\templates\base.html:209 .\templates\base.html:211
 msgid "Speedy"
 msgstr ""
 

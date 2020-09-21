@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 17:07+0300\n"
+"POT-Creation-Date: 2020-09-21 06:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -705,7 +705,7 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
-#: .\admin\views.py:45
+#: .\admin\views.py:46
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -722,7 +722,7 @@ msgstr ""
 "בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
 "חברים נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:83
+#: .\admin\views.py:84
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -747,7 +747,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:101
+#: .\admin\views.py:102
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
