@@ -92,6 +92,14 @@ def string_is_not_empty(s):
     return False
 
 
+def string_is_not_none(s):
+    if (s is None):
+        return False
+    if (isinstance(s, str)):
+        return True
+    return False
+
+
 def to_attribute(name, language_code=None):
     language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
     return translated_fields.to_attribute(name=name, language_code=language_code)

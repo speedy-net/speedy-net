@@ -55,9 +55,13 @@ class LocalizedFirstLastNameMixin(object):
         self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
         localized_fields = self.get_localized_fields()
+        required_localized_fields = self.get_required_localized_fields()
         for loc_field in localized_fields:
             self.fields[loc_field] = User._meta.get_field(loc_field).formfield()
-            self.fields[loc_field].required = True
+            if (loc_field in required_localized_fields):
+                self.fields[loc_field].required = True
+            if (loc_field == self.get_localized_field(base_field_name="last_name", language_code=self.language_code)):
+                self.fields[loc_field].label = _('Last name (optional)')
             self.initial[loc_field] = getattr(self.instance, loc_field, '')
         self.order_fields(field_order=localized_fields)
 
@@ -73,11 +77,19 @@ class LocalizedFirstLastNameMixin(object):
     def get_localizable_fields():
         return User.NAME_LOCALIZABLE_FIELDS
 
+    @staticmethod
+    def get_required_localizable_fields():
+        return User.NAME_REQUIRED_LOCALIZABLE_FIELDS
+
     def get_localized_field(self, base_field_name, language_code):
         return to_attribute(name=base_field_name, language_code=language_code or self.language_code)
 
     def get_localized_fields(self, language=None):
         loc_fields = self.get_localizable_fields()
+        return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
+
+    def get_required_localized_fields(self, language=None):
+        loc_fields = self.get_required_localizable_fields()
         return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
 
 
