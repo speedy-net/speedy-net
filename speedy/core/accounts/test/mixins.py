@@ -183,7 +183,6 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         if (value is None):
             str_value = ''
             gender_error_messages = [self._this_field_cannot_be_null_error_message]
-            # date_of_birth_error_messages = [self._this_field_cannot_be_null_error_message]
         else:
             str_value = str(value)
             if (value == ''):
@@ -193,18 +192,11 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
                     gender_error_messages = [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]
                 else:
                     gender_error_messages = None
-            # date_of_birth_error_messages = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
-            # date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
-        # slug_and_username_error_messages = [self._ensure_this_value_has_at_least_min_length_characters_error_message_by_min_length_and_value_length(min_length=6, value_length=len(str_value))]
         slug_and_username_error_messages = [self._user_username_must_start_with_4_or_more_letters_error_message]
         date_of_birth_error_messages = [self._enter_a_valid_date_error_message]
         errors_dict = {
-            # 'first_name': [self._this_field_cannot_be_blank_error_message],
-            # 'last_name': [self._this_field_cannot_be_blank_error_message],
             'username': slug_and_username_error_messages,
             'slug': slug_and_username_error_messages,
-            # 'password': [self._this_field_cannot_be_blank_error_message],
-            # 'gender': gender_error_messages,
             'date_of_birth': date_of_birth_error_messages,
         }
         if (value in [None, '']):
@@ -216,21 +208,12 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
                     errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
                 else:
                     raise NotImplementedError()
-                # errors_dict['last_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
             errors_dict['password'] = [self._this_field_cannot_be_blank_error_message]
         else:
             self.assertNotEqual(first=str_value, second='')
         self.assertEqual(first=gender_is_valid, second=(gender_error_messages is None))
         if (not (gender_is_valid)):
             errors_dict['gender'] = gender_error_messages
-        # if (value is None):
-        #     errors_dict['gender'] = [self._this_field_cannot_be_null_error_message]
-        #     errors_dict['date_of_birth'] = [self._this_field_cannot_be_null_error_message]
-        # # elif (value == ''):
-        # #     pass
-        # else:
-        #     errors_dict['gender'] = [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]
-        #     errors_dict['date_of_birth'] = [self._value_has_an_invalid_date_format_error_message_by_value(value=str_value)]
         return errors_dict
 
     def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
