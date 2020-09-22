@@ -738,8 +738,6 @@ if (django_settings.LOGIN_ENABLED):
             self.data.update({
                 'first_name_en': "Doron",
                 'last_name_en': "Matalon",
-                'first_name_he': "Doron",
-                'last_name_he': "Matalon",
             })
             self.first_name = "Doron"
             self.last_name = "Matalon"
@@ -757,8 +755,6 @@ if (django_settings.LOGIN_ENABLED):
             self.data.update({
                 'first_name_he': "דורון",
                 'last_name_he': "מטלון",
-                'first_name_en': "דורון",
-                'last_name_en': "מטלון",
             })
             self.first_name = "דורון"
             self.last_name = "מטלון"
@@ -775,8 +771,6 @@ if (django_settings.LOGIN_ENABLED):
             self.data.update({
                 'first_name_en': "Doron",
                 'last_name_en': "",
-                'first_name_he': "Doron",
-                'last_name_he': "",
             })
             self.first_name = "Doron"
             self.last_name = ""
@@ -794,8 +788,6 @@ if (django_settings.LOGIN_ENABLED):
             self.data.update({
                 'first_name_he': "דורון",
                 'last_name_he': "",
-                'first_name_en': "דורון",
-                'last_name_en': "",
             })
             self.first_name = "דורון"
             self.last_name = ""

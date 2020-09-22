@@ -210,7 +210,12 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         if (value in [None, '']):
             self.assertEqual(first=str_value, second='')
             for language_code, language_name in django_settings.LANGUAGES:
-                errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
+                if (value is None):
+                    errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_null_error_message]
+                elif (value == ''):
+                    errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
+                else:
+                    raise NotImplementedError()
                 # errors_dict['last_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
             errors_dict['password'] = [self._this_field_cannot_be_blank_error_message]
         else:
