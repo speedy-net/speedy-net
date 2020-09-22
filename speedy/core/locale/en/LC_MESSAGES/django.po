@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 04:48+0300\n"
+"POT-Creation-Date: 2020-09-22 06:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:751
+#: .\__translations\__translations.py:9 .\accounts\models.py:753
 msgid "email address"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:449
+#: .\__translations\__translations.py:23 .\accounts\models.py:451
 msgid "Friends"
 msgstr ""
 
@@ -1786,7 +1786,7 @@ msgstr ""
 msgid "Update your profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:158 .\accounts\validators.py:211
+#: .\accounts\forms.py:158 .\accounts\validators.py:225
 msgid "A profile picture is required."
 msgstr ""
 
@@ -1821,7 +1821,7 @@ msgstr ""
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:81 .\accounts\models.py:82 .\accounts\validators.py:18
+#: .\accounts\models.py:81 .\accounts\models.py:82 .\accounts\validators.py:19
 msgid "This username is already taken."
 msgstr ""
 
@@ -1990,67 +1990,67 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:456 .\accounts\models.py:735 .\blocks\models.py:15
+#: .\accounts\models.py:458 .\accounts\models.py:737 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:457
+#: .\accounts\models.py:459
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:477
+#: .\accounts\models.py:479
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:736
+#: .\accounts\models.py:738
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:737
+#: .\accounts\models.py:739
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:738
+#: .\accounts\models.py:740
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:739
+#: .\accounts\models.py:741
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:740
+#: .\accounts\models.py:742
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:741
+#: .\accounts\models.py:743
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:752
+#: .\accounts\models.py:754
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:818
+#: .\accounts\models.py:820
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:819
+#: .\accounts\models.py:821
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\validators.py:36
+#: .\accounts\validators.py:37
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
 
-#: .\accounts\validators.py:38
+#: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\validators.py:44
+#: .\accounts\validators.py:45
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2061,7 +2061,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:55
+#: .\accounts\validators.py:56
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2072,7 +2072,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:66
+#: .\accounts\validators.py:67
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2083,7 +2083,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:77
+#: .\accounts\validators.py:78
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2094,7 +2094,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:101
+#: .\accounts\validators.py:102
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2105,14 +2105,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:111
+#: .\accounts\validators.py:112
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:132
+#: .\accounts\validators.py:133
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2121,7 +2121,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:142
+#: .\accounts\validators.py:143
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
@@ -2129,19 +2129,27 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: .\accounts\validators.py:188 .\accounts\validators.py:195
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\accounts\validators.py:190
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\accounts\validators.py:202 .\accounts\validators.py:209
 msgid "Enter a valid date."
 msgstr ""
 
-#: .\accounts\validators.py:206
+#: .\accounts\validators.py:220
 msgid "This email is already in use."
 msgstr ""
 
-#: .\accounts\validators.py:213
+#: .\accounts\validators.py:227
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 15 MB."
 msgstr ""
 
-#: .\accounts\validators.py:244
+#: .\accounts\validators.py:258
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."

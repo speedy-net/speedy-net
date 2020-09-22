@@ -4,6 +4,7 @@ from PIL import Image
 from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
+from speedy.core.base.utils import string_is_not_empty, string_is_not_none
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from django.template.loader import render_to_string
 
@@ -179,6 +180,19 @@ def age_is_valid_in_model(age):
 def age_is_valid_in_forms(age):
     from .models import User
     return (age in User.AGE_VALID_VALUES_IN_FORMS)
+
+
+def validate_first_name_in_model(first_name):
+    if (not (string_is_not_empty(first_name))):
+        if (first_name is None):
+            raise ValidationError(_('This field cannot be null.'))
+        else:
+            raise ValidationError(_('This field cannot be blank.'))
+
+
+def validate_last_name_in_model(last_name):
+    if (not (string_is_not_none(last_name))):
+        raise ValidationError(_('This field cannot be null.'))
 
 
 def validate_date_of_birth_in_model(date_of_birth):

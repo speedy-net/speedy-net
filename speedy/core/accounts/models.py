@@ -22,7 +22,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, get_all_field_names
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .fields import UserAccessField
@@ -354,6 +354,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'username': speedy_core_accounts_validators.get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
             'slug': speedy_core_accounts_validators.get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
             'date_of_birth': [speedy_core_accounts_validators.validate_date_of_birth_in_model],
+            **{to_attribute(name='first_name', language_code=language_code): [speedy_core_accounts_validators.validate_first_name_in_model] for language_code, language_name in django_settings.LANGUAGES},
+            **{to_attribute(name='last_name', language_code=language_code): [speedy_core_accounts_validators.validate_last_name_in_model] for language_code, language_name in django_settings.LANGUAGES},
         }
         return validators
 
