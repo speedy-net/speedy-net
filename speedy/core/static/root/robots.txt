@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /google*
+Disallow: /registration-step-*
+Disallow: /login/?*
 
 User-agent: MJ12bot
 Disallow: /
