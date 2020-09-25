@@ -6,34 +6,34 @@
 
  - Requirements for alpha step 1 - Speedy Net:
 
-    * support English and Hebrew
-    * registration
-    * activating profile by validating email address
-    * login (with username or email, and password)
-    * profile picture
-    * public profile / profile for friends
-    * first name/last name must be language-specific
-    * friendship requests
-    * approving friendship requests (up to 800 friends per person)
-    * password reset
+    * Support English and Hebrew
+    * Registration
+    * Activating profile by validating email address
+    * Login (with username or email, and password)
+    * Profile picture
+    * Public profile / profile for friends
+    * First name/last name must be language-specific
+    * Friendship requests
+    * Approving friendship requests (up to 800 friends per person)
+    * Password reset
     * Sending/receiving private messages
     * Any email address, phone and link (Facebook, Twitter, blog etc.) - visible to anyone/friends/only me
-    * website must be mobile- and desktop-friendly
-    * import all users from PHP/MySQL
+    * Website must be mobile- and desktop-friendly
+    * Import all users from PHP/MySQL
     * Users of PHP/MySQL Speedy Net will be able to login with their current username or email, and password
 
  - Requirements for alpha step 1 - Speedy Match:
 
-    * support English and Hebrew
-    * registration to Speedy Net
-    * profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
+    * Support English and Hebrew
+    * Registration to Speedy Net
+    * Profile in Speedy Match - vegan/vegetarian/carnist, smoking or not, single/married, have children (how many)/doesn't have children etc.
     * Looking for men, women or both
     * Writing some text about yourself - who you are, what you prefer etc.
     * Which personal attributes are valid (from 0 to 5. 0 - invalid (no match). 5 - 5 hearts match)
     * Searching for matching people (who use Speedy Match in the same language)
     * Sending/receiving private messages (Speedy Net)
-    * friendship requests (Speedy Net)
-    * website must be mobile- and desktop-friendly
+    * Friendship requests (Speedy Net)
+    * Website must be mobile- and desktop-friendly
     * Every text you type in Speedy Match will be language - specific. If you use Speedy Match in more than one language, you can type different text in different languages. But everything else will be the same.
 
 
