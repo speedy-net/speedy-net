@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}" />
 {% endblock %}
 
+{% block google_ads %}
+    <script data-ad-client="ca-pub-6979799050855377" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{% endblock %}
+
 {% block user_menu_matches_class %}active{% endblock %}
 
 {% block body_class %}{{ block.super }} with-background{% endblock %}
