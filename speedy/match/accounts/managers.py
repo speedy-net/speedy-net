@@ -101,15 +101,15 @@ class SiteProfileManager(BaseManager):
                 if ((timezone_now - other_user.date_created).days < 15) or ((timezone_now - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
-                    if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((timezone_now - other_user.speedy_match_profile.last_visit).days < 20):
-                        other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                    if (other_user.speedy_match_profile.rank >= self.model.RANK_5) and ((timezone_now - other_user.speedy_match_profile.last_visit).days < 10):
+                        other_user.speedy_match_profile._user_last_visit_days_offset += 0
                     else:
                         if (other_user.speedy_match_profile._likes_to_user_count >= 10):
-                            other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 0
                         elif (other_user.speedy_match_profile._likes_to_user_count >= 3):
-                            other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 30
                         else:
-                            other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
+                            other_user.speedy_match_profile._user_last_visit_days_offset += 80
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                         other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
