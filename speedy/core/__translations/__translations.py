@@ -66,6 +66,18 @@ pgettext_lazy(context="female", message='Add')
 pgettext_lazy(context="male", message='Add')
 pgettext_lazy(context="other", message='Add')
 
+pgettext_lazy(context="female", message="Where do I live?")
+pgettext_lazy(context="male", message="Where do I live?")
+pgettext_lazy(context="other", message="Where do I live?")
+
+pgettext_lazy(context="female", message="Where do you live?")
+pgettext_lazy(context="male", message="Where do you live?")
+pgettext_lazy(context="other", message="Where do you live?")
+
+pgettext_lazy(context="female", message="Please write where you live.")
+pgettext_lazy(context="male", message="Please write where you live.")
+pgettext_lazy(context="other", message="Please write where you live.")
+
 pgettext_lazy(context="female", message="Vegan (eats only plants and fungi)")
 pgettext_lazy(context="male", message="Vegan (eats only plants and fungi)")
 pgettext_lazy(context="other", message="Vegan (eats only plants and fungi)")

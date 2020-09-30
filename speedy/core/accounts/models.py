@@ -325,7 +325,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     smoking_status = models.SmallIntegerField(verbose_name=_('smoking status'), choices=SMOKING_STATUS_CHOICES_WITH_DEFAULT, default=SMOKING_STATUS_UNKNOWN)
     relationship_status = models.SmallIntegerField(verbose_name=_('relationship status'), choices=RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT, default=RELATIONSHIP_STATUS_UNKNOWN)
     city = TranslatedField(
-        field=models.CharField(verbose_name=_('city or locality'), max_length=120, blank=True, null=True),
+        field=models.CharField(verbose_name=_('Where do I live?'), max_length=120, blank=True, null=True),
     )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

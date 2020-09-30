@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 06:57+0300\n"
+"POT-Creation-Date: 2020-09-30 05:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -396,60 +396,45 @@ msgstr ""
 
 #: .\__translations\__translations.py:33
 msgctxt "female"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\__translations\__translations.py:34
 msgctxt "male"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\__translations\__translations.py:35
 msgctxt "other"
-msgid "Please write where you live."
+msgid "Do you have children? How many?"
 msgstr ""
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
-msgid "Do you have children? How many?"
+msgid "Do you want (more) children?"
 msgstr ""
 
 #: .\__translations\__translations.py:38
 msgctxt "male"
-msgid "Do you have children? How many?"
+msgid "Do you want (more) children?"
 msgstr ""
 
 #: .\__translations\__translations.py:39
 msgctxt "other"
-msgid "Do you have children? How many?"
+msgid "Do you want (more) children?"
 msgstr ""
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
-msgid "Do you want (more) children?"
+msgid "Who is your ideal partner?"
 msgstr ""
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
-msgid "Do you want (more) children?"
+msgid "Who is your ideal partner?"
 msgstr ""
 
 #: .\__translations\__translations.py:43
-msgctxt "other"
-msgid "Do you want (more) children?"
-msgstr ""
-
-#: .\__translations\__translations.py:45
-msgctxt "female"
-msgid "Who is your ideal partner?"
-msgstr ""
-
-#: .\__translations\__translations.py:46
-msgctxt "male"
-msgid "Who is your ideal partner?"
-msgstr ""
-
-#: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Who is your ideal partner?"
 msgstr ""
@@ -542,11 +527,11 @@ msgstr ""
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:148 .\templates\profiles\user_extra_info_widget.html:22
-msgid "City or locality"
+#: .\accounts\forms.py:148
+msgid "Where do you live?"
 msgstr ""
 
-#: .\accounts\forms.py:183 .\accounts\models.py:122
+#: .\accounts\forms.py:184 .\accounts\models.py:122
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -996,28 +981,28 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
 
-#: .\templates\matches\match_list.html:31
+#: .\templates\matches\match_list.html:35
 msgid "Update matches"
 msgstr ""
 
-#: .\templates\matches\match_list.html:39
+#: .\templates\matches\match_list.html:43
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr ""
 
-#: .\templates\matches\match_list.html:50
+#: .\templates\matches\match_list.html:54
 msgid "Age:"
 msgstr ""
 
-#: .\templates\matches\match_list.html:64
+#: .\templates\matches\match_list.html:68
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\matches\match_list.html:71
+#: .\templates\matches\match_list.html:75
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:98
+#: .\templates\matches\match_list.html:102
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
@@ -1065,6 +1050,10 @@ msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
+msgstr ""
+
+#: .\templates\profiles\user_extra_info_widget.html:22
+msgid "Where do I live?"
 msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:42

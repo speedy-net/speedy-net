@@ -145,7 +145,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         # Create the localized city field dynamically.
-        self.fields[to_attribute(name='city')] = forms.CharField(label=_('City or locality'), max_length=120, error_messages={'required': _("Please write where you live.")})
+        self.fields[to_attribute(name='city')] = forms.CharField(label=_('Where do you live?'), max_length=120, error_messages={'required': _("Please write where you live.")})
         # Delete unneeded fields from the form.
         self.delete_unneeded_fields()
         # Update fields attributes according to the user's gender and language.
@@ -169,6 +169,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         if (to_attribute(name='profile_description') in self.fields):
             self.fields[to_attribute(name='profile_description')].error_messages = {'required': pgettext_lazy(context=self.instance.user.get_gender(), message="Please write a few words about yourself.")}
         if (to_attribute(name='city') in self.fields):
+            self.fields[to_attribute(name='city')].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Where do you live?')
             self.fields[to_attribute(name='city')].error_messages = {'required': pgettext_lazy(context=self.instance.user.get_gender(), message="Please write where you live.")}
         if (to_attribute(name='children') in self.fields):
             self.fields[to_attribute(name='children')].label = pgettext_lazy(context=self.instance.user.get_gender(), message='Do you have children? How many?')

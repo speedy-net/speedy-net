@@ -19,7 +19,7 @@
                         <td>{{ user.speedy_match_profile.profile_description|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'City or locality' %}</th>
+                        <th class="user-profile-th">{% trans 'Where do I live?' context user.get_gender %}</th>
                         <td>{{ user.city|linebreaksbr }}</td>
                     </tr>
                     <tr>
