@@ -134,7 +134,7 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                        s = (sum(map(int, list(other_user.id))) + (int(datetime_now.hour / 4) * 99) + (datetime_now.day * 7) + (datetime_now.month * 11) + (datetime_now.year * 1)) % 12
+                        s = (sum(map(int, list(other_user.id))) + ((datetime_now.hour // 4) * 99) + (datetime_now.day * 7) + (datetime_now.month * 11) + (datetime_now.year * 1)) % 12
                         if (s in {0, 4, 8, 10}):  # 4/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         elif (s in {2, 6, 11}):  # 3/12
@@ -146,7 +146,7 @@ class SiteProfileManager(BaseManager):
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                s = (sum(map(int, list(other_user.id))) + (int(datetime_now.hour / 4) * 99) + (datetime_now.day * 17) + (datetime_now.month * 19) + (datetime_now.year * 1)) % 77
+                s = (sum(map(int, list(other_user.id))) + ((datetime_now.hour // 4) * 99) + (datetime_now.day * 17) + (datetime_now.month * 19) + (datetime_now.year * 1)) % 77
                 if (s in {24, 48, 72}):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
                 elif (s in {25, 49, 73}):  # 3/77
@@ -162,7 +162,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-int(max([((timezone_now - u.speedy_match_profile.last_visit).days + u.speedy_match_profile._user_last_visit_days_offset), 0]) / 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-(max([((timezone_now - u.speedy_match_profile.last_visit).days + u.speedy_match_profile._user_last_visit_days_offset), 0]) // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
@@ -235,7 +235,7 @@ class SiteProfileManager(BaseManager):
                 number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
             ))
-        matches_list = sorted(matches_list, key=lambda u: (-int((timezone_now - u.speedy_match_profile.last_visit).days / 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
+        matches_list = sorted(matches_list, key=lambda u: (-((timezone_now - u.speedy_match_profile.last_visit).days // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
             user=user,
             language_code=language_code,
