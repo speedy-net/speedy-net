@@ -86,6 +86,8 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
             return redirect(to=reverse('messages:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.objects.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
             self.permission_required = 'messages.send_message'
+            if (not (self.request.user.has_perm(perm='messages.send_message', obj=visited_user))):
+                return self.handle_no_permission()
             self.user = visited_user
             self.chat = None
             return self.get(request=request, *args, **kwargs)
