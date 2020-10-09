@@ -62,7 +62,7 @@ class UserSingleChatMixin(UserChatsMixin):
         return cd
 
 
-class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
+class ChatListView(UserChatsMixin, generic.ListView):
     template_name = 'messages/chat_list.html'
     page_size = 24
     paginate_by = page_size
@@ -72,6 +72,7 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
+    permission_required = 'messages.read_chat'
     template_name = 'messages/chat_detail.html'
     page_size = 24
     paginate_by = page_size
@@ -84,6 +85,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         if ((visited_user) and (visited_user.slug != visited_user_slug)):
             return redirect(to=reverse('messages:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.objects.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
+            self.permission_required = 'messages.send_message'
             self.user = visited_user
             self.chat = None
             return self.get(request=request, *args, **kwargs)
@@ -137,7 +139,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
         return cd
 
 
-class SendMessageToChatView(UserSingleChatMixin, PermissionRequiredMixin, generic.CreateView):
+class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     permission_required = 'messages.send_message'
     template_name = 'messages/chat_detail.html'
     form_class = MessageForm
