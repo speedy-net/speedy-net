@@ -38,6 +38,18 @@ class Chat(TimeStampedModel):
     def participants_count(self):
         return len(self.participants)
 
+    @property
+    def messages(self):
+        return self.message_set.prefetch_related('sender__user')
+
+    @property
+    def messages_count(self):
+        return len(self.messages)
+
+    @property
+    def senders_ids(self):
+        return {message.sender.id for message in self.messages if (message.sender)}
+
     class Meta:
         verbose_name = _('chat')
         verbose_name_plural = _('chats')
@@ -73,7 +85,7 @@ class Chat(TimeStampedModel):
 
 class Message(TimeStampedModel):
     id = RegularUDIDField()
-    chat = models.ForeignKey(to=Chat, verbose_name=_('chat'), on_delete=models.SET_NULL, blank=True, null=True)
+    chat = models.ForeignKey(to=Chat, verbose_name=_('chat'), on_delete=models.PROTECT, blank=True, null=True)
     sender = models.ForeignKey(to=Entity, verbose_name=_('sender'), on_delete=models.PROTECT, blank=True, null=True)
     text = models.TextField(verbose_name=_('message'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)])
 
