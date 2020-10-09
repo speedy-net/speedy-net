@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-09 09:21+0300\n"
+"POT-Creation-Date: 2020-10-09 11:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1710,7 +1710,31 @@ msgctxt "other"
 msgid "Friends"
 msgstr ""
 
-#: .\__translations\__translations.py:237
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow."
+msgstr ""
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow."
+msgstr ""
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow."
+msgstr ""
+
+#: .\__translations\__translations.py:241
 msgctxt "female_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1719,7 +1743,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit her Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:238
+#: .\__translations\__translations.py:242
 msgctxt "female_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1728,7 +1752,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit his Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:239
+#: .\__translations\__translations.py:243
 msgctxt "female_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1737,7 +1761,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:240
+#: .\__translations\__translations.py:244
 msgctxt "male_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1746,7 +1770,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit her Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:241
+#: .\__translations\__translations.py:245
 msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1755,7 +1779,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit his Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:242
+#: .\__translations\__translations.py:246
 msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1764,7 +1788,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:243
+#: .\__translations\__translations.py:247
 msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1773,7 +1797,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit her Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:244
+#: .\__translations\__translations.py:248
 msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1782,7 +1806,7 @@ msgstr ""
 "This user doesn't match your profile, but you can visit his Speedy Net "
 "profile. View user's profile on Speedy Net."
 
-#: .\__translations\__translations.py:245
+#: .\__translations\__translations.py:249
 msgctxt "other_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
