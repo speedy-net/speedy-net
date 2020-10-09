@@ -6,10 +6,13 @@ from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import redirect
 from django.views import generic
+from django.contrib import messages
+from django.utils.translation import pgettext_lazy
 from rules.contrib.views import PermissionRequiredMixin
 
 from speedy.core.profiles.views import UserMixin
 from speedy.core.base.utils import normalize_username
+from speedy.core.blocks.models import Block
 from .forms import MessageForm
 from .models import Chat
 
@@ -49,7 +52,7 @@ class UserSingleChatMixin(UserChatsMixin):
             raise Http404()
 
     def get_messages_queryset(self):
-        return self.get_chat().message_set.prefetch_related('sender__user')
+        return self.get_chat().messages_queryset
 
     def has_permission(self):
         return ((super().has_permission()) and (self.request.user.has_perm(perm='messages.read_chat', obj=self.chat)))
@@ -61,8 +64,22 @@ class UserSingleChatMixin(UserChatsMixin):
         })
         return cd
 
+    def handle_no_permission(self):
+        if (self.request.user.is_authenticated):
+            try:
+                if (getattr(self, "user", None) is None):
+                    self.user = self.get_user()
+                if (self.request.user == self.user) or (Block.objects.there_is_block(user_1=self.request.user, user_2=self.user)):
+                    pass
+                else:
+                    messages.error(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow.'))
+                    return redirect(to=self.user)
+            except PermissionDenied:
+                pass
+        return super().handle_no_permission()
 
-class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
+
+class ChatListView(UserChatsMixin, generic.ListView):
     template_name = 'messages/chat_list.html'
     page_size = 24
     paginate_by = page_size
@@ -72,6 +89,7 @@ class ChatListView(UserChatsMixin, PermissionRequiredMixin, generic.ListView):
 
 
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
+    permission_required = 'messages.read_chat'
     template_name = 'messages/chat_detail.html'
     page_size = 24
     paginate_by = page_size
@@ -84,8 +102,11 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         if ((visited_user) and (visited_user.slug != visited_user_slug)):
             return redirect(to=reverse('messages:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.objects.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
+            self.permission_required = 'messages.send_message'
             self.user = visited_user
             self.chat = None
+            if (not (self.request.user.has_perm(perm='messages.send_message', obj=visited_user))):
+                return self.handle_no_permission()
             return self.get(request=request, *args, **kwargs)
         return super().dispatch(request=request, *args, **kwargs)
 
@@ -123,6 +144,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
 class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
     template_name = 'messages/message_list_poll.html'
+    raise_exception = True
 
     def get_queryset(self):
         since = float(self.request.GET.get('since', 0))
@@ -138,6 +160,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
 
 
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
+    permission_required = 'messages.send_message'
     template_name = 'messages/chat_detail.html'
     form_class = MessageForm
     raise_exception = True
