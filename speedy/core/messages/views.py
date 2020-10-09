@@ -137,7 +137,8 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
         return cd
 
 
-class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
+class SendMessageToChatView(UserSingleChatMixin, PermissionRequiredMixin, generic.CreateView):
+    permission_required = 'messages.send_message'
     template_name = 'messages/chat_detail.html'
     form_class = MessageForm
     raise_exception = True
