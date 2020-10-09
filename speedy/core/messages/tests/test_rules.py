@@ -38,7 +38,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertFalse(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
             self.assertFalse(expr=self.user_2.has_perm(perm='messages.view_send_message_button', obj=self.user_1))
 
-        def test_cannot_send_message_to_other_user_if_didnt_send_too_many_emails_1(self):
+        def test_can_send_message_to_other_user_if_didnt_send_too_many_emails_1(self):
             self._create_users(users_count=6)
             chats = dict()
             for i in range(4):
@@ -50,7 +50,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
 
-        def test_cannot_send_message_to_other_user_if_didnt_send_too_many_emails_2(self):
+        def test_can_send_message_to_other_user_if_didnt_send_too_many_emails_2(self):
             self._create_users(users_count=6)
             chats = dict()
             for i in range(5):
