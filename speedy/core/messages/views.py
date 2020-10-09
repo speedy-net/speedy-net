@@ -49,7 +49,7 @@ class UserSingleChatMixin(UserChatsMixin):
             raise Http404()
 
     def get_messages_queryset(self):
-        return self.get_chat().message_set.prefetch_related('sender__user')
+        return self.get_chat().messages_queryset
 
     def has_permission(self):
         return ((super().has_permission()) and (self.request.user.has_perm(perm='messages.read_chat', obj=self.chat)))
