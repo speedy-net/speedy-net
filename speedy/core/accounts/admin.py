@@ -24,6 +24,9 @@ class ReservedUsernameAdmin(ModelAdmin):
 
 class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
+    inlines = [
+        MessageInlineAdmin,
+    ]
 
     def has_delete_permission(self, request, obj=None):
         return True
