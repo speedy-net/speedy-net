@@ -1,11 +1,9 @@
-from django.contrib import admin as django_admin
-
 from speedy.core import admin
-from speedy.core.base.admin import ReadOnlyModelAdmin
+from speedy.core.base.admin import ReadOnlyModelAdmin, ReadOnlyTabularInlineModelAdmin
 from .models import Chat, Message
 
 
-class MessageInlineAdmin(django_admin.TabularInline):
+class MessageInlineAdmin(ReadOnlyTabularInlineModelAdmin):
     model = Message
 
 
