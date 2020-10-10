@@ -4,11 +4,15 @@ from translated_fields import TranslatedFieldAdmin
 
 from speedy.core import admin
 from speedy.core.base.admin import ModelAdmin, ReadOnlyModelAdmin
+from speedy.core.messages.admin import MessageInlineAdmin
 from .models import Entity, ReservedUsername, User, UserEmailAddress
 
 
 class EntityAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
+    inlines = [
+        MessageInlineAdmin,
+    ]
 
     def has_delete_permission(self, request, obj=None):
         return True
@@ -20,6 +24,9 @@ class ReservedUsernameAdmin(ModelAdmin):
 
 class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
+    inlines = [
+        MessageInlineAdmin,
+    ]
 
     def has_delete_permission(self, request, obj=None):
         return True

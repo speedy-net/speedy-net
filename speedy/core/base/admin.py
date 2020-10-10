@@ -11,7 +11,7 @@ class ModelAdmin(django_admin.ModelAdmin):
     list_per_page = 250
 
 
-class ReadOnlyModelAdmin(ModelAdmin):
+class ReadOnlyModelAdminMixin(object):
     """
     ModelAdmin class that prevents modifications through the admin.
 
@@ -26,14 +26,26 @@ class ReadOnlyModelAdmin(ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         return self.fields or [f.name for f in self.model._meta.fields]
 
-    def has_add_permission(self, request):
-        return False
-
     # Allow viewing objects but not actually changing them.
     def has_change_permission(self, request, obj=None):
         return (request.method in ['GET', 'HEAD'] and super().has_change_permission(request, obj))
 
     def has_delete_permission(self, request, obj=None):
+        return False
+
+
+class ReadOnlyModelAdmin(ReadOnlyModelAdminMixin, ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+
+class ReadOnlyTabularInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.TabularInline):
+    def has_add_permission(self, request, obj):
+        return False
+
+
+class ReadOnlyStackedInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.StackedInline):
+    def has_add_permission(self, request, obj):
         return False
 
 
