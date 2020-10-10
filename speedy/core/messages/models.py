@@ -56,7 +56,13 @@ class Chat(TimeStampedModel):
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
-        return ', '.join(str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants)
+        participants = ', '.join(str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants)
+        senders_list = [str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants if (ent and (ent.id in self.senders_ids))]
+        if (len(senders_list) > 0):
+            senders = ', '.join(senders_list)
+        else:
+            senders = str(_("Unknown"))
+        return "{} ({} messages, senders: {})".format(participants, self.messages_count, senders)
 
     def save(self, *args, **kwargs):
         if (self.is_private):
