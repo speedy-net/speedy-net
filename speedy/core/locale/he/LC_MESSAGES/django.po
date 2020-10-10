@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-09 12:15+0300\n"
+"POT-Creation-Date: 2020-10-10 15:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1959,7 +1959,7 @@ msgstr "תמונה"
 msgid "Special username"
 msgstr "שם משתמש/ת מיוחד"
 
-#: .\accounts\models.py:101 .\messages\models.py:105
+#: .\accounts\models.py:101 .\messages\models.py:111
 msgid "entity"
 msgstr "ישות"
 
@@ -1996,7 +1996,7 @@ msgid "Other"
 msgstr "אחר/ת"
 
 #: .\accounts\models.py:217 .\accounts\models.py:232 .\accounts\models.py:253
-#: .\messages\models.py:59 .\messages\models.py:101
+#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:107
 msgid "Unknown"
 msgstr "לא ידוע"
 
@@ -2435,7 +2435,7 @@ msgstr "Abuse (User)"
 msgid "Abuse (Photo)"
 msgstr "Abuse (Photo)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:89
+#: .\contact_by_form\models.py:21 .\messages\models.py:95
 msgid "sender"
 msgstr "שולח/ת"
 
@@ -2519,7 +2519,7 @@ msgstr "is group chat"
 msgid "last message"
 msgstr "הודעה אחרונה"
 
-#: .\messages\models.py:54 .\messages\models.py:88 .\messages\models.py:106
+#: .\messages\models.py:54 .\messages\models.py:94 .\messages\models.py:112
 msgid "chat"
 msgstr "צ'ט"
 
@@ -2527,19 +2527,23 @@ msgstr "צ'ט"
 msgid "chats"
 msgstr "צ'טים"
 
-#: .\messages\models.py:90 .\messages\models.py:95
+#: .\messages\models.py:64
+msgid "None"
+msgstr "אין"
+
+#: .\messages\models.py:96 .\messages\models.py:101
 msgid "message"
 msgstr "הודעה"
 
-#: .\messages\models.py:96
+#: .\messages\models.py:102
 msgid "messages"
 msgstr "הודעות"
 
-#: .\messages\models.py:111
+#: .\messages\models.py:117
 msgid "read mark"
 msgstr "read mark"
 
-#: .\messages\models.py:112
+#: .\messages\models.py:118
 msgid "read marks"
 msgstr "read marks"
 

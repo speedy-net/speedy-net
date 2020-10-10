@@ -61,7 +61,7 @@ class Chat(TimeStampedModel):
         if (len(senders_list) > 0):
             senders = ', '.join(senders_list)
         else:
-            senders = str(_("Unknown"))
+            senders = str(_("None"))
         return "<Chat {}: {} ({} messages, senders: {})>".format(self.id, participants, self.messages_count, senders)
 
     def save(self, *args, **kwargs):
