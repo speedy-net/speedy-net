@@ -33,6 +33,21 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (0 messages, senders: None)>'.format(chat.id))
             else:
                 self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (0 messages, senders: None)>".format(chat.id))
+            Message.objects.send_message(from_entity=user_1, chat=chat, text='Hello!')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (1 messages, senders: Doron)>'.format(chat.id))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (1 messages, senders: Doron Matalon)>".format(chat.id))
+            Message.objects.send_message(from_entity=user_1, chat=chat, text='Hi.')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (2 messages, senders: Doron)>'.format(chat.id))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (2 messages, senders: Doron Matalon)>".format(chat.id))
+            Message.objects.send_message(from_entity=user_2, chat=chat, text='Hi!')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (3 messages, senders: Doron, Jennifer)>'.format(chat.id))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (3 messages, senders: Doron Matalon, Jennifer Connelly)>".format(chat.id))
 
         def test_get_slug_private_chat(self):
             user_1 = self.get_active_user_doron()
@@ -57,6 +72,21 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertEqual(first=str(chat), second="<Chat {}: Doron, Jennifer, {}, {} (0 messages, senders: None)>".format(chat.id, user_3.name, user_4.name))
             else:
                 self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (0 messages, senders: None)>".format(chat.id, user_3.name, user_4.name))
+            Message.objects.send_message(from_entity=user_1, chat=chat, text='Hello!')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (1 messages, senders: Doron)>'.format(chat.id, user_3.name, user_4.name))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (1 messages, senders: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
+            Message.objects.send_message(from_entity=user_1, chat=chat, text='Hi.')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (2 messages, senders: Doron)>'.format(chat.id, user_3.name, user_4.name))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (2 messages, senders: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
+            Message.objects.send_message(from_entity=user_2, chat=chat, text='Hi!')
+            if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (3 messages, senders: Doron, Jennifer)>'.format(chat.id, user_3.name, user_4.name))
+            else:
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (3 messages, senders: Doron Matalon, Jennifer Connelly)>".format(chat.id, user_3.name, user_4.name))
 
         def test_get_slug_group_chat(self):
             user_1 = self.get_active_user_doron()
