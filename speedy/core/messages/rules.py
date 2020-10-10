@@ -28,23 +28,29 @@ def can_send_new_message(user):
     then don't let them send any new messages to new chats.
     """
     if ((now() - user.date_created).days < 10):
-        if ((Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
+        count_user_messages_1_day = Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
             entity=user,
             string_in_messages="@",
             created_after=now() - timedelta(days=1),
-        ) >= 5) or (Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
+        )
+        count_user_messages_3_days = Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
             entity=user,
             string_in_messages="@",
             created_after=now() - timedelta(days=3),
-        ) >= 10) or (Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
+        )
+        count_user_messages_7_days = Chat.objects.count_chats_with_string_in_messages_and_only_one_sender(
             entity=user,
             string_in_messages="@",
             created_after=now() - timedelta(days=7),
-        ) >= 15)):
+        )
+        if ((count_user_messages_1_day >= 5) or (count_user_messages_3_days >= 10) or (count_user_messages_7_days >= 15)):
             site = Site.objects.get_current()
-            logger.warning("User {user} can't send messages today on {site_name}.".format(
+            logger.warning("User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}).".format(
                 user=user,
                 site_name=_(site.name),
+                count_user_messages_1_day=count_user_messages_1_day,
+                count_user_messages_3_days=count_user_messages_3_days,
+                count_user_messages_7_days=count_user_messages_7_days,
             ))
             return False
     return True
