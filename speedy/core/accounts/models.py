@@ -100,7 +100,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entities')
-        ordering = ('id',)
+        ordering = ('-date_created',)
 
     def __str__(self):
         return '<Entity {} - {}>'.format(self.id, self.slug)
@@ -157,7 +157,7 @@ class ReservedUsername(Entity):
     objects = BaseManager()
 
     class Meta:
-        ordering = ('username',)
+        ordering = ('-date_created',)
 
     def __init__(self, *args, **kwargs):
         if (('username' in kwargs) and (not ('slug' in kwargs))):
@@ -457,7 +457,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
-        ordering = ('-speedy_net_site_profile__last_visit', 'id')
+        ordering = ('-speedy_net_site_profile__last_visit',)
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
@@ -752,7 +752,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     class Meta:
         verbose_name = _('email address')
         verbose_name_plural = _('email addresses')
-        ordering = ('date_created', 'id',)
+        ordering = ('-date_created',)
 
     def __str__(self):
         return self.email
