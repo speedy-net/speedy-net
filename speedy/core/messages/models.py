@@ -62,7 +62,7 @@ class Chat(TimeStampedModel):
             senders = ', '.join(senders_list)
         else:
             senders = str(_("Unknown"))
-        return "{} ({} messages, senders: {})".format(participants, self.messages_count, senders)
+        return "<Chat {}: {} ({} messages, senders: {})>".format(self.id, participants, self.messages_count, senders)
 
     def save(self, *args, **kwargs):
         if (self.is_private):
