@@ -76,6 +76,7 @@ def activate_development(settings):
         'LOGGING': LOGGING,
         'USE_HTTPS': False,
         'SESSION_COOKIE_SECURE': False,
+        'SESSION_COOKIE_SAMESITE': 'Lax',
         'CSRF_COOKIE_SECURE': False,
         'DEBUG': True,
     })
