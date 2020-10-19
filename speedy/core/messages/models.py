@@ -62,7 +62,7 @@ class Chat(TimeStampedModel):
             senders = ', '.join(senders_list)
         else:
             senders = str(_("None"))
-        return "<Chat {}: {} ({} messages, senders: {})>".format(self.id, participants, self.messages_count, senders)
+        return "<Chat {}: {} ({} {}, {}: {})>".format(self.id, participants, self.messages_count, "message" if (self.messages_count == 1) else "messages", "sender" if (len(senders_list) == 1) else "senders", senders)
 
     def save(self, *args, **kwargs):
         if (self.is_private):

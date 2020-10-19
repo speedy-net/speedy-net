@@ -35,14 +35,14 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (0 messages, senders: None)>".format(chat.id))
             Message.objects.send_message(from_entity=user_1, chat=chat, text='Hello!')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (1 messages, senders: Doron)>'.format(chat.id))
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (1 message, sender: Doron)>'.format(chat.id))
             else:
-                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (1 messages, senders: Doron Matalon)>".format(chat.id))
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (1 message, sender: Doron Matalon)>".format(chat.id))
             Message.objects.send_message(from_entity=user_1, chat=chat, text='Hi.')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (2 messages, senders: Doron)>'.format(chat.id))
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (2 messages, sender: Doron)>'.format(chat.id))
             else:
-                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (2 messages, senders: Doron Matalon)>".format(chat.id))
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (2 messages, sender: Doron Matalon)>".format(chat.id))
             Message.objects.send_message(from_entity=user_2, chat=chat, text='Hi!')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer (3 messages, senders: Doron, Jennifer)>'.format(chat.id))
@@ -74,14 +74,14 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (0 messages, senders: None)>".format(chat.id, user_3.name, user_4.name))
             Message.objects.send_message(from_entity=user_1, chat=chat, text='Hello!')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (1 messages, senders: Doron)>'.format(chat.id, user_3.name, user_4.name))
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (1 message, sender: Doron)>'.format(chat.id, user_3.name, user_4.name))
             else:
-                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (1 messages, senders: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (1 message, sender: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
             Message.objects.send_message(from_entity=user_1, chat=chat, text='Hi.')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (2 messages, senders: Doron)>'.format(chat.id, user_3.name, user_4.name))
+                self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (2 messages, sender: Doron)>'.format(chat.id, user_3.name, user_4.name))
             else:
-                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (2 messages, senders: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
+                self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (2 messages, sender: Doron Matalon)>".format(chat.id, user_3.name, user_4.name))
             Message.objects.send_message(from_entity=user_2, chat=chat, text='Hi!')
             if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                 self.assertEqual(first=str(chat), second='<Chat {}: Doron, Jennifer, {}, {} (3 messages, senders: Doron, Jennifer)>'.format(chat.id, user_3.name, user_4.name))
