@@ -19,7 +19,7 @@ var datepicker_options = {
     minDate: '-185y+1d',
     maxDate: '+3y+0d',
     yearRange: '-185:+3',
-    defaultDate: '+3y+0d'
+    defaultDate: '+2y+0d'
 };
 
 $.datepicker.regional.he = {
