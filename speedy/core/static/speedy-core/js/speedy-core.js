@@ -16,9 +16,10 @@ var datepicker_options = {
     altFormat: 'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
-    minDate: '-180y+1d',
-    maxDate: '+0d',
-    yearRange: '-180:+0'
+    minDate: '-185y+1d',
+    maxDate: '+3y+0d',
+    yearRange: '-185:+3',
+    defaultDate: '+3y+0d'
 };
 
 $.datepicker.regional.he = {
