@@ -1,8 +1,8 @@
 from django import template
 
-register = template.Library()
-
 from speedy.core.messages.models import ReadMark, Chat
+
+register = template.Library()
 
 
 @register.simple_tag

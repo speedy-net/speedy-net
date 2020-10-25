@@ -6,7 +6,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.messages.models import Message, ReadMark
-    from speedy.core.messages.templatetags import core_messages_tags
+    from speedy.core.messages.templatetags import core_messages_tags_and_filters
 
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
     from speedy.core.messages.test.factories import ChatFactory
@@ -18,8 +18,8 @@ if (django_settings.LOGIN_ENABLED):
             user_1 = ActiveUserFactory()
             user_2 = ActiveUserFactory()
             chat = ChatFactory(ent1=user_1, ent2=user_2)
-            self.assertEqual(first=core_messages_tags.get_other_participant(chat=chat, user=user_1).id, second=user_2.id)
-            self.assertEqual(first=core_messages_tags.get_other_participant(chat=chat, user=user_2).id, second=user_1.id)
+            self.assertEqual(first=core_messages_tags_and_filters.get_other_participant(chat=chat, user=user_1).id, second=user_2.id)
+            self.assertEqual(first=core_messages_tags_and_filters.get_other_participant(chat=chat, user=user_2).id, second=user_1.id)
 
 
     @only_on_sites_with_login
@@ -50,7 +50,7 @@ if (django_settings.LOGIN_ENABLED):
             _mark(4)
             _message(4)
 
-            output = core_messages_tags.annotate_chats_with_read_marks(chat_list=chats, entity=user_1)
+            output = core_messages_tags_and_filters.annotate_chats_with_read_marks(chat_list=chats, entity=user_1)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=chats[0].is_unread)
             self.assertFalse(expr=chats[1].is_unread)
@@ -74,13 +74,13 @@ if (django_settings.LOGIN_ENABLED):
             sleep(0.001)
             self.assertEqual(first=ReadMark.objects.count(), second=2)
 
-            output = core_messages_tags.annotate_messages_with_read_marks(message_list=messages, entity=user_1)
+            output = core_messages_tags_and_filters.annotate_messages_with_read_marks(message_list=messages, entity=user_1)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=messages[0].is_unread)
             self.assertFalse(expr=messages[1].is_unread)
             self.assertTrue(expr=messages[2].is_unread)
 
-            output = core_messages_tags.annotate_messages_with_read_marks(message_list=messages, entity=user_2)
+            output = core_messages_tags_and_filters.annotate_messages_with_read_marks(message_list=messages, entity=user_2)
             self.assertEqual(first=output, second='')
             self.assertFalse(expr=messages[0].is_unread)
             self.assertFalse(expr=messages[1].is_unread)
@@ -119,8 +119,8 @@ if (django_settings.LOGIN_ENABLED):
             Message.objects.send_message(from_entity=user_3, chat=chats[2], text='text')
             sleep(0.1)
 
-            self.assertEqual(first=core_messages_tags.unread_chats_count(entity=user_1), second=1 + 1 + 0)
-            self.assertEqual(first=core_messages_tags.unread_chats_count(entity=user_2), second=0 + 0 + 1)
-            self.assertEqual(first=core_messages_tags.unread_chats_count(entity=user_3), second=0 + 0 + 0)
+            self.assertEqual(first=core_messages_tags_and_filters.unread_chats_count(entity=user_1), second=1 + 1 + 0)
+            self.assertEqual(first=core_messages_tags_and_filters.unread_chats_count(entity=user_2), second=0 + 0 + 1)
+            self.assertEqual(first=core_messages_tags_and_filters.unread_chats_count(entity=user_3), second=0 + 0 + 0)
 
 
