@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
+from django.utils.timezone import now
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +32,11 @@ class SiteProfileMiddleware(MiddlewareMixin):
                     request.user.speedy_net_profile.deactivate()
                     if (not (_user_is_active == (request.user.is_active or request.user.speedy_net_profile.is_active))):
                         speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
-                        logger.info('User {user} was deactivated on {site_name} - no confirmed email.'.format(site_name=_(speedy_net_site.name), user=request.user))
+                        logger.info('User {user} was deactivated on {site_name} - no confirmed email (registered {registered_days_ago} days ago).'.format(
+                            site_name=_(speedy_net_site.name),
+                            user=request.user,
+                            registered_days_ago=(now() - request.user.date_created).days,
+                        ))
             if (not (request.user.profile.is_active_and_valid)):
                 redirect_this_user = True
                 for url in django_settings.DONT_REDIRECT_INACTIVE_USER:

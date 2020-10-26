@@ -471,7 +471,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         self.has_confirmed_email = (self.email_addresses.filter(is_confirmed=True).count() > 0)
         self.save_user_and_profile()
         if (not (self.has_confirmed_email == previous_has_confirmed_email)):
-            logger.info('User::_update_has_confirmed_email_field::User {user} has_confirmed_email is {has_confirmed_email} on {site_name}.'.format(site_name=_(speedy_net_site.name), user=self, has_confirmed_email=self.has_confirmed_email))
+            logger.info('User::_update_has_confirmed_email_field::User {user} has_confirmed_email is {has_confirmed_email} on {site_name} (registered {registered_days_ago} days ago).'.format(
+                site_name=_(speedy_net_site.name),
+                user=self,
+                has_confirmed_email=self.has_confirmed_email,
+                registered_days_ago=(now() - self.date_created).days,
+            ))
 
     def save(self, *args, **kwargs):
         # Superuser must be equal to staff.

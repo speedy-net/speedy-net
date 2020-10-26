@@ -219,7 +219,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                     user=self.instance,
                     new_date_of_birth=self.instance.date_of_birth,
                     old_date_of_birth=user.date_of_birth,
-                    registered_days_ago=(now() - user.date_created).days,
+                    registered_days_ago=(now() - self.instance.date_created).days,
                 ))
             if (not (self.instance.gender == user.gender)):
                 site = Site.objects.get_current()
@@ -228,7 +228,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                     user=self.instance,
                     new_gender=self.instance.gender,
                     old_gender=user.gender,
-                    registered_days_ago=(now() - user.date_created).days,
+                    registered_days_ago=(now() - self.instance.date_created).days,
                 ))
             if (not (self.instance.username == user.username)):
                 # Error - users can't change their username.
@@ -238,7 +238,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                     user=self.instance,
                     new_username=self.instance.username,
                     old_username=user.username,
-                    registered_days_ago=(now() - user.date_created).days,
+                    registered_days_ago=(now() - self.instance.date_created).days,
                 ))
         return super().save(commit=commit)
 
@@ -332,7 +332,12 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
             user_email_list = [e.email for e in user.email_addresses.all() if (e.email == email.lower())]
             if (len(user_email_list) == 1):
                 user_email = user_email_list[0]
-                logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email}".format(site_name=_(site_name), user=user, user_email=user_email))
+                logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email} (registered {registered_days_ago} days ago)".format(
+                    site_name=_(site_name),
+                    user=user,
+                    user_email=user_email,
+                    registered_days_ago=(now() - user.date_created).days,
+                ))
                 context = {
                     'email': user_email,
                     'domain': domain,  # Taken from Django; not used.
@@ -345,7 +350,12 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
                 }
                 self.send_mail(subject_template_name, email_template_name, context, from_email, user_email, html_email_template_name=html_email_template_name)
             else:
-                logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email}".format(site_name=_(site_name), user=user, email=email))
+                logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email} (registered {registered_days_ago} days ago)".format(
+                    site_name=_(site_name),
+                    user=user,
+                    email=email,
+                    registered_days_ago=(now() - user.date_created).days,
+                ))
 
 
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.SetPasswordForm):

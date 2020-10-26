@@ -5,6 +5,7 @@ from django import forms
 from django.conf import settings as django_settings
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.timezone import now
 from django.contrib.sites.models import Site
 
 from speedy.core.base.utils import to_attribute, update_form_field_choices
@@ -225,7 +226,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_profile = SpeedyMatchSiteProfile.objects.get(pk=self.instance.pk)
             if (not (self.instance.height == user_profile.height)):
                 site = Site.objects.get_current()
-                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height}'.format(site_name=_(site.name), user=self.instance.user, new_height=self.instance.height, old_height=user_profile.height))
+                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height} (registered {registered_days_ago} days ago)'.format(
+                    site_name=_(site.name),
+                    user=self.instance.user,
+                    new_height=self.instance.height,
+                    old_height=user_profile.height,
+                    registered_days_ago=(now() - self.instance.user.date_created).days,
+                ))
             if ('profile_picture' in self.fields):
                 profile_picture = self.files.get('profile_picture')
                 if (profile_picture):
@@ -241,9 +248,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                     if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.instance.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
                         self.instance.not_allowed_to_use_speedy_match = True
                         self.instance.save()
-                        logger.warning('User {user} is not allowed to use Speedy Match (height={height}).'.format(
+                        logger.warning('User {user} is not allowed to use Speedy Match (height={height}, registered {registered_days_ago} days ago).'.format(
                             user=self.instance.user,
                             height=self.instance.height,
+                            registered_days_ago=(now() - self.instance.user.date_created).days,
                         ))
             activation_step = self.instance.activation_step
             step, errors = self.instance.validate_profile_and_activate(commit=False)

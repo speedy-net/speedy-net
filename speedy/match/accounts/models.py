@@ -6,6 +6,7 @@ from django.db.models import JSONField
 from django.contrib.postgres.fields import ArrayField
 from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _, get_language
+from django.utils.timezone import now
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 
@@ -190,12 +191,13 @@ class SiteProfile(SiteProfileBase):
             if (not (step == len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
                 error = True
             if (error):
-                logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug}".format(
+                logger.error("is_active_and_valid::user is active but not valid, step={step}, error_messages={error_messages}, self.user.pk={self_user_pk}, self.user.username={self_user_username}, self.user.slug={self_user_slug} (registered {registered_days_ago} days ago)".format(
                     step=step,
                     error_messages=error_messages,
                     self_user_pk=self.user.pk,
                     self_user_username=self.user.username,
                     self_user_slug=self.user.slug,
+                    registered_days_ago=(now() - self.user.date_created).days,
                 ))
                 return False
         return (self.is_active)

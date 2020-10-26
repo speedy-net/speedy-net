@@ -5,6 +5,7 @@ from django.contrib.sites.models import Site
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.utils.translation import pgettext_lazy, ugettext as _
+from django.utils.timezone import now
 
 from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.match.accounts import utils
@@ -102,13 +103,18 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         if (self.request.user.speedy_match_profile.is_active):
             self.display_welcome_message()
             site = Site.objects.get_current()
-            logger.info('User {user} activated their account on {site_name}.'.format(site_name=_(site.name), user=self.request.user))
+            logger.info('User {user} activated their account on {site_name} (registered {registered_days_ago} days ago).'.format(
+                site_name=_(site.name),
+                user=self.request.user,
+                registered_days_ago=(now() - self.request.user.date_created).days,
+            ))
             if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.request.user.speedy_match_profile.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
                 self.request.user.speedy_match_profile.not_allowed_to_use_speedy_match = True
                 self.request.user.save_user_and_profile()
-                logger.error('User {user} is not allowed to use Speedy Match (height={height}).'.format(
+                logger.error('User {user} is not allowed to use Speedy Match (height={height}) (registered {registered_days_ago} days ago).'.format(
                     user=self.request.user,
                     height=self.request.user.speedy_match_profile.height,
+                    registered_days_ago=(now() - self.request.user.date_created).days,
                 ))
         return redirect(to=success_url)
 

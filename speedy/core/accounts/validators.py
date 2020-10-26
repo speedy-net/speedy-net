@@ -6,6 +6,7 @@ from django.core.validators import RegexValidator, MinLengthValidator, MaxLength
 from django.core.exceptions import ValidationError
 from speedy.core.base.utils import string_is_not_empty, string_is_not_none
 from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.utils.timezone import now
 from django.template.loader import render_to_string
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
@@ -248,9 +249,10 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
                     photo_is_valid = True
     except Exception as e:
         photo_is_valid = False
-        logger.error('validate_profile_picture_for_user::user={user}, Exception={e}'.format(
+        logger.error('validate_profile_picture_for_user::user={user}, Exception={e} (registered {registered_days_ago} days ago)'.format(
             user=user,
             e=str(e),
+            registered_days_ago=(now() - user.date_created).days,
         ))
     if (test_new_profile_picture):
         user.photo = user._photo

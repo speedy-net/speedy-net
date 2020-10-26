@@ -4,6 +4,7 @@ from django.db import models
 from django.conf import settings as django_settings
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
+from django.utils.timezone import now
 from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
@@ -43,11 +44,26 @@ class SiteProfile(SiteProfileBase):
         previous_number_of_friends = self.number_of_friends
         self.number_of_friends = self.user.speedy_net_friends_count
         if (not (self.number_of_friends == previous_number_of_friends)):
-            logger.info('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has {number_of_friends} friends on {site_name}.'.format(site_name=_(speedy_net_site.name), user=self.user, number_of_friends=self.number_of_friends))
+            logger.info('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago).'.format(
+                site_name=_(speedy_net_site.name),
+                user=self.user,
+                number_of_friends=self.number_of_friends,
+                registered_days_ago=(now() - self.user.date_created).days,
+            ))
             if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
-                logger.warning('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {number_of_friends} friends on {site_name}.'.format(site_name=_(speedy_net_site.name), user=self.user, number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20))
+                logger.warning('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago).'.format(
+                    site_name=_(speedy_net_site.name),
+                    user=self.user,
+                    number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20,
+                    registered_days_ago=(now() - self.user.date_created).days,
+                ))
             if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
-                logger.error('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name}.'.format(site_name=_(speedy_net_site.name), user=self.user, MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED))
+                logger.error('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name} (registered {registered_days_ago} days ago).'.format(
+                    site_name=_(speedy_net_site.name),
+                    user=self.user,
+                    MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED,
+                    registered_days_ago=(now() - self.user.date_created).days,
+                ))
 
     def activate(self):
         self.is_active = True
