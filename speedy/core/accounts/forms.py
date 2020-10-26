@@ -8,6 +8,7 @@ from django.contrib.auth import forms as django_auth_forms, password_validation
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.timezone import now
 from django.core.exceptions import ValidationError
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
@@ -213,14 +214,32 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()
-                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth}'.format(site_name=_(site.name), user=self.instance, new_date_of_birth=self.instance.date_of_birth, old_date_of_birth=user.date_of_birth))
+                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth} (registered {registered_days_ago} days ago)'.format(
+                    site_name=_(site.name),
+                    user=self.instance,
+                    new_date_of_birth=self.instance.date_of_birth,
+                    old_date_of_birth=user.date_of_birth,
+                    registered_days_ago=(now() - user.date_created).days,
+                ))
             if (not (self.instance.gender == user.gender)):
                 site = Site.objects.get_current()
-                logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender}'.format(site_name=_(site.name), user=self.instance, new_gender=self.instance.gender, old_gender=user.gender))
+                logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender} (registered {registered_days_ago} days ago)'.format(
+                    site_name=_(site.name),
+                    user=self.instance,
+                    new_gender=self.instance.gender,
+                    old_gender=user.gender,
+                    registered_days_ago=(now() - user.date_created).days,
+                ))
             if (not (self.instance.username == user.username)):
                 # Error - users can't change their username.
                 site = Site.objects.get_current()
-                logger.error('User changed username on {site_name}, user={user}, new username={new_username}, old username={old_username}'.format(site_name=_(site.name), user=self.instance, new_username=self.instance.username, old_username=user.username))
+                logger.error('User changed username on {site_name}, user={user}, new username={new_username}, old username={old_username} (registered {registered_days_ago} days ago)'.format(
+                    site_name=_(site.name),
+                    user=self.instance,
+                    new_username=self.instance.username,
+                    old_username=user.username,
+                    registered_days_ago=(now() - user.date_created).days,
+                ))
         return super().save(commit=commit)
 
 
