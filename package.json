@@ -12,6 +12,7 @@
   },
   "author": "",
   "license": "GNU Affero General Public License",
+  "private": true,
   "bugs": {
     "url": "https://github.com/speedy-net/speedy-net/issues"
   },
@@ -23,7 +24,9 @@
     "gulp-rename": "^1.4.0",
     "gulp-rtlcss": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "jquery": "^3.5.1",
     "natives": "^1.1.6",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.16.1"
   }
 }
