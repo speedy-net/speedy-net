@@ -1,4 +1,5 @@
 from time import sleep
+from dateutil.relativedelta import relativedelta
 
 from django.conf import settings as django_settings
 
@@ -107,7 +108,7 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
             for i in range(15):
-                chats[str(4 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(7 + i)))
+                chats[str(4 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(4 + 3 + i)))
                 Message.objects.send_message(from_entity=self.user_1, chat=chats[str(4 + i)], text='test@example.com')
                 sleep(0.01)
                 self.assertFalse(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
@@ -122,12 +123,34 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
             for i in range(12):
-                Message.objects.send_message(from_entity=getattr(self, "user_{}".format(7 + i)), chat=chats[str(4 + i)], text='Hello!')
+                Message.objects.send_message(from_entity=getattr(self, "user_{}".format(4 + 3 + i)), chat=chats[str(4 + i)], text='Hello!')
                 sleep(0.01)
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+
+        def test_cannot_send_message_to_other_user_if_sent_too_many_emails_3(self):
+            self._create_users(users_count=30)
+            self.user_1.date_created -= relativedelta(days=30)
+            self.user_1.save_user_and_profile()
+            chats = dict()
+            for i in range(19):
+                chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='test@example.com')
+                sleep(0.01)
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+            for i in range(5):
+                chats[str(19 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(19 + 3 + i)))
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(19 + i)], text='test@example.com')
+                sleep(0.01)
+                self.assertFalse(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
 
 
     @only_on_sites_with_login
