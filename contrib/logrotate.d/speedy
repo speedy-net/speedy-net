@@ -1,7 +1,7 @@
 /var/log/django/speedy.log
 {
     weekly
-    rotate 16
+    rotate 17
     create
     dateext
     missingok
