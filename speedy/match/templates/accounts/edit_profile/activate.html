@@ -175,6 +175,20 @@
                 <script>
                     gtag('event', 'conversion', {'send_to': 'AW-1011575750/LardCJfvsbcBEMbXreID'});
                 </script>
+                {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH %}
+                {% else %}
+                    {# <!-- Event snippet for Speedy Match - matches list - invalid height conversion page --> #}
+                    <script>
+                        gtag('event', 'conversion', {'send_to': 'AW-1011575750/svRGCLiyw7sBEMbXreID'});
+                    </script>
+                {% endif %}
+                {% if not user.speedy_match_profile.not_allowed_to_use_speedy_match %}
+                {% else %}
+                    {# <!-- Event snippet for Speedy Match - matches list - not allowed to use speedy match conversion page --> #}
+                    <script>
+                        gtag('event', 'conversion', {'send_to': 'AW-1011575750/om86CNjWzrsBEMbXreID'});
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endblock %}
