@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 15:20+0300\n"
+"POT-Creation-Date: 2020-11-26 08:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:753
+#: .\__translations\__translations.py:9 .\accounts\models.py:758
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -1884,58 +1884,58 @@ msgstr "אני והחברים/ות שלי"
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\forms.py:64
+#: .\accounts\forms.py:65
 msgid "Last name (optional)"
 msgstr "שם משפחה (אופציונלי)"
 
-#: .\accounts\forms.py:128
+#: .\accounts\forms.py:129
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:137
+#: .\accounts\forms.py:138
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:140
+#: .\accounts\forms.py:141
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:158
+#: .\accounts\forms.py:159
 msgid "Update your profile picture"
 msgstr "עדכנ/י את תמונת הפרופיל שלך"
 
-#: .\accounts\forms.py:158 .\accounts\validators.py:225
+#: .\accounts\forms.py:159 .\accounts\validators.py:226
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
-#: .\accounts\forms.py:260 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:279 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:266 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:285 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:269 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:288 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:282
+#: .\accounts\forms.py:301
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:366
+#: .\accounts\forms.py:395
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:378
+#: .\accounts\forms.py:407
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -1943,7 +1943,7 @@ msgstr "הסיסמה לא תקינה."
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:81 .\accounts\models.py:82 .\accounts\validators.py:19
+#: .\accounts\models.py:81 .\accounts\models.py:82 .\accounts\validators.py:20
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
@@ -2112,7 +2112,7 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:458 .\accounts\models.py:737 .\blocks\models.py:15
+#: .\accounts\models.py:458 .\accounts\models.py:742 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -2120,47 +2120,47 @@ msgstr "משתמש/ת"
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:479
+#: .\accounts\models.py:484
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:738
+#: .\accounts\models.py:743
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:739
+#: .\accounts\models.py:744
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:740
+#: .\accounts\models.py:745
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:741
+#: .\accounts\models.py:746
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:742
+#: .\accounts\models.py:747
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:743
+#: .\accounts\models.py:748
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:754
+#: .\accounts\models.py:759
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:820
+#: .\accounts\models.py:825
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:821
+#: .\accounts\models.py:826
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\validators.py:37
+#: .\accounts\validators.py:38
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -2168,7 +2168,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או "
 "מקפים. שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:39
+#: .\accounts\validators.py:40
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -2176,7 +2176,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
 "של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:45
+#: .\accounts\validators.py:46
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2191,7 +2191,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לפחות (מכיל "
 "%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:56
+#: .\accounts\validators.py:57
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2206,7 +2206,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
 "%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:67
+#: .\accounts\validators.py:68
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2219,7 +2219,7 @@ msgstr[0] ""
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל %(show_value)d)."
 
-#: .\accounts\validators.py:78
+#: .\accounts\validators.py:79
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2234,7 +2234,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:102
+#: .\accounts\validators.py:103
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2245,14 +2245,14 @@ msgid_plural ""
 msgstr[0] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:112
+#: .\accounts\validators.py:113
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "הסיסמה שלך חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:133
+#: .\accounts\validators.py:134
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2261,36 +2261,36 @@ msgid_plural ""
 msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
 msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
 
-#: .\accounts\validators.py:143
+#: .\accounts\validators.py:144
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
 msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
-#: .\accounts\validators.py:188 .\accounts\validators.py:195
+#: .\accounts\validators.py:189 .\accounts\validators.py:196
 msgid "This field cannot be null."
 msgstr "שדה זה אינו יכול להיות ריק."
 
-#: .\accounts\validators.py:190
+#: .\accounts\validators.py:191
 msgid "This field cannot be blank."
 msgstr "שדה זה אינו יכול להיות ריק."
 
-#: .\accounts\validators.py:202 .\accounts\validators.py:209
+#: .\accounts\validators.py:203 .\accounts\validators.py:210
 msgid "Enter a valid date."
 msgstr "יש להזין תאריך חוקי."
 
-#: .\accounts\validators.py:220
+#: .\accounts\validators.py:221
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\validators.py:227
+#: .\accounts\validators.py:228
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 15 MB."
 msgstr ""
 "גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
 
-#: .\accounts\validators.py:258
+#: .\accounts\validators.py:260
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2298,20 +2298,20 @@ msgstr ""
 "אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
 "מתקבלים."
 
-#: .\accounts\views.py:272
+#: .\accounts\views.py:282
 msgid "Invalid confirmation link."
 msgstr "קישור אימות לא חוקי."
 
-#: .\accounts\views.py:296 .\accounts\views.py:312
+#: .\accounts\views.py:306 .\accounts\views.py:322
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-‎{email_address}‎‎"
 
-#: .\accounts\views.py:327
+#: .\accounts\views.py:337
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:343
+#: .\accounts\views.py:353
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 

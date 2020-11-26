@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 15:20+0300\n"
+"POT-Creation-Date: 2020-11-26 08:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -443,203 +443,203 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:56
+#: .\accounts\forms.py:57
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:56 .\accounts\forms.py:95
+#: .\accounts\forms.py:57 .\accounts\forms.py:96
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:57
+#: .\accounts\forms.py:58
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:57 .\accounts\forms.py:101 .\accounts\validators.py:73
+#: .\accounts\forms.py:58 .\accounts\forms.py:102 .\accounts\validators.py:73
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\forms.py:58
+#: .\accounts\forms.py:59
 msgid "My smoking status"
 msgstr ""
 
-#: .\accounts\forms.py:58 .\accounts\forms.py:104 .\accounts\validators.py:78
+#: .\accounts\forms.py:59 .\accounts\forms.py:105 .\accounts\validators.py:78
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\forms.py:59
+#: .\accounts\forms.py:60
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:59 .\accounts\forms.py:107 .\accounts\validators.py:83
+#: .\accounts\forms.py:60 .\accounts\forms.py:108 .\accounts\validators.py:83
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:60 .\accounts\forms.py:125 .\accounts\validators.py:88
+#: .\accounts\forms.py:61 .\accounts\forms.py:126 .\accounts\validators.py:88
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:98
+#: .\accounts\forms.py:99
 msgid "Your height is required."
 msgstr ""
 
-#: .\accounts\forms.py:110 .\accounts\validators.py:43
+#: .\accounts\forms.py:111 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:148 .\accounts\validators.py:48
+#: .\accounts\forms.py:114 .\accounts\forms.py:149 .\accounts\validators.py:48
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:116 .\accounts\models.py:112
+#: .\accounts\forms.py:117 .\accounts\models.py:113
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:119 .\accounts\models.py:115
+#: .\accounts\forms.py:120 .\accounts\models.py:116
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:122 .\accounts\validators.py:63
+#: .\accounts\forms.py:123 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:128
+#: .\accounts\forms.py:129
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:131
+#: .\accounts\forms.py:132
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:134 .\accounts\validators.py:110
+#: .\accounts\forms.py:135 .\accounts\validators.py:110
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:137 .\accounts\validators.py:118
+#: .\accounts\forms.py:138 .\accounts\validators.py:118
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:140 .\accounts\validators.py:126
+#: .\accounts\forms.py:141 .\accounts\validators.py:126
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:148
+#: .\accounts\forms.py:149
 msgid "Where do you live?"
 msgstr ""
 
-#: .\accounts\forms.py:184 .\accounts\models.py:122
+#: .\accounts\forms.py:185 .\accounts\models.py:123
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
 
-#: .\accounts\models.py:36 .\accounts\models.py:88
+#: .\accounts\models.py:37 .\accounts\models.py:89
 msgid "No match"
 msgstr ""
 
-#: .\accounts\models.py:37 .\accounts\models.py:89
+#: .\accounts\models.py:38 .\accounts\models.py:90
 msgid "One heart"
 msgstr ""
 
-#: .\accounts\models.py:38 .\accounts\models.py:90
+#: .\accounts\models.py:39 .\accounts\models.py:91
 msgid "Two hearts"
 msgstr ""
 
-#: .\accounts\models.py:39 .\accounts\models.py:91
+#: .\accounts\models.py:40 .\accounts\models.py:92
 msgid "Three hearts"
 msgstr ""
 
-#: .\accounts\models.py:40 .\accounts\models.py:92
+#: .\accounts\models.py:41 .\accounts\models.py:93
 msgid "Four hearts"
 msgstr ""
 
-#: .\accounts\models.py:41 .\accounts\models.py:93
+#: .\accounts\models.py:42 .\accounts\models.py:94
 msgid "Five hearts"
 msgstr ""
 
-#: .\accounts\models.py:97
+#: .\accounts\models.py:98
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:98
+#: .\accounts\models.py:99
 msgid "On new likes"
 msgstr ""
 
-#: .\accounts\models.py:101
+#: .\accounts\models.py:102
 msgid "Active languages"
 msgstr ""
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:108
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr ""
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:108
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr ""
 
-#: .\accounts\models.py:109
+#: .\accounts\models.py:110
 msgid "Few words about me"
 msgstr ""
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:119
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:129
 msgid "Minimal age to match"
 msgstr ""
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:130
 msgid "Maximal age to match"
 msgstr ""
 
-#: .\accounts\models.py:130
+#: .\accounts\models.py:131
 msgid "Diet match"
 msgstr ""
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:132
 msgid "Smoking status match"
 msgstr ""
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:133
 msgid "Relationship status match"
 msgstr ""
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:136
 msgid "Diet to match"
 msgstr ""
 
-#: .\accounts\models.py:143
+#: .\accounts\models.py:144
 msgid "Smoking status to match"
 msgstr ""
 
-#: .\accounts\models.py:151
+#: .\accounts\models.py:152
 msgid "Relationship status to match"
 msgstr ""
 
-#: .\accounts\models.py:158
+#: .\accounts\models.py:159
 msgid "Activation step"
 msgstr ""
 
-#: .\accounts\models.py:161
+#: .\accounts\models.py:162
 msgid "Number of matches on last user's search"
 msgstr ""
 
-#: .\accounts\models.py:204
+#: .\accounts\models.py:206
 msgid "Speedy Match Profile"
 msgstr ""
 
-#: .\accounts\models.py:205 .\profiles\apps.py:7
+#: .\accounts\models.py:207 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:292 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:294 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -680,11 +680,13 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:46
+#: .\admin\views.py:64
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
-"{total_number_of_active_members}, of which "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others), of which "
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week, {total_number_of_active_members_in_the_last_month} members "
 "entered the site in the last month, and "
@@ -692,7 +694,7 @@ msgid ""
 "site in the last four months."
 msgstr ""
 
-#: .\admin\views.py:84
+#: .\admin\views.py:105
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -707,7 +709,7 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:102
+#: .\admin\views.py:123
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -1002,7 +1004,7 @@ msgstr ""
 msgid "Add more options"
 msgstr ""
 
-#: .\templates\matches\match_list.html:102
+#: .\templates\matches\match_list.html:104
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
