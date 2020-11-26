@@ -8,7 +8,9 @@
         <div class="card-body">
             <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
                 <h5 class="card-title mb-0">
-                    {{ user.name|truncatechars:18 }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
+                    {% block user_name_and_age %}
+                        {{ user.name|truncatechars:18 }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
+                    {% endblock %}
                 </h5>
             </a>
             {% if user.speedy_match_profile.rank > 0 %}

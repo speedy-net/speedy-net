@@ -17,3 +17,8 @@
         </div>
     {% endif %}
 {% endblock %}
+
+{% block include_match_item %}
+    {% include 'admin/matches/match_item.html' with user=match %}
+{% endblock %}
+

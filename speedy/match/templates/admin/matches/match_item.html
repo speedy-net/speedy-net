@@ -1,0 +1,12 @@
+{% extends 'matches/match_item.html' %}
+
+{% load i18n %}
+{% load user_tags %}
+{% load match_tags_and_filters %}
+
+{% block user_name_and_age %}
+    {{ block.super }}
+    <br />
+    ({{ user.get_gender_display }})
+{% endblock %}
+
