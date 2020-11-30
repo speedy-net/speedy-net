@@ -136,7 +136,7 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                        s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), ((datetime_now.hour // 4) * 97), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 12
+                        s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 97), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 12
                         if (s in {0, 4, 8, 10}):  # 4/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         elif (s in {2, 6, 11}):  # 3/12
@@ -148,7 +148,7 @@ class SiteProfileManager(BaseManager):
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), ((datetime_now.hour // 4) * 98), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 77
+                s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 98), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 77
                 if (s in {24, 48, 72}):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
                 elif (s in {25, 49, 73}):  # 3/77
