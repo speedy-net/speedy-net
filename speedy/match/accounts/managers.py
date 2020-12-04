@@ -5,7 +5,7 @@ from datetime import date, datetime
 from django.utils.translation import get_language
 from django.utils.timezone import now
 
-from speedy.core.base.utils import get_age_ranges_match
+from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import User
 
@@ -147,11 +147,11 @@ class SiteProfileManager(BaseManager):
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
-                if ((len(other_user.speedy_match_profile.profile_description) >= 20) and (other_user.speedy_match_profile.profile_description.count(" ") >= 9)):
+                if ((string_is_not_empty(other_user.speedy_match_profile.profile_description)) and (len(other_user.speedy_match_profile.profile_description) >= 20) and (other_user.speedy_match_profile.profile_description.count(" ") >= 9)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 3 * 30
-                if ((len(other_user.speedy_match_profile.match_description) >= 20) and (other_user.speedy_match_profile.match_description.count(" ") >= 7)):
+                if ((string_is_not_empty(other_user.speedy_match_profile.match_description)) and (len(other_user.speedy_match_profile.match_description) >= 20) and (other_user.speedy_match_profile.match_description.count(" ") >= 7)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
