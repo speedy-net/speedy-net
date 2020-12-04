@@ -116,6 +116,7 @@ class ReadMark(TimeStampedModel):
     class Meta:
         verbose_name = _('read mark')
         verbose_name_plural = _('read marks')
+        unique_together = ('entity', 'chat')
         ordering = ('-date_created',)
         get_latest_by = 'date_created'
 
