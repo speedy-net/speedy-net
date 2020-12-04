@@ -8,7 +8,6 @@ from django import test as django_test
 
 from speedy.core.accounts.models import User
 
-
 if (django_settings.LOGIN_ENABLED):
     _test_case = django_test.TestCase()
 
@@ -25,11 +24,11 @@ if (django_settings.LOGIN_ENABLED):
         def activate_profile(self, created, extracted, **kwargs):
             from speedy.core.uploads.test.factories import UserImageFactory
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            self.speedy_match_profile.profile_description = "Hi!"
+            self.speedy_match_profile.profile_description = ("Hi! " * 12).strip()
             self.city = "Tel Aviv."
             self.speedy_match_profile.children = "One boy."
             self.speedy_match_profile.more_children = "Yes."
-            self.speedy_match_profile.match_description = "Hi!"
+            self.speedy_match_profile.match_description = ("Hi! " * 8).strip()
             self.speedy_match_profile.height = random.randint(150, 220)
             _test_case.assertEqual(first=self.diet, second=User.DIET_UNKNOWN)
             _test_case.assertEqual(first=self.smoking_status, second=User.SMOKING_STATUS_UNKNOWN)
