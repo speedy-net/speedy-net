@@ -147,6 +147,14 @@ class SiteProfileManager(BaseManager):
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
+                if ((len(other_user.speedy_match_profile.profile_description) >= 20) and (other_user.speedy_match_profile.profile_description.count(" ") >= 9)):
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                else:
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 3 * 30
+                if ((len(other_user.speedy_match_profile.match_description) >= 20) and (other_user.speedy_match_profile.match_description.count(" ") >= 7)):
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                else:
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                 s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 98), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 77
                 if (s in {24, 48, 72}):  # 3/77
