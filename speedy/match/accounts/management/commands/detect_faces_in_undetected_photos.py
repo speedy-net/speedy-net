@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        images = Image.objects.filter(aws_image_moderation_time=None)
+        images = Image.objects.filter(visible_on_website=True, aws_facial_analysis_time=None)  # ~~~~ TODO: Use only images of Speedy Match active users.
         for image in images:
-            if (image.aws_image_moderation_time is None):
+            if ((image.visible_on_website) and (image.aws_facial_analysis_time is None)):
                 photo_is_valid = False
-                labels_detected = False
+                faces_detected = 0
                 try:
                     profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test_640.html", context={"user": user})
                     logger.debug('moderate_unmoderated_photos::user={user}, profile_picture_html={profile_picture_html}'.format(
@@ -32,15 +32,16 @@ class Command(BaseCommand):
                     if (photo_is_valid):
                         client = boto3.client('rekognition')
                         with open(photo, 'rb') as _image:  # open the image of width 640px
-                            image.aws_raw_image_moderation_results = client.detect_labels(Image={'Bytes': _image.read()})
-                        for label in image.aws_raw_image_moderation_results["ModerationLabels"]:
-                            if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male"]):
-                                labels_detected = True
-                        if (labels_detected):
-                            image.visible_on_website = False
+                            image.aws_raw_facial_analysis_results = client.detect_labels(Image={'Bytes': _image.read()})
+                        for face in image.aws_raw_facial_analysis_results['FaceDetails']:
+                            if ((face["AgeRange"]["Low"] >= 2) and (face["AgeRange"]["High"] >= 8)):
+                                faces_detected += 1
+                        image.number_of_faces = faces_detected
+                        if (faces_detected >= 1):
+                            user.speedy_match_profile.profile_picture_offset = 0
                         else:
-                            image.visible_on_website = True
-                        image.aws_image_moderation_time = now()
+                            user.speedy_match_profile.profile_picture_offset = 5
+                        image.aws_facial_analysis_time = now()
                         image.save()
 
                 except Exception as e:
