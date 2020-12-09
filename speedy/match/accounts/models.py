@@ -161,6 +161,7 @@ class SiteProfile(SiteProfileBase):
     number_of_matches = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_("Number of matches on last user's search"), default=None, blank=True, null=True),
     )
+    profile_picture_months_offset = models.PositiveSmallIntegerField(default=5)  # If a face is detected, will be 0. Otherwise, will be 5 months.
     not_allowed_to_use_speedy_match = models.BooleanField(default=False)  # If set to True, user will have no matches.
 
     objects = SiteProfileManager()

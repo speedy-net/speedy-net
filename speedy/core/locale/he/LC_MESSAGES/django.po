@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 00:50+0200\n"
+"POT-Creation-Date: 2020-12-09 10:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3229,31 +3229,55 @@ msgstr ""
 msgid "Browse..."
 msgstr "עיון..."
 
-#: .\uploads\models.py:14
+#: .\uploads\models.py:15
 msgid "owner"
 msgstr "בעלים"
 
-#: .\uploads\models.py:15 .\uploads\models.py:24
+#: .\uploads\models.py:16 .\uploads\models.py:25
 msgid "file"
 msgstr "קובץ"
 
-#: .\uploads\models.py:16
+#: .\uploads\models.py:17
 msgid "is stored"
 msgstr "is stored"
 
-#: .\uploads\models.py:17
+#: .\uploads\models.py:18
 msgid "file size"
 msgstr "גודל קובץ"
 
-#: .\uploads\models.py:25
+#: .\uploads\models.py:26
 msgid "uploaded files"
 msgstr "uploaded files"
 
 #: .\uploads\models.py:47
+msgid "visible on website"
+msgstr "visible on website"
+
+#: .\uploads\models.py:48
+msgid "AWS image moderation time"
+msgstr "AWS image moderation time"
+
+#: .\uploads\models.py:49
+msgid "AWS facial analysis time"
+msgstr "AWS facial analysis time"
+
+#: .\uploads\models.py:50
+msgid "AWS raw image moderation results"
+msgstr "AWS raw image moderation results"
+
+#: .\uploads\models.py:51
+msgid "AWS raw facial analysis results"
+msgstr "AWS raw facial analysis results"
+
+#: .\uploads\models.py:52
+msgid "number of faces"
+msgstr "number of faces"
+
+#: .\uploads\models.py:55
 msgid "images"
 msgstr "תמונות"
 
-#: .\uploads\models.py:48
+#: .\uploads\models.py:56
 msgid "uploaded images"
 msgstr "uploaded images"
 
