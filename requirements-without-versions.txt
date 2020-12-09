@@ -1,5 +1,5 @@
-asgiref
 Django
+asgiref
 boto3
 botocore
 django-crispy-forms
