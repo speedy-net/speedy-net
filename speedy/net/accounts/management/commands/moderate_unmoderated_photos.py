@@ -1,22 +1,30 @@
 import logging
 import boto3
+from datetime import timedelta
+from PIL import Image
 
 from django.core.management import BaseCommand
 from django.utils.timezone import now
 from django.template.loader import render_to_string
 
-from speedy.core.uploads.models import Image
+from speedy.core.accounts.models import User
 
 logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        images = Image.objects.filter(aws_image_moderation_time=None)
-        for image in images:
-            if (image.aws_image_moderation_time is None):
+        users = User.objects.filter(
+            photo__aws_image_moderation_time=None,
+            photo__date_created__lte=(now() - timedelta(minutes=5)),
+        ).distinct(
+        ).order_by('photo__date_created')
+        for user in users:
+            image = user.photo
+            if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
                 labels_detected = False
+                labels_detected_list=[]
                 try:
                     profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test_640.html", context={"user": user})
                     logger.debug('moderate_unmoderated_photos::user={user}, profile_picture_html={profile_picture_html}'.format(
@@ -36,10 +44,20 @@ class Command(BaseCommand):
                         for label in image.aws_raw_image_moderation_results["ModerationLabels"]:
                             if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male"]):
                                 labels_detected = True
+                                labels_detected_list.append(label["Name"])
                         if (labels_detected):
                             image.visible_on_website = False
+                            logger.warning("moderate_unmoderated_photos::labels detected. user={user}, labels detected={labels_detected_list}, registered {registered_days_ago} days ago).".format(
+                                user=user,
+                                labels_detected_list=labels_detected_list,
+                                registered_days_ago=(now() - user.date_created).days,
+                            ))
                         else:
                             image.visible_on_website = True
+                            logger.debug("moderate_unmoderated_photos::labels not detected. user={user}, registered {registered_days_ago} days ago).".format(
+                                user=user,
+                                registered_days_ago=(now() - user.date_created).days,
+                            ))
                         image.aws_image_moderation_time = now()
                         image.save()
 
