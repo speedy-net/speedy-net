@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 00:50+0200\n"
+"POT-Creation-Date: 2020-12-09 08:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -636,15 +636,15 @@ msgstr "Activation step"
 msgid "Number of matches on last user's search"
 msgstr "Number of matches on last user's search"
 
-#: .\accounts\models.py:206
+#: .\accounts\models.py:207
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:207 .\profiles\apps.py:7
+#: .\accounts\models.py:208 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:294 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:295 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
