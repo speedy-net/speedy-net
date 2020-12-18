@@ -239,6 +239,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                 profile_picture = self.files.get('profile_picture')
                 if (profile_picture):
                     self.instance.user.photo = self.instance.user._new_profile_picture
+                    self.instance.profile_picture_months_offset = 5
             for field_name in self.user_fields:
                 if (field_name in self.fields):
                     setattr(self.instance.user, field_name, self.cleaned_data[field_name])
