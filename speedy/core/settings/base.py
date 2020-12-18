@@ -190,6 +190,12 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = int(7.5 * 1024 * 1024)  # 7.5 MB
 
 MAX_PHOTO_SIZE = int(15 * 1024 * 1024)  # 15 MB
 
+IMAGE_FILE_EXTENSIONS = (
+    'jpeg',
+    'jpg',
+    'png',
+)
+
 THUMBNAIL_DEBUG = True
 
 THUMBNAIL_DUMMY = True

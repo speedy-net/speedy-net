@@ -39,9 +39,4 @@ ADMIN_USER_PROFILE_WIDGETS += [
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
 ]
 
-IMAGE_FILE_EXTENSIONS = (
-    'jpeg',
-    'jpg',
-    'png',
-)
 
