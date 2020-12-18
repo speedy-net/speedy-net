@@ -18,12 +18,13 @@ class Command(BaseCommand):
             new_path = file.file.path
             if (old_path == new_path):
                 logger.debug('Skipped moving file {id}.'.format(id=file.id))
-                continue
+            else:
+                logger.info('Moving file {id} from {old_path} to {new_path}.'.format(
+                    id=file.id,
+                    old_path=old_path,
+                    new_path=new_path,
+                ))
+                os.rename(old_path, new_path)
+                file.save()
 
-            logger.info('Moving file {id} from {old_path} to {new_path}.'.format(
-                id=file.id,
-                old_path=old_path,
-                new_path=file.file.path,
-            ))
-            os.rename(old_path, new_path)
-            file.save()
+
