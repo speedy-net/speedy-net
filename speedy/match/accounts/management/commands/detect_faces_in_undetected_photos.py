@@ -41,7 +41,7 @@ class Command(BaseCommand):
                                     photo_is_valid = True
                         if (photo_is_valid):
                             client = boto3.client('rekognition')
-                            with open(photo, 'rb') as _image:  # open the image of width 640px
+                            with open(user.photo.file.path, 'rb') as _image:  # open the image of width 640px
                                 image.aws_raw_facial_analysis_results = client.DetectFaces(Image={'Bytes': _image.read()})
                             for detected_face in image.aws_raw_facial_analysis_results['FaceDetails']:
                                 if ((detected_face["AgeRange"]["Low"] >= 2) and (detected_face["AgeRange"]["High"] >= 8)):

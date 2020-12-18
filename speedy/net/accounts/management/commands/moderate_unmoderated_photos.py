@@ -39,7 +39,7 @@ class Command(BaseCommand):
                                 photo_is_valid = True
                     if (photo_is_valid):
                         client = boto3.client('rekognition')
-                        with open(photo, 'rb') as _image:  # open the image of width 640px
+                        with open(user.photo.file.path, 'rb') as _image:  # open the image of width 640px
                             image.aws_raw_image_moderation_results = client.DetectModerationLabels(Image={'Bytes': _image.read()})
                         for label in image.aws_raw_image_moderation_results["ModerationLabels"]:
                             if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male"]):
