@@ -1,6 +1,7 @@
 import logging
 import boto3
 from datetime import timedelta
+from io import BytesIO
 from PIL import Image
 
 from django.core.management import BaseCommand
@@ -41,8 +42,11 @@ class Command(BaseCommand):
                                     photo_is_valid = True
                         if (photo_is_valid):
                             client = boto3.client('rekognition')
-                            with open(user.photo.file.path, 'rb') as _image:  # open the image of width 640px
-                                image.aws_raw_facial_analysis_results = client.detect_faces(Image={'Bytes': _image.read()}, Attributes=['ALL'])
+                            with Image.open(image.file) as _image:
+                                _image = _image.resize((640, 640 * _image.height // _image.width))  # Resize the image to width 640px
+                                _image_buffer = BytesIO()
+                                _image.save(_image_buffer, format='PNG')
+                                image.aws_raw_facial_analysis_results = client.detect_faces(Image={'Bytes': _image_buffer.getvalue()}, Attributes=['ALL'])
                             for detected_face in image.aws_raw_facial_analysis_results['FaceDetails']:
                                 if ((detected_face["AgeRange"]["Low"] >= 2) and (detected_face["AgeRange"]["High"] >= 8)):
                                     faces_detected += 1
