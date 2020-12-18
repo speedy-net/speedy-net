@@ -57,6 +57,7 @@ class Command(BaseCommand):
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
                             image.aws_facial_analysis_time = now()
+                            user.speedy_match_profile.save()
                             image.save()
 
                     except Exception as e:
