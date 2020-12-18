@@ -16,7 +16,7 @@ class Command(BaseCommand):
             new_filename = file.file.field.generate_filename(file, file.file.name)
             file.file.name = new_filename
             new_path = file.file.path
-            if old_path == new_path:
+            if (old_path == new_path):
                 logger.debug('Skipped moving file {id}.'.format(id=file.id))
                 continue
 
