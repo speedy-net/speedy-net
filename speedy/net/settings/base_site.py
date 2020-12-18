@@ -40,8 +40,8 @@ ADMIN_USER_PROFILE_WIDGETS += [
 ]
 
 IMAGE_FILE_EXTENSIONS = (
-    '.jpeg',
-    '.jpg',
-    '.png',
+    'jpeg',
+    'jpg',
+    'png',
 )
 
