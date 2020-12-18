@@ -142,15 +142,15 @@ def is_transparent(image):
     """
     :type image: PIL.Image.Image
     """
-    if image.mode == 'P':
+    if (image.mode == 'P'):
         transparent = image.info.get('transparency', -1)
         for _, index in image.getcolors():
-            if index == transparent:
+            if (index == transparent):
                 return True
 
-    elif image.mode == 'RGBA':
+    elif (image.mode == 'RGBA'):
         extrema = image.getextrema()
-        if extrema[3][0] < 255:
+        if (extrema[3][0] < 255):
             return True
 
     return False

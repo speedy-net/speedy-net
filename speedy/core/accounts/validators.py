@@ -250,9 +250,9 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
                 else:
                     photo_is_valid = True
 
-        if photo_is_valid:
+        if (photo_is_valid):
             with Image.open(user.photo.file) as image:
-                if is_transparent(image):
+                if (is_transparent(image)):
                     photo_is_valid = False
                     photo_is_invalid_reason = _("Please upload a nontransparent image.")
     except Exception as e:
@@ -265,7 +265,7 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
     if (test_new_profile_picture):
         user.photo = user._photo
     if (not (photo_is_valid)):
-        if photo_is_invalid_reason:
+        if (photo_is_invalid_reason):
             raise ValidationError(photo_is_invalid_reason)
         raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
