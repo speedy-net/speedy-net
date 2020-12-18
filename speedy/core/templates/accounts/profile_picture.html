@@ -5,13 +5,19 @@
     {% if with_link %}
         <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}" title="{{ user.name }}">
     {% endif %}
-    {% thumbnail user.photo.file geometry crop='center 20%' as image %}
-        <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}" />
-    {% empty %}
+    {% if user.photo.visible_on_website %}
+        {% thumbnail user.photo.file geometry crop='center 20%' as image %}
+            <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}" />
+        {% empty %}
+            <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio }}%;">
+                <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />
+            </div>
+        {% endthumbnail %}
+    {% else %}
         <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio }}%;">
             <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />
         </div>
-    {% endthumbnail %}
+    {% endif %}
     {% if with_link %}
         </a>
     {% endif %}
