@@ -17,9 +17,9 @@ class Command(BaseCommand):
             file.file.name = new_filename
             new_path = file.file.path
             if (old_path == new_path):
-                logger.debug('Skipped moving file {id}.'.format(id=file.id))
+                logger.debug('convert_existing_filenames::Skipped moving file {id}.'.format(id=file.id))
             else:
-                logger.info('Moving file {id} from {old_path} to {new_path}.'.format(
+                logger.info('convert_existing_filenames::Moving file {id} from {old_path} to {new_path}.'.format(
                     id=file.id,
                     old_path=old_path,
                     new_path=new_path,
