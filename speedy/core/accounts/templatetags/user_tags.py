@@ -6,7 +6,7 @@ register = template.Library()
 
 
 @register.inclusion_tag(filename='accounts/profile_picture.html', takes_context=True)
-def profile_picture(context, user, geometry, with_link=True, html_class=''):
+def profile_picture(context, user, geometry, with_link=True, html_class='', bypass_visible=False):
     context = copy.copy(context)
     geometry_splitted = geometry.split('x')
     width = geometry_splitted[0]
@@ -23,6 +23,7 @@ def profile_picture(context, user, geometry, with_link=True, html_class=''):
         'aspect_ratio': aspect_ratio,
         'with_link': with_link,
         'html_class': html_class,
+        'bypass_visible': bypass_visible,
     })
     return context
 
