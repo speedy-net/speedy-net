@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import tempfile
@@ -43,7 +44,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=r.status_code, second=200)
             json_response = json.loads(r.content.decode())
             self.assertEqual(first=len(json_response['files'][0]['uuid']), second=20)
-            self.assertEqual(first=json_response['files'][0]['name'], second=os.path.basename(self.upload_file.name))
+            self.assertEqual(first=json_response['files'][0]['name'], second=hashlib.md5('$$$-{}-$$$'.format(json_response['files'][0]['uuid']).encode('utf-8')).hexdigest())
             self.assertEqual(first=json_response['files'][0]['type'], second='image')
             self.assertEqual(first=Image.objects.count(), second=initial_images_count + 1)
             image = Image.objects.exclude(id__in=initial_images_id).first()
