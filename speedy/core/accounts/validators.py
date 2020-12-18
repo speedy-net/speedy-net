@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from django.utils.timezone import now
 from django.template.loader import render_to_string
 
-from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default
+from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default, is_transparent
 
 logger = logging.getLogger(__name__)
 
@@ -233,9 +233,11 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
     if (test_new_profile_picture):
         user._photo = user.photo
     photo_is_valid = False
+    photo_is_invalid_reason = None
     try:
         if (test_new_profile_picture):
             user.photo = user._new_profile_picture
+
         profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test.html", context={"user": user})
         logger.debug('validate_profile_picture_for_user::user={user}, profile_picture_html={profile_picture_html}'.format(
             user=user,
@@ -247,6 +249,12 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
                     photo_is_valid = False
                 else:
                     photo_is_valid = True
+
+        if photo_is_valid:
+            with Image.open(user.photo.file) as image:
+                if is_transparent(image):
+                    photo_is_valid = False
+                    photo_is_invalid_reason = _("Please upload a nontransparent image.")
     except Exception as e:
         photo_is_valid = False
         logger.error('validate_profile_picture_for_user::user={user}, Exception={e} (registered {registered_days_ago} days ago)'.format(
@@ -257,6 +265,8 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
     if (test_new_profile_picture):
         user.photo = user._photo
     if (not (photo_is_valid)):
+        if photo_is_invalid_reason:
+            raise ValidationError(photo_is_invalid_reason)
         raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
