@@ -40,7 +40,7 @@ if (django_settings.LOGIN_ENABLED):
             _test_case.assertNotEqual(first=self.smoking_status, second=User.SMOKING_STATUS_UNKNOWN)
             _test_case.assertNotEqual(first=self.relationship_status, second=User.RELATIONSHIP_STATUS_UNKNOWN)
             self.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
-            self.photo = UserImageFactory(owner=self)
+            self.photo = UserImageFactory(owner=self, visible_on_website=True)
             email = UserEmailAddressFactory(user=self, is_confirmed=True)
             email.save()
             email.make_primary()
