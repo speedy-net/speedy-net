@@ -213,7 +213,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                 profile_picture = self.files.get('profile_picture')
                 if (profile_picture):
                     self.instance.photo = self.instance._new_profile_picture
-                    if self.instance.speedy_match_profile and self.instance.speedy_match_profile.profile_picture_months_offset != 5:
+                    if (self.instance.speedy_match_profile):
                         self.instance.speedy_match_profile.profile_picture_months_offset = 5
                         self.instance.speedy_match_profile.save()
             user = User.objects.get(pk=self.instance.pk)
