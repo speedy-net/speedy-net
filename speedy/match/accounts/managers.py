@@ -17,6 +17,8 @@ class SiteProfileManager(BaseManager):
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
         if (user.pk == other_user.pk):
             return self.model.RANK_0
+        if (not (other_user.photo.visible_on_website)):
+            return self.model.RANK_0
         if (other_user.gender not in user.speedy_match_profile.gender_to_match):
             return self.model.RANK_0
         if (user.gender not in other_user.speedy_match_profile.gender_to_match):
@@ -63,6 +65,7 @@ class SiteProfileManager(BaseManager):
         blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
         blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         qs = User.objects.active(
+            photo__visible_on_website=True,
             gender__in=user.speedy_match_profile.gender_to_match,
             diet__in=user.speedy_match_profile.diet_to_match,
             smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
@@ -223,6 +226,7 @@ class SiteProfileManager(BaseManager):
         blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
         qs = User.objects.active(
             pk__in=from_list,
+            photo__visible_on_website=True,
             gender__in=user.speedy_match_profile.gender_to_match,
             diet__in=user.speedy_match_profile.diet_to_match,
             smoking_status__in=user.speedy_match_profile.smoking_status_to_match,

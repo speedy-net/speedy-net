@@ -351,6 +351,26 @@ if (django_settings.LOGIN_ENABLED):
             # self.assertListEqual(list1=matches_list, list2=[self.user_1, self.user_4, self.user_3])
             # self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
 
+        def test_photo_not_visible_doesnt_match_profile_in_matches_list(self):
+            """
+            Test that users with invisible photos don't appear in matches list, but their matches are not affected.
+            """
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertTrue(self.user_4 in matches_list)
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertTrue(self.user_5 in matches_list)
+            self.user_4.photo.visible_on_website = False
+            self.user_4.photo.save()
+            self.user_4.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertTrue(self.user_4 not in matches_list)
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertTrue(self.user_5 in matches_list)
+
         def test_cannot_delete_site_profiles_with_queryset_delete(self):
             with self.assertRaises(NotImplementedError) as cm:
                 SpeedyMatchSiteProfile.objects.delete()
