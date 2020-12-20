@@ -264,8 +264,9 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
     if (test_new_profile_picture):
         user.photo = user._photo
     if (not (photo_is_valid)):
-        if (photo_is_invalid_reason):
+        if (photo_is_invalid_reason is not None):
             raise ValidationError(photo_is_invalid_reason)
-        raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
+        else:
+            raise ValidationError(_("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted."))
 
 
