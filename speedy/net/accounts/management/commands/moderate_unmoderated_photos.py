@@ -25,7 +25,7 @@ class Command(BaseCommand):
             if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
                 labels_detected = False
-                labels_detected_list=[]
+                labels_detected_list = []
                 try:
                     profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test_640.html", context={"user": user})
                     logger.debug('moderate_unmoderated_photos::user={user}, profile_picture_html={profile_picture_html}'.format(
