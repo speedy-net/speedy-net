@@ -249,12 +249,11 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
                     photo_is_valid = False
                 else:
                     photo_is_valid = True
-
-        if (photo_is_valid):
-            with Image.open(user.photo.file) as image:
-                if (is_transparent(image)):
-                    photo_is_valid = False
-                    photo_is_invalid_reason = _("Please upload a nontransparent image.")
+            if (photo_is_valid):
+                with Image.open(user.photo.file) as image:
+                    if (is_transparent(image)):
+                        photo_is_valid = False
+                        photo_is_invalid_reason = _("Please upload a nontransparent image.")
     except Exception as e:
         photo_is_valid = False
         logger.error('validate_profile_picture_for_user::user={user}, Exception={e} (registered {registered_days_ago} days ago)'.format(
