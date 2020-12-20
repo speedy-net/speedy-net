@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 10:21+0200\n"
+"POT-Creation-Date: 2020-12-20 11:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1815,6 +1815,27 @@ msgstr ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+
 #: .\accounts\apps.py:7
 msgid "Speedy Core Accounts"
 msgstr ""
@@ -1831,58 +1852,58 @@ msgstr ""
 msgid "Anyone"
 msgstr ""
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr ""
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr ""
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr ""
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr ""
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:159
+#: .\accounts\forms.py:160
 msgid "Update your profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:159 .\accounts\validators.py:226
+#: .\accounts\forms.py:160 .\accounts\validators.py:226
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:279 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:284 .\templates\base_with_login.html:114
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:285 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:290 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:127
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:288 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:293 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:124
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:301
+#: .\accounts\forms.py:306
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:395
+#: .\accounts\forms.py:400
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:407
+#: .\accounts\forms.py:412
 msgid "Invalid password."
 msgstr ""
 
@@ -2218,7 +2239,7 @@ msgid ""
 "This picture's file size is too big. The maximal file size allowed is 15 MB."
 msgstr ""
 
-#: .\accounts\validators.py:260
+#: .\accounts\validators.py:250 .\accounts\validators.py:269
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2281,7 +2302,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: .\base\validators.py:5 .\base\validators.py:6
+#: .\base\validators.py:6 .\base\validators.py:7
 msgid "id contains illegal characters."
 msgstr ""
 

@@ -248,4 +248,8 @@ pgettext_lazy(context="other_female", message="This user doesn't match your prof
 pgettext_lazy(context="other_male", message="This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.")
 pgettext_lazy(context="other_other", message="This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.")
 
+pgettext_lazy(context="female", message="Your profile picture can't be transparent. Please upload a nontransparent image.")
+pgettext_lazy(context="male", message="Your profile picture can't be transparent. Please upload a nontransparent image.")
+pgettext_lazy(context="other", message="Your profile picture can't be transparent. Please upload a nontransparent image.")
+
 

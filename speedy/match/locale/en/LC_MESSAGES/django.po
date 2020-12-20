@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 10:21+0200\n"
+"POT-Creation-Date: 2020-12-20 11:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -443,95 +443,95 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:57
+#: .\accounts\forms.py:58
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:57 .\accounts\forms.py:96
+#: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:58
+#: .\accounts\forms.py:59
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:58 .\accounts\forms.py:102 .\accounts\validators.py:73
+#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\forms.py:59
+#: .\accounts\forms.py:60
 msgid "My smoking status"
 msgstr ""
 
-#: .\accounts\forms.py:59 .\accounts\forms.py:105 .\accounts\validators.py:78
+#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\forms.py:60
+#: .\accounts\forms.py:61
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:60 .\accounts\forms.py:108 .\accounts\validators.py:83
+#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:126 .\accounts\validators.py:88
+#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:99
+#: .\accounts\forms.py:100
 msgid "Your height is required."
 msgstr ""
 
-#: .\accounts\forms.py:111 .\accounts\validators.py:43
+#: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\accounts\forms.py:114 .\accounts\forms.py:149 .\accounts\validators.py:48
+#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:117 .\accounts\models.py:113
+#: .\accounts\forms.py:118 .\accounts\models.py:113
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:120 .\accounts\models.py:116
+#: .\accounts\forms.py:121 .\accounts\models.py:116
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:123 .\accounts\validators.py:63
+#: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:132
+#: .\accounts\forms.py:133
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:135 .\accounts\validators.py:110
+#: .\accounts\forms.py:136 .\accounts\validators.py:110
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:138 .\accounts\validators.py:118
+#: .\accounts\forms.py:139 .\accounts\validators.py:118
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:141 .\accounts\validators.py:126
+#: .\accounts\forms.py:142 .\accounts\validators.py:126
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:149
+#: .\accounts\forms.py:150
 msgid "Where do you live?"
 msgstr ""
 
-#: .\accounts\forms.py:185 .\accounts\models.py:123
+#: .\accounts\forms.py:186 .\accounts\models.py:123
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""

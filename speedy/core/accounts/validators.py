@@ -5,7 +5,7 @@ from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from speedy.core.base.utils import string_is_not_empty, string_is_not_none
-from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 from django.utils.timezone import now
 from django.template.loader import render_to_string
 
@@ -250,7 +250,7 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
                     photo_is_invalid_reason = _("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted.")
                 elif (is_transparent(image)):
                     photo_is_valid = False
-                    photo_is_invalid_reason = _("Your profile picture can't be transparent. Please upload a nontransparent image.")
+                    photo_is_invalid_reason = pgettext_lazy(context=user.get_gender(), message="Your profile picture can't be transparent. Please upload a nontransparent image.")
                 else:
                     photo_is_valid = True
     except Exception as e:
