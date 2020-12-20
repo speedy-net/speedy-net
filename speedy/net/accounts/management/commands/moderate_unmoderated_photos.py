@@ -24,7 +24,7 @@ class Command(BaseCommand):
         for user in users:
             image = user.photo
             if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
-                photo_is_valid = False
+                photo_is_valid = None
                 labels_detected = False
                 labels_detected_list = []
                 try:
@@ -66,6 +66,10 @@ class Command(BaseCommand):
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
+                        image.aws_image_moderation_time = now()
+                        image.save()
+                    elif (photo_is_valid is False):
+                        image.visible_on_website = False
                         image.aws_image_moderation_time = now()
                         image.save()
 
