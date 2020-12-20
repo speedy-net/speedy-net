@@ -24,7 +24,7 @@ class Command(BaseCommand):
         for user in users:
             image = user.photo
             if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
-                photo_is_valid = None
+                photo_is_valid = False
                 labels_detected = False
                 labels_detected_list = []
                 try:
@@ -37,12 +37,27 @@ class Command(BaseCommand):
                         with Image.open(image.file) as _image:
                             if (getattr(_image, "is_animated", False)):
                                 photo_is_valid = False
-                                logger.debug('moderate_unmoderated_photos::image is animated. user={user}.'.format(user=user))
+                                logger.error("moderate_unmoderated_photos::image is animated. user={user}, registered {registered_days_ago} days ago).".format(
+                                    user=user,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
                             elif (is_transparent(_image)):
                                 photo_is_valid = False
-                                logger.debug('moderate_unmoderated_photos::image is transparent. user={user}.'.format(user=user))
+                                logger.error("moderate_unmoderated_photos::image is transparent. user={user}, registered {registered_days_ago} days ago).".format(
+                                    user=user,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
                             else:
                                 photo_is_valid = True
+                                logger.debug("moderate_unmoderated_photos::photo is valid. user={user}, registered {registered_days_ago} days ago).".format(
+                                    user=user,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
+                    else:
+                        logger.error("moderate_unmoderated_photos::thumbnail failed. user={user}, registered {registered_days_ago} days ago).".format(
+                            user=user,
+                            registered_days_ago=(now() - user.date_created).days,
+                        ))
                     if (photo_is_valid):
                         client = boto3.client('rekognition')
                         thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
@@ -66,13 +81,12 @@ class Command(BaseCommand):
                             ))
                         image.aws_image_moderation_time = now()
                         image.save()
-                    elif (photo_is_valid is False):
+                    else:
                         image.visible_on_website = False
                         image.aws_image_moderation_time = now()
                         image.save()
 
                 except Exception as e:
-                    photo_is_valid = False  ####
                     logger.error('moderate_unmoderated_photos::user={user}, Exception={e} (registered {registered_days_ago} days ago)'.format(
                         user=user,
                         e=str(e),
