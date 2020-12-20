@@ -40,11 +40,11 @@ class Command(BaseCommand):
                                 logger.debug('moderate_unmoderated_photos::image is animated. user={user}.'.format(user=user))
                             else:
                                 photo_is_valid = True
-                    if (photo_is_valid):
-                        with Image.open(image.file) as _image:
-                            if (is_transparent(_image)):
-                                photo_is_valid = False
-                                logger.debug('moderate_unmoderated_photos::image is transparent. user={user}.'.format(user=user))
+                        if (photo_is_valid):
+                            with Image.open(image.file) as _image:
+                                if (is_transparent(_image)):
+                                    photo_is_valid = False
+                                    logger.debug('moderate_unmoderated_photos::image is transparent. user={user}.'.format(user=user))
                     if (photo_is_valid):
                         client = boto3.client('rekognition')
                         thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
