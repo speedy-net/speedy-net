@@ -22,7 +22,7 @@ class Command(BaseCommand):
             photo__date_created__lte=(now() - timedelta(minutes=5)),
             speedy_match_site_profile__active_languages__len__gt=0,
         ).distinct(
-        ).order_by('photo__date_created')
+        ).order_by('photo__date_created')[:100]
         for user in users:
             if (len(user.speedy_match_profile.active_languages) > 0):
                 image = user.photo
