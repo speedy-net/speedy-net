@@ -9,6 +9,8 @@
     <br />
     ({{ user.get_gender_display }})
     <br />
-    ({{ user.photo.visible_on_website|yesno:'Photo is visible,Photo is not visible' }}, {{ user.photo.number_of_faces|default_if_none:"_unknown_" }} faces, offset={{ user.speedy_match_profile.profile_picture_months_offset }})
+    ({{ user.photo.visible_on_website|yesno:'Photo is visible,Photo is not visible' }})
+    <br />
+    ({{ user.photo.number_of_faces|default_if_none:"_unknown_" }} faces, offset={{ user.speedy_match_profile.profile_picture_months_offset }})
 {% endblock %}
 
