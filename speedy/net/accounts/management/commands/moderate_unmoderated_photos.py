@@ -61,7 +61,7 @@ class Command(BaseCommand):
                     if (photo_is_valid):
                         client = boto3.client('rekognition')
                         thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
-                        image.aws_raw_image_moderation_results = client.detect_moderation_labels(Image={'Bytes': thumbnail.read()})
+                        image.aws_raw_image_moderation_results = client.detect_moderation_labels(Image={'Bytes': thumbnail.read()}, MinConfidence=85)
                         for label in image.aws_raw_image_moderation_results["ModerationLabels"]:
                             if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male"]):
                                 labels_detected = True
