@@ -5,9 +5,9 @@
     {% if with_link %}
         <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}" title="{{ user.name }}">
     {% endif %}
-    {% if user.photo.visible_on_website or bypass_visible %}
+    {% if user.photo.visible_on_website or bypass_visible or admin_user %}
         {% thumbnail user.photo.file geometry crop='center 20%' as image %}
-            <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}" />
+            <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}{% if admin_user %}{% if user.photo.visible_on_website or bypass_visible %} visible-on-website{% else %} not-visible-on-website{% endif %}{% endif %}" />
         {% empty %}
             <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio }}%;">
                 <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />

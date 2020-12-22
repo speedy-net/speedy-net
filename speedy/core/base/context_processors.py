@@ -55,10 +55,13 @@ def speedy_match_domain(request):
 
 def add_admin_user_prefix(request):
     if ((request.user.is_superuser) and (request.user.is_staff)):
+        admin_user = True
         admin_user_prefix = "/admin/user"
     else:
+        admin_user = False
         admin_user_prefix = ""
     return {
+        'admin_user': admin_user,
         'admin_user_prefix': admin_user_prefix,
     }
 

@@ -319,3 +319,7 @@ body.bidi-rtl .navbar-right {
     padding-bottom: 6px !important;
 }
 
+.img-fluid.not-visible-on-website {
+    border: 22px dashed black;
+}
+
