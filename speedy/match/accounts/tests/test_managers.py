@@ -170,6 +170,18 @@ if (django_settings.LOGIN_ENABLED):
             self.assertEqual(first=len(matches_list), second=4)
             self.assertListEqual(list1=matches_list, list2=[self.user_4, self.user_3, self.user_2, self.user_1])
             self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 5, 5, 5])
+            self.user_3.speedy_match_profile.profile_picture_months_offset = 5
+            self.user_3.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertListEqual(list1=matches_list, list2=[self.user_4, self.user_2, self.user_1, self.user_3])
+            self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 5, 5, 5])
+            self.user_3.speedy_match_profile.profile_picture_months_offset = 0
+            self.user_3.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertListEqual(list1=matches_list, list2=[self.user_4, self.user_3, self.user_2, self.user_1])
+            self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 5, 5, 5])
 
         def test_matches_list_sorted_by_rank(self):
             sleep(0.2)
@@ -293,6 +305,18 @@ if (django_settings.LOGIN_ENABLED):
             self.assertListEqual(list1=matches_list, list2=[self.user_1, self.user_4, self.user_3])
             self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
             self.user_4.speedy_match_profile.match_description = self.user_2.speedy_match_profile.match_description
+            self.user_4.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertListEqual(list1=matches_list, list2=[self.user_1, self.user_4, self.user_3])
+            self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
+            self.user_4.speedy_match_profile.profile_picture_months_offset = 5
+            self.user_4.save_user_and_profile()
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
+            self.assertEqual(first=len(matches_list), second=3)
+            self.assertListEqual(list1=matches_list, list2=[self.user_1, self.user_3, self.user_4])
+            self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
+            self.user_4.speedy_match_profile.profile_picture_months_offset = 0
             self.user_4.save_user_and_profile()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_2)
             self.assertEqual(first=len(matches_list), second=3)
