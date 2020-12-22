@@ -24,7 +24,13 @@ class Command(BaseCommand):
                     old_path=old_path,
                     new_path=new_path,
                 ))
-                os.rename(old_path, new_path)
-                file.save()
+                try:
+                    os.rename(old_path, new_path)
+                    file.save()
+                except Exception as e:
+                    logger.error('convert_existing_filenames::file={file}, Exception={e}'.format(
+                        file=file,
+                        e=str(e),
+                    ))
 
 
