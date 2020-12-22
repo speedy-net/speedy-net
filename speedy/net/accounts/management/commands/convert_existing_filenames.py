@@ -32,5 +32,10 @@ class Command(BaseCommand):
                         file=file,
                         e=str(e),
                     ))
+                    # logger.info('convert_existing_filenames::Deleting file={file}, path={path}.'.format(
+                    #     file=file,
+                    #     path=old_path,
+                    # ))
+                    # file.delete()
 
 
