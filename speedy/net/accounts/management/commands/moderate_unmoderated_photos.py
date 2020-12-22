@@ -23,7 +23,7 @@ class Command(BaseCommand):
         ).order_by('photo__date_created')
         for user in users:
             image = user.photo
-            if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
+            if ((image is not None) and (image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
                 labels_detected = False
                 labels_detected_list = []

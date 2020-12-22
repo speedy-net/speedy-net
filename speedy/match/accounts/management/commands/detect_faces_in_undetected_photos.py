@@ -26,7 +26,7 @@ class Command(BaseCommand):
         for user in users:
             if (len(user.speedy_match_profile.active_languages) > 0):
                 image = user.photo
-                if ((image.visible_on_website) and (image.aws_facial_analysis_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
+                if ((image is not None) and (image.visible_on_website) and (image.aws_facial_analysis_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                     photo_is_valid = False
                     faces_detected = 0
                     try:
