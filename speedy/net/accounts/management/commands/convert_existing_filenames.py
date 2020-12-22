@@ -2,6 +2,7 @@ import logging
 import os
 
 from django.core.management import BaseCommand
+from django.utils.timezone import now
 
 from speedy.core.uploads.models import File
 
@@ -24,7 +25,16 @@ class Command(BaseCommand):
                     old_path=old_path,
                     new_path=new_path,
                 ))
-                os.rename(old_path, new_path)
-                file.save()
+                try:
+                    os.rename(old_path, new_path)
+                    file.save()
+                except Exception as e:
+                    user = file.owner
+                    logger.error('convert_existing_filenames::file={file}, user={user}, Exception={e} (registered {registered_days_ago} days ago)'.format(
+                        file=file,
+                        user=user,
+                        e=str(e),
+                        registered_days_ago=(now() - user.date_created).days,
+                    ))
 
 
