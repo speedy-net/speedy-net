@@ -20,7 +20,7 @@ class Command(BaseCommand):
             photo__aws_image_moderation_time=None,
             photo__date_created__lte=(now() - timedelta(minutes=5)),
         ).distinct(
-        ).order_by('photo__date_created')
+        ).order_by('photo__date_created')[:100]
         for user in users:
             image = user.photo
             if ((image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
