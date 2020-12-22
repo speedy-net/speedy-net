@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        files = File.objects.all().order_by('date_created')
+        files = File.objects.all().order_by('date_created')[:100]
         for file in files:
             old_path = file.file.path
             new_filename = file.file.field.generate_filename(file, file.file.name)
