@@ -1,10 +1,8 @@
 import logging
-from datetime import timedelta
 
 from django.core.management import BaseCommand
-from django.utils.timezone import now
 
-from speedy.core.accounts.models import User, UserEmailAddress
+from speedy.core.accounts.models import User
 
 logger = logging.getLogger(__name__)
 
