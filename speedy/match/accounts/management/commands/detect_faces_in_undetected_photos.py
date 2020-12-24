@@ -36,7 +36,7 @@ class Command(BaseCommand):
                             profile_picture_html=profile_picture_html,
                         ))
                         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
-                            with Image.open(image.file) as _image:
+                            with image.file, Image.open(image.file) as _image:
                                 if (getattr(_image, "is_animated", False)):
                                     photo_is_valid = False
                                     logger.error("detect_faces_in_undetected_photos::image is animated. user={user}, registered {registered_days_ago} days ago).".format(
