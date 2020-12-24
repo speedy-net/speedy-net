@@ -3,7 +3,7 @@
 
 <div class="user-profile pull-left flip">
     <div class="user-profile-image">
-        {% profile_picture user '130x130' with_link=False %}
+        {% profile_picture user '130x130' with_link=False bypass_visible=True %}
     </div>
     <h5 class="card-title mb-0">
         {{ user.name|truncatechars:18 }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{% if user.diet > 0 %}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}{% endif %}
