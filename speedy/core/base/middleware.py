@@ -149,7 +149,7 @@ class UpdateSessionAuthHashMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        self.update_session_auth_hash_if_needed(request)
+        self.update_session_auth_hash_if_needed(request=request)
         return self.get_response(request=request)
 
     @staticmethod
@@ -163,20 +163,20 @@ class UpdateSessionAuthHashMiddleware(object):
             if backend_path in auth.settings.AUTHENTICATION_BACKENDS:
                 backend = auth.load_backend(backend_path)
                 user = backend.get_user(user_id)
-                # Verify the session
-                if hasattr(user, 'get_session_auth_hash'):
+                # Verify the session.
+                if (hasattr(user, 'get_session_auth_hash')):
                     session_hash = request.session.get(auth.HASH_SESSION_KEY)
-                    session_hash_verified = session_hash and auth.constant_time_compare(
+                    session_hash_verified = (session_hash) and (auth.constant_time_compare(
                         session_hash,
                         user.get_session_auth_hash()
-                    )
-                    if not session_hash_verified:
-                        if not (
-                            session_hash and
-                            hasattr(user, '_legacy_get_session_auth_hash') and
-                            auth.constant_time_compare(session_hash, user._legacy_get_session_auth_hash())
+                    ))
+                    if (not (session_hash_verified)):
+                        if (
+                            (session_hash) and
+                            (hasattr(user, '_legacy_get_session_auth_hash')) and
+                            (auth.constant_time_compare(session_hash, user._legacy_get_session_auth_hash()))
                         ):
-                            pass
-                        else:
-                            # Update the session auth hash
+                            # Update the session auth hash.
                             request.session[auth.HASH_SESSION_KEY] = user.get_session_auth_hash()
+
+
