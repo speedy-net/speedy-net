@@ -244,7 +244,7 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
             profile_picture_html=profile_picture_html,
         ))
         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
-            with Image.open(user.photo.file) as image:
+            with user.photo.file, Image.open(user.photo.file) as image:
                 if (getattr(image, "is_animated", False)):
                     photo_is_valid = False
                     photo_is_invalid_reason = _("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted.")
