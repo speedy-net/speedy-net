@@ -8,7 +8,15 @@
         <div class="card-body">
             <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
                 <h5 class="card-title mb-0">
-                    {{ user.name }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
+                    {% block user_name_and_age %}
+                        {{ user.name }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
+                        <br />
+                        ({{ user.get_gender_display }})
+                        <br />
+                        <span class="direction-ltr">&lrm;({{ user.photo.visible_on_website|yesno:'Photo is visible,Photo is not visible' }})&lrm;</span>
+                        <br />
+                        <span class="direction-ltr">&lrm;({{ user.photo.number_of_faces|default_if_none:"_unknown_" }} faces, offset={{ user.speedy_match_profile.profile_picture_months_offset }})&lrm;</span>
+                    {% endblock %}
                 </h5>
             </a>
             {% if show_details %}
