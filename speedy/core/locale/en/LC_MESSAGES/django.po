@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 11:14+0200\n"
+"POT-Creation-Date: 2020-12-25 09:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2236,7 +2236,7 @@ msgstr ""
 
 #: .\accounts\validators.py:228
 msgid ""
-"This picture's file size is too big. The maximal file size allowed is 15 MB."
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 
 #: .\accounts\validators.py:250 .\accounts\validators.py:269
@@ -2478,11 +2478,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:161
+#: .\settings\base.py:162
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:162
+#: .\settings\base.py:163
 msgid "Hebrew"
 msgstr ""
 

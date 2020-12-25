@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 11:14+0200\n"
+"POT-Creation-Date: 2020-12-25 09:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2307,9 +2307,9 @@ msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
 #: .\accounts\validators.py:228
 msgid ""
-"This picture's file size is too big. The maximal file size allowed is 15 MB."
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
-"גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
+"גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 30 מגה בייט."
 
 #: .\accounts\validators.py:250 .\accounts\validators.py:269
 msgid ""
@@ -2568,11 +2568,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:161
+#: .\settings\base.py:162
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:162
+#: .\settings\base.py:163
 msgid "Hebrew"
 msgstr "עברית"
 
@@ -3301,6 +3301,12 @@ msgstr "תמונות"
 #: .\uploads\models.py:56
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid ""
+#~ "This picture's file size is too big. The maximal file size allowed is 15 "
+#~ "MB."
+#~ msgstr ""
+#~ "גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 15 מגה בייט."
 
 #~ msgid "Where do you live?"
 #~ msgstr "איפה את/ה גר/ה?"

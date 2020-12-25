@@ -225,7 +225,7 @@ def validate_profile_picture(profile_picture):
     if (not (profile_picture)):
         raise ValidationError(_("A profile picture is required."))
     if (profile_picture.size > django_settings.MAX_PHOTO_SIZE):
-        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 15 MB."))
+        raise ValidationError(_("This picture's file size is too big. The maximal file size allowed is 30 MB."))
 
 
 def validate_profile_picture_for_user(user, profile_picture, test_new_profile_picture):
