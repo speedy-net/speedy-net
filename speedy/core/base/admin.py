@@ -8,7 +8,8 @@ from speedy.core import admin
 
 
 class ModelAdmin(django_admin.ModelAdmin):
-    list_per_page = 250
+    # list_per_page = 250
+    list_per_page = 5000
 
 
 class ReadOnlyModelAdminMixin(object):
