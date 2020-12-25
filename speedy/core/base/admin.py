@@ -11,6 +11,10 @@ class ModelAdmin(django_admin.ModelAdmin):
     list_per_page = 250
 
 
+class ModelAdmin5000(ModelAdmin):
+    list_per_page = 5000
+
+
 class ReadOnlyModelAdminMixin(object):
     """
     ModelAdmin class that prevents modifications through the admin.

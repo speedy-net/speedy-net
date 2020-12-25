@@ -4,7 +4,7 @@ if (django_settings.LOGIN_ENABLED):
     from translated_fields import TranslatedFieldAdmin
 
     from speedy.core import admin
-    from speedy.core.base.admin import ModelAdmin, ReadOnlyModelAdmin
+    from speedy.core.base.admin import ModelAdmin, ModelAdmin5000, ReadOnlyModelAdmin
     from speedy.core.messages.admin import MessageInlineAdmin
     from speedy.core.accounts.utils import get_site_profile_model
     from .models import Entity, ReservedUsername, User, UserEmailAddress
@@ -22,7 +22,7 @@ if (django_settings.LOGIN_ENABLED):
             return True
 
 
-    class ReservedUsernameAdmin(ModelAdmin):
+    class ReservedUsernameAdmin(ModelAdmin5000):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
 
