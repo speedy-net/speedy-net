@@ -8,8 +8,7 @@ from speedy.core import admin
 
 
 class ModelAdmin(django_admin.ModelAdmin):
-    # list_per_page = 250
-    list_per_page = 5000
+    list_per_page = 250
 
 
 class ReadOnlyModelAdminMixin(object):
@@ -38,6 +37,10 @@ class ReadOnlyModelAdminMixin(object):
 class ReadOnlyModelAdmin(ReadOnlyModelAdminMixin, ModelAdmin):
     def has_add_permission(self, request):
         return False
+
+
+class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
+    list_per_page = 5000
 
 
 class ReadOnlyTabularInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.TabularInline):
