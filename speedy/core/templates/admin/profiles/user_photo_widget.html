@@ -1,0 +1,26 @@
+{% load user_tags %}
+
+<div class="col-sm-4 mb-4">
+    <div class="text-center">
+        {% profile_picture user "390" html_class="img-thumbnail img-fluid center-block" %}
+        <div class="card-body">
+            <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
+                <h5 class="card-title mb-0">
+                    {% block user_name_and_age %}
+                        {{ user.name }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_age }}{{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}, {{ user.get_diet }}
+                        <br />
+                        ({{ user.get_gender_display }})
+                        <br />
+                        {% if user.photo %}
+                            <span class="direction-ltr">&lrm;({{ user.photo.visible_on_website|yesno:'Photo is visible,Photo is not visible' }})&lrm;</span>
+                            <br />
+                            <span class="direction-ltr">&lrm;({{ user.photo.number_of_faces|default_if_none:"_unknown_" }} faces, offset={{ user.speedy_match_profile.profile_picture_months_offset }})&lrm;</span>
+                        {% else %}
+                            <span class="direction-ltr">&lrm;(No photo)&lrm;</span>
+                        {% endif %}
+                    {% endblock %}
+                </h5>
+            </a>
+        </div>
+    </div>
+</div>

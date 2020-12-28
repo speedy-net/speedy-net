@@ -17,7 +17,7 @@ USER_PROFILE_WIDGETS = [
 ]
 
 ADMIN_USER_PROFILE_WIDGETS = [
-    'speedy.core.profiles.widgets.UserPhotoWidget',
+    'speedy.core.profiles.admin.widgets.AdminUserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
     'speedy.core.profiles.admin.widgets.AdminUserInfoWidget',
 ]
