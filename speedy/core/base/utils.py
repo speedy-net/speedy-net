@@ -150,4 +150,9 @@ def is_transparent(image):
         if (extrema[3][0] < 255):
             return True
 
+    elif (image.mode == 'LA'):
+        extrema = image.getextrema()
+        if (extrema[1][0] < 255):
+            return True
+
     return False
