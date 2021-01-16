@@ -68,8 +68,9 @@ class Command(BaseCommand):
                                 labels_detected_list.append(label["Name"])
                         if (labels_detected):
                             image.visible_on_website = False
-                            logger.warning("moderate_unmoderated_photos::labels detected. user={user}, labels detected={labels_detected_list}, registered {registered_days_ago} days ago).".format(
+                            logger.warning("moderate_unmoderated_photos::{labels_detected_count} labels detected. user={user}, labels detected={labels_detected_list}, registered {registered_days_ago} days ago).".format(
                                 user=user,
+                                labels_detected_count=len(labels_detected_list),
                                 labels_detected_list=labels_detected_list,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
