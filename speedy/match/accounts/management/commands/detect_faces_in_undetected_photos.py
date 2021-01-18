@@ -65,8 +65,9 @@ class Command(BaseCommand):
                             thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
                             image.aws_raw_facial_analysis_results = client.detect_faces(Image={'Bytes': thumbnail.read()}, Attributes=['ALL'])
                             for detected_face in image.aws_raw_facial_analysis_results['FaceDetails']:
-                                if ((detected_face["AgeRange"]["Low"] >= 2) and (detected_face["AgeRange"]["High"] >= 8)):
-                                    faces_detected += 1
+                                if (detected_face["Confidence"] >= 99.0):
+                                    if ((detected_face["AgeRange"]["Low"] >= 2) and (detected_face["AgeRange"]["High"] >= 8)):
+                                        faces_detected += 1
                             image.number_of_faces = faces_detected
                             if (faces_detected >= 1):
                                 user.speedy_match_profile.profile_picture_months_offset = 0
