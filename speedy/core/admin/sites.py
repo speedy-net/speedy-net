@@ -5,6 +5,8 @@ from . import views
 
 
 class AdminSite(django_admin.AdminSite):
+    final_catch_all_view = False
+
     def get_urls(self):
         urlpatterns = super().get_urls()
         urlpatterns += [
