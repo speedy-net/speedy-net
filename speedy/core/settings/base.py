@@ -217,6 +217,8 @@ DATE_FIELD_FORMATS = [
 
 DEFAULT_DATE_FIELD_FORMAT = '%Y-%m-%d'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
