@@ -5,6 +5,7 @@ from django.utils.timezone import now
 from django.views import generic
 from django.db.models import Count
 
+from speedy.core.base.utils import get_age_ranges_match
 from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
@@ -123,6 +124,45 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             total_number_of_active_members_text += _("Admin: {total_number_of_active_members_registered_in_year} active members registered in {year}.").format(
                 total_number_of_active_members_registered_in_year='{:,}'.format(total_number_of_active_members_registered_in_year),
                 year=year,
+            )
+        total_number_of_active_members_text += "\n"
+        for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 5, 5):
+            age_ranges = get_age_ranges_match(min_age=age, max_age=age + 4)
+            total_number_of_active_members_in_age_range = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                date_of_birth__range=age_ranges,
+            ).count()
+            total_number_of_female_active_members_in_age_range = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_FEMALE,
+            ).count()
+            total_number_of_male_active_members_in_age_range = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_MALE,
+            ).count()
+            total_number_of_other_active_members_in_age_range = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_OTHER,
+            ).count()
+            total_number_of_active_members_text += "\n"
+            total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age}.").format(
+                total_number_of_active_members_in_age_range='{:,}'.format(total_number_of_active_members_in_age_range),
+                total_number_of_female_active_members_in_age_range='{:,}'.format(total_number_of_female_active_members_in_age_range),
+                total_number_of_male_active_members_in_age_range='{:,}'.format(total_number_of_male_active_members_in_age_range),
+                total_number_of_other_active_members_in_age_range='{:,}'.format(total_number_of_other_active_members_in_age_range),
+                min_age='{:,}'.format(age),
+                max_age='{:,}'.format(age + 4),
             )
         return total_number_of_active_members_text
 
