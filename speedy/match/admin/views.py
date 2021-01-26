@@ -155,15 +155,16 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_OTHER,
             ).count()
-            total_number_of_active_members_text += "\n"
-            total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age}.").format(
-                total_number_of_active_members_in_age_range='{:,}'.format(total_number_of_active_members_in_age_range),
-                total_number_of_female_active_members_in_age_range='{:,}'.format(total_number_of_female_active_members_in_age_range),
-                total_number_of_male_active_members_in_age_range='{:,}'.format(total_number_of_male_active_members_in_age_range),
-                total_number_of_other_active_members_in_age_range='{:,}'.format(total_number_of_other_active_members_in_age_range),
-                min_age='{:,}'.format(age),
-                max_age='{:,}'.format(age + 4),
-            )
+            if ((total_number_of_active_members_in_age_range > 0) or (age < 100)):
+                total_number_of_active_members_text += "\n"
+                total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age}.").format(
+                    total_number_of_active_members_in_age_range='{:,}'.format(total_number_of_active_members_in_age_range),
+                    total_number_of_female_active_members_in_age_range='{:,}'.format(total_number_of_female_active_members_in_age_range),
+                    total_number_of_male_active_members_in_age_range='{:,}'.format(total_number_of_male_active_members_in_age_range),
+                    total_number_of_other_active_members_in_age_range='{:,}'.format(total_number_of_other_active_members_in_age_range),
+                    min_age='{:,}'.format(age),
+                    max_age='{:,}'.format(age + 4),
+                )
         return total_number_of_active_members_text
 
     def get_queryset(self):
