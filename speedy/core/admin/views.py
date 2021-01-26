@@ -26,8 +26,7 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     paginate_by = page_size
     show_details = False
 
-    @staticmethod
-    def get_total_number_of_members_text():
+    def get_total_number_of_members_text(self):
         SiteProfile = get_site_profile_model()
         total_number_of_members = User.objects.all().count()
         total_number_of_members_in_the_last_week = User.objects.filter(**{

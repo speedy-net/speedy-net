@@ -18,8 +18,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     page_size = 250
     paginate_by = page_size
 
-    @staticmethod
-    def get_total_number_of_active_members_text():
+    def get_total_number_of_active_members_text(self):
         language_code = get_language()
         total_number_of_active_members = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
@@ -126,8 +125,11 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 year=year,
             )
         total_number_of_active_members_text += "\n"
-        for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 5, 5):
-            age_ranges = get_age_ranges_match(min_age=age, max_age=age + 4)
+        age_interval = 5
+        if (self.request.GET.get('age_interval')):
+            age_interval = int(self.request.GET.get('age_interval'))
+        for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
+            age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
             total_number_of_active_members_in_age_range = User.objects.active(
                 speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
                 speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
@@ -163,7 +165,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                     total_number_of_male_active_members_in_age_range='{:,}'.format(total_number_of_male_active_members_in_age_range),
                     total_number_of_other_active_members_in_age_range='{:,}'.format(total_number_of_other_active_members_in_age_range),
                     min_age='{:,}'.format(age),
-                    max_age='{:,}'.format(age + 4),
+                    max_age='{:,}'.format(age + (age_interval - 1)),
                 )
         return total_number_of_active_members_text
 
