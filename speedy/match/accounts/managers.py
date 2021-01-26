@@ -83,6 +83,7 @@ class SiteProfileManager(BaseManager):
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).prefetch_related(
+            "photo",
             "likes_to_user",
             "friends",
         ).order_by('-speedy_match_site_profile__last_visit')
@@ -243,6 +244,8 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).prefetch_related(
+            "photo",
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
