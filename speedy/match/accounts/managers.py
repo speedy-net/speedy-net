@@ -197,15 +197,17 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_matches={number_of_matches}".format(
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
             user=user,
             language_code=language_code,
+            number_of_users=len(user_list),
             number_of_matches=len(matches_list),
         ))
         if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user.speedy_match_profile.height <= 85) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)):
-            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
+            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
                 user=user,
                 language_code=language_code,
+                number_of_users=len(user_list),
                 number_of_matches=len(matches_list),
                 height=user.speedy_match_profile.height,
                 not_allowed_to_use_speedy_match=user.speedy_match_profile.not_allowed_to_use_speedy_match,
