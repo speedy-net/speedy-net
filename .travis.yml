@@ -2,7 +2,8 @@ language: python
 python:
   - "3.6"
   - "3.7"
-#  - "3.8" # ~~~~ TODO - Some tests are skipped with Python 3.8. Check why they are skipped and enable tests with Python 3.8. (We use Python 3.6 in production).
+  - "3.8"
+  - "3.9"
 sudo: required
 dist: bionic
 addons:
