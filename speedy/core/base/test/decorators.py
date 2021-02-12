@@ -2,7 +2,7 @@ import unittest
 
 from django.conf import settings as django_settings
 
-conditional_test = lambda conditional_function: unittest.skipUnless(condition=conditional_function(), reason="excluded.")
+conditional_test = lambda conditional_function: unittest.skipUnless(condition=conditional_function(), reason="This test is irrelevant in this site.")
 
 exclude_on_site = lambda site_id: conditional_test(conditional_function=lambda: (not (django_settings.SITE_ID == site_id)))
 exclude_on_speedy_net = exclude_on_site(site_id=django_settings.SPEEDY_NET_SITE_ID)

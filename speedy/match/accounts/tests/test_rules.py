@@ -10,7 +10,7 @@ if (django_settings.LOGIN_ENABLED):
 
     @only_on_speedy_match
     class ViewProfileRulesTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Match.")
         def test_doron_and_jennifer_have_access(self):
             raise NotImplementedError()
 

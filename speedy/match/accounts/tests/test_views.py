@@ -43,7 +43,7 @@ if (django_settings.LOGIN_ENABLED):
     class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
         redirect_url = '/registration-step-2/'
 
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Match.")
         def test_inactive_user_can_request_activation(self):
             # ~~~~ TODO: check if we need this test
             raise NotImplementedError()

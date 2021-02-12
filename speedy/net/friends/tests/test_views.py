@@ -15,7 +15,7 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.first_user_friends_list_url)
             self.assertEqual(first=r.status_code, second=200)
 
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Net.")
         def test_visitor_cannot_open_the_page(self):
             raise NotImplementedError()
 
@@ -23,7 +23,7 @@ if (django_settings.LOGIN_ENABLED):
             r = self.client.get(path=self.second_user_friends_list_url)
             self.assertEqual(first=r.status_code, second=200)
 
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Net.")
         def test_user_cannot_open_other_users_friends_page(self):
             raise NotImplementedError()
 

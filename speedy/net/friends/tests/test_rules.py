@@ -13,7 +13,7 @@ if (django_settings.LOGIN_ENABLED):
         def test_user_can_view_another_user_friend_list(self):
             self.assertTrue(expr=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user))
 
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Net.")
         def test_user_cannot_view_another_user_friend_list(self):
             raise NotImplementedError()
 

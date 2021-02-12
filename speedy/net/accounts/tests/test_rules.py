@@ -14,7 +14,7 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(expr=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer))
             self.assertTrue(expr=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron))
 
-        @unittest.skip
+        @unittest.skip(reason="This test is irrelevant in Speedy Net.")
         def test_doron_and_jennifer_have_no_access(self):
             raise NotImplementedError()
 
