@@ -12,7 +12,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
     from speedy.core.base.test.utils import get_random_user_password
-    from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory
+    from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory
     from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
 
@@ -1258,20 +1258,6 @@ if (django_settings.LOGIN_ENABLED):
         page_url = '/welcome/'
         redirect_url = None
 
-        def set_up(self):
-            super().set_up()
-            self.user = InactiveUserFactory()
-            self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
-            self.assertEqual(first=self.user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
-            self.assertEqual(first=self.user.profile.is_active, second=False)
-            self.assert_models_count(
-                entity_count=1,
-                user_count=1,
-                user_email_address_count=0,
-                confirmed_email_address_count=0,
-                unconfirmed_email_address_count=0,
-            )
-
         def test_visitor_has_no_access(self):
             self.client.logout()
             r = self.client.get(path=self.page_url)
@@ -1289,6 +1275,38 @@ if (django_settings.LOGIN_ENABLED):
 
         def test_inactive_user_can_request_activation(self):
             raise NotImplementedError()
+
+
+    class ActivateSiteProfileViewTestCaseMixin1(ActivateSiteProfileViewTestCaseMixin):
+        def set_up(self):
+            super().set_up()
+            self.user = InactiveUserFactory()
+            self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=self.user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
+            self.assertEqual(first=self.user.profile.is_active, second=False)
+            self.assert_models_count(
+                entity_count=1,
+                user_count=1,
+                user_email_address_count=0,
+                confirmed_email_address_count=0,
+                unconfirmed_email_address_count=0,
+            )
+
+
+    class ActivateSiteProfileViewTestCaseMixin2(ActivateSiteProfileViewTestCaseMixin):
+        def set_up(self):
+            super().set_up()
+            self.user = SpeedyNetInactiveUserFactory()
+            self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+            self.assertEqual(first=self.user.is_active, second=False)
+            self.assertEqual(first=self.user.profile.is_active, second=False)
+            self.assert_models_count(
+                entity_count=1,
+                user_count=1,
+                user_email_address_count=1,
+                confirmed_email_address_count=1,
+                unconfirmed_email_address_count=0,
+            )
 
 
     @only_on_sites_with_login

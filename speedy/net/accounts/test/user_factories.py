@@ -3,7 +3,6 @@ import factory.fuzzy
 
 from django.conf import settings as django_settings
 
-
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
     from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory

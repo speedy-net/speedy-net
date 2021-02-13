@@ -6,7 +6,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_speedy_match
-    from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin
+    from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin1, ActivateSiteProfileViewTestCaseMixin2
     from speedy.core.accounts.models import User
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
@@ -40,14 +40,20 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_speedy_match
-    class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
+    class ActivateSiteProfileViewTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
         redirect_url = '/registration-step-2/'
 
         @unittest.skip(reason="This test is irrelevant in Speedy Match.")
         def test_inactive_user_can_request_activation(self):
-            # ~~~~ TODO: check if we need this test
             raise NotImplementedError()
 
-        # ~~~~ TODO: test when the Speedy Net account is also deactivated.
+
+    @only_on_speedy_match
+    class ActivateSiteProfileViewTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
+        redirect_url = '/welcome/'
+
+        @unittest.skip(reason="This test is irrelevant in Speedy Match.")
+        def test_inactive_user_can_request_activation(self):
+            raise NotImplementedError()
 
 

@@ -4,7 +4,7 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_speedy_net
-    from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin
+    from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin1, ActivateSiteProfileViewTestCaseMixin2
     from speedy.core.accounts.models import User
     from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
@@ -35,7 +35,7 @@ if (django_settings.LOGIN_ENABLED):
 
 
     @only_on_speedy_net
-    class ActivateSiteProfileViewTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
+    class ActivateSiteProfileViewTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
         redirect_url = '/welcome/'
 
         def test_inactive_user_can_request_activation(self):
@@ -44,5 +44,21 @@ if (django_settings.LOGIN_ENABLED):
             user = User.objects.get(pk=self.user.pk)
             self.assertEqual(first=user.is_active, second=True)
             self.assertEqual(first=user.profile.is_active, second=True)
+            self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+
+
+    @only_on_speedy_net
+    class ActivateSiteProfileViewTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
+        redirect_url = '/welcome/'
+
+        def test_inactive_user_can_request_activation(self):
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+            user = User.objects.get(pk=self.user.pk)
+            self.assertEqual(first=user.is_active, second=True)
+            self.assertEqual(first=user.profile.is_active, second=True)
+            self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+            self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
 
 

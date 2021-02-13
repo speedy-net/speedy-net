@@ -53,3 +53,9 @@ if (django_settings.LOGIN_ENABLED):
                 raise Exception("Step not as expected, {}".format(step))
 
 
+    class SpeedyNetInactiveUserFactory(ActiveUserFactory):
+        @factory.post_generation
+        def deactivate_profile(self, created, extracted, **kwargs):
+            self.speedy_net_profile.deactivate()
+
+
