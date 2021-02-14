@@ -5,7 +5,7 @@ from speedy.core.patches import locale_patches
 from speedy.core.patches import session_patches
 
 
-class SpeedyCoreBaseConfig(AppConfig):
+class SpeedyCoreBaseAppConfig(AppConfig):
     name = 'speedy.core.base'
     verbose_name = _("Speedy Core Base App")
     label = 'base'
