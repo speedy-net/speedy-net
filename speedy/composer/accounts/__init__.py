@@ -1,3 +1,3 @@
-default_app_config = 'speedy.composer.accounts.apps.SpeedyComposerAccountsConfig'
+default_app_config = 'speedy.composer.accounts.apps.SpeedyComposerAccountsAppConfig'
 
 

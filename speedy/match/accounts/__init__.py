@@ -1,3 +1,3 @@
-default_app_config = 'speedy.match.accounts.apps.SpeedyMatchAccountsConfig'
+default_app_config = 'speedy.match.accounts.apps.SpeedyMatchAccountsAppConfig'
 
 

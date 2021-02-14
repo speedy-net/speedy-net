@@ -1,3 +1,3 @@
-default_app_config = 'speedy.mail.accounts.apps.SpeedyMailSoftwareAccountsConfig'
+default_app_config = 'speedy.mail.accounts.apps.SpeedyMailSoftwareAccountsAppConfig'
 
 
