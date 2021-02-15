@@ -151,9 +151,15 @@ class SiteProfileManager(BaseManager):
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 profile_description = other_user.speedy_match_profile.profile_description
-                profile_description_split = profile_description.split()
+                if (string_is_not_empty(profile_description)):
+                    profile_description_split = profile_description.split()
+                else:
+                    profile_description_split = "".split()
                 match_description = other_user.speedy_match_profile.match_description
-                match_description_split = match_description.split()
+                if (string_is_not_empty(match_description)):
+                    match_description_split = match_description.split()
+                else:
+                    match_description_split = "".split()
                 if ((string_is_not_empty(profile_description)) and (len(profile_description) >= 20) and (len(profile_description_split) >= 10)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
