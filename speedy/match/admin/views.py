@@ -159,11 +159,14 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             ).count()
             if ((total_number_of_active_members_in_age_range > 0) or (age < 100)):
                 total_number_of_active_members_text += "\n"
-                total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age}.").format(
+                total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range} females, {total_percent_of_male_active_members_in_age_range} males, {total_percent_of_other_active_members_in_age_range} others).").format(
                     total_number_of_active_members_in_age_range='{:,}'.format(total_number_of_active_members_in_age_range),
                     total_number_of_female_active_members_in_age_range='{:,}'.format(total_number_of_female_active_members_in_age_range),
                     total_number_of_male_active_members_in_age_range='{:,}'.format(total_number_of_male_active_members_in_age_range),
                     total_number_of_other_active_members_in_age_range='{:,}'.format(total_number_of_other_active_members_in_age_range),
+                    total_percent_of_female_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_female_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
+                    total_percent_of_male_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_male_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
+                    total_percent_of_other_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_other_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
                     min_age='{:,}'.format(age),
                     max_age='{:,}'.format(age + (age_interval - 1)),
                 )
