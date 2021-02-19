@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-19 08:04+0200\n"
+"POT-Creation-Date: 2021-02-19 11:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -773,7 +773,7 @@ msgstr "משתמשים לא יכולים לעשות לייק לעצמם."
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr "המשתמש כבר עשה לייק למשתמש האחר"
+msgstr "המשתמש כבר עשה לייק למשתמש האחר."
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
