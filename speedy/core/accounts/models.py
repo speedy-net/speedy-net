@@ -862,6 +862,12 @@ class SiteProfileBase(TimeStampedModel):
         raise NotImplementedError("call_after_verify_email_address is not implemented.")
 
 
+class UserCachedCounts(TimeStampedModel):
+    user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name='cached_counts')
+    friends = models.SmallIntegerField(default=-1)
+    likes_to_user = models.IntegerField(default=-1)
+
+
 @receiver(signal=models.signals.post_save, sender=UserEmailAddress)
 def update_user_has_confirmed_email_field_after_saving_email_address(sender, instance: UserEmailAddress, **kwargs):
     instance.user._update_has_confirmed_email_field()

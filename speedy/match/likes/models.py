@@ -42,3 +42,14 @@ def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
             })
 
 
+@receiver(signal=models.signals.post_save, sender=UserLike)
+def update_user_cached_counts_on_new_like(sender, instance: UserLike, created, **kwargs):
+    if (created):
+        user = instance.to_user
+        user.cached_counts.likes_to_user = user.likes_to_user.count()
+
+
+@receiver(signal=models.signals.post_delete, sender=UserLike)
+def update_user_cached_counts_on_unlike(sender, instance: UserLike, **kwargs):
+    user = instance.to_user
+    user.cached_counts.likes_to_user = user.likes_to_user.count()
