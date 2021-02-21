@@ -163,7 +163,7 @@ class SiteProfile(SiteProfileBase):
     )
     profile_picture_months_offset = models.PositiveSmallIntegerField(default=5)  # If a face is detected, will be 0. Otherwise, will be 5 months.
     not_allowed_to_use_speedy_match = models.BooleanField(default=False)  # If set to True, user will have no matches.
-    likes_to_user_count = models.PositiveIntegerField(default=None, blank=True, null=True)
+    likes_to_user_count = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
 
     objects = SiteProfileManager()
 
