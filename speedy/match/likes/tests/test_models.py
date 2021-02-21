@@ -28,8 +28,10 @@ if (django_settings.LOGIN_ENABLED):
             UserLike.objects.add_like(from_user=ActiveUserFactory(), to_user=self.user_2)
 
         def assert_counters(self, user, from_user_likes, to_user_likes):
+            user = User.objects.get(pk=user.pk)
             self.assertEqual(first=len(UserLike.objects.filter(from_user=user)), second=from_user_likes)
             self.assertEqual(first=len(UserLike.objects.filter(to_user=user)), second=to_user_likes)
+            self.assertEqual(first=user.speedy_match_profile.likes_to_user_count, second=to_user_likes)
 
         def test_set_up(self):
             self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)

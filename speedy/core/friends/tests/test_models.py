@@ -24,9 +24,11 @@ if (django_settings.LOGIN_ENABLED):
             Friend.objects.add_friend(from_user=ActiveUserFactory(), to_user=self.user_1)
 
         def assert_counters(self, user, requests, sent_requests, friends):
+            user = User.objects.get(pk=user.pk)
             self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
             self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
             self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
+            self.assertEqual(first=user.speedy_net_profile.friends_count, second=friends)
 
         def test_set_up(self):
             self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
