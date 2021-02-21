@@ -34,6 +34,16 @@ if (django_settings.LOGIN_ENABLED):
             self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
             self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
 
+        def test_delete_users(self):
+            for user in User.objects.all().exclude(pk=self.user_1.pk):
+                user.delete()
+            self.user_2 = None
+            self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=0)
+            Friend.objects.add_friend(from_user=self.user_1, to_user=ActiveUserFactory()).accept()
+            self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=1)
+            Friend.objects.add_friend(from_user=ActiveUserFactory(), to_user=self.user_1).accept()
+            self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=2)
+
         def test_if_no_relation_between_users_nothing_get_affected(self):
             Block.objects.block(blocker=self.user_1, blocked=self.user_2)
             self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
