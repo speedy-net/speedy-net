@@ -42,3 +42,16 @@ def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
             })
 
 
+@receiver(signal=models.signals.post_save, sender=UserLike)
+def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, **kwargs):
+    if (created):
+        user = instance.to_user
+        user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+        user.speedy_match_profile.save()
+
+
+@receiver(signal=models.signals.post_delete, sender=UserLike)
+def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
+    user = instance.to_user
+    user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+    user.speedy_match_profile.save()
