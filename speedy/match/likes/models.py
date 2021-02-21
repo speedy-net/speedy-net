@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.models import TimeStampedModel
-from speedy.core.accounts.models import User, UserCachedCounts
+from speedy.core.accounts.models import User
 from .managers import UserLikeManager
 
 
@@ -43,23 +43,15 @@ def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
 
 
 @receiver(signal=models.signals.post_save, sender=UserLike)
-def update_user_cached_counts_on_new_like(sender, instance: UserLike, created, **kwargs):
+def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, **kwargs):
     if (created):
         user = instance.to_user
-        count = user.likes_to_user.count()
-        if hasattr(user, 'cached_counts'):
-            user.cached_counts.likes_to_user = count
-            user.cached_counts.save()
-        else:
-            UserCachedCounts.objects.create(user=user, likes_to_user=count)
+        user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+        user.speedy_match_profile.save()
 
 
 @receiver(signal=models.signals.post_delete, sender=UserLike)
-def update_user_cached_counts_on_unlike(sender, instance: UserLike, **kwargs):
+def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
     user = instance.to_user
-    count = user.likes_to_user.count()
-    if hasattr(user, 'cached_counts'):
-        user.cached_counts.likes_to_user = count
-        user.cached_counts.save()
-    else:
-        UserCachedCounts.objects.create(user=user, likes_to_user=count)
+    user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+    user.speedy_match_profile.save()

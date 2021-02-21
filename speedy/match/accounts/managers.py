@@ -8,7 +8,7 @@ from django.utils.timezone import now
 
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
-from speedy.core.accounts.models import User, UserCachedCounts
+from speedy.core.accounts.models import User
 
 logger = logging.getLogger(__name__)
 
@@ -49,21 +49,15 @@ class SiteProfileManager(BaseManager):
         return rank
 
     def _ensure_cached_counts(self, user):
-        if not hasattr(user, 'cached_counts'):
-            UserCachedCounts.objects.create(user=user, likes_to_user=len(user.likes_to_user.all()), friends=len(user.friends.all()))
-            return
-        need_save = False
-        if user.cached_counts.likes_to_user == -1:
-            user.cached_counts.likes_to_user = len(user.likes_to_user.all())
-            need_save = True
-        if user.cached_counts.friends == -1:
-            user.cached_counts.friends = len(user.friends.all())
-            need_save = True
-        if need_save:
-            user.cached_counts.save()
+        if user.speedy_match_profile.likes_to_user_count is None:
+            user.speedy_match_profile.likes_to_user_count = len(user.friends.all())
+            user.speedy_match_profile.save()
+        if user.speedy_net_profile.friends_count is None:
+            user.speedy_net_profile.friends_count = len(user.likes_to_user.all())
+            user.speedy_net_profile.save()
 
-    def _prefetch_related_objects_if_no_cache_counts(self, user_list):
-        users_to_prefetch = [user for user in user_list if not hasattr(user, 'cached_counts') or user.cached_counts.likes_to_user == -1 or user.cached_counts.friends == -1]
+    def _prefetch_related_objects_if_no_cached_counts(self, user_list):
+        users_to_prefetch = [user for user in user_list if user.speedy_match_profile.likes_to_user_count is None or user.speedy_net_profile.friends_count is None]
         prefetch_related_objects(users_to_prefetch, 'likes_to_user', 'friends')
 
     def get_matches(self, user):
@@ -101,11 +95,9 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
-        ).prefetch_related(
-            'cached_counts',
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
-        self._prefetch_related_objects_if_no_cache_counts(user_list)
+        self._prefetch_related_objects_if_no_cached_counts(user_list)
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         datetime_now = datetime.now()
@@ -120,8 +112,8 @@ class SiteProfileManager(BaseManager):
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 self._ensure_cached_counts(other_user)
-                other_user.speedy_match_profile._likes_to_user_count = other_user.cached_counts.likes_to_user
-                other_user.speedy_match_profile._friends_count = other_user.cached_counts.friends
+                other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
+                other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
                 other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
                 if ((timezone_now - other_user.date_created).days < 15) or ((timezone_now - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
