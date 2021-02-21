@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-19 11:10+0200\n"
+"POT-Creation-Date: 2021-02-21 10:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -696,7 +696,10 @@ msgid ""
 "Admin: The total number of active members on the site is "
 "{total_number_of_active_members} ({total_number_of_female_active_members} "
 "females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others), of which "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week, {total_number_of_active_members_in_the_last_month} members "
 "entered the site in the last month, and "
@@ -706,13 +709,16 @@ msgstr ""
 "אדמין: מספר החברים הפעילים באתר הוא {total_number_of_active_members} "
 "({total_number_of_female_active_members} נקבות, "
 "{total_number_of_male_active_members} זכרים, "
-"{total_number_of_other_active_members} אחרים/ות), מתוכם "
+"{total_number_of_other_active_members} אחרים/ות; "
+"{total_percent_of_female_active_members} נקבות, "
+"{total_percent_of_male_active_members} זכרים, "
+"{total_percent_of_other_active_members} אחרים/ות), מתוכם "
 "{total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע "
 "האחרון, {total_number_of_active_members_in_the_last_month} חברים נכנסו לאתר "
 "בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
 "חברים נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:105
+#: .\admin\views.py:108
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -737,7 +743,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:123
+#: .\admin\views.py:126
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -746,7 +752,7 @@ msgstr ""
 "אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים "
 "נרשמו לאתר בשנת {year}."
 
-#: .\admin\views.py:162
+#: .\admin\views.py:165
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "

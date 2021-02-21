@@ -61,11 +61,14 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__active_languages__contains=[language_code],
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
         ).count()
-        total_number_of_active_members_text = _("Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week, {total_number_of_active_members_in_the_last_month} members entered the site in the last month, and {total_number_of_active_members_in_the_last_four_months} members entered the site in the last four months.").format(
+        total_number_of_active_members_text = _("Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others; {total_percent_of_female_active_members} females, {total_percent_of_male_active_members} males, {total_percent_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week, {total_number_of_active_members_in_the_last_month} members entered the site in the last month, and {total_number_of_active_members_in_the_last_four_months} members entered the site in the last four months.").format(
             total_number_of_active_members='{:,}'.format(total_number_of_active_members),
             total_number_of_female_active_members='{:,}'.format(total_number_of_female_active_members),
             total_number_of_male_active_members='{:,}'.format(total_number_of_male_active_members),
             total_number_of_other_active_members='{:,}'.format(total_number_of_other_active_members),
+            total_percent_of_female_active_members='{:,.1f}%'.format(round(float(total_number_of_female_active_members) / float(total_number_of_active_members) * 100, 1) if (total_number_of_active_members > 0) else 0),
+            total_percent_of_male_active_members='{:,.1f}%'.format(round(float(total_number_of_male_active_members) / float(total_number_of_active_members) * 100, 1) if (total_number_of_active_members > 0) else 0),
+            total_percent_of_other_active_members='{:,.1f}%'.format(round(float(total_number_of_other_active_members) / float(total_number_of_active_members) * 100, 1) if (total_number_of_active_members > 0) else 0),
             total_number_of_active_members_in_the_last_week='{:,}'.format(total_number_of_active_members_in_the_last_week),
             total_number_of_active_members_in_the_last_month='{:,}'.format(total_number_of_active_members_in_the_last_month),
             total_number_of_active_members_in_the_last_four_months='{:,}'.format(total_number_of_active_members_in_the_last_four_months),
