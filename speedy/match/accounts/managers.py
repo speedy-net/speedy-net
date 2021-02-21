@@ -2,6 +2,7 @@ import logging
 import hashlib
 from datetime import date, datetime
 
+from django.db.models import prefetch_related_objects
 from django.utils.translation import get_language
 from django.utils.timezone import now
 
@@ -47,6 +48,18 @@ class SiteProfileManager(BaseManager):
         rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
         return rank
 
+    def _ensure_cached_counts(self, user):
+        if user.speedy_match_profile.likes_to_user_count is None:
+            user.speedy_match_profile.likes_to_user_count = len(user.friends.all())
+            user.speedy_match_profile.save()
+        if user.speedy_net_profile.friends_count is None:
+            user.speedy_net_profile.friends_count = len(user.likes_to_user.all())
+            user.speedy_net_profile.save()
+
+    def _prefetch_related_objects_if_no_cached_counts(self, user_list):
+        users_to_prefetch = [user for user in user_list if user.speedy_match_profile.likes_to_user_count is None or user.speedy_net_profile.friends_count is None]
+        prefetch_related_objects(users_to_prefetch, 'likes_to_user', 'friends')
+
     def get_matches(self, user):
         """
         Get matches from database.
@@ -82,11 +95,9 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__active_languages__contains=[language_code],
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
-        ).prefetch_related(
-            "likes_to_user",
-            "friends",
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
+        self._prefetch_related_objects_if_no_cached_counts(user_list=user_list)
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         datetime_now = datetime.now()
@@ -100,8 +111,9 @@ class SiteProfileManager(BaseManager):
                 blocking_users_ids=blocking_users_ids,
             )
             if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
-                other_user.speedy_match_profile._likes_to_user_count = len(other_user.likes_to_user.all())
-                other_user.speedy_match_profile._friends_count = len(other_user.friends.all())
+                self._ensure_cached_counts(other_user)
+                other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
+                other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
                 other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
                 if ((timezone_now - other_user.date_created).days < 15) or ((timezone_now - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
