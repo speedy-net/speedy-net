@@ -35,7 +35,7 @@
                             {% if step <= request.user.speedy_match_profile.activation_step %}
                                 <a href="{% url 'accounts:activate' step=step %}">
                             {% endif %}
-                                <span class="activation-step {% if step == current_step %}active{% endif %} {% if step < current_step %}passed{% endif %}">{{ step }}</span>
+                                <span class="activation-step{% if step == current_step %} active{% endif %}{% if step < current_step %} passed{% endif %}">{{ step }}</span>
                             {% if step <= request.user.speedy_match_profile.activation_step %}
                                 </a>
                             {% endif %}
