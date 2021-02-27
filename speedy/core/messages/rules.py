@@ -2,8 +2,8 @@ import logging
 from datetime import timedelta
 
 from rules import predicate, add_perm, is_authenticated
-from django.utils.timezone import now
 from django.contrib.sites.models import Site
+from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.accounts.base_rules import is_self

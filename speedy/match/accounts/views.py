@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
-from django.utils.translation import pgettext_lazy, ugettext as _
 from django.utils.timezone import now
+from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.match.accounts import utils
@@ -32,11 +32,19 @@ class IndexView(speedy_core_accounts_views.IndexView):
 
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
     def get_context_data(self, **kwargs):
+        if (self.request.user.is_authenticated):
+            if ((now() - self.request.user.date_created).days < 7):
+                include_in_conversions = True
+            else:
+                include_in_conversions = False
+        else:
+            include_in_conversions = False
         cd = super().get_context_data(**kwargs)
         cd.update({
             'steps_range': list(utils.get_steps_range()),
             'current_step': self.step,
             'previous_step': self.step - 1,
+            'include_in_conversions': include_in_conversions,
         })
         return cd
 

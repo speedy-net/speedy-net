@@ -1,7 +1,7 @@
 from datetime import timedelta, datetime, timezone, date
 
-from django.utils.translation import get_language, gettext_lazy as _
 from django.utils.timezone import now
+from django.utils.translation import get_language, gettext_lazy as _
 from django.views import generic
 from django.db.models import Count
 

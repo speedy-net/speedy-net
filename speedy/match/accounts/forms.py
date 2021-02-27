@@ -4,8 +4,8 @@ import json
 from django import forms
 from django.conf import settings as django_settings
 from django.template.loader import render_to_string
-from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
 
 from speedy.core.base import validators as speedy_core_base_validators

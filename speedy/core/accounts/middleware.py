@@ -4,8 +4,8 @@ from django.conf import settings as django_settings
 from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sites.models import Site
-from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _
 
 logger = logging.getLogger(__name__)
 

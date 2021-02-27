@@ -145,7 +145,7 @@
     </script>
     {% block google_conversions %}
         {# Track Google conversions - only on speedymatch.com #}
-        {% if site.domain == 'speedymatch.com' %}
+        {% if site.domain == 'speedymatch.com' and include_in_conversions %}
             {% if current_step == 2 %}
                 {# <!-- Event snippet for Speedy Match - registration step 2 - within 5 days conversion page --> #}
                 <script>

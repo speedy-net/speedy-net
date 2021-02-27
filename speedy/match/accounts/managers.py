@@ -3,8 +3,8 @@ import hashlib
 from datetime import date, datetime
 
 from django.db.models import prefetch_related_objects
-from django.utils.translation import get_language
 from django.utils.timezone import now
+from django.utils.translation import get_language
 
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager

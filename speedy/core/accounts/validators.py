@@ -5,8 +5,8 @@ from django.conf import settings as django_settings
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 from speedy.core.base.utils import string_is_not_empty, string_is_not_none
-from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 from django.template.loader import render_to_string
 
 from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default, is_transparent

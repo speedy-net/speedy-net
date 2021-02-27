@@ -1,7 +1,7 @@
 from datetime import timedelta
 
-from django.utils.translation import get_language, gettext_lazy as _
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import User

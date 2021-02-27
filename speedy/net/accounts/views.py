@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
-from django.utils.translation import pgettext_lazy, ugettext as _
 from django.utils.timezone import now
+from django.utils.translation import pgettext_lazy, ugettext as _
 
 from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.net.accounts import utils

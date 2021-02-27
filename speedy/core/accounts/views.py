@@ -10,8 +10,8 @@ from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
-from django.utils.translation import gettext_lazy as _, get_language, pgettext_lazy
 from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _, get_language, pgettext_lazy
 from django.views import generic
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.detail import SingleObjectMixin

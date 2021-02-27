@@ -123,7 +123,7 @@
     {{ block.super }}
     {% block google_conversions %}
         {# Track Google conversions - only on speedymatch.com #}
-        {% if site.domain == 'speedymatch.com' %}
+        {% if site.domain == 'speedymatch.com' and include_in_conversions %}
             {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH %}
                 {% if not user.speedy_match_profile.not_allowed_to_use_speedy_match %}
                     {# <!-- Event snippet for Speedy Match - active user conversion page --> #}

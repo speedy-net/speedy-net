@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import redirect
+from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 
 from rules.contrib.views import LoginRequiredMixin
@@ -49,10 +50,18 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
         return self.request.user.speedy_match_profile
 
     def get_context_data(self, **kwargs):
+        if (self.request.user.is_authenticated):
+            if ((now() - self.request.user.date_created).days < 7):
+                include_in_conversions = True
+            else:
+                include_in_conversions = False
+        else:
+            include_in_conversions = False
         cd = super().get_context_data(**kwargs)
         cd.update({
             'matches_list': self.page.object_list,
             'total_number_of_active_members_text': utils.get_total_number_of_active_members_text(),
+            'include_in_conversions': include_in_conversions,
         })
         return cd
 
