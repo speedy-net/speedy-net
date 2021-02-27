@@ -213,7 +213,7 @@ class SiteProfile(SiteProfileBase):
         return '{} @ Speedy Match'.format(super().__str__())
 
     def save(self, *args, **kwargs):
-        if hasattr(self, "_rank_dict"):
+        if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
         self._set_values_to_match()
         if (self.activation_step < 2):
@@ -247,9 +247,9 @@ class SiteProfile(SiteProfileBase):
 
     def _set_active_languages(self, languages):
         self.active_languages = sorted(list(set(languages)))
-        if hasattr(self, "is_active"):
+        if (hasattr(self, "is_active")):
             delattr(self, "is_active")
-        if hasattr(self, "is_active_and_valid"):
+        if (hasattr(self, "is_active_and_valid")):
             delattr(self, "is_active_and_valid")
 
     def _deactivate_language(self, step, commit=True):

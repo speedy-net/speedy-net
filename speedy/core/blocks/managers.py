@@ -70,9 +70,9 @@ class BlockManager(BaseManager):
         """
         bust_cache('blocked', blocker.pk)
         bust_cache('blocking', blocked.pk)
-        if hasattr(blocker, '_prefetched_objects_cache'):
+        if (hasattr(blocker, '_prefetched_objects_cache')):
             blocker._prefetched_objects_cache.pop('blocked_entities', None)
-        if hasattr(blocked, '_prefetched_objects_cache'):
+        if (hasattr(blocked, '_prefetched_objects_cache')):
             blocked._prefetched_objects_cache.pop('blocking_entities', None)
         ensure_caches(user=blocker)
 
