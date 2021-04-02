@@ -37,7 +37,7 @@
                 {% include 'profiles/block_warning.html' with user=user other=other %}
             {% endif %}
 
-            <div class="bg-primary rounded-lg p-3" data-block="MessageList" data-poll-url="{% url 'messages:chat_poll' chat_slug=chat|get_chat_slug:user %}">
+            <div class="bg-primary rounded-lg p-3" data-block="MessageList" data-poll-url="{% url 'messages:chat_poll' chat_slug=chat|get_chat_slug:user %}" data-page-number="{{ page_obj.number }}">
                 {% include 'messages/message_list_poll.html' %}
             </div>
 

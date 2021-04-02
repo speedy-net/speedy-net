@@ -101,19 +101,23 @@ evil.block('@@AutoForm', {
 evil.block('@@MessageList', {
     init: function () {
         var _this = this;
-        window.setInterval(function () {
-            _this.poll();
-        }, 5000);
+        if (this.block.data('page-number') === 1) {
+            window.setInterval(function () {
+                _this.poll();
+            }, 5000);
+        }
     },
 
     poll: function () {
         var _this = this;
-        var url = this.block.data('poll-url');
-        var since = this.$('@message').first().data('timestamp');
-        url += '?since=' + since;
-        $.get(url, function (data) {
-            $(data).prependTo(_this.block);
-        });
+        if (this.block.data('page-number') === 1) {
+            var url = this.block.data('poll-url');
+            var since = this.$('@message').first().data('timestamp');
+            url += '?since=' + since;
+            $.get(url, function (data) {
+                $(data).prependTo(_this.block);
+            });
+        }
     }
 });
 
