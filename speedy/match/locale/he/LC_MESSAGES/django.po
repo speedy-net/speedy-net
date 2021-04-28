@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 10:27+0200\n"
+"POT-Creation-Date: 2021-04-28 11:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -636,15 +636,15 @@ msgstr "Activation step"
 msgid "Number of matches on last user's search"
 msgstr "Number of matches on last user's search"
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:208
 msgid "Speedy Match Profile"
 msgstr "פרופיל ספידי מץ'"
 
-#: .\accounts\models.py:208 .\profiles\apps.py:7
+#: .\accounts\models.py:209 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:295 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:296 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
@@ -690,7 +690,7 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
-#: .\admin\views.py:64
+#: .\admin\views.py:85
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -703,8 +703,14 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week, {total_number_of_active_members_in_the_last_month} members "
 "entered the site in the last month, and "
-"{total_number_of_active_members_in_the_last_four_months} members entered the "
-"site in the last four months."
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months."
 msgstr ""
 "אדמין: מספר החברים הפעילים באתר הוא {total_number_of_active_members} "
 "({total_number_of_female_active_members} נקבות, "
@@ -716,9 +722,15 @@ msgstr ""
 "{total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע "
 "האחרון, {total_number_of_active_members_in_the_last_month} חברים נכנסו לאתר "
 "בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
-"חברים נכנסו לאתר בארבעת החודשים האחרונים."
+"חברים ({total_number_of_female_active_members_in_the_last_four_months} "
+"נקבות, {total_number_of_male_active_members_in_the_last_four_months} זכרים, "
+"{total_number_of_other_active_members_in_the_last_four_months} אחרים/ות; "
+"{total_percent_of_female_active_members_in_the_last_four_months} נקבות, "
+"{total_percent_of_male_active_members_in_the_last_four_months} זכרים, "
+"{total_percent_of_other_active_members_in_the_last_four_months} אחרים/ות) "
+"נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:108
+#: .\admin\views.py:135
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -743,7 +755,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:126
+#: .\admin\views.py:153
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -752,7 +764,7 @@ msgstr ""
 "אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים "
 "נרשמו לאתר בשנת {year}."
 
-#: .\admin\views.py:165
+#: .\admin\views.py:192
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -833,7 +845,7 @@ msgstr "לייקים הדדיים"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match Matches"
 
-#: .\matches\views.py:75 .\matches\views.py:89
+#: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
 msgstr "הגדרת ההתאמות שלך נשמרה."
 

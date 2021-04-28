@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 10:27+0200\n"
+"POT-Creation-Date: 2021-04-28 11:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,11 @@ msgstr ""
 msgid "Number of friends on last user's visit"
 msgstr ""
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:32
 msgid "Speedy Net Profile"
 msgstr ""
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 10:27+0200\n"
+"POT-Creation-Date: 2021-04-28 11:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -631,15 +631,15 @@ msgstr ""
 msgid "Number of matches on last user's search"
 msgstr ""
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:208
 msgid "Speedy Match Profile"
 msgstr ""
 
-#: .\accounts\models.py:208 .\profiles\apps.py:7
+#: .\accounts\models.py:209 .\profiles\apps.py:7
 msgid "Speedy Match Profiles"
 msgstr ""
 
-#: .\accounts\models.py:295 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:296 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr ""
 
@@ -680,7 +680,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:64
+#: .\admin\views.py:85
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -693,11 +693,17 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week, {total_number_of_active_members_in_the_last_month} members "
 "entered the site in the last month, and "
-"{total_number_of_active_members_in_the_last_four_months} members entered the "
-"site in the last four months."
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months."
 msgstr ""
 
-#: .\admin\views.py:108
+#: .\admin\views.py:135
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -712,14 +718,14 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:126
+#: .\admin\views.py:153
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
 
-#: .\admin\views.py:165
+#: .\admin\views.py:192
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -792,7 +798,7 @@ msgstr ""
 msgid "Speedy Match Matches"
 msgstr ""
 
-#: .\matches\views.py:75 .\matches\views.py:89
+#: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
 msgstr ""
 
