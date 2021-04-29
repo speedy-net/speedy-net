@@ -3,8 +3,6 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block body_class %}{{ block.super }} with-background{% endblock %}
-
 {% block content %}
     <div class="row">
         <div class="col-md-8">
@@ -14,6 +12,7 @@
             <h5>
                 {% block main_page_h5 %}{% endblock %}
             </h5>
+            {% block main_page_image %}{% endblock %}
         </div>
         <div class="col-md-4" data-block="RegistrationForm">
             <h1>
