@@ -21,7 +21,7 @@
 
 {% block body %}
 <center>
-    <div id="top-gradient"></div>
+    <div id="top-gradient" class="{% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}top-gradient-red{% else %}top-gradient-blue{% endif %}"></div>
     <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
     <br />
     <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
