@@ -121,7 +121,9 @@ html {
 }
 
 @each $color, $value in $theme-colors {
-    .btn-#{$color}.btn-arrow-right {
+    .btn-#{$color}.btn-arrow-right,
+    .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active,
+    .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
         background: $value;
         background: linear-gradient(-135deg, transparent 1em, $value 0) top right,
         linear-gradient(-45deg, transparent 1em, $value 0) bottom right;
@@ -129,14 +131,11 @@ html {
         background-repeat: no-repeat;
         border: transparent;
         padding-right: 3em;
-
-        &:not(:disabled):not(.disabled):active,
-        &:not(:disabled):not(.disabled).active {
-            background: inherit;
-        }
     }
 
-    .btn-#{$color}.btn-arrow-left {
+    .btn-#{$color}.btn-arrow-left,
+    .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active
+    .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
         background: $value;
         background: linear-gradient(135deg, transparent 1em, $value 0) top right,
         linear-gradient(45deg, transparent 1em, $value 0) bottom right;
@@ -144,11 +143,6 @@ html {
         background-repeat: no-repeat;
         border: transparent;
         padding-left: 3em;
-
-        &:not(:disabled):not(.disabled):active,
-        &:not(:disabled):not(.disabled).active {
-            background: inherit;
-        }
     }
 
 }
