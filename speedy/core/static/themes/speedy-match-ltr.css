@@ -6661,20 +6661,20 @@ html {
     padding-top: 0.1em;
     padding-bottom: 0.1em; }
 
-body.with-background > .body-inner {
-  min-height: 100vh; }
-  body.with-background > .body-inner > .speedy-body-container a {
-    color: #212529; }
-
-body.with-background .speedy-body-container .col-md-8 {
-  background: url("/static/speedy-match/images/photo.png") no-repeat;
-  background-position: bottom left;
-  /* background-size: 630px; */
-  background-size: 590px; }
-
-body.with-background .navbar.bg-speedy-match {
-  /* background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0)); */
-  font-weight: normal; }
+body.with-background {
+  font-weight: bold; }
+  body.with-background > .body-inner {
+    min-height: 100vh; }
+    body.with-background > .body-inner > .speedy-body-container a {
+      color: #212529; }
+  body.with-background .speedy-body-container .col-md-8 {
+    background: url("/static/speedy-match/images/photo.png") no-repeat;
+    background-position: bottom left;
+    /* background-size: 630px; */
+    background-size: 590px; }
+  body.with-background .navbar.bg-speedy-match {
+    /* background: linear-gradient(#ff3a64, rgba(255, 58, 100, 0)); */
+    font-weight: normal; }
 
 .main-couple-bg {
   width: 700px;

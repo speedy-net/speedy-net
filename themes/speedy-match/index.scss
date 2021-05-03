@@ -200,6 +200,8 @@ html {
 }
 
 body.with-background {
+    font-weight: bold;
+
     > .body-inner {
         min-height: 100vh;
 
