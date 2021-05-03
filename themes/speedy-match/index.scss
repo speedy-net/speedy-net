@@ -200,19 +200,14 @@ html {
 }
 
 body.with-background {
-    background-image: linear-gradient(#ff7200, #ff3a64);
-    color: $light-orange;
-    font-weight: bold;
-
     > .body-inner {
-        background: url('/static/speedy-match/images/hearts-bg.png');
-        //background-position-y: 64px;
         min-height: 100vh;
 
-        a {
-            color: #212529;
+        > .speedy-body-container {
+            a {
+                color: #212529;
+            }
         }
-
     }
 
     .speedy-body-container .col-md-8 {
@@ -228,45 +223,28 @@ body.with-background {
     }
 }
 
-body.bidi-ltr.with-background {
-    .speedy-body-container .col-md-8 {
-        min-height: 711px;
-    }
-}
-
-body.bidi-rtl.with-background {
-    .speedy-body-container .col-md-8 {
-        min-height: 685px;
-    }
-}
-
-body.user-is-not-authenticated.with-background {
-    > .body-inner {
-        background-position-y: 105px;
-    }
-}
-
-body.user-is-authenticated.with-background {
-    > .body-inner {
-        background-position-y: 64px;
-    }
+.main-couple-bg {
+    width: 700px;
+    max-width: 95%;
 }
 
 @media (max-width: 1020px) {
-    body.with-background {
-        .speedy-body-container .col-md-8 {
-            background-size: contain;
-            margin-bottom: 25px;
-            min-height: 700px;
-        }
+    .speedy-body-container .col-md-8 {
+        margin-bottom: 25px;
+    }
 
-        .speedy-body-container .col-md-8 h5 {
-            padding-bottom: 75%;
-        }
+    .main-couple-bg {
+        width: 100%;
     }
 
     h5 {
         font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-couple-bg {
+        max-width: 100%;
     }
 }
 
@@ -317,7 +295,6 @@ body.with-background {
 .invalid-feedback {
     display: block;
     font-size: 90%;
-    color: #000000;
 }
 
 .row {
@@ -359,11 +336,9 @@ body.bidi-ltr .dropdown-menu {
 }
 
 @media screen and (min-width: 768px) {
-    body.with-background {
-        .row.total-number-of-active-members,
-        .row.total-number-of-members {
-            padding: 0px 20px;
-        }
+    .row.total-number-of-active-members,
+    .row.total-number-of-members {
+        padding: 0px 20px;
     }
 
     .col-10 {

@@ -2,6 +2,7 @@
 
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% block site_title %}{{ block.super }}{% endblock %} - {% trans 'Free online dating'|title %}{% endblock %}
 
@@ -14,6 +15,10 @@
     <br />
     {% blocktrans with site_name=site_name %}All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Match today to find matching partners, it only takes a few minutes.{% endblocktrans %}<br />
     <br />
+{% endblock %}
+
+{% block main_page_image %}
+    <img class="main-couple-bg" src="{% static 'speedy-match/images/couple-bg.png' %}" alt="" />
 {% endblock %}
 
 {% block total_number_of_active_members_block %}

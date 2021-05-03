@@ -203,11 +203,9 @@ body.bidi-ltr .dropdown-menu {
 }
 
 @media screen and (min-width: 768px) {
-    body.with-background {
-        .row.total-number-of-active-members,
-        .row.total-number-of-members {
-            padding: 0px 20px;
-        }
+    .row.total-number-of-active-members,
+    .row.total-number-of-members {
+        padding: 0px 20px;
     }
 
     .col-10 {
