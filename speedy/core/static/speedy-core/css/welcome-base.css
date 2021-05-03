@@ -14,9 +14,8 @@ html, body {
 
 #top-gradient.top-gradient-red {
     height: 80px;
-    background: url('/static/speedy-core/images/red-gradient.png');
+    background: none;
     margin-bottom: 15px;
-    background-repeat: repeat-x;
     width: 100%;
 }
 
