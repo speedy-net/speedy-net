@@ -127,6 +127,31 @@ html {
 }
 
 
+.main-splash-bg {
+    width: 700px;
+    max-width: 95%;
+}
+
+@media (max-width: 1020px) {
+    .speedy-body-container .col-md-8 {
+        margin-bottom: 25px;
+    }
+
+    .main-splash-bg {
+        width: 100%;
+    }
+
+    h5 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-splash-bg {
+        max-width: 100%;
+    }
+}
+
 .footer a,
 .footer a:visited,
 .footer a:link,

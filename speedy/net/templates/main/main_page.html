@@ -3,6 +3,7 @@
 {% load core_tags_and_filters %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block description %}
     <meta name="description" content="{% blocktrans with site_name=site_name %}Speedy Net is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly.{% endblocktrans %}" />
@@ -15,6 +16,10 @@
     <br />
     {% blocktrans with site_name=site_name %}All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.{% endblocktrans %}<br />
     <br />
+{% endblock %}
+
+{% block main_page_image %}
+    <img class="main-splash-bg" src="{% static 'speedy-net/images/splash.png' %}" alt="" />
 {% endblock %}
 
 {% block total_number_of_active_members_block %}
