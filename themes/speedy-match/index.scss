@@ -124,25 +124,45 @@ html {
     .btn-#{$color}.btn-arrow-right,
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active,
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
-        background: $value;
-        background: linear-gradient(-135deg, transparent 1em, $value 0) top right,
-        linear-gradient(-45deg, transparent 1em, $value 0) bottom right;
-        background-size: 100% 50%;
-        background-repeat: no-repeat;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' viewbox='xMidYMid' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Csymbol id='arrow' viewBox='0 0 15 30' width='15' height='30' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L15,15 L0,30 z'%3E%3C/path%3E%3C/symbol%3E%3Cg fill='%23ff1c32'%3E%3Crect width='100%25' height='100%25' transform='translate(-19.7 0)' /%3E%3Cuse xlink:href='%23arrow' height='100%25' x='100%25' transform='translate(-20 0)' /%3E%3C/g%3E%3C/svg%3E");
+        // <svg height="100%" viewbox="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink">
+        //   <symbol id="arrow" viewBox="0 0 15 30" width="15" height="30" preserveAspectRatio="none">
+        //     <path d="M0,0 L15,15 L0,30 z"></path>
+        //   </symbol>
+        //   <g fill="#ff1c32">
+        //     <rect width="100%" height="100%" transform="translate(-19.7 0)" />
+        //     <use xlink:href="#arrow" height="100%" x="100%" transform="translate(-20 0)" />
+        //   </g>
+        // </svg>
         border: transparent;
         padding-right: 3em;
+
+        body.bidi-rtl & {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' viewbox='xMidYMid' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Csymbol id='arrow' viewBox='0 0 15 30' width='15' height='30' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L15,15 L0,30 z'%3E%3C/path%3E%3C/symbol%3E%3Cg fill='%23ff1c32'%3E%3Crect width='100%25' height='100%25' transform='translate(19.7 0)' /%3E%3Cuse xlink:href='%23arrow' height='100%25' x='-20' transform='scale (-1, 1)' /%3E%3C/g%3E%3C/svg%3E");
+        }
     }
 
     .btn-#{$color}.btn-arrow-left,
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
-        background: $value;
-        background: linear-gradient(135deg, transparent 1em, $value 0) top right,
-        linear-gradient(45deg, transparent 1em, $value 0) bottom right;
-        background-size: 100% 50%;
-        background-repeat: no-repeat;
+        background: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' viewbox='xMidYMid' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Csymbol id='arrow' viewBox='0 0 15 30' width='15' height='30' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L15,15 L0,30 z'%3E%3C/path%3E%3C/symbol%3E%3Cg fill='%23ff1c32'%3E%3Crect width='100%25' height='100%25' transform='translate(19.7 0)' /%3E%3Cuse xlink:href='%23arrow' height='100%25' x='-20' transform='scale (-1, 1)' /%3E%3C/g%3E%3C/svg%3E");
+        // <svg height="100%" viewbox="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink">
+        //   <symbol id="arrow" viewBox="0 0 15 30" width="15" height="30" preserveAspectRatio="none">
+        //     <path d="M0,0 L15,15 L0,30 z"></path>
+        //   </symbol>
+        //   <g fill="#ff1c32">
+        //     <rect width="100%" height="100%" transform="translate(19.7 0)" />
+        //     <use xlink:href="#arrow" height="100%" x="-20" transform="scale (-1, 1)" />
+        //   </g>
+        // </svg>
         border: transparent;
         padding-left: 3em;
+
+        body.bidi-rtl & {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' viewbox='xMidYMid' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Csymbol id='arrow' viewBox='0 0 15 30' width='15' height='30' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L15,15 L0,30 z'%3E%3C/path%3E%3C/symbol%3E%3Cg fill='%23ff1c32'%3E%3Crect width='100%25' height='100%25' transform='translate(-19.7 0)' /%3E%3Cuse xlink:href='%23arrow' height='100%25' x='100%25' transform='translate(-20 0)' /%3E%3C/g%3E%3C/svg%3E");
+        }
     }
 
 }
