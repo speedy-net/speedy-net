@@ -24,6 +24,8 @@ $grays: (
     900: $gray-900
 );
 
+$navbar-light-color: rgba($black, .6) !default;
+
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
@@ -92,6 +94,22 @@ html {
 
 .bg-light {
     background: theme-color('light');
+}
+
+.bg-speedy-net {
+    form {
+        color: black;
+
+        a {
+            //color: black;
+            color: rgba($black, .75);
+        }
+    }
+
+    a {
+        //color: #212529;
+        color: $navbar-light-color;
+    }
 }
 
 .bg-unread {

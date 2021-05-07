@@ -22,6 +22,9 @@ $grays: (
     900: $gray-900
 );
 
+$speedy-match-orange: #f7b1a6;
+$navbar-light-color: rgba($black, .6) !default;
+
 $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -53,7 +56,7 @@ $colors: (
 
 $theme-colors: (
     primary: $red,
-    secondary: lighten($orange, 20%),
+    secondary: lighten($speedy-match-orange, 20%),
     success: $green,
     info: $cyan,
     warning: $yellow,
@@ -89,22 +92,20 @@ html {
 }
 
 .bg-speedy-match {
-    background: $orange;
-
-    .nav-link {
-        color: rgba(255, 255, 255, 0.6) !important;
-    }
+    background: $speedy-match-orange;
 
     form {
         color: black;
 
         a {
-            color: black;
+            //color: black;
+            color: rgba($black, .75);
         }
     }
 
     a {
-        color: #212529;
+        //color: #212529;
+        color: $navbar-light-color;
     }
 }
 
