@@ -4,7 +4,7 @@ html, body {
     color: black;
 }
 
-#top-gradient.top-gradient-blue {
+#top-gradient.blue-gradient {
     height: 80px;
     background: url('/static/speedy-core/images/blue-gradient.png');
     margin-bottom: 15px;
@@ -12,10 +12,11 @@ html, body {
     width: 100%;
 }
 
-#top-gradient.top-gradient-red {
+#top-gradient.pink-gradient {
     height: 80px;
-    background: none;
+    background: url('/static/speedy-core/images/pink-gradient.png');
     margin-bottom: 15px;
+    background-repeat: repeat-x;
     width: 100%;
 }
 

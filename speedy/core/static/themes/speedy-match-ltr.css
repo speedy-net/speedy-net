@@ -200,7 +200,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #ea361a;
+  color: #70180a;
   text-align: left;
   caption-side: bottom; }
 
@@ -1286,7 +1286,7 @@ pre {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 28, 50, 0.25); }
   .form-control::placeholder {
-    color: #ea361a;
+    color: #70180a;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #fbd6d0;
@@ -1406,7 +1406,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   margin-top: 0.3rem;
   margin-left: -1.25rem; }
   .form-check-input:disabled ~ .form-check-label {
-    color: #ea361a; }
+    color: #70180a; }
 
 .form-check-label {
   margin-bottom: 0; }
@@ -5992,7 +5992,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #410e06 !important; }
 
 .text-muted {
-  color: #ea361a !important; }
+  color: #70180a !important; }
 
 .text-hide {
   font: 0/0 a;
