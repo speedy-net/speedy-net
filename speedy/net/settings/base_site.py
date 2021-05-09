@@ -13,7 +13,7 @@ SITE_TITLE = _('Speedy Net [alpha]')
 
 ROOT_URLCONF = 'speedy.net.urls'
 
-DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
+DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
 SERVER_EMAIL = 'webmaster+server@speedy.net'
 
 INSTALLED_APPS += [

@@ -26,7 +26,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-DEFAULT_FROM_EMAIL = 'webmaster@speedy.net'
+DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
 SERVER_EMAIL = 'webmaster+server@speedy.net'
 
 ADMINS = MANAGERS = (

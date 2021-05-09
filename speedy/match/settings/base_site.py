@@ -13,7 +13,7 @@ SITE_TITLE = _('Speedy Match [alpha]')
 
 ROOT_URLCONF = 'speedy.match.urls'
 
-DEFAULT_FROM_EMAIL = 'webmaster@speedymatch.com'
+DEFAULT_FROM_EMAIL = 'notifications@speedymatch.com'
 SERVER_EMAIL = 'webmaster+server@speedymatch.com'
 
 INSTALLED_APPS += [
