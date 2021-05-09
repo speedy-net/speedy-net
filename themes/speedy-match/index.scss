@@ -127,9 +127,13 @@ html {
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active,
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
         background-color: $value;
-        -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
         border: transparent;
         padding-right: 3em;
+        border-right: 1px solid white;
+
+        body.bidi-ltr & {
+            -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
+        }
 
         body.bidi-rtl & {
             -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
@@ -140,9 +144,13 @@ html {
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
         background-color: $value;
-        -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
         border: transparent;
         padding-left: 3em;
+        border-left: 1px solid white;
+
+        body.bidi-ltr & {
+            -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
+        }
 
         body.bidi-rtl & {
             -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
