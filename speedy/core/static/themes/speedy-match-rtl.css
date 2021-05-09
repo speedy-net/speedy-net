@@ -6471,7 +6471,8 @@ html {
   background-color: #ff1c32;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-primary.btn-arrow-right, body.bidi-ltr
   .btn-primary.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-primary.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6486,7 +6487,8 @@ html {
   background-color: #ff1c32;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-primary.btn-arrow-left, body.bidi-ltr
   .btn-primary.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-primary.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6500,7 +6502,8 @@ html {
   background-color: #ea361a;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-secondary.btn-arrow-right, body.bidi-ltr
   .btn-secondary.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-secondary.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6515,7 +6518,8 @@ html {
   background-color: #ea361a;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-secondary.btn-arrow-left, body.bidi-ltr
   .btn-secondary.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-secondary.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6529,7 +6533,8 @@ html {
   background-color: #28a745;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-success.btn-arrow-right, body.bidi-ltr
   .btn-success.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-success.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6544,7 +6549,8 @@ html {
   background-color: #28a745;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-success.btn-arrow-left, body.bidi-ltr
   .btn-success.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-success.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6558,7 +6564,8 @@ html {
   background-color: #17a2b8;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-info.btn-arrow-right, body.bidi-ltr
   .btn-info.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-info.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6573,7 +6580,8 @@ html {
   background-color: #17a2b8;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-info.btn-arrow-left, body.bidi-ltr
   .btn-info.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-info.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6587,7 +6595,8 @@ html {
   background-color: #ffc107;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-warning.btn-arrow-right, body.bidi-ltr
   .btn-warning.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-warning.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6602,7 +6611,8 @@ html {
   background-color: #ffc107;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-warning.btn-arrow-left, body.bidi-ltr
   .btn-warning.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-warning.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6616,7 +6626,8 @@ html {
   background-color: #ff1c32;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-danger.btn-arrow-right, body.bidi-ltr
   .btn-danger.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-danger.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6631,7 +6642,8 @@ html {
   background-color: #ff1c32;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-danger.btn-arrow-left, body.bidi-ltr
   .btn-danger.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-danger.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6645,7 +6657,8 @@ html {
   background-color: #fdeae8;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-light.btn-arrow-right, body.bidi-ltr
   .btn-light.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-light.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6660,7 +6673,8 @@ html {
   background-color: #fdeae8;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-light.btn-arrow-left, body.bidi-ltr
   .btn-light.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-light.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }
@@ -6674,7 +6688,8 @@ html {
   background-color: #70180a;
   border: transparent;
   padding-left: 3em;
-  border-left: 1px solid white; }
+  background-clip: padding-box;
+  border-left: 1px solid transparent; }
   body.bidi-ltr .btn-dark.btn-arrow-right, body.bidi-ltr
   .btn-dark.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active, body.bidi-ltr
   .btn-dark.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
@@ -6689,7 +6704,8 @@ html {
   background-color: #70180a;
   border: transparent;
   padding-right: 3em;
-  border-right: 1px solid white; }
+  background-clip: padding-box;
+  border-right: 1px solid transparent; }
   body.bidi-ltr .btn-dark.btn-arrow-left, body.bidi-ltr
   .btn-dark.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active .btn-dark.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
     -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat; }

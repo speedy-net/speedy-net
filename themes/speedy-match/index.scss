@@ -129,7 +129,8 @@ html {
         background-color: $value;
         border: transparent;
         padding-right: 3em;
-        border-right: 1px solid white;
+        background-clip: padding-box;
+        border-right: 1px solid transparent;
 
         body.bidi-ltr & {
             -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
@@ -146,7 +147,8 @@ html {
         background-color: $value;
         border: transparent;
         padding-left: 3em;
-        border-left: 1px solid white;
+        background-clip: padding-box;
+        border-left: 1px solid transparent;
 
         body.bidi-ltr & {
             -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
