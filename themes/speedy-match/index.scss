@@ -127,12 +127,12 @@ html {
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus):active,
     .btn-#{$color}.btn-arrow-right:not(:disabled):not(.disabled):not(:focus).active {
         background-color: $value;
-        -webkit-mask-image: url("/static/speedy-match/images/btn-arrow-right.svg");
+        -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
         border: transparent;
         padding-right: 3em;
 
         body.bidi-rtl & {
-            -webkit-mask-image: url("/static/speedy-match/images/btn-arrow-left.svg");
+            -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
         }
     }
 
@@ -140,12 +140,12 @@ html {
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus):active
     .btn-#{$color}.btn-arrow-left:not(:disabled):not(.disabled):not(:focus).active {
         background-color: $value;
-        -webkit-mask-image: url("/static/speedy-match/images/btn-arrow-left.svg");
+        -webkit-mask: url("/static/speedy-match/images/btn-arrow-left.svg") no-repeat;
         border: transparent;
         padding-left: 3em;
 
         body.bidi-rtl & {
-            -webkit-mask-image: url("/static/speedy-match/images/btn-arrow-right.svg");
+            -webkit-mask: url("/static/speedy-match/images/btn-arrow-right.svg") no-repeat;
         }
     }
 
