@@ -154,10 +154,10 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 total_number_of_active_members_registered_in_year='{:,}'.format(total_number_of_active_members_registered_in_year),
                 year=year,
             )
-        total_number_of_active_members_text += "\n"
         age_interval = 5
         if (self.request.GET.get('age_interval')):
             age_interval = int(self.request.GET.get('age_interval'))
+        total_number_of_active_members_text += "\n"
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
             total_number_of_active_members_in_age_range = User.objects.active(
@@ -197,6 +197,53 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                     total_percent_of_female_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_female_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
                     total_percent_of_male_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_male_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
                     total_percent_of_other_active_members_in_age_range='{:,.1f}%'.format(round(float(total_number_of_other_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0),
+                    min_age='{:,}'.format(age),
+                    max_age='{:,}'.format(age + (age_interval - 1)),
+                )
+        total_number_of_active_members_text += "\n"
+        for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
+            age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
+            total_number_of_active_members_in_age_range_in_the_last_four_months = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
+                date_of_birth__range=age_ranges,
+            ).count()
+            total_number_of_female_active_members_in_age_range_in_the_last_four_months = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_FEMALE,
+            ).count()
+            total_number_of_male_active_members_in_age_range_in_the_last_four_months = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_MALE,
+            ).count()
+            total_number_of_other_active_members_in_age_range_in_the_last_four_months = User.objects.active(
+                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+                speedy_match_site_profile__active_languages__contains=[language_code],
+                speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
+                date_of_birth__range=age_ranges,
+                gender=User.GENDER_OTHER,
+            ).count()
+            if ((total_number_of_active_members_in_age_range_in_the_last_four_months > 0) or (age < 100)):
+                total_number_of_active_members_text += "\n"
+                total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} ({total_number_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_four_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months} others) entered the site in the last four months.").format(
+                    total_number_of_active_members_in_age_range_in_the_last_four_months='{:,}'.format(total_number_of_active_members_in_age_range_in_the_last_four_months),
+                    total_number_of_female_active_members_in_age_range_in_the_last_four_months='{:,}'.format(total_number_of_female_active_members_in_age_range_in_the_last_four_months),
+                    total_number_of_male_active_members_in_age_range_in_the_last_four_months='{:,}'.format(total_number_of_male_active_members_in_age_range_in_the_last_four_months),
+                    total_number_of_other_active_members_in_age_range_in_the_last_four_months='{:,}'.format(total_number_of_other_active_members_in_age_range_in_the_last_four_months),
+                    total_percent_of_female_active_members_in_age_range_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_female_active_members_in_age_range_in_the_last_four_months) / float(total_number_of_active_members_in_age_range_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0) else 0),
+                    total_percent_of_male_active_members_in_age_range_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_male_active_members_in_age_range_in_the_last_four_months) / float(total_number_of_active_members_in_age_range_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0) else 0),
+                    total_percent_of_other_active_members_in_age_range_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_other_active_members_in_age_range_in_the_last_four_months) / float(total_number_of_active_members_in_age_range_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0) else 0),
                     min_age='{:,}'.format(age),
                     max_age='{:,}'.format(age + (age_interval - 1)),
                 )

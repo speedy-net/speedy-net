@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-28 11:00+0300\n"
+"POT-Creation-Date: 2021-05-10 13:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2510,9 +2510,9 @@ msgstr "בקשת החברות נדחתה."
 
 #: .\messages\apps.py:7 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
-#: .\templates\messages\chat_detail.html:15
+#: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:21
+#: .\templates\messages\chat_list.html:19
 msgid "Messages"
 msgstr "הודעות"
 
@@ -2974,44 +2974,44 @@ msgstr "בקשות חברות ששלחת"
 msgid "There are no pending friendship requests."
 msgstr "אין פה בקשות חברות."
 
-#: .\templates\main\main_page_base.html:12
+#: .\templates\main\main_page_base.html:10
 #, python-format
 msgid "Welcome to %(site_name)s!"
 msgstr "ברוכים הבאים ל%(site_name)s!"
 
-#: .\templates\main\main_page_base.html:20
+#: .\templates\main\main_page_base.html:19
 #, python-format
 msgid "Join %(site_name)s!"
 msgstr "הצטרפו ל%(site_name)s!"
 
-#: .\templates\main\main_page_base.html:23
+#: .\templates\main\main_page_base.html:22
 msgid "It's free and anyone can join!"
 msgstr "זה בחינם וכולם יכולים להצטרף!"
 
-#: .\templates\messages\chat_detail.html:27
+#: .\templates\messages\chat_detail.html:25
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "שיחה עם <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\messages\chat_detail.html:33
+#: .\templates\messages\chat_detail.html:31
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "שלח/י הודעה ל%(user_name)s"
 
-#: .\templates\messages\chat_detail.html:47
+#: .\templates\messages\chat_detail.html:45
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\messages\chat_list.html:48
+#: .\templates\messages\chat_list.html:46
 msgid "Unread"
 msgstr "לא נקראה"
 
-#: .\templates\messages\chat_list.html:55
+#: .\templates\messages\chat_list.html:53
 msgid "You:"
 msgstr "את/ה:"
 
-#: .\templates\messages\chat_list.html:75
+#: .\templates\messages\chat_list.html:73
 msgid "You have no messages yet."
 msgstr "עדיין אין לך הודעות."
 

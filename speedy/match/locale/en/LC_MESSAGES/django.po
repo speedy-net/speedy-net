@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-28 11:00+0300\n"
+"POT-Creation-Date: 2021-05-10 13:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -738,6 +738,24 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
 
+#: .\admin\views.py:239
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) entered the site in the last four months."
+msgstr ""
+
 #: .\likes\managers.py:14 .\likes\models.py:31
 msgid "Users cannot like themselves."
 msgstr ""
@@ -818,7 +836,7 @@ msgstr ""
 msgid "About Speedy Match"
 msgstr ""
 
-#: .\templates\about\about.html:15 .\templates\main\main_page.html:13
+#: .\templates\about\about.html:15 .\templates\main\main_page.html:14
 msgid ""
 "<a href=\"https://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching web app for romantic purposes for singles who "
@@ -982,11 +1000,11 @@ msgstr ""
 msgid "You have no likes here."
 msgstr ""
 
-#: .\templates\main\main_page.html:6
+#: .\templates\main\main_page.html:7
 msgid "Free online dating"
 msgstr ""
 
-#: .\templates\main\main_page.html:9
+#: .\templates\main\main_page.html:10
 msgid ""
 "Speedy Match is a new dating/matching web app for romantic purposes for "
 "singles who are members of Speedy Net. With Speedy Match you can find "
@@ -994,12 +1012,12 @@ msgid ""
 "vegetarian friendly."
 msgstr ""
 
-#: .\templates\main\main_page.html:13
+#: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
 msgstr ""
 
-#: .\templates\main\main_page.html:15
+#: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."

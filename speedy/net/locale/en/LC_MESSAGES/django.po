@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-28 11:00+0300\n"
+"POT-Creation-Date: 2021-05-10 13:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 msgid "About Speedy Net"
 msgstr ""
 
-#: .\templates\about\about.html:15 .\templates\main\main_page.html:12
+#: .\templates\about\about.html:15 .\templates\main\main_page.html:13
 msgid ""
 "<a href=\"https://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
 "new social network. With Speedy Net you can communicate with your friends. "
@@ -76,7 +76,7 @@ msgid ""
 "and which details will be private. Private details will appear only to you."
 msgstr ""
 
-#: .\templates\about\about.html:21 .\templates\main\main_page.html:14
+#: .\templates\about\about.html:21 .\templates\main\main_page.html:15
 msgid ""
 "You can use our new app, <a href=\"https://en.speedymatch.com/\" title="
 "\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Your Friends"
 msgstr ""
 
-#: .\templates\main\main_page.html:8
+#: .\templates\main\main_page.html:9
 msgid ""
 "Speedy Net is a new social network. With Speedy Net you can communicate with "
 "your friends. Speedy Net is open to free registration for people from all "
@@ -160,13 +160,13 @@ msgid ""
 "friendly."
 msgstr ""
 
-#: .\templates\main\main_page.html:16
+#: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
 
-#: .\templates\main\main_page.html:78
+#: .\templates\main\main_page.html:83
 msgid "Free Online Dating"
 msgstr ""
 
