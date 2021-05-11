@@ -31,6 +31,9 @@ class ChatManager(BaseManager):
         chats = self.chats(entity=entity).filter(messages__text__icontains=string_in_messages, messages__date_created__gte=created_after).distinct()
         return len({chat.id for chat in chats if (chat.senders_ids == {entity.id})})
 
+    def count_chats_with_strings_in_messages_and_only_one_sender(self, entity, strings_in_messages, created_after):
+        return max([self.count_chats_with_string_in_messages_and_only_one_sender(entity=entity, string_in_messages=string_in_messages, created_after=created_after) for string_in_messages in strings_in_messages])
+
 
 class MessageManager(BaseManager):
     def send_message(self, from_entity, to_entity=None, chat=None, text=None):
