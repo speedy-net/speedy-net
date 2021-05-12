@@ -7,6 +7,7 @@ $gray-300: lighten($speedy-match-orange, 4%);
 $gray-400: $speedy-match-orange;
 $gray-500: darken($speedy-match-orange, 15%);
 $gray-600: darken($speedy-match-orange, 30%);
+$gray-650: darken($speedy-match-orange, 40%);
 $gray-700: darken($speedy-match-orange, 45%);
 $gray-800: darken($speedy-match-orange, 57%);
 $gray-900: darken($speedy-match-orange, 70%);
@@ -59,7 +60,7 @@ $colors: (
 
 $theme-colors: (
     primary: $red,
-    secondary: $gray-700,
+    secondary: $gray-650,
     success: $green,
     info: $cyan,
     warning: $yellow,
