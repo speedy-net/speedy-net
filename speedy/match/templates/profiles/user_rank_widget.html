@@ -15,11 +15,11 @@
             {% if user.speedy_match_profile.rank > 0 %}
                 <div class="card-body text-center">
                     <div title="{{ user.speedy_match_profile.rank|rank_description }}">
-                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 1 %} text-primary{% else %} text-secondary{% endif %}"></i>
-                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 2 %} text-primary{% else %} text-secondary{% endif %}"></i>
-                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 3 %} text-primary{% else %} text-secondary{% endif %}"></i>
-                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 4 %} text-primary{% else %} text-secondary{% endif %}"></i>
-                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 5 %} text-primary{% else %} text-secondary{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 1 %} text-primary{% else %} text-dark{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 2 %} text-primary{% else %} text-dark{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 3 %} text-primary{% else %} text-dark{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 4 %} text-primary{% else %} text-dark{% endif %}"></i>
+                        <i class="fa fa-heart fa-2x{% if user.speedy_match_profile.rank >= 5 %} text-primary{% else %} text-dark{% endif %}"></i>
                     </div>
                 </div>
             {% else %}
