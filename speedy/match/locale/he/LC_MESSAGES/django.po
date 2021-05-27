@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 13:44+0300\n"
+"POT-Creation-Date: 2021-05-27 08:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -690,7 +690,7 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
-#: .\admin\views.py:85
+#: .\admin\views.py:127
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -700,9 +700,21 @@ msgid ""
 "{total_percent_of_female_active_members} females, "
 "{total_percent_of_male_active_members} males, "
 "{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_active_members_in_the_last_month} members "
-"entered the site in the last month, and "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
+"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, and "
 "{total_number_of_active_members_in_the_last_four_months} members "
 "({total_number_of_female_active_members_in_the_last_four_months} females, "
 "{total_number_of_male_active_members_in_the_last_four_months} males, "
@@ -719,18 +731,31 @@ msgstr ""
 "{total_percent_of_female_active_members} נקבות, "
 "{total_percent_of_male_active_members} זכרים, "
 "{total_percent_of_other_active_members} אחרים/ות), מתוכם "
-"{total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע "
-"האחרון, {total_number_of_active_members_in_the_last_month} חברים נכנסו לאתר "
-"בחודש האחרון, ו-{total_number_of_active_members_in_the_last_four_months} "
-"חברים ({total_number_of_female_active_members_in_the_last_four_months} "
-"נקבות, {total_number_of_male_active_members_in_the_last_four_months} זכרים, "
+"{total_number_of_active_members_in_the_last_week} חברים "
+"({total_number_of_female_active_members_in_the_last_week} נקבות, "
+"{total_number_of_male_active_members_in_the_last_week} זכרים, "
+"{total_number_of_other_active_members_in_the_last_week} אחרים/ות; "
+"{total_percent_of_female_active_members_in_the_last_week} נקבות, "
+"{total_percent_of_male_active_members_in_the_last_week} זכרים, "
+"{total_percent_of_other_active_members_in_the_last_week} אחרים/ות) נכנסו "
+"לאתר בשבוע האחרון, {total_number_of_active_members_in_the_last_month} חברים "
+"({total_number_of_female_active_members_in_the_last_month} נקבות, "
+"{total_number_of_male_active_members_in_the_last_month} זכרים, "
+"{total_number_of_other_active_members_in_the_last_month} אחרים/ות; "
+"{total_percent_of_female_active_members_in_the_last_month} נקבות, "
+"{total_percent_of_male_active_members_in_the_last_month} זכרים, "
+"{total_percent_of_other_active_members_in_the_last_month} אחרים/ות) נכנסו "
+"לאתר בחודש האחרון, ו-"
+"{total_number_of_active_members_in_the_last_four_months} חברים "
+"({total_number_of_female_active_members_in_the_last_four_months} נקבות, "
+"{total_number_of_male_active_members_in_the_last_four_months} זכרים, "
 "{total_number_of_other_active_members_in_the_last_four_months} אחרים/ות; "
 "{total_percent_of_female_active_members_in_the_last_four_months} נקבות, "
 "{total_percent_of_male_active_members_in_the_last_four_months} זכרים, "
 "{total_percent_of_other_active_members_in_the_last_four_months} אחרים/ות) "
 "נכנסו לאתר בארבעת החודשים האחרונים."
 
-#: .\admin\views.py:135
+#: .\admin\views.py:189
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -755,7 +780,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:153
+#: .\admin\views.py:207
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -764,7 +789,7 @@ msgstr ""
 "אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים "
 "נרשמו לאתר בשנת {year}."
 
-#: .\admin\views.py:192
+#: .\admin\views.py:246
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -785,7 +810,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} זכרים, "
 "{total_percent_of_other_active_members_in_age_range} אחרים/ות)."
 
-#: .\admin\views.py:239
+#: .\admin\views.py:293
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
