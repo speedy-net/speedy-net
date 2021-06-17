@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.conf import settings as django_settings
 from django.test import override_settings
-from django.db.utils import IntegrityError
+from django.db.utils import IntegrityError, DataError
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.test import tests_settings
@@ -10,7 +10,7 @@ from speedy.core.base.test.models import SiteTestCase
 from speedy.core.base.test.decorators import only_on_sites_with_login
 from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-from speedy.core.accounts.models import Entity, User, UserEmailAddress
+from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
 
 if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.utils import get_random_user_password
@@ -261,6 +261,140 @@ class EntityEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
 # @only_on_sites_with_login # ~~~~ TODO
 @override_settings(LANGUAGE_CODE='he')
 class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='he')
+
+
+class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+    def test_cannot_create_reserved_username_without_a_username(self):
+        reserved_username = ReservedUsername()
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
+    def test_cannot_create_reserved_usernames_with_bulk_create(self):
+        reserved_username_1 = ReservedUsername(slug='zzzzzz')
+        reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
+        with self.assertRaises(NotImplementedError) as cm:
+            ReservedUsername.objects.bulk_create([reserved_username_1, reserved_username_2])
+        self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
+
+    def test_cannot_delete_reserved_usernames_with_queryset_delete(self):
+        with self.assertRaises(NotImplementedError) as cm:
+            ReservedUsername.objects.delete()
+        self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+        with self.assertRaises(NotImplementedError) as cm:
+            ReservedUsername.objects.all().delete()
+        self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+        with self.assertRaises(NotImplementedError) as cm:
+            ReservedUsername.objects.filter(pk=1).delete()
+        self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+        with self.assertRaises(NotImplementedError) as cm:
+            ReservedUsername.objects.all().exclude(pk=2).delete()
+        self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+    def test_can_create_reserved_username_with_reserved_username(self):
+        reserved_username = ReservedUsername(slug='webmaster')
+        reserved_username.save()
+
+    def test_can_create_reserved_username_with_reserved_and_too_short_username(self):
+        reserved_username = ReservedUsername(slug='mail')
+        reserved_username.save()
+
+    def test_cannot_create_reserved_username_with_existing_username_1(self):
+        entity = Entity(slug='zzzzzz')
+        entity.save()
+        reserved_username = ReservedUsername(slug='ZZZ-ZZZ')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
+
+    def test_cannot_create_reserved_username_with_existing_username_2(self):
+        reserved_username_1 = ReservedUsername(slug='zzzzzz')
+        reserved_username_1.save()
+        reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username_2.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
+
+    def test_star2000_is_valid_username(self):
+        reserved_username = ReservedUsername(slug='star2000', username='star2000')
+        reserved_username.save()
+
+    def test_come2us_is_valid_username(self):
+        reserved_username = ReservedUsername(slug='come2us', username='come2us')
+        reserved_username.save()
+
+    def test_000000_is_valid_username(self):
+        reserved_username = ReservedUsername(slug='0' * 6, username='0' * 6)
+        reserved_username.save()
+
+    def test_0test1_is_valid_username(self):
+        reserved_username = ReservedUsername(slug='0-test-1', username='0test1')
+        reserved_username.save()
+
+    def test_0_is_valid_username_1(self):
+        reserved_username = ReservedUsername(slug='0')
+        reserved_username.save()
+
+    def test_0_is_valid_username_2(self):
+        reserved_username = ReservedUsername(username='0')
+        reserved_username.save()
+
+    def test_long_username_is_valid_username_1(self):
+        reserved_username = ReservedUsername(slug='0' * 250)
+        reserved_username.save()
+
+    def test_long_username_is_valid_username_2(self):
+        reserved_username = ReservedUsername(username='0' * 250)
+        reserved_username.save()
+
+    def test_username_too_long_exception_1(self):
+        reserved_username = ReservedUsername(slug='0' * 5000)
+        with self.assertRaises(DataError) as cm:
+            reserved_username.save()
+        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+
+    def test_username_too_long_exception_2(self):
+        reserved_username = ReservedUsername(username='0' * 5000)
+        with self.assertRaises(DataError) as cm:
+            reserved_username.save()
+        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+
+    def test_username_too_long_exception_3(self):
+        reserved_username = ReservedUsername(slug='0' * 260)
+        with self.assertRaises(DataError) as cm:
+            reserved_username.save()
+        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+
+    def test_username_too_long_exception_4(self):
+        reserved_username = ReservedUsername(username='0' * 260)
+        with self.assertRaises(DataError) as cm:
+            reserved_username.save()
+        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+
+    def test_slug_and_username_dont_match_1(self):
+        reserved_username = ReservedUsername(slug='star2001', username='star2000')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
+
+    def test_slug_and_username_dont_match_2(self):
+        reserved_username = ReservedUsername(slug='0-test-2', username='0test1')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
+
+
+class ReservedUsernameEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+    def validate_all_values(self):
+        super().validate_all_values()
+        self.assertEqual(first=self.language_code, second='en')
+
+
+@override_settings(LANGUAGE_CODE='he')
+class ReservedUsernameHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
     def validate_all_values(self):
         super().validate_all_values()
         self.assertEqual(first=self.language_code, second='he')
