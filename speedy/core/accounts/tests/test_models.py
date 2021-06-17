@@ -366,25 +366,25 @@ class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
         reserved_username = ReservedUsername(slug='0' * 5000)
         with self.assertRaises(DataError) as cm:
             reserved_username.save()
-        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+        self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
 
     def test_username_too_long_exception_2(self):
         reserved_username = ReservedUsername(username='0' * 5000)
         with self.assertRaises(DataError) as cm:
             reserved_username.save()
-        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+        self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
 
     def test_username_too_long_exception_3(self):
         reserved_username = ReservedUsername(slug='0' * 260)
         with self.assertRaises(DataError) as cm:
             reserved_username.save()
-        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+        self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
 
     def test_username_too_long_exception_4(self):
         reserved_username = ReservedUsername(username='0' * 260)
         with self.assertRaises(DataError) as cm:
             reserved_username.save()
-        self.assertEqual(first=str(cm.exception), second="value too long for type character varying(255)\n")
+        self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
 
     def test_slug_and_username_dont_match_1(self):
         reserved_username = ReservedUsername(slug='star2001', username='star2000')
