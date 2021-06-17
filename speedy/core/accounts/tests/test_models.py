@@ -273,6 +273,18 @@ class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAcc
             reserved_username.save()
         self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
+    def test_cannot_create_reserved_username_with_empty_username(self):
+        reserved_username = ReservedUsername(username='')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
+    def test_cannot_create_reserved_username_with_empty_slug(self):
+        reserved_username = ReservedUsername(slug='')
+        with self.assertRaises(ValidationError) as cm:
+            reserved_username.save()
+        self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
     def test_cannot_create_reserved_usernames_with_bulk_create(self):
         reserved_username_1 = ReservedUsername(slug='zzzzzz')
         reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
