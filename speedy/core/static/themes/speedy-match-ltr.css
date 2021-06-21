@@ -6879,3 +6879,6 @@ strong {
 
 input:required {
   box-shadow: none; }
+
+.fa-heart.text-dark {
+  color: #a81600 !important; }
