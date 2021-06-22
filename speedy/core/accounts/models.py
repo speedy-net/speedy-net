@@ -757,7 +757,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     class Meta:
         verbose_name = _('email address')
         verbose_name_plural = _('email addresses')
-        ordering = ('-date_created',)
+        ordering = ('date_created',)
 
     def __str__(self):
         return self.email
