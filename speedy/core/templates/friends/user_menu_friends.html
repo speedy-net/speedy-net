@@ -3,7 +3,7 @@
 {% with request.user.received_friendship_requests_count as received_friendship_requests_count %}
     <li class="nav-item">
         <a href="{% url received_friendship_requests_count|yesno:'friends:received_requests,friends:list' slug=request.user.slug %}" class="nav-link {% block user_menu_friends_class %}{% endblock %}">
-            <i class="fa fa-fw fa-users"></i>
+            <i class="fas fa-fw fa-user-friends"></i>
             <span class="label">
                 {% include 'menu/friends_trans.html' %}
             </span>

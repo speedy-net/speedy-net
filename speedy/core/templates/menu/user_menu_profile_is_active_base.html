@@ -5,14 +5,14 @@
 {% block user_menu_extra_0 %}{% endblock %}
 <li class="nav-item">
     <a href="{{ admin_user_prefix }}{% url 'profiles:user' slug=request.user.slug %}" class="nav-link">
-        <i class="fa fa-fw fa-user"></i>
+        <i class="fas fa-fw fa-user"></i>
         <span class="label">{{ request.user.first_name|truncatechars:25 }}</span>
     </a>
 </li>
 {% block user_menu_extra_1 %}{% endblock %}
 <li class="nav-item">
     <a href="{% url 'messages:list' %}" class="nav-link {% block user_menu_messages_class %}{% endblock %}">
-        <i class="fa fa-fw fa-comments"></i>
+        <i class="fas fa-fw fa-comments"></i>
         <span class="label">{% trans 'Messages' %}</span>
         {% unread_chats_count request.user as unread_chats %}
         {% if unread_chats %}

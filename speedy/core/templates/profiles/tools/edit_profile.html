@@ -2,7 +2,7 @@
 
 {% if request.user == user %}
     <a href="{% url 'accounts:edit_profile' %}" class="btn btn-default" title="{% trans 'Edit Profile' %}">
-        <i class="fa fa-pencil"></i>
+        <i class="fas fa-pencil-alt"></i>
         {% trans 'Edit Profile' %}
     </a>
 {% endif %}

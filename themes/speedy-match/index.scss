@@ -403,3 +403,9 @@ input:required {
     color: #a81600 !important;
 }
 
+@media screen and (max-width: 991.98px) {
+    ul.navbar-nav.ml-auto {
+        margin-left: inherit !important;
+    }
+}
+

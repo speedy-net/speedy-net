@@ -14,11 +14,11 @@
             {% comment %}
                 {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and user.speedy_match_profile.rank > 0 %}
                     <div title="{{ user.speedy_match_profile.rank|rank_description }}">
-                        <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 1 %} text-primary{% else %} text-light{% endif %}"></i>
-                        <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 2 %} text-primary{% else %} text-light{% endif %}"></i>
-                        <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 3 %} text-primary{% else %} text-light{% endif %}"></i>
-                        <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 4 %} text-primary{% else %} text-light{% endif %}"></i>
-                        <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 5 %} text-primary{% else %} text-light{% endif %}"></i>
+                        <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 1 %} text-primary{% else %} text-light{% endif %}"></i>
+                        <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 2 %} text-primary{% else %} text-light{% endif %}"></i>
+                        <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 3 %} text-primary{% else %} text-light{% endif %}"></i>
+                        <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 4 %} text-primary{% else %} text-light{% endif %}"></i>
+                        <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 5 %} text-primary{% else %} text-light{% endif %}"></i>
                     </div>
                 {% endif %}
             {% endcomment %}
@@ -27,14 +27,14 @@
                     <form action="{% url 'friends:accept_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left" style="margin: 0px 5px;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-sm btn-success" title="{% trans 'Accept Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
-                            <i class="fa fa-check"></i>
+                            <i class="fas fa-check"></i>
                             {% trans 'Accept' context request.user.get_gender %}
                         </button>
                     </form>
                     <form action="{% url 'friends:reject_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left" style="margin: 0px 5px;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-sm btn-danger" title="{% trans 'Reject Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
-                            <i class="fa fa-times"></i>
+                            <i class="fas fa-times"></i>
                             {% trans 'Reject' context request.user.get_gender %}
                         </button>
                     </form>

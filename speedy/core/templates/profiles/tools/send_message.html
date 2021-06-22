@@ -7,7 +7,7 @@
 {% if request.user.is_authenticated %}
     {% if can_view_send_message_button %}
         <a href="{% url 'messages:chat' user.slug %}" class="btn btn-primary" title="{% trans 'Send Message' context request.user.get_gender %}">
-            <i class="fa fa-envelope"></i>
+            <i class="fas fa-envelope"></i>
             {% trans 'Send Message' context request.user.get_gender %}
         </a>
     {% endif %}

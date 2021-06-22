@@ -7,8 +7,8 @@
 {% block user_menu_extra_1 %}
     <li class="nav-item">
         <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
-            <i class="fa fa-fw fa-star" aria-hidden="true"></i>
-            <span>{% trans 'Matches' %}</span>
+            <i class="fas fa-fw fa-star" aria-hidden="true"></i>
+            <span class="label">{% trans 'Matches' %}</span>
         </a>
     </li>
 {% endblock %}
@@ -16,8 +16,8 @@
 {% block user_menu_extra_2 %}
     <li class="nav-item">
         <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
-            <i class="fa fa-fw fa-heart"></i>
-            {% trans 'Likes' %}
+            <i class="fas fa-fw fa-heart"></i>
+            <span class="label">{% trans 'Likes' %}</span>
         </a>
     </li>
     {% include 'friends/user_menu_friends.html' %}

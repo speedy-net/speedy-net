@@ -9,7 +9,7 @@
     <form action="{% url 'likes:like' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
         <button class="btn btn-danger" type="submit" title="{% trans 'Like' context request.user.get_gender %}" style="min-width: 70px;">
-            <i class="fa fa-heart"></i>
+            <i class="fas fa-heart"></i>
             {% trans 'Like' context request.user.get_gender %}
         </button>
     </form>
@@ -17,7 +17,7 @@
     <form action="{% url 'likes:unlike' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
         <button class="btn btn-default" type="submit" title="{% trans 'Unlike' context request.user.get_gender %}" style="min-width: 70px;">
-            <i class="fa fa-heart"></i>
+            <i class="fas fa-heart"></i>
             {% trans 'Unlike' context request.user.get_gender %}
         </button>
     </form>

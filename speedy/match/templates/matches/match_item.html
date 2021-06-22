@@ -15,11 +15,11 @@
             </a>
             {% if user.speedy_match_profile.rank > 0 %}
                 <div title="{{ user.speedy_match_profile.rank|rank_description }}">
-                    <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 1 %} text-light{% else %} text-dark{% endif %}"></i>
-                    <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 2 %} text-light{% else %} text-dark{% endif %}"></i>
-                    <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 3 %} text-light{% else %} text-dark{% endif %}"></i>
-                    <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 4 %} text-light{% else %} text-dark{% endif %}"></i>
-                    <i class="fa fa-heart{% if user.speedy_match_profile.rank >= 5 %} text-light{% else %} text-dark{% endif %}"></i>
+                    <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 1 %} text-light{% else %} text-dark{% endif %}"></i>
+                    <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 2 %} text-light{% else %} text-dark{% endif %}"></i>
+                    <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 3 %} text-light{% else %} text-dark{% endif %}"></i>
+                    <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 4 %} text-light{% else %} text-dark{% endif %}"></i>
+                    <i class="fas fa-heart{% if user.speedy_match_profile.rank >= 5 %} text-light{% else %} text-dark{% endif %}"></i>
                 </div>
             {% endif %}
         </div>

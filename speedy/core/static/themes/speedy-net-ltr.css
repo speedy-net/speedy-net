@@ -6595,3 +6595,7 @@ strong {
 
 input:required {
   box-shadow: none; }
+
+@media screen and (max-width: 991.98px) {
+  ul.navbar-nav.ml-auto {
+    margin-left: inherit !important; } }
