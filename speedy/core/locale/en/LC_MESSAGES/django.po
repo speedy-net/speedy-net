@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 08:34+0300\n"
+"POT-Creation-Date: 2021-06-23 18:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1880,30 +1880,30 @@ msgstr ""
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:284 .\templates\base_with_login.html:114
+#: .\accounts\forms.py:292 .\templates\base_with_login.html:123
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:290 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:298 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:127
+#: .\templates\base_with_login.html:136
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:293 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:124
+#: .\accounts\forms.py:301 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:133
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:306
+#: .\accounts\forms.py:314
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:400
+#: .\accounts\forms.py:408
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:412
+#: .\accounts\forms.py:420
 msgid "Invalid password."
 msgstr ""
 
@@ -2514,7 +2514,7 @@ msgstr ""
 msgid "Internal server error"
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:188
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:197
 #: .\templates\base_without_login.html:9
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2522,8 +2522,8 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:10
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:101
-#: .\templates\base_with_login.html:145
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:104
+#: .\templates\base_with_login.html:106 .\templates\base_with_login.html:154
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2534,7 +2534,7 @@ msgid "Profile Info"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:23
-#: .\templates\base_with_login.html:189
+#: .\templates\base_with_login.html:198
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2733,7 +2733,8 @@ msgstr ""
 msgid "Speedy"
 msgstr ""
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:105
+#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:111
+#: .\templates\base_with_login.html:113
 msgid "Logout"
 msgstr ""
 
@@ -2741,37 +2742,30 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:95
-#, python-format
-msgid ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
-msgstr ""
-
-#: .\templates\base_with_login.html:120
+#: .\templates\base_with_login.html:129
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:189
+#: .\templates\base_with_login.html:198
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:13
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base_with_login.html:190
+#: .\templates\base_with_login.html:199
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:13
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base_with_login.html:190
+#: .\templates\base_with_login.html:199
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base_with_login.html:191 .\templates\base_without_login.html:10
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:10
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:13
 #: .\templates\contact_by_form\feedback_base.html:6

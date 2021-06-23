@@ -181,7 +181,11 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                 for pair in self.get_field_pairs()
             ]),
         )
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+        self.helper.layout.append(
+            HTML('<button type="submit" title="{button_text}" class="btn btn-primary"><i class="fas fa-save"></i><span class="label ml-2">{button_text}</span></button>'.format(
+                button_text=pgettext_lazy(context=self.instance.get_gender(), message='Save Changes'),
+            )),
+        )
 
     def get_field_pairs(self):
         return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug',), ('gender', 'date_of_birth'), ('profile_picture',))
@@ -263,7 +267,11 @@ class ProfileNotificationsForm(forms.ModelForm):
                 self.fields[field.name] = field.formfield()
                 self.fields[field.name].initial = getattr(self.instance.profile, field.name)
         self.helper = FormHelperWithDefaults()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+        self.helper.layout.append(
+            HTML('<button type="submit" title="{button_text}" class="btn btn-primary"><i class="fas fa-save"></i><span class="label ml-2">{button_text}</span></button>'.format(
+                button_text=pgettext_lazy(context=self.instance.get_gender(), message='Save Changes'),
+            )),
+        )
 
     def save(self, commit=True):
         for field_name in self.fields.keys():
@@ -450,6 +458,10 @@ class ProfilePrivacyForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
-        self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.get_gender(), message='Save Changes')))
+        self.helper.layout.append(
+            HTML('<button type="submit" title="{button_text}" class="btn btn-primary"><i class="fas fa-save"></i><span class="label ml-2">{button_text}</span></button>'.format(
+                button_text=pgettext_lazy(context=self.instance.get_gender(), message='Save Changes'),
+            )),
+        )
 
 
