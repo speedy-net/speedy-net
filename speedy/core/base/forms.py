@@ -19,6 +19,9 @@ class ModelFormWithDefaults(forms.ModelForm):
 class FormHelperWithDefaults(FormHelper):
     render_unmentioned_fields = True
 
+    def add_default_layout(self, form):
+        self.add_layout(self.build_default_layout(form))
+
 
 class DeleteUnneededFieldsMixin(object):
     def delete_unneeded_fields(self):
