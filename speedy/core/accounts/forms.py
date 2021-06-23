@@ -181,7 +181,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                 for pair in self.get_field_pairs()
             ]),
         )
-        self.helper.layout.fields.append(
+        self.helper.layout.append(
             HTML('<button type="submit" title="{button_text}" class="btn btn-primary"><i class="fas fa-save"></i><span class="label ml-2">{button_text}</span></button>'.format(
                 button_text=pgettext_lazy(context=self.instance.get_gender(), message='Save Changes'),
             )),
