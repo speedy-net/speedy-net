@@ -1448,7 +1448,7 @@ if (django_settings.LOGIN_ENABLED):
             user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
             user_email_address_1.save()
             sleep(0.01)
-            user_email_address_2 = UserEmailAddress(user=user, email='email77@example.org', is_confirmed=False)
+            user_email_address_2 = UserEmailAddress(user=user, email='test-email-77@example.org', is_confirmed=False)
             user_email_address_2.save()
             sleep(0.01)
             user_email_address_3 = UserEmailAddress(user=user, email='email88@example.info', is_confirmed=False)
@@ -1465,12 +1465,12 @@ if (django_settings.LOGIN_ENABLED):
                 user_unconfirmed_email_addresses_count=3,
             )
             user_email_addresses = list(user.email_addresses.all())
-            self.assertListEqual(list1=[address.email for address in user_email_addresses], list2=['email75@example.com', 'email77@example.org', 'email88@example.info', 'email99@example.co.uk'])
+            self.assertListEqual(list1=[address.email for address in user_email_addresses], list2=['email75@example.com', 'test-email-77@example.org', 'email88@example.info', 'email99@example.co.uk'])
             self.assertListEqual(list1=[address.pk for address in user_email_addresses], list2=[user_email_address_1.pk, user_email_address_2.pk, user_email_address_3.pk, user_email_address_4.pk])
             self.assertListEqual(list1=[address.pk for address in user_email_addresses], list2=[user_email_address_1.id, user_email_address_2.id, user_email_address_3.id, user_email_address_4.id])
             user_email_address_3.delete()
             user_email_addresses = list(user.email_addresses.all())
-            self.assertListEqual(list1=[address.email for address in user_email_addresses], list2=['email75@example.com', 'email77@example.org', 'email99@example.co.uk'])
+            self.assertListEqual(list1=[address.email for address in user_email_addresses], list2=['email75@example.com', 'test-email-77@example.org', 'email99@example.co.uk'])
             self.assertListEqual(list1=[address.pk for address in user_email_addresses], list2=[user_email_address_1.pk, user_email_address_2.pk, user_email_address_4.pk])
             self.assertListEqual(list1=[address.pk for address in user_email_addresses], list2=[user_email_address_1.id, user_email_address_2.id, user_email_address_4.id])
 
