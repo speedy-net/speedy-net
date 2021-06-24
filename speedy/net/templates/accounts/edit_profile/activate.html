@@ -17,6 +17,7 @@
                 </div>
             {% elif form %}
                 {% crispy form %}
+                <br />
             {% else %}
                 <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context request.user.get_gender %}</a>
             {% endif %}
