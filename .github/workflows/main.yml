@@ -32,6 +32,12 @@ jobs:
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
+      - run: psql --version
+      - run: |
+          psql -c 'create user pguser;' -U postgres
+          psql -c 'alter user pguser createdb; ' -U postgres
+        env:
+          PGHOST: 127.0.0.1
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/net
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
