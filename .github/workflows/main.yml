@@ -20,11 +20,11 @@ jobs:
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
-      - run: cd speedy/net
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
-      - run: cd ../match
+        working-directory: ./speedy/net
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
-      - run: cd ../composer
+        working-directory: ./speedy/match
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
-      - run: cd ../mail
+        working-directory: ./speedy/composer
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
+        working-directory: ./speedy/mail
