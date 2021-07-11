@@ -25,8 +25,8 @@ jobs:
           wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
           sudo apt-get -y install postgresql-9.6
-          sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/9.6/main/pg_hba.conf
-          sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/9.6/main/pg_hba.conf
+          sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/9.6/main/pg_hba.conf
+          sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/9.6/main/pg_hba.conf
           sudo service postgresql start
       - run: psql --version
       - run: |
