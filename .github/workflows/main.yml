@@ -6,6 +6,13 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
+        is-master-or-staging:
+          - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
+        exclude:
+          - python-version: 3.8
+            is-master-or-staging: false
+          - python-version: 3.9
+            is-master-or-staging: false
     steps:
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
