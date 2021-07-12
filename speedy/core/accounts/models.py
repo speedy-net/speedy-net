@@ -170,10 +170,10 @@ class ReservedUsername(Entity):
 
     def clean_fields(self, exclude=None):
         # ~~~~ TODO: fix models! Exceptions should be 'slug' or 'username' and not '__all__'.
-        self.normalize_slug_and_username()
-        self.validate_username_for_slug()
-        self.validate_username_required()
-        self.validate_username_unique()
+        # self.normalize_slug_and_username()
+        # self.validate_username_for_slug()
+        # self.validate_username_required()
+        # self.validate_username_unique()
 
         if (exclude is None):
             exclude = []
