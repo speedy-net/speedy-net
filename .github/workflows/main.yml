@@ -2,22 +2,31 @@ name: GitHub Actions Speedy Net
 on: [push]
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-18.04, ubuntu-latest]
         python-version: [3.6, 3.7, 3.8, 3.9]
         postgresql-version: [10, 13]
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
           - python-version: 3.6
+            os: ubuntu-latest
+          - python-version: 3.6
             postgresql-version: 13
           - python-version: 3.7
+            os: ubuntu-latest
+          - python-version: 3.7
             postgresql-version: 13
+          - python-version: 3.8
+            os: ubuntu-18.04
           - python-version: 3.8
             postgresql-version: 10
           - python-version: 3.8
             is-master-or-staging: false
+          - python-version: 3.9
+            os: ubuntu-18.04
           - python-version: 3.9
             postgresql-version: 10
           - python-version: 3.9
