@@ -6,6 +6,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
+        postgresql-version: [10]
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
@@ -38,11 +39,11 @@ jobs:
           sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
           wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
-          sudo apt-get -y install postgresql-9.6
-          sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/9.6/main/pg_hba.conf
-          sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/9.6/main/pg_hba.conf
+          sudo apt-get -y install postgresql-${{ matrix.postgresql-version }}
+          sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
+          sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
           ! sudo pg_dropcluster 13 main
-          sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/9.6/main/postgresql.conf
+          sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/${{ matrix.postgresql-version }}/main/postgresql.conf
           sudo service postgresql start
       - run: psql --version
       - run: |
