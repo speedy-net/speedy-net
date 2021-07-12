@@ -84,9 +84,20 @@ jobs:
           PGHOST: 127.0.0.1
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/net
+        continue-on-error: true
+        id: net
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/match
+        continue-on-error: true
+        id: match
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/composer
+        continue-on-error: true
+        id: composer
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/mail
+        continue-on-error: true
+        id: mail
+      - name: Check on failures
+        if: ${{ steps.net.outcome == 'failure' || steps.match.outcome == 'failure' || steps.composer.outcome == 'failure' || steps.mail.outcome == 'failure' }}
+        run: exit 1
