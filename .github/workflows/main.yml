@@ -6,14 +6,34 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
-        postgresql-version: [10]
+        postgresql-version: [10, 13]
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
+          - python-version: 3.6
+            postgresql-version: 13
+          - python-version: 3.7
+            postgresql-version: 13
+          - python-version: 3.8
+            postgresql-version: 10
           - python-version: 3.8
             is-master-or-staging: false
           - python-version: 3.9
+            postgresql-version: 10
+          - python-version: 3.9
             is-master-or-staging: false
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -45,10 +65,13 @@ jobs:
           ! sudo pg_dropcluster 13 main
           sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/${{ matrix.postgresql-version }}/main/postgresql.conf
           sudo service postgresql start
+        if: ${{ matrix.postgresql-version != 13 }}
       - run: psql --version
       - run: |
           psql -c 'create user pguser;' -U postgres
           psql -c 'alter user pguser createdb; ' -U postgres
+        env:
+          PGHOST: 127.0.0.1
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
         working-directory: ./speedy/net
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
