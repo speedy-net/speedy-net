@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /admin/
-Disallow: /google*
+Disallow: /google*.html
 Disallow: /registration-step-*
 Disallow: /login/?*
 
