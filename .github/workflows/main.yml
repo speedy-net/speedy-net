@@ -59,7 +59,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: cp env.ini.tests env.ini
       - run: pip install --upgrade -r requirements.txt
       - run: pip freeze
@@ -85,3 +84,4 @@ jobs:
           PGHOST: 127.0.0.1
       - run: python --version
       - run: ./run_all_tests_with_deprecation_warnings.sh
+      - run: echo "🍏 This job's status is ${{ job.status }}."
