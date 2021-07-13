@@ -24,14 +24,14 @@ jobs:
             os: ubuntu-18.04
           - python-version: 3.8
             postgresql-version: 10
-          - python-version: 3.8
-            is-master-or-staging: false
+#          - python-version: 3.8
+#            is-master-or-staging: false
           - python-version: 3.9
             os: ubuntu-18.04
           - python-version: 3.9
             postgresql-version: 10
-          - python-version: 3.9
-            is-master-or-staging: false
+#          - python-version: 3.9
+#            is-master-or-staging: false
     services:
       postgres:
         image: postgres
