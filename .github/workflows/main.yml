@@ -84,4 +84,5 @@ jobs:
         env:
           PGHOST: 127.0.0.1
       - run: python --version
-      - run: ./run_all_tests.sh
+      #- run: ./run_all_tests.sh
+      - run: ./run_all_tests_with_deprecation_warnings.sh
