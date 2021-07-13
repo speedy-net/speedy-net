@@ -72,7 +72,7 @@ jobs:
           sudo apt-get -y install postgresql-${{ matrix.postgresql-version }}
           sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
           sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          ! sudo pg_dropcluster 13 main
+          ! docker stop $(docker ps -q --filter ancestor=postgres)
           sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/${{ matrix.postgresql-version }}/main/postgresql.conf
           sudo service postgresql start
         if: ${{ matrix.postgresql-version != 13 }}
