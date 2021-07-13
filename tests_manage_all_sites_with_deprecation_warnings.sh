@@ -2,6 +2,7 @@
 
 SITES="net match composer mail core"
 cd "speedy/net"
+python --version
 
 exitcode=0
 

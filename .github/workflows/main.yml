@@ -83,4 +83,5 @@ jobs:
           psql -c "select version();" -U postgres
         env:
           PGHOST: 127.0.0.1
+      - run: python --version
       - run: ./run_all_tests.sh
