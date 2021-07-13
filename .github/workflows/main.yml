@@ -80,6 +80,7 @@ jobs:
       - run: |
           psql -c 'create user pguser;' -U postgres
           psql -c 'alter user pguser createdb; ' -U postgres
+          psql -c "select version();" -U postgres
         env:
           PGHOST: 127.0.0.1
       - run: python tests_manage.py test # python -W error::DeprecationWarning tests_manage.py test
