@@ -183,6 +183,13 @@
                 <script>
                     gtag('event', 'conversion', {'send_to': 'AW-1011575750/svRGCLiyw7sBEMbXreID'});
                 </script>
+                {% if not user.speedy_match_profile.not_allowed_to_use_speedy_match %}
+                {% else %}
+                    {# <!-- Event snippet for Speedy Match - matches list - invalid height and not allowed to use speedy match conversion page --> #}
+                    <script>
+                        gtag('event', 'conversion', {'send_to': 'AW-1011575750/QAlsCJbg09oCEMbXreID'});
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endblock %}
