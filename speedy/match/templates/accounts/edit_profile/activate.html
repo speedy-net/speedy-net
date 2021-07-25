@@ -206,6 +206,12 @@
                     <script>
                         gtag('event', 'conversion', {'send_to': 'AW-1011575750/om86CNjWzrsBEMbXreID'});
                     </script>
+                    {% if user.has_confirmed_email %}
+                        {# <!-- Event snippet for Speedy Match - matches list - not allowed to use speedy match, has confirmed email conversion page --> #}
+                        <script>
+                            gtag('event', 'conversion', {'send_to': 'AW-1011575750/VvGWCNOZv9wCEMbXreID'});
+                        </script>
+                    {% endif %}
                 {% endif %}
                 {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH %}
                 {% else %}
