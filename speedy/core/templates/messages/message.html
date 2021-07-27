@@ -3,13 +3,13 @@
 
 <div class="row no-gutters" data-role="message" data-timestamp="{{ message.date_created|date:"U.u" }}">
     <div class="col-2" style="max-width: 100px;">
-        {% profile_picture message.sender '100x100' html_class="img-fluid rounded-lg" %}
+        {% profile_picture message.sender.user '100x100' html_class="img-fluid rounded-lg" %}
     </div>
     <div class="col-10">
         <div class="{{ message.is_unread|yesno:'bg-unread,bg-white' }} text-default rounded-lg p-3 ml-3{% if ajax_view or not forloop.last %} mb-3{% endif %}">
             <p>
                 <strong>
-                    {{ message.sender.user.name }}
+                    <a href="{{ admin_user_prefix }}{{ message.sender.user.get_absolute_url }}" title="{{ message.sender.user.name }}" class="text-default">{{ message.sender.user.name }}</a>
                 </strong>
                 {{ LANGUAGE_BIDI|yesno:'&rlm;,&lrm;'|safe }}
                 <small>
