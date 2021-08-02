@@ -39,24 +39,24 @@ class Command(BaseCommand):
                             with image.file, Image.open(image.file) as _image:
                                 if (getattr(_image, "is_animated", False)):
                                     photo_is_valid = False
-                                    logger.error("detect_faces_in_undetected_photos::image is animated. user={user}, registered {registered_days_ago} days ago).".format(
+                                    logger.error("detect_faces_in_undetected_photos::image is animated. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
                                 elif (is_transparent(_image)):
                                     photo_is_valid = False
-                                    logger.error("detect_faces_in_undetected_photos::image is transparent. user={user}, registered {registered_days_ago} days ago).".format(
+                                    logger.error("detect_faces_in_undetected_photos::image is transparent. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
                                 else:
                                     photo_is_valid = True
-                                    logger.debug("detect_faces_in_undetected_photos::photo is valid. user={user}, registered {registered_days_ago} days ago).".format(
+                                    logger.debug("detect_faces_in_undetected_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
                         else:
-                            logger.error("detect_faces_in_undetected_photos::thumbnail failed. user={user}, registered {registered_days_ago} days ago).".format(
+                            logger.error("detect_faces_in_undetected_photos::thumbnail failed. user={user} (registered {registered_days_ago} days ago).".format(
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
@@ -73,7 +73,7 @@ class Command(BaseCommand):
                                 user.speedy_match_profile.profile_picture_months_offset = 0
                             else:
                                 user.speedy_match_profile.profile_picture_months_offset = 5
-                            logger.debug("detect_faces_in_undetected_photos::{faces_detected} faces detected. user={user}, registered {registered_days_ago} days ago).".format(
+                            logger.debug("detect_faces_in_undetected_photos::{faces_detected} faces detected. user={user} (registered {registered_days_ago} days ago).".format(
                                 faces_detected=faces_detected,
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,

@@ -49,7 +49,7 @@ def can_send_new_message(user):
     )
     if ((count_user_messages_1_day >= limit_user_messages_1_day) or (count_user_messages_3_days >= limit_user_messages_3_days) or (count_user_messages_7_days >= limit_user_messages_7_days)):
         site = Site.objects.get_current()
-        logger.warning("User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}, registered {registered_days_ago} days ago).".format(
+        logger.warning("User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days} (registered {registered_days_ago} days ago).".format(
             user=user,
             site_name=_(site.name),
             count_user_messages_1_day=count_user_messages_1_day,

@@ -33,19 +33,36 @@ class Command(BaseCommand):
                         user.last_ip_address_used_raw_ipapi_results = ip_address_raw_ipapi_results
                         user.last_ip_address_used_ipapi_time = now()
                         user.save()
-                        if ("latitude" in ip_address_raw_ipapi_results) and ("longitude" in ip_address_raw_ipapi_results):
-                            logger.debug("get_ip_address_ipapi_info::info ok, info saved. user={user}, registered {registered_days_ago} days ago).".format(
+                        if (("latitude" in ip_address_raw_ipapi_results) and ("longitude" in ip_address_raw_ipapi_results)):
+                            city = "unknown city"
+                            region = "unknown region"
+                            country = "unknown country"
+                            continent = "unknown continent"
+                            if ("city" in ip_address_raw_ipapi_results):
+                                city = ip_address_raw_ipapi_results["city"]
+                            if ("region_name" in ip_address_raw_ipapi_results):
+                                region = ip_address_raw_ipapi_results["region_name"]
+                            if ("country_name" in ip_address_raw_ipapi_results):
+                                country = ip_address_raw_ipapi_results["country_name"]
+                            if ("continent_name" in ip_address_raw_ipapi_results):
+                                continent = ip_address_raw_ipapi_results["continent_name"]
+                            logger.debug("get_ip_address_ipapi_info::info ok, info saved. user={user}, {user_name} is located in {city}, {region}, {country}, {continent}. (registered {registered_days_ago} days ago).".format(
                                 user=user,
+                                user_name=user.name,
+                                city=city,
+                                region=region,
+                                country=country,
+                                continent=continent,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
                         else:
-                            logger.error("get_ip_address_ipapi_info::info not ok, info saved. ip_address_raw_ipapi_results={ip_address_raw_ipapi_results}, user={user}, registered {registered_days_ago} days ago).".format(
+                            logger.error("get_ip_address_ipapi_info::info not ok, info saved. ip_address_raw_ipapi_results={ip_address_raw_ipapi_results}, user={user} (registered {registered_days_ago} days ago).".format(
                                 ip_address_raw_ipapi_results=ip_address_raw_ipapi_results,
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
                     else:
-                        logger.error("get_ip_address_ipapi_info::info not ok, info not saved. ip_address_raw_ipapi_results={ip_address_raw_ipapi_results}, user={user}, registered {registered_days_ago} days ago).".format(
+                        logger.error("get_ip_address_ipapi_info::info not ok, info not saved. ip_address_raw_ipapi_results={ip_address_raw_ipapi_results}, user={user} (registered {registered_days_ago} days ago).".format(
                             ip_address_raw_ipapi_results=ip_address_raw_ipapi_results,
                             user=user,
                             registered_days_ago=(now() - user.date_created).days,

@@ -251,7 +251,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
                     if (not (SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH <= self.instance.height <= SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH)):
                         self.instance.not_allowed_to_use_speedy_match = True
                         self.instance.save()
-                        logger.warning('User {user} is not allowed to use Speedy Match (height={height}, registered {registered_days_ago} days ago).'.format(
+                        logger.warning('User {user} is not allowed to use Speedy Match (height={height} (registered {registered_days_ago} days ago).'.format(
                             user=self.instance.user,
                             height=self.instance.height,
                             registered_days_ago=(now() - self.instance.user.date_created).days,

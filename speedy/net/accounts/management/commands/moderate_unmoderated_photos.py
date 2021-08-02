@@ -37,24 +37,24 @@ class Command(BaseCommand):
                         with image.file, Image.open(image.file) as _image:
                             if (getattr(_image, "is_animated", False)):
                                 photo_is_valid = False
-                                logger.error("moderate_unmoderated_photos::image is animated. user={user}, registered {registered_days_ago} days ago).".format(
+                                logger.error("moderate_unmoderated_photos::image is animated. user={user} (registered {registered_days_ago} days ago).".format(
                                     user=user,
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                             elif (is_transparent(_image)):
                                 photo_is_valid = False
-                                logger.error("moderate_unmoderated_photos::image is transparent. user={user}, registered {registered_days_ago} days ago).".format(
+                                logger.error("moderate_unmoderated_photos::image is transparent. user={user} (registered {registered_days_ago} days ago).".format(
                                     user=user,
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                             else:
                                 photo_is_valid = True
-                                logger.debug("moderate_unmoderated_photos::photo is valid. user={user}, registered {registered_days_ago} days ago).".format(
+                                logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
                                     user=user,
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                     else:
-                        logger.error("moderate_unmoderated_photos::thumbnail failed. user={user}, registered {registered_days_ago} days ago).".format(
+                        logger.error("moderate_unmoderated_photos::thumbnail failed. user={user} (registered {registered_days_ago} days ago).".format(
                             user=user,
                             registered_days_ago=(now() - user.date_created).days,
                         ))
@@ -68,7 +68,7 @@ class Command(BaseCommand):
                                 labels_detected_list.append(label["Name"])
                         if (labels_detected):
                             image.visible_on_website = False
-                            logger.warning("moderate_unmoderated_photos::{labels_detected_count} labels detected. user={user}, labels detected={labels_detected_list}, registered {registered_days_ago} days ago).".format(
+                            logger.warning("moderate_unmoderated_photos::{labels_detected_count} labels detected. user={user}, labels detected={labels_detected_list} (registered {registered_days_ago} days ago).".format(
                                 user=user,
                                 labels_detected_count=len(labels_detected_list),
                                 labels_detected_list=labels_detected_list,
@@ -76,7 +76,7 @@ class Command(BaseCommand):
                             ))
                         else:
                             image.visible_on_website = True
-                            logger.debug("moderate_unmoderated_photos::labels not detected. user={user}, registered {registered_days_ago} days ago).".format(
+                            logger.debug("moderate_unmoderated_photos::labels not detected. user={user} (registered {registered_days_ago} days ago).".format(
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
