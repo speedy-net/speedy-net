@@ -8,6 +8,7 @@ django-friendship
 django-translated-fields
 factory-boy
 Faker
+haversine
 jmespath
 Pillow
 psycopg2
