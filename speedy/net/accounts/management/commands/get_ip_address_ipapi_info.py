@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         users = User.objects.exclude(
-            last_ip_address_used__isnull=True,
+            last_ip_address_used=None,
         ).filter(
             last_ip_address_used_ipapi_time=None,
             last_ip_address_used_date_updated__lte=(now() - timedelta(minutes=4)),
