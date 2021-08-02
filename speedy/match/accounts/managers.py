@@ -1,5 +1,6 @@
 import logging
 import hashlib
+import random
 from datetime import date, datetime
 
 from haversine import haversine, Unit
@@ -160,6 +161,7 @@ class SiteProfileManager(BaseManager):
                             other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                         else:  # 5/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                 if ((int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 100) < 12):
                     distance_offset = 0 * 30
                 else:
@@ -171,6 +173,12 @@ class SiteProfileManager(BaseManager):
                             other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
                             other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
                             distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
+                            if (random.randint(0, 399) == 0):
+                                logger.debug("SiteProfileManager::get_matches:The distance between {user} and {other_user} is {distance_between_users} km.".format(
+                                    user=user,
+                                    other_user=other_user,
+                                    distance_between_users=distance_between_users,
+                                ))
                             if (distance_between_users < 60):
                                 distance_offset = 0 * 30
                             elif (distance_between_users < 300):
