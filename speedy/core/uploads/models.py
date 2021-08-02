@@ -1,7 +1,6 @@
 import os
 
 from django.db import models
-from django.db.models import JSONField
 from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
@@ -47,8 +46,8 @@ class Image(File):
     visible_on_website = models.BooleanField(verbose_name=_('visible on website'), default=False)
     aws_image_moderation_time = models.DateTimeField(verbose_name=_('AWS image moderation time'), blank=True, null=True)
     aws_facial_analysis_time = models.DateTimeField(verbose_name=_('AWS facial analysis time'), blank=True, null=True)
-    aws_raw_image_moderation_results = JSONField(verbose_name=_('AWS raw image moderation results'), blank=True, null=True)
-    aws_raw_facial_analysis_results = JSONField(verbose_name=_('AWS raw facial analysis results'), blank=True, null=True)
+    aws_raw_image_moderation_results = models.JSONField(verbose_name=_('AWS raw image moderation results'), blank=True, null=True)
+    aws_raw_facial_analysis_results = models.JSONField(verbose_name=_('AWS raw facial analysis results'), blank=True, null=True)
     number_of_faces = models.PositiveSmallIntegerField(verbose_name=_('number of faces'), blank=True, null=True)
 
     class Meta:

@@ -26,6 +26,7 @@ class SiteProfileMiddleware(MiddlewareMixin):
                     update_last_visit = False
             if (update_last_visit):
                 request.user.profile.update_last_visit()
+                request.user.update_last_ip_address_used(request=request)
             if (not (request.user.has_confirmed_email_or_registered_now)):
                 if (not ((request.user.is_superuser) or (request.user.is_staff))):
                     _user_is_active = (request.user.is_active or request.user.speedy_net_profile.is_active)

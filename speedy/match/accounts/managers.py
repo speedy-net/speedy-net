@@ -2,6 +2,8 @@ import logging
 import hashlib
 from datetime import date, datetime
 
+from haversine import haversine, Unit
+
 from django.db.models import prefetch_related_objects
 from django.utils.timezone import now
 from django.utils.translation import get_language
@@ -158,6 +160,33 @@ class SiteProfileManager(BaseManager):
                             other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                         else:  # 5/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
+                if ((int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 100) < 12):
+                    distance_offset = 0 * 30
+                else:
+                    distance_offset = 6 * 30
+                    try:
+                        if ((user.last_ip_address_used_raw_ipapi_results is not None) and (other_user.last_ip_address_used_raw_ipapi_results is not None)):
+                            user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
+                            user_longitude = user.last_ip_address_used_raw_ipapi_results["longitude"]
+                            other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
+                            other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
+                            distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
+                            if (distance_between_users < 60):
+                                distance_offset = 0 * 30
+                            elif (distance_between_users < 300):
+                                distance_offset = 2 * 30
+                            elif (distance_between_users < 3000):
+                                distance_offset = 4 * 30
+                            else:
+                                distance_offset = 6 * 30
+                    except Exception as e:
+                        logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, Exception={e} (registered {registered_days_ago} days ago)".format(
+                            user=user,
+                            e=str(e),
+                            registered_days_ago=(now() - user.date_created).days,
+                        ))
+                        distance_offset = 6 * 30
+                other_user.speedy_match_profile._user_last_visit_days_offset += distance_offset
                 if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
