@@ -744,7 +744,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self.last_ip_address_used = ip_address_used
                 self.last_ip_address_used_date_updated = now()
                 self.last_ip_address_used_ipapi_time = None
-                self.last_ip_address_used_raw_ipapi_results = None
                 self.save_user_and_profile()
 
 
