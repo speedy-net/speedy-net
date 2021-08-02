@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 18:01+0300\n"
+"POT-Creation-Date: 2021-08-02 14:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:758
+#: .\__translations\__translations.py:9 .\accounts\models.py:771
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -893,7 +893,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:451
+#: .\__translations\__translations.py:23 .\accounts\models.py:455
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -1933,30 +1933,30 @@ msgstr "עדכנ/י את תמונת הפרופיל שלך"
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
-#: .\accounts\forms.py:292 .\templates\base_with_login.html:123
+#: .\accounts\forms.py:293 .\templates\base_with_login.html:123
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:298 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:299 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
 #: .\templates\base_with_login.html:136
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:301 .\templates\base_with_login.html:70
+#: .\accounts\forms.py:302 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:133
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:314
+#: .\accounts\forms.py:315
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:408
+#: .\accounts\forms.py:409
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:420
+#: .\accounts\forms.py:421
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -2133,51 +2133,59 @@ msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:458 .\accounts\models.py:742 .\blocks\models.py:15
+#: .\accounts\models.py:338
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "Last IP address used https://ipapi.com/ time"
+
+#: .\accounts\models.py:339
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "Last IP address used raw https://ipapi.com/ results"
+
+#: .\accounts\models.py:462 .\accounts\models.py:755 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:459
+#: .\accounts\models.py:463
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:484
+#: .\accounts\models.py:488
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:743
+#: .\accounts\models.py:756
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:744
+#: .\accounts\models.py:757
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:745
+#: .\accounts\models.py:758
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:746
+#: .\accounts\models.py:759
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:747
+#: .\accounts\models.py:760
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:748
+#: .\accounts\models.py:761
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:759
+#: .\accounts\models.py:772
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:825
+#: .\accounts\models.py:838
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:826
+#: .\accounts\models.py:839
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2336,7 +2344,7 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\admin\views.py:41
+#: .\admin\views.py:46
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2352,7 +2360,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_four_months} חברים נכנסו לאתר בארבעת "
 "החודשים האחרונים."
 
-#: .\admin\views.py:64
+#: .\admin\views.py:74
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2375,7 +2383,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני "
 "1 באוגוסט 2019."
 
-#: .\admin\views.py:79
+#: .\admin\views.py:90
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2568,11 +2576,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:162
+#: .\settings\base.py:163
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:163
+#: .\settings\base.py:164
 msgid "Hebrew"
 msgstr "עברית"
 
@@ -2693,11 +2701,11 @@ msgstr "הוסף/י חדשה"
 msgid "Change Password"
 msgstr "שנה/י סיסמה"
 
-#: .\templates\accounts\edit_profile\privacy.html:11
+#: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
 msgstr "הגיל שלך יהיה גלוי להתאמות שלך בספידי מץ'."
 
-#: .\templates\accounts\edit_profile\privacy.html:15
+#: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
 msgstr "שנה/י הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך."
 
@@ -3242,55 +3250,55 @@ msgstr ""
 msgid "Browse..."
 msgstr "עיון..."
 
-#: .\uploads\models.py:15
+#: .\uploads\models.py:14
 msgid "owner"
 msgstr "בעלים"
 
-#: .\uploads\models.py:16 .\uploads\models.py:25
+#: .\uploads\models.py:15 .\uploads\models.py:24
 msgid "file"
 msgstr "קובץ"
 
-#: .\uploads\models.py:17
+#: .\uploads\models.py:16
 msgid "is stored"
 msgstr "is stored"
 
-#: .\uploads\models.py:18
+#: .\uploads\models.py:17
 msgid "file size"
 msgstr "גודל קובץ"
 
-#: .\uploads\models.py:26
+#: .\uploads\models.py:25
 msgid "uploaded files"
 msgstr "uploaded files"
 
-#: .\uploads\models.py:47
+#: .\uploads\models.py:46
 msgid "visible on website"
 msgstr "visible on website"
 
-#: .\uploads\models.py:48
+#: .\uploads\models.py:47
 msgid "AWS image moderation time"
 msgstr "AWS image moderation time"
 
-#: .\uploads\models.py:49
+#: .\uploads\models.py:48
 msgid "AWS facial analysis time"
 msgstr "AWS facial analysis time"
 
-#: .\uploads\models.py:50
+#: .\uploads\models.py:49
 msgid "AWS raw image moderation results"
 msgstr "AWS raw image moderation results"
 
-#: .\uploads\models.py:51
+#: .\uploads\models.py:50
 msgid "AWS raw facial analysis results"
 msgstr "AWS raw facial analysis results"
 
-#: .\uploads\models.py:52
+#: .\uploads\models.py:51
 msgid "number of faces"
 msgstr "number of faces"
 
-#: .\uploads\models.py:55
+#: .\uploads\models.py:54
 msgid "images"
 msgstr "תמונות"
 
-#: .\uploads\models.py:56
+#: .\uploads\models.py:55
 msgid "uploaded images"
 msgstr "uploaded images"
 

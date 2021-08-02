@@ -2,7 +2,6 @@ import logging
 
 from django.conf import settings as django_settings
 from django.db import models
-from django.db.models import JSONField
 from django.contrib.postgres.fields import ArrayField
 from django.utils.functional import classproperty, cached_property
 from django.utils.timezone import now
@@ -128,9 +127,9 @@ class SiteProfile(SiteProfileBase):
     )
     min_age_to_match = models.SmallIntegerField(verbose_name=_('Minimal age to match'), default=min_age_to_match_default.__func__)
     max_age_to_match = models.SmallIntegerField(verbose_name=_('Maximal age to match'), default=max_age_to_match_default.__func__)
-    diet_match = JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
-    smoking_status_match = JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
-    relationship_status_match = JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
+    diet_match = models.JSONField(verbose_name=_('Diet match'), default=diet_match_default.__func__)
+    smoking_status_match = models.JSONField(verbose_name=_('Smoking status match'), default=smoking_status_match_default.__func__)
+    relationship_status_match = models.JSONField(verbose_name=_('Relationship status match'), default=relationship_status_match_default.__func__)
     diet_to_match = ArrayField(
         base_field=models.SmallIntegerField(choices=User.DIET_VALID_CHOICES),
         verbose_name=_('Diet to match'),

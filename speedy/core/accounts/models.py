@@ -333,6 +333,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
     access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
     notify_on_message = models.SmallIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
+    last_ip_address_used = models.GenericIPAddressField(blank=True, null=True)
+    last_ip_address_used_date_updated = models.DateTimeField(blank=True, null=True)
+    last_ip_address_used_ipapi_time = models.DateTimeField(verbose_name=_('Last IP address used https://ipapi.com/ time'), blank=True, null=True)
+    last_ip_address_used_raw_ipapi_results = models.JSONField(verbose_name=_('Last IP address used raw https://ipapi.com/ results'), blank=True, null=True)
 
     objects = UserManager()
 
@@ -732,6 +736,15 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def get_relationship_status_choices(self):
         return self.__class__.relationship_status_choices(gender=self.get_gender())
+
+    def update_last_ip_address_used(self, request):
+        ip_address_used = request.META.get('REMOTE_ADDR')
+        if ip_address_used:
+            if (not (self.last_ip_address_used == ip_address_used)):
+                self.last_ip_address_used = ip_address_used
+                self.last_ip_address_used_date_updated = now()
+                self.last_ip_address_used_ipapi_time = None
+                self.save_user_and_profile()
 
 
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
