@@ -162,8 +162,9 @@ class SiteProfileManager(BaseManager):
                         else:  # 5/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                if ((int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 100) < 12):
-                    distance_offset = 0 * 30
+                s = int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 100
+                if (s < 12):
+                    distance_offset = (s % 4) * 2 * 30
                 else:
                     distance_offset = 6 * 30
                     try:
