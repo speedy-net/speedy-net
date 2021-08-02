@@ -155,9 +155,9 @@ class SiteProfileManager(BaseManager):
                     else:
                         # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                         s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 97), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 12
-                        if (s in {0, 4, 8, 10}):  # 4/12
+                        if (5 <= s < 9):  # 4/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
-                        elif (s in {2, 6, 11}):  # 3/12
+                        elif (9 <= s < 12):  # 3/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                         else:  # 5/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
@@ -229,17 +229,17 @@ class SiteProfileManager(BaseManager):
                 other_user.speedy_match_profile._user_last_visit_days_offset += other_user.speedy_match_profile.profile_picture_months_offset * 30
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                 s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 98), (int(other_user.id) % 777), (int(other_user.id) % 458)).encode('utf-8')).hexdigest(), 16) % 77
-                if (s in {24, 48, 72}):  # 3/77
+                if (74 <= s < 77):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
-                elif (s in {25, 49, 73}):  # 3/77
+                elif (71 <= s < 74):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 2 * 30
                 else:  # 71/77
                     if ((timezone_now - other_user.speedy_match_profile.last_visit).days < 5):
                         other_user.speedy_match_profile._user_last_visit_days_offset -= 0 * 30
                     else:
-                        if (s in {27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 50, 51}):  # 23/77
+                        if (48 <= s < 71):  # 23/77
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
-                        elif (s in {52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 74, 75, 76}):  # 23/77
+                        elif (25 <= s < 48):  # 23/77
                             other_user.speedy_match_profile._user_last_visit_days_offset += 2 * 30
                         else:  # 25/77
                             other_user.speedy_match_profile._user_last_visit_days_offset -= 0 * 30
