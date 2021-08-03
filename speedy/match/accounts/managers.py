@@ -188,8 +188,9 @@ class SiteProfileManager(BaseManager):
                             else:
                                 distance_offset = 6 * 30
                     except Exception as e:
-                        logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, Exception={e} (registered {registered_days_ago} days ago)".format(
+                        logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
                             user=user,
+                            other_user=other_user,
                             e=str(e),
                             registered_days_ago=(now() - user.date_created).days,
                         ))
