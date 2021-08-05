@@ -117,6 +117,8 @@ class SiteProfileManager(BaseManager):
                 other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
                 other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
                 other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
+                if ((timezone_now - other_user.speedy_match_profile.last_visit).days >= 180):
+                    other_user.speedy_match_profile._user_last_visit_days_offset += 6 * 30
                 if ((timezone_now - other_user.date_created).days < 15) or ((timezone_now - other_user.speedy_match_profile.last_visit).days < 5):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
