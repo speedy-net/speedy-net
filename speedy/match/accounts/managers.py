@@ -166,6 +166,13 @@ class SiteProfileManager(BaseManager):
                 s = int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 1000
                 if (0 <= s < 120):  # 12/100
                     distance_offset = int((s % 6) * 2 / 10 * 6 * 30 + 0.5)
+                    if (random.randint(0, 399) == 0):
+                        logger.debug("SiteProfileManager::get_matches:distance_offset #1: {user} and {other_user}, s is {s}, distance offset is {distance_offset} .".format(
+                            user=user,
+                            other_user=other_user,
+                            s=s,
+                            distance_offset=distance_offset,
+                        ))
                 else:
                     distance_offset = int(10 / 10 * 6 * 30 + 0.5)
                     try:
@@ -175,12 +182,6 @@ class SiteProfileManager(BaseManager):
                             other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
                             other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
                             distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
-                            if (random.randint(0, 399) == 0):
-                                logger.debug("SiteProfileManager::get_matches:The distance between {user} and {other_user} is {distance_between_users} km.".format(
-                                    user=user,
-                                    other_user=other_user,
-                                    distance_between_users=distance_between_users,
-                                ))
                             if (distance_between_users < 60):
                                 distance_offset = int(0 / 10 * 6 * 30 + 0.5)
                             elif (distance_between_users < 300):
@@ -193,6 +194,14 @@ class SiteProfileManager(BaseManager):
                                 distance_offset = int(8 / 10 * 6 * 30 + 0.5)
                             else:
                                 distance_offset = int(10 / 10 * 6 * 30 + 0.5)
+                            if (random.randint(0, 399) == 0):
+                                logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
+                                    user=user,
+                                    other_user=other_user,
+                                    distance_between_users=distance_between_users,
+                                    s=s,
+                                    distance_offset=distance_offset,
+                                ))
                     except Exception as e:
                         logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
                             user=user,
