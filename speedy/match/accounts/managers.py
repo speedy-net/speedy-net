@@ -163,11 +163,11 @@ class SiteProfileManager(BaseManager):
                         else:  # 5/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                s = int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 100
-                if (0 <= s < 12):
-                    distance_offset = (s % 4) * 2 * 30
+                s = int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 1000
+                if (0 <= s < 120):  # 12/100
+                    distance_offset = int((s % 5) * 2 / 8 * 6 * 30)
                 else:
-                    distance_offset = 6 * 30
+                    distance_offset = int(8 / 8 * 6 * 30)
                     try:
                         if ((user.last_ip_address_used_raw_ipapi_results is not None) and (other_user.last_ip_address_used_raw_ipapi_results is not None)):
                             user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
@@ -182,13 +182,15 @@ class SiteProfileManager(BaseManager):
                                     distance_between_users=distance_between_users,
                                 ))
                             if (distance_between_users < 60):
-                                distance_offset = 0 * 30
+                                distance_offset = int(0 / 8 * 6 * 30)
                             elif (distance_between_users < 300):
-                                distance_offset = 2 * 30
+                                distance_offset = int(2 / 8 * 6 * 30)
                             elif (distance_between_users < 3000):
-                                distance_offset = 4 * 30
+                                distance_offset = int(4 / 8 * 6 * 30)
+                            elif (distance_between_users < 6000):
+                                distance_offset = int(6 / 8 * 6 * 30)
                             else:
-                                distance_offset = 6 * 30
+                                distance_offset = int(8 / 8 * 6 * 30)
                     except Exception as e:
                         logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
                             user=user,
@@ -196,7 +198,7 @@ class SiteProfileManager(BaseManager):
                             e=str(e),
                             registered_days_ago=(now() - user.date_created).days,
                         ))
-                        distance_offset = 6 * 30
+                        distance_offset = int(8 / 8 * 6 * 30)
                 other_user.speedy_match_profile._user_last_visit_days_offset += distance_offset
                 if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 1 * 30
