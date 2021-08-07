@@ -1,3 +1,4 @@
+import random
 from time import sleep
 # from datetime import date
 # from dateutil.relativedelta import relativedelta
@@ -376,16 +377,21 @@ if (django_settings.LOGIN_ENABLED):
         #     # self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
         #
         def test_length_of_matches_list(self):
+            # This test takes a long time. Run the full test only on random 5% of the times.
+            if (random.randint(0, 19) == 0):
+                n_range, i_range = 6, 200
+            else:
+                n_range, i_range = 3, 5
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
             self.assertEqual(first=len(matches_list), second=4)
             self.assertTrue(self.user_4 in matches_list)
             user_count = 5
             user_count_list = list()
             matches_list_length_list = list()
-            for n in range(6):
-                for i in range(200):
+            for n in range(n_range):
+                for i in range(i_range):
                     u = ActiveUserFactory()
-                user_count += 200
+                user_count += i_range
                 user_count_list.append(user_count)
                 self.assertEqual(first=User.objects.count(), second=user_count)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
@@ -396,8 +402,15 @@ if (django_settings.LOGIN_ENABLED):
                 else:
                     self.assertEqual(first=len(matches_list), second=720)
                 self.assertFalse(self.user_5 in matches_list)
-            self.assertListEqual(list1=user_count_list, list2=[205, 405, 605, 805, 1005, 1205])
-            self.assertListEqual(list1=matches_list_length_list, list2=[204, 404, 604, 720, 720, 720])
+            if ((n_range, i_range) == (6, 200)):
+                self.assertListEqual(list1=user_count_list, list2=[205, 405, 605, 805, 1005, 1205])
+                self.assertListEqual(list1=matches_list_length_list, list2=[204, 404, 604, 720, 720, 720])
+                self.assertEqual(first=User.objects.count(), second=1205)
+            else:
+                self.assertListEqual(list1=user_count_list, list2=[10, 15, 20])
+                self.assertListEqual(list1=matches_list_length_list, list2=[9, 14, 19])
+                self.assertEqual(first=User.objects.count(), second=20)
+            print("ManagerMatchesTestCase::test_length_of_matches_list:Tested with {} users.".format(User.objects.count()))
 
         def test_photo_not_visible_doesnt_match_profile_in_matches_list(self):
             """
