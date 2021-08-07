@@ -165,7 +165,7 @@ class SiteProfileManager(BaseManager):
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                 s = int(hashlib.md5("$$$-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (((datetime_now.hour // 4) + 1) * 92)).encode('utf-8')).hexdigest(), 16) % 1000
                 if (0 <= s < 120):  # 12/100
-                    if (0 <= s < 18):
+                    if (0 <= s < 12):
                         distance_offset = int((s % 3) * 2 / 10 * 6 * 30 + 0.5)
                     else:
                         distance_offset = int((s % 3 + 3) * 2 / 10 * 6 * 30 + 0.5)
