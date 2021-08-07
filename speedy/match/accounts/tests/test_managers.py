@@ -87,7 +87,7 @@ if (django_settings.LOGIN_ENABLED):
             self.user_4.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE, User.GENDER_MALE]
             self.user_4.save_user_and_profile()
             matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
-            self.assertTrue(0 < len(matches_list) < 4)
+            self.assertEqual(first=len(matches_list), second=3)
             self.assertTrue(self.user_4 not in matches_list)
             self.user_4.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
             self.user_4.save_user_and_profile()
@@ -375,6 +375,30 @@ if (django_settings.LOGIN_ENABLED):
         #     # self.assertListEqual(list1=matches_list, list2=[self.user_1, self.user_4, self.user_3])
         #     # self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
         #
+        def test_length_of_matches_list(self):
+            matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+            self.assertEqual(first=len(matches_list), second=4)
+            self.assertTrue(self.user_4 in matches_list)
+            user_count = 5
+            user_count_list = list()
+            matches_list_length_list = list()
+            for n in range(6):
+                for i in range(200):
+                    u = ActiveUserFactory()
+                user_count += 200
+                user_count_list.append(user_count)
+                self.assertEqual(first=User.objects.count(), second=user_count)
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+                matches_list_length_list.append(len(matches_list))
+                if (user_count < 700):
+                    self.assertEqual(first=len(matches_list), second=user_count - 1)
+                    self.assertTrue(self.user_4 in matches_list)
+                else:
+                    self.assertEqual(first=len(matches_list), second=720)
+                self.assertFalse(self.user_5 in matches_list)
+            self.assertListEqual(list1=user_count_list, list2=[205, 405, 605, 805, 1005, 1205])
+            self.assertListEqual(list1=matches_list_length_list, list2=[204, 404, 604, 720, 720, 720])
+
         def test_photo_not_visible_doesnt_match_profile_in_matches_list(self):
             """
             Test that users with invisible photos don't appear in matches list, but their matches are not affected.
