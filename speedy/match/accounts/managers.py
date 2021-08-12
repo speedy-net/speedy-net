@@ -116,6 +116,7 @@ class SiteProfileManager(BaseManager):
                 self._ensure_cached_counts(other_user=other_user)
                 other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
                 other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
+                other_user.speedy_match_profile._distance_between_users = None
                 other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
                 if ((timezone_now - other_user.speedy_match_profile.last_visit).days >= 180):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 6 * 30
@@ -197,6 +198,7 @@ class SiteProfileManager(BaseManager):
                                 distance_offset = int(8 / 10 * 6 * 30 + 0.5)
                             else:
                                 distance_offset = int(10 / 10 * 6 * 30 + 0.5)
+                            other_user.speedy_match_profile._distance_between_users = distance_between_users
                             if (random.randint(0, 399) == 0):
                                 logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
                                     user=user,
@@ -275,11 +277,12 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, distance_between_users_list={distance_between_users_list}".format(
             user=user,
             language_code=language_code,
             number_of_users=len(user_list),
             number_of_matches=len(matches_list),
+            distance_between_users_list=[getattr(u.speedy_match_profile, "_distance_between_users", None) for u in matches_list[:40]],
         ))
         if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user.speedy_match_profile.height <= 85) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)):
             logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
