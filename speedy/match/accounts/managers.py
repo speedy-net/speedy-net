@@ -277,11 +277,12 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, distance_between_users_list={distance_between_users_list}".format(
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, user_id_list={user_id_list}, distance_between_users_list={distance_between_users_list}".format(
             user=user,
             language_code=language_code,
             number_of_users=len(user_list),
             number_of_matches=len(matches_list),
+            user_id_list=[u.id for u in matches_list[:40]],
             distance_between_users_list=[getattr(u.speedy_match_profile, "_distance_between_users", None) for u in matches_list[:40]],
         ))
         if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user.speedy_match_profile.height <= 85) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)):
