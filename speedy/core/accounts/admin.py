@@ -1,10 +1,17 @@
 from django.conf import settings as django_settings
 
-if (django_settings.LOGIN_ENABLED):
-    from translated_fields import TranslatedFieldAdmin
+from translated_fields import TranslatedFieldAdmin
 
+from speedy.core.base.admin import ModelAdmin, ModelAdmin5000, ReadOnlyModelAdmin
+
+
+class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    def has_delete_permission(self, request, obj=None):
+        return True
+
+
+if (django_settings.LOGIN_ENABLED):
     from speedy.core import admin
-    from speedy.core.base.admin import ModelAdmin, ModelAdmin5000, ReadOnlyModelAdmin
     from speedy.core.messages.admin import MessageInlineAdmin
     from speedy.core.accounts.utils import get_site_profile_model
     from .models import Entity, ReservedUsername, User, UserEmailAddress
@@ -40,11 +47,6 @@ if (django_settings.LOGIN_ENABLED):
     class UserEmailAddressAdmin(ReadOnlyModelAdmin):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
-        def has_delete_permission(self, request, obj=None):
-            return True
-
-
-    class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
         def has_delete_permission(self, request, obj=None):
             return True
 
