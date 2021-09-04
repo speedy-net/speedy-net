@@ -69,7 +69,13 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
         context.update({
             'site_name': _(site.name),
         })
-        rendered = render_mail(template_name_prefix, context)
+        rendered = render_mail(template_name_prefix=template_name_prefix, context=context)
+        logger.debug('send_mail::site={site}, to={to}, template_name_prefix={template_name_prefix}, subject="{subject}"'.format(
+            site=_(site.name),
+            to=to,
+            template_name_prefix=template_name_prefix,
+            subject=rendered.subject,
+        ))
         msg = EmailMultiAlternatives(
             subject=rendered.subject,
             body=rendered.body_plain,
