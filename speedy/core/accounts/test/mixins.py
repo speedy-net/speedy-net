@@ -305,8 +305,8 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
         _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
         _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
         _username_is_required_error_message_dict = {'en': 'Username is required.', 'he': 'שם המשתמש/ת נדרש.'}
-        _password_reset_on_speedy_net_subject_dict = {'en': "Password Reset on Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
-        _password_reset_on_speedy_match_subject_dict = {'en': "Password Reset on Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
+        _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
+        _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
 
         _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
         _value_must_be_an_integer_error_message_to_format_dict = {'en': "“{value}” value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
