@@ -1,7 +1,7 @@
 import logging
 import hashlib
 import random
-from datetime import date, datetime
+from datetime import timedelta, datetime, date
 from haversine import haversine, Unit
 
 from django.db.models import prefetch_related_objects
@@ -75,6 +75,9 @@ class SiteProfileManager(BaseManager):
             user=user,
             language_code=language_code,
         ))
+        datetime_now = datetime.now()
+        timezone_now = now()
+        today = date.today()
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
@@ -95,6 +98,7 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=timezone_now - timedelta(days=720),
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
@@ -102,9 +106,6 @@ class SiteProfileManager(BaseManager):
         self._prefetch_related_objects_if_no_cached_counts(user_list=user_list)
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
-        datetime_now = datetime.now()
-        timezone_now = now()
-        today = date.today()
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
                 user=user,
@@ -304,6 +305,7 @@ class SiteProfileManager(BaseManager):
             user=user,
             language_code=language_code,
         ))
+        timezone_now = now()
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
@@ -331,7 +333,6 @@ class SiteProfileManager(BaseManager):
         user_list = qs
         # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
-        timezone_now = now()
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
                 user=user,
