@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-05 19:32+0300\n"
+"POT-Creation-Date: 2021-09-07 05:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2270,18 +2270,19 @@ msgstr ""
 msgid "You have made this email address primary."
 msgstr ""
 
-#: .\admin\views.py:46
+#: .\admin\views.py:50
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
 "of which {total_number_of_members_in_the_last_week} members entered the site "
 "in the last week, {total_number_of_members_in_the_last_month} members "
-"entered the site in the last month, and "
+"entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
-"in the last four months."
+"in the last four months, and {total_number_of_members_in_the_last_two_years} "
+"members entered the site in the last two years."
 msgstr ""
 
-#: .\admin\views.py:74
+#: .\admin\views.py:87
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2291,11 +2292,15 @@ msgid ""
 "members registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:90
+#: .\admin\views.py:105
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "

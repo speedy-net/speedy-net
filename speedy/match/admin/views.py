@@ -124,7 +124,34 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
             gender=User.GENDER_OTHER,
         ).count()
-        total_number_of_active_members_text = _("Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others; {total_percent_of_female_active_members} females, {total_percent_of_male_active_members} males, {total_percent_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members ({total_number_of_female_active_members_in_the_last_week} females, {total_number_of_male_active_members_in_the_last_week} males, {total_number_of_other_active_members_in_the_last_week} others; {total_percent_of_female_active_members_in_the_last_week} females, {total_percent_of_male_active_members_in_the_last_week} males, {total_percent_of_other_active_members_in_the_last_week} others) entered the site in the last week, {total_number_of_active_members_in_the_last_month} members ({total_number_of_female_active_members_in_the_last_month} females, {total_number_of_male_active_members_in_the_last_month} males, {total_number_of_other_active_members_in_the_last_month} others; {total_percent_of_female_active_members_in_the_last_month} females, {total_percent_of_male_active_members_in_the_last_month} males, {total_percent_of_other_active_members_in_the_last_month} others) entered the site in the last month, and {total_number_of_active_members_in_the_last_four_months} members ({total_number_of_female_active_members_in_the_last_four_months} females, {total_number_of_male_active_members_in_the_last_four_months} males, {total_number_of_other_active_members_in_the_last_four_months} others; {total_percent_of_female_active_members_in_the_last_four_months} females, {total_percent_of_male_active_members_in_the_last_four_months} males, {total_percent_of_other_active_members_in_the_last_four_months} others) entered the site in the last four months.").format(
+        total_number_of_active_members_in_the_last_two_years = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
+        ).count()
+        total_number_of_female_active_members_in_the_last_two_years = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
+            gender=User.GENDER_FEMALE,
+        ).count()
+        total_number_of_male_active_members_in_the_last_two_years = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
+            gender=User.GENDER_MALE,
+        ).count()
+        total_number_of_other_active_members_in_the_last_two_years = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
+            gender=User.GENDER_OTHER,
+        ).count()
+        total_number_of_active_members_text = _("Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others; {total_percent_of_female_active_members} females, {total_percent_of_male_active_members} males, {total_percent_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members ({total_number_of_female_active_members_in_the_last_week} females, {total_number_of_male_active_members_in_the_last_week} males, {total_number_of_other_active_members_in_the_last_week} others; {total_percent_of_female_active_members_in_the_last_week} females, {total_percent_of_male_active_members_in_the_last_week} males, {total_percent_of_other_active_members_in_the_last_week} others) entered the site in the last week, {total_number_of_active_members_in_the_last_month} members ({total_number_of_female_active_members_in_the_last_month} females, {total_number_of_male_active_members_in_the_last_month} males, {total_number_of_other_active_members_in_the_last_month} others; {total_percent_of_female_active_members_in_the_last_month} females, {total_percent_of_male_active_members_in_the_last_month} males, {total_percent_of_other_active_members_in_the_last_month} others) entered the site in the last month, {total_number_of_active_members_in_the_last_four_months} members ({total_number_of_female_active_members_in_the_last_four_months} females, {total_number_of_male_active_members_in_the_last_four_months} males, {total_number_of_other_active_members_in_the_last_four_months} others; {total_percent_of_female_active_members_in_the_last_four_months} females, {total_percent_of_male_active_members_in_the_last_four_months} males, {total_percent_of_other_active_members_in_the_last_four_months} others) entered the site in the last four months, and {total_number_of_active_members_in_the_last_two_years} members ({total_number_of_female_active_members_in_the_last_two_years} females, {total_number_of_male_active_members_in_the_last_two_years} males, {total_number_of_other_active_members_in_the_last_two_years} others; {total_percent_of_female_active_members_in_the_last_two_years} females, {total_percent_of_male_active_members_in_the_last_two_years} males, {total_percent_of_other_active_members_in_the_last_two_years} others) entered the site in the last two years.").format(
             total_number_of_active_members='{:,}'.format(total_number_of_active_members),
             total_number_of_female_active_members='{:,}'.format(total_number_of_female_active_members),
             total_number_of_male_active_members='{:,}'.format(total_number_of_male_active_members),
@@ -153,6 +180,13 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             total_percent_of_female_active_members_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_female_active_members_in_the_last_four_months) / float(total_number_of_active_members_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_the_last_four_months > 0) else 0),
             total_percent_of_male_active_members_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_male_active_members_in_the_last_four_months) / float(total_number_of_active_members_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_the_last_four_months > 0) else 0),
             total_percent_of_other_active_members_in_the_last_four_months='{:,.1f}%'.format(round(float(total_number_of_other_active_members_in_the_last_four_months) / float(total_number_of_active_members_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_the_last_four_months > 0) else 0),
+            total_number_of_active_members_in_the_last_two_years='{:,}'.format(total_number_of_active_members_in_the_last_two_years),
+            total_number_of_female_active_members_in_the_last_two_years='{:,}'.format(total_number_of_female_active_members_in_the_last_two_years),
+            total_number_of_male_active_members_in_the_last_two_years='{:,}'.format(total_number_of_male_active_members_in_the_last_two_years),
+            total_number_of_other_active_members_in_the_last_two_years='{:,}'.format(total_number_of_other_active_members_in_the_last_two_years),
+            total_percent_of_female_active_members_in_the_last_two_years='{:,.1f}%'.format(round(float(total_number_of_female_active_members_in_the_last_two_years) / float(total_number_of_active_members_in_the_last_two_years) * 100, 1) if (total_number_of_active_members_in_the_last_two_years > 0) else 0),
+            total_percent_of_male_active_members_in_the_last_two_years='{:,.1f}%'.format(round(float(total_number_of_male_active_members_in_the_last_two_years) / float(total_number_of_active_members_in_the_last_two_years) * 100, 1) if (total_number_of_active_members_in_the_last_two_years > 0) else 0),
+            total_percent_of_other_active_members_in_the_last_two_years='{:,.1f}%'.format(round(float(total_number_of_other_active_members_in_the_last_two_years) / float(total_number_of_active_members_in_the_last_two_years) * 100, 1) if (total_number_of_active_members_in_the_last_two_years > 0) else 0),
         )
         total_number_of_active_members_registered_in_the_last_week = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
@@ -178,6 +212,18 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__active_languages__contains=[language_code],
             date_created__lte=now() - timedelta(days=120),
         ).count()
+        total_number_of_active_members_registered_in_the_last_two_years = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__gte=now() - timedelta(days=720),
+        ).count()
+        total_number_of_active_members_registered_more_than_two_years_ago = User.objects.active(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+            date_created__lte=now() - timedelta(days=720),
+        ).count()
         total_number_of_active_members_registered_before_2019_08_01 = User.objects.active(
             speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
@@ -186,11 +232,13 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         ).count()
         total_number_of_active_members_text += "\n"
         total_number_of_active_members_text += "\n"
-        total_number_of_active_members_text += _("Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.").format(
+        total_number_of_active_members_text += _("Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_in_the_last_two_years} active members registered in the last two years. {total_number_of_active_members_registered_more_than_two_years_ago} active members registered more than two years ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.").format(
             total_number_of_active_members_registered_in_the_last_week='{:,}'.format(total_number_of_active_members_registered_in_the_last_week),
             total_number_of_active_members_registered_in_the_last_month='{:,}'.format(total_number_of_active_members_registered_in_the_last_month),
             total_number_of_active_members_registered_in_the_last_four_months='{:,}'.format(total_number_of_active_members_registered_in_the_last_four_months),
             total_number_of_active_members_registered_more_than_four_months_ago='{:,}'.format(total_number_of_active_members_registered_more_than_four_months_ago),
+            total_number_of_active_members_registered_in_the_last_two_years='{:,}'.format(total_number_of_active_members_registered_in_the_last_two_years),
+            total_number_of_active_members_registered_more_than_two_years_ago='{:,}'.format(total_number_of_active_members_registered_more_than_two_years_ago),
             total_number_of_active_members_registered_before_2019_08_01='{:,}'.format(total_number_of_active_members_registered_before_2019_08_01),
         )
         total_number_of_active_members_text += "\n"
