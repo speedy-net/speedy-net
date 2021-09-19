@@ -178,6 +178,18 @@
                             gtag('event', 'conversion', {'send_to': 'AW-1011575750/5K1KCJ31gNsCEMbXreID'});
                         </script>
                     {% endif %}
+                    {% if paginator.count >= 360 %}
+                        {# <!-- Event snippet for Speedy Match - active user - at least 360 matches conversion page --> #}
+                        <script>
+                            gtag('event', 'conversion', {'send_to': 'AW-1011575750/al_NCOzg3PUCEMbXreID'});
+                        </script>
+                    {% endif %}
+                    {% if paginator.count >= 480 %}
+                        {# <!-- Event snippet for Speedy Match - active user - at least 480 matches conversion page --> #}
+                        <script>
+                            gtag('event', 'conversion', {'send_to': 'AW-1011575750/Dx9tCLPStPUCEMbXreID'});
+                        </script>
+                    {% endif %}
                     {% if paginator.count >= 720 %}
                         {# <!-- Event snippet for Speedy Match - active user - at least 720 matches conversion page --> #}
                         <script>
