@@ -18,7 +18,13 @@ class Command(BaseCommand):
                     image_path=image.file.path,
                 ))
                 try:
-                    os.remove(image.file.path)
+                    try:
+                        os.remove(image.file.path)
+                    except FileNotFoundError as e:
+                        logger.info('remove_images_with_no_owner::image={image}, FileNotFoundError Exception={e}'.format(
+                            image=image,
+                            e=str(e),
+                        ))
                     image.delete()
                 except Exception as e:
                     logger.error('remove_images_with_no_owner::image={image}, Exception={e}'.format(
