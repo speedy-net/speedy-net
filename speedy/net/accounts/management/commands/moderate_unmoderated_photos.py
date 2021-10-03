@@ -75,6 +75,14 @@ class Command(BaseCommand):
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
                         else:
+                            labels_list = [label["Name"] for label in image.aws_raw_image_moderation_results["ModerationLabels"]]
+                            if (len(labels_list) > 0):
+                                logger.info("moderate_unmoderated_photos::{labels_count} labels. user={user}, labels={labels_list} (registered {registered_days_ago} days ago).".format(
+                                    user=user,
+                                    labels_count=len(labels_list),
+                                    labels_list=labels_list,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
                             image.visible_on_website = True
                             logger.debug("moderate_unmoderated_photos::labels not detected. user={user} (registered {registered_days_ago} days ago).".format(
                                 user=user,
