@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 05:30+0300\n"
+"POT-Creation-Date: 2021-10-06 07:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1166,28 +1166,28 @@ msgstr ""
 "כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי מץ' "
 "למצוא בני זוג מתאימים, זה לוקח רק כמה דקות."
 
-#: .\templates\matches\match_list.html:35
+#: .\templates\matches\match_list.html:31
 msgid "Update matches"
 msgstr "עדכון התאמות"
 
-#: .\templates\matches\match_list.html:43
+#: .\templates\matches\match_list.html:39
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "תזונה"
 
-#: .\templates\matches\match_list.html:54
+#: .\templates\matches\match_list.html:50
 msgid "Age:"
 msgstr "גיל:"
 
-#: .\templates\matches\match_list.html:68
+#: .\templates\matches\match_list.html:64
 msgid "Refresh"
 msgstr "עדכון"
 
-#: .\templates\matches\match_list.html:75
+#: .\templates\matches\match_list.html:71
 msgid "Add more options"
 msgstr "הוסף/י עוד אפשרויות"
 
-#: .\templates\matches\match_list.html:104
+#: .\templates\matches\match_list.html:100
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
