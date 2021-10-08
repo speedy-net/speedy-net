@@ -23,19 +23,23 @@
     {% endif %}
 {% endblock %}
 
+{% block footer_extra_links_6 %}
+    {% if LANGUAGE_CODE == "en" %}
+        <p>
+            <a href="https://www.digitalocean.com/" title="DigitalOcean – The developer cloud">DigitalOcean</a>
+            <a href="https://aws.amazon.com/" title="Amazon Web Services (AWS) – Cloud Computing Services">AWS</a>
+            <a href="https://cloud.google.com/" title="Google Cloud – Cloud Computing Services">Google Cloud</a>
+            <a href="https://www.linode.com/" title="Linode – Cloud Computing &amp; Linux Servers">Linode</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
 {% block facebook_link %}
     {% if LANGUAGE_CODE == "en" %}
         <a href="https://www.facebook.com/en.speedy.net/" title="Speedy Net on Facebook">Speedy Net on Facebook</a>
     {% endif %}
     {% if LANGUAGE_CODE == "he" %}
         <a href="https://www.facebook.com/he.speedy.net/" title="ספידי נט בפייסבוק">ספידי נט בפייסבוק</a>
-    {% endif %}
-{% endblock %}
-
-{% block extra_python_django_links %}
-    {% if LANGUAGE_CODE == "en" %}
-        <a href="https://www.digitalocean.com/" title="DigitalOcean – The developer cloud">DigitalOcean</a>
-        <a href="https://aws.amazon.com/" title="Amazon Web Services (AWS) – Cloud Computing Services">AWS</a>
     {% endif %}
 {% endblock %}
 
