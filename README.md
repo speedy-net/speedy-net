@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/speedy-net/speedy-net.svg?branch=master)](https://travis-ci.org/speedy-net/speedy-net)
-
 # Speedy Net / Speedy Match
 
 [Speedy Net](https://www.speedy.net/) is a new social network which will have apps, such as [Speedy Match](https://www.speedymatch.com/) (a dating/matching app for singles) and [Speedy Composer](https://www.speedycomposer.com/) and [Speedy Mail](https://www.speedy-mail-software.com/) (later). Speedy Net is open to all ages - vegan, vegetarian or carnists, men, women or other. Speedy Net will be vegan-friendly and friendly to human rights, peace and animal rights.
