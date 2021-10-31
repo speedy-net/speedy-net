@@ -92,6 +92,10 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         site = Site.objects.get_current()
         messages.success(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Welcome to {site_name}!').format(site_name=_(site.name)))
 
+    def display_not_allowed_to_use_speedy_match_message(self):
+        site = Site.objects.get_current()
+        messages.error(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message="We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.").format(site_name=_(site.name)))
+
     def get_success_url(self):
         if (self.step >= len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1):
             if (self.request.user.has_confirmed_email):
@@ -124,6 +128,8 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
                     height=self.request.user.speedy_match_profile.height,
                     registered_days_ago=(now() - self.request.user.date_created).days,
                 ))
+        elif (self.request.user.speedy_match_profile.not_allowed_to_use_speedy_match):
+            self.display_not_allowed_to_use_speedy_match_message()
         return redirect(to=success_url)
 
 

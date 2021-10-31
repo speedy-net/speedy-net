@@ -42,4 +42,8 @@ pgettext_lazy(context="female", message="Who is your ideal partner?")
 pgettext_lazy(context="male", message="Who is your ideal partner?")
 pgettext_lazy(context="other", message="Who is your ideal partner?")
 
+pgettext_lazy(context="female", message="We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.")
+pgettext_lazy(context="male", message="We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.")
+pgettext_lazy(context="other", message="We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.")
+
 
