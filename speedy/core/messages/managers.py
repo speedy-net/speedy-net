@@ -8,7 +8,7 @@ from speedy.core.base.managers import BaseManager
 
 class ChatManager(BaseManager):
     def get_queryset(self):
-        return super().get_queryset().filter(site=Site.objects.get_current())
+        return super().get_queryset().filter(site=Site.objects.get_current()).prefetch_related('messages', 'messages__sender', 'messages__sender__user')
 
     def chats(self, entity):
         return self.filter(Q(group__in=[entity]) | Q(ent1_id=entity.id) | Q(ent2_id=entity.id))
