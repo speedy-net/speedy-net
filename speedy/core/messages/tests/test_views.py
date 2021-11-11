@@ -27,9 +27,13 @@ if (django_settings.LOGIN_ENABLED):
             self.user_1 = ActiveUserFactory()
             self.user_2 = ActiveUserFactory()
             self.user_3 = ActiveUserFactory()
+            sleep(0.01)
             self.chat_1_2 = ChatFactory(ent1=self.user_1, ent2=self.user_2)
+            sleep(0.01)
             self.chat_2_3 = ChatFactory(ent1=self.user_2, ent2=self.user_3)
+            sleep(0.01)
             self.chat_3_1 = ChatFactory(ent1=self.user_3, ent2=self.user_1)
+            sleep(0.01)
 
         def test_visitor_has_no_access(self):
             self.client.logout()
