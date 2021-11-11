@@ -40,7 +40,7 @@ class Chat(TimeStampedModel):
 
     @property
     def messages_queryset(self):
-        return self.messages.prefetch_related('sender__user')
+        return self.messages.all()
 
     @property
     def messages_count(self):
