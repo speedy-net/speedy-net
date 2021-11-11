@@ -152,6 +152,45 @@ if (django_settings.LOGIN_ENABLED):
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
                 self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
 
+        def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages(self):
+            self._create_users(users_count=50)
+            chats = dict()
+            for i in range(40):
+                chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Hello {}'.format(i % 2))
+                sleep(0.01)
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+
+        def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages(self):
+            self._create_users(users_count=50)
+            chats = dict()
+            for i in range(29):
+                chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Hello')
+                sleep(0.01)
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+            for i in range(11):
+                chats[str(29 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(29 + 3 + i)))
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(29 + i)], text='Hello')
+                sleep(0.01)
+                self.assertFalse(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+                self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+            for i in range(11):
+                Message.objects.send_message(from_entity=getattr(self, "user_{}".format(29 + 3 + i)), chat=chats[str(29 + i)], text='Hello!')
+                sleep(0.01)
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+
 
     @only_on_sites_with_login
     class ViewChatsRulesTestCase(SiteTestCase):

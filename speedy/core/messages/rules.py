@@ -27,6 +27,7 @@ def can_send_new_message(user):
     or at least 15 messages with an email address without a reply in the last week,
     then don't let them send any new messages to new chats.
     """
+    can_send = True
     if ((now() - user.date_created).days < 10):
         limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 10, 15
     else:
@@ -49,7 +50,7 @@ def can_send_new_message(user):
     )
     if ((count_user_messages_1_day >= limit_user_messages_1_day) or (count_user_messages_3_days >= limit_user_messages_3_days) or (count_user_messages_7_days >= limit_user_messages_7_days)):
         site = Site.objects.get_current()
-        logger.warning("User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days} (registered {registered_days_ago} days ago).".format(
+        logger.warning("[count_user_messages] User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}, registered {registered_days_ago} days ago).".format(
             user=user,
             site_name=_(site.name),
             count_user_messages_1_day=count_user_messages_1_day,
@@ -57,8 +58,21 @@ def can_send_new_message(user):
             count_user_messages_7_days=count_user_messages_7_days,
             registered_days_ago=(now() - user.date_created).days,
         ))
-        return False
-    return True
+        can_send = False
+    count_identical_messages_in_chats = Chat.objects.count_identical_messages_in_chats_with_only_one_sender(
+        entity=user,
+    )
+    if (count_identical_messages_in_chats[0] >= 30):
+        site = Site.objects.get_current()
+        logger.warning("[count_identical_messages] User {user} can't send messages today on {site_name} ({count_identical_messages_in_chats_0} / \"{count_identical_messages_in_chats_1}\", registered {registered_days_ago} days ago).".format(
+            user=user,
+            site_name=_(site.name),
+            count_identical_messages_in_chats_0=count_identical_messages_in_chats[0],
+            count_identical_messages_in_chats_1=count_identical_messages_in_chats[1],
+            registered_days_ago=(now() - user.date_created).days,
+        ))
+        can_send = False
+    return can_send
 
 
 @predicate
