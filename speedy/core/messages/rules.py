@@ -26,6 +26,9 @@ def can_send_new_message(user):
     or at least 10 messages with an email address without a reply in the last 3 days,
     or at least 15 messages with an email address without a reply in the last week,
     then don't let them send any new messages to new chats.
+
+    If the user sent more than 30 identical messages without a reply,
+    then don't let them send any new messages to new chats.
     """
     can_send = True
     if ((now() - user.date_created).days < 10):
