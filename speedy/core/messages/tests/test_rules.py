@@ -209,6 +209,13 @@ if (django_settings.LOGIN_ENABLED):
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
             self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
+            for i in range(20):
+                Message.objects.send_message(from_entity=getattr(self, "user_{}".format(10 + 3 + i)), chat=chats[str(10 + i)], text='Hello!')
+                sleep(0.01)
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2))
+            self.assertTrue(expr=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3))
 
 
     @only_on_sites_with_login
