@@ -230,9 +230,9 @@ pgettext_lazy(context="female", message='Friends')
 pgettext_lazy(context="male", message='Friends')
 pgettext_lazy(context="other", message='Friends')
 
-pgettext_lazy(context="female", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow.')
-pgettext_lazy(context="male", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow.')
-pgettext_lazy(context="other", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow.')
+pgettext_lazy(context="female", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.')
+pgettext_lazy(context="male", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.')
+pgettext_lazy(context="other", message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.')
 
 # pgettext_lazy(context="female", message="Registration complete. Don't forget to confirm your email.")
 # pgettext_lazy(context="male", message="Registration complete. Don't forget to confirm your email.")

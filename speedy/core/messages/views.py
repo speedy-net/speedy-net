@@ -72,7 +72,7 @@ class UserSingleChatMixin(UserChatsMixin):
                 if (self.request.user == self.user) or (Block.objects.there_is_block(user_1=self.request.user, user_2=self.user)):
                     pass
                 else:
-                    messages.error(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow.'))
+                    messages.error(request=self.request, message=pgettext_lazy(context=self.request.user.get_gender(), message='Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.'))
                     return redirect(to=self.user)
             except PermissionDenied:
                 pass
