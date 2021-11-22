@@ -332,8 +332,8 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(redirect_to=self.success_url)
 
-    def delete(self, *args, **kwargs):
-        response = super().delete(*args, **kwargs)
+    def form_valid(self, *args, **kwargs):
+        response = super().form_valid(*args, **kwargs)
         messages.success(request=self.request, message=_('The email address was deleted.'))
         return response
 
