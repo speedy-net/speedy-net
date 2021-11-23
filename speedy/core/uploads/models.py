@@ -25,11 +25,6 @@ class File(TimeStampedModel):
         verbose_name_plural = _('uploaded files')
         ordering = ('-date_created',)
 
-    def __init__(self, *args, **kwargs):
-        if ((not (kwargs.get('id'))) and (not (args))):
-            kwargs['id'] = generate_regular_udid()
-        super().__init__(*args, **kwargs)
-
     def __str__(self):
         return '{} (owner={})'.format(self.basename, self.owner)
 

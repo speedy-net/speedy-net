@@ -17,6 +17,10 @@ class BaseModel(ValidateModelMixin, models.Model):
     objects = BaseManager()
 
     def save(self, *args, **kwargs):
+        self.generate_id_if_needed()
+        return super().save(*args, **kwargs)
+
+    def generate_id_if_needed(self):
         try:
             field = self._meta.get_field('id')
             if ((not (self.id)) and (hasattr(field, 'id_generator'))):
@@ -25,7 +29,6 @@ class BaseModel(ValidateModelMixin, models.Model):
                     self.id = field.id_generator()
         except FieldDoesNotExist:
             pass
-        return super().save(*args, **kwargs)
 
     class Meta:
         abstract = True
