@@ -26,7 +26,7 @@ class File(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __init__(self, *args, **kwargs):
-        if (not (kwargs.get('id'))):
+        if ((not (kwargs.get('id'))) and (not (args))):
             kwargs['id'] = generate_regular_udid()
         super().__init__(*args, **kwargs)
 
