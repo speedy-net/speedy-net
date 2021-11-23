@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 14:58+0200\n"
+"POT-Creation-Date: 2021-11-23 06:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3277,7 +3277,7 @@ msgstr "עיון..."
 msgid "owner"
 msgstr "בעלים"
 
-#: .\uploads\models.py:15 .\uploads\models.py:24
+#: .\uploads\models.py:15
 msgid "file"
 msgstr "קובץ"
 
@@ -3288,6 +3288,10 @@ msgstr "is stored"
 #: .\uploads\models.py:17
 msgid "file size"
 msgstr "גודל קובץ"
+
+#: .\uploads\models.py:24
+msgid "uploaded file"
+msgstr "uploaded file"
 
 #: .\uploads\models.py:25
 msgid "uploaded files"
@@ -3318,12 +3322,15 @@ msgid "number of faces"
 msgstr "number of faces"
 
 #: .\uploads\models.py:54
-msgid "images"
-msgstr "תמונות"
+msgid "uploaded image"
+msgstr "uploaded image"
 
 #: .\uploads\models.py:55
 msgid "uploaded images"
 msgstr "uploaded images"
+
+#~ msgid "images"
+#~ msgstr "תמונות"
 
 #~ msgid ""
 #~ "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "

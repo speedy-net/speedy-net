@@ -21,7 +21,7 @@ class File(TimeStampedModel):
         return os.path.basename(self.file.name)
 
     class Meta:
-        verbose_name = _('file')
+        verbose_name = _('uploaded file')
         verbose_name_plural = _('uploaded files')
         ordering = ('-date_created',)
 
@@ -51,7 +51,7 @@ class Image(File):
     number_of_faces = models.PositiveSmallIntegerField(verbose_name=_('number of faces'), blank=True, null=True)
 
     class Meta:
-        verbose_name = _('images')
+        verbose_name = _('uploaded image')
         verbose_name_plural = _('uploaded images')
         ordering = ('-date_created',)
 
