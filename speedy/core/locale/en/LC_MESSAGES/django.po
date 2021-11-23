@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 14:58+0200\n"
+"POT-Creation-Date: 2021-11-23 06:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3138,7 +3138,7 @@ msgstr ""
 msgid "owner"
 msgstr ""
 
-#: .\uploads\models.py:15 .\uploads\models.py:24
+#: .\uploads\models.py:15
 msgid "file"
 msgstr ""
 
@@ -3148,6 +3148,10 @@ msgstr ""
 
 #: .\uploads\models.py:17
 msgid "file size"
+msgstr ""
+
+#: .\uploads\models.py:24
+msgid "uploaded file"
 msgstr ""
 
 #: .\uploads\models.py:25
@@ -3179,7 +3183,7 @@ msgid "number of faces"
 msgstr ""
 
 #: .\uploads\models.py:54
-msgid "images"
+msgid "uploaded image"
 msgstr ""
 
 #: .\uploads\models.py:55
