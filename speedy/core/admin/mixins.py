@@ -1,3 +1,9 @@
+try:
+    from rules.contrib.views import LoginRequiredMixin
+except ImportError:
+    from django.utils import encoding
+    encoding.force_text = encoding.force_str
+
 from rules.contrib.views import LoginRequiredMixin
 
 
