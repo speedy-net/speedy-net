@@ -52,7 +52,7 @@ You can find more details in the specifications.
 
 ## How to setup the project and run locally
 
-First make sure that you're using Python 3.6 or later (we recommend the latest Python version).
+First make sure that you're using Python 3.8 or later (we recommend the latest Python version).
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
@@ -139,16 +139,20 @@ Will compile static files.
 
 Install all dependencies using **apt-get**:
 
-    sudo apt-get install python3 python3-pip python3-venv  # common python stuff
+    sudo apt-get install python3.8 python3.8-pip python3.8-venv libpython3.8 libpython3.8-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-plugin-python3 postfix memcached
+    sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
 
+Build **uwsgi** plugin:
+
+    PYTHON=python3.8 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python38"
+    mv python38_plugin.so /usr/lib/uwsgi/plugins
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
 
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
-    python3 -m venv env
+    python3.8 -m venv env
     source env/bin/activate
     python -m pip install --upgrade pip
     pip install --upgrade setuptools wheel
