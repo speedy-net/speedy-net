@@ -8,12 +8,12 @@ jobs:
       matrix:
         os: [ubuntu-18.04, ubuntu-latest]
         python-version: [3.8, 3.9]
-        postgresql-version: [10, 13]
+        postgresql-version: [10, latest]
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
           - os: ubuntu-18.04
-            postgresql-version: 13
+            postgresql-version: latest
           - os: ubuntu-latest
             postgresql-version: 10
           - os: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
           ! docker stop $(docker ps -q --filter ancestor=postgres)
           sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/${{ matrix.postgresql-version }}/main/postgresql.conf
           sudo service postgresql start
-        if: ${{ matrix.postgresql-version != 13 }}
+        if: ${{ matrix.postgresql-version != 'latest' }}
       - run: psql --version
       - run: |
           psql -c 'create user pguser;' -U postgres
