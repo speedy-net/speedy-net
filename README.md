@@ -139,6 +139,8 @@ Will compile static files.
 
 Install all dependencies using **apt-get**:
 
+    sudo add-apt-repository -y ppa:deadsnakes/ppa
+    sudo apt update
     sudo apt-get install python3.8 python3-pip python3.8-venv python3.8-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
