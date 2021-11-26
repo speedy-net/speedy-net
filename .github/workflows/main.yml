@@ -8,7 +8,7 @@ jobs:
       matrix:
         os: [ubuntu-18.04, ubuntu-latest]
         python-version: [3.8, 3.9]
-        postgresql-version: [10, latest]
+        postgresql-version: [10, 11, 12, 13, latest]
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
@@ -16,6 +16,12 @@ jobs:
             postgresql-version: latest
           - os: ubuntu-latest
             postgresql-version: 10
+          - os: ubuntu-latest
+            postgresql-version: 11
+          - os: ubuntu-latest
+            postgresql-version: 12
+          - os: ubuntu-latest
+            postgresql-version: 13
           - os: ubuntu-latest
             is-master-or-staging: false
     services:
