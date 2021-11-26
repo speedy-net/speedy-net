@@ -140,10 +140,11 @@ Will compile static files.
 Install all dependencies using **apt-get**:
 
     sudo add-apt-repository -y ppa:deadsnakes/ppa
+    sudo add-apt-repository -y "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
     sudo apt update
     sudo apt-get install python3.8 python3-pip python3.8-venv python3.8-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install postgresql-13 postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
 
 Build **uwsgi** plugin:
 
@@ -172,7 +173,7 @@ Setup a database:
     createdb -O speedy_net speedy_net
     exit
 
-In **/etc/postgresql/10/main/pg_hba.conf** change the line:
+In **/etc/postgresql/13/main/pg_hba.conf** change the line:
 
     host    all             all             127.0.0.1/32            md5
 
