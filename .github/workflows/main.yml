@@ -15,6 +15,9 @@ jobs:
           - '3.9'
           - '3.10'
         postgresql-version:
+          - '10'
+          - '11'
+          - '12'
           - '13'
           - 'latest'
         is-master-or-staging:
@@ -22,6 +25,12 @@ jobs:
         exclude:
           - os: 'ubuntu-18.04'
             postgresql-version: 'latest'
+          - os: 'ubuntu-latest'
+            postgresql-version: '10'
+          - os: 'ubuntu-latest'
+            postgresql-version: '11'
+          - os: 'ubuntu-latest'
+            postgresql-version: '12'
           - os: 'ubuntu-latest'
             postgresql-version: '13'
           - os: 'ubuntu-latest'
