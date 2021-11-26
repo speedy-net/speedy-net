@@ -23,5 +23,3 @@ sqlparse
 text-unidecode
 typing-extensions
 urllib3
-contextvars  # Not needed in Python>=3.7
-immutables  # Not needed in Python>=3.7
