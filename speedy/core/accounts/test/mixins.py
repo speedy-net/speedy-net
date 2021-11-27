@@ -1,4 +1,5 @@
 from django.conf import settings as django_settings
+from django.db import connection
 
 from speedy.core.base.utils import to_attribute
 from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
@@ -277,6 +278,14 @@ class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
 
     def _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(self, field_name, max_length, value_length):
         return {field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=max_length, value_length=value_length)]}
+
+    def _not_null_constraint_error_message_by_column_and_relation(self, column, relation):
+        postgresql_version = connection.cursor().connection.server_version
+        if (postgresql_version < 130000):
+            msg = 'null value in column "{}" violates not-null constraint'
+        else:
+            msg = 'null value in column "{}" of relation "{}" violates not-null constraint'
+        return msg.format(column, relation)
 
     def set_up(self):
         super().set_up()

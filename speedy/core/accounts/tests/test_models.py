@@ -3,7 +3,6 @@ from datetime import datetime
 
 from django.conf import settings as django_settings
 from django.test import override_settings
-from django.db import connection
 from django.db.utils import IntegrityError, DataError
 from django.core.exceptions import ValidationError
 
@@ -18,14 +17,6 @@ if (django_settings.LOGIN_ENABLED):
     from speedy.core.base.test.utils import get_random_user_password
     from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
     from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
-
-
-def _not_null_constraint_error_message(column, relation):
-    postgresql_version = connection.cursor().connection.server_version
-    msg = 'null value in column "{}" of relation "{}" violates not-null constraint'
-    if (postgresql_version < 130000):
-        msg = 'null value in column "{}" violates not-null constraint'
-    return msg.format(column, relation)
 
 
 class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -712,7 +703,7 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(IntegrityError) as cm:
                 user = DefaultUserFactory(last_name_en=None, last_name_he=None)
                 user.save_user_and_profile()
-            self.assertIn(member=_not_null_constraint_error_message("last_name_en", "accounts_user"), container=str(cm.exception))
+            self.assertIn(member=self._not_null_constraint_error_message_by_column_and_relation(column="last_name_en", relation="accounts_user"), container=str(cm.exception))
 
         def test_first_name_and_last_name_are_long(self):
             with self.assertRaises(ValidationError) as cm:
