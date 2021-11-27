@@ -703,7 +703,7 @@ if (django_settings.LOGIN_ENABLED):
             with self.assertRaises(IntegrityError) as cm:
                 user = DefaultUserFactory(last_name_en=None, last_name_he=None)
                 user.save_user_and_profile()
-            self.assertIn(member=self._not_null_constraint_error_message_by_column_and_relation(column="last_name_en", relation="accounts_user111"), container=str(cm.exception))
+            self.assertIn(member=self._not_null_constraint_error_message_by_column_and_relation(column="last_name_en111", relation="accounts_user111"), container=str(cm.exception))
 
         def test_first_name_and_last_name_are_long(self):
             with self.assertRaises(ValidationError) as cm:
