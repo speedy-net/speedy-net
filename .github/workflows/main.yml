@@ -6,17 +6,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, ubuntu-latest]
-        python-version: [3.8, 3.9]
-        postgresql-version: [13, latest]
+        os: ['ubuntu-18.04', 'ubuntu-latest']
+        python-version: ['3.8', '3.9', '3.10']
+        postgresql-version: ['13', 'latest']
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
-          - os: ubuntu-18.04
-            postgresql-version: latest
-          - os: ubuntu-latest
-            postgresql-version: 13
-          - os: ubuntu-latest
+          - os: 'ubuntu-18.04'
+            postgresql-version: 'latest'
+          - os: 'ubuntu-latest'
+            postgresql-version: '13'
+          - os: 'ubuntu-latest'
             is-master-or-staging: false
     services:
       postgres:
