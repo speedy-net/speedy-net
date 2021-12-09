@@ -1,6 +1,6 @@
 import logging
 import re
-import random
+import secrets
 import string
 
 from datetime import date
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 def _generate_udid(length):
     digits = string.digits
     digits_without_zero = digits[1:]
-    return ''.join(random.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
+    return ''.join(secrets.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
 
 
 def generate_small_udid():
