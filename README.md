@@ -270,6 +270,10 @@ To upgrade all the requirements (including Django), run:
 
     pip install --upgrade -r requirements-without-versions.txt
 
+To upgrade all the requirements for tests, run:
+
+    pip install --upgrade -r tests-requirements-pip-upgrade.txt
+
 ## How to make migrations and migrate
 
 To make all migrations, run:
