@@ -7,8 +7,6 @@ django-crispy-forms==1.13.0
 django-environ==0.8.1
 django-friendship==1.9.4
 django-translated-fields==0.11.3
-factory-boy==3.2.1
-Faker==9.9.1
 haversine==2.5.1
 jmespath==0.10.0
 Pillow==8.4.0

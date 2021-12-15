@@ -88,6 +88,10 @@ To run Speedy Match server:
 
     cd speedy/match
     ./manage.py run_server 8020
+    
+To install the requirements for tests:
+
+    pip install --upgrade -r tests-requirements.txt
 
 To run Speedy Net tests:
 

@@ -6,8 +6,6 @@ django-crispy-forms
 django-environ
 django-friendship
 django-translated-fields
-factory-boy
-Faker
 haversine
 jmespath
 Pillow
