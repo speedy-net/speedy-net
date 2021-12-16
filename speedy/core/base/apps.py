@@ -3,6 +3,7 @@ from django.apps import AppConfig
 
 from speedy.core.patches import locale_patches
 from speedy.core.patches import session_patches
+from speedy.core.patches import tests_patches
 
 
 class SpeedyCoreBaseAppConfig(AppConfig):
@@ -13,5 +14,6 @@ class SpeedyCoreBaseAppConfig(AppConfig):
     def ready(self):
         locale_patches.patch()
         session_patches.patch()
+        tests_patches.patch()
 
 
