@@ -1,18 +1,20 @@
-import random
-
 from django.conf import settings as django_settings
-from django import test as django_test
-
-from speedy.core.accounts.models import User
 
 if (django_settings.TESTS):
-    import factory
-
     if (django_settings.LOGIN_ENABLED):
-        _test_case = django_test.TestCase()
+        import random
+
+        import factory
+
+        from django import test as django_test
+
+        from speedy.core.accounts.models import User
 
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
+
+
+        _test_case = django_test.TestCase()
 
 
         class InactiveUserFactory(DefaultUserFactory):

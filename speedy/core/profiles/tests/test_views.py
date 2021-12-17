@@ -1,17 +1,18 @@
-import random
-from datetime import date
-
 from django.conf import settings as django_settings
-from django.test import override_settings
-from django.test.client import RequestFactory
-from django.views import generic
-from django.utils.html import escape
-from django.contrib.auth.models import AnonymousUser
-
-from friendship.models import Friend
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
+        from datetime import date
+
+        from django.test import override_settings
+        from django.test.client import RequestFactory
+        from django.views import generic
+        from django.utils.html import escape
+        from django.contrib.auth.models import AnonymousUser
+
+        from friendship.models import Friend
+
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login

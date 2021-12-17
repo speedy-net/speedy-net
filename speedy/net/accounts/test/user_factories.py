@@ -1,9 +1,9 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    import factory
-
     if (django_settings.LOGIN_ENABLED):
+        import factory
+
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 

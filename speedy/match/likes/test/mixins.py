@@ -1,9 +1,9 @@
 from django.conf import settings as django_settings
 
-from speedy.core.accounts.models import User
-
-
 if (django_settings.TESTS):
+    from speedy.core.accounts.models import User
+
+
     class SpeedyMatchLikesLanguageMixin(object):
         def set_up(self):
             super().set_up()

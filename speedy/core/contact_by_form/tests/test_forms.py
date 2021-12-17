@@ -1,8 +1,9 @@
 from django.conf import settings as django_settings
-from django.test import override_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from django.test import override_settings
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin

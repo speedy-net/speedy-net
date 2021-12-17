@@ -1,9 +1,9 @@
-import unittest
-
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import unittest
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.friends.tests.test_rules import ViewFriendListRulesTestCaseMixin

@@ -1,9 +1,10 @@
 from django.conf import settings as django_settings
-from django.test import override_settings
-from django.utils.html import escape
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from django.test import override_settings
+        from django.utils.html import escape
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.admin.tests.test_views import AdminViewBaseMixin

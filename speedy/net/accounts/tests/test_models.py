@@ -1,9 +1,9 @@
-from datetime import date
-
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from datetime import date
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
         from speedy.core.accounts.models import User

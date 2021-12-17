@@ -1,12 +1,12 @@
 from django.conf import settings as django_settings
 
-from speedy.core.base.utils import generate_regular_udid as generate_random_id
-from speedy.core.accounts.models import UserEmailAddress
-
 if (django_settings.TESTS):
-    import factory
-
     if (django_settings.LOGIN_ENABLED):
+        import factory
+
+        from speedy.core.base.utils import generate_regular_udid as generate_random_id
+        from speedy.core.accounts.models import UserEmailAddress
+
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
 
 

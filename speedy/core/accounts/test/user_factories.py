@@ -1,6 +1,5 @@
 from django.conf import settings as django_settings
 
-
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):

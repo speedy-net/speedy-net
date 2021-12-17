@@ -1,10 +1,10 @@
-from time import sleep
-from dateutil.relativedelta import relativedelta
-
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from time import sleep
+        from dateutil.relativedelta import relativedelta
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.blocks.models import Block

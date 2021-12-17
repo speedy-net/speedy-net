@@ -1,13 +1,12 @@
-import string
-import random
-
 from django.conf import settings as django_settings
 
-from speedy.core.accounts.models import User
-
-
 if (django_settings.TESTS):
+    import string
+    import random
+
     if (django_settings.LOGIN_ENABLED):
+        from speedy.core.accounts.models import User
+
 
         def get_random_user_password_length():
             return random.randint(User.settings.MIN_PASSWORD_LENGTH, User.settings.MAX_PASSWORD_LENGTH)

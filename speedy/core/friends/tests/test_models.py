@@ -1,10 +1,11 @@
-from time import sleep
-
 from django.conf import settings as django_settings
-from friendship.models import Friend
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from time import sleep
+
+        from friendship.models import Friend
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile

@@ -1,12 +1,13 @@
-import itertools
-from datetime import date
-
 from django.conf import settings as django_settings
-from django.test import override_settings
-from django.core.exceptions import ValidationError
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import itertools
+        from datetime import date
+
+        from django.test import override_settings
+        from django.core.exceptions import ValidationError
+
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match

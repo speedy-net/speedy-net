@@ -1,13 +1,13 @@
-import hashlib
-import json
-import os
-import tempfile
-
 from django.conf import settings as django_settings
-from django.core.files.uploadedfile import SimpleUploadedFile
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import hashlib
+        import json
+        import tempfile
+
+        from django.core.files.uploadedfile import SimpleUploadedFile
+
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login

@@ -1,12 +1,13 @@
-from time import sleep
-from datetime import datetime
-
 from django.conf import settings as django_settings
-from django.test import override_settings
-from django.db.utils import IntegrityError, DataError
-from django.core.exceptions import ValidationError
 
 if (django_settings.TESTS):
+    from time import sleep
+    from datetime import datetime
+
+    from django.test import override_settings
+    from django.db.utils import IntegrityError, DataError
+    from django.core.exceptions import ValidationError
+
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
     from speedy.core.base.test.decorators import only_on_sites_with_login

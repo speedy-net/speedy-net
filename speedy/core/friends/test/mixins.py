@@ -1,10 +1,10 @@
 from django.conf import settings as django_settings
 
-from speedy.core.base.utils import get_both_genders_context_from_genders
-from speedy.core.accounts.models import User
-
-
 if (django_settings.TESTS):
+    from speedy.core.base.utils import get_both_genders_context_from_genders
+    from speedy.core.accounts.models import User
+
+
     class SpeedyCoreFriendsLanguageMixin(object):
         def _you_already_have_friends_error_message_by_user_number_of_friends_and_gender(self, user_number_of_friends, gender):
             return self._you_already_have_friends_error_message_to_format_dict_by_gender[gender].format(user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)

@@ -1,12 +1,13 @@
-import random
-from time import sleep
-
 from django.conf import settings as django_settings
-from django.test import override_settings
-from django.core import mail
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
+        from time import sleep
+
+        from django.test import override_settings
+        from django.core import mail
+
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match

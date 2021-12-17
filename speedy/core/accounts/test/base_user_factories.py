@@ -1,19 +1,21 @@
-import string
-from datetime import date
-
 from django.conf import settings as django_settings
-from django import test as django_test
 
 if (django_settings.TESTS):
-    from speedy.core.base.test import tests_settings
-    from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
-    from speedy.core.base.utils import normalize_username
-    from speedy.core.accounts.models import User
-
-    import factory
-    import factory.fuzzy
-
     if (django_settings.LOGIN_ENABLED):
+        import string
+        from datetime import date
+
+        import factory
+        import factory.fuzzy
+
+        from django import test as django_test
+
+        from speedy.core.base.test import tests_settings
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
+        from speedy.core.base.utils import normalize_username
+        from speedy.core.accounts.models import User
+
+
         class DjangoTestCaseWithMixin(SpeedyCoreAccountsModelsMixin, django_test.TestCase):
             pass
 

@@ -1,9 +1,9 @@
-from datetime import date, datetime
-from dateutil.relativedelta import relativedelta
-
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from datetime import date, datetime
+    from dateutil.relativedelta import relativedelta
+
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.utils import get_random_user_password
 

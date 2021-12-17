@@ -1,13 +1,14 @@
-import shutil
-
 from django.conf import settings as django_settings
-from django.core.management import call_command
-from django import test as django_test
-from django.test.runner import DiscoverRunner
-from django.contrib.sites.models import Site
-from django.utils.translation import gettext_lazy as _
 
 if (django_settings.TESTS):
+    import shutil
+
+    from django.core.management import call_command
+    from django import test as django_test
+    from django.test.runner import DiscoverRunner
+    from django.contrib.sites.models import Site
+    from django.utils.translation import gettext_lazy as _
+
     from speedy.core.base.test import tests_settings
 
 

@@ -1,8 +1,9 @@
 from django.conf import settings as django_settings
-from django.core.exceptions import ValidationError
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from django.core.exceptions import ValidationError
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.blocks.models import Block
