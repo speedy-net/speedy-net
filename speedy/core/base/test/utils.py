@@ -1,10 +1,10 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    import string
-    import random
-
     if (django_settings.LOGIN_ENABLED):
+        import string
+        import random
+
         from speedy.core.accounts.models import User
 
 
