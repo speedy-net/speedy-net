@@ -11,10 +11,11 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.friends.test.mixins import SpeedyCoreFriendsLanguageMixin
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-        from speedy.core.base.utils import get_both_genders_context_from_users
-        from speedy.core.accounts.models import User
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
+
+        from speedy.core.base.utils import get_both_genders_context_from_users
+        from speedy.core.accounts.models import User
 
 
         class UserFriendListViewTestCaseMixin(object):

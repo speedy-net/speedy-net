@@ -11,16 +11,17 @@ if (django_settings.TESTS):
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
-        from speedy.core.base.utils import to_attribute
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
         from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-        from speedy.match.accounts import utils, validators
-        from speedy.core.accounts.models import User
 
         from speedy.core.uploads.test.factories import UserImageFactory
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+
+        from speedy.core.base.utils import to_attribute
+        from speedy.match.accounts import utils, validators
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+        from speedy.core.accounts.models import User
 
 
         class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):

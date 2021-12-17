@@ -4,6 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
+
         from speedy.core.profiles.tests.test_views import UserMixinTextCaseMixin
 
 

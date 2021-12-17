@@ -12,11 +12,12 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_random_user_password
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-        from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
-        from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
+
+        from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
+        from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
         class RedirectMeMixin(object):

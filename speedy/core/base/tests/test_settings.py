@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     from speedy.core.base.test import tests_settings
     from speedy.core.base.test.models import SiteTestCase
+
     from speedy.core.base.utils import normalize_slug, normalize_username
 
 

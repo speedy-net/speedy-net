@@ -4,9 +4,9 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import factory
 
-        from speedy.core.messages.models import Chat
-
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
+
+        from speedy.core.messages.models import Chat
 
 
         class ChatFactory(factory.django.DjangoModelFactory):

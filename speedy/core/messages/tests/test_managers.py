@@ -6,10 +6,11 @@ if (django_settings.TESTS):
 
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.messages.models import Chat, Message, ReadMark
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.messages.test.factories import ChatFactory
+
+        from speedy.core.messages.models import Chat, Message, ReadMark
 
 
         @only_on_sites_with_login

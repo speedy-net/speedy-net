@@ -2,10 +2,10 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from speedy.core.accounts.test.user_factories import ActiveUserFactory
+
         from speedy.core.accounts.models import User
         from speedy.core.blocks.models import Block
-
-        from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
         class ViewProfileRulesTestCaseMixin(object):

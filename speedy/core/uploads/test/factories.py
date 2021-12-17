@@ -4,9 +4,9 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import factory
 
-        from speedy.core.uploads.models import File, Image
-
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
+
+        from speedy.core.uploads.models import File, Image
 
 
         class FileFactory(factory.django.DjangoModelFactory):

@@ -4,7 +4,9 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
+
         from speedy.core.accounts.tests.test_forms import ProfileNotificationsFormTestCaseMixin
+
         from speedy.match.accounts.forms import ProfileNotificationsForm
 
 

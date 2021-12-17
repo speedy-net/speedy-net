@@ -4,10 +4,11 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.messages.forms import MessageForm
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.messages.test.factories import ChatFactory
+
+        from speedy.core.messages.forms import MessageForm
 
 
         @only_on_sites_with_login

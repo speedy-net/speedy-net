@@ -3,8 +3,9 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     from django.db import connection
 
-    from speedy.core.base.utils import to_attribute
     from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
+
+    from speedy.core.base.utils import to_attribute
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 

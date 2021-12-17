@@ -13,6 +13,7 @@ if (django_settings.TESTS):
     from speedy.core.base.test.decorators import only_on_sites_with_login
     from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
+
     from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
 
     if (django_settings.LOGIN_ENABLED):

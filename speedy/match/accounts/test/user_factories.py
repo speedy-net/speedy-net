@@ -8,10 +8,10 @@ if (django_settings.TESTS):
 
         from django import test as django_test
 
-        from speedy.core.accounts.models import User
-
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
+
+        from speedy.core.accounts.models import User
 
 
         _test_case = django_test.TestCase()

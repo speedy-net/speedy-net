@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
+
     from speedy.core.base.middleware import RemoveExtraSlashesMiddleware
 
 

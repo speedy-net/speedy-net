@@ -6,10 +6,11 @@ if (django_settings.TESTS):
 
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
-        from speedy.core.accounts.models import User
-        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+
+        from speedy.core.accounts.models import User
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
         @only_on_speedy_net

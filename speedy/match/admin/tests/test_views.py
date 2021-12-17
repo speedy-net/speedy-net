@@ -7,6 +7,7 @@ if (django_settings.TESTS):
 
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
+
         from speedy.core.admin.tests.test_views import AdminViewBaseMixin
 
 
