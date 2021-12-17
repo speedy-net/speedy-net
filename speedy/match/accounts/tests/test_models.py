@@ -18,6 +18,7 @@ if (django_settings.TESTS):
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         from speedy.match.accounts import utils, validators
         from speedy.core.accounts.models import User
+
         from speedy.core.uploads.test.factories import UserImageFactory
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
 

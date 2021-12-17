@@ -17,6 +17,7 @@ if (django_settings.TESTS):
 
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.utils import get_random_user_password
+
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 

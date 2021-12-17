@@ -11,8 +11,9 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         from speedy.core.accounts.models import User
-        from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.blocks.models import Block
+
+        from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
         @only_on_speedy_match

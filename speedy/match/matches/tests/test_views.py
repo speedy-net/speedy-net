@@ -5,6 +5,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
+
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 

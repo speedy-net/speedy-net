@@ -13,10 +13,11 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
         from speedy.match.likes.test.mixins import SpeedyMatchLikesLanguageMixin
-        from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.blocks.models import Block
         from speedy.core.accounts.models import User
         from speedy.match.likes.models import UserLike
+
+        from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
         class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin):

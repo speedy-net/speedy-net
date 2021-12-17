@@ -8,9 +8,9 @@ if (django_settings.TESTS):
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
+        from speedy.core.admin.test.mixins import SpeedyCoreAdminLanguageMixin
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
-        from speedy.core.admin.test.mixins import SpeedyCoreAdminLanguageMixin
 
 
         class AdminViewBaseMixin(SpeedyCoreAdminLanguageMixin):

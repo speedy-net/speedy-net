@@ -10,6 +10,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin
         from speedy.core.contact_by_form.models import Feedback
+
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.uploads.test.factories import FileFactory
 

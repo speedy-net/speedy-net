@@ -26,6 +26,7 @@ if (django_settings.TESTS):
             def activate_profile(self, created, extracted, **kwargs):
                 from speedy.core.uploads.test.factories import UserImageFactory
                 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+
                 self.speedy_match_profile.profile_description = "One two three four five six seven eight nine ten eleven twelve."
                 self.city = "Tel Aviv."
                 self.speedy_match_profile.children = "One boy."

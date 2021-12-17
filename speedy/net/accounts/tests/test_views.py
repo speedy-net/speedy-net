@@ -7,6 +7,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_speedy_net
         from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin1, ActivateSiteProfileViewTestCaseMixin2
         from speedy.core.accounts.models import User
+
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
