@@ -8,6 +8,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
+
         class FileFactory(factory.django.DjangoModelFactory):
             owner = factory.SubFactory(ActiveUserFactory)
             file = factory.django.FileField()

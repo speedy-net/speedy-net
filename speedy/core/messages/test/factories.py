@@ -8,6 +8,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
+
         class ChatFactory(factory.django.DjangoModelFactory):
             ent1 = factory.SubFactory(ActiveUserFactory)
             ent2 = factory.SubFactory(ActiveUserFactory)
