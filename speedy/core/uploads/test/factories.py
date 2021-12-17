@@ -2,7 +2,6 @@ from django.conf import settings as django_settings
 
 from speedy.core.uploads.models import File, Image
 
-
 if (django_settings.TESTS):
     import factory
 

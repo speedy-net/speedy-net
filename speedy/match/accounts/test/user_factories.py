@@ -5,7 +5,6 @@ from django import test as django_test
 
 from speedy.core.accounts.models import User
 
-
 if (django_settings.TESTS):
     import factory
     import factory.fuzzy

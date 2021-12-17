@@ -4,13 +4,12 @@ from datetime import date
 from django.conf import settings as django_settings
 from django import test as django_test
 
-from speedy.core.base.test import tests_settings
-from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
-from speedy.core.base.utils import normalize_username
-from speedy.core.accounts.models import User
-
-
 if (django_settings.TESTS):
+    from speedy.core.base.test import tests_settings
+    from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
+    from speedy.core.base.utils import normalize_username
+    from speedy.core.accounts.models import User
+
     import factory
     import factory.fuzzy
 
