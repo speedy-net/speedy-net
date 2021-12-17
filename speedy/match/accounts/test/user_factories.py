@@ -7,7 +7,6 @@ from speedy.core.accounts.models import User
 
 if (django_settings.TESTS):
     import factory
-    import factory.fuzzy
 
     if (django_settings.LOGIN_ENABLED):
         _test_case = django_test.TestCase()

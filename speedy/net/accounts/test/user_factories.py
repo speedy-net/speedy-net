@@ -2,7 +2,6 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     import factory
-    import factory.fuzzy
 
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory

@@ -5,7 +5,6 @@ from speedy.core.accounts.models import UserEmailAddress
 
 if (django_settings.TESTS):
     import factory
-    import factory.fuzzy
 
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.accounts.test.base_user_factories import DefaultUserFactory
