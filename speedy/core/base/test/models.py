@@ -47,7 +47,7 @@ if (django_settings.TESTS):
         maxDiff = None
 
         def _pre_setup(self):
-            self.assertTrue(expr=django_settings.TESTS)
+            assert (django_settings.TESTS is True)
             return_value = super()._pre_setup()
             call_command('load_data', tests_settings.SITES_FIXTURE, verbosity=0)
             self.site = Site.objects.get_current()
