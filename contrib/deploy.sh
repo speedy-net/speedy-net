@@ -12,6 +12,8 @@ ${PIP} install --upgrade setuptools wheel
 # ${PIP} uninstall Django # installed from Speedy Net fork. # ~~~~ TODO: When we upgrade Django to 3.1.*, this will not be necessary.
 ${PIP} install --upgrade -r requirements.txt
 ${PIP} uninstall django-debug-toolbar # django-debug-toolbar should never be installed in production or staging.
+${PIP} uninstall factory-boy # factory-boy should never be installed in production or staging.
+${PIP} uninstall Faker # Faker should never be installed in production or staging.
 
 for site in ${SITES}
 do
