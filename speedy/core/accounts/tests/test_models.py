@@ -1,11 +1,8 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    from time import sleep
-    from datetime import datetime
-
     from django.test import override_settings
-    from django.db.utils import IntegrityError, DataError
+    from django.db.utils import DataError
     from django.core.exceptions import ValidationError
 
     from speedy.core.base.test import tests_settings
@@ -14,13 +11,20 @@ if (django_settings.TESTS):
     from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
     from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
 
-    from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
+    from speedy.core.accounts.models import Entity, ReservedUsername
 
     if (django_settings.LOGIN_ENABLED):
+        from time import sleep
+        from datetime import datetime
+
+        from django.db.utils import IntegrityError
+
         from speedy.core.base.test.utils import get_random_user_password
 
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
+
+        from speedy.core.accounts.models import User, UserEmailAddress
 
 
     class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
