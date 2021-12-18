@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from speedy.core import admin
+from speedy.net import admin
 from speedy.core.urls_with_login import urlpatterns
 
 app_name = 'speedy.net'
