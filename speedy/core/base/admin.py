@@ -73,17 +73,17 @@ admin.site.register(Friend, ReadOnlyModelAdmin)
 admin.site.register(FriendshipRequest, ReadOnlyModelAdmin)
 
 
-class Friend1(object):
+class _Friend(object):
     def __str__(self):
         return "User {} is friends with {}".format(self.to_user, self.from_user)
 
 
-class FriendshipRequest1(object):
+class _FriendshipRequest(object):
     def __str__(self):
         return "Friendship request from user {} to {}".format(self.from_user, self.to_user)
 
 
-Friend.__str__ = Friend1.__str__
-FriendshipRequest.__str__ = FriendshipRequest1.__str__
+Friend.__str__ = _Friend.__str__
+FriendshipRequest.__str__ = _FriendshipRequest.__str__
 
 
