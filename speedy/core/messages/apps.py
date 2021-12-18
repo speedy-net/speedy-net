@@ -3,6 +3,7 @@ from django.apps import AppConfig
 
 
 class SpeedyCoreMessagesAppConfig(AppConfig):
+    default = True
     name = 'speedy.core.messages'
     verbose_name = _("Messages")
     label = 'core_messages'

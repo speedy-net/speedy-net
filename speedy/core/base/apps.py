@@ -6,6 +6,7 @@ from speedy.core.patches import session_patches
 
 
 class SpeedyCoreBaseAppConfig(AppConfig):
+    default = True
     name = 'speedy.core.base'
     verbose_name = _("Speedy Core Base App")
     label = 'base'
