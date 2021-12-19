@@ -56,8 +56,7 @@ First make sure that you're using Python 3.8 or later (we recommend the latest P
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
-    pip install virtualenv # (as administrator)
-    virtualenv .venv
+    python3.8 -m venv .venv
     source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
