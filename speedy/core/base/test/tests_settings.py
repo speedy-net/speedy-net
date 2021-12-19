@@ -122,6 +122,14 @@ if (django_settings.TESTS):
         MAX_HEIGHT_TO_MATCH = 220  # In cm.
 
 
+    SITE_NAME_EN_DICT = {
+        django_settings.SPEEDY_NET_SITE_ID: "Speedy Net",
+        django_settings.SPEEDY_MATCH_SITE_ID: "Speedy Match",
+        django_settings.SPEEDY_COMPOSER_SITE_ID: "Speedy Composer",
+        django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "Speedy Mail Software",
+    }
+
+
     if (django_settings.LOGIN_ENABLED):
         # Generate a new random password for each test.
         USER_PASSWORD = get_random_user_password()
