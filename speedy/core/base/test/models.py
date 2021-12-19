@@ -74,9 +74,15 @@ if (django_settings.TESTS):
                 django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'he': "ספידי קומפוזר"}[self.language_code],
                 django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[self.language_code],
             }
+            self.assertEqual(first=self.site.id, second=django_settings.SITE_ID)
             self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
             self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
             self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
+            self.assertEqual(first=self.site.name, second=tests_settings.SITE_NAME_EN_DICT[django_settings.SITE_ID])
+            if (self.language_code == 'en'):
+                self.assertEqual(first=self.site_name, second=self.site.name)
+            else:
+                self.assertNotEqual(first=self.site_name, second=self.site.name)
             self.assertEqual(first=len(self.all_language_codes), second=2)
             self.assertEqual(first=len(self.all_other_language_codes), second=1)
             self.assertEqual(first=len(self.all_language_codes), second=len(set(self.all_language_codes)))
