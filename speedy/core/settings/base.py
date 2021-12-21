@@ -123,11 +123,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_FAIL_SILENTLY = False
 
 DATABASES = {
-    'default': env.db()
+    'default': env.db(),
 }
 
 CACHES = {
-    'default': env.cache()
+    'default': env.cache(),
 }
 
 DEFAULT_AUTHENTICATION_BACKEND = 'django.contrib.auth.backends.AllowAllUsersModelBackend'
