@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).parent.parent.parent.parent
 APP_DIR = ROOT_DIR / 'speedy' / 'core'
 env = environ.Env()
-environ.Env.read_env(str(ROOT_DIR / 'env.ini'))
+env.read_env(str(ROOT_DIR / 'env.ini'))
 
 
 def update_site_paths(settings):
