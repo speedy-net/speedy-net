@@ -6,7 +6,7 @@ from speedy.core.blocks.models import Block
 
 
 class BlockedUsersListView(UserMixin, PermissionRequiredMixin, generic.ListView):
-    permission_required = 'accounts.edit_profile'
+    permission_required = 'accounts.view_blocked_users_list'
     page_size = 24
     paginate_by = page_size
 
