@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.conf import settings as django_settings
 
-from rules import predicate, add_perm, remove_perm, always_allow
+from rules import predicate, add_perm, always_allow, always_deny
 
 from speedy.core.accounts.base_rules import is_self, is_active
 from speedy.core.accounts.rules import has_access_perm
@@ -26,16 +26,12 @@ def is_match_profile(user, other_user):
 
 
 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-    remove_perm('accounts.view_profile')
     add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
-    remove_perm('accounts.view_profile_header')
     add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & is_match_profile)
-    remove_perm('accounts.view_profile_info')
     add_perm('accounts.view_profile_info', has_access_perm & ~is_blocked & is_match_profile)
-    remove_perm('accounts.view_profile_age')
     add_perm('accounts.view_profile_age', always_allow)
     add_perm('accounts.view_profile_rank', has_access_perm & ~there_is_block & is_match_profile & ~is_self)
-    remove_perm('accounts.view_user_on_speedy_net_widget')
     add_perm('accounts.view_user_on_speedy_net_widget', has_access_perm & ~there_is_block & is_match_profile)
+    add_perm('accounts.view_user_on_speedy_match_widget', always_deny)
 
 

@@ -1,3 +1,5 @@
+from django.conf import settings as django_settings
+
 from rules import predicate, add_perm, always_deny
 
 from speedy.core.accounts.base_rules import is_self, is_active
@@ -73,16 +75,18 @@ def has_access_perm_for_email_address(user, email_address):
     return _has_access_perm_for_obj(user=user, other_user=email_address.user, access=email_address.access)
 
 
-add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
+if (not (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID)):
+    add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
+    add_perm('accounts.view_profile_header', has_access_perm)
+    add_perm('accounts.view_profile_info', has_access_perm)
+    add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
+    add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
+    add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
+
 add_perm('accounts.view_profile_username', has_access_perm & is_self)
-add_perm('accounts.view_profile_header', has_access_perm)
-add_perm('accounts.view_profile_info', has_access_perm)
 add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_perm_for_dob_day_month)
 add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
-add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
 add_perm('accounts.edit_profile', has_access_perm & is_self)
-add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
-add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary & ~email_address_is_only_confirmed_email)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
