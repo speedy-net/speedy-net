@@ -17,7 +17,7 @@ def friendship_request_received(user, other_user):
 
 
 @predicate
-def is_friend(user, other_user):
+def are_friends(user, other_user):
     return Friend.objects.are_friends(user1=user, user2=other_user)
 
 
@@ -31,13 +31,10 @@ def view_friend_list(user, other_user):
         return (is_self(user=user, other_user=other_user))
 
 
-are_friends = is_friend
-
-
-add_perm('friends.request', is_authenticated & ~is_self & ~friendship_request_sent & ~is_friend & ~there_is_block)
+add_perm('friends.request', is_authenticated & ~is_self & ~friendship_request_sent & ~are_friends & ~there_is_block)
 add_perm('friends.cancel_request', is_authenticated & friendship_request_sent)
 add_perm('friends.view_requests', is_self)
 add_perm('friends.view_friend_list', view_friend_list)
-add_perm('friends.remove', is_authenticated & is_friend)
+add_perm('friends.remove', is_authenticated & are_friends)
 
 
