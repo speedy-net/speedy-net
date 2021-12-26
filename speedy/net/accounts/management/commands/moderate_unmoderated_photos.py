@@ -63,7 +63,7 @@ class Command(BaseCommand):
                         thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
                         image.aws_raw_image_moderation_results = client.detect_moderation_labels(Image={'Bytes': thumbnail.read()}, MinConfidence=85)
                         for label in image.aws_raw_image_moderation_results["ModerationLabels"]:
-                            if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male", "Partial Nudity"]):
+                            if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male", "Partial Nudity", "Male Swimwear Or Underwear"]):
                                 labels_detected = True
                                 labels_detected_list.append(label["Name"])
                         if (labels_detected):
