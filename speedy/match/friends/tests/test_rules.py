@@ -17,6 +17,6 @@ if (django_settings.TESTS):
                 raise NotImplementedError()
 
             def test_user_cannot_view_another_user_friend_list(self):
-                self.assertFalse(expr=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user), expr2=False)
 
 

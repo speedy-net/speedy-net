@@ -36,36 +36,36 @@ if (django_settings.TESTS):
                 """
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_2 in matches_list)
+                self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_2 not in matches_list)
+                self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_2 in matches_list)
+                self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_2 not in matches_list)
+                self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_2 in matches_list)
+                self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_2 not in matches_list)
+                self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_2 not in matches_list)
+                self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_2 in matches_list)
+                self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
 
 
         @only_on_speedy_match
@@ -87,35 +87,35 @@ if (django_settings.TESTS):
                 """
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_4 in matches_list)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 self.user_4.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE, User.GENDER_MALE]
                 self.user_4.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_4 not in matches_list)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
                 self.user_4.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
                 self.user_4.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_4 in matches_list)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 self.user_5.speedy_match_profile.gender_to_match = [User.GENDER_OTHER]
                 self.user_5.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=0)
-                self.assertTrue(self.user_4 not in matches_list)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
                 self.user_5.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
                 self.user_5.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_4 in matches_list)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 self.user_5.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE]
                 self.user_5.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=2)
-                self.assertTrue(self.user_1 in matches_list)
-                self.assertTrue(self.user_2 not in matches_list)
-                self.assertTrue(self.user_3 in matches_list)
-                self.assertTrue(self.user_4 not in matches_list)
+                self.assertIs(expr1=self.user_1 in matches_list, expr2=True)
+                self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
+                self.assertIs(expr1=self.user_3 in matches_list, expr2=True)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
 
             # def test_matches_list_sorted_by_speedy_match_last_visit(self):
             #     """
@@ -387,7 +387,7 @@ if (django_settings.TESTS):
                     n_range, i_range = 3, 5
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_4 in matches_list)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 user_count = 5
                 user_count_list = list()
                 matches_list_length_list = list()
@@ -401,10 +401,10 @@ if (django_settings.TESTS):
                     matches_list_length_list.append(len(matches_list))
                     if (user_count < 700):
                         self.assertEqual(first=len(matches_list), second=user_count - 1)
-                        self.assertTrue(self.user_4 in matches_list)
+                        self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                     else:
                         self.assertEqual(first=len(matches_list), second=720)
-                    self.assertFalse(self.user_5 in matches_list)
+                    self.assertIs(expr1=self.user_5 in matches_list, expr2=False)
                 if ((n_range, i_range) == (6, 200)):
                     self.assertListEqual(list1=user_count_list, list2=[205, 405, 605, 805, 1005, 1205])
                     self.assertListEqual(list1=matches_list_length_list, list2=[204, 404, 604, 720, 720, 720])
@@ -421,19 +421,19 @@ if (django_settings.TESTS):
                 """
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_4 in matches_list)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_5 in matches_list)
+                self.assertIs(expr1=self.user_5 in matches_list, expr2=True)
                 self.user_4.photo.visible_on_website = False
                 self.user_4.photo.save()
                 self.user_4.save_user_and_profile()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=3)
-                self.assertTrue(self.user_4 not in matches_list)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
                 self.assertEqual(first=len(matches_list), second=4)
-                self.assertTrue(self.user_5 in matches_list)
+                self.assertIs(expr1=self.user_5 in matches_list, expr2=True)
 
             def test_cannot_delete_site_profiles_with_queryset_delete(self):
                 with self.assertRaises(NotImplementedError) as cm:

@@ -54,11 +54,11 @@ if (django_settings.TESTS):
 
                 output = core_messages_tags_and_filters.annotate_chats_with_read_marks(chat_list=chats, entity=user_1)
                 self.assertEqual(first=output, second='')
-                self.assertFalse(expr=chats[0].is_unread)
-                self.assertFalse(expr=chats[1].is_unread)
-                self.assertTrue(expr=chats[2].is_unread)
-                self.assertFalse(expr=chats[3].is_unread)
-                self.assertTrue(expr=chats[4].is_unread)
+                self.assertIs(expr1=chats[0].is_unread, expr2=False)
+                self.assertIs(expr1=chats[1].is_unread, expr2=False)
+                self.assertIs(expr1=chats[2].is_unread, expr2=True)
+                self.assertIs(expr1=chats[3].is_unread, expr2=False)
+                self.assertIs(expr1=chats[4].is_unread, expr2=True)
 
 
         @only_on_sites_with_login
@@ -78,15 +78,15 @@ if (django_settings.TESTS):
 
                 output = core_messages_tags_and_filters.annotate_messages_with_read_marks(message_list=messages, entity=user_1)
                 self.assertEqual(first=output, second='')
-                self.assertFalse(expr=messages[0].is_unread)
-                self.assertFalse(expr=messages[1].is_unread)
-                self.assertTrue(expr=messages[2].is_unread)
+                self.assertIs(expr1=messages[0].is_unread, expr2=False)
+                self.assertIs(expr1=messages[1].is_unread, expr2=False)
+                self.assertIs(expr1=messages[2].is_unread, expr2=True)
 
                 output = core_messages_tags_and_filters.annotate_messages_with_read_marks(message_list=messages, entity=user_2)
                 self.assertEqual(first=output, second='')
-                self.assertFalse(expr=messages[0].is_unread)
-                self.assertFalse(expr=messages[1].is_unread)
-                self.assertFalse(expr=messages[2].is_unread)
+                self.assertIs(expr1=messages[0].is_unread, expr2=False)
+                self.assertIs(expr1=messages[1].is_unread, expr2=False)
+                self.assertIs(expr1=messages[2].is_unread, expr2=False)
 
 
         @only_on_sites_with_login

@@ -17,7 +17,7 @@ if (django_settings.TESTS):
                 raise NotImplementedError()
 
             def test_doron_and_jennifer_have_no_access(self):
-                self.assertFalse(expr=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer))
-                self.assertFalse(expr=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron))
+                self.assertIs(expr1=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer), expr2=False)
+                self.assertIs(expr1=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron), expr2=False)
 
 

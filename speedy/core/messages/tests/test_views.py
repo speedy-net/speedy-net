@@ -204,7 +204,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=chat.last_message, second=message)
                 self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
                 self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
-                self.assertTrue(expr=chat.is_private)
+                self.assertIs(expr1=chat.is_private, expr2=True)
                 self.assertEqual(first=len(mail.outbox), second=1)
                 self.assertEqual(first=mail.outbox[0].subject, second={
                     django_settings.SPEEDY_NET_SITE_ID: self._you_have_a_new_message_on_speedy_net_subject,
@@ -252,7 +252,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=chat.last_message, second=message)
                 self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
                 self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
-                self.assertTrue(expr=chat.is_private)
+                self.assertIs(expr1=chat.is_private, expr2=True)
                 self.assertEqual(first=len(mail.outbox), second=1)
                 self.assertEqual(first=mail.outbox[0].subject, second={
                     django_settings.SPEEDY_NET_SITE_ID: self._you_have_a_new_message_on_speedy_net_subject,
@@ -300,7 +300,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=chat.last_message, second=message)
                 self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
                 self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
-                self.assertTrue(expr=chat.is_private)
+                self.assertIs(expr1=chat.is_private, expr2=True)
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_user_cannot_submit_the_form_with_text_too_long_1(self):

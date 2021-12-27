@@ -214,8 +214,8 @@ if (django_settings.TESTS):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_valid_json_errors_dict_by_field_name(field_name=field_name))
 
             def save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name_list, value_to_test, null):
-                self.assertTrue(expr=(isinstance(field_name_list, (list, tuple))))
-                self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
+                self.assertIs(expr1=(isinstance(field_name_list, (list, tuple))), expr2=True)
+                self.assertIs(expr1=(isinstance(value_to_test, (list, tuple))), expr2=True)
                 self.assertEqual(first=len(field_name_list), second=len(value_to_test))
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
@@ -339,7 +339,7 @@ if (django_settings.TESTS):
                     valid_values = SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES
                 elif (field_name in ['min_max_age_to_match']):
                     values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES]
-                    self.assertTrue(expr=all((len(value) == 2) for value in values_to_test_valid_ages))
+                    self.assertIs(expr1=all((len(value) == 2) for value in values_to_test_valid_ages), expr2=True)
                     values_to_test = []
                     if (test_settings["test_invalid_values_to_save"]):
                         values_to_test.extend([(value, value) for value in self._empty_values_to_test + self._non_int_string_values_to_test])
@@ -348,7 +348,7 @@ if (django_settings.TESTS):
                         self.assert_list_2_contains_all_elements_in_list_1(list_1=values_to_test_valid_ages, list_2=values_to_test)
                     else:
                         values_to_test.extend(values_to_test_valid_ages)
-                    self.assertTrue(expr=all((len(value) == 2) for value in values_to_test))
+                    self.assertIs(expr1=all((len(value) == 2) for value in values_to_test), expr2=True)
                     if (test_settings["test_invalid_values_to_save"]):
                         valid_values_to_save = [value for value in values_to_test if (all(isinstance(value[i], int) for i in range(len(value))))]
                         valid_values = [value for value in values_to_test_valid_ages if (value[0] <= value[1])]
@@ -440,9 +440,9 @@ if (django_settings.TESTS):
                     invalid_values = [value for value in values_to_test if (value not in valid_values)]
                 self.assert_valid_values_ok(values_to_test=values_to_test, valid_values_to_assign=valid_values_to_assign, valid_values_to_save=valid_values_to_save, valid_values=valid_values, invalid_values=invalid_values)
                 if (field_name in ['profile_picture']):
-                    self.assertTrue(expr=test_settings["test_invalid_values_to_assign"])
+                    self.assertIs(expr1=test_settings["test_invalid_values_to_assign"], expr2=True)
                 else:
-                    self.assertFalse(expr=test_settings["test_invalid_values_to_assign"])
+                    self.assertIs(expr1=test_settings["test_invalid_values_to_assign"], expr2=False)
                 if (test_settings["test_invalid_values_to_assign"]):
                     self.assertLess(a=len(valid_values_to_assign), b=len(values_to_test))
                 else:
@@ -547,14 +547,14 @@ if (django_settings.TESTS):
                             if (not (value_is_valid)):
                                 self.assertEqual(first=step, second=test_settings["expected_step"])
                                 if (field_name in ['min_max_age_to_match']):
-                                    self.assertTrue(expr=(isinstance(value_to_test, (list, tuple))))
+                                    self.assertIs(expr1=(isinstance(value_to_test, (list, tuple))), expr2=True)
                                     if (all(value_to_test[i] in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES for i in range(2))):
                                         expected_error_messages_len = 1
                                         expected_error_messages_key = "expected_error_messages_min_age_to_match_and_max_age_to_match_valid"
                                         fields_and_error_messages = [(field_name, "expected_error_message_min_age_to_match_and_max_age_to_match_valid")]
                                         error_message_min_age_to_match_and_max_age_to_match_valid_count += 1
                                     else:
-                                        self.assertTrue(expr=test_settings["test_invalid_ages"])
+                                        self.assertIs(expr1=test_settings["test_invalid_ages"], expr2=True)
                                         expected_error_messages_len = 2
                                         expected_error_messages_key = "expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"
                                         fields_and_error_messages = []

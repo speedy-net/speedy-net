@@ -184,8 +184,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=entity.username, second=user.username)
                 self.assertEqual(first=entity.slug, second=user.slug)
                 self.assertEqual(first=len(entity.id), second=15)
-                self.assertTrue(expr=user.check_password(raw_password=self.password))
-                self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=self.password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
                 self.assertEqual(first=user.first_name, second=self.first_name)
                 self.assertEqual(first=user.last_name, second=self.last_name)
                 self.assert_user_first_and_last_name_in_all_languages(user=user)
@@ -201,8 +201,8 @@ if (django_settings.TESTS):
                     user_unconfirmed_email_addresses_count=1,
                 )
                 self.assertEqual(first=user.email_addresses.first().email, second='email@example.com')
-                self.assertFalse(expr=user.email_addresses.first().is_confirmed)
-                self.assertTrue(expr=user.email_addresses.first().is_primary)
+                self.assertIs(expr1=user.email_addresses.first().is_confirmed, expr2=False)
+                self.assertIs(expr1=user.email_addresses.first().is_primary, expr2=True)
                 for (key, value) in self.data.items():
                     if (not (key in ['new_password1', 'date_of_birth'])):
                         self.assertEqual(first=getattr(user, key), second=value)
@@ -436,18 +436,18 @@ if (django_settings.TESTS):
                 else:
                     self.assertRedirects(response=r, expected_url='/registration-step-2/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                     r = self.client.get(path='/registration-step-2/')
-                self.assertTrue(expr=r.context['user'].is_authenticated)
+                self.assertIs(expr1=r.context['user'].is_authenticated, expr2=True)
                 self.assertEqual(first=r.context['user'].username, second='user1234')
                 self.assertEqual(first=r.context['user'].slug, second='user-1234')
-                self.assertTrue(expr=r.context['user'].is_active)
-                self.assertTrue(expr=r.context['user'].speedy_net_profile.is_active)
-                self.assertFalse(expr=r.context['user'].speedy_match_profile.is_active)
+                self.assertIs(expr1=r.context['user'].is_active, expr2=True)
+                self.assertIs(expr1=r.context['user'].speedy_net_profile.is_active, expr2=True)
+                self.assertIs(expr1=r.context['user'].speedy_match_profile.is_active, expr2=False)
                 if (django_settings.ACTIVATE_PROFILE_AFTER_REGISTRATION):
-                    self.assertTrue(expr=r.context['user'].profile.is_active)
+                    self.assertIs(expr1=r.context['user'].profile.is_active, expr2=True)
                     self.assertEqual(first=r.context['user'].profile, second=r.context['user'].speedy_net_profile)
                     self.assertNotEqual(first=r.context['user'].profile, second=r.context['user'].speedy_match_profile)
                 else:
-                    self.assertFalse(expr=r.context['user'].profile.is_active)
+                    self.assertIs(expr1=r.context['user'].profile.is_active, expr2=False)
                     self.assertEqual(first=r.context['user'].profile, second=r.context['user'].speedy_match_profile)
                     self.assertNotEqual(first=r.context['user'].profile, second=r.context['user'].speedy_net_profile)
                 self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step, second=2)
@@ -470,7 +470,7 @@ if (django_settings.TESTS):
                 user = User.objects.get(username=self.username)
                 email = user.email_addresses.first()
                 email_address = UserEmailAddress.objects.get(email='email@example.com')
-                self.assertFalse(expr=email.is_confirmed)
+                self.assertIs(expr1=email.is_confirmed, expr2=False)
                 self.assertEqual(first=email.confirmation_sent, second=1)
                 self.assertEqual(first=mail.outbox[0].subject, second={
                     django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[user.get_gender()],
@@ -818,7 +818,7 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/logout/')
                 self.assertEqual(first=r.status_code, second=200)
                 r = self.client.get(path='/')
-                self.assertFalse(expr=r.context['user'].is_authenticated)
+                self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
 
 
         class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -1178,9 +1178,9 @@ if (django_settings.TESTS):
                 r = self.client.post(path=self.page_url, data=data)
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
                 user = User.objects.get(pk=self.user.pk)
-                self.assertTrue(expr=user.check_password(raw_password=new_password))
-                self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
-                self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=incorrect_new_password), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_old_password_incorrect(self):
                 incorrect_old_password = '7' * 8
@@ -1194,9 +1194,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_old_password_was_entered_incorrectly_errors_dict())
                 user = User.objects.get(pk=self.user.pk)
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password))
-                self.assertFalse(expr=user.check_password(raw_password=incorrect_old_password))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=incorrect_old_password), expr2=False)
 
             def test_password_too_short(self):
                 new_password = '8' * 3
@@ -1209,8 +1209,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict(field_names=self._both_password_field_names))
                 user = User.objects.get(pk=self.user.pk)
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long(self):
                 new_password = '8' * 121
@@ -1223,8 +1223,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict(field_names=self._both_password_field_names))
                 user = User.objects.get(pk=self.user.pk)
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_passwords_dont_match(self):
                 new_password_1 = '8' * 8
@@ -1238,9 +1238,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._the_two_password_fields_didnt_match_errors_dict())
                 user = User.objects.get(pk=self.user.pk)
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password_1))
-                self.assertFalse(expr=user.check_password(raw_password=new_password_2))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password_1), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=new_password_2), expr2=False)
 
 
         @only_on_sites_with_login
@@ -1410,7 +1410,7 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message])
-                self.assertTrue(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
+                self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=True)
 
             def test_wrong_user_login_redirects_to_logout(self):
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
@@ -1434,7 +1434,7 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._invalid_confirmation_link_error_message])
-                self.assertFalse(expr=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed)
+                self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=False)
 
 
         @only_on_sites_with_login
@@ -1513,7 +1513,7 @@ if (django_settings.TESTS):
                 }
                 r = self.client.post(path='/edit-profile/emails/add/', data=data)
                 email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
-                self.assertFalse(expr=email_address.is_primary)
+                self.assertIs(expr1=email_address.is_primary, expr2=False)
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
@@ -1542,7 +1542,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
                 email_address = UserEmailAddress.objects.get(email='email@example.com')
-                self.assertFalse(expr=email_address.is_primary)
+                self.assertIs(expr1=email_address.is_primary, expr2=False)
                 self.assertEqual(first=len(mail.outbox), second=1)
                 self.assertEqual(first=mail.outbox[0].subject, second={
                     django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.user.get_gender()],
@@ -1583,7 +1583,7 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
                 email_address = UserEmailAddress.objects.get(email='email@example.com')
-                self.assertTrue(expr=email_address.is_primary)
+                self.assertIs(expr1=email_address.is_primary, expr2=True)
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,

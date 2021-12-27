@@ -30,13 +30,13 @@ if (django_settings.TESTS):
                 self.jennifer = self.get_active_user_jennifer()
 
             def test_user_and_other_user_have_access(self):
-                self.assertTrue(expr=self.user.has_perm(perm='accounts.view_profile', obj=self.other_user))
-                self.assertTrue(expr=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='accounts.view_profile', obj=self.other_user), expr2=True)
+                self.assertIs(expr1=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user), expr2=True)
 
             def test_user_and_other_user_have_no_access_if_blocked(self):
                 Block.objects.block(blocker=self.other_user, blocked=self.user)
-                self.assertFalse(expr=self.user.has_perm(perm='accounts.view_profile', obj=self.other_user))
-                self.assertFalse(expr=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='accounts.view_profile', obj=self.other_user), expr2=False)
+                self.assertIs(expr1=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user), expr2=False)
 
             def test_doron_and_jennifer_have_access(self):
                 raise NotImplementedError()

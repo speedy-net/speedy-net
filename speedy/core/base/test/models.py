@@ -100,10 +100,10 @@ if (django_settings.TESTS):
             # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
             # print("tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
             # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
-            self.assertTrue(expr=(15 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 23))
-            self.assertTrue(expr=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 33))
-            self.assertTrue(expr=(15 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 23))
-            self.assertTrue(expr=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33))
+            self.assertIs(expr1=(15 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 23), expr2=True)
+            self.assertIs(expr1=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST) < 33), expr2=True)
+            self.assertIs(expr1=(15 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 23), expr2=True)
+            self.assertIs(expr1=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33), expr2=True)
 
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE

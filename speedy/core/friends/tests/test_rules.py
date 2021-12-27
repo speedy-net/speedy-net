@@ -20,19 +20,19 @@ if (django_settings.TESTS):
                 self.other_user = ActiveUserFactory()
 
             def test_user_can_send_request_to_other_user(self):
-                self.assertTrue(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.request', obj=self.other_user), expr2=True)
 
             def test_user_cannot_send_request_to_other_user_if_blocked(self):
                 Block.objects.block(blocker=self.other_user, blocked=self.user)
-                self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
-                self.assertFalse(expr=self.other_user.has_perm(perm='friends.request', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.request', obj=self.other_user), expr2=False)
+                self.assertIs(expr1=self.other_user.has_perm(perm='friends.request', obj=self.user), expr2=False)
 
             def test_user_cannot_send_request_to_themself(self):
-                self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.request', obj=self.user), expr2=False)
 
             def test_user_cannot_send_second_request(self):
                 Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
-                self.assertFalse(expr=self.user.has_perm(perm='friends.request', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.request', obj=self.other_user), expr2=False)
 
 
         @only_on_sites_with_login
@@ -43,10 +43,10 @@ if (django_settings.TESTS):
                 self.other_user = ActiveUserFactory()
 
             def test_user_cannot_view_incoming_requests_for_other_user(self):
-                self.assertFalse(expr=self.user.has_perm(perm='friends.view_requests', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.view_requests', obj=self.other_user), expr2=False)
 
             def test_user_can_view_incoming_requests(self):
-                self.assertTrue(expr=self.user.has_perm(perm='friends.view_requests', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.view_requests', obj=self.user), expr2=True)
 
 
         @only_on_sites_with_login
@@ -57,7 +57,7 @@ if (django_settings.TESTS):
                 self.other_user = ActiveUserFactory()
 
             def test_user_can_view_his_own_friend_list(self):
-                self.assertTrue(expr=self.user.has_perm(perm='friends.view_friend_list', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.user), expr2=True)
 
             def test_user_can_view_another_user_friend_list(self):
                 raise NotImplementedError()
@@ -75,16 +75,16 @@ if (django_settings.TESTS):
                 Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
 
             def test_user_can_remove_other_user(self):
-                self.assertTrue(expr=self.user.has_perm(perm='friends.remove', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.remove', obj=self.other_user), expr2=True)
 
             def test_other_user_can_remove_user(self):
-                self.assertTrue(expr=self.other_user.has_perm(perm='friends.remove', obj=self.user))
+                self.assertIs(expr1=self.other_user.has_perm(perm='friends.remove', obj=self.user), expr2=True)
 
             def test_user_cannot_remove_themself(self):
-                self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.remove', obj=self.user), expr2=False)
 
             def test_user_cannot_remove_other_user_if_not_friends(self):
                 Friend.objects.remove_friend(from_user=self.user, to_user=self.other_user)
-                self.assertFalse(expr=self.user.has_perm(perm='friends.remove', obj=self.other_user))
+                self.assertIs(expr1=self.user.has_perm(perm='friends.remove', obj=self.other_user), expr2=False)
 
 

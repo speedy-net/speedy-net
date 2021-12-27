@@ -20,7 +20,7 @@ if (django_settings.TESTS):
                 user = ActiveUserFactory()
                 chat = ChatFactory(ent1=user)
                 form = MessageForm(from_entity=user, chat=chat, data=data)
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 message = form.save()
                 self.assertEqual(first=message.chat, second=chat)
                 self.assertEqual(first=message.sender.user, second=user)

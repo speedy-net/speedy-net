@@ -61,7 +61,7 @@ if (django_settings.TESTS):
                     if (slug_dict["slug_length"] >= User.settings.MIN_SLUG_LENGTH):
                         form = RegistrationForm(language_code=self.language_code, data=data)
                         form.full_clean()
-                        self.assertTrue(expr=form.is_valid())
+                        self.assertIs(expr1=form.is_valid(), expr2=True)
                         self.assertDictEqual(d1=form.errors, d2={})
                         user = form.save()
                         self.assertEqual(first=User.objects.filter(username=username).count(), second=1)
@@ -72,7 +72,7 @@ if (django_settings.TESTS):
                     else:
                         form = RegistrationForm(language_code=self.language_code, data=data)
                         form.full_clean()
-                        self.assertFalse(expr=form.is_valid())
+                        self.assertIs(expr1=form.is_valid(), expr2=False)
                         self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=User, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
                         self.assertEqual(first=User.objects.filter(username=username).count(), second=0)
                         model_save_failures_count += 1
@@ -90,7 +90,7 @@ if (django_settings.TESTS):
             def test_visitor_can_register(self):
                 form = RegistrationForm(language_code=self.language_code, data=self.data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assert_models_count(
@@ -109,8 +109,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=entity.username, second=user.username)
                 self.assertEqual(first=entity.slug, second=user.slug)
                 self.assertEqual(first=len(entity.id), second=15)
-                self.assertTrue(expr=user.check_password(raw_password=self.password))
-                self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=self.password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
                 self.assertEqual(first=user.first_name, second=self.first_name)
                 self.assertEqual(first=user.first_name_en, second=self.first_name)
                 self.assertEqual(first=user.first_name_he, second=self.first_name)
@@ -129,8 +129,8 @@ if (django_settings.TESTS):
                     user_unconfirmed_email_addresses_count=1,
                 )
                 self.assertEqual(first=user.email_addresses.first().email, second='email@example.com')
-                self.assertFalse(expr=user.email_addresses.first().is_confirmed)
-                self.assertTrue(expr=user.email_addresses.first().is_primary)
+                self.assertIs(expr1=user.email_addresses.first().is_confirmed, expr2=False)
+                self.assertIs(expr1=user.email_addresses.first().is_primary, expr2=True)
                 for (key, value) in self.data.items():
                     if (not (key in ['new_password1', 'date_of_birth'])):
                         self.assertEqual(first=getattr(user, key), second=value)
@@ -141,7 +141,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'this-is-a-slug'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assertEqual(first=user.slug, second='this-is-a-slug')
@@ -152,7 +152,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'this.is__a.slug'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assertEqual(first=user.slug, second='this-is-a-slug')
@@ -163,7 +163,7 @@ if (django_settings.TESTS):
                 data['slug'] = '--this--is---a--slug--'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assertEqual(first=user.slug, second='this-is-a-slug')
@@ -174,7 +174,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'THIS-IS-A-SLUG'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assertEqual(first=user.slug, second='this-is-a-slug')
@@ -185,7 +185,7 @@ if (django_settings.TESTS):
                 data['email'] = 'EMAIL22@EXAMPLE.COM'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 email_addresses = UserEmailAddress.objects.filter(user=user)
@@ -195,7 +195,7 @@ if (django_settings.TESTS):
             def run_test_required_fields(self, data):
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
 
             def test_required_fields_1(self):
@@ -225,7 +225,7 @@ if (django_settings.TESTS):
                 )
                 form = RegistrationForm(language_code=self.language_code, data=self.data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._this_email_is_already_in_use_errors_dict())
                 self.assert_models_count(
                     entity_count=1,
@@ -270,7 +270,7 @@ if (django_settings.TESTS):
                 )
                 form = RegistrationForm(language_code=self.language_code, data=self.data)
                 form.full_clean()
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
                 user = form.save()
                 self.assert_models_count(
@@ -301,7 +301,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'webmaster'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
 
             def test_slug_validation_fails_with_reserved_and_too_short_username(self):
@@ -309,7 +309,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'mail'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=4))
 
             def test_slug_validation_fails_with_username_already_taken(self):
@@ -318,7 +318,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'valid-slug'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._this_username_is_already_taken_errors_dict(slug_fail=True))
 
             def test_slug_validation_ok(self):
@@ -328,7 +328,7 @@ if (django_settings.TESTS):
                     data['slug'] = slug
                     form = RegistrationForm(language_code=self.language_code, data=data)
                     form.full_clean()
-                    self.assertTrue(expr=form.is_valid())
+                    self.assertIs(expr1=form.is_valid(), expr2=True)
                     self.assertDictEqual(d1=form.errors, d2={})
                     user = form.save()
                     self.assert_models_count(
@@ -360,7 +360,7 @@ if (django_settings.TESTS):
                     data['slug'] = slug
                     form = RegistrationForm(language_code=self.language_code, data=data)
                     form.full_clean()
-                    self.assertFalse(expr=form.is_valid())
+                    self.assertIs(expr1=form.is_valid(), expr2=False)
                     self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=username_value_length))
 
             def test_slug_and_username_min_length_ok(self):
@@ -383,7 +383,7 @@ if (django_settings.TESTS):
                 data['slug'] = 'a' * 201
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_value_length=201))
 
             def test_slug_validation_fails_with_invalid_username_regex(self):
@@ -393,7 +393,7 @@ if (django_settings.TESTS):
                     data['slug'] = slug
                     form = RegistrationForm(language_code=self.language_code, data=data)
                     form.full_clean()
-                    self.assertFalse(expr=form.is_valid(), msg="{} is a valid slug.".format(slug))
+                    self.assertIs(expr1=form.is_valid(), expr2=False, msg="{} is a valid slug.".format(slug))
                     self.assertDictEqual(d1=form.errors, d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True), msg='"{}" - Unexpected error messages.'.format(slug))
 
             def test_cannot_register_invalid_email(self):
@@ -401,7 +401,7 @@ if (django_settings.TESTS):
                 data['email'] = 'email'
                 form = RegistrationForm(language_code=self.language_code, data=data)
                 form.full_clean()
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._enter_a_valid_email_address_errors_dict())
 
             def test_invalid_date_of_birth_list_fail(self):
@@ -410,7 +410,7 @@ if (django_settings.TESTS):
                     data['date_of_birth'] = date_of_birth
                     form = RegistrationForm(language_code=self.language_code, data=data)
                     form.full_clean()
-                    self.assertFalse(expr=form.is_valid(), msg="{} is a valid date of birth.".format(date_of_birth))
+                    self.assertIs(expr1=form.is_valid(), expr2=False, msg="{} is a valid date of birth.".format(date_of_birth))
                     self.assertDictEqual(d1=form.errors, d2=self._date_of_birth_errors_dict_by_date_of_birth(date_of_birth=date_of_birth), msg='"{}" - Unexpected error messages.'.format(date_of_birth))
 
 
@@ -548,7 +548,7 @@ if (django_settings.TESTS):
                     'password': 'wrong password!!',
                 }
                 form = SiteProfileDeactivationForm(user=self.user, data=data)
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._invalid_password_errors_dict())
 
             def test_correct_password(self):
@@ -556,7 +556,7 @@ if (django_settings.TESTS):
                     'password': tests_settings.USER_PASSWORD,
                 }
                 form = SiteProfileDeactivationForm(user=self.user, data=data)
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 self.assertDictEqual(d1=form.errors, d2={})
 
 

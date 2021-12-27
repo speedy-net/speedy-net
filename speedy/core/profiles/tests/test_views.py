@@ -159,7 +159,7 @@ if (django_settings.TESTS):
                 self.user.access_dob_day_month = UserAccessField.ACCESS_FRIENDS
                 self.user.save()
                 Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.user, user2=self.other_user), expr2=True)
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
@@ -273,7 +273,7 @@ if (django_settings.TESTS):
 
             def test_user_profile_deactivated_user_from_friend(self):
                 Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.user, user2=self.other_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.user, user2=self.other_user), expr2=True)
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
                 self.deactivate_user()
                 r = self.client.get(path=self.user_profile_url)

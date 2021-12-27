@@ -172,9 +172,9 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 
             def test_user_cannot_send_friendship_request_to_a_friend(self):
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 Friend.objects.add_friend(from_user=self.first_user, to_user=self.second_user).accept()
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.second_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
@@ -312,11 +312,11 @@ if (django_settings.TESTS):
 
             def test_user_that_has_received_request_can_accept_it(self):
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
                 self.assertIsNone(obj=r.context)
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
@@ -329,11 +329,11 @@ if (django_settings.TESTS):
                 for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
                     Friend.objects.add_friend(from_user=self.second_user, to_user=ActiveUserFactory()).accept()
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
                 self.assertIsNone(obj=r.context)
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
@@ -346,16 +346,16 @@ if (django_settings.TESTS):
                 for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
                     Friend.objects.add_friend(from_user=self.second_user, to_user=ActiveUserFactory()).accept()
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_already_have_friends_error_message_by_user_number_of_friends_and_gender(user_number_of_friends=4, gender=self.second_user.get_gender())])
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
             def test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self):
@@ -363,11 +363,11 @@ if (django_settings.TESTS):
                 for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
                     Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertTrue(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
                 self.assertIsNone(obj=r.context)
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
@@ -380,16 +380,16 @@ if (django_settings.TESTS):
                 for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
                     Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(other_user_number_of_friends=4, both_genders=get_both_genders_context_from_users(user=self.second_user, other_user=self.first_user))])
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
 
 
         @only_on_sites_with_login
@@ -429,11 +429,11 @@ if (django_settings.TESTS):
 
             def test_user_that_has_received_request_can_reject_it(self):
                 self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 r = self.client.post(path=self.page_url)
                 expected_url = self.first_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertFalse(expr=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user))
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
                 self.assertEqual(first=self.second_user.friendship_requests_received.count(), second=0)
                 self.assertIsNone(obj=r.context)
                 r = self.client.get(path=expected_url)

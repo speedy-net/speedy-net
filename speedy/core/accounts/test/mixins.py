@@ -140,7 +140,7 @@ if (django_settings.TESTS):
             return {'email': [self._this_email_is_already_in_use_error_message]}
 
         def _this_username_is_already_taken_errors_dict(self, slug_fail=False, username_fail=False):
-            self.assertTrue(expr=slug_fail)
+            self.assertIs(expr1=slug_fail, expr2=True)
             errors_dict = {}
             if (slug_fail):
                 errors_dict['slug'] = [self._this_username_is_already_taken_error_message]

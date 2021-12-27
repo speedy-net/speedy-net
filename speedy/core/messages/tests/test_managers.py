@@ -67,8 +67,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=Chat.objects.count(), second=1)
                 chat = message.chat
                 self.assertEqual(first=chat.participants_count, second=2)
-                self.assertTrue(expr=chat.is_private)
-                self.assertFalse(expr=chat.is_group)
+                self.assertIs(expr1=chat.is_private, expr2=True)
+                self.assertIs(expr1=chat.is_group, expr2=False)
                 self.assertEqual(first=chat.ent1.id, second=user_1.id)
                 self.assertEqual(first=chat.ent2.id, second=user_2.id)
                 entities_ids = set(ent.id for ent in chat.participants)

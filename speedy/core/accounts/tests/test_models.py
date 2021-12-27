@@ -661,13 +661,13 @@ if (django_settings.TESTS):
                 user = DefaultUserFactory()
                 UserEmailAddressFactory(user=user, is_confirmed=False)
                 UserEmailAddressFactory(user=user, is_confirmed=False)
-                self.assertFalse(expr=user.has_confirmed_email)
+                self.assertIs(expr1=user.has_confirmed_email, expr2=False)
 
             def test_has_a_confirmed_email(self):
                 user = DefaultUserFactory()
                 UserEmailAddressFactory(user=user, is_confirmed=False)
                 UserEmailAddressFactory(user=user, is_confirmed=True)
-                self.assertTrue(expr=user.has_confirmed_email)
+                self.assertIs(expr1=user.has_confirmed_email, expr2=True)
 
             def test_user_id_length(self):
                 user = DefaultUserFactory()
@@ -798,31 +798,31 @@ if (django_settings.TESTS):
                 new_password = '8' * 8
                 incorrect_new_password = '7' * 8
                 user = DefaultUserFactory()
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 user.set_password(raw_password=new_password)
-                self.assertTrue(expr=user.check_password(raw_password=new_password))
-                self.assertFalse(expr=user.check_password(raw_password=incorrect_new_password))
-                self.assertFalse(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=incorrect_new_password), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_password_too_short_exception(self):
                 new_password = '8' * 3
                 user = DefaultUserFactory()
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 with self.assertRaises(ValidationError) as cm:
                     user.set_password(raw_password=new_password)
                 self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message])
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long_exception(self):
                 new_password = '8' * 121
                 user = DefaultUserFactory()
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 with self.assertRaises(ValidationError) as cm:
                     user.set_password(raw_password=new_password)
                 self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
-                self.assertTrue(expr=user.check_password(raw_password=tests_settings.USER_PASSWORD))
-                self.assertFalse(expr=user.check_password(raw_password=new_password))
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_valid_date_of_birth_list_ok(self):
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:

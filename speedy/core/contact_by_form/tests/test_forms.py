@@ -16,7 +16,7 @@ if (django_settings.TESTS):
 
         class FeedbackFormTestCaseMixin(SpeedyCoreFeedbackLanguageMixin):
             def assert_form_text_field(self, form):
-                self.assertTrue(expr=form.fields['text'].required)
+                self.assertIs(expr1=form.fields['text'].required, expr2=True)
 
             def test_feedback_form_for_visitor_displays_name_and_email(self):
                 defaults = {
@@ -24,8 +24,8 @@ if (django_settings.TESTS):
                 }
                 form = FeedbackForm(defaults=defaults)
                 self.assertListEqual(list1=list(form.fields.keys()), list2=self._feedback_form_all_the_required_fields_keys(user_is_logged_in=False))
-                self.assertTrue(expr=form.fields['sender_name'].required)
-                self.assertTrue(expr=form.fields['sender_email'].required)
+                self.assertIs(expr1=form.fields['sender_name'].required, expr2=True)
+                self.assertIs(expr1=form.fields['sender_email'].required, expr2=True)
                 self.assert_form_text_field(form=form)
 
             def test_visitor_cannot_submit_form_without_all_the_required_fields(self):
@@ -34,7 +34,7 @@ if (django_settings.TESTS):
                 }
                 data = {}
                 form = FeedbackForm(defaults=defaults, data=data)
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._feedback_form_all_the_required_fields_are_required_errors_dict(user_is_logged_in=False))
 
             @only_on_sites_with_login
@@ -57,7 +57,7 @@ if (django_settings.TESTS):
                 }
                 data = {}
                 form = FeedbackForm(defaults=defaults, data=data)
-                self.assertFalse(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._feedback_form_all_the_required_fields_are_required_errors_dict(user_is_logged_in=True))
 
             @only_on_sites_with_login
@@ -73,7 +73,7 @@ if (django_settings.TESTS):
                     'text': "I personally don't like this user.",
                 }
                 form = FeedbackForm(defaults=defaults, data=data)
-                self.assertTrue(expr=form.is_valid())
+                self.assertIs(expr1=form.is_valid(), expr2=True)
                 feedback = form.save()
                 self.assertEqual(first=feedback.sender, second=user)
                 self.assertEqual(first=feedback.sender_name, second='')
