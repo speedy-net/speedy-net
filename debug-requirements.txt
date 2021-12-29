@@ -1,2 +1,2 @@
-# python==3.6
-django-debug-toolbar==3.2.3
+# python==3.8
+django-debug-toolbar==3.2.4
