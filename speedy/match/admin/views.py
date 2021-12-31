@@ -301,7 +301,10 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                         else:
                             total_number_of_active_members_text += '<span style="color: #b10515;">'
                     else:
-                        total_number_of_active_members_text += '<span>'
+                        if (total_number_of_active_members_in_age_range >= 10):
+                            total_number_of_active_members_text += '<span>'
+                        else:
+                            total_number_of_active_members_text += '<span style="color: #b10515;">'
                 else:
                     total_number_of_active_members_text += '<span style="color: green;">'
                 total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range} females, {total_percent_of_male_active_members_in_age_range} males, {total_percent_of_other_active_members_in_age_range} others).").format(
@@ -362,7 +365,10 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                         else:
                             total_number_of_active_members_text += '<span style="color: #b10515;">'
                     else:
-                        total_number_of_active_members_text += '<span>'
+                        if (total_number_of_active_members_in_age_range_in_the_last_four_months >= 10):
+                            total_number_of_active_members_text += '<span>'
+                        else:
+                            total_number_of_active_members_text += '<span style="color: #b10515;">'
                 else:
                     total_number_of_active_members_text += '<span style="color: green;">'
                 total_number_of_active_members_text += _("Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} ({total_number_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_four_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months} others) entered the site in the last four months.").format(
