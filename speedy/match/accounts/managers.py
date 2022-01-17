@@ -169,8 +169,20 @@ class SiteProfileManager(BaseManager):
                 if (0 <= s < 120):  # 12/100
                     if (0 <= s < 12):
                         distance_offset = int((s % 3) * 2 / 10 * 6 * 30 + 0.5)
+                        if ((s % 3) * 2 == 0):
+                            other_user.speedy_match_profile._distance_between_users = "30.0 distance_offset #1"
+                        elif ((s % 3) * 2 == 2):
+                            other_user.speedy_match_profile._distance_between_users = "180.0 distance_offset #1"
+                        elif ((s % 3) * 2 == 4):
+                            other_user.speedy_match_profile._distance_between_users = "750.0 distance_offset #1"
                     else:
                         distance_offset = int((s % 3 + 3) * 2 / 10 * 6 * 30 + 0.5)
+                        if ((s % 3 + 3) * 2 == 6):
+                            other_user.speedy_match_profile._distance_between_users = "2100.0 distance_offset #1"
+                        elif ((s % 3 + 3) * 2 == 8):
+                            other_user.speedy_match_profile._distance_between_users = "4500.0 distance_offset #1"
+                        elif ((s % 3 + 3) * 2 == 10):
+                            other_user.speedy_match_profile._distance_between_users = "12000.0 distance_offset #1"
                     if (random.randint(0, 399) == 0):
                         logger.debug("SiteProfileManager::get_matches:distance_offset #1: {user} and {other_user}, s is {s}, distance offset is {distance_offset} .".format(
                             user=user,
