@@ -23,7 +23,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
     def send_mail(self, subject, message, *args, **kwargs):
         should_send_mail, count = self._should_send_mail(subject)
         if (should_send_mail):
-            if (count):
+            if (count > 1):
                 message = '{}\n\n{}'.format(self.COUNT_FORMAT.format(count), message)
                 if ('html_message' in kwargs):
                     kwargs['html_message'] = kwargs['html_message'].replace('<body>\n', '<body>\n{}\n'.format(self.COUNT_HTML_FORMAT.format(count)))
@@ -41,7 +41,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
                 'cooldown_count': 0,
             }
             cached_value = cache_manager.cache_get_or_set(mail_admins_key, value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
-            count = cached_value['cooldown_count']
+            count = cached_value['cooldown_count'] + 1
             if (cached_value == value):
                 # Not in cooldown period
                 should_send_mail = True
