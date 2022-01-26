@@ -18,12 +18,15 @@ def cache_key(type, subject):
 
 class AdminEmailHandler(log.AdminEmailHandler):
     COUNT_FORMAT = 'Count: {}'
+    COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
     def send_mail(self, subject, message, *args, **kwargs):
         should_send_mail, count = self._should_send_mail(subject)
         if (should_send_mail):
             if (count):
                 message = '{}\n\n{}'.format(self.COUNT_FORMAT.format(count), message)
+                if ('html_message' in kwargs):
+                    kwargs['html_message'] = kwargs['html_message'].replace('<body>\n', '<body>\n{}\n'.format(self.COUNT_HTML_FORMAT.format(count)))
             super().send_mail(subject, message, *args, **kwargs)
 
     def _should_send_mail(self, subject):
