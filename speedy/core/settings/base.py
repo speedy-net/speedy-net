@@ -272,7 +272,7 @@ LOGGING = {
         },
         'mail_admins': {  # for staging and production
             'level': 'INFO',
-            'class': 'django.utils.log.AdminEmailHandler',
+            'class': 'speedy.core.base.log.AdminEmailHandler',
             'formatter': 'verbose',
             'include_html': True,
         },
