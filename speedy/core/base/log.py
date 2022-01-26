@@ -47,7 +47,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
                 should_send_mail = True
             else:
                 # Consider adding lock
-                if (cached_value['cooldown_start_time'] - now >= MAIL_ADMINS_COOLDOWN_PERIOD):
+                if (now - cached_value['cooldown_start_time'] >= MAIL_ADMINS_COOLDOWN_PERIOD):
                     # Cooldown period passed, reset cooldown period
                     should_send_mail = True
                     cache_manager.cache_set(mail_admins_key, value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
