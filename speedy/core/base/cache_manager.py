@@ -62,6 +62,14 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
     return cache.set(key, wrapped_value, timeout=timeout, version=version)
 
 
+def cache_delete_many(keys, version=None):
+    """
+    :type keys: list[str]
+    :type version: int
+    """
+    cache.delete_many(keys, version=version)
+
+
 def _wrap(value, timeout):
     expire_time = None
     if (timeout is not None):
@@ -75,13 +83,5 @@ def _wrap(value, timeout):
         'expire_time': expire_time,
     }
     return wrapped_value
-
-
-def cache_delete_many(keys, version=None):
-    """
-    :type keys: list[str]
-    :type version: int
-    """
-    cache.delete_many(keys, version=version)
 
 
