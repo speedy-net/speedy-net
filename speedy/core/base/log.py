@@ -20,8 +20,8 @@ class AdminEmailHandler(log.AdminEmailHandler):
 
     def send_mail(self, subject, message, *args, **kwargs):
         should_send_mail, count = self._should_send_mail(subject)
-        if should_send_mail:
-            if count:
+        if (should_send_mail):
+            if (count):
                 message = ('Count: %s' % count) + message
             super().send_mail(subject, message, *args, **kwargs)
 
