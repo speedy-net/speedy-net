@@ -90,6 +90,7 @@
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
+        <div class="js-session" hidden></div>
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}
         {% block greeting %}
             {% comment %}

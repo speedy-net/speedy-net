@@ -268,3 +268,8 @@ if (isRTL) {
     };
 }
 
+if (window.storage !== null) {
+    var element = document.querySelector('.js-session');
+    // window.localStorage.setItem('logged-in', true);
+    window.localStorage.removeItem('logged-in');
+}
