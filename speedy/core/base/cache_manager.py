@@ -33,6 +33,19 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
     return wrapped_value['value']
 
 
+def cache_get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None):
+    """
+    :type key: str
+    :type default: object
+    :type timeout: int
+    :type version: int
+    """
+    if (not (USE_CACHE)):
+        return None
+
+    return cache.get_or_set(key, default, timeout=timeout, version=version)
+
+
 def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
     """
     :type key: str
