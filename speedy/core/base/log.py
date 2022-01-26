@@ -17,7 +17,7 @@ def cache_key(type, subject):
 
 
 class AdminEmailHandler(log.AdminEmailHandler):
-    COUNT_FORMAT = 'Count: {}'
+    COUNT_FORMAT = 'Number in the last hour: {}'
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
     def send_mail(self, subject, message, *args, **kwargs):
@@ -31,7 +31,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
 
     def _should_send_mail(self, subject):
         if (not (subject.startswith('WARNING'))):
-            return True, 0
+            return True, 1
 
         try:
             mail_admins_key = cache_key('mail_admins', subject)
@@ -39,9 +39,11 @@ class AdminEmailHandler(log.AdminEmailHandler):
             value = {
                 'cooldown_start_time': now,
                 'cooldown_count': 0,
+                'cooldown_timestamps': [],
             }
             cached_value = cache_manager.cache_get_or_set(mail_admins_key, value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
-            count = cached_value['cooldown_count'] + 1
+            # count = cached_value['cooldown_count'] + 1
+            count_last_hour = sum(1 for timestamp in cached_value['cooldown_timestamps'] if now - timestamp < MAIL_ADMINS_COOLDOWN_PERIOD) + 1
             if (cached_value == value):
                 # Not in cooldown period
                 should_send_mail = True
@@ -55,7 +57,8 @@ class AdminEmailHandler(log.AdminEmailHandler):
                     # Still in cooldown period, update cooldown count
                     should_send_mail = False
                     cached_value['cooldown_count'] += 1
+                    cached_value['cooldown_timestamps'].append(now)
                     cache_manager.cache_set(mail_admins_key, cached_value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
-            return should_send_mail, count
+            return should_send_mail, count_last_hour
         except Exception:
-            return True, 0
+            return True, 1
