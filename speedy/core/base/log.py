@@ -26,6 +26,9 @@ class AdminEmailHandler(log.AdminEmailHandler):
             super().send_mail(subject, message, *args, **kwargs)
 
     def _should_send_mail(self, subject):
+        if (not (subject.startswith('WARNING'))):
+            return True, 0
+
         try:
             mail_admins_key = cache_key('mail_admins', subject)
             now = time.time()
