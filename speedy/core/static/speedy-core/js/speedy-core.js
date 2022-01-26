@@ -110,12 +110,19 @@ evil.block('@@MessageList', {
 
     poll: function () {
         var _this = this;
+        if (window.localStorage !== null && window.localStorage.getItem('logged-in') === 'false') {
+            return;
+        }
         if (this.block.data('page-number') === 1) {
             var url = this.block.data('poll-url');
             var since = this.$('@message').first().data('timestamp');
             url += '?since=' + since;
-            $.get(url, function (data) {
+            $.ajax(url).done(function (data) {
                 $(data).prependTo(_this.block);
+            }).fail(function (jqXHR) {
+                if (jqXHR.status === 403 && window.localStorage !== null) {
+                    window.localStorage.setItem('logged-in', 'false');
+                }
             });
         }
     }
