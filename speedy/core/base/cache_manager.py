@@ -43,7 +43,9 @@ def cache_get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None):
     if (not (USE_CACHE)):
         return None
 
-    return cache.get_or_set(key, default, timeout=timeout, version=version)
+    wrapped_default = _wrap(default, timeout)
+    wrapped_value = cache.get_or_set(key, wrapped_default, timeout=timeout, version=version)
+    return wrapped_value['value']
 
 
 def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
