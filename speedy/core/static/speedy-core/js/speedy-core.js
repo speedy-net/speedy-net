@@ -110,8 +110,8 @@ evil.block('@@MessageList', {
 
     poll: function () {
         var _this = this;
-        if (!((window.localStorage !== null) && (window.localStorage.getItem('logged-in') === 'false'))) {
-            if (this.block.data('page-number') === 1) {
+        if (this.block.data('page-number') === 1) {
+            if (!((window.localStorage !== null) && (window.localStorage.getItem('logged-in') === 'false'))) {
                 var url = this.block.data('poll-url');
                 var since = this.$('@message').first().data('timestamp');
                 url += '?since=' + since;
