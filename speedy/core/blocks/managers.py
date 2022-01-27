@@ -30,7 +30,7 @@ def bust_cache(type, user_pk):
     """
     bust_keys = BUST_CACHES[type]
     keys = [CACHE_TYPES[k] % user_pk for k in bust_keys]
-    cache_manager.cache_delete_many(keys)
+    cache_manager.cache_delete_many(keys=keys)
 
 
 def ensure_caches(user):
@@ -42,21 +42,21 @@ def ensure_caches(user):
     if (not (isinstance(user, Entity))):
         return
 
-    blocked_key = cache_key('blocked', user.pk)
-    blocked_entities = cache_manager.cache_get(blocked_key, sliding_timeout=DEFAULT_TIMEOUT)
+    blocked_key = cache_key(type='blocked', user_pk=user.pk)
+    blocked_entities = cache_manager.cache_get(key=blocked_key, sliding_timeout=DEFAULT_TIMEOUT)
     if (blocked_entities is None):
         query.prefetch_related_objects([user], 'blocked_entities')
-        cache_manager.cache_set(blocked_key, user._prefetched_objects_cache['blocked_entities'])
+        cache_manager.cache_set(key=blocked_key, value=user._prefetched_objects_cache['blocked_entities'])
     else:
         if (not (hasattr(user, '_prefetched_objects_cache'))):
             user._prefetched_objects_cache = {}
         user._prefetched_objects_cache['blocked_entities'] = blocked_entities
 
-    blocking_key = cache_key('blocking', user.pk)
-    blocking_entities = cache_manager.cache_get(blocking_key, sliding_timeout=DEFAULT_TIMEOUT)
+    blocking_key = cache_key(type='blocking', user_pk=user.pk)
+    blocking_entities = cache_manager.cache_get(key=blocking_key, sliding_timeout=DEFAULT_TIMEOUT)
     if (blocking_entities is None):
         query.prefetch_related_objects([user], 'blocking_entities')
-        cache_manager.cache_set(blocking_key, user._prefetched_objects_cache['blocking_entities'])
+        cache_manager.cache_set(key=blocking_key, value=user._prefetched_objects_cache['blocking_entities'])
     else:
         if (not (hasattr(user, '_prefetched_objects_cache'))):
             user._prefetched_objects_cache = {}
@@ -68,8 +68,8 @@ class BlockManager(BaseManager):
         """
         Update caches after block or unblock.
         """
-        bust_cache('blocked', blocker.pk)
-        bust_cache('blocking', blocked.pk)
+        bust_cache(type='blocked', user_pk=blocker.pk)
+        bust_cache(type='blocking', user_pk=blocked.pk)
         if (hasattr(blocker, '_prefetched_objects_cache')):
             blocker._prefetched_objects_cache.pop('blocked_entities', None)
         if (hasattr(blocked, '_prefetched_objects_cache')):

@@ -18,7 +18,7 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
     if (not (USE_CACHE)):
         return None
 
-    wrapped_value = cache.get(key, default=DEFAULT_VALUE, version=version)
+    wrapped_value = cache.get(key=key, default=DEFAULT_VALUE, version=version)
     if (wrapped_value is DEFAULT_VALUE):
         return default
 
@@ -43,8 +43,8 @@ def cache_get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None):
     if (not (USE_CACHE)):
         return None
 
-    wrapped_default = _wrap(default, timeout)
-    wrapped_value = cache.get_or_set(key, wrapped_default, timeout=timeout, version=version)
+    wrapped_default = _wrap(value=default, timeout=timeout)
+    wrapped_value = cache.get_or_set(key=key, default=wrapped_default, timeout=timeout, version=version)
     return wrapped_value['value']
 
 
@@ -58,8 +58,8 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
     if (not (USE_CACHE)):
         return
 
-    wrapped_value = _wrap(value, timeout)
-    return cache.set(key, wrapped_value, timeout=timeout, version=version)
+    wrapped_value = _wrap(value=value, timeout=timeout)
+    return cache.set(key=key, value=wrapped_value, timeout=timeout, version=version)
 
 
 def cache_delete_many(keys, version=None):
@@ -67,7 +67,7 @@ def cache_delete_many(keys, version=None):
     :type keys: list[str]
     :type version: int
     """
-    cache.delete_many(keys, version=version)
+    cache.delete_many(keys=keys, version=version)
 
 
 def _wrap(value, timeout):

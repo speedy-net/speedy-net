@@ -13,7 +13,7 @@ MAIL_ADMINS_COOLDOWN_PERIOD = 3600  # 1 hour
 
 
 def cache_key(type, subject):
-    return CACHE_TYPES[type] % murmur3_32(subject)
+    return CACHE_TYPES[type] % murmur3_32(data=subject)
 
 
 class AdminEmailHandler(log.AdminEmailHandler):
@@ -21,7 +21,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
     def send_mail(self, subject, message, *args, **kwargs):
-        should_send_mail, count = self._should_send_mail(subject)
+        should_send_mail, count = self._should_send_mail(subject=subject)
         if (should_send_mail):
             if (count > 1):
                 message = '{}\n\n{}'.format(self.COUNT_FORMAT.format(count), message)
@@ -34,16 +34,16 @@ class AdminEmailHandler(log.AdminEmailHandler):
             return True, 1
 
         try:
-            mail_admins_key = cache_key('mail_admins', subject)
+            mail_admins_key = cache_key(type='mail_admins', subject=subject)
             now = time.time()
             value = {
                 'cooldown_start_time': now,
                 'cooldown_count': 0,
                 'cooldown_timestamps': [],
             }
-            cached_value = cache_manager.cache_get_or_set(mail_admins_key, value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
+            cached_value = cache_manager.cache_get_or_set(key=mail_admins_key, default=value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
             # count = cached_value['cooldown_count'] + 1
-            count_last_hour = sum(1 for timestamp in cached_value['cooldown_timestamps'] if now - timestamp < MAIL_ADMINS_COOLDOWN_PERIOD) + 1
+            count_last_hour = sum(1 for timestamp in cached_value['cooldown_timestamps'] if (now - timestamp < MAIL_ADMINS_COOLDOWN_PERIOD)) + 1
             if (cached_value == value):
                 # Not in cooldown period
                 should_send_mail = True
@@ -52,13 +52,15 @@ class AdminEmailHandler(log.AdminEmailHandler):
                 if (now - cached_value['cooldown_start_time'] >= MAIL_ADMINS_COOLDOWN_PERIOD):
                     # Cooldown period passed, reset cooldown period
                     should_send_mail = True
-                    cache_manager.cache_set(mail_admins_key, value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
+                    cache_manager.cache_set(key=mail_admins_key, value=value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
                 else:
                     # Still in cooldown period, update cooldown count
                     should_send_mail = False
                     cached_value['cooldown_count'] += 1
                     cached_value['cooldown_timestamps'].append(now)
-                    cache_manager.cache_set(mail_admins_key, cached_value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
+                    cache_manager.cache_set(key=mail_admins_key, value=cached_value, timeout=MAIL_ADMINS_COOLDOWN_PERIOD)
             return should_send_mail, count_last_hour
         except Exception:
             return True, 1
+
+
