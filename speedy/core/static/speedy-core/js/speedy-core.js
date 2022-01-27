@@ -110,20 +110,19 @@ evil.block('@@MessageList', {
 
     poll: function () {
         var _this = this;
-        if ((window.localStorage !== null) && (window.localStorage.getItem('logged-in') === 'false')) {
-            return;
-        }
-        if (this.block.data('page-number') === 1) {
-            var url = this.block.data('poll-url');
-            var since = this.$('@message').first().data('timestamp');
-            url += '?since=' + since;
-            $.ajax(url).done(function (data) {
-                $(data).prependTo(_this.block);
-            }).fail(function (jqXHR) {
-                if ((jqXHR.status === 403) && (window.localStorage !== null)) {
-                    window.localStorage.setItem('logged-in', 'false');
-                }
-            });
+        if (!((window.localStorage !== null) && (window.localStorage.getItem('logged-in') === 'false'))) {
+            if (this.block.data('page-number') === 1) {
+                var url = this.block.data('poll-url');
+                var since = this.$('@message').first().data('timestamp');
+                url += '?since=' + since;
+                $.ajax(url).done(function (data) {
+                    $(data).prependTo(_this.block);
+                }).fail(function (jqXHR) {
+                    if ((jqXHR.status === 403) && (window.localStorage !== null)) {
+                        window.localStorage.setItem('logged-in', 'false');
+                    }
+                });
+            }
         }
     }
 });
@@ -209,10 +208,9 @@ evil.block('@@Uploader', {
     'change on @fileInput': function (event) {
         event.preventDefault();
         files = this.fileInput[0].files;
-        if (!files.length) {
-            return;
+        if (files.length) {
+            this.startUpload(files[0]);
         }
-        this.startUpload(files[0]);
     }
 
 });
