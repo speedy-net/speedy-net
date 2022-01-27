@@ -90,7 +90,6 @@
 
 {% block login_logout_register %}
     {% if request.user.is_authenticated %}
-        <div class="js-session" hidden></div>
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}
         {% block greeting %}
             {% comment %}
@@ -182,6 +181,11 @@
                     speedy.setSession('{{ other_site.domain }}', '{{ request.session.session_key|default:'' }}');
                 {% endif %}
             {% endfor %}
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            if (window.localStorage !== null) {
+                window.localStorage.removeItem('logged-in');
+            }
         {% endif %}
     </script>
 {% endblock %}

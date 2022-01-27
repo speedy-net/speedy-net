@@ -110,7 +110,7 @@ evil.block('@@MessageList', {
 
     poll: function () {
         var _this = this;
-        if (window.localStorage !== null && window.localStorage.getItem('logged-in') === 'false') {
+        if ((window.localStorage !== null) && (window.localStorage.getItem('logged-in') === 'false')) {
             return;
         }
         if (this.block.data('page-number') === 1) {
@@ -120,7 +120,7 @@ evil.block('@@MessageList', {
             $.ajax(url).done(function (data) {
                 $(data).prependTo(_this.block);
             }).fail(function (jqXHR) {
-                if (jqXHR.status === 403 && window.localStorage !== null) {
+                if ((jqXHR.status === 403) && (window.localStorage !== null)) {
                     window.localStorage.setItem('logged-in', 'false');
                 }
             });
@@ -268,8 +268,3 @@ if (isRTL) {
     };
 }
 
-if (window.storage !== null) {
-    var element = document.querySelector('.js-session');
-    // window.localStorage.setItem('logged-in', true);
-    window.localStorage.removeItem('logged-in');
-}
