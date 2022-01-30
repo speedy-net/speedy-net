@@ -3,6 +3,10 @@
 {% load i18n %}
 {% load core_tags_and_filters %}
 
+{% block google_ads %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
+{% endblock %}
+
 {% block footer_extra_links_1 %}
     <p>
         <a href="//www.{{ site.domain }}/" class="black">{% trans site.name %}, {% now 'Y' %}</a>
