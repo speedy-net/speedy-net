@@ -9,6 +9,8 @@
 
 {% block title %}{% trans 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
+{% block google_ads %}{% endblock %}
+
 {% block extra_css %}
     {{ block.super }}
     {% if form %}

@@ -5,3 +5,5 @@
 
 {% block title %}{{ block.super }} - {% if view.report_entity %}{% trans 'Report a User' context user.get_gender %}{% elif view.report_file %}{% trans 'Report a Photo' %}{% else %}{% trans 'Contact Us' %}{% endif %}{% endblock %}
 
+{% block google_ads %}{% endblock %}
+
