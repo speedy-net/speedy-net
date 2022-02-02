@@ -43,6 +43,10 @@ class ReadOnlyModelAdmin(ReadOnlyModelAdminMixin, ModelAdmin):
         return False
 
 
+class ReadOnlyModelAdmin2000(ReadOnlyModelAdmin):
+    list_per_page = 2000
+
+
 class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
     list_per_page = 5000
 
