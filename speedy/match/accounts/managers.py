@@ -20,6 +20,10 @@ class SiteProfileManager(BaseManager):
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
         if (user.pk == other_user.pk):
             return self.model.RANK_0
+        if ((not (user.speedy_match_profile.is_active)) or (not (other_user.speedy_match_profile.is_active))):
+            return self.model.RANK_0
+        if (user.speedy_match_profile.not_allowed_to_use_speedy_match or other_user.speedy_match_profile.not_allowed_to_use_speedy_match):
+            return self.model.RANK_0
         if (not (other_user.photo.visible_on_website)):
             return self.model.RANK_0
         if (other_user.gender not in user.speedy_match_profile.gender_to_match):
@@ -31,8 +35,6 @@ class SiteProfileManager(BaseManager):
         if (not (other_user.speedy_match_profile.min_age_to_match <= user.get_age() <= other_user.speedy_match_profile.max_age_to_match)):
             return self.model.RANK_0
         if (not ((self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH) and (self.model.settings.MIN_HEIGHT_TO_MATCH <= other_user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH))):
-            return self.model.RANK_0
-        if (user.speedy_match_profile.not_allowed_to_use_speedy_match or other_user.speedy_match_profile.not_allowed_to_use_speedy_match):
             return self.model.RANK_0
         if (other_user.pk in blocked_users_ids):
             return self.model.RANK_0
@@ -124,7 +126,7 @@ class SiteProfileManager(BaseManager):
                 blocked_users_ids=blocked_users_ids,
                 blocking_users_ids=blocking_users_ids,
             )
-            if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
+            if ((user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 self._ensure_cached_counts(other_user=other_user)
                 other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
                 other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
@@ -290,13 +292,16 @@ class SiteProfileManager(BaseManager):
                             other_user.speedy_match_profile._user_last_visit_days_offset -= 0 * 30
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
-            # This is an error. All users should have ranks more than 0.
-            logger.error('SiteProfileManager::get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
-                user=user,
-                language_code=language_code,
-                number_of_users=len(user_list),
-                number_of_matches=len(matches_list),
-            ))
+            if (((not (user.speedy_match_profile.is_active)) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)) and (len(matches_list) == 0)):
+                pass
+            else:
+                # This is an error. All users should have ranks more than 0.
+                logger.error('SiteProfileManager::get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                    user=user,
+                    language_code=language_code,
+                    number_of_users=len(user_list),
+                    number_of_matches=len(matches_list),
+                ))
         matches_list = sorted(matches_list, key=lambda u: (-(max([((timezone_now - u.speedy_match_profile.last_visit).days + u.speedy_match_profile._user_last_visit_days_offset), 0]) // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         matches_list = matches_list[:720]
         # Save number of matches in this language in user's profile.
@@ -364,17 +369,20 @@ class SiteProfileManager(BaseManager):
                 blocked_users_ids=blocked_users_ids,
                 blocking_users_ids=blocking_users_ids,
             )
-            if ((other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
+            if ((user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 matches_list.append(other_user)
         if (not (len(matches_list) == len(user_list))):
-            # This is an error. All users should have ranks more than 0.
-            logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
-                user=user,
-                language_code=language_code,
-                from_list_len=len(from_list),
-                number_of_users=len(user_list),
-                number_of_matches=len(matches_list),
-            ))
+            if (((not (user.speedy_match_profile.is_active)) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)) and (len(matches_list) == 0)):
+                pass
+            else:
+                # This is an error. All users should have ranks more than 0.
+                logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                    user=user,
+                    language_code=language_code,
+                    from_list_len=len(from_list),
+                    number_of_users=len(user_list),
+                    number_of_matches=len(matches_list),
+                ))
         matches_list = sorted(matches_list, key=lambda u: (-((timezone_now - u.speedy_match_profile.last_visit).days // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
         logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
             user=user,
