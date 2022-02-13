@@ -52,11 +52,11 @@ You can find more details in the specifications.
 
 ## How to setup the project and run locally
 
-First make sure that you're using Python 3.8 or later (we recommend the latest Python version).
+First make sure that you're using Python 3.9 or later (we recommend the latest Python version).
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
-    python3.8 -m venv .venv
+    python3.9 -m venv .venv
     source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
@@ -87,7 +87,7 @@ To run Speedy Match server:
 
     cd speedy/match
     ./manage.py run_server 8020
-    
+
 To install the requirements for tests:
 
     pip install --upgrade -r tests-requirements.txt
@@ -145,20 +145,20 @@ Install all dependencies using **apt-get**:
     sudo add-apt-repository -y ppa:deadsnakes/ppa
     sudo add-apt-repository -y "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
     sudo apt update
-    sudo apt-get install python3.8 python3-pip python3.8-venv python3.8-dev  # common python stuff
+    sudo apt-get install python3.9 python3-pip python3.9-venv python3.9-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql-13 postgresql-client-13 postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
 
 Build **uwsgi** plugin:
 
-    PYTHON=python3.8 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python38"
-    mv python38_plugin.so /usr/lib/uwsgi/plugins
+    PYTHON=python3.9 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python39"
+    mv python39_plugin.so /usr/lib/uwsgi/plugins
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
 
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
-    python3.8 -m venv env
+    python3.9 -m venv env
     source env/bin/activate
     python -m pip install --upgrade pip
     pip install --upgrade setuptools wheel
