@@ -284,17 +284,17 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
@@ -306,7 +306,7 @@ LOGGING = {
         'speedy': {
             'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
-            'propagate': True,
+            'propagate': False,
         },
     },
 }
