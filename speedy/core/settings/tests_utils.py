@@ -37,12 +37,12 @@ LOGGING = {
             'filters': ['require_debug_true'],
         },
     },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': True,
+    },
     'loggers': {
-        'root': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
         'django': {
             'handlers': ['console'],
             'level': 'DEBUG',
