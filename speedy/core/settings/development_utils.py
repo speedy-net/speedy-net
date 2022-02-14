@@ -40,17 +40,17 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': [],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['console'],
+            'handlers': [],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['console'],
+            'handlers': [],
             'level': 'DEBUG',
             'propagate': True,
         },
@@ -60,7 +60,7 @@ LOGGING = {
             'propagate': False,
         },
         'speedy': {
-            'handlers': ['console'],
+            'handlers': [],
             'level': 'DEBUG',
             'propagate': True,
         },
@@ -72,7 +72,7 @@ def activate_development(settings):
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
         'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],
-        'INSTALLED_APPS': settings['INSTALLED_APPS'] + ['debug_toolbar'],
+        # 'INSTALLED_APPS': settings['INSTALLED_APPS'] + ['debug_toolbar'],
         'LOGGING': LOGGING,
         'USE_HTTPS': False,
         'SESSION_COOKIE_SECURE': False,
