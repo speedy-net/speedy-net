@@ -219,7 +219,7 @@ if (django_settings.TESTS):
                     r = self.client.post(path='/', data=self.data)
                     for call in mocked_emit.call_args_list:
                         log_record = call.args[-1]
-                        if ('New user' in log_record.message):
+                        if (log_record.msg.startswith('New user')):
                             log_records.append(log_record)
                 self.assertEqual(first=len(log_records), second=1)
 
