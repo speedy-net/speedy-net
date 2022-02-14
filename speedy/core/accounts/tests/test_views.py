@@ -211,6 +211,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=getattr(user, key), second=value)
                 self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
 
+            @override_settings(DEBUG=True)
             def test_visitor_register_logs_one_record(self):
                 log_records = []
                 console_handler = next(h for h in logging.root.handlers if h.name == 'console')
