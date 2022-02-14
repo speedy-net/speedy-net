@@ -1,3 +1,6 @@
+import logging
+from unittest import mock
+
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -207,6 +210,17 @@ if (django_settings.TESTS):
                     if (not (key in ['new_password1', 'date_of_birth'])):
                         self.assertEqual(first=getattr(user, key), second=value)
                 self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
+
+            def test_visitor_register_logs_one_record(self):
+                log_records = []
+                console_handler = next(h for h in logging.getLogger('root').handlers if h.name == 'console')
+                with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
+                    r = self.client.post(path='/', data=self.data)
+                    for call in mocked_emit.call_args_list:
+                        log_record = call.args[-1]
+                        if ('New user' in log_record.message):
+                            log_records.append(log_record)
+                self.assertEqual(first=len(log_records), second=1)
 
             def run_test_required_fields(self, data):
                 r = self.client.post(path='/', data=data)
