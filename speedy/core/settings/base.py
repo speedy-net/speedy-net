@@ -277,12 +277,12 @@ LOGGING = {
             'include_html': True,
         },
     },
+    'root': {
+        'handlers': ['console', 'file', 'mail_admins'],
+        'level': 'INFO',
+        'propagate': True,
+    },
     'loggers': {
-        'root': {
-            'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'INFO',
-            'propagate': True,
-        },
         'django': {
             'handlers': ['console', 'file', 'mail_admins'],
             'level': 'INFO',

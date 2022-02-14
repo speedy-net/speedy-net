@@ -213,7 +213,7 @@ if (django_settings.TESTS):
             @override_settings(DEBUG=True)
             def test_visitor_register_logs_one_record(self):
                 log_records = []
-                console_handler = next(h for h in logging.getLogger('root').handlers if h.name == 'console')
+                console_handler = next(h for h in logging.root.handlers if h.name == 'console')
                 with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
                     r = self.client.post(path='/', data=self.data)
                     for call in mocked_emit.call_args_list:
