@@ -1,10 +1,9 @@
-import logging
-from unittest import mock
-
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import logging
+        from unittest import mock
         from datetime import date, datetime
 
         from django.test import override_settings
