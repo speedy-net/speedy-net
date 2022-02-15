@@ -235,14 +235,6 @@ LOGGING = {
             'format': '[{server_time}] {message}',
             'style': '{',
         },
-        #         'verbose': {
-        # #            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        #             'format': '%(asctime)s %(name)s %(levelname)s: %(message)s',
-        #             'datefmt': '%Y-%m-%d %H:%M:%S',
-        #         },
-        #         'simple': {
-        #             'format': '%(levelname)s %(message)s'
-        #         },
     },
     'filters': {
         'require_debug_true': {
@@ -277,24 +269,24 @@ LOGGING = {
             'include_html': True,
         },
     },
+    'root': {
+        'handlers': ['console', 'file', 'mail_admins'],
+        'level': 'INFO',
+        'propagate': True,
+    },
     'loggers': {
-        'root': {
-            'handlers': ['console', 'file', 'mail_admins'],
-            'level': 'INFO',
-            'propagate': True,
-        },
         'django': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
         'django.db.backends': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
         'django.template': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': [],
             'level': 'INFO',
             'propagate': True,
         },
@@ -306,7 +298,7 @@ LOGGING = {
         'speedy': {
             'handlers': ['console', 'file', 'mail_admins'],
             'level': 'DEBUG',
-            'propagate': True,
+            'propagate': False,
         },
     },
 }
