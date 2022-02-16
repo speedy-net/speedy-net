@@ -71,7 +71,7 @@ def activate_tests(settings):
         'MEDIA_ROOT': TESTS_MEDIA_ROOT,
         'LOGGING': LOGGING,
         'TESTS': True,
-        'DEBUG': True,
+        'DEBUG': False,  # Django sets it to False anyway.
     })
 
 
