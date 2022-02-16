@@ -128,7 +128,7 @@ if (django_settings.TESTS):
 
 
     class OVERRIDE_LOGGING_SETTINGS(object):
-        LOGGING = copy.copy(django_settings.LOGGING)
+        LOGGING = copy.deepcopy(django_settings.LOGGING)
         LOGGING['loggers']['speedy']['handlers'] = ['console']
 
 
