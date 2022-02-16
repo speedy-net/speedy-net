@@ -30,6 +30,9 @@ class AdminEmailHandler(log.AdminEmailHandler):
             super().send_mail(subject, message, *args, **kwargs)
 
     def _should_send_mail(self, subject):
+        if (subject == "INFO: Found credentials in shared credentials file: ~/.aws/credentials"):
+            return False, 1
+
         if (not (subject.startswith('WARNING'))):
             return True, 1
 
