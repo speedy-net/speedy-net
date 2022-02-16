@@ -2,8 +2,12 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     import copy
+    import logging.config
     from datetime import date, datetime
     from dateutil.relativedelta import relativedelta
+
+    from django.core.signals import setting_changed
+    from django.dispatch import receiver
 
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.utils import get_random_user_password
@@ -139,5 +143,10 @@ if (django_settings.TESTS):
         # Generate a new random password for each test.
         USER_PASSWORD = get_random_user_password()
         # USER_PASSWORD = 'vjha9c4q44zs'
+
+    @receiver(setting_changed)
+    def logging_changed(**kwargs):
+        if kwargs['setting'] == 'LOGGING':
+            logging.config.dictConfig(kwargs['value'])
 
 
