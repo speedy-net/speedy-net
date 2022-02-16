@@ -1,6 +1,7 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    import copy
     from datetime import date, datetime
     from dateutil.relativedelta import relativedelta
 
@@ -122,13 +123,17 @@ if (django_settings.TESTS):
         MAX_HEIGHT_TO_MATCH = 220  # In cm.
 
 
+    class OVERRIDE_LOGGING_SETTINGS(object):
+        LOGGING = copy.copy(django_settings.LOGGING)
+        LOGGING['loggers']['speedy']['handlers'] = ['console']
+
+
     SITE_NAME_EN_DICT = {
         django_settings.SPEEDY_NET_SITE_ID: "Speedy Net",
         django_settings.SPEEDY_MATCH_SITE_ID: "Speedy Match",
         django_settings.SPEEDY_COMPOSER_SITE_ID: "Speedy Composer",
         django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "Speedy Mail Software",
     }
-
 
     if (django_settings.LOGIN_ENABLED):
         # Generate a new random password for each test.

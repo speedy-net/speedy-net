@@ -210,8 +210,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=getattr(user, key), second=value)
                 self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
 
-            @override_settings(DEBUG=True)
-            def test_visitor_register_logs_one_record(self):
+            def run_test_visitor_register_logs_n_records(self, number_of_records_logged):
                 log_records = []
                 console_handler = next(h for h in logging.root.handlers if h.name == 'console')
                 with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
@@ -220,7 +219,15 @@ if (django_settings.TESTS):
                         log_record = call.args[-1]
                         if (log_record.msg.startswith('New user')):
                             log_records.append(log_record)
-                self.assertEqual(first=len(log_records), second=1)
+                self.assertEqual(first=len(log_records), second=number_of_records_logged)
+
+            @override_settings(DEBUG=True)
+            def test_visitor_register_logs_one_record(self):
+                self.run_test_visitor_register_logs_n_records(number_of_records_logged=1)
+
+            @override_settings(LOGGING=tests_settings.OVERRIDE_LOGGING_SETTINGS.LOGGING, DEBUG=True)
+            def test_visitor_register_logs_two_records_with_override_settings(self):
+                self.run_test_visitor_register_logs_n_records(number_of_records_logged=2)
 
             def run_test_required_fields(self, data):
                 r = self.client.post(path='/', data=data)
