@@ -66,7 +66,7 @@ LOGGING = {
 
 def activate_tests(settings):
     settings.update({
-        'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'EMAIL_BACKEND': 'django.core.mail.backends.locmem.EmailBackend',  # Django sets it to locmem.EmailBackend anyway.
         'TESTS_MEDIA_ROOT': TESTS_MEDIA_ROOT,
         'MEDIA_ROOT': TESTS_MEDIA_ROOT,
         'LOGGING': LOGGING,
