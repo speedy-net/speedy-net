@@ -144,9 +144,9 @@ if (django_settings.TESTS):
         USER_PASSWORD = get_random_user_password()
         # USER_PASSWORD = 'vjha9c4q44zs'
 
-    @receiver(setting_changed)
+    @receiver(signal=setting_changed)
     def logging_changed(**kwargs):
         if kwargs['setting'] == 'LOGGING':
-            logging.config.dictConfig(kwargs['value'])
+            logging.config.dictConfig(config=kwargs['value'])
 
 
