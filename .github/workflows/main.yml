@@ -59,7 +59,7 @@ jobs:
       - run: pwd
       - run: lsb_release -a
       - run: |
-          for version in 14 15 16
+          for version in 14 15 16 17 18
           do
             sudo apt-get -y remove postgresql-$version postgresql-client-$version || true
             sudo pg_dropcluster $version main || true
