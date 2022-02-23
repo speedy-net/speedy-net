@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 06:56+0200\n"
+"POT-Creation-Date: 2022-02-23 07:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1901,7 +1901,7 @@ msgid ""
 "image."
 msgstr "תמונת הפרופיל שלך לא יכולה להיות שקופה. העלה/י בבקשה תמונה לא שקופה."
 
-#: .\accounts\apps.py:7
+#: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
@@ -2413,7 +2413,7 @@ msgstr ""
 "אדמין: {total_number_of_members_registered_in_year} חברים נרשמו לאתר בשנת "
 "{year}."
 
-#: .\base\apps.py:10
+#: .\base\apps.py:11
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
@@ -2453,7 +2453,7 @@ msgstr "חסמת את {}."
 msgid "You have unblocked {}."
 msgstr "ביטלת את חסימת {}."
 
-#: .\contact_by_form\apps.py:7
+#: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
 msgstr "Contact By Form"
 
@@ -2537,11 +2537,11 @@ msgstr "בקשת החברות התקבלה."
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
-#: .\messages\apps.py:7 .\templates\base_with_login.html:40
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:19
+#: .\templates\messages\chat_list.html:23
 msgid "Messages"
 msgstr "הודעות"
 
@@ -2633,14 +2633,14 @@ msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:197
-#: .\templates\base_without_login.html:9
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:202
+#: .\templates\base_without_login.html:13
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
-#: .\templates\accounts\edit_profile\core_base.html:10
+#: .\templates\accounts\edit_profile\core_base.html:12
 #: .\templates\base_with_login.html:50 .\templates\base_with_login.html:104
 #: .\templates\base_with_login.html:106 .\templates\base_with_login.html:154
 #: .\templates\profiles\tools\edit_profile.html:4
@@ -2648,25 +2648,25 @@ msgstr "אודות"
 msgid "Edit Profile"
 msgstr "עריכת פרופיל"
 
-#: .\templates\accounts\edit_profile\core_base.html:17
+#: .\templates\accounts\edit_profile\core_base.html:19
 msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
-#: .\templates\accounts\edit_profile\core_base.html:23
-#: .\templates\base_with_login.html:198
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:203
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
 
-#: .\templates\accounts\edit_profile\core_base.html:29
+#: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
 msgstr "התראות"
 
-#: .\templates\accounts\edit_profile\core_base.html:35
+#: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
 msgstr "דואר אלקטרוני וסיסמה"
 
-#: .\templates\accounts\edit_profile\core_base.html:43
+#: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
 msgstr "הקפא/י את פעילות החשבון"
 
@@ -2866,28 +2866,28 @@ msgstr "דף הבית"
 msgid "Password"
 msgstr "סיסמה"
 
-#: .\templates\base_with_login.html:198
+#: .\templates\base_with_login.html:203
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
-#: .\templates\privacy\privacy_policy.html:13
+#: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base_with_login.html:199
+#: .\templates\base_with_login.html:204
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
-#: .\templates\terms\terms_of_service.html:13
+#: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base_with_login.html:199
+#: .\templates\base_with_login.html:204
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:10
+#: .\templates\base_with_login.html:205 .\templates\base_without_login.html:14
 #: .\templates\contact_by_email\contact_us.html:8
-#: .\templates\contact_by_email\contact_us.html:13
+#: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
@@ -2902,7 +2902,7 @@ msgstr "משתמשים חסומים"
 msgid "You're not blocking anybody."
 msgstr "את/ה לא חוסם/ת אף אחד"
 
-#: .\templates\contact_by_email\contact_us.html:17
+#: .\templates\contact_by_email\contact_us.html:19
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
@@ -2910,7 +2910,7 @@ msgstr ""
 "אם יש לכם שאלות, הצעות או אם אתם מעוניינים להצטרף לצוות - צרו איתנו קשר "
 "בדואר אלקטרוני."
 
-#: .\templates\contact_by_email\contact_us.html:19
+#: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster: "
 msgstr "אורי רודברג, מייסד ומנהל האתר: "
 
@@ -2982,11 +2982,11 @@ msgstr ""
 msgid "You have a new message on "
 msgstr "יש לך הודעה חדשה ב"
 
-#: .\templates\friends\base.html:25
+#: .\templates\friends\base.html:29
 msgid "Received Requests"
 msgstr "בקשות חברות שקיבלת"
 
-#: .\templates\friends\base.html:31
+#: .\templates\friends\base.html:35
 msgid "Sent Requests"
 msgstr "בקשות חברות ששלחת"
 
@@ -2995,44 +2995,44 @@ msgstr "בקשות חברות ששלחת"
 msgid "There are no pending friendship requests."
 msgstr "אין פה בקשות חברות."
 
-#: .\templates\main\main_page_base.html:10
+#: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
 msgstr "ברוכים הבאים ל%(site_name)s!"
 
-#: .\templates\main\main_page_base.html:19
+#: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
 msgstr "הצטרפו ל%(site_name)s!"
 
-#: .\templates\main\main_page_base.html:22
+#: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
 msgstr "זה בחינם וכולם יכולים להצטרף!"
 
-#: .\templates\messages\chat_detail.html:25
+#: .\templates\messages\chat_detail.html:29
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "שיחה עם <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\messages\chat_detail.html:31
+#: .\templates\messages\chat_detail.html:35
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "שלח/י הודעה ל%(user_name)s"
 
-#: .\templates\messages\chat_detail.html:45
+#: .\templates\messages\chat_detail.html:49
 msgid "Mark All as Read"
 msgstr "סמנ/י שכל ההודעות נקראו"
 
-#: .\templates\messages\chat_list.html:46
+#: .\templates\messages\chat_list.html:50
 msgid "Unread"
 msgstr "לא נקראה"
 
-#: .\templates\messages\chat_list.html:53
+#: .\templates\messages\chat_list.html:57
 msgid "You:"
 msgstr "את/ה:"
 
-#: .\templates\messages\chat_list.html:73
+#: .\templates\messages\chat_list.html:77
 msgid "You have no messages yet."
 msgstr "עדיין אין לך הודעות."
 
@@ -3040,7 +3040,7 @@ msgstr "עדיין אין לך הודעות."
 msgid "New"
 msgstr "חדשה"
 
-#: .\templates\privacy\privacy_policy.html:17
+#: .\templates\privacy\privacy_policy.html:19
 msgid ""
 "We respect your privacy. We will not sell or share your personal details, "
 "including your name, your date of birth, your email address and your "
@@ -3053,15 +3053,15 @@ msgstr ""
 "הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים או אתרים "
 "אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
 
-#: .\templates\privacy\privacy_policy.html:19
+#: .\templates\privacy\privacy_policy.html:21
 msgid ""
 "Your profile on Speedy Net is visible to everyone, but you can choose who to "
 "share with your email address and your date of birth. If you signed up for "
 "Speech Match, your Speech Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speech Match "
-"will not appear on Google and is not visible to people who is not registered "
-"to the site."
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
 msgstr ""
 "הפרופיל שלכם בספידי נט גלוי לכולם, אך אתם תוכלו לבחור עם מי לשתף את כתובת "
 "הדואר האלקטרוני שלכם ותאריך הלידה שלכם. אם נרשמתם לספידי מץ', הפרופיל שלכם "
@@ -3069,7 +3069,7 @@ msgstr ""
 "ושאתם מתאימים להם לפי ההגדרות שלהם. הפרופיל שלכם בספידי מץ' לא יופיע בגוגל "
 "ולא גלוי למי שלא רשום לאתר."
 
-#: .\templates\privacy\privacy_policy.html:21
+#: .\templates\privacy\privacy_policy.html:23
 msgid ""
 "If you have deactivated your account on Speedy Net or Speech Match, your "
 "profile on that site will be removed from the site and you will not appear "
@@ -3216,7 +3216,7 @@ msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי "
 "נט."
 
-#: .\templates\terms\terms_of_service.html:17
+#: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
@@ -3224,7 +3224,7 @@ msgstr ""
 "האתר באלפא, ייתכן שיהיו תקלות באתר. הנהלת האתר אינה אחראית על תקלות שיהיו "
 "באתר."
 
-#: .\templates\terms\terms_of_service.html:19
+#: .\templates\terms\terms_of_service.html:21
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
@@ -3236,7 +3236,7 @@ msgstr ""
 "בספידי נט בשביל לשלוח הודעות ספאם, או הודעות בעלות תוכן זהה למספר גדול של "
 "אנשים."
 
-#: .\templates\terms\terms_of_service.html:21
+#: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
@@ -3249,7 +3249,7 @@ msgstr ""
 "פעילות המשתמשים מחוץ לאתר. אם בחרתם להפגש או לשוחח בטלפון עם אנשים שהכרתם "
 "באתר, האחריות לתוצאות הפגישה או שיחת הטלפון היא שלכם."
 
-#: .\templates\terms\terms_of_service.html:23
+#: .\templates\terms\terms_of_service.html:25
 msgid ""
 "After signing up for the site you are asked to verify your email address via "
 "a link sent to you. Accounts without a verified email address will be "
@@ -3259,7 +3259,7 @@ msgstr ""
 "קישור שנשלח אליכם. חשבונות ללא כתובת דואר אלקטרוני מאומתת יימחקו מהאתר לאחר "
 "10 ימים."
 
-#: .\templates\terms\terms_of_service.html:25
+#: .\templates\terms\terms_of_service.html:27
 msgid ""
 "If you mistakenly signed up for the site with an incorrect email address, "
 "add a new email address to your account and verify it. You can attach "
@@ -3297,35 +3297,35 @@ msgstr "uploaded file"
 msgid "uploaded files"
 msgstr "uploaded files"
 
-#: .\uploads\models.py:46
+#: .\uploads\models.py:41
 msgid "visible on website"
 msgstr "visible on website"
 
-#: .\uploads\models.py:47
+#: .\uploads\models.py:42
 msgid "AWS image moderation time"
 msgstr "AWS image moderation time"
 
-#: .\uploads\models.py:48
+#: .\uploads\models.py:43
 msgid "AWS facial analysis time"
 msgstr "AWS facial analysis time"
 
-#: .\uploads\models.py:49
+#: .\uploads\models.py:44
 msgid "AWS raw image moderation results"
 msgstr "AWS raw image moderation results"
 
-#: .\uploads\models.py:50
+#: .\uploads\models.py:45
 msgid "AWS raw facial analysis results"
 msgstr "AWS raw facial analysis results"
 
-#: .\uploads\models.py:51
+#: .\uploads\models.py:46
 msgid "number of faces"
 msgstr "number of faces"
 
-#: .\uploads\models.py:54
+#: .\uploads\models.py:49
 msgid "uploaded image"
 msgstr "uploaded image"
 
-#: .\uploads\models.py:55
+#: .\uploads\models.py:50
 msgid "uploaded images"
 msgstr "uploaded images"
 
