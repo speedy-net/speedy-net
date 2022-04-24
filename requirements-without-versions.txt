@@ -19,6 +19,6 @@ s3transfer
 six
 sorl-thumbnail
 sqlparse
-text-unidecode
 typing-extensions
+tzdata
 urllib3
