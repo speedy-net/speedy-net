@@ -101,7 +101,7 @@ body.bidi-rtl .user-profile {
     padding: 0;
 }
 
-.activation-form-field ul label {
+.activation-form-field div[id] label {
     font-weight: normal;
     font-size: 15px;
 }
