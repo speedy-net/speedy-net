@@ -148,13 +148,18 @@ ul.errorlist li {
     font-size: 22px;
 }
 
+form .form-row .col-md-6 .form-group {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
 @media screen and (max-width: 767px) {
     /*
     .page-header {
         display: none;
     }
     */
-
     .activation-step-wrapper {
         padding-top: 15px;
     }
