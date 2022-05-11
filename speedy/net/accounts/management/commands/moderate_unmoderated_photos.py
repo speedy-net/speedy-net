@@ -26,6 +26,7 @@ class Command(BaseCommand):
             if ((image is not None) and (image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
                 labels_detected = False
+                not_allowed_labels_detected = False
                 labels_detected_list = []
                 try:
                     profile_picture_html = render_to_string(template_name="accounts/tests/profile_picture_test_640.html", context={"user": user})
@@ -66,6 +67,8 @@ class Command(BaseCommand):
                             if (label["Name"] in ["Explicit Nudity", "Sexual Activity", "Graphic Male Nudity", "Graphic Female Nudity", "Barechested Male", "Partial Nudity", "Male Swimwear Or Underwear"]):
                                 labels_detected = True
                                 labels_detected_list.append(label["Name"])
+                                if (label["Name"] in ["Graphic Male Nudity"]):
+                                    not_allowed_labels_detected = True
                         if (labels_detected):
                             image.visible_on_website = False
                             logger.warning("moderate_unmoderated_photos::{labels_detected_count} labels detected. user={user}, labels detected={labels_detected_list} (registered {registered_days_ago} days ago).".format(
@@ -90,6 +93,19 @@ class Command(BaseCommand):
                             ))
                         image.aws_image_moderation_time = now()
                         image.save()
+                        if (not_allowed_labels_detected):
+                            user.speedy_match_profile.not_allowed_to_use_speedy_match = True
+                            user.photo = None
+                            user.speedy_net_profile.deactivate()
+                            user.speedy_match_profile.deactivate()
+                            user.save_user_and_profile()
+                            logger.error("moderate_unmoderated_photos::{labels_detected_count} labels detected. User {user} is not allowed to use Speedy Match (height={height}), labels detected={labels_detected_list} (registered {registered_days_ago} days ago).".format(
+                                user=user,
+                                height=user.speedy_match_profile.height,
+                                labels_detected_count=len(labels_detected_list),
+                                labels_detected_list=labels_detected_list,
+                                registered_days_ago=(now() - user.date_created).days,
+                            ))
                     else:
                         image.visible_on_website = False
                         image.aws_image_moderation_time = now()
