@@ -38,7 +38,9 @@ class CleanAndValidateAllFieldsMixin(object):
         Allows to have different slug and username validators for Entity and User.
         """
         if (exclude is None):
-            exclude = []
+            exclude = set()
+        else:
+            exclude = set(exclude)
 
         self.clean_all_fields(exclude=exclude)
 
@@ -176,10 +178,12 @@ class ReservedUsername(Entity):
         self.validate_username_unique()
 
         if (exclude is None):
-            exclude = []
+            exclude = set()
+        else:
+            exclude = set(exclude)
 
         # Reserved username can be less than 6 characters, and any alphanumeric sequence.
-        exclude += ['username', 'slug']
+        exclude |= {'username', 'slug'}
 
         return super().clean_fields(exclude=exclude)
 
@@ -508,7 +512,9 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         Allows to have different slug and username validators for Entity and User.
         """
         if (exclude is None):
-            exclude = []
+            exclude = set()
+        else:
+            exclude = set(exclude)
 
         # If special username is true, don't validate username.
         if (self.special_username):
@@ -517,7 +523,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self.validate_username_for_slug()
             self.validate_username_required()
             self.validate_username_unique()
-            exclude += ['username', 'slug']
+            exclude |= {'username', 'slug'}
 
         return super().clean_fields(exclude=exclude)
 
