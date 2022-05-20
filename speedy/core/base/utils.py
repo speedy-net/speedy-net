@@ -156,3 +156,16 @@ def is_transparent(image):
             return True
 
     return False
+
+
+def convert_to_set(exclude=None):
+    """
+    Return a set - either `set()` or `set(exclude)`.
+    """
+    if (exclude is None):
+        exclude = set()
+    else:
+        exclude = set(exclude)
+    return exclude
+
+

@@ -22,7 +22,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names, convert_to_set
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .fields import UserAccessField
@@ -37,11 +37,7 @@ class CleanAndValidateAllFieldsMixin(object):
         """
         Allows to have different slug and username validators for Entity and User.
         """
-        if (exclude is None):
-            exclude = set()
-        else:
-            exclude = set(exclude)
-
+        exclude = convert_to_set(exclude=exclude)
         self.clean_all_fields(exclude=exclude)
 
         try:
@@ -57,6 +53,8 @@ class CleanAndValidateAllFieldsMixin(object):
         pass
 
     def validate_all_fields(self, errors, exclude=None):
+        exclude = convert_to_set(exclude=exclude)
+
         for field_name, validators in self.validators.items():
             f = self._meta.get_field(field_name)
             if (field_name in exclude):
@@ -109,6 +107,7 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         # return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
 
     def clean_all_fields(self, exclude=None):
+        exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
         self.normalize_slug_and_username()
@@ -171,16 +170,13 @@ class ReservedUsername(Entity):
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
+        exclude = convert_to_set(exclude=exclude)
+
         # ~~~~ TODO: fix models! Exceptions should be 'slug' or 'username' and not '__all__'.
         self.normalize_slug_and_username()
         self.validate_username_for_slug()
         self.validate_username_required()
         self.validate_username_unique()
-
-        if (exclude is None):
-            exclude = set()
-        else:
-            exclude = set(exclude)
 
         # Reserved username can be less than 6 characters, and any alphanumeric sequence.
         exclude |= {'username', 'slug'}
@@ -511,10 +507,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         """
         Allows to have different slug and username validators for Entity and User.
         """
-        if (exclude is None):
-            exclude = set()
-        else:
-            exclude = set(exclude)
+        exclude = convert_to_set(exclude=exclude)
 
         # If special username is true, don't validate username.
         if (self.special_username):
@@ -528,6 +521,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return super().clean_fields(exclude=exclude)
 
     def clean_all_fields(self, exclude=None):
+        exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
         for base_field_name in __class__.NAME_LOCALIZABLE_FIELDS:
@@ -787,6 +781,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return super().save(*args, **kwargs)
 
     def clean_all_fields(self, exclude=None):
+        exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
         self.normalize_email()
