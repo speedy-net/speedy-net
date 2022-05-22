@@ -22,7 +22,7 @@ if (django_settings.TESTS):
                 self.user_2 = ActiveUserFactory()
                 self.user_3 = ActiveUserFactory()
                 self.chat_1_2 = ChatFactory(ent1=self.user_1, ent2=self.user_2)
-                self.chat_1_2_3 = ChatFactory(group=(self.user_1, self.user_2, self.user_3))
+                self.chat_1_2_3 = ChatFactory(ent1=None, ent2=None, is_group=True, group=(self.user_1, self.user_2, self.user_3))
 
             def test_chats(self):
                 chats = list(Chat.objects.chats(entity=self.user_1))
