@@ -67,7 +67,7 @@ if (django_settings.TESTS):
                 user_2 = self.get_active_user_jennifer()
                 user_3 = ActiveUserFactory()
                 user_4 = ActiveUserFactory()
-                chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
+                chat = ChatFactory.group_chat_with(group=(user_1, user_2, user_3, user_4))
                 self.assertEqual(first=str(chat), second="<Chat {}: {}, {}, {}, {} (0 messages, senders: None)>".format(chat.id, user_1.name, user_2.name, user_3.name, user_4.name))
                 self.assertEqual(first=str(chat), second="<Chat {}: {}, {}, {}, {} (0 messages, senders: None)>".format(chat.id, user_1.profile.get_name(), user_2.profile.get_name(), user_3.profile.get_name(), user_4.profile.get_name()))
                 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
@@ -95,7 +95,7 @@ if (django_settings.TESTS):
                 user_2 = self.get_active_user_jennifer()
                 user_3 = ActiveUserFactory()
                 user_4 = ActiveUserFactory()
-                chat = ChatFactory(ent1=None, ent2=None, is_group=True, group=[user_1, user_2, user_3, user_4])
+                chat = ChatFactory.group_chat_with(group=(user_1, user_2, user_3, user_4))
                 self.assertEqual(first=chat.get_slug(current_user=user_1), second=chat.id)
 
             def test_cannot_delete_chats_with_queryset_delete_1(self):
