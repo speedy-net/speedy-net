@@ -17,7 +17,7 @@ if (django_settings.TESTS):
                 model = Chat
 
             @factory.post_generation
-            def group(self, created, extracted, **kwargs):
+            def group(self: Chat, created, extracted, **kwargs):
                 if (extracted is not None):
                     assert self.is_group
                     for entity in extracted:
