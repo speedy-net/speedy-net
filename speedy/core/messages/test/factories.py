@@ -17,10 +17,14 @@ if (django_settings.TESTS):
                 model = Chat
 
             @factory.post_generation
-            def group(self, created, extracted, **kwargs):
+            def group(self: Chat, created, extracted, **kwargs):
                 if (extracted is not None):
-                    self.is_group = True
+                    assert (self.is_group is True)
                     for entity in extracted:
                         self.group.add(entity)
+
+            @classmethod
+            def group_chat_with(cls, group):
+                return cls(ent1=None, ent2=None, is_group=True, group=group)
 
 
