@@ -23,4 +23,8 @@ if (django_settings.TESTS):
                     for entity in extracted:
                         self.group.add(entity)
 
+            @classmethod
+            def group_chat_with(cls, group):
+                return cls(ent1=None, ent2=None, is_group=True, group=group)
+
 
