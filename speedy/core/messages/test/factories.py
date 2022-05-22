@@ -19,7 +19,7 @@ if (django_settings.TESTS):
             @factory.post_generation
             def group(self, created, extracted, **kwargs):
                 if (extracted is not None):
-                    self.is_group = True
+                    assert self.is_group
                     for entity in extracted:
                         self.group.add(entity)
 
