@@ -17,7 +17,7 @@ if (django_settings.TESTS):
         class ChatManagerTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
-                ChatFactory(is_group=True)
+                ChatFactory()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
                 self.user_3 = ActiveUserFactory()
