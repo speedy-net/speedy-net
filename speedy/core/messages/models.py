@@ -71,10 +71,10 @@ class Chat(TimeStampedModel):
             assert self.ent2
             assert (not (self.ent1 == self.ent2))
             assert (self.group.count() == 0)
-            if ((self.id == '') and (django.VERSION >= (4, 1))):
-                # Django 4.1: "Related managers for ForeignKey, ManyToManyField, and GenericRelation are now cached on the Model instance to which they belong."
-                # Remove the cached related manager with related_val = ('',) for self.group, since '' is generally valid for foreign keys but is not for Chat.id.
-                self._state.related_managers_cache.pop('group')
+            # if ((self.id == '') and (django.VERSION >= (4, 1))):
+            #     # Django 4.1: "Related managers for ForeignKey, ManyToManyField, and GenericRelation are now cached on the Model instance to which they belong."
+            #     # Remove the cached related manager with related_val = ('',) for self.group, since '' is generally valid for foreign keys but is not for Chat.id.
+            #     self._state.related_managers_cache.pop('group')
         else:
             assert (self.ent1 is None)
             assert (self.ent2 is None)
