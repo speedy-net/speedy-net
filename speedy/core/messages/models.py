@@ -78,7 +78,10 @@ class Chat(TimeStampedModel):
         else:
             assert (self.ent1 is None)
             assert (self.ent2 is None)
-        self.site = Site.objects.get_current()
+        # Only assign site if it's not already assigned.
+        if (self.site_id is None):
+            self.site = Site.objects.get_current()
+        assert (self.site_id is not None)
         return super().save(*args, **kwargs)
 
     def get_slug(self, current_user: Entity):
