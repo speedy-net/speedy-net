@@ -54,13 +54,13 @@
                                         <div class="form-control-static mt-1">{% translate 'Age:' %}</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-center">
-                                        {% crispy_field form.min_age_to_match %}
+                                        {% crispy_field form.min_age_to_match 'class' 'form-control' %}
                                     </div>
                                     <div class="col-1 d-flex justify-content-center px-0 dash">
                                         <div class="form-control-static mt-1">&ndash;</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-center">
-                                        {% crispy_field form.max_age_to_match %}
+                                        {% crispy_field form.max_age_to_match 'class' 'form-control' %}
                                     </div>
                                 </div>
                             </div>
