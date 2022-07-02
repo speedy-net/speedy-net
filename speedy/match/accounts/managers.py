@@ -208,32 +208,33 @@ class SiteProfileManager(BaseManager):
                     distance_offset = self._get_distance_offset(index=10)
                     try:
                         if ((user.last_ip_address_used_raw_ipapi_results is not None) and (other_user.last_ip_address_used_raw_ipapi_results is not None)):
-                            user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
-                            user_longitude = user.last_ip_address_used_raw_ipapi_results["longitude"]
-                            other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
-                            other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
-                            distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
-                            if (distance_between_users < 60):
-                                distance_offset = self._get_distance_offset(index=0)
-                            elif (distance_between_users < 300):
-                                distance_offset = self._get_distance_offset(index=2)
-                            elif (distance_between_users < 1200):
-                                distance_offset = self._get_distance_offset(index=4)
-                            elif (distance_between_users < 3000):
-                                distance_offset = self._get_distance_offset(index=6)
-                            elif (distance_between_users < 6000):
-                                distance_offset = self._get_distance_offset(index=8)
-                            else:
-                                distance_offset = self._get_distance_offset(index=10)
-                            other_user.speedy_match_profile._distance_between_users = distance_between_users
-                            if (random.randint(0, 399) == 0):
-                                logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
-                                    user=user,
-                                    other_user=other_user,
-                                    distance_between_users=distance_between_users,
-                                    s=s,
-                                    distance_offset=distance_offset,
-                                ))
+                            if (("latitude" in user.last_ip_address_used_raw_ipapi_results) and (user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and ("longitude" in user.last_ip_address_used_raw_ipapi_results) and (user.last_ip_address_used_raw_ipapi_results["longitude"] is not None) and ("latitude" in other_user.last_ip_address_used_raw_ipapi_results) and (other_user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and ("longitude" in other_user.last_ip_address_used_raw_ipapi_results) and (other_user.last_ip_address_used_raw_ipapi_results["longitude"] is not None)):
+                                user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
+                                user_longitude = user.last_ip_address_used_raw_ipapi_results["longitude"]
+                                other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
+                                other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
+                                distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
+                                if (distance_between_users < 60):
+                                    distance_offset = self._get_distance_offset(index=0)
+                                elif (distance_between_users < 300):
+                                    distance_offset = self._get_distance_offset(index=2)
+                                elif (distance_between_users < 1200):
+                                    distance_offset = self._get_distance_offset(index=4)
+                                elif (distance_between_users < 3000):
+                                    distance_offset = self._get_distance_offset(index=6)
+                                elif (distance_between_users < 6000):
+                                    distance_offset = self._get_distance_offset(index=8)
+                                else:
+                                    distance_offset = self._get_distance_offset(index=10)
+                                other_user.speedy_match_profile._distance_between_users = distance_between_users
+                                if (random.randint(0, 399) == 0):
+                                    logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
+                                        user=user,
+                                        other_user=other_user,
+                                        distance_between_users=distance_between_users,
+                                        s=s,
+                                        distance_offset=distance_offset,
+                                    ))
                     except Exception as e:
                         logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
                             user=user,
