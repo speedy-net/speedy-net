@@ -21,11 +21,21 @@ if (django_settings.TESTS):
             self.auckland = (-36.8509, 174.7645)
             self.herzliya = (32.1624, 34.8447)
             self.san_francisco_360 = (37.7749, -122.4194 + 360.0)
-            self.point_1 = (0.0, 0.0)
-            self.point_2 = (0.0, 0.0 + 180.0)
-            self.point_3 = (0.0, 0.0 - 90.0)
-            self.point_4 = (0.0, 0.0 + 90.0)
-            self.point_5 = (0.0, 0.0 + 60.0)
+            self.equator_point_1 = (0.0, 0.0)
+            self.equator_point_2 = (0.0, 0.0 + 180.0)
+            self.equator_point_3 = (0.0, 0.0 - 90.0)
+            self.equator_point_4 = (0.0, 0.0 + 90.0)
+            self.equator_point_5 = (0.0, 0.0 + 60.0)
+            self.north_pole_1 = (90.0, 0.0)
+            self.north_pole_2 = (90.0, 90.0)
+            self.north_pole_3 = (90.0, 180.0)
+            self.north_pole_4 = (90.0, -90.0)
+            self.south_pole_1 = (-90.0, 0.0)
+            self.south_pole_2 = (-90.0, 90.0)
+            self.south_pole_3 = (-90.0, 180.0)
+            self.south_pole_4 = (-90.0, -90.0)
+            self.london_other_side_1 = (51.5072 * -1.0, -0.1276 + 180.0)
+            self.london_other_side_2 = (51.5072 - 180.0, -0.1276)
 
         def test_distance_between_locations_to_themselves(self):
             self.assertIs(expr1=(0.0 == haversine(point1=self.london, point2=self.london, unit=Unit.KILOMETERS)), expr2=True)
@@ -67,9 +77,33 @@ if (django_settings.TESTS):
             self.assertIs(expr1=(8616.468 < haversine(point1=self.london, point2=self.san_francisco_360, unit=Unit.KILOMETERS) < 8616.469), expr2=True)
 
         def test_distance_between_points_on_the_equator(self):
-            self.assertIs(expr1=(20015.114 < haversine(point1=self.point_1, point2=self.point_2, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
-            self.assertIs(expr1=(20015.114 < haversine(point1=self.point_3, point2=self.point_4, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
-            self.assertIs(expr1=(6671.704 < haversine(point1=self.point_1, point2=self.point_5, unit=Unit.KILOMETERS) < 6671.705), expr2=True)  # One third of the maximal distance on Earth.
-            self.assertIs(expr1=(10007.557 < haversine(point1=self.point_1, point2=self.point_4, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
+            self.assertIs(expr1=(20015.114 < haversine(point1=self.equator_point_1, point2=self.equator_point_2, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
+            self.assertIs(expr1=(20015.114 < haversine(point1=self.equator_point_3, point2=self.equator_point_4, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
+            self.assertIs(expr1=(6671.704 < haversine(point1=self.equator_point_1, point2=self.equator_point_5, unit=Unit.KILOMETERS) < 6671.705), expr2=True)  # One third of the maximal distance on Earth.
+            self.assertIs(expr1=(10007.557 < haversine(point1=self.equator_point_1, point2=self.equator_point_4, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
+
+        def test_distance_between_poles(self):
+            for north_pole in (self.north_pole_1, self.north_pole_2, self.north_pole_3, self.north_pole_4):
+                self.assertIs(expr1=(-0.000001 < haversine(point1=self.north_pole_1, point2=north_pole, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
+
+            for south_pole in (self.south_pole_1, self.south_pole_2, self.south_pole_3, self.south_pole_4):
+                self.assertIs(expr1=(-0.000001 < haversine(point1=self.south_pole_1, point2=south_pole, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
+
+            for north_pole in (self.north_pole_1, self.north_pole_2, self.north_pole_3, self.north_pole_4):
+                for south_pole in (self.south_pole_1, self.south_pole_2, self.south_pole_3, self.south_pole_4):
+                    self.assertIs(expr1=(20015.114 < haversine(point1=north_pole, point2=south_pole, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
+
+            for north_pole in (self.north_pole_1, self.north_pole_2, self.north_pole_3, self.north_pole_4):
+                for equator_point in (self.equator_point_1, self.equator_point_2, self.equator_point_3, self.equator_point_4, self.equator_point_5):
+                    self.assertIs(expr1=(10007.557 < haversine(point1=north_pole, point2=equator_point, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
+
+            for south_pole in (self.south_pole_1, self.south_pole_2, self.south_pole_3, self.south_pole_4):
+                for equator_point in (self.equator_point_1, self.equator_point_2, self.equator_point_3, self.equator_point_4, self.equator_point_5):
+                    self.assertIs(expr1=(10007.557 < haversine(point1=equator_point, point2=south_pole, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
+
+        def test_london_other_side_distance(self):
+            for london_other_side in (self.london_other_side_1, self.london_other_side_2):
+                self.assertIs(expr1=(-0.001 < haversine(point1=self.london_other_side_1, point2=london_other_side, unit=Unit.KILOMETERS) < 0.001), expr2=True)
+                self.assertIs(expr1=(20015.114 < haversine(point1=self.london, point2=london_other_side, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
 
 
