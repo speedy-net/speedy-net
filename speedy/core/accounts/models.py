@@ -869,7 +869,7 @@ class SiteProfileBase(TimeStampedModel):
     def get_name(self):
         raise NotImplementedError("get_name is not implemented.")
 
-    def validate_profile_and_activate(self):
+    def validate_profile_and_activate(self, commit=True):
         raise NotImplementedError("validate_profile_and_activate is not implemented.")
 
     def call_after_verify_email_address(self):
