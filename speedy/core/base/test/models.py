@@ -114,10 +114,18 @@ if (django_settings.TESTS):
             self.all_other_full_http_hosts = ['https://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]
             self.client = self.client_class(HTTP_HOST=self.http_host)
 
+        def tear_down(self):
+            pass
+
         def setUp(self):
             return_value = super().setUp()
             self.set_up()
             self.validate_all_values()
+            return return_value
+
+        def tearDown(self):
+            return_value = super().tearDown()
+            self.tear_down()
             return return_value
 
         @classmethod
