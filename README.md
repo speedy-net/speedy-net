@@ -102,9 +102,9 @@ To run Speedy Match tests:
     cd speedy/match
     ./tests_manage.py test
 
-To run tests with deprecation warnings (in any directory):
+To run tests with all warnings (in any directory):
 
-    python -W error::DeprecationWarning tests_manage.py test
+    python -W error tests_manage.py test
 
 You need to run both Speedy Net and Speedy Match in parallel in separate console tabs.
 
@@ -289,9 +289,9 @@ To run all tests locally, run:
 
     ./run_all_tests.sh
 
-To run all tests locally with deprecation warnings, run:
+To run all tests locally with all warnings, run:
 
-    ./run_all_tests_with_deprecation_warnings.sh
+    ./run_all_tests_with_all_warnings.sh
 
 ## How to make and compile all messages for translation (To Hebrew):
 
