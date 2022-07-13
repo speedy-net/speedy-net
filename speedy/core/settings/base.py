@@ -85,7 +85,6 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 
     'speedy.core.base.middleware.LocaleDomainMiddleware',
-    'speedy.core.base.middleware.EnsureCachesMiddleware',
     'speedy.core.base.middleware.UpdateSessionAuthHashMiddleware',
 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

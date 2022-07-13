@@ -12,8 +12,8 @@ from .managers import BlockManager
 
 
 class Block(TimeStampedModel):
-    blocker = models.ForeignKey(to=Entity, verbose_name=_('user'), on_delete=models.CASCADE, related_name='blocked_entities')
-    blocked = models.ForeignKey(to=Entity, verbose_name=_('blocked user'), on_delete=models.CASCADE, related_name='blocking_entities')
+    blocker = models.ForeignKey(to=Entity, verbose_name=_('user'), on_delete=models.CASCADE, related_name='blocked_entities+')
+    blocked = models.ForeignKey(to=Entity, verbose_name=_('blocked user'), on_delete=models.CASCADE, related_name='blocking_entities+')
 
     objects = BlockManager()
 

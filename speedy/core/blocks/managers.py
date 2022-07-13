@@ -33,36 +33,6 @@ def bust_cache(type, user_pk, version=None):
     cache_manager.cache_delete_many(keys=keys, version=version)
 
 
-def ensure_caches(user):
-    """
-    Ensure the cache for a given type.
-    """
-    from django.db.models import query
-
-    if (not (isinstance(user, Entity))):
-        return
-
-    blocked_key = cache_key(type='blocked', user_pk=user.pk)
-    blocked_entities = cache_manager.cache_get(key=blocked_key, sliding_timeout=DEFAULT_TIMEOUT)
-    if (blocked_entities is None):
-        query.prefetch_related_objects([user], 'blocked_entities')
-        cache_manager.cache_set(key=blocked_key, value=user._prefetched_objects_cache['blocked_entities'])
-    else:
-        if (not (hasattr(user, '_prefetched_objects_cache'))):
-            user._prefetched_objects_cache = {}
-        user._prefetched_objects_cache['blocked_entities'] = blocked_entities
-
-    blocking_key = cache_key(type='blocking', user_pk=user.pk)
-    blocking_entities = cache_manager.cache_get(key=blocking_key, sliding_timeout=DEFAULT_TIMEOUT)
-    if (blocking_entities is None):
-        query.prefetch_related_objects([user], 'blocking_entities')
-        cache_manager.cache_set(key=blocking_key, value=user._prefetched_objects_cache['blocking_entities'])
-    else:
-        if (not (hasattr(user, '_prefetched_objects_cache'))):
-            user._prefetched_objects_cache = {}
-        user._prefetched_objects_cache['blocking_entities'] = blocking_entities
-
-
 class BlockManager(BaseManager):
     def _update_caches(self, blocker, blocked):
         """
@@ -76,11 +46,6 @@ class BlockManager(BaseManager):
             del blocker.blocked_entities_ids
         if ('blocking_entities_ids' in blocked.__dict__):
             del blocked.blocking_entities_ids
-        if (hasattr(blocker, '_prefetched_objects_cache')):
-            blocker._prefetched_objects_cache.pop('blocked_entities', None)
-        if (hasattr(blocked, '_prefetched_objects_cache')):
-            blocked._prefetched_objects_cache.pop('blocking_entities', None)
-        ensure_caches(user=blocker)
 
     def block(self, blocker, blocked):
         if (blocker == blocked):

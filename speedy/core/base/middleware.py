@@ -126,20 +126,6 @@ class RemoveExtraSlashesMiddleware(object):
         return self.get_response(request=request)
 
 
-class EnsureCachesMiddleware(object):
-    """
-    Ensure caches for current user.
-    """
-
-    def __init__(self, get_response):
-        self.get_response = get_response
-
-    def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        if (request.user.is_authenticated):
-            block_managers.ensure_caches(user=request.user)
-        return self.get_response(request=request)
-
-
 class UpdateSessionAuthHashMiddleware(object):
     """
     Update session auth hash from Django 3.0.x to 3.1.1.
