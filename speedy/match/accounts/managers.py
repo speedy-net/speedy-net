@@ -93,8 +93,8 @@ class SiteProfileManager(BaseManager):
         today = date.today()
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
-        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
-        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
+        blocked_users_ids = user.blocked_entities_ids
+        blocking_users_ids = user.blocking_entities_ids
         qs = User.objects.active(
             photo__visible_on_website=True,
             gender__in=user.speedy_match_profile.gender_to_match,
@@ -338,8 +338,8 @@ class SiteProfileManager(BaseManager):
         timezone_now = now()
         # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
         # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
-        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
-        blocking_users_ids = [block.blocker_id for block in user.blocking_entities.all()]
+        blocked_users_ids = user.blocked_entities_ids
+        blocking_users_ids = user.blocking_entities_ids
         qs = User.objects.active(
             pk__in=from_list,
             photo__visible_on_website=True,

@@ -24,13 +24,13 @@ def cache_key(type, user_pk):
     return CACHE_TYPES[type] % user_pk
 
 
-def bust_cache(type, user_pk):
+def bust_cache(type, user_pk, version=None):
     """
     Bust the cache for a given type, can bust multiple caches.
     """
     bust_keys = BUST_CACHES[type]
     keys = [CACHE_TYPES[k] % user_pk for k in bust_keys]
-    cache_manager.cache_delete_many(keys=keys)
+    cache_manager.cache_delete_many(keys=keys, version=version)
 
 
 def ensure_caches(user):
@@ -69,7 +69,13 @@ class BlockManager(BaseManager):
         Update caches after block or unblock.
         """
         bust_cache(type='blocked', user_pk=blocker.pk)
+        bust_cache(type='blocked', user_pk=blocker.pk, version=2)
         bust_cache(type='blocking', user_pk=blocked.pk)
+        bust_cache(type='blocking', user_pk=blocked.pk, version=2)
+        if ('blocked_entities_ids' in blocker.__dict__):
+            del blocker.blocked_entities_ids
+        if ('blocking_entities_ids' in blocked.__dict__):
+            del blocked.blocking_entities_ids
         if (hasattr(blocker, '_prefetched_objects_cache')):
             blocker._prefetched_objects_cache.pop('blocked_entities', None)
         if (hasattr(blocked, '_prefetched_objects_cache')):
@@ -92,15 +98,46 @@ class BlockManager(BaseManager):
     def has_blocked(self, blocker, blocked):
         if ((not (isinstance(blocker, Entity))) or (not (isinstance(blocked, Entity)))):
             return False
-        if (blocker.blocked_entities.all()._result_cache is not None):
-            return any(blocked.pk == block.blocked_id for block in blocker.blocked_entities.all())
-        if (blocked.blocking_entities.all()._result_cache is not None):
-            return any(blocker.pk == block.blocker_id for block in blocked.blocking_entities.all())
-        ensure_caches(user=blocker)
-        return any(blocked.pk == block.blocked_id for block in blocker.blocked_entities.all())
+        if ('blocked_entities_ids' in blocker.__dict__):
+            return (blocked.pk in blocker.blocked_entities_ids)
+        if ('blocking_entities_ids' in blocked.__dict__):
+            return (blocker.pk in blocked.blocking_entities_ids)
+        return (blocked.pk in blocker.blocked_entities_ids)
 
     def there_is_block(self, user_1, user_2):
         return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
+
+    def get_blocked_entities_ids(self, blocker):
+        blocked_key = cache_key(type='blocked', user_pk=blocker.pk)
+        try:
+            blocked_entities_ids = cache_manager.cache_get(key=blocked_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
+        except Exception:
+            # ~~~~ TODO: Log warning
+            blocked_entities_ids = None
+        if (blocked_entities_ids is None):
+            blocked_entities_ids = list(self.filter(blocker=blocker).values_list('blocked_id', flat=True))
+            try:
+                cache_manager.cache_set(key=blocked_key, value=blocked_entities_ids, version=2)
+            except Exception:
+                # ~~~~ TODO: Log warning
+                pass
+        return blocked_entities_ids
+
+    def get_blocking_entities_ids(self, blocked):
+        blocking_key = cache_key(type='blocking', user_pk=blocked.pk)
+        try:
+            blocking_entities_ids = cache_manager.cache_get(key=blocking_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
+        except Exception:
+            # ~~~~ TODO: Log warning
+            blocking_entities_ids = None
+        if (blocking_entities_ids is None):
+            blocking_entities_ids = list(self.filter(blocked=blocked).values_list('blocker_id', flat=True))
+            try:
+                cache_manager.cache_set(key=blocking_key, value=blocking_entities_ids, version=2)
+            except Exception:
+                # ~~~~ TODO: Log warning
+                pass
+        return blocking_entities_ids
 
     def get_blocked_list_to_queryset(self, blocker):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile

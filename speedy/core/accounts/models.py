@@ -97,6 +97,16 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         }
         return validators
 
+    @cached_property
+    def blocked_entities_ids(self):
+        from speedy.core.blocks.models import Block
+        return Block.objects.get_blocked_entities_ids(blocker=self)
+
+    @cached_property
+    def blocking_entities_ids(self):
+        from speedy.core.blocks.models import Block
+        return Block.objects.get_blocking_entities_ids(blocked=self)
+
     class Meta:
         verbose_name = _('entity')
         verbose_name_plural = _('entities')

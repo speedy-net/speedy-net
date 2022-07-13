@@ -48,7 +48,7 @@ class UserLikeManager(BaseManager):
         who_likes_me = [u.pk for u in who_likes_me if (u.speedy_match_profile.is_active)]
 
         # Filter out users I blocked.
-        blocked_users_ids = [block.blocked_id for block in user.blocked_entities.all()]
+        blocked_users_ids = user.blocked_entities_ids
         who_likes_me = [pk for pk in who_likes_me if (not (pk in blocked_users_ids))]
 
         return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
