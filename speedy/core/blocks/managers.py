@@ -1,3 +1,5 @@
+import logging
+
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
@@ -5,6 +7,8 @@ from speedy.core.base import cache_manager
 from speedy.core.base.cache_manager import DEFAULT_TIMEOUT
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import Entity, User
+
+logger = logging.getLogger(__name__)
 
 CACHE_TYPES = {
     'blocked': 'speedy-bo-%s',
@@ -76,32 +80,42 @@ class BlockManager(BaseManager):
         blocked_key = cache_key(type='blocked', entity_pk=blocker.pk)
         try:
             blocked_entities_ids = cache_manager.cache_get(key=blocked_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
-        except Exception:
-            # ~~~~ TODO: Log warning
+        except Exception as e:
+            logger.debug("BlockManager::get_blocked_entities_ids:cache_manager.cache_get raised an exception, blocker={blocker}, Exception={e}".format(
+                blocker=blocker,
+                e=str(e),
+            ))
             blocked_entities_ids = None
         if (blocked_entities_ids is None):
             blocked_entities_ids = list(self.filter(blocker=blocker).values_list('blocked_id', flat=True))
             try:
                 cache_manager.cache_set(key=blocked_key, value=blocked_entities_ids, version=2)
-            except Exception:
-                # ~~~~ TODO: Log warning
-                pass
+            except Exception as e:
+                logger.debug("BlockManager::get_blocked_entities_ids:cache_manager.cache_set raised an exception, blocker={blocker}, Exception={e}".format(
+                    blocker=blocker,
+                    e=str(e),
+                ))
         return blocked_entities_ids
 
     def get_blocking_entities_ids(self, blocked):
         blocking_key = cache_key(type='blocking', entity_pk=blocked.pk)
         try:
             blocking_entities_ids = cache_manager.cache_get(key=blocking_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
-        except Exception:
-            # ~~~~ TODO: Log warning
+        except Exception as e:
+            logger.debug("BlockManager::get_blocking_entities_ids:cache_manager.cache_get raised an exception, blocked={blocked}, Exception={e}".format(
+                blocked=blocked,
+                e=str(e),
+            ))
             blocking_entities_ids = None
         if (blocking_entities_ids is None):
             blocking_entities_ids = list(self.filter(blocked=blocked).values_list('blocker_id', flat=True))
             try:
                 cache_manager.cache_set(key=blocking_key, value=blocking_entities_ids, version=2)
-            except Exception:
-                # ~~~~ TODO: Log warning
-                pass
+            except Exception as e:
+                logger.debug("BlockManager::get_blocking_entities_ids:cache_manager.cache_set raised an exception, blocked={blocked}, Exception={e}".format(
+                    blocked=blocked,
+                    e=str(e),
+                ))
         return blocking_entities_ids
 
     def get_blocked_list_to_queryset(self, blocker):
