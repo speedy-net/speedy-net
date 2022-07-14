@@ -16,7 +16,7 @@ class UserLikeManager(BaseManager):
         if (self.filter(from_user=from_user, to_user=to_user).exists()):
             raise ValidationError(_("User already likes other user."))
 
-        if (Block.objects.there_is_block(user_1=from_user, user_2=to_user)):
+        if (Block.objects.there_is_block(entity_1=from_user, entity_2=to_user)):
             raise ValidationError(_("User cannot like a blocked user."))
 
         self.create(from_user=from_user, to_user=to_user)

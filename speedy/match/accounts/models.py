@@ -305,7 +305,7 @@ class SiteProfile(SiteProfileBase):
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
         if ((self.is_active_and_valid) and (other_profile.is_active_and_valid)):
-            if (Block.objects.there_is_block(user_1=self.user, user_2=other_profile.user)):
+            if (Block.objects.there_is_block(entity_1=self.user, entity_2=other_profile.user)):
                 return self.__class__.RANK_0
             if (not ((__class__.settings.MIN_HEIGHT_TO_MATCH <= self.height <= __class__.settings.MAX_HEIGHT_TO_MATCH) and (__class__.settings.MIN_HEIGHT_TO_MATCH <= other_profile.height <= __class__.settings.MAX_HEIGHT_TO_MATCH))):
                 return self.__class__.RANK_0

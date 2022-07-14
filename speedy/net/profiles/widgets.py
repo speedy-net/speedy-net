@@ -18,7 +18,7 @@ class UserOnSpeedyNetWidget(Widget):
         if (not (self.viewer.is_authenticated)):
             is_active_and_there_is_no_block = False  # This widget appears only for authenticated users on Speedy Match.
         else:
-            is_active_and_there_is_no_block = ((self.user.speedy_net_profile.is_active) and (not (Block.objects.there_is_block(user_1=self.viewer, user_2=self.user))))
+            is_active_and_there_is_no_block = ((self.user.speedy_net_profile.is_active) and (not (Block.objects.there_is_block(entity_1=self.viewer, entity_2=self.user))))
         if (not (is_active_and_there_is_no_block is True)):
             logger.error('UserOnSpeedyNetWidget::get inside "if (not (is_active_and_there_is_no_block is True)):", is_active_and_there_is_no_block={is_active_and_there_is_no_block}, self.viewer={viewer}, self.user={user}'.format(is_active_and_there_is_no_block=is_active_and_there_is_no_block, viewer=self.viewer, user=self.user))
         return is_active_and_there_is_no_block

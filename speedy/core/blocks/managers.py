@@ -17,19 +17,19 @@ BUST_CACHES = {
 }
 
 
-def cache_key(type, user_pk):
+def cache_key(type, entity_pk):
     """
     Build the cache key for a particular type of cached value.
     """
-    return CACHE_TYPES[type] % user_pk
+    return CACHE_TYPES[type] % entity_pk
 
 
-def bust_cache(type, user_pk, version=None):
+def bust_cache(type, entity_pk, version=None):
     """
     Bust the cache for a given type, can bust multiple caches.
     """
     bust_keys = BUST_CACHES[type]
-    keys = [CACHE_TYPES[k] % user_pk for k in bust_keys]
+    keys = [CACHE_TYPES[k] % entity_pk for k in bust_keys]
     cache_manager.cache_delete_many(keys=keys, version=version)
 
 
@@ -38,10 +38,10 @@ class BlockManager(BaseManager):
         """
         Update caches after block or unblock.
         """
-        bust_cache(type='blocked', user_pk=blocker.pk)
-        bust_cache(type='blocked', user_pk=blocker.pk, version=2)
-        bust_cache(type='blocking', user_pk=blocked.pk)
-        bust_cache(type='blocking', user_pk=blocked.pk, version=2)
+        bust_cache(type='blocked', entity_pk=blocker.pk)
+        bust_cache(type='blocked', entity_pk=blocker.pk, version=2)
+        bust_cache(type='blocking', entity_pk=blocked.pk)
+        bust_cache(type='blocking', entity_pk=blocked.pk, version=2)
         if ('blocked_entities_ids' in blocker.__dict__):
             del blocker.blocked_entities_ids
         if ('blocking_entities_ids' in blocked.__dict__):
@@ -69,11 +69,11 @@ class BlockManager(BaseManager):
             return (blocker.pk in blocked.blocking_entities_ids)
         return (blocked.pk in blocker.blocked_entities_ids)
 
-    def there_is_block(self, user_1, user_2):
-        return self.has_blocked(blocker=user_1, blocked=user_2) or self.has_blocked(blocker=user_2, blocked=user_1)
+    def there_is_block(self, entity_1, entity_2):
+        return self.has_blocked(blocker=entity_1, blocked=entity_2) or self.has_blocked(blocker=entity_2, blocked=entity_1)
 
     def get_blocked_entities_ids(self, blocker):
-        blocked_key = cache_key(type='blocked', user_pk=blocker.pk)
+        blocked_key = cache_key(type='blocked', entity_pk=blocker.pk)
         try:
             blocked_entities_ids = cache_manager.cache_get(key=blocked_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
         except Exception:
@@ -89,7 +89,7 @@ class BlockManager(BaseManager):
         return blocked_entities_ids
 
     def get_blocking_entities_ids(self, blocked):
-        blocking_key = cache_key(type='blocking', user_pk=blocked.pk)
+        blocking_key = cache_key(type='blocking', entity_pk=blocked.pk)
         try:
             blocking_entities_ids = cache_manager.cache_get(key=blocking_key, version=2, sliding_timeout=DEFAULT_TIMEOUT)
         except Exception:
