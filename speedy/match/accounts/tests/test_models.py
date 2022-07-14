@@ -726,7 +726,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
 
             def test_set_active_languages_3(self):
+                # Check that @cached_property user.speedy_match_profile.is_active is changed after calling user.speedy_match_profile._set_active_languages().
                 user = self.get_active_user_jennifer()
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
                 user.speedy_match_profile._set_active_languages(languages=[])
                 user.save_user_and_profile()
                 self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2=set())
