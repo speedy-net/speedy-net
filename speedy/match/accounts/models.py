@@ -246,10 +246,10 @@ class SiteProfile(SiteProfileBase):
 
     def _set_active_languages(self, languages):
         self.active_languages = sorted(list(set(languages)))
-        if (hasattr(self, "is_active")):
-            delattr(self, "is_active")
-        if (hasattr(self, "is_active_and_valid")):
-            delattr(self, "is_active_and_valid")
+        if ("is_active" in self.__dict__):
+            del self.is_active
+        if ("is_active_and_valid" in self.__dict__):
+            del self.is_active_and_valid
 
     def _deactivate_language(self, step, commit=True):
         # Profile is invalid. Deactivate in this language.
