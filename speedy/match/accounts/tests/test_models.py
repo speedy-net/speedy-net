@@ -724,18 +724,21 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=2)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
             def test_set_active_languages_3(self):
-                # Check that @cached_property user.speedy_match_profile.is_active is changed after calling user.speedy_match_profile._set_active_languages().
+                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile._set_active_languages().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
                 user.speedy_match_profile._set_active_languages(languages=[])
                 user.save_user_and_profile()
                 self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2=set())
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_set_active_languages_with_duplicates(self):
                 p = SpeedyMatchSiteProfile()
@@ -775,27 +778,34 @@ if (django_settings.TESTS):
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 with self.assertRaises(NotImplementedError) as cm:
                     user.speedy_match_profile.activate()
                 self.assertEqual(first=str(cm.exception), second="activate is not implemented.")
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_call_deactivate_directly_and_assert_no_exception(self):
+                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile.deactivate().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
                 user.speedy_match_profile.deactivate()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 user.speedy_match_profile.call_after_verify_email_address()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_call_get_name_directly_and_assert_no_exception(self):
                 user = self.get_default_user_doron()
@@ -834,13 +844,16 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.has_confirmed_email, second=False)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_deleting_email_addresses_deactivates_user(self):
+                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user_email_address.delete().
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.has_confirmed_email, second=True)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=1)
                 self.assertEqual(first=len(user.email_addresses.all()), second=1)
                 self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=1)
@@ -851,13 +864,17 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.has_confirmed_email, second=False)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_unconfirming_email_addresses_deactivates_user(self):
+                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after changing email.is_confirmed to False.
+                # After changing email.is_confirmed to True, user.speedy_match_profile.is_active doesn't change to True automatically. The user has to activate himself.
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.has_confirmed_email, second=True)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=1)
                 self.assertEqual(first=len(user.email_addresses.all()), second=1)
                 self.assertEqual(first=len(user.email_addresses.filter(is_confirmed=True)), second=1)
@@ -869,6 +886,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.has_confirmed_email, second=False)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
                 email = user.email_addresses.filter(is_confirmed=False).first()
                 email.is_confirmed = True
@@ -878,6 +896,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.has_confirmed_email, second=True)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_validate_profile_and_activate_exception_on_profile_picture(self):
