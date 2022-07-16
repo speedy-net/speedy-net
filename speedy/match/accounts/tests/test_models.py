@@ -791,8 +791,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
-            def test_call_deactivate_directly_and_assert_no_exception(self):
-                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile.deactivate().
+            def test_call_deactivate_and_activate_directly_and_assert_no_exception(self):
+                # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile.deactivate() and user.speedy_match_profile.validate_profile_and_activate().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
@@ -803,6 +803,19 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
+                # user.speedy_match_profile.validate_profile_and_activate(commit=False) doesn't change anything.
+                step, error_messages = user.speedy_match_profile.validate_profile_and_activate(commit=False)
+                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
+                step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
+                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
             def test_call_speedy_net_deactivate_and_activate_directly_and_assert_no_exception(self):
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_net_profile.deactivate() and user.speedy_net_profile.activate().
