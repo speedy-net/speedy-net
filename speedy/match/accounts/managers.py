@@ -91,8 +91,6 @@ class SiteProfileManager(BaseManager):
         datetime_now = datetime.now()
         timezone_now = now()
         today = date.today()
-        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
-        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
         qs = User.objects.active(
@@ -117,7 +115,6 @@ class SiteProfileManager(BaseManager):
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs[:2400]
         self._prefetch_related_objects_if_no_cached_counts(user_list=user_list)
-        # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
@@ -336,8 +333,6 @@ class SiteProfileManager(BaseManager):
             language_code=language_code,
         ))
         timezone_now = now()
-        # blocked_users_ids = Block.objects.filter(blocker__pk=user.pk).values_list('blocked_id', flat=True)
-        # blocking_users_ids = Block.objects.filter(blocked__pk=user.pk).values_list('blocker_id', flat=True)
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
         qs = User.objects.active(
@@ -361,7 +356,6 @@ class SiteProfileManager(BaseManager):
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
         user_list = qs
-        # matches_list = [other_user for other_user in user_list if ((other_user.speedy_match_profile.is_active) and (user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile) > self.model.RANK_0))]
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
