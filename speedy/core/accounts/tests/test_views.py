@@ -836,6 +836,13 @@ if (django_settings.TESTS):
                 )
 
             def test_user_can_logout(self):
+                r = self.client.get(path='/')
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertRedirects(response=r, expected_url='/{}/'.format(self.user.slug), status_code=302, target_status_code=200, fetch_redirect_response=False)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                else:
+                    raise NotImplementedError()
                 r = self.client.get(path='/logout/')
                 self.assertEqual(first=r.status_code, second=200)
                 r = self.client.get(path='/')
