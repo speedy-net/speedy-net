@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 from django.conf import settings as django_settings
 from django.contrib import messages
-from django.contrib.auth import login as django_auth_login, views as django_auth_views, update_session_auth_hash
+from django.contrib.auth import login as django_auth_login, logout as django_auth_logout, views as django_auth_views, update_session_auth_hash
 from django.contrib.sites.models import Site
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
@@ -269,7 +269,8 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
     def get(self, request, *args, **kwargs):
         email_address = self.get_object()
         if (not (email_address.user == self.request.user)):
-            return redirect(to='{}?next={}'.format(reverse('accounts:logout'), self.request.get_full_path()))
+            django_auth_logout(request=self.request)
+            return redirect(to=self.request.get_full_path())
         assert (email_address.user == self.request.user)
         token = self.kwargs.get('token')
         if (email_address.is_confirmed):

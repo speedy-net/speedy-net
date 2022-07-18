@@ -1440,13 +1440,11 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message])
                 self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=True)
 
-            def test_wrong_user_login_redirects_to_logout(self):
+            def test_wrong_user_login_logs_user_out_and_redirects_to_login(self):
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = self.unconfirmed_email_address.id
                 token = self.unconfirmed_email_address.confirmation_token
                 r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
-                self.assertRedirects(response=r, expected_url='/logout/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=302, fetch_redirect_response=False)
-                r = self.client.get(path='/logout/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=302, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/emails/{}/verify/{}/'.format(email_id, token))
                 self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=200)
