@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-26 09:03+0300\n"
+"POT-Creation-Date: 2022-07-19 12:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:771
+#: .\__translations\__translations.py:9 .\accounts\models.py:781
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -893,7 +893,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:455
+#: .\__translations\__translations.py:23 .\accounts\models.py:465
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -1945,18 +1945,18 @@ msgstr "עדכנ/י את תמונת הפרופיל שלך"
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
-#: .\accounts\forms.py:293 .\templates\base_with_login.html:123
+#: .\accounts\forms.py:293 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
 #: .\accounts\forms.py:299 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:136
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:302 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:133
+#: .\accounts\forms.py:302 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -1992,212 +1992,212 @@ msgstr "תמונה"
 msgid "Special username"
 msgstr "שם משתמש/ת מיוחד"
 
-#: .\accounts\models.py:101 .\messages\models.py:111
+#: .\accounts\models.py:111 .\messages\models.py:117
 msgid "entity"
 msgstr "ישות"
 
-#: .\accounts\models.py:102
+#: .\accounts\models.py:112
 msgid "entities"
 msgstr "ישויות"
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:139
 msgid "Slug does not parse to username."
 msgstr "slug לא מתאים לשם המשתמש/ת."
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:143
 msgid "Username is required."
 msgstr "שם המשתמש/ת נדרש."
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:152
 msgid "name"
 msgstr "שם"
 
-#: .\accounts\models.py:156
+#: .\accounts\models.py:167
 msgid "description"
 msgstr "תיאור"
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:213
 msgid "Female"
 msgstr "נקבה"
 
-#: .\accounts\models.py:204
+#: .\accounts\models.py:214
 msgid "Male"
 msgstr "זכר"
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:215
 msgid "Other"
 msgstr "אחר/ת"
 
-#: .\accounts\models.py:217 .\accounts\models.py:232 .\accounts\models.py:253
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:107
+#: .\accounts\models.py:227 .\accounts\models.py:242 .\accounts\models.py:263
+#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: .\accounts\models.py:218
+#: .\accounts\models.py:228
 msgid "Vegan (eats only plants and fungi)"
 msgstr "טבעוני/ת (אוכל/ת רק צמחים ופטריות)"
 
-#: .\accounts\models.py:219
+#: .\accounts\models.py:229
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "צמחוני/ת (לא אוכל/ת דגים ובשר)"
 
-#: .\accounts\models.py:220
+#: .\accounts\models.py:230
 msgid "Carnist (eats animals)"
 msgstr "קרניסט/ית (אוכל/ת חיות)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:243
 msgid "Not smoking"
 msgstr "לא מעשנ/ת"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:244
 msgid "Smoking occasionally"
 msgstr "מעשנ/ת מדי פעם"
 
-#: .\accounts\models.py:235
+#: .\accounts\models.py:245
 msgid "Smoking"
 msgstr "מעשנ/ת"
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:264
 msgid "Single"
 msgstr "רווק/ה"
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:265
 msgid "Divorced"
 msgstr "גרוש/ה"
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:266
 msgid "Widowed"
 msgstr "אלמן/אלמנה"
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:267
 msgid "In a relationship"
 msgstr "במערכת יחסים"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:268
 msgid "In an open relationship"
 msgstr "במערכת יחסים פתוחה"
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:269
 msgid "It's complicated"
 msgstr "זה מסובך"
 
-#: .\accounts\models.py:260
+#: .\accounts\models.py:270
 msgid "Separated"
 msgstr "פרוד/ה"
 
-#: .\accounts\models.py:261
+#: .\accounts\models.py:271
 msgid "Engaged"
 msgstr "מאורס/ת"
 
-#: .\accounts\models.py:262
+#: .\accounts\models.py:272
 msgid "Married"
 msgstr "נשוי/נשואה"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:281
 msgid "Notify me"
 msgstr "הודיעו לי"
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:282
 msgid "Don't notify me"
 msgstr "אל תודיעו לי"
 
-#: .\accounts\models.py:317
+#: .\accounts\models.py:327
 msgid "first name"
 msgstr "שם פרטי"
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:330
 msgid "last name"
 msgstr "שם משפחה"
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:332
 msgid "I am"
 msgstr "אני"
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:333
 msgid "date of birth"
 msgstr "תאריך לידה"
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:334
 msgid "diet"
 msgstr "תזונה"
 
-#: .\accounts\models.py:325
+#: .\accounts\models.py:335
 msgid "smoking status"
 msgstr "הרגלי עישון"
 
-#: .\accounts\models.py:326
+#: .\accounts\models.py:336
 msgid "relationship status"
 msgstr "סטטוס מערכת יחסים"
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:338
 msgid "Where do I live?"
 msgstr "איפה אני גר/ה?"
 
-#: .\accounts\models.py:333
+#: .\accounts\models.py:343
 msgid "Who can view my birth month and day"
 msgstr "מי יכול/ה לראות את חודש ויום הלידה שלי"
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:344
 msgid "Who can view my birth year"
 msgstr "מי יכול/ה לראות את שנת הלידה שלי"
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:345
 msgid "On new messages"
 msgstr "כאשר יש הודעות חדשות"
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:348
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Last IP address used https://ipapi.com/ time"
 
-#: .\accounts\models.py:339
+#: .\accounts\models.py:349
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Last IP address used raw https://ipapi.com/ results"
 
-#: .\accounts\models.py:462 .\accounts\models.py:755 .\blocks\models.py:15
+#: .\accounts\models.py:472 .\accounts\models.py:765 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:463
+#: .\accounts\models.py:473
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:498
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:756
+#: .\accounts\models.py:766
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:757
+#: .\accounts\models.py:767
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:768
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:759
+#: .\accounts\models.py:769
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:760
+#: .\accounts\models.py:770
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:771
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:772
+#: .\accounts\models.py:782
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:838
+#: .\accounts\models.py:849
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:839
+#: .\accounts\models.py:850
 msgid "last visit"
 msgstr "ביקור אחרון"
 
@@ -2339,20 +2339,20 @@ msgstr ""
 "אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
 "מתקבלים."
 
-#: .\accounts\views.py:282
+#: .\accounts\views.py:283
 msgid "Invalid confirmation link."
 msgstr "קישור אימות לא חוקי."
 
-#: .\accounts\views.py:306 .\accounts\views.py:322
+#: .\accounts\views.py:307 .\accounts\views.py:323
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "הודעת אימות נשלחה ל-‎{email_address}‎‎"
 
-#: .\accounts\views.py:337
+#: .\accounts\views.py:338
 msgid "The email address was deleted."
 msgstr "כתובת הדואר האלקטרוני נמחקה."
 
-#: .\accounts\views.py:353
+#: .\accounts\views.py:354
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
@@ -2429,7 +2429,7 @@ msgstr "id מכיל תווים לא חוקיים."
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
-#: .\blocks\managers.py:81 .\blocks\models.py:31
+#: .\blocks\managers.py:56 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "משתמשים לא יכולים לחסום את עצמם."
 
@@ -2485,7 +2485,7 @@ msgstr "Abuse (User)"
 msgid "Abuse (Photo)"
 msgstr "Abuse (Photo)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:95
+#: .\contact_by_form\models.py:21 .\messages\models.py:101
 msgid "sender"
 msgstr "שולח/ת"
 
@@ -2569,7 +2569,7 @@ msgstr "is group chat"
 msgid "last message"
 msgstr "הודעה אחרונה"
 
-#: .\messages\models.py:54 .\messages\models.py:94 .\messages\models.py:112
+#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
 msgid "chat"
 msgstr "צ'ט"
 
@@ -2581,27 +2581,27 @@ msgstr "צ'טים"
 msgid "None"
 msgstr "אין"
 
-#: .\messages\models.py:96 .\messages\models.py:101
+#: .\messages\models.py:102 .\messages\models.py:107
 msgid "message"
 msgstr "הודעה"
 
-#: .\messages\models.py:102
+#: .\messages\models.py:108
 msgid "messages"
 msgstr "הודעות"
 
-#: .\messages\models.py:117
+#: .\messages\models.py:123
 msgid "read mark"
 msgstr "read mark"
 
-#: .\messages\models.py:118
+#: .\messages\models.py:124
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:163
+#: .\settings\base.py:162
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:164
+#: .\settings\base.py:163
 msgid "Hebrew"
 msgstr "עברית"
 
@@ -2633,7 +2633,7 @@ msgstr "ספידי מצטערת, אבל הדף לא נמצא."
 msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:202
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:206
 #: .\templates\base_without_login.html:13
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2641,8 +2641,8 @@ msgstr "אודות"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:104
-#: .\templates\base_with_login.html:106 .\templates\base_with_login.html:154
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2653,7 +2653,7 @@ msgid "Profile Info"
 msgstr "פרטי פרופיל"
 
 #: .\templates\accounts\edit_profile\core_base.html:25
-#: .\templates\base_with_login.html:203
+#: .\templates\base_with_login.html:207
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr "פרטיות"
@@ -2845,7 +2845,7 @@ msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
 #: .\templates\base.html:194 .\templates\base.html:195
-#: .\templates\base_with_login.html:84 .\templates\base_with_login.html:85
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr "אתר ידידותי לטבעונים"
 
@@ -2853,39 +2853,38 @@ msgstr "אתר ידידותי לטבעונים"
 msgid "Speedy"
 msgstr "ספידי"
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:111
-#: .\templates\base_with_login.html:113
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
 msgstr "התנתק/י"
 
-#: .\templates\base_with_login.html:64
+#: .\templates\base_with_login.html:67
 msgid "Home"
 msgstr "דף הבית"
 
-#: .\templates\base_with_login.html:129
+#: .\templates\base_with_login.html:133
 msgid "Password"
 msgstr "סיסמה"
 
-#: .\templates\base_with_login.html:203
+#: .\templates\base_with_login.html:207
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: .\templates\base_with_login.html:204
+#: .\templates\base_with_login.html:208
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
 msgstr "תנאי שימוש"
 
-#: .\templates\base_with_login.html:204
+#: .\templates\base_with_login.html:208
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base_with_login.html:205 .\templates\base_without_login.html:14
+#: .\templates\base_with_login.html:209 .\templates\base_without_login.html:14
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6

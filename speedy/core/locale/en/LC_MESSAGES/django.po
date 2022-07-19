@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-26 09:03+0300\n"
+"POT-Creation-Date: 2022-07-19 12:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:771
+#: .\__translations\__translations.py:9 .\accounts\models.py:781
 msgid "email address"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:455
+#: .\__translations\__translations.py:23 .\accounts\models.py:465
 msgid "Friends"
 msgstr ""
 
@@ -1886,18 +1886,18 @@ msgstr ""
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:293 .\templates\base_with_login.html:123
+#: .\accounts\forms.py:293 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr ""
 
 #: .\accounts\forms.py:299 .\templates\accounts\login.html:6
-#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:67
-#: .\templates\base_with_login.html:136
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:302 .\templates\base_with_login.html:70
-#: .\templates\base_with_login.html:133
+#: .\accounts\forms.py:302 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr ""
 
@@ -1933,212 +1933,212 @@ msgstr ""
 msgid "Special username"
 msgstr ""
 
-#: .\accounts\models.py:101 .\messages\models.py:111
+#: .\accounts\models.py:111 .\messages\models.py:117
 msgid "entity"
 msgstr ""
 
-#: .\accounts\models.py:102
+#: .\accounts\models.py:112
 msgid "entities"
 msgstr ""
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:139
 msgid "Slug does not parse to username."
 msgstr ""
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:143
 msgid "Username is required."
 msgstr ""
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:152
 msgid "name"
 msgstr ""
 
-#: .\accounts\models.py:156
+#: .\accounts\models.py:167
 msgid "description"
 msgstr ""
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:213
 msgid "Female"
 msgstr ""
 
-#: .\accounts\models.py:204
+#: .\accounts\models.py:214
 msgid "Male"
 msgstr ""
 
-#: .\accounts\models.py:205
+#: .\accounts\models.py:215
 msgid "Other"
 msgstr ""
 
-#: .\accounts\models.py:217 .\accounts\models.py:232 .\accounts\models.py:253
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:107
+#: .\accounts\models.py:227 .\accounts\models.py:242 .\accounts\models.py:263
+#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
 msgid "Unknown"
 msgstr ""
 
-#: .\accounts\models.py:218
+#: .\accounts\models.py:228
 msgid "Vegan (eats only plants and fungi)"
 msgstr ""
 
-#: .\accounts\models.py:219
+#: .\accounts\models.py:229
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr ""
 
-#: .\accounts\models.py:220
+#: .\accounts\models.py:230
 msgid "Carnist (eats animals)"
 msgstr ""
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:243
 msgid "Not smoking"
 msgstr ""
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:244
 msgid "Smoking occasionally"
 msgstr ""
 
-#: .\accounts\models.py:235
+#: .\accounts\models.py:245
 msgid "Smoking"
 msgstr ""
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:264
 msgid "Single"
 msgstr ""
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:265
 msgid "Divorced"
 msgstr ""
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:266
 msgid "Widowed"
 msgstr ""
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:267
 msgid "In a relationship"
 msgstr ""
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:268
 msgid "In an open relationship"
 msgstr ""
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:269
 msgid "It's complicated"
 msgstr ""
 
-#: .\accounts\models.py:260
+#: .\accounts\models.py:270
 msgid "Separated"
 msgstr ""
 
-#: .\accounts\models.py:261
+#: .\accounts\models.py:271
 msgid "Engaged"
 msgstr ""
 
-#: .\accounts\models.py:262
+#: .\accounts\models.py:272
 msgid "Married"
 msgstr ""
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:281
 msgid "Notify me"
 msgstr ""
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:282
 msgid "Don't notify me"
 msgstr ""
 
-#: .\accounts\models.py:317
+#: .\accounts\models.py:327
 msgid "first name"
 msgstr ""
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:330
 msgid "last name"
 msgstr ""
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:332
 msgid "I am"
 msgstr ""
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:333
 msgid "date of birth"
 msgstr ""
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:334
 msgid "diet"
 msgstr ""
 
-#: .\accounts\models.py:325
+#: .\accounts\models.py:335
 msgid "smoking status"
 msgstr ""
 
-#: .\accounts\models.py:326
+#: .\accounts\models.py:336
 msgid "relationship status"
 msgstr ""
 
-#: .\accounts\models.py:328
+#: .\accounts\models.py:338
 msgid "Where do I live?"
 msgstr ""
 
-#: .\accounts\models.py:333
+#: .\accounts\models.py:343
 msgid "Who can view my birth month and day"
 msgstr ""
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:344
 msgid "Who can view my birth year"
 msgstr ""
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:345
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:338
+#: .\accounts\models.py:348
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr ""
 
-#: .\accounts\models.py:339
+#: .\accounts\models.py:349
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 
-#: .\accounts\models.py:462 .\accounts\models.py:755 .\blocks\models.py:15
+#: .\accounts\models.py:472 .\accounts\models.py:765 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:463
+#: .\accounts\models.py:473
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:498
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:756
+#: .\accounts\models.py:766
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:757
+#: .\accounts\models.py:767
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:768
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:759
+#: .\accounts\models.py:769
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:760
+#: .\accounts\models.py:770
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:771
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:772
+#: .\accounts\models.py:782
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:838
+#: .\accounts\models.py:849
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:839
+#: .\accounts\models.py:850
 msgid "last visit"
 msgstr ""
 
@@ -2259,20 +2259,20 @@ msgid ""
 "are accepted."
 msgstr ""
 
-#: .\accounts\views.py:282
+#: .\accounts\views.py:283
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:306 .\accounts\views.py:322
+#: .\accounts\views.py:307 .\accounts\views.py:323
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:337
+#: .\accounts\views.py:338
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:353
+#: .\accounts\views.py:354
 msgid "You have made this email address primary."
 msgstr ""
 
@@ -2329,7 +2329,7 @@ msgstr ""
 msgid "Changes saved."
 msgstr ""
 
-#: .\blocks\managers.py:81 .\blocks\models.py:31
+#: .\blocks\managers.py:56 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr ""
 
@@ -2385,7 +2385,7 @@ msgstr ""
 msgid "Abuse (Photo)"
 msgstr ""
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:95
+#: .\contact_by_form\models.py:21 .\messages\models.py:101
 msgid "sender"
 msgstr ""
 
@@ -2469,7 +2469,7 @@ msgstr ""
 msgid "last message"
 msgstr ""
 
-#: .\messages\models.py:54 .\messages\models.py:94 .\messages\models.py:112
+#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
 msgid "chat"
 msgstr ""
 
@@ -2481,27 +2481,27 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: .\messages\models.py:96 .\messages\models.py:101
+#: .\messages\models.py:102 .\messages\models.py:107
 msgid "message"
 msgstr ""
 
-#: .\messages\models.py:102
+#: .\messages\models.py:108
 msgid "messages"
 msgstr ""
 
-#: .\messages\models.py:117
+#: .\messages\models.py:123
 msgid "read mark"
 msgstr ""
 
-#: .\messages\models.py:118
+#: .\messages\models.py:124
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:163
+#: .\settings\base.py:162
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:164
+#: .\settings\base.py:163
 msgid "Hebrew"
 msgstr ""
 
@@ -2533,7 +2533,7 @@ msgstr ""
 msgid "Internal server error"
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:202
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:206
 #: .\templates\base_without_login.html:13
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2541,8 +2541,8 @@ msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
-#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:104
-#: .\templates\base_with_login.html:106 .\templates\base_with_login.html:154
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
@@ -2553,7 +2553,7 @@ msgid "Profile Info"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:25
-#: .\templates\base_with_login.html:203
+#: .\templates\base_with_login.html:207
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2744,7 +2744,7 @@ msgid "Speedy Sale"
 msgstr ""
 
 #: .\templates\base.html:194 .\templates\base.html:195
-#: .\templates\base_with_login.html:84 .\templates\base_with_login.html:85
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr ""
 
@@ -2752,39 +2752,38 @@ msgstr ""
 msgid "Speedy"
 msgstr ""
 
-#: .\templates\base_with_login.html:57 .\templates\base_with_login.html:111
-#: .\templates\base_with_login.html:113
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base_with_login.html:64
+#: .\templates\base_with_login.html:67
 msgid "Home"
 msgstr ""
 
-#: .\templates\base_with_login.html:129
+#: .\templates\base_with_login.html:133
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:203
+#: .\templates\base_with_login.html:207
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base_with_login.html:204
+#: .\templates\base_with_login.html:208
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base_with_login.html:204
+#: .\templates\base_with_login.html:208
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base_with_login.html:205 .\templates\base_without_login.html:14
+#: .\templates\base_with_login.html:209 .\templates\base_without_login.html:14
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6
