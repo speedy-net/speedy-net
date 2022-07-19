@@ -3,7 +3,7 @@
 <p class="form-control-static" data-block="Uploader" data-action="{% url 'uploads:upload' %}">
     <span href="#" class="btn btn-xs btn-success" data-role="browseButton">
         <i class="fas fa-folder-open"></i>
-        {% trans 'Browse...' %}
+        {% translate 'Browse...' %}
     </span>
     <span data-role="filename">{{ file.basename }}</span>
     <span class="progress" data-role="progress" style="display: block">

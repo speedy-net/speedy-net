@@ -4,6 +4,6 @@
 {% if friendship_request_sent %}
     <form class="d-inline" action="{% url 'friends:cancel_request' user.slug %}" method="post">
         {% csrf_token %}
-        <button type="submit" class="btn btn-default" title="{% trans 'Cancel Friendship Request' context request.user.get_gender %}">{% trans 'Cancel Friendship Request' context request.user.get_gender %}</button>
+        <button type="submit" class="btn btn-default" title="{% translate 'Cancel Friendship Request' context request.user.get_gender %}">{% translate 'Cancel Friendship Request' context request.user.get_gender %}</button>
     </form>
 {% endif %}

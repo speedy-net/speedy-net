@@ -7,10 +7,10 @@
         <div class="card">
             <div class="card-header">
                 <a href="{% url 'friends:list' user.slug %}" class="pull-right">
-                    {% trans 'See All' context request.user.get_gender %}
+                    {% translate 'See All' context request.user.get_gender %}
                 </a>
                 <h5 class="card-title mb-0">
-                    {% trans 'Admin - Friends' %} ({{ friends_count }} {% trans 'friends' %})
+                    {% translate 'Admin - Friends' %} ({{ friends_count }} {% translate 'friends' %})
                 </h5>
             </div>
             <div class="card-body">
@@ -22,7 +22,7 @@
                             </div>
                         {% endfor %}
                     {% else %}
-                        {% trans 'No friends yet.' %}
+                        {% translate 'No friends yet.' %}
                     {% endif %}
                 </div>
             </div>

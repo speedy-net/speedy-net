@@ -4,9 +4,9 @@
     <div class="col-sm-12 pull-right">
        <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{{ admin_user_prefix }}{% url 'profiles:user' slug=user.slug %}">
             {% if user == viewer %}
-                {% blocktrans context viewer.get_gender %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
+                {% blocktranslate context viewer.get_gender %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktranslate %}
             {% else %}
-                {% blocktrans with user_name=user.first_name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+                {% blocktranslate with user_name=user.first_name|truncatechars:50 context viewer.get_gender %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktranslate %}
             {% endif %}
         </a>
     </div>

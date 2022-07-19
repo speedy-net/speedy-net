@@ -5,25 +5,25 @@
 {% load core_messages_tags_and_filters %}
 {% load rules %}
 
-{% block title %}{{ block.super }} - {% trans 'Terms of Service' %}{% endblock %}
+{% block title %}{{ block.super }} - {% translate 'Terms of Service' %}{% endblock %}
 
 {% block google_ads %}{% endblock %}
 
 {% block content %}
 <div class="page-header">
     <h1>
-        {% blocktrans with site_name=site_name %}Terms of Service{% endblocktrans %}
+        {% blocktranslate with site_name=site_name %}Terms of Service{% endblocktranslate %}
     </h1>
 </div>
 <div class="static-content">
-    {% blocktrans with site_name=site_name %}The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}You can use Speedy Net for legal purposes only. You are not allowed to upload contents related to hate, violence, animal abuse, nudity or pornography. You are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}You can use Speedy Net for legal purposes only. You are not allowed to upload contents related to hate, violence, animal abuse, nudity or pornography. You are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}Site management cannot verify personal information provided by users of the site. Some users' personal information may not be correct. Site management is not responsible for user activity outside the site. If you choose to meet or talk on the phone with people you met on the site, the responsibility for the results of the meeting or phone call is yours.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}Site management cannot verify personal information provided by users of the site. Some users' personal information may not be correct. Site management is not responsible for user activity outside the site. If you choose to meet or talk on the phone with people you met on the site, the responsibility for the results of the meeting or phone call is yours.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}After signing up for the site you are asked to verify your email address via a link sent to you. Accounts without a verified email address will be deleted from the site after 10 days.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}After signing up for the site you are asked to verify your email address via a link sent to you. Accounts without a verified email address will be deleted from the site after 10 days.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}If you mistakenly signed up for the site with an incorrect email address, add a new email address to your account and verify it. You can attach several email addresses to your account on the site.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}If you mistakenly signed up for the site with an incorrect email address, add a new email address to your account and verify it. You can attach several email addresses to your account on the site.{% endblocktranslate %}<br />
 </div>
 {% endblock %}

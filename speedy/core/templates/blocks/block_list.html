@@ -3,7 +3,7 @@
 {% load core_tags_and_filters %}
 {% load i18n %}
 
-{% block title %}{% trans 'Blocked Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Blocked Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block tab_content %}
     <div class="row flex-wrap">
@@ -12,7 +12,7 @@
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-warning">
-                    {% trans "You're not blocking anybody." context user.get_gender %}
+                    {% translate "You're not blocking anybody." context user.get_gender %}
                 </div>
             </div>
         {% endfor %}

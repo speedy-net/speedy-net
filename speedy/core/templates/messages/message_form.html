@@ -6,7 +6,7 @@
 {% block user_content %}
     <div class="card mb-4 bg-light">
         <div class="card-body">
-            <h2>{% blocktrans context request.user.get_gender with user_name=user.name %}Send a message to {{ user_name }}{% endblocktrans %}</h2>
+            <h2>{% blocktranslate context request.user.get_gender with user_name=user.name %}Send a message to {{ user_name }}{% endblocktranslate %}</h2>
             {% crispy form %}
         </div>
     </div>

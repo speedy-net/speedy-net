@@ -3,23 +3,23 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Welcome' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Welcome' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-md-10">
             <div class="page-header">
-                <h1>{% blocktrans with site_name=site_name context user.get_gender %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
+                <h1>{% blocktranslate with site_name=site_name context user.get_gender %}Welcome to {{ site_name }}{% endblocktranslate %}</h1>
             </div>
             {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">
-                    {% trans 'Please confirm your email address.' context user.get_gender %}
+                    {% translate 'Please confirm your email address.' context user.get_gender %}
                 </div>
             {% elif form %}
                 {% crispy form %}
                 <br />
             {% else %}
-                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context request.user.get_gender %}</a>
+                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% translate 'Your Speedy Net account is not active. Enter this page to activate it.' context request.user.get_gender %}</a>
             {% endif %}
         </div>
     </div>

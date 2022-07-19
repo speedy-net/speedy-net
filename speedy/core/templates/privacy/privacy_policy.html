@@ -5,21 +5,21 @@
 {% load core_messages_tags_and_filters %}
 {% load rules %}
 
-{% block title %}{{ block.super }} - {% trans 'Privacy Policy' %}{% endblock %}
+{% block title %}{{ block.super }} - {% translate 'Privacy Policy' %}{% endblock %}
 
 {% block google_ads %}{% endblock %}
 
 {% block content %}
 <div class="page-header">
     <h1>
-        {% blocktrans with site_name=site_name %}Privacy Policy{% endblocktrans %}
+        {% blocktranslate with site_name=site_name %}Privacy Policy{% endblocktranslate %}
     </h1>
 </div>
 <div class="static-content">
-    {% blocktrans with site_name=site_name %}We respect your privacy. We will not sell or share your personal details, including your name, your date of birth, your email address and your password. Messages you send to people on Speedy Net are personal and will not be shared with other people or websites. Your password is saved encrypted on our database.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}We respect your privacy. We will not sell or share your personal details, including your name, your date of birth, your email address and your password. Messages you send to people on Speedy Net are personal and will not be shared with other people or websites. Your password is saved encrypted on our database.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}Your profile on Speedy Net is visible to everyone, but you can choose who to share with your email address and your date of birth. If you signed up for Speech Match, your Speech Match profile will only be visible to people who match you according to the settings you have set up on the site, and that you match them according to their settings. Your profile on Speech Match will not appear on Google and is not visible to people who are not registered to the site.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}Your profile on Speedy Net is visible to everyone, but you can choose who to share with your email address and your date of birth. If you signed up for Speech Match, your Speech Match profile will only be visible to people who match you according to the settings you have set up on the site, and that you match them according to their settings. Your profile on Speech Match will not appear on Google and is not visible to people who are not registered to the site.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}If you have deactivated your account on Speedy Net or Speech Match, your profile on that site will be removed from the site and you will not appear in other people's search results on the site. Note that deactivating your account on Speedy Net also automatically deactivates your account at Speedy Match. You can deactivate only your account at Speedy Match, in which case your Speedy Net account will remain active. You can reactivate your account after you deactivate it whenever you like.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}If you have deactivated your account on Speedy Net or Speech Match, your profile on that site will be removed from the site and you will not appear in other people's search results on the site. Note that deactivating your account on Speedy Net also automatically deactivates your account at Speedy Match. You can deactivate only your account at Speedy Match, in which case your Speedy Net account will remain active. You can reactivate your account after you deactivate it whenever you like.{% endblocktranslate %}<br />
 </div>
 {% endblock %}

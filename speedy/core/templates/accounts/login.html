@@ -3,13 +3,13 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Login' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Login' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="page-header">
-                <h1>{% trans 'Login' %}</h1>
+                <h1>{% translate 'Login' %}</h1>
             </div>
             {% crispy form %}
         </div>

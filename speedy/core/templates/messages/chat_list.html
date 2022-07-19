@@ -5,7 +5,7 @@
 {% load core_messages_tags_and_filters %}
 {% load user_tags %}
 
-{% block title %}{% trans 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
         <div class="col-12">
 
             <div class="page-header">
-                <h1>{% trans 'Messages' %}</h1>
+                <h1>{% translate 'Messages' %}</h1>
             </div>
 
             {% if chat_list %}
@@ -47,14 +47,14 @@
                                             </small>
                                             {% if chat.is_unread %}
                                                 <span class="pull-right">
-                                                    <i class="fas fa-circle text-primary" title="{% trans 'Unread' %}"></i>
+                                                    <i class="fas fa-circle text-primary" title="{% translate 'Unread' %}"></i>
                                                 </span>
                                             {% endif %}
                                         </p>
                                         <p>
                                             {% if user.id == chat.last_message.sender_id %}
                                                 <strong>
-                                                    <small>{% trans 'You:' context request.user.get_gender %}</small>
+                                                    <small>{% translate 'You:' context request.user.get_gender %}</small>
                                                 </strong>
                                             {% else %}
                                                 <strong>
@@ -74,7 +74,7 @@
 
             {% else %}
                 <div class="alert alert-warning">
-                    {% trans 'You have no messages yet.' context user.get_gender %}
+                    {% translate 'You have no messages yet.' context user.get_gender %}
                 </div>
             {% endif %}
         </div>

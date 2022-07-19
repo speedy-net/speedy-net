@@ -7,29 +7,29 @@
 
 {% if can_block or can_unblock %}
 <div class="dropdown d-inline">
-    <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% trans 'Toggle Dropdown' %}">
+    <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% translate 'Toggle Dropdown' %}">
         <span class="fas fa-ellipsis-h"></span>
-        <span class="sr-only">{% trans 'Toggle Dropdown' %}</span>
+        <span class="sr-only">{% translate 'Toggle Dropdown' %}</span>
     </button>
     <div class="dropdown-menu">
         {% if can_block %}
-            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% trans 'Are you sure you want to block ' context request.user.get_gender %}{{ user.name }}{% trans '?' %}');">
+            <form action="{% url 'blocks:block' user.slug %}" class="d-inline" method="post" onsubmit="return confirm('{% translate 'Are you sure you want to block ' context request.user.get_gender %}{{ user.name }}{% translate '?' %}');">
                 {% csrf_token %}
-                <button class="dropdown-item" type="submit" title="{% trans 'Block ' context request.user.get_gender %}{{ user.name }}">
-                    {% trans 'Block ' context request.user.get_gender %}{{ user.name }}
+                <button class="dropdown-item" type="submit" title="{% translate 'Block ' context request.user.get_gender %}{{ user.name }}">
+                    {% translate 'Block ' context request.user.get_gender %}{{ user.name }}
                 </button>
             </form>
         {% elif can_unblock %}
             <form action="{% url 'blocks:unblock' user.slug %}" method="post">
                 {% csrf_token %}
-                <button class="dropdown-item" type="submit" title="{% trans 'Unblock ' context request.user.get_gender %}{{ user.name }}">
-                    {% trans 'Unblock ' context request.user.get_gender %}{{ user.name }}
+                <button class="dropdown-item" type="submit" title="{% translate 'Unblock ' context request.user.get_gender %}{{ user.name }}">
+                    {% translate 'Unblock ' context request.user.get_gender %}{{ user.name }}
                 </button>
             </form>
         {% endif %}
-        <a class="dropdown-item" href="{% url 'contact:report_entity' user.slug %}" title="{% trans 'Report ' context request.user.get_gender %}{{ user.name }}">{% trans 'Report ' context request.user.get_gender %}{{ user.name }}</a>
+        <a class="dropdown-item" href="{% url 'contact:report_entity' user.slug %}" title="{% translate 'Report ' context request.user.get_gender %}{{ user.name }}">{% translate 'Report ' context request.user.get_gender %}{{ user.name }}</a>
         {% if user.photo %}
-            <a class="dropdown-item" href="{% url 'contact:report_file' user.photo.id %}" title="{% trans 'Report this photo' context request.user.get_gender %}">{% trans 'Report this photo' context request.user.get_gender %}</a>
+            <a class="dropdown-item" href="{% url 'contact:report_file' user.photo.id %}" title="{% translate 'Report this photo' context request.user.get_gender %}">{% translate 'Report this photo' context request.user.get_gender %}</a>
         {% endif %}
     </div>
 </div>

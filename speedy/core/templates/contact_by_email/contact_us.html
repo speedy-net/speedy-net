@@ -5,19 +5,19 @@
 {% load core_messages_tags_and_filters %}
 {% load rules %}
 
-{% block title %}{{ block.super }} - {% trans 'Contact Us' %}{% endblock %}
+{% block title %}{{ block.super }} - {% translate 'Contact Us' %}{% endblock %}
 
 {% block google_ads %}{% endblock %}
 
 {% block content %}
 <div class="page-header">
     <h1>
-        {% blocktrans with site_name=site_name %}Contact Us{% endblocktrans %}
+        {% blocktranslate with site_name=site_name %}Contact Us{% endblocktranslate %}
     </h1>
 </div>
 <div class="static-content">
-    {% blocktrans with site_name=site_name %}If you have any questions, suggestions or are interested in joining the team - please contact us by email.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}If you have any questions, suggestions or are interested in joining the team - please contact us by email.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}Uri Rodberg, founder and webmaster: {% endblocktrans %}<a href="mailto:uri@speedy.net">uri@speedy.net</a><br />
+    {% blocktranslate with site_name=site_name %}Uri Rodberg, founder and webmaster: {% endblocktranslate %}<a href="mailto:uri@speedy.net">uri@speedy.net</a><br />
 </div>
 {% endblock %}

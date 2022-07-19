@@ -2,214 +2,214 @@
 
 {% load i18n %}
 
-{% trans 'Your friend' context user.get_gender %}
-{% trans 'Friendship request sent' %}
+{% translate 'Your friend' context user.get_gender %}
+{% translate 'Friendship request sent' %}
 
-{% trans "You haven't confirmed your email address. Please check your inbox." context "female" %}
-{% trans "You haven't confirmed your email address. Please check your inbox." context "male" %}
-{% trans "You haven't confirmed your email address. Please check your inbox." context "other" %}
+{% translate "You haven't confirmed your email address. Please check your inbox." context "female" %}
+{% translate "You haven't confirmed your email address. Please check your inbox." context "male" %}
+{% translate "You haven't confirmed your email address. Please check your inbox." context "other" %}
 
-{% trans 'Logout' context "female" %}
-{% trans 'Logout' context "male" %}
-{% trans 'Logout' context "other" %}
+{% translate 'Logout' context "female" %}
+{% translate 'Logout' context "male" %}
+{% translate 'Logout' context "other" %}
 
-{% blocktrans context "female" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
-{% blocktrans context "male" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
-{% blocktrans context "other" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}
+{% blocktranslate context "female" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktranslate %}
+{% blocktranslate context "male" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktranslate %}
+{% blocktranslate context "other" with user_link=request.user.get_absolute_url user_name=request.user.first_name site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktranslate %}
 
-{% trans 'Please confirm your email address.' context "female" %}
-{% trans 'Please confirm your email address.' context "male" %}
-{% trans 'Please confirm your email address.' context "other" %}
+{% translate 'Please confirm your email address.' context "female" %}
+{% translate 'Please confirm your email address.' context "male" %}
+{% translate 'Please confirm your email address.' context "other" %}
 
-{% trans 'Deactivate Account' context "female" %}
-{% trans 'Deactivate Account' context "male" %}
-{% trans 'Deactivate Account' context "other" %}
+{% translate 'Deactivate Account' context "female" %}
+{% translate 'Deactivate Account' context "male" %}
+{% translate 'Deactivate Account' context "other" %}
 
-{% trans 'Resend a confirmation email' context "female" %}
-{% trans 'Resend a confirmation email' context "male" %}
-{% trans 'Resend a confirmation email' context "other" %}
+{% translate 'Resend a confirmation email' context "female" %}
+{% translate 'Resend a confirmation email' context "male" %}
+{% translate 'Resend a confirmation email' context "other" %}
 
-{% trans 'Make this email address primary' context "female" %}
-{% trans 'Make this email address primary' context "male" %}
-{% trans 'Make this email address primary' context "other" %}
+{% translate 'Make this email address primary' context "female" %}
+{% translate 'Make this email address primary' context "male" %}
+{% translate 'Make this email address primary' context "other" %}
 
-{% trans 'Are you sure you want to delete this email address?' context "female" %}
-{% trans 'Are you sure you want to delete this email address?' context "male" %}
-{% trans 'Are you sure you want to delete this email address?' context "other" %}
+{% translate 'Are you sure you want to delete this email address?' context "female" %}
+{% translate 'Are you sure you want to delete this email address?' context "male" %}
+{% translate 'Are you sure you want to delete this email address?' context "other" %}
 
-{% trans 'Delete this email address' context "female" %}
-{% trans 'Delete this email address' context "male" %}
-{% trans 'Delete this email address' context "other" %}
+{% translate 'Delete this email address' context "female" %}
+{% translate 'Delete this email address' context "male" %}
+{% translate 'Delete this email address' context "other" %}
 
-{% trans 'Add Another' context "female" %}
-{% trans 'Add Another' context "male" %}
-{% trans 'Add Another' context "other" %}
+{% translate 'Add Another' context "female" %}
+{% translate 'Add Another' context "male" %}
+{% translate 'Add Another' context "other" %}
 
-{% trans 'Change Password' context "female" %}
-{% trans 'Change Password' context "male" %}
-{% trans 'Change Password' context "other" %}
+{% translate 'Change Password' context "female" %}
+{% translate 'Change Password' context "male" %}
+{% translate 'Change Password' context "other" %}
 
-{% trans 'Change privacy settings of email addresses on your profile.' context "female" %}
-{% trans 'Change privacy settings of email addresses on your profile.' context "male" %}
-{% trans 'Change privacy settings of email addresses on your profile.' context "other" %}
+{% translate 'Change privacy settings of email addresses on your profile.' context "female" %}
+{% translate 'Change privacy settings of email addresses on your profile.' context "male" %}
+{% translate 'Change privacy settings of email addresses on your profile.' context "other" %}
 
-{% trans "You're not blocking anybody." context "female" %}
-{% trans "You're not blocking anybody." context "male" %}
-{% trans "You're not blocking anybody." context "other" %}
+{% translate "You're not blocking anybody." context "female" %}
+{% translate "You're not blocking anybody." context "male" %}
+{% translate "You're not blocking anybody." context "other" %}
 
-{% trans 'Report a User' context "female" %}
-{% trans 'Report a User' context "male" %}
-{% trans 'Report a User' context "other" %}
+{% translate 'Report a User' context "female" %}
+{% translate 'Report a User' context "male" %}
+{% translate 'Report a User' context "other" %}
 
-{#{% trans 'Report a Photo' %}#}
-{#{% trans 'Report a Photo' %}#}
-{#{% trans 'Report a Photo' %}#}
+{#{% translate 'Report a Photo' %}#}
+{#{% translate 'Report a Photo' %}#}
+{#{% translate 'Report a Photo' %}#}
 {##}
-{#{% trans 'Contact Us' %}#}
-{#{% trans 'Contact Us' %}#}
-{#{% trans 'Contact Us' %}#}
+{#{% translate 'Contact Us' %}#}
+{#{% translate 'Contact Us' %}#}
+{#{% translate 'Contact Us' %}#}
 
-{% trans 'Your feedback was sent to administrators.' context "female" %}
-{% trans 'Your feedback was sent to administrators.' context "male" %}
-{% trans 'Your feedback was sent to administrators.' context "other" %}
+{% translate 'Your feedback was sent to administrators.' context "female" %}
+{% translate 'Your feedback was sent to administrators.' context "male" %}
+{% translate 'Your feedback was sent to administrators.' context "other" %}
 
-{% blocktrans context "female" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
-{% blocktrans context "male" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
-{% blocktrans context "other" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}
+{% blocktranslate context "female" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktranslate %}
+{% blocktranslate context "male" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktranslate %}
+{% blocktranslate context "other" with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktranslate %}
 
-{% trans 'Mark All as Read' context "female" %}
-{% trans 'Mark All as Read' context "male" %}
-{% trans 'Mark All as Read' context "other" %}
+{% translate 'Mark All as Read' context "female" %}
+{% translate 'Mark All as Read' context "male" %}
+{% translate 'Mark All as Read' context "other" %}
 
-{% trans 'You:' context "female" %}
-{% trans 'You:' context "male" %}
-{% trans 'You:' context "other" %}
+{% translate 'You:' context "female" %}
+{% translate 'You:' context "male" %}
+{% translate 'You:' context "other" %}
 
-{% trans 'You have no messages yet.' context "female" %}
-{% trans 'You have no messages yet.' context "male" %}
-{% trans 'You have no messages yet.' context "other" %}
+{% translate 'You have no messages yet.' context "female" %}
+{% translate 'You have no messages yet.' context "male" %}
+{% translate 'You have no messages yet.' context "other" %}
 
-{% trans 'You blocked ' context "female" %}
-{% trans 'You blocked ' context "male" %}
-{% trans 'You blocked ' context "other" %}
+{% translate 'You blocked ' context "female" %}
+{% translate 'You blocked ' context "male" %}
+{% translate 'You blocked ' context "other" %}
 
-{% trans ' blocked you.' context "female" %}
-{% trans ' blocked you.' context "male" %}
-{% trans ' blocked you.' context "other" %}
+{% translate ' blocked you.' context "female" %}
+{% translate ' blocked you.' context "male" %}
+{% translate ' blocked you.' context "other" %}
 
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktrans %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktranslate %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktranslate %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Match profile. View {{ user_name }}’s profile on Speedy Match.{% endblocktranslate %}
 
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
-{% blocktrans with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktrans %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "female" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktranslate %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "male" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktranslate %}
+{% blocktranslate with user_name=user.first_name|truncatechars:50 context "other" %}{{ user_name }} also has a Speedy Net profile. View {{ user_name }}’s profile on Speedy Net.{% endblocktranslate %}
 
-{% blocktrans context "female" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
-{% blocktrans context "male" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
-{% blocktrans context "other" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktrans %}
+{% blocktranslate context "female" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktranslate %}
+{% blocktranslate context "male" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktranslate %}
+{% blocktranslate context "other" %}You also have a Speedy Net profile. View your profile on Speedy Net.{% endblocktranslate %}
 
-{% trans 'Add to Friends' context "female" %}
-{% trans 'Add to Friends' context "male" %}
-{% trans 'Add to Friends' context "other" %}
+{% translate 'Add to Friends' context "female" %}
+{% translate 'Add to Friends' context "male" %}
+{% translate 'Add to Friends' context "other" %}
 
-{% trans 'Are you sure you want to block ' context "female" %}
-{% trans 'Are you sure you want to block ' context "male" %}
-{% trans 'Are you sure you want to block ' context "other" %}
+{% translate 'Are you sure you want to block ' context "female" %}
+{% translate 'Are you sure you want to block ' context "male" %}
+{% translate 'Are you sure you want to block ' context "other" %}
 
-{% trans 'Block ' context "female" %}
-{% trans 'Block ' context "male" %}
-{% trans 'Block ' context "other" %}
+{% translate 'Block ' context "female" %}
+{% translate 'Block ' context "male" %}
+{% translate 'Block ' context "other" %}
 
-{% trans 'Unblock ' context "female" %}
-{% trans 'Unblock ' context "male" %}
-{% trans 'Unblock ' context "other" %}
+{% translate 'Unblock ' context "female" %}
+{% translate 'Unblock ' context "male" %}
+{% translate 'Unblock ' context "other" %}
 
-{% trans 'Report ' context "female" %}
-{% trans 'Report ' context "male" %}
-{% trans 'Report ' context "other" %}
+{% translate 'Report ' context "female" %}
+{% translate 'Report ' context "male" %}
+{% translate 'Report ' context "other" %}
 
-{% trans 'Report this photo' context "female" %}
-{% trans 'Report this photo' context "male" %}
-{% trans 'Report this photo' context "other" %}
+{% translate 'Report this photo' context "female" %}
+{% translate 'Report this photo' context "male" %}
+{% translate 'Report this photo' context "other" %}
 
-{% trans 'Remove Friend' context "female" %}
-{% trans 'Remove Friend' context "male" %}
-{% trans 'Remove Friend' context "other" %}
+{% translate 'Remove Friend' context "female" %}
+{% translate 'Remove Friend' context "male" %}
+{% translate 'Remove Friend' context "other" %}
 
-{% trans 'Cancel Friendship Request' context "female" %}
-{% trans 'Cancel Friendship Request' context "male" %}
-{% trans 'Cancel Friendship Request' context "other" %}
+{% translate 'Cancel Friendship Request' context "female" %}
+{% translate 'Cancel Friendship Request' context "male" %}
+{% translate 'Cancel Friendship Request' context "other" %}
 
-{% trans 'Accept' context "female" %}
-{% trans 'Accept' context "male" %}
-{% trans 'Accept' context "other" %}
+{% translate 'Accept' context "female" %}
+{% translate 'Accept' context "male" %}
+{% translate 'Accept' context "other" %}
 
-{% trans 'Reject' context "female" %}
-{% trans 'Reject' context "male" %}
-{% trans 'Reject' context "other" %}
+{% translate 'Reject' context "female" %}
+{% translate 'Reject' context "male" %}
+{% translate 'Reject' context "other" %}
 
-{% trans 'Accept Friendship Request' context "female" %}
-{% trans 'Accept Friendship Request' context "male" %}
-{% trans 'Accept Friendship Request' context "other" %}
+{% translate 'Accept Friendship Request' context "female" %}
+{% translate 'Accept Friendship Request' context "male" %}
+{% translate 'Accept Friendship Request' context "other" %}
 
-{% trans 'Reject Friendship Request' context "female" %}
-{% trans 'Reject Friendship Request' context "male" %}
-{% trans 'Reject Friendship Request' context "other" %}
+{% translate 'Reject Friendship Request' context "female" %}
+{% translate 'Reject Friendship Request' context "male" %}
+{% translate 'Reject Friendship Request' context "other" %}
 
-{% trans 'Send Message' context "female" %}
-{% trans 'Send Message' context "male" %}
-{% trans 'Send Message' context "other" %}
+{% translate 'Send Message' context "female" %}
+{% translate 'Send Message' context "male" %}
+{% translate 'Send Message' context "other" %}
 
-{% trans 'Welcome' context "female" %}
-{% trans 'Welcome' context "male" %}
-{% trans 'Welcome' context "other" %}
+{% translate 'Welcome' context "female" %}
+{% translate 'Welcome' context "male" %}
+{% translate 'Welcome' context "other" %}
 
-{% trans 'Your friend' context "female" %}
-{% trans 'Your friend' context "male" %}
-{% trans 'Your friend' context "other" %}
+{% translate 'Your friend' context "female" %}
+{% translate 'Your friend' context "male" %}
+{% translate 'Your friend' context "other" %}
 
-{% trans 'See All' context "female" %}
-{% trans 'See All' context "male" %}
-{% trans 'See All' context "other" %}
+{% translate 'See All' context "female" %}
+{% translate 'See All' context "male" %}
+{% translate 'See All' context "other" %}
 
-{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context "female" %}
-{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context "male" %}
-{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context "other" %}
+{% translate 'Your Speedy Net account is not active. Enter this page to activate it.' context "female" %}
+{% translate 'Your Speedy Net account is not active. Enter this page to activate it.' context "male" %}
+{% translate 'Your Speedy Net account is not active. Enter this page to activate it.' context "other" %}
 
-{% blocktrans with site_name=site_name context "female" %}Welcome to {{ site_name }}{% endblocktrans %}
-{% blocktrans with site_name=site_name context "male" %}Welcome to {{ site_name }}{% endblocktrans %}
-{% blocktrans with site_name=site_name context "other" %}Welcome to {{ site_name }}{% endblocktrans %}
+{% blocktranslate with site_name=site_name context "female" %}Welcome to {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "male" %}Welcome to {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "other" %}Welcome to {{ site_name }}{% endblocktranslate %}
 
-{% trans "has sent you a message." context "female" %}
-{% trans "has sent you a message." context "male" %}
-{% trans "has sent you a message." context "other" %}
+{% translate "has sent you a message." context "female" %}
+{% translate "has sent you a message." context "male" %}
+{% translate "has sent you a message." context "other" %}
 
-{% trans "Read it:" context "female" %}
-{% trans "Read it:" context "male" %}
-{% trans "Read it:" context "other" %}
+{% translate "Read it:" context "female" %}
+{% translate "Read it:" context "male" %}
+{% translate "Read it:" context "other" %}
 
-{% trans "Confirm your email address on " context "female" %}
-{% trans "Confirm your email address on " context "male" %}
-{% trans "Confirm your email address on " context "other" %}
+{% translate "Confirm your email address on " context "female" %}
+{% translate "Confirm your email address on " context "male" %}
+{% translate "Confirm your email address on " context "other" %}
 
-{% trans "Use this link to activate your account:" context "female" %}
-{% trans "Use this link to activate your account:" context "male" %}
-{% trans "Use this link to activate your account:" context "other" %}
+{% translate "Use this link to activate your account:" context "female" %}
+{% translate "Use this link to activate your account:" context "male" %}
+{% translate "Use this link to activate your account:" context "other" %}
 
-{% trans "Use this link to verify your email address:" context "female" %}
-{% trans "Use this link to verify your email address:" context "male" %}
-{% trans "Use this link to verify your email address:" context "other" %}
+{% translate "Use this link to verify your email address:" context "female" %}
+{% translate "Use this link to verify your email address:" context "male" %}
+{% translate "Use this link to verify your email address:" context "other" %}
 
-{% trans "Use this link to change your password:" context "female" %}
-{% trans "Use this link to change your password:" context "male" %}
-{% trans "Use this link to change your password:" context "other" %}
+{% translate "Use this link to change your password:" context "female" %}
+{% translate "Use this link to change your password:" context "male" %}
+{% translate "Use this link to change your password:" context "other" %}
 
-{% trans 'Username' context "female" %}
-{% trans 'Username' context "male" %}
-{% trans 'Username' context "other" %}
+{% translate 'Username' context "female" %}
+{% translate 'Username' context "male" %}
+{% translate 'Username' context "other" %}
 
-{% blocktrans with site_name=site_name context "female" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
-{% blocktrans with site_name=site_name context "male" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
-{% blocktrans with site_name=site_name context "other" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktrans %}
+{% blocktranslate with site_name=site_name context "female" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "male" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "other" %}You are subscribed to receive this type of notifications from {{ site_name }}. Enter this page to change your notifications settings or opt out:{% endblocktranslate %}
 

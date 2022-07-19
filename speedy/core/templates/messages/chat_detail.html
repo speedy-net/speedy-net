@@ -10,7 +10,7 @@
 
 {% block user_menu_messages_class %}active{% endblock %}
 
-{% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% trans 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% translate 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
@@ -26,13 +26,13 @@
 
             <div class="page-header">
                 <h1>
-                    {% blocktrans with user_name=other.user.name link=other.user.get_absolute_url %}Chat with <a href="{{ link }}">{{ user_name }}</a>{% endblocktrans %}
+                    {% blocktranslate with user_name=other.user.name link=other.user.get_absolute_url %}Chat with <a href="{{ link }}">{{ user_name }}</a>{% endblocktranslate %}
                 </h1>
             </div>
 
             {% if can_send_message %}
                 <div class="mb-4">
-                    <p>{% blocktrans context request.user.get_gender with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktrans %}</p>
+                    <p>{% blocktranslate context request.user.get_gender with user_name=other.user.name %}Send a message to {{ user_name }}{% endblocktranslate %}</p>
                     {% crispy form %}
                 </div>
             {% else %}
@@ -46,7 +46,7 @@
             <div style="margin-top: 20px;">{# ~~~~ TODO: define a class CSS #}
                 <form action="{% url 'messages:mark_read' chat_slug=chat|get_chat_slug:user %}" method="post">
                     {% csrf_token %}
-                    <button class="btn btn-default" type="submit">{% trans 'Mark All as Read' context request.user.get_gender %}</button>
+                    <button class="btn btn-default" type="submit">{% translate 'Mark All as Read' context request.user.get_gender %}</button>
                 </form>
             </div>
 

@@ -37,7 +37,7 @@
                         </li>
                         {% block navbar_mobile_menu_top_extra_1 %}{% endblock %}
                         <li>
-                            <a href="{% url 'messages:list' %}">{% trans 'Messages' %}</a>
+                            <a href="{% url 'messages:list' %}">{% translate 'Messages' %}</a>
                         </li>
                         {% block navbar_mobile_menu_top_extra_2 %}{% endblock %}
                         <li>
@@ -47,27 +47,27 @@
                         </li>
                         {% block navbar_mobile_menu_top_extra_3 %}{% endblock %}
                         <li>
-                            <a href="{% url 'accounts:edit_profile' %}">{% trans 'Edit Profile' %}</a>
+                            <a href="{% url 'accounts:edit_profile' %}">{% translate 'Edit Profile' %}</a>
                         </li>
                         {% block navbar_mobile_menu_top_extra_4 %}{% endblock %}
                     {% endblock %}
                 </ul>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{% url 'accounts:logout' %}">{% trans 'Logout' context request.user.get_gender %}</a>
+                        <a href="{% url 'accounts:logout' %}">{% translate 'Logout' context request.user.get_gender %}</a>
                     </li>
                     {% include 'menu/about_mobile_menu_links.html' %}
                 </ul>
             {% else %}
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/">{% trans 'Home' %}</a>
+                        <a href="/">{% translate 'Home' %}</a>
                     </li>
                     <li>
-                        <a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a>
+                        <a href="{% url 'accounts:login' %}">{% translate 'Login' %}</a>
                     </li>
                     <li>
-                        <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
+                        <a href="{% url 'accounts:password_reset' %}">{% translate 'Forgot your password?' %}</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav">
@@ -81,8 +81,8 @@
 {% block navbar_vegan_friendly_logo %}
     {% if not request.user.is_authenticated %}
         <div class="navbar-vegan-friendly-logo">
-            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.vegan-friendly.club/" title="{% trans "A vegan friendly website" %}">
-                <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% trans "A vegan friendly website" %}" title="{% trans "A vegan friendly website" %}" />
+            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.vegan-friendly.club/" title="{% translate "A vegan friendly website" %}">
+                <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% translate "A vegan friendly website" %}" title="{% translate "A vegan friendly website" %}" />
             </a>
         </div>
     {% endif %}
@@ -93,23 +93,23 @@
         {% block login_logout_register_user_is_authenticated_extra_0 %}{% endblock %}
         {% block greeting %}
             {% comment %}
-                <li class="nav-item"><span class="nav-link">{% blocktrans context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:25 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktrans %}</span></li>
+                <li class="nav-item"><span class="nav-link">{% blocktranslate context request.user.get_gender with user_link=request.user.get_absolute_url user_name=request.user.first_name|truncatechars:25 site_name=site_name %}Hi <a href="{{ user_link }}" class="navbar-link">{{ user_name }}</a>, welcome back to {{ site_name }}!{% endblocktranslate %}</span></li>
             {% endcomment %}
         {% endblock %}
         {% block login_logout_register_user_is_authenticated_extra_1 %}{% endblock %}
         <div class="d-lg-none d-xl-none" data-role="sideMenuPlaceholder"></div>
         {% block login_logout_register_user_is_authenticated_extra_2 %}{% endblock %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:edit_profile' %}" title="{% trans 'Edit Profile' %}">
+            <a class="nav-link" href="{% url 'accounts:edit_profile' %}" title="{% translate 'Edit Profile' %}">
                 <i class="fas fa-fw fa-pencil-alt"></i>
-                <span class="label">{% trans 'Edit Profile' %}</span>
+                <span class="label">{% translate 'Edit Profile' %}</span>
             </a>
         </li>
         {% block login_logout_register_user_is_authenticated_extra_3 %}{% endblock %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:logout' %}" title="{% trans 'Logout' context request.user.get_gender %}">
+            <a class="nav-link" href="{% url 'accounts:logout' %}" title="{% translate 'Logout' context request.user.get_gender %}">
                 <i class="fas fa-fw fa-sign-out-alt"></i>
-                <span class="label">{% trans 'Logout' context request.user.get_gender %}</span>
+                <span class="label">{% translate 'Logout' context request.user.get_gender %}</span>
             </a>
         </li>
     {% else %}
@@ -119,20 +119,20 @@
             <div class="row">
                 <div class="col-auto">
                     <label>
-                        {% trans 'Email or Username' %}
+                        {% translate 'Email or Username' %}
                         <input type="text" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="255" class="direction-ltr textinput textInput form-control" required />
                     </label>
                 </div>
                 <div class="col-auto">
                     <label>
-                        {% trans 'Password' %}
+                        {% translate 'Password' %}
                         <input type="password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="direction-ltr textinput textInput form-control" required />
                     </label>
                     <br>
-                    <a href="{% url 'accounts:password_reset' %}">{% trans 'Forgot your password?' %}</a>
+                    <a href="{% url 'accounts:password_reset' %}">{% translate 'Forgot your password?' %}</a>
                 </div>
                 <div class="col-auto pt-4">
-                    <button type="submit" class="btn">{% trans 'Login' %}</button>
+                    <button type="submit" class="btn">{% translate 'Login' %}</button>
                 </div>
             </div>
         </form>
@@ -150,7 +150,7 @@
     <li class="nav-item">
         <a href="{% url 'accounts:edit_profile' %}" class="nav-link">
             <i class="fas fa-fw fa-pencil-alt"></i>
-            <span class="label">{% trans 'Edit Profile' %}</span>
+            <span class="label">{% translate 'Edit Profile' %}</span>
         </a>
     </li>
 {% endblock %}
@@ -192,16 +192,16 @@
 
 {% block footer_extra_links_0 %}
     <p>
-        <a href="//www.{{ site.domain }}/" class="black">{% trans site.name %}, {% now 'Y' %}</a>
+        <a href="//www.{{ site.domain }}/" class="black">{% translate site.name %}, {% now 'Y' %}</a>
     </p>
 {% endblock %}
 
 {% block footer_extra_links_1 %}
     <p>
-        <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
-        <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
-        <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
-        <a href="{% url 'contact:contact_us' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+        <a href="{% url 'about:about' %}" title="{% translate "About" %}">{% translate "About" %}</a>
+        <a href="{% url 'privacy:privacy_policy' %}" title="{% translate "Privacy Policy" %}">{% translate "Privacy" %}</a>
+        <a href="{% url 'terms:terms_of_service' %}" title="{% translate "Terms of Service" %}">{% translate "Terms" %}</a>
+        <a href="{% url 'contact:contact_us' %}" title="{% translate "Contact Us" %}">{% translate "Contact Us" %}</a>
     </p>
 {% endblock %}
 

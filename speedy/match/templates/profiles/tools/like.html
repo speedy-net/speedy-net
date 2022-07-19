@@ -8,17 +8,17 @@
 {% if can_like %}
     <form action="{% url 'likes:like' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
-        <button class="btn btn-danger" type="submit" title="{% trans 'Like' context request.user.get_gender %}" style="min-width: 70px;">
+        <button class="btn btn-danger" type="submit" title="{% translate 'Like' context request.user.get_gender %}" style="min-width: 70px;">
             <i class="fas fa-heart"></i>
-            {% trans 'Like' context request.user.get_gender %}
+            {% translate 'Like' context request.user.get_gender %}
         </button>
     </form>
 {% elif can_unlike %}
     <form action="{% url 'likes:unlike' user.slug %}" method="post" style="display: inline">
         {% csrf_token %}
-        <button class="btn btn-default" type="submit" title="{% trans 'Unlike' context request.user.get_gender %}" style="min-width: 70px;">
+        <button class="btn btn-default" type="submit" title="{% translate 'Unlike' context request.user.get_gender %}" style="min-width: 70px;">
             <i class="fas fa-heart"></i>
-            {% trans 'Unlike' context request.user.get_gender %}
+            {% translate 'Unlike' context request.user.get_gender %}
         </button>
     </form>
 {% endif %}

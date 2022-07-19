@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-8">
             <h1>
-                {% blocktrans with site_name=site_name %}Welcome to {{ site_name }}!{% endblocktrans %}
+                {% blocktranslate with site_name=site_name %}Welcome to {{ site_name }}!{% endblocktranslate %}
             </h1>
             <h5>
                 {% block main_page_h5 %}{% endblock %}
@@ -18,10 +18,10 @@
         </div>
         <div class="col-md-4" data-block="RegistrationForm">
             <h1>
-                {% blocktrans with site_name=site_name %}Join {{ site_name }}!{% endblocktrans %}
+                {% blocktranslate with site_name=site_name %}Join {{ site_name }}!{% endblocktranslate %}
             </h1>
             <h4>
-                {% blocktrans with site_name=site_name %}It's free and anyone can join!{% endblocktrans %}
+                {% blocktranslate with site_name=site_name %}It's free and anyone can join!{% endblocktranslate %}
             </h4>
             {% crispy form %}
         </div>

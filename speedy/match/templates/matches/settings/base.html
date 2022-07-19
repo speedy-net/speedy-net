@@ -7,7 +7,7 @@
 {% load rules %}
 {% load static %}
 
-{% block title %}{% trans 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Match Settings' context user.get_gender %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}{% endblock %}
 
@@ -24,26 +24,26 @@
             <div class="pull-right">
                 <a href="{% url 'matches:list' %}" class="btn btn-default">
                     <i class="fas {{ LANGUAGE_BIDI|yesno:'fa-arrow-right,fa-arrow-left'|safe }}"></i>
-                    {% trans 'Back to Matches' %}
+                    {% translate 'Back to Matches' %}
                 </a>
             </div>
-            {% trans 'Match Settings' context user.get_gender %}
+            {% translate 'Match Settings' context user.get_gender %}
         </h1>
     </div>
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link {% active_class 'matches:edit_match_settings' %}" href="{% url 'matches:edit_match_settings' %}">
-                {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
+                {% translate 'About my match'|title context user.speedy_match_profile.get_match_gender %}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% active_class 'matches:edit_about_me' %}" href="{% url 'matches:edit_about_me' %}">
-                {% trans 'About me'|title context user.get_gender %}
+                {% translate 'About me'|title context user.get_gender %}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% active_class 'accounts:edit_profile' %}" href="{% url 'accounts:edit_profile' %}">
-                {% trans 'Profile Info' %}
+                {% translate 'Profile Info' %}
             </a>
         </li>
     </ul>

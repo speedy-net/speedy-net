@@ -8,22 +8,22 @@
     {% endfor %}
 </li>
 <li>
-    <a href="{% url 'about:about' %}" title="{% trans "About" %}">{% trans "About" %}</a>
+    <a href="{% url 'about:about' %}" title="{% translate "About" %}">{% translate "About" %}</a>
 </li>
 <li>
-    <a href="{% url 'privacy:privacy_policy' %}" title="{% trans "Privacy Policy" %}">{% trans "Privacy" %}</a>
+    <a href="{% url 'privacy:privacy_policy' %}" title="{% translate "Privacy Policy" %}">{% translate "Privacy" %}</a>
 </li>
 <li>
-    <a href="{% url 'terms:terms_of_service' %}" title="{% trans "Terms of Service" %}">{% trans "Terms" %}</a>
+    <a href="{% url 'terms:terms_of_service' %}" title="{% translate "Terms of Service" %}">{% translate "Terms" %}</a>
 </li>
 <li>
-    <a href="{% url 'contact:contact_us' %}" title="{% trans "Contact Us" %}">{% trans "Contact Us" %}</a>
+    <a href="{% url 'contact:contact_us' %}" title="{% translate "Contact Us" %}">{% translate "Contact Us" %}</a>
 </li>
 <li role="separator" class="divider"></li>
 {% block navigate_other_site %}
     {% for other_site in sites %}
         <li>
-            <a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% trans other_site.name %}</a>
+            <a href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% translate other_site.name %}</a>
         </li>
     {% endfor %}
 {% endblock %}

@@ -6,15 +6,15 @@
 {% load static %}
 
 {% block description %}
-    <meta name="description" content="{% blocktrans with site_name=site_name %}Speedy Net is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly.{% endblocktrans %}" />
+    <meta name="description" content="{% blocktranslate with site_name=site_name %}Speedy Net is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly.{% endblocktranslate %}" />
 {% endblock %}
 
 {% block main_page_h5 %}
-    {% blocktrans with site_name=site_name %}<a href="https://en.speedy.net/" title="Speedy Net">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in two languages - English and Hebrew.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}<a href="https://en.speedy.net/" title="Speedy Net">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in two languages - English and Hebrew.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}You can use our new app, <a href="https://en.speedymatch.com/" title="Speedy Match">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}You can use our new app, <a href="https://en.speedymatch.com/" title="Speedy Match">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.{% endblocktranslate %}<br />
     <br />
-    {% blocktrans with site_name=site_name %}All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.{% endblocktrans %}<br />
+    {% blocktranslate with site_name=site_name %}All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.{% endblocktranslate %}<br />
     <br />
 {% endblock %}
 
@@ -80,7 +80,7 @@
     {% endif %}
     {% if LANGUAGE_CODE == "en" %}
         <p>
-            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.info/" title="{% trans "Free Online Dating" %}">{% trans "Free Online Dating" %}</a>
+            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.info/" title="{% translate "Free Online Dating" %}">{% translate "Free Online Dating" %}</a>
             <a href="https://en.blog.speedy.net/category/veganism/" title="Veganism">Veganism</a>
         </p>
     {% endif %}

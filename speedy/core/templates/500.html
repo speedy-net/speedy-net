@@ -3,14 +3,14 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% trans 'Internal server error'|title %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Internal server error'|title %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1>{% trans 'Internal server error'|title %}</h1>
+        <h1>{% translate 'Internal server error'|title %}</h1>
     </div>
     <img class="speedy-404-background" src="{% static 'speedy-core/images/speedy-404-background.png' %}" alt="" />
     <div class="alert alert-danger">
-        {% trans "Speedy is sorry, but we can't handle your request." %}
+        {% translate "Speedy is sorry, but we can't handle your request." %}
     </div>
 {% endblock %}

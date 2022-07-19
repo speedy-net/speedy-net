@@ -8,7 +8,7 @@
     <li class="nav-item">
         <a class="nav-link {% block user_menu_matches_class %}{% endblock %}" href="{% url 'matches:list' %}">
             <i class="fas fa-fw fa-star" aria-hidden="true"></i>
-            <span class="label">{% trans 'Matches' %}</span>
+            <span class="label">{% translate 'Matches' %}</span>
         </a>
     </li>
 {% endblock %}
@@ -17,7 +17,7 @@
     <li class="nav-item">
         <a class="nav-link {% block user_menu_likes_class %}{% endblock %}" href="{% url 'likes:list' request.user.slug %}">
             <i class="fas fa-fw fa-heart"></i>
-            <span class="label">{% trans 'Likes' %}</span>
+            <span class="label">{% translate 'Likes' %}</span>
         </a>
     </li>
     {% include 'friends/user_menu_friends.html' %}

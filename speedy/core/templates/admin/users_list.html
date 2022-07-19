@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% trans 'Admin - All Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Admin - All Users' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block content %}
     <div class="mb-4 filters">
@@ -16,7 +16,7 @@
             {% empty %}
                 <div class="col-12">
                     <div class="alert alert-warning">
-                        {% trans "No users." %}
+                        {% translate "No users." %}
                     </div>
                 </div>
             {% endfor %}

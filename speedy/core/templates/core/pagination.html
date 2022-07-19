@@ -6,12 +6,12 @@
         <ul class="pagination">
             {% if page_obj.has_previous %}
                 <li>
-                    <a href="{{ request.path }}{% set_request_params page=page_obj.previous_page_number %}">{{ LANGUAGE_BIDI|yesno:'&rarr;&nbsp;,&larr;&nbsp;'|safe }}{% trans "Previous" %}</a>
+                    <a href="{{ request.path }}{% set_request_params page=page_obj.previous_page_number %}">{{ LANGUAGE_BIDI|yesno:'&rarr;&nbsp;,&larr;&nbsp;'|safe }}{% translate "Previous" %}</a>
                 </li>
             {% else %}
                 {% comment %}
                 <li class="disabled">
-                    <span>&larr;&nbsp;{% trans "Previous" %}</span>
+                    <span>&larr;&nbsp;{% translate "Previous" %}</span>
                 </li>
                 {% endcomment %}
             {% endif %}
@@ -28,12 +28,12 @@
             {% endfor %}
             {% if page_obj.has_next %}
                 <li>
-                    <a href="{{ request.path }}{% set_request_params page=page_obj.next_page_number %}">{% trans "Next" %}{{ LANGUAGE_BIDI|yesno:'&nbsp;&larr;,&nbsp;&rarr;'|safe }}</a>
+                    <a href="{{ request.path }}{% set_request_params page=page_obj.next_page_number %}">{% translate "Next" %}{{ LANGUAGE_BIDI|yesno:'&nbsp;&larr;,&nbsp;&rarr;'|safe }}</a>
                 </li>
             {% else %}
                 {% comment %}
                 <li class="disabled">
-                    <span>{% trans "Next" %}&nbsp;&rarr;</span>
+                    <span>{% translate "Next" %}&nbsp;&rarr;</span>
                 </li>
                 {% endcomment %}
             {% endif %}

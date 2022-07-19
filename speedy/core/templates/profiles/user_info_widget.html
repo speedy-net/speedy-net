@@ -9,20 +9,20 @@
     <div class="card">
         <div class="card-header">
             <h5 class="card-title mb-0">
-                {% trans 'Information' %}
+                {% translate 'Information' %}
             </h5>
         </div>
         <table class="user-profile-table table">
             <tbody>
 
                 <tr>
-                    <th class="user-profile-th">{% trans 'Name' %}</th>
+                    <th class="user-profile-th">{% translate 'Name' %}</th>
                     <td>{{ user.name|truncatechars:50 }}</td>
                 </tr>
 
                 {% if can_view_username %}
                     <tr>
-                        <th class="user-profile-th">{% trans 'Username' context user.get_gender %}</th>
+                        <th class="user-profile-th">{% translate 'Username' context user.get_gender %}</th>
                         <td>
                             <a href="{{ admin_user_prefix }}{{ user.get_absolute_url }}">
                                 {{ user.slug }}
@@ -32,7 +32,7 @@
                 {% endif %}
 
                 <tr>
-                    <th class="user-profile-th">{% trans 'Gender' %}</th>
+                    <th class="user-profile-th">{% translate 'Gender' %}</th>
                     <td>{{ user.get_gender_display }}</td>
                 </tr>
 
@@ -41,7 +41,7 @@
                 {% if can_view_profile and user.date_of_birth %}
                     {% if can_view_dob_day_month or can_view_dob_year %}
                         <tr>
-                            <th class="user-profile-th">{% if can_view_dob_day_month %}{% trans 'Birth Date' %}{% elif can_view_dob_year %}{% trans 'Birth Year' %}{% endif %}</th>
+                            <th class="user-profile-th">{% if can_view_dob_day_month %}{% translate 'Birth Date' %}{% elif can_view_dob_year %}{% translate 'Birth Year' %}{% endif %}</th>
                             <td>
                                 {% if can_view_dob_day_month and can_view_dob_year %}
                                     {{ user.date_of_birth|date:"DATE_FORMAT" }}
@@ -58,7 +58,7 @@
                 {% has_perm 'accounts.view_profile_age' viewer user as can_view_profile_age %}
                 {% if can_view_profile and user.date_of_birth and can_view_profile_age %}
                     <tr>
-                        <th class="user-profile-th">{% trans 'Age' %}</th>
+                        <th class="user-profile-th">{% translate 'Age' %}</th>
                         <td>{{ user.get_age }}</td>
                     </tr>
                 {% endif %}
@@ -67,7 +67,7 @@
                     {% has_perm 'accounts.view_useremailaddress' viewer address as can_view_address %}
                     {% if can_view_profile and can_view_address %}
                         <tr>
-                            <th class="user-profile-th">{% trans 'Email' %}</th>
+                            <th class="user-profile-th">{% translate 'Email' %}</th>
                             <td>
                                 <a href="mailto:{{ address }}">
                                     {{ address }}

@@ -59,12 +59,12 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="drop-down-menu-button">
                 {% for other_site in sites %}
-                    <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% trans other_site.name %}</a>
+                    <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% translate other_site.name %}</a>
                 {% endfor %}
             </div>
         </div>
         {% block navbar_brand %}
-            <a class="navbar-brand" href="/" title="{% trans site.name %}">{% trans site.name %}</a>
+            <a class="navbar-brand" href="/" title="{% translate site.name %}">{% translate site.name %}</a>
         {% endblock %}
         {% block navbar_vegan_friendly_logo %}{% endblock %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-text" aria-controls="navbar-text" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +98,7 @@
     {% endfor %}
     {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
         <div class="alert alert-danger">
-            {% trans "You haven't confirmed your email address. Please check your inbox." context user.get_gender %}
+            {% translate "You haven't confirmed your email address. Please check your inbox." context user.get_gender %}
         </div>
     {% endif %}
 
@@ -146,31 +146,31 @@
                         {% block footer_extra_links_2 %}{% endblock %}
                         {% block footer_links_1 %}
                             <p>
-                                <a href="https://{{ LANGUAGE_CODE }}.speedy.net/" title="{% trans "Speedy Net" %}">{% trans "Speedy Net" %}</a>
-                                <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% trans "Speedy Match" %}{% if LANGUAGE_CODE == "he" %} – הכרויות בספידי{% endif %}">{% trans "Speedy Match" %}</a>
-                                <a href="https://{{ LANGUAGE_CODE }}.speedycomposer.com/" title="{% trans "Speedy Composer" %}">{% trans "Speedy Composer" %}</a>
-                                <a href="https://{{ LANGUAGE_CODE }}.speedy-mail-software.com/" title="{% trans "Speedy Mail Software" %}">{% trans "Speedy Mail Software" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedy.net/" title="{% translate "Speedy Net" %}">{% translate "Speedy Net" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% translate "Speedy Match" %}{% if LANGUAGE_CODE == "he" %} – הכרויות בספידי{% endif %}">{% translate "Speedy Match" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedycomposer.com/" title="{% translate "Speedy Composer" %}">{% translate "Speedy Composer" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.speedy-mail-software.com/" title="{% translate "Speedy Mail Software" %}">{% translate "Speedy Mail Software" %}</a>
                             </p>
                         {% endblock %}
                         {% block footer_extra_links_3 %}{% endblock %}
                         {% block footer_links_2 %}
                             <p>
-                                <a href="https://www.cafepress.com/speedynet" title="{% trans "Speedy Net's Shop" %}">{% trans "Speedy Net's Shop" %}</a>
-                                <a href="https://www.cafepress.com/speedymatch" title="{% trans "Speedy Match's Shop" %}">{% trans "Speedy Match's Shop" %}</a>
-                                <a href="https://www.cafepress.com/speedycomposer" title="{% trans "Speedy Composer's Shop" %}">{% trans "Speedy Composer's Shop" %}</a>
-                                <a href="https://www.cafepress.com/speedy_s" title="{% trans "Speedy S-logo Shop" %}">{% trans "Speedy S-logo Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedynet" title="{% translate "Speedy Net's Shop" %}">{% translate "Speedy Net's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedymatch" title="{% translate "Speedy Match's Shop" %}">{% translate "Speedy Match's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedycomposer" title="{% translate "Speedy Composer's Shop" %}">{% translate "Speedy Composer's Shop" %}</a>
+                                <a href="https://www.cafepress.com/speedy_s" title="{% translate "Speedy S-logo Shop" %}">{% translate "Speedy S-logo Shop" %}</a>
                             </p>
                         {% endblock %}
                         {% block footer_extra_links_4 %}{% endblock %}
                         {% block footer_links_3 %}
                             <p>
-                                <a href="https://{{ LANGUAGE_CODE }}.blog.speedy.net/" title="{% trans "Speedy Net Blog" %}">{% trans "Speedy Net Blog" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE }}.blog.speedy.net/" title="{% translate "Speedy Net Blog" %}">{% translate "Speedy Net Blog" %}</a>
                                 {% if LANGUAGE_CODE == "he" %}
-                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy-paz.com" title="{% trans "Speedy Paz" %}">{% trans "Speedy Paz" %}</a>
+                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy-paz.com" title="{% translate "Speedy Paz" %}">{% translate "Speedy Paz" %}</a>
                                 {% else %}
-                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% trans "Speedy Software" %}">{% trans "Speedy Software" %}</a>
+                                    <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedysoftware.com/" title="{% translate "Speedy Software" %}">{% translate "Speedy Software" %}</a>
                                 {% endif %}
-                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy.sale/" title="{% trans "Speedy Sale" %}">{% trans "Speedy Sale" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.speedy.sale/" title="{% translate "Speedy Sale" %}">{% translate "Speedy Sale" %}</a>
                                 {% if LANGUAGE_CODE == "he" %}
                                     {% block hebrew_extra_links %}{% endblock %}
                                 {% else %}
@@ -191,8 +191,8 @@
                     </div>
                     {% block footer_vegan_friendly_logo %}
                         <div class="col-md-2">
-                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.vegan-friendly.club/" title="{% trans "A vegan friendly website" %}">
-                                <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% trans "A vegan friendly website" %}" title="{% trans "A vegan friendly website" %}" />
+                            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.vegan-friendly.club/" title="{% translate "A vegan friendly website" %}">
+                                <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% translate "A vegan friendly website" %}" title="{% translate "A vegan friendly website" %}" />
                             </a>
                         </div>
                     {% endblock %}
@@ -208,9 +208,9 @@
 <center>
     <br />
     <!-- Facebook Badge START -->
-    <a class="speedy-bottom-badge-link" href="https://www.facebook.com/speedy.the.female.dog" target="_top" title="{% trans "Speedy" %}">{% trans "Speedy" %}</a>
+    <a class="speedy-bottom-badge-link" href="https://www.facebook.com/speedy.the.female.dog" target="_top" title="{% translate "Speedy" %}">{% translate "Speedy" %}</a>
     <br>
-    <a href="https://www.facebook.com/speedy.the.female.dog" target="_top" title="{% trans "Speedy" %}">
+    <a href="https://www.facebook.com/speedy.the.female.dog" target="_top" title="{% translate "Speedy" %}">
         <img class="fb-badge" src="https://www.speedysoftware.com/images/facebook/facebook_32x32.png" style="border: 0px;" />
     </a>
     <br>

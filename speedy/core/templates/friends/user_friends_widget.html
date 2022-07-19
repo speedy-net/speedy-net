@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header">
                 <a href="{% url 'friends:list' user.slug %}" class="pull-right">
-                    {% trans 'See All' context request.user.get_gender %}
+                    {% translate 'See All' context request.user.get_gender %}
                 </a>
                 <h5 class="card-title mb-0">
                     {% include 'menu/friends_trans.html' %}

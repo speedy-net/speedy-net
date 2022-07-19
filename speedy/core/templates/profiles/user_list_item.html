@@ -26,16 +26,16 @@
                 <div style="margin-left:auto; margin-right:auto; display:table; margin-top:10px;">
                     <form action="{% url 'friends:accept_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left" style="margin: 0px 5px;">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-sm btn-success" title="{% trans 'Accept Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
+                        <button type="submit" class="btn btn-sm btn-success" title="{% translate 'Accept Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
                             <i class="fas fa-check"></i>
-                            {% trans 'Accept' context request.user.get_gender %}
+                            {% translate 'Accept' context request.user.get_gender %}
                         </button>
                     </form>
                     <form action="{% url 'friends:reject_request' request.user.slug received_friendship_request.id %}" method="post" class="pull-left" style="margin: 0px 5px;">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-sm btn-danger" title="{% trans 'Reject Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
+                        <button type="submit" class="btn btn-sm btn-danger" title="{% translate 'Reject Friendship Request' context request.user.get_gender %}" style="font-size: 16px; min-width: 70px;">
                             <i class="fas fa-times"></i>
-                            {% trans 'Reject' context request.user.get_gender %}
+                            {% translate 'Reject' context request.user.get_gender %}
                         </button>
                     </form>
                 </div>

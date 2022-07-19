@@ -1,8 +1,8 @@
 {% load i18n %}
 
 {% if request.user == user %}
-    <a href="{% url 'accounts:edit_profile' %}" class="btn btn-default" title="{% trans 'Edit Profile' %}">
+    <a href="{% url 'accounts:edit_profile' %}" class="btn btn-default" title="{% translate 'Edit Profile' %}">
         <i class="fas fa-pencil-alt"></i>
-        {% trans 'Edit Profile' %}
+        {% translate 'Edit Profile' %}
     </a>
 {% endif %}

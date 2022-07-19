@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% if form %}{% trans 'Registration Step' %} {{ current_step }}{% else %}{% trans 'Welcome' context user.get_gender %}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% if form %}{% translate 'Registration Step' %} {{ current_step }}{% else %}{% translate 'Welcome' context user.get_gender %}{% endif %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% comment %}
     activation-form.css contains code which should not be displayed if there is no form. Such as hiding page-header.
@@ -22,11 +22,11 @@
     <div class="row">
         <div class="col-md-10{% if form %} text-center{% endif %}">
             <div class="page-header">
-                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktrans with site_name=site_name context user.get_gender %}Welcome to {{ site_name }}{% endblocktrans %}</h1>
+                <h1{% if form %} style="visibility: hidden; display: none;"{% endif %}>{% blocktranslate with site_name=site_name context user.get_gender %}Welcome to {{ site_name }}{% endblocktranslate %}</h1>
             </div>
             {% if not request.user.has_confirmed_email_or_registered_now %}
                 <div class="alert alert-danger">
-                    {% trans 'Please confirm your email address.' context user.get_gender %}
+                    {% translate 'Please confirm your email address.' context user.get_gender %}
                 </div>
             {% elif form %}
                 <div class="activation-step-wrapper">
@@ -43,9 +43,9 @@
                     </div>
                     <div class="activation-form-header text-left flip">
                         {% if current_step < 7 %}
-                            {% trans 'About me'|title context user.get_gender %}
+                            {% translate 'About me'|title context user.get_gender %}
                         {% else %}
-                            {% trans 'About my match'|title context user.speedy_match_profile.get_match_gender %}
+                            {% translate 'About my match'|title context user.speedy_match_profile.get_match_gender %}
                         {% endif %}
                     </div>
                     <form action="{% url 'accounts:activate' step=current_step %}" method="post" class="activation-form"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
@@ -73,16 +73,16 @@
                         <div class="clearfix"></div>
                         <div class="activation-form-actions">
                             {% if current_step != 0 %}
-                                <a class="btn btn-primary btn-lg btn-arrow-left" href="{% url 'accounts:activate' step=previous_step %}">{% trans 'Back' %}</a>
+                                <a class="btn btn-primary btn-lg btn-arrow-left" href="{% url 'accounts:activate' step=previous_step %}">{% translate 'Back' %}</a>
                             {% endif %}
                             <button class="btn btn-primary btn-lg btn-arrow-right" type="submit">
-                                {% trans 'Next step' %}
+                                {% translate 'Next step' %}
                             </button>
                         </div>
                     </form>
                 </div>
             {% else %}
-                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% trans 'Your Speedy Net account is not active. Enter this page to activate it.' context request.user.get_gender %}</a>
+                <a href="//{{ LANGUAGE_CODE }}.{{ SPEEDY_NET_DOMAIN }}{% url 'accounts:activate' %}">{% translate 'Your Speedy Net account is not active. Enter this page to activate it.' context request.user.get_gender %}</a>
             {% endif %}
         </div>
     </div>
@@ -112,22 +112,22 @@
                 }
                 switch (gender_selected) {
                     case 'female':
-                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "female" %}:');
-                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "female" %}:');
-                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "female" %}:');
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% translate 'My ideal match' context "female" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% translate 'Minimal age to match' context "female" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% translate 'Maximal age to match' context "female" %}:');
                         break;
 
                     case 'male':
-                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "male" %}:');
-                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "male" %}:');
-                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "male" %}:');
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% translate 'My ideal match' context "male" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% translate 'Minimal age to match' context "male" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% translate 'Maximal age to match' context "male" %}:');
                         break;
 
                     case 'other':
                     default:
-                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% trans 'My ideal match' context "other" %}:');
-                        $('label[for="id_min_age_to_match"]').html('{% trans 'Minimal age to match' context "other" %}:');
-                        $('label[for="id_max_age_to_match"]').html('{% trans 'Maximal age to match' context "other" %}:');
+                        $('label[for="id_match_description_{{ LANGUAGE_CODE }}"]').html('{% translate 'My ideal match' context "other" %}:');
+                        $('label[for="id_min_age_to_match"]').html('{% translate 'Minimal age to match' context "other" %}:');
+                        $('label[for="id_max_age_to_match"]').html('{% translate 'Maximal age to match' context "other" %}:');
                         break;
                 }
             }

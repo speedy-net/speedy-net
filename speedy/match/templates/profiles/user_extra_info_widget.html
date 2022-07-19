@@ -9,49 +9,49 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    {% trans 'More Information' %}
+                    {% translate 'More Information' %}
                 </h5>
             </div>
             <table class="user-profile-table table">
                 <tbody>
                     <tr>
-                        <th class="user-profile-th">{% trans 'About me' %}</th>
+                        <th class="user-profile-th">{% translate 'About me' %}</th>
                         <td>{{ user.speedy_match_profile.profile_description|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Where do I live?' context user.get_gender %}</th>
+                        <th class="user-profile-th">{% translate 'Where do I live?' context user.get_gender %}</th>
                         <td>{{ user.city|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Height' %}</th>
-                        <td>{{ user.speedy_match_profile.height }} {% trans 'cm' %}</td>
+                        <th class="user-profile-th">{% translate 'Height' %}</th>
+                        <td>{{ user.speedy_match_profile.height }} {% translate 'cm' %}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Do you have children? How many?' %}</th>
+                        <th class="user-profile-th">{% translate 'Do you have children? How many?' %}</th>
                         <td>{{ user.speedy_match_profile.children|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Do you want (more) children?' context user.get_gender %}</th>
+                        <th class="user-profile-th">{% translate 'Do you want (more) children?' context user.get_gender %}</th>
                         <td>{{ user.speedy_match_profile.more_children|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Diet' %}</th>
+                        <th class="user-profile-th">{% translate 'Diet' %}</th>
                         <td>{{ diet }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Smoking status' %}</th>
+                        <th class="user-profile-th">{% translate 'Smoking status' %}</th>
                         <td>{{ smoking_status }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Relationship status' %}</th>
+                        <th class="user-profile-th">{% translate 'Relationship status' %}</th>
                         <td>{{ relationship_status }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'Gender to match' context user.speedy_match_profile.get_match_gender %}</th>
+                        <th class="user-profile-th">{% translate 'Gender to match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ gender_to_match }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% trans 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
+                        <th class="user-profile-th">{% translate 'My ideal match' context user.speedy_match_profile.get_match_gender %}</th>
                         <td>{{ user.speedy_match_profile.match_description|linebreaksbr }}</td>
                     </tr>
                 </tbody>

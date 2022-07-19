@@ -3,38 +3,38 @@
 {% load core_tags_and_filters %}
 {% load i18n %}
 
-{% block title %}{% trans 'Edit Profile' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Edit Profile' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}{% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1>{% trans 'Edit Profile' %}</h1>
+        <h1>{% translate 'Edit Profile' %}</h1>
     </div>
 
     <ul class="nav nav-tabs">
         {% block edit_profile_links_0 %}{% endblock %}
         <li class="nav-item">
             <a class="nav-link {% active_class 'accounts:edit_profile' %}" href="{% url 'accounts:edit_profile' %}">
-                {% trans 'Profile Info' %}
+                {% translate 'Profile Info' %}
             </a>
         </li>
         {% block edit_profile_links_1 %}{% endblock %}
         <li class="nav-item">
             <a class="nav-link {% active_class 'accounts:edit_profile_privacy' %}" href="{% url 'accounts:edit_profile_privacy' %}">
-                {% trans 'Privacy' %}
+                {% translate 'Privacy' %}
             </a>
         </li>
         {% block edit_profile_links_2 %}{% endblock %}
         <li class="nav-item">
             <a class="nav-link {% active_class 'accounts:edit_profile_notifications' %}" href="{% url 'accounts:edit_profile_notifications' %}">
-                {% trans 'Notifications' %}
+                {% translate 'Notifications' %}
             </a>
         </li>
         {% block edit_profile_links_3 %}{% endblock %}
         <li class="nav-item">
             <a class="nav-link {% active_class 'accounts:edit_profile_credentials' %}" href="{% url 'accounts:edit_profile_credentials' %}">
-                {% trans 'Emails & Password' %}
+                {% translate 'Emails & Password' %}
             </a>
         </li>
         {% block edit_profile_links_4 %}{% endblock %}
@@ -42,7 +42,7 @@
             {% block edit_profile_links_5 %}{% endblock %}
             <li class="nav-item">
                 <a class="nav-link {% active_class 'accounts:deactivate_profile' %}" href="{% url 'accounts:deactivate_profile' %}">
-                    {% trans 'Deactivate Account' context request.user.get_gender %}
+                    {% translate 'Deactivate Account' context request.user.get_gender %}
                 </a>
             </li>
             {% block edit_profile_links_6 %}{% endblock %}

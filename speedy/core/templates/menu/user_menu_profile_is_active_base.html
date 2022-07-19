@@ -13,7 +13,7 @@
 <li class="nav-item">
     <a href="{% url 'messages:list' %}" class="nav-link {% block user_menu_messages_class %}{% endblock %}">
         <i class="fas fa-fw fa-comments"></i>
-        <span class="label">{% trans 'Messages' %}</span>
+        <span class="label">{% translate 'Messages' %}</span>
         {% unread_chats_count request.user as unread_chats %}
         {% if unread_chats %}
             <span class="badge badge-light">{{ unread_chats }}</span>

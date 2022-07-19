@@ -3,7 +3,7 @@
 {% load core_tags_and_filters %}
 {% load i18n %}
 
-{% block title %}{% trans 'Likes' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
+{% block title %}{% translate 'Likes' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
@@ -13,7 +13,7 @@
 
 {% block content %}
     <div class="page-header">
-        <h1>{% trans 'Likes' %}</h1>
+        <h1>{% translate 'Likes' %}</h1>
     </div>
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
@@ -42,7 +42,7 @@
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-danger">
-                    {% trans 'You have no likes here.' context user.speedy_match_profile.get_like_gender %}
+                    {% translate 'You have no likes here.' context user.speedy_match_profile.get_like_gender %}
                 </div>
             </div>
         {% endfor %}

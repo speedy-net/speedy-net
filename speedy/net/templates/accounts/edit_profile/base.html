@@ -6,7 +6,7 @@
 {% block edit_profile_links_5 %}
     <li class="nav-item">
         <a class="nav-link {% active_class 'blocks:blocked_users_list' %}" href="{% url 'blocks:blocked_users_list' request.user.slug %}">
-            {% trans 'Blocked Users' %}
+            {% translate 'Blocked Users' %}
         </a>
     </li>
 {% endblock %}

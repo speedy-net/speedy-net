@@ -9,11 +9,11 @@
     {% endif %}
     <br />
     <p>
-        {% trans "Your age will be visible to your matches on Speedy Match." %}
+        {% translate "Your age will be visible to your matches on Speedy Match." %}
     </p>
     <p>
         <a href="{% url 'accounts:edit_profile_credentials' %}">
-            {% trans 'Change privacy settings of email addresses on your profile.' context request.user.get_gender %}
+            {% translate 'Change privacy settings of email addresses on your profile.' context request.user.get_gender %}
         </a>
     </p>
 {% endblock %}
