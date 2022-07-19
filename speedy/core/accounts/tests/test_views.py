@@ -843,7 +843,7 @@ if (django_settings.TESTS):
                     self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 else:
                     raise NotImplementedError()
-                r = self.client.get(path='/logout/')
+                r = self.client.post(path='/logout/')
                 self.assertEqual(first=r.status_code, second=200)
                 r = self.client.get(path='/')
                 self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
