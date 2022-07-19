@@ -54,7 +54,10 @@
                 </ul>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{% url 'accounts:logout' %}">{% translate 'Logout' context request.user.get_gender %}</a>
+                        <form class="logout-form" method="post" action="{% url 'accounts:logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">{% translate 'Logout' context request.user.get_gender %}</button>
+                        </form>
                     </li>
                     {% include 'menu/about_mobile_menu_links.html' %}
                 </ul>
@@ -107,10 +110,11 @@
         </li>
         {% block login_logout_register_user_is_authenticated_extra_3 %}{% endblock %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:logout' %}" title="{% translate 'Logout' context request.user.get_gender %}">
+            <form class="logout-form nav-link" method="post" action="{% url 'accounts:logout' %}">
+                {% csrf_token %}
                 <i class="fas fa-fw fa-sign-out-alt"></i>
-                <span class="label">{% translate 'Logout' context request.user.get_gender %}</span>
-            </a>
+                <button type="submit" class="label" title="{% translate 'Logout' context request.user.get_gender %}">{% translate 'Logout' context request.user.get_gender %}</button>
+            </form>
         </li>
     {% else %}
         <form class="form" method="post" action="{% url 'accounts:login' %}">

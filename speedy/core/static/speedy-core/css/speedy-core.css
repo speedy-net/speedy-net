@@ -323,3 +323,27 @@ body.bidi-rtl .navbar-right {
     border: 22px dashed black;
 }
 
+.logout-form {
+    display: block;
+}
+
+.logout-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+.navbar-light .navbar-nav .logout-form.nav-link button {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.navbar-light .navbar-nav .logout-form.nav-link button:hover, .navbar-light .navbar-nav .logout-form.nav-link button:focus {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-light .navbar-nav .logout-form.nav-link button.disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+
