@@ -6,7 +6,7 @@
 
 {% block extra_css %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'speedy-core/css/received_friendship_requests.css' %}" />
+    <link rel="stylesheet" href="{% static 'speedy-core/css/received_friendship_requests.css' %}?v={% now 'Y-m-d' %}" />
 {% endblock %}
 
 {% block tab_content %}

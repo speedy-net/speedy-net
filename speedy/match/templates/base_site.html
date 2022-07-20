@@ -6,9 +6,9 @@
 
 {% block site_theme %}
     {% if LANGUAGE_BIDI %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match-rtl.css' %}" />
+        <link rel="stylesheet" href="{% static 'themes/speedy-match-rtl.css' %}?v={% now 'Y-m-d' %}" />
     {% else %}
-        <link rel="stylesheet" href="{% static 'themes/speedy-match-ltr.css' %}" />
+        <link rel="stylesheet" href="{% static 'themes/speedy-match-ltr.css' %}?v={% now 'Y-m-d' %}" />
     {% endif %}
 {% endblock %}
 
@@ -73,7 +73,7 @@
 
 {% block extra_js %}
     {{ block.super }}
-    <script src="{% static 'speedy-match/js/activation-form.js' %}"></script>
+    <script src="{% static 'speedy-match/js/activation-form.js' %}?v={% now 'Y-m-d' %}"></script>
 {% endblock %}
 
 {% block facebook_link %}

@@ -12,9 +12,9 @@
 {% block extra_css %}
     {{ block.super }}
     {% if form %}
-        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}?v={% now 'Y-m-d' %}" />
     {% endif %}
-    <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}" />
+    <link rel="stylesheet" href="{% static 'speedy-match/css/match-list.css' %}?v={% now 'Y-m-d' %}" />
 {% endblock %}
 
 {% block google_ads %}

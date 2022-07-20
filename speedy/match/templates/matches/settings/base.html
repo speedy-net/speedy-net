@@ -14,7 +14,7 @@
 {% block extra_css %}
     {{ block.super }}
     {% if form %}
-        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}" />
+        <link rel="stylesheet" href="{% static 'speedy-match/css/activation-form.css' %}?v={% now 'Y-m-d' %}" />
     {% endif %}
 {% endblock %}
 

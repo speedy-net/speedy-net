@@ -4,7 +4,7 @@
 
 {% block css %}
     {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'speedy-composer/css/welcome-site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-composer/css/welcome-site.css' %}?v={% now 'Y-m-d' %}" />
 {% endblock %}
 
 {% block logo_src %}{% static 'speedy-composer/images/logo.png' %}{% endblock %}

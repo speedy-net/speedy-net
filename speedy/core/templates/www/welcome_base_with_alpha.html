@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'speedy-core/css/welcome-base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-core/css/welcome-base.css' %}?v={% now 'Y-m-d' %}" />
 {% endblock %}
 
 {% block js %}

@@ -4,7 +4,7 @@
 
 {% block css %}
     {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'speedy-mail/css/welcome-site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'speedy-mail/css/welcome-site.css' %}?v={% now 'Y-m-d' %}" />
 {% endblock %}
 
 {% block logo_src %}{% static 'speedy-mail/images/logo.png' %}{% endblock %}
