@@ -38,9 +38,9 @@ def normalize_slug(slug):
     Normalize the slug.
     """
     slug = slug.lower()
-    slug = re.sub('[^a-zA-Z0-9]{1,}', '-', slug)
-    slug = re.sub('^-', '', slug)
-    slug = re.sub('-$', '', slug)
+    slug = re.sub(pattern=r'[^a-zA-Z0-9]{1,}', repl='-', string=slug)
+    slug = re.sub(pattern=r'^-', repl='', string=slug)
+    slug = re.sub(pattern=r'-$', repl='', string=slug)
     return slug
 
 
@@ -49,7 +49,7 @@ def normalize_username(username):
     Normalize the username.
     """
     slug = normalize_slug(slug=username)
-    username = re.sub('[-._]', '', slug)
+    username = re.sub(pattern=r'[-._]', repl='', string=slug)
     return username
 
 
