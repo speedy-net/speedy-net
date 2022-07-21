@@ -23,10 +23,10 @@ class BaseModel(ValidateModelMixin, models.Model):
     def generate_id_if_needed(self):
         try:
             field = self._meta.get_field('id')
-            if ((not (self.id)) and (hasattr(field, 'id_generator'))):
-                self.id = field.id_generator()
+            if ((not (self.id)) and (hasattr(field, 'generate_id'))):
+                self.id = field.generate_id()
                 while (self._meta.model.objects.filter(id=self.id).exists()):
-                    self.id = field.id_generator()
+                    self.id = field.generate_id()
         except FieldDoesNotExist:
             pass
 

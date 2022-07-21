@@ -25,7 +25,7 @@ class UDIDField(models.CharField):
 
 
 class SmallUDIDField(UDIDField):
-    id_generator = staticmethod(generate_small_udid)
+    generate_id = staticmethod(generate_small_udid)
 
     def __init__(self, *args, **kwargs):
         given_kwargs = kwargs
@@ -39,7 +39,7 @@ class SmallUDIDField(UDIDField):
 
 
 class RegularUDIDField(UDIDField):
-    id_generator = staticmethod(generate_regular_udid)
+    generate_id = staticmethod(generate_regular_udid)
 
     def __init__(self, *args, **kwargs):
         given_kwargs = kwargs
