@@ -55,7 +55,7 @@
                         <td>{{ user.speedy_match_profile.match_description|linebreaksbr }}</td>
                     </tr>
                     <tr>
-                        <th class="user-profile-th">{% translate 'Last visited Speedy Match' context user.speedy_match_profile.get_match_gender %}</th>
+                        <th class="user-profile-th">{% translate 'Last visited Speedy Match' context user.get_gender %}</th>
                         <td>{{ user.speedy_match_profile.last_visit_str }}</td>
                     </tr>
                 </tbody>
