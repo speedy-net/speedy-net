@@ -884,6 +884,8 @@ class SiteProfileBase(TimeStampedModel):
 
     def update_last_visit(self):
         self.last_visit = now()
+        if ("last_visit_str" in self.__dict__):
+            del self.last_visit_str
         self.user.save_user_and_profile()
 
     def activate(self):
