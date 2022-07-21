@@ -859,7 +859,7 @@ class SiteProfileBase(TimeStampedModel):
     @cached_property
     def last_visit_str(self):
         today = date.today()
-        last_visit_date = date(year=self.last_visit.year, month=self.last_visit.month, day=self.last_visit.day)
+        last_visit_date = self.last_visit.date()
         if ((today - last_visit_date).days == 0):
             return _("Today")
         elif ((today - last_visit_date).days == 1):
