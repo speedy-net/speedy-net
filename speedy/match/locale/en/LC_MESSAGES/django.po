@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-19 12:55+0300\n"
+"POT-Creation-Date: 2022-07-21 14:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -289,6 +289,21 @@ msgstr ""
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
+msgstr ""
+
+#: .\__translations\__translations.html:78
+msgctxt "female"
+msgid "Last visited Speedy Match"
+msgstr ""
+
+#: .\__translations\__translations.html:79
+msgctxt "male"
+msgid "Last visited Speedy Match"
+msgstr ""
+
+#: .\__translations\__translations.html:80
+msgctxt "other"
+msgid "Last visited Speedy Match"
 msgstr ""
 
 #: .\__translations\__translations.py:6
@@ -1158,6 +1173,10 @@ msgstr ""
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
+msgstr ""
+
+#: .\templates\profiles\user_extra_info_widget.html:58
+msgid "Last visited Speedy Match"
 msgstr ""
 
 #: .\templates\profiles\user_rank_widget.html:12

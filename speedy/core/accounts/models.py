@@ -1,6 +1,6 @@
 import logging
 import warnings
-from datetime import timedelta
+from datetime import timedelta, date
 
 from django.conf import settings as django_settings
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -11,7 +11,9 @@ from django.core.validators import MaxLengthValidator
 from django.urls import reverse
 from django.db import models, transaction
 from django.dispatch import receiver
+from django.utils import formats
 from django.utils.timezone import now
+from django.utils.timesince import timesince
 from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
@@ -853,6 +855,20 @@ class SiteProfileBase(TimeStampedModel):
     @cached_property
     def is_active_and_valid(self):
         raise NotImplementedError("is_active_and_valid is not implemented.")
+
+    @cached_property
+    def last_visit_str(self):
+        today = date.today()
+        last_visit_date = date(year=self.last_visit.year, month=self.last_visit.month, day=self.last_visit.day)
+        if ((today - last_visit_date).days == 0):
+            return _("Today")
+        elif ((today - last_visit_date).days == 1):
+            return _("Yesterday")
+        else:
+            return _("On {date} ({timesince} ago)").format(
+                date=formats.date_format(value=last_visit_date),
+                timesince=timesince(d=last_visit_date, now=today)
+            )
 
     class Meta:
         abstract = True
