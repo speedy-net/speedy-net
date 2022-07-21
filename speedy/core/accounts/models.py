@@ -11,6 +11,7 @@ from django.core.validators import MaxLengthValidator
 from django.urls import reverse
 from django.db import models, transaction
 from django.dispatch import receiver
+from django.utils import formats
 from django.utils.timezone import now
 from django.utils.timesince import timesince
 from django.utils.functional import classproperty, cached_property
@@ -865,7 +866,7 @@ class SiteProfileBase(TimeStampedModel):
             return _("yesterday")
         else:
             return _("On {date} ({timesince} ago)").format(
-                date=last_visit_date,
+                date=formats.date_format(value=last_visit_date),
                 timesince=timesince(d=last_visit_date, now=today)
             )
 
