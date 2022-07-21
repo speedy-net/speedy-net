@@ -1,6 +1,8 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from dateutil.relativedelta import relativedelta
+
     from django.test import override_settings
     from django.db.utils import DataError
     from django.core.exceptions import ValidationError
@@ -884,6 +886,30 @@ if (django_settings.TESTS):
                         self.assertNotEqual(first=user.name, second=user.speedy_net_profile.get_name())
                     else:
                         raise NotImplementedError()
+
+            def test_user_profile_last_visit_str(self):
+                user_1 = ActiveUserFactory()
+                self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'he': "היום"}[self.language_code])
+                user_2 = ActiveUserFactory()
+                user_2.profile.last_visit -= relativedelta(days=1)
+                user_2.save_user_and_profile()
+                self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Yesterday", 'he': "אתמול"}[self.language_code])
+                user_3 = ActiveUserFactory()
+                user_3.profile.last_visit -= relativedelta(days=2)
+                user_3.save_user_and_profile()
+                self.assertIs(expr1={'en': "days ago", 'he': "לפני יומיים"}[self.language_code] in user_3.profile.last_visit_str, expr2=True)
+                user_4 = ActiveUserFactory()
+                user_4.profile.last_visit -= relativedelta(days=3)
+                user_4.save_user_and_profile()
+                self.assertIs(expr1={'en': "days ago", 'he': "ימים"}[self.language_code] in user_4.profile.last_visit_str, expr2=True)
+                user_5 = ActiveUserFactory()
+                user_5.profile.last_visit -= relativedelta(years=1)
+                user_5.save_user_and_profile()
+                self.assertIs(expr1={'en': "year ago", 'he': "לפני שנה"}[self.language_code] in user_5.profile.last_visit_str, expr2=True)
+                user_6 = ActiveUserFactory()
+                user_6.profile.last_visit -= relativedelta(years=2)
+                user_6.save_user_and_profile()
+                self.assertIs(expr1={'en': "years ago", 'he': "לפני שנתיים"}[self.language_code] in user_6.profile.last_visit_str, expr2=True)
 
 
         @only_on_sites_with_login
