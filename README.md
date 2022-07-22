@@ -167,7 +167,7 @@ Clone the project, create a venv, activate it and install required modules using
 You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
 
     /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
-    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.2
+    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.3
 
 Setup a database:
 
@@ -261,7 +261,7 @@ Refer to [django-environ documentation](https://django-environ.readthedocs.io/en
 
 ## How to upgrade required packages
 
-To upgrade all the requirements (with Django>=3.2,<3.3), run:
+To upgrade all the requirements (with Django>=4.0,<4.1), run:
 
     pip install --upgrade -r requirements-pip-upgrade.txt
 
