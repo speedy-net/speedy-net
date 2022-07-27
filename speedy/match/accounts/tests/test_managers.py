@@ -413,7 +413,7 @@ if (django_settings.TESTS):
                     self.assertListEqual(list1=user_count_list, list2=[10, 15, 20])
                     self.assertListEqual(list1=matches_list_length_list, list2=[9, 14, 19])
                     self.assertEqual(first=User.objects.count(), second=20)
-                print("ManagerMatchesTestCase::test_length_of_matches_list:Tested with {} users.".format(User.objects.count()))
+                print("{}::Tested with {} users.".format(self.id(), User.objects.count()))
 
             def test_photo_not_visible_doesnt_match_profile_in_matches_list(self):
                 """
