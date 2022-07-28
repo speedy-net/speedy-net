@@ -860,7 +860,7 @@ class SiteProfileBase(TimeStampedModel):
     def last_visit_str(self):
         today = date.today()
         last_visit_date = self.last_visit.date()
-        if ((today - last_visit_date).days == 0):
+        if ((today - last_visit_date).days <= 0):
             return _("Today")
         elif ((today - last_visit_date).days == 1):
             return _("Yesterday")
