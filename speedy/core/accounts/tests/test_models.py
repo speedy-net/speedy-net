@@ -915,6 +915,7 @@ if (django_settings.TESTS):
                 else:
                     self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Yesterday", 'he': "אתמול"}[self.language_code])
                     print("{}::Skipped test - dates don't match.".format(self.id()))
+                    self.skipTest(reason="Skipped test - dates don't match.")
 
 
         @only_on_sites_with_login
