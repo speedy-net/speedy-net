@@ -888,6 +888,9 @@ if (django_settings.TESTS):
                         raise NotImplementedError()
 
             def test_user_profile_last_visit_str(self):
+                """
+                This test depends on the time zone of the computer running the tests. If you run them on your local computer, and your local date is different from the current date at UTC, then this test will be skipped with a reason. On the website, it might display "Today" even if the last visit date is "tomorrow" or "yesterday", depending on the server's time zone.
+                """
                 user_1 = ActiveUserFactory()
                 # If user_1.profile.last_visit_str is not "Today", skip this test.
                 if (not (user_1.profile.last_visit_str == {'en': "Today", 'he': "היום"}[self.language_code])):
