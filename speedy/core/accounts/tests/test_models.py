@@ -892,7 +892,7 @@ if (django_settings.TESTS):
                 # If user_1.profile.last_visit_str is not "Today", skip this test.
                 if (not (user_1.profile.last_visit_str == {'en': "Today", 'he': "היום"}[self.language_code])):
                     self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Yesterday", 'he': "אתמול"}[self.language_code])
-                    print("{}::Skipped test - dates don't match.".format(self.id()))
+                    print("{}::Skipped test - user_1.profile.last_visit_str is \"Yesterday\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
 
@@ -902,8 +902,8 @@ if (django_settings.TESTS):
                 user_2.save_user_and_profile()
                 # If user_2.profile.last_visit_str is not "Yesterday", skip this test.
                 if (not (user_2.profile.last_visit_str == {'en': "Yesterday", 'he': "אתמול"}[self.language_code])):
-                    self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'he': "היום"}[self.language_code])
-                    print("{}::Skipped test - dates don't match.".format(self.id()))
+                    self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Today", 'he': "היום"}[self.language_code])
+                    print("{}::Skipped test - user_2.profile.last_visit_str is \"Today\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
 
