@@ -865,10 +865,13 @@ class SiteProfileBase(TimeStampedModel):
         elif ((today - last_visit_date).days == 1):
             return _("Yesterday")
         else:
-            return _("On {date} ({timesince} ago)").format(
-                date=formats.date_format(value=last_visit_date),
-                timesince=timesince(d=last_visit_date, now=today)
-            )
+            return _("On {date} ({timesince} ago)")\
+                .replace(" ago)", "\xa0ago)")\
+                .replace("(לפני ", "(לפני\xa0")\
+                .format(
+                    date=formats.date_format(value=last_visit_date),
+                    timesince=timesince(d=last_visit_date, now=today),
+                )
 
     class Meta:
         abstract = True
