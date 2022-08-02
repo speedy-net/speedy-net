@@ -13,7 +13,6 @@ from django.db import models, transaction
 from django.dispatch import receiver
 from django.utils import formats
 from django.utils.timezone import now
-from django.utils.timesince import timesince
 from django.utils.html import avoid_wrapping
 from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -25,7 +24,7 @@ from speedy.core.base.mail import send_mail
 from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
-from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names, convert_to_set
+from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names, convert_to_set, timesince
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .fields import UserAccessField

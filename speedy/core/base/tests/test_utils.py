@@ -1,9 +1,11 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from datetime import date
+
     from speedy.core.base.test.models import SiteTestCase
 
-    from speedy.core.base.utils import normalize_slug, normalize_username
+    from speedy.core.base.utils import normalize_slug, normalize_username, timesince
 
 
     class NormalizeSlugTestCase(SiteTestCase):
@@ -38,5 +40,12 @@ if (django_settings.TESTS):
         def test_remove_dashes_dots_and_underscores(self):
             self.assertEqual(first=normalize_username(username='this-is-a-slug'), second='thisisaslug')
             self.assertEqual(first=normalize_username(username='.this_is...a_slug--'), second='thisisaslug')
+
+
+    class TimeSinceTestCase(SiteTestCase):
+
+        def test_timesince(self):
+            today = date.today()
+            self.assertEqual(first=timesince(d=today, now=today), second="")
 
 

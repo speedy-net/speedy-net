@@ -8,7 +8,9 @@ from dateutil.relativedelta import relativedelta
 
 from django.conf import settings as django_settings
 from django.utils import translation
-from django.utils.translation import get_language
+from django.utils.timesince import TIME_STRINGS as timesince_time_strings
+from django.utils.html import avoid_wrapping
+from django.utils.translation import gettext, get_language
 
 import translated_fields
 
@@ -167,5 +169,26 @@ def convert_to_set(exclude=None):
     else:
         exclude = set(exclude)
     return exclude
+
+
+def timesince(d, now):
+    delta = relativedelta(now, d)
+
+    years = delta.years
+    months = delta.months
+    weeks = delta.days // 7
+    days = delta.days - weeks * 7
+
+    timesince_counts = [(years, "year"), (months, "month")]
+    if (years == 0):
+        timesince_counts.append((weeks, "week"))
+        if (months == 0):
+            timesince_counts.append((days, "day"))
+
+    result = []
+    for (count, name) in timesince_counts:
+        if (count > 0):
+            result.append(avoid_wrapping(value=timesince_time_strings[name] % {"num": count}))
+    return gettext(", ").join(result)
 
 
