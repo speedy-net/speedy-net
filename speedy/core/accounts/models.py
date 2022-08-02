@@ -14,6 +14,7 @@ from django.dispatch import receiver
 from django.utils import formats
 from django.utils.timezone import now
 from django.utils.timesince import timesince
+from django.utils.html import avoid_wrapping
 from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
@@ -865,13 +866,12 @@ class SiteProfileBase(TimeStampedModel):
         elif ((today - last_visit_date).days == 1):
             return _("Yesterday")
         else:
-            return _("On {date} ({timesince} ago)")\
-                .replace(" ago)", "\xa0ago)")\
-                .replace("(לפני ", "(לפני\xa0")\
-                .format(
-                    date=formats.date_format(value=last_visit_date),
+            return _("On {date} ({timesince_ago})").format(
+                date=formats.date_format(value=last_visit_date),
+                timesince_ago=avoid_wrapping(value=_("{timesince} ago")).format(
                     timesince=timesince(d=last_visit_date, now=today),
-                )
+                ),
+            )
 
     class Meta:
         abstract = True
