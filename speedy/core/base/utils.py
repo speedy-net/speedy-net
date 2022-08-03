@@ -10,7 +10,7 @@ from django.conf import settings as django_settings
 from django.utils import translation
 from django.utils.timesince import TIME_STRINGS as timesince_time_strings
 from django.utils.html import avoid_wrapping
-from django.utils.translation import gettext, get_language
+from django.utils.translation import pgettext, get_language
 
 import translated_fields
 
@@ -189,6 +189,9 @@ def timesince(d, now):
     for (count, name) in timesince_counts:
         if (count > 0):
             result.append(avoid_wrapping(value=timesince_time_strings[name] % {"num": count}))
-    return gettext(", ").join(result)
+    result = pgettext(context="timesince", message=", ").join(result)
+    if (get_language() == "he"):
+        result = re.sub(pattern=r'(\ {1}ו{1})(\d{1})', repl=lambda m: "-".join(m.groups()), string=result)
+    return result
 
 
