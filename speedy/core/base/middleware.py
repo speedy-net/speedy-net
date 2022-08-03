@@ -10,8 +10,6 @@ from django.urls import NoReverseMatch
 from django.urls import reverse
 from django.utils import translation
 
-from speedy.core.blocks import managers as block_managers
-
 
 def redirect_to_www(site: Site) -> HttpResponseBase:
     url = '//www.{domain}{path}'.format(
