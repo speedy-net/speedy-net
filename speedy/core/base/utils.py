@@ -175,18 +175,15 @@ def timesince(d, now):
     """
     Like Django's timesince but more accurate. Returns results only when delta is at least one day (positive). Otherwise returns "". Result is either one or two in depth.
     """
-    delta = relativedelta(d, now)
+    delta = -relativedelta(d, now)
 
     result = []
-    _years = -delta.years
-    _months = -delta.months
-    _days = -delta.days
-    if ((_years >= 0) and (_months >= 0) and (_days >= 0)):
+    if ((delta.years >= 0) and (delta.months >= 0) and (delta.days >= 0)):
 
-        years = _years
-        months = _months
-        weeks = _days // 7
-        days = _days - weeks * 7
+        years = delta.years
+        months = delta.months
+        weeks = delta.days // 7
+        days = delta.days - weeks * 7
 
         timesince_counts = [(years, "year"), (months, "month")]
         if (years == 0):
