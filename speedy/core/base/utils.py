@@ -172,23 +172,29 @@ def convert_to_set(exclude=None):
 
 
 def timesince(d, now):
+    """
+    Like Django's timesince but more accurate. Returns results only when delta is at least one day (positive). Otherwise returns "". Result is either one or two in depth.
+    """
     delta = relativedelta(now, d)
 
-    years = delta.years
-    months = delta.months
-    weeks = delta.days // 7
-    days = delta.days - weeks * 7
-
-    timesince_counts = [(years, "year"), (months, "month")]
-    if (years == 0):
-        timesince_counts.append((weeks, "week"))
-        if (months == 0):
-            timesince_counts.append((days, "day"))
-
     result = []
-    for (count, name) in timesince_counts:
-        if (count > 0):
-            result.append(avoid_wrapping(value=timesince_time_strings[name] % {"num": count}))
+    if ((delta.years >= 0) and (delta.months >= 0) and (delta.days >= 0)):
+
+        years = delta.years
+        months = delta.months
+        weeks = delta.days // 7
+        days = delta.days - weeks * 7
+
+        timesince_counts = [(years, "year"), (months, "month")]
+        if (years == 0):
+            timesince_counts.append((weeks, "week"))
+            if (months == 0):
+                timesince_counts.append((days, "day"))
+
+        for (count, name) in timesince_counts:
+            if (count > 0):
+                result.append(avoid_wrapping(value=timesince_time_strings[name] % {"num": count}))
+
     result = pgettext(context="timesince", message=", ").join(result)
     if (get_language() == "he"):
         result = re.sub(pattern=r'(\ {1}ו{1})(\d{1})', repl=lambda m: "-".join(m.groups()), string=result)
