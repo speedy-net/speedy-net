@@ -113,7 +113,14 @@ class SiteProfileManager(BaseManager):
         ).exclude(
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
-        user_list = qs[:2400]
+        _user_list = qs[:2400]
+        user_list = []
+        months = None
+        for m in range(4, 28, 4):
+            if (months is None):
+                user_list = [u for u in _user_list if ((timezone_now - u.speedy_match_profile.last_visit).days <= m * 30)]
+                if ((m == 24) or (len(user_list) >= 1080)):
+                    months = m
         self._prefetch_related_objects_if_no_cached_counts(user_list=user_list)
         matches_list = []
         for other_user in user_list:
@@ -305,9 +312,10 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, user_id_list={user_id_list}, distance_between_users_list={distance_between_users_list}".format(
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, months={months}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, user_id_list={user_id_list}, distance_between_users_list={distance_between_users_list}".format(
             user=user,
             language_code=language_code,
+            months=months,
             number_of_users=len(user_list),
             number_of_matches=len(matches_list),
             user_id_list=[u.id for u in matches_list[:40]],
