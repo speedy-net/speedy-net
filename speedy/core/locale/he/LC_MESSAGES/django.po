@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-03 07:54+0300\n"
+"POT-Creation-Date: 2022-08-16 04:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2439,7 +2439,7 @@ msgstr "Speedy Core Base App"
 msgid "ID"
 msgstr "ID"
 
-#: .\base\utils.py:192
+#: .\base\utils.py:198
 msgctxt "timesince"
 msgid ", "
 msgstr " ו"
@@ -3290,6 +3290,17 @@ msgstr ""
 "אם נרשמתם לאתר בטעות עם כתובת דואר אלקטרוני שגויה, הוסיפו כתובת דואר "
 "אלקטרוני חדשה לחשבון שלכם ואמתו אותה. ניתן לצרף מספר כתובות דואר אלקטרוני "
 "לחשבון שלכם באתר."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face. "
+"It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"תמונת הפרופיל שלכם צריכה להיות תמונה שלכם, שבה רואים את הפנים שלכם. מותר "
+"להעלות תמונת פרופיל עם אנשים נוספים. אין להעלות תמונות עירום, תמונות שבהן "
+"רואים אברי מין (של גברים או נשים) או תמונות בחזה חשוף (של גברים או נשים)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
