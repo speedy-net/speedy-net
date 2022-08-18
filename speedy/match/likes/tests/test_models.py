@@ -2,6 +2,8 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
+
         from django.test import override_settings
         from django.core import mail
 
@@ -69,6 +71,92 @@ if (django_settings.TESTS):
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
                 self.assert_counters(user=self.user_1, from_user_likes=3, to_user_likes=1)
                 self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=3)
+
+
+        @only_on_speedy_match
+        class LikeGenderTestCase(SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)
+                self.user_2 = ActiveUserFactory(gender=User.GENDER_MALE)
+                self.user_3 = ActiveUserFactory(gender=User.GENDER_OTHER)
+
+            def _create_users(self, users_count, gender):
+                for i in range(users_count):
+                    setattr(self, "user_{}".format(4 + i), ActiveUserFactory(gender=gender))
+
+            def test_get_like_gender_if_there_are_no_liked_and_liking_users(self):
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="other")
+                for gender in User.GENDER_VALID_VALUES:
+                    for user in [self.user_1, self.user_2, self.user_3]:
+                        user.speedy_match_profile.gender_to_match = [gender]
+                        user.save_user_and_profile()
+                        self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second=User.GENDERS_DICT[gender])
+
+            def test_get_like_gender_for_15_liked_and_liking_users(self):
+                self._create_users(users_count=15, gender=User.GENDER_FEMALE)
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    user.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE]
+                    user.save_user_and_profile()
+                    for i in range(8):
+                        UserLike.objects.add_like(from_user=user, to_user=getattr(self, "user_{}".format(4 + i)))
+                    for i in range(7):
+                        UserLike.objects.add_like(from_user=getattr(self, "user_{}".format(4 + 8 + i)), to_user=user)
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
+
+                self.user_8.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
+                self.user_8.save_user_and_profile()
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
+
+                self.user_16.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
+                self.user_16.save_user_and_profile()
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="other")
+
+                self.user_8.delete()
+                self.user_16.delete()
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
+
+                UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
+
+                UserLike.objects.add_like(from_user=self.user_3, to_user=self.user_1)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="other")
+
+                UserLike.objects.remove_like(from_user=self.user_3, to_user=self.user_1)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
+
+                UserLike.objects.remove_like(from_user=self.user_1, to_user=self.user_2)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
+
+                UserLike.objects.add_like(from_user=self.user_3, to_user=self.user_1)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
+
+                UserLike.objects.remove_like(from_user=self.user_3, to_user=self.user_1)
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
+
+                self.user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
+                self.user_1.save_user_and_profile()
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="other")
+
+                self.user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE, User.GENDER_FEMALE]
+                self.user_1.save_user_and_profile()
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="other")
+
+                self.user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE, User.GENDER_OTHER]
+                self.user_1.save_user_and_profile()
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="other")
+
+                self.user_1.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
+                self.user_1.save_user_and_profile()
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="other")
+
+                self.user_1.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE]
+                self.user_1.save_user_and_profile()
+                self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
 
 
         class LikeNotificationsTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin):

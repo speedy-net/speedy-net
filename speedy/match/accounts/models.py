@@ -372,10 +372,23 @@ class SiteProfile(SiteProfileBase):
         return match_gender
 
     def get_like_gender(self):
-        # No need to query the database if len(self.gender_to_match) is not 1.
-        if ((len(self.gender_to_match) == 1) and ({self.get_match_gender()} == {like.to_user.get_gender() for like in UserLike.objects.filter(from_user=self.user).prefetch_related("to_user").distinct()} | {like.from_user.get_gender() for like in UserLike.objects.filter(to_user=self.user).prefetch_related("from_user").distinct()} | {self.get_match_gender()})):
-            like_gender = self.get_match_gender()
-        else:
+        """
+        If there is only one gender to match, and at least 90% of the liked and liking users genders are equal to this gender, return this gender.
+
+        Otherwise, return "other".
+
+        (Actually 100% of the liked and liking users genders should be equal to this gender if there was always only one gender to match for this user, but some users change their gender, and therefore we allow up to 10% of the users to change their genders and not to be equal to this gender.)
+
+        We don't query the database of liked and liking users if len(self.gender_to_match) is not 1.
+        """
+        like_gender = None
+        if (len(self.gender_to_match) == 1):
+            match_gender = self.get_match_gender()
+            like_users_genders_1 = [like.to_user.get_gender() for like in UserLike.objects.filter(from_user=self.user).prefetch_related("to_user").distinct()] + [like.from_user.get_gender() for like in UserLike.objects.filter(to_user=self.user).prefetch_related("from_user").distinct()]
+            like_users_genders_2 = [gender for gender in like_users_genders_1 if (gender == match_gender)]
+            if (len(like_users_genders_2) >= 0.9 * len(like_users_genders_1)):
+                like_gender = match_gender
+        if (like_gender is None):
             like_gender = User.GENDERS_DICT.get(User.GENDER_OTHER)
         return like_gender
 
