@@ -116,6 +116,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="other")
 
                 self.user_8.delete()
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
+
                 self.user_16.delete()
                 for user in [self.user_1, self.user_2, self.user_3]:
                     self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
