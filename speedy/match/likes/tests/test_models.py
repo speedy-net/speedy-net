@@ -183,6 +183,11 @@ if (django_settings.TESTS):
                 for user in [self.user_1, self.user_2, self.user_3]:
                     self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
 
+                self.user_24.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
+                self.user_24.save_user_and_profile()
+                for user in [self.user_1, self.user_2, self.user_3]:
+                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="female")
+
                 self.user_18.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
                 self.user_18.save_user_and_profile()
                 for user in [self.user_1, self.user_2, self.user_3]:
@@ -190,11 +195,6 @@ if (django_settings.TESTS):
 
                 self.user_20.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
                 self.user_20.save_user_and_profile()
-                for user in [self.user_1, self.user_2, self.user_3]:
-                    self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="other")
-
-                self.user_24.gender = random.choice([User.GENDER_MALE, User.GENDER_OTHER])
-                self.user_24.save_user_and_profile()
                 for user in [self.user_1, self.user_2, self.user_3]:
                     self.assertEqual(first=user.speedy_match_profile.get_like_gender(), second="other")
 
