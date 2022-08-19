@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 from PIL import Image
 
 from django.conf import settings as django_settings
@@ -215,8 +216,10 @@ def validate_email_unique(email, user_email_address_pk=None):
     if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
         # If this email address is not confirmed, delete it. Maybe another user added it but it belongs to the current user.
         for user_email_address in UserEmailAddress.objects.filter(email=email, is_confirmed=False).exclude(pk=user_email_address_pk):
-            user_email_address.delete()
-        # If this email address is confirmed, raise an exception.
+            # Only delete this email address if it was created at least 5 minutes ago.
+            if (user_email_address.date_created <= (now() - timedelta(minutes=5))):
+                user_email_address.delete()
+        # If this email address is confirmed or was created less than 5 minutes ago, raise an exception.
         if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
             raise ValidationError(_('This email is already in use.'))
 

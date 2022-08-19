@@ -1,6 +1,7 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from datetime import timedelta
     from dateutil.relativedelta import relativedelta
 
     from django.test import override_settings
@@ -1207,6 +1208,62 @@ if (django_settings.TESTS):
                 )
                 user = DefaultUserFactory()
                 user_email_address = UserEmailAddress(user=user, email='email@example.com')
+                with self.assertRaises(ValidationError) as cm:
+                    user_email_address.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=user,
+                    user_email_addresses_count=0,
+                    user_primary_email_addresses_count=0,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                existing_user = User.objects.get(pk=existing_user.pk)
+                user = User.objects.get(pk=user.pk)
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=user,
+                    user_email_addresses_count=0,
+                    user_primary_email_addresses_count=0,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                self.assert_models_count(
+                    entity_count=2,
+                    user_count=2,
+                    user_email_address_count=1,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=1,
+                )
+
+            def test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self):
+                # Unconfirmed email address is deleted if another user adds it again.
+                existing_user = DefaultUserFactory()
+                existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=False)
+                existing_user_email.date_created -= timedelta(minutes=6)
+                existing_user_email.save()
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                user = DefaultUserFactory()
+                user_email_address = UserEmailAddress(user=user, email='email@example.com')
                 user_email_address.save()
                 self.assert_user_email_addresses_count(
                     user=existing_user,
@@ -1250,6 +1307,62 @@ if (django_settings.TESTS):
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                user = DefaultUserFactory()
+                user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
+                with self.assertRaises(ValidationError) as cm:
+                    user_email_address.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._this_email_is_already_in_use_errors_dict())
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=user,
+                    user_email_addresses_count=0,
+                    user_primary_email_addresses_count=0,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                existing_user = User.objects.get(pk=existing_user.pk)
+                user = User.objects.get(pk=user.pk)
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=user,
+                    user_email_addresses_count=0,
+                    user_primary_email_addresses_count=0,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                self.assert_models_count(
+                    entity_count=2,
+                    user_count=2,
+                    user_email_address_count=1,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=1,
+                )
+
+            def test_non_unique_unconfirmed_email_address_uppercase_registered_6_minutes_ago(self):
+                # Unconfirmed email address is deleted if another user adds it again.
+                existing_user = DefaultUserFactory()
+                existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
+                existing_user_email.date_created -= timedelta(minutes=6)
+                existing_user_email.save()
                 self.assert_user_email_addresses_count(
                     user=existing_user,
                     user_email_addresses_count=1,

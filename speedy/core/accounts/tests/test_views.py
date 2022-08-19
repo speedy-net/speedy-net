@@ -4,7 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import logging
         from unittest import mock
-        from datetime import date, datetime
+        from datetime import date, datetime, timedelta
 
         from django.test import override_settings
         from django.core import mail
@@ -337,6 +337,52 @@ if (django_settings.TESTS):
             def test_non_unique_unconfirmed_email_address(self):
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
+                existing_user = existing_user_email.user
+                self.assert_models_count(
+                    entity_count=1,
+                    user_count=1,
+                    user_email_address_count=1,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                r = self.client.post(path='/', data=self.data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._this_email_is_already_in_use_errors_dict())
+                self.assert_models_count(
+                    entity_count=1,
+                    user_count=1,
+                    user_email_address_count=1,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=1,
+                )
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+                existing_user = User.objects.get(pk=existing_user.pk)
+                self.assert_user_email_addresses_count(
+                    user=existing_user,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=0,
+                    user_unconfirmed_email_addresses_count=1,
+                )
+
+            def test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self):
+                # Unconfirmed email address is deleted if another user adds it again.
+                existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
+                existing_user_email.date_created -= timedelta(minutes=6)
+                existing_user_email.save()
                 existing_user = existing_user_email.user
                 self.assert_models_count(
                     entity_count=1,
