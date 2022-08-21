@@ -232,6 +232,10 @@ window.speedy.setSession = function (domain, key) {
 
 $(document).ready(function () {
     $(".form-control-danger").addClass("is-invalid"); // A hack to work with django-crispy-forms 1.6.1.
+
+    $('form[method="post"]').submit(function () {
+        $(this).find(':input[type="submit"]').prop('disabled', true);
+    });
 });
 
 var isRTL = $("body").hasClass("bidi-rtl");
