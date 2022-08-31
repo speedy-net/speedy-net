@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-16 04:57+0300\n"
+"POT-Creation-Date: 2022-08-31 08:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1941,7 +1941,7 @@ msgstr "צור/י חשבון"
 msgid "Update your profile picture"
 msgstr "עדכנ/י את תמונת הפרופיל שלך"
 
-#: .\accounts\forms.py:160 .\accounts\validators.py:226
+#: .\accounts\forms.py:160 .\accounts\validators.py:229
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
@@ -1976,7 +1976,7 @@ msgstr "הסיסמה לא תקינה."
 msgid "username"
 msgstr "שם משתמש/ת"
 
-#: .\accounts\models.py:83 .\accounts\models.py:84 .\accounts\validators.py:20
+#: .\accounts\models.py:83 .\accounts\models.py:84 .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "שם המשתמש/ת הזה כבר תפוס."
 
@@ -2219,7 +2219,7 @@ msgstr "בתאריך {date} ({timesince_ago})"
 msgid "{timesince} ago"
 msgstr "לפני {timesince}"
 
-#: .\accounts\validators.py:38
+#: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -2227,7 +2227,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או "
 "מקפים. שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:40
+#: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -2235,7 +2235,7 @@ msgstr ""
 "שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
 "של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:46
+#: .\accounts\validators.py:47
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2250,7 +2250,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לפחות (מכיל "
 "%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:57
+#: .\accounts\validators.py:58
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2265,7 +2265,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
 "%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
-#: .\accounts\validators.py:68
+#: .\accounts\validators.py:69
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2278,7 +2278,7 @@ msgstr[0] ""
 msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל %(show_value)d)."
 
-#: .\accounts\validators.py:79
+#: .\accounts\validators.py:80
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2293,7 +2293,7 @@ msgstr[1] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לכל היותר (מכיל "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:103
+#: .\accounts\validators.py:104
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2304,14 +2304,14 @@ msgid_plural ""
 msgstr[0] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "סיסמה זו קצרה מדי. היא חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:113
+#: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "הסיסמה שלך חייבת להכיל לפחות תו %(min_length)d."
 msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d תווים."
 
-#: .\accounts\validators.py:134
+#: .\accounts\validators.py:135
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2320,36 +2320,36 @@ msgid_plural ""
 msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
 msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
 
-#: .\accounts\validators.py:144
+#: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "על הסיסמה שלך להכיל עד תו %(max_length)d."
 msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 
-#: .\accounts\validators.py:189 .\accounts\validators.py:196
+#: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
 msgstr "שדה זה אינו יכול להיות ריק."
 
-#: .\accounts\validators.py:191
+#: .\accounts\validators.py:192
 msgid "This field cannot be blank."
 msgstr "שדה זה אינו יכול להיות ריק."
 
-#: .\accounts\validators.py:203 .\accounts\validators.py:210
+#: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
 msgstr "יש להזין תאריך חוקי."
 
-#: .\accounts\validators.py:221
+#: .\accounts\validators.py:224
 msgid "This email is already in use."
 msgstr "הדואר האלקטרוני הזה כבר נמצא בשימוש."
 
-#: .\accounts\validators.py:228
+#: .\accounts\validators.py:231
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 30 מגה בייט."
 
-#: .\accounts\validators.py:250 .\accounts\validators.py:269
+#: .\accounts\validators.py:253 .\accounts\validators.py:272
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."

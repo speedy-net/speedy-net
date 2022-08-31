@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-16 04:57+0300\n"
+"POT-Creation-Date: 2022-08-31 08:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1882,7 +1882,7 @@ msgstr ""
 msgid "Update your profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:160 .\accounts\validators.py:226
+#: .\accounts\forms.py:160 .\accounts\validators.py:229
 msgid "A profile picture is required."
 msgstr ""
 
@@ -1917,7 +1917,7 @@ msgstr ""
 msgid "username"
 msgstr ""
 
-#: .\accounts\models.py:83 .\accounts\models.py:84 .\accounts\validators.py:20
+#: .\accounts\models.py:83 .\accounts\models.py:84 .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr ""
 
@@ -2160,19 +2160,19 @@ msgstr ""
 msgid "{timesince} ago"
 msgstr ""
 
-#: .\accounts\validators.py:38
+#: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
 
-#: .\accounts\validators.py:40
+#: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
 
-#: .\accounts\validators.py:46
+#: .\accounts\validators.py:47
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2183,7 +2183,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:57
+#: .\accounts\validators.py:58
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2194,7 +2194,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:68
+#: .\accounts\validators.py:69
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2205,7 +2205,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:79
+#: .\accounts\validators.py:80
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2216,7 +2216,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:103
+#: .\accounts\validators.py:104
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2227,14 +2227,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:113
+#: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:134
+#: .\accounts\validators.py:135
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2243,35 +2243,35 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:144
+#: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\accounts\validators.py:189 .\accounts\validators.py:196
+#: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
 msgstr ""
 
-#: .\accounts\validators.py:191
+#: .\accounts\validators.py:192
 msgid "This field cannot be blank."
 msgstr ""
 
-#: .\accounts\validators.py:203 .\accounts\validators.py:210
+#: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
 msgstr ""
 
-#: .\accounts\validators.py:221
+#: .\accounts\validators.py:224
 msgid "This email is already in use."
 msgstr ""
 
-#: .\accounts\validators.py:228
+#: .\accounts\validators.py:231
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 
-#: .\accounts\validators.py:250 .\accounts\validators.py:269
+#: .\accounts\validators.py:253 .\accounts\validators.py:272
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
