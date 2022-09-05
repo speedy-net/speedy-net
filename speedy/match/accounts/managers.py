@@ -52,18 +52,6 @@ class SiteProfileManager(BaseManager):
         rank = min([diet_rank, smoking_status_rank, relationship_status_rank])
         return rank
 
-    def _ensure_cached_counts(self, other_user):
-        if (other_user.speedy_match_profile.likes_to_user_count is None):
-            other_user.speedy_match_profile.likes_to_user_count = len(other_user.likes_to_user.all())
-            other_user.speedy_match_profile.save()
-        if (other_user.speedy_net_profile.friends_count is None):
-            other_user.speedy_net_profile.friends_count = len(other_user.friends.all())
-            other_user.speedy_net_profile.save()
-
-    def _prefetch_related_objects_if_no_cached_counts(self, user_list):
-        users_to_prefetch = [user for user in user_list if ((user.speedy_match_profile.likes_to_user_count is None) or (user.speedy_net_profile.friends_count is None))]
-        prefetch_related_objects(users_to_prefetch, 'likes_to_user', 'friends')
-
     def _get_distance_offset(self, index):
         if (not (index in {0, 2, 4, 6, 8, 10})):
             logger.warning("SiteProfileManager::get_matches:_get_distance_offset:index is invalid! index={index}".format(
@@ -121,7 +109,6 @@ class SiteProfileManager(BaseManager):
                 user_list = [u for u in _user_list if ((timezone_now - u.speedy_match_profile.last_visit).days <= m * 30)]
                 if ((m == 24) or (len(user_list) >= 1080)):
                     months = m
-        self._prefetch_related_objects_if_no_cached_counts(user_list=user_list)
         matches_list = []
         for other_user in user_list:
             other_user.speedy_match_profile.rank = self._get_rank(
@@ -131,7 +118,6 @@ class SiteProfileManager(BaseManager):
                 blocking_users_ids=blocking_users_ids,
             )
             if ((user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
-                self._ensure_cached_counts(other_user=other_user)
                 other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
                 other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
                 other_user.speedy_match_profile._distance_between_users = None

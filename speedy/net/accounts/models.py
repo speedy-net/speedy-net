@@ -22,7 +22,7 @@ class SiteProfile(SiteProfileBase):
     number_of_friends = TranslatedField(
         field=models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=None, blank=True, null=True),
     )
-    friends_count = models.PositiveSmallIntegerField(default=0, blank=True, null=True)
+    friends_count = models.PositiveSmallIntegerField(default=0)
 
     @cached_property
     def is_active_and_valid(self):
