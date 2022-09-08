@@ -167,14 +167,14 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=error_messages, list2=[])
 
             def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only):
-                if ((null == True) and (value_to_test in self._empty_string_list)):
+                if ((null is True) and (value_to_test in self._empty_string_list)):
                     with self.assertRaises(ValueError) as cm:
                         user.save_user_and_profile()
                     self.assertEqual(first=str(cm.exception), second="Field '{field_name}' expected a number but got ''.".format(field_name=field_name))
                 else:
                     with self.assertRaises(ValidationError) as cm:
                         user.save_user_and_profile()
-                    if ((null == False) and (value_to_test in self._none_list)):
+                    if ((null is False) and (value_to_test in self._none_list)):
                         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name(field_name=field_name))
                     elif (isinstance(value_to_test, int)):
                         if ((choices_only is False) and (value_to_test < -32768)):
@@ -212,9 +212,9 @@ if (django_settings.TESTS):
             def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                if ((null == False) and (value_to_test in self._none_list)):
+                if ((null is False) and (value_to_test in self._none_list)):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name(field_name=field_name))
-                elif ((blank == False) and (value_to_test in self._empty_string_list + [list(), tuple(), dict()])):
+                elif ((blank is False) and (value_to_test in self._empty_string_list + [list(), tuple(), dict()])):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_blank_errors_dict_by_field_name(field_name=field_name))
                 else:
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_valid_json_errors_dict_by_field_name(field_name=field_name))
@@ -225,7 +225,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(field_name_list), second=len(value_to_test))
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                if ((null == False) and (all(value_to_test[i] in self._none_list for i in range(len(value_to_test))))):
+                if ((null is False) and (all(value_to_test[i] in self._none_list for i in range(len(value_to_test))))):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name_list(field_name_list=field_name_list))
                 else:
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list=field_name_list, value_list=value_to_test))
