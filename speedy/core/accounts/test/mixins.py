@@ -267,6 +267,12 @@ if (django_settings.TESTS):
         def _value_must_be_valid_json_errors_dict_by_field_name(self, field_name):
             return {field_name: [self._value_must_be_valid_json_error_message]}
 
+        def _ensure_this_value_is_greater_than_or_equal_to_minus_32768_errors_dict_by_field_name(self, field_name):
+            return {field_name: [self._ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message]}
+
+        def _ensure_this_value_is_less_than_or_equal_to_32767_errors_dict_by_field_name(self, field_name):
+            return {field_name: [self._ensure_this_value_is_less_than_or_equal_to_32767_error_message]}
+
         def _value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(self, field_name, value):
             return {field_name: [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]}
 
@@ -320,6 +326,8 @@ if (django_settings.TESTS):
             _username_is_required_error_message_dict = {'en': 'Username is required.', 'he': 'שם המשתמש/ת נדרש.'}
             _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
             _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
+            _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict = {'en': 'Ensure this value is greater than or equal to -32768.', 'he': 'יש לוודא שהערך גדול מ או שווה ל־-32768.'}
+            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'he': 'יש לוודא שערך זה פחות מ או שווה ל־32767 .'}
 
             _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
             _value_must_be_an_integer_error_message_to_format_dict = {'en': "“{value}” value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
@@ -327,7 +335,7 @@ if (django_settings.TESTS):
             _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}). שם המשתמש/ת חייב להיות באנגלית.'}
             _username_must_contain_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
             _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
-            _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'he': 'הודעת אימות נשלחה ל-‎{email_address}‎‎'}
+            _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'he': 'הודעת אימות נשלחה ל-‎{email_address}‎'}
 
             _you_cant_change_your_username_error_message_dict_by_gender = {
                 'en': {
@@ -386,6 +394,8 @@ if (django_settings.TESTS):
             self._username_is_required_error_message = _username_is_required_error_message_dict[self.language_code]
             self._password_reset_on_speedy_net_subject = _password_reset_on_speedy_net_subject_dict[self.language_code]
             self._password_reset_on_speedy_match_subject = _password_reset_on_speedy_match_subject_dict[self.language_code]
+            self._ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message = _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict[self.language_code]
+            self._ensure_this_value_is_less_than_or_equal_to_32767_error_message = _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict[self.language_code]
 
             self._value_is_not_a_valid_choice_error_message_to_format = _value_is_not_a_valid_choice_error_message_to_format_dict[self.language_code]
             self._value_must_be_an_integer_error_message_to_format = _value_must_be_an_integer_error_message_to_format_dict[self.language_code]
