@@ -29,6 +29,7 @@ if (django_settings.TESTS):
             _empty_string_list = [""]
             _empty_values_to_test = _none_list + _empty_string_list
             _non_int_string_values_to_test = ["Tel Aviv.", "One boy.", "Yes.", "Hi!"]
+            _int_big_values_to_test = [int("-5" + "0" * 500), int("-5" + "0" * 1000), int("-5" + "0" * 2000), int("-5" + "0" * 4000), int("5" + "0" * 500), int("5" + "0" * 1000), int("5" + "0" * 2000), int("5" + "0" * 4000)]
             _valid_string_values_to_test = ["1"] + _non_int_string_values_to_test
             _valid_string_values_to_test_max_length_120 = _valid_string_values_to_test + ["a" * 60, "a" * 120]
             _too_long_string_values_to_test_max_length_120 = ["a" * 121, "b" * 200, "a" * 5000, "a" * 50000, "a" * 50001, "a" * 100000, "b" * 1000000]
@@ -165,7 +166,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(error_messages), second=0)
                 self.assertListEqual(list1=error_messages, list2=[])
 
-            def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null):
+            def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only):
                 if ((null == True) and (value_to_test in self._empty_string_list)):
                     with self.assertRaises(ValueError) as cm:
                         user.save_user_and_profile()
@@ -176,7 +177,12 @@ if (django_settings.TESTS):
                     if ((null == False) and (value_to_test in self._none_list)):
                         self.assertDictEqual(d1=dict(cm.exception), d2=self._this_field_cannot_be_null_errors_dict_by_field_name(field_name=field_name))
                     elif (isinstance(value_to_test, int)):
-                        self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
+                        if ((choices_only is False) and (value_to_test < -32768)):
+                            self.assertDictEqual(d1=dict(cm.exception), d2=self._ensure_this_value_is_greater_than_or_equal_to_minus_32768_errors_dict_by_field_name(field_name=field_name))
+                        elif ((choices_only is False) and (value_to_test >= 32768)):
+                            self.assertDictEqual(d1=dict(cm.exception), d2=self._ensure_this_value_is_less_than_or_equal_to_32767_errors_dict_by_field_name(field_name=field_name))
+                        else:
+                            self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
                     else:
                         self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
 
@@ -257,23 +263,23 @@ if (django_settings.TESTS):
                     invalid_values = self._empty_values_to_test + self._too_long_string_values_to_test_max_length_50000
                     valid_values = self._valid_string_values_to_test_max_length_50000
                 elif (field_name in ['height']):
-                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 10 + 1))
-                    valid_values_to_save = self._none_list + [value for value in values_to_test if (isinstance(value, int))]
+                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 10 + 1)) + self._int_big_values_to_test
+                    valid_values_to_save = self._none_list + [value for value in values_to_test if ((isinstance(value, int)) and (-32768 <= value < 32768))]
                     valid_values = SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES
                 elif (field_name in ['diet']):
-                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.DIET_MAX_VALUE_PLUS_ONE + 10))
+                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.DIET_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.DIET_CHOICES_WITH_DEFAULT]
                     valid_values = User.DIET_VALID_VALUES
                     self.assertEqual(first=valid_values_to_save, second=[User.DIET_UNKNOWN] + valid_values)
                     self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
                 elif (field_name in ['smoking_status']):
-                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE + 10))
+                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT]
                     valid_values = User.SMOKING_STATUS_VALID_VALUES
                     self.assertEqual(first=valid_values_to_save, second=[User.SMOKING_STATUS_UNKNOWN] + valid_values)
                     self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
                 elif (field_name in ['relationship_status']):
-                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE + 10))
+                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT]
                     valid_values = User.RELATIONSHIP_STATUS_VALID_VALUES
                     self.assertEqual(first=valid_values_to_save, second=[User.RELATIONSHIP_STATUS_UNKNOWN] + valid_values)
@@ -334,8 +340,8 @@ if (django_settings.TESTS):
                     valid_sets = sum([valid_sets_dict[str(i)] for i in range(1, 4)], [])
                     self.assertListEqual(list1=valid_sets, list2=[{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}])
                 elif (field_name in ['min_age_to_match', 'max_age_to_match']):
-                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1))
-                    valid_values_to_save = [value for value in values_to_test if (isinstance(value, int))]
+                    values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 10 + 1)) + self._int_big_values_to_test
+                    valid_values_to_save = [value for value in values_to_test if ((isinstance(value, int)) and (-32768 <= value < 32768))]
                     valid_values = SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES
                 elif (field_name in ['min_max_age_to_match']):
                     values_to_test_valid_ages = [(value, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED - value) for value in SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES]
@@ -523,13 +529,15 @@ if (django_settings.TESTS):
                         can_save_user_and_profile_set.add(can_save_user_and_profile)
                         if (not (can_save_user_and_profile)):
                             if (field_name in ['height']):
-                                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True)
+                                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=True, choices_only=False)
                             elif (field_name in ['city']):
                                 self.save_user_and_profile_and_assert_exceptions_for_string(user=user, field_name=to_attribute(name=field_name), value_to_test=value_to_test, max_length=120)
                             elif (field_name in ['profile_description', 'children', 'more_children', 'match_description']):
                                 self.save_user_and_profile_and_assert_exceptions_for_string(user=user, field_name=to_attribute(name=field_name), value_to_test=value_to_test, max_length=50000)
-                            elif (field_name in ['diet', 'smoking_status', 'relationship_status', 'min_age_to_match', 'max_age_to_match']):
-                                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False)
+                            elif (field_name in ['diet', 'smoking_status', 'relationship_status']):
+                                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False, choices_only=True)
+                            elif (field_name in ['min_age_to_match', 'max_age_to_match']):
+                                self.save_user_and_profile_and_assert_exceptions_for_integer(user=user, field_name=field_name, value_to_test=value_to_test, null=False, choices_only=False)
                             elif (field_name in ['min_max_age_to_match']):
                                 self.save_user_and_profile_and_assert_exceptions_for_integer_list(user=user, field_name_list=['min_age_to_match', 'max_age_to_match'], value_to_test=value_to_test, null=False)
                             elif (field_name in ['gender_to_match']):
@@ -1024,7 +1032,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 3,
                     "expected_error_message": self._height_must_be_from_1_to_450_cm_error_message,
-                    "expected_counts_tuple": (450, 22, 0, 5),
+                    "expected_counts_tuple": (450, 22, 0, 13),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1036,7 +1044,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 5,
                     "expected_error_message": self._your_diet_is_required_error_message,
-                    "expected_counts_tuple": (3, 1, 0, 26),
+                    "expected_counts_tuple": (3, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1048,7 +1056,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 5,
                     "expected_error_message": self._your_smoking_status_is_required_error_message,
-                    "expected_counts_tuple": (3, 1, 0, 26),
+                    "expected_counts_tuple": (3, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1060,7 +1068,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 6,
                     "expected_error_message": self._your_relationship_status_is_required_error_message,
-                    "expected_counts_tuple": (9, 1, 0, 26),
+                    "expected_counts_tuple": (9, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1084,7 +1092,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 7,
                     "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
-                    "expected_counts_tuple": (181, 20, 0, 6),
+                    "expected_counts_tuple": (181, 20, 0, 14),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1097,7 +1105,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 7,
                     "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
-                    "expected_counts_tuple": (177, 22, 0, 6),
+                    "expected_counts_tuple": (177, 22, 0, 14),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1109,7 +1117,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 7,
                     "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
-                    "expected_counts_tuple": (181, 20, 0, 6),
+                    "expected_counts_tuple": (181, 20, 0, 14),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
@@ -1122,7 +1130,7 @@ if (django_settings.TESTS):
                     "test_invalid_values_to_save": True,
                     "expected_step": 7,
                     "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
-                    "expected_counts_tuple": (177, 22, 0, 6),
+                    "expected_counts_tuple": (177, 22, 0, 14),
                 }
                 test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"])]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
