@@ -327,7 +327,7 @@ if (django_settings.TESTS):
             _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
             _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
             _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict = {'en': 'Ensure this value is greater than or equal to -32768.', 'he': 'יש לוודא שהערך גדול מ או שווה ל־-32768.'}
-            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'he': 'Ensure this value is less than or equal to 32767.'}
+            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'he': 'יש לוודא שערך זה פחות מ או שווה ל־32767 .'}
 
             _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
             _value_must_be_an_integer_error_message_to_format_dict = {'en': "“{value}” value must be an integer.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
