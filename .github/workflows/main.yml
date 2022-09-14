@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - 'ubuntu-18.04'
+          - 'ubuntu-20.04'
           - 'ubuntu-latest'
         python-version:
           - '3.8'
@@ -20,7 +20,7 @@ jobs:
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
-          - os: 'ubuntu-18.04'
+          - os: 'ubuntu-20.04'
             postgresql-version: 'latest'
           - os: 'ubuntu-latest'
             postgresql-version: '13'
