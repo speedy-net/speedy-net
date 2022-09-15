@@ -43,7 +43,6 @@ if (django_settings.TESTS):
 
 
     class TimeSinceTestCase(SiteTestCase):
-
         def test_timesince(self):
             today = date.today()
             self.assertEqual(first=timesince(d=today, now=today), second="")
