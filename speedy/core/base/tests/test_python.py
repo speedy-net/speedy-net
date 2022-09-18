@@ -1,10 +1,11 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
     from speedy.core.base.test.models import SiteTestCase
 
 
-    class PythonTestCase(SiteTestCase):
+    class PythonTestCase(SpeedyCoreBaseLanguageMixin, SiteTestCase):
         def test_501_digits(self):
             for f in ["-5", "5"]:
                 int(f + "0" * 500)
@@ -27,30 +28,26 @@ if (django_settings.TESTS):
 
         def test_4301_digits(self):
             for f in ["-5", "5"]:
-                int(f + "0" * 4300)  # ~~~~ TODO: remove this line!
-                # with self.assertRaises(ValueError) as cm:
-                #     int(f + "0" * 4300)
-                # self.assertEqual(first=str(cm.exception), second="Exceeds the limit (4300) for integer string conversion: value has {digits} digits".format(digits=4301))
+                with self.assertRaises(ValueError) as cm:
+                    int(f + "0" * 4300)
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=4301))
 
         def test_5001_digits(self):
             for f in ["-5", "5"]:
-                int(f + "0" * 5000)  # ~~~~ TODO: remove this line!
-                # with self.assertRaises(ValueError) as cm:
-                #     int(f + "0" * 5000)
-                # self.assertEqual(first=str(cm.exception), second="Exceeds the limit (4300) for integer string conversion: value has {digits} digits".format(digits=5001))
+                with self.assertRaises(ValueError) as cm:
+                    int(f + "0" * 5000)
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=5001))
 
         def test_50001_digits(self):
             for f in ["-5", "5"]:
-                int(f + "0" * 50000)  # ~~~~ TODO: remove this line!
-                # with self.assertRaises(ValueError) as cm:
-                #     int(f + "0" * 50000)
-                # self.assertEqual(first=str(cm.exception), second="Exceeds the limit (4300) for integer string conversion: value has {digits} digits".format(digits=50001))
+                with self.assertRaises(ValueError) as cm:
+                    int(f + "0" * 50000)
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=50001))
 
         def test_500001_digits(self):
             for f in ["-5", "5"]:
-                int(f + "0" * 500000)  # ~~~~ TODO: remove this line!
-                # with self.assertRaises(ValueError) as cm:
-                #     int(f + "0" * 500000)
-                # self.assertEqual(first=str(cm.exception), second="Exceeds the limit (4300) for integer string conversion: value has {digits} digits".format(digits=500001))
+                with self.assertRaises(ValueError) as cm:
+                    int(f + "0" * 500000)
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=500001))
 
 
