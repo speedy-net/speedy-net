@@ -300,7 +300,6 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            # _this_field_is_required_error_message_dict = {'en': '___This field is required.', 'he': 'יש להזין תוכן בשדה זה.___'} # ~~~~ TODO: remove this line!
             _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'he': 'שדה זה אינו יכול להיות ריק.'}
             _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'he': 'שדה זה אינו יכול להיות ריק.'}
             _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'he': 'id מכיל תווים לא חוקיים.'}
@@ -368,7 +367,6 @@ if (django_settings.TESTS):
                 },
             }
 
-            # self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code] # ~~~~ TODO: remove this line!
             self._this_field_cannot_be_null_error_message = _this_field_cannot_be_null_error_message_dict[self.language_code]
             self._this_field_cannot_be_blank_error_message = _this_field_cannot_be_blank_error_message_dict[self.language_code]
             self._id_contains_illegal_characters_error_message = _id_contains_illegal_characters_error_message_dict[self.language_code]
