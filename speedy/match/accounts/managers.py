@@ -4,7 +4,6 @@ import random
 from datetime import timedelta, datetime, date
 from haversine import haversine, Unit
 
-from django.db.models import prefetch_related_objects
 from django.utils.timezone import now
 from django.utils.translation import get_language
 
@@ -198,7 +197,16 @@ class SiteProfileManager(BaseManager):
                     distance_offset = self._get_distance_offset(index=10)
                     try:
                         if ((user.last_ip_address_used_raw_ipapi_results is not None) and (other_user.last_ip_address_used_raw_ipapi_results is not None)):
-                            if (("latitude" in user.last_ip_address_used_raw_ipapi_results) and (user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and ("longitude" in user.last_ip_address_used_raw_ipapi_results) and (user.last_ip_address_used_raw_ipapi_results["longitude"] is not None) and ("latitude" in other_user.last_ip_address_used_raw_ipapi_results) and (other_user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and ("longitude" in other_user.last_ip_address_used_raw_ipapi_results) and (other_user.last_ip_address_used_raw_ipapi_results["longitude"] is not None)):
+                            if (
+                                ("latitude" in user.last_ip_address_used_raw_ipapi_results) and
+                                (user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and
+                                ("longitude" in user.last_ip_address_used_raw_ipapi_results) and
+                                (user.last_ip_address_used_raw_ipapi_results["longitude"] is not None) and
+                                ("latitude" in other_user.last_ip_address_used_raw_ipapi_results) and
+                                (other_user.last_ip_address_used_raw_ipapi_results["latitude"] is not None) and
+                                ("longitude" in other_user.last_ip_address_used_raw_ipapi_results) and
+                                (other_user.last_ip_address_used_raw_ipapi_results["longitude"] is not None)
+                            ):
                                 user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
                                 user_longitude = user.last_ip_address_used_raw_ipapi_results["longitude"]
                                 other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
