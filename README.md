@@ -52,11 +52,11 @@ You can find more details in the specifications.
 
 ## How to setup the project and run locally
 
-First make sure that you're using Python 3.9 or later (we recommend the latest Python version).
+First make sure that you're using Python 3.10 or later (we recommend the latest Python version).
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
-    python3.9 -m venv .venv
+    python3.10 -m venv .venv
     source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
@@ -138,27 +138,27 @@ Will compile static files.
     docker-compose run --rm net load_data speedy/core/fixtures/default_sites_local.json
 
 
-## How to setup a server (Ubuntu 18.04)
+## How to setup a server (Ubuntu 22.04)
 
 Install all dependencies using **apt-get**:
 
     sudo add-apt-repository -y ppa:deadsnakes/ppa
     sudo add-apt-repository -y "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
     sudo apt update
-    sudo apt-get install python3.9 python3-pip python3.9-venv python3.9-dev  # common python stuff
+    sudo apt-get install python3.10 python3-pip python3.10-venv python3.10-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql-13 postgresql-client-13 postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
 
 Build **uwsgi** plugin:
 
-    PYTHON=python3.9 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python39"
-    mv python39_plugin.so /usr/lib/uwsgi/plugins
+    PYTHON=python3.10 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python310"
+    mv python310_plugin.so /usr/lib/uwsgi/plugins
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
 
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
-    python3.9 -m venv env
+    python3.10 -m venv env
     source env/bin/activate
     python -m pip install --upgrade pip
     pip install --upgrade setuptools wheel
@@ -176,7 +176,7 @@ Setup a database:
     createdb -O speedy_net speedy_net
     exit
 
-In **/etc/postgresql/13/main/pg_hba.conf** change the line:
+In **/etc/postgresql/14/main/pg_hba.conf** change the line:
 
     host    all             all             127.0.0.1/32            md5
 
