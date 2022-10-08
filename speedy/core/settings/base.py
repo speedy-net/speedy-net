@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'friendship',
     'rules.apps.AutodiscoverRulesConfig',
     'sorl.thumbnail',
+    'django_admin_inline_paginator',
 
     'speedy.core.base',
     'speedy.core.accounts',

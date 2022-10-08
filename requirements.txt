@@ -3,6 +3,7 @@ Django==4.0.8
 asgiref==3.5.2
 boto3==1.24.85
 botocore==1.27.85
+django-admin-inline-paginator==0.3.0
 django-crispy-forms==1.13.0
 django-environ==0.9.0
 django-friendship==1.9.6

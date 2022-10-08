@@ -2,6 +2,7 @@ from django.contrib import admin as django_admin
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 
+from django_admin_inline_paginator.admin import TabularInlinePaginated
 from friendship.models import Follow, Friend, FriendshipRequest, Block
 
 from speedy.core import admin
@@ -52,6 +53,11 @@ class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
 
 
 class ReadOnlyTabularInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.TabularInline):
+    def has_add_permission(self, request, obj):
+        return False
+
+
+class ReadOnlyTabularInlinePaginatedModelAdmin(ReadOnlyModelAdminMixin, TabularInlinePaginated):
     def has_add_permission(self, request, obj):
         return False
 

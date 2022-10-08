@@ -2,6 +2,7 @@ Django>=4.0,<4.1
 asgiref
 boto3
 botocore
+django-admin-inline-paginator
 django-crispy-forms
 django-environ
 django-friendship
