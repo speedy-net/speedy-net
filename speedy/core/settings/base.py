@@ -45,11 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_admin_inline_paginator',
     'crispy_forms',
     'friendship',
     'rules.apps.AutodiscoverRulesConfig',
     'sorl.thumbnail',
-    'django_admin_inline_paginator',
 
     'speedy.core.base',
     'speedy.core.accounts',
