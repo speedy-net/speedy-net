@@ -36,7 +36,7 @@ class UserLike(TimeStampedModel):
 def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
     if (created):
         user = instance.to_user
-        if (user.speedy_match_profile.notify_on_like == User.NOTIFICATIONS_ON):
+        if ((user.is_active) and (user.speedy_match_profile.notify_on_like == User.NOTIFICATIONS_ON)):
             user.mail_user(template_name_prefix='email/likes/like', context={
                 'like': instance,
             })
@@ -56,3 +56,5 @@ def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
     user = instance.to_user
     # Do .filter(...).update(...) because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile
     SpeedyMatchSiteProfile.objects.filter(user=user).update(likes_to_user_count=user.likes_to_user.count())
+
+
