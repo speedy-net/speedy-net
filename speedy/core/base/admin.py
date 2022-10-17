@@ -25,13 +25,6 @@ class ReadOnlyModelAdminMixin(object):
     """
     actions = None
 
-    # We cannot call super().get_fields(request, obj) because that method calls
-    # get_readonly_fields(request, obj), causing infinite recursion. Ditto for
-    # super().get_form(request, obj). So we assume the default ModelForm.
-    def get_readonly_fields(self, request, obj=None):
-        return self.fields or [f.name for f in (self.model._meta.fields + self.model._meta.many_to_many)]
-
-    # Allow viewing objects but not actually changing them.
     def has_change_permission(self, request, obj=None):
         return False
 
