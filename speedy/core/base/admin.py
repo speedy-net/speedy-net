@@ -33,7 +33,7 @@ class ReadOnlyModelAdminMixin(object):
 
     # Allow viewing objects but not actually changing them.
     def has_change_permission(self, request, obj=None):
-        return (request.method in ['GET', 'HEAD'] and super().has_change_permission(request, obj))
+        return False
 
     def has_delete_permission(self, request, obj=None):
         return False
