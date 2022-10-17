@@ -6,6 +6,8 @@ from .models import File, Image
 class FileOwnerAdminMixin(object):
     def get_queryset(self, request):
         return super().get_queryset(request=request).prefetch_related(
+            'file',
+            'file__name',
             'owner',
         )
 
