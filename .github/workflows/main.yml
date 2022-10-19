@@ -43,7 +43,7 @@ jobs:
             is-master-or-staging: false
     services:
       postgres:
-        image: postgres
+        image: postgres:${{ matrix.postgresql-version }}
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
         options: >-
@@ -73,34 +73,10 @@ jobs:
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
-      - run: |
-          for version in 14 15 16 17 18
-          do
-            sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
-            sudo pg_dropcluster $version main || true
-          done
-          docker stop $(docker ps -q --filter ancestor=postgres) || true
-          sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-          sudo apt-get update
-          sudo apt-get -y install postgresql-${{ matrix.postgresql-version }} postgresql-client-${{ matrix.postgresql-version }}
-          sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          if [[ ${{ matrix.postgresql-version }} = 13 ]]; then
-            sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          else
-            sudo sed -i 's|host    all             all             127.0.0.1/32            scram-sha-256|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          fi
-          sudo service postgresql start
-        if: ${{ matrix.postgresql-version != 'latest' }}
-      - run: pg_lsclusters
-      - run: apt list --installed | grep postgresql
       - run: psql --version
-      - run: |
-          psql -c 'create user pguser;' -U postgres
-          psql -c 'alter user pguser createdb; ' -U postgres
-          psql -c "select version();" -U postgres
-        env:
-          PGHOST: 127.0.0.1
+      - run: psql -h 127.0.0.1 -U postgres -c 'select version();'
+      - run: psql -h 127.0.0.1 -U postgres -c 'create user pguser;'
+      - run: psql -h 127.0.0.1 -U postgres -c 'alter user pguser createdb;'
       - run: python --version
       - run: ./run_all_tests_with_all_warnings.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
