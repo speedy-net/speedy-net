@@ -76,7 +76,7 @@ jobs:
       - run: |
           for version in 14 15 16 17 18
           do
-            sudo apt-get -y remove postgresql-$version postgresql-client-$version || true
+            sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
             sudo pg_dropcluster $version main || true
           done
           docker stop $(docker ps -q --filter ancestor=postgres) || true
@@ -85,7 +85,11 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install postgresql-${{ matrix.postgresql-version }} postgresql-client-${{ matrix.postgresql-version }}
           sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
+          if [[ ${{ matrix.postgresql-version }} = 13 ]]; then
+            sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
+          else
+            sudo sed -i 's|host    all             all             127.0.0.1/32            scram-sha-256|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
+          fi
           sudo service postgresql start
         if: ${{ matrix.postgresql-version != 'latest' }}
       - run: pg_lsclusters
