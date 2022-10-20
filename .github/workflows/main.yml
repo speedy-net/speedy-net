@@ -10,7 +10,6 @@ jobs:
         os:
           - 'ubuntu-20.04'
           - 'ubuntu-22.04'
-          - 'ubuntu-latest'
         python-version:
           - '3.8'
           - '3.9'
@@ -19,27 +18,16 @@ jobs:
           - '13'
           - '14'
           - '15'
-          - 'latest'
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
           - os: 'ubuntu-20.04'
-            postgresql-version: 'latest'
-          - os: 'ubuntu-20.04'
             postgresql-version: '14'
           - os: 'ubuntu-20.04'
             postgresql-version: '15'
           - os: 'ubuntu-22.04'
-            postgresql-version: 'latest'
+            postgresql-version: '13'
           - os: 'ubuntu-22.04'
-            postgresql-version: '13'
-          - os: 'ubuntu-latest'
-            postgresql-version: '13'
-          - os: 'ubuntu-latest'
-            postgresql-version: '14'
-          - os: 'ubuntu-latest'
-            postgresql-version: '15'
-          - os: 'ubuntu-latest'
             is-master-or-staging: false
     services:
       postgres:
