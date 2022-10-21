@@ -11,11 +11,11 @@ class FileOwnerAdminMixin(object):
 
 
 class FileAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin5000):
-    pass
+    readonly_fields = ('date_created', 'date_updated', 'id')
 
 
 class ImageAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin5000):
-    pass
+    readonly_fields = ('date_created', 'date_updated', 'id')
 
 
 admin.site.register(File, FileAdmin)

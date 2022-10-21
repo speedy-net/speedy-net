@@ -3,6 +3,10 @@ from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Feedback
 
 
-admin.site.register(Feedback, ReadOnlyModelAdmin)
+class FeedbackAdmin(ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+
+admin.site.register(Feedback, FeedbackAdmin)
 
 

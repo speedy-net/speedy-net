@@ -3,6 +3,10 @@ from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import Block
 
 
-admin.site.register(Block, ReadOnlyModelAdmin)
+class BlockAdmin(ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+
+admin.site.register(Block, BlockAdmin)
 
 

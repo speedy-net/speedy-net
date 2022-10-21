@@ -6,6 +6,7 @@ from .models import Chat, Message
 class MessageInlineAdmin(ReadOnlyTabularInlinePaginatedModelAdmin):
     model = Message
     per_page = 100
+    readonly_fields = ('date_created', 'date_updated', 'id')
 
     def get_queryset(self, request):
         return super().get_queryset(request=request).prefetch_related(
@@ -18,7 +19,15 @@ class MessageInlineAdmin(ReadOnlyTabularInlinePaginatedModelAdmin):
         )
 
 
-admin.site.register(Chat, ReadOnlyModelAdmin)
-admin.site.register(Message, ReadOnlyModelAdmin2000)
+class ChatAdmin(ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+
+class MessageAdmin(ReadOnlyModelAdmin2000):
+    readonly_fields = ('date_created', 'date_updated', 'id')
+
+
+admin.site.register(Chat, ChatAdmin)
+admin.site.register(Message, MessageAdmin)
 
 

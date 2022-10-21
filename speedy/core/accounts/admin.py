@@ -6,6 +6,8 @@ from speedy.core.base.admin import ModelAdmin, ModelAdmin5000, ReadOnlyModelAdmi
 
 
 class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    readonly_fields = ('date_created', 'date_updated')
+
     def has_delete_permission(self, request, obj=None):
         return True
 
