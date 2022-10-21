@@ -25,6 +25,9 @@ class ReadOnlyModelAdminMixin(object):
     """
     actions = None
 
+    def has_add_permission(self, request, obj=None):
+        return False
+
     def has_change_permission(self, request, obj=None):
         return False
 
@@ -33,8 +36,7 @@ class ReadOnlyModelAdminMixin(object):
 
 
 class ReadOnlyModelAdmin(ReadOnlyModelAdminMixin, ModelAdmin):
-    def has_add_permission(self, request):
-        return False
+    pass
 
 
 class ReadOnlyModelAdmin2000(ReadOnlyModelAdmin):
@@ -46,18 +48,15 @@ class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
 
 
 class ReadOnlyTabularInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.TabularInline):
-    def has_add_permission(self, request, obj):
-        return False
+    pass
 
 
 class ReadOnlyTabularInlinePaginatedModelAdmin(ReadOnlyModelAdminMixin, TabularInlinePaginated):
-    def has_add_permission(self, request, obj):
-        return False
+    pass
 
 
 class ReadOnlyStackedInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.StackedInline):
-    def has_add_permission(self, request, obj):
-        return False
+    pass
 
 
 django_admin.site.unregister(Site)
