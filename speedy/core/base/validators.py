@@ -9,3 +9,5 @@ small_udid_validator = RegexValidator(regex=r'^[1-9][0-9]{14}$', message=_("id c
 
 def validate_image_file_extension(value):
     return FileExtensionValidator(allowed_extensions=django_settings.IMAGE_FILE_EXTENSIONS)(value)
+
+
