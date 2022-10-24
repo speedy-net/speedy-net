@@ -29,6 +29,10 @@ if (django_settings.TESTS):
                             add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID)
                         elif (label_to_test == 'speedy.match'):
                             add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID)
+                        elif (label_to_test == 'speedy.composer'):
+                            add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_COMPOSER_SITE_ID)
+                        elif (label_to_test == 'speedy.mail'):
+                            add_this_label = (django_settings.SITE_ID == django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
                         else:
                             add_this_label = True
                         if (add_this_label):
