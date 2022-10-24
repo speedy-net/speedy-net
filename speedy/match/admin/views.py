@@ -295,7 +295,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 total_percent_of_male_active_members_in_age_range = round(float(total_number_of_male_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0
                 total_percent_of_other_active_members_in_age_range = round(float(total_number_of_other_active_members_in_age_range) / float(total_number_of_active_members_in_age_range) * 100, 1) if (total_number_of_active_members_in_age_range > 0) else 0
                 if (total_number_of_active_members_in_age_range > 0):
-                    if ((total_percent_of_female_active_members_in_age_range < 40) or (total_percent_of_male_active_members_in_age_range < 40)):
+                    if ((total_percent_of_female_active_members_in_age_range < 45) or (total_percent_of_male_active_members_in_age_range < 45)):
                         if (total_number_of_active_members_in_age_range >= 20):
                             if ((total_percent_of_female_active_members_in_age_range < 35) or (total_percent_of_male_active_members_in_age_range < 35)):
                                 total_number_of_active_members_text += '<span style="color: red;">'
@@ -362,7 +362,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 total_percent_of_male_active_members_in_age_range_in_the_last_four_months = round(float(total_number_of_male_active_members_in_age_range_in_the_last_four_months) / float(total_number_of_active_members_in_age_range_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0) else 0
                 total_percent_of_other_active_members_in_age_range_in_the_last_four_months = round(float(total_number_of_other_active_members_in_age_range_in_the_last_four_months) / float(total_number_of_active_members_in_age_range_in_the_last_four_months) * 100, 1) if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0) else 0
                 if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0):
-                    if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 40) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 40)):
+                    if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 45) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 45)):
                         if (total_number_of_active_members_in_age_range_in_the_last_four_months >= 20):
                             if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 35) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 35)):
                                 total_number_of_active_members_text += '<span style="color: red;">'
