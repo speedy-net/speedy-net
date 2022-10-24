@@ -378,25 +378,25 @@ if (django_settings.TESTS):
             reserved_username = ReservedUsername(slug='0' * 5000)
             with self.assertRaises(DataError) as cm:
                 reserved_username.save()
-            self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
+            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
         def test_username_too_long_exception_2(self):
             reserved_username = ReservedUsername(username='0' * 5000)
             with self.assertRaises(DataError) as cm:
                 reserved_username.save()
-            self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
+            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
         def test_username_too_long_exception_3(self):
             reserved_username = ReservedUsername(slug='0' * 260)
             with self.assertRaises(DataError) as cm:
                 reserved_username.save()
-            self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
+            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
         def test_username_too_long_exception_4(self):
             reserved_username = ReservedUsername(username='0' * 260)
             with self.assertRaises(DataError) as cm:
                 reserved_username.save()
-            self.assertIn(member='value too long for type character varying(255)', container=str(cm.exception))
+            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
         def test_slug_and_username_dont_match_1(self):
             reserved_username = ReservedUsername(slug='star2001', username='star2000')
