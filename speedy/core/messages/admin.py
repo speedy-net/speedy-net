@@ -21,6 +21,9 @@ class MessageInlineAdmin(ReadOnlyTabularInlinePaginatedModelAdmin):
 
 class ChatAdmin(ReadOnlyModelAdmin):
     readonly_fields = ('date_created', 'date_updated', 'id')
+    inlines = [
+        MessageInlineAdmin,
+    ]
 
 
 class MessageAdmin(ReadOnlyModelAdmin2000):
