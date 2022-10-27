@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - 'ubuntu-20.04'
+#          - 'ubuntu-20.04'
           - 'ubuntu-22.04'
         python-version:
           - '3.8'
@@ -21,13 +21,15 @@ jobs:
         is-master-or-staging:
           - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
         exclude:
-          - os: 'ubuntu-20.04'
-            postgresql-version: '14'
-          - os: 'ubuntu-20.04'
-            postgresql-version: '15'
-          - os: 'ubuntu-22.04'
-            postgresql-version: '13'
-          - os: 'ubuntu-22.04'
+#          - os: 'ubuntu-20.04'
+#            postgresql-version: '14'
+#          - os: 'ubuntu-20.04'
+#            postgresql-version: '15'
+#          - os: 'ubuntu-22.04'
+#            postgresql-version: '13'
+          - postgresql-version: '14'
+            is-master-or-staging: false
+          - postgresql-version: '15'
             is-master-or-staging: false
     services:
       postgres:
@@ -46,6 +48,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+        if: ${{ matrix.python-version != '3.8' }}
+      - run: |
+          sudo add-apt-repository -y ppa:deadsnakes/ppa
+          sudo apt update
+          sudo apt-get install python${{ matrix.python-version }} python3-pip python${{ matrix.python-version }}-venv python${{ matrix.python-version }}-dev
+          python --version
+        if: ${{ matrix.python-version == '3.8' }}
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
