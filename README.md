@@ -121,6 +121,7 @@ The project uses Bootstrap 4 with [gulp.js](https://gulpjs.com). `css` are compi
 
 You need to setup [Node](https://nodejs.org/en/) with [npm](https://www.npmjs.com). To install build tools run:
 
+    npm install --global gulp-cli
     npm install
 
 Then:
