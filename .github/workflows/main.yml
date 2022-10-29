@@ -73,7 +73,7 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install postgresql-${{ matrix.postgresql-version }} postgresql-client-${{ matrix.postgresql-version }}
           sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          if [[ ${{ matrix.postgresql-version }} = 13 ]]; then
+          if [[ ${{ matrix.postgresql-version }} == 13 ]]; then
             sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
           else
             sudo sed -i 's|host    all             all             127.0.0.1/32            scram-sha-256|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
