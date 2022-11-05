@@ -563,6 +563,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             'site_name': _(site.name),
             'user': self,
         })
+        if (len(addresses) > 1):
+            logger.error("User::mail_user::User {user} has {email_addresses_count} primary email addresses (registered {registered_days_ago} days ago).".format(
+                user=self,
+                email_addresses_count=len(addresses),
+                registered_days_ago=(now() - self.date_created).days,
+            ))
         if (addresses):
             return addresses[0].mail(template_name_prefix=template_name_prefix, context=context)
         return False
