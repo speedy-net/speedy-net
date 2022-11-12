@@ -45,7 +45,7 @@ class SiteProfile(SiteProfileBase):
         previous_number_of_friends = self.number_of_friends
         self.number_of_friends = self.user.speedy_net_friends_count
         if (not (self.number_of_friends == previous_number_of_friends)):
-            logger.info('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago).'.format(
+            logger.debug('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago).'.format(
                 site_name=_(speedy_net_site.name),
                 user=self.user,
                 number_of_friends=self.number_of_friends,
