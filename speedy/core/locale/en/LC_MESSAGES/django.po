@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-10 02:55+0300\n"
+"POT-Creation-Date: 2022-11-23 13:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:783
+#: .\__translations\__translations.py:9 .\accounts\models.py:789
 msgid "email address"
 msgstr ""
 
@@ -2094,7 +2094,7 @@ msgstr ""
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 
-#: .\accounts\models.py:474 .\accounts\models.py:767 .\blocks\models.py:15
+#: .\accounts\models.py:474 .\accounts\models.py:773 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
@@ -2106,56 +2106,56 @@ msgstr ""
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:768
+#: .\accounts\models.py:774
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:775
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:770
+#: .\accounts\models.py:776
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:771
+#: .\accounts\models.py:777
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:772
+#: .\accounts\models.py:778
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:773
+#: .\accounts\models.py:779
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:790
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:857
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:858
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\models.py:864
+#: .\accounts\models.py:870
 msgid "Today"
 msgstr ""
 
-#: .\accounts\models.py:866
+#: .\accounts\models.py:872
 msgid "Yesterday"
 msgstr ""
 
-#: .\accounts\models.py:868
+#: .\accounts\models.py:874
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr ""
 
-#: .\accounts\models.py:870
+#: .\accounts\models.py:876
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr ""
@@ -2766,12 +2766,12 @@ msgstr ""
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:194 .\templates\base.html:195
+#: .\templates\base.html:198 .\templates\base.html:199
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr ""
 
-#: .\templates\base.html:211 .\templates\base.html:213
+#: .\templates\base.html:215 .\templates\base.html:217
 msgid "Speedy"
 msgstr ""
 
