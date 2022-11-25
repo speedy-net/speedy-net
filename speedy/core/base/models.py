@@ -18,6 +18,7 @@ class BaseModel(ValidateModelMixin, models.Model):
 
     def save(self, *args, **kwargs):
         self.generate_id_if_needed()
+        kwargs["update_fields"] = None
         return super().save(*args, **kwargs)
 
     def generate_id_if_needed(self):
