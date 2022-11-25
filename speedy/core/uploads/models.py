@@ -34,7 +34,7 @@ class File(TimeStampedModel):
 
     def store(self):
         self.is_stored = True
-        self.save(update_fields={'is_stored', 'size'})
+        self.save()
 
 
 class Image(File):

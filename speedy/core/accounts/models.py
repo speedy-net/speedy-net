@@ -832,12 +832,12 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         else:
             msg_count = self.mail(template_name_prefix='email/accounts/confirm_first_email')
         self.confirmation_sent += 1
-        self.save(update_fields={'confirmation_sent'})
+        self.save()
         return msg_count
 
     def verify(self):
         self.is_confirmed = True
-        self.save(update_fields={'is_confirmed'})
+        self.save()
         if (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1):
             # If this user doesn't have a confirmed primary email address, make this one primary.
             if (UserEmailAddress.objects.filter(user=self.user, is_primary=True, is_confirmed=True).count() == 0):
@@ -847,7 +847,7 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     def make_primary(self):
         self.user.email_addresses.update(is_primary=False)
         self.is_primary = True
-        self.save(update_fields={'is_primary'})
+        self.save()
 
 
 class SiteProfileBase(TimeStampedModel):

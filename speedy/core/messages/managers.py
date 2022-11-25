@@ -56,7 +56,7 @@ class MessageManager(BaseManager):
             chat = Chat.objects.chat_with(ent1=from_entity, ent2=to_entity)
         chat.last_message = self.create(chat=chat, sender=from_entity, text=text)
         chat.date_updated = chat.last_message.date_created
-        chat.save(update_fields={'last_message', 'date_updated'})
+        chat.save()
         chat.mark_read(entity=from_entity)
         return chat.last_message
 
@@ -65,7 +65,7 @@ class ReadMarkManager(BaseManager):
     def mark(self, chat, entity):
         read_mark, created = self.get_or_create(chat=chat, entity=entity)
         if (not (created)):
-            read_mark.save(update_fields={'date_updated'})
+            read_mark.save()
         return read_mark
 
 
