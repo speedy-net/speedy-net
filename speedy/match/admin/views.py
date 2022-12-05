@@ -297,7 +297,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 if (total_number_of_active_members_in_age_range > 0):
                     if ((total_percent_of_female_active_members_in_age_range < 45) or (total_percent_of_male_active_members_in_age_range < 45)):
                         if (total_number_of_active_members_in_age_range >= 20):
-                            if ((total_percent_of_female_active_members_in_age_range < 35) or (total_percent_of_male_active_members_in_age_range < 35)):
+                            if ((total_percent_of_female_active_members_in_age_range < 42) or (total_percent_of_male_active_members_in_age_range < 42)):
                                 total_number_of_active_members_text += '<span style="color: red;">'
                             else:
                                 total_number_of_active_members_text += '<span style="color: blue;">'
@@ -364,7 +364,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 if (total_number_of_active_members_in_age_range_in_the_last_four_months > 0):
                     if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 45) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 45)):
                         if (total_number_of_active_members_in_age_range_in_the_last_four_months >= 20):
-                            if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 35) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 35)):
+                            if ((total_percent_of_female_active_members_in_age_range_in_the_last_four_months < 42) or (total_percent_of_male_active_members_in_age_range_in_the_last_four_months < 42)):
                                 total_number_of_active_members_text += '<span style="color: red;">'
                             else:
                                 total_number_of_active_members_text += '<span style="color: blue;">'
