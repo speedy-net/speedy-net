@@ -20,6 +20,6 @@ s3transfer
 six
 sorl-thumbnail
 sqlparse
-typing-extensions
+typing_extensions
 tzdata
 urllib3
