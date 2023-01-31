@@ -23,6 +23,11 @@ class UserManager(BaseUserManager):
     def normalize_email(cls, email):
         """
         Normalize the email address by lowercasing it.
+
+        :param email: The email address.
+        :type email: str
+        :return: The normalized email address.
+        :rtype str
         """
         email = super().normalize_email(email=email)
         email = email.lower()
