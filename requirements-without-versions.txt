@@ -13,7 +13,6 @@ Pillow
 psycopg2
 pymemcache
 python-dateutil
-python-memcached
 pytz
 rules
 s3transfer
