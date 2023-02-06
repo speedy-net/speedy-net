@@ -179,7 +179,7 @@ Setup a database:
 
 In **/etc/postgresql/14/main/pg_hba.conf** change the line:
 
-    host    all             all             127.0.0.1/32            md5
+    host    all             all             127.0.0.1/32            scram-sha-256
 
 to
 
@@ -202,8 +202,8 @@ Run migrations and collect static:
 Copy sample **nginx** and **uwsgi** configs:
 
     cd ~/speedy-net/
-    sudo cp contrib/uwsgi/*.ini /etc/uwsgi/apps-enabled/
-    sudo cp contrib/nginx/*.conf /etc/nginx/sites-enabled/
+    sudo cp contrib/uwsgi/*.ini /etc/uwsgi/apps-available/
+    sudo cp contrib/nginx/*.conf /etc/nginx/sites-available/
 
 Copy **logrotate** config:
 
