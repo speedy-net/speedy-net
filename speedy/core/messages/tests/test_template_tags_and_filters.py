@@ -90,7 +90,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UnreadChatsCount(SiteTestCase):
+        class UnreadChatsCountTestCase(SiteTestCase):
             def test_tag(self):
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()

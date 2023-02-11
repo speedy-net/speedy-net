@@ -45,7 +45,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ReceivedFriendshipRequestsListView(SiteTestCase):
+        class ReceivedFriendshipRequestsListViewTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -69,7 +69,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class SentFriendshipRequestsListView(SiteTestCase):
+        class SentFriendshipRequestsListViewTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
