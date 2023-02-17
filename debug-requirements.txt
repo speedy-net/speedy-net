@@ -1,2 +1,2 @@
-# python==3.9
+# python==3.10
 django_debug_toolbar==3.8.1
