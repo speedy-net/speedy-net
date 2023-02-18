@@ -30,24 +30,24 @@ if (django_settings.TESTS):
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 4300)
-                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=4301))
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=4301))
 
         def test_5001_digits(self):
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 5000)
-                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=5001))
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=5001))
 
         def test_50001_digits(self):
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 50000)
-                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=50001))
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=50001))
 
         def test_500001_digits(self):
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 500000)
-                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_for_integer_string_conversion_error_message_by_digits(digits=500001))
+                self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=500001))
 
 
