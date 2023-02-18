@@ -160,15 +160,6 @@ Clone the project, create a venv, activate it and install required modules using
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
     python3.10 -m venv env
-    source env/bin/activate
-    python -m pip install --upgrade pip
-    pip install --upgrade setuptools wheel
-    pip install --upgrade -r requirements.txt
-
-You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
-
-    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
-    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.5
 
 Setup a database:
 
@@ -195,10 +186,6 @@ Copy **env.ini.example** to **env.ini**:
 
 Change **env.ini** appropriately. Refer to [**env.ini** section](#envini) of this document. `DATABASE_URL` should be like `postgres://speedy_net@127.0.0.1:5432/speedy_net`
 
-Run migrations and collect static:
-
-    contrib/deploy.sh
-
 Copy sample **nginx** and **uwsgi** configs:
 
     cd ~/speedy-net/
@@ -214,7 +201,7 @@ Remove default **nginx** config:
 
      sudo rm /etc/nginx/sites-enabled/default
 
-Install **systemd** service to create required directories on boot:
+Install **systemd** service to create required directories on boot (optional):
 
     sudo cp contrib/prepare-uwsgi.service /lib/systemd/system/
     sudo systemctl enable prepare-uwsgi
@@ -223,6 +210,23 @@ Review and edit these config files, restart servers:
 
     sudo service uwsgi restart
     sudo service nginx restart
+
+Run migrations and collect static:
+
+    contrib/deploy.sh
+
+You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
+
+    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
+    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.5
+
+Run again **contrib/deploy.sh**:
+
+    contrib/deploy.sh
+
+Reboot the server and check that everything works:
+
+    sudo reboot
 
 
 ## How to create an admin user
