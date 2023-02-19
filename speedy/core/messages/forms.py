@@ -26,7 +26,7 @@ class MessageForm(forms.ModelForm):
             self.helper.form_action = reverse('messages_entity:user_send', kwargs={'slug': self.to_entity.slug})
         self.helper.form_class = 'form-vertical'
         self.helper.layout = Layout(
-            InlineField('text', style="height: 55px"),
+            InlineField('text', style="height: 55px", onblur='this.value = this.value.trim();'),
             Submit('submit', pgettext_lazy(context=self.from_entity.get_gender(), message='Send')),
         )
 
