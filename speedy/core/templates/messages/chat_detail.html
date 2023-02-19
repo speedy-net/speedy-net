@@ -50,7 +50,9 @@
                 </form>
             </div>
 
-            {% pagination %}
+            {% if paginator %}{# No paginator if render SendMessageToChatView.form_invalid #}
+                {% pagination %}
+            {% endif %}
 
         </div>
     </div>
