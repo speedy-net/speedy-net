@@ -12,9 +12,11 @@
 
 {% block title %}{% get_other_participant chat user as other %}{{ other.user.name }} / {% translate 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
-{% block google_ads %}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
-{% endblock %}
+{% comment %}
+    {% block google_ads %}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
+    {% endblock %}
+{% endcomment %}
 
 {% block content %}
     {% get_other_participant chat user as other %}
