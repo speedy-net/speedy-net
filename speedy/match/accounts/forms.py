@@ -3,6 +3,7 @@ import json
 
 from django import forms
 from django.conf import settings as django_settings
+from django.core.exceptions import ValidationError
 from django.template.loader import render_to_string
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -206,8 +207,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_image = Image(owner=self.instance.user, file=profile_picture)
             user_image.save()
             self.instance.user._new_profile_picture = user_image
-            speedy_core_base_validators.validate_image_file_extension(profile_picture)
-            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=True)
+            try:
+                speedy_core_base_validators.validate_image_file_extension(profile_picture)
+                speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=True)
+            except ValidationError:
+                user_image.file.delete(save=False)
+                user_image.delete()
+                raise
         else:
             profile_picture = self.instance.user.photo
             speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=False)

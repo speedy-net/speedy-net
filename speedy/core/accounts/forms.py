@@ -196,8 +196,13 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             user_image = Image(owner=self.instance, file=profile_picture)
             user_image.save()
             self.instance._new_profile_picture = user_image
-            speedy_core_base_validators.validate_image_file_extension(profile_picture)
-            speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=True)
+            try:
+                speedy_core_base_validators.validate_image_file_extension(profile_picture)
+                speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=True)
+            except ValidationError:
+                user_image.file.delete(save=False)
+                user_image.delete()
+                raise
         else:
             if (self.instance.photo):
                 profile_picture = self.instance.photo
