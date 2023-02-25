@@ -22,8 +22,8 @@ jobs:
           - '13'
           - '14'
           - '15'
-        is-master-or-staging:
-          - ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' }}
+        is-main-or-staging:
+          - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
           - os: 'ubuntu-20.04'
             postgresql-version: '14'
@@ -32,7 +32,7 @@ jobs:
           - os: 'ubuntu-22.04'
             postgresql-version: '13'
           - os: 'ubuntu-22.04'
-            is-master-or-staging: false
+            is-main-or-staging: false
     services:
       postgres:
         image: postgres
