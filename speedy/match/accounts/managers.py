@@ -207,10 +207,10 @@ class SiteProfileManager(BaseManager):
                                 ("longitude" in other_user.last_ip_address_used_raw_ipapi_results) and
                                 (other_user.last_ip_address_used_raw_ipapi_results["longitude"] is not None)
                             ):
-                                user_latitude = user.last_ip_address_used_raw_ipapi_results["latitude"]
-                                user_longitude = user.last_ip_address_used_raw_ipapi_results["longitude"]
-                                other_user_latitude = other_user.last_ip_address_used_raw_ipapi_results["latitude"]
-                                other_user_longitude = other_user.last_ip_address_used_raw_ipapi_results["longitude"]
+                                user_latitude = float(user.last_ip_address_used_raw_ipapi_results["latitude"])
+                                user_longitude = float(user.last_ip_address_used_raw_ipapi_results["longitude"])
+                                other_user_latitude = float(other_user.last_ip_address_used_raw_ipapi_results["latitude"])
+                                other_user_longitude = float(other_user.last_ip_address_used_raw_ipapi_results["longitude"])
                                 distance_between_users = haversine(point1=(user_latitude, user_longitude), point2=(other_user_latitude, other_user_longitude), unit=Unit.KILOMETERS)
                                 if (distance_between_users < 60):
                                     distance_offset = self._get_distance_offset(index=0)
