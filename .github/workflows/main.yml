@@ -31,7 +31,9 @@ jobs:
             postgresql-version: '15'
           - os: 'ubuntu-22.04'
             postgresql-version: '13'
-          - os: 'ubuntu-22.04'
+          - os: 'ubuntu-20.04'
+            is-main-or-staging: false
+          - postgresql-version: '15'
             is-main-or-staging: false
     services:
       postgres:
