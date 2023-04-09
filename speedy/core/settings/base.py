@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'django_admin_inline_paginator',
     'crispy_forms',
+    'crispy_bootstrap4',
     'friendship',
     'rules.apps.AutodiscoverRulesConfig',
     'sorl.thumbnail',
@@ -117,6 +118,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
