@@ -2,6 +2,7 @@ Django
 asgiref
 boto3
 botocore
+crispy-bootstrap4
 django-admin-inline-paginator
 django-crispy-forms
 django-environ
