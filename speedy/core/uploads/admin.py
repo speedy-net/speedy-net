@@ -1,5 +1,5 @@
 from speedy.core import admin
-from speedy.core.base.admin import ReadOnlyModelAdmin5000
+from speedy.core.base.admin import ReadOnlyModelAdmin15000
 from .models import File, Image
 
 
@@ -10,11 +10,11 @@ class FileOwnerAdminMixin(object):
         )
 
 
-class FileAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin5000):
+class FileAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin15000):
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 
-class ImageAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin5000):
+class ImageAdmin(FileOwnerAdminMixin, ReadOnlyModelAdmin15000):
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 

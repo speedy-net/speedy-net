@@ -2,7 +2,7 @@ from django.conf import settings as django_settings
 
 from translated_fields import TranslatedFieldAdmin
 
-from speedy.core.base.admin import ModelAdmin, ModelAdmin5000, ReadOnlyModelAdmin
+from speedy.core.base.admin import ModelAdmin, ModelAdmin15000, ReadOnlyModelAdmin
 
 
 class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
@@ -31,7 +31,7 @@ if (django_settings.LOGIN_ENABLED):
             return True
 
 
-    class ReservedUsernameAdmin(ModelAdmin5000):
+    class ReservedUsernameAdmin(ModelAdmin15000):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
 

@@ -16,6 +16,10 @@ class ModelAdmin5000(ModelAdmin):
     list_per_page = 5000
 
 
+class ModelAdmin15000(ModelAdmin):
+    list_per_page = 15000
+
+
 class ReadOnlyModelAdminMixin(object):
     """
     ModelAdmin class that prevents modifications through the admin.
@@ -45,6 +49,10 @@ class ReadOnlyModelAdmin2000(ReadOnlyModelAdmin):
 
 class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
     list_per_page = 5000
+
+
+class ReadOnlyModelAdmin15000(ReadOnlyModelAdmin):
+    list_per_page = 15000
 
 
 class ReadOnlyTabularInlineModelAdmin(ReadOnlyModelAdminMixin, django_admin.TabularInline):
