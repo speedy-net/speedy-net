@@ -330,10 +330,13 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
-        logger.debug("SiteProfileManager::get_matches_from_list:start:user={user}, language_code={language_code}".format(
-            user=user,
-            language_code=language_code,
-        ))
+        # Log this function only 0.2% of the time, since it's called very often.
+        log_this_function = (random.randint(0, 499) == 0)
+        if (log_this_function):
+            logger.debug("SiteProfileManager::get_matches_from_list:start:user={user}, language_code={language_code}".format(
+                user=user,
+                language_code=language_code,
+            ))
         timezone_now = now()
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
@@ -381,13 +384,14 @@ class SiteProfileManager(BaseManager):
                     number_of_matches=len(matches_list),
                 ))
         matches_list = sorted(matches_list, key=lambda u: (-((timezone_now - u.speedy_match_profile.last_visit).days // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
-        logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
-            user=user,
-            language_code=language_code,
-            from_list_len=len(from_list),
-            number_of_users=len(user_list),
-            number_of_matches=len(matches_list),
-        ))
+        if (log_this_function):
+            logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
+                user=user,
+                language_code=language_code,
+                from_list_len=len(from_list),
+                number_of_users=len(user_list),
+                number_of_matches=len(matches_list),
+            ))
         return matches_list
 
 
