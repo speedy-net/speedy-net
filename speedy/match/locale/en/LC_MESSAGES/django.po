@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-23 13:05+0200\n"
+"POT-Creation-Date: 2023-05-05 08:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -488,95 +488,95 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr ""
 
-#: .\accounts\forms.py:58
+#: .\accounts\forms.py:59
 msgid "Add profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:58 .\accounts\forms.py:97
+#: .\accounts\forms.py:59 .\accounts\forms.py:98
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:59
+#: .\accounts\forms.py:60
 msgid "My diet"
 msgstr ""
 
-#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
+#: .\accounts\forms.py:60 .\accounts\forms.py:104 .\accounts\validators.py:73
 msgid "Your diet is required."
 msgstr ""
 
-#: .\accounts\forms.py:60
+#: .\accounts\forms.py:61
 msgid "My smoking status"
 msgstr ""
 
-#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
+#: .\accounts\forms.py:61 .\accounts\forms.py:107 .\accounts\validators.py:78
 msgid "Your smoking status is required."
 msgstr ""
 
-#: .\accounts\forms.py:61
+#: .\accounts\forms.py:62
 msgid "My relationship status"
 msgstr ""
 
-#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
+#: .\accounts\forms.py:62 .\accounts\forms.py:110 .\accounts\validators.py:83
 msgid "Your relationship status is required."
 msgstr ""
 
-#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
+#: .\accounts\forms.py:63 .\accounts\forms.py:128 .\accounts\validators.py:88
 msgid "Gender to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:100
+#: .\accounts\forms.py:101
 msgid "Your height is required."
 msgstr ""
 
-#: .\accounts\forms.py:112 .\accounts\validators.py:43
+#: .\accounts\forms.py:113 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
 msgstr ""
 
-#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
+#: .\accounts\forms.py:116 .\accounts\forms.py:151 .\accounts\validators.py:48
 msgid "Please write where you live."
 msgstr ""
 
-#: .\accounts\forms.py:118 .\accounts\models.py:112
+#: .\accounts\forms.py:119 .\accounts\models.py:112
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr ""
 
-#: .\accounts\forms.py:121 .\accounts\models.py:115
+#: .\accounts\forms.py:122 .\accounts\models.py:115
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr ""
 
-#: .\accounts\forms.py:124 .\accounts\validators.py:63
+#: .\accounts\forms.py:125 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
 msgstr ""
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "Minimal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:133
+#: .\accounts\forms.py:134
 msgid "Maximal age to match is required."
 msgstr ""
 
-#: .\accounts\forms.py:136 .\accounts\validators.py:110
+#: .\accounts\forms.py:137 .\accounts\validators.py:110
 msgid "Diet match is required."
 msgstr ""
 
-#: .\accounts\forms.py:139 .\accounts\validators.py:118
+#: .\accounts\forms.py:140 .\accounts\validators.py:118
 msgid "Smoking status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:142 .\accounts\validators.py:126
+#: .\accounts\forms.py:143 .\accounts\validators.py:126
 msgid "Relationship status match is required."
 msgstr ""
 
-#: .\accounts\forms.py:150
+#: .\accounts\forms.py:151
 msgid "Where do you live?"
 msgstr ""
 
-#: .\accounts\forms.py:186 .\accounts\models.py:122
+#: .\accounts\forms.py:187 .\accounts\models.py:122
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr ""
@@ -808,6 +808,24 @@ msgid ""
 msgstr ""
 
 #: .\admin\views.py:380
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) entered the site in the last eight months."
+msgstr ""
+
+#: .\admin\views.py:447
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
