@@ -20,7 +20,7 @@ gulp.task('build:speedy-net', function () {
 });
 
 gulp.task('build:speedy-match', function () {
-   return buildTheme('speedy-match');
+    return buildTheme('speedy-match');
 });
 
 gulp.task('build', ['build:speedy-net', 'build:speedy-match']);
