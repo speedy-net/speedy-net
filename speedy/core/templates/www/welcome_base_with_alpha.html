@@ -5,6 +5,10 @@
 
 {% block google_ads %}{% endblock %}
 
+{% block robots %}
+    <meta name="googlebot" content="noindex, follow" />
+{% endblock %}
+
 {% block description %}
     <meta name="description" content="{{ site.name }} - Select your language: English or Hebrew (עברית)." />
 {% endblock %}
