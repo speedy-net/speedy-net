@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 08:56+0300\n"
+"POT-Creation-Date: 2023-05-19 08:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2714,64 +2714,64 @@ msgstr ""
 msgid "No users."
 msgstr ""
 
-#: .\templates\base.html:101
+#: .\templates\base.html:102
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:149
+#: .\templates\base.html:150
 msgid "Speedy Net"
 msgstr ""
 
-#: .\templates\base.html:150
+#: .\templates\base.html:151
 msgid "Speedy Match"
 msgstr ""
 
-#: .\templates\base.html:151
+#: .\templates\base.html:152
 msgid "Speedy Composer"
 msgstr ""
 
-#: .\templates\base.html:152
+#: .\templates\base.html:153
 msgid "Speedy Mail Software"
 msgstr ""
 
-#: .\templates\base.html:158
+#: .\templates\base.html:159
 msgid "Speedy Net's Shop"
 msgstr ""
 
-#: .\templates\base.html:159
+#: .\templates\base.html:160
 msgid "Speedy Match's Shop"
 msgstr ""
 
-#: .\templates\base.html:160
+#: .\templates\base.html:161
 msgid "Speedy Composer's Shop"
 msgstr ""
 
-#: .\templates\base.html:161
+#: .\templates\base.html:162
 msgid "Speedy S-logo Shop"
 msgstr ""
 
-#: .\templates\base.html:167
+#: .\templates\base.html:168
 msgid "Speedy Net Blog"
 msgstr ""
 
-#: .\templates\base.html:169
+#: .\templates\base.html:170
 msgid "Speedy Paz"
 msgstr ""
 
-#: .\templates\base.html:171
+#: .\templates\base.html:172
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:173
+#: .\templates\base.html:174
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:198 .\templates\base.html:199
+#: .\templates\base.html:199 .\templates\base.html:200
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr ""
 
-#: .\templates\base.html:215 .\templates\base.html:217
+#: .\templates\base.html:216 .\templates\base.html:218
 msgid "Speedy"
 msgstr ""
 
