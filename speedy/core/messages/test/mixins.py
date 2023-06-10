@@ -11,8 +11,8 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _you_have_a_new_message_on_speedy_net_subject_dict = {'en': "You have a new message on Speedy Net", 'he': "יש לך הודעה חדשה בספידי נט"}
-            _you_have_a_new_message_on_speedy_match_subject_dict = {'en': "You have a new message on Speedy Match", 'he': "יש לך הודעה חדשה בספידי מץ'"}
+            _you_have_a_new_message_on_speedy_net_subject_dict = {'en': "You have a new message on Speedy Net", 'fr': "You have a new message on Speedy Net", 'he': "יש לך הודעה חדשה בספידי נט"}
+            _you_have_a_new_message_on_speedy_match_subject_dict = {'en': "You have a new message on Speedy Match", 'fr': "You have a new message on Speedy Match", 'he': "יש לך הודעה חדשה בספידי מץ'"}
 
             self._you_have_a_new_message_on_speedy_net_subject = _you_have_a_new_message_on_speedy_net_subject_dict[self.language_code]
             self._you_have_a_new_message_on_speedy_match_subject = _you_have_a_new_message_on_speedy_match_subject_dict[self.language_code]

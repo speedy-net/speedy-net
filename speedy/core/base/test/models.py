@@ -73,33 +73,33 @@ if (django_settings.TESTS):
                 django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
             }
             site_name_dict = {
-                django_settings.SPEEDY_NET_SITE_ID: {'en': "Speedy Net", 'he': "ספידי נט"}[self.language_code],
-                django_settings.SPEEDY_MATCH_SITE_ID: {'en': "Speedy Match", 'he': "ספידי מץ'"}[self.language_code],
-                django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'he': "ספידי קומפוזר"}[self.language_code],
-                django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[self.language_code],
+                django_settings.SPEEDY_NET_SITE_ID: {'en': "Speedy Net", 'fr': "Speedy Net", 'he': "ספידי נט"}[self.language_code],
+                django_settings.SPEEDY_MATCH_SITE_ID: {'en': "Speedy Match", 'fr': "Speedy Match", 'he': "ספידי מץ'"}[self.language_code],
+                django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'fr': "Speedy Composer", 'he': "ספידי קומפוזר"}[self.language_code],
+                django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'fr': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[self.language_code],
             }
             self.assertEqual(first=self.site.id, second=django_settings.SITE_ID)
             self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
             self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
             self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
             self.assertEqual(first=self.site.name, second=tests_settings.SITE_NAME_EN_DICT[django_settings.SITE_ID])
-            if (self.language_code == 'en'):
+            if (self.language_code in {'en', 'fr'}):
                 self.assertEqual(first=self.site_name, second=self.site.name)
             else:
                 self.assertNotEqual(first=self.site_name, second=self.site.name)
-            self.assertEqual(first=len(self.all_language_codes), second=2)
-            self.assertEqual(first=len(self.all_other_language_codes), second=1)
+            self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 3, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
+            self.assertEqual(first=len(self.all_other_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 2, django_settings.SPEEDY_COMPOSER_SITE_ID: 1, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 1}[self.site.id])
             self.assertEqual(first=len(self.all_language_codes), second=len(set(self.all_language_codes)))
             self.assertEqual(first=len(self.all_other_language_codes), second=len(set(self.all_other_language_codes)))
-            self.assertListEqual(list1=self.all_language_codes, list2=['en', 'he'])
-            self.assertListEqual(list1=self.all_other_language_codes, list2={'en': ['he'], 'he': ['en']}[self.language_code])
+            self.assertListEqual(list1=self.all_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'he'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'he'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
+            self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: {'en': ['fr', 'he'], 'fr': ['en', 'he'], 'he': ['en', 'fr']}[self.language_code], django_settings.SPEEDY_MATCH_SITE_ID: {'en': ['fr', 'he'], 'fr': ['en', 'he'], 'he': ['en', 'fr']}[self.language_code], django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': ['he'], 'fr': None, 'he': ['en']}[self.language_code], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': ['he'], 'fr': None, 'he': ['en']}[self.language_code]}[self.site.id])
             self.assertIn(member=self.language_code, container=self.all_language_codes)
             self.assertNotIn(member=self.language_code, container=self.all_other_language_codes)
             self.assertSetEqual(set1=set(self.all_language_codes) - {self.language_code}, set2=set(self.all_other_language_codes))
             self.assertEqual(first=self.full_http_host, second='https://{language_code}.{domain}/'.format(language_code=self.language_code, domain=self.site.domain))
             self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(self.all_other_language_codes))
             self.assertEqual(first=len(self.all_other_full_http_hosts), second=len(set(self.all_other_full_http_hosts)))
-            self.assertListEqual(list1=self.all_other_full_http_hosts, list2={'en': ['https://he.{domain}/'.format(domain=self.site.domain)], 'he': ['https://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code])
+            self.assertListEqual(list1=self.all_other_full_http_hosts, list2={django_settings.SPEEDY_NET_SITE_ID: {'en': ['https://fr.{domain}/'.format(domain=self.site.domain), 'https://he.{domain}/'.format(domain=self.site.domain)], 'fr': ['https://en.{domain}/'.format(domain=self.site.domain), 'https://he.{domain}/'.format(domain=self.site.domain)], 'he': ['https://en.{domain}/'.format(domain=self.site.domain), 'https://fr.{domain}/'.format(domain=self.site.domain)]}[self.language_code], django_settings.SPEEDY_MATCH_SITE_ID: {'en': ['https://fr.{domain}/'.format(domain=self.site.domain), 'https://he.{domain}/'.format(domain=self.site.domain)], 'fr': ['https://en.{domain}/'.format(domain=self.site.domain), 'https://he.{domain}/'.format(domain=self.site.domain)], 'he': ['https://en.{domain}/'.format(domain=self.site.domain), 'https://fr.{domain}/'.format(domain=self.site.domain)]}[self.language_code], django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': ['https://he.{domain}/'.format(domain=self.site.domain)], 'fr': None, 'he': ['https://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': ['https://he.{domain}/'.format(domain=self.site.domain)], 'fr': None, 'he': ['https://en.{domain}/'.format(domain=self.site.domain)]}[self.language_code]}[self.site.id])
             # print("tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
             # print("tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST", tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST, len(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST), len(set(tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST)))  # ~~~~ TODO
             # print("tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST", tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST, len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST), len(set(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST)))  # ~~~~ TODO
