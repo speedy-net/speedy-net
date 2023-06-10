@@ -35,7 +35,7 @@ def sites(request):
         'site': site,
         'site_name': _(site.name),
         'site_title': site_title,
-        'sites': Site.objects.all().order_by('pk'),
+        'sites': Site.objects.filter(pk__in=django_settings.TEMPLATES_TOP_SITES).order_by('pk'),
     }
 
 

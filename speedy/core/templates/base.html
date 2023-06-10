@@ -54,16 +54,18 @@
 
 <nav class="navbar mb-4 navbar-expand-lg navbar-light {% block navbar_class %}bg-light{% endblock %}">
     <div class="container">
-        <div class="dropdown">
-            <button class="btn btn-outline-secondary mr-2" type="button" id="drop-down-menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-th"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="drop-down-menu-button">
-                {% for other_site in sites %}
-                    <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% translate other_site.name %}</a>
-                {% endfor %}
+        {% block top_sites_dropdown %}
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary mr-2" type="button" id="drop-down-menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-th"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="drop-down-menu-button">
+                    {% for other_site in sites %}
+                        <a class="dropdown-item" href="//{{ LANGUAGE_CODE }}.{{ other_site.domain }}">{% translate other_site.name %}</a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+        {% endblock %}
         {% block navbar_brand %}
             <a class="navbar-brand" href="/" title="{% translate site.name %}">{% translate site.name %}</a>
         {% endblock %}
