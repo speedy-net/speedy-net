@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 from .base import *
 
 
@@ -57,4 +59,11 @@ LOCALE_PATHS += [
     str(ROOT_DIR / 'speedy/net/locale'),
     str(ROOT_DIR / 'speedy/match/locale'),
 ]
+
+LANGUAGES_TO_ADD = [
+    ('fr', _('French')),
+]
+
+LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]
+
 

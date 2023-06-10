@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 08:13+0300\n"
+"POT-Creation-Date: 2023-06-10 10:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2620,13 +2620,17 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:166
+#: .\settings\base.py:167
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:167
+#: .\settings\base.py:168
 msgid "Hebrew"
 msgstr "עברית"
+
+#: .\settings\base_with_login.py:64
+msgid "French"
+msgstr "צרפתית"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2657,7 +2661,7 @@ msgid "Internal server error"
 msgstr "שגיאת שרת פנימית"
 
 #: .\templates\about\about_base.html:5 .\templates\base_with_login.html:206
-#: .\templates\base_without_login.html:13
+#: .\templates\base_without_login.html:16
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr "אודות"
@@ -2814,65 +2818,65 @@ msgstr "אדמין - כל המשתמשים"
 msgid "No users."
 msgstr "אין משתמשים."
 
-#: .\templates\base.html:102
+#: .\templates\base.html:104
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך."
 
-#: .\templates\base.html:150
+#: .\templates\base.html:152
 msgid "Speedy Net"
 msgstr "ספידי נט"
 
-#: .\templates\base.html:151
+#: .\templates\base.html:153
 msgid "Speedy Match"
 msgstr "ספידי מץ'"
 
-#: .\templates\base.html:152
+#: .\templates\base.html:154
 msgid "Speedy Composer"
 msgstr "ספידי קומפוזר"
 
-#: .\templates\base.html:153
+#: .\templates\base.html:155
 msgid "Speedy Mail Software"
 msgstr "תוכנת דואר ספידי"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:161
 msgid "Speedy Net's Shop"
 msgstr "החנות של ספידי נט"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:162
 msgid "Speedy Match's Shop"
 msgstr "החנות של ספידי מץ'"
 
-#: .\templates\base.html:161
+#: .\templates\base.html:163
 msgid "Speedy Composer's Shop"
 msgstr "החנות של ספידי קומפוזר"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:164
 msgid "Speedy S-logo Shop"
 msgstr "החנות של ספידי S-לוגו"
 
-#: .\templates\base.html:168
+#: .\templates\base.html:170
 msgid "Speedy Net Blog"
 msgstr "הבלוג של ספידי נט"
 
-#: .\templates\base.html:170
+#: .\templates\base.html:172
 msgid "Speedy Paz"
 msgstr "ספידי פז"
 
-#: .\templates\base.html:172
+#: .\templates\base.html:174
 msgid "Speedy Software"
 msgstr "ספידי תוכנה"
 
-#: .\templates\base.html:174
+#: .\templates\base.html:176
 msgid "Speedy Sale"
 msgstr "ספידי סייל"
 
-#: .\templates\base.html:199 .\templates\base.html:200
+#: .\templates\base.html:201 .\templates\base.html:202
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr "אתר ידידותי לטבעונים"
 
-#: .\templates\base.html:216 .\templates\base.html:218
+#: .\templates\base.html:218 .\templates\base.html:220
 msgid "Speedy"
 msgstr "ספידי"
 
@@ -2907,7 +2911,7 @@ msgstr "תנאי שימוש"
 msgid "Terms"
 msgstr "תנאים"
 
-#: .\templates\base_with_login.html:209 .\templates\base_without_login.html:14
+#: .\templates\base_with_login.html:209 .\templates\base_without_login.html:17
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6

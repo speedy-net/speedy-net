@@ -1,430 +1,437 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    from datetime import timedelta
-    from dateutil.relativedelta import relativedelta
-
-    from django.test import override_settings
-    from django.db.utils import DataError
-    from django.core.exceptions import ValidationError
-
-    from speedy.core.base.test import tests_settings
-    from speedy.core.base.test.models import SiteTestCase
-    from speedy.core.base.test.decorators import only_on_sites_with_login
-    from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-    from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-
-    from speedy.core.accounts.models import Entity, ReservedUsername
-
     if (django_settings.LOGIN_ENABLED):
         from time import sleep
-        from datetime import datetime
+        from datetime import datetime, timedelta
+        from dateutil.relativedelta import relativedelta
 
-        from django.db.utils import IntegrityError
+        from django.test import override_settings
+        from django.db.utils import DataError, IntegrityError
+        from django.core.exceptions import ValidationError
 
         from speedy.core.base.test.utils import get_random_user_password
 
+        from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.models import SiteTestCase
+        from speedy.core.base.test.decorators import only_on_sites_with_login
+        from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
-        from speedy.core.accounts.models import User, UserEmailAddress
+        from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
 
 
-    class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-        def create_one_entity(self):
-            entity = Entity(slug='zzzzzz', username='zzzzzz')
-            entity.save()
-            self.assertEqual(first=entity.username, second='zzzzzz')
-            self.assertEqual(first=entity.slug, second='zzzzzz')
-            self.assertEqual(first=len(entity.id), second=15)
-            return entity
+        class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+            def create_one_entity(self):
+                entity = Entity(slug='zzzzzz', username='zzzzzz')
+                entity.save()
+                self.assertEqual(first=entity.username, second='zzzzzz')
+                self.assertEqual(first=entity.slug, second='zzzzzz')
+                self.assertEqual(first=len(entity.id), second=15)
+                return entity
 
-        def run_test_all_slugs_to_test_list(self, test_settings):
-            ok_count, model_save_failures_count = 0, 0
-            for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
-                entity = Entity(slug=slug_dict["slug"])
-                if (slug_dict["slug_length"] >= Entity.settings.MIN_SLUG_LENGTH):
-                    entity.save()
-                    ok_count += 1
-                else:
-                    with self.assertRaises(ValidationError) as cm:
+            def run_test_all_slugs_to_test_list(self, test_settings):
+                ok_count, model_save_failures_count = 0, 0
+                for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
+                    entity = Entity(slug=slug_dict["slug"])
+                    if (slug_dict["slug_length"] >= Entity.settings.MIN_SLUG_LENGTH):
                         entity.save()
-                    self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
-                    model_save_failures_count += 1
-            counts_tuple = (ok_count, model_save_failures_count)
-            self.assert_models_count(
-                entity_count=ok_count,
-                user_count=0,
-                user_email_address_count=0,
-                confirmed_email_address_count=0,
-                unconfirmed_email_address_count=0,
-            )
-            self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
-            self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
+                        ok_count += 1
+                    else:
+                        with self.assertRaises(ValidationError) as cm:
+                            entity.save()
+                        self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=slug_dict["slug_length"]))
+                        model_save_failures_count += 1
+                counts_tuple = (ok_count, model_save_failures_count)
+                self.assert_models_count(
+                    entity_count=ok_count,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+                self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
+                self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
-        def test_model_settings(self):
-            self.assertEqual(first=Entity.settings.MIN_USERNAME_LENGTH, second=6)
-            self.assertEqual(first=Entity.settings.MAX_USERNAME_LENGTH, second=120)
-            self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
-            self.assertEqual(first=Entity.settings.MAX_SLUG_LENGTH, second=200)
+            def test_model_settings(self):
+                self.assertEqual(first=Entity.settings.MIN_USERNAME_LENGTH, second=6)
+                self.assertEqual(first=Entity.settings.MAX_USERNAME_LENGTH, second=120)
+                self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
+                self.assertEqual(first=Entity.settings.MAX_SLUG_LENGTH, second=200)
 
-        def test_cannot_create_entity_without_a_slug(self):
-            entity = Entity()
-            with self.assertRaises(ValidationError) as cm:
+            def test_cannot_create_entity_without_a_slug(self):
+                entity = Entity()
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+
+            def test_cannot_create_entities_with_bulk_create(self):
+                entity_1 = Entity(slug='zzzzzz')
+                entity_2 = Entity(slug='ZZZ-ZZZ')
+                with self.assertRaises(NotImplementedError) as cm:
+                    Entity.objects.bulk_create([entity_1, entity_2])
+                self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
+
+            def test_cannot_delete_entities_with_queryset_delete(self):
+                with self.assertRaises(NotImplementedError) as cm:
+                    Entity.objects.delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    Entity.objects.all().delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    Entity.objects.filter(pk=1).delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    Entity.objects.all().exclude(pk=2).delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+            def test_cannot_create_entity_with_an_invalid_id(self):
+                old_entity = self.create_one_entity()
+                old_entity_id = old_entity.id
+                old_entity_id_as_list = list(old_entity_id)
+                old_entity_id_as_list[0] = '0'
+                new_entity_id = ''.join(old_entity_id_as_list)
+                self.assertEqual(first=new_entity_id, second='0{}'.format(old_entity_id[1:]))
+                self.assertNotEqual(first=new_entity_id, second=old_entity_id)
+                new_entity = Entity(slug='yyyyyy', username='yyyyyy', id=new_entity_id)
+                self.assertEqual(first=new_entity.id, second=new_entity_id)
+                self.assertNotEqual(first=new_entity.id, second=old_entity.id)
+                self.assertEqual(first=len(new_entity.id), second=15)
+                with self.assertRaises(AssertionError) as cm:
+                    self.assertIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
+                self.assertEqual(first=str(cm.exception), second="'0' not found in ['1', '2', '3', '4', '5', '6', '7', '8', '9']")
+                self.assertNotIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
+                for i in range(1, 15):
+                    self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
+                with self.assertRaises(ValidationError) as cm:
+                    new_entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
+
+            def test_cannot_create_entity_with_reserved_username(self):
+                entity = Entity(slug='webmaster')
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+
+            def test_cannot_create_entity_with_reserved_and_too_short_username(self):
+                entity = Entity(slug='mail')
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=4))
+
+            def test_cannot_create_entity_with_existing_username(self):
+                entity_1 = Entity(slug='zzzzzz')
+                entity_1.save()
+                entity_2 = Entity(slug='ZZZ-ZZZ')
+                with self.assertRaises(ValidationError) as cm:
+                    entity_2.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+
+            def test_automatic_creation_of_username_and_id(self):
+                entity = Entity(slug='zzzzzz')
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+                self.assertEqual(first=entity.username, second='zzzzzz')
+                self.assertEqual(first=entity.slug, second='zzzzzz')
+                self.assertEqual(first=len(entity.id), second=15)
 
-        def test_cannot_create_entities_with_bulk_create(self):
-            entity_1 = Entity(slug='zzzzzz')
-            entity_2 = Entity(slug='ZZZ-ZZZ')
-            with self.assertRaises(NotImplementedError) as cm:
-                Entity.objects.bulk_create([entity_1, entity_2])
-            self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
-
-        def test_cannot_delete_entities_with_queryset_delete(self):
-            with self.assertRaises(NotImplementedError) as cm:
-                Entity.objects.delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                Entity.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                Entity.objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                Entity.objects.all().exclude(pk=2).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-
-        def test_cannot_create_entity_with_an_invalid_id(self):
-            old_entity = self.create_one_entity()
-            old_entity_id = old_entity.id
-            old_entity_id_as_list = list(old_entity_id)
-            old_entity_id_as_list[0] = '0'
-            new_entity_id = ''.join(old_entity_id_as_list)
-            self.assertEqual(first=new_entity_id, second='0{}'.format(old_entity_id[1:]))
-            self.assertNotEqual(first=new_entity_id, second=old_entity_id)
-            new_entity = Entity(slug='yyyyyy', username='yyyyyy', id=new_entity_id)
-            self.assertEqual(first=new_entity.id, second=new_entity_id)
-            self.assertNotEqual(first=new_entity.id, second=old_entity.id)
-            self.assertEqual(first=len(new_entity.id), second=15)
-            with self.assertRaises(AssertionError) as cm:
-                self.assertIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
-            self.assertEqual(first=str(cm.exception), second="'0' not found in ['1', '2', '3', '4', '5', '6', '7', '8', '9']")
-            self.assertNotIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
-            for i in range(1, 15):
-                self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
-            with self.assertRaises(ValidationError) as cm:
-                new_entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
-
-        def test_cannot_create_entity_with_reserved_username(self):
-            entity = Entity(slug='webmaster')
-            with self.assertRaises(ValidationError) as cm:
+            def test_automatic_creation_of_id(self):
+                entity = Entity(slug='zzzzzz', username='zzzzzz')
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+                self.assertEqual(first=entity.username, second='zzzzzz')
+                self.assertEqual(first=entity.slug, second='zzzzzz')
+                self.assertEqual(first=len(entity.id), second=15)
+                self.assertGreaterEqual(a=int(entity.id), b=10 ** 14)
+                self.assertLess(a=int(entity.id), b=10 ** 15)
+                self.assertIn(member=entity.id[0], container=[str(i) for i in range(1, 10)])
+                for i in range(1, 15):
+                    self.assertIn(member=entity.id[i], container=[str(i) for i in range(10)])
 
-        def test_cannot_create_entity_with_reserved_and_too_short_username(self):
-            entity = Entity(slug='mail')
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=4))
-
-        def test_cannot_create_entity_with_existing_username(self):
-            entity_1 = Entity(slug='zzzzzz')
-            entity_1.save()
-            entity_2 = Entity(slug='ZZZ-ZZZ')
-            with self.assertRaises(ValidationError) as cm:
+            def test_create_2_entities_and_assert_different_ids(self):
+                entity_1 = Entity(slug='zzzzzz1')
+                entity_1.save()
+                entity_2 = Entity(slug='ZZZ-ZZZ-2')
                 entity_2.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
+                self.assertEqual(first=entity_1.username, second='zzzzzz1')
+                self.assertEqual(first=entity_2.username, second='zzzzzz2')
+                self.assertNotEqual(first=entity_1.username, second=entity_2.username)
+                self.assertEqual(first=entity_1.slug, second='zzzzzz1')
+                self.assertEqual(first=entity_2.slug, second='zzz-zzz-2')
+                self.assertNotEqual(first=entity_1.slug, second=entity_2.slug)
+                self.assertEqual(first=len(entity_1.id), second=15)
+                self.assertEqual(first=len(entity_2.id), second=15)
+                self.assertNotEqual(first=entity_1.id, second=entity_2.id)
 
-        def test_automatic_creation_of_username_and_id(self):
-            entity = Entity(slug='zzzzzz')
-            entity.save()
-            self.assertEqual(first=entity.username, second='zzzzzz')
-            self.assertEqual(first=entity.slug, second='zzzzzz')
-            self.assertEqual(first=len(entity.id), second=15)
+            def test_slug_and_username_min_length_fail(self):
+                entity = Entity(slug='a' * 5, username='a' * 5)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
 
-        def test_automatic_creation_of_id(self):
-            entity = Entity(slug='zzzzzz', username='zzzzzz')
-            entity.save()
-            self.assertEqual(first=entity.username, second='zzzzzz')
-            self.assertEqual(first=entity.slug, second='zzzzzz')
-            self.assertEqual(first=len(entity.id), second=15)
-            self.assertGreaterEqual(a=int(entity.id), b=10 ** 14)
-            self.assertLess(a=int(entity.id), b=10 ** 15)
-            self.assertIn(member=entity.id[0], container=[str(i) for i in range(1, 10)])
-            for i in range(1, 15):
-                self.assertIn(member=entity.id[i], container=[str(i) for i in range(10)])
-
-        def test_create_2_entities_and_assert_different_ids(self):
-            entity_1 = Entity(slug='zzzzzz1')
-            entity_1.save()
-            entity_2 = Entity(slug='ZZZ-ZZZ-2')
-            entity_2.save()
-            self.assertEqual(first=entity_1.username, second='zzzzzz1')
-            self.assertEqual(first=entity_2.username, second='zzzzzz2')
-            self.assertNotEqual(first=entity_1.username, second=entity_2.username)
-            self.assertEqual(first=entity_1.slug, second='zzzzzz1')
-            self.assertEqual(first=entity_2.slug, second='zzz-zzz-2')
-            self.assertNotEqual(first=entity_1.slug, second=entity_2.slug)
-            self.assertEqual(first=len(entity_1.id), second=15)
-            self.assertEqual(first=len(entity_2.id), second=15)
-            self.assertNotEqual(first=entity_1.id, second=entity_2.id)
-
-        def test_slug_and_username_min_length_fail(self):
-            entity = Entity(slug='a' * 5, username='a' * 5)
-            with self.assertRaises(ValidationError) as cm:
+            def test_slug_and_username_min_length_ok_1(self):
+                entity = Entity(slug='a' * 6, username='a' * 6)
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
 
-        def test_slug_and_username_min_length_ok_1(self):
-            entity = Entity(slug='a' * 6, username='a' * 6)
-            entity.save()
+            def test_slug_and_username_min_length_ok_2(self):
+                self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
+                test_settings = {
+                    "expected_counts_tuple": (8, 0),
+                }
+                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
-        def test_slug_and_username_min_length_ok_2(self):
-            self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
-            test_settings = {
-                "expected_counts_tuple": (8, 0),
-            }
-            self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+            @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
+            def test_slug_min_length_fail_username_min_length_ok(self):
+                self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
+                test_settings = {
+                    "expected_counts_tuple": (4, 4),
+                }
+                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
-        @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
-        def test_slug_min_length_fail_username_min_length_ok(self):
-            self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
-            test_settings = {
-                "expected_counts_tuple": (4, 4),
-            }
-            self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+            def test_slug_and_username_max_length_fail(self):
+                entity = Entity(slug='a' * 201, username='z' * 201)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=201))
 
-        def test_slug_and_username_max_length_fail(self):
-            entity = Entity(slug='a' * 201, username='z' * 201)
-            with self.assertRaises(ValidationError) as cm:
+            def test_slug_max_length_ok_username_max_length_fail_1(self):
+                entity = Entity(slug='b' * 200, username='b' * 200)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=200))
+
+            def test_slug_max_length_ok_username_max_length_fail_2(self):
+                entity = Entity(slug='b' * 121, username='b' * 121)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=121))
+
+            def test_slug_max_length_fail_username_max_length_ok_with_username(self):
+                entity = Entity(slug='a-' * 120, username='a' * 120)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+
+            def test_slug_max_length_fail_username_max_length_ok_without_username(self):
+                entity = Entity(slug='a-' * 120)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+
+            def test_slug_and_username_max_length_ok(self):
+                entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=201))
 
-        def test_slug_max_length_ok_username_max_length_fail_1(self):
-            entity = Entity(slug='b' * 200, username='b' * 200)
-            with self.assertRaises(ValidationError) as cm:
+            def test_star2000_is_valid_username(self):
+                entity = Entity(slug='star2000', username='star2000')
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=200))
 
-        def test_slug_max_length_ok_username_max_length_fail_2(self):
-            entity = Entity(slug='b' * 121, username='b' * 121)
-            with self.assertRaises(ValidationError) as cm:
+            def test_come2us_is_valid_username(self):
+                entity = Entity(slug='come2us', username='come2us')
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=121))
 
-        def test_slug_max_length_fail_username_max_length_ok_with_username(self):
-            entity = Entity(slug='a-' * 120, username='a' * 120)
-            with self.assertRaises(ValidationError) as cm:
+            def test_000000_is_invalid_username(self):
+                entity = Entity(slug='0' * 6, username='0' * 6)
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+
+            def test_0test1_is_invalid_username(self):
+                entity = Entity(slug='0-test-1', username='0test1')
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+
+            def test_slug_and_username_dont_match_but_valid(self):
+                entity = Entity(slug='star2001', username='star2000')
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
+
+            def test_slug_and_username_dont_match_and_invalid(self):
+                entity = Entity(slug='0-test-2', username='0test1')
+                with self.assertRaises(ValidationError) as cm:
+                    entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
+
+
+        # @only_on_sites_with_login # ~~~~ TODO
+        class EntityEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='en')
+
+
+        # @only_on_sites_with_login # ~~~~ TODO
+        @override_settings(LANGUAGE_CODE='fr')
+        class EntityFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        # @only_on_sites_with_login # ~~~~ TODO
+        @override_settings(LANGUAGE_CODE='he')
+        class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='he')
+
+
+        class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+            def test_cannot_create_reserved_username_without_a_username(self):
+                reserved_username = ReservedUsername()
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
+            def test_cannot_create_reserved_username_with_empty_username(self):
+                reserved_username = ReservedUsername(username='')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
+            def test_cannot_create_reserved_username_with_empty_slug(self):
+                reserved_username = ReservedUsername(slug='')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
+
+            def test_cannot_create_reserved_usernames_with_bulk_create(self):
+                reserved_username_1 = ReservedUsername(slug='zzzzzz')
+                reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
+                with self.assertRaises(NotImplementedError) as cm:
+                    ReservedUsername.objects.bulk_create([reserved_username_1, reserved_username_2])
+                self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
+
+            def test_cannot_delete_reserved_usernames_with_queryset_delete(self):
+                with self.assertRaises(NotImplementedError) as cm:
+                    ReservedUsername.objects.delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    ReservedUsername.objects.all().delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    ReservedUsername.objects.filter(pk=1).delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+                with self.assertRaises(NotImplementedError) as cm:
+                    ReservedUsername.objects.all().exclude(pk=2).delete()
+                self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+            def test_can_create_reserved_username_with_reserved_username(self):
+                reserved_username = ReservedUsername(slug='webmaster')
+                reserved_username.save()
+
+            def test_can_create_reserved_username_with_reserved_and_too_short_username(self):
+                reserved_username = ReservedUsername(slug='mail')
+                reserved_username.save()
+
+            def test_cannot_create_reserved_username_with_existing_username_1(self):
+                entity = Entity(slug='zzzzzz')
                 entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+                reserved_username = ReservedUsername(slug='ZZZ-ZZZ')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
 
-        def test_slug_max_length_fail_username_max_length_ok_without_username(self):
-            entity = Entity(slug='a-' * 120)
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
+            def test_cannot_create_reserved_username_with_existing_username_2(self):
+                reserved_username_1 = ReservedUsername(slug='zzzzzz')
+                reserved_username_1.save()
+                reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username_2.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
 
-        def test_slug_and_username_max_length_ok(self):
-            entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
-            entity.save()
-
-        def test_star2000_is_valid_username(self):
-            entity = Entity(slug='star2000', username='star2000')
-            entity.save()
-
-        def test_come2us_is_valid_username(self):
-            entity = Entity(slug='come2us', username='come2us')
-            entity.save()
-
-        def test_000000_is_invalid_username(self):
-            entity = Entity(slug='0' * 6, username='0' * 6)
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-
-        def test_0test1_is_invalid_username(self):
-            entity = Entity(slug='0-test-1', username='0test1')
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-
-        def test_slug_and_username_dont_match_but_valid(self):
-            entity = Entity(slug='star2001', username='star2000')
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
-
-        def test_slug_and_username_dont_match_and_invalid(self):
-            entity = Entity(slug='0-test-2', username='0test1')
-            with self.assertRaises(ValidationError) as cm:
-                entity.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
-
-
-    # @only_on_sites_with_login # ~~~~ TODO
-    class EntityEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='en')
-
-
-    # @only_on_sites_with_login # ~~~~ TODO
-    @override_settings(LANGUAGE_CODE='he')
-    class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='he')
-
-
-    class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
-        def test_cannot_create_reserved_username_without_a_username(self):
-            reserved_username = ReservedUsername()
-            with self.assertRaises(ValidationError) as cm:
+            def test_star2000_is_valid_username(self):
+                reserved_username = ReservedUsername(slug='star2000', username='star2000')
                 reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
-        def test_cannot_create_reserved_username_with_empty_username(self):
-            reserved_username = ReservedUsername(username='')
-            with self.assertRaises(ValidationError) as cm:
+            def test_come2us_is_valid_username(self):
+                reserved_username = ReservedUsername(slug='come2us', username='come2us')
                 reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
-        def test_cannot_create_reserved_username_with_empty_slug(self):
-            reserved_username = ReservedUsername(slug='')
-            with self.assertRaises(ValidationError) as cm:
+            def test_000000_is_valid_username(self):
+                reserved_username = ReservedUsername(slug='0' * 6, username='0' * 6)
                 reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
-        def test_cannot_create_reserved_usernames_with_bulk_create(self):
-            reserved_username_1 = ReservedUsername(slug='zzzzzz')
-            reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
-            with self.assertRaises(NotImplementedError) as cm:
-                ReservedUsername.objects.bulk_create([reserved_username_1, reserved_username_2])
-            self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
-
-        def test_cannot_delete_reserved_usernames_with_queryset_delete(self):
-            with self.assertRaises(NotImplementedError) as cm:
-                ReservedUsername.objects.delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                ReservedUsername.objects.all().delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                ReservedUsername.objects.filter(pk=1).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-            with self.assertRaises(NotImplementedError) as cm:
-                ReservedUsername.objects.all().exclude(pk=2).delete()
-            self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
-
-        def test_can_create_reserved_username_with_reserved_username(self):
-            reserved_username = ReservedUsername(slug='webmaster')
-            reserved_username.save()
-
-        def test_can_create_reserved_username_with_reserved_and_too_short_username(self):
-            reserved_username = ReservedUsername(slug='mail')
-            reserved_username.save()
-
-        def test_cannot_create_reserved_username_with_existing_username_1(self):
-            entity = Entity(slug='zzzzzz')
-            entity.save()
-            reserved_username = ReservedUsername(slug='ZZZ-ZZZ')
-            with self.assertRaises(ValidationError) as cm:
+            def test_0test1_is_valid_username(self):
+                reserved_username = ReservedUsername(slug='0-test-1', username='0test1')
                 reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
 
-        def test_cannot_create_reserved_username_with_existing_username_2(self):
-            reserved_username_1 = ReservedUsername(slug='zzzzzz')
-            reserved_username_1.save()
-            reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
-            with self.assertRaises(ValidationError) as cm:
-                reserved_username_2.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
-
-        def test_star2000_is_valid_username(self):
-            reserved_username = ReservedUsername(slug='star2000', username='star2000')
-            reserved_username.save()
-
-        def test_come2us_is_valid_username(self):
-            reserved_username = ReservedUsername(slug='come2us', username='come2us')
-            reserved_username.save()
-
-        def test_000000_is_valid_username(self):
-            reserved_username = ReservedUsername(slug='0' * 6, username='0' * 6)
-            reserved_username.save()
-
-        def test_0test1_is_valid_username(self):
-            reserved_username = ReservedUsername(slug='0-test-1', username='0test1')
-            reserved_username.save()
-
-        def test_0_is_valid_username_1(self):
-            reserved_username = ReservedUsername(slug='0')
-            reserved_username.save()
-
-        def test_0_is_valid_username_2(self):
-            reserved_username = ReservedUsername(username='0')
-            reserved_username.save()
-
-        def test_long_username_is_valid_username_1(self):
-            reserved_username = ReservedUsername(slug='0' * 250)
-            reserved_username.save()
-
-        def test_long_username_is_valid_username_2(self):
-            reserved_username = ReservedUsername(username='0' * 250)
-            reserved_username.save()
-
-        def test_username_too_long_exception_1(self):
-            reserved_username = ReservedUsername(slug='0' * 5000)
-            with self.assertRaises(DataError) as cm:
+            def test_0_is_valid_username_1(self):
+                reserved_username = ReservedUsername(slug='0')
                 reserved_username.save()
-            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
-        def test_username_too_long_exception_2(self):
-            reserved_username = ReservedUsername(username='0' * 5000)
-            with self.assertRaises(DataError) as cm:
+            def test_0_is_valid_username_2(self):
+                reserved_username = ReservedUsername(username='0')
                 reserved_username.save()
-            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
-        def test_username_too_long_exception_3(self):
-            reserved_username = ReservedUsername(slug='0' * 260)
-            with self.assertRaises(DataError) as cm:
+            def test_long_username_is_valid_username_1(self):
+                reserved_username = ReservedUsername(slug='0' * 250)
                 reserved_username.save()
-            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
-        def test_username_too_long_exception_4(self):
-            reserved_username = ReservedUsername(username='0' * 260)
-            with self.assertRaises(DataError) as cm:
+            def test_long_username_is_valid_username_2(self):
+                reserved_username = ReservedUsername(username='0' * 250)
                 reserved_username.save()
-            self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
-        def test_slug_and_username_dont_match_1(self):
-            reserved_username = ReservedUsername(slug='star2001', username='star2000')
-            with self.assertRaises(ValidationError) as cm:
-                reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
+            def test_username_too_long_exception_1(self):
+                reserved_username = ReservedUsername(slug='0' * 5000)
+                with self.assertRaises(DataError) as cm:
+                    reserved_username.save()
+                self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
-        def test_slug_and_username_dont_match_2(self):
-            reserved_username = ReservedUsername(slug='0-test-2', username='0test1')
-            with self.assertRaises(ValidationError) as cm:
-                reserved_username.save()
-            self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
+            def test_username_too_long_exception_2(self):
+                reserved_username = ReservedUsername(username='0' * 5000)
+                with self.assertRaises(DataError) as cm:
+                    reserved_username.save()
+                self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
+
+            def test_username_too_long_exception_3(self):
+                reserved_username = ReservedUsername(slug='0' * 260)
+                with self.assertRaises(DataError) as cm:
+                    reserved_username.save()
+                self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
+
+            def test_username_too_long_exception_4(self):
+                reserved_username = ReservedUsername(username='0' * 260)
+                with self.assertRaises(DataError) as cm:
+                    reserved_username.save()
+                self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
+
+            def test_slug_and_username_dont_match_1(self):
+                reserved_username = ReservedUsername(slug='star2001', username='star2000')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
+
+            def test_slug_and_username_dont_match_2(self):
+                reserved_username = ReservedUsername(slug='0-test-2', username='0test1')
+                with self.assertRaises(ValidationError) as cm:
+                    reserved_username.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
 
 
-    class ReservedUsernameEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='en')
+        class ReservedUsernameEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='en')
 
 
-    @override_settings(LANGUAGE_CODE='he')
-    class ReservedUsernameHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='he')
+        @override_settings(LANGUAGE_CODE='fr')
+        class ReservedUsernameFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
-    if (django_settings.LOGIN_ENABLED):
+        @override_settings(LANGUAGE_CODE='he')
+        class ReservedUsernameHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='he')
+
+
         class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
@@ -720,7 +727,7 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="a" * 200, last_name_en="b" * 200)
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_he', 'last_name_en', 'last_name_he']})
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_he']})
 
             def test_slug_and_username_min_length_ok_2(self):
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
@@ -894,24 +901,24 @@ if (django_settings.TESTS):
                 """
                 user_1 = ActiveUserFactory()
                 # If user_1.profile.last_visit_str is not "Today", skip this test.
-                if (not (user_1.profile.last_visit_str == {'en': "Today", 'he': "היום"}[self.language_code])):
-                    self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Yesterday", 'he': "אתמול"}[self.language_code])
+                if (not (user_1.profile.last_visit_str == {'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])):
+                    self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Yesterday", 'fr': "Hier", 'he': "אתמול"}[self.language_code])
                     print("{}::Skipped test - user_1.profile.last_visit_str is \"Yesterday\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
 
-                self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'he': "היום"}[self.language_code])
+                self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])
                 user_2 = ActiveUserFactory()
                 user_2.profile.last_visit -= relativedelta(days=1)
                 user_2.save_user_and_profile()
                 # If user_2.profile.last_visit_str is not "Yesterday", skip this test.
-                if (not (user_2.profile.last_visit_str == {'en': "Yesterday", 'he': "אתמול"}[self.language_code])):
-                    self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Today", 'he': "היום"}[self.language_code])
+                if (not (user_2.profile.last_visit_str == {'en': "Yesterday", 'fr': "Hier", 'he': "אתמול"}[self.language_code])):
+                    self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])
                     print("{}::Skipped test - user_2.profile.last_visit_str is \"Today\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
 
-                self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Yesterday", 'he': "אתמול"}[self.language_code])
+                self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Yesterday", 'fr': "Hier", 'he': "אתמול"}[self.language_code])
                 user_3 = ActiveUserFactory()
                 user_3.profile.last_visit -= relativedelta(days=2)
                 user_3.save_user_and_profile()
@@ -1003,6 +1010,23 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.data.update({
+                    'first_name_fr': "Doron",
+                    'last_name_fr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserWithLastNameHebrewTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
@@ -1033,6 +1057,24 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.data.update({
+                    'first_name_fr': "Doron",
+                    'last_name_fr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login
@@ -1719,6 +1761,14 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class UserEmailAddressFrenchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login
