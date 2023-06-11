@@ -84,7 +84,7 @@
 {% block navbar_vegan_friendly_logo %}
     {% if not request.user.is_authenticated %}
         <div class="navbar-vegan-friendly-logo">
-            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.vegan-friendly.club/" title="{% translate "A vegan friendly website" %}">
+            <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.vegan-friendly.club/" title="{% translate "A vegan friendly website" %}">
                 <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo-{{ LANGUAGE_CODE }}.png" alt="{% translate "A vegan friendly website" %}" title="{% translate "A vegan friendly website" %}" />
             </a>
         </div>

@@ -58,6 +58,14 @@ def convert_en_to_www(value):
 
 
 @register.filter
+def convert_non_he_to_www(value):
+    if (not (value == "he")):
+        return "www"
+    else:
+        return value
+
+
+@register.filter
 def jsonify(object):
     return json.dumps(object)
 

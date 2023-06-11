@@ -74,13 +74,13 @@
     {% if LANGUAGE_CODE == "he" %}
         <p>
             <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
-            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.info/" title="אתרי הכרויות">אתרי הכרויות</a>
+            <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.free-online-dating.info/" title="אתרי הכרויות">אתרי הכרויות</a>
             <a href="https://he.blog.speedy.net/category/טבעונות/" title="טבעונות">טבעונות</a>
         </p>
     {% endif %}
     {% if LANGUAGE_CODE == "en" %}
         <p>
-            <a href="https://{{ LANGUAGE_CODE|convert_en_to_www }}.free-online-dating.info/" title="{% translate "Free Online Dating" %}">{% translate "Free Online Dating" %}</a>
+            <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.free-online-dating.info/" title="{% translate "Free Online Dating" %}">{% translate "Free Online Dating" %}</a>
             <a href="https://en.blog.speedy.net/category/veganism/" title="Veganism">Veganism</a>
             <a href="https://www.happycow.net/" title="Find Vegan &amp; Vegetarian Restaurants – HappyCow">HappyCow</a>
         </p>
