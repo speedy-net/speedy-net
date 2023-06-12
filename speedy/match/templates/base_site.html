@@ -76,6 +76,7 @@
     <script src="{% static 'speedy-match/js/activation-form.js' %}?v={% now 'Y-m-d' %}"></script>
 {% endblock %}
 
+{% comment %}
 {% block facebook_link %}
     {% if LANGUAGE_CODE == "he" %}
         <a href="https://www.facebook.com/he.speedy.match/" title="ספידי מץ' בפייסבוק">ספידי מץ' בפייסבוק</a>
@@ -84,6 +85,7 @@
         <a href="https://www.facebook.com/en.speedy.match/" title="Speedy Match on Facebook">Speedy Match on Facebook</a>
     {% endif %}
 {% endblock %}
+{% endcomment %}
 
 {% block footer_extra_links_4 %}
     {{ block.super }}

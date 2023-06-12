@@ -10,6 +10,7 @@
     <a class="navbar-brand" href="/" title="{% translate site.name %}"><img class="logo-small" src="{% static 'speedy-net/images/' %}logo-small-alpha-{{ LANGUAGE_CODE }}.png" alt="{% translate site.name %}" /></a>
 {% endblock %}
 
+{% comment %}
 {% block facebook_link %}
     {% if LANGUAGE_CODE == "en" %}
         <a href="https://www.facebook.com/en.speedy.net/" title="Speedy Net on Facebook">Speedy Net on Facebook</a>
@@ -18,6 +19,7 @@
         <a href="https://www.facebook.com/he.speedy.net/" title="ספידי נט בפייסבוק">ספידי נט בפייסבוק</a>
     {% endif %}
 {% endblock %}
+{% endcomment %}
 
 {% block footer_extra_links_3 %}
     {{ block.super }}
