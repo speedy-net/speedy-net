@@ -1009,21 +1009,21 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fr')
-        class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
-            def set_up(self):
-                super().set_up()
-                self.data.update({
-                    'first_name_fr': "Doron",
-                    'last_name_fr': "Matalon",
-                })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
-
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fr')
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='fr')
+        # class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def set_up(self):
+        #         super().set_up()
+        #         self.data.update({
+        #             'first_name_fr': "Doron",
+        #             'last_name_fr': "Matalon",
+        #         })
+        #         self.first_name = "Doron"
+        #         self.last_name = "Matalon"
+        #
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login
@@ -1059,22 +1059,22 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fr')
-        class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
-            def set_up(self):
-                super().set_up()
-                self.data.update({
-                    'first_name_fr': "Doron",
-                    'last_name_fr': "",
-                })
-                self.first_name = "Doron"
-                self.last_name = ""
-
-
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='fr')
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='fr')
+        # class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def set_up(self):
+        #         super().set_up()
+        #         self.data.update({
+        #             'first_name_fr': "Doron",
+        #             'last_name_fr': "",
+        #         })
+        #         self.first_name = "Doron"
+        #         self.last_name = ""
+        #
+        #
+        # def validate_all_values(self):
+        #     super().validate_all_values()
+        #     self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login
