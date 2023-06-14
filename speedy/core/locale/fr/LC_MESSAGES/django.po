@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-10 10:13+0200\n"
+"POT-Creation-Date: 2023-06-14 22:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2527,8 +2527,8 @@ msgstr ""
 msgid "Internal server error"
 msgstr ""
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:206
-#: .\templates\base_without_login.html:16
+#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:34
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr ""
@@ -2547,7 +2547,7 @@ msgid "Profile Info"
 msgstr ""
 
 #: .\templates\accounts\edit_profile\core_base.html:25
-#: .\templates\base_with_login.html:207
+#: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
 msgstr ""
@@ -2689,60 +2689,28 @@ msgstr ""
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 
-#: .\templates\base.html:152
-msgid "Speedy Net"
-msgstr ""
-
-#: .\templates\base.html:153
-msgid "Speedy Match"
-msgstr ""
-
-#: .\templates\base.html:154
-msgid "Speedy Composer"
-msgstr ""
-
-#: .\templates\base.html:155
-msgid "Speedy Mail Software"
-msgstr ""
-
-#: .\templates\base.html:161
-msgid "Speedy Net's Shop"
-msgstr ""
-
-#: .\templates\base.html:162
-msgid "Speedy Match's Shop"
-msgstr ""
-
-#: .\templates\base.html:163
-msgid "Speedy Composer's Shop"
-msgstr ""
-
-#: .\templates\base.html:164
-msgid "Speedy S-logo Shop"
-msgstr ""
-
-#: .\templates\base.html:170
+#: .\templates\base.html:156
 msgid "Speedy Net Blog"
 msgstr ""
 
-#: .\templates\base.html:172
+#: .\templates\base.html:158
 msgid "Speedy Paz"
 msgstr ""
 
-#: .\templates\base.html:174
+#: .\templates\base.html:160
 msgid "Speedy Software"
 msgstr ""
 
-#: .\templates\base.html:176
+#: .\templates\base.html:162
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:201 .\templates\base.html:202
+#: .\templates\base.html:187 .\templates\base.html:188
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr ""
 
-#: .\templates\base.html:218 .\templates\base.html:220
+#: .\templates\base.html:204 .\templates\base.html:206
 msgid "Speedy"
 msgstr ""
 
@@ -2758,32 +2726,64 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:207
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:15
+msgid "Speedy Net"
+msgstr ""
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:16
+msgid "Speedy Match"
+msgstr ""
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:24
+msgid "Speedy Net's Shop"
+msgstr ""
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:25
+msgid "Speedy Match's Shop"
+msgstr ""
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:27
+msgid "Speedy S-logo Shop"
+msgstr ""
+
+#: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
 msgstr ""
 
-#: .\templates\base_with_login.html:208
+#: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
 msgstr ""
 
-#: .\templates\base_with_login.html:208
+#: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base_with_login.html:209 .\templates\base_without_login.html:17
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:35
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
+msgstr ""
+
+#: .\templates\base_without_login.html:17
+msgid "Speedy Composer"
+msgstr ""
+
+#: .\templates\base_without_login.html:18
+msgid "Speedy Mail Software"
+msgstr ""
+
+#: .\templates\base_without_login.html:26
+msgid "Speedy Composer's Shop"
 msgstr ""
 
 #: .\templates\blocks\block_list.html:6
