@@ -1,50 +1,8 @@
-{% extends 'base_site.html' %}
+{% extends 'www/welcome_base.html' %}
 
-{% load i18n %}
 {% load static %}
 
-{% block google_ads %}{% endblock %}
-
-{% block robots %}
-    <meta name="googlebot" content="noindex, follow" />
-{% endblock %}
-
-{% block description %}
-    <meta name="description" content="{{ site.name }} - Select your language: English or Hebrew (עברית)." />
-{% endblock %}
-
-{% block viewport %}
-
-{% endblock %}
-
-{% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'speedy-core/css/welcome-base.css' %}?v={% now 'Y-m-d' %}" />
-{% endblock %}
-
-{% block js %}
-
-{% endblock %}
-
-{% block body %}
-<center>
-    <div id="top-gradient" class="{% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}pink-gradient{% else %}blue-gradient{% endif %}"></div>
-    <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
-    <br />
-    <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
-        <tr>
-            <td dir="ltr">
-                <a class="language-link" href="//en.{{ site.domain }}/" title="English{% block alpha_english_title %} [alpha]{% endblock %}" target="_top">English{% block alpha_english %}<span> [alpha]</span>{% endblock %}</a>
-            </td>
-            <td dir="rtl">
-                <a class="language-link" href="//he.{{ site.domain }}/" title="עברית{% block alpha_hebrew_title %} [אלפא]{% endblock %}" target="_top">עברית{% block alpha_hebrew %}<span> [אלפא]</span>{% endblock %}</a>
-            </td>
-        </tr>
-    </table>
-    <br />
-    <img class="main-image" src="{% block splash_src %}{% endblock %}" alt="{{ site.name }}" />
-    <br />
-    <br />
-    <br />
-</center>
-
-{% endblock %}
+{% block alpha_english_title %} [alpha]{% endblock %}
+{% block alpha_english %}<span> [alpha]</span>{% endblock %}
+{% block alpha_hebrew_title %} [אלפא]{% endblock %}
+{% block alpha_hebrew %}<span> [אלפא]</span>{% endblock %}
