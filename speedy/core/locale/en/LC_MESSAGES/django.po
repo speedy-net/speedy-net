@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-14 22:50+0200\n"
+"POT-Creation-Date: 2023-06-19 03:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2561,7 +2561,7 @@ msgid "Internal server error"
 msgstr ""
 
 #: .\templates\about\about_base.html:5 .\templates\base_with_login.html:230
-#: .\templates\base_without_login.html:34
+#: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
 msgstr ""
@@ -2738,12 +2738,12 @@ msgstr ""
 msgid "Speedy Sale"
 msgstr ""
 
-#: .\templates\base.html:187 .\templates\base.html:188
+#: .\templates\base.html:188 .\templates\base.html:189
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr ""
 
-#: .\templates\base.html:204 .\templates\base.html:206
+#: .\templates\base.html:205 .\templates\base.html:207
 msgid "Speedy"
 msgstr ""
 
@@ -2759,23 +2759,23 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:15
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
 msgstr ""
 
-#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:16
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
 msgstr ""
 
-#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:24
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
 msgstr ""
 
-#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:25
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
 msgstr ""
 
-#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:27
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
 msgstr ""
 
@@ -2798,7 +2798,7 @@ msgstr ""
 msgid "Terms"
 msgstr ""
 
-#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:35
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
 #: .\templates\contact_by_email\contact_us.html:8
 #: .\templates\contact_by_email\contact_us.html:15
 #: .\templates\contact_by_form\feedback_base.html:6
@@ -2807,15 +2807,15 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: .\templates\base_without_login.html:17
+#: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
 msgstr ""
 
-#: .\templates\base_without_login.html:18
+#: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
 msgstr ""
 
-#: .\templates\base_without_login.html:26
+#: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
 msgstr ""
 

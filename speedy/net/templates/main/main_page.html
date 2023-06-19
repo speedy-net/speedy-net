@@ -39,19 +39,16 @@
 {% endblock %}
 
 {% block footer_extra_links_3 %}
-    {% if LANGUAGE_CODE == "he" %}
-        <p>
+    <p>
+        {% if LANGUAGE_CODE == "he" %}
             <a href="https://he.vegan-friendly.club/vegans-with-conscience/" title="טבעונים בעלי מצפון">טבעונים בעלי מצפון</a>
             <a href="https://www.etgar21.info/" title="אתגר הטבעונות">אתגר הטבעונות</a>
             <a href="http://www.vegan-guide.co.il/" title="פרויקט 365 – איך לעבור לטבעונות">פרויקט 365</a>
             <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="מחפשת חבר? מחפש חברה? בואו להכיר בספידי!">להכיר בספידי</a>
-        </p>
-    {% endif %}
-    {% if LANGUAGE_CODE == "en" %}
-        <p>
-            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="Speedy Match – dating Speedy">Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!</a>
-        </p>
-    {% endif %}
+        {% else %}
+            <a href="https://{{ LANGUAGE_CODE }}.speedymatch.com/" title="{% translate "Speedy Match – dating Speedy" %}">{% translate "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!" %}</a>
+        {% endif %}
+    </p>
 {% endblock %}
 
 {% block extra_python_django_links %}
@@ -71,19 +68,18 @@
 {% endblock %}
 
 {% block footer_extra_links_6 %}
-    {% if LANGUAGE_CODE == "he" %}
-        <p>
+    <p>
+        {% if LANGUAGE_CODE == "he" %}
             <a href="https://adam-hofshi.blog/" title="בלוג אדם חופשי">בלוג אדם חופשי</a>
             <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.free-online-dating.info/" title="אתרי הכרויות">אתרי הכרויות</a>
             <a href="https://he.blog.speedy.net/category/טבעונות/" title="טבעונות">טבעונות</a>
-        </p>
-    {% endif %}
-    {% if LANGUAGE_CODE == "en" %}
-        <p>
-            <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.free-online-dating.info/" title="{% translate "Free Online Dating" %}">{% translate "Free Online Dating" %}</a>
-            <a href="https://en.blog.speedy.net/category/veganism/" title="Veganism">Veganism</a>
+        {% else %}
+            {% if LANGUAGE_CODE == "en" %}
+                <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.free-online-dating.info/" title="{% translate "Free Online Dating" %}">{% translate "Free Online Dating" %}</a>
+                <a href="https://en.blog.speedy.net/category/veganism/" title="Veganism">Veganism</a>
+            {% endif %}
             <a href="https://www.happycow.net/" title="Find Vegan &amp; Vegetarian Restaurants – HappyCow">HappyCow</a>
-        </p>
-    {% endif %}
+        {% endif %}
+    </p>
 {% endblock %}
 
