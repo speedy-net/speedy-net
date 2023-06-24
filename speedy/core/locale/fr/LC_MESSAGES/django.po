@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 21:01+0200\n"
+"POT-Creation-Date: 2023-06-24 07:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -884,7 +884,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "La valeur doit être un JSON valide."
+msgstr "La valeur doit respecter la syntaxe JSON."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -2342,11 +2342,11 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Ce mot de passe est trop court. Il doit contenir au moins "
-"%(min_length)d caractère."
+"Ce mot de passe est trop court. Il doit contenir au minimum %(min_length)d "
+"caractère."
 msgstr[1] ""
-"Ce mot de passe est trop court. Il doit contenir au moins "
-"%(min_length)d caractères."
+"Ce mot de passe est trop court. Il doit contenir au minimum %(min_length)d "
+"caractères."
 
 #: .\accounts\validators.py:114
 #, python-format

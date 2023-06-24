@@ -150,6 +150,14 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fr')
+        class LikeViewFrenchTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class LikeViewHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -532,6 +540,14 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fr')
+        class LikeListViewsFrenchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_speedy_match

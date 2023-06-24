@@ -92,6 +92,14 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='fr')
+        class FeedbackFormFrenchTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackFormHebrewTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
