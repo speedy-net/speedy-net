@@ -30,7 +30,7 @@ if (django_settings.TESTS):
             super().set_up()
 
             _please_contact_us_by_email_error_message_dict = {'en': 'Please contact us by email.', 'fr': 'Please contact us by email.', 'he': 'אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.'}
-            _not_17_error_message_dict = {'en': 'Not 17.', 'fr': 'Not 17.', 'he': 'לא 17.'}
+            _not_17_error_message_dict = {'en': 'Not 17.', 'fr': 'Pas 17.', 'he': 'לא 17.'}
 
             self._please_contact_us_by_email_error_message = _please_contact_us_by_email_error_message_dict[self.language_code]
             self._not_17_error_message = _not_17_error_message_dict[self.language_code]

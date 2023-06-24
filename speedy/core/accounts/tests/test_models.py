@@ -901,19 +901,19 @@ if (django_settings.TESTS):
                 """
                 user_1 = ActiveUserFactory()
                 # If user_1.profile.last_visit_str is not "Today", skip this test.
-                if (not (user_1.profile.last_visit_str == {'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])):
+                if (not (user_1.profile.last_visit_str == {'en': "Today", 'fr': "Aujourd’hui", 'he': "היום"}[self.language_code])):
                     self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Yesterday", 'fr': "Hier", 'he': "אתמול"}[self.language_code])
                     print("{}::Skipped test - user_1.profile.last_visit_str is \"Yesterday\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
 
-                self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])
+                self.assertEqual(first=user_1.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd’hui", 'he': "היום"}[self.language_code])
                 user_2 = ActiveUserFactory()
                 user_2.profile.last_visit -= relativedelta(days=1)
                 user_2.save_user_and_profile()
                 # If user_2.profile.last_visit_str is not "Yesterday", skip this test.
                 if (not (user_2.profile.last_visit_str == {'en': "Yesterday", 'fr': "Hier", 'he': "אתמול"}[self.language_code])):
-                    self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd'hui", 'he': "היום"}[self.language_code])
+                    self.assertEqual(first=user_2.profile.last_visit_str, second={'en': "Today", 'fr': "Aujourd’hui", 'he': "היום"}[self.language_code])
                     print("{}::Skipped test - user_2.profile.last_visit_str is \"Today\", dates don't match.".format(self.id()))
                     self.skipTest(reason="Skipped test - dates don't match.")
                     return
@@ -922,75 +922,75 @@ if (django_settings.TESTS):
                 user_3 = ActiveUserFactory()
                 user_3.profile.last_visit -= relativedelta(days=2)
                 user_3.save_user_and_profile()
-                self.assertIs(expr1={'en': "(2\xa0days\xa0ago)", 'he': "(לפני\xa0יומיים)"}[self.language_code] in user_3.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(2\xa0days\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0jours)", 'he': "(לפני\xa0יומיים)"}[self.language_code] in user_3.profile.last_visit_str, expr2=True)
                 user_4 = ActiveUserFactory()
                 user_4.profile.last_visit -= relativedelta(days=3)
                 user_4.save_user_and_profile()
-                self.assertIs(expr1={'en': "(3\xa0days\xa0ago)", 'he': "(לפני\xa03\xa0ימים)"}[self.language_code] in user_4.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(3\xa0days\xa0ago)", 'fr': "(il\xa0y\xa0a\xa03\xa0jours)", 'he': "(לפני\xa03\xa0ימים)"}[self.language_code] in user_4.profile.last_visit_str, expr2=True)
                 user_5 = ActiveUserFactory()
                 user_5.profile.last_visit -= relativedelta(weeks=1)
                 user_5.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0week\xa0ago)", 'he': "(לפני\xa0שבוע)"}[self.language_code] in user_5.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0week\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0semaine)", 'he': "(לפני\xa0שבוע)"}[self.language_code] in user_5.profile.last_visit_str, expr2=True)
                 user_6 = ActiveUserFactory()
                 user_6.profile.last_visit -= relativedelta(weeks=2)
                 user_6.save_user_and_profile()
-                self.assertIs(expr1={'en': "(2\xa0weeks\xa0ago)", 'he': "(לפני\xa0שבועיים)"}[self.language_code] in user_6.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(2\xa0weeks\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0semaines)", 'he': "(לפני\xa0שבועיים)"}[self.language_code] in user_6.profile.last_visit_str, expr2=True)
                 user_7 = ActiveUserFactory()
                 user_7.profile.last_visit -= relativedelta(months=1)
                 user_7.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0month\xa0ago)", 'he': "(לפני\xa0חודש)"}[self.language_code] in user_7.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0month\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0mois)", 'he': "(לפני\xa0חודש)"}[self.language_code] in user_7.profile.last_visit_str, expr2=True)
                 user_8 = ActiveUserFactory()
                 user_8.profile.last_visit -= relativedelta(months=2)
                 user_8.save_user_and_profile()
-                self.assertIs(expr1={'en': "(2\xa0months\xa0ago)", 'he': "(לפני\xa0חודשיים)"}[self.language_code] in user_8.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(2\xa0months\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0mois)", 'he': "(לפני\xa0חודשיים)"}[self.language_code] in user_8.profile.last_visit_str, expr2=True)
                 user_9 = ActiveUserFactory()
                 user_9.profile.last_visit -= relativedelta(months=3)
                 user_9.save_user_and_profile()
-                self.assertIs(expr1={'en': "(3\xa0months\xa0ago)", 'he': "(לפני\xa03\xa0חודשים)"}[self.language_code] in user_9.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(3\xa0months\xa0ago)", 'fr': "(il\xa0y\xa0a\xa03\xa0mois)", 'he': "(לפני\xa03\xa0חודשים)"}[self.language_code] in user_9.profile.last_visit_str, expr2=True)
                 user_10 = ActiveUserFactory()
                 user_10.profile.last_visit -= relativedelta(months=3, weeks=1)
                 user_10.save_user_and_profile()
-                self.assertIs(expr1={'en': "(3\xa0months, 1\xa0week\xa0ago)", 'he': "(לפני\xa03\xa0חודשים ושבוע)"}[self.language_code] in user_10.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(3\xa0months, 1\xa0week\xa0ago)", 'fr': "(il\xa0y\xa0a\xa03\xa0mois, 1\xa0semaine)", 'he': "(לפני\xa03\xa0חודשים ושבוע)"}[self.language_code] in user_10.profile.last_visit_str, expr2=True)
                 user_11 = ActiveUserFactory()
                 user_11.profile.last_visit -= relativedelta(months=3, weeks=2)
                 user_11.save_user_and_profile()
-                self.assertIs(expr1={'en': "(3\xa0months, 2\xa0weeks\xa0ago)", 'he': "(לפני\xa03\xa0חודשים ושבועיים)"}[self.language_code] in user_11.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(3\xa0months, 2\xa0weeks\xa0ago)", 'fr': "(il\xa0y\xa0a\xa03\xa0mois, 2\xa0semaines)", 'he': "(לפני\xa03\xa0חודשים ושבועיים)"}[self.language_code] in user_11.profile.last_visit_str, expr2=True)
                 user_12 = ActiveUserFactory()
                 user_12.profile.last_visit -= relativedelta(years=1)
                 user_12.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_12.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'fr': " (il\xa0y\xa0a\xa01\xa0année)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_12.profile.last_visit_str, expr2=True)
                 user_13 = ActiveUserFactory()
                 user_13.profile.last_visit -= relativedelta(years=1, weeks=1)
                 user_13.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_13.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_13.profile.last_visit_str, expr2=True)
                 user_14 = ActiveUserFactory()
                 user_14.profile.last_visit -= relativedelta(years=1, months=1)
                 user_14.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year, 1\xa0month\xa0ago)", 'he': "(לפני\xa0שנה וחודש)"}[self.language_code] in user_14.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year, 1\xa0month\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année, 1\xa0mois)", 'he': "(לפני\xa0שנה וחודש)"}[self.language_code] in user_14.profile.last_visit_str, expr2=True)
                 user_15 = ActiveUserFactory()
                 user_15.profile.last_visit -= relativedelta(years=1, months=1, weeks=1)
                 user_15.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year, 1\xa0month\xa0ago)", 'he': "(לפני\xa0שנה וחודש)"}[self.language_code] in user_15.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year, 1\xa0month\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année, 1\xa0mois)", 'he': "(לפני\xa0שנה וחודש)"}[self.language_code] in user_15.profile.last_visit_str, expr2=True)
                 user_16 = ActiveUserFactory()
                 user_16.profile.last_visit -= relativedelta(years=2)
                 user_16.save_user_and_profile()
-                self.assertIs(expr1={'en': "(2\xa0years\xa0ago)", 'he': "(לפני\xa0שנתיים)"}[self.language_code] in user_16.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(2\xa0years\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0années)", 'he': "(לפני\xa0שנתיים)"}[self.language_code] in user_16.profile.last_visit_str, expr2=True)
                 user_17 = ActiveUserFactory()
                 user_17.profile.last_visit -= relativedelta(years=2, weeks=2)
                 user_17.save_user_and_profile()
-                self.assertIs(expr1={'en': "(2\xa0years\xa0ago)", 'he': "(לפני\xa0שנתיים)"}[self.language_code] in user_17.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(2\xa0years\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0années)", 'he': "(לפני\xa0שנתיים)"}[self.language_code] in user_17.profile.last_visit_str, expr2=True)
                 user_18 = ActiveUserFactory()
                 user_18.profile.last_visit -= (relativedelta(years=1) - relativedelta(weeks=1))
                 user_18.save_user_and_profile()
-                self.assertIs(expr1={'en': "(11\xa0months, 3\xa0weeks\xa0ago)", 'he': "(לפני\xa011\xa0חודשים ו-3\xa0שבועות)"}[self.language_code] in user_18.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(11\xa0months, 3\xa0weeks\xa0ago)", 'fr': "(il\xa0y\xa0a\xa011\xa0mois, 3\xa0semaines)", 'he': "(לפני\xa011\xa0חודשים ו-3\xa0שבועות)"}[self.language_code] in user_18.profile.last_visit_str, expr2=True)
                 user_19 = ActiveUserFactory()
                 user_19.profile.last_visit -= (relativedelta(years=1) - relativedelta(weeks=2))
                 user_19.save_user_and_profile()
-                self.assertIs(expr1={'en': "(11\xa0months, 2\xa0weeks\xa0ago)", 'he': "(לפני\xa011\xa0חודשים ושבועיים)"}[self.language_code] in user_19.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(11\xa0months, 2\xa0weeks\xa0ago)", 'fr': "(il\xa0y\xa0a\xa011\xa0mois, 2\xa0semaines)", 'he': "(לפני\xa011\xa0חודשים ושבועיים)"}[self.language_code] in user_19.profile.last_visit_str, expr2=True)
                 user_20 = ActiveUserFactory()
                 user_20.profile.last_visit -= (relativedelta(years=2) - relativedelta(weeks=2))
                 user_20.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year, 11\xa0months\xa0ago)", 'he': "(לפני\xa0שנה ו-11\xa0חודשים)"}[self.language_code] in user_20.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year, 11\xa0months\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année, 11\xa0mois)", 'he': "(לפני\xa0שנה ו-11\xa0חודשים)"}[self.language_code] in user_20.profile.last_visit_str, expr2=True)
 
 
         @only_on_sites_with_login
@@ -1009,21 +1009,21 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        # @only_on_sites_with_login
-        # @override_settings(LANGUAGE_CODE='fr')
-        # class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
-        #     def set_up(self):
-        #         super().set_up()
-        #         self.data.update({
-        #             'first_name_fr': "Doron",
-        #             'last_name_fr': "Matalon",
-        #         })
-        #         self.first_name = "Doron"
-        #         self.last_name = "Matalon"
-        #
-        #     def validate_all_values(self):
-        #         super().validate_all_values()
-        #         self.assertEqual(first=self.language_code, second='fr')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.data.update({
+                    'first_name_fr': "Doron",
+                    'last_name_fr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login
@@ -1059,22 +1059,22 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        # @only_on_sites_with_login
-        # @override_settings(LANGUAGE_CODE='fr')
-        # class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
-        #     def set_up(self):
-        #         super().set_up()
-        #         self.data.update({
-        #             'first_name_fr': "Doron",
-        #             'last_name_fr': "",
-        #         })
-        #         self.first_name = "Doron"
-        #         self.last_name = ""
-        #
-        #
-        # def validate_all_values(self):
-        #     super().validate_all_values()
-        #     self.assertEqual(first=self.language_code, second='fr')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.data.update({
+                    'first_name_fr': "Doron",
+                    'last_name_fr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+
+        def validate_all_values(self):
+            super().validate_all_values()
+            self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login

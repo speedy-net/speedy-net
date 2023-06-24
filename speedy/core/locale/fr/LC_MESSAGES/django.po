@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 21:01+0200\n"
+"POT-Creation-Date: 2023-06-24 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -884,7 +884,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "La valeur doit être un JSON valide."
+msgstr "La valeur doit respecter la syntaxe JSON."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -2342,11 +2342,11 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Ce mot de passe est trop court. Il doit contenir au moins "
-"%(min_length)d caractère."
+"Ce mot de passe est trop court. Il doit contenir au minimum %(min_length)d "
+"caractère."
 msgstr[1] ""
-"Ce mot de passe est trop court. Il doit contenir au moins "
-"%(min_length)d caractères."
+"Ce mot de passe est trop court. Il doit contenir au minimum %(min_length)d "
+"caractères."
 
 #: .\accounts\validators.py:114
 #, python-format
@@ -2696,7 +2696,7 @@ msgstr "Mauvaise demande"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Désolé, mais nous ne pouvons pas répondre à votre demande."
+msgstr "Speedy est désolée, mais nous ne pouvons pas répondre à votre demande."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2704,7 +2704,7 @@ msgstr "Permission refusée"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Désolé, mais cette page est privée."
+msgstr "Speedy est désolée, mais cette page est privée."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2712,7 +2712,7 @@ msgstr "Page introuvable"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Désolé, mais la page n’a pas été trouvée."
+msgstr "Speedy est désolée, mais la page n’a pas été trouvée."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
