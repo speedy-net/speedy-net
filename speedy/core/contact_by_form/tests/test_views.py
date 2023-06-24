@@ -227,6 +227,14 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='fr')
+        class FeedbackViewTypeFeedbackFrenchTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -257,6 +265,14 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class FeedbackViewTypeReportEntityFrenchTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -284,6 +300,14 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class FeedbackViewTypeReportFileFrenchTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
         @only_on_sites_with_login

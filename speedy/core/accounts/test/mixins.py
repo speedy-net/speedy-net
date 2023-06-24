@@ -305,46 +305,46 @@ if (django_settings.TESTS):
             _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'fr': 'Ce champ ne peut pas contenir la valeur nulle.', 'he': 'שדה זה אינו יכול להיות ריק.'}
             _this_field_cannot_be_blank_error_message_dict = {'en': 'This field cannot be blank.', 'fr': 'Ce champ ne peut pas être vide.', 'he': 'שדה זה אינו יכול להיות ריק.'}
             _id_contains_illegal_characters_error_message_dict = {'en': 'id contains illegal characters.', 'fr': 'cette ID contient des caractères illégaux.', 'he': 'id מכיל תווים לא חוקיים.'}
-            _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'fr': 'Value must be valid JSON.', 'he': 'ערך חייב להיות JSON חוקי.'}
-            _invalid_password_error_message_dict = {'en': 'Invalid password.', 'fr': 'Invalid password.', 'he': 'הסיסמה לא תקינה.'}
+            _value_must_be_valid_json_error_message_dict = {'en': 'Value must be valid JSON.', 'fr': 'La valeur doit respecter la syntaxe JSON.', 'he': 'ערך חייב להיות JSON חוקי.'}
+            _invalid_password_error_message_dict = {'en': 'Invalid password.', 'fr': 'Mot de passe invalide.', 'he': 'הסיסמה לא תקינה.'}
             _password_too_short_error_message_dict = {'en': 'This password is too short. It must contain at least 8 characters.', 'fr': 'Ce mot de passe est trop court. Il doit contenir au minimum 8 caractères.', 'he': 'סיסמה זו קצרה מדי. היא חייבת להכיל לפחות 8 תווים.'}
-            _password_too_long_error_message_dict = {'en': 'This password is too long. It must contain at most 120 characters.', 'fr': 'This password is too long. It must contain at most 120 characters.', 'he': 'סיסמה זו ארוכה מדי. היא יכולה להכיל 120 תווים לכל היותר.'}
+            _password_too_long_error_message_dict = {'en': 'This password is too long. It must contain at most 120 characters.', 'fr': 'Ce mot de passe est trop long. Il doit contenir au maximum 120\xa0caractères.', 'he': 'סיסמה זו ארוכה מדי. היא יכולה להכיל 120 תווים לכל היותר.'}
             _this_username_is_already_taken_error_message_dict = {'en': 'This username is already taken.', 'fr': 'Ce nom d’utilisateur est déjà pris.', 'he': 'שם המשתמש/ת הזה כבר תפוס.'}
             _enter_a_valid_email_address_error_message_dict = {'en': 'Enter a valid email address.', 'fr': 'Saisissez une adresse de courriel valide.', 'he': 'נא להזין כתובת דואר אלקטרוני חוקית.'}
             _this_email_is_already_in_use_error_message_dict = {'en': 'This email is already in use.', 'fr': 'Cet e-mail est déjà utilisé.', 'he': 'הדואר האלקטרוני הזה כבר נמצא בשימוש.'}
             _enter_a_valid_date_error_message_dict = {'en': 'Enter a valid date.', 'fr': 'Saisissez une date valide.', 'he': 'יש להזין תאריך חוקי.'}
-            _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'fr': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
-            _your_old_password_was_entered_incorrectly_error_message_dict = {'en': 'Your old password was entered incorrectly. Please enter it again.', 'fr': 'Your old password was entered incorrectly. Please enter it again.', 'he': 'סיסמתך הישנה הוזנה בצורה שגויה. נא להזינה שוב.'}
-            _the_two_password_fields_didnt_match_error_message_dict = {'en': "The two password fields didn’t match.", 'fr': "The two password fields didn’t match.", 'he': 'שני שדות הסיסמה אינם זהים.'}
+            _please_enter_a_correct_username_and_password_error_message_dict = {'en': 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'fr': 'Veuillez saisir un nom d’utilisateur et un mot de passe corrects. Attention, les deux champs peuvent être sensibles à la casse.', 'he': 'נא להזין שם משתמש/ת וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.'}
+            _your_old_password_was_entered_incorrectly_error_message_dict = {'en': 'Your old password was entered incorrectly. Please enter it again.', 'fr': 'Votre ancien mot de passe est incorrect. Veuillez le rectifier.', 'he': 'סיסמתך הישנה הוזנה בצורה שגויה. נא להזינה שוב.'}
+            _the_two_password_fields_didnt_match_error_message_dict = {'en': "The two password fields didn’t match.", 'fr': "Les deux mots de passe ne correspondent pas.", 'he': 'שני שדות הסיסמה אינם זהים.'}
             _entity_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, and may contain letters, digits or dashes.', 'fr': 'Le nom d’utilisateur doit commencer par 4 lettres ou plus et peut contenir des lettres, des chiffres ou des tirets.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או מקפים. שם המשתמש/ת חייב להיות באנגלית.'}
-            _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'fr': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית.'}
+            _user_username_must_start_with_4_or_more_letters_error_message_dict = {'en': 'Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.', 'fr': 'Le nom d’utilisateur doit commencer par 4 lettres ou plus, suivies d’un nombre quelconque de chiffres. Vous pouvez ajouter des tirets entre les mots.', 'he': 'שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית.'}
             _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'fr': 'Slug ne correspond pas à un nom d’utilisateur.', 'he': 'slug לא מתאים לשם המשתמש/ת.'}
-            _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'fr': "You've already confirmed this email address.", 'he': 'כבר אימתת את כתובת הדואר האלקטרוני שלך.'}
-            _invalid_confirmation_link_error_message_dict = {'en': "Invalid confirmation link.", 'fr': "Invalid confirmation link.", 'he': 'קישור אימות לא חוקי.'}
-            _youve_confirmed_your_email_address_message_dict = {'en': "You've confirmed your email address.", 'fr': "You've confirmed your email address.", 'he': 'אימתת את כתובת הדואר האלקטרוני שלך.'}
-            _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'fr': 'The email address was deleted.', 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
-            _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'fr': 'You have made this email address primary.', 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
+            _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'fr': "Vous avez déjà confirmé cette adresse e-mail.", 'he': 'כבר אימתת את כתובת הדואר האלקטרוני שלך.'}
+            _invalid_confirmation_link_error_message_dict = {'en': "Invalid confirmation link.", 'fr': "Lien de confirmation invalide.", 'he': 'קישור אימות לא חוקי.'}
+            _youve_confirmed_your_email_address_message_dict = {'en': "You've confirmed your email address.", 'fr': "Vous avez confirmé votre adresse e-mail.", 'he': 'אימתת את כתובת הדואר האלקטרוני שלך.'}
+            _the_email_address_was_deleted_error_message_dict = {'en': 'The email address was deleted.', 'fr': 'L’adresse e-mail a été supprimée.', 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
+            _you_have_changed_your_primary_email_address_error_message_dict = {'en': 'You have made this email address primary.', 'fr': 'Vous avez défini cette adresse e-mail comme adresse primaire.', 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
             _username_is_required_error_message_dict = {'en': 'Username is required.', 'fr': 'Nom d’utilisateur requis.', 'he': 'שם המשתמש/ת נדרש.'}
-            _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'fr': "Password reset on Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
-            _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'fr': "Password reset on Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
-            _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict = {'en': 'Ensure this value is greater than or equal to -32768.', 'fr': 'Ensure this value is greater than or equal to -32768.', 'he': 'יש לוודא שהערך גדול מ או שווה ל־-32768.'}
-            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'fr': 'Ensure this value is less than or equal to 32767.', 'he': 'יש לוודא שערך זה פחות מ או שווה ל־32767 .'}
+            _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'fr': "Réinitialisation du mot de passe sur Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
+            _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'fr': "Réinitialisation du mot de passe sur Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
+            _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict = {'en': 'Ensure this value is greater than or equal to -32768.', 'fr': 'Assurez-vous que cette valeur est supérieure ou égale à -32768.', 'he': 'יש לוודא שהערך גדול מ או שווה ל־-32768.'}
+            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'fr': 'Assurez-vous que cette valeur est inférieure ou égale à 32767.', 'he': 'יש לוודא שערך זה פחות מ או שווה ל־32767 .'}
             _value_too_long_for_type_character_varying_255_error_message_dict = {'en': 'value too long for type character varying(255)', 'fr': 'value too long for type character varying(255)', 'he': 'value too long for type character varying(255)'}
 
-            _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'fr': 'La valeur « {value} » n’est pas un choix valide.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
-            _value_must_be_an_integer_error_message_to_format_dict = {'en': "“{value}” value must be an integer.", 'fr': "La valeur « {value} » doit être un nombre entier.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
-            _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au moins {min_length} caractères alphanumériques (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}). שם המשתמש/ת חייב להיות באנגלית.'}
-            _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au maximum {max_length} caractères alphanumériques (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}). שם המשתמש/ת חייב להיות באנגלית.'}
-            _username_must_contain_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au moins {min_length} caractères (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
-            _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au maximum {max_length} caractères (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
-            _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'fr': 'A confirmation message was sent to {email_address}', 'he': 'הודעת אימות נשלחה ל-‎{email_address}‎'}
+            _value_is_not_a_valid_choice_error_message_to_format_dict = {'en': 'Value {value} is not a valid choice.', 'fr': 'La valeur «\xa0{value}\xa0» n’est pas un choix valide.', 'he': 'ערך {value} אינו אפשרות חוקית.'}
+            _value_must_be_an_integer_error_message_to_format_dict = {'en': "“{value}” value must be an integer.", 'fr': "La valeur «\xa0{value}\xa0» doit être un nombre entier.", 'he': "הערך '{value}' חייב להיות מספר שלם."}
+            _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au moins {min_length}\xa0caractères alphanumériques (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים אלפאנומריים לפחות (מכיל {value_length}). שם המשתמש/ת חייב להיות באנגלית.'}
+            _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au maximum {max_length}\xa0caractères alphanumériques (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים אלפאנומריים לכל היותר (מכיל {value_length}). שם המשתמש/ת חייב להיות באנגלית.'}
+            _username_must_contain_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au moins {min_length}\xa0caractères (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
+            _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au maximum {max_length}\xa0caractères (il en contient {value_length}).', 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
+            _a_confirmation_message_was_sent_to_email_address_error_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'fr': 'Un message de confirmation a été envoyé à {email_address}', 'he': 'הודעת אימות נשלחה ל-‎{email_address}‎'}
 
             _you_cant_change_your_username_error_message_dict_by_gender = {
                 'en': {
                     **{gender: "You can't change your username." for gender in User.ALL_GENDERS},
                 },
                 'fr': {
-                    **{gender: "You can't change your username." for gender in User.ALL_GENDERS},
+                    **{gender: "Vous ne pouvez pas changer votre nom d’utilisateur." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "לא ניתן לשנות שם משתמשת.",
@@ -357,7 +357,7 @@ if (django_settings.TESTS):
                     **{gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
                 },
                 'fr': {
-                    **{gender: "Confirm your email address on Speedy Net" for gender in User.ALL_GENDERS},
+                    **{gender: "Confirmez votre adresse e-mail sur Speedy Net" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי נט",
@@ -370,7 +370,7 @@ if (django_settings.TESTS):
                     **{gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'fr': {
-                    **{gender: "Confirm your email address on Speedy Match" for gender in User.ALL_GENDERS},
+                    **{gender: "Confirmez votre adresse e-mail sur Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "אמתי את כתובת הדואר האלקטרוני שלך בספידי מץ'",

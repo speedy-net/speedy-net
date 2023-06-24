@@ -17,7 +17,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'fr': 'This field is required.', 'he': 'יש להזין תוכן בשדה זה.'}
+            _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'fr': 'Ce champ est obligatoire.', 'he': 'יש להזין תוכן בשדה זה.'}
             # _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at least {min_length} characters (it has {value_length}).', 'he': '_____ # ~~~~ TODO'} # ~~~~ TODO
             _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Ensure this value has at most {max_length} characters (it has {value_length}).', 'fr': 'Assurez-vous que cette valeur comporte au plus {max_length} caractères (actuellement {value_length}).', 'he': 'נא לוודא שערך זה מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
             if (sys.version_info >= (3, 11)):
