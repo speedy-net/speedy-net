@@ -18,9 +18,29 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='first_name_fr',
-            field=models.CharField(default=None, max_length=150, verbose_name='first name'),
+            field=models.CharField(
+                default=None, max_length=150, verbose_name='first name',
+                null=True,
+            ),
         ),
         migrations.AddField(
+            model_name='user',
+            name='last_name_fr',
+            field=models.CharField(
+                blank=True, default=None, max_length=150, verbose_name='last name',
+                null=True,
+            ),
+        ),
+        migrations.RunSQL(
+            sql='UPDATE "accounts_user" SET "first_name_fr" = first_name_en, "last_name_fr" = last_name_en;',
+            reverse_sql='',
+        ),
+        migrations.AlterField(
+            model_name='user',
+            name='first_name_fr',
+            field=models.CharField(default=None, max_length=150, verbose_name='first name'),
+        ),
+        migrations.AlterField(
             model_name='user',
             name='last_name_fr',
             field=models.CharField(blank=True, default=None, max_length=150, verbose_name='last name'),
