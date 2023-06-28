@@ -47,6 +47,12 @@ $.datepicker.regional.en = {
     firstDay: 0
 };
 
+$.datepicker.regional.fr = {
+    monthNames: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
 evil.block('@@RegistrationForm', {
