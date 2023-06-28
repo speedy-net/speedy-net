@@ -1,3 +1,4 @@
+{% load l10n %}
 {% load thumbnail %}
 {% load static %}
 
@@ -9,12 +10,12 @@
         {% thumbnail user.photo.file geometry crop='center 20%' as image %}
             <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}{% if admin_user %}{% if user.photo.visible_on_website or bypass_visible %} visible-on-website{% else %} not-visible-on-website{% endif %}{% endif %}" />
         {% empty %}
-            <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio }}%;">
+            <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio|unlocalize }}%;">
                 <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />
             </div>
         {% endthumbnail %}
     {% else %}
-        <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio }}%;">
+        <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio|unlocalize }}%;">
             <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />
         </div>
     {% endif %}
