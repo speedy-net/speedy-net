@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 17:28+0200\n"
+"POT-Creation-Date: 2023-06-28 07:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,7 +153,7 @@ msgstr "Définir cette adresse e-mail comme la principale"
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette adresse e-mail ?"
+msgstr "Źtes-vous sūre de vouloir supprimer cette adresse e-mail ?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
@@ -163,7 +163,7 @@ msgstr "Êtes-vous sûr de vouloir supprimer cette adresse e-mail ?"
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette adresse e-mail ?"
+msgstr "Źtes-vous sūr(e) de vouloir supprimer cette adresse e-mail ?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -465,12 +465,12 @@ msgstr "Ajouter aux amis"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Êtes-vous sûr(e) de vouloir bloquer "
+msgstr "Źtes-vous sūre de vouloir bloquer "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Êtes-vous sûr(e) de vouloir bloquer "
+msgstr "Źtes-vous sūr de vouloir bloquer "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
@@ -660,12 +660,12 @@ msgstr "Bienvenue"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "Votre ami(e)"
+msgstr "Votre amie"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "Votre ami(e)"
+msgstr "Votre ami"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
@@ -1660,12 +1660,12 @@ msgstr "Cet utilisateur a déjà demandé à être votre ami(e)."
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
+msgstr "Vous źtes déją amie avec cet utilisateur."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
+msgstr "Vous źtes déją amie avec cet utilisateur."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
@@ -1675,17 +1675,17 @@ msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
+msgstr "Vous źtes déją ami avec cet utilisateur."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
+msgstr "Vous źtes déją ami avec cet utilisateur."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Vous êtes déjà ami(e) avec cet utilisateur."
+msgstr "Vous źtes déją ami avec cet utilisateur."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
@@ -2696,7 +2696,7 @@ msgstr "Mauvaise demande"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Speedy est désolée, mais nous ne pouvons pas répondre à votre demande."
+msgstr "Speedy est désolée, mais nous ne pouvons pas répondre ą votre demande."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2793,7 +2793,7 @@ msgstr "Définir cette adresse e-mail comme la principale"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette adresse e-mail ?"
+msgstr "Źtes-vous sūr(e) de vouloir supprimer cette adresse e-mail ?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
