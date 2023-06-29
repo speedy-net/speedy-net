@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 08:56+0300\n"
+"POT-Creation-Date: 2023-06-29 21:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -932,8 +932,8 @@ msgid ""
 "and chat with them online. You can add people as friends on Speedy Net, like "
 "people and send them messages. Speedy Match is open to free registration for "
 "people from all countries and ages (no age limit!). The site is vegan and "
-"vegetarian friendly. It is currently available in two languages - English "
-"and Hebrew."
+"vegetarian friendly. It is currently available in three languages - English, "
+"French and Hebrew."
 msgstr ""
 
 #: .\templates\about\about.html:19
