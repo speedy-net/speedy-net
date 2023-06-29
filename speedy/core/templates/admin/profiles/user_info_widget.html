@@ -35,11 +35,11 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Active languages on Speedy Match</th>
-                        <td><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height and not user.speedy_match_profile.not_allowed_to_use_speedy_match %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.active_languages }}</span></td>
+                        <td class="direction-ltr"><span style="color: {% if user.speedy_match_profile.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height and user.speedy_match_profile.height <= user.speedy_match_profile.settings.MAX_HEIGHT_TO_MATCH and 85 < user.speedy_match_profile.height and not user.speedy_match_profile.not_allowed_to_use_speedy_match %}blue{% else %}red{% endif %}; font-weight: bold;">{{ user.speedy_match_profile.active_languages }}</span></td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Match Activation step (en,fr,he)</th>
-                        <td>{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_fr }},{{ user.speedy_match_profile.activation_step_he }}</td>
+                        <td class="direction-ltr">{{ user.speedy_match_profile.activation_step_en }},{{ user.speedy_match_profile.activation_step_fr }},{{ user.speedy_match_profile.activation_step_he }}</td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Height</th>
@@ -83,11 +83,11 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Match - Minimal, Maximal age to match</th>
-                        <td>{{ user.speedy_match_profile.min_age_to_match }},{{ user.speedy_match_profile.max_age_to_match }}</td>
+                        <td class="direction-ltr">{{ user.speedy_match_profile.min_age_to_match }},{{ user.speedy_match_profile.max_age_to_match }}</td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Speedy Match - Number of matches on last user's search (en,fr,he)</th>
-                        <td>{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_fr }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
+                        <td class="direction-ltr">{{ user.speedy_match_profile.number_of_matches_en }},{{ user.speedy_match_profile.number_of_matches_fr }},{{ user.speedy_match_profile.number_of_matches_he }}</td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Email addresses</th>
