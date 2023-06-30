@@ -153,7 +153,7 @@
                         {% block footer_extra_links_4 %}{% endblock %}
                         {% block footer_links_3 %}
                             <p>
-                                <a href="https://{{ LANGUAGE_CODE }}.blog.speedy.net/" title="{% translate "Speedy Net Blog" %}">{% translate "Speedy Net Blog" %}</a>
+                                <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_en }}.blog.speedy.net/" title="{% translate "Speedy Net Blog" %}">{% translate "Speedy Net Blog" %}</a>
                                 {% if LANGUAGE_CODE == "he" %}
                                     <a href="https://{{ LANGUAGE_CODE|convert_non_he_to_www }}.speedy-paz.com" title="{% translate "Speedy Paz" %}">{% translate "Speedy Paz" %}</a>
                                 {% else %}
