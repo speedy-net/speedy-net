@@ -30,17 +30,18 @@
     <div id="top-gradient" class="{% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID %}pink-gradient{% else %}blue-gradient{% endif %}"></div>
     <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
     <br />
-    <table border="0" cellspacing="20" cellpadding="0" dir="ltr">
+    <table border="0" {% block table_cellspacing %}{% endblock %}cellpadding="0" dir="ltr">
         <tr>
             {% block english_td %}
                 <td dir="ltr">
-                    <a class="language-link" href="//en.{{ site.domain }}/" title="English{% block alpha_english_title %}{% endblock %}" target="_top">English{% block alpha_english %}{% endblock %}</a>
+                    <a class="{% block english_a_classes %}{% endblock %}" href="//en.{{ site.domain }}/" title="English{% block alpha_english_title %}{% endblock %}" target="_top">English{% block alpha_english %}{% endblock %}</a>
                 </td>
             {% endblock %}
             {% block french_td %}{% endblock %}
+        {% block hebrew_tr %}{% endblock %}
             {% block hebrew_td %}
-                <td dir="rtl">
-                    <a class="language-link" href="//he.{{ site.domain }}/" title="עברית{% block alpha_hebrew_title %}{% endblock %}" target="_top">עברית{% block alpha_hebrew %}{% endblock %}</a>
+                <td {% block hebrew_colspan %}{% endblock %}dir="rtl">
+                    <a class="{% block hebrew_a_classes %}{% endblock %}" href="//he.{{ site.domain }}/" title="עברית{% block alpha_hebrew_title %}{% endblock %}" target="_top">עברית{% block alpha_hebrew %}{% endblock %}</a>
                 </td>
             {% endblock %}
         </tr>

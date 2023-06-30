@@ -4,7 +4,7 @@
 <li class="menu-languages">
     {% get_language_info_list for LANGUAGES as languages %}
     {% for language in languages %}
-        <a href="//{{ language.code }}.{{ site.domain }}{{ request.get_full_path }}" title="{{ language.name_local }}">{{ language.name_local }}</a>
+        <a href="//{{ language.code }}.{{ site.domain }}{{ request.path }}{% set_request_params page=1 %}" title="{{ language.name_local|title }}">{{ language.name_local|title }}</a>
     {% endfor %}
 </li>
 <li>

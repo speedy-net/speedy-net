@@ -53,12 +53,17 @@ td {
     font-size: 40px;
 }
 
+.language-link.table {
+    display: table;
+    margin: 0px auto;
+}
+
 img.main-image {
     max-width: 100%;
 }
 
 .speedy-bottom-badge-link {
-    font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
     font-size: 11px;
     font-variant: normal;
     font-style: normal;
@@ -72,9 +77,11 @@ img.main-image {
         width: 12%;
         height: auto;
     }
+
     .language-link {
         font-size: 60px;
     }
+
     .speedy-bottom-badge-link {
         font-size: 28px;
     }
