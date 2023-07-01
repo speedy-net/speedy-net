@@ -385,6 +385,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return self.get_full_name()
 
     @cached_property
+    def first_name_property(self):
+        return self.get_first_name()
+
+    @cached_property
     def short_name(self):
         return self.get_short_name()
 
