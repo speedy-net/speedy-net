@@ -1,5 +1,5 @@
 # python==3.10
-Django==4.1.9
+Django==4.1.10
 asgiref==3.6.0
 boto3==1.26.136
 botocore==1.29.136
