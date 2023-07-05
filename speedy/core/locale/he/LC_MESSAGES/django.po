@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 03:01+0200\n"
+"POT-Creation-Date: 2023-07-05 10:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:799
+#: .\__translations\__translations.py:9 .\accounts\models.py:803
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -893,7 +893,7 @@ msgstr "בקשות חברות"
 msgid "Friend"
 msgstr "חבר/ה"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:468
+#: .\__translations\__translations.py:23 .\accounts\models.py:472
 msgid "Friends"
 msgstr "חברים/ות"
 
@@ -2153,68 +2153,68 @@ msgstr "Last IP address used https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Last IP address used raw https://ipapi.com/ results"
 
-#: .\accounts\models.py:475 .\accounts\models.py:783 .\blocks\models.py:15
+#: .\accounts\models.py:479 .\accounts\models.py:787 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:476
+#: .\accounts\models.py:480
 msgid "users"
 msgstr "משתמשים"
 
-#: .\accounts\models.py:501
+#: .\accounts\models.py:505
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:788
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:789
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:786
+#: .\accounts\models.py:790
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:787
+#: .\accounts\models.py:791
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:788
+#: .\accounts\models.py:792
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:789
+#: .\accounts\models.py:793
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:800
+#: .\accounts\models.py:804
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:867
+#: .\accounts\models.py:871
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:868
+#: .\accounts\models.py:872
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\models.py:880
+#: .\accounts\models.py:884
 msgid "Today"
 msgstr "היום"
 
-#: .\accounts\models.py:882
+#: .\accounts\models.py:886
 msgid "Yesterday"
 msgstr "אתמול"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:888
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "בתאריך {date} ({timesince_ago})"
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:890
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "לפני {timesince}"
@@ -2631,6 +2631,22 @@ msgstr "עברית"
 #: .\settings\base_with_login.py:64
 msgid "French"
 msgstr "צרפתית"
+
+#: .\settings\base_with_login.py:65
+msgid "German"
+msgstr "גרמנית"
+
+#: .\settings\base_with_login.py:66
+msgid "Spanish"
+msgstr "ספרדית"
+
+#: .\settings\base_with_login.py:67
+msgid "Portuguese"
+msgstr "פורטוגזית"
+
+#: .\settings\base_with_login.py:68
+msgid "Italian"
+msgstr "איטלקית"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
