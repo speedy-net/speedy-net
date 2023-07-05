@@ -62,6 +62,10 @@ LOCALE_PATHS += [
 
 LANGUAGES_TO_ADD = [
     ('fr', _('French')),
+    ('de', _('German')),
+    ('es', _('Spanish')),
+    ('pt', _('Portuguese')),
+    ('it', _('Italian')),
 ]
 
 LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]

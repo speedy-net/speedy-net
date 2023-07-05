@@ -219,7 +219,7 @@ def get_all_field_names(base_field_name):
     #     base_field_name=base_field_name,
     #     field_names=field_names,
     # ))
-    assert (len(field_names) == 3)
+    assert (len(field_names) == 7)
     return field_names
 
 
