@@ -760,10 +760,10 @@ if (django_settings.TESTS):
 
             def test_set_active_languages_with_an_unsupported_language_1(self):
                 user = self.get_active_user_jennifer()
-                user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'de'])
+                user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'ab'])
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=1, value="'de'"))
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=1, value="'ab'"))
 
             def test_set_active_languages_with_an_unsupported_language_2(self):
                 user = self.get_active_user_jennifer()

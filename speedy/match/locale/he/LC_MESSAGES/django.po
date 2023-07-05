@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 05:18+0300\n"
+"POT-Creation-Date: 2023-09-04 15:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -698,7 +698,7 @@ msgstr "פרופיל ספידי מץ'"
 msgid "Speedy Match Profiles"
 msgstr "פרופילים ספידי מץ'"
 
-#: .\accounts\models.py:295 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:297 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "אמת/י בבקשה את כתובת הדואר האלקטרוני שלך."
 
@@ -1055,6 +1055,7 @@ msgid "About Speedy Match"
 msgstr "אודות ספידי מץ'"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
 msgid ""
 "<a href=\"https://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching web app for romantic purposes for singles who "
@@ -1063,8 +1064,8 @@ msgid ""
 "and chat with them online. You can add people as friends on Speedy Net, like "
 "people and send them messages. Speedy Match is open to free registration for "
 "people from all countries and ages (no age limit!). The site is vegan and "
-"vegetarian friendly. It is currently available in three languages - English, "
-"French and Hebrew."
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 msgstr ""
 "<a href=\"https://he.speedymatch.com/\" title=\"ספידי מץ'\">ספידי מץ'</a> "
 "הוא אתר הכרויות/התאמות למטרות רומנטיות לפנויות/פנויים חברי <a href=\"https://"
@@ -1072,8 +1073,7 @@ msgstr ""
 "למצוא בנות זוג ובני זוג מתאימים ולשוחח איתם אונליין. אתם יכולים להוסיף אנשים "
 "כחברים בספידי נט, לעשות לייק לאנשים ולשלוח להם הודעות. ספידי מץ' פתוחה "
 "להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר הוא "
-"ידידותי לטבעונים ולצמחונים. כיום האתר זמין בשלוש שפות - אנגלית, צרפתית "
-"ועברית."
+"ידידותי לטבעונים ולצמחונים. כיום האתר זמין ב-%(languages_num)s שפות."
 
 #: .\templates\about\about.html:19
 msgid ""
