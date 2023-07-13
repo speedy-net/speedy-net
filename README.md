@@ -266,7 +266,7 @@ Refer to [django-environ documentation](https://django-environ.readthedocs.io/en
 
 ## How to upgrade required packages
 
-To upgrade all the requirements (with Django>=4.0,<4.1), run:
+To upgrade all the requirements (with Django>=4.1,<4.2), run:
 
     pip install --upgrade -r requirements-pip-upgrade.txt
 
@@ -282,7 +282,7 @@ To upgrade all the requirements for tests, run:
 
 To make all migrations, run:
 
-    ./manage_all_sites.sh make_migrations
+    ./manage_all_sites_with_login.sh make_migrations
 
 To migrate all sites, run:
 
