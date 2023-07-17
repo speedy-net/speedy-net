@@ -42,7 +42,8 @@ class ChatManager(BaseManager):
         for chat in chats:
             if (chat.senders_ids == {entity.id}):
                 for message in chat.messages.all():
-                    d[message.text] += 1
+                    if (len(message.text) >= 25):
+                        d[message.text] += 1
         l1 = sorted([(d[k], k) for k in d.keys()] + [(0, "")], reverse=True)
         return l1[0]
 
