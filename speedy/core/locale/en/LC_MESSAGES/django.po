@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 03:01+0200\n"
+"POT-Creation-Date: 2023-07-19 04:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:799
+#: .\__translations\__translations.py:9 .\accounts\models.py:803
 msgid "email address"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:468
+#: .\__translations\__translations.py:23 .\accounts\models.py:472
 msgid "Friends"
 msgstr ""
 
@@ -2094,68 +2094,68 @@ msgstr ""
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 
-#: .\accounts\models.py:475 .\accounts\models.py:783 .\blocks\models.py:15
+#: .\accounts\models.py:479 .\accounts\models.py:787 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:476
+#: .\accounts\models.py:480
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:501
+#: .\accounts\models.py:505
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:788
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:789
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:786
+#: .\accounts\models.py:790
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:787
+#: .\accounts\models.py:791
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:788
+#: .\accounts\models.py:792
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:789
+#: .\accounts\models.py:793
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:800
+#: .\accounts\models.py:804
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:867
+#: .\accounts\models.py:871
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:868
+#: .\accounts\models.py:872
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\models.py:880
+#: .\accounts\models.py:884
 msgid "Today"
 msgstr ""
 
-#: .\accounts\models.py:882
+#: .\accounts\models.py:886
 msgid "Yesterday"
 msgstr ""
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:888
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr ""
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:890
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr ""
@@ -2294,7 +2294,7 @@ msgstr ""
 msgid "You have made this email address primary."
 msgstr ""
 
-#: .\admin\views.py:50
+#: .\admin\views.py:54
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2302,11 +2302,13 @@ msgid ""
 "in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
-"in the last four months, and {total_number_of_members_in_the_last_two_years} "
-"members entered the site in the last two years."
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
 msgstr ""
 
-#: .\admin\views.py:87
+#: .\admin\views.py:100
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2316,6 +2318,10 @@ msgid ""
 "members registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
 "{total_number_of_members_registered_in_the_last_two_years} members "
 "registered in the last two years. "
 "{total_number_of_members_registered_more_than_two_years_ago} members "
@@ -2324,7 +2330,7 @@ msgid ""
 "before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:105
+#: .\admin\views.py:120
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "

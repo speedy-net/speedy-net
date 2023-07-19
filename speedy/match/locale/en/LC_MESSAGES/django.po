@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-29 21:27+0200\n"
+"POT-Creation-Date: 2023-07-19 04:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -725,7 +725,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:154
+#: .\admin\views.py:181
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -757,7 +757,15 @@ msgid ""
 "{total_percent_of_female_active_members_in_the_last_four_months} females, "
 "{total_percent_of_male_active_members_in_the_last_four_months} males, "
 "{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, and "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
 "{total_number_of_active_members_in_the_last_two_years} members "
 "({total_number_of_female_active_members_in_the_last_two_years} females, "
 "{total_number_of_male_active_members_in_the_last_two_years} males, "
@@ -768,7 +776,7 @@ msgid ""
 "entered the site in the last two years."
 msgstr ""
 
-#: .\admin\views.py:235
+#: .\admin\views.py:281
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -779,6 +787,10 @@ msgid ""
 "members registered in the last four months. "
 "{total_number_of_active_members_registered_more_than_four_months_ago} active "
 "members registered more than four months ago. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} active "
+"members registered in the last eight months. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"active members registered more than eight months ago. "
 "{total_number_of_active_members_registered_in_the_last_two_years} active "
 "members registered in the last two years. "
 "{total_number_of_active_members_registered_more_than_two_years_ago} active "
@@ -787,14 +799,14 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:255
+#: .\admin\views.py:303
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
 
-#: .\admin\views.py:313
+#: .\admin\views.py:361
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -807,7 +819,7 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
 
-#: .\admin\views.py:380
+#: .\admin\views.py:428
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -825,7 +837,7 @@ msgid ""
 "others) entered the site in the last eight months."
 msgstr ""
 
-#: .\admin\views.py:447
+#: .\admin\views.py:495
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
