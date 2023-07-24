@@ -148,7 +148,32 @@ Install all dependencies using **apt-get**:
     sudo apt update
     sudo apt-get install python3.10 python3-pip python3.10-venv python3.10-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-all nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-14 nginx uwsgi uwsgi-src postfix memcached
+
+In **/etc/postgresql/14/main/pg_hba.conf** change the line:
+
+    host    all             all             127.0.0.1/32            scram-sha-256
+    host    all             all             ::1/128                 scram-sha-256
+to
+
+    host    all             all             127.0.0.1/32            trust
+    host    all             all             ::1/128                 trust
+
+And add under # Database administrative login by Unix domain socket
+    local   all             speedy_net                              trust
+below the the line
+    local   all             postgres                                peer
+
+Restart **postgresql**:
+
+    sudo service postgresql restart
+
+Setup a database:
+
+    sudo -i -u postgres
+    createuser speedy_net
+    createdb -O speedy_net speedy_net
+    exit
 
 Build **uwsgi** plugin:
 
@@ -160,25 +185,6 @@ Clone the project, create a venv, activate it and install required modules using
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
     python3.10 -m venv env
-
-Setup a database:
-
-    sudo -i -u postgres
-    createuser speedy_net
-    createdb -O speedy_net speedy_net
-    exit
-
-In **/etc/postgresql/14/main/pg_hba.conf** change the line:
-
-    host    all             all             127.0.0.1/32            scram-sha-256
-
-to
-
-    host    all             all             127.0.0.1/32            trust
-
-Restart **postgresql**:
-
-    sudo service postgresql restart
 
 Copy **env.ini.example** to **env.ini**:
 
