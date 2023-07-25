@@ -31,7 +31,7 @@
     <a href="//www.{{ site.domain }}/" title="{{ site.name }}" target="_top"><img class="main-logo" src="{% block logo_src %}{% endblock %}" alt="{{ site.name }}" /></a><br />
     <br />
     <table border="0" {% block table_cellspacing %}{% endblock %}cellpadding="0" dir="ltr">
-        <tr style="text-align: center;">
+        <tr{% block english_and_french_tr_style %}{% endblock %}>
             {% block english_td %}
                 <td dir="ltr">
                     <a class="{% block english_a_classes %}{% endblock %}" href="//en.{{ site.domain }}/" title="English{% block alpha_english_title %}{% endblock %}" target="_top">English{% block alpha_english %}{% endblock %}</a>
