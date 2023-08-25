@@ -12,7 +12,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
-        from speedy.match.accounts.test.mixins import SpeedyMatchAccountsLanguageMixin
+        from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin, SpeedyMatchAccountsLanguageMixin
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 
         from speedy.core.uploads.test.factories import UserImageFactory
@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import User
 
 
-        class SpeedyMatchSiteProfileTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
+        class SpeedyMatchSiteProfileTestCaseMixin(SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
             _none_list = [None]
             _empty_string_list = [""]
             _empty_values_to_test = _none_list + _empty_string_list
@@ -159,12 +159,6 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=invalid_values, list2=[value for value in values_to_test if (value not in valid_values)])
                 self.assertListEqual(list1=valid_values, list2=[value for value in values_to_test if (value not in invalid_values)])
                 self.assert_list_2_doesnt_contain_elements_in_list_1(list_1=invalid_values, list_2=valid_values)
-
-            def assert_step_and_error_messages_ok(self, step, error_messages):
-                self.assertEqual(first=step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
-                self.assertEqual(first=step, second=10)
-                self.assertEqual(first=len(error_messages), second=0)
-                self.assertListEqual(list1=error_messages, list2=[])
 
             def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only):
                 if ((null is True) and (value_to_test in self._empty_string_list)):
@@ -1254,7 +1248,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class SpeedyMatchSiteProfileMatchTestCase(SiteTestCase):
+        class SpeedyMatchSiteProfileMatchTestCase(SpeedyMatchAccountsModelsMixin, SiteTestCase):
             def get_active_user_doron(self):
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
                 user.diet = User.DIET_VEGETARIAN
@@ -1400,6 +1394,15 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=0)
                 # Save both users to delete rank cache.
                 user_1.speedy_match_profile.not_allowed_to_use_speedy_match = False
+                user_1.save_user_and_profile()
+                user_2.save_user_and_profile()
+                rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)
+                rank_2 = user_2.speedy_match_profile.get_matching_rank(other_profile=user_1.speedy_match_profile)
+                self.assertEqual(first=rank_1, second=0)
+                self.assertEqual(first=rank_2, second=0)
+                # Save both users to delete rank cache.
+                step, error_messages = user_1.speedy_match_profile.validate_profile_and_activate()
+                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
                 user_1.save_user_and_profile()
                 user_2.save_user_and_profile()
                 rank_1 = user_1.speedy_match_profile.get_matching_rank(other_profile=user_2.speedy_match_profile)

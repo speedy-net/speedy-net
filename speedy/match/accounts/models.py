@@ -223,6 +223,8 @@ class SiteProfile(SiteProfileBase):
             self._deactivate_language(step=self.activation_step, commit=False)
         if ((len(self.active_languages) > 0) and (not (self.user.has_confirmed_email))):
             self._set_active_languages(languages=[])
+        if ((len(self.active_languages) > 0) and (self.not_allowed_to_use_speedy_match)):
+            self._set_active_languages(languages=[])
         return super().save(*args, **kwargs)
 
     def _set_values_to_match(self):
