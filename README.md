@@ -150,7 +150,7 @@ Install all dependencies using **apt-get**:
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-14 nginx uwsgi uwsgi-src postfix memcached
 
-In **/etc/postgresql/14/main/pg_hba.conf** change the line:
+In **/etc/postgresql/14/main/pg_hba.conf** change the lines:
 
     host    all             all             127.0.0.1/32            scram-sha-256
     host    all             all             ::1/128                 scram-sha-256
@@ -159,9 +159,12 @@ to
     host    all             all             127.0.0.1/32            trust
     host    all             all             ::1/128                 trust
 
-And add under # Database administrative login by Unix domain socket
+And add under # Database administrative login by Unix domain socket:
+
     local   all             speedy_net                              trust
-below the the line
+
+below the line:
+
     local   all             postgres                                peer
 
 Restart **postgresql**:
