@@ -77,6 +77,30 @@ $.datepicker.regional.it = {
     firstDay: 0
 };
 
+$.datepicker.regional.nl = {
+    monthNames: ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.sv = {
+    monthNames: ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.ko = {
+    monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.fi = {
+    monthNames: ["tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
 evil.block('@@RegistrationForm', {
