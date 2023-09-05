@@ -53,6 +53,30 @@ $.datepicker.regional.fr = {
     firstDay: 0
 };
 
+$.datepicker.regional.de = {
+    monthNames: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.es = {
+    monthNames: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.pt = {
+    monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.it = {
+    monthNames: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
 evil.block('@@RegistrationForm', {

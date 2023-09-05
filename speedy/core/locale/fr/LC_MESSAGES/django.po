@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 05:02+0300\n"
+"POT-Creation-Date: 2023-06-28 07:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2701,6 +2701,22 @@ msgstr "Hébreu"
 #: .\settings\base_with_login.py:64
 msgid "French"
 msgstr "Français"
+
+#: .\settings\base_with_login.py:65
+msgid "German"
+msgstr "Allemand"
+
+#: .\settings\base_with_login.py:66
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: .\settings\base_with_login.py:67
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: .\settings\base_with_login.py:68
+msgid "Italian"
+msgstr "Italien"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
