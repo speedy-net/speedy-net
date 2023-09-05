@@ -50,7 +50,7 @@ if (django_settings.TESTS):
                         user_name=user.name,
                     ))
                     field_name_localized_list.append(field_name_localized)
-            self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_he'])
+            self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_sv', 'last_name_ko', 'last_name_fi', 'last_name_he'])
 
 
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
@@ -428,13 +428,13 @@ if (django_settings.TESTS):
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender.keys())), second=3)
 
-            self.assertEqual(first=len(set(self._user_all_the_required_fields_keys())), second=12)
+            self.assertEqual(first=len(set(self._user_all_the_required_fields_keys())), second=16)
             self.assertEqual(first=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), second=set(self._user_all_the_required_fields_keys()))
-            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=12)
+            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=16)
             self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()) - set(self._user_all_the_required_fields_keys())), second=0)
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys()) | {'first_name_en', 'first_name_he'})
             self.assertEqual(first=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()), second=set(self._user_all_the_required_fields_keys()))
-            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys())), second=12)
+            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys())), second=16)
             self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()) - set(self._user_all_the_required_fields_keys())), second=0)
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()), set2=set(self._user_all_the_required_fields_keys()) | {'first_name_en', 'first_name_he'})
             self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys(), list2=[field_name for field_name in self._registration_form_all_the_required_fields_keys() if (not (field_name in ['email', 'new_password1']))])
@@ -443,8 +443,8 @@ if (django_settings.TESTS):
             self.assertNotEqual(first=[to_attribute(name='first_name')], second=['first_name'])
             self.assertNotEqual(first=[to_attribute(name='first_name'), to_attribute(name='last_name')], second=['first_name', 'last_name'])
             self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=[to_attribute(name='first_name', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES])
-            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=[to_attribute(name='first_name', language_code='en'), to_attribute(name='first_name', language_code='fr'), to_attribute(name='first_name', language_code='de'), to_attribute(name='first_name', language_code='es'), to_attribute(name='first_name', language_code='pt'), to_attribute(name='first_name', language_code='it'), to_attribute(name='first_name', language_code='he')])
-            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_he'])
+            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=[to_attribute(name='first_name', language_code='en'), to_attribute(name='first_name', language_code='fr'), to_attribute(name='first_name', language_code='de'), to_attribute(name='first_name', language_code='es'), to_attribute(name='first_name', language_code='pt'), to_attribute(name='first_name', language_code='it'), to_attribute(name='first_name', language_code='nl'), to_attribute(name='first_name', language_code='sv'), to_attribute(name='first_name', language_code='ko'), to_attribute(name='first_name', language_code='fi'), to_attribute(name='first_name', language_code='he')])
+            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he'])
             self.assertListEqual(list1=self._registration_form_all_the_required_fields_keys()[:1], list2=[to_attribute(name='first_name')])
             self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys()[:1], list2=[to_attribute(name='first_name')])
 
