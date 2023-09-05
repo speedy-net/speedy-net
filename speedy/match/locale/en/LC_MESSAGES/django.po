@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-05 09:02+0300\n"
+"POT-Creation-Date: 2023-09-05 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -936,6 +936,7 @@ msgid "About Speedy Match"
 msgstr ""
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
 msgid ""
 "<a href=\"https://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching web app for romantic purposes for singles who "
@@ -944,8 +945,8 @@ msgid ""
 "and chat with them online. You can add people as friends on Speedy Net, like "
 "people and send them messages. Speedy Match is open to free registration for "
 "people from all countries and ages (no age limit!). The site is vegan and "
-"vegetarian friendly. It is currently available in three languages - English, "
-"French and Hebrew."
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 msgstr ""
 
 #: .\templates\about\about.html:19
