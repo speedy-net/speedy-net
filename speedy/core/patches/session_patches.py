@@ -8,7 +8,7 @@ def patch():
         iterations_diff = abs(self.iterations - int(iterations))
         return ((int(iterations) != self.iterations) and (iterations_diff >= 250000))
 
-    PBKDF2PasswordHasher.iterations = 180000  # Django 3.0.x
+    PBKDF2PasswordHasher.iterations = 390000  # Django 4.1.x
     PBKDF2PasswordHasher.must_update = must_update
 
 
