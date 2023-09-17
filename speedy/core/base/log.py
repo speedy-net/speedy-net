@@ -33,6 +33,9 @@ class AdminEmailHandler(log.AdminEmailHandler):
         if (subject == "INFO: Found credentials in shared credentials file: ~/.aws/credentials"):
             return False, 1
 
+        if (subject.startswith("WARNING (EXTERNAL IP): Not Found: ")):
+            return False, 1
+
         if (not (subject.startswith('WARNING'))):
             return True, 1
 
