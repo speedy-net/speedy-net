@@ -21,6 +21,17 @@ class AdminEmailHandler(log.AdminEmailHandler):
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
     def send_mail(self, subject, message, *args, **kwargs):
+        """
+        Override to send mail only once per hour for WARNING messages.
+        If this is a WARNING message, it will be sent by mail only once per hour.
+        Some specific messages are never sent by mail.
+
+        :param subject:
+        :param message:
+        :param args:
+        :param kwargs:
+        :return:
+        """
         should_send_mail, count = self._should_send_mail(subject=subject)
         if (should_send_mail):
             if (count > 1):
@@ -30,6 +41,14 @@ class AdminEmailHandler(log.AdminEmailHandler):
             super().send_mail(subject, message, *args, **kwargs)
 
     def _should_send_mail(self, subject):
+        """
+        Returns whether to send mail or not, and the number of times the subject was logged in the last hour.
+        If this is a WARNING message, it will be sent by mail only once per hour.
+        Some specific messages are never sent by mail.
+
+        :param subject:
+        :return: (should_send_mail (bool), count_last_hour (int, >= 1))
+        """
         if (subject == "INFO: Found credentials in shared credentials file: ~/.aws/credentials"):
             return False, 1
 
