@@ -9,7 +9,6 @@ from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
 
-from speedy.core.base import validators as speedy_core_base_validators
 from speedy.core.base.utils import to_attribute, update_form_field_choices
 from speedy.core.base.forms import DeleteUnneededFieldsMixin
 from speedy.core.uploads.models import Image
@@ -208,7 +207,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_image.save()
             self.instance.user._new_profile_picture = user_image
             try:
-                speedy_core_base_validators.validate_image_file_extension(profile_picture)
+                speedy_core_accounts_validators.validate_image_file_extension(value=profile_picture)
                 speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance.user, profile_picture=profile_picture, test_new_profile_picture=True)
             except ValidationError:
                 user_image.file.delete(save=False)

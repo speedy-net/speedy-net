@@ -16,7 +16,6 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.template.loader import render_to_string
 
-from speedy.core.base import validators as speedy_core_base_validators
 from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.base.mail import send_mail
@@ -197,7 +196,7 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             user_image.save()
             self.instance._new_profile_picture = user_image
             try:
-                speedy_core_base_validators.validate_image_file_extension(profile_picture)
+                speedy_core_accounts_validators.validate_image_file_extension(value=profile_picture)
                 speedy_core_accounts_validators.validate_profile_picture_for_user(user=self.instance, profile_picture=profile_picture, test_new_profile_picture=True)
             except ValidationError:
                 user_image.file.delete(save=False)

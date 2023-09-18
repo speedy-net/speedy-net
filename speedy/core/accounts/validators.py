@@ -3,7 +3,7 @@ from datetime import timedelta
 from PIL import Image
 
 from django.conf import settings as django_settings
-from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
+from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator, FileExtensionValidator
 from django.core.exceptions import ValidationError
 from speedy.core.base.utils import string_is_not_empty, string_is_not_none
 from django.utils.timezone import now
@@ -222,6 +222,10 @@ def validate_email_unique(email, user_email_address_pk=None):
         # If this email address is confirmed or was created less than 5 minutes ago, raise an exception.
         if (UserEmailAddress.objects.filter(email=email).exclude(pk=user_email_address_pk).exists()):
             raise ValidationError(_('This email is already in use.'))
+
+
+def validate_image_file_extension(value):
+    return FileExtensionValidator(allowed_extensions=django_settings.IMAGE_FILE_EXTENSIONS)(value=value)
 
 
 def validate_profile_picture(profile_picture):
