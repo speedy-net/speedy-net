@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-04 15:17+0300\n"
+"POT-Creation-Date: 2023-09-19 07:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,41 +18,47 @@ msgstr ""
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr ""
+msgstr "Tu amigo"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr ""
+msgstr "Solicitud de amistad enviada"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
+"No has confirmado tu dirección de correo electrónico. Revisa tu bandeja de "
+"entrada."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
+"No has confirmado tu dirección de correo electrónico. Revisa tu bandeja de "
+"entrada."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
+"No has confirmado tu dirección de correo electrónico. Revisa tu bandeja de "
+"entrada."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
 msgid "Logout"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\__translations\__translations.html:13
 msgctxt "male"
 msgid "Logout"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\__translations\__translations.html:14
 msgctxt "other"
 msgid "Logout"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\__translations\__translations.html:16
 #, python-format
@@ -61,6 +67,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
+"¡Hola, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s </"
+"a>bienvenida de nuevo a %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -69,6 +77,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
+"¡Hola, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s </"
+"a>bienvenido de nuevo a %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -77,279 +87,290 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
+"¡Hola, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s </"
+"a>bienvenido de nuevo a %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "Por favor confirma tu dirección de correo electrónico."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "Por favor confirma tu dirección de correo electrónico."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "Por favor confirma tu dirección de correo electrónico."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Desactivar cuenta"
 
 #: .\__translations\__translations.html:25
 msgctxt "male"
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Desactivar cuenta"
 
 #: .\__translations\__translations.html:26
 msgctxt "other"
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Desactivar cuenta"
 
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr ""
+msgstr "Reenviar un correo electrónico de confirmación"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr ""
+msgstr "Reenviar un correo electrónico de confirmación"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr ""
+msgstr "Reenviar un correo electrónico de confirmación"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr ""
+msgstr "Haz que esta dirección de correo electrónico sea la principal"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr ""
+msgstr "Haz que esta dirección de correo electrónico sea la principal"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr ""
+msgstr "Haz que esta dirección de correo electrónico sea la principal"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
+"¿Estás segura de que deseas eliminar esta dirección de correo electrónico?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
+"¿Estás seguro de que deseas eliminar esta dirección de correo electrónico?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
+"¿Estás seguro de que deseas eliminar esta dirección de correo electrónico?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr ""
+msgstr "Eliminar esta dirección de correo electrónico"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr ""
+msgstr "Eliminar esta dirección de correo electrónico"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr ""
+msgstr "Eliminar esta dirección de correo electrónico"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
 msgid "Add Another"
-msgstr ""
+msgstr "Agregar otra"
 
 #: .\__translations\__translations.html:45
 msgctxt "male"
 msgid "Add Another"
-msgstr ""
+msgstr "Agregar otra"
 
 #: .\__translations\__translations.html:46
 msgctxt "other"
 msgid "Add Another"
-msgstr ""
+msgstr "Agregar otra"
 
 #: .\__translations\__translations.html:48
 msgctxt "female"
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar la contraseña"
 
 #: .\__translations\__translations.html:49
 msgctxt "male"
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar la contraseña"
 
 #: .\__translations\__translations.html:50
 msgctxt "other"
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar la contraseña"
 
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
+"Cambiar la configuración de privacidad de las direcciones de correo "
+"electrónico en tu perfil."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
+"Cambiar la configuración de privacidad de las direcciones de correo "
+"electrónico en tu perfil."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
+"Cambiar la configuración de privacidad de las direcciones de correo "
+"electrónico en tu perfil."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr ""
+msgstr "No estás bloqueando a nadie."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr ""
+msgstr "No estás bloqueando a nadie."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr ""
+msgstr "No estás bloqueando a nadie."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr ""
+msgstr "Reportar un usuario"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
 msgid "Report a User"
-msgstr ""
+msgstr "Reportar un usuario"
 
 #: .\__translations\__translations.html:62
 msgctxt "other"
 msgid "Report a User"
-msgstr ""
+msgstr "Reportar un usuario"
 
 #: .\__translations\__translations.html:72
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "Tus comentarios fueron enviados a los administradores."
 
 #: .\__translations\__translations.html:73
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "Tus comentarios fueron enviados a los administradores."
 
 #: .\__translations\__translations.html:74
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "Tus comentarios fueron enviados a los administradores."
 
 #: .\__translations\__translations.html:76
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Enviar un mensaje a %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Enviar un mensaje a %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Enviar un mensaje a %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
 msgid "Mark All as Read"
-msgstr ""
+msgstr "Marcar todo como leído"
 
 #: .\__translations\__translations.html:81
 msgctxt "male"
 msgid "Mark All as Read"
-msgstr ""
+msgstr "Marcar todo como leído"
 
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr ""
+msgstr "Marcar todo como leído"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr ""
+msgstr "Tú:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr ""
+msgstr "Tú:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr ""
+msgstr "Tú:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "Aún no tienes mensajes."
 
 #: .\__translations\__translations.html:89
 msgctxt "male"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "Aún no tienes mensajes."
 
 #: .\__translations\__translations.html:90
 msgctxt "other"
 msgid "You have no messages yet."
-msgstr ""
+msgstr "Aún no tienes mensajes."
 
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr ""
+msgstr "Bloqueaste a "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr ""
+msgstr "Bloqueaste a "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr ""
+msgstr "Bloqueaste a "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr ""
+msgstr " te bloqueó."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr ""
+msgstr " te bloqueó."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr ""
+msgstr " te bloqueó."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -358,6 +379,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Match. Ver el perfil de "
+"%(user_name)s en Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -366,6 +389,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Match. Ver el perfil de "
+"%(user_name)s en Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -374,6 +399,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Match. Ver el perfil de "
+"%(user_name)s en Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -382,6 +409,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Net. Ver el perfil de "
+"%(user_name)s en Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -390,6 +419,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Net. Ver el perfil de "
+"%(user_name)s en Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -398,399 +429,404 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Net. Ver el perfil de "
+"%(user_name)s en Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
+msgstr "También tienes un perfil de Speedy Net. Ve tu perfil en Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
+msgstr "También tienes un perfil de Speedy Net. Ve tu perfil en Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
+msgstr "También tienes un perfil de Speedy Net. Ve tu perfil en Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
-msgstr ""
+msgstr "Añadir a Amigos"
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
-msgstr ""
+msgstr "Añadir a Amigos"
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
-msgstr ""
+msgstr "Añadir a Amigos"
 
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr ""
+msgstr "¿Estás segura de que quieres bloquear a  "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr ""
+msgstr "¿Estás seguro de que quieres bloquear a  "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr ""
+msgstr "¿Estás seguro de que quieres bloquear a  "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr ""
+msgstr "Bloquear "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr ""
+msgstr "Bloquear "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr ""
+msgstr "Bloquear "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr ""
+msgstr "Desbloquear "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr ""
+msgstr "Desbloquear "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr ""
+msgstr "Desbloquear "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr ""
+msgstr "Reportar "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr ""
+msgstr "Reportar "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr ""
+msgstr "Reportar "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
 msgid "Report this photo"
-msgstr ""
+msgstr "Reportar esta foto"
 
 #: .\__translations\__translations.html:133
 msgctxt "male"
 msgid "Report this photo"
-msgstr ""
+msgstr "Reportar esta foto"
 
 #: .\__translations\__translations.html:134
 msgctxt "other"
 msgid "Report this photo"
-msgstr ""
+msgstr "Reportar esta foto"
 
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr ""
+msgstr "Eliminar Amigo"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
-msgstr ""
+msgstr "Eliminar Amigo"
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
-msgstr ""
+msgstr "Eliminar Amigo"
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr ""
+msgstr "Cancelar solicitud de amistad"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr ""
+msgstr "Cancelar solicitud de amistad"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr ""
+msgstr "Cancelar solicitud de amistad"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr ""
+msgstr "Aceptar solicitud de amistad"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr ""
+msgstr "Aceptar solicitud de amistad"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr ""
+msgstr "Aceptar solicitud de amistad"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr ""
+msgstr "Rechazar solicitud de amistad"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr ""
+msgstr "Rechazar solicitud de amistad"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr ""
+msgstr "Rechazar solicitud de amistad"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
 msgid "Send Message"
-msgstr ""
+msgstr "Enviar mensaje"
 
 #: .\__translations\__translations.html:161
 msgctxt "male"
 msgid "Send Message"
-msgstr ""
+msgstr "Enviar mensaje"
 
 #: .\__translations\__translations.html:162
 msgctxt "other"
 msgid "Send Message"
-msgstr ""
+msgstr "Enviar mensaje"
 
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenido"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenido"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenido"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr ""
+msgstr "Tu amigo"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr ""
+msgstr "Tu amigo"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr ""
+msgstr "Tu amigo"
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
 msgid "See All"
-msgstr ""
+msgstr "Ver todo"
 
 #: .\__translations\__translations.html:173
 msgctxt "male"
 msgid "See All"
-msgstr ""
+msgstr "Ver todo"
 
 #: .\__translations\__translations.html:174
 msgctxt "other"
 msgid "See All"
-msgstr ""
+msgstr "Ver todo"
 
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"Tu cuenta Speedy Net no está activa. Ingresa a esta página para activarla."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"Tu cuenta Speedy Net no está activa. Ingresa a esta página para activarla."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"Tu cuenta Speedy Net no está activa. Ingresa a esta página para activarla."
 
 #: .\__translations\__translations.html:180
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "Bienvenido a %(site_name)s"
 
 #: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "Bienvenido a %(site_name)s"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "Bienvenido a %(site_name)s"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
 msgid "has sent you a message."
-msgstr ""
+msgstr "te ha enviado un mensaje."
 
 #: .\__translations\__translations.html:185
 msgctxt "male"
 msgid "has sent you a message."
-msgstr ""
+msgstr "te ha enviado un mensaje."
 
 #: .\__translations\__translations.html:186
 msgctxt "other"
 msgid "has sent you a message."
-msgstr ""
+msgstr "te ha enviado un mensaje."
 
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr ""
+msgstr "Leerlo:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr ""
+msgstr "Leerlo:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr ""
+msgstr "Leerlo:"
 
 #: .\__translations\__translations.html:192
 msgctxt "female"
 msgid "Confirm your email address on "
-msgstr ""
+msgstr "Confirma tu dirección de correo electrónico en "
 
 #: .\__translations\__translations.html:193
 msgctxt "male"
 msgid "Confirm your email address on "
-msgstr ""
+msgstr "Confirma tu dirección de correo electrónico en "
 
 #: .\__translations\__translations.html:194
 msgctxt "other"
 msgid "Confirm your email address on "
-msgstr ""
+msgstr "Confirma tu dirección de correo electrónico en "
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
-msgstr ""
+msgstr "Utiliza este enlace para activar tu cuenta:"
 
 #: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
-msgstr ""
+msgstr "Utiliza este enlace para activar tu cuenta:"
 
 #: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
-msgstr ""
+msgstr "Utiliza este enlace para activar tu cuenta:"
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
 msgid "Use this link to verify your email address:"
-msgstr ""
+msgstr "Utiliza este enlace para verificar tu dirección de correo electrónico:"
 
 #: .\__translations\__translations.html:201
 msgctxt "male"
 msgid "Use this link to verify your email address:"
-msgstr ""
+msgstr "Utiliza este enlace para verificar tu dirección de correo electrónico:"
 
 #: .\__translations\__translations.html:202
 msgctxt "other"
 msgid "Use this link to verify your email address:"
-msgstr ""
+msgstr "Utiliza este enlace para verificar tu dirección de correo electrónico:"
 
 #: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
-msgstr ""
+msgstr "Utiliza este enlace para cambiar tu contraseña:"
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
-msgstr ""
+msgstr "Utiliza este enlace para cambiar tu contraseña:"
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
-msgstr ""
+msgstr "Utiliza este enlace para cambiar tu contraseña:"
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuaria"
 
 #: .\__translations\__translations.html:209
 msgctxt "male"
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: .\__translations\__translations.html:210
 msgctxt "other"
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: .\__translations\__translations.html:212
 #, python-format
@@ -799,6 +835,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
+"Estás suscrita para recibir este tipo de notificaciones de %(site_name)s. "
+"Ingresa a esta página para cambiar la configuración de tus notificaciones o "
+"cancelar tu suscripción:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -807,6 +846,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
+"Estás suscrito para recibir este tipo de notificaciones de %(site_name)s. "
+"Ingresa a esta página para cambiar la configuración de tus notificaciones o "
+"cancelar tu suscripción:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -815,31 +857,34 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
+"Estás suscrito para recibir este tipo de notificaciones de %(site_name)s. "
+"Ingresa a esta página para cambiar la configuración de tus notificaciones o "
+"cancelar tu suscripción:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Introduce una dirección de correo electrónico válida."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:803
 msgid "email address"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr ""
+msgstr "El valor debe ser JSON válido."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -847,42 +892,44 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
+"Por favor ingrese un %(username)s y contraseña correctos. Considere que "
+"ambos campos son sensibles al uso de mayúsculas."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
-msgstr ""
+msgstr "Mensaje"
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr ""
+msgstr "Solicitud de amistad"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr ""
+msgstr "Solicitudes de amistad"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr ""
+msgstr "Amigo"
 
 #: .\__translations\__translations.py:23 .\accounts\models.py:472
 msgid "Friends"
-msgstr ""
+msgstr "Amigos"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr ""
+msgstr "Siguiendo relación"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr ""
+msgstr "Siguiendo relaciones"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
-msgstr ""
+msgstr "Relación bloqueada"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr ""
+msgstr "Relaciones bloqueadas"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -893,448 +940,452 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
+"La lista contiene %(show_value)d elemento, no debería contener más de "
+"%(limit_value)d."
 msgstr[1] ""
+"La lista contiene %(show_value)d elementos, no debería contener más de "
+"%(limit_value)d."
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "username (slug)"
-msgstr ""
+msgstr "nombre de usuaria (slug)"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "username (slug)"
-msgstr ""
+msgstr "nombre de usuario (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "username (slug)"
-msgstr ""
+msgstr "nombre de usuario (slug)"
 
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr ""
+msgstr "Actualiza tu foto de perfil"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr ""
+msgstr "Actualiza tu foto de perfil"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr ""
+msgstr "Actualiza tu foto de perfil"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardar cambios"
 
 #: .\__translations\__translations.py:50
 msgctxt "male"
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardar cambios"
 
 #: .\__translations\__translations.py:51
 msgctxt "other"
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardar cambios"
 
 #: .\__translations\__translations.py:53
 msgctxt "female"
 msgid "You can't change your username."
-msgstr ""
+msgstr "No puedes cambiar tu nombre de usuario."
 
 #: .\__translations\__translations.py:54
 msgctxt "male"
 msgid "You can't change your username."
-msgstr ""
+msgstr "No puedes cambiar tu nombre de usuario."
 
 #: .\__translations\__translations.py:55
 msgctxt "other"
 msgid "You can't change your username."
-msgstr ""
+msgstr "No puedes cambiar tu nombre de usuario."
 
 #: .\__translations\__translations.py:57
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr ""
+msgstr "Activa tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr ""
+msgstr "Activa tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr ""
+msgstr "Activa tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr ""
+msgstr "Desactiva tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr ""
+msgstr "Desactiva tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr ""
+msgstr "Desactiva tu cuenta {site_name}"
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
 msgid "Add"
-msgstr ""
+msgstr "Agregar"
 
 #: .\__translations\__translations.py:66
 msgctxt "male"
 msgid "Add"
-msgstr ""
+msgstr "Agregar"
 
 #: .\__translations\__translations.py:67
 msgctxt "other"
 msgid "Add"
-msgstr ""
+msgstr "Agregar"
 
 #: .\__translations\__translations.py:69
 msgctxt "female"
 msgid "Where do I live?"
-msgstr ""
+msgstr "¿Donde vivo?"
 
 #: .\__translations\__translations.py:70
 msgctxt "male"
 msgid "Where do I live?"
-msgstr ""
+msgstr "¿Donde vivo?"
 
 #: .\__translations\__translations.py:71
 msgctxt "other"
 msgid "Where do I live?"
-msgstr ""
+msgstr "¿Donde vivo?"
 
 #: .\__translations\__translations.py:73
 msgctxt "female"
 msgid "Where do you live?"
-msgstr ""
+msgstr "¿Dónde vives?"
 
 #: .\__translations\__translations.py:74
 msgctxt "male"
 msgid "Where do you live?"
-msgstr ""
+msgstr "¿Dónde vives?"
 
 #: .\__translations\__translations.py:75
 msgctxt "other"
 msgid "Where do you live?"
-msgstr ""
+msgstr "¿Dónde vives?"
 
 #: .\__translations\__translations.py:77
 msgctxt "female"
 msgid "Please write where you live."
-msgstr ""
+msgstr "Escribe dónde vives."
 
 #: .\__translations\__translations.py:78
 msgctxt "male"
 msgid "Please write where you live."
-msgstr ""
+msgstr "Escribe dónde vives."
 
 #: .\__translations\__translations.py:79
 msgctxt "other"
 msgid "Please write where you live."
-msgstr ""
+msgstr "Escribe dónde vives."
 
 #: .\__translations\__translations.py:81
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
-msgstr ""
+msgstr "Vegana (come sólo plantas y hongos)"
 
 #: .\__translations\__translations.py:82
 msgctxt "male"
 msgid "Vegan (eats only plants and fungi)"
-msgstr ""
+msgstr "Vegano (come sólo plantas y hongos)"
 
 #: .\__translations\__translations.py:83
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr ""
+msgstr "Vegano (come sólo plantas y hongos)"
 
 #: .\__translations\__translations.py:85
 msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
+msgstr "Vegetariana (no come pescado ni carne)"
 
 #: .\__translations\__translations.py:86
 msgctxt "male"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
+msgstr "Vegetariano (no come pescado ni carne)"
 
 #: .\__translations\__translations.py:87
 msgctxt "other"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
+msgstr "Vegetariano (no come pescado ni carne)"
 
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr ""
+msgstr "Carnista (come animales)"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr ""
+msgstr "Carnista (come animales)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr ""
+msgstr "Carnista (come animales)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
 msgid "Vegan"
-msgstr ""
+msgstr "Vegana"
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
 msgid "Vegan"
-msgstr ""
+msgstr "Vegano"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
 msgid "Vegan"
-msgstr ""
+msgstr "Vegano"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
 msgid "Vegetarian"
-msgstr ""
+msgstr "Vegetariana"
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
 msgid "Vegetarian"
-msgstr ""
+msgstr "Vegetariano"
 
 #: .\__translations\__translations.py:99
 msgctxt "other"
 msgid "Vegetarian"
-msgstr ""
+msgstr "Vegetariano"
 
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Carnist"
-msgstr ""
+msgstr "Carnista"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr ""
+msgstr "Carnista"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr ""
+msgstr "Carnista"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Not smoking"
-msgstr ""
+msgstr "No fumo"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
 msgid "Not smoking"
-msgstr ""
+msgstr "No fumo"
 
 #: .\__translations\__translations.py:107
 msgctxt "other"
 msgid "Not smoking"
-msgstr ""
+msgstr "No fumo"
 
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr ""
+msgstr "fumo ocasionalmente"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr ""
+msgstr "fumo ocasionalmente"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr ""
+msgstr "fumo ocasionalmente"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
 msgid "Smoking"
-msgstr ""
+msgstr "fumo"
 
 #: .\__translations\__translations.py:114
 msgctxt "male"
 msgid "Smoking"
-msgstr ""
+msgstr "fumo"
 
 #: .\__translations\__translations.py:115
 msgctxt "other"
 msgid "Smoking"
-msgstr ""
+msgstr "fumo"
 
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr ""
+msgstr "Soltera"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr ""
+msgstr "Soltero"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr ""
+msgstr "Soltero"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciada"
 
 #: .\__translations\__translations.py:122
 msgctxt "male"
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciado"
 
 #: .\__translations\__translations.py:123
 msgctxt "other"
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciado"
 
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "Widowed"
-msgstr ""
+msgstr "Viuda"
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Widowed"
-msgstr ""
+msgstr "Viudo"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Widowed"
-msgstr ""
+msgstr "Viudo"
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
 msgid "In a relationship"
-msgstr ""
+msgstr "En una relación"
 
 #: .\__translations\__translations.py:130
 msgctxt "male"
 msgid "In a relationship"
-msgstr ""
+msgstr "En una relación"
 
 #: .\__translations\__translations.py:131
 msgctxt "other"
 msgid "In a relationship"
-msgstr ""
+msgstr "En una relación"
 
 #: .\__translations\__translations.py:133
 msgctxt "female"
 msgid "In an open relationship"
-msgstr ""
+msgstr "En una relación abierta"
 
 #: .\__translations\__translations.py:134
 msgctxt "male"
 msgid "In an open relationship"
-msgstr ""
+msgstr "En una relación abierta"
 
 #: .\__translations\__translations.py:135
 msgctxt "other"
 msgid "In an open relationship"
-msgstr ""
+msgstr "En una relación abierta"
 
 #: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "It's complicated"
-msgstr ""
+msgstr "Es complicado"
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "It's complicated"
-msgstr ""
+msgstr "Es complicado"
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "It's complicated"
-msgstr ""
+msgstr "Es complicado"
 
 #: .\__translations\__translations.py:141
 msgctxt "female"
 msgid "Separated"
-msgstr ""
+msgstr "Separada"
 
 #: .\__translations\__translations.py:142
 msgctxt "male"
 msgid "Separated"
-msgstr ""
+msgstr "Separado"
 
 #: .\__translations\__translations.py:143
 msgctxt "other"
 msgid "Separated"
-msgstr ""
+msgstr "Separado"
 
 #: .\__translations\__translations.py:145
 msgctxt "female"
 msgid "Engaged"
-msgstr ""
+msgstr "Comprometida"
 
 #: .\__translations\__translations.py:146
 msgctxt "male"
 msgid "Engaged"
-msgstr ""
+msgstr "Comprometido"
 
 #: .\__translations\__translations.py:147
 msgctxt "other"
 msgid "Engaged"
-msgstr ""
+msgstr "Comprometido"
 
 #: .\__translations\__translations.py:149
 msgctxt "female"
 msgid "Married"
-msgstr ""
+msgstr "Casada"
 
 #: .\__translations\__translations.py:150
 msgctxt "male"
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #: .\__translations\__translations.py:151
 msgctxt "other"
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #: .\__translations\__translations.py:153
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "Tu nueva contraseña ha sido guardada."
 
 #: .\__translations\__translations.py:154
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "Tu nueva contraseña ha sido guardada."
 
 #: .\__translations\__translations.py:155
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr ""
+msgstr "Tu nueva contraseña ha sido guardada."
 
 #: .\__translations\__translations.py:157
 msgctxt "female"
@@ -1342,6 +1393,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
+"Tus cuentas Speedy Net y Speedy Match han sido desactivadas. Puedes "
+"reactivarlas en cualquier momento."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1349,6 +1402,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
+"Tus cuentas Speedy Net y Speedy Match han sido desactivadas. Puedes "
+"reactivarlas en cualquier momento."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1356,6 +1411,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
+"Tus cuentas Speedy Net y Speedy Match han sido desactivadas. Puedes "
+"reactivarlas en cualquier momento."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1364,6 +1421,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
+"Tu cuenta {site_name} ha sido desactivada. Puedes reactivarla en cualquier "
+"momento. Tu cuenta Speedy Net permanece activa."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1372,6 +1431,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
+"Tu cuenta {site_name} ha sido desactivada. Puedes reactivarla en cualquier "
+"momento. Tu cuenta Speedy Net permanece activa."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1380,51 +1441,53 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
+"Tu cuenta {site_name} ha sido desactivada. Puedes reactivarla en cualquier "
+"momento. Tu cuenta Speedy Net permanece activa."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "Ya has confirmado esta dirección de correo electrónico."
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "Ya has confirmado esta dirección de correo electrónico."
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr ""
+msgstr "Ya has confirmado esta dirección de correo electrónico."
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "Has confirmado tu dirección de correo electrónico."
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "Has confirmado tu dirección de correo electrónico."
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr ""
+msgstr "Has confirmado tu dirección de correo electrónico."
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: .\__translations\__translations.py:177
 #, python-brace-format
@@ -1433,6 +1496,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
+"Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. "
+"Elimina amigos antes de continuar."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1441,6 +1506,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
+"Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. "
+"Elimina amigos antes de continuar."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1449,6 +1516,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
+"Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. "
+"Elimina amigos antes de continuar."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1457,6 +1526,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1465,6 +1536,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1473,6 +1546,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1481,6 +1556,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1489,6 +1566,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1497,6 +1576,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1505,6 +1586,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1513,6 +1596,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1521,177 +1606,179 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
+"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "No puedes ser amiga de ti misma."
 
 #: .\__translations\__translations.py:192
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "No puedes ser amigo de ti mismo."
 
 #: .\__translations\__translations.py:193
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr ""
+msgstr "No puedes ser amigo de ti mismo."
 
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "Ya solicitaste amistad a este usuario."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "Ya solicitaste amistad a este usuario."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr ""
+msgstr "Ya solicitaste amistad a este usuario."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr ""
+msgstr "Este usuario ya te solicitó amistad."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr ""
+msgstr "Este usuario ya te solicitó amistad."
 
 #: .\__translations\__translations.py:201
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr ""
+msgstr "Este usuario ya te solicitó amistad."
 
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amiga de esta usuaria."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de este usuario."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amiga de este usuario."
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de esta usuaria."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de este usuario."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de este usuario."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de esta usuaria."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de este usuario."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr ""
+msgstr "Ya eres amigo de este usuario."
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr ""
+msgstr "Has cancelado tu solicitud de amistad."
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr ""
+msgstr "Has cancelado tu solicitud de amistad."
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr ""
+msgstr "Has cancelado tu solicitud de amistad."
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr ""
+msgstr "Has eliminado a esta usuaria de tus amigos."
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr ""
+msgstr "Has eliminado a este usuario de tus amigos."
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr ""
+msgstr "Has eliminado a este usuario de tus amigos."
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr ""
+msgstr "¡Bienvenida a {site_name}!"
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr ""
+msgstr "¡Bienvenido a {site_name}!"
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr ""
+msgstr "¡Bienvenido a {site_name}!"
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr ""
+msgstr "¡Bienvenida a {site_name}! Tu cuenta ya está activa."
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr ""
+msgstr "¡Bienvenido a {site_name}! Tu cuenta ya está activa."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr ""
+msgstr "¡Bienvenido a {site_name}! Tu cuenta ya está activa."
 
 #: .\__translations\__translations.py:229
 msgctxt "female"
 msgid "Friends"
-msgstr ""
+msgstr "Amigas"
 
 #: .\__translations\__translations.py:230
 msgctxt "male"
 msgid "Friends"
-msgstr ""
+msgstr "Amigos"
 
 #: .\__translations\__translations.py:231
 msgctxt "other"
 msgid "Friends"
-msgstr ""
+msgstr "Amigos"
 
 #: .\__translations\__translations.py:233
 msgctxt "female"
@@ -1702,6 +1789,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
+"Debido al abuso del sitio para enviar mensajes spam, tuvimos que limitar la "
+"cantidad de mensajes que se pueden enviar a otros miembros del sitio en un "
+"día. Inténtalo de nuevo mañana. Ten en cuenta que no está permitido utilizar "
+"Speedy Net para enviar mensajes de spam o mensajes con el mismo contenido a "
+"un gran número de personas."
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1712,6 +1804,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
+"Debido al abuso del sitio para enviar mensajes spam, tuvimos que limitar la "
+"cantidad de mensajes que se pueden enviar a otros miembros del sitio en un "
+"día. Inténtalo de nuevo mañana. Ten en cuenta que no está permitido utilizar "
+"Speedy Net para enviar mensajes de spam o mensajes con el mismo contenido a "
+"un gran número de personas."
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1722,6 +1819,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
+"Debido al abuso del sitio para enviar mensajes spam, tuvimos que limitar la "
+"cantidad de mensajes que se pueden enviar a otros miembros del sitio en un "
+"día. Inténtalo de nuevo mañana. Ten en cuenta que no está permitido utilizar "
+"Speedy Net para enviar mensajes de spam o mensajes con el mismo contenido a "
+"un gran número de personas."
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1729,6 +1831,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Esta usuaria no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1736,6 +1840,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1743,6 +1849,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1750,6 +1858,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Esta usuaria no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1757,6 +1867,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1764,6 +1876,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1771,6 +1885,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Esta usuaria no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1778,6 +1894,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1785,6 +1903,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
+"Este usuario no coincide con tu perfil, pero puedes visitar su perfil de "
+"Speedy Net."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1792,6 +1912,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
+"Tu foto de perfil no puede ser transparente. Sube una imagen no transparente."
 
 #: .\__translations\__translations.py:252
 msgctxt "male"
@@ -1799,6 +1920,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
+"Tu foto de perfil no puede ser transparente. Sube una imagen no transparente."
 
 #: .\__translations\__translations.py:253
 msgctxt "other"
@@ -1806,336 +1928,342 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
+"Tu foto de perfil no puede ser transparente. Sube una imagen no transparente."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr ""
+msgstr "Cuentas Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
-msgstr ""
+msgstr "Solo yo"
 
 #: .\accounts\fields.py:13
 msgid "Me and my friends"
-msgstr ""
+msgstr "Yo y mis amigos"
 
 #: .\accounts\fields.py:15
 msgid "Anyone"
-msgstr ""
+msgstr "Cualquiera"
 
-#: .\accounts\forms.py:66
+#: .\accounts\forms.py:65
 msgid "Last name (optional)"
-msgstr ""
+msgstr "Apellido (opcional)"
+
+#: .\accounts\forms.py:129
+msgid "Your email"
+msgstr "Tu correo electrónico"
 
 #: .\accounts\forms.py:130
-msgid "Your email"
-msgstr ""
-
-#: .\accounts\forms.py:131
 msgid "New password"
-msgstr ""
+msgstr "Nueva contraseña"
 
-#: .\accounts\forms.py:139
+#: .\accounts\forms.py:138
 msgid "New username"
-msgstr ""
+msgstr "Nuevo nombre de usuario"
 
-#: .\accounts\forms.py:142
+#: .\accounts\forms.py:141
 msgid "Create an account"
-msgstr ""
+msgstr "Crea una cuenta"
 
-#: .\accounts\forms.py:160
+#: .\accounts\forms.py:159
 msgid "Update your profile picture"
-msgstr ""
+msgstr "Actualiza tu foto de perfil"
 
-#: .\accounts\forms.py:160 .\accounts\validators.py:229
+#: .\accounts\forms.py:159 .\accounts\validators.py:233
 msgid "A profile picture is required."
-msgstr ""
+msgstr "Se requiere una foto de perfil."
 
-#: .\accounts\forms.py:298 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:297 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr ""
+msgstr "Correo electrónico o nombre de usuario"
 
-#: .\accounts\forms.py:304 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:303 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
-msgstr ""
+msgstr "Inicio de sesión"
 
-#: .\accounts\forms.py:307 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:306 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
-msgstr ""
+msgstr "¿Olvidaste tu contraseña?"
 
-#: .\accounts\forms.py:320
+#: .\accounts\forms.py:319
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
-#: .\accounts\forms.py:414
+#: .\accounts\forms.py:413
 msgid "Your password"
-msgstr ""
+msgstr "Tu contraseña"
 
-#: .\accounts\forms.py:426
+#: .\accounts\forms.py:425
 msgid "Invalid password."
-msgstr ""
+msgstr "Contraseña no válida."
 
 #: .\accounts\models.py:84
 msgid "username"
-msgstr ""
+msgstr "nombre de usuario"
 
 #: .\accounts\models.py:84 .\accounts\models.py:85 .\accounts\validators.py:21
 msgid "This username is already taken."
-msgstr ""
+msgstr "Este nombre de usuario ya está en uso."
 
 #: .\accounts\models.py:85
 msgid "username (slug)"
-msgstr ""
+msgstr "nombre de usuario (slug)"
 
 #: .\accounts\models.py:86
 msgid "photo"
-msgstr ""
+msgstr "foto"
 
 #: .\accounts\models.py:87
 msgid "Special username"
-msgstr ""
+msgstr "Nombre de usuario especial"
 
 #: .\accounts\models.py:114 .\messages\models.py:117
 msgid "entity"
-msgstr ""
+msgstr "entidad"
 
 #: .\accounts\models.py:115
 msgid "entities"
-msgstr ""
+msgstr "entidades"
 
 #: .\accounts\models.py:142
 msgid "Slug does not parse to username."
-msgstr ""
+msgstr "Slug no analiza el nombre de usuario."
 
 #: .\accounts\models.py:146
 msgid "Username is required."
-msgstr ""
+msgstr "Se requiere nombre de usuario."
 
 #: .\accounts\models.py:155
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: .\accounts\models.py:170
 msgid "description"
-msgstr ""
+msgstr "descripción"
 
 #: .\accounts\models.py:216
 msgid "Female"
-msgstr ""
+msgstr "Femenino"
 
 #: .\accounts\models.py:217
 msgid "Male"
-msgstr ""
+msgstr "Masculino"
 
 #: .\accounts\models.py:218
 msgid "Other"
-msgstr ""
+msgstr "Otro"
 
 #: .\accounts\models.py:230 .\accounts\models.py:245 .\accounts\models.py:266
 #: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: .\accounts\models.py:231
 msgid "Vegan (eats only plants and fungi)"
-msgstr ""
+msgstr "Vegano (come sólo plantas y hongos)"
 
 #: .\accounts\models.py:232
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr ""
+msgstr "Vegetariano (no come pescado ni carne)"
 
 #: .\accounts\models.py:233
 msgid "Carnist (eats animals)"
-msgstr ""
+msgstr "Carnista (come animales)"
 
 #: .\accounts\models.py:246
 msgid "Not smoking"
-msgstr ""
+msgstr "No fumo"
 
 #: .\accounts\models.py:247
 msgid "Smoking occasionally"
-msgstr ""
+msgstr "fumo ocasionalmente"
 
 #: .\accounts\models.py:248
 msgid "Smoking"
-msgstr ""
+msgstr "fumo"
 
 #: .\accounts\models.py:267
 msgid "Single"
-msgstr ""
+msgstr "Soltero"
 
 #: .\accounts\models.py:268
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciado"
 
 #: .\accounts\models.py:269
 msgid "Widowed"
-msgstr ""
+msgstr "Viudo"
 
 #: .\accounts\models.py:270
 msgid "In a relationship"
-msgstr ""
+msgstr "En una relación"
 
 #: .\accounts\models.py:271
 msgid "In an open relationship"
-msgstr ""
+msgstr "En una relación abierta"
 
 #: .\accounts\models.py:272
 msgid "It's complicated"
-msgstr ""
+msgstr "Es complicado"
 
 #: .\accounts\models.py:273
 msgid "Separated"
-msgstr ""
+msgstr "Separado"
 
 #: .\accounts\models.py:274
 msgid "Engaged"
-msgstr ""
+msgstr "Comprometido"
 
 #: .\accounts\models.py:275
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #: .\accounts\models.py:284
 msgid "Notify me"
-msgstr ""
+msgstr "Notificarme"
 
 #: .\accounts\models.py:285
 msgid "Don't notify me"
-msgstr ""
+msgstr "No me notifiques"
 
 #: .\accounts\models.py:330
 msgid "first name"
-msgstr ""
+msgstr "nombre de pila"
 
 #: .\accounts\models.py:333
 msgid "last name"
-msgstr ""
+msgstr "apellido"
 
 #: .\accounts\models.py:335
 msgid "I am"
-msgstr ""
+msgstr "Soy"
 
 #: .\accounts\models.py:336
 msgid "date of birth"
-msgstr ""
+msgstr "fecha de nacimiento"
 
 #: .\accounts\models.py:337
 msgid "diet"
-msgstr ""
+msgstr "dieta"
 
 #: .\accounts\models.py:338
 msgid "smoking status"
-msgstr ""
+msgstr "Condición de fumador"
 
 #: .\accounts\models.py:339
 msgid "relationship status"
-msgstr ""
+msgstr "estado de relación"
 
 #: .\accounts\models.py:341
 msgid "Where do I live?"
-msgstr ""
+msgstr "¿Donde vivo?"
 
 #: .\accounts\models.py:346
 msgid "Who can view my birth month and day"
-msgstr ""
+msgstr "¿Quién puede ver mi mes y día de nacimiento?"
 
 #: .\accounts\models.py:347
 msgid "Who can view my birth year"
-msgstr ""
+msgstr "¿Quién puede ver mi año de nacimiento?"
 
 #: .\accounts\models.py:348
 msgid "On new messages"
-msgstr ""
+msgstr "En mensajes nuevos"
 
 #: .\accounts\models.py:351
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr ""
+msgstr "Última dirección IP utilizo https://ipapi.com/ time"
 
 #: .\accounts\models.py:352
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr ""
+msgstr "La última dirección IP utilizó https://ipapi.com/ results sin procesar"
 
 #: .\accounts\models.py:479 .\accounts\models.py:787 .\blocks\models.py:15
 msgid "user"
-msgstr ""
+msgstr "usuario"
 
 #: .\accounts\models.py:480
 msgid "users"
-msgstr ""
+msgstr "usuarios"
 
 #: .\accounts\models.py:505
 msgid "Superuser must be equal to staff."
-msgstr ""
+msgstr "El superusuario debe ser igual al personal."
 
 #: .\accounts\models.py:788
 msgid "email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #: .\accounts\models.py:789
 msgid "is confirmed"
-msgstr ""
+msgstr "esta confirmado"
 
 #: .\accounts\models.py:790
 msgid "is primary"
-msgstr ""
+msgstr "es primario"
 
 #: .\accounts\models.py:791
 msgid "confirmation token"
-msgstr ""
+msgstr "ficha de confirmación"
 
 #: .\accounts\models.py:792
 msgid "confirmation sent"
-msgstr ""
+msgstr "confirmación enviada"
 
 #: .\accounts\models.py:793
 msgid "Who can see this email"
-msgstr ""
+msgstr "¿Quién puede ver este correo electrónico?"
 
 #: .\accounts\models.py:804
 msgid "email addresses"
-msgstr ""
+msgstr "direcciones de correo electrónico"
 
 #: .\accounts\models.py:871
 msgid "User"
-msgstr ""
+msgstr "usuario"
 
 #: .\accounts\models.py:872
 msgid "last visit"
-msgstr ""
+msgstr "última visita"
 
 #: .\accounts\models.py:884
 msgid "Today"
-msgstr ""
+msgstr "Hoy"
 
 #: .\accounts\models.py:886
 msgid "Yesterday"
-msgstr ""
+msgstr "Ayer"
 
 #: .\accounts\models.py:888
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr ""
+msgstr "El {date} ({timesince_ago})"
 
 #: .\accounts\models.py:890
 #, python-brace-format
 msgid "{timesince} ago"
-msgstr ""
+msgstr "hace {timesince}"
 
 #: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
+"El nombre de usuario debe comenzar con 4 o más letras y puede contener "
+"letras, dígitos o guiones."
 
 #: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
+"El nombre de usuario debe comenzar con 4 o más letras, después de las cuales "
+"puede haber cualquier número de dígitos. Puedes agregar guiones entre "
+"palabras."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2146,7 +2274,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
+"El nombre de usuario debe contener al menos %(limit_value)d caracter "
+"alfanumérico (tiene %(show_value)d)."
 msgstr[1] ""
+"El nombre de usuario debe contener al menos %(limit_value)d caracteres "
+"alfanumérico (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2157,7 +2289,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
+"El nombre de usuario debe contener como máximo %(limit_value)d caracter "
+"alfanumérico (tiene %(show_value)d)."
 msgstr[1] ""
+"El nombre de usuario debe contener como máximo %(limit_value)d caracteres "
+"alfanumérico (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2168,7 +2304,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"El nombre de usuario debe contener al menos %(limit_value)d caracter (tiene "
+"%(show_value)d)."
 msgstr[1] ""
+"El nombre de usuario debe contener al menos %(limit_value)d caracteres ("
+"tiene %(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2179,7 +2319,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"El nombre de usuario debe contener como máximo %(limit_value)d caracter ("
+"tiene %(show_value)d)."
 msgstr[1] ""
+"El nombre de usuario debe contener como máximo %(limit_value)d caracteres ("
+"tiene %(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2190,14 +2334,18 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
+"Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d "
+"caracter."
 msgstr[1] ""
+"Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d "
+"caracteres."
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Su contraseña debe contener al menos %(min_length)d caracter."
+msgstr[1] "Su contraseña debe contener al menos %(min_length)d caracteres."
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2206,58 +2354,66 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
+"Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d "
+"caracter."
 msgstr[1] ""
+"Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d "
+"caracteres."
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tu contraseña debe contener como máximo %(max_length)d caracter."
+msgstr[1] "Tu contraseña debe contener como máximo %(max_length)d caracteres."
 
 #: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
-msgstr ""
+msgstr "Este campo no puede ser nulo."
 
 #: .\accounts\validators.py:192
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "Este campo no puede estar vacío."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Introduce una fecha válida."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."
-msgstr ""
+msgstr "Este correo electrónico ya está en uso."
 
-#: .\accounts\validators.py:231
+#: .\accounts\validators.py:235
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
+"El tamaño del archivo de esta imagen es demasiado grande. El tamaño máximo "
+"de archivo permitido es 30 MB."
 
-#: .\accounts\validators.py:253 .\accounts\validators.py:272
+#: .\accounts\validators.py:257 .\accounts\validators.py:276
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
+"No puedes usar este formato para tu foto de perfil. Sólo se aceptan formatos "
+"JPEG o PNG."
 
 #: .\accounts\views.py:283
 msgid "Invalid confirmation link."
-msgstr ""
+msgstr "Enlace de confirmación no válido."
 
 #: .\accounts\views.py:307 .\accounts\views.py:323
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr ""
+msgstr "Se envió un mensaje de confirmación a {email_address}"
 
 #: .\accounts\views.py:338
 msgid "The email address was deleted."
-msgstr ""
+msgstr "La dirección de correo electrónico fue eliminada."
 
 #: .\accounts\views.py:354
 msgid "You have made this email address primary."
-msgstr ""
+msgstr "Has convertido esta dirección de correo electrónico en principal."
 
 #: .\admin\views.py:54
 #, python-brace-format
@@ -2272,6 +2428,16 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
+"Admin: El número total de miembros en el sitio es {total_number_of_members}, "
+"de los cuales {total_number_of_members_in_the_last_week} miembros ingresaron "
+"al sitio en la última semana, {total_number_of_members_in_the_last_month} "
+"miembros ingresaron al sitio en el último mes, "
+"{total_number_of_members_in_the_last_four_months} miembros ingresaron al "
+"sitio en los últimos cuatro meses, "
+"{total_number_of_members_in_the_last_eight_months} miembros ingresaron al "
+"sitio en los últimos ocho meses, y "
+"{total_number_of_members_in_the_last_two_years} miembros ingresaron al sitio "
+"en los últimos dos años."
 
 #: .\admin\views.py:100
 #, python-brace-format
@@ -2294,6 +2460,24 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
+"Admin: {total_number_of_members_registered_in_the_last_week} miembros "
+"registrados en la última semana. "
+"{total_number_of_members_registered_in_the_last_month} miembros registrados "
+"en el último mes. "
+"{total_number_of_members_registered_in_the_last_four_months} miembros "
+"registrados en los últimos cuatro meses. "
+"{total_number_of_members_registered_more_than_four_months_ago} miembros "
+"registrados hace más de cuatro meses. "
+"{total_number_of_members_registered_in_the_last_eight_months} miembros "
+"registrados en los últimos ocho meses. "
+"{total_number_of_members_registered_more_than_eight_months_ago} miembros "
+"registrados hace más de ocho meses. "
+"{total_number_of_members_registered_in_the_last_two_years} miembros "
+"registrados en los últimos dos años. "
+"{total_number_of_members_registered_more_than_two_years_ago} miembros "
+"registrados hace más de dos años. "
+"{total_number_of_members_registered_before_2019_08_01} miembros registrados "
+"antes del 1 de agosto de 2019."
 
 #: .\admin\views.py:120
 #, python-brace-format
@@ -2301,135 +2485,137 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
+"Admin: {total_number_of_members_registered_in_year} miembros registrados en "
+"{year}."
 
 #: .\base\apps.py:12
 msgid "Speedy Core Base App"
-msgstr ""
+msgstr "Aplicación básica Speedy Core"
 
 #: .\base\fields.py:17
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: .\base\utils.py:320
 msgctxt "timesince"
 msgid ", "
-msgstr ""
+msgstr ", "
 
-#: .\base\validators.py:6 .\base\validators.py:7
+#: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
-msgstr ""
+msgstr "id contiene caracteres ilegales."
 
 #: .\base\views.py:57
 msgid "Changes saved."
-msgstr ""
+msgstr "Cambios guardados."
 
 #: .\blocks\managers.py:56 .\blocks\models.py:31
 msgid "Users cannot block themselves."
-msgstr ""
+msgstr "Los usuarios no pueden bloquearse a sí mismos."
 
 #: .\blocks\models.py:16
 msgid "blocked user"
-msgstr ""
+msgstr "usuario bloqueado"
 
 #: .\blocks\models.py:21
 msgid "block"
-msgstr ""
+msgstr "bloquear"
 
 #: .\blocks\models.py:22
 msgid "user blocks"
-msgstr ""
+msgstr "bloqueos de usuario"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
-msgstr ""
+msgstr "Has bloqueado a {}."
 
 #: .\blocks\views.py:31
 msgid "You have unblocked {}."
-msgstr ""
+msgstr "Has desbloqueado a {}."
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
-msgstr ""
+msgstr "Contacto por formulario"
 
 #: .\contact_by_form\forms.py:13
 msgid "Type the number \"17\""
-msgstr ""
+msgstr "Escribe el número \"17\""
 
 #: .\contact_by_form\forms.py:40
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: .\contact_by_form\forms.py:46
 msgid "Please contact us by email."
-msgstr ""
+msgstr "Por favor, contáctanos por correo electrónico."
 
 #: .\contact_by_form\forms.py:52
 msgid "Not 17."
-msgstr ""
+msgstr "No 17."
 
 #: .\contact_by_form\models.py:16
 msgid "Feedback"
-msgstr ""
+msgstr "Comentario"
 
 #: .\contact_by_form\models.py:17
 msgid "Abuse (User)"
-msgstr ""
+msgstr "Abuso (Usuario)"
 
 #: .\contact_by_form\models.py:18
 msgid "Abuse (Photo)"
-msgstr ""
+msgstr "Abuso (Foto)"
 
 #: .\contact_by_form\models.py:21 .\messages\models.py:101
 msgid "sender"
-msgstr ""
+msgstr "remitente"
 
 #: .\contact_by_form\models.py:22
 msgid "your name"
-msgstr ""
+msgstr "tu nombre"
 
 #: .\contact_by_form\models.py:23
 msgid "your email"
-msgstr ""
+msgstr "Tu correo electrónico"
 
 #: .\contact_by_form\models.py:24
 msgid "type"
-msgstr ""
+msgstr "tipo"
 
 #: .\contact_by_form\models.py:25
 msgid "your message"
-msgstr ""
+msgstr "tu mensaje"
 
 #: .\contact_by_form\models.py:27
 msgid "reported entity"
-msgstr ""
+msgstr "entidad reportada"
 
 #: .\contact_by_form\models.py:28
 msgid "reported photo"
-msgstr ""
+msgstr "foto reportada"
 
 #: .\contact_by_form\models.py:31
 msgid "feedback"
-msgstr ""
+msgstr "Comentario"
 
 #: .\contact_by_form\models.py:32
 msgid "feedbacks"
-msgstr ""
+msgstr "comentarios"
 
 #: .\friends\views.py:163
 msgid "Friendship request sent."
-msgstr ""
+msgstr "Solicitud de amistad enviada."
 
 #: .\friends\views.py:175
 msgid "No friendship request."
-msgstr ""
+msgstr "Ninguna solicitud de amistad."
 
 #: .\friends\views.py:208
 msgid "Friendship request accepted."
-msgstr ""
+msgstr "Solicitud de amistad aceptada."
 
 #: .\friends\views.py:223
 msgid "Friendship request rejected."
-msgstr ""
+msgstr "Solicitud de amistad rechazada."
 
 #: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2437,121 +2623,121 @@ msgstr ""
 #: .\templates\messages\chat_list.html:8
 #: .\templates\messages\chat_list.html:23
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: .\messages\models.py:16
 msgid "site"
-msgstr ""
+msgstr "sitio"
 
 #: .\messages\models.py:17
 msgid "participant 1"
-msgstr ""
+msgstr "participante 1"
 
 #: .\messages\models.py:18
 msgid "participant 2"
-msgstr ""
+msgstr "participante 2"
 
 #: .\messages\models.py:19
 msgid "participants"
-msgstr ""
+msgstr "participantes"
 
 #: .\messages\models.py:20
 msgid "is group chat"
-msgstr ""
+msgstr "es chat grupal"
 
 #: .\messages\models.py:21
 msgid "last message"
-msgstr ""
+msgstr "último mensaje"
 
 #: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
 msgid "chat"
-msgstr ""
+msgstr "chat"
 
 #: .\messages\models.py:55
 msgid "chats"
-msgstr ""
+msgstr "chats"
 
 #: .\messages\models.py:64
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #: .\messages\models.py:102 .\messages\models.py:107
 msgid "message"
-msgstr ""
+msgstr "Mensaje"
 
 #: .\messages\models.py:108
 msgid "messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: .\messages\models.py:123
 msgid "read mark"
-msgstr ""
+msgstr "leer marca"
 
 #: .\messages\models.py:124
 msgid "read marks"
-msgstr ""
+msgstr "leer marcas"
 
 #: .\settings\base.py:167
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: .\settings\base.py:168
 msgid "Hebrew"
-msgstr ""
+msgstr "Hebreo"
 
 #: .\settings\base_with_login.py:64
 msgid "French"
-msgstr ""
+msgstr "Francés"
 
 #: .\settings\base_with_login.py:65
 msgid "German"
-msgstr ""
+msgstr "Alemán"
 
 #: .\settings\base_with_login.py:66
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: .\settings\base_with_login.py:67
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugués"
 
 #: .\settings\base_with_login.py:68
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr ""
+msgstr "Solicitud incorrecta"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr ""
+msgstr "Speedy lo siente, pero no podemos atender tu solicitud."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr ""
+msgstr "Permiso denegado"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr ""
+msgstr "Speedy lo siente, pero esta página es privada."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
-msgstr ""
+msgstr "Página no encontrada"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr ""
+msgstr "Speedy lo siente, pero no se encuentra la página."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
-msgstr ""
+msgstr "Error Interno del Servidor"
 
 #: .\templates\about\about_base.html:5 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
@@ -2560,98 +2746,101 @@ msgstr ""
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
-msgstr ""
+msgstr "Editar perfil"
 
 #: .\templates\accounts\edit_profile\core_base.html:19
 msgid "Profile Info"
-msgstr ""
+msgstr "Información de perfil"
 
 #: .\templates\accounts\edit_profile\core_base.html:25
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
-msgstr ""
+msgstr "Privacidad"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
-msgstr ""
+msgstr "Notificaciones"
 
 #: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
-msgstr ""
+msgstr "Correos electrónicos y contraseña"
 
 #: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Desactivar cuenta"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr ""
+msgstr "direcciones de correo electrónico"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr ""
+msgstr "Dirección"
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
-msgstr ""
+msgstr "Agregado"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr ""
+msgstr "Visibilidad"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
-msgstr ""
+msgstr "No confirmado"
 
 #: .\templates\accounts\edit_profile\credentials.html:25
 msgid "Primary"
-msgstr ""
+msgstr "Principal"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr ""
+msgstr "Reenviar un correo electrónico de confirmación"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr ""
+msgstr "Haz que esta dirección de correo electrónico sea la principal"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
+"¿Estás seguro de que deseas eliminar esta dirección de correo electrónico?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr ""
+msgstr "Eliminar esta dirección de correo electrónico"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
-msgstr ""
+msgstr "Agregar otra"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar la contraseña"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr ""
+msgstr "Tu edad será visible para tus coincidencias en Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
+"Cambiar la configuración de privacidad de las direcciones de correo "
+"electrónico en tu perfil."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr ""
+msgstr "Agregar correo electrónico"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\templates\accounts\password_reset\complete.html:5
 #: .\templates\accounts\password_reset\complete.html:11
@@ -2662,128 +2851,132 @@ msgstr ""
 #: .\templates\accounts\password_reset\form.html:6
 #: .\templates\accounts\password_reset\form.html:12
 msgid "Reset Password"
-msgstr ""
+msgstr "Restablecer contraseña"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr ""
+msgstr "Contraseña restablecida correctamente."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr ""
+msgstr "No se pudo reiniciar contraseña Enlace no válido"
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
 msgstr ""
+"Se ha enviado un correo electrónico con instrucciones para restablecer la "
+"contraseña."
 
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
-msgstr ""
+msgstr "Ver todo"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr ""
+msgstr "Admin - Amigos"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
-msgstr ""
+msgstr "Amigos"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
-msgstr ""
+msgstr "Aún no hay amigos."
 
 #: .\templates\admin\profiles\user_info_widget.html:10
 msgid "Admin Information"
-msgstr ""
+msgstr "Información de Admin"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr ""
+msgstr "Admin: todos los usuarios"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr ""
+msgstr "No hay usuarios."
 
 #: .\templates\base.html:104
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
+"No has confirmado tu dirección de correo electrónico. Revisa tu bandeja de "
+"entrada."
 
 #: .\templates\base.html:156
 msgid "Speedy Net Blog"
-msgstr ""
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:158
 msgid "Speedy Paz"
-msgstr ""
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:160
 msgid "Speedy Software"
-msgstr ""
+msgstr "Speedy Software"
 
 #: .\templates\base.html:162
 msgid "Speedy Sale"
-msgstr ""
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:188 .\templates\base.html:189
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr ""
+msgstr "Un sitio web vegano"
 
 #: .\templates\base.html:205 .\templates\base.html:207
 msgid "Speedy"
-msgstr ""
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr ""
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr ""
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr ""
+msgstr "Tienda de Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr ""
+msgstr "Tienda de Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr ""
+msgstr "Tienda con el logotipo S de Speedy"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de privacidad"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
-msgstr ""
+msgstr "Términos de servicio"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
-msgstr ""
+msgstr "Términos"
 
 #: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
 #: .\templates\contact_by_email\contact_us.html:8
@@ -2792,92 +2985,94 @@ msgstr ""
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
-msgstr ""
+msgstr "Contáctanos"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr ""
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr ""
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr ""
+msgstr "Tienda de Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
-msgstr ""
+msgstr "Usuarios bloqueados"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr ""
+msgstr "No estás bloqueando a nadie."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
 msgstr ""
+"Si tienes alguna pregunta, sugerencia o estás interesado en unirte al "
+"equipo, contáctanos por correo electrónico."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster: "
-msgstr ""
+msgstr "Uri Rodberg, fundador y webmaster: "
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
 msgid "Report a User"
-msgstr ""
+msgstr "Reportar un usuario"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr ""
+msgstr "Reportar una foto"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr ""
+msgstr "Gracias"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr ""
+msgstr "Tus comentarios fueron enviados a los administradores."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr ""
+msgstr "Utiliza este enlace para activar tu cuenta:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
-msgstr ""
+msgstr "Confirma tu dirección de correo electrónico en "
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
-msgstr ""
+msgstr "Utiliza este enlace para verificar tu dirección de correo electrónico:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr ""
+msgstr "Utiliza este enlace para cambiar tu contraseña:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 msgid "Password reset on "
-msgstr ""
+msgstr "Restablecer contraseña activado "
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
-msgstr ""
+msgstr "te ha enviado un mensaje."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr ""
+msgstr "Leerlo:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -2885,68 +3080,71 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
+"Estás suscrito para recibir este tipo de notificaciones de %(site_name)s. "
+"Ingresa a esta página para cambiar la configuración de tus notificaciones o "
+"cancelar tu suscripción:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 msgid "You have a new message on "
-msgstr ""
+msgstr "Tienes un nuevo mensaje en "
 
 #: .\templates\friends\base.html:29
 msgid "Received Requests"
-msgstr ""
+msgstr "Solicitudes recibidas"
 
 #: .\templates\friends\base.html:35
 msgid "Sent Requests"
-msgstr ""
+msgstr "Solicitudes enviadas"
 
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr ""
+msgstr "No hay solicitudes de amistad pendientes."
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr ""
+msgstr "¡Bienvenido a %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr ""
+msgstr "¡Unirse a %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
-msgstr ""
+msgstr "¡Es gratis y cualquiera puede unirse!"
 
 #: .\templates\messages\chat_detail.html:31
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr ""
+msgstr "Chatea con <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:37
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Enviar un mensaje a %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:51
 msgid "Mark All as Read"
-msgstr ""
+msgstr "Marcar todo como leído"
 
 #: .\templates\messages\chat_list.html:50
 msgid "Unread"
-msgstr ""
+msgstr "No leído"
 
 #: .\templates\messages\chat_list.html:57
 msgid "You:"
-msgstr ""
+msgstr "Tú:"
 
 #: .\templates\messages\chat_list.html:77
 msgid "You have no messages yet."
-msgstr ""
+msgstr "Aún no tienes mensajes."
 
 #: .\templates\messages\message.html:20
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: .\templates\privacy\privacy_policy.html:19
 msgid ""
@@ -2956,6 +3154,11 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
+"Respetamos tu privacidad. No venderemos ni compartiremos tus datos "
+"personales, incluidos tu nombre, fecha de nacimiento, dirección de correo "
+"electrónico y contraseña. Los mensajes que envías a personas en Speedy Net "
+"son personales y no se compartirán con otras personas ni sitios web. Tu "
+"contraseña se guarda cifrada en nuestra base de datos."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -2967,6 +3170,13 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
+"Tu perfil en Speedy Net es visible para todos, pero puedes elegir con quién "
+"compartir tu dirección de correo electrónico y tu fecha de nacimiento. Si te "
+"registraste en Speech Match, tu perfil de Speech Match solo será visible "
+"para las personas que coincidan contigo según la configuración que hayas "
+"configurado en el sitio y que tú coincidas con ellas según su configuración. "
+"Tu perfil en Speech Match no aparecerá en Google y no será visible para "
+"personas que no estén registradas en el sitio."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -2978,115 +3188,122 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
+"Si has desactivado tu cuenta en Speedy Net o Speech Match, tu perfil en ese "
+"sitio será eliminado del sitio y no aparecerá en los resultados de búsqueda "
+"de otras personas en el sitio. Ten en cuenta que al desactivar tu cuenta en "
+"Speedy Net también se desactiva automáticamente tu cuenta en Speedy Match. "
+"Solo puedes desactivar tu cuenta en Speedy Match, en cuyo caso tu cuenta "
+"Speedy Net permanecerá activa. Puedes reactivar tu cuenta cuando quieras "
+"luego de desactivarla."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr ""
+msgstr "Bloqueaste a "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr ""
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr ""
+msgstr " te bloqueó."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr ""
+msgstr "Aceptar solicitud de amistad"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr ""
+msgstr "Rechazar solicitud de amistad"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr ""
+msgstr "Añadir a Amigos"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr ""
+msgstr "Alternar menú desplegable"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr ""
+msgstr "¿Estás seguro de que quieres bloquear a  "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr ""
+msgstr "Bloquear "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr ""
+msgstr "Desbloquear "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr ""
+msgstr "Reportar "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
-msgstr ""
+msgstr "Reportar esta foto"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr ""
+msgstr "Cancelar solicitud de amistad"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr ""
+msgstr "Eliminar Amigo"
 
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
-msgstr ""
+msgstr "Enviar mensaje"
 
 #: .\templates\profiles\user_info_widget.html:12
 msgid "Information"
-msgstr ""
+msgstr "Información"
 
 #: .\templates\profiles\user_info_widget.html:19
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: .\templates\profiles\user_info_widget.html:25
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: .\templates\profiles\user_info_widget.html:35
 msgid "Gender"
-msgstr ""
+msgstr "Género"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Date"
-msgstr ""
+msgstr "Fecha de nacimiento"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Year"
-msgstr ""
+msgstr "Año de nacimiento"
 
 #: .\templates\profiles\user_info_widget.html:61
 msgid "Age"
-msgstr ""
+msgstr "Edad"
 
 #: .\templates\profiles\user_on_speedy_match_widget.html:6
 #, python-format
@@ -3094,10 +3311,12 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Match. Ver el perfil de "
+"%(user_name)s en Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
+msgstr "También tienes un perfil de Speedy Net. Ve tu perfil en Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3105,12 +3324,16 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s también tiene un perfil de Speedy Net. Ver el perfil de "
+"%(user_name)s en Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
+"El sitio está en alfa, puede haber errores. La administración del sitio no "
+"es responsable de ninguna falla en el sitio."
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
@@ -3119,6 +3342,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
+"Puedes utilizar Speedy Net únicamente para propósitos legales. No está "
+"permitido subir contenidos relacionados con odio, violencia, maltrato "
+"animal, desnudez o pornografía. No está permitido utilizar Speedy Net para "
+"enviar mensajes de spam o mensajes con el mismo contenido a un gran número "
+"de personas."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3128,6 +3356,12 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
+"La administración del sitio no puede verificar la información personal "
+"proporcionada por los usuarios del sitio. Es posible que la información "
+"personal de algunos usuarios no sea correcta. La administración del sitio no "
+"es responsable de la actividad del usuario fuera del sitio. Si eliges "
+"reunirte o hablar por teléfono con personas que conociste en el sitio, la "
+"responsabilidad de los resultados de la reunión o llamada telefónica es tuya."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3135,6 +3369,10 @@ msgid ""
 "a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
+"Después de registrarte en el sitio, se te pedirá que verifiques tu dirección "
+"de correo electrónico a través de un enlace que se te enviará. Las cuentas "
+"sin una dirección de correo electrónico verificada se eliminarán del sitio "
+"después de 10 días."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3142,6 +3380,10 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
+"Si te registraste por error en el sitio con una dirección de correo "
+"electrónico incorrecta, agrega una nueva dirección de correo electrónico a "
+"tu cuenta y verifícala. Puedes adjuntar varias direcciones de correo "
+"electrónico a tu cuenta en el sitio."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
@@ -3150,63 +3392,67 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
+"Tu foto de perfil debe ser una foto tuya, donde podamos ver tu cara. Está "
+"permitido subir una foto de perfil con otras personas. No subas fotos de "
+"desnudos, fotos que muestren genitales (de hombres o mujeres) o imágenes con "
+"el torso desnudo (de hombres o mujeres)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr ""
+msgstr "Navegar..."
 
 #: .\uploads\models.py:14
 msgid "owner"
-msgstr ""
+msgstr "propietario"
 
 #: .\uploads\models.py:15
 msgid "file"
-msgstr ""
+msgstr "archivo"
 
 #: .\uploads\models.py:16
 msgid "is stored"
-msgstr ""
+msgstr "está almacenado"
 
 #: .\uploads\models.py:17
 msgid "file size"
-msgstr ""
+msgstr "tamaño del archivo"
 
 #: .\uploads\models.py:24
 msgid "uploaded file"
-msgstr ""
+msgstr "archivo subido"
 
 #: .\uploads\models.py:25
 msgid "uploaded files"
-msgstr ""
+msgstr "archivos subidos"
 
 #: .\uploads\models.py:41
 msgid "visible on website"
-msgstr ""
+msgstr "visible en el sitio web"
 
 #: .\uploads\models.py:42
 msgid "AWS image moderation time"
-msgstr ""
+msgstr "Tiempo de moderación de imagen AWS"
 
 #: .\uploads\models.py:43
 msgid "AWS facial analysis time"
-msgstr ""
+msgstr "Tiempo de análisis facial AWS"
 
 #: .\uploads\models.py:44
 msgid "AWS raw image moderation results"
-msgstr ""
+msgstr "Resultados de moderación de imágenes sin procesar AWS"
 
 #: .\uploads\models.py:45
 msgid "AWS raw facial analysis results"
-msgstr ""
+msgstr "Resultados del análisis facial sin procesar AWS"
 
 #: .\uploads\models.py:46
 msgid "number of faces"
-msgstr ""
+msgstr "numero de caras"
 
 #: .\uploads\models.py:49
 msgid "uploaded image"
-msgstr ""
+msgstr "imagen subida"
 
 #: .\uploads\models.py:50
 msgid "uploaded images"
-msgstr ""
+msgstr "imágenes subidas"

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-28 07:12+0200\n"
+"POT-Creation-Date: 2023-09-19 06:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1955,58 +1955,58 @@ msgstr "Moi et mes amis"
 msgid "Anyone"
 msgstr "Tout le monde"
 
-#: .\accounts\forms.py:66
+#: .\accounts\forms.py:65
 msgid "Last name (optional)"
 msgstr "Nom de famille (facultatif)"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:129
 msgid "Your email"
 msgstr "Votre e-mail"
 
-#: .\accounts\forms.py:131
+#: .\accounts\forms.py:130
 msgid "New password"
 msgstr "Nouveau mot de passe"
 
-#: .\accounts\forms.py:139
+#: .\accounts\forms.py:138
 msgid "New username"
 msgstr "Nouveau nom d’utilisateur"
 
-#: .\accounts\forms.py:142
+#: .\accounts\forms.py:141
 msgid "Create an account"
 msgstr "Créer un compte"
 
-#: .\accounts\forms.py:160
+#: .\accounts\forms.py:159
 msgid "Update your profile picture"
 msgstr "Mettez à jour votre photo de profil"
 
-#: .\accounts\forms.py:160 .\accounts\validators.py:229
+#: .\accounts\forms.py:159 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "Une photo de profil est requise."
 
-#: .\accounts\forms.py:298 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:297 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-mail ou Nom d’utilisateur"
 
-#: .\accounts\forms.py:304 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:303 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Connexion"
 
-#: .\accounts\forms.py:307 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:306 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
 
-#: .\accounts\forms.py:320
+#: .\accounts\forms.py:319
 msgid "Submit"
 msgstr "Envoyer"
 
-#: .\accounts\forms.py:414
+#: .\accounts\forms.py:413
 msgid "Your password"
 msgstr "Votre mot de passe"
 
-#: .\accounts\forms.py:426
+#: .\accounts\forms.py:425
 msgid "Invalid password."
 msgstr "Mot de passe invalide."
 
@@ -2394,14 +2394,14 @@ msgstr "Saisissez une date valide."
 msgid "This email is already in use."
 msgstr "Cet e-mail est déjà utilisé."
 
-#: .\accounts\validators.py:231
+#: .\accounts\validators.py:235
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "La taille du fichier de cette image est trop importante. La taille maximale "
 "des fichiers est de 30 Mo."
 
-#: .\accounts\validators.py:253 .\accounts\validators.py:272
+#: .\accounts\validators.py:257 .\accounts\validators.py:276
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2514,7 +2514,7 @@ msgctxt "timesince"
 msgid ", "
 msgstr ", "
 
-#: .\base\validators.py:6 .\base\validators.py:7
+#: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
 msgstr "cette ID contient des caractères illégaux."
 

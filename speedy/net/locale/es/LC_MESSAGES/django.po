@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-05 10:14+0300\n"
+"POT-Creation-Date: 2023-09-19 07:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr ""
+msgstr "Cuentas Speedy Net"
 
 #: .\accounts\models.py:20
 msgid "User"
-msgstr ""
+msgstr "usuario"
 
 #: .\accounts\models.py:23
 msgid "Number of friends on last user's visit"
-msgstr ""
+msgstr "Número de amigos en la última visita del usuario"
 
 #: .\accounts\models.py:32
 msgid "Speedy Net Profile"
-msgstr ""
+msgstr "Perfil de Speedy Net"
 
 #: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
-msgstr ""
+msgstr "Perfiles de Speedy Net"
 
 #: .\accounts\utils.py:22
 #, python-brace-format
@@ -44,14 +44,18 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
+"El número total de miembros activos en el sitio es "
+"{total_number_of_active_members_in_the_last_four_months}, de los cuales "
+"{total_number_of_active_members_in_the_last_week} ingresaron al sitio en la "
+"última semana."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr ""
+msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr ""
+msgstr "Acerca de Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -62,6 +66,11 @@ msgid ""
 "ages (no age limit!). The site is vegan and vegetarian friendly. It is "
 "currently available in %(languages_num)s languages."
 msgstr ""
+"<a href=\"https://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> es "
+"una nueva red social. Con Speedy Net puedes comunicarte con tus amigos. "
+"Speedy Net está abierto al registro gratuito para personas de todos los "
+"países y edades (¡sin límite de edad!). El sitio es compatible con veganos y "
+"vegetarianos. Actualmente está disponible en %(languages_num)s idiomas."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -69,6 +78,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
+"Los fundadores de Speedy Net son veganos, apoyan los derechos de los "
+"animales y se oponen a los experimentos con animales. Speedy Net es una red "
+"social amigable para personas veganas y vegetarianas y con los animales."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -77,6 +89,11 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
+"Decidimos limitar el número de amigos en Speedy Net a 800. Te recomendamos "
+"que agregues como amigos sólo a personas que conozcas personalmente. Puedes "
+"seleccionar qué detalles aparecerán en tu perfil como públicos, qué detalles "
+"serán solo para amigos y qué detalles serán privados. Los detalles privados "
+"solo te aparecerán a ti."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 msgid ""
@@ -84,6 +101,10 @@ msgid ""
 "\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
 "Speedy Match is open to singles of all ages."
 msgstr ""
+"Puedes utilizar nuestra nueva aplicación, <a href=\"https://en.speedymatch."
+"com/\" title=\"Speedy Match\">Speedy Match</a>, para encontrar personas que "
+"coincidan para tener citas. Speedy Match está abierto a solteros de todas "
+"las edades."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -91,12 +112,18 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
+"Todas las funciones de Speedy Net y Speedy Match son gratuitas. Únete a "
+"Speedy Net hoy para encontrar amigos, solo te llevará unos minutos. <a href="
+"\"/\" title=\"Join Speedy Net\">Haz clic aquí</a> para unirte."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
+"Speedy Net es un proyecto de software gratuito y de código abierto. Si "
+"deseas ayudar a desarrollar y mejorar Speedy Net, comunícate conmigo por "
+"correo electrónico."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -104,55 +131,60 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Net lleva el nombre de <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, una perra que estuvo con nosotros "
+"durante muchos años y murió en 2003. Speedy dio a luz a 7 cachorros en 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
+"Speedy Net se encuentra actualmente en alfa. Fue lanzado en junio de 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "Gracias y buena suerte,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
+msgstr "Fundador y director de Speedy Net y Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenido"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "Bienvenido a %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "Por favor confirma tu dirección de correo electrónico."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"Tu cuenta Speedy Net no está activa. Ingresa a esta página para activarla."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
-msgstr ""
+msgstr "Usuarios bloqueados"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "Aún no tienes amigos."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr ""
+msgstr "Tus amigos"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -161,34 +193,40 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
+"Speedy Net es una nueva red social. Con Speedy Net puedes comunicarte con "
+"tus amigos. Speedy Net está abierto al registro gratuito para personas de "
+"todos los países y edades (¡sin límite de edad!). El sitio es compatible con "
+"veganos y vegetarianos."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
+"Todas las funciones de Speedy Net y Speedy Match son gratuitas. Únete a "
+"Speedy Net hoy para encontrar amigos, solo te llevará unos minutos."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr ""
+msgstr "Speedy Match – citas Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
+msgstr "¿Buscas novio? ¿Buscas novia? ¡Ven y conoce a Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr ""
+msgstr "Citas en línea gratis"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr ""
+msgstr "Amigos"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr ""
+msgstr "Tu amigo"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr ""
+msgstr "Solicitud de amistad enviada"
