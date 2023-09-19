@@ -2289,11 +2289,9 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Der Benutzername muss mindestens %(limit_value)d alphanumerisches Zeichen "
-"(it has %(show_value)d) enthalten."
+"Der Benutzername muss mindestens %(limit_value)d alphanumerisches Zeichen enthalten (er hat %(show_value)d)."
 msgstr[1] ""
-"Der Benutzername muss mindestens %(limit_value)d alphanumerische Zeichen (it "
-"has %(show_value)d) enthalten."
+"Der Benutzername muss mindestens %(limit_value)d alphanumerische Zeichen enthalten (er hat %(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2304,11 +2302,9 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Der Benutzername darf höchstens %(limit_value)d alphanumerisches Zeichen (it "
-"has %(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d alphanumerisches Zeichen enthalten (er hat %(show_value)d)."
 msgstr[1] ""
-"Der Benutzername darf höchstens %(limit_value)d alphanumerische Zeichen (it "
-"has %(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d alphanumerische Zeichen enthalten (er hat %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2319,11 +2315,9 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Der Benutzername muss mindestens %(limit_value)d Zeichen (it has "
-"%(show_value)d) enthalten."
+"Der Benutzername muss mindestens %(limit_value)d Zeichen enthalten (er hat %(show_value)d)."
 msgstr[1] ""
-"Der Benutzername muss mindestens %(limit_value)d Zeichen (it has "
-"%(show_value)d) enthalten."
+"Der Benutzername muss mindestens %(limit_value)d Zeichen enthalten (er hat %(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2334,11 +2328,9 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Der Benutzername darf höchstens %(limit_value)d Zeichen (it has "
-"%(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d Zeichen enthalten (er hat %(show_value)d)."
 msgstr[1] ""
-"Der Benutzername darf höchstens %(limit_value)d Zeichen (it has "
-"%(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d Zeichen enthalten (er hat %(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format
