@@ -1303,7 +1303,7 @@ msgstr "Actualizar coincidencias"
 #: .\templates\matches\match_list.html:43
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "dieta"
+msgstr "Dieta"
 
 #: .\templates\matches\match_list.html:54
 msgid "Age:"
@@ -1378,7 +1378,7 @@ msgstr "Condición de fumador"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "estado de relación"
+msgstr "Estado de relación"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"

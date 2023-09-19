@@ -1306,7 +1306,7 @@ msgstr "Aggiorna le corrispondenze"
 #: .\templates\matches\match_list.html:43
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "dieta"
+msgstr "Dieta"
 
 #: .\templates\matches\match_list.html:54
 msgid "Age:"
@@ -1378,11 +1378,11 @@ msgstr "Dove vivo?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "fumo"
+msgstr "Fumo"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "stato della relazione"
+msgstr "Stato della relazione"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
