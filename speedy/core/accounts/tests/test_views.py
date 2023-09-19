@@ -989,6 +989,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.first_name_es, second=self.original_first_name)
                 self.assertEqual(first=user.first_name_pt, second=self.original_first_name)
                 self.assertEqual(first=user.first_name_it, second=self.original_first_name)
+                self.assertEqual(first=user.first_name_nl, second=self.original_first_name)
+                self.assertEqual(first=user.first_name_sv, second=self.original_first_name)
+                self.assertEqual(first=user.first_name_ko, second=self.original_first_name)
+                self.assertEqual(first=user.first_name_fi, second=self.original_first_name)
                 self.assertEqual(first=user.first_name_he, second={'en': self.original_first_name, 'fr': self.original_first_name, 'he': self.first_name}[self.language_code])
                 self.assertEqual(first=user.last_name, second=self.last_name)
                 self.assertEqual(first=user.last_name_en, second={'en': self.last_name, 'fr': self.original_last_name, 'he': self.original_last_name}[self.language_code])
@@ -997,6 +1001,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.last_name_es, second=self.original_last_name)
                 self.assertEqual(first=user.last_name_pt, second=self.original_last_name)
                 self.assertEqual(first=user.last_name_it, second=self.original_last_name)
+                self.assertEqual(first=user.last_name_nl, second=self.original_last_name)
+                self.assertEqual(first=user.last_name_sv, second=self.original_last_name)
+                self.assertEqual(first=user.last_name_ko, second=self.original_last_name)
+                self.assertEqual(first=user.last_name_fi, second=self.original_last_name)
                 self.assertEqual(first=user.last_name_he, second={'en': self.original_last_name, 'fr': self.original_last_name, 'he': self.last_name}[self.language_code])
                 for (key, value) in self.data.items():
                     if (not (key in ['date_of_birth'])):
@@ -1103,6 +1111,10 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.first_name_es, second=self.original_first_name)
                     self.assertEqual(first=user.first_name_pt, second=self.original_first_name)
                     self.assertEqual(first=user.first_name_it, second=self.original_first_name)
+                    self.assertEqual(first=user.first_name_nl, second=self.original_first_name)
+                    self.assertEqual(first=user.first_name_sv, second=self.original_first_name)
+                    self.assertEqual(first=user.first_name_ko, second=self.original_first_name)
+                    self.assertEqual(first=user.first_name_fi, second=self.original_first_name)
                     self.assertEqual(first=user.first_name_he, second={'en': self.original_first_name, 'fr': self.original_first_name, 'he': self.first_name}[self.language_code])
                     self.assertEqual(first=user.last_name, second=self.last_name)
                     self.assertEqual(first=user.last_name_en, second={'en': self.last_name, 'fr': self.original_last_name, 'he': self.original_last_name}[self.language_code])
@@ -1111,6 +1123,10 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.last_name_es, second=self.original_last_name)
                     self.assertEqual(first=user.last_name_pt, second=self.original_last_name)
                     self.assertEqual(first=user.last_name_it, second=self.original_last_name)
+                    self.assertEqual(first=user.last_name_nl, second=self.original_last_name)
+                    self.assertEqual(first=user.last_name_sv, second=self.original_last_name)
+                    self.assertEqual(first=user.last_name_ko, second=self.original_last_name)
+                    self.assertEqual(first=user.last_name_fi, second=self.original_last_name)
                     self.assertEqual(first=user.last_name_he, second={'en': self.original_last_name, 'fr': self.original_last_name, 'he': self.last_name}[self.language_code])
                     for (key, value) in self.data.items():
                         if (not (key in ['date_of_birth'])):

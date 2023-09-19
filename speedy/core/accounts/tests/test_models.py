@@ -720,6 +720,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.last_name_es, second="")
                 self.assertEqual(first=user.last_name_pt, second="")
                 self.assertEqual(first=user.last_name_it, second="")
+                self.assertEqual(first=user.last_name_nl, second="")
+                self.assertEqual(first=user.last_name_sv, second="")
+                self.assertEqual(first=user.last_name_ko, second="")
+                self.assertEqual(first=user.last_name_fi, second="")
                 self.assertEqual(first=user.last_name_he, second="")
 
             def test_last_name_is_none(self):
