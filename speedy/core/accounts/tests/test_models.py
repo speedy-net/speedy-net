@@ -715,6 +715,11 @@ if (django_settings.TESTS):
                 user.save_user_and_profile()
                 self.assertEqual(first=user.last_name, second="")
                 self.assertEqual(first=user.last_name_en, second="")
+                self.assertEqual(first=user.last_name_fr, second="")
+                self.assertEqual(first=user.last_name_de, second="")
+                self.assertEqual(first=user.last_name_es, second="")
+                self.assertEqual(first=user.last_name_pt, second="")
+                self.assertEqual(first=user.last_name_it, second="")
                 self.assertEqual(first=user.last_name_he, second="")
 
             def test_last_name_is_none(self):
