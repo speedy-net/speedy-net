@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:56+0300\n"
+"POT-Creation-Date: 2023-09-20 18:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgstr "Le tue corrispondenze"
 #: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
-msgstr "Amici"
+msgstr "Amiche"
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
@@ -161,7 +161,7 @@ msgstr "Amici"
 #: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Friends"
-msgstr "Amici"
+msgstr "Amici/Amiche"
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
@@ -409,7 +409,7 @@ msgstr "Scrivi una breve descrizione di te stessa."
 #: .\__translations\__translations.py:30
 msgctxt "male"
 msgid "Please write a few words about yourself."
-msgstr "Scrivi una breve descrizione di te stessa."
+msgstr "Scrivi una breve descrizione di te stesso."
 
 #: .\__translations\__translations.py:31
 msgctxt "other"
@@ -454,12 +454,12 @@ msgstr "Chi è la tua partner ideale?"
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "Chi la tua partner ideale?"
+msgstr "Chi è il tuo partner ideale?"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Chi è il tuo partner ideale?"
+msgstr "Chi è il/la tuo/a partner ideale?"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
@@ -470,7 +470,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Siamo spiacenti, ma non sei autorizzati a utilizzare il sito web "
+"Siamo spiacenti, ma non sei autorizzata a utilizzare il sito web "
 "{site_name}. Abbiamo scoperto che alcune delle informazioni fornite al "
 "momento della registrazione al sito non sono corrette o che l’utente ha "
 "violato le regole di utilizzo del sito. Pertanto, non sei autorizzato "
@@ -485,7 +485,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Siamo spiacenti, ma non sei autorizzati a utilizzare il sito web "
+"Siamo spiacenti, ma non sei autorizzato a utilizzare il sito web "
 "{site_name}. Abbiamo scoperto che alcune delle informazioni fornite al "
 "momento della registrazione al sito non sono corrette o che l’utente ha "
 "violato le regole di utilizzo del sito. Pertanto, non sei autorizzato "
@@ -500,7 +500,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Siamo spiacenti, ma non sei autorizzati a utilizzare il sito web "
+"Siamo spiacenti, ma non sei autorizzato/a a utilizzare il sito web "
 "{site_name}. Abbiamo scoperto che alcune delle informazioni fornite al "
 "momento della registrazione al sito non sono corrette o che l’utente ha "
 "violato le regole di utilizzo del sito. Pertanto, non sei autorizzato "

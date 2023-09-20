@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:56+0300\n"
+"POT-Creation-Date: 2023-09-20 18:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,12 +158,12 @@ msgstr "Sei sicura di voler cancellare questo indirizzo e-mail?"
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Sei sicura di voler cancellare questo indirizzo e-mail?"
+msgstr "Sei sicuro di voler cancellare questo indirizzo e-mail?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Sei sicura di voler cancellare questo indirizzo e-mail?"
+msgstr "Sei sicuro/a di voler cancellare questo indirizzo e-mail?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -254,12 +254,12 @@ msgstr "Segnala un’utente"
 #: .\__translations\__translations.html:61
 msgctxt "male"
 msgid "Report a User"
-msgstr "Segnala un’utente"
+msgstr "Segnala un utente"
 
 #: .\__translations\__translations.html:62
 msgctxt "other"
 msgid "Report a User"
-msgstr "Segnala un’utente"
+msgstr "Segnala un utente/un’utente"
 
 #: .\__translations\__translations.html:72
 msgctxt "female"
@@ -650,12 +650,12 @@ msgstr "Benvenuta"
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr "Benvenuta"
+msgstr "Benvenuto"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr "Benvenuta"
+msgstr "Benvenuto/a"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
@@ -715,13 +715,13 @@ msgstr "Benvenuta su %(site_name)s"
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr "Benvenuta su %(site_name)s"
+msgstr "Benvenuto su %(site_name)s"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr "Benvenuta su %(site_name)s"
+msgstr "Benvenuto/a su %(site_name)s"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
@@ -1215,12 +1215,12 @@ msgstr "Fumatrice occasionale"
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Fumatrice occasionale"
+msgstr "Fumatore occasionale"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Fumatrice occasionale"
+msgstr "Fumatore/Fumatrice occasionale"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
@@ -1245,12 +1245,12 @@ msgstr "Nubile"
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Nubile"
+msgstr "Celibe"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Nubile/Celibe"
+msgstr "Celibe/Nubile"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
@@ -1275,12 +1275,12 @@ msgstr "Vedova"
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Widowed"
-msgstr "Vedova"
+msgstr "Vedovo"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Widowed"
-msgstr "Vedova"
+msgstr "Vedovo/a"
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
@@ -1335,12 +1335,12 @@ msgstr "Separata"
 #: .\__translations\__translations.py:142
 msgctxt "male"
 msgid "Separated"
-msgstr "Separata"
+msgstr "Separato"
 
 #: .\__translations\__translations.py:143
 msgctxt "other"
 msgid "Separated"
-msgstr "Separata"
+msgstr "Separato/a"
 
 #: .\__translations\__translations.py:145
 msgctxt "female"
@@ -1350,7 +1350,7 @@ msgstr "Impegnata"
 #: .\__translations\__translations.py:146
 msgctxt "male"
 msgid "Engaged"
-msgstr "Impegnata"
+msgstr "Impegnato"
 
 #: .\__translations\__translations.py:147
 msgctxt "other"
@@ -1365,12 +1365,12 @@ msgstr "Sposata"
 #: .\__translations\__translations.py:150
 msgctxt "male"
 msgid "Married"
-msgstr "Sposata"
+msgstr "Sposato"
 
 #: .\__translations\__translations.py:151
 msgctxt "other"
 msgid "Married"
-msgstr "Sposata"
+msgstr "Sposato/a"
 
 #: .\__translations\__translations.py:153
 msgctxt "female"
@@ -1666,42 +1666,42 @@ msgstr "Sei già amica di questa utente."
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questa utente."
+msgstr "Sei già amica di questo utente."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questa utente."
+msgstr "Sei già amica di questo/a utente."
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questo utente."
+msgstr "Sei già amico di questa utente."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questo/a utente."
+msgstr "Sei già amico di questo utente."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Sei già amico di questa utente."
+msgstr "Sei già amico di questo/a utente."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Sei già amico di questa utente."
+msgstr "Sei già amico/a di questa utente."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questa utente."
+msgstr "Sei già amico/a di questo utente."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "Sei già amica di questa utente."
+msgstr "Sei già amico/a di questo/a utente."
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
@@ -1726,12 +1726,12 @@ msgstr "Hai rimosso questa utente dagli amici."
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "Hai rimosso questa utente dagli amici."
+msgstr "Hai rimosso questo utente dagli amici."
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "Hai rimosso questa utente dagli amici."
+msgstr "Hai rimosso questo/a utente dagli amici."
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
@@ -1749,7 +1749,7 @@ msgstr "Benvenuto su {site_name}!"
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "Benvenuto su {site_name}!"
+msgstr "Benvenuto/a su {site_name}!"
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
@@ -1772,7 +1772,7 @@ msgstr "Benvenuto/a su {site_name}! Il tuo account è ora attivo."
 #: .\__translations\__translations.py:229
 msgctxt "female"
 msgid "Friends"
-msgstr "Amici"
+msgstr "Amiche"
 
 #: .\__translations\__translations.py:230
 msgctxt "male"
@@ -1782,7 +1782,7 @@ msgstr "Amici"
 #: .\__translations\__translations.py:231
 msgctxt "other"
 msgid "Friends"
-msgstr "Amici"
+msgstr "Amici/Amiche"
 
 #: .\__translations\__translations.py:233
 msgctxt "female"
@@ -1844,7 +1844,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Questa utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
+"Questo utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
 "Speedy Net. Visualizza il profilo dell’utente su Speedy Net."
 
 #: .\__translations\__translations.py:243
@@ -1853,7 +1853,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Questa utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
+"Questo/a utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
 "Speedy Net. Visualizza il profilo dell’utente su Speedy Net."
 
 #: .\__translations\__translations.py:244
@@ -1880,7 +1880,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Questo utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
+"Questo/a utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
 "Speedy Net. Visualizza il profilo dell’utente su Speedy Net."
 
 #: .\__translations\__translations.py:247
@@ -1898,7 +1898,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Questa utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
+"Questo utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
 "Speedy Net. Visualizza il profilo dell’utente su Speedy Net."
 
 #: .\__translations\__translations.py:249
@@ -1907,7 +1907,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Questa utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
+"Questo/a utente non corrisponde al tuo profilo, ma puoi visitare il suo su "
 "Speedy Net. Visualizza il profilo dell’utente su Speedy Net."
 
 #: .\__translations\__translations.py:251
@@ -2095,7 +2095,7 @@ msgstr "Fumatore/Fumatrice"
 
 #: .\accounts\models.py:267
 msgid "Single"
-msgstr "Nubile/Celibe"
+msgstr "Celibe/Nubile"
 
 #: .\accounts\models.py:268
 msgid "Divorced"
@@ -2103,7 +2103,7 @@ msgstr "Divorziato/a"
 
 #: .\accounts\models.py:269
 msgid "Widowed"
-msgstr "Vedova"
+msgstr "Vedovo/a"
 
 #: .\accounts\models.py:270
 msgid "In a relationship"
@@ -2282,11 +2282,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Il nome utente deve contenere almeno %(limit_value)d carattere alfanumerico ("
-"ha %(show_value)d)."
+"Il nome utente deve contenere almeno %(limit_value)d carattere alfanumerico "
+"(ha %(show_value)d)."
 msgstr[1] ""
-"Il nome utente deve contenere almeno %(limit_value)d caratteri alfanumerici ("
-"ha %(show_value)d)."
+"Il nome utente deve contenere almeno %(limit_value)d caratteri alfanumerici "
+"(ha %(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format

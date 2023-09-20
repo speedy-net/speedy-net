@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:32+0300\n"
+"POT-Creation-Date: 2023-09-20 18:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,7 +252,7 @@ msgstr "No estás bloqueando a nadie."
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "Reportar un usuario"
+msgstr "Reportar una usuaria"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
@@ -540,7 +540,7 @@ msgstr "Reportar esta foto"
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "Eliminar Amigo"
+msgstr "Eliminar Amiga"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
@@ -645,7 +645,7 @@ msgstr "Enviar mensaje"
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr "Bienvenido"
+msgstr "Bienvenida"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
@@ -660,7 +660,7 @@ msgstr "Bienvenido"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "Tu amigo"
+msgstr "Tu amiga"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
@@ -709,7 +709,7 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr "Bienvenido a %(site_name)s"
+msgstr "Bienvenida a %(site_name)s"
 
 #: .\__translations\__translations.html:181
 #, python-format
@@ -1526,7 +1526,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Esta usuaria ya tiene {0} amigas. No se puede tener más de {1} amigas en "
 "Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:182
@@ -1536,7 +1536,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
 "Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:183
@@ -1546,7 +1546,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
+"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
 "Speedy Net. Pídele que elimine amigos antes de continuar."
 
 #: .\__translations\__translations.py:184
@@ -1556,8 +1556,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigas. No se puede tener más de {1} amigas en "
+"Speedy Net. Pídele que elimine amigas antes de continuar."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1586,8 +1586,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigas. No se puede tener más de {1} amigas en "
+"Speedy Net. Pídele que elimine amigas antes de continuar."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1627,7 +1627,7 @@ msgstr "No puedes ser amigo de ti mismo."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Ya solicitaste amistad a este usuario."
+msgstr "Ya solicitaste amistad a esta usuaria."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
@@ -1642,7 +1642,7 @@ msgstr "Ya solicitaste amistad a este usuario."
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Este usuario ya te solicitó amistad."
+msgstr "Esta usuaria ya te solicitó amistad."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
@@ -1662,7 +1662,7 @@ msgstr "Ya eres amiga de esta usuaria."
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Ya eres amigo de este usuario."
+msgstr "Ya eres amiga de este usuario."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
@@ -2307,8 +2307,8 @@ msgstr[0] ""
 "El nombre de usuario debe contener al menos %(limit_value)d caracter (tiene "
 "%(show_value)d)."
 msgstr[1] ""
-"El nombre de usuario debe contener al menos %(limit_value)d caracteres ("
-"tiene %(show_value)d)."
+"El nombre de usuario debe contener al menos %(limit_value)d caracteres "
+"(tiene %(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2319,11 +2319,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracter ("
-"tiene %(show_value)d)."
+"El nombre de usuario debe contener como máximo %(limit_value)d caracter "
+"(tiene %(show_value)d)."
 msgstr[1] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracteres ("
-"tiene %(show_value)d)."
+"El nombre de usuario debe contener como máximo %(limit_value)d caracteres "
+"(tiene %(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format

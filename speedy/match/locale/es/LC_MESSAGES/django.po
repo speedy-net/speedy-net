@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:32+0300\n"
+"POT-Creation-Date: 2023-09-20 18:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
+"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
+"búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -75,7 +76,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
+"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
+"búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -83,7 +85,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
+"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
+"búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -93,12 +96,12 @@ msgstr "Configuración de coincidencias"
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "Configuración de coincidenicas"
+msgstr "Configuración de coincidencias"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "Configuración de coincidenicas"
+msgstr "Configuración de coincidencias"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -163,7 +166,7 @@ msgstr "Amigos"
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr "Tus amigos"
+msgstr "Tus amigas"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
@@ -178,7 +181,7 @@ msgstr "Tus amigos"
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "Aún no tienes amigos."
+msgstr "Aún no tienes amigas."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
@@ -1322,7 +1325,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
+"Aún no tienes coincidencias. Intenta ampliar tu configuración de búsqueda o "
+"vuelve a comprobar más tarde."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
