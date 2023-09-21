@@ -8,7 +8,7 @@ from django.contrib.auth import forms as django_auth_forms, password_validation
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.timezone import now
-from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.translation import get_language, gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
@@ -151,7 +151,13 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
             email = self.cleaned_data['email']
             user.email_addresses.create(email=email, is_confirmed=False, is_primary=True)
             site = Site.objects.get_current()
-            logger.info('New user on {site_name}, user={user}, email={email}'.format(site_name=_(site.name), user=user, email=email))
+            language_code = get_language()
+            logger.info('New user on {site_name}, user={user}, email={email}, language_code={language_code}.'.format(
+                site_name=_(site.name),
+                user=user,
+                email=email,
+                language_code=language_code,
+            ))
         return user
 
 
@@ -227,31 +233,37 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
                 site = Site.objects.get_current()
-                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth} (registered {registered_days_ago} days ago)'.format(
+                language_code = get_language()
+                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance,
                     new_date_of_birth=self.instance.date_of_birth,
                     old_date_of_birth=user.date_of_birth,
                     registered_days_ago=(now() - self.instance.date_created).days,
+                    language_code=language_code,
                 ))
             if (not (self.instance.gender == user.gender)):
                 site = Site.objects.get_current()
-                logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender} (registered {registered_days_ago} days ago)'.format(
+                language_code = get_language()
+                logger.warning('User changed gender on {site_name}, user={user}, new gender={new_gender}, old gender={old_gender} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance,
                     new_gender=self.instance.gender,
                     old_gender=user.gender,
                     registered_days_ago=(now() - self.instance.date_created).days,
+                    language_code=language_code,
                 ))
             if (not (self.instance.username == user.username)):
                 # Error - users can't change their username.
                 site = Site.objects.get_current()
-                logger.error('User changed username on {site_name}, user={user}, new username={new_username}, old username={old_username} (registered {registered_days_ago} days ago)'.format(
+                language_code = get_language()
+                logger.error('User changed username on {site_name}, user={user}, new username={new_username}, old username={old_username} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance,
                     new_username=self.instance.username,
                     old_username=user.username,
                     registered_days_ago=(now() - self.instance.date_created).days,
+                    language_code=language_code,
                 ))
         return super().save(commit=commit)
 
@@ -339,7 +351,13 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
         email = self.cleaned_data["email"]
         site = Site.objects.get_current()
         users_list = self.get_users(email)
-        logger.info("PasswordResetForm::User submitted form, site_name={site_name}, email={email}, matching_users={matching_users}".format(site_name=_(site.name), email=email, matching_users=len(users_list)))
+        language_code = get_language()
+        logger.info("PasswordResetForm::User submitted form, site_name={site_name}, email={email}, matching_users={matching_users}, language_code={language_code}.".format(
+            site_name=_(site.name),
+            email=email,
+            matching_users=len(users_list),
+            language_code=language_code,
+        ))
         for user in users_list:
             if (not (domain_override)):
                 current_site = get_current_site(request)
@@ -350,11 +368,12 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
             user_email_list = [e.email for e in user.email_addresses.all() if (e.email == email.lower())]
             if (len(user_email_list) == 1):
                 user_email = user_email_list[0]
-                logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email} (registered {registered_days_ago} days ago)".format(
+                logger.info("PasswordResetForm::Sending reset link to the user, site_name={site_name}, user={user}, user_email={user_email} (registered {registered_days_ago} days ago), language_code={language_code}.".format(
                     site_name=_(site_name),
                     user=user,
                     user_email=user_email,
                     registered_days_ago=(now() - user.date_created).days,
+                    language_code=language_code,
                 ))
                 context = {
                     'email': user_email,
@@ -368,11 +387,12 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
                 }
                 self.send_mail(subject_template_name, email_template_name, context, from_email, user_email, html_email_template_name=html_email_template_name)
             else:
-                logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email} (registered {registered_days_ago} days ago)".format(
+                logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email} (registered {registered_days_ago} days ago), language_code={language_code}.".format(
                     site_name=_(site_name),
                     user=user,
                     email=email,
                     registered_days_ago=(now() - user.date_created).days,
+                    language_code=language_code,
                 ))
 
 

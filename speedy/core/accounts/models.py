@@ -16,7 +16,7 @@ from django.utils import formats
 from django.utils.timezone import now
 from django.utils.html import avoid_wrapping
 from django.utils.functional import classproperty, cached_property
-from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.translation import get_language, gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
@@ -487,16 +487,18 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
     def _update_has_confirmed_email_field(self):
-        speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
         previous_has_confirmed_email = self.has_confirmed_email
         self.has_confirmed_email = (self.email_addresses.filter(is_confirmed=True).count() > 0)
         self.save_user_and_profile()
         if (not (self.has_confirmed_email == previous_has_confirmed_email)):
-            logger.info('User::_update_has_confirmed_email_field::User {user} has_confirmed_email is {has_confirmed_email} on {site_name} (registered {registered_days_ago} days ago).'.format(
+            speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
+            language_code = get_language()
+            logger.info('User::_update_has_confirmed_email_field::User {user} has_confirmed_email is {has_confirmed_email} on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                 site_name=_(speedy_net_site.name),
                 user=self,
                 has_confirmed_email=self.has_confirmed_email,
                 registered_days_ago=(now() - self.date_created).days,
+                language_code=language_code,
             ))
 
     def save(self, *args, **kwargs):

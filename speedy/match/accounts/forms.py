@@ -6,7 +6,7 @@ from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
 from django.template.loader import render_to_string
 from django.utils.timezone import now
-from django.utils.translation import gettext_lazy as _, pgettext_lazy
+from django.utils.translation import get_language, gettext_lazy as _, pgettext_lazy
 from django.contrib.sites.models import Site
 
 from speedy.core.base.utils import to_attribute, update_form_field_choices
@@ -233,12 +233,14 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             user_profile = SpeedyMatchSiteProfile.objects.get(pk=self.instance.pk)
             if (not (self.instance.height == user_profile.height)):
                 site = Site.objects.get_current()
-                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height} (registered {registered_days_ago} days ago)'.format(
+                language_code = get_language()
+                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance.user,
                     new_height=self.instance.height,
                     old_height=user_profile.height,
                     registered_days_ago=(now() - self.instance.user.date_created).days,
+                    language_code=language_code,
                 ))
             if ('profile_picture' in self.fields):
                 profile_picture = self.files.get('profile_picture')

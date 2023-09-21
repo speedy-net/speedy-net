@@ -5,7 +5,7 @@ from django.contrib.sites.models import Site
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.timezone import now
-from django.utils.translation import pgettext_lazy, gettext_lazy as _
+from django.utils.translation import get_language, pgettext_lazy, gettext_lazy as _
 
 from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.net.accounts import utils
@@ -41,10 +41,12 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         if (self.request.user.speedy_net_profile.is_active):
             self.display_welcome_message()
             site = Site.objects.get_current()
-            logger.info('User {user} activated their account on {site_name} (registered {registered_days_ago} days ago).'.format(
+            language_code = get_language()
+            logger.info('User {user} activated their account on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                 site_name=_(site.name),
                 user=self.request.user,
                 registered_days_ago=(now() - self.request.user.date_created).days,
+                language_code=language_code,
             ))
         return redirect(to=success_url)
 

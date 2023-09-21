@@ -10,7 +10,7 @@ from django.conf import settings as django_settings
 from django.utils import translation
 from django.utils.timesince import TIME_STRINGS as timesince_time_strings
 from django.utils.html import avoid_wrapping
-from django.utils.translation import pgettext, get_language
+from django.utils.translation import get_language, pgettext
 
 import translated_fields
 

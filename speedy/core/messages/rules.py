@@ -4,7 +4,7 @@ from datetime import timedelta
 from rules import predicate, add_perm, is_authenticated
 from django.contrib.sites.models import Site
 from django.utils.timezone import now
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 
 from speedy.core.accounts.base_rules import is_self
 from speedy.core.blocks.rules import there_is_block
@@ -53,13 +53,15 @@ def can_send_new_message(user):
     )
     if ((count_user_messages_1_day >= limit_user_messages_1_day) or (count_user_messages_3_days >= limit_user_messages_3_days) or (count_user_messages_7_days >= limit_user_messages_7_days)):
         site = Site.objects.get_current()
-        logger.warning("[count_user_messages] User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}, registered {registered_days_ago} days ago).".format(
+        language_code = get_language()
+        logger.warning("[count_user_messages] User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}, registered {registered_days_ago} days ago), language_code={language_code}.".format(
             user=user,
             site_name=_(site.name),
             count_user_messages_1_day=count_user_messages_1_day,
             count_user_messages_3_days=count_user_messages_3_days,
             count_user_messages_7_days=count_user_messages_7_days,
             registered_days_ago=(now() - user.date_created).days,
+            language_code=language_code,
         ))
         can_send = False
     count_identical_messages_in_chats = Chat.objects.count_identical_messages_in_chats_with_only_one_sender(
@@ -67,12 +69,14 @@ def can_send_new_message(user):
     )
     if (count_identical_messages_in_chats[0] >= 30):
         site = Site.objects.get_current()
-        logger.warning("[count_identical_messages] User {user} can't send messages today on {site_name} ({count_identical_messages_in_chats_0} / \"{count_identical_messages_in_chats_1}\", registered {registered_days_ago} days ago).".format(
+        language_code = get_language()
+        logger.warning("[count_identical_messages] User {user} can't send messages today on {site_name} ({count_identical_messages_in_chats_0} / \"{count_identical_messages_in_chats_1}\", registered {registered_days_ago} days ago), language_code={language_code}.".format(
             user=user,
             site_name=_(site.name),
             count_identical_messages_in_chats_0=count_identical_messages_in_chats[0],
             count_identical_messages_in_chats_1=count_identical_messages_in_chats[1],
             registered_days_ago=(now() - user.date_created).days,
+            language_code=language_code,
         ))
         can_send = False
     return can_send

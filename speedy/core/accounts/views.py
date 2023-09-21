@@ -11,7 +11,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils.timezone import now
-from django.utils.translation import gettext_lazy as _, get_language, pgettext_lazy
+from django.utils.translation import get_language, gettext_lazy as _, pgettext_lazy
 from django.views import generic
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.detail import SingleObjectMixin
@@ -105,11 +105,13 @@ class RegistrationView(generic.CreateView):
         email_addresses = user.email_addresses.all()
         if (not (len(email_addresses) == 1)):
             site = Site.objects.get_current()
-            logger.error("RegistrationView::form_valid::User has {len_email_addresses} email addresses, site_name={site_name}, user={user} (registered {registered_days_ago} days ago)".format(
+            language_code = get_language()
+            logger.error("RegistrationView::form_valid::User has {len_email_addresses} email addresses, site_name={site_name}, user={user} (registered {registered_days_ago} days ago), language_code={language_code}.".format(
                 len_email_addresses=len(email_addresses),
                 site_name=_(site.name),
                 user=user,
                 registered_days_ago=(now() - user.date_created).days,
+                language_code=language_code,
             ))
         for email_address in email_addresses:
             email_address.send_confirmation_email()
@@ -243,10 +245,12 @@ class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
         else:
             message = pgettext_lazy(context=self.request.user.get_gender(), message='Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.').format(site_name=_(site.name))
         messages.success(request=self.request, message=message)
-        logger.info('User {user} deactivated their account on {site_name} (registered {registered_days_ago} days ago).'.format(
+        language_code = get_language()
+        logger.info('User {user} deactivated their account on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
             site_name=_(site.name),
             user=user,
             registered_days_ago=(now() - user.date_created).days,
+            language_code=language_code,
         ))
         return super().form_valid(form=form)
 
