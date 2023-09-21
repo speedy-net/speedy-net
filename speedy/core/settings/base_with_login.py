@@ -66,6 +66,10 @@ LANGUAGES_TO_ADD = [
     ('es', _('Spanish')),
     ('pt', _('Portuguese')),
     ('it', _('Italian')),
+    ('nl', _('Dutch')),
+    ('sv', _('Swedish')),
+    ('ko', _('Korean')),
+    ('fi', _('Finnish')),
 ]
 
 LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]

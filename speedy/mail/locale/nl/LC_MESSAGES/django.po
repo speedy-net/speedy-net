@@ -1,0 +1,118 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-05 11:16+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\apps.py:8
+msgid "Speedy Mail Software Accounts"
+msgstr ""
+
+#: .\accounts\models.py:11
+msgid "User"
+msgstr ""
+
+#: .\accounts\models.py:19
+msgid "Speedy Mail Profile"
+msgstr ""
+
+#: .\accounts\models.py:20
+msgid "Speedy Mail Profiles"
+msgstr ""
+
+#: .\templates\about\about.html:11
+msgid "About Speedy Mail Software"
+msgstr ""
+
+#: .\templates\about\about.html:15
+msgid ""
+"Speedy Mail Software will be a free software and open source web-based email "
+"such as Gmail. We want the mail to be as similar as possible to the "
+"excellent email of Google, Gmail. When we develop such a mail software, we "
+"intend to run a free email service to all members of Speedy Net, so that the "
+"username of each person at Speedy Net + the speedy.net domain name will be "
+"the email address of the user. In the past we operated an email like this, "
+"but unfortunately we had to close it because it was a lot worse than Gmail, "
+"in terms of features and storage, and also because we were not able to "
+"control the problem of spam (\"junk mail\") sent to our clients. But if we "
+"can recruit volunteers to create a good email program, we will reactivate "
+"Speedy Mail and will allow any company or organization to operate a similar "
+"web-based email on their site."
+msgstr ""
+
+#: .\templates\about\about.html:17
+msgid ""
+"Speedy Mail Software will be available in two languages - English and "
+"Hebrew, and will be free of charge. Speedy Net and Speedy Mail Software are "
+"free software & open source projects. If you want to help developing Speedy "
+"Mail Software, please contact me by email."
+msgstr ""
+
+#: .\templates\about\about.html:19
+msgid ""
+"Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
+"speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was "
+"with us for many years and died in 2003. Speedy gave birth to 7 puppies in "
+"1988."
+msgstr ""
+
+#: .\templates\about\about.html:21 .\templates\main\main_page.html:23
+msgid "Thank you and good luck,"
+msgstr ""
+
+#: .\templates\about\about.html:22 .\templates\main\main_page.html:24
+msgid "Uri Rodberg"
+msgstr ""
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:25
+msgid "Founder and director of Speedy Net and Speedy Mail,"
+msgstr ""
+
+#: .\templates\about\about.html:24 .\templates\main\main_page.html:26
+msgid "Speedy Paz Technologies Ltd."
+msgstr ""
+
+#: .\templates\main\main_page.html:9
+msgid ""
+"We are looking for volunteers to help us develop Speedy Mail Software, a "
+"free software and open source web-based email such as Gmail."
+msgstr ""
+
+#: .\templates\main\main_page.html:15
+msgid "Welcome to Speedy Mail Software!"
+msgstr ""
+
+#: .\templates\main\main_page.html:19
+msgid ""
+"We are looking for volunteers to help us develop Speedy Mail Software, a "
+"free software and open source web-based email such as Gmail. We want the "
+"mail to be as similar as possible to the excellent email of Google, Gmail. "
+"When we develop such a mail software, we intend to run a free email service "
+"to all members of Speedy Net, so that the username of each person at Speedy "
+"Net + the speedy.net domain name will be the email address of the user. In "
+"the past we operated an email like this, but unfortunately we had to close "
+"it because it was a lot worse than Gmail, in terms of features and storage, "
+"and also because we were not able to control the problem of spam (\"junk mail"
+"\") sent to our clients. But if we can recruit volunteers to create a good "
+"email program, we will reactivate Speedy Mail and will allow any company or "
+"organization to operate a similar web-based email on their site."
+msgstr ""
+
+#: .\templates\main\main_page.html:21
+msgid ""
+"Speedy Mail Software will use the Python and JavaScript languages. Speedy "
+"Net is also free software and open source. If you are interested in "
+"volunteering, please contact me by email."
+msgstr ""
