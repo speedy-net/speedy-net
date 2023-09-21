@@ -307,15 +307,15 @@ To run all tests locally with all warnings, run:
 
     ./run_all_tests_with_all_warnings.sh
 
-## How to make and compile all messages for translation (To Hebrew):
+## How to make and compile all messages for translation:
 
-To make all messages (in both languages), run:
+To make all messages (in all languages), run:
 
     ./make_all_messages.sh
 
-Edit \*.po files in speedy/\*/locale/he/LC_MESSAGES directories (No need to translate to English, leave all the files in speedy/\*/locale/en as they are).
+Edit \*.po files in speedy/\*/locale/\*/LC_MESSAGES directories (No need to translate to English, leave all the files in speedy/\*/locale/en as they are).
 
-To compile all messages (in both languages) after you've done editing all the \*.po files, run:
+To compile all messages (in all languages) after you've done editing all the \*.po files, run:
 
     ./compile_all_messages.sh
 
