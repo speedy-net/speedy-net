@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -2719,7 +2719,7 @@ msgstr "A Speedy lamenta, mas esta página é privativa."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
-msgstr "Página não encontrada."
+msgstr "Página não encontrada"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."

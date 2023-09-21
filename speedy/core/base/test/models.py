@@ -72,18 +72,22 @@ if (django_settings.TESTS):
                 django_settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
                 django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
             }
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it'}):
+                c = 'en'
+            else:
+                c = self.language_code
             site_name_dict = {
-                django_settings.SPEEDY_NET_SITE_ID: {'en': "Speedy Net", 'fr': "Speedy Net", 'he': "ספידי נט"}[self.language_code],
-                django_settings.SPEEDY_MATCH_SITE_ID: {'en': "Speedy Match", 'fr': "Speedy Match", 'he': "ספידי מץ'"}[self.language_code],
-                django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'fr': "Speedy Composer", 'he': "ספידי קומפוזר"}[self.language_code],
-                django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'fr': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[self.language_code],
+                django_settings.SPEEDY_NET_SITE_ID: {'en': "Speedy Net", 'he': "ספידי נט"}[c],
+                django_settings.SPEEDY_MATCH_SITE_ID: {'en': "Speedy Match", 'he': "ספידי מץ'"}[c],
+                django_settings.SPEEDY_COMPOSER_SITE_ID: {'en': "Speedy Composer", 'he': "ספידי קומפוזר"}[c],
+                django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: {'en': "Speedy Mail Software", 'he': "תוכנת דואר ספידי"}[c],
             }
             self.assertEqual(first=self.site.id, second=django_settings.SITE_ID)
             self.assertEqual(first=self.site.id, second=site_id_dict[self.site.id])
             self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
             self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
             self.assertEqual(first=self.site.name, second=tests_settings.SITE_NAME_EN_DICT[django_settings.SITE_ID])
-            if (self.language_code in {'en', 'fr'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it'}):
                 self.assertEqual(first=self.site_name, second=self.site.name)
             else:
                 self.assertNotEqual(first=self.site_name, second=self.site.name)
