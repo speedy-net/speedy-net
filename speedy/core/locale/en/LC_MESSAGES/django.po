@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 06:48+0300\n"
+"POT-Creation-Date: 2023-09-21 09:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:803
+#: .\__translations\__translations.py:9 .\accounts\models.py:805
 msgid "email address"
 msgstr ""
 
@@ -1878,38 +1878,38 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: .\accounts\forms.py:159
+#: .\accounts\forms.py:165
 msgid "Update your profile picture"
 msgstr ""
 
-#: .\accounts\forms.py:159 .\accounts\validators.py:233
+#: .\accounts\forms.py:165 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr ""
 
-#: .\accounts\forms.py:297 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr ""
 
-#: .\accounts\forms.py:303 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr ""
 
-#: .\accounts\forms.py:306 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr ""
 
-#: .\accounts\forms.py:319
+#: .\accounts\forms.py:331
 msgid "Submit"
 msgstr ""
 
-#: .\accounts\forms.py:413
+#: .\accounts\forms.py:433
 msgid "Your password"
 msgstr ""
 
-#: .\accounts\forms.py:425
+#: .\accounts\forms.py:445
 msgid "Invalid password."
 msgstr ""
 
@@ -2094,7 +2094,7 @@ msgstr ""
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 
-#: .\accounts\models.py:479 .\accounts\models.py:787 .\blocks\models.py:15
+#: .\accounts\models.py:479 .\accounts\models.py:789 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
@@ -2102,60 +2102,60 @@ msgstr ""
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:507
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:788
+#: .\accounts\models.py:790
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:789
+#: .\accounts\models.py:791
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:790
+#: .\accounts\models.py:792
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:791
+#: .\accounts\models.py:793
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:792
+#: .\accounts\models.py:794
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:793
+#: .\accounts\models.py:795
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:804
+#: .\accounts\models.py:806
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:871
+#: .\accounts\models.py:873
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:872
+#: .\accounts\models.py:874
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:886
 msgid "Today"
 msgstr ""
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:888
 msgid "Yesterday"
 msgstr ""
 
-#: .\accounts\models.py:888
+#: .\accounts\models.py:890
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr ""
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:892
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr ""
@@ -2277,20 +2277,20 @@ msgid ""
 "are accepted."
 msgstr ""
 
-#: .\accounts\views.py:283
+#: .\accounts\views.py:287
 msgid "Invalid confirmation link."
 msgstr ""
 
-#: .\accounts\views.py:307 .\accounts\views.py:323
+#: .\accounts\views.py:311 .\accounts\views.py:327
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr ""
 
-#: .\accounts\views.py:338
+#: .\accounts\views.py:342
 msgid "The email address was deleted."
 msgstr ""
 
-#: .\accounts\views.py:354
+#: .\accounts\views.py:358
 msgid "You have made this email address primary."
 msgstr ""
 

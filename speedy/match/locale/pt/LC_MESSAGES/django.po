@@ -1057,7 +1057,7 @@ msgstr "Nenhum"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-20 18:32+0300\n"
+"POT-Creation-Date: 2023-09-21 09:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -869,7 +869,7 @@ msgstr "Introduce una dirección de correo electrónico válida."
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:803
+#: .\__translations\__translations.py:9 .\accounts\models.py:805
 msgid "email address"
 msgstr "Dirección de correo electrónico"
 
@@ -1966,38 +1966,38 @@ msgstr "Nuevo nombre de usuario"
 msgid "Create an account"
 msgstr "Crea una cuenta"
 
-#: .\accounts\forms.py:159
+#: .\accounts\forms.py:165
 msgid "Update your profile picture"
 msgstr "Actualiza tu foto de perfil"
 
-#: .\accounts\forms.py:159 .\accounts\validators.py:233
+#: .\accounts\forms.py:165 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "Se requiere una foto de perfil."
 
-#: .\accounts\forms.py:297 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "Correo electrónico o nombre de usuario"
 
-#: .\accounts\forms.py:303 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Inicio de sesión"
 
-#: .\accounts\forms.py:306 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: .\accounts\forms.py:319
+#: .\accounts\forms.py:331
 msgid "Submit"
 msgstr "Enviar"
 
-#: .\accounts\forms.py:413
+#: .\accounts\forms.py:433
 msgid "Your password"
 msgstr "Tu contraseña"
 
-#: .\accounts\forms.py:425
+#: .\accounts\forms.py:445
 msgid "Invalid password."
 msgstr "Contraseña no válida."
 
@@ -2182,7 +2182,7 @@ msgstr "Última dirección IP utilizo https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "La última dirección IP utilizó https://ipapi.com/ results sin procesar"
 
-#: .\accounts\models.py:479 .\accounts\models.py:787 .\blocks\models.py:15
+#: .\accounts\models.py:479 .\accounts\models.py:789 .\blocks\models.py:15
 msgid "user"
 msgstr "usuario"
 
@@ -2190,60 +2190,60 @@ msgstr "usuario"
 msgid "users"
 msgstr "usuarios"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:507
 msgid "Superuser must be equal to staff."
 msgstr "El superusuario debe ser igual al personal."
 
-#: .\accounts\models.py:788
+#: .\accounts\models.py:790
 msgid "email"
 msgstr "Correo electrónico"
 
-#: .\accounts\models.py:789
+#: .\accounts\models.py:791
 msgid "is confirmed"
 msgstr "esta confirmado"
 
-#: .\accounts\models.py:790
+#: .\accounts\models.py:792
 msgid "is primary"
 msgstr "es primario"
 
-#: .\accounts\models.py:791
+#: .\accounts\models.py:793
 msgid "confirmation token"
 msgstr "ficha de confirmación"
 
-#: .\accounts\models.py:792
+#: .\accounts\models.py:794
 msgid "confirmation sent"
 msgstr "confirmación enviada"
 
-#: .\accounts\models.py:793
+#: .\accounts\models.py:795
 msgid "Who can see this email"
 msgstr "¿Quién puede ver este correo electrónico?"
 
-#: .\accounts\models.py:804
+#: .\accounts\models.py:806
 msgid "email addresses"
 msgstr "direcciones de correo electrónico"
 
-#: .\accounts\models.py:871
+#: .\accounts\models.py:873
 msgid "User"
 msgstr "usuario"
 
-#: .\accounts\models.py:872
+#: .\accounts\models.py:874
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:886
 msgid "Today"
 msgstr "Hoy"
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:888
 msgid "Yesterday"
 msgstr "Ayer"
 
-#: .\accounts\models.py:888
+#: .\accounts\models.py:890
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "El {date} ({timesince_ago})"
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:892
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "hace {timesince}"
@@ -2398,20 +2398,20 @@ msgstr ""
 "No puedes usar este formato para tu foto de perfil. Sólo se aceptan formatos "
 "JPEG o PNG."
 
-#: .\accounts\views.py:283
+#: .\accounts\views.py:287
 msgid "Invalid confirmation link."
 msgstr "Enlace de confirmación no válido."
 
-#: .\accounts\views.py:307 .\accounts\views.py:323
+#: .\accounts\views.py:311 .\accounts\views.py:327
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Se envió un mensaje de confirmación a {email_address}"
 
-#: .\accounts\views.py:338
+#: .\accounts\views.py:342
 msgid "The email address was deleted."
 msgstr "La dirección de correo electrónico fue eliminada."
 
-#: .\accounts\views.py:354
+#: .\accounts\views.py:358
 msgid "You have made this email address primary."
 msgstr "Has convertido esta dirección de correo electrónico en principal."
 
