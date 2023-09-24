@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:46+0300\n"
+"POT-Creation-Date: 2023-09-24 14:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgstr "Tuas correspondências"
 #: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
-msgstr "Amigos"
+msgstr "Amigas"
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
@@ -470,10 +470,10 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Infelizmente tu não estás autorizado a usar o sítio {site_name}. Descobrimos "
+"Infelizmente tu não estás autorizada a usar o sítio {site_name}. Descobrimos "
 "que algumas das informações que forneceste ao se cadastrar no sítio estão "
 "incorrectas ou que violaste as regras de uso. Portanto, tu não estás "
-"autorizado a usar o sítio."
+"autorizada a usar o sítio."
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
