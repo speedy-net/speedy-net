@@ -732,7 +732,7 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="a" * 200, last_name_en="b" * 200)
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_he']})
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_sv', 'last_name_ko', 'last_name_fi', 'last_name_he']})
 
             def test_slug_and_username_min_length_ok_2(self):
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
