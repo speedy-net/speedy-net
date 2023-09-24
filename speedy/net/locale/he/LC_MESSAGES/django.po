@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-05 10:35+0300\n"
+"POT-Creation-Date: 2023-09-24 15:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,7 @@ msgstr ""
 msgid "Speedy Net Accounts"
 msgstr "Speedy Net Accounts"
 
+# ####: .\aaa\accounts\models.py:20
 #: .\accounts\models.py:20
 msgid "User"
 msgstr "משתמש/ת"
@@ -223,7 +224,6 @@ msgstr "חבר/ה שלך"
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
 msgstr "בקשת חברות נשלחה"
-
 
 #~ msgid "user"
 #~ msgstr "משתמש/ת"

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 07:09+0300\n"
+"POT-Creation-Date: 2023-09-24 15:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Die Gesamtzahl der aktiven Mitglieder auf der Website beträgt "
 "{total_number_of_active_members_in_the_last_four_months}, von denen "
-"{total_number_of_active_members_in_the_last_week} Mitglieder der Webseite "
-"letzte Woche beigetreten sind."
+"{total_number_of_active_members_in_the_last_week} Mitglieder die Website in "
+"der letzten Woche betreten haben."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
