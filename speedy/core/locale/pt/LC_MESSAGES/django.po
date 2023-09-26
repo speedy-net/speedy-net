@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 15:57+0300\n"
+"POT-Creation-Date: 2023-09-26 20:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2426,15 +2426,15 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Administrador: o número total de membros no sítio é "
-"{total_number_of_members}, dos quais "
-"{total_number_of_members_in_the_last_week} membros entraram no sítio nesta "
-"última semana, {total_number_of_members_in_the_last_month} membros entraram "
-"no sítio neste último mês, {total_number_of_members_in_the_last_four_months} "
-"membros entraram no sítio nos últimos quatro meses, "
-"{total_number_of_members_in_the_last_eight_months} membros entraram no sítio "
-"nos últimos oito meses e {total_number_of_members_in_the_last_two_years} "
-"membros entraram no sítio nos últimos dois anos."
+"Admin: o número total de membros no sítio é {total_number_of_members}, dos "
+"quais {total_number_of_members_in_the_last_week} membros entraram no sítio "
+"nesta última semana, {total_number_of_members_in_the_last_month} membros "
+"entraram no sítio neste último mês, "
+"{total_number_of_members_in_the_last_four_months} membros entraram no sítio "
+"nos últimos quatro meses, {total_number_of_members_in_the_last_eight_months} "
+"membros entraram no sítio nos últimos oito meses e "
+"{total_number_of_members_in_the_last_two_years} membros entraram no sítio "
+"nos últimos dois anos."
 
 #: .\admin\views.py:100
 #, python-brace-format
@@ -2867,7 +2867,7 @@ msgstr "Ver todos"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "Administrador - Amigos"
+msgstr "Admin - Amigos"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
@@ -2883,7 +2883,7 @@ msgstr "Informações do administrador"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr "Administrador - Todos os utilizadores"
+msgstr "Admin - Todos os utilizadores"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
