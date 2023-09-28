@@ -19,7 +19,7 @@ pytz==2023.3
 rules==3.3
 s3transfer==0.6.1
 six==1.16.0
-sorl-thumbnail==12.9.0
+-e git+https://github.com/uri-rodberg/sorl-thumbnail.git@9339cc250328f7c5d00212877d920a69bf7e740a#egg=sorl_thumbnail
 sqlparse==0.4.4
 typing_extensions==4.7.1
 tzdata==2023.3
