@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -2595,7 +2595,7 @@ msgstr "foto reportada"
 
 #: .\contact_by_form\models.py:31
 msgid "feedback"
-msgstr "Comentario"
+msgstr "comentario"
 
 #: .\contact_by_form\models.py:32
 msgid "feedbacks"
