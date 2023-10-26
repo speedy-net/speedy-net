@@ -121,7 +121,7 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_cannot_login_with_wrong_username(self):
-                self.client.login(username='a{}'.format(self.user.slug), password=tests_settings.USER_PASSWORD)
+                self.client.login(username='a{}'.format(self.user.username), password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_cannot_login_with_wrong_email(self):
