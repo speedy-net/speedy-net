@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 16:11+0300\n"
+"POT-Creation-Date: 2023-11-08 01:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr ""
+msgstr "Speedy Net-tilit"
 
 #: .\accounts\models.py:20
 msgid "User"
-msgstr ""
+msgstr "Käyttäjä"
 
 #: .\accounts\models.py:23
 msgid "Number of friends on last user's visit"
-msgstr ""
+msgstr "Ystävien määrä käyttäjän edellisellä vierailulla"
 
 #: .\accounts\models.py:32
 msgid "Speedy Net Profile"
-msgstr ""
+msgstr "Speedy Net profiili"
 
 #: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
-msgstr ""
+msgstr "Speedy Net profiili"
 
 #: .\accounts\utils.py:22
 #, python-brace-format
@@ -44,14 +44,18 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
+"Sivuston aktiivisten jäsenten kokonaismäärä on "
+"{total_number_of_active_members_in_the_last_four_months}, joista "
+"{total_number_of_active_members_in_the_last_week} jäsentä tuli sivustolle "
+"viime viikolla."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr ""
+msgstr "Speedy Net [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr ""
+msgstr "Speedy Netistä"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -62,6 +66,11 @@ msgid ""
 "ages (no age limit!). The site is vegan and vegetarian friendly. It is "
 "currently available in %(languages_num)s languages."
 msgstr ""
+"<a href=\"https://fi.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> on "
+"uusi sosiaalinen verkosto. Speedy Netillä voit kommunikoida ystäviesi "
+"kanssa. Speedy Net on avoinna ilmaiselle rekisteröinnille kaikille maista ja "
+"ikäryhmistä (ei ikärajaa!). Sivusto on vegaani- ja kasvissyöjäystävällinen. "
+"Se on tällä hetkellä saatavilla %(languages_num)s kielellä."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -69,6 +78,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
+"Speedy Netin perustajat ovat vegaaneja, kannattavat eläinten oikeuksia ja "
+"vastustavat eläinkokeita. Speedy Net on sosiaalinen verkosto, joka sopii "
+"vegaaneille ja kasvissyöjille ja eläimille."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -77,13 +89,21 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
+"Päätimme rajoittaa Speedy Netin ystävien määrän 800:aan. Suosittelemme "
+"lisäämään ystäviksi vain henkilöitä, jotka tunnet henkilökohtaisesti. Voit "
+"valita, mitkä tiedot näkyvät profiilissasi julkisina, mitkä tiedot näkyvät "
+"vain ystävillesi ja mitkä tiedot ovat yksityisiä. Yksityiset tiedot näkyvät "
+"vain sinulle."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 msgid ""
-"You can use our new app, <a href=\"https://en.speedymatch.com/\" title="
-"\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
+"You can use our new app, <a href=\"https://en.speedymatch.com/\" "
+"title=\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
 "Speedy Match is open to singles of all ages."
 msgstr ""
+"Voit käyttää uutta appiamme, <a href=\"https://fi.speedymatch.com/\" "
+"title=\"Speedy Match\">Speedy Match</a>, löytääksesi tapaamiseen sopivia "
+"henkilöitä. Speedy Match on aovin kaikenikäisille sinkuille"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -91,12 +111,17 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
+"Kaikki toiminnot Speedy Netissä ja Speedy Matchissa ovat ilmaisia. Liity "
+"Speedy Netiin nyt löytääksesi ystäviä, se vie vain hetken. <a href=\"/\" "
+"title=\"Liity Speedyyn"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
+"Speedy Net on ilmainen ja vapaan koodin ohjelmisto. Jos haluat autta "
+"kehittämään Speedy Netiä, ota yhteyttä minuun sähköpostilla."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -104,55 +129,59 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Net on nimetty <a href=\"https://www.facebook.com/speedy.the.female."
+"dog\" title=\"Speedy\">Speedy</a> mukaan, tyttökoiran, joka oli meillä monta "
+"vuotta ja kuoli vuonna 2003. Speedy sai 7 pentua vuonna 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr ""
+msgstr "Speedy Net on alpha-vaiheessa. Se lanseerattiin 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "Kiitos ja onnea,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
+msgstr "Speedy Netin ja Speedy Matchin perustaja ja johtaja,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr ""
+msgstr "Tervetuloa"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "Tervetuloa %(site_name) - sivulle"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "Vahvista sähköpostiosoitteesi."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"Speedy Net -tilisi ei ole aktiivinen. Aktivoi se siirtymällä tälle sivulle."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
-msgstr ""
+msgstr "Estetyt käyttäjät"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "Sinulla ei ole vielä ystäviä"
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr ""
+msgstr "Ystäväsi"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -161,34 +190,853 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
+"Speedy Net on uusi sosiaalinen verkosto. Speedy Netin avulla voit "
+"kommunikoida ystäviesi kanssa. Spedy Netiin voi liittyä kaikista maista ja "
+"kaikenikäiset (ei ikärajaa!). Speedy Net on vegaani- ja "
+"vegetaristiystävällinen"
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
+"Kaikki toiminnot Speedy Netissä ja Speedy Matchissa ovat ilmaisia. Liity "
+"Speedy Netiin nyt löytääksesi ystäviä, se vie vain hetken."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr ""
+msgstr "Speedy match - deittaile Speedyä"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
+msgstr "Etsitkö poikaystävää? Etsitkö tyttöystävää? Tule ja tapaa Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr ""
+msgstr "Ilmaista onlinedeittailua"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr ""
+msgstr "Ystävät"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr ""
+msgstr "Ystäväsi"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr ""
+msgstr "Ystäväpyyntö lähetetty"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
