@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 16:11+0300\n"
+"POT-Creation-Date: 2023-11-08 07:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2493,47 +2493,47 @@ msgstr ""
 
 #: .\settings\base.py:167
 msgid "English"
-msgstr ""
+msgstr "Engels"
 
 #: .\settings\base.py:168
 msgid "Hebrew"
-msgstr ""
+msgstr "Hebreeuws"
 
 #: .\settings\base_with_login.py:64
 msgid "French"
-msgstr ""
+msgstr "Frans"
 
 #: .\settings\base_with_login.py:65
 msgid "German"
-msgstr ""
+msgstr "Duits"
 
 #: .\settings\base_with_login.py:66
 msgid "Spanish"
-msgstr ""
+msgstr "Spaans"
 
 #: .\settings\base_with_login.py:67
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugees"
 
 #: .\settings\base_with_login.py:68
 msgid "Italian"
-msgstr ""
+msgstr "Italiaans"
 
 #: .\settings\base_with_login.py:69
 msgid "Dutch"
-msgstr ""
+msgstr "Nederlands"
 
 #: .\settings\base_with_login.py:70
 msgid "Swedish"
-msgstr ""
+msgstr "Zweeds"
 
 #: .\settings\base_with_login.py:71
 msgid "Korean"
-msgstr ""
+msgstr "Koreaans"
 
 #: .\settings\base_with_login.py:72
 msgid "Finnish"
-msgstr ""
+msgstr "Fins"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
