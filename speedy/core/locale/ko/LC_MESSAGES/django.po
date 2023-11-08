@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 16:11+0300\n"
+"POT-Creation-Date: 2023-11-08 07:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -893,7 +893,6 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -2146,7 +2145,6 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2157,7 +2155,6 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2168,7 +2165,6 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2179,7 +2175,6 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2190,14 +2185,12 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2206,14 +2199,12 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
-msgstr[1] ""
 
 #: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
@@ -2493,47 +2484,47 @@ msgstr ""
 
 #: .\settings\base.py:167
 msgid "English"
-msgstr ""
+msgstr "영어"
 
 #: .\settings\base.py:168
 msgid "Hebrew"
-msgstr ""
+msgstr "히브리어"
 
 #: .\settings\base_with_login.py:64
 msgid "French"
-msgstr ""
+msgstr "프랑스어"
 
 #: .\settings\base_with_login.py:65
 msgid "German"
-msgstr ""
+msgstr "독일어"
 
 #: .\settings\base_with_login.py:66
 msgid "Spanish"
-msgstr ""
+msgstr "스페인어"
 
 #: .\settings\base_with_login.py:67
 msgid "Portuguese"
-msgstr ""
+msgstr "포르투갈어"
 
 #: .\settings\base_with_login.py:68
 msgid "Italian"
-msgstr ""
+msgstr "이탈리아어"
 
 #: .\settings\base_with_login.py:69
 msgid "Dutch"
-msgstr ""
+msgstr "네덜란드어"
 
 #: .\settings\base_with_login.py:70
 msgid "Swedish"
-msgstr ""
+msgstr "스웨덴어"
 
 #: .\settings\base_with_login.py:71
 msgid "Korean"
-msgstr ""
+msgstr "한국어"
 
 #: .\settings\base_with_login.py:72
 msgid "Finnish"
-msgstr ""
+msgstr "핀란드어"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
