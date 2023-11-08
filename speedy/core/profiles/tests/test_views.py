@@ -617,6 +617,230 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class UserDetailViewDutchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.birth_date = "Geburtsdatum"
+                self.birth_year = "Geburtsjahr"
+                if (self.random_choice == 1):
+                    self.first_name = "Corrin"
+                    self.last_name = "Gideon"
+                    self.full_name = "Corrin Gideon"
+                    self.user_birth_date = "12. September 1992"
+                    self.user_birth_month_day = "12. September"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12. September 1990"
+                    self.not_user_birth_month_day = "21. September"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Jennifer"
+                    self.last_name = "Connelly"
+                    self.full_name = "Jennifer Connelly"
+                    self.user_birth_date = "31. Januar 1978"
+                    self.user_birth_month_day = "31. Januar"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31. Januar 1990"
+                    self.not_user_birth_month_day = "30. Januar"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                    }
+                else:
+                    raise NotImplementedError()
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Seite Nicht Gefunden / Speedy Net [alpha]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Seite Nicht Gefunden / Speedy Match [alpha]",
+                }
+                self.expected_404_speedy_is_sorry = 'Speedy tut es leid, aber die Seite kann nicht gefunden werden.'
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserDetailViewSwedishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.birth_date = "Födelsedatum"
+                self.birth_year = "Födelseår"
+                if (self.random_choice == 1):
+                    self.first_name = "Corrin"
+                    self.last_name = "Gideon"
+                    self.full_name = "Corrin Gideon"
+                    self.user_birth_date = "12. September 1992"
+                    self.user_birth_month_day = "12. September"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12. September 1990"
+                    self.not_user_birth_month_day = "21. September"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Jennifer"
+                    self.last_name = "Connelly"
+                    self.full_name = "Jennifer Connelly"
+                    self.user_birth_date = "31. Januar 1978"
+                    self.user_birth_month_day = "31. Januar"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31. Januar 1990"
+                    self.not_user_birth_month_day = "30. Januar"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                    }
+                else:
+                    raise NotImplementedError()
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Net [alpha]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Match [alpha]",
+                }
+                self.expected_404_speedy_is_sorry = 'Speedy beklagar, men sidan har inte hittats.'
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserDetailViewKoreanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.birth_date = "Geburtsdatum"
+                self.birth_year = "Geburtsjahr"
+                if (self.random_choice == 1):
+                    self.first_name = "Corrin"
+                    self.last_name = "Gideon"
+                    self.full_name = "Corrin Gideon"
+                    self.user_birth_date = "12. September 1992"
+                    self.user_birth_month_day = "12. September"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12. September 1990"
+                    self.not_user_birth_month_day = "21. September"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Jennifer"
+                    self.last_name = "Connelly"
+                    self.full_name = "Jennifer Connelly"
+                    self.user_birth_date = "31. Januar 1978"
+                    self.user_birth_month_day = "31. Januar"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31. Januar 1990"
+                    self.not_user_birth_month_day = "30. Januar"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                    }
+                else:
+                    raise NotImplementedError()
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Seite Nicht Gefunden / Speedy Net [alpha]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Seite Nicht Gefunden / Speedy Match [alpha]",
+                }
+                self.expected_404_speedy_is_sorry = 'Speedy tut es leid, aber die Seite kann nicht gefunden werden.'
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserDetailViewFinnishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.birth_date = "Syntymäpäivä"
+                self.birth_year = "Syntymävuosi"
+                if (self.random_choice == 1):
+                    self.first_name = "Corrin"
+                    self.last_name = "Gideon"
+                    self.full_name = "Corrin Gideon"
+                    self.user_birth_date = "12. September 1992"
+                    self.user_birth_month_day = "12. September"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12. September 1990"
+                    self.not_user_birth_month_day = "21. September"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Jennifer"
+                    self.last_name = "Connelly"
+                    self.full_name = "Jennifer Connelly"
+                    self.user_birth_date = "31. Januar 1978"
+                    self.user_birth_month_day = "31. Januar"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31. Januar 1990"
+                    self.not_user_birth_month_day = "30. Januar"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                    }
+                else:
+                    raise NotImplementedError()
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Sivua Ei Löydy / Speedy Net [alpha]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Sivua Ei Löydy / Speedy Match [alpha]",
+                }
+                self.expected_404_speedy_is_sorry = 'Speedy pahoittelee, mutta sivua ei löydy.'
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserDetailViewHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
