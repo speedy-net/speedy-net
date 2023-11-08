@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 16:11+0300\n"
+"POT-Creation-Date: 2023-11-08 07:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2722,19 +2722,19 @@ msgstr "Italienisch"
 
 #: .\settings\base_with_login.py:69
 msgid "Dutch"
-msgstr ""
+msgstr "Niederländisch"
 
 #: .\settings\base_with_login.py:70
 msgid "Swedish"
-msgstr ""
+msgstr "Schwedisch"
 
 #: .\settings\base_with_login.py:71
 msgid "Korean"
-msgstr ""
+msgstr "Koreanisch"
 
 #: .\settings\base_with_login.py:72
 msgid "Finnish"
-msgstr ""
+msgstr "Finnisch"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
