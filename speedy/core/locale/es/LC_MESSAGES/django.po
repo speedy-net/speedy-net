@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 07:25+0200\n"
+"POT-Creation-Date: 2023-11-09 14:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -871,11 +871,11 @@ msgstr "Dirección de correo electrónico"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:805
 msgid "email address"
-msgstr "Dirección de correo electrónico"
+msgstr "dirección de correo electrónico"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
-msgstr "Dirección de correo electrónico"
+msgstr "Dirección de correo electrónico:"
 
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
@@ -2196,7 +2196,7 @@ msgstr "El superusuario debe ser igual al personal."
 
 #: .\accounts\models.py:790
 msgid "email"
-msgstr "Correo electrónico"
+msgstr "correo electrónico"
 
 #: .\accounts\models.py:791
 msgid "is confirmed"
@@ -2788,7 +2788,7 @@ msgstr "Desactivar cuenta"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "direcciones de correo electrónico"
+msgstr "Direcciones de correo electrónico"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
