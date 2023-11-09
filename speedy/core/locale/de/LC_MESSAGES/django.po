@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 07:25+0200\n"
+"POT-Creation-Date: 2023-11-09 14:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -871,11 +871,11 @@ msgstr "E-Mail-Adresse"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:805
 msgid "email address"
-msgstr "E-Mail-Adresse"
+msgstr "e-mail-adresse"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
-msgstr "E-Mail-Adresse"
+msgstr "E-Mail-Adresse:"
 
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
@@ -2212,7 +2212,7 @@ msgstr "Superbenutzer muss dem Personal entsprechen"
 
 #: .\accounts\models.py:790
 msgid "email"
-msgstr "E-Mail"
+msgstr "e-mail"
 
 #: .\accounts\models.py:791
 msgid "is confirmed"
@@ -2236,7 +2236,7 @@ msgstr "Wer kann diese E-Mail sehen"
 
 #: .\accounts\models.py:806
 msgid "email addresses"
-msgstr "E-Mail-Adressen"
+msgstr "e-mail-adressen"
 
 #: .\accounts\models.py:873
 msgid "User"

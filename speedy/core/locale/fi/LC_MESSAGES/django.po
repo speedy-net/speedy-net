@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 07:25+0200\n"
+"POT-Creation-Date: 2023-11-09 14:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,19 +268,19 @@ msgstr "Palautteesi lähetettiin ylläpitäjille."
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "Lähetä viesti käyttäjälle"
+msgstr ""
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "Lähetä viesti käyttäjälle"
+msgstr ""
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "Lähetä viesti käyttäjälle"
+msgstr ""
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
@@ -364,8 +364,6 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Match profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Match:issä."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -374,8 +372,6 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Match profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Match:issä."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -384,8 +380,6 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Match profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Match:issä."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -394,8 +388,6 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Net profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Netissä."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -404,8 +396,6 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Net profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Netissä."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -414,8 +404,6 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Käyttäjällä %(user_name)on myös Speedy Net profiili. Näytä käyttäjän "
-"%(user_name) profiili Speedy Netissä."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -823,9 +811,6 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Olet kirjautunut vastaanottamaan tämä tapaisia ilmoituksia sivulta  "
-"%(site_name). Mene tälle sivulle muuttaaksesi ilmoitusasetuksiasi tai "
-"kirjautuaksesi pois ilmoituksista:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -834,9 +819,6 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Olet kirjautunut vastaanottamaan tämä tapaisia ilmoituksia sivulta  "
-"%(site_name). Mene tälle sivulle muuttaaksesi ilmoitusasetuksiasi tai "
-"kirjautuaksesi pois ilmoituksista:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -845,9 +827,6 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Olet kirjautunut vastaanottamaan tämä tapaisia ilmoituksia sivulta  "
-"%(site_name). Mene tälle sivulle muuttaaksesi ilmoitusasetuksiasi tai "
-"kirjautuaksesi pois ilmoituksista:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -880,8 +859,6 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Syötä oikea %(username) ja salasana. Huomaa, että molemmat kentät ovat "
-"merkkikokoriippuvaisia."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -2411,15 +2388,6 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Järjestelmänvalvoja: Sivuston jäsenten kokonaismäärä on "
-"{total_number_of_members}, joista {total_number_of_members_in_the_last_week} "
-"jäsentä tuli sivustolle viime viikolla, "
-"{total_number_of_members_in_the_last_month} jäsentä tuli sivustolle viime "
-"kuussa, {total_number_of_members_the_members_the_members viimeisen neljän "
-"kuukauden aikana {total_number_of_members_in_the_last_eight_months} ​​jäsentä "
-"tuli sivustolle viimeisen kahdeksan kuukauden aikana ja "
-"{total_number_of_members_in_the_last_two_years} jäsentä on tullut sivustolle "
-"viimeisen kahden vuoden aikana."
 
 #: .\admin\views.py:100
 #, python-brace-format
@@ -3094,7 +3062,7 @@ msgstr "Ystävyyspyyntöjä ei ole vireillä."
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "Tervetuloa sivustolle  %(site_name)!"
+msgstr ""
 
 #: .\templates\main\main_page_base.html:21
 #, python-format

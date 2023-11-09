@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 07:25+0200\n"
+"POT-Creation-Date: 2023-11-09 14:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -862,7 +862,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:805
 msgid "email address"
-msgstr "E-mail"
+msgstr "e-mail"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
@@ -2191,7 +2191,7 @@ msgstr "Superuser precisa ser igual a funcionário."
 
 #: .\accounts\models.py:790
 msgid "email"
-msgstr "E-mail"
+msgstr "e-mail"
 
 #: .\accounts\models.py:791
 msgid "is confirmed"
@@ -2784,7 +2784,7 @@ msgstr "Desativar conta"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "direcções de e-mail"
+msgstr "Direcções de e-mail"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
