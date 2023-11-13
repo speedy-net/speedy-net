@@ -1,4 +1,4 @@
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
 
@@ -31,6 +31,9 @@ def sites(request):
         site_title = django_settings.SITE_TITLE
     else:
         site_title = _(site.name)
+    if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+        if (get_language() == 'en'):
+            site_title = _(site.name)
     return {
         'site': site,
         'site_name': _(site.name),
