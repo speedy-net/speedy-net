@@ -10,13 +10,31 @@
 {% block english_and_french_tr_style %} style="text-align: center;"{% endblock %}
 
 {% block french_td %}
-    <td dir="ltr">
-        <a class="{% block french_a_classes %}language-link table{% endblock %}" href="//fr.{{ site.domain }}/" title="Français{% block alpha_french_title %} [alpha]{% endblock %}" target="_top">Français{% block alpha_french %}<span> [alpha]</span>{% endblock %}</a>
+    <td colspan="3" dir="ltr">
+        <a class="language-link table" href="//fr.{{ site.domain }}/" title="Français [alpha]" target="_top">Français<span> [alpha]</span></a>
     </td>
 {% endblock %}
 
-{% block hebrew_tr %}</tr><tr>{% endblock %}
-{% block hebrew_colspan %}colspan="2" {% endblock %}
+{% block welcome_base_with_alpha_all_trs %}</tr>
+    <tr style="text-align: center;">
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//de.{{ site.domain }}/" title="Deutsch [alpha]" target="_top">Deutsch<span> [alpha]</span></a>
+        </td>
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//es.{{ site.domain }}/" title="Español [alfa]" target="_top">Español<span> [alfa]</span></a>
+        </td>
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//pt.{{ site.domain }}/" title="Português [alfa]" target="_top">Português<span> [alfa]</span></a>
+        </td>
+    </tr>
+    <tr style="text-align: center;">
+        <td colspan="3" dir="ltr">
+            <a class="language-link table" href="//it.{{ site.domain }}/" title="Italiano [alfa]" target="_top">Italiano<span> [alfa]</span></a>
+        </td>
+{% endblock %}
+
+{% block english_colspan %}colspan="3" {% endblock %}
+{% block hebrew_colspan %}colspan="3" {% endblock %}
 
 {% block table_cellspacing %}cellspacing="8" {% endblock %}
 

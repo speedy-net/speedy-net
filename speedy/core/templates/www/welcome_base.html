@@ -33,12 +33,12 @@
     <table border="0" {% block table_cellspacing %}{% endblock %}cellpadding="0" dir="ltr">
         <tr{% block english_and_french_tr_style %}{% endblock %}>
             {% block english_td %}
-                <td dir="ltr">
+                <td {% block english_colspan %}{% endblock %}dir="ltr">
                     <a class="{% block english_a_classes %}{% endblock %}" href="//en.{{ site.domain }}/" title="English{% block alpha_english_title %}{% endblock %}" target="_top">English{% block alpha_english %}{% endblock %}</a>
                 </td>
             {% endblock %}
             {% block french_td %}{% endblock %}
-        {% block hebrew_tr %}{% endblock %}
+        {% block welcome_base_with_alpha_all_trs %}{% endblock %}
             {% block hebrew_td %}
                 <td {% block hebrew_colspan %}{% endblock %}dir="rtl">
                     <a class="{% block hebrew_a_classes %}{% endblock %}" href="//he.{{ site.domain }}/" title="עברית{% block alpha_hebrew_title %}{% endblock %}" target="_top">עברית{% block alpha_hebrew %}{% endblock %}</a>
