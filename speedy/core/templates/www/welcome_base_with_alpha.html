@@ -31,10 +31,25 @@
         <td colspan="3" dir="ltr">
             <a class="language-link table" href="//it.{{ site.domain }}/" title="Italiano [alfa]" target="_top">Italiano<span> [alfa]</span></a>
         </td>
-{% endblock %}
+        <td colspan="3" dir="ltr">
+            <a class="language-link table" href="//nl.{{ site.domain }}/" title="Nederlands [alpha]" target="_top">Nederlands<span> [alpha]</span></a>
+        </td>
+    </tr>
+    <tr style="text-align: center;">
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//sv.{{ site.domain }}/" title="Svenska [alpha]" target="_top">Svenska<span> [alpha]</span></a>
+        </td>
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//ko.{{ site.domain }}/" title="한국어 [알파 버전]" target="_top">한국어<span> [알파 버전]</span></a>
+        </td>
+        <td colspan="2" dir="ltr">
+            <a class="language-link table" href="//fi.{{ site.domain }}/" title="Suomi [alpha]" target="_top">Suomi<span> [alpha]</span></a>
+        </td>
+    </tr>
+    <tr style="text-align: center;">{% endblock %}
 
 {% block english_colspan %}colspan="3" {% endblock %}
-{% block hebrew_colspan %}colspan="3" {% endblock %}
+{% block hebrew_colspan %}colspan="6" {% endblock %}
 
 {% block table_cellspacing %}cellspacing="8" {% endblock %}
 
