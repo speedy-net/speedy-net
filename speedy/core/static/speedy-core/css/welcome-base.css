@@ -85,4 +85,9 @@ img.main-image {
     .speedy-bottom-badge-link {
         font-size: 28px;
     }
+
+    a > span:before {
+        content: '';
+        display: block;
+    }
 }
