@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -217,7 +217,7 @@ msgstr "Speedy Match –  Speedy daten"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Op zoek naar een vriendje of vriendinnetje? Maak kennis met Speedy!"
+msgstr "Op zoek naar een vriendje? Op zoek naar een vriendinnetje? Kom kennismaken met Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
