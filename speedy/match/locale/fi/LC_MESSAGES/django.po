@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 05:08+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -301,17 +301,17 @@ msgstr "Sinä tykkäät"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Vieraili viimeksi Speedy Matchissa"
+msgstr "Vieraili viimeksi Speedy Match issa"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Vieraili viimeksi Speedy Matchissa"
+msgstr "Vieraili viimeksi Speedy Match issa"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Vieraili viimeksi Speedy Matchissa"
+msgstr "Vieraili viimeksi Speedy Match issa"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -979,30 +979,31 @@ msgstr "Speedy Match [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Speedy Matchista"
+msgstr "Speedy Match ista"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
 msgid ""
-"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a> is a new dating/matching web app for romantic purposes for singles who "
-"are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a>. With Speedy Match you can find matching people for "
-"dating and chat with them online. You can add people as friends on Speedy "
-"Net, like people and send them messages. Speedy Match is open to free "
-"registration for people from all countries and ages (no age limit!). The "
-"site is vegan and vegetarian friendly. It is currently available in "
-"%(languages_num)s languages."
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
+"find matching people for dating and chat with them online. You can add "
+"people as friends on Speedy Net, like people and send them messages. Speedy "
+"Match is open to free registration for people from all countries and ages "
+"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
+"available in %(languages_num)s languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a> on uusi deittailusovellus romanttisiin tarkoituksiin sinkkuille, jotka "
-"ovat <a href= \"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> "
-"Speedy Matchissa. Speedy Matchin avulla voit löytää sopivia ihmisiä "
-"treffeille ja keskustella heidän kanssaan verkossa. Voit lisätä ihmisiä "
-"ystäviksi Speedy Netissä, tykätä ihmisistä ja lähettää heille viestejä. "
-"Speedy Match on avoinna ilmaiselle rekisteröinnille kaikista maista ja "
-"ikäryhmistä (ei ikärajaa!). Sivusto on vegaani- ja kasvissyöjäystävällinen. "
-"Se on tällä hetkellä saatavilla %(languages_num)s kielellä."
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> on uusi deittailusovellus romanttisiin "
+"tarkoituksiin sinkkuille, jotka ovat <a href= \"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a> Speedy Match issa. Speedy "
+"Matchin avulla voit löytää sopivia ihmisiä treffeille ja keskustella heidän "
+"kanssaan verkossa. Voit lisätä ihmisiä ystäviksi Speedy Net issä, tykätä "
+"ihmisistä ja lähettää heille viestejä. Speedy Match on avoinna ilmaiselle "
+"rekisteröinnille kaikista maista ja ikäryhmistä (ei ikärajaa!). Sivusto on "
+"vegaani- ja kasvissyöjäystävällinen. Se on tällä hetkellä saatavilla "
+"%(languages_num)s kielellä."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1010,7 +1011,7 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"Speedy Matchin perustajat ovat vegaaneja, tukevat eläinten oikeuksia ja "
+"Speedy Match in perustajat ovat vegaaneja, tukevat eläinten oikeuksia ja "
 "vastustavat eläinkokeita. Speedy Match on treffisovellus, joka on "
 "ystävällinen vegaaneille ja kasvissyöjille ja eläimille."
 
@@ -1035,9 +1036,10 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Kaikki Speedy Netin ja Speedy Matchin ominaisuudet ovat ilmaisia. Liity "
-"Speedy Matchiin tänään löytääksesi sopivia kumppaneita, se vie vain muutaman "
-"minuutin. Liity <a href=\"/\" title=\"Join Speedy Match\">Napsauta tätä</a>."
+"Kaikki Speedy Net in ja Speedy Match in ominaisuudet ovat ilmaisia. Liity "
+"Speedy Match iin tänään löytääksesi sopivia kumppaneita, se vie vain "
+"muutaman minuutin. Liity <a href=\"/\" title=\"Join Speedy Match\">Napsauta "
+"tätä</a>."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1045,7 +1047,7 @@ msgid ""
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
 "Speedy Match on ilmainen ohjelmisto ja avoimen lähdekoodin projekti. Jos "
-"haluat auttaa Speedy Matchin kehittämisessä ja parantamisessa, ota minuun "
+"haluat auttaa Speedy Match in kehittämisessä ja parantamisessa, ota minuun "
 "yhteyttä sähköpostitse."
 
 #: .\templates\about\about.html:27
@@ -1074,7 +1076,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Netin ja Speedy Matchin perustaja ja johtaja,"
+msgstr "Speedy Net in ja Speedy Match in perustaja ja johtaja,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1091,7 +1093,7 @@ msgstr "Tervetuloa"
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Tervetuloa %(site_name) - sivulle"
+msgstr "Tervetuloa %(site_name)s - sivulle"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1189,23 +1191,23 @@ msgid ""
 "vegetarian friendly."
 msgstr ""
 "Speedy Match on uusi deittailu-/pari-verkkosovellus romanttisiin "
-"tarkoituksiin sinkkuille, jotka ovat Speedy Netin jäseniä. Speedy Matchin "
+"tarkoituksiin sinkkuille, jotka ovat Speedy Net in jäseniä. Speedy Match in "
 "avulla voit löytää sopivia ihmisiä treffeille ja keskustella heidän kanssaan "
 "verkossa. Sivusto on vegaani- ja kasvissyöjäystävällinen."
 
 #: .\templates\main\main_page.html:14
 msgid ""
-"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
-msgstr "Etsitkö poikaystävää? Etsitkö tyttöystävää? Tule tapaamaan Speedy!"
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr "Etsitkö poikaystävää? Etsitkö tyttöystävää? Tule ja tapaa Speedy!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Kaikki Speedy Netin ja Speedy Matchin ominaisuudet ovat ilmaisia. Liity "
-"Speedy Matchiin tänään löytääksesi sopivia kumppaneita, se vie vain muutaman "
-"minuutin."
+"Kaikki Speedy Net in ja Speedy Match in ominaisuudet ovat ilmaisia. Liity "
+"Speedy Match iin tänään löytääksesi sopivia kumppaneita, se vie vain "
+"muutaman minuutin."
 
 #: .\templates\matches\match_list.html:35
 msgid "Update matches"
@@ -1294,7 +1296,7 @@ msgstr "Suhdestatus"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Vieraili viimeksi Speedy Matchissä"
+msgstr "Vieraili viimeksi Speedy Match issä"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 05:09+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -408,17 +408,17 @@ msgstr ""
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Netissä."
+msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Net issä."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Netissä."
+msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Net issä."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Netissä."
+msgstr "Sinullakin on Speedy Net-profiili. Näytä profiilisi Speedy Net issä."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -1492,7 +1492,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1502,7 +1502,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1512,7 +1512,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1522,7 +1522,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1532,7 +1532,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1542,7 +1542,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1552,7 +1552,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1562,7 +1562,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1572,7 +1572,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Speedy Net issä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1757,7 +1757,7 @@ msgstr ""
 "Koska sivustoa käytettiin väärin roskapostiviestien lähettämiseen, jouduimme "
 "rajoittamaan viestien määrää, jotka voidaan lähettää muille sivuston "
 "jäsenille yhdessä päivässä. Yritä huomenna uudelleen. Huomaa, että et saa "
-"käyttää Speedy Netiä roskapostiviestien tai samansisältöisten viestien "
+"käyttää Speedy Net iä roskapostiviestien tai samansisältöisten viestien "
 "lähettämiseen suurelle joukolle ihmisiä."
 
 #: .\__translations\__translations.py:234
@@ -1772,7 +1772,7 @@ msgstr ""
 "Koska sivustoa käytettiin väärin roskapostiviestien lähettämiseen, jouduimme "
 "rajoittamaan viestien määrää, jotka voidaan lähettää muille sivuston "
 "jäsenille yhdessä päivässä. Yritä huomenna uudelleen. Huomaa, että et saa "
-"käyttää Speedy Netiä roskapostiviestien tai samansisältöisten viestien "
+"käyttää Speedy Net iä roskapostiviestien tai samansisältöisten viestien "
 "lähettämiseen suurelle joukolle ihmisiä."
 
 #: .\__translations\__translations.py:235
@@ -1787,7 +1787,7 @@ msgstr ""
 "Koska sivustoa käytettiin väärin roskapostiviestien lähettämiseen, jouduimme "
 "rajoittamaan viestien määrää, jotka voidaan lähettää muille sivuston "
 "jäsenille yhdessä päivässä. Yritä huomenna uudelleen. Huomaa, että et saa "
-"käyttää Speedy Netiä roskapostiviestien tai samansisältöisten viestien "
+"käyttää Speedy Net iä roskapostiviestien tai samansisältöisten viestien "
 "lähettämiseen suurelle joukolle ihmisiä."
 
 #: .\__translations\__translations.py:241
@@ -1797,7 +1797,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1806,7 +1806,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1815,7 +1815,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1824,7 +1824,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1833,7 +1833,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1842,7 +1842,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1851,7 +1851,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1860,7 +1860,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1869,7 +1869,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Tämä käyttäjä ei vastaa profiiliasi, mutta voit vierailla hänen Speedy Net -"
-"profiilissaan. Tarkastele käyttäjän profiilia Speedy Netissä."
+"profiilissaan. Tarkastele käyttäjän profiilia Speedy Net issä."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -2790,7 +2790,7 @@ msgstr "Vaihda salasana"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Ikäsi näkyy matcheillesi Speedy Matchissa."
+msgstr "Ikäsi näkyy matcheillesi Speedy Match issa."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3128,7 +3128,7 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Profiilisi Speedy Netissä näkyy kaikille, mutta voit valita kenelle jaat "
+"Profiilisi Speedy Net issä näkyy kaikille, mutta voit valita kenelle jaat "
 "sähköpostiosoitteesi ja syntymäaikasi. Jos kirjauduit Speech Matchiin, "
 "Speech Match -profiilisi näkyy vain ihmisille, jotka vastaavat sinua "
 "sivustolle määrittämiesi asetusten perusteella, ja että yhdistät heidät "
@@ -3145,13 +3145,13 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Jos olet poistanut tilisi käytöstä Speedy Netissä tai Speech Matchissa, "
+"Jos olet poistanut tilisi käytöstä Speedy Net issä tai Speech Matchissa, "
 "profiilisi kyseisellä sivustolla poistetaan sivustolta etkä näy muiden "
 "ihmisten hakutuloksissa sivustolla. Huomaa, että tilisi deaktivoiminen "
-"Speedy Netissä deaktivoi myös tilisi automaattisesti Speedy Matchissa. Voit "
-"deaktivoida vain tilisi Speedy Matchissa, jolloin Speedy Net -tilisi pysyy "
-"aktiivisena. Voit aktivoida tilisi uudelleen deaktivoinnin jälkeen milloin "
-"haluat."
+"Speedy Net issä deaktivoi myös tilisi automaattisesti Speedy Match issa. "
+"Voit deaktivoida vain tilisi Speedy Match issa, jolloin Speedy Net -tilisi "
+"pysyy aktiivisena. Voit aktivoida tilisi uudelleen deaktivoinnin jälkeen "
+"milloin haluat."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3269,12 +3269,12 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s:llä on myös Speedy Match -profiili. Näytä käyttäjän "
-"%(user_name)s profiili Speedy Matchissa."
+"%(user_name)s profiili Speedy Match issa."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Sinulla on myös Speedy Net -profiili. Tarkastele profiiliasi Speedy Netissä."
+"Sinulla on myös Speedy Net -profiili. Tarkastele profiiliasi Speedy Net issä."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3283,7 +3283,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s:llä on myös Speedy Net -profiili. Näytä käyttäjän "
-"%(user_name)s profiili Speedy Netissä."
+"%(user_name)s profiili Speedy Net issä."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3300,9 +3300,9 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Voit käyttää Speedy Netiä vain laillisiin tarkoituksiin. Et saa ladata "
+"Voit käyttää Speedy Net iä vain laillisiin tarkoituksiin. Et saa ladata "
 "sisältöä, joka liittyy vihaan, väkivaltaan, eläinten hyväksikäyttöön, "
-"alastomuuteen tai pornografiaan. Et saa käyttää Speedy Netiä "
+"alastomuuteen tai pornografiaan. Et saa käyttää Speedy Net iä "
 "roskapostiviestien tai samansisältöisten viestien lähettämiseen suurelle "
 "joukolle ihmisiä."
 

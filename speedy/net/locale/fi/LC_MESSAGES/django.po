@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:17+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr "Speedy Net [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Speedy Netistä"
+msgstr "Speedy Net istä"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -67,11 +67,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> on "
-"uusi sosiaalinen verkosto. Speedy Netillä voit kommunikoida ystäviesi "
-"kanssa. Speedy Net on avoinna ilmaiselle rekisteröinnille kaikille maista ja "
-"ikäryhmistä (ei ikärajaa!). Sivusto on vegaani- ja kasvissyöjäystävällinen. "
-"Se on tällä hetkellä saatavilla %(languages_num)s kielellä."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> on uusi sosiaalinen verkosto. Speedy Net illä voit "
+"kommunikoida ystäviesi kanssa. Speedy Net on avoinna ilmaiselle "
+"rekisteröinnille kaikille maista ja ikäryhmistä (ei ikärajaa!). Sivusto on "
+"vegaani- ja kasvissyöjäystävällinen. Se on tällä hetkellä saatavilla "
+"%(languages_num)s kielellä."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -79,7 +80,7 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Speedy Netin perustajat ovat vegaaneja, kannattavat eläinten oikeuksia ja "
+"Speedy Net in perustajat ovat vegaaneja, kannattavat eläinten oikeuksia ja "
 "vastustavat eläinkokeita. Speedy Net on sosiaalinen verkosto, joka sopii "
 "vegaaneille ja kasvissyöjille ja eläimille."
 
@@ -90,7 +91,7 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
-"Päätimme rajoittaa Speedy Netin ystävien määrän 800:aan. Suosittelemme "
+"Päätimme rajoittaa Speedy Net in ystävien määrän 800:aan. Suosittelemme "
 "lisäämään ystäviksi vain henkilöitä, jotka tunnet henkilökohtaisesti. Voit "
 "valita, mitkä tiedot näkyvät profiilissasi julkisina, mitkä tiedot näkyvät "
 "vain ystävillesi ja mitkä tiedot ovat yksityisiä. Yksityiset tiedot näkyvät "
@@ -103,9 +104,9 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Voit käyttää uutta appiamme, <a href=\"https://%(language_code)s.speedymatch.com/\" "
-"title=\"Speedy Match\">Speedy Match</a>, löytääksesi tapaamiseen sopivia "
-"henkilöitä. Speedy Match on aovin kaikenikäisille sinkuille"
+"Voit käyttää uutta appiamme, <a href=\"https://%(language_code)s.speedymatch."
+"com/\" title=\"Speedy Match\">Speedy Match</a>, löytääksesi tapaamiseen "
+"sopivia henkilöitä. Speedy Match on aovin kaikenikäisille sinkuille"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -113,8 +114,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Kaikki toiminnot Speedy Netissä ja Speedy Matchissa ovat ilmaisia. Liity "
-"Speedy Netiin nyt löytääksesi ystäviä, se vie vain hetken. <a href=\"/\" "
+"Kaikki toiminnot Speedy Net issä ja Speedy Match issa ovat ilmaisia. Liity "
+"Speedy Net iin nyt löytääksesi ystäviä, se vie vain hetken. <a href=\"/\" "
 "title=\"Liity Speedyyn"
 
 #: .\templates\about\about.html:27
@@ -123,7 +124,7 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net on ilmainen ja vapaan koodin ohjelmisto. Jos haluat autta "
-"kehittämään Speedy Netiä, ota yhteyttä minuun sähköpostilla."
+"kehittämään Speedy Net iä, ota yhteyttä minuun sähköpostilla."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -149,7 +150,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Netin ja Speedy Matchin perustaja ja johtaja,"
+msgstr "Speedy Net in ja Speedy Match in perustaja ja johtaja,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -162,7 +163,7 @@ msgstr "Tervetuloa"
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Tervetuloa %(site_name) - sivulle"
+msgstr "Tervetuloa %(site_name)s - sivulle"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
@@ -192,8 +193,8 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net on uusi sosiaalinen verkosto. Speedy Netin avulla voit "
-"kommunikoida ystäviesi kanssa. Spedy Netiin voi liittyä kaikista maista ja "
+"Speedy Net on uusi sosiaalinen verkosto. Speedy Net in avulla voit "
+"kommunikoida ystäviesi kanssa. Spedy Net iin voi liittyä kaikista maista ja "
 "kaikenikäiset (ei ikärajaa!). Speedy Net on vegaani- ja "
 "vegetaristiystävällinen"
 
@@ -202,8 +203,8 @@ msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Kaikki toiminnot Speedy Netissä ja Speedy Matchissa ovat ilmaisia. Liity "
-"Speedy Netiin nyt löytääksesi ystäviä, se vie vain hetken."
+"Kaikki toiminnot Speedy Net issä ja Speedy Match issa ovat ilmaisia. Liity "
+"Speedy Net iin nyt löytääksesi ystäviä, se vie vain hetken."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"

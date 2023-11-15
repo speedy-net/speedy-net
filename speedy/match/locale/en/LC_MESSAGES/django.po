@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:14+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1114,7 +1114,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:14
 msgid ""
-"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
 
 #: .\templates\main\main_page.html:16

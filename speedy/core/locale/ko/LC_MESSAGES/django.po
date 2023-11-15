@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 05:09+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1511,7 +1511,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:182
@@ -1521,7 +1521,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:183
@@ -1531,7 +1531,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:184
@@ -1541,7 +1541,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:185
@@ -1551,7 +1551,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:186
@@ -1561,7 +1561,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:187
@@ -1571,7 +1571,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:188
@@ -1581,7 +1581,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:189
@@ -1591,7 +1591,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이 사용자에게는 이미 {1}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:191

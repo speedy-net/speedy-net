@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:17+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,11 +67,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> är "
-"ett nytt socialt nätverk. Med Speedy Net kan du kommunicera med dina vänner. "
-"Speedy Net är öppet för gratis registrering för människor från alla länder "
-"och åldrar (ingen åldersgräns!). Webbplatsen är vegan- och vegetarianvänlig. "
-"Den är för närvarande tillgänglig på %(languages_num)s språk."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> är ett nytt socialt nätverk. Med Speedy Net kan du "
+"kommunicera med dina vänner. Speedy Net är öppet för gratis registrering för "
+"människor från alla länder och åldrar (ingen åldersgräns!). Webbplatsen är "
+"vegan- och vegetarianvänlig. Den är för närvarande tillgänglig på "
+"%(languages_num)s språk."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -103,9 +104,9 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Du kan använda vår nya app, <a href=\"https://%(language_code)s.speedymatch.com/\" "
-"title=\"Speedy Match\">Speedy Match</a>, för att hitta matchande personer "
-"för dejting. Speedy Match är öppen för singlar i alla åldrar."
+"Du kan använda vår nya app, <a href=\"https://%(language_code)s.speedymatch."
+"com/\" title=\"Speedy Match\">Speedy Match</a>, för att hitta matchande "
+"personer för dejting. Speedy Match är öppen för singlar i alla åldrar."
 
 #: .\templates\about\about.html:25
 msgid ""

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 05:08+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1070,25 +1070,26 @@ msgstr "À propos de Speedy Match"
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
 msgid ""
-"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a> is a new dating/matching web app for romantic purposes for singles who "
-"are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a>. With Speedy Match you can find matching people for "
-"dating and chat with them online. You can add people as friends on Speedy "
-"Net, like people and send them messages. Speedy Match is open to free "
-"registration for people from all countries and ages (no age limit!). The "
-"site is vegan and vegetarian friendly. It is currently available in "
-"%(languages_num)s languages."
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
+"find matching people for dating and chat with them online. You can add "
+"people as friends on Speedy Net, like people and send them messages. Speedy "
+"Match is open to free registration for people from all countries and ages "
+"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
+"available in %(languages_num)s languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a> est une nouvelle application Web de rencontres pour les célibataires "
-"membres de <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a>. Avec Speedy Match, vous pouvez trouver des personnes qui vous "
-"correspondent et discuter avec elles en ligne. Vous pouvez ajouter des amis "
-"sur Speedy Net, les liker et leur envoyer des messages. L’inscription à "
-"Speedy Match est gratuite pour les personnes de tous pays, quel que soit "
-"leur âge (aucune limite d’âge !). Notre site est adapté aux véganes et "
-"végétariens. Il est actuellement disponible en %(languages_num)s langues."
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> est une nouvelle application Web de rencontres pour "
+"les célibataires membres de <a href=\"https://%(language_code)s.speedy.net/"
+"\" title=\"Speedy Net\">Speedy Net</a>. Avec Speedy Match, vous pouvez "
+"trouver des personnes qui vous correspondent et discuter avec elles en "
+"ligne. Vous pouvez ajouter des amis sur Speedy Net, les liker et leur "
+"envoyer des messages. L’inscription à Speedy Match est gratuite pour les "
+"personnes de tous pays, quel que soit leur âge (aucune limite d’âge !). "
+"Notre site est adapté aux véganes et végétariens. Il est actuellement "
+"disponible en %(languages_num)s langues."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1287,10 +1288,10 @@ msgstr ""
 
 #: .\templates\main\main_page.html:14
 msgid ""
-"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
 "Vous cherchez un petit ami ? Vous cherchez une petite amie ? Venez essayer "
-"Speedy ! "
+"Speedy !"
 
 #: .\templates\main\main_page.html:16
 msgid ""

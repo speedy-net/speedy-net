@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:17+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,11 +66,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>은 새로"
-"운 소셜 네트워크입니다. Speedy Net으로 친구와 소통할 수 있습니다. Speedy Net"
-"은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 등록이 가능"
-"하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다. 현재 "
-"%(languages_num)s개 언어로 사용할 수 있습니다."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a>은 새로운 소셜 네트워크입니다. Speedy Net으로 친구와 소통"
+"할 수 있습니다. Speedy Net은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람"
+"들을 위해 무료 등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식"
+"주의자 친화적입니다. 현재 %(languages_num)s개 언어로 사용할 수 있습니다."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -100,9 +100,9 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"저희의 새로운 앱, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>로 데이팅을 위한 매칭 대상을 찾아보세요. Speedy Match"
-"는 모든 연령의 싱글에게 개방되어 있습니다."
+"저희의 새로운 앱, <a href=\"https://%(language_code)s.speedymatch.com/\" "
+"title=\"Speedy Match\">Speedy Match</a>로 데이팅을 위한 매칭 대상을 찾아보세"
+"요. Speedy Match는 모든 연령의 싱글에게 개방되어 있습니다."
 
 #: .\templates\about\about.html:25
 msgid ""

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:17+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,11 +90,11 @@ msgid ""
 "compose will be saved in your personal compositions directory. You will be "
 "able to rename compositions, delete them and share them with your friends."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"ספידי קומפוזר\">ספידי "
-"קומפוזר</a> יהיה אתר אינטרנט חדש להלחנה אוטומטית של מנגינות לחברי ספידי נט. "
-"האתר ישתמש בטכנולוגיה של רשתות נוירונים ממוחשבות על מנת להלחין עבורכם "
-"מנגינות. המנגינות שתלחינו יישמרו בתיקיית המנגינות האישית שלכם. אתם תוכלו "
-"לשנות את שם המנגינות, למחוק מנגינות ולשתף אותן עם חברים שלכם."
+"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"ספידי "
+"קומפוזר\">ספידי קומפוזר</a> יהיה אתר אינטרנט חדש להלחנה אוטומטית של מנגינות "
+"לחברי ספידי נט. האתר ישתמש בטכנולוגיה של רשתות נוירונים ממוחשבות על מנת "
+"להלחין עבורכם מנגינות. המנגינות שתלחינו יישמרו בתיקיית המנגינות האישית שלכם. "
+"אתם תוכלו לשנות את שם המנגינות, למחוק מנגינות ולשתף אותן עם חברים שלכם."
 
 #: .\templates\about\about.html:17
 msgid ""

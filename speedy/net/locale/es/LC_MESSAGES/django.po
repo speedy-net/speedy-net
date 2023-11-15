@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 06:17+0200\n"
+"POT-Creation-Date: 2023-11-15 14:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,11 +67,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> es "
-"una nueva red social. Con Speedy Net puedes comunicarte con tus amigos. "
-"Speedy Net está abierto al registro gratuito para personas de todos los "
-"países y edades (¡sin límite de edad!). El sitio es compatible con veganos y "
-"vegetarianos. Actualmente está disponible en %(languages_num)s idiomas."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> es una nueva red social. Con Speedy Net puedes "
+"comunicarte con tus amigos. Speedy Net está abierto al registro gratuito "
+"para personas de todos los países y edades (¡sin límite de edad!). El sitio "
+"es compatible con veganos y vegetarianos. Actualmente está disponible en "
+"%(languages_num)s idiomas."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -103,10 +104,10 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Puedes utilizar nuestra nueva aplicación, <a href=\"https://%(language_code)s.speedymatch."
-"com/\" title=\"Speedy Match\">Speedy Match</a>, para encontrar personas que "
-"coincidan para tener citas. Speedy Match está abierto a solteros de todas "
-"las edades."
+"Puedes utilizar nuestra nueva aplicación, <a href=\"https://"
+"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"a>, para encontrar personas que coincidan para tener citas. Speedy Match "
+"está abierto a solteros de todas las edades."
 
 #: .\templates\about\about.html:25
 msgid ""
