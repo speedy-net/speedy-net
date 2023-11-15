@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-09 14:33+0200\n"
+"POT-Creation-Date: 2023-11-15 05:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr ""
+msgstr "여기에 좋아요가 없습니다."
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr ""
+msgstr "여기에 좋아요가 없습니다."
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr ""
+msgstr "여기에 좋아요가 없습니다."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr ""
+msgstr "매치 업데이트"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr ""
+msgstr "매치 업데이트"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr ""
+msgstr "매치 업데이트"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
 msgid "Add more options"
-msgstr ""
+msgstr "다른 옵션 추가"
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
 msgid "Add more options"
-msgstr ""
+msgstr "다른 옵션 추가"
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
 msgid "Add more options"
-msgstr ""
+msgstr "다른 옵션 추가"
 
 #: .\__translations\__translations.html:18
 msgctxt "female"
@@ -67,6 +67,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
+"아직 매치가 없습니다. 검색 설정을 확대하여 시도하거나 나중에 다시 확인하십시"
+"오."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -74,6 +76,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
+"아직 매치가 없습니다. 검색 설정을 확대하여 시도하거나 나중에 다시 확인하십시"
+"오."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -81,379 +85,381 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
+"아직 매치가 없습니다. 검색 설정을 확대하여 시도하거나 나중에 다시 확인하십시"
+"오."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr ""
+msgstr "매치 설정"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr ""
+msgstr "매치 설정"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr ""
+msgstr "매치 설정"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr ""
+msgstr "좋아요"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr ""
+msgstr "좋아요"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr ""
+msgstr "좋아요"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr ""
+msgstr "싫어요"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr ""
+msgstr "싫어요"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr ""
+msgstr "싫어요"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr ""
+msgstr "내 매치"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr ""
+msgstr "내 매치"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr ""
+msgstr "내 매치"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
-msgstr ""
+msgstr "친구"
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
 msgid "Friends"
-msgstr ""
+msgstr "친구"
 
 #: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Friends"
-msgstr ""
+msgstr "친구"
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr ""
+msgstr "내 친구"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
 msgid "Your Friends"
-msgstr ""
+msgstr "내 친구"
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
-msgstr ""
+msgstr "내 친구"
 
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "아직 친구가 없습니다."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "아직 친구가 없습니다."
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "아직 친구가 없습니다."
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
 msgid "About me"
-msgstr ""
+msgstr "내 소개"
 
 #: .\__translations\__translations.html:51
 msgctxt "male"
 msgid "About me"
-msgstr ""
+msgstr "내 소개"
 
 #: .\__translations\__translations.html:52
 msgctxt "other"
 msgid "About me"
-msgstr ""
+msgstr "내 소개"
 
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr ""
+msgstr "내 매치 정보"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr ""
+msgstr "내 매치 정보"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr ""
+msgstr "내 매치 정보"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr ""
+msgstr "매치 성별"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr ""
+msgstr "매치 성별"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr ""
+msgstr "매치 성별"
 
 #: .\__translations\__translations.html:62
 msgctxt "female"
 msgid "Someone likes you on "
-msgstr ""
+msgstr "누군가가 다음에서 귀하를 좋아합니다 "
 
 #: .\__translations\__translations.html:63
 msgctxt "male"
 msgid "Someone likes you on "
-msgstr ""
+msgstr "누군가가 다음에서 귀하를 좋아합니다 "
 
 #: .\__translations\__translations.html:64
 msgctxt "other"
 msgid "Someone likes you on "
-msgstr ""
+msgstr "누군가가 다음에서 귀하를 좋아합니다 "
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr ""
+msgstr "귀하가 다음 사람을 좋아합니다"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr ""
+msgstr "귀하가 다음 사람을 좋아합니다"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr ""
+msgstr "귀하가 다음 사람을 좋아합니다"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr ""
+msgstr "Speedy Match 최근 방문"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr ""
+msgstr "Speedy Match 최근 방문"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr ""
+msgstr "Speedy Match 최근 방문"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
-msgstr ""
+msgstr "내 키(cm)"
 
 #: .\__translations\__translations.py:9
 msgctxt "female"
 msgid "Add profile picture"
-msgstr ""
+msgstr "프로필 사진 추가"
 
 #: .\__translations\__translations.py:10
 msgctxt "male"
 msgid "Add profile picture"
-msgstr ""
+msgstr "프로필 사진 추가"
 
 #: .\__translations\__translations.py:11
 msgctxt "other"
 msgid "Add profile picture"
-msgstr ""
+msgstr "프로필 사진 추가"
 
 #: .\__translations\__translations.py:13
 msgctxt "female"
 msgid "My height in centimeters"
-msgstr ""
+msgstr "내 키(cm)"
 
 #: .\__translations\__translations.py:14
 msgctxt "male"
 msgid "My height in centimeters"
-msgstr ""
+msgstr "내 키(cm)"
 
 #: .\__translations\__translations.py:15
 msgctxt "other"
 msgid "My height in centimeters"
-msgstr ""
+msgstr "내 키(cm)"
 
 #: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr ""
+msgstr "내 이상적 매치"
 
 #: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr ""
+msgstr "내 이상적 매치"
 
 #: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr ""
+msgstr "내 이상적 매치"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr ""
+msgstr "매치 최소 연령"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr ""
+msgstr "매치 최소 연령"
 
 #: .\__translations\__translations.py:23
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr ""
+msgstr "매치 최소 연령"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr ""
+msgstr "매치 최고 연령"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr ""
+msgstr "매치 최고 연령"
 
 #: .\__translations\__translations.py:27
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr ""
+msgstr "매치 최고 연령"
 
 #: .\__translations\__translations.py:29
 msgctxt "female"
 msgid "Please write a few words about yourself."
-msgstr ""
+msgstr "귀하에 대한 몇 가지 단어를 적어주세요."
 
 #: .\__translations\__translations.py:30
 msgctxt "male"
 msgid "Please write a few words about yourself."
-msgstr ""
+msgstr "귀하에 대한 몇 가지 단어를 적어주세요."
 
 #: .\__translations\__translations.py:31
 msgctxt "other"
 msgid "Please write a few words about yourself."
-msgstr ""
+msgstr "귀하에 대한 몇 가지 단어를 적어주세요."
 
 #: .\__translations\__translations.py:33
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "자녀가 있습니까? 몇 명입니까?"
 
 #: .\__translations\__translations.py:34
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "자녀가 있습니까? 몇 명입니까?"
 
 #: .\__translations\__translations.py:35
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "자녀가 있습니까? 몇 명입니까?"
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "(더 많은) 자녀를 원합니까?"
 
 #: .\__translations\__translations.py:38
 msgctxt "male"
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "(더 많은) 자녀를 원합니까?"
 
 #: .\__translations\__translations.py:39
 msgctxt "other"
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "(더 많은) 자녀를 원합니까?"
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr ""
+msgstr "이상적인 파트너는 누구입니까?"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr ""
+msgstr "이상적인 파트너는 누구입니까?"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr ""
+msgstr "이상적인 파트너는 누구입니까?"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
@@ -464,6 +470,9 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
+"죄송합니다만, {site_name} 웹사이트를 사용할 권한이 없습니다. 해당 사이트에서 "
+"등록할 때 제공하신 정보 중 일부가 정확하지 않거나 해당 사이트의 규칙을 위반하"
+"신 것으로 밝혀졌습니다. 따라서 해당 사이트를 사용할 권한이 없습니다."
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
@@ -474,6 +483,9 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
+"죄송합니다만, {site_name} 웹사이트를 사용할 권한이 없습니다. 해당 사이트에서 "
+"등록할 때 제공하신 정보 중 일부가 정확하지 않거나 해당 사이트의 규칙을 위반하"
+"신 것으로 밝혀졌습니다. 따라서 해당 사이트를 사용할 권한이 없습니다."
 
 #: .\__translations\__translations.py:47
 #, python-brace-format
@@ -484,210 +496,213 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
+"죄송합니다만, {site_name} 웹사이트를 사용할 권한이 없습니다. 해당 사이트에서 "
+"등록할 때 제공하신 정보 중 일부가 정확하지 않거나 해당 사이트의 규칙을 위반하"
+"신 것으로 밝혀졌습니다. 따라서 해당 사이트를 사용할 권한이 없습니다."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr ""
+msgstr "Speedy Match 계정"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
-msgstr ""
+msgstr "프로필 사진 추가"
 
 #: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
-msgstr ""
+msgstr "프로필 사진이 필요합니다."
 
 #: .\accounts\forms.py:59
 msgid "My diet"
-msgstr ""
+msgstr "내 식단"
 
 #: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
 msgid "Your diet is required."
-msgstr ""
+msgstr "식단이 필요합니다."
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
-msgstr ""
+msgstr "내 흡연 여부"
 
 #: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
 msgid "Your smoking status is required."
-msgstr ""
+msgstr "흡연 여부를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:61
 msgid "My relationship status"
-msgstr ""
+msgstr "관계 상태"
 
 #: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
 msgid "Your relationship status is required."
-msgstr ""
+msgstr "관계 상태를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
 msgid "Gender to match is required."
-msgstr ""
+msgstr "매치 성별이 필요합니다."
 
 #: .\accounts\forms.py:100
 msgid "Your height is required."
-msgstr ""
+msgstr "키를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
-msgstr ""
+msgstr "귀하에 대한 몇 가지 단어를 적어주세요."
 
 #: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
-msgstr ""
+msgstr "살고 있는 곳을 적어 주세요."
 
 #: .\accounts\forms.py:118 .\accounts\models.py:112
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr ""
+msgstr "자녀가 있습니까? 몇 명입니까?"
 
 #: .\accounts\forms.py:121 .\accounts\models.py:115
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
-msgstr ""
+msgstr "(더 많은) 자녀를 원합니까?"
 
 #: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
-msgstr ""
+msgstr "이상적인 파트너는 누구입니까?"
 
 #: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
-msgstr ""
+msgstr "매치 최소 연령을 알려주셔야 합니다."
 
 #: .\accounts\forms.py:133
 msgid "Maximal age to match is required."
-msgstr ""
+msgstr "매치 최고 연령을 알려주셔야 합니다."
 
 #: .\accounts\forms.py:136 .\accounts\validators.py:110
 msgid "Diet match is required."
-msgstr ""
+msgstr "식단 매치를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:139 .\accounts\validators.py:118
 msgid "Smoking status match is required."
-msgstr ""
+msgstr "흡연 여부 매치를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:142 .\accounts\validators.py:126
 msgid "Relationship status match is required."
-msgstr ""
+msgstr "관계 상태 매치를 알려주셔야 합니다."
 
 #: .\accounts\forms.py:150
 msgid "Where do you live?"
-msgstr ""
+msgstr "어디에 살고 계신가요?"
 
 #: .\accounts\forms.py:186 .\accounts\models.py:122
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr ""
+msgstr "매치 성별"
 
 #: .\accounts\models.py:36 .\accounts\models.py:88
 msgid "No match"
-msgstr ""
+msgstr "매치 없음"
 
 #: .\accounts\models.py:37 .\accounts\models.py:89
 msgid "One heart"
-msgstr ""
+msgstr "하트 1개"
 
 #: .\accounts\models.py:38 .\accounts\models.py:90
 msgid "Two hearts"
-msgstr ""
+msgstr "하트 2개"
 
 #: .\accounts\models.py:39 .\accounts\models.py:91
 msgid "Three hearts"
-msgstr ""
+msgstr "하트 3개"
 
 #: .\accounts\models.py:40 .\accounts\models.py:92
 msgid "Four hearts"
-msgstr ""
+msgstr "하트 4개"
 
 #: .\accounts\models.py:41 .\accounts\models.py:93
 msgid "Five hearts"
-msgstr ""
+msgstr "하트 5개"
 
 #: .\accounts\models.py:97
 msgid "User"
-msgstr ""
+msgstr "사용자"
 
 #: .\accounts\models.py:98
 msgid "On new likes"
-msgstr ""
+msgstr "새로운 좋아요에"
 
 #: .\accounts\models.py:101
 msgid "Active languages"
-msgstr ""
+msgstr "활성 언어"
 
 #: .\accounts\models.py:107
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
-msgstr ""
+msgstr "키"
 
 #: .\accounts\models.py:107
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: .\accounts\models.py:109
 msgid "Few words about me"
-msgstr ""
+msgstr "나에 대한 몇 가지 단어"
 
 #: .\accounts\models.py:118
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr ""
+msgstr "내 이상적 매치"
 
 #: .\accounts\models.py:128
 msgid "Minimal age to match"
-msgstr ""
+msgstr "매치 최소 연령"
 
 #: .\accounts\models.py:129
 msgid "Maximal age to match"
-msgstr ""
+msgstr "매치 최고 연령"
 
 #: .\accounts\models.py:130
 msgid "Diet match"
-msgstr ""
+msgstr "식단 매치"
 
 #: .\accounts\models.py:131
 msgid "Smoking status match"
-msgstr ""
+msgstr "흡연 여부 매치"
 
 #: .\accounts\models.py:132
 msgid "Relationship status match"
-msgstr ""
+msgstr "관계 상태 매치"
 
 #: .\accounts\models.py:135
 msgid "Diet to match"
-msgstr ""
+msgstr "매치에 대한 식단"
 
 #: .\accounts\models.py:143
 msgid "Smoking status to match"
-msgstr ""
+msgstr "매치에 대한 흡연 여부"
 
 #: .\accounts\models.py:151
 msgid "Relationship status to match"
-msgstr ""
+msgstr "매치에 대한 관계 상태"
 
 #: .\accounts\models.py:158
 msgid "Activation step"
-msgstr ""
+msgstr "활성화 단계"
 
 #: .\accounts\models.py:161
 msgid "Number of matches on last user's search"
-msgstr ""
+msgstr "최근 사용자 검색에서 매치의 수"
 
 #: .\accounts\models.py:207
 msgid "Speedy Match Profile"
-msgstr ""
+msgstr "Speedy Match 프로필"
 
 #: .\accounts\models.py:208 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr ""
+msgstr "Speedy Match 프로필"
 
 #: .\accounts\models.py:297 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "이메일 주소를 확인해주세요."
 
 #: .\accounts\utils.py:88
 #, python-brace-format
@@ -697,34 +712,37 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
+"이 사이트의 총 활성 회원의 수는 {total_number_of_active_members_in_the_last_four_months}"
+"명이며, 이 가운데 {total_number_of_active_members_in_the_last_week}명의 회원"
+"들이 지난 주 해당 사이트를 방문했습니다."
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
-msgstr ""
+msgstr "키는 1~450cm이어야 합니다."
 
 #: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "매치의 최소 연령은 0~180세이어야 합니다."
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr ""
+msgstr "매치의 최고 연령은 0~180세이어야 합니다."
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr ""
+msgstr "매치의 최고 연령은 매치의 최소 연령보다 적을 수 없습니다."
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
-msgstr ""
+msgstr "적어도 하나의 식단 매치 옵션이 하트 5개이어야 합니다."
 
 #: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be five hearts."
-msgstr ""
+msgstr "적어도 하나의 흡연 여부 매치 옵션이 하트 5개이어야 합니다."
 
 #: .\accounts\validators.py:128
 msgid "At least one relationship status match option should be five hearts."
-msgstr ""
+msgstr "적어도 하나의 관계 상태 매치 옵션이 하트 5개이어야 합니다."
 
 #: .\admin\views.py:181
 #, python-brace-format
@@ -776,6 +794,53 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
+"관리자: 이 사이트의 총 활성 회원의 수는 {total_number_of_active_members}명이"
+"고, ({total_number_of_female_active_members}명의 여성 회원, "
+"{total_number_of_male_active_members}명의 남성 회원, "
+"{total_number_of_other_active_members}명의 기타 회원, "
+"{total_percent_of_female_active_members}의 여성 회원, "
+"{total_percent_of_male_active_members}의 남성 회원, "
+"{total_percent_of_other_active_members} others)의 기타 회원으로 구성되며, 이 "
+"가운데 {total_number_of_active_members_in_the_last_week}명의 회원, "
+"({total_number_of_female_active_members_in_the_last_week}명의 여성 회원, "
+"{total_number_of_male_active_members_in_the_last_week}명의 남성 회원, "
+"{total_number_of_other_active_members_in_the_last_week}명의 기타 회원; "
+"{total_percent_of_female_active_members_in_the_last_week}의 여성 회원, "
+"{total_percent_of_male_active_members_in_the_last_week}의 남성 회원, "
+"{total_percent_of_other_active_members_in_the_last_week} others)명의 기타 회"
+"원이 지난 주에 사이트를 방문했고, "
+"{total_number_of_active_members_in_the_last_month}명의 회원, "
+"({total_number_of_female_active_members_in_the_last_month}명의 여성 회원, "
+"{total_number_of_male_active_members_in_the_last_month}명의 남성 회원, "
+"{total_number_of_other_active_members_in_the_last_month}명의 기타 회원; "
+"{total_percent_of_female_active_members_in_the_last_month}의 여성 회원, "
+"{total_percent_of_male_active_members_in_the_last_month}의 남성 회원, "
+"{total_percent_of_other_active_members_in_the_last_month} others)의 기타 회원"
+"이 지난 달에 사이트를 방문했으며, "
+"{total_number_of_active_members_in_the_last_four_months}명의 회원, "
+"({total_number_of_female_active_members_in_the_last_four_months}명의 여성 회"
+"원, {total_number_of_male_active_members_in_the_last_four_months}명의 남성 회"
+"원, {total_number_of_other_active_members_in_the_last_four_months}명의 기타 "
+"회원, {total_percent_of_female_active_members_in_the_last_four_months}의 여"
+"성 회원, {total_percent_of_male_active_members_in_the_last_four_months}의 남"
+"성 회원, {total_percent_of_other_active_members_in_the_last_four_months} "
+"others)명의 기타 회원이 지난 4개월 동안에 사이트를 방문했고, "
+"{total_number_of_active_members_in_the_last_eight_months}명의 회원, "
+"({total_number_of_female_active_members_in_the_last_eight_months}명의 여성 회"
+"원, {total_number_of_male_active_members_in_the_last_eight_months}명의 남성 "
+"회원, {total_number_of_other_active_members_in_the_last_eight_months}명의 기"
+"타 회원, {total_percent_of_female_active_members_in_the_last_eight_months}의 "
+"여성 회원, {total_percent_of_male_active_members_in_the_last_eight_months}의 "
+"남성 회원, {total_percent_of_other_active_members_in_the_last_eight_months} "
+"others)의 기타 회원이 지난 8개월 동안 사이트를 방문했으며, "
+"{total_number_of_active_members_in_the_last_two_years}명의 회원, "
+"({total_number_of_female_active_members_in_the_last_two_years}명의 여성 회"
+"원, {total_number_of_male_active_members_in_the_last_two_years}명의 남성 회"
+"원, {total_number_of_other_active_members_in_the_last_two_years}명의 기타 회"
+"원, {total_percent_of_female_active_members_in_the_last_two_years}명의 여성 "
+"회원, {total_percent_of_male_active_members_in_the_last_two_years}명의 남성 "
+"회원, {total_percent_of_other_active_members_in_the_last_two_years} others)"
+"의 기타 회원이 지난 2년 동안에 사이트를 방문했습니다."
 
 #: .\admin\views.py:281
 #, python-brace-format
@@ -799,6 +864,24 @@ msgid ""
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
 msgstr ""
+"관리자: {total_number_of_active_members_registered_in_the_last_week}명의 활"
+"성 회원들이 지난 주에 등록했습니다.. "
+"{total_number_of_active_members_registered_in_the_last_month}명의 활성 회원들"
+"이 지난 달에 등록했습니다. "
+"{total_number_of_active_members_registered_in_the_last_four_months}명의 활성 "
+"회원들이 지난 4개월 동안에 등록했습니다. "
+"{total_number_of_active_members_registered_more_than_four_months_ago}명의 활"
+"성 회원들이 4개월보다 이전에 등록했습니다. "
+"{total_number_of_active_members_registered_in_the_last_eight_months}명의 활"
+"성 회원들이 지난 8개월 동안에 등록했습니다. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago}명의 활"
+"성 회원들이 8개월보다 이전에 등록했습니다. "
+"{total_number_of_active_members_registered_in_the_last_two_years}명의 활성 회"
+"원들이 지난 2년 동안에 등록했습니다. "
+"{total_number_of_active_members_registered_more_than_two_years_ago}명의 활성 "
+"회원들이 2년보다 이전에 등록했습니다. "
+"{total_number_of_active_members_registered_before_2019_08_01}명의 활성 회원들"
+"이 2019년 8월 1일 이전에 등록했습니다."
 
 #: .\admin\views.py:303
 #, python-brace-format
@@ -806,6 +889,8 @@ msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
+"관리자: {total_number_of_active_members_registered_in_year}명의 활성 회원들"
+"이 {year}에 등록했습니다."
 
 #: .\admin\views.py:361
 #, python-brace-format
@@ -819,6 +904,14 @@ msgid ""
 "{total_percent_of_male_active_members_in_age_range} males, "
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
+"관리자: {total_number_of_active_members_in_age_range}명의 활성 회원, "
+"({total_number_of_female_active_members_in_age_range}명의 여성 활성 회원, "
+"{total_number_of_male_active_members_in_age_range}명의 남성 활성 회원, "
+"{total_number_of_other_active_members_in_age_range}명의 기타 활성 회원)의 연"
+"령대가 {min_age}~{max_age}세임 "
+"({total_percent_of_female_active_members_in_age_range}가 여성 회원, "
+"{total_percent_of_male_active_members_in_age_range}가 남성 회원, "
+"{total_percent_of_other_active_members_in_age_range}가 기타 회원임)."
 
 #: .\admin\views.py:428
 #, python-brace-format
@@ -837,6 +930,21 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "others) entered the site in the last eight months."
 msgstr ""
+"관리자: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months}명의 활"
+"성 회원 "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+"명의 여성 활성 회원, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months}명"
+"의 남성 활성 회원, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+"명의 기타 활성 회원) 연령대는 {min_age}~{max_age}이고 "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+"의 여성 회원, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+"의 남성 회원, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+"의 기타 회원) 지난 8개월 동안에 해당 사이트를 방문했음."
 
 #: .\admin\views.py:495
 #, python-brace-format
@@ -855,93 +963,107 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) entered the site in the last four months."
 msgstr ""
+"관리자: {total_number_of_active_members_in_age_range_in_the_last_four_months}"
+"명의 활성 회원 "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+"명의 여성 활성 회원, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months}명"
+"의 남성 활성 회원, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months}명"
+"의 기타 활성 회원) 연령대는 {min_age}~{max_age}이고 "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+"의 여성 활성 회원, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months}"
+"의 남성 활성 회원, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+"의 기타 활성 회원) 지난 4개월 동안에 해당 사이트를 방문했음."
 
 #: .\likes\managers.py:14 .\likes\models.py:31
 msgid "Users cannot like themselves."
-msgstr ""
+msgstr "사용자는 본인을 좋아할 수 없습니다."
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr ""
+msgstr "사용자가 이미 다른 사용자를 좋아합니다."
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
-msgstr ""
+msgstr "사용자는 차단된 사용자를 좋아할 수 없습니다."
 
 #: .\likes\models.py:13
 msgid "from user"
-msgstr ""
+msgstr "사용자로부터"
 
 #: .\likes\models.py:14
 msgid "to user"
-msgstr ""
+msgstr "사용자에게"
 
 #: .\likes\models.py:20
 msgid "user like"
-msgstr ""
+msgstr "사용자 좋아요"
 
 #: .\likes\models.py:21
 msgid "user likes"
-msgstr ""
+msgstr "사용자 좋아요"
 
 #: .\likes\views.py:28
 msgid "Girls You Like"
-msgstr ""
+msgstr "귀하가 좋아하는 여성"
 
 #: .\likes\views.py:29
 msgid "Boys You Like"
-msgstr ""
+msgstr "귀하가 좋아하는 남성"
 
 #: .\likes\views.py:30
 msgid "People You Like"
-msgstr ""
+msgstr "귀하가 좋아하는 사람"
 
 #: .\likes\views.py:33
 msgid "Girls Who Like You"
-msgstr ""
+msgstr "귀하를 좋아하는 여성"
 
 #: .\likes\views.py:34
 msgid "Boys Who Like You"
-msgstr ""
+msgstr "귀하를 좋아하는 남성"
 
 #: .\likes\views.py:35
 msgid "People Who Like You"
-msgstr ""
+msgstr "귀하를 좋아하는 사람"
 
 #: .\likes\views.py:37
 msgid "Mutual Likes"
-msgstr ""
+msgstr "상호 좋아요"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr ""
+msgstr "Speedy Match의 매치"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
-msgstr ""
+msgstr "매치 설정이 저장되었습니다."
 
 #: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: .\profiles\widgets.py:64
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr ""
+msgstr "Speedy Match [알파 버전]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr ""
+msgstr "Speedy Match 소개"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
 msgid ""
-"<a href=\"https://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching web app for romantic purposes for singles who "
-"are members of <a href=\"https://en.speedy.net/\" title=\"Speedy "
+"are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a>. With Speedy Match you can find matching people for "
 "dating and chat with them online. You can add people as friends on Speedy "
 "Net, like people and send them messages. Speedy Match is open to free "
@@ -949,6 +1071,14 @@ msgid ""
 "site is vegan and vegetarian friendly. It is currently available in "
 "%(languages_num)s languages."
 msgstr ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"a>는 <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>"
+"의 회원인 싱글을 위한 새로운 데이팅/매칭 웹 앱으로 로맨틱한 만남을 목적으로 "
+"합니다. Speedy Match로 데이팅과 온라인 채팅을 위한 매칭 대상을 찾을 수 있습니"
+"다. Speedy Net에 친구로 추가하고, 좋아하고, 메시지를 보낼 수 있습니다. "
+"Speedy Match는 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 "
+"등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입"
+"니다. 현재 %(languages_num)s개 언어로 사용할 수 있습니다."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -956,6 +1086,8 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
+"Speedy Match의 설립자는 비건이며, 동물의 권리를 지지하고, 동물 실험에 반대합"
+"니다. Speedy Match는 비건 및 채식주의자 그리고 동물 친화적인 데이팅 앱입니다."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -966,6 +1098,12 @@ msgid ""
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
 msgstr ""
+"귀하의 요구 사항에 일치하는 사람들만 귀하의 프로필을 보고 귀하에게 연락할 수 "
+"있습니다. 저희는 익명의 검색을 허용하지 않으며 Speedy Match 프로필은 매칭 파"
+"트너에게만 보입니다. 귀하의 프로필을 볼 수 있는 사람을 선택할 수 있으며, 어"
+"떤 세부 정보를 프로필에 공개하고, 어떤 세부 정보를 친구에게만 보여주며, 어떤 "
+"세부 정보를 비공개로 할지 선택할 수 있습니다. 비공개 세부 정보는 귀하에게만 "
+"나타납니다."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -973,12 +1111,17 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
+"Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Match에 가입"
+"하여 매칭 파트너를 찾아보세요. 몇 분밖에 걸리지 않습니다. <a href=\"/\" "
+"title=\"Join Speedy Match\">여기를 클릭</a>하여 가입하세요."
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
+"Speedy Match는 무료 소프트웨어이며 오픈 소스 프로젝트입니다. Speedy Match의 "
+"개발과 개선에 도움을 주고 싶으시면, 이메일로 연락해주세요."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -986,97 +1129,105 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Match는 오랜 세월 저희와 함께 하고 2003년에 세상을 떠난 암컷 반려견인 "
+"<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>의 이름을 딴 것입니다. Speedy는 1988년 7마리의 강"
+"아지를 낳았습니다."
 
 #: .\templates\about\about.html:29
 msgid "Speedy Match is currently in alpha. It was launched in August 2019."
 msgstr ""
+"Speedy Match는 현재 알파 버전입니다. Speedy Match는 2019년 8월에 출시되었습니"
+"다."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "감사드리며 행운을 빕니다,"
 
 #: .\templates\about\about.html:32
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
+msgstr "Speedy Net과 Speedy Match의 설립자 겸 디렉터,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
-msgstr ""
+msgstr "관계 단계"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
-msgstr ""
+msgstr "환영합니다"
 
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "%(site_name)s에 오신 것을 환영합니다"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
 #: .\templates\matches\settings\base.html:41
 #: .\templates\profiles\user_extra_info_widget.html:18
 msgid "About me"
-msgstr ""
+msgstr "내 소개"
 
 #: .\templates\accounts\edit_profile\activate.html:48
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr ""
+msgstr "내 매치 정보"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
-msgstr ""
+msgstr "뒤로"
 
 #: .\templates\accounts\edit_profile\activate.html:79
 msgid "Next step"
-msgstr ""
+msgstr "다음 단계"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"귀하의 Speedy Net 계정이 활성화되어 있지 않습니다. 이 페이지를 입력하여 활성"
+"화하세요."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr ""
+msgstr "관리자 - 모든 매치"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr ""
+msgstr "내 매치"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr ""
+msgstr "매치"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:16
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr ""
+msgstr "좋아요"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr ""
+msgstr "내 매치 설정"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr ""
+msgstr "매치 설정"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1084,26 +1235,28 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
+"%(site_name)s(으)로부터 이러한 유형의 알림을 받기로 구독했습니다. 이 페이지"
+"를 입력하여 알림 설정을 변경하거나 수신 취소하세요:"
 
 #: .\templates\email\likes\like_subject.txt:1
 msgid "Someone likes you on "
-msgstr ""
+msgstr "누군가가 다음에서 귀하를 좋아합니다 "
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "아직 친구가 없습니다."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr ""
+msgstr "내 친구"
 
 #: .\templates\likes\like_list.html:45
 msgid "You have no likes here."
-msgstr ""
+msgstr "여기에 좋아요가 없습니다."
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
-msgstr ""
+msgstr "무료 온라인 데이팅"
 
 #: .\templates\main\main_page.html:10
 msgid ""
@@ -1112,109 +1265,118 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
+"Speedy Match는 Speedy Net의 회원인 싱글을 위한 새로운 데이팅/매칭 웹 앱으로 "
+"로맨틱한 만남을 목적으로 합니다. Speedy Match로 데이팅과 온라인 채팅을 위한 "
+"매칭 대상을 찾을 수 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy! "
 msgstr ""
+"남자 친구를 찾고 계십니까? 여자 친구를 찾고 계십니까? 오셔서 Speedy를 만나보"
+"세요! "
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
+"Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Match에 가입"
+"하여 매칭 파트너를 찾아보세요. 몇 분밖에 걸리지 않습니다."
 
 #: .\templates\matches\match_list.html:35
 msgid "Update matches"
-msgstr ""
+msgstr "매치 업데이트"
 
 #: .\templates\matches\match_list.html:43
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr ""
+msgstr "식단"
 
 #: .\templates\matches\match_list.html:54
 msgid "Age:"
-msgstr ""
+msgstr "나이:"
 
 #: .\templates\matches\match_list.html:68
 msgid "Refresh"
-msgstr ""
+msgstr "새로 고침"
 
 #: .\templates\matches\match_list.html:75
 msgid "Add more options"
-msgstr ""
+msgstr "다른 옵션 추가"
 
 #: .\templates\matches\match_list.html:104
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
+"아직 매치가 없습니다. 검색 설정을 확대하여 시도하거나 나중에 다시 확인하십시"
+"오."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr ""
+msgstr "매치로 돌아가기"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
-msgstr ""
+msgstr "프로필 정보"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr ""
+msgstr "친구"
 
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr ""
+msgstr "좋아요"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr ""
+msgstr "싫어요"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr ""
+msgstr "귀하의 친구"
 
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr ""
+msgstr "이(가) 귀하를 좋아합니다"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr ""
+msgstr "귀하가 다음 사람을 좋아합니다"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr ""
+msgstr "친구 요청 전송됨"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
-msgstr ""
+msgstr "자세히 알아보기"
 
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
-msgstr ""
+msgstr "내가 살고 있는 곳은?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr ""
+msgstr "흡연 여부"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr ""
+msgstr "관계 상태"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr ""
+msgstr "Speedy Match 최근 방문"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr ""
+msgstr "매치 순위"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr ""
+msgstr "매치가 없습니다."

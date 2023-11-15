@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-09 14:33+0200\n"
+"POT-Creation-Date: 2023-11-15 06:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,13 +59,14 @@ msgstr "Sobre o Speedy Net"
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
 msgid ""
-"<a href=\"https://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
-"new social network. With Speedy Net you can communicate with your friends. "
-"Speedy Net is open to free registration for people from all countries and "
-"ages (no age limit!). The site is vegan and vegetarian friendly. It is "
-"currently available in %(languages_num)s languages."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 msgstr ""
-"O <a href=\"https://pt.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> é "
+"O <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> é "
 "uma nova rede social. Com o Speedy Net tu podes se comunicar com teus "
 "amigos. O Speedy Net está aberto para o registo gratuito de pessoas de todos "
 "os países e idades (sem limite de idade!). O sítio é amigável aos veganos e "
@@ -95,12 +96,17 @@ msgstr ""
 "privativos aparecerão apenas para ti."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, fuzzy, python-format
+#| msgid ""
+#| "You can use our new app, <a href=\"https://%(language_code)s.speedymatch."
+#| "com/\" title=\"Speedy Match\">Speedy Match</a>, to find matching people "
+#| "for dating. Speedy Match is open to singles of all ages."
 msgid ""
-"You can use our new app, <a href=\"https://en.speedymatch.com/\" "
-"title=\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
-"Speedy Match is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Podes utilizar nosso novo app, <a href=\"https://pt.speedymatch.com/\" "
+"Podes utilizar nosso novo app, <a href=\"https://%(language_code)s.speedymatch.com/\" "
 "title=\"Speedy Match\">Speedy Match</a>, para encontrar pessoas que combinem "
 "contigo para encontros. O Speedy Match está aberto para pessoas solteiras de "
 "todas as idades."

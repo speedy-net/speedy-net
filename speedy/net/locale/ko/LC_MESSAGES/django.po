@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-09 14:33+0200\n"
+"POT-Creation-Date: 2023-11-15 06:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr ""
+msgstr "Speedy Net 계정"
 
 #: .\accounts\models.py:20
 msgid "User"
-msgstr ""
+msgstr "사용자"
 
 #: .\accounts\models.py:23
 msgid "Number of friends on last user's visit"
-msgstr ""
+msgstr "최근 사용자 방문에서 친구의 수"
 
 #: .\accounts\models.py:32
 msgid "Speedy Net Profile"
-msgstr ""
+msgstr "Speedy Net 프로필"
 
 #: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
-msgstr ""
+msgstr "Speedy Net 프로필"
 
 #: .\accounts\utils.py:22
 #, python-brace-format
@@ -44,24 +44,33 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
+"이 사이트의 총 활성 회원의 수는 {total_number_of_active_members_in_the_last_four_months}"
+"명이며, 이 가운데 {total_number_of_active_members_in_the_last_week}명의 회원"
+"들이 지난 주 해당 사이트를 방문했습니다."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr ""
+msgstr "Speedy Net [알파 버전]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr ""
+msgstr "Speedy Net 소개"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
 msgid ""
-"<a href=\"https://en.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a "
-"new social network. With Speedy Net you can communicate with your friends. "
-"Speedy Net is open to free registration for people from all countries and "
-"ages (no age limit!). The site is vegan and vegetarian friendly. It is "
-"currently available in %(languages_num)s languages."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>은 새로"
+"운 소셜 네트워크입니다. Speedy Net으로 친구와 소통할 수 있습니다. Speedy Net"
+"은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 등록이 가능"
+"하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다. 현재 "
+"%(languages_num)s개 언어로 사용할 수 있습니다."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -69,6 +78,8 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
+"Speedy Net의 설립자는 비건이며, 동물의 권리를 지지하고, 동물 실험에 반대합니"
+"다. Speedy Net은 비건 및 채식주의자 그리고 동물 친화적인 소셜 네트워크입니다."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -77,13 +88,25 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
+"저희는 Speedy Net의 친구 수를 800명으로 제한하기로 했습니다. 귀하가 개인적으"
+"로 아는 사람만 친구로 추가하시기 바랍니다. 귀하의 프로필에서 공개할 세부 정보"
+"를 선택하고, 어떤 세부 정보를 친구에게만 보여주며, 어떤 세부 정보를 비공개로 "
+"할지 선택할 수 있습니다. 비공개 세부 정보는 귀하에게만 나타납니다."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, fuzzy, python-format
+#| msgid ""
+#| "You can use our new app, <a href=\"https://%(language_code)s.speedymatch."
+#| "com/\" title=\"Speedy Match\">Speedy Match</a>, to find matching people "
+#| "for dating. Speedy Match is open to singles of all ages."
 msgid ""
-"You can use our new app, <a href=\"https://en.speedymatch.com/\" "
-"title=\"Speedy Match\">Speedy Match</a>, to find matching people for dating. "
-"Speedy Match is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
+"저희의 새로운 앱, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>로 데이팅을 위한 매칭 대상을 찾아보세요. Speedy Match"
+"는 모든 연령의 싱글에게 개방되어 있습니다."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -91,12 +114,17 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
+"Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Net에 가입하"
+"여 친구를 찾아보세요. 몇 분밖에 걸리지 않습니다. <a href=\"/\" title=\"Join "
+"Speedy Net\">여기를 클릭</a>하여 가입하세요."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
+"Speedy Net은 무료 소프트웨어이며 오픈 소스 프로젝트입니다. Speedy Net의 개발"
+"과 개선에 도움을 주고 싶으시면, 이메일로 연락해주세요."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -104,55 +132,62 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Net은 오랜 세월 저희와 함께 하고 2003년에 세상을 떠난 암컷 반려견인 "
+"<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>의 이름을 딴 것입니다. Speedy는 1988년 7마리의 강"
+"아지를 낳았습니다."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
+"Speedy Net은 현재 알파 버전입니다. Speedy Net은 2012년 6월에 출시되었습니다."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "감사드리며 행운을 빕니다,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
+msgstr "Speedy Net과 Speedy Match의 설립자 겸 디렉터,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr ""
+msgstr "환영합니다"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr ""
+msgstr "%(site_name)s에 오신 것을 환영합니다"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr ""
+msgstr "이메일 주소를 확인해주세요."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
+"귀하의 Speedy Net 계정이 활성화되어 있지 않습니다. 이 페이지를 입력하여 활성"
+"화하세요."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
-msgstr ""
+msgstr "차단된 사용자"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr ""
+msgstr "아직 친구가 없습니다."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr ""
+msgstr "내 친구"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -161,34 +196,42 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
+"Speedy Net은 새로운 소셜 네트워크입니다. Speedy Net으로 친구와 소통할 수 있습"
+"니다. Speedy Net은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 "
+"무료 등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화"
+"적입니다."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
+"Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Net에 가입하"
+"여 친구를 찾아보세요. 몇 분밖에 걸리지 않습니다."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr ""
+msgstr "Speedy Match – 데이팅 Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
+"남자 친구를 찾고 계십니까? 여자 친구를 찾고 계십니까? 오셔서 Speedy를 만나보"
+"세요!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr ""
+msgstr "무료 온라인 데이팅"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr ""
+msgstr "친구"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr ""
+msgstr "귀하의 친구"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr ""
+msgstr "친구 요청 전송됨"

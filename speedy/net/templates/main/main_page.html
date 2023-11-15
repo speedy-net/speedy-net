@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block main_page_h5 %}
-    {% blocktranslate with site_name=site_name languages_num=11 %}<a href="https://en.speedy.net/" title="Speedy Net">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in {{ languages_num }} languages.{% endblocktranslate %}<br />
+    {% blocktranslate with site_name=site_name languages_num=11 language_code=LANGUAGE_CODE %}<a href="https://{{ language_code }}.speedy.net/" title="Speedy Net">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in {{ languages_num }} languages.{% endblocktranslate %}<br />
     <br />
-    {% blocktranslate with site_name=site_name %}You can use our new app, <a href="https://en.speedymatch.com/" title="Speedy Match">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.{% endblocktranslate %}<br />
+    {% blocktranslate with site_name=site_name language_code=LANGUAGE_CODE %}You can use our new app, <a href="https://{{ language_code }}.speedymatch.com/" title="Speedy Match">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.{% endblocktranslate %}<br />
     <br />
     {% blocktranslate with site_name=site_name %}All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.{% endblocktranslate %}<br />
     <br />

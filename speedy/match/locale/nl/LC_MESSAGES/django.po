@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-09 14:33+0200\n"
+"POT-Creation-Date: 2023-11-15 05:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -939,9 +939,9 @@ msgstr ""
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
 msgid ""
-"<a href=\"https://en.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
 "a> is a new dating/matching web app for romantic purposes for singles who "
-"are members of <a href=\"https://en.speedy.net/\" title=\"Speedy "
+"are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a>. With Speedy Match you can find matching people for "
 "dating and chat with them online. You can add people as friends on Speedy "
 "Net, like people and send them messages. Speedy Match is open to free "
