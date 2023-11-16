@@ -16,7 +16,7 @@
     </h1>
 </div>
 <div class="static-content">
-    {% blocktranslate with site_name=site_name %}The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.{% endblocktranslate %}<br />
+    {% if settings.SITE_ID == settings.SPEEDY_MATCH_SITE_ID and LANGUAGE_CODE == "en" %}The site is in production, but there may be errors. Site management is not responsible for any faults on the site.{% else %}{% blocktranslate with site_name=site_name %}The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.{% endblocktranslate %}{% endif %}<br />
     <br />
     {% blocktranslate with site_name=site_name %}You can use Speedy Net for legal purposes only. You are not allowed to upload contents related to hate, violence, animal abuse, nudity or pornography. You are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.{% endblocktranslate %}<br />
     <br />

@@ -26,7 +26,7 @@
     <br />
     {% blocktranslate with site_name=site_name %}Speedy Match is named after <a href="https://www.facebook.com/speedy.the.female.dog" title="Speedy">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.{% endblocktranslate %}<br />
     <br />
-    {% blocktranslate with site_name=site_name %}Speedy Match is currently in alpha. It was launched in August 2019.{% endblocktranslate %}<br />
+    {% if LANGUAGE_CODE == "en" %}Speedy Match was launched in alpha in August 2019. Since November 2023, the English version of Speedy Match is in production. Other languages are still in alpha.{% else %}{% blocktranslate with site_name=site_name %}Speedy Match is currently in alpha. It was launched in August 2019. The English version of Speedy Match is in production.{% endblocktranslate %}{% endif %}<br />
     <br />
     {% blocktranslate with site_name=site_name %}Thank you and good luck,{% endblocktranslate %}<br />
     <a href="https://www.speedysoft.com/uri/en/">{% blocktranslate with site_name=site_name %}Uri Rodberg{% endblocktranslate %}</a><br />

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 14:37+0200\n"
+"POT-Creation-Date: 2023-11-16 02:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1061,10 +1061,12 @@ msgstr ""
 "ons was en stierf in 2003. Speedy beviel in 1988 van 7 puppy's."
 
 #: .\templates\about\about.html:29
-msgid "Speedy Match is currently in alpha. It was launched in August 2019."
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
 msgstr ""
 "Speedy Match bevindt zich momenteel in de alfa-fase. Het werd gelanceerd in "
-"augustus 2019."
+"augustus 2019. De Engelse versie van Speedy Match is in productie."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1200,7 +1202,9 @@ msgstr ""
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Op zoek naar een vriendje? Op zoek naar een vriendinnetje? Kom kennismaken met Speedy!"
+msgstr ""
+"Op zoek naar een vriendje? Op zoek naar een vriendinnetje? Kom kennismaken "
+"met Speedy!"
 
 #: .\templates\main\main_page.html:16
 msgid ""

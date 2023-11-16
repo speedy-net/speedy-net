@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 14:37+0200\n"
+"POT-Creation-Date: 2023-11-16 02:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1145,9 +1145,12 @@ msgstr ""
 "em 1988."
 
 #: .\templates\about\about.html:29
-msgid "Speedy Match is currently in alpha. It was launched in August 2019."
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
 msgstr ""
-"O Speedy Match está actualmente na fase alfa. Foi lançado em agosto de 2019."
+"O Speedy Match está actualmente na fase alfa. Foi lançado em agosto de 2019. "
+"A versão em inglês do Speedy Match está em produção."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

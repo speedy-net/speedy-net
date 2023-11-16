@@ -2,6 +2,9 @@
 
 {% load static %}
 
+{% block alpha_english_title %} [alpha]{% endblock %}
+{% block alpha_english %}<span> [alpha]</span>{% endblock %}
+
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'speedy-net/css/welcome-site.css' %}?v={% now 'Y-m-d' %}" />

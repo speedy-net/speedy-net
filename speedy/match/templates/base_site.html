@@ -60,7 +60,7 @@
 {% endif %}
 
 {% block navbar_brand %}
-    <a class="navbar-brand" href="/" title="{% translate site.name %}"><img class="logo-small" src="{% static 'speedy-match/images/' %}logo-small-alpha-{{ LANGUAGE_CODE }}.png" alt="{% translate site.name %}" /></a>
+    <a class="navbar-brand" href="/" title="{% translate site.name %}"><img class="logo-small" src="{% if LANGUAGE_CODE == "en" %}{% static 'speedy-match/images/logo-small.png' %}{% else %}{% static 'speedy-match/images/' %}logo-small-alpha-{{ LANGUAGE_CODE }}.png{% endif %}" alt="{% translate site.name %}" /></a>
 {% endblock %}
 
 {% block greeting %}

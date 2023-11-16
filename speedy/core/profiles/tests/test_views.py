@@ -298,10 +298,10 @@ if (django_settings.TESTS):
                     self.not_user_birth_month_day = "21 September"
                     self.expected_title = {
                         django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Jennifer"
@@ -314,16 +314,16 @@ if (django_settings.TESTS):
                     self.not_user_birth_month_day = "30 January"
                     self.expected_title = {
                         django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match",
                     }
                 else:
                     raise NotImplementedError()
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Page Not Found / Speedy Net [alpha]",
-                    django_settings.SPEEDY_MATCH_SITE_ID: "Page Not Found / Speedy Match [alpha]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Page Not Found / Speedy Match",
                 }
                 self.expected_404_speedy_is_sorry = 'Speedy is sorry, but the page is not found.'
 
@@ -332,7 +332,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match".format(self.first_name),
                 })
 
 
