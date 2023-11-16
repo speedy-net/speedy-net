@@ -334,6 +334,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -389,6 +392,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
                 })
 
 
@@ -446,6 +452,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -501,6 +510,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 
@@ -558,6 +570,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -613,6 +628,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 
@@ -670,6 +688,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -725,6 +746,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
                 })
 
 
@@ -782,6 +806,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [알파 버전]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파 버전]".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파 버전]".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -838,6 +865,9 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
                 })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                })
 
 
         @only_on_sites_with_login
@@ -893,6 +923,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=self.expected_title, d2={
                     django_settings.SPEEDY_NET_SITE_ID: "{} / ספידי נט [אלפא]".format(self.full_name),
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / ספידי מץ' [אלפא]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / ספידי מץ' [אלפא]".format(self.user.slug),
                 })
 
 
