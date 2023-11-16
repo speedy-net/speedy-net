@@ -168,6 +168,8 @@ LANGUAGES = [
     ('he', _('Hebrew')),
 ]
 
+LANGUAGES_WITH_ADS = set()
+
 LOCALE_PATHS = [
     str(APP_DIR / 'locale'),
     str(ROOT_DIR / 'speedy/core/locale'),
