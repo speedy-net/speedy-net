@@ -8,7 +8,9 @@
 {% block title %}{% translate 'Messages' %} / {% block site_title %}{{ block.super }}{% endblock %}{% endblock %}
 
 {% block google_ads %}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
+    {% if LANGUAGE_CODE == "en" %}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
+    {% endif %}
 {% endblock %}
 
 {% block user_menu_messages_class %}active{% endblock %}
