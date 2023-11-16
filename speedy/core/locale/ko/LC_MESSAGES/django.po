@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 02:52+0200\n"
+"POT-Creation-Date: 2023-11-16 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2574,7 +2574,7 @@ msgstr "친구 요청 거부됨."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:23
+#: .\templates\messages\chat_list.html:25
 msgid "Messages"
 msgstr "메시지"
 
@@ -3048,11 +3048,11 @@ msgstr ""
 msgid "You have a new message on "
 msgstr "다음에 새 메시지가 있습니다. "
 
-#: .\templates\friends\base.html:29
+#: .\templates\friends\base.html:31
 msgid "Received Requests"
 msgstr "받은 요청"
 
-#: .\templates\friends\base.html:35
+#: .\templates\friends\base.html:37
 msgid "Sent Requests"
 msgstr "보낸 요청"
 
@@ -3075,30 +3075,30 @@ msgstr "%(site_name)s와 함께 하세요!"
 msgid "It's free and anyone can join!"
 msgstr "무료이고 누구나 가입할 수 있습니다!"
 
-#: .\templates\messages\chat_detail.html:31
+#: .\templates\messages\chat_detail.html:25
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "<a href=\"%(link)s\">%(user_name)s</a>와(과) 채팅"
 
-#: .\templates\messages\chat_detail.html:37
+#: .\templates\messages\chat_detail.html:31
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "%(user_name)s에 메시지 보내기"
 
-#: .\templates\messages\chat_detail.html:51
+#: .\templates\messages\chat_detail.html:45
 msgid "Mark All as Read"
 msgstr "모두 읽음으로 표시"
 
-#: .\templates\messages\chat_list.html:50
+#: .\templates\messages\chat_list.html:52
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: .\templates\messages\chat_list.html:57
+#: .\templates\messages\chat_list.html:59
 msgid "You:"
 msgstr "귀하:"
 
-#: .\templates\messages\chat_list.html:77
+#: .\templates\messages\chat_list.html:79
 msgid "You have no messages yet."
 msgstr "아직 메시지가 없습니다."
 

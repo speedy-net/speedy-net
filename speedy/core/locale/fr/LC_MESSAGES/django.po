@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 02:52+0200\n"
+"POT-Creation-Date: 2023-11-16 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2634,7 +2634,7 @@ msgstr "Demande d’amitié rejetée."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:23
+#: .\templates\messages\chat_list.html:25
 msgid "Messages"
 msgstr "Messages"
 
@@ -3116,11 +3116,11 @@ msgstr ""
 msgid "You have a new message on "
 msgstr "Vous avez un nouveau message sur "
 
-#: .\templates\friends\base.html:29
+#: .\templates\friends\base.html:31
 msgid "Received Requests"
 msgstr "Demandes reçues"
 
-#: .\templates\friends\base.html:35
+#: .\templates\friends\base.html:37
 msgid "Sent Requests"
 msgstr "Demandes envoyées"
 
@@ -3143,30 +3143,30 @@ msgstr "Rejoignez %(site_name)s !"
 msgid "It's free and anyone can join!"
 msgstr "C’est gratuit et tout le monde peut s’inscrire !"
 
-#: .\templates\messages\chat_detail.html:31
+#: .\templates\messages\chat_detail.html:25
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "Chat avec <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\messages\chat_detail.html:37
+#: .\templates\messages\chat_detail.html:31
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "Envoyer un message à %(user_name)s"
 
-#: .\templates\messages\chat_detail.html:51
+#: .\templates\messages\chat_detail.html:45
 msgid "Mark All as Read"
 msgstr "Marquer tout comme lu"
 
-#: .\templates\messages\chat_list.html:50
+#: .\templates\messages\chat_list.html:52
 msgid "Unread"
 msgstr "Non lu"
 
-#: .\templates\messages\chat_list.html:57
+#: .\templates\messages\chat_list.html:59
 msgid "You:"
 msgstr "Vous :"
 
-#: .\templates\messages\chat_list.html:77
+#: .\templates\messages\chat_list.html:79
 msgid "You have no messages yet."
 msgstr "Vous n’avez pas de messages pour l’instant."
 

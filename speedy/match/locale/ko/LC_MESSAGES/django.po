@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 02:52+0200\n"
+"POT-Creation-Date: 2023-11-16 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1213,7 +1213,7 @@ msgid "Matches"
 msgstr "매치"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
-#: .\templates\likes\like_list.html:16
+#: .\templates\likes\like_list.html:18
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "좋아요"
@@ -1253,7 +1253,7 @@ msgstr "아직 친구가 없습니다."
 msgid "Your Friends"
 msgstr "내 친구"
 
-#: .\templates\likes\like_list.html:45
+#: .\templates\likes\like_list.html:47
 msgid "You have no likes here."
 msgstr "여기에 좋아요가 없습니다."
 
@@ -1287,28 +1287,28 @@ msgstr ""
 "Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Match에 가입"
 "하여 매칭 파트너를 찾아보세요. 몇 분밖에 걸리지 않습니다."
 
-#: .\templates\matches\match_list.html:35
+#: .\templates\matches\match_list.html:37
 msgid "Update matches"
 msgstr "매치 업데이트"
 
-#: .\templates\matches\match_list.html:43
+#: .\templates\matches\match_list.html:45
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "식단"
 
-#: .\templates\matches\match_list.html:54
+#: .\templates\matches\match_list.html:56
 msgid "Age:"
 msgstr "나이:"
 
-#: .\templates\matches\match_list.html:68
+#: .\templates\matches\match_list.html:70
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: .\templates\matches\match_list.html:75
+#: .\templates\matches\match_list.html:77
 msgid "Add more options"
 msgstr "다른 옵션 추가"
 
-#: .\templates\matches\match_list.html:104
+#: .\templates\matches\match_list.html:106
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
