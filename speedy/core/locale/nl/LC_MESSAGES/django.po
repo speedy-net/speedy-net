@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:01+0200\n"
+"POT-Creation-Date: 2023-11-17 10:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -930,7 +930,11 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
+"Lijst bevat %(show_value)d element, maar mag niet meer dan %(limit_value)d "
+"elementen bevatten."
 msgstr[1] ""
+"Lijst bevat %(show_value)d elementen, maar mag niet meer dan %(limit_value)d "
+"elementen bevatten."
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -2331,14 +2335,16 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
+"Dit wachtwoord is te kort. De minimale lengte is %(min_length)d teken."
 msgstr[1] ""
+"Dit wachtwoord is te kort. De minimale lengte is %(min_length)d tekens."
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Uw wachtwoord moet minstens %(min_length)d teken lang zijn."
+msgstr[1] "Uw wachtwoord moet minstens %(min_length)d tekens lang zijn."
 
 #: .\accounts\validators.py:135
 #, python-format
