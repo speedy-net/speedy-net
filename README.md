@@ -227,7 +227,7 @@ Run migrations and collect static:
 You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
 
     /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
-    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.7
+    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.9
 
 Run again **contrib/deploy.sh**:
 
