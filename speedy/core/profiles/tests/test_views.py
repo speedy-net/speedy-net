@@ -769,11 +769,11 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "1990년 9월 12일"
                     self.not_user_birth_month_day = "9월 21일"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [알파 버전]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [알파 버전]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [알파]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [알파 버전]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [알파]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Jennifer"
@@ -785,17 +785,17 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "1990년 1월 31일"
                     self.not_user_birth_month_day = "1월 30일"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [알파 버전]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [알파 버전]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [알파]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [알파 버전]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [알파]",
                     }
                 else:
                     raise NotImplementedError()
                 self.expected_404_title = {
-                    django_settings.SPEEDY_NET_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Net [알파 버전]",
-                    django_settings.SPEEDY_MATCH_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Match [알파 버전]",
+                    django_settings.SPEEDY_NET_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Net [알파]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Match [알파]",
                 }
                 self.expected_404_speedy_is_sorry = 'Speedy에서 죄송하게 생각합니다만, 해당 페이지를 찾을 수 없습니다.'
 
@@ -803,11 +803,11 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
                 self.assertDictEqual(d1=self.expected_title, d2={
-                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [알파 버전]".format(self.full_name),
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파 버전]".format(self.first_name),
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [알파]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파]".format(self.first_name),
                 })
                 self.assertDictEqual(d1=self.expected_title_no_match, d2={
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파 버전]".format(self.user.slug),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [알파]".format(self.user.slug),
                 })
 
 
