@@ -651,11 +651,11 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "12 september 1990"
                     self.not_user_birth_month_day = "21 september"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Jennifer"
@@ -667,17 +667,17 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "31 januari 1990"
                     self.not_user_birth_month_day = "30 januari"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
                 self.expected_404_title = {
-                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alpha]",
-                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alpha]",
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
                 }
                 self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
 
@@ -685,11 +685,11 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
                 self.assertDictEqual(d1=self.expected_title, d2={
-                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
                 })
                 self.assertDictEqual(d1=self.expected_title_no_match, d2={
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 
@@ -710,11 +710,11 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "12 september 1990"
                     self.not_user_birth_month_day = "21 september"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Jennifer"
@@ -726,17 +726,17 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "31 januari 1990"
                     self.not_user_birth_month_day = "30 januari"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
                 self.expected_404_title = {
-                    django_settings.SPEEDY_NET_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Net [alpha]",
-                    django_settings.SPEEDY_MATCH_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Match [alpha]",
+                    django_settings.SPEEDY_NET_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Match [alfa]",
                 }
                 self.expected_404_speedy_is_sorry = 'Speedy beklagar, men sidan har inte hittats.'
 
@@ -744,11 +744,11 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
                 self.assertDictEqual(d1=self.expected_title, d2={
-                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
                 })
                 self.assertDictEqual(d1=self.expected_title_no_match, d2={
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 
@@ -828,11 +828,11 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "12. syyskuuta 1990"
                     self.not_user_birth_month_day = "21. syyskuu"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Jennifer"
@@ -844,17 +844,17 @@ if (django_settings.TESTS):
                     self.not_user_birth_date = "31. tammikuuta 1990"
                     self.not_user_birth_month_day = "30. tammikuu"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
                 self.expected_404_title = {
-                    django_settings.SPEEDY_NET_SITE_ID: "Sivua Ei Löydy / Speedy Net [alpha]",
-                    django_settings.SPEEDY_MATCH_SITE_ID: "Sivua Ei Löydy / Speedy Match [alpha]",
+                    django_settings.SPEEDY_NET_SITE_ID: "Sivua Ei Löydy / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Sivua Ei Löydy / Speedy Match [alfa]",
                 }
                 self.expected_404_speedy_is_sorry = 'Speedy pahoittelee, mutta sivua ei löydy.'
 
@@ -862,11 +862,11 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
                 self.assertDictEqual(d1=self.expected_title, d2={
-                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alpha]".format(self.full_name),
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.first_name),
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
                 })
                 self.assertDictEqual(d1=self.expected_title_no_match, d2={
-                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alpha]".format(self.user.slug),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 

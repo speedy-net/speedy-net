@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 08:35+0200\n"
+"POT-Creation-Date: 2023-11-17 09:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1008,7 +1008,7 @@ msgstr "Inga"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
