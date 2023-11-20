@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -705,7 +705,7 @@ msgstr "Speedy Match-profiler"
 
 #: .\accounts\models.py:297 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr "Bekräfta e-postadressen"
+msgstr "Bekräfta e-postadressen."
 
 #: .\accounts\utils.py:88
 #, python-brace-format

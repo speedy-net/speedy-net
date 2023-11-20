@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -746,17 +746,17 @@ msgstr "Lees het:"
 #: .\__translations\__translations.html:192
 msgctxt "female"
 msgid "Confirm your email address on "
-msgstr "Bevestig je e-mailadres op"
+msgstr "Bevestig je e-mailadres op "
 
 #: .\__translations\__translations.html:193
 msgctxt "male"
 msgid "Confirm your email address on "
-msgstr "Bevestig je e-mailadres op"
+msgstr "Bevestig je e-mailadres op "
 
 #: .\__translations\__translations.html:194
 msgctxt "other"
 msgid "Confirm your email address on "
-msgstr "Bevestig jullie e-mailadres op"
+msgstr "Bevestig jullie e-mailadres op "
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3061,7 +3061,7 @@ msgstr "Gebruik deze link om je account te activeren:"
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
-msgstr "Bevestig je e-mailadres op"
+msgstr "Bevestig je e-mailadres op "
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"

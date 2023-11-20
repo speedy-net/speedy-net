@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -87,17 +87,17 @@ msgstr ""
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
@@ -732,17 +732,17 @@ msgstr "Lue se:"
 #: .\__translations\__translations.html:192
 msgctxt "female"
 msgid "Confirm your email address on "
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi "
 
 #: .\__translations\__translations.html:193
 msgctxt "male"
 msgid "Confirm your email address on "
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi "
 
 #: .\__translations\__translations.html:194
 msgctxt "other"
 msgid "Confirm your email address on "
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi "
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3011,7 +3011,7 @@ msgstr "Käytä tätä linkkiä aktivoidaksesi tilisi:"
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
-msgstr "Vahvista sähköpostiosoitteesi"
+msgstr "Vahvista sähköpostiosoitteesi "
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
