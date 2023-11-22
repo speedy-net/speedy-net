@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 10:08+0200\n"
+"POT-Creation-Date: 2023-11-22 14:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2467,7 +2467,7 @@ msgstr ""
 "{total_number_of_members_registered_more_than_four_months_ago} zijn in meer "
 "dan vier maanden geleden lid geworden. "
 "{total_number_of_members_registered_in_the_last_eight_months} leden zijn in "
-"de afgelopen acht maanden lid geworden.\n"
+"de afgelopen acht maanden lid geworden."
 "{total_number_of_members_registered_more_than_eight_months_ago} leden zijn "
 "meer dan acht maanden geleden lid geworden. "
 "{total_number_of_members_registered_in_the_last_two_years} zijn in de "
