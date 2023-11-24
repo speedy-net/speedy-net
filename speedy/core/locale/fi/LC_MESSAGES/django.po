@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-24 11:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2449,7 +2449,7 @@ msgstr "ID"
 #: .\base\utils.py:320
 msgctxt "timesince"
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
