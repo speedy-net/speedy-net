@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-24 11:29+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -830,7 +830,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Syötä voimassaoleva sähköpostiosoite"
+msgstr "Syötä kelvollinen sähköpostiosoite."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -2337,7 +2337,7 @@ msgstr "Tämä kenttä ei voi olla tyhjä."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "Anna kelvollinen päivämäärä."
+msgstr "Syötä oikea päivämäärä."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."

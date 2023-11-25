@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -874,7 +874,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "De waarde moet een geldige JSON zijn."
+msgstr "Waarde moet geldige JSON zijn."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -2366,11 +2366,11 @@ msgstr[1] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 
 #: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
-msgstr "Dit veld kan niet nul zijn."
+msgstr "Dit veld mag niet leeg zijn."
 
 #: .\accounts\validators.py:192
 msgid "This field cannot be blank."
-msgstr "Dit veld mag niet leeg zijn."
+msgstr "Dit veld kan niet leeg zijn."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."

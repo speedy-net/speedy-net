@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "유효한 이메일 주소를 입력하세요."
+msgstr "올바른 이메일 주소를 입력하세요."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -2335,7 +2335,7 @@ msgstr "이 필드는 공백일 수 없습니다"
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "유효한 날짜를 입력하십시오."
+msgstr "올바른 날짜를 입력하세요."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."

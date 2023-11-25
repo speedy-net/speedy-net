@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,7 +854,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Informe um e-mail válido."
+msgstr "Introduza um endereço de e-mail válido."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -875,7 +875,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "O valor precisa ser um JSON válido."
+msgstr "O valor deve ser um JSON válido."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -2241,7 +2241,7 @@ msgstr "Em {date} ({timesince_ago})"
 #: .\accounts\models.py:892
 #, python-brace-format
 msgid "{timesince} ago"
-msgstr "Há {timesince}"
+msgstr "há {timesince}"
 
 #: .\accounts\validators.py:39
 msgid ""
@@ -2371,11 +2371,11 @@ msgstr "Este campo não pode ser nulo."
 
 #: .\accounts\validators.py:192
 msgid "This field cannot be blank."
-msgstr "Este campo não pode estar vazio."
+msgstr "Este campo não pode ser vazio."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "Informe uma data válida."
+msgstr "Introduza uma data válida."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -730,7 +730,7 @@ msgstr "La edad mínima para coincidir debe ser de 0 a 180 años."
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "La edad mínima para coincidir debe ser de 0 a 180 años."
+msgstr "La edad máxima para coincidir debe ser de 0 a 180 años."
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 14:26+0200\n"
+"POT-Creation-Date: 2023-11-25 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,7 +863,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Geben Sie eine gültige E-Mail-Adresse ein."
+msgstr "Bitte gültige E-Mail-Adresse eingeben."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -884,7 +884,7 @@ msgstr "E-Mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Wert muss eine gültige JSON sein."
+msgstr "Wert muss gültiges JSON sein."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -2051,7 +2051,7 @@ msgstr "Slug wird nicht in Benutzername umgewandelt."
 
 #: .\accounts\models.py:146
 msgid "Username is required."
-msgstr "Benutzername ist erforderlich"
+msgstr "Benutzername ist erforderlich."
 
 #: .\accounts\models.py:155
 msgid "name"
@@ -2384,15 +2384,15 @@ msgstr[1] "Ihr Passwort darf höchstens %(max_length)d Zeichen enthalten."
 
 #: .\accounts\validators.py:190 .\accounts\validators.py:197
 msgid "This field cannot be null."
-msgstr "Dieses Feld kann nicht null sein."
+msgstr "Dieses Feld darf nicht null sein."
 
 #: .\accounts\validators.py:192
 msgid "This field cannot be blank."
-msgstr "Dieses Feld kann nicht leer sein."
+msgstr "Dieses Feld darf nicht leer sein."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "Geben Sie ein gültiges Datum ein."
+msgstr "Bitte ein gültiges Datum eingeben."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."
