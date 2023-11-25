@@ -317,6 +317,46 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='de')
+        class LikeNotificationsGermanTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='es')
+        class LikeNotificationsSpanishTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='pt')
+        class LikeNotificationsPortugueseTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='it')
+        class LikeNotificationsItalianTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='nl')
+        class LikeNotificationsDutchTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class LikeNotificationsHebrewTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):

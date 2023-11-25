@@ -56,7 +56,7 @@ if (django_settings.TESTS):
                     "expected_error_message_min_age_to_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_error_message_max_age_to_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
                 }
-                test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'fr': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'fr': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'de': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'es': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'pt': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'it': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'nl': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"]).replace("\xa0", "\\xa0")]
                 test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ["['{expected_error_message_min_age_to_match_invalid}']".format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]).replace("\xa0", "\\xa0"), "['{expected_error_message_max_age_to_match_invalid}']".format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"]).replace("\xa0", "\\xa0")]
                 return test_settings
 
@@ -64,7 +64,7 @@ if (django_settings.TESTS):
                 test_settings = {
                     "field_name": 'diet_match',
                     "expected_step": 8,
-                    "expected_error_message_keys_and_ranks_invalid": self.diet_match_is_required_error_message,
+                    "expected_error_message_keys_and_ranks_invalid": self._diet_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
                 }
                 test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
@@ -75,7 +75,7 @@ if (django_settings.TESTS):
                 test_settings = {
                     "field_name": 'smoking_status_match',
                     "expected_step": 8,
-                    "expected_error_message_keys_and_ranks_invalid": self.smoking_status_match_is_required_error_message,
+                    "expected_error_message_keys_and_ranks_invalid": self._smoking_status_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
                 }
                 test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
@@ -86,7 +86,7 @@ if (django_settings.TESTS):
                 test_settings = {
                     "field_name": 'relationship_status_match',
                     "expected_step": 9,
-                    "expected_error_message_keys_and_ranks_invalid": self.relationship_status_match_is_required_error_message,
+                    "expected_error_message_keys_and_ranks_invalid": self._relationship_status_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
                 }
                 test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
@@ -726,8 +726,29 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=3)
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
+                if (self.language_code in {'en', 'fr', 'he'}):
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
+                else:
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                    self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
+                    active_languages = {'en', 'fr', 'he'} | {self.language_code}
+                    user.speedy_match_profile._set_active_languages(languages=active_languages)
+                    user.save_user_and_profile()
+                    self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2=active_languages)
+                    self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=4)
+                    self.assertEqual(first=user.is_active, second=True)
+                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
+                    user.speedy_match_profile._set_active_languages(languages=['en', 'fr', 'he'])
+                    user.save_user_and_profile()
+                    self.assertSetEqual(set1=set(user.speedy_match_profile.active_languages), set2={'en', 'fr', 'he'})
+                    self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=3)
+                    self.assertEqual(first=user.is_active, second=True)
+                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                    self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_set_active_languages_3(self):
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile._set_active_languages().
@@ -1237,6 +1258,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='de')
+        class SpeedyMatchSiteProfileGermanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='es')
+        class SpeedyMatchSiteProfileSpanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='pt')
+        class SpeedyMatchSiteProfilePortugueseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='it')
+        class SpeedyMatchSiteProfileItalianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='nl')
+        class SpeedyMatchSiteProfileDutchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
 
 
         @only_on_speedy_match

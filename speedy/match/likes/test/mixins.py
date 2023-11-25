@@ -8,7 +8,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'he': "לייקים הדדיים"}
+            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'de': "_____ # ~~~~ TODO", 'es': "_____ # ~~~~ TODO", 'pt': "_____ # ~~~~ TODO", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'he': "לייקים הדדיים"}
 
             _list_to_title_dict_by_gender = {
                 'en': {
@@ -20,6 +20,31 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: "Les filles que vous aimez",
                     User.GENDER_MALE_STRING: "Les garçons que vous aimez",
                     User.GENDER_OTHER_STRING: "Les personnes que vous aimez",
+                },
+                'de': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'pt': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'it': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'nl': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "בנות שעשית להן לייק",
@@ -38,6 +63,31 @@ if (django_settings.TESTS):
                     User.GENDER_MALE_STRING: "Les garçons qui vous aiment",
                     User.GENDER_OTHER_STRING: "Les personnes qui vous aiment",
                 },
+                'de': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'pt': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'it': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'nl': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
                 'he': {
                     User.GENDER_FEMALE_STRING: "בנות שעשו לך לייק",
                     User.GENDER_MALE_STRING: "בנים שעשו לך לייק",
@@ -50,6 +100,23 @@ if (django_settings.TESTS):
                 },
                 'fr': {
                     **{gender: "Quelqu’un vous aime bien sur Speedy Match" for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{gender: "Jemand likt Sie am Speedy Match" for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    **{gender: "Le gustas a alguien Speedy Match" for gender in User.ALL_GENDERS},
+                },
+                'pt': {
+                    **{gender: "Alguém curte a ti no Speedy Match" for gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{gender: "Qualcuno ti ha messo Mi Piace su Speedy Match" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    User.GENDER_FEMALE_STRING: "Iemand vindt je leuk op Speedy Match",
+                    User.GENDER_MALE_STRING: "Iemand vindt je leuk op Speedy Match",
+                    User.GENDER_OTHER_STRING: "Iemand vindt jullie leuk op Speedy Match",
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מישהי עשתה לך לייק בספידי מץ'",
