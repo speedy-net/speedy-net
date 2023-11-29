@@ -1080,6 +1080,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class UserWithLastNameEnglishTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Doron",
@@ -1097,13 +1098,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class UserWithLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Doron",
-                    'last_name_fr': "Matalon",
+                    'first_name_fr': "Alizée",
+                    'last_name_fr': "Lyonnet",
                 })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
+                self.first_name = "Alizée"
+                self.last_name = "Lyonnet"
 
             def validate_all_values(self):
                 super().validate_all_values()
@@ -1114,6 +1116,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='de')
         class UserWithLastNameGermanTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_de': "Doron",
@@ -1131,13 +1134,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='es')
         class UserWithLastNameSpanishTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_es': "Doron",
-                    'last_name_es': "Matalon",
+                    'first_name_es': "Lionel",
+                    'last_name_es': "Messi",
                 })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
+                self.first_name = "Lionel"
+                self.last_name = "Messi"
 
             def validate_all_values(self):
                 super().validate_all_values()
@@ -1148,13 +1152,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='pt')
         class UserWithLastNamePortugueseTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_pt': "Doron",
-                    'last_name_pt': "Matalon",
+                    'first_name_pt': "Cristiano",
+                    'last_name_pt': "Ronaldo",
                 })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
+                self.first_name = "Cristiano"
+                self.last_name = "Ronaldo"
 
             def validate_all_values(self):
                 super().validate_all_values()
@@ -1165,13 +1170,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='it')
         class UserWithLastNameItalianTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_it': "Doron",
-                    'last_name_it': "Matalon",
+                    'first_name_it': "Andrea",
+                    'last_name_it': "Bocelli",
                 })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
+                self.first_name = "Andrea"
+                self.last_name = "Bocelli"
 
             def validate_all_values(self):
                 super().validate_all_values()
@@ -1182,6 +1188,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='nl')
         class UserWithLastNameDutchTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_nl': "Doron",
@@ -1199,6 +1206,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class UserWithLastNameHebrewTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "דורון",
@@ -1215,6 +1223,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class UserWithoutLastNameEnglishTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Doron",
@@ -1232,12 +1241,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class UserWithoutLastNameFrenchTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Doron",
+                    'first_name_fr': "Alizée",
                     'last_name_fr': "",
                 })
-                self.first_name = "Doron"
+                self.first_name = "Alizée"
                 self.last_name = ""
 
             def validate_all_values(self):
@@ -1249,6 +1259,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='de')
         class UserWithoutLastNameGermanTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_de': "Doron",
@@ -1266,12 +1277,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='es')
         class UserWithoutLastNameSpanishTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_es': "Doron",
+                    'first_name_es': "Lionel",
                     'last_name_es': "",
                 })
-                self.first_name = "Doron"
+                self.first_name = "Lionel"
                 self.last_name = ""
 
             def validate_all_values(self):
@@ -1283,12 +1295,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='pt')
         class UserWithoutLastNamePortugueseTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_pt': "Doron",
+                    'first_name_pt': "Cristiano",
                     'last_name_pt': "",
                 })
-                self.first_name = "Doron"
+                self.first_name = "Cristiano"
                 self.last_name = ""
 
             def validate_all_values(self):
@@ -1300,12 +1313,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='it')
         class UserWithoutLastNameItalianTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_it': "Doron",
+                    'first_name_it': "Andrea",
                     'last_name_it': "",
                 })
-                self.first_name = "Doron"
+                self.first_name = "Andrea"
                 self.last_name = ""
 
             def validate_all_values(self):
@@ -1317,6 +1331,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='nl')
         class UserWithoutLastNameDutchTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_nl': "Doron",
@@ -1334,6 +1349,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class UserWithoutLastNameHebrewTestCase(UserTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "דורון",

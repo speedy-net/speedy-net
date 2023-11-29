@@ -642,6 +642,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class RegistrationViewWithLastNameEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Doron",
@@ -660,13 +661,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class RegistrationViewWithLastNameFrenchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Doron",
-                    'last_name_fr': "Matalon",
+                    'first_name_fr': "Alizée",
+                    'last_name_fr': "Lyonnet",
                 })
-                self.first_name = "Doron"
-                self.last_name = "Matalon"
+                self.first_name = "Alizée"
+                self.last_name = "Lyonnet"
                 self.set_up_required_fields()
 
             def validate_all_values(self):
@@ -678,6 +680,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationViewWithLastNameHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "דורון",
@@ -695,6 +698,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class RegistrationViewWithoutLastNameEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Doron",
@@ -713,12 +717,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class RegistrationViewWithoutLastNameFrenchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Doron",
+                    'first_name_fr': "Alizée",
                     'last_name_fr': "",
                 })
-                self.first_name = "Doron"
+                self.first_name = "Alizée"
                 self.last_name = ""
                 self.set_up_required_fields()
 
@@ -731,6 +736,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationViewWithoutLastNameHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "דורון",
@@ -1149,6 +1155,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class EditProfileViewWithLastNameEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Jennifer",
@@ -1167,13 +1174,14 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class EditProfileViewWithLastNameFrenchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Jennifer",
-                    'last_name_fr': "Connelly",
+                    'first_name_fr': "Alizée",
+                    'last_name_fr': "Lyonnet",
                 })
-                self.first_name = "Jennifer"
-                self.last_name = "Connelly"
+                self.first_name = "Alizée"
+                self.last_name = "Lyonnet"
                 self.set_up_required_fields()
 
             def validate_all_values(self):
@@ -1185,6 +1193,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileViewWithLastNameHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "ג'ניפר",
@@ -1202,6 +1211,7 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class EditProfileViewWithoutLastNameEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_en': "Jennifer",
@@ -1220,12 +1230,13 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='fr')
         class EditProfileViewWithoutLastNameFrenchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_fr': "Jennifer",
+                    'first_name_fr': "Alizée",
                     'last_name_fr': "",
                 })
-                self.first_name = "Jennifer"
+                self.first_name = "Alizée"
                 self.last_name = ""
                 self.set_up_required_fields()
 
@@ -1238,6 +1249,7 @@ if (django_settings.TESTS):
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileViewWithoutLastNameHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
+                # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
                     'first_name_he': "ג'ניפר",

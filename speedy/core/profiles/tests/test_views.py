@@ -65,6 +65,7 @@ if (django_settings.TESTS):
 
         class UserDetailViewTestCaseMixin(object):
             def set_up(self):
+                # Check names in English alphabet and in Hebrew alphabet.
                 super().set_up()
                 self.random_choice = random.choice([1, 2])
                 if (self.random_choice == 1):
