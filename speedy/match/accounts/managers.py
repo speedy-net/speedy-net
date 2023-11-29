@@ -101,6 +101,7 @@ class SiteProfileManager(BaseManager):
             pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
         ).order_by('-speedy_match_site_profile__last_visit')
         _user_list = qs[:2400]
+        # If there are at least 1,080 users who visited Speedy Match in the last 4 months, use them. Otherwise check 8 months, 12 months etc.
         user_list = []
         months = None
         for m in range(4, 28, 4):
