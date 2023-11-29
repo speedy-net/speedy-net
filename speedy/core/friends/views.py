@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.shortcuts import redirect, get_object_or_404
+from django.utils import formats
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.views import generic
 
@@ -81,16 +82,16 @@ class LimitMaxFriendsMixin(object):
         user_number_of_friends = len(Friend.objects.friends(user=self.request.user))
         if (user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(
-                '{:,}'.format(user_number_of_friends),
-                '{:,}'.format(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
+                formats.number_format(value=user_number_of_friends),
+                formats.number_format(value=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
             ))
 
     def check_other_user_friends(self, user):
         other_user_number_of_friends = len(Friend.objects.friends(user=user))
         if (other_user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=user), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(
-                '{:,}'.format(other_user_number_of_friends),
-                '{:,}'.format(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
+                formats.number_format(value=other_user_number_of_friends),
+                formats.number_format(value=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
             ))
 
 

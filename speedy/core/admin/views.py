@@ -1,6 +1,7 @@
 from datetime import timedelta, datetime, timezone, date
 
 from django.conf import settings as django_settings
+from django.utils import formats
 from django.utils.module_loading import import_string
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
@@ -52,12 +53,12 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
             "{}__last_visit__gte".format(SiteProfile.RELATED_NAME): now() - timedelta(days=720),
         }).count()
         total_number_of_members_text = _("Admin: The total number of members on the site is {total_number_of_members}, of which {total_number_of_members_in_the_last_week} members entered the site in the last week, {total_number_of_members_in_the_last_month} members entered the site in the last month, {total_number_of_members_in_the_last_four_months} members entered the site in the last four months, {total_number_of_members_in_the_last_eight_months} members entered the site in the last eight months, and {total_number_of_members_in_the_last_two_years} members entered the site in the last two years.").format(
-            total_number_of_members='{:,}'.format(total_number_of_members),
-            total_number_of_members_in_the_last_week='{:,}'.format(total_number_of_members_in_the_last_week),
-            total_number_of_members_in_the_last_month='{:,}'.format(total_number_of_members_in_the_last_month),
-            total_number_of_members_in_the_last_four_months='{:,}'.format(total_number_of_members_in_the_last_four_months),
-            total_number_of_members_in_the_last_eight_months='{:,}'.format(total_number_of_members_in_the_last_eight_months),
-            total_number_of_members_in_the_last_two_years='{:,}'.format(total_number_of_members_in_the_last_two_years),
+            total_number_of_members=formats.number_format(value=total_number_of_members),
+            total_number_of_members_in_the_last_week=formats.number_format(value=total_number_of_members_in_the_last_week),
+            total_number_of_members_in_the_last_month=formats.number_format(value=total_number_of_members_in_the_last_month),
+            total_number_of_members_in_the_last_four_months=formats.number_format(value=total_number_of_members_in_the_last_four_months),
+            total_number_of_members_in_the_last_eight_months=formats.number_format(value=total_number_of_members_in_the_last_eight_months),
+            total_number_of_members_in_the_last_two_years=formats.number_format(value=total_number_of_members_in_the_last_two_years),
         )
         total_number_of_members_registered_in_the_last_week = User.objects.filter(
             has_confirmed_email=True,
@@ -98,15 +99,15 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
         total_number_of_members_text += "\n"
         total_number_of_members_text += "\n"
         total_number_of_members_text += _("Admin: {total_number_of_members_registered_in_the_last_week} members registered in the last week. {total_number_of_members_registered_in_the_last_month} members registered in the last month. {total_number_of_members_registered_in_the_last_four_months} members registered in the last four months. {total_number_of_members_registered_more_than_four_months_ago} members registered more than four months ago. {total_number_of_members_registered_in_the_last_eight_months} members registered in the last eight months. {total_number_of_members_registered_more_than_eight_months_ago} members registered more than eight months ago. {total_number_of_members_registered_in_the_last_two_years} members registered in the last two years. {total_number_of_members_registered_more_than_two_years_ago} members registered more than two years ago. {total_number_of_members_registered_before_2019_08_01} members registered before 1 August 2019.").format(
-            total_number_of_members_registered_in_the_last_week='{:,}'.format(total_number_of_members_registered_in_the_last_week),
-            total_number_of_members_registered_in_the_last_month='{:,}'.format(total_number_of_members_registered_in_the_last_month),
-            total_number_of_members_registered_in_the_last_four_months='{:,}'.format(total_number_of_members_registered_in_the_last_four_months),
-            total_number_of_members_registered_more_than_four_months_ago='{:,}'.format(total_number_of_members_registered_more_than_four_months_ago),
-            total_number_of_members_registered_in_the_last_eight_months='{:,}'.format(total_number_of_members_registered_in_the_last_eight_months),
-            total_number_of_members_registered_more_than_eight_months_ago='{:,}'.format(total_number_of_members_registered_more_than_eight_months_ago),
-            total_number_of_members_registered_in_the_last_two_years='{:,}'.format(total_number_of_members_registered_in_the_last_two_years),
-            total_number_of_members_registered_more_than_two_years_ago='{:,}'.format(total_number_of_members_registered_more_than_two_years_ago),
-            total_number_of_members_registered_before_2019_08_01='{:,}'.format(total_number_of_members_registered_before_2019_08_01),
+            total_number_of_members_registered_in_the_last_week=formats.number_format(value=total_number_of_members_registered_in_the_last_week),
+            total_number_of_members_registered_in_the_last_month=formats.number_format(value=total_number_of_members_registered_in_the_last_month),
+            total_number_of_members_registered_in_the_last_four_months=formats.number_format(value=total_number_of_members_registered_in_the_last_four_months),
+            total_number_of_members_registered_more_than_four_months_ago=formats.number_format(value=total_number_of_members_registered_more_than_four_months_ago),
+            total_number_of_members_registered_in_the_last_eight_months=formats.number_format(value=total_number_of_members_registered_in_the_last_eight_months),
+            total_number_of_members_registered_more_than_eight_months_ago=formats.number_format(value=total_number_of_members_registered_more_than_eight_months_ago),
+            total_number_of_members_registered_in_the_last_two_years=formats.number_format(value=total_number_of_members_registered_in_the_last_two_years),
+            total_number_of_members_registered_more_than_two_years_ago=formats.number_format(value=total_number_of_members_registered_more_than_two_years_ago),
+            total_number_of_members_registered_before_2019_08_01=formats.number_format(value=total_number_of_members_registered_before_2019_08_01),
         )
         total_number_of_members_text += "\n"
         today = date.today()
@@ -118,7 +119,7 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
             ).count()
             total_number_of_members_text += "\n"
             total_number_of_members_text += _("Admin: {total_number_of_members_registered_in_year} members registered in {year}.").format(
-                total_number_of_members_registered_in_year='{:,}'.format(total_number_of_members_registered_in_year),
+                total_number_of_members_registered_in_year=formats.number_format(value=total_number_of_members_registered_in_year),
                 year=year,
             )
         return total_number_of_members_text
