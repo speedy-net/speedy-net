@@ -67,7 +67,20 @@ def can_send_new_message(user):
     count_identical_messages_in_chats = Chat.objects.count_identical_messages_in_chats_with_only_one_sender(
         entity=user,
     )
-    if (count_identical_messages_in_chats[0] >= 30):
+    limit_identical_messages = 8
+    if ((now() - user.date_created).days < 60):
+        if (user.has_confirmed_email):
+            emails = user.email_addresses.filter(is_primary=True)
+            if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
+                email_name, domain_part = user.email.strip().rsplit("@", 1)
+                if (domain_part in {'gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'}):
+                    limit_identical_messages = 15
+    else:
+        if (user.has_confirmed_email):
+            limit_identical_messages = 30
+        else:
+            limit_identical_messages = 15
+    if (count_identical_messages_in_chats[0] >= limit_identical_messages):
         site = Site.objects.get_current()
         language_code = get_language()
         logger.warning("[count_identical_messages] User {user} can't send messages today on {site_name} ({count_identical_messages_in_chats_0} / \"{count_identical_messages_in_chats_1}\", registered {registered_days_ago} days ago), language_code={language_code}.".format(

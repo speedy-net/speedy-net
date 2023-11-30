@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
         from time import sleep
         from dateutil.relativedelta import relativedelta
 
@@ -11,6 +12,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.messages.test.factories import ChatFactory
 
+        from speedy.core.accounts.models import UserEmailAddress
         from speedy.core.blocks.models import Block
         from speedy.core.messages.models import Message
 
@@ -154,8 +156,36 @@ if (django_settings.TESTS):
                     self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
                     self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
 
-            def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages(self):
+            def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_1(self):
+                self._create_users(users_count=24)
+                chats = dict()
+                for i in range(14):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet {}'.format(i % 2))
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_2(self):
+                self._create_users(users_count=38)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address.make_primary()
+                chats = dict()
+                for i in range(28):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet {}'.format(i % 2))
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_3(self):
                 self._create_users(users_count=50)
+                self.user_1.date_created -= relativedelta(days=60, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(40):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -167,7 +197,65 @@ if (django_settings.TESTS):
                     self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_1(self):
+                self._create_users(users_count=28)
+                chats = dict()
+                for i in range(7):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(11):
+                    chats[str(7 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(7 + 3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(7 + i)], text='Lorem ipsum dolor sit amet')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(11):
+                    Message.objects.send_message(from_entity=getattr(self, "user_{}".format(7 + 3 + i)), chat=chats[str(7 + i)], text='Lorem ipsum dolor sit amet!')
+                    sleep(0.01)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_2(self):
+                self._create_users(users_count=35)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address.make_primary()
+                chats = dict()
+                for i in range(14):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(11):
+                    chats[str(14 + i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(14 + 3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(14 + i)], text='Lorem ipsum dolor sit amet')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(11):
+                    Message.objects.send_message(from_entity=getattr(self, "user_{}".format(14 + 3 + i)), chat=chats[str(14 + i)], text='Lorem ipsum dolor sit amet!')
+                    sleep(0.01)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_3(self):
                 self._create_users(users_count=50)
+                self.user_1.date_created -= relativedelta(days=60, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(29):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -193,8 +281,64 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
 
-            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_2(self):
+            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_4(self):
+                self._create_users(users_count=44)
+                chats = dict()
+                for i in range(34):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet {}'.format(i % 2))
+                    sleep(0.01)
+                    if (i < 14):
+                        self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    else:
+                        self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(20):
+                    Message.objects.send_message(from_entity=getattr(self, "user_{}".format(10 + 3 + i)), chat=chats[str(10 + i)], text='Lorem ipsum dolor sit amet!')
+                    sleep(0.01)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_5(self):
+                self._create_users(users_count=50)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address.make_primary()
+                chats = dict()
+                for i in range(40):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Lorem ipsum dolor sit amet {}'.format(i % 2))
+                    sleep(0.01)
+                    if (i < 28):
+                        self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    else:
+                        self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                for i in range(20):
+                    Message.objects.send_message(from_entity=getattr(self, "user_{}".format(10 + 3 + i)), chat=chats[str(10 + i)], text='Lorem ipsum dolor sit amet!')
+                    sleep(0.01)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_6(self):
                 self._create_users(users_count=80)
+                self.user_1.date_created -= relativedelta(days=60, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(70):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
