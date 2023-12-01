@@ -65,17 +65,36 @@ if (django_settings.TESTS):
 
         class UserDetailViewTestCaseMixin(object):
             def set_up(self):
-                # Check names in English alphabet and in Hebrew alphabet.
                 super().set_up()
                 self.random_choice = random.choice([1, 2])
                 if (self.random_choice == 1):
+                    # Check names in English alphabet and in Hebrew alphabet.
                     self.user = ActiveUserFactory(first_name_en="Corrin", last_name_en="Gideon", slug="corrin-gideon", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
                     self.user.first_name_he = "קורין"
                     self.user.last_name_he = "גדעון"
                 elif (self.random_choice == 2):
-                    self.user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
-                    self.user.first_name_he = "ג'ניפר"
-                    self.user.last_name_he = "קונלי"
+                    if (self.language_code in {'en', 'he'}):
+                        # Check names in English alphabet and in Hebrew alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
+                        self.user.first_name_he = "ג'ניפר"
+                        self.user.last_name_he = "קונלי"
+                    elif (self.language_code == 'fr'):
+                        # Check names in French alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Alizée", last_name_en="Lyonnet", slug="aliz-e-lyonnet", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
+                    elif (self.language_code == 'es'):
+                        # Check names in Spanish alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Lionel", last_name_en="Messi", slug="lionel-messi", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_MALE)
+                    elif (self.language_code == 'pt'):
+                        # Check names in Portuguese alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Cristiano", last_name_en="Ronaldo", slug="cristiano-ronaldo", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_MALE)
+                    elif (self.language_code == 'it'):
+                        # Check names in Italian alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Andrea", last_name_en="Bocelli", slug="andrea-bocelli", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_MALE)
+                    elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi'}):
+                        # Check names in English alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
+                    else:
+                        raise NotImplementedError()
                 else:
                     raise NotImplementedError()
                 self.user.save()
@@ -251,7 +270,20 @@ if (django_settings.TESTS):
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
                     elif (self.random_choice == 2):
-                        self.assertEqual(first=self.user.slug, second="jennifer-connelly")
+                        if (self.language_code in {'en', 'he'}):
+                            self.assertEqual(first=self.user.slug, second="jennifer-connelly")
+                        elif (self.language_code == 'fr'):
+                            self.assertEqual(first=self.user.slug, second="aliz-e-lyonnet")
+                        elif (self.language_code == 'es'):
+                            self.assertEqual(first=self.user.slug, second="lionel-messi")
+                        elif (self.language_code == 'pt'):
+                            self.assertEqual(first=self.user.slug, second="cristiano-ronaldo")
+                        elif (self.language_code == 'it'):
+                            self.assertEqual(first=self.user.slug, second="andrea-bocelli")
+                        elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi'}):
+                            self.assertEqual(first=self.user.slug, second="doron-matalon")
+                        else:
+                            raise NotImplementedError()
                         self.assertEqual(first=r.status_code, second=200)
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
@@ -364,20 +396,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Alizée"
+                    self.last_name = "Lyonnet"
+                    self.full_name = "Alizée Lyonnet"
                     self.user_birth_date = "31 janvier 1978"
                     self.user_birth_month_day = "31 janvier"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 janvier 1990"
                     self.not_user_birth_month_day = "30 janvier"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Alizée Lyonnet / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Alizée / Speedy Match [alpha]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "aliz-e-lyonnet / Speedy Match [alpha]",
                     }
                 else:
                     raise NotImplementedError()
@@ -423,20 +455,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alpha]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
                     self.user_birth_date = "31. Januar 1978"
                     self.user_birth_month_day = "31. Januar"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31. Januar 1990"
                     self.not_user_birth_month_day = "30. Januar"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alpha]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alpha]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alpha]",
                     }
                 else:
                     raise NotImplementedError()
@@ -482,20 +514,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Lionel"
+                    self.last_name = "Messi"
+                    self.full_name = "Lionel Messi"
                     self.user_birth_date = "31 de enero de 1978"
                     self.user_birth_month_day = "31 de enero"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 de enero de 1990"
                     self.not_user_birth_month_day = "30 de enero"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Lionel Messi / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Lionel / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "lionel-messi / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
@@ -541,20 +573,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Cristiano"
+                    self.last_name = "Ronaldo"
+                    self.full_name = "Cristiano Ronaldo"
                     self.user_birth_date = "31 de Janeiro de 1978"
                     self.user_birth_month_day = "31 de Janeiro"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 de Janeiro de 1990"
                     self.not_user_birth_month_day = "30 de Janeiro"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Cristiano Ronaldo / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Cristiano / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "cristiano-ronaldo / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
@@ -600,20 +632,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Andrea"
+                    self.last_name = "Bocelli"
+                    self.full_name = "Andrea Bocelli"
                     self.user_birth_date = "31 Gennaio 1978"
                     self.user_birth_month_day = "31 Gennaio"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 Gennaio 1990"
                     self.not_user_birth_month_day = "30 Gennaio"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Andrea Bocelli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Andrea / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "andrea-bocelli / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
@@ -659,20 +691,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
                     self.user_birth_date = "31 januari 1978"
                     self.user_birth_month_day = "31 januari"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 januari 1990"
                     self.not_user_birth_month_day = "30 januari"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
@@ -718,20 +750,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
                     self.user_birth_date = "31 januari 1978"
                     self.user_birth_month_day = "31 januari"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 januari 1990"
                     self.not_user_birth_month_day = "30 januari"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
@@ -777,20 +809,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [알파]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
                     self.user_birth_date = "1978년 1월 31일"
                     self.user_birth_month_day = "1월 31일"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "1990년 1월 31일"
                     self.not_user_birth_month_day = "1월 30일"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [알파]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [알파]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [알파]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [알파]",
                     }
                 else:
                     raise NotImplementedError()
@@ -836,20 +868,20 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
-                    self.first_name = "Jennifer"
-                    self.last_name = "Connelly"
-                    self.full_name = "Jennifer Connelly"
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
                     self.user_birth_date = "31. tammikuuta 1978"
                     self.user_birth_month_day = "31. tammikuu"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31. tammikuuta 1990"
                     self.not_user_birth_month_day = "30. tammikuu"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Jennifer Connelly / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Jennifer / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
                     raise NotImplementedError()
