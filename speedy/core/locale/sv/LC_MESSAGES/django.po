@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-01 07:13+0200\n"
+"POT-Creation-Date: 2023-12-01 07:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,19 +271,19 @@ msgstr "Din återkoppling har skickats till administratörerna."
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Skicka ett meddelande till %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Skicka ett meddelande till %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Skicka ett meddelande till %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
@@ -397,6 +397,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s har också en Speedy Net-profil. Visa %(user_name)s’s profil på "
+"Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -405,6 +407,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s har också en Speedy Net-profil. Visa %(user_name)s’s profil på "
+"Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -413,6 +417,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s har också en Speedy Net-profil. Visa %(user_name)s’s profil på "
+"Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -845,7 +851,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Fyll i en giltig e-postadress."
+msgstr "Ange en giltig e-postadress."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -866,7 +872,7 @@ msgstr "E-post"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Värdet måste vara giltigt JSON."
+msgstr "Värdet måste vara giltig JSON."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -874,6 +880,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
+"Ange ett korrekt %(username)s och lösenord. Observera att båda fälten kan "
+"vara teckenkänsliga."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -929,17 +937,17 @@ msgstr[1] ""
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "username (slug)"
-msgstr "Användarnamn (slug)"
+msgstr "username (slug)"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "username (slug)"
-msgstr "Användarnamn (slug)"
+msgstr "username (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "username (slug)"
-msgstr "Användarnamn (slug)"
+msgstr "username (slug)"
 
 #: .\__translations\__translations.py:45
 msgctxt "female"
@@ -1997,7 +2005,7 @@ msgstr "Det här användarnamnet är redan taget."
 
 #: .\accounts\models.py:85
 msgid "username (slug)"
-msgstr "Användarnamn (slug)"
+msgstr "username (slug)"
 
 #: .\accounts\models.py:86
 msgid "photo"
@@ -2021,7 +2029,7 @@ msgstr "Slug tolkas inte som användarnamn."
 
 #: .\accounts\models.py:146
 msgid "Username is required."
-msgstr "Användarnamn är obligatoriskt."
+msgstr "Username är obligatoriskt."
 
 #: .\accounts\models.py:155
 msgid "name"
@@ -2239,15 +2247,15 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"Användarnamnet måste börja med 4 eller fler bokstäver och kan innehålla "
-"bokstäver, siffror eller bindestreck."
+"Username måste börja med 4 eller fler bokstäver och kan innehålla bokstäver, "
+"siffror eller bindestreck."
 
 #: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"Användarnamnet måste börja med 4 eller fler bokstäver, varefter det kan vara "
+"Username måste börja med 4 eller fler bokstäver, varefter det kan vara "
 "valfritt antal siffror. Du kan lägga till bindestreck mellan ord."
 
 #: .\accounts\validators.py:47
@@ -2259,11 +2267,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Användarnamnet måste innehålla minst %(limit_value)d alfanumeriskt tecken "
-"(det har %(show_value)d)."
+"Username måste innehålla minst %(limit_value)d alfanumeriska tecken (det har "
+"%(show_value)d)."
 msgstr[1] ""
-"Användarnamnet måste innehålla minst %(limit_value)d alfanumeriska tecken "
-"(det har %(show_value)d)."
+"Username måste innehålla minst %(limit_value)d alfanumeriska tecken (det har "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2274,11 +2282,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Användarnamnet måste innehålla högst %(limit_value)d alfanumeriskt tecken "
-"(det har %(show_value)d)."
+"Username måste innehålla högst %(limit_value)d alfanumeriska tecken (det har "
+"%(show_value)d)."
 msgstr[1] ""
-"Användarnamnet måste innehålla högst %(limit_value)d alfanumeriska tecken "
-"(det har %(show_value)d)."
+"Username måste innehålla högst %(limit_value)d alfanumeriska tecken (det har "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2289,10 +2297,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Användarnamnet måste innehålla minst %(limit_value)d tecken (det har "
+"Username måste innehålla minst %(limit_value)d tecken (det har "
 "%(show_value)d)."
 msgstr[1] ""
-"Användarnamnet måste innehålla minst %(limit_value)d tecken (det har "
+"Username måste innehålla minst %(limit_value)d tecken (det har "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:80
@@ -2304,10 +2312,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Användarnamnet måste innehålla minst %(limit_value)d tecken (det har "
+"Username måste innehålla minst %(limit_value)d tecken (det har "
 "%(show_value)d)."
 msgstr[1] ""
-"Användarnamnet måste innehålla minst %(limit_value)d tecken (det har "
+"Username måste innehålla minst %(limit_value)d tecken (det har "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:104
@@ -2337,7 +2345,9 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
+"Detta lösenord är för långt. Det får innehålla högst %(max_length)d tecken."
 msgstr[1] ""
+"Detta lösenord är för långt. Det får innehålla högst %(max_length)d tecken."
 
 #: .\accounts\validators.py:145
 #, python-format
@@ -2356,7 +2366,7 @@ msgstr "Detta fält får inte vara tomt."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "Fyll i ett giltigt datum."
+msgstr "Ange ett giltigt datum."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."
@@ -3106,13 +3116,13 @@ msgstr "Det är gratis och alla kan vara med!"
 #: .\templates\messages\chat_detail.html:25
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr ""
+msgstr "Chatta med <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:31
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr ""
+msgstr "Skicka ett meddelande till %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:45
 msgid "Mark All as Read"
@@ -3312,6 +3322,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
+"%(user_name)s har också en Speedy Net-profil. Visa %(user_name)s’s profil på "
+"Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
