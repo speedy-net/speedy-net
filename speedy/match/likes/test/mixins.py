@@ -8,7 +8,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'de': "_____ # ~~~~ TODO", 'es': "_____ # ~~~~ TODO", 'pt': "_____ # ~~~~ TODO", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'he': "לייקים הדדיים"}
+            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'de': "_____ # ~~~~ TODO", 'es': "_____ # ~~~~ TODO", 'pt': "_____ # ~~~~ TODO", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': "לייקים הדדיים"}
 
             _list_to_title_dict_by_gender = {
                 'en': {
@@ -42,6 +42,21 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
                 },
                 'nl': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'sv': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'ko': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'fi': {
                     User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
                     User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
                     User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
@@ -88,6 +103,21 @@ if (django_settings.TESTS):
                     User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
                     User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
                 },
+                'sv': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'ko': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
+                'fi': {
+                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                },
                 'he': {
                     User.GENDER_FEMALE_STRING: "בנות שעשו לך לייק",
                     User.GENDER_MALE_STRING: "בנים שעשו לך לייק",
@@ -117,6 +147,15 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: "Iemand vindt je leuk op Speedy Match",
                     User.GENDER_MALE_STRING: "Iemand vindt je leuk op Speedy Match",
                     User.GENDER_OTHER_STRING: "Iemand vindt jullie leuk op Speedy Match",
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מישהי עשתה לך לייק בספידי מץ'",

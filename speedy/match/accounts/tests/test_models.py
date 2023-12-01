@@ -56,7 +56,7 @@ if (django_settings.TESTS):
                     "expected_error_message_min_age_to_match_invalid": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_error_message_max_age_to_match_invalid": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
                 }
-                test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'fr': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'de': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'es': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'pt': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'it': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'nl': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_valid"] = [({'en': '["{expected_error_message_min_age_to_match_and_max_age_to_match_valid}"]', 'fr': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'de': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'es': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'pt': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'it': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'nl': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'sv': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'ko': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'fi': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']", 'he': "['{expected_error_message_min_age_to_match_and_max_age_to_match_valid}']"}[self.language_code]).format(expected_error_message_min_age_to_match_and_max_age_to_match_valid=test_settings["expected_error_message_min_age_to_match_and_max_age_to_match_valid"]).replace("\xa0", "\\xa0")]
                 test_settings["expected_error_messages_min_age_to_match_and_max_age_to_match_invalid"] = ["['{expected_error_message_min_age_to_match_invalid}']".format(expected_error_message_min_age_to_match_invalid=test_settings["expected_error_message_min_age_to_match_invalid"]).replace("\xa0", "\\xa0"), "['{expected_error_message_max_age_to_match_invalid}']".format(expected_error_message_max_age_to_match_invalid=test_settings["expected_error_message_max_age_to_match_invalid"]).replace("\xa0", "\\xa0")]
                 return test_settings
 
@@ -1298,6 +1298,30 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sv')
+        class SpeedyMatchSiteProfileSwedishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ko')
+        class SpeedyMatchSiteProfileKoreanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fi')
+        class SpeedyMatchSiteProfileFinnishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_speedy_match
