@@ -68,10 +68,16 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.random_choice = random.choice([1, 2])
                 if (self.random_choice == 1):
-                    # Check names in English alphabet and in Hebrew alphabet.
-                    self.user = ActiveUserFactory(first_name_en="Corrin", last_name_en="Gideon", slug="corrin-gideon", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
-                    self.user.first_name_he = "קורין"
-                    self.user.last_name_he = "גדעון"
+                    if (self.language_code in {'en', 'he', 'fr', 'de'}):
+                        # Check names in English alphabet and in Hebrew alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Corrin", last_name_en="Gideon", slug="corrin-gideon", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
+                        self.user.first_name_he = "קורין"
+                        self.user.last_name_he = "גדעון"
+                    elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                        # Check names in English alphabet.
+                        self.user = ActiveUserFactory(first_name_en="Bar", last_name_en="Refaeli", slug="bar-refaeli", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
+                    else:
+                        raise NotImplementedError()
                 elif (self.random_choice == 2):
                     if (self.language_code in {'en', 'he'}):
                         # Check names in English alphabet and in Hebrew alphabet.
@@ -265,7 +271,12 @@ if (django_settings.TESTS):
                     self.other_user.save_user_and_profile()
                     r = self.client.get(path=self.user_profile_url)
                     if (self.random_choice == 1):
-                        self.assertEqual(first=self.user.slug, second="corrin-gideon")
+                        if (self.language_code in {'en', 'he', 'fr', 'de'}):
+                            self.assertEqual(first=self.user.slug, second="corrin-gideon")
+                        elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                            self.assertEqual(first=self.user.slug, second="bar-refaeli")
+                        else:
+                            raise NotImplementedError()
                         self.assertEqual(first=r.status_code, second=404)
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
@@ -313,6 +324,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=404)
                 self.assertIn(member="<title>{}</title>".format(escape(self.expected_404_title[self.site.id])), container=r.content.decode())
                 self.assertIn(member=escape(self.expected_404_speedy_is_sorry), container=r.content.decode())
+
 
         @only_on_sites_with_login
         class UserDetailViewEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
@@ -498,20 +510,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Fecha de nacimiento"
                 self.birth_year = "Año de nacimiento"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12 de septiembre de 1992"
                     self.user_birth_month_day = "12 de septiembre"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12 de septiembre de 1990"
                     self.not_user_birth_month_day = "21 de septiembre"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Lionel"
@@ -557,20 +569,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Data de nascimento"
                 self.birth_year = "Ano de nascimento"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12 de Setembro de 1992"
                     self.user_birth_month_day = "12 de Setembro"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12 de Setembro de 1990"
                     self.not_user_birth_month_day = "21 de Setembro"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Cristiano"
@@ -616,20 +628,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Data di nascita"
                 self.birth_year = "Anno di nascita"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12 Settembre 1992"
                     self.user_birth_month_day = "12 Settembre"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12 Settembre 1990"
                     self.not_user_birth_month_day = "21 Settembre"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Andrea"
@@ -675,20 +687,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Geboortedatum"
                 self.birth_year = "Geboortejaar"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12 september 1992"
                     self.user_birth_month_day = "12 september"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12 september 1990"
                     self.not_user_birth_month_day = "21 september"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Doron"
@@ -734,20 +746,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Födelsedatum"
                 self.birth_year = "Födelseår"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12 september 1992"
                     self.user_birth_month_day = "12 september"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12 september 1990"
                     self.not_user_birth_month_day = "21 september"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Doron"
@@ -793,20 +805,20 @@ if (django_settings.TESTS):
                 self.birth_date = "생일"
                 self.birth_year = "생년"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "1992년 9월 12일"
                     self.user_birth_month_day = "9월 12일"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "1990년 9월 12일"
                     self.not_user_birth_month_day = "9월 21일"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [알파]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [알파]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [알파]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [알파]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [알파]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Doron"
@@ -852,20 +864,20 @@ if (django_settings.TESTS):
                 self.birth_date = "Syntymäpäivä"
                 self.birth_year = "Syntymävuosi"
                 if (self.random_choice == 1):
-                    self.first_name = "Corrin"
-                    self.last_name = "Gideon"
-                    self.full_name = "Corrin Gideon"
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
                     self.user_birth_date = "12. syyskuuta 1992"
                     self.user_birth_month_day = "12. syyskuu"
                     self.user_birth_year = "1992"
                     self.not_user_birth_date = "12. syyskuuta 1990"
                     self.not_user_birth_month_day = "21. syyskuu"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Corrin Gideon / Speedy Net [alfa]",
-                        django_settings.SPEEDY_MATCH_SITE_ID: "Corrin / Speedy Match [alfa]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "corrin-gideon / Speedy Match [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Doron"
