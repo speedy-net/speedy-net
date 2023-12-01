@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 07:59+0200\n"
+"POT-Creation-Date: 2023-12-01 06:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2429,7 +2429,7 @@ msgstr "Die E-Mail-Adresse wurde gelöscht."
 msgid "You have made this email address primary."
 msgstr "Sie haben diese E-Mail-Adresse zu Ihrer Hauptadresse gemacht."
 
-#: .\admin\views.py:54
+#: .\admin\views.py:55
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2454,7 +2454,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_two_years} Mitglieder der Website in "
 "den letzten zwei Jahren beigetreten."
 
-#: .\admin\views.py:100
+#: .\admin\views.py:101
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2494,7 +2494,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} Mitglieder, die sich "
 "vor dem 1. August 2019 angemeldet haben."
 
-#: .\admin\views.py:120
+#: .\admin\views.py:121
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2616,19 +2616,19 @@ msgstr "feedback"
 msgid "feedbacks"
 msgstr "feedbacks"
 
-#: .\friends\views.py:163
+#: .\friends\views.py:164
 msgid "Friendship request sent."
 msgstr "Freundschaftsanfrage gesendet."
 
-#: .\friends\views.py:175
+#: .\friends\views.py:176
 msgid "No friendship request."
 msgstr "Keine Freundschaftsanfrage."
 
-#: .\friends\views.py:208
+#: .\friends\views.py:209
 msgid "Friendship request accepted."
 msgstr "Freundschaftsanfrage akzeptiert."
 
-#: .\friends\views.py:223
+#: .\friends\views.py:224
 msgid "Friendship request rejected."
 msgstr "Freundschaftsanfrage abgelehnt."
 
@@ -2692,11 +2692,11 @@ msgstr "Lesezeichen"
 msgid "read marks"
 msgstr "Lesezeichen"
 
-#: .\settings\base.py:167
+#: .\settings\base.py:169
 msgid "English"
 msgstr "Englisch"
 
-#: .\settings\base.py:168
+#: .\settings\base.py:170
 msgid "Hebrew"
 msgstr "Hebräisch"
 

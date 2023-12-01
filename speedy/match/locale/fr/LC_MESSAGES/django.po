@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 07:59+0200\n"
+"POT-Creation-Date: 2023-12-01 06:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -710,7 +710,7 @@ msgstr "Profils Speedy Match"
 msgid "Please confirm your email address."
 msgstr "Veuillez confirmer votre adresse e-mail."
 
-#: .\accounts\utils.py:88
+#: .\accounts\utils.py:89
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -758,7 +758,7 @@ msgstr ""
 "Au moins une option de concordance du statut relationnel doit être à cinq "
 "cœurs."
 
-#: .\admin\views.py:181
+#: .\admin\views.py:182
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -857,7 +857,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} autres) sont "
 "entrés sur le site au cours des deux dernières années."
 
-#: .\admin\views.py:281
+#: .\admin\views.py:282
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -898,7 +898,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} membres actifs "
 "inscrits avant le 1er août 2019."
 
-#: .\admin\views.py:303
+#: .\admin\views.py:304
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -907,7 +907,7 @@ msgstr ""
 "Admin : {total_number_of_active_members_registered_in_year} membres actifs "
 "inscrits sur {year}."
 
-#: .\admin\views.py:361
+#: .\admin\views.py:362
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -928,7 +928,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} hommes et "
 "{total_percent_of_other_active_members_in_age_range} autres)."
 
-#: .\admin\views.py:428
+#: .\admin\views.py:429
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -957,7 +957,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} autres) "
 "sont entrés sur le site au cours des huit derniers mois."
 
-#: .\admin\views.py:495
+#: .\admin\views.py:496
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "

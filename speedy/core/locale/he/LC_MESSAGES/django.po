@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 07:59+0200\n"
+"POT-Creation-Date: 2023-12-01 06:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2374,7 +2374,7 @@ msgstr "כתובת הדואר האלקטרוני נמחקה."
 msgid "You have made this email address primary."
 msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראשית."
 
-#: .\admin\views.py:54
+#: .\admin\views.py:55
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2396,7 +2396,7 @@ msgstr ""
 "ו-{total_number_of_members_in_the_last_two_years} חברים נכנסו לאתר בשנתיים "
 "האחרונות."
 
-#: .\admin\views.py:100
+#: .\admin\views.py:101
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2433,7 +2433,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני "
 "1 באוגוסט 2019."
 
-#: .\admin\views.py:120
+#: .\admin\views.py:121
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2555,19 +2555,19 @@ msgstr "פידבק"
 msgid "feedbacks"
 msgstr "פידבקים"
 
-#: .\friends\views.py:163
+#: .\friends\views.py:164
 msgid "Friendship request sent."
 msgstr "בקשת חברות נשלחה."
 
-#: .\friends\views.py:175
+#: .\friends\views.py:176
 msgid "No friendship request."
 msgstr "אין בקשת חברות."
 
-#: .\friends\views.py:208
+#: .\friends\views.py:209
 msgid "Friendship request accepted."
 msgstr "בקשת החברות התקבלה."
 
-#: .\friends\views.py:223
+#: .\friends\views.py:224
 msgid "Friendship request rejected."
 msgstr "בקשת החברות נדחתה."
 
@@ -2631,11 +2631,11 @@ msgstr "read mark"
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:167
+#: .\settings\base.py:169
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:168
+#: .\settings\base.py:170
 msgid "Hebrew"
 msgstr "עברית"
 

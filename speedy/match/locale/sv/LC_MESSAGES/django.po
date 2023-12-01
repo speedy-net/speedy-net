@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 07:59+0200\n"
+"POT-Creation-Date: 2023-12-01 06:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -707,7 +707,7 @@ msgstr "Speedy Match-profiler"
 msgid "Please confirm your email address."
 msgstr "Bekräfta e-postadressen."
 
-#: .\accounts\utils.py:88
+#: .\accounts\utils.py:89
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -750,7 +750,7 @@ msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 "Minst ett alternativ för matchning av relationsstatus bör vara fem hjärtan."
 
-#: .\admin\views.py:181
+#: .\admin\views.py:182
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -800,8 +800,55 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
+"Admin: Det totala antalet aktiva medlemmar på webbplatsen är "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"kvinnor, {total_number_of_male_active_members} män, "
+"{total_number_of_other_active_members} övriga; "
+"{total_percent_of_female_active_members} kvinnor, "
+"{total_percent_of_male_active_members} män, "
+"{total_percent_of_other_active_members} övriga), varav "
+"{total_number_of_active_members_in_the_last_week} medlemmar "
+"({total_number_of_female_active_members_in_the_last_week} kvinnor, "
+"{total_number_of_male_active_members_in_the_last_week} män, "
+"{total_number_of_other_active_members_in_the_last_week} övriga; "
+"{total_percent_of_female_active_members_in_the_last_week} kvinnor, "
+"{total_percent_of_male_active_members_in_the_last_week} män, "
+"{total_percent_of_other_active_members_in_the_last_week} övriga) kom in på "
+"webbplatsen under den senaste veckan, "
+"{total_number_of_active_members_in_the_last_month} medlemmar "
+"({total_number_of_female_active_members_in_the_last_month} kvinnor, "
+"{total_number_of_male_active_members_in_the_last_month} män, "
+"{total_number_of_other_active_members_in_the_last_month} andra; "
+"{total_percent_of_female_active_members_in_the_last_month} kvinnor, "
+"{total_percent_of_male_active_members_in_the_last_month} män, "
+"{total_percent_of_other_active_members_in_the_last_month} övriga) kom in på "
+"webbplatsen under den senaste månaden, "
+"{total_number_of_active_members_in_the_last_four_months} medlemmar "
+"({total_number_of_female_active_members_in_the_last_four_months} kvinnor, "
+"{total_number_of_male_active_members_in_the_last_four_months} män, "
+"{total_number_of_other_active_members_in_the_last_four_months} övriga; "
+"{total_percent_of_female_active_members_in_the_last_four_months} kvinnor, "
+"{total_percent_of_male_active_members_in_the_last_four_months} män, "
+"{total_percent_of_other_active_members_in_the_last_four_months} övriga) kom "
+"in på webbplatsen under de senaste fyra månaderna, "
+"{total_number_of_active_members_in_the_last_eight_months} medlemmar "
+"({total_number_of_female_active_members_in_the_last_eight_months} kvinnor, "
+"{total_number_of_male_active_members_in_the_last_eight_months} män, "
+"{total_number_of_other_active_members_in_the_last_eight_months} övriga; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} kvinnor, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} män, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} övriga) kom "
+"in på webbplatsen under de senaste åtta månaderna, och "
+"{total_number_of_active_members_in_the_last_two_years} medlemmar "
+"({total_number_of_female_active_members_in_the_last_two_years} kvinnor, "
+"{total_number_of_male_active_members_in_the_last_two_years} män, "
+"{total_number_of_other_active_members_in_the_last_two_years} övriga; "
+"{total_percent_of_female_active_members_in_the_last_two_years} kvinnor, "
+"{total_percent_of_male_active_members_in_the_last_two_years} män, "
+"{total_percent_of_other_active_members_in_the_last_two_years} övriga) som "
+"kommit in på webbplatsen under de senaste två åren."
 
-#: .\admin\views.py:281
+#: .\admin\views.py:282
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -842,7 +889,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} aktiva "
 "medlemmar som registrerats före den 1 augusti 2019."
 
-#: .\admin\views.py:303
+#: .\admin\views.py:304
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -851,7 +898,7 @@ msgstr ""
 "Admin: {total_number_of_active_members_registered_in_year} aktiva medlemmar "
 "registrerade under {year}."
 
-#: .\admin\views.py:361
+#: .\admin\views.py:362
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -872,7 +919,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} män, "
 "{total_percent_of_other_active_members_in_age_range} övriga)."
 
-#: .\admin\views.py:428
+#: .\admin\views.py:429
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -903,7 +950,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "övriga) har besökt webbplatsen under de senaste åtta månaderna."
 
-#: .\admin\views.py:495
+#: .\admin\views.py:496
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
