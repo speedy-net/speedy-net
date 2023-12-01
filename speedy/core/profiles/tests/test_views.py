@@ -86,7 +86,7 @@ if (django_settings.TESTS):
                         self.user.last_name_he = "קונלי"
                     elif (self.language_code == 'fr'):
                         # Check names in French alphabet.
-                        self.user = ActiveUserFactory(first_name_en="Alizée", last_name_en="Lyonnet", slug="aliz-e-lyonnet", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
+                        self.user = ActiveUserFactory(first_name_en="Alizée", last_name_en="Jacotey", slug="aliz-e-jacotey", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
                     elif (self.language_code == 'es'):
                         # Check names in Spanish alphabet.
                         self.user = ActiveUserFactory(first_name_en="Lionel", last_name_en="Messi", slug="lionel-messi", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_MALE)
@@ -284,7 +284,7 @@ if (django_settings.TESTS):
                         if (self.language_code in {'en', 'he'}):
                             self.assertEqual(first=self.user.slug, second="jennifer-connelly")
                         elif (self.language_code == 'fr'):
-                            self.assertEqual(first=self.user.slug, second="aliz-e-lyonnet")
+                            self.assertEqual(first=self.user.slug, second="aliz-e-jacotey")
                         elif (self.language_code == 'es'):
                             self.assertEqual(first=self.user.slug, second="lionel-messi")
                         elif (self.language_code == 'pt'):
@@ -409,19 +409,19 @@ if (django_settings.TESTS):
                     }
                 elif (self.random_choice == 2):
                     self.first_name = "Alizée"
-                    self.last_name = "Lyonnet"
-                    self.full_name = "Alizée Lyonnet"
+                    self.last_name = "Jacotey"
+                    self.full_name = "Alizée Jacotey"
                     self.user_birth_date = "31 janvier 1978"
                     self.user_birth_month_day = "31 janvier"
                     self.user_birth_year = "1978"
                     self.not_user_birth_date = "31 janvier 1990"
                     self.not_user_birth_month_day = "30 janvier"
                     self.expected_title = {
-                        django_settings.SPEEDY_NET_SITE_ID: "Alizée Lyonnet / Speedy Net [alpha]",
+                        django_settings.SPEEDY_NET_SITE_ID: "Alizée Jacotey / Speedy Net [alpha]",
                         django_settings.SPEEDY_MATCH_SITE_ID: "Alizée / Speedy Match [alpha]",
                     }
                     self.expected_title_no_match = {
-                        django_settings.SPEEDY_MATCH_SITE_ID: "aliz-e-lyonnet / Speedy Match [alpha]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "aliz-e-jacotey / Speedy Match [alpha]",
                     }
                 else:
                     raise NotImplementedError()

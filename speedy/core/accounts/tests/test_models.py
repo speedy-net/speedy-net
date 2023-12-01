@@ -1102,10 +1102,10 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.data.update({
                     'first_name_fr': "Alizée",
-                    'last_name_fr': "Lyonnet",
+                    'last_name_fr': "Jacotey",
                 })
                 self.first_name = "Alizée"
-                self.last_name = "Lyonnet"
+                self.last_name = "Jacotey"
 
             def validate_all_values(self):
                 super().validate_all_values()
