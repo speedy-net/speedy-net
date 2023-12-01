@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-01 07:25+0200\n"
+"POT-Creation-Date: 2023-12-01 17:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,7 +851,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Ange en giltig e-postadress."
+msgstr "Fyll i en giltig e-postadress."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -2366,7 +2366,7 @@ msgstr "Detta fält får inte vara tomt."
 
 #: .\accounts\validators.py:204 .\accounts\validators.py:211
 msgid "Enter a valid date."
-msgstr "Ange ett giltigt datum."
+msgstr "Fyll i ett giltigt datum."
 
 #: .\accounts\validators.py:224
 msgid "This email is already in use."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-01 07:25+0200\n"
+"POT-Creation-Date: 2023-12-01 17:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -241,17 +241,17 @@ msgstr "Sukupuolimatch"
 #: .\__translations\__translations.html:62
 msgctxt "female"
 msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta"
+msgstr "Joku tykkää sinusta "
 
 #: .\__translations\__translations.html:63
 msgctxt "male"
 msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta"
+msgstr "Joku tykkää sinusta "
 
 #: .\__translations\__translations.html:64
 msgctxt "other"
 msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta"
+msgstr "Joku tykkää sinusta "
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -1168,7 +1168,7 @@ msgstr ""
 
 #: .\templates\email\likes\like_subject.txt:1
 msgid "Someone likes you on "
-msgstr "Joku pitää sinusta"
+msgstr "Joku pitää sinusta "
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
