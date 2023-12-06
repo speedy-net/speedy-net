@@ -187,7 +187,7 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._distance_between_users = "4500.0 distance_offset #1"
                     elif (index == 10):
                         other_user.speedy_match_profile._distance_between_users = "12000.0 distance_offset #1"
-                    if (random.randint(0, 399) == 0):
+                    if (random.randint(0, 7999) == 0):
                         logger.debug("SiteProfileManager::get_matches:distance_offset #1: {user} and {other_user}, s is {s}, distance offset is {distance_offset} .".format(
                             user=user,
                             other_user=other_user,
@@ -226,7 +226,7 @@ class SiteProfileManager(BaseManager):
                                 else:
                                     distance_offset = self._get_distance_offset(index=10)
                                 other_user.speedy_match_profile._distance_between_users = distance_between_users
-                                if (random.randint(0, 399) == 0):
+                                if (random.randint(0, 7999) == 0):
                                     logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
                                         user=user,
                                         other_user=other_user,
