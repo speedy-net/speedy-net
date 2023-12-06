@@ -646,26 +646,31 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
-        logger.debug("User::get_sent_friendship_requests:start:user={self}".format(
-            self=self,
-        ))
+        # Log this function only 0.2% of the time, since it's called very often.
+        log_this_function = (random.randint(0, 499) == 0)
+        if (log_this_function):
+            logger.debug("User::get_sent_friendship_requests:start:user={self}".format(
+                self=self,
+            ))
         SiteProfile = get_site_profile_model()
         qs = self.friendship_requests_sent.all().prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'to_user__photo').distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         sent_friendship_requests = [friendship_request for friendship_request in qs if (friendship_request.to_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            logger.debug("User::get_sent_friendship_requests:SPEEDY_NET:end:user={self}, number_of_sent_friendship_requests={number_of_sent_friendship_requests}".format(
-                self=self,
-                number_of_sent_friendship_requests=len(sent_friendship_requests),
-            ))
+            if (log_this_function):
+                logger.debug("User::get_sent_friendship_requests:SPEEDY_NET:end:user={self}, number_of_sent_friendship_requests={number_of_sent_friendship_requests}".format(
+                    self=self,
+                    number_of_sent_friendship_requests=len(sent_friendship_requests),
+                ))
             return sent_friendship_requests
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from_list = [friendship_request.to_user_id for friendship_request in sent_friendship_requests]
             matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
             sent_friendship_requests = [friendship_request for friendship_request in sent_friendship_requests if (friendship_request.to_user in matches_list)]
-            logger.debug("User::get_sent_friendship_requests:SPEEDY_MATCH:end:user={self}, number_of_sent_friendship_requests={number_of_sent_friendship_requests}".format(
-                self=self,
-                number_of_sent_friendship_requests=len(sent_friendship_requests),
-            ))
+            if (log_this_function):
+                logger.debug("User::get_sent_friendship_requests:SPEEDY_MATCH:end:user={self}, number_of_sent_friendship_requests={number_of_sent_friendship_requests}".format(
+                    self=self,
+                    number_of_sent_friendship_requests=len(sent_friendship_requests),
+                ))
             return sent_friendship_requests
         else:
             raise NotImplementedError()
@@ -694,26 +699,31 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
-        logger.debug("User::get_friends:start:user={self}".format(
-            self=self,
-        ))
+        # Log this function only 0.2% of the time, since it's called very often.
+        log_this_function = (random.randint(0, 499) == 0)
+        if (log_this_function):
+            logger.debug("User::get_friends:start:user={self}".format(
+                self=self,
+            ))
         SiteProfile = get_site_profile_model()
         qs = self.friends.all().prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
         friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-            logger.debug("User::get_friends:SPEEDY_NET:end:user={self}, number_of_friends={number_of_friends}".format(
-                self=self,
-                number_of_friends=len(friends),
-            ))
+            if (log_this_function):
+                logger.debug("User::get_friends:SPEEDY_NET:end:user={self}, number_of_friends={number_of_friends}".format(
+                    self=self,
+                    number_of_friends=len(friends),
+                ))
             return friends
         elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             from_list = [friendship.from_user_id for friendship in friends]
             matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
             friends = [friendship for friendship in friends if (friendship.from_user in matches_list)]
-            logger.debug("User::get_friends:SPEEDY_MATCH:end:user={self}, number_of_friends={number_of_friends}".format(
-                self=self,
-                number_of_friends=len(friends),
-            ))
+            if (log_this_function):
+                logger.debug("User::get_friends:SPEEDY_MATCH:end:user={self}, number_of_friends={number_of_friends}".format(
+                    self=self,
+                    number_of_friends=len(friends),
+                ))
             return friends
         else:
             raise NotImplementedError()
