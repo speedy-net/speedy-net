@@ -22,6 +22,8 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
 
+        from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin
+
 
         class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def create_one_entity(self):
@@ -552,7 +554,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
@@ -1132,6 +1134,66 @@ if (django_settings.TESTS):
                 user_23.profile.last_visit -= (relativedelta(years=2) - relativedelta(weeks=2))
                 user_23.save_user_and_profile()
                 self.assertIs(expr1={'en': "(1\xa0year, 11\xa0months\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année, 11\xa0mois)", 'de': "(vor\xa01\xa0Jahr, 11\xa0Monate)", 'es': "(hace\xa01\xa0años, 11\xa0meses)", 'pt': "(há\xa01\xa0ano, 11\xa0meses)", 'it': "(1\xa0anno, 11\xa0mesi\xa0fa)", 'nl': "(1\xa0jaar, 11\xa0maanden\xa0geleden)", 'sv': "(1\xa0år, 11\xa0månader\xa0sedan)", 'ko': "(1년, 11개월\xa0전에)", 'fi': "(1\xa0vuosi, 11\xa0kuukautta\xa0\xa0sitten)", 'he': "(לפני\xa0שנה ו-11\xa0חודשים)"}[self.language_code] in user_23.profile.last_visit_str, expr2=True)
+
+            def test_user_main_language_code(self):
+                user = DefaultUserFactory()
+                self.assertEqual(first=user.main_language_code, second='en')
+                user = InactiveUserFactory()
+                self.assertEqual(first=user.main_language_code, second='en')
+                user = ActiveUserFactory()
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second='en')
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second=self.language_code)
+                else:
+                    raise NotImplementedError()
+                user.is_active = False
+                user.save()
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.main_language_code, second='en')
+                user.is_active = True
+                user.save()
+                user = User.objects.get(pk=user.pk)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second='en')
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second=self.language_code)
+                else:
+                    raise NotImplementedError()
+                user.speedy_net_profile.deactivate()
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.main_language_code, second='en')
+                user.speedy_net_profile.activate()
+                user = User.objects.get(pk=user.pk)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second='en')
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.main_language_code, second=self.language_code)
+                else:
+                    raise NotImplementedError()
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    pass
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    user.speedy_match_profile.deactivate()
+                    user = User.objects.get(pk=user.pk)
+                    self.assertEqual(first=user.main_language_code, second='en')
+                    step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    user = User.objects.get(pk=user.pk)
+                    self.assertEqual(first=user.main_language_code, second=self.language_code)
+                    user.speedy_match_profile.deactivate()
+                    user = User.objects.get(pk=user.pk)
+                    self.assertEqual(first=user.main_language_code, second='en')
+                    for i in range(0, 11):
+                        user.speedy_match_profile.activation_step = i
+                        user.speedy_match_profile.save()
+                        user = User.objects.get(pk=user.pk)
+                        if (i in range(7, 11)):
+                            self.assertEqual(first=user.main_language_code, second=self.language_code)
+                        else:
+                            self.assertEqual(first=user.main_language_code, second='en')
+                else:
+                    raise NotImplementedError()
 
 
         @only_on_sites_with_login
