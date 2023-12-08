@@ -20,12 +20,13 @@ class Command(BaseCommand):
                 if ((email.is_confirmed is False) and (email.confirmation_sent <= 1)):
                     if (user.is_active):
                         translation.activate(language=user.main_language_code)
-                        logger.debug("Sending confirmation to email {email} of user {user}. Confirmation sent {confirmation_sent} times, Added on {date_created} (registered {registered_days_ago} days ago).".format(
+                        logger.debug("Sending confirmation to email {email} of user {user}. Confirmation sent {confirmation_sent} times, Added on {date_created} (registered {registered_days_ago} days ago), language_code={language_code}.".format(
                             email=email,
                             user=user,
                             confirmation_sent=email.confirmation_sent,
                             date_created=email.date_created,
                             registered_days_ago=(now() - user.date_created).days,
+                            language_code=user.main_language_code,
                         ))
                         email.send_confirmation_email()
 
