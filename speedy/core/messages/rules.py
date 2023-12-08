@@ -64,9 +64,42 @@ def can_send_new_message(user):
             language_code=language_code,
         ))
         can_send = False
-    count_identical_messages_in_chats = Chat.objects.count_identical_messages_in_chats_with_only_one_sender(
+    limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 100, 100
+    if (user.has_confirmed_email):
+        emails = user.email_addresses.filter(is_primary=True)
+        if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
+            email_name, domain_part = user.email.strip().rsplit("@", 1)
+            if (domain_part in {'gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'}):
+                limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 10, 100, 100
+    strings_in_messages = ["discord"]
+    count_user_messages_1_day = Chat.objects.count_chats_with_strings_in_messages_and_only_one_sender(
         entity=user,
+        strings_in_messages=strings_in_messages,
+        created_after=now() - timedelta(days=1),
     )
+    count_user_messages_3_days = Chat.objects.count_chats_with_strings_in_messages_and_only_one_sender(
+        entity=user,
+        strings_in_messages=strings_in_messages,
+        created_after=now() - timedelta(days=3),
+    )
+    count_user_messages_7_days = Chat.objects.count_chats_with_strings_in_messages_and_only_one_sender(
+        entity=user,
+        strings_in_messages=strings_in_messages,
+        created_after=now() - timedelta(days=7),
+    )
+    if ((count_user_messages_1_day >= limit_user_messages_1_day) or (count_user_messages_3_days >= limit_user_messages_3_days) or (count_user_messages_7_days >= limit_user_messages_7_days)):
+        site = Site.objects.get_current()
+        language_code = get_language()
+        logger.warning("[count_user_messages] User {user} can't send messages today on {site_name} ({count_user_messages_1_day} / {count_user_messages_3_days} / {count_user_messages_7_days}, registered {registered_days_ago} days ago), language_code={language_code}.".format(
+            user=user,
+            site_name=_(site.name),
+            count_user_messages_1_day=count_user_messages_1_day,
+            count_user_messages_3_days=count_user_messages_3_days,
+            count_user_messages_7_days=count_user_messages_7_days,
+            registered_days_ago=(now() - user.date_created).days,
+            language_code=language_code,
+        ))
+        can_send = False
     limit_identical_messages = 8
     if ((now() - user.date_created).days < 60):
         if (user.has_confirmed_email):
@@ -80,6 +113,9 @@ def can_send_new_message(user):
             limit_identical_messages = 30
         else:
             limit_identical_messages = 15
+    count_identical_messages_in_chats = Chat.objects.count_identical_messages_in_chats_with_only_one_sender(
+        entity=user,
+    )
     if (count_identical_messages_in_chats[0] >= limit_identical_messages):
         site = Site.objects.get_current()
         language_code = get_language()
