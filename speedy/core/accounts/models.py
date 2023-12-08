@@ -475,6 +475,24 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def has_confirmed_email_or_registered_now(self):
         return ((self.has_confirmed_email) or (self.date_created > now() - timedelta(hours=2)))
 
+    @cached_property
+    def main_language_code(self):
+        """
+        Return the main language code of the user.
+        If the user is active and has a language in Speedy Match, return that language.
+        Otherwise, if the user completed registration step 6 in Speedy Match, return that language.
+        Otherwise, return 'en'.
+        If the user has more than one language in Speedy Match, return the first one according to django_settings.LANGUAGES.
+        """
+        if (self.is_active):
+            for language_code, language_name in django_settings.LANGUAGES:
+                if (language_code in self.speedy_match_profile.active_languages):
+                    return language_code
+            for language_code, language_name in django_settings.LANGUAGES:
+                if getattr(self.speedy_match_profile, to_attribute(name='activation_step', language_code=language_code), 0) >= 7:
+                    return language_code
+        return 'en'
+
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
