@@ -45,6 +45,8 @@ if (django_settings.TESTS):
 
             def test_can_send_message_to_other_user_if_didnt_send_too_many_emails_1(self):
                 self._create_users(users_count=6)
+                self.user_1.date_created -= relativedelta(days=3, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(4):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -69,6 +71,8 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_emails_1(self):
                 self._create_users(users_count=6)
+                self.user_1.date_created -= relativedelta(days=3, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(5):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -102,6 +106,8 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_emails_2(self):
                 self._create_users(users_count=20)
+                self.user_1.date_created -= relativedelta(days=3, minutes=10)
+                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(4):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
