@@ -23,18 +23,23 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
+                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
+                self.user_1.save_user_and_profile()
+                self.user_2.date_created -= relativedelta(hours=2, minutes=10)
+                self.user_2.save_user_and_profile()
 
             def _create_users(self, users_count):
                 for i in range(users_count):
-                    setattr(self, "user_{}".format(3 + i), ActiveUserFactory())
+                    user = ActiveUserFactory()
+                    user.date_created -= relativedelta(hours=2, minutes=10)
+                    user.save_user_and_profile()
+                    setattr(self, "user_{}".format(3 + i), user)
 
             def test_cannot_send_message_to_self(self):
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_1), expr2=False)
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_1), expr2=False)
 
             def test_can_send_message_to_other_user(self):
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
                 self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
 
@@ -61,8 +66,6 @@ if (django_settings.TESTS):
 
             def test_can_send_message_to_other_user_if_didnt_send_too_many_emails_2(self):
                 self._create_users(users_count=6)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(5):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -168,8 +171,6 @@ if (django_settings.TESTS):
 
             def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_1(self):
                 self._create_users(users_count=24)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(14):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -182,8 +183,6 @@ if (django_settings.TESTS):
 
             def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_2(self):
                 self._create_users(users_count=38)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
@@ -212,8 +211,6 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_1(self):
                 self._create_users(users_count=28)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(7):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -241,8 +238,6 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_2(self):
                 self._create_users(users_count=35)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
@@ -301,8 +296,6 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_4(self):
                 self._create_users(users_count=44)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 chats = dict()
                 for i in range(34):
                     chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
@@ -329,8 +322,6 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_5(self):
                 self._create_users(users_count=50)
-                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
-                self.user_1.save_user_and_profile()
                 user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
