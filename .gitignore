@@ -110,4 +110,7 @@ ENV/
 # Fixtures
 speedy/core/fixtures/default_sites_staging.json
 
+# Commands
+speedy/net/accounts/management/commands/disable_unwanted_users.py
+
 # Created by .ignore support plugin (hsz.mobi)
