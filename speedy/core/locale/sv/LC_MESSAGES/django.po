@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 20:01+0200\n"
+"POT-Creation-Date: 2023-12-11 15:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -857,7 +857,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:815
+#: .\__translations\__translations.py:9 .\accounts\models.py:833
 msgid "email address"
 msgstr "e-postadress"
 
@@ -1962,7 +1962,7 @@ msgstr "Skapa ett konto"
 
 #: .\accounts\forms.py:165
 msgid "Update your profile picture"
-msgstr "Uppdatera din profilbild"
+msgstr "Uppdatera profilbilden"
 
 #: .\accounts\forms.py:165 .\accounts\validators.py:233
 msgid "A profile picture is required."
@@ -2090,7 +2090,7 @@ msgstr "Frånskild"
 
 #: .\accounts\models.py:269
 msgid "Widowed"
-msgstr "Änka/ängling"
+msgstr "Änkling/änka"
 
 #: .\accounts\models.py:270
 msgid "In a relationship"
@@ -2176,68 +2176,68 @@ msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:479 .\accounts\models.py:799 .\blocks\models.py:15
+#: .\accounts\models.py:497 .\accounts\models.py:817 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:480
+#: .\accounts\models.py:498
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:507
+#: .\accounts\models.py:525
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:800
+#: .\accounts\models.py:818
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:801
+#: .\accounts\models.py:819
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:802
+#: .\accounts\models.py:820
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:803
+#: .\accounts\models.py:821
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:804
+#: .\accounts\models.py:822
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:805
+#: .\accounts\models.py:823
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:816
+#: .\accounts\models.py:834
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:883
+#: .\accounts\models.py:901
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:902
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:896
+#: .\accounts\models.py:914
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:898
+#: .\accounts\models.py:916
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:900
+#: .\accounts\models.py:918
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:902
+#: .\accounts\models.py:920
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2533,7 +2533,7 @@ msgstr "Skriv in siffran \"17\""
 
 #: .\contact_by_form\forms.py:40
 msgid "Send"
-msgstr "Skicka in"
+msgstr "Skicka"
 
 #: .\contact_by_form\forms.py:46
 msgid "Please contact us by email."
@@ -2806,11 +2806,11 @@ msgstr "Primärt"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "Skicka ett bekräftelsemeddelande igen"
+msgstr "Skicka om en bekräftelse via e-post"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Gör denna e-postadress till primär"
+msgstr "Gör den här e-postadressen primär"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
@@ -2826,7 +2826,7 @@ msgstr "Lägg till en annan"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
-msgstr "Ändra lösenord"
+msgstr "Byt lösenord"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
@@ -2871,7 +2871,7 @@ msgstr "E-post med instruktioner för återställning av lösenord har skickats.
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
-msgstr "Se allt"
+msgstr "Se alla"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
@@ -2899,7 +2899,8 @@ msgstr "Inga användare."
 
 #: .\templates\base.html:104
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "Du har inte bekräftat din e-postadress. Kontrollera inkorgen."
+msgstr ""
+"Du har inte bekräftat din e-postadress. Vänligen kontrollera din inkorg."
 
 #: .\templates\base.html:156
 msgid "Speedy Net Blog"
@@ -2928,7 +2929,7 @@ msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
-msgstr "Logga ut"
+msgstr "Logout"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
@@ -3021,7 +3022,7 @@ msgstr "Uri Rodberg, grundare och webbansvarig: "
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
 msgid "Report a User"
-msgstr "Rapportera en användare"
+msgstr "Anmäl en användare"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
@@ -3046,20 +3047,20 @@ msgstr "Nästa"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr "Använd denna länk för att aktivera kontot:"
+msgstr "Använd denna länk för att aktivera ditt konto:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 msgid "Confirm your email address on "
-msgstr "Bekräfta din e-postadress på "
+msgstr "Bekräfta e-postadressen på "
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
-msgstr "Använd denna länk för att verifiera din e-postadress:"
+msgstr "Använd denna länk för att verifiera e-postadressen:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr "Använd denna länk för att ändra ditt lösenord:"
+msgstr "Använd denna länk för att ändra lösenordet:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 msgid "Password reset on "
@@ -3071,7 +3072,7 @@ msgstr "har skickat ett meddelande till dig."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "Läs det här:"
+msgstr "Läs det:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -3204,17 +3205,17 @@ msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "blockerade dig."
+msgstr " blockerat dig."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Acceptera vänskapsförfrågan"
+msgstr "Acceptera vänskapsbegäran"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Acceptera"
+msgstr "Godkänn"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
@@ -3264,7 +3265,7 @@ msgstr "Rapportera det här fotot"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Avbryt vänskapsförfrågan"
+msgstr "Avbryt vänskapsbegäran"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"

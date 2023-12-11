@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-01 17:58+0200\n"
+"POT-Creation-Date: 2023-12-11 15:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -509,7 +509,7 @@ msgstr "Speedy Match-konton"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
-msgstr "Lägg till profilbild"
+msgstr "Lägg till profilfoto"
 
 #: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
@@ -598,7 +598,7 @@ msgstr "Var bor du?"
 #: .\accounts\forms.py:186 .\accounts\models.py:122
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "Könstillhörighet att matcha"
+msgstr "Kön att matcha"
 
 #: .\accounts\models.py:36 .\accounts\models.py:88
 msgid "No match"
@@ -653,15 +653,15 @@ msgstr "Några ord om mig"
 #: .\accounts\models.py:118
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "Min ideala matchning"
+msgstr "Min idealiska matchning"
 
 #: .\accounts\models.py:128
 msgid "Minimal age to match"
-msgstr "Minsta ålder för matchning"
+msgstr "Minimal ålder för matchning"
 
 #: .\accounts\models.py:129
 msgid "Maximal age to match"
-msgstr "Högsta ålder för matchning"
+msgstr "Maximal ålder för matchning"
 
 #: .\accounts\models.py:130
 msgid "Diet match"
@@ -705,7 +705,7 @@ msgstr "Speedy Match-profiler"
 
 #: .\accounts\models.py:297 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr "Bekräfta e-postadressen."
+msgstr "Bekräfta din e-postadress."
 
 #: .\accounts\utils.py:89
 #, python-brace-format
@@ -1260,7 +1260,7 @@ msgstr "Dina vänner"
 
 #: .\templates\likes\like_list.html:47
 msgid "You have no likes here."
-msgstr "Du har inga gillanden här."
+msgstr "Du har inga gillningar här."
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
@@ -1380,7 +1380,7 @@ msgstr "Relationsstatus"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Senast besökt Speedy Match"
+msgstr "Speedy Match besöktes senast"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
