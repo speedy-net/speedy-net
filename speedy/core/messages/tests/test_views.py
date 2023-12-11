@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from time import sleep
+        from dateutil.relativedelta import relativedelta
 
         from django.test import override_settings
         from django.core import mail
@@ -134,6 +135,10 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
+                self.user_1.date_created -= relativedelta(hours=2, minutes=10)
+                self.user_1.save_user_and_profile()
+                self.user_2.date_created -= relativedelta(hours=2, minutes=10)
+                self.user_2.save_user_and_profile()
                 self.page_url = '/messages/{}/compose/'.format(self.user_2.slug)
                 self.data = {
                     'text': 'Hi Hi Hi',
