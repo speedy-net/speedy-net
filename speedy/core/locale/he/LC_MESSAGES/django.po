@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 15:37+0200\n"
+"POT-Creation-Date: 2023-12-12 07:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2969,7 +2969,7 @@ msgstr "משתמשים חסומים"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "את/ה לא חוסם/ת אף אחד"
+msgstr "את/ה לא חוסם/ת אף אחד."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
@@ -3189,7 +3189,7 @@ msgstr "דחה/י"
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr "הוסף/י לחברים"
+msgstr "הוסף/י לחברים/ות"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
