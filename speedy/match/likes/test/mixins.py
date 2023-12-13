@@ -8,7 +8,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'de': "_____ # ~~~~ TODO", 'es': "_____ # ~~~~ TODO", 'pt': "_____ # ~~~~ TODO", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': "לייקים הדדיים"}
+            _list_mutual_title_dict = {'en': "Mutual Likes", 'fr': "J’aimes mutuels", 'de': "Gegenseitige Likes", 'es': "Me gusta mutuos", 'pt': "Curtidas recíproca", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': "לייקים הדדיים"}
 
             _list_to_title_dict_by_gender = {
                 'en': {
@@ -22,19 +22,19 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Les personnes que vous aimez",
                 },
                 'de': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Mädchen, die Sie selbst mögen",
+                    User.GENDER_MALE_STRING: "Jungs die Sie selbst mögen",
+                    User.GENDER_OTHER_STRING: "Leute, die Sie selbst mögen",
                 },
                 'es': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Chicas que te gustan",
+                    User.GENDER_MALE_STRING: "Chicos que te gustan",
+                    User.GENDER_OTHER_STRING: "Gente que te gusta",
                 },
                 'pt': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Garotas que tu curtes",
+                    User.GENDER_MALE_STRING: "Garotos que tu curtes",
+                    User.GENDER_OTHER_STRING: "Pessoas que tu curtes",
                 },
                 'it': {
                     User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
@@ -79,19 +79,19 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Les personnes qui vous aiment",
                 },
                 'de': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Mädchen, die Sie mögen",
+                    User.GENDER_MALE_STRING: "Jungs, die Sie mögen",
+                    User.GENDER_OTHER_STRING: "Leute, die Sie mögen",
                 },
                 'es': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Chicas a las que les gustas",
+                    User.GENDER_MALE_STRING: "Chicos a los que les gustas",
+                    User.GENDER_OTHER_STRING: "Gente a la que le gustas",
                 },
                 'pt': {
-                    User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_MALE_STRING: "_____ # ~~~~ TODO",
-                    User.GENDER_OTHER_STRING: "_____ # ~~~~ TODO",
+                    User.GENDER_FEMALE_STRING: "Garotas que curtem a ti",
+                    User.GENDER_MALE_STRING: "Garotos que curtem a ti",
+                    User.GENDER_OTHER_STRING: "Pessoas que curtem a ti",
                 },
                 'it': {
                     User.GENDER_FEMALE_STRING: "_____ # ~~~~ TODO",
