@@ -86,13 +86,10 @@ def can_send_new_message(user):
             language_code=language_code,
         ))
         can_send = False
-    limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 100, 100
-    if (user.has_confirmed_email):
-        emails = user.email_addresses.filter(is_primary=True)
-        if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
-            email_name, domain_part = user.email.strip().rsplit("@", 1)
-            if (domain_part in {'gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'}):
-                limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 10, 100, 100
+    if ((now() - user.date_created).days < 15):
+        limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 10, 100, 100
+    else:
+        limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 15, 100, 100
     strings_in_messages = ["discord"]
     count_user_messages_1_day = Chat.objects.count_chats_with_strings_in_messages_and_only_one_sender(
         entity=user,
