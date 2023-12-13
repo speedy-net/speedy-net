@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-13 12:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1529,8 +1529,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esta usuaria ya tiene {0} amigas. No se puede tener más de {1} amigas en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1539,8 +1539,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1549,8 +1549,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esta usuaria ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No pueden tener más de {1} amigos en "
+"Speedy Net. Pídeles que eliminen a tus amigos antes de continuar."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1559,8 +1559,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigas. No se puede tener más de {1} amigas en "
-"Speedy Net. Pídele que elimine amigas antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1569,8 +1569,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1579,8 +1579,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No pueden tener más de {1} amigos en "
+"Speedy Net. Pídeles que eliminen a tus amigos antes de continuar."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1589,8 +1589,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigas. No se puede tener más de {1} amigas en "
-"Speedy Net. Pídele que elimine amigas antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1599,8 +1599,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy "
+"Net. Pídele que elimine a sus amigos antes de continuar."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1609,8 +1609,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Este usuario ya tiene {0} amigos. No se puede tener más de {1} amigos en "
-"Speedy Net. Pídele que elimine amigos antes de continuar."
+"Este usuario ya tiene {0} amigos. No pueden tener más de {1} amigos en "
+"Speedy Net. Pídeles que eliminen a tus amigos antes de continuar."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
