@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-13 11:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1382,105 +1382,3 @@ msgstr "דרגת התאמה"
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
 msgstr "אין התאמה."
-
-#~ msgid "."
-#~ msgstr "."
-
-#~ msgid "Free online dating for singles"
-#~ msgstr "הכרויות לפנויות/פנויים אונליין בחינם"
-
-#~ msgid "Free dating for singles"
-#~ msgstr "הכרויות לפנויות/פנויים בחינם"
-
-#~ msgid "Dating for vegans and vegetarians"
-#~ msgstr "הכרויות לטבעונים ולצמחונים"
-
-#~ msgid "Please write some text in this field."
-#~ msgstr "אנא כתוב/י טקסט בשדה זה."
-
-#~ msgid "Please select diet match."
-#~ msgstr "אנא בחר/י התאמת תזונה."
-
-#~ msgid "Please select smoking status match."
-#~ msgstr "אנא בחר/י התאמת הרגלי עישון."
-
-#~ msgid "Please select relationship status match."
-#~ msgstr "אנא בחר/י התאמת סטטוס מערכת יחסים."
-
-#~ msgctxt "female"
-#~ msgid "About Me"
-#~ msgstr "על עצמי"
-
-#~ msgctxt "male"
-#~ msgid "About Me"
-#~ msgstr "על עצמי"
-
-#~ msgctxt "other"
-#~ msgid "About Me"
-#~ msgstr "על עצמי"
-
-#~ msgctxt "female"
-#~ msgid "About My Match"
-#~ msgstr "על בת הזוג שלי"
-
-#~ msgctxt "male"
-#~ msgid "About My Match"
-#~ msgstr "על בן הזוג שלי"
-
-#~ msgctxt "other"
-#~ msgid "About My Match"
-#~ msgstr "על בן/בת הזוג שלי"
-
-#~ msgid "About My Match"
-#~ msgstr "על בן/בת הזוג שלי"
-
-#~ msgid "About Me"
-#~ msgstr "על עצמי"
-
-#~ msgid "user"
-#~ msgstr "משתמש/ת"
-
-#~ msgid "active languages"
-#~ msgstr "שפות פעילות"
-
-#~ msgid "height"
-#~ msgstr "גובה"
-
-#~ msgid "My ideal girlfriend"
-#~ msgstr "בת הזוג האידיאלית שלי"
-
-#~ msgid "My ideal boyfriend"
-#~ msgstr "בן הזוג האידיאלי שלי"
-
-#~ msgid "Gender"
-#~ msgstr "מין"
-
-#~ msgctxt "female"
-#~ msgid "People I Like"
-#~ msgstr "אנשים שעשיתי להם לייק"
-
-#~ msgctxt "male"
-#~ msgid "People I Like"
-#~ msgstr "אנשים שעשיתי להם לייק"
-
-#~ msgctxt "other"
-#~ msgid "People I Like"
-#~ msgstr "אנשים שעשיתי להם לייק"
-
-#~ msgctxt "female"
-#~ msgid "People Who Like Me"
-#~ msgstr "אנשים שעשו לי לייק"
-
-#~ msgctxt "male"
-#~ msgid "People Who Like Me"
-#~ msgstr "אנשים שעשו לי לייק"
-
-#~ msgctxt "other"
-#~ msgid "People Who Like Me"
-#~ msgstr "אנשים שעשו לי לייק"
-
-#~ msgid "People I Like"
-#~ msgstr "אנשים שעשיתי להם לייק"
-
-#~ msgid "People Who Like Me"
-#~ msgstr "אנשים שעשו לי לייק"
