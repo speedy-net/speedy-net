@@ -158,6 +158,30 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='de')
+        class LikeViewGermanTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='es')
+        class LikeViewSpanishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='pt')
+        class LikeViewPortugueseTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class LikeViewHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -548,6 +572,30 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='de')
+        class LikeListViewsGermanTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='es')
+        class LikeListViewsSpanishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='pt')
+        class LikeListViewsPortugueseTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
 
 
         @only_on_speedy_match

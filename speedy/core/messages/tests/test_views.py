@@ -345,6 +345,30 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='de')
+        class SendMessageToUserViewGermanTestCase(SendMessageToUserViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='es')
+        class SendMessageToUserViewSpanishTestCase(SendMessageToUserViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pt')
+        class SendMessageToUserViewPortugueseTestCase(SendMessageToUserViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class SendMessageToUserViewHebrewTestCase(SendMessageToUserViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
