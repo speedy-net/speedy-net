@@ -15,10 +15,10 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'he': 'בקשת חברות נשלחה.'}
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'he': 'בקשת החברות התקבלה.'}
-            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'he': 'בקשת החברות נדחתה.'}
-            _youve_cancelled_your_friendship_request_success_message_dict = {'en': "You've cancelled your friendship request.", 'fr': "Vous avez annulé votre demande d’amitié.", 'he': 'ביטלת את בקשת החברות שלך.'}
+            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'he': 'בקשת חברות נשלחה.'}
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'he': 'בקשת החברות התקבלה.'}
+            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'he': 'בקשת החברות נדחתה.'}
+            _youve_cancelled_your_friendship_request_success_message_dict = {'en': "You've cancelled your friendship request.", 'fr': "Vous avez annulé votre demande d’amitié.", 'de': "Sie haben Ihre Freundschaftsanfrage gelöscht.", 'es': "Has cancelado tu solicitud de amistad.", 'pt': "Tu cancelaste tua solicitação de amizade.", 'he': 'ביטלת את בקשת החברות שלך.'}
 
             _you_have_removed_this_user_from_friends_success_message_dict_by_gender = {
                 'en': {
@@ -26,6 +26,19 @@ if (django_settings.TESTS):
                 },
                 'fr': {
                     **{gender: "Vous avez supprimé cet utilisateur de vos amis." for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{gender: "Sie haben diesen Benutzer von Ihren Freunden entfernt." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "Has eliminado a esta usuaria de tus amigos.",
+                    User.GENDER_MALE_STRING: "Has eliminado a este usuario de tus amigos.",
+                    User.GENDER_OTHER_STRING: "Has eliminado a este usuario de tus amigos.",
+                },
+                'pt': {
+                    User.GENDER_FEMALE_STRING: "Tu removeste esta utilizadora dos teus amigos.",
+                    User.GENDER_MALE_STRING: "Tu removeste este utilizador dos teus amigos.",
+                    User.GENDER_OTHER_STRING: "Tu removeste este utilizador dos teus amigos.",
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "הסרת את המשתמשת הזאת מהחברים שלך.",
@@ -41,6 +54,17 @@ if (django_settings.TESTS):
                 'fr': {
                     **{gender: "Vous avez déjà demandé à cet utilisateur d’être votre ami(e)." for gender in User.ALL_GENDERS},
                 },
+                'de': {
+                    **{gender: "Sie haben bereits um die Freundschaft dieses Benutzers gebeten." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "Ya solicitaste amistad a esta usuaria.",
+                    User.GENDER_MALE_STRING: "Ya solicitaste amistad a este usuario.",
+                    User.GENDER_OTHER_STRING: "Ya solicitaste amistad a este usuario.",
+                },
+                'pt': {
+                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},
+                },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר ביקשת חברות מהמשתמשת הזאת.",
                     User.GENDER_MALE_STRING: "כבר ביקשת חברות מהמשתמש הזה.",
@@ -54,6 +78,19 @@ if (django_settings.TESTS):
                 },
                 'fr': {
                     **{gender: "Cet utilisateur a déjà demandé à être votre ami(e)." for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{gender: "Dieser Benutzer hat bereits um Ihre Freundschaft gebeten." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "Esta usuaria ya te solicitó amistad.",
+                    User.GENDER_MALE_STRING: "Este usuario ya te solicitó amistad.",
+                    User.GENDER_OTHER_STRING: "Este usuario ya te solicitó amistad.",
+                },
+                'pt': {
+                    User.GENDER_FEMALE_STRING: "Esta utilizadora já solicitou a tua amizade.",
+                    User.GENDER_MALE_STRING: "Este utilizador já solicitou a tua amizade.",
+                    User.GENDER_OTHER_STRING: "Este utilizador já solicitou a tua amizade.",
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "המשתמשת הזאת כבר ביקשה ממך חברות.",
@@ -77,6 +114,39 @@ if (django_settings.TESTS):
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Vous êtes déjà ami(e) avec cet utilisateur.",
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Vous êtes déjà ami(e) avec cet utilisateur.",
                 },
+                'de': {
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sie sind mit dieser Benutzerin bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sie sind mit dieser Benutzerin bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sie sind mit diesem Benutzer bereits befreundet.",
+                },
+                'es': {
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ya eres amiga de esta usuaria.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ya eres amiga de este usuario.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ya eres amiga de este usuario.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ya eres amigo de esta usuaria.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ya eres amigo de este usuario.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ya eres amigo de este usuario.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ya eres amigo de esta usuaria.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ya eres amigo de este usuario.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ya eres amigo de este usuario.",
+                },
+                'pt': {
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Tu já és amiga desta utilizadora.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Tu já és amiga deste utilizador.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Tu já és amiga deste utilizador.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Tu já és amigo desta utilizadora.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Tu já és amigo deste utilizador.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Tu já és amigo deste utilizador.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Tu já és amigo desta utilizadora.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Tu já és amigo deste utilizador.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Tu já és amigo deste utilizador.",
+                },
                 'he': {
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "את כבר חברה של המשתמשת הזאת.",
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "את כבר חברה של המשתמש הזה.",
@@ -97,6 +167,19 @@ if (django_settings.TESTS):
                 'fr': {
                     **{gender: "On ne peut pas être ami avec soi-même." for gender in User.ALL_GENDERS},
                 },
+                'de': {
+                    **{gender: "Sie können nicht mit sich selbst befreundet sein." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    User.GENDER_FEMALE_STRING: "No puedes ser amiga de ti misma.",
+                    User.GENDER_MALE_STRING: "No puedes ser amigo de ti mismo.",
+                    User.GENDER_OTHER_STRING: "No puedes ser amigo de ti mismo.",
+                },
+                'pt': {
+                    User.GENDER_FEMALE_STRING: "Tu não podes ser amiga de ti mesma.",
+                    User.GENDER_MALE_STRING: "Tu não podes ser amigo de ti mesmo.",
+                    User.GENDER_OTHER_STRING: "Tu não podes ser amigo de ti mesmo.",
+                },
                 'he': {
                     User.GENDER_FEMALE_STRING: "את לא יכולה להיות חברה של עצמך.",
                     User.GENDER_MALE_STRING: "אתה לא יכול להיות חבר של עצמך.",
@@ -110,6 +193,17 @@ if (django_settings.TESTS):
                 },
                 'fr': {
                     **{gender: "Vous avez déjà des amis sur {0}. Vous ne pouvez pas avoir plus de {1} ami(e)s sur Speedy Net. Veuillez supprimer des amis avant de continuer." for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    User.GENDER_FEMALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
+                    User.GENDER_MALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen.",
+                    User.GENDER_OTHER_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
+                },
+                'es': {
+                    **{gender: "Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. Elimina amigos antes de continuar." for gender in User.ALL_GENDERS},
+                },
+                'pt': {
+                    **{gender: "Tu já tens {0} amigos. Não podes ter mais que {1} amigos no Speedy Net. Remova amigos antes de continuar." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה.",
@@ -128,6 +222,21 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Cet utilisateur a déjà {0} amis. Elle ne peut pas avoir plus de {1} amis sur Speedy Net. Demandez-lui de retirer ses amis avant de continuer." for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Cet utilisateur a déjà {0} amis. Il ne peut pas avoir plus de {1} amis sur Speedy Net. Demandez-lui de retirer ses amis avant de continuer." for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Cet utilisateur a déjà {0} amis. Ils/Elles ne peuvent pas avoir plus de {1} ami(e)s sur Speedy Net. Demandez-leur de retirer leurs amis avant de continuer." for user_gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Dieser Benutzer hat bereits {0} Freunde. Sie können auf Speedy Net nicht mehr als {1} Freunde haben. Bitte bitten Sie sie, Freunde zu entfernen, bevor Sie weitermachen." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Dieser Benutzer hat bereits {0} Freunde. Sie können auf Speedy Net nicht mehr als {1} Freunde haben. Bitte bitten Sie sie, Freunde zu entfernen, bevor Sie weitermachen." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Dieser Benutzer hat bereits {0} Freunde. Sie können auf Speedy Net nicht mehr als {1} Freunde haben. Bitte bitten Sie sie, Freunde zu entfernen, bevor Sie weitermachen." for user_gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy Net. Pídele que elimine a sus amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Este usuario ya tiene {0} amigos. No puede tener más de {1} amigos en Speedy Net. Pídele que elimine a sus amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Este usuario ya tiene {0} amigos. No pueden tener más de {1} amigos en Speedy Net. Pídeles que eliminen a tus amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                },
+                'pt': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na Speedy Net. Peça que ela remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na Speedy Net. Peça que ele remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na Speedy Net. Peça que eles removam amigos antes de continuar." for user_gender in User.ALL_GENDERS},
                 },
                 'he': {
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות וחברים בספידי נט. אנא בקשי ממנה להסיר חברים/ות לפני שאת ממשיכה.",
