@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -739,19 +739,22 @@ msgid "Read it:"
 msgstr "קרא/י אותה:"
 
 #: .\__translations\__translations.html:192
+#, python-format
 msgctxt "female"
-msgid "Confirm your email address on "
-msgstr "אמתי את כתובת הדואר האלקטרוני שלך ב"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "אמתי את כתובת הדואר האלקטרוני שלך ב%(site_name)s"
 
 #: .\__translations\__translations.html:193
+#, python-format
 msgctxt "male"
-msgid "Confirm your email address on "
-msgstr "אמת את כתובת הדואר האלקטרוני שלך ב"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "אמת את כתובת הדואר האלקטרוני שלך ב%(site_name)s"
 
 #: .\__translations\__translations.html:194
+#, python-format
 msgctxt "other"
-msgid "Confirm your email address on "
-msgstr "אמת/י את כתובת הדואר האלקטרוני שלך ב"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "אמת/י את כתובת הדואר האלקטרוני שלך ב%(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3015,8 +3018,9 @@ msgstr "השתמש/י בקישור זה כדי להפעיל את חשבונך:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
-msgid "Confirm your email address on "
-msgstr "אמת/י את כתובת הדואר האלקטרוני שלך ב"
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "אמת/י את כתובת הדואר האלקטרוני שלך ב%(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3027,8 +3031,9 @@ msgid "Use this link to change your password:"
 msgstr "השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
-msgid "Password reset on "
-msgstr "איפוס סיסמה ב"
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "איפוס סיסמה ב%(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3048,8 +3053,9 @@ msgstr ""
 "הגדרות ההתראות שלך או לבטל את הסכמתך:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
-msgid "You have a new message on "
-msgstr "יש לך הודעה חדשה ב"
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "יש לך הודעה חדשה ב%(site_name)s"
 
 #: .\templates\friends\base.html:31
 msgid "Received Requests"

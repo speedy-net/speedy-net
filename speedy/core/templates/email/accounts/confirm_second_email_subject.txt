@@ -1,1 +1,1 @@
-{% load i18n %}{% trans "Confirm your email address on " context user.get_gender %}{{ site_name|safe }}
+{% load i18n %}{% blocktranslate with site_name=site_name context user.get_gender %}Confirm your email address on {{ site_name }}{% endblocktranslate %}

@@ -59,9 +59,9 @@
 {% translate 'Gender to match' context "male" %}
 {% translate 'Gender to match' context "other" %}
 
-{% translate "Someone likes you on " context "female" %}
-{% translate "Someone likes you on " context "male" %}
-{% translate "Someone likes you on " context "other" %}
+{% blocktranslate with site_name=site_name context "female" %}Someone likes you on {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "male" %}Someone likes you on {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "other" %}Someone likes you on {{ site_name }}{% endblocktranslate %}
 
 {% translate "likes you." context "female" %}
 {% translate "likes you." context "male" %}

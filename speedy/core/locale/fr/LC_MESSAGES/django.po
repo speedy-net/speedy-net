@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -754,19 +754,22 @@ msgid "Read it:"
 msgstr "Lisez-le :"
 
 #: .\__translations\__translations.html:192
+#, python-format
 msgctxt "female"
-msgid "Confirm your email address on "
-msgstr "Confirmez votre adresse e-mail sur "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Confirmez votre adresse e-mail sur %(site_name)s"
 
 #: .\__translations\__translations.html:193
+#, python-format
 msgctxt "male"
-msgid "Confirm your email address on "
-msgstr "Confirmez votre adresse e-mail sur "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Confirmez votre adresse e-mail sur %(site_name)s"
 
 #: .\__translations\__translations.html:194
+#, python-format
 msgctxt "other"
-msgid "Confirm your email address on "
-msgstr "Confirmez votre adresse e-mail sur "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Confirmez votre adresse e-mail sur %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3080,8 +3083,9 @@ msgstr "Utilisez ce lien pour activer votre compte :"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
-msgid "Confirm your email address on "
-msgstr "Confirmez votre adresse e-mail sur "
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Confirmez votre adresse e-mail sur %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3092,8 +3096,9 @@ msgid "Use this link to change your password:"
 msgstr "Utilisez ce lien pour modifier votre mot de passe :"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
-msgid "Password reset on "
-msgstr "Réinitialisation du mot de passe sur "
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "Réinitialisation du mot de passe sur %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3114,8 +3119,9 @@ msgstr ""
 "notification ou vous désabonner :"
 
 #: .\templates\email\messages\new_message_subject.txt:1
-msgid "You have a new message on "
-msgstr "Vous avez un nouveau message sur "
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Vous avez un nouveau message sur %(site_name)s"
 
 #: .\templates\friends\base.html:31
 msgid "Received Requests"

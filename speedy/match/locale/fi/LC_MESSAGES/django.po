@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,19 +239,22 @@ msgid "Gender to match"
 msgstr "Sukupuolimatch"
 
 #: .\__translations\__translations.html:62
+#, python-format
 msgctxt "female"
-msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Joku tykkää sinusta %(site_name)s"
 
 #: .\__translations\__translations.html:63
+#, python-format
 msgctxt "male"
-msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Joku tykkää sinusta %(site_name)s"
 
 #: .\__translations\__translations.html:64
+#, python-format
 msgctxt "other"
-msgid "Someone likes you on "
-msgstr "Joku tykkää sinusta "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Joku tykkää sinusta %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -1167,8 +1170,9 @@ msgstr ""
 "tälle sivulle muuttaaksesi ilmoitusasetuksiasi tai poistaaksesi ne käytöstä:"
 
 #: .\templates\email\likes\like_subject.txt:1
-msgid "Someone likes you on "
-msgstr "Joku pitää sinusta "
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "Joku tykkää sinusta %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."

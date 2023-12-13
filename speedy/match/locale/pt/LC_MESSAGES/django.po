@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,19 +239,22 @@ msgid "Gender to match"
 msgstr "Gênero para correspondência"
 
 #: .\__translations\__translations.html:62
+#, python-format
 msgctxt "female"
-msgid "Someone likes you on "
-msgstr "Alguém curte a ti no "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Alguém curte a ti no %(site_name)s"
 
 #: .\__translations\__translations.html:63
+#, python-format
 msgctxt "male"
-msgid "Someone likes you on "
-msgstr "Alguém curte a ti no "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Alguém curte a ti no %(site_name)s"
 
 #: .\__translations\__translations.html:64
+#, python-format
 msgctxt "other"
-msgid "Someone likes you on "
-msgstr "Alguém curte a ti no "
+msgid "Someone likes you on %(site_name)s"
+msgstr "Alguém curte a ti no %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -1252,8 +1255,9 @@ msgstr ""
 "cancelar o cadastro:"
 
 #: .\templates\email\likes\like_subject.txt:1
-msgid "Someone likes you on "
-msgstr "Alguém curte a ti no "
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "Alguém curte a ti no %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."

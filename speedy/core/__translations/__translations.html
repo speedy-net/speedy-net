@@ -189,9 +189,9 @@
 {% translate "Read it:" context "male" %}
 {% translate "Read it:" context "other" %}
 
-{% translate "Confirm your email address on " context "female" %}
-{% translate "Confirm your email address on " context "male" %}
-{% translate "Confirm your email address on " context "other" %}
+{% blocktranslate with site_name=site_name context "female" %}Confirm your email address on {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "male" %}Confirm your email address on {{ site_name }}{% endblocktranslate %}
+{% blocktranslate with site_name=site_name context "other" %}Confirm your email address on {{ site_name }}{% endblocktranslate %}
 
 {% translate "Use this link to activate your account:" context "female" %}
 {% translate "Use this link to activate your account:" context "male" %}

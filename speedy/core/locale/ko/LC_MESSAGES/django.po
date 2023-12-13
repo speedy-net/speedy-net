@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -745,19 +745,22 @@ msgid "Read it:"
 msgstr "읽기:"
 
 #: .\__translations\__translations.html:192
+#, python-format
 msgctxt "female"
-msgid "Confirm your email address on "
-msgstr "다음에서 이메일 주소 확인 "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "다음에서 이메일 주소 확인 %(site_name)s"
 
 #: .\__translations\__translations.html:193
+#, python-format
 msgctxt "male"
-msgid "Confirm your email address on "
-msgstr "다음에서 이메일 주소 확인 "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "다음에서 이메일 주소 확인 %(site_name)s"
 
 #: .\__translations\__translations.html:194
+#, python-format
 msgctxt "other"
-msgid "Confirm your email address on "
-msgstr "다음에서 이메일 주소 확인 "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "다음에서 이메일 주소 확인 %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3012,8 +3015,9 @@ msgstr "이 링크를 사용하여 계정을 활성화하세요:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
-msgid "Confirm your email address on "
-msgstr "다음에서 이메일 주소 확인 "
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "다음에서 이메일 주소 확인 %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3024,8 +3028,9 @@ msgid "Use this link to change your password:"
 msgstr "이 링크를 사용하여 암호를 변경하세요:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
-msgid "Password reset on "
-msgstr "다음에서 암호 재설정 "
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "%(site_name)s의 비밀번호 재설정"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3045,8 +3050,9 @@ msgstr ""
 "를 입력하여 알림 설정을 변경하거나 수신 취소하세요:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
-msgid "You have a new message on "
-msgstr "다음에 새 메시지가 있습니다. "
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "다음에 새 메시지가 있습니다. %(site_name)s"
 
 #: .\templates\friends\base.html:31
 msgid "Received Requests"

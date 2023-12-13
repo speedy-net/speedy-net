@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 07:58+0200\n"
+"POT-Creation-Date: 2023-12-13 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -754,19 +754,22 @@ msgid "Read it:"
 msgstr "Lesen Sie sie:"
 
 #: .\__translations\__translations.html:192
+#, python-format
 msgctxt "female"
-msgid "Confirm your email address on "
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
 
 #: .\__translations\__translations.html:193
+#, python-format
 msgctxt "male"
-msgid "Confirm your email address on "
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
 
 #: .\__translations\__translations.html:194
+#, python-format
 msgctxt "other"
-msgid "Confirm your email address on "
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf "
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3076,8 +3079,9 @@ msgstr "Verwenden Sie diesen Link, um Ihr Konto zu aktivieren:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
-msgid "Confirm your email address on "
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf "
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3088,8 +3092,9 @@ msgid "Use this link to change your password:"
 msgstr "Verwenden Sie diesen Link, um Ihr Passwort zu ändern:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
-msgid "Password reset on "
-msgstr "Passwortrückstellung am "
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "Passwort auf %(site_name)s zurücksetzen"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3110,8 +3115,9 @@ msgstr ""
 "Nachrichteneinstellungen einzustellen oder auszusteigen:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
-msgid "You have a new message on "
-msgstr "Sie haben eine neue Mitteilung erhalten auf "
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Sie haben eine neue Mitteilung erhalten auf %(site_name)s"
 
 #: .\templates\friends\base.html:31
 msgid "Received Requests"
