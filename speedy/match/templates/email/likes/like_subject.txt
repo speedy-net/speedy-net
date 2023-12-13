@@ -1,1 +1,1 @@
-{% load i18n %}{% blocktranslate with site_name=site_name context like.from_user.get_gender %}Someone likes you on {{ site_name }}{% endblocktranslate %}
+{% load i18n %}{% autoescape off %}{% blocktranslate with site_name=site_name context like.from_user.get_gender %}Someone likes you on {{ site_name }}{% endblocktranslate %}{% endautoescape %}

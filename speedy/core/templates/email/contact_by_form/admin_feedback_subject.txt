@@ -1,1 +1,1 @@
-{% load i18n %}{{ site_name|safe }}: {{ feedback|safe }}
+{% load i18n %}{% autoescape off %}{{ site_name }}: {{ feedback }}{% endautoescape %}
