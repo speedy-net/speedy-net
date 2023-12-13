@@ -84,14 +84,14 @@ if (django_settings.TESTS):
                 self.assertEqual(first=feedback.text, second=data['text'])
 
 
-        @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
         class FeedbackFormEnglishTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='fr')
         class FeedbackFormFrenchTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -99,7 +99,31 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='fr')
 
 
-        @only_on_sites_with_login # Contact by form is currently limited only to sites with login.
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='de')
+        class FeedbackFormGermanTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='es')
+        class FeedbackFormSpanishTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='pt')
+        class FeedbackFormPortugueseTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackFormHebrewTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
