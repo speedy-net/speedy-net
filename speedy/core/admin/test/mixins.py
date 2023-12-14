@@ -1,6 +1,5 @@
 from django.conf import settings as django_settings
 
-
 if (django_settings.TESTS):
     class SpeedyCoreAdminLanguageMixin(object):
         def set_up(self):
