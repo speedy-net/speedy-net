@@ -65,6 +65,46 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='it')
+        class AdminMatchesListViewItalianTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='nl')
+        class AdminMatchesListViewDutchTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sv')
+        class AdminMatchesListViewSwedishTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ko')
+        class AdminMatchesListViewKoreanTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fi')
+        class AdminMatchesListViewFinnishTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class AdminMatchesListViewHebrewTestCase(AdminMatchesListViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):

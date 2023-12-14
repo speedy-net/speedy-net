@@ -574,6 +574,101 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class RegistrationFormWithLastNameItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "Bocelli",
+                })
+                self.first_name = "Andrea"
+                self.last_name = "Bocelli"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class RegistrationFormWithLastNameDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationFormWithLastNameSwedishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationFormWithLastNameKoreanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationFormWithLastNameFinnishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationFormWithLastNameHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             def set_up(self):
@@ -684,6 +779,101 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class RegistrationFormWithoutLastNameItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "",
+                })
+                self.first_name = "Andrea"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class RegistrationFormWithoutLastNameDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationFormWithoutLastNameSwedishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationFormWithoutLastNameKoreanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationFormWithoutLastNameFinnishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -818,6 +1008,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class DeactivationFormItalianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class DeactivationFormDutchTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class DeactivationFormSwedishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class DeactivationFormKoreanTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class DeactivationFormFinnishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login

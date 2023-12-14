@@ -29,8 +29,8 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _please_contact_us_by_email_error_message_dict = {'en': 'Please contact us by email.', 'fr': 'Veuillez nous contacter par e-mail.', 'de': "Bitte kontaktieren Sie uns per E-Mail.", 'es': "Por favor, contáctanos por correo electrónico.", 'pt': "Entre em contacto conosco por e-mail.", 'he': 'אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.'}
-            _not_17_error_message_dict = {'en': 'Not 17.', 'fr': 'Pas 17.', 'de': "Nicht 17.", 'es': "No 17.", 'pt': "Não 17.", 'he': 'לא 17.'}
+            _please_contact_us_by_email_error_message_dict = {'en': 'Please contact us by email.', 'fr': 'Veuillez nous contacter par e-mail.', 'de': "Bitte kontaktieren Sie uns per E-Mail.", 'es': "Por favor, contáctanos por correo electrónico.", 'pt': "Entre em contacto conosco por e-mail.", 'it': "Contattateci tramite e-mail.", 'nl': "Neem contact met ons op via e-mail.", 'sv': "Kontakta oss via e-post.", 'ko': "이메일로 연락해주세요.", 'fi': "Ota yhteyttä sähköpostitse.", 'he': 'אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.'}
+            _not_17_error_message_dict = {'en': 'Not 17.', 'fr': 'Pas 17.', 'de': "Nicht 17.", 'es': "No 17.", 'pt': "Não 17.", 'it': "Non 17.", 'nl': "Niet 17.", 'sv': "Inte 17.", 'ko': "17이 아님.", 'fi': "Ei 17.", 'he': 'לא 17.'}
 
             self._please_contact_us_by_email_error_message = _please_contact_us_by_email_error_message_dict[self.language_code]
             self._not_17_error_message = _not_17_error_message_dict[self.language_code]
