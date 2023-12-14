@@ -1,3 +1,5 @@
+import random
+
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -143,6 +145,9 @@ if (django_settings.TESTS):
         # Generate a new random password for each test.
         USER_PASSWORD = get_random_user_password()
         # USER_PASSWORD = 'vjha9c4q44zs'
+
+    RANDOM_LANGUAGE_CODE_CHOICE = random.choice(['de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', '__1', '__2'])
+
 
     @receiver(signal=setting_changed)
     def logging_changed(**kwargs):
