@@ -67,6 +67,7 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "אנשים שעשית להם לייק",
                 },
             }
+
             _list_from_title_dict_by_gender = {
                 'en': {
                     User.GENDER_FEMALE_STRING: "Girls Who Like You",
@@ -124,6 +125,7 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "אנשים שעשו לך לייק",
                 },
             }
+
             _someone_likes_you_on_speedy_match_subject_dict_by_gender = {
                 'en': {
                     **{gender: "Someone likes you on Speedy Match" for gender in User.ALL_GENDERS},

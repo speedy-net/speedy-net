@@ -2355,7 +2355,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message_dict_by_gender[self.user.get_gender()]])
                 self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=True)
 
             def test_wrong_user_login_logs_user_out_and_redirects_to_login(self):
