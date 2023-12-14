@@ -734,6 +734,101 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class RegistrationViewWithLastNameItalianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "Bocelli",
+                })
+                self.first_name = "Andrea"
+                self.last_name = "Bocelli"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class RegistrationViewWithLastNameDutchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationViewWithLastNameSwedishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationViewWithLastNameKoreanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationViewWithLastNameFinnishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationViewWithLastNameHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             def set_up(self):
@@ -844,6 +939,101 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class RegistrationViewWithoutLastNameItalianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "",
+                })
+                self.first_name = "Andrea"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class RegistrationViewWithoutLastNameDutchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationViewWithoutLastNameSwedishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationViewWithoutLastNameKoreanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationViewWithoutLastNameFinnishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -1045,6 +1235,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class LoginViewItalianTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class LoginViewDutchTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class LoginViewSwedishTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class LoginViewKoreanTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class LoginViewFinnishTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -1385,6 +1615,101 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class EditProfileViewWithLastNameItalianTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "Bocelli",
+                })
+                self.first_name = "Andrea"
+                self.last_name = "Bocelli"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class EditProfileViewWithLastNameDutchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class EditProfileViewWithLastNameSwedishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class EditProfileViewWithLastNameKoreanTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class EditProfileViewWithLastNameFinnishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileViewWithLastNameHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
             def set_up(self):
@@ -1495,6 +1820,101 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class EditProfileViewWithoutLastNameItalianTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Italian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_it': "Andrea",
+                    'last_name_it': "",
+                })
+                self.first_name = "Andrea"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class EditProfileViewWithoutLastNameDutchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Dutch alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_nl': "Doron",
+                    'last_name_nl': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class EditProfileViewWithoutLastNameSwedishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class EditProfileViewWithoutLastNameKoreanTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class EditProfileViewWithoutLastNameFinnishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            def set_up(self):
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -1737,6 +2157,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class EditProfileCredentialsViewItalianTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class EditProfileCredentialsViewDutchTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class EditProfileCredentialsViewSwedishTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class EditProfileCredentialsViewKoreanTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class EditProfileCredentialsViewFinnishTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileCredentialsViewHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -1961,6 +2421,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class VerifyUserEmailAddressViewItalianTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class VerifyUserEmailAddressViewDutchTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class VerifyUserEmailAddressViewSwedishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class VerifyUserEmailAddressViewKoreanTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class VerifyUserEmailAddressViewFinnishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class VerifyUserEmailAddressViewHebrewTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -2149,6 +2649,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class AddUserEmailAddressViewItalianTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class AddUserEmailAddressViewDutchTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class AddUserEmailAddressViewSwedishTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class AddUserEmailAddressViewKoreanTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class AddUserEmailAddressViewFinnishTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class AddUserEmailAddressViewHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -2239,6 +2779,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class SendConfirmationEmailViewItalianTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class SendConfirmationEmailViewDutchTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class SendConfirmationEmailViewSwedishTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class SendConfirmationEmailViewKoreanTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class SendConfirmationEmailViewFinnishTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -2464,6 +3044,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class DeleteUserEmailAddressViewItalianTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class DeleteUserEmailAddressViewDutchTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class DeleteUserEmailAddressViewSwedishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class DeleteUserEmailAddressViewKoreanTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class DeleteUserEmailAddressViewFinnishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class DeleteUserEmailAddressViewHebrewTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -2628,6 +3248,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class SetPrimaryUserEmailAddressViewItalianTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class SetPrimaryUserEmailAddressViewDutchTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class SetPrimaryUserEmailAddressViewSwedishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class SetPrimaryUserEmailAddressViewKoreanTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class SetPrimaryUserEmailAddressViewFinnishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class SetPrimaryUserEmailAddressViewHebrewTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -2705,6 +3365,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class PasswordResetViewItalianTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class PasswordResetViewDutchTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class PasswordResetViewSwedishTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class PasswordResetViewKoreanTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class PasswordResetViewFinnishTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login

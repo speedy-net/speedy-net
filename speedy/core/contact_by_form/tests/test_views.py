@@ -274,6 +274,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='it')
+        class FeedbackViewTypeFeedbackItalianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='nl')
+        class FeedbackViewTypeFeedbackDutchTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeFeedbackSwedishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeFeedbackKoreanTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeFeedbackFinnishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeFeedbackHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -336,6 +376,46 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class FeedbackViewTypeReportEntityItalianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class FeedbackViewTypeReportEntityDutchTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeReportEntitySwedishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeReportEntityKoreanTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeReportEntityFinnishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeReportEntityHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -395,6 +475,46 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class FeedbackViewTypeReportFileItalianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class FeedbackViewTypeReportFileDutchTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeReportFileSwedishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeReportFileKoreanTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeReportFileFinnishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
