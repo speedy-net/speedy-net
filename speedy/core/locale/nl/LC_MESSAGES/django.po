@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-14 14:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1519,9 +1519,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze kan niet meer dan {1} vrienden "
+"Deze gebruiker heeft al {0} vrienden. Ze mag niet meer dan {1} vrienden "
 "hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat je "
-"doorgaat."
+"verder gaat."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1530,9 +1530,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Hij kan niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je "
-"doorgaat."
+"Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
+"gaat."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1542,8 +1542,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hen om vrienden te verwijderen voordat je "
-"doorgaat."
+"hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
+"voordat je verder gaat."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1552,9 +1552,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze kan niet meer dan {1} vrienden "
+"Deze gebruiker heeft al {0} vrienden. Ze mag niet meer dan {1} vrienden "
 "hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat je "
-"doorgaat."
+"verder gaat."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1563,9 +1563,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hen om vrienden te verwijderen voordat je "
-"doorgaat."
+"Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
+"gaat."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1575,8 +1575,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hen om vrienden te verwijderen voordat je "
-"doorgaat."
+"hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
+"voordat je verder gaat."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1585,9 +1585,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze kan niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat jullie "
-"doorgaan."
+"Deze gebruiker heeft al {0} vrienden. Ze mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat je "
+"verder gaat."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1596,9 +1596,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Hij kan niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat jullie "
-"doorgaan."
+"Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
+"gaat."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1608,8 +1608,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hen om vrienden te verwijderen voordat jullie "
-"doorgaan."
+"hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
+"voordat je verder gaat."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
