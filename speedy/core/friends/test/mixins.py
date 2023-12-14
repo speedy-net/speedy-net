@@ -15,10 +15,10 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'he': 'בקשת חברות נשלחה.'}
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'he': 'בקשת החברות התקבלה.'}
-            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'he': 'בקשת החברות נדחתה.'}
-            _youve_cancelled_your_friendship_request_success_message_dict = {'en': "You've cancelled your friendship request.", 'fr': "Vous avez annulé votre demande d’amitié.", 'de': "Sie haben Ihre Freundschaftsanfrage gelöscht.", 'es': "Has cancelado tu solicitud de amistad.", 'pt': "Tu cancelaste tua solicitação de amizade.", 'he': 'ביטלת את בקשת החברות שלך.'}
+            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת חברות נשלחה.'}
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת החברות התקבלה.'}
+            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת החברות נדחתה.'}
+            _youve_cancelled_your_friendship_request_success_message_dict = {'en': "You've cancelled your friendship request.", 'fr': "Vous avez annulé votre demande d’amitié.", 'de': "Sie haben Ihre Freundschaftsanfrage gelöscht.", 'es': "Has cancelado tu solicitud de amistad.", 'pt': "Tu cancelaste tua solicitação de amizade.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'ביטלת את בקשת החברות שלך.'}
 
             _you_have_removed_this_user_from_friends_success_message_dict_by_gender = {
                 'en': {
@@ -39,6 +39,21 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: "Tu removeste esta utilizadora dos teus amigos.",
                     User.GENDER_MALE_STRING: "Tu removeste este utilizador dos teus amigos.",
                     User.GENDER_OTHER_STRING: "Tu removeste este utilizador dos teus amigos.",
+                },
+                'it': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "הסרת את המשתמשת הזאת מהחברים שלך.",
@@ -64,6 +79,21 @@ if (django_settings.TESTS):
                 },
                 'pt': {
                     **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר ביקשת חברות מהמשתמשת הזאת.",
@@ -91,6 +121,21 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: "Esta utilizadora já solicitou a tua amizade.",
                     User.GENDER_MALE_STRING: "Este utilizador já solicitou a tua amizade.",
                     User.GENDER_OTHER_STRING: "Este utilizador já solicitou a tua amizade.",
+                },
+                'it': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "המשתמשת הזאת כבר ביקשה ממך חברות.",
@@ -147,6 +192,21 @@ if (django_settings.TESTS):
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Tu já és amigo deste utilizador.",
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Tu já és amigo deste utilizador.",
                 },
+                'it': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
                 'he': {
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "את כבר חברה של המשתמשת הזאת.",
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "את כבר חברה של המשתמש הזה.",
@@ -180,6 +240,21 @@ if (django_settings.TESTS):
                     User.GENDER_MALE_STRING: "Tu não podes ser amigo de ti mesmo.",
                     User.GENDER_OTHER_STRING: "Tu não podes ser amigo de ti mesmo.",
                 },
+                'it': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
                 'he': {
                     User.GENDER_FEMALE_STRING: "את לא יכולה להיות חברה של עצמך.",
                     User.GENDER_MALE_STRING: "אתה לא יכול להיות חבר של עצמך.",
@@ -204,6 +279,21 @@ if (django_settings.TESTS):
                 },
                 'pt': {
                     **{gender: "Tu já tens {0} amigos. Não podes ter mais que {1} amigos no Speedy Net. Remova amigos antes de continuar." for gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה.",
@@ -237,6 +327,31 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na Speedy Net. Peça que ela remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na Speedy Net. Peça que ele remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na Speedy Net. Peça que eles removam amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "_____ # ~~~~ TODO" for user_gender in User.ALL_GENDERS},
                 },
                 'he': {
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות וחברים בספידי נט. אנא בקשי ממנה להסיר חברים/ות לפני שאת ממשיכה.",
