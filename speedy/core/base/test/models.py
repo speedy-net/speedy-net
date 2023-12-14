@@ -118,7 +118,7 @@ if (django_settings.TESTS):
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE
             # ~~~~ TODO: Add argument "--run-all-languages" to command test, and if run with this argument, run all tests, and don't skip tests.
-            if (self.language_code in {'en', 'he', 'fr'}):
+            if (self.language_code in {'en', 'fr', 'he'}):
                 # Always run these tests.
                 pass
             elif (self.language_code in {'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
