@@ -342,7 +342,7 @@ if (django_settings.TESTS):
                 expected_url = self.second_user.get_absolute_url()
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path=expected_url)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_cancelled_your_friendship_request_success_message])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_cancelled_your_friendship_request_success_message_dict_by_gender[self.first_user.get_gender()]])
                 r = self.client.get(path=expected_url)
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
 

@@ -15,10 +15,47 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת חברות נשלחה.'}
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת החברות התקבלה.'}
-            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'בקשת החברות נדחתה.'}
-            _youve_cancelled_your_friendship_request_success_message_dict = {'en': "You've cancelled your friendship request.", 'fr': "Vous avez annulé votre demande d’amitié.", 'de': "Sie haben Ihre Freundschaftsanfrage gelöscht.", 'es': "Has cancelado tu solicitud de amistad.", 'pt': "Tu cancelaste tua solicitação de amizade.", 'it': "_____ # ~~~~ TODO", 'nl': "_____ # ~~~~ TODO", 'sv': "_____ # ~~~~ TODO", 'ko': "_____ # ~~~~ TODO", 'fi': "_____ # ~~~~ TODO", 'he': 'ביטלת את בקשת החברות שלך.'}
+            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'it': "Richiesta di amicizia inviata.", 'nl': "Vriendschapsverzoek verzonden.", 'sv': "Vänskapsförfrågan skickad.", 'ko': "친구 요청 전송됨.", 'fi': "Ystävyyspyyntö lähetetty.", 'he': 'בקשת חברות נשלחה.'}
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'it': "Richiesta di amicizia accettata.", 'nl': "Vriendschapsverzoek geaccepteerd.", 'sv': "Vänskapsförfrågan accepterad.", 'ko': "친구 요청 수락됨.", 'fi': "Ystävyyspyyntö hyväksytty.", 'he': 'בקשת החברות התקבלה.'}
+            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'it': "Richiesta di amicizia rifiutata.", 'nl': "Vriendschapsverzoek afgewezen.", 'sv': "Vänskapsförfrågan avvisad.", 'ko': "친구 요청 거부됨.", 'fi': "Ystävyyspyyntö hylätty.", 'he': 'בקשת החברות נדחתה.'}
+
+            _youve_cancelled_your_friendship_request_success_message_dict_by_gender = {
+                'en': {
+                    **{gender: "You've cancelled your friendship request." for gender in User.ALL_GENDERS},
+                },
+                'fr': {
+                    **{gender: "Vous avez annulé votre demande d’amitié." for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{gender: "Sie haben Ihre Freundschaftsanfrage gelöscht." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    **{gender: "Has cancelado tu solicitud de amistad." for gender in User.ALL_GENDERS},
+                },
+                'pt': {
+                    **{gender: "Tu cancelaste tua solicitação de amizade." for gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{gender: "Hai annullato la tua richiesta di amicizia." for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    User.GENDER_FEMALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
+                    User.GENDER_MALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
+                    User.GENDER_OTHER_STRING: "Jullie hebben je vriendschapsverzoek geannuleerd.",
+                },
+                'sv': {
+                    **{gender: "Du har avbrutit din vänskapsförfrågan." for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "친구 요청을 취소했습니다." for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "Olet peruuttanut ystävyyspyyntösi." for gender in User.ALL_GENDERS},
+                },
+                'he': {
+                    **{gender: 'ביטלת את בקשת החברות שלך.' for gender in User.ALL_GENDERS},
+                },
+            }
 
             _you_have_removed_this_user_from_friends_success_message_dict_by_gender = {
                 'en': {
@@ -41,19 +78,23 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Tu removeste este utilizador dos teus amigos.",
                 },
                 'it': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Hai rimosso questa utente dagli amici.",
+                    User.GENDER_MALE_STRING: "Hai rimosso questo utente dagli amici.",
+                    User.GENDER_OTHER_STRING: "Hai rimosso questo/a utente dagli amici.",
                 },
                 'nl': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Je hebt deze gebruiker uit je vrienden verwijderd.",
+                    User.GENDER_MALE_STRING: "Je hebt deze gebruiker uit je vrienden verwijderd.",
+                    User.GENDER_OTHER_STRING: "Jullie hebben deze gebruiker uit je vrienden verwijderd.",
                 },
                 'sv': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Du har tagit bort den här användaren från dina vänner." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "귀하의 친구 목록에서 이 사용자를 지웠습니다." for gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Olet poistanut tämän käyttäjän ystävistäsi." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "הסרת את המשתמשת הזאת מהחברים שלך.",
@@ -81,19 +122,21 @@ if (django_settings.TESTS):
                     **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},
                 },
                 'it': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Je hebt al om vriendschap van deze gebruiker gevraagd.",
+                    User.GENDER_MALE_STRING: "Je hebt al om vriendschap van deze gebruiker gevraagd.",
+                    User.GENDER_OTHER_STRING: "Jullie hebben al om vriendschap van deze gebruiker gevraagd.",
                 },
                 'sv': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Du har redan begärt vänskap från den här användaren." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "이미 이 사용자로부터 친구를 요청했습니다." for gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר ביקשת חברות מהמשתמשת הזאת.",
@@ -123,19 +166,21 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Este utilizador já solicitou a tua amizade.",
                 },
                 'it': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Questa utente ti ha già richiesto l'amicizia." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Deze gebruiker heeft je al om vriendschap gevraagd.",
+                    User.GENDER_MALE_STRING: "Deze gebruiker heeft je al om vriendschap gevraagd.",
+                    User.GENDER_OTHER_STRING: "Deze gebruiker heeft jullie al om vriendschap gevraagd.",
                 },
                 'sv': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Denna användare har redan begärt vänskap från dig." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "이 사용자는 이미 귀하로부터 친구를 요청했습니다." for gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Tämä käyttäjä on jo lähettänyt sinulle ystäväpyynnön." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "המשתמשת הזאת כבר ביקשה ממך חברות.",
@@ -193,19 +238,35 @@ if (django_settings.TESTS):
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Tu já és amigo deste utilizador.",
                 },
                 'it': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sei già amica di questa utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sei già amica di questo utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sei già amica di questo/a utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sei già amico di questa utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sei già amico di questo utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sei già amico di questo/a utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Sei già amico/a di questa utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Sei già amico/a di questo utente.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sei già amico/a di questo/a utente.",
                 },
                 'nl': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Je bent al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Je bent al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Je bent al vrienden met deze gebruikers.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Je bent al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Je bent al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Je bent al vrienden met deze gebruikers.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Jullie zijn al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Jullie zijn al vrienden met deze gebruiker.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Jullie zijn al vrienden met deze gebruikers.",
                 },
                 'sv': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Du är redan vän med den här användaren." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "이미 이 사용자와 친구입니다." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "_____ # ~~~~ TODO" for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Olet jo ystävä tämän käyttäjän kanssa." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'he': {
                     get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "את כבר חברה של המשתמשת הזאת.",
@@ -241,19 +302,23 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Tu não podes ser amigo de ti mesmo.",
                 },
                 'it': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Non puoi essere amica di te stessa.",
+                    User.GENDER_MALE_STRING: "Non puoi essere amica di te stessa.",
+                    User.GENDER_OTHER_STRING: "Non puoi essere amico/a di te stesso/a.",
                 },
                 'nl': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Je kan geen vrienden zijn met jezelf.",
+                    User.GENDER_MALE_STRING: "Je kan geen vrienden zijn met jezelf.",
+                    User.GENDER_OTHER_STRING: "Jullie kunnen geen vrienden zijn met jezelf.",
                 },
                 'sv': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Du kan inte vara vän med dig själv." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "나 자신과 친구가 될 수 없습니다." for gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Et voi olla ystävä itsesi kanssa." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "את לא יכולה להיות חברה של עצמך.",
@@ -281,19 +346,21 @@ if (django_settings.TESTS):
                     **{gender: "Tu já tens {0} amigos. Não podes ter mais que {1} amigos no Speedy Net. Remova amigos antes de continuar." for gender in User.ALL_GENDERS},
                 },
                 'it': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Hai già {0} amici. Non puoi avere più di {1} amici su Speedy Net. Cortesemente, rimuovi gli amici prima di procedere." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: "Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat je doorgaat.",
+                    User.GENDER_MALE_STRING: "Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat je doorgaat.",
+                    User.GENDER_OTHER_STRING: "Jullie hebben al {0} vrienden. Jullie kunnen niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat jullie doorgaan.",
                 },
                 'sv': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Du har redan {0} vänner. Du kan inte ha fler än {1} vänner på Speedy Net. Ta bort vänner innan du fortsätter." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우시기 바랍니다." for gender in User.ALL_GENDERS},
                 },
                 'fi': {
-                    **{gender: "_____ # ~~~~ TODO" for gender in User.ALL_GENDERS},
+                    **{gender: "Sinulla on jo {0} ystävää. Sinulla voi olla enintään {1} ystävää Speedy Netissä. Poista ystävät ennen kuin jatkat." for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה.",
@@ -369,8 +436,8 @@ if (django_settings.TESTS):
             self._friendship_request_sent_success_message = _friendship_request_sent_success_message_dict[self.language_code]
             self._friendship_request_accepted_success_message = _friendship_request_accepted_success_message_dict[self.language_code]
             self._friendship_request_rejected_success_message = _friendship_request_rejected_success_message_dict[self.language_code]
-            self._youve_cancelled_your_friendship_request_success_message = _youve_cancelled_your_friendship_request_success_message_dict[self.language_code]
 
+            self._youve_cancelled_your_friendship_request_success_message_dict_by_gender = _youve_cancelled_your_friendship_request_success_message_dict_by_gender[self.language_code]
             self._you_have_removed_this_user_from_friends_success_message_dict_by_gender = _you_have_removed_this_user_from_friends_success_message_dict_by_gender[self.language_code]
             self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender = _you_already_requested_friendship_from_this_user_error_message_dict_by_gender[self.language_code]
             self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender = _this_user_already_requested_friendship_from_you_error_message_dict_by_gender[self.language_code]
@@ -379,6 +446,7 @@ if (django_settings.TESTS):
             self._you_already_have_friends_error_message_to_format_dict_by_gender = _you_already_have_friends_error_message_to_format_dict_by_gender[self.language_code]
             self._this_user_already_has_friends_error_message_to_format_dict_by_both_genders = _this_user_already_has_friends_error_message_to_format_dict_by_both_genders[self.language_code]
 
+            self.assertSetEqual(set1=set(self._youve_cancelled_your_friendship_request_success_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._you_have_removed_this_user_from_friends_success_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
@@ -387,6 +455,7 @@ if (django_settings.TESTS):
             self.assertSetEqual(set1=set(self._you_already_have_friends_error_message_to_format_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._this_user_already_has_friends_error_message_to_format_dict_by_both_genders.keys()), set2={get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender) for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS})
 
+            self.assertEqual(first=len(set(self._youve_cancelled_your_friendship_request_success_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._you_have_removed_this_user_from_friends_success_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._you_already_requested_friendship_from_this_user_error_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._this_user_already_requested_friendship_from_you_error_message_dict_by_gender.keys())), second=3)

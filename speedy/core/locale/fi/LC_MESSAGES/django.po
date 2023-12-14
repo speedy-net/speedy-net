@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-14 11:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1597,17 +1597,17 @@ msgstr "Et voi olla ystävä itsesi kanssa."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
@@ -2374,7 +2374,7 @@ msgstr "Vahvistusviesti lähetettiin osoitteeseen {email_address}"
 
 #: .\accounts\views.py:342
 msgid "The email address was deleted."
-msgstr "Vahvistusviesti lähetettiin osoitteeseen {email_address}"
+msgstr ""
 
 #: .\accounts\views.py:358
 msgid "You have made this email address primary."
@@ -3030,7 +3030,7 @@ msgstr "Käytä tätä linkkiä vaihtaaksesi salasanasi:"
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Salasanan nollaus sivustolla %(site_name)s "
+msgstr "Salasanan nollaus sivustolla %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
