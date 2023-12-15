@@ -16,6 +16,7 @@ if (django_settings.TESTS):
         def __init__(self, *args, **kwargs):
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
+            self.test_all_languages = kwargs.get('test_all_languages', False)
 
         def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
             if (not (test_labels)):
@@ -117,17 +118,23 @@ if (django_settings.TESTS):
 
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE
-            # ~~~~ TODO: Add argument "--run-all-languages" to command test, and if run with this argument, run all tests, and don't skip tests.
-            if (self.language_code in {'en', 'fr', 'he'}):
-                # Always run these tests.
-                pass
-            elif (self.language_code in {'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
-                # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
-                if (not (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE)):
-                    self.skipTest(reason="Skipped test - language code skipped.")
-                    return
+            if (SiteDiscoverRunner.test_all_languages):
+                # Test all languages, and don't skip languages.
+                if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                    pass
+                else:
+                    raise NotImplementedError()
             else:
-                raise NotImplementedError()
+                if (self.language_code in {'en', 'fr', 'he'}):
+                    # Always run these tests.
+                    pass
+                elif (self.language_code in {'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                    # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
+                    if (not (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE)):
+                        self.skipTest(reason="Skipped test - language code skipped.")
+                        return
+                else:
+                    raise NotImplementedError()
             self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
             self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
             self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)

@@ -7,9 +7,9 @@ class Command(makemessages.Command):
     def add_arguments(self, parser):
         super().add_arguments(parser=parser)
         parser.add_argument(
-            '--no-fuzzy-matching',
-            action='store_true',
-            help='Do not use fuzzy matching in msgmerge.',
+            "--no-fuzzy-matching",
+            action="store_true",
+            help="Do not use fuzzy matching in msgmerge.",
         )
 
 
