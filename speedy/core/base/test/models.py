@@ -42,6 +42,14 @@ if (django_settings.TESTS):
             print(test_labels)
             return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
+        def setup_test_environment(self, **kwargs):
+            super().setup_test_environment(**kwargs)
+            django_settings.TEST_ALL_LANGUAGES = self.test_all_languages
+
+        def teardown_test_environment(self, **kwargs):
+            super().teardown_test_environment(**kwargs)
+            del django_settings.TEST_ALL_LANGUAGES
+
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
         def run_tests(self, *args, **kwargs):
@@ -118,7 +126,7 @@ if (django_settings.TESTS):
 
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE
-            if (SiteDiscoverRunner.test_all_languages):
+            if (django_settings.TEST_ALL_LANGUAGES):
                 # Test all languages, and don't skip languages.
                 if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                     pass
