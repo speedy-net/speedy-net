@@ -183,7 +183,7 @@ if (django_settings.TESTS):
 
             def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_2(self):
                 self._create_users(users_count=38)
-                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
                 for i in range(28):
@@ -238,7 +238,7 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_2(self):
                 self._create_users(users_count=35)
-                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
                 for i in range(14):
@@ -322,7 +322,7 @@ if (django_settings.TESTS):
 
             def test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_5(self):
                 self._create_users(users_count=50)
-                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com', 'outlook.com', 'hotmail.com'])), is_confirmed=True)
+                user_1_email_address = UserEmailAddress(user=self.user_1, email='1@{}'.format(random.choice(['gmail.com', 'yahoo.com', 'icloud.com'])), is_confirmed=True)
                 user_1_email_address.make_primary()
                 chats = dict()
                 for i in range(40):
