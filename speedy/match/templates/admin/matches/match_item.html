@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load user_tags %}
 {% load match_tags_and_filters %}
+{% load admin_tags_and_filters %}
 
 {% block user_name_and_age %}
     {{ block.super }}
@@ -16,5 +17,7 @@
     {% else %}
         <span class="direction-ltr">&lrm;(No photo)&lrm;</span>
     {% endif %}
+    <br />
+    <span class="direction-ltr">&lrm;{{ user.speedy_match_profile|number_of_matches_html }}&lrm;</span>
 {% endblock %}
 
