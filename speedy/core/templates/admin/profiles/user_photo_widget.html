@@ -20,7 +20,7 @@
                             <span class="direction-ltr">&lrm;(No photo)&lrm;</span>
                         {% endif %}
                         <br />
-                        {{ user.speedy_match_profile|number_of_matches_html }}
+                        <span class="direction-ltr">&lrm;{{ user.speedy_match_profile|number_of_matches_html }}&lrm;</span>
                     {% endblock %}
                 </h5>
             </a>
