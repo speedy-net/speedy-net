@@ -7,7 +7,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils import translation
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 
 logger = logging.getLogger(__name__)
 
@@ -65,16 +65,18 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
     # Sending mail may fail. If it fails, log the error and continue.
     try:
         site = Site.objects.get_current()
+        language_code = get_language()
         context = context or {}
         context.update({
             'site_name': _(site.name),
         })
         rendered = render_mail(template_name_prefix=template_name_prefix, context=context)
-        logger.debug('send_mail::site={site}, to={to}, template_name_prefix={template_name_prefix}, subject="{subject}"'.format(
+        logger.debug('send_mail::site={site}, to={to}, template_name_prefix={template_name_prefix}, subject="{subject}", language_code={language_code}.'.format(
             site=_(site.name),
             to=to,
             template_name_prefix=template_name_prefix,
             subject=rendered.subject,
+            language_code=language_code,
         ))
         msg = EmailMultiAlternatives(
             subject=rendered.subject,
