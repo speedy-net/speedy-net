@@ -52,7 +52,7 @@ class ENTITY_SETTINGS(object):
 
 
 class NAMED_ENTITY_SETTINGS(object):
-    MIN_NAME_LENGTH = 1 # ~~~~ TODO: too short?
+    MIN_NAME_LENGTH = 1  # ~~~~ TODO: too short?
     MAX_NAME_LENGTH = 200
 
 
