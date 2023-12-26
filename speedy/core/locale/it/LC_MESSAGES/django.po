@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-14 16:46+0200\n"
+"POT-Creation-Date: 2023-12-26 12:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2906,7 +2906,7 @@ msgstr "Amici"
 msgid "No friends yet."
 msgstr "Non ci sono ancora amici."
 
-#: .\templates\admin\profiles\user_info_widget.html:10
+#: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
 msgstr "Informazioni sull’amministratore"
 

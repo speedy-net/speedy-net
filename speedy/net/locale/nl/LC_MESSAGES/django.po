@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-26 13:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,7 +116,7 @@ msgid ""
 msgstr ""
 "Alle functies van Speedy Net en Speedy Match zijn gratis. Word nog vandaag "
 "lid van Speedy Net om vrienden te vinden. Het duurt maar een paar minuten! "
-"<a href=\"/\" title=\"Word lid van Speedy Net\">Klik hier</a> om lid te "
+"<a href=\"/\" title=\"Wordt nog lid van Speedy Net\">Klik hier</a> om lid te "
 "worden."
 
 #: .\templates\about\about.html:27
@@ -184,11 +184,11 @@ msgstr "Geblokkeerde gebruikers"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Je hebt not geen vrienden."
+msgstr "Je hebt nog geen vrienden."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Je Vrienden."
+msgstr "Je Vrienden"
 
 #: .\templates\main\main_page.html:9
 msgid ""
