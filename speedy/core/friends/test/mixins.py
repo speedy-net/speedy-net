@@ -39,9 +39,7 @@ if (django_settings.TESTS):
                     **{gender: "Hai annullato la tua richiesta di amicizia." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
-                    User.GENDER_MALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben je vriendschapsverzoek geannuleerd.",
+                    **{gender: "Je hebt je vriendschapsverzoek geannuleerd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har avbrutit din vänskapsförfrågan." for gender in User.ALL_GENDERS},
