@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-26 13:22+0200\n"
+"POT-Creation-Date: 2023-12-27 05:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -333,17 +333,17 @@ msgstr "Du har inga meddelanden ännu."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Du blockerade"
+msgstr "Du blockerade "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Du blockerade"
+msgstr "Du blockerade "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Du blockerade"
+msgstr "Du blockerade "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
@@ -468,47 +468,47 @@ msgstr "Är du säker på att du vill blockera "
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blockera"
+msgstr "Blockera "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blockera"
+msgstr "Blockera "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blockera"
+msgstr "Blockera "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Avblockera"
+msgstr "Avblockera "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Avblockera"
+msgstr "Avblockera "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Avblockera"
+msgstr "Avblockera "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Rapportera"
+msgstr "Rapportera "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Rapportera"
+msgstr "Rapportera "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Rapportera"
+msgstr "Rapportera "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -3203,7 +3203,7 @@ msgstr ""
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Du blockerade"
+msgstr "Du blockerade "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3254,16 +3254,16 @@ msgstr "?"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blockera"
+msgstr "Blockera "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Avblockera"
+msgstr "Avblockera "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Rapportera"
+msgstr "Rapportera "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"

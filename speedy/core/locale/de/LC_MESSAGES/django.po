@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-26 12:38+0200\n"
+"POT-Creation-Date: 2023-12-27 05:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,17 +213,17 @@ msgstr "Passwort ändern"
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
@@ -243,7 +243,7 @@ msgstr "Sie sperren niemanden."
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "Sie sperren niemanden."
+msgstr "Einen Benutzer melden"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
