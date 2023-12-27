@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 07:58+0200\n"
+"POT-Creation-Date: 2023-12-27 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1510,7 +1510,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} "
-"Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen."
+"Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format

@@ -317,9 +317,7 @@ if (django_settings.TESTS):
                     **{gender: "Vous avez déjà des amis sur {0}. Vous ne pouvez pas avoir plus de {1} ami(e)s sur Speedy Net. Veuillez supprimer des amis avant de continuer." for gender in User.ALL_GENDERS},
                 },
                 'de': {
-                    User.GENDER_FEMALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
-                    User.GENDER_MALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen.",
-                    User.GENDER_OTHER_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
+                    **{gender: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen." for gender in User.ALL_GENDERS},
                 },
                 'es': {
                     **{gender: "Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. Elimina amigos antes de continuar." for gender in User.ALL_GENDERS},
