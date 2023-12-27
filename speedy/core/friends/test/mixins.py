@@ -115,10 +115,10 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Ya solicitaste amistad a este usuario.",
                 },
                 'pt': {
-                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},
+                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'pt': check translation, should be different per gender like 'es'.
                 },
                 'it': {
-                    **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},
+                    **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'it': check translation, should be different per gender like 'es'.
                 },
                 'nl': {
                     **{gender: "Je hebt al om vriendschap van deze gebruiker gevraagd." for gender in User.ALL_GENDERS},
@@ -160,7 +160,7 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Este utilizador já solicitou a tua amizade.",
                 },
                 'it': {
-                    **{gender: "Questa utente ti ha già richiesto l'amicizia." for gender in User.ALL_GENDERS},
+                    **{gender: "Questa utente ti ha già richiesto l'amicizia." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'it': check translation, should be different per gender like 'es'.
                 },
                 'nl': {
                     **{gender: "Deze gebruiker heeft je al om vriendschap gevraagd." for gender in User.ALL_GENDERS},
