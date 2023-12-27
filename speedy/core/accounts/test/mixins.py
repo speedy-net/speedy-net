@@ -374,9 +374,7 @@ if (django_settings.TESTS):
                     **{gender: "Hai già confermato il tuo indirizzo e-mail." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt je e-mailadres bevestigd.",
-                    User.GENDER_MALE_STRING: "Je hebt je e-mailadres bevestigd.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben je e-mailadres bevestigd.",
+                    **{gender: "Je hebt je e-mailadres bevestigd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har bekräftat din e-postadress." for gender in User.ALL_GENDERS},
@@ -414,9 +412,7 @@ if (django_settings.TESTS):
                     **{gender: "Non puoi modificare il tuo nome utente." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Jullie kunnen je gebruikersnaam niet wijzigen.",
-                    User.GENDER_MALE_STRING: "Je kunt je gebruikersnaam niet wijzigen.",
-                    User.GENDER_OTHER_STRING: "Je kunt je gebruikersnaam niet wijzigen.",
+                    **{gender: "Jullie kunnen je gebruikersnaam niet wijzigen." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du kan inte ändra användarnamnet." for gender in User.ALL_GENDERS},
