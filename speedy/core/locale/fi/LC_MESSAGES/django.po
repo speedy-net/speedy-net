@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 06:16+0200\n"
+"POT-Creation-Date: 2023-12-27 06:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -875,7 +875,7 @@ msgstr "Sähköposti"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Arvon tulee olla JSON."
+msgstr "Arvon pitää olla kelvollista JSONia."
 
 #: .\__translations\__translations.py:13
 #, python-format
