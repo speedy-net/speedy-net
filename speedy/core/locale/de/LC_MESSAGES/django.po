@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-27 09:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,17 +213,17 @@ msgstr "Passwort ändern"
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
@@ -243,7 +243,7 @@ msgstr "Sie sperren niemanden."
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "Sie sperren niemanden."
+msgstr "Einen Benutzer melden"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
@@ -1510,7 +1510,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} "
-"Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen."
+"Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -2912,7 +2912,7 @@ msgstr "Freunde/Freundinnen"
 msgid "No friends yet."
 msgstr "Noch keine Freunde."
 
-#: .\templates\admin\profiles\user_info_widget.html:10
+#: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
 msgstr "Admin-Informationen"
 
@@ -3044,8 +3044,8 @@ msgstr ""
 "interessiert sind, kontaktieren Sie uns bitte per E-Mail."
 
 #: .\templates\contact_by_email\contact_us.html:21
-msgid "Uri Rodberg, founder and webmaster: "
-msgstr "Uri Rodberg, Gründer und Webmaster "
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, Gründer und Webmaster:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10

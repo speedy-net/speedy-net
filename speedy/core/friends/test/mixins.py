@@ -39,9 +39,7 @@ if (django_settings.TESTS):
                     **{gender: "Hai annullato la tua richiesta di amicizia." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
-                    User.GENDER_MALE_STRING: "Je hebt je vriendschapsverzoek geannuleerd.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben je vriendschapsverzoek geannuleerd.",
+                    **{gender: "Je hebt je vriendschapsverzoek geannuleerd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har avbrutit din vänskapsförfrågan." for gender in User.ALL_GENDERS},
@@ -83,9 +81,7 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Hai rimosso questo/a utente dagli amici.",
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt deze gebruiker uit je vrienden verwijderd.",
-                    User.GENDER_MALE_STRING: "Je hebt deze gebruiker uit je vrienden verwijderd.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben deze gebruiker uit je vrienden verwijderd.",
+                    **{gender: "Je hebt deze gebruiker uit je vrienden verwijderd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har tagit bort den här användaren från dina vänner." for gender in User.ALL_GENDERS},
@@ -119,15 +115,13 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Ya solicitaste amistad a este usuario.",
                 },
                 'pt': {
-                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},
+                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'pt': check translation, should be different per gender like 'es'.
                 },
                 'it': {
-                    **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},
+                    **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'it': check translation, should be different per gender like 'es'.
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt al om vriendschap van deze gebruiker gevraagd.",
-                    User.GENDER_MALE_STRING: "Je hebt al om vriendschap van deze gebruiker gevraagd.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben al om vriendschap van deze gebruiker gevraagd.",
+                    **{gender: "Je hebt al om vriendschap van deze gebruiker gevraagd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har redan begärt vänskap från den här användaren." for gender in User.ALL_GENDERS},
@@ -166,12 +160,10 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Este utilizador já solicitou a tua amizade.",
                 },
                 'it': {
-                    **{gender: "Questa utente ti ha già richiesto l'amicizia." for gender in User.ALL_GENDERS},
+                    **{gender: "Questa utente ti ha già richiesto l'amicizia." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'it': check translation, should be different per gender like 'es'.
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Deze gebruiker heeft je al om vriendschap gevraagd.",
-                    User.GENDER_MALE_STRING: "Deze gebruiker heeft je al om vriendschap gevraagd.",
-                    User.GENDER_OTHER_STRING: "Deze gebruiker heeft jullie al om vriendschap gevraagd.",
+                    **{gender: "Deze gebruiker heeft je al om vriendschap gevraagd." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Denna användare har redan begärt vänskap från dig." for gender in User.ALL_GENDERS},
@@ -249,15 +241,7 @@ if (django_settings.TESTS):
                     get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Sei già amico/a di questo/a utente.",
                 },
                 'nl': {
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Je bent al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Je bent al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Je bent al vrienden met deze gebruikers.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Je bent al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Je bent al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Je bent al vrienden met deze gebruikers.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Jullie zijn al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Jullie zijn al vrienden met deze gebruiker.",
-                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Jullie zijn al vrienden met deze gebruikers.",
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Je bent al vrienden met deze gebruiker." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Du är redan vän med den här användaren." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -307,9 +291,7 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Non puoi essere amico/a di te stesso/a.",
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je kan geen vrienden zijn met jezelf.",
-                    User.GENDER_MALE_STRING: "Je kan geen vrienden zijn met jezelf.",
-                    User.GENDER_OTHER_STRING: "Jullie kunnen geen vrienden zijn met jezelf.",
+                    **{gender: "Je kan geen vrienden zijn met jezelf." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du kan inte vara vän med dig själv." for gender in User.ALL_GENDERS},
@@ -335,9 +317,7 @@ if (django_settings.TESTS):
                     **{gender: "Vous avez déjà des amis sur {0}. Vous ne pouvez pas avoir plus de {1} ami(e)s sur Speedy Net. Veuillez supprimer des amis avant de continuer." for gender in User.ALL_GENDERS},
                 },
                 'de': {
-                    User.GENDER_FEMALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
-                    User.GENDER_MALE_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen.",
-                    User.GENDER_OTHER_STRING: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen.",
+                    **{gender: "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen." for gender in User.ALL_GENDERS},
                 },
                 'es': {
                     **{gender: "Ya tienes {0} amigos. No puedes tener más de {1} amigos en Speedy Net. Elimina amigos antes de continuar." for gender in User.ALL_GENDERS},
@@ -349,9 +329,7 @@ if (django_settings.TESTS):
                     **{gender: "Hai già {0} amici. Non puoi avere più di {1} amici su Speedy Net. Cortesemente, rimuovi gli amici prima di procedere." for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat je doorgaat.",
-                    User.GENDER_MALE_STRING: "Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat je doorgaat.",
-                    User.GENDER_OTHER_STRING: "Jullie hebben al {0} vrienden. Jullie kunnen niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat jullie doorgaan.",
+                    **{gender: "Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy Net. Verwijder vrienden voordat je doorgaat." for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Du har redan {0} vänner. Du kan inte ha fler än {1} vänner på Speedy Net. Ta bort vänner innan du fortsätter." for gender in User.ALL_GENDERS},

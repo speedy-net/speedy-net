@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 09:50+0200\n"
+"POT-Creation-Date: 2023-12-27 09:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2916,7 +2916,7 @@ msgstr "amis"
 msgid "No friends yet."
 msgstr "Aucun ami pour l’instant."
 
-#: .\templates\admin\profiles\user_info_widget.html:10
+#: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
 msgstr "Informations administratives"
 
@@ -3048,8 +3048,8 @@ msgstr ""
 "notre équipe, n’hésitez pas à nous contacter par e-mail."
 
 #: .\templates\contact_by_email\contact_us.html:21
-msgid "Uri Rodberg, founder and webmaster: "
-msgstr "Uri Rodberg, fondateur et webmaster : "
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, fondateur et webmaster :"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
