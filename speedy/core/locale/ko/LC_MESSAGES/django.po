@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 06:38+0200\n"
+"POT-Creation-Date: 2023-12-27 07:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2980,8 +2980,8 @@ msgstr ""
 "질문, 추천 또는 팀 합류에 관심이 있으시면, 저희에게 메일로 연락해 주세요."
 
 #: .\templates\contact_by_email\contact_us.html:21
-msgid "Uri Rodberg, founder and webmaster: "
-msgstr "유리 로드버그, 설립자 겸 웹마스터: "
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "유리 로드버그, 설립자 겸 웹마스터:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
