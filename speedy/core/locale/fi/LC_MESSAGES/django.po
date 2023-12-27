@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 05:34+0200\n"
+"POT-Creation-Date: 2023-12-27 06:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,7 +854,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Syötä voimassaoleva sähköpostiosoite"
+msgstr "Syötä kelvollinen sähköpostiosoite."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -1517,8 +1517,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1527,8 +1527,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1537,8 +1537,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Heillä ei voi olla enempää kuin {1} "
+"ystävää Speedy Netissä. Pyydä heitä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1547,8 +1547,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1557,8 +1557,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1567,8 +1567,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Heillä ei voi olla enempää kuin {1} "
+"ystävää Speedy Netissä. Pyydä heitä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1577,8 +1577,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1587,8 +1587,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Hänellä ei voi olla yli {1} ystävää "
+"Speedy Netissä. Pyydä häntä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1597,8 +1597,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Tällä käyttäjällä on jo {0} ystävää. Heillä voi olla enintään {1} ystävää "
-"Speedy Netissä. Pyydä heitä poistamaan ystäviä ennen kuin jatkat."
+"Tällä käyttäjällä on jo {0} ystävää. Heillä ei voi olla enempää kuin {1} "
+"ystävää Speedy Netissä. Pyydä heitä poistamaan ystävät ennen kuin jatkat."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1618,17 +1618,17 @@ msgstr "Et voi olla ystävä itsesi kanssa."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.."
+msgstr "Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
@@ -2725,7 +2725,7 @@ msgstr "Speedy pahoittelee, mutta tämä sivu on yksityinen."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
-msgstr "Sivua ei löydetty"
+msgstr "Sivua ei löydy"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
