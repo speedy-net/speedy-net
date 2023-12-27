@@ -146,9 +146,7 @@ if (django_settings.TESTS):
                     **{gender: "Qualcuno ti ha messo Mi Piace su Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Iemand vindt je leuk op Speedy Match",
-                    User.GENDER_MALE_STRING: "Iemand vindt je leuk op Speedy Match",
-                    User.GENDER_OTHER_STRING: "Iemand vindt jullie leuk op Speedy Match",
+                    **{gender: "Iemand vindt je leuk op Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Någon gillar dig på Speedy Match" for gender in User.ALL_GENDERS},

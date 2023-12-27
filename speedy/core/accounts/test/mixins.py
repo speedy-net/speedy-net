@@ -450,9 +450,7 @@ if (django_settings.TESTS):
                     **{gender: "Confermato il tuo indirizzo e-mail su Speedy Net" for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Bevestig je e-mailadres op Speedy Net",
-                    User.GENDER_MALE_STRING: "Bevestig je e-mailadres op Speedy Net",
-                    User.GENDER_OTHER_STRING: "Bevestig jullie e-mailadres op Speedy Net",
+                    **{gender: "Bevestig je e-mailadres op Speedy Net" for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Bekräfta e-postadressen på Speedy Net" for gender in User.ALL_GENDERS},
@@ -490,9 +488,7 @@ if (django_settings.TESTS):
                     **{gender: "Confermato il tuo indirizzo e-mail su Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'nl': {
-                    User.GENDER_FEMALE_STRING: "Bevestig je e-mailadres op Speedy Match",
-                    User.GENDER_MALE_STRING: "Bevestig je e-mailadres op Speedy Match",
-                    User.GENDER_OTHER_STRING: "Bevestig jullie e-mailadres op Speedy Match",
+                    **{gender: "Bevestig je e-mailadres op Speedy Match" for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: "Bekräfta e-postadressen på Speedy Match" for gender in User.ALL_GENDERS},
