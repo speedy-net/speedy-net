@@ -132,7 +132,7 @@ if (django_settings.TESTS):
 
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE
-            if (django_settings.TEST_ALL_LANGUAGES):
+            if 1: #################### TODO (django_settings.TEST_ALL_LANGUAGES):
                 # Test all languages, and don't skip languages.
                 if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                     pass
