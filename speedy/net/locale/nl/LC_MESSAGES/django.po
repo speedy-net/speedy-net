@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 09:59+0200\n"
+"POT-Creation-Date: 2023-12-28 08:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 "We hebben besloten om het aantal vrienden op Speedy Net te beperken tot 800. "
 "We raden je dan ook aan om alleen mensen toe te voegen die je persoonlijk "
 "kent. Je kunt kiezen welke gegevens als openbaar op je profiel verschijnen, "
-"welke  alleen voor vrienden zichtbaar zijn en welke privé blijven. "
+"welke alleen voor vrienden zichtbaar zijn en welke privé blijven. "
 "Privégegevens zijn alleen voor jou zichtbaar."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
@@ -212,7 +212,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match –  Speedy daten"
+msgstr "Speedy Match – Speedy daten"
 
 #: .\templates\main\main_page.html:49
 msgid ""

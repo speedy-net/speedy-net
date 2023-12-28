@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 09:59+0200\n"
+"POT-Creation-Date: 2023-12-28 08:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -762,17 +762,17 @@ msgstr "Bevestig je e-mailadres op %(site_name)s"
 #: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
-msgstr "Gebruik deze link om  je account te activeren:"
+msgstr "Gebruik deze link om je account te activeren:"
 
 #: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
-msgstr "Gebruik deze link om  je account te activeren:"
+msgstr "Gebruik deze link om je account te activeren:"
 
 #: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
-msgstr "Gebruik deze link om  je account te activeren:"
+msgstr "Gebruik deze link om je account te activeren:"
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
@@ -2264,7 +2264,7 @@ msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"De gebruikersnaam moet beginnen met 4 of meer letters, met daarna een  een "
+"De gebruikersnaam moet beginnen met 4 of meer letters, met daarna een "
 "willekeurig aantal cijfers. Je kunt ook streepjes tussen woorden gebruiken."
 
 #: .\accounts\validators.py:47
@@ -3057,7 +3057,7 @@ msgstr "Volgende"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr "Gebruik deze link om  je account te activeren:"
+msgstr "Gebruik deze link om je account te activeren:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
@@ -3370,7 +3370,7 @@ msgid ""
 msgstr ""
 "Het sitebeheer kan de door gebruikers van de site verstrekte persoonlijke "
 "informatie niet verifiëren. Het sitebeheer is niet verantwoordelijk voor "
-"gebruikersactiviteiten buiten de website.  Als je ervoor kiest mensen te "
+"gebruikersactiviteiten buiten de website. Als je ervoor kiest mensen te "
 "ontmoeten of te bellen die je op de website hebt ontmoet, ben je zelf "
 "verantwoordelijk voor de eventuele gevolgen."
 
