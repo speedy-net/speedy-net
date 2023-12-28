@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 09:59+0200\n"
+"POT-Creation-Date: 2023-12-28 05:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -465,17 +465,17 @@ msgstr "Añadir a Amigos"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "¿Estás segura de que quieres bloquear a  "
+msgstr "¿Estás segura de que quieres bloquear a "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "¿Estás seguro de que quieres bloquear a  "
+msgstr "¿Estás seguro de que quieres bloquear a "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "¿Estás seguro de que quieres bloquear a  "
+msgstr "¿Estás seguro de que quieres bloquear a "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -3262,7 +3262,7 @@ msgstr "Alternar menú desplegable"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "¿Estás seguro de que quieres bloquear a  "
+msgstr "¿Estás seguro de que quieres bloquear a "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
