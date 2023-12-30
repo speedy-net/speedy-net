@@ -10,8 +10,8 @@ def patch():
             qs = (
                 # FriendshipRequest.objects.select_related("from_user", "to_user")
                 FriendshipRequest.objects
-                    .filter(from_user=user)
-                    .all()
+                .filter(from_user=user)
+                .all()
             )
             requests = list(qs)
             cache.set(key, requests)
@@ -19,3 +19,5 @@ def patch():
         return requests
 
     FriendshipManager.sent_requests = sent_requests
+
+
