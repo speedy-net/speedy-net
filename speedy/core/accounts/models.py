@@ -808,6 +808,26 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self.last_ip_address_used_ipapi_time = None
                 self.save_user_and_profile()
 
+    def display_ads(self):
+        """
+        This function determines if the user should see ads or not.
+
+        The user should see ads if:
+        1. The user is 15 years old or older, and
+        2. The user registered more than 21 days ago, and
+        3. The number of days since registration is not divisible by 6 with a remainder of 2. (every 6 days, the user should see ads for 5 days, and not see ads for 1 day)
+        :param self:
+        :return: True if the user should see ads, False otherwise.
+        :rtype: bool
+        """
+        _display_ads = False
+        timezone_now = now()
+        if (self.get_age() >= 15):
+            if ((timezone_now - self.date_created).days >= 21):
+                if (not (((timezone_now - self.date_created).days % 6) == 2)):
+                    _display_ads = True
+        return _display_ads
+
 
 User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
