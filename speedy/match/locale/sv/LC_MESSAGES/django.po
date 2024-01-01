@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 08:31+0200\n"
+"POT-Creation-Date: 2024-01-01 20:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1221,7 +1221,7 @@ msgid "Matches"
 msgstr "Matchningar"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
-#: .\templates\likes\like_list.html:18
+#: .\templates\likes\like_list.html:20
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "Gillanden"
@@ -1262,7 +1262,7 @@ msgstr "Du har inga vänner än."
 msgid "Your Friends"
 msgstr "Dina vänner"
 
-#: .\templates\likes\like_list.html:47
+#: .\templates\likes\like_list.html:49
 msgid "You have no likes here."
 msgstr "Du har inga gillningar här."
 
@@ -1297,28 +1297,28 @@ msgstr ""
 "Speedy Match idag för att hitta matchande partners, det tar bara några "
 "minuter."
 
-#: .\templates\matches\match_list.html:37
+#: .\templates\matches\match_list.html:39
 msgid "Update matches"
 msgstr "Uppdatera matchningar"
 
-#: .\templates\matches\match_list.html:45
+#: .\templates\matches\match_list.html:47
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "Diet"
 
-#: .\templates\matches\match_list.html:56
+#: .\templates\matches\match_list.html:58
 msgid "Age:"
 msgstr "Ålder:"
 
-#: .\templates\matches\match_list.html:70
+#: .\templates\matches\match_list.html:72
 msgid "Refresh"
 msgstr "Återuppdatera"
 
-#: .\templates\matches\match_list.html:77
+#: .\templates\matches\match_list.html:79
 msgid "Add more options"
 msgstr "Lägg till fler alternativ"
 
-#: .\templates\matches\match_list.html:106
+#: .\templates\matches\match_list.html:108
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
