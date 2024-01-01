@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 08:31+0200\n"
+"POT-Creation-Date: 2024-01-01 19:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1124,7 +1124,7 @@ msgid ""
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
 "Alle functies van Speedy Net en Speedy Match zijn gratis. Word nog vandaag "
-"lid van Speedy Match om geschikte partners te vinden. Het duurt slechts een "
+"lid van Speedy Match om geschikte partners te vinden. Het duurt maar een "
 "paar minuten! <a href=\"/\" title=\"Wordt nog lid van Speedy Match\">Klik "
 "hier</a> om lid te worden."
 
@@ -1225,7 +1225,7 @@ msgid "Matches"
 msgstr "Matches"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
-#: .\templates\likes\like_list.html:18
+#: .\templates\likes\like_list.html:20
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "Likes"
@@ -1267,7 +1267,7 @@ msgstr "Je hebt nog geen vrienden."
 msgid "Your Friends"
 msgstr "Je Vrienden"
 
-#: .\templates\likes\like_list.html:47
+#: .\templates\likes\like_list.html:49
 msgid "You have no likes here."
 msgstr "Je hebt hier geen likes."
 
@@ -1303,28 +1303,28 @@ msgstr ""
 "lid van Speedy Match om geschikte partners te vinden. Het duurt maar een "
 "paar minuten!"
 
-#: .\templates\matches\match_list.html:37
+#: .\templates\matches\match_list.html:39
 msgid "Update matches"
 msgstr "Werk matches bij"
 
-#: .\templates\matches\match_list.html:45
+#: .\templates\matches\match_list.html:47
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "Dieet"
 
-#: .\templates\matches\match_list.html:56
+#: .\templates\matches\match_list.html:58
 msgid "Age:"
 msgstr "Leeftijd:"
 
-#: .\templates\matches\match_list.html:70
+#: .\templates\matches\match_list.html:72
 msgid "Refresh"
 msgstr "Opnieuw laden"
 
-#: .\templates\matches\match_list.html:77
+#: .\templates\matches\match_list.html:79
 msgid "Add more options"
 msgstr "Voeg meer opties toe"
 
-#: .\templates\matches\match_list.html:106
+#: .\templates\matches\match_list.html:108
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."

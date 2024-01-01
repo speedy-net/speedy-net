@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 08:31+0200\n"
+"POT-Creation-Date: 2024-01-01 19:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,7 +872,7 @@ msgstr "Saisissez une adresse de courriel valide."
 msgid "Email address"
 msgstr "Adresse e-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:833
+#: .\__translations\__translations.py:9 .\accounts\models.py:853
 msgid "email address"
 msgstr "adresse e-mail"
 
@@ -2195,7 +2195,7 @@ msgstr "Dernière adresse IP utilisée https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Dernière adresse IP utilisée https://ipapi.com/results"
 
-#: .\accounts\models.py:497 .\accounts\models.py:817 .\blocks\models.py:15
+#: .\accounts\models.py:497 .\accounts\models.py:837 .\blocks\models.py:15
 msgid "user"
 msgstr "utilisateur"
 
@@ -2207,56 +2207,56 @@ msgstr "utilisateurs"
 msgid "Superuser must be equal to staff."
 msgstr "Le superutilisateur doit être égal au staff."
 
-#: .\accounts\models.py:818
+#: .\accounts\models.py:838
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:819
+#: .\accounts\models.py:839
 msgid "is confirmed"
 msgstr "confirmé"
 
-#: .\accounts\models.py:820
+#: .\accounts\models.py:840
 msgid "is primary"
 msgstr "principal"
 
-#: .\accounts\models.py:821
+#: .\accounts\models.py:841
 msgid "confirmation token"
 msgstr "jeton de confirmation"
 
-#: .\accounts\models.py:822
+#: .\accounts\models.py:842
 msgid "confirmation sent"
 msgstr "confirmation envoyée"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:843
 msgid "Who can see this email"
 msgstr "Qui peut voir cet e-mail ?"
 
-#: .\accounts\models.py:834
+#: .\accounts\models.py:854
 msgid "email addresses"
 msgstr "adresses e-mail"
 
-#: .\accounts\models.py:901
+#: .\accounts\models.py:921
 msgid "User"
 msgstr "Utilisateur"
 
-#: .\accounts\models.py:902
+#: .\accounts\models.py:922
 msgid "last visit"
 msgstr "dernière visite"
 
-#: .\accounts\models.py:914
+#: .\accounts\models.py:934
 msgid "Today"
 msgstr "Aujourd’hui"
 
-#: .\accounts\models.py:916
+#: .\accounts\models.py:936
 msgid "Yesterday"
 msgstr "Hier"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:938
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Sur {date} ({timesince_ago})"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:940
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "il y a {timesince}"
@@ -2638,7 +2638,7 @@ msgstr "Demande d’amitié rejetée."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:25
+#: .\templates\messages\chat_list.html:27
 msgid "Messages"
 msgstr "Messages"
 
@@ -3123,11 +3123,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "Vous avez un nouveau message sur %(site_name)s"
 
-#: .\templates\friends\base.html:31
+#: .\templates\friends\base.html:33
 msgid "Received Requests"
 msgstr "Demandes reçues"
 
-#: .\templates\friends\base.html:37
+#: .\templates\friends\base.html:39
 msgid "Sent Requests"
 msgstr "Demandes envoyées"
 
@@ -3165,15 +3165,15 @@ msgstr "Envoyer un message à %(user_name)s"
 msgid "Mark All as Read"
 msgstr "Marquer tout comme lu"
 
-#: .\templates\messages\chat_list.html:52
+#: .\templates\messages\chat_list.html:54
 msgid "Unread"
 msgstr "Non lu"
 
-#: .\templates\messages\chat_list.html:59
+#: .\templates\messages\chat_list.html:61
 msgid "You:"
 msgstr "Vous :"
 
-#: .\templates\messages\chat_list.html:79
+#: .\templates\messages\chat_list.html:81
 msgid "You have no messages yet."
 msgstr "Vous n’avez pas de messages pour l’instant."
 

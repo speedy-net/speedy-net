@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 08:31+0200\n"
+"POT-Creation-Date: 2024-01-01 19:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -445,7 +445,7 @@ msgstr ""
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-" Hai anche un profilo Speedy Net. Visualizza il tuo profilo su Speedy Net."
+"Hai anche un profilo Speedy Net. Visualizza il tuo profilo su Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -872,7 +872,7 @@ msgstr "Inserisci un indirizzo email valido."
 msgid "Email address"
 msgstr "Indirizzo e-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:833
+#: .\__translations\__translations.py:9 .\accounts\models.py:853
 msgid "email address"
 msgstr "indirizzo e-mail"
 
@@ -2074,7 +2074,7 @@ msgstr "Vegano/a (si nutre esclusivamente di piante e funghi)"
 
 #: .\accounts\models.py:232
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetariana (non mangia né pesce né carne)"
+msgstr "Vegetariano/a (non mangia né pesce né carne)"
 
 #: .\accounts\models.py:233
 msgid "Carnist (eats animals)"
@@ -2086,7 +2086,7 @@ msgstr "Non fumatore/Non fumatrice"
 
 #: .\accounts\models.py:247
 msgid "Smoking occasionally"
-msgstr "Fumatrice occasionale"
+msgstr "Fumatore/Fumatrice occasionale"
 
 #: .\accounts\models.py:248
 msgid "Smoking"
@@ -2118,7 +2118,7 @@ msgstr "È complicato"
 
 #: .\accounts\models.py:273
 msgid "Separated"
-msgstr "Separata"
+msgstr "Separato/a"
 
 #: .\accounts\models.py:274
 msgid "Engaged"
@@ -2189,7 +2189,7 @@ msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Risultati grezzi dell’ultimo indirizzo IP utilizzato https://ipapi.com/"
 
-#: .\accounts\models.py:497 .\accounts\models.py:817 .\blocks\models.py:15
+#: .\accounts\models.py:497 .\accounts\models.py:837 .\blocks\models.py:15
 msgid "user"
 msgstr "utente"
 
@@ -2201,56 +2201,56 @@ msgstr "utenti"
 msgid "Superuser must be equal to staff."
 msgstr "Il superutente deve essere uguale allo staff."
 
-#: .\accounts\models.py:818
+#: .\accounts\models.py:838
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:819
+#: .\accounts\models.py:839
 msgid "is confirmed"
 msgstr "è confermato"
 
-#: .\accounts\models.py:820
+#: .\accounts\models.py:840
 msgid "is primary"
 msgstr "è principale"
 
-#: .\accounts\models.py:821
+#: .\accounts\models.py:841
 msgid "confirmation token"
 msgstr "token di conferma"
 
-#: .\accounts\models.py:822
+#: .\accounts\models.py:842
 msgid "confirmation sent"
 msgstr "conferma inviata"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:843
 msgid "Who can see this email"
 msgstr "Chi può vedere questa e-mail"
 
-#: .\accounts\models.py:834
+#: .\accounts\models.py:854
 msgid "email addresses"
 msgstr "indirizzi e-mail"
 
-#: .\accounts\models.py:901
+#: .\accounts\models.py:921
 msgid "User"
 msgstr "utente"
 
-#: .\accounts\models.py:902
+#: .\accounts\models.py:922
 msgid "last visit"
 msgstr "ultima visita"
 
-#: .\accounts\models.py:914
+#: .\accounts\models.py:934
 msgid "Today"
 msgstr "Oggi"
 
-#: .\accounts\models.py:916
+#: .\accounts\models.py:936
 msgid "Yesterday"
 msgstr "Ieri"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:938
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Il {date} ({timesince_ago})"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:940
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} fa"
@@ -2628,7 +2628,7 @@ msgstr "Richiesta di amicizia rifiutata."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:25
+#: .\templates\messages\chat_list.html:27
 msgid "Messages"
 msgstr "Messaggi"
 
@@ -2831,7 +2831,7 @@ msgstr "Utilizza questo indirizzo e-mail come indirizzo principale"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Sei sicura di voler cancellare questo indirizzo e-mail?"
+msgstr "Sei sicuro/a di voler cancellare questo indirizzo e-mail?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
@@ -3044,7 +3044,7 @@ msgstr "Uri Rodberg, fondatore e webmaster:"
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
 msgid "Report a User"
-msgstr "Segnala un’utente"
+msgstr "Segnala un utente/un’utente"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
@@ -3113,11 +3113,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "Hai un nuovo messaggio su %(site_name)s"
 
-#: .\templates\friends\base.html:31
+#: .\templates\friends\base.html:33
 msgid "Received Requests"
 msgstr "Richieste ricevute"
 
-#: .\templates\friends\base.html:37
+#: .\templates\friends\base.html:39
 msgid "Sent Requests"
 msgstr "Richieste inviate"
 
@@ -3155,15 +3155,15 @@ msgstr "Invia un messaggio a %(user_name)s"
 msgid "Mark All as Read"
 msgstr "Contrassegna come letto"
 
-#: .\templates\messages\chat_list.html:52
+#: .\templates\messages\chat_list.html:54
 msgid "Unread"
 msgstr "Non letto"
 
-#: .\templates\messages\chat_list.html:59
+#: .\templates\messages\chat_list.html:61
 msgid "You:"
 msgstr "Tu:"
 
-#: .\templates\messages\chat_list.html:79
+#: .\templates\messages\chat_list.html:81
 msgid "You have no messages yet."
 msgstr "Non hai ancora ricevuto messaggi."
 
@@ -3342,7 +3342,7 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-" Hai anche un profilo Speedy Net. Visualizza il tuo profilo su Speedy Net."
+"Hai anche un profilo Speedy Net. Visualizza il tuo profilo su Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format

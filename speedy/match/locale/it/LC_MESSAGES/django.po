@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 08:31+0200\n"
+"POT-Creation-Date: 2024-01-01 19:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1183,12 +1183,12 @@ msgstr "Fase di registrazione"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
-msgstr "Benvenuta"
+msgstr "Benvenuto/a"
 
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Benvenuta su %(site_name)s"
+msgstr "Benvenuto/a su %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1230,7 +1230,7 @@ msgid "Matches"
 msgstr "Corrispondenze"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
-#: .\templates\likes\like_list.html:18
+#: .\templates\likes\like_list.html:20
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "Mi Piace"
@@ -1272,7 +1272,7 @@ msgstr "Non hai ancora nessun amico/nessuna amica."
 msgid "Your Friends"
 msgstr "I tuoi amici"
 
-#: .\templates\likes\like_list.html:47
+#: .\templates\likes\like_list.html:49
 msgid "You have no likes here."
 msgstr "Non hai Mi Piace."
 
@@ -1306,28 +1306,28 @@ msgstr ""
 "oggi stesso a Speedy Match per trovare partner corrispondenti, ci vogliono "
 "solo pochi minuti."
 
-#: .\templates\matches\match_list.html:37
+#: .\templates\matches\match_list.html:39
 msgid "Update matches"
 msgstr "Aggiorna le corrispondenze"
 
-#: .\templates\matches\match_list.html:45
+#: .\templates\matches\match_list.html:47
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "Dieta"
 
-#: .\templates\matches\match_list.html:56
+#: .\templates\matches\match_list.html:58
 msgid "Age:"
 msgstr "Età:"
 
-#: .\templates\matches\match_list.html:70
+#: .\templates\matches\match_list.html:72
 msgid "Refresh"
 msgstr "Aggiorna"
 
-#: .\templates\matches\match_list.html:77
+#: .\templates\matches\match_list.html:79
 msgid "Add more options"
 msgstr "Aggiungi altre opzioni"
 
-#: .\templates\matches\match_list.html:106
+#: .\templates\matches\match_list.html:108
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
