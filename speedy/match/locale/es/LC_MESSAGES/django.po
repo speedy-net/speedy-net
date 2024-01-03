@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 20:05+0200\n"
+"POT-Creation-Date: 2024-01-03 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1240,7 +1240,7 @@ msgstr "Tus ajustes de coincidencia"
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "Configuración de coincidenicas"
+msgstr "Configuración de coincidencias"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
@@ -1330,8 +1330,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Aún no tienes coincidencias. Intenta ampliar tu configuración de búsqueda o "
-"vuelve a comprobar más tarde."
+"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
+"búsqueda o vuelve a comprobar más tarde."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"

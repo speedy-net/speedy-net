@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 20:05+0200\n"
+"POT-Creation-Date: 2024-01-03 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2085,7 +2085,7 @@ msgstr "Végétarien(ne) (ne mange pas de poisson ni de viande)"
 
 #: .\accounts\models.py:233
 msgid "Carnist (eats animals)"
-msgstr "Carnivore (mange des animaux)"
+msgstr "Carniste (mange des animaux)"
 
 #: .\accounts\models.py:246
 msgid "Not smoking"
@@ -2105,7 +2105,7 @@ msgstr "Célibataire"
 
 #: .\accounts\models.py:268
 msgid "Divorced"
-msgstr "Divorcé"
+msgstr "Divorcé(é)"
 
 #: .\accounts\models.py:269
 msgid "Widowed"

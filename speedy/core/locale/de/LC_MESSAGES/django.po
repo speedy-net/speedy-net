@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 20:05+0200\n"
+"POT-Creation-Date: 2024-01-03 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1790,7 +1790,7 @@ msgstr "Freunde"
 #: .\__translations\__translations.py:231
 msgctxt "other"
 msgid "Friends"
-msgstr "Freunde"
+msgstr "Freunde/Freundinnen"
 
 #: .\__translations\__translations.py:233
 msgctxt "female"
@@ -2082,7 +2082,7 @@ msgstr "Unbekannt"
 
 #: .\accounts\models.py:231
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganerin (isst nur Pflanzen und Pilze)"
+msgstr "Veganer (isst nur Pflanzen und Pilze)"
 
 #: .\accounts\models.py:232
 msgid "Vegetarian (doesn't eat fish and meat)"
@@ -2090,7 +2090,7 @@ msgstr "Vegetarier (isst weder Fisch noch Fleisch)"
 
 #: .\accounts\models.py:233
 msgid "Carnist (eats animals)"
-msgstr "Carnistin (isst Tiere)"
+msgstr "Carnist (isst Tiere)"
 
 #: .\accounts\models.py:246
 msgid "Not smoking"
@@ -2861,7 +2861,7 @@ msgstr "Ihr Alter wird für Ihre Matches auf Speedy Match sichtbar sein"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
