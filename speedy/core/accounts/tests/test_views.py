@@ -61,6 +61,14 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
+            def test_visitor_gets_redirected_to_canonical_url_1(self):
+                r = self.client.get(path='/?a=1')
+                self.assertRedirects(response=r, expected_url='/', status_code=301, target_status_code=200)
+
+            def test_visitor_gets_redirected_to_canonical_url_2(self):
+                r = self.client.get(path='/?b=2')
+                self.assertRedirects(response=r, expected_url='/', status_code=301, target_status_code=200)
+
 
         @only_on_sites_with_login
         class MeViewTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):

@@ -128,6 +128,7 @@ class RegistrationView(generic.CreateView):
 
 
 class IndexView(generic.View):
+    canonical_full_path = "/"
     redirect_authenticated_users_to = 'profiles:me'  # The default.
     registration_view = RegistrationView
 
@@ -139,6 +140,9 @@ class IndexView(generic.View):
             else:
                 return redirect(to=self.redirect_authenticated_users_to)
         else:
+            if request.method.lower() in ["get"]:
+                if (not (request.get_full_path() == self.canonical_full_path)):
+                    return redirect(to=self.canonical_full_path, permanent=True)
             return self.registration_view.as_view()(request=request, *args, **kwargs)
 
 
