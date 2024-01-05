@@ -52,11 +52,11 @@ You can find more details in the specifications.
 
 ## How to setup the project and run locally
 
-First make sure that you're using Python 3.10 or later (we recommend the latest Python version).
+First make sure that you're using Python 3.11 or later (we recommend the latest Python version).
 
 Then, you'll want to create a virtualenv and activate. You create virtualenv once and activate it each time you start to work on the project.
 
-    python3.10 -m venv .venv
+    python3.11 -m venv .venv
     source .venv/Scripts/activate  # Windows Git Bash (MINGW64)
     source .venv/bin/activate   # *.nix
 
@@ -146,7 +146,7 @@ Install all dependencies using **apt-get**:
     sudo add-apt-repository -y ppa:deadsnakes/ppa
     sudo add-apt-repository -y "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
     sudo apt update
-    sudo apt-get install python3.10 python3-pip python3.10-venv python3.10-dev  # common python stuff
+    sudo apt-get install python3.11 python3-pip python3.11-venv python3.11-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-14 nginx uwsgi uwsgi-src postfix memcached
 
@@ -180,14 +180,14 @@ Setup a database:
 
 Build **uwsgi** plugin:
 
-    PYTHON=python3.10 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python310"
-    mv python310_plugin.so /usr/lib/uwsgi/plugins
+    PYTHON=python3.11 uwsgi --build-plugin "/usr/src/uwsgi/plugins/python python311"
+    mv python311_plugin.so /usr/lib/uwsgi/plugins
 
 Clone the project, create a venv, activate it and install required modules using **pip**:
 
     git clone https://github.com/speedy-net/speedy-net.git
     cd speedy-net/
-    python3.10 -m venv env
+    python3.11 -m venv env
 
 Copy **env.ini.example** to **env.ini**:
 
