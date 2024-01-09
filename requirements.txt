@@ -1,4 +1,4 @@
-# python==3.10
+# python==3.11
 Django==4.1.13
 asgiref==3.7.2
 boto3==1.28.77
