@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 14:42+0200\n"
+"POT-Creation-Date: 2024-01-09 15:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1606,7 +1606,7 @@ msgstr ""
 #: .\__translations\__translations.py:191
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "Tu não podes ser amiga de ti mesma."
+msgstr "Tu não podes ser amigo de ti mesmo."
 
 #: .\__translations\__translations.py:192
 msgctxt "male"
@@ -1621,7 +1621,7 @@ msgstr "Tu não podes ser amigo de ti mesmo."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Tu já solicitaste a amizade deste utilizador."
+msgstr "Tu já solicitaste a amizade deste utilizadora."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
@@ -1636,7 +1636,7 @@ msgstr "Tu já solicitaste a amizade deste utilizador."
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Esta utilizadora já solicitou a tua amizade."
+msgstr "Este utilizadora já solicitou a tua amizade."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
@@ -1711,7 +1711,7 @@ msgstr "Tu cancelaste tua solicitação de amizade."
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "Tu removeste esta utilizadora dos teus amigos."
+msgstr "Tu removeste este utilizadora dos teus amigos."
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
@@ -2399,20 +2399,20 @@ msgstr ""
 "Tu não podes utilizar este formato para a tua foto de perfil. Somente os "
 "formatos JPEG ou PNG são aceitos."
 
-#: .\accounts\views.py:287
+#: .\accounts\views.py:291
 msgid "Invalid confirmation link."
 msgstr "Link de confirmação inválido."
 
-#: .\accounts\views.py:311 .\accounts\views.py:327
+#: .\accounts\views.py:315 .\accounts\views.py:331
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Uma mensagem de confirmação foi enviada para {email_address}"
 
-#: .\accounts\views.py:342
+#: .\accounts\views.py:346
 msgid "The email address was deleted."
 msgstr "A direcção de e-mail foi excluída."
 
-#: .\accounts\views.py:358
+#: .\accounts\views.py:362
 msgid "You have made this email address primary."
 msgstr "Configuraste esta caixa de e-mail como principal."
 
