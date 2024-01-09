@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 14:42+0200\n"
+"POT-Creation-Date: 2024-01-09 15:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2396,20 +2396,20 @@ msgstr ""
 "Je kunt dit formaat niet gebruiken voor je profielfoto. Alleen JPEG- of PNG-"
 "formaten worden geaccepteerd."
 
-#: .\accounts\views.py:287
+#: .\accounts\views.py:291
 msgid "Invalid confirmation link."
 msgstr "Ongeldige bevestigingslink."
 
-#: .\accounts\views.py:311 .\accounts\views.py:327
+#: .\accounts\views.py:315 .\accounts\views.py:331
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Er is een bevestigingsbericht verzonden naar {email_address}"
 
-#: .\accounts\views.py:342
+#: .\accounts\views.py:346
 msgid "The email address was deleted."
 msgstr "Het e-mailadres is verwijderd."
 
-#: .\accounts\views.py:358
+#: .\accounts\views.py:362
 msgid "You have made this email address primary."
 msgstr "Je heb die je primaire e-mailadres gemaakt."
 
