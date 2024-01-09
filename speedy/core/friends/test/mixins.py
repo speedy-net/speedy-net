@@ -115,7 +115,9 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: "Ya solicitaste amistad a este usuario.",
                 },
                 'pt': {
-                    **{gender: "Tu já solicitaste a amizade deste utilizador." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'pt': check translation, should be different per gender like 'es'.
+                    User.GENDER_FEMALE_STRING: "Tu já solicitaste a amizade desta utilizadora.",
+                    User.GENDER_MALE_STRING: "Tu já solicitaste a amizade deste utilizador.",
+                    User.GENDER_OTHER_STRING: "Tu já solicitaste a amizade deste utilizador.",
                 },
                 'it': {
                     **{gender: "Hai già richiesto l’amicizia a questa utente." for gender in User.ALL_GENDERS},  # ~~~~ TODO: 'it': check translation, should be different per gender like 'es'.

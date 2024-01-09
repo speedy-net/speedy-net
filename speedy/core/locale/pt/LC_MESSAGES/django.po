@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-09 15:35+0200\n"
+"POT-Creation-Date: 2024-01-09 15:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1621,7 +1621,7 @@ msgstr "Tu não podes ser amigo de ti mesmo."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Tu já solicitaste a amizade deste utilizador."
+msgstr "Tu já solicitaste a amizade desta utilizadora."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
