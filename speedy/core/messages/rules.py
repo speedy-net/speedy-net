@@ -30,40 +30,40 @@ def can_send_new_message(user):
     If the user sent more than 30 identical messages without a reply,
     then don't let them send any new messages to new chats.
 
-    If the user signed up to Speedy Net less than 6 hours ago, and they don't use a gmail.com email address,
-    then don't let them send any new messages to new chats.
+    # If the user signed up to Speedy Net less than 6 hours ago, and they don't use a gmail.com email address,
+    # then don't let them send any new messages to new chats.
     """
     can_send = True
-    language_code = get_language()
-    if (language_code == 'en'):
-        if (user.date_created >= (now() - timedelta(minutes=360))):
-            can_send = False
-            if (user.has_confirmed_email):
-                emails = user.email_addresses.filter(is_primary=True)
-                if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
-                    email_name, domain_part = user.email.strip().rsplit("@", 1)
-                    if (domain_part in {'gmail.com'}):
-                        can_send = True
-        if ((now() - user.date_created).days < 2):
-            if (user.has_confirmed_email):
-                emails = user.email_addresses.filter(is_primary=True)
-                if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
-                    email_name, domain_part = user.email.strip().rsplit("@", 1)
-                    if (domain_part in {'outlook.com', 'hotmail.com'}):
-                        can_send = False
+    # language_code = get_language()
+    # if (language_code == 'en'):
+    #     if (user.date_created >= (now() - timedelta(minutes=360))):
+    #         can_send = False
+    #         if (user.has_confirmed_email):
+    #             emails = user.email_addresses.filter(is_primary=True)
+    #             if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
+    #                 email_name, domain_part = user.email.strip().rsplit("@", 1)
+    #                 if (domain_part in {'gmail.com'}):
+    #                     can_send = True
+    #     if ((now() - user.date_created).days < 2):
+    #         if (user.has_confirmed_email):
+    #             emails = user.email_addresses.filter(is_primary=True)
+    #             if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
+    #                 email_name, domain_part = user.email.strip().rsplit("@", 1)
+    #                 if (domain_part in {'outlook.com', 'hotmail.com'}):
+    #                     can_send = False
     if ((now() - user.date_created).days < 10):
         limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 10, 15
-        if ((now() - user.date_created).days < 3):
-            limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 2, 10, 15
-            if (user.has_confirmed_email):
-                emails = user.email_addresses.filter(is_primary=True)
-                if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
-                    email_name, domain_part = user.email.strip().rsplit("@", 1)
-                    if (domain_part in {'gmail.com'}):
-                        if ((now() - user.date_created).days < 2):
-                            limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 3, 10, 15
-                        else:
-                            limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 10, 15
+        # if ((now() - user.date_created).days < 3):
+        #     limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 2, 10, 15
+        #     if (user.has_confirmed_email):
+        #         emails = user.email_addresses.filter(is_primary=True)
+        #         if ((len(emails) == 1) and (user.email) and (user.email == emails[0].email) and (emails[0].is_confirmed)):
+        #             email_name, domain_part = user.email.strip().rsplit("@", 1)
+        #             if (domain_part in {'gmail.com'}):
+        #                 if ((now() - user.date_created).days < 2):
+        #                     limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 3, 10, 15
+        #                 else:
+        #                     limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 5, 10, 15
     else:
         limit_user_messages_1_day, limit_user_messages_3_days, limit_user_messages_7_days = 20, 60, 60
     strings_in_messages = ["@", "http://", "https://"]
