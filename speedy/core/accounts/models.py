@@ -956,10 +956,12 @@ class SiteProfileBase(TimeStampedModel):
         return return_value
 
     def update_last_visit(self):
+        self._in_update_last_visit = True
         self.last_visit = now()
         if ("last_visit_str" in self.__dict__):
             del self.last_visit_str
         self.user.save_user_and_profile()
+        del self._in_update_last_visit
 
     def activate(self):
         raise NotImplementedError("activate is not implemented.")

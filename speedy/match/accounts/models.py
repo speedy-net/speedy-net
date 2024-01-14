@@ -3,6 +3,7 @@ import logging
 from django.conf import settings as django_settings
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.dispatch import receiver
 from django.utils.functional import classproperty, cached_property
 from django.utils.timezone import now
 from django.utils.translation import get_language, gettext_lazy as _
@@ -15,7 +16,7 @@ from speedy.core.base.utils import to_attribute
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
-from .managers import SiteProfileManager
+from .managers import SiteProfileManager, bust_cache
 
 logger = logging.getLogger(__name__)
 
@@ -402,5 +403,11 @@ class SiteProfile(SiteProfileBase):
 
     def get_relationship_status_match_choices(self):
         return User.relationship_status_choices(gender=self.get_match_gender())
+
+
+@receiver(signal=models.signals.post_save, sender=SiteProfile)
+def invalidate_matches_after_update_site_profile(sender, instance: SiteProfile, **kwargs):
+    if (not (getattr(instance, '_in_update_last_visit', None))):
+        bust_cache(type='matches', entity_pk=instance.user.pk)
 
 
