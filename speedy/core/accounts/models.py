@@ -26,6 +26,7 @@ from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import SmallUDIDField, RegularUDIDField
 from speedy.core.base.utils import normalize_slug, normalize_username, generate_confirmation_token, get_age, string_is_not_none, to_attribute, get_all_field_names, convert_to_set, timesince
+from speedy.core.friends.managers import FriendshipRequestManager
 from speedy.core.uploads.fields import PhotoField
 from .managers import EntityManager, UserManager
 from .fields import UserAccessField
@@ -429,7 +430,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     @cached_property
     def received_friendship_requests_count(self):
-        return len(self.received_friendship_requests)
+        return FriendshipRequestManager.get_received_friendship_requests_count(user=self)
 
     @cached_property
     def sent_friendship_requests(self):
