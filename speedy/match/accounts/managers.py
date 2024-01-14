@@ -90,24 +90,6 @@ class SiteProfileManager(BaseManager):
             distance_offset = int(index / 10 * 15 * 30 + 0.5)
         return distance_offset
 
-    def get_matches(self, user):
-        """
-        Get matches from database.
-
-        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
-        """
-        matches_key = cache_key(type='matches', entity_pk=user.pk)
-        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
-        if (matches_users_ids is not None):
-            matches = list(self._get_active_users_for_matches_queryset(user=user, from_list=matches_users_ids))
-            matches_order = {u: i for i, u in enumerate(matches_users_ids)}
-            matches = sorted(matches, key=lambda u: matches_order[u.id])
-        else:
-            matches = self._get_matches(user=user)
-            matches_users_ids = [u.id for u in matches]
-            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
-        return matches
-
     def _get_matches(self, user):
         language_code = get_language()
         logger.debug("SiteProfileManager::get_matches:start:user={user}, language_code={language_code}".format(
@@ -395,6 +377,24 @@ class SiteProfileManager(BaseManager):
                 pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
             ).order_by('-speedy_match_site_profile__last_visit')
         return qs
+
+    def get_matches(self, user):
+        """
+        Get matches from database.
+
+        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
+        """
+        matches_key = cache_key(type='matches', entity_pk=user.pk)
+        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
+        if (matches_users_ids is not None):
+            matches = list(self._get_active_users_for_matches_queryset(user=user, from_list=matches_users_ids))
+            matches_order = {u: i for i, u in enumerate(matches_users_ids)}
+            matches = sorted(matches, key=lambda u: matches_order[u.id])
+        else:
+            matches = self._get_matches(user=user)
+            matches_users_ids = [u.id for u in matches]
+            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
+        return matches
 
     def get_matches_from_list(self, user, from_list):
         language_code = get_language()
