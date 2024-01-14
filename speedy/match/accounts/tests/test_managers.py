@@ -12,6 +12,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
+        from speedy.match.accounts.managers import bust_cache
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         from speedy.core.accounts.models import User
         from speedy.core.blocks.models import Block
@@ -397,6 +398,7 @@ if (django_settings.TESTS):
                     user_count += i_range
                     user_count_list.append(user_count)
                     self.assertEqual(first=User.objects.count(), second=user_count)
+                    bust_cache(type='matches', entity_pk=self.user_5.pk)  # Simulate cache timeout
                     matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                     matches_list_length_list.append(len(matches_list))
                     if (user_count < 700):
