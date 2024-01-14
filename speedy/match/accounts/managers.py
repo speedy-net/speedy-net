@@ -4,14 +4,42 @@ import random
 from datetime import timedelta, datetime, date
 from haversine import haversine, Unit
 
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.db import models
+from django.dispatch import receiver
 from django.utils.timezone import now
 from django.utils.translation import get_language
 
+from speedy.core.base import cache_manager
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import User
 
 logger = logging.getLogger(__name__)
+
+CACHE_TYPES = {
+    'matches': 'speedy-m-%s',
+}
+
+BUST_CACHES = {
+    'matches': ['matches'],
+}
+
+
+def cache_key(type, entity_pk):
+    return CACHE_TYPES[type] % entity_pk
+
+
+def bust_cache(type, entity_pk, version=None):
+    bust_keys = BUST_CACHES[type]
+    keys = [cache_key(type=k, entity_pk=entity_pk) for k in bust_keys]
+    cache_manager.cache_delete_many(keys=keys, version=version)
+
+
+@receiver(signal=models.signals.post_save, sender=User)
+def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
+    if (not (getattr(instance.profile, '_in_update_last_visit', None))):
+        bust_cache(type='matches', entity_pk=instance.pk)
 
 
 class SiteProfileManager(BaseManager):
@@ -68,6 +96,19 @@ class SiteProfileManager(BaseManager):
 
         Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
         """
+        matches_key = cache_key(type='matches', entity_pk=user.pk)
+        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
+        if (matches_users_ids is not None):
+            matches = self._get_active_users_from_list(user=user, from_list=matches_users_ids)
+            matches_order = {u: i for i, u in enumerate(matches_users_ids)}
+            matches = sorted(matches, key=lambda u: matches_order[u.id])
+        else:
+            matches = self._get_matches(user=user)
+            matches_users_ids = [u.id for u in matches]
+            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
+        return matches
+
+    def _get_matches(self, user):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
@@ -326,6 +367,34 @@ class SiteProfileManager(BaseManager):
                 not_allowed_to_use_speedy_match=user.speedy_match_profile.not_allowed_to_use_speedy_match,
             ))
         return matches_list
+
+    def _get_active_users_from_list(self, user, from_list):
+        user.speedy_match_profile._set_values_to_match()
+        age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
+        language_code = get_language()
+        blocked_users_ids = user.blocked_entities_ids
+        blocking_users_ids = user.blocking_entities_ids
+        qs = User.objects.active(
+            pk__in=from_list,
+            photo__visible_on_website=True,
+            gender__in=user.speedy_match_profile.gender_to_match,
+            diet__in=user.speedy_match_profile.diet_to_match,
+            smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
+            relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
+            speedy_match_site_profile__gender_to_match__contains=[user.gender],
+            speedy_match_site_profile__diet_to_match__contains=[user.diet],
+            speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
+            speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
+            date_of_birth__range=age_ranges,
+            speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
+            speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
+            speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+        ).exclude(
+            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).order_by('-speedy_match_site_profile__last_visit')
+        return list(qs)
 
     def get_matches_from_list(self, user, from_list):
         user.speedy_match_profile._set_values_to_match()
