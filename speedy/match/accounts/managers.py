@@ -370,7 +370,7 @@ class SiteProfileManager(BaseManager):
         matches_key = cache_key(type='matches', entity_pk=user.pk)
         matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
         if (matches_users_ids is not None):
-            matches = list(self._get_active_users_for_matches_queryset(user=user, from_list=matches_users_ids))
+            matches = self.get_matches_from_list(user=user, from_list=matches_users_ids)
             matches_order = {u: i for i, u in enumerate(matches_users_ids)}
             matches = sorted(matches, key=lambda u: matches_order[u.id])
         else:
