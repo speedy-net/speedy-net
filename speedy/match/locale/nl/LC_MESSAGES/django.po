@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 14:42+0200\n"
+"POT-Creation-Date: 2024-01-15 02:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,13 +561,13 @@ msgstr "Schrijf een paar woorden over jezelf."
 msgid "Please write where you live."
 msgstr "Schrijf alstublieft waar je woont."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:112
+#: .\accounts\forms.py:118 .\accounts\models.py:113
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Heb je kinderen? Hoeveel?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:115
+#: .\accounts\forms.py:121 .\accounts\models.py:116
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -601,115 +601,115 @@ msgstr "Matchen van de relatiestatus is vereist."
 msgid "Where do you live?"
 msgstr "Waar woon je?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:122
+#: .\accounts\forms.py:186 .\accounts\models.py:123
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Geslacht voor matchen"
 
-#: .\accounts\models.py:36 .\accounts\models.py:88
+#: .\accounts\models.py:37 .\accounts\models.py:89
 msgid "No match"
 msgstr "Geen match"
 
-#: .\accounts\models.py:37 .\accounts\models.py:89
+#: .\accounts\models.py:38 .\accounts\models.py:90
 msgid "One heart"
 msgstr "Een hart"
 
-#: .\accounts\models.py:38 .\accounts\models.py:90
+#: .\accounts\models.py:39 .\accounts\models.py:91
 msgid "Two hearts"
 msgstr "Twee harten"
 
-#: .\accounts\models.py:39 .\accounts\models.py:91
+#: .\accounts\models.py:40 .\accounts\models.py:92
 msgid "Three hearts"
 msgstr "Drie harten"
 
-#: .\accounts\models.py:40 .\accounts\models.py:92
+#: .\accounts\models.py:41 .\accounts\models.py:93
 msgid "Four hearts"
 msgstr "Vier harten"
 
-#: .\accounts\models.py:41 .\accounts\models.py:93
+#: .\accounts\models.py:42 .\accounts\models.py:94
 msgid "Five hearts"
 msgstr "Vijf harten"
 
-#: .\accounts\models.py:97
+#: .\accounts\models.py:98
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:98
+#: .\accounts\models.py:99
 msgid "On new likes"
 msgstr "Op nieuwe likes"
 
-#: .\accounts\models.py:101
+#: .\accounts\models.py:102
 msgid "Active languages"
 msgstr "Actieve talen"
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:108
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Lengte"
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:108
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:109
+#: .\accounts\models.py:110
 msgid "Few words about me"
 msgstr "Een paar woorden over mij"
 
-#: .\accounts\models.py:118
+#: .\accounts\models.py:119
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "Mijn ideale match"
 
-#: .\accounts\models.py:128
+#: .\accounts\models.py:129
 msgid "Minimal age to match"
 msgstr "Minimale leeftijd voor matchen"
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:130
 msgid "Maximal age to match"
 msgstr "Maximale leeftijd voor matchen"
 
-#: .\accounts\models.py:130
+#: .\accounts\models.py:131
 msgid "Diet match"
 msgstr "Dieet match"
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:132
 msgid "Smoking status match"
 msgstr "Rookstatus van match"
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:133
 msgid "Relationship status match"
 msgstr "Relatiestatus van match"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:136
 msgid "Diet to match"
 msgstr "Dieet voor matchen"
 
-#: .\accounts\models.py:143
+#: .\accounts\models.py:144
 msgid "Smoking status to match"
 msgstr "Rokerstatus voor matchen"
 
-#: .\accounts\models.py:151
+#: .\accounts\models.py:152
 msgid "Relationship status to match"
 msgstr "Relatiestatus voor matchen"
 
-#: .\accounts\models.py:158
+#: .\accounts\models.py:159
 msgid "Activation step"
 msgstr "Activeringsstap"
 
-#: .\accounts\models.py:161
+#: .\accounts\models.py:162
 msgid "Number of matches on last user's search"
 msgstr "Aantal matches in de laatste zoekopdracht van de gebruiker"
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:208
 msgid "Speedy Match Profile"
 msgstr "Speedy Match Profiel"
 
-#: .\accounts\models.py:208 .\profiles\apps.py:8
+#: .\accounts\models.py:209 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Speedy Match Profielen"
 
-#: .\accounts\models.py:297 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:298 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Bevestig je e-mailadres."
 
