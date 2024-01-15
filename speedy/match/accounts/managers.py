@@ -335,47 +335,30 @@ class SiteProfileManager(BaseManager):
         language_code = get_language()
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
+        filter_dict = dict(
+            photo__visible_on_website=True,
+            gender__in=user.speedy_match_profile.gender_to_match,
+            diet__in=user.speedy_match_profile.diet_to_match,
+            smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
+            relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
+            speedy_match_site_profile__gender_to_match__contains=[user.gender],
+            speedy_match_site_profile__diet_to_match__contains=[user.diet],
+            speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
+            speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
+            date_of_birth__range=age_ranges,
+            speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
+            speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
+            speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+        )
         if (from_list is not None):
-            qs = User.objects.active(
-                pk__in=from_list,
-                photo__visible_on_website=True,
-                gender__in=user.speedy_match_profile.gender_to_match,
-                diet__in=user.speedy_match_profile.diet_to_match,
-                smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
-                relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
-                speedy_match_site_profile__gender_to_match__contains=[user.gender],
-                speedy_match_site_profile__diet_to_match__contains=[user.diet],
-                speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
-                speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
-                date_of_birth__range=age_ranges,
-                speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
-                speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
-                speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
-            ).exclude(
-                pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
-            ).order_by('-speedy_match_site_profile__last_visit')
-        else:
-            qs = User.objects.active(
-                photo__visible_on_website=True,
-                gender__in=user.speedy_match_profile.gender_to_match,
-                diet__in=user.speedy_match_profile.diet_to_match,
-                smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
-                relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
-                speedy_match_site_profile__gender_to_match__contains=[user.gender],
-                speedy_match_site_profile__diet_to_match__contains=[user.diet],
-                speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
-                speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
-                date_of_birth__range=age_ranges,
-                speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
-                speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
-                speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
-            ).exclude(
-                pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
-            ).order_by('-speedy_match_site_profile__last_visit')
+            filter_dict["pk__in"] = from_list
+        qs = User.objects.active(
+            **filter_dict
+        ).exclude(
+            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).order_by('-speedy_match_site_profile__last_visit')
         return qs
 
     def get_matches(self, user):
