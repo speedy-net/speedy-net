@@ -1,9 +1,29 @@
 from collections import defaultdict
 
 from django.contrib.sites.models import Site
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.db.models import Q
 
+from speedy.core.base import cache_manager
 from speedy.core.base.managers import BaseManager
+
+CACHE_TYPES = {
+    'unread_chats_count': 'speedy-cuc-%s',
+}
+
+BUST_CACHES = {
+    'unread_chats_count': ['unread_chats_count'],
+}
+
+
+def cache_key(type, entity_pk):
+    return CACHE_TYPES[type] % entity_pk
+
+
+def bust_cache(type, entity_pk, version=None):
+    bust_keys = BUST_CACHES[type]
+    keys = [cache_key(type=k, entity_pk=entity_pk) for k in bust_keys]
+    cache_manager.cache_delete_many(keys=keys, version=version)
 
 
 class ChatManager(BaseManager):
@@ -47,6 +67,17 @@ class ChatManager(BaseManager):
         l1 = sorted([(d[k], k) for k in d.keys()] + [(0, "")], reverse=True)
         return l1[0]
 
+    def count_unread_chats(self, entity):
+        from .models import ReadMark
+        unread_chats_count_cache_key = cache_key(type='unread_chats_count', entity_pk=entity.pk)
+        unread_chats_count = cache_manager.cache_get(key=unread_chats_count_cache_key, sliding_timeout=DEFAULT_TIMEOUT)
+        if (unread_chats_count is None):
+            chat_list = self.chats(entity=entity)
+            ReadMark.objects.annotate_chats_with_read_marks(chat_list=chat_list, entity=entity)
+            unread_chats_count = len([c for c in chat_list if (c.is_unread)])
+            cache_manager.cache_set(key=unread_chats_count_cache_key, value=unread_chats_count)
+        return unread_chats_count
+
 
 class MessageManager(BaseManager):
     def send_message(self, from_entity, to_entity=None, chat=None, text=None):
@@ -63,6 +94,18 @@ class MessageManager(BaseManager):
 
 
 class ReadMarkManager(BaseManager):
+    def annotate_chats_with_read_marks(self, chat_list, entity):
+        read_marks = {read_mark.chat_id: read_mark for read_mark in self.filter(chat__in=chat_list, entity=entity)}
+        for chat in chat_list:
+            read_mark = read_marks.get(chat.id)
+            if (chat.last_message is None):
+                chat.is_unread = False
+            elif (read_mark is None):
+                chat.is_unread = True
+            else:
+                chat.is_unread = chat.last_message.date_created > read_mark.date_updated
+        return ''
+
     def mark(self, chat, entity):
         read_mark, created = self.get_or_create(chat=chat, entity=entity)
         if (not (created)):

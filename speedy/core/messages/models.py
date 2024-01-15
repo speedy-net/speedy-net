@@ -8,7 +8,7 @@ from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import RegularUDIDField
 from speedy.core.accounts.models import Entity, User
-from .managers import ChatManager, MessageManager, ReadMarkManager
+from .managers import ChatManager, MessageManager, ReadMarkManager, bust_cache
 
 
 class Chat(TimeStampedModel):
@@ -125,6 +125,19 @@ class ReadMark(TimeStampedModel):
         unique_together = ('entity', 'chat')
         ordering = ('-date_created',)
         get_latest_by = 'date_created'
+
+
+@receiver(signal=models.signals.post_save, sender=Chat)
+def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kwargs):
+    if (instance.last_message is not None):
+        other_participants = instance.get_other_participants(entity=instance.last_message.sender)
+        for participant in other_participants:
+            bust_cache(type='unread_chats_count', entity_pk=participant.pk)
+
+
+@receiver(signal=models.signals.post_save, sender=ReadMark)
+def invalidate_unread_chats_count_after_read_mark(sender, instance: ReadMark, **kwargs):
+    bust_cache(type='unread_chats_count', entity_pk=instance.entity.pk)
 
 
 @receiver(signal=models.signals.post_save, sender=Message)

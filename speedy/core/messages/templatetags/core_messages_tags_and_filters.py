@@ -23,16 +23,7 @@ def annotate_chats_with_read_marks(chat_list, entity):
     :type chat_list: [speedy.core.messages.models.Chat]
     :type entity: speedy.core.accounts.models.Entity
     """
-    read_marks = {read_mark.chat_id: read_mark for read_mark in ReadMark.objects.filter(chat__in=chat_list, entity=entity)}
-    for chat in chat_list:
-        read_mark = read_marks.get(chat.id)
-        if (chat.last_message is None):
-            chat.is_unread = False
-        elif (read_mark is None):
-            chat.is_unread = True
-        else:
-            chat.is_unread = chat.last_message.date_created > read_mark.date_updated
-    return ''
+    return ReadMark.objects.annotate_chats_with_read_marks(chat_list=chat_list, entity=entity)
 
 
 @register.simple_tag
@@ -64,8 +55,6 @@ def get_chat_slug(chat, current_user):
 
 @register.simple_tag
 def unread_chats_count(entity):
-    chat_list = Chat.objects.chats(entity=entity)
-    annotate_chats_with_read_marks(chat_list=chat_list, entity=entity)
-    return len([c for c in chat_list if (c.is_unread)])
+    return Chat.objects.count_unread_chats(entity=entity)
 
 
