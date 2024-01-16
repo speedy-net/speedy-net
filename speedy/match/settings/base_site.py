@@ -21,9 +21,6 @@ INSTALLED_APPS += [
     'speedy.match.matches',
 ]
 
-CACHE_SET_MATCHES_TIMEOUT = 6 * 60  # 6 minutes
-CACHE_GET_MATCHES_SLIDING_TIMEOUT = 0
-
 AUTH_SITE_PROFILE_MODEL = 'match_accounts.SiteProfile'
 
 ACTIVATE_PROFILE_AFTER_REGISTRATION = False
