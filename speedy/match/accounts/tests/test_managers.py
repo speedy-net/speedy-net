@@ -12,7 +12,6 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
-        from speedy.match.accounts.managers import bust_cache
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         from speedy.core.accounts.models import User
         from speedy.core.blocks.models import Block
@@ -39,31 +38,38 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
+                # Don't simulate cache timeout, and check that the matches list is still the same.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_2 not in matches_list, expr2=True)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_1)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_2 in matches_list, expr2=True)
@@ -91,11 +97,21 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 self.user_4.speedy_match_profile.gender_to_match = [User.GENDER_FEMALE, User.GENDER_MALE]
                 self.user_4.save_user_and_profile()
+                # Don't simulate cache timeout, and check that the matches list changed.
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+                self.assertEqual(first=len(matches_list), second=3)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
+                self.user_5.save_user_and_profile()  # Simulate cache timeout.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
                 self.user_4.speedy_match_profile.gender_to_match = User.GENDER_VALID_VALUES
                 self.user_4.save_user_and_profile()
+                # Don't simulate cache timeout, and check that the matches list is still the same.
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+                self.assertEqual(first=len(matches_list), second=3)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
+                self.user_5.save_user_and_profile()  # Simulate cache timeout.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
@@ -398,7 +414,7 @@ if (django_settings.TESTS):
                     user_count += i_range
                     user_count_list.append(user_count)
                     self.assertEqual(first=User.objects.count(), second=user_count)
-                    bust_cache(type='matches', entity_pk=self.user_5.pk)  # Simulate cache timeout
+                    self.user_5.save_user_and_profile()  # Simulate cache timeout.
                     matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                     matches_list_length_list.append(len(matches_list))
                     if (user_count < 700):
