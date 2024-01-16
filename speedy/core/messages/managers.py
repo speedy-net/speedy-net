@@ -1,7 +1,7 @@
 from collections import defaultdict
 
+from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
-from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.db.models import Q
 
 from speedy.core.base import cache_manager
@@ -70,12 +70,12 @@ class ChatManager(BaseManager):
     def count_unread_chats(self, entity):
         from .models import ReadMark
         unread_chats_count_cache_key = cache_key(type='unread_chats_count', entity_pk=entity.pk)
-        unread_chats_count = cache_manager.cache_get(key=unread_chats_count_cache_key, sliding_timeout=DEFAULT_TIMEOUT)
+        unread_chats_count = cache_manager.cache_get(key=unread_chats_count_cache_key, sliding_timeout=django_settings.CACHE_GET_UNREAD_CHATS_COUNT_SLIDING_TIMEOUT)
         if (unread_chats_count is None):
             chat_list = self.chats(entity=entity)
             ReadMark.objects.annotate_chats_with_read_marks(chat_list=chat_list, entity=entity)
             unread_chats_count = len([c for c in chat_list if (c.is_unread)])
-            cache_manager.cache_set(key=unread_chats_count_cache_key, value=unread_chats_count)
+            cache_manager.cache_set(key=unread_chats_count_cache_key, value=unread_chats_count, timeout=django_settings.CACHE_SET_UNREAD_CHATS_COUNT_TIMEOUT)
         return unread_chats_count
 
 

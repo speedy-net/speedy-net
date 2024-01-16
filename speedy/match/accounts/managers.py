@@ -4,7 +4,7 @@ import random
 from datetime import timedelta, datetime, date
 from haversine import haversine, Unit
 
-from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver
 from django.utils.timezone import now
@@ -472,7 +472,7 @@ class SiteProfileManager(BaseManager):
             language_code=language_code,
         ))
         matches_key = cache_key(type='matches', entity_pk=user.pk)
-        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
+        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=django_settings.CACHE_GET_MATCHES_SLIDING_TIMEOUT)
         matches_list = []
         if (matches_users_ids is not None):
             matches_list = self.get_matches_from_list(user=user, from_list=matches_users_ids)
@@ -496,7 +496,7 @@ class SiteProfileManager(BaseManager):
             from_cache = "no"
             matches_list = self._get_matches(user=user)
             matches_users_ids = [u.id for u in matches_list]
-            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
+            cache_manager.cache_set(key=matches_key, value=matches_users_ids, timeout=django_settings.CACHE_SET_MATCHES_TIMEOUT)
         logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, from_cache={from_cache}".format(
             user=user,
             language_code=language_code,
