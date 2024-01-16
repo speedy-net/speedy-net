@@ -103,11 +103,21 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     @cached_property
     def blocked_entities_ids(self):
+        """
+        Return a list of blocked entities ids.
+
+        :return: A list of blocked entities ids.
+        """
         from speedy.core.blocks.models import Block
         return Block.objects.get_blocked_entities_ids(blocker=self)
 
     @cached_property
     def blocking_entities_ids(self):
+        """
+        Return a list of blocking entities ids.
+
+        :return: A list of blocking entities ids.
+        """
         from speedy.core.blocks.models import Block
         return Block.objects.get_blocking_entities_ids(blocked=self)
 

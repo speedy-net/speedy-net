@@ -302,6 +302,14 @@ class SiteProfile(SiteProfileBase):
         pass
 
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
+        """
+        Get the matching rank between self and other_profile.
+
+        :param self:
+        :param other_profile:
+        :param second_call:
+        :return: The matching rank between self and other_profile.
+        """
         self._get_matching_rank_calls = getattr(self, "_get_matching_rank_calls", 0) + 1
         if (self._get_matching_rank_calls >= 5):
             logger.debug('_get_matching_rank::_get_matching_rank_calls={_get_matching_rank_calls}, self={self}, other_profile={other_profile}'.format(_get_matching_rank_calls=self._get_matching_rank_calls, self=self, other_profile=other_profile))
@@ -343,6 +351,13 @@ class SiteProfile(SiteProfileBase):
             return self.__class__.RANK_0
 
     def get_matching_rank(self, other_profile) -> int:
+        """
+        Get the matching rank between self and other_profile.
+
+        :param self:
+        :param other_profile:
+        :return: The matching rank between self and other_profile.
+        """
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
         rank_dict = getattr(self, "_rank_dict", {})

@@ -43,8 +43,16 @@ def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
 
 
 class SiteProfileManager(BaseManager):
-    # Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
+        """
+        Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.
+
+        :param user:
+        :param other_user:
+        :param blocked_users_ids: The IDs of the users who this user blocked.
+        :param blocking_users_ids: The IDs of the users who blocked this user.
+        :return: The rank of the other user.
+        """
         if (user.pk == other_user.pk):
             return self.model.RANK_0
         if ((not (user.speedy_match_profile.is_active)) or (not (other_user.speedy_match_profile.is_active))):
@@ -80,8 +88,14 @@ class SiteProfileManager(BaseManager):
         return rank
 
     def _get_distance_offset(self, index):
+        """
+        Get distance offset for a given index.
+
+        :param index: must be in {0, 2, 4, 6, 8, 10}.
+        :return: distance offset (in days).
+        """
         if (not (index in {0, 2, 4, 6, 8, 10})):
-            logger.warning("SiteProfileManager::get_matches:_get_distance_offset:index is invalid! index={index}".format(
+            logger.warning("SiteProfileManager::_get_distance_offset:index is invalid! index={index}".format(
                 index=index,
             ))
         if (index < 10):
@@ -90,9 +104,56 @@ class SiteProfileManager(BaseManager):
             distance_offset = int(index / 10 * 15 * 30 + 0.5)
         return distance_offset
 
-    def _get_matches(self, user):
+    def _get_matching_users_queryset(self, user, from_list=None):
+        """
+        Get matching users queryset.
+
+        :param user:
+        :param from_list: A given list of users (optional).
+        :return: Queryset of matching users.
+        """
+        user.speedy_match_profile._set_values_to_match()
+        age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
-        logger.debug("SiteProfileManager::get_matches:start:user={user}, language_code={language_code}".format(
+        blocked_users_ids = user.blocked_entities_ids
+        blocking_users_ids = user.blocking_entities_ids
+        filter_dict = dict(
+            photo__visible_on_website=True,
+            gender__in=user.speedy_match_profile.gender_to_match,
+            diet__in=user.speedy_match_profile.diet_to_match,
+            smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
+            relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
+            speedy_match_site_profile__gender_to_match__contains=[user.gender],
+            speedy_match_site_profile__diet_to_match__contains=[user.diet],
+            speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
+            speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
+            date_of_birth__range=age_ranges,
+            speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
+            speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
+            speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+            speedy_match_site_profile__active_languages__contains=[language_code],
+        )
+        if (from_list is not None):
+            filter_dict["pk__in"] = from_list
+        qs = User.objects.active(
+            **filter_dict
+        ).exclude(
+            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
+        ).order_by('-speedy_match_site_profile__last_visit')
+        return qs
+
+    def _get_matches(self, user):
+        """
+        Get matches from database.
+
+        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
+
+        :param user:
+        :return: Up to 720 matching users.
+        """
+        language_code = get_language()
+        logger.debug("SiteProfileManager::_get_matches:start:user={user}, language_code={language_code}".format(
             user=user,
             language_code=language_code,
         ))
@@ -101,7 +162,7 @@ class SiteProfileManager(BaseManager):
         today = date.today()
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
-        qs = self._get_active_users_for_matches_queryset(user=user)
+        qs = self._get_matching_users_queryset(user=user)
         _user_list = qs[:2400]
         # If there are at least 1,080 users who visited Speedy Match in the last 4 months, use them. Otherwise check 8 months, 12 months etc.
         user_list = []
@@ -190,7 +251,7 @@ class SiteProfileManager(BaseManager):
                     elif (index == 10):
                         other_user.speedy_match_profile._distance_between_users = "12000.0 distance_offset #1"
                     if (random.randint(0, 7999) == 0):
-                        logger.debug("SiteProfileManager::get_matches:distance_offset #1: {user} and {other_user}, s is {s}, distance offset is {distance_offset} .".format(
+                        logger.debug("SiteProfileManager::_get_matches:distance_offset #1: {user} and {other_user}, s is {s}, distance offset is {distance_offset} .".format(
                             user=user,
                             other_user=other_user,
                             s=s,
@@ -229,7 +290,7 @@ class SiteProfileManager(BaseManager):
                                     distance_offset = self._get_distance_offset(index=10)
                                 other_user.speedy_match_profile._distance_between_users = distance_between_users
                                 if (random.randint(0, 7999) == 0):
-                                    logger.debug("SiteProfileManager::get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
+                                    logger.debug("SiteProfileManager::_get_matches:distance_offset #2:s is {s}, distance offset is {distance_offset}, The distance between {user} and {other_user} is {distance_between_users} km.".format(
                                         user=user,
                                         other_user=other_user,
                                         distance_between_users=distance_between_users,
@@ -237,7 +298,7 @@ class SiteProfileManager(BaseManager):
                                         distance_offset=distance_offset,
                                     ))
                     except Exception as e:
-                        logger.debug("SiteProfileManager::get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
+                        logger.debug("SiteProfileManager::_get_matches:Can't calculate distance between users, user={user}, other_user={other_user}, Exception={e} (registered {registered_days_ago} days ago)".format(
                             user=user,
                             other_user=other_user,
                             e=str(e),
@@ -298,7 +359,7 @@ class SiteProfileManager(BaseManager):
                 pass
             else:
                 # This is an error. All users should have ranks more than 0.
-                logger.error('SiteProfileManager::get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                logger.error('SiteProfileManager::_get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
                     user=user,
                     language_code=language_code,
                     number_of_users=len(user_list),
@@ -309,7 +370,7 @@ class SiteProfileManager(BaseManager):
         # Save number of matches in this language in user's profile.
         user.speedy_match_profile.number_of_matches = len(matches_list)
         user.speedy_match_profile.save()
-        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, months={months}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, user_id_list={user_id_list}, distance_between_users_list={distance_between_users_list}".format(
+        logger.debug("SiteProfileManager::_get_matches:end:user={user}, language_code={language_code}, months={months}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, user_id_list={user_id_list}, distance_between_users_list={distance_between_users_list}".format(
             user=user,
             language_code=language_code,
             months=months,
@@ -319,7 +380,7 @@ class SiteProfileManager(BaseManager):
             distance_between_users_list=[getattr(u.speedy_match_profile, "_distance_between_users", None) for u in matches_list[:40]],
         ))
         if ((not (self.model.settings.MIN_HEIGHT_TO_MATCH <= user.speedy_match_profile.height <= self.model.settings.MAX_HEIGHT_TO_MATCH)) or (user.speedy_match_profile.height <= 85) or (user.speedy_match_profile.not_allowed_to_use_speedy_match)):
-            logger.warning("SiteProfileManager::get_matches:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
+            logger.warning("SiteProfileManager::_get_matches:user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}, height={height}, not_allowed_to_use_speedy_match={not_allowed_to_use_speedy_match}".format(
                 user=user,
                 language_code=language_code,
                 number_of_users=len(user_list),
@@ -329,57 +390,14 @@ class SiteProfileManager(BaseManager):
             ))
         return matches_list
 
-    def _get_active_users_for_matches_queryset(self, user, from_list=None):
-        user.speedy_match_profile._set_values_to_match()
-        age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
-        language_code = get_language()
-        blocked_users_ids = user.blocked_entities_ids
-        blocking_users_ids = user.blocking_entities_ids
-        filter_dict = dict(
-            photo__visible_on_website=True,
-            gender__in=user.speedy_match_profile.gender_to_match,
-            diet__in=user.speedy_match_profile.diet_to_match,
-            smoking_status__in=user.speedy_match_profile.smoking_status_to_match,
-            relationship_status__in=user.speedy_match_profile.relationship_status_to_match,
-            speedy_match_site_profile__gender_to_match__contains=[user.gender],
-            speedy_match_site_profile__diet_to_match__contains=[user.diet],
-            speedy_match_site_profile__smoking_status_to_match__contains=[user.smoking_status],
-            speedy_match_site_profile__relationship_status_to_match__contains=[user.relationship_status],
-            date_of_birth__range=age_ranges,
-            speedy_match_site_profile__min_age_to_match__lte=user.get_age(),
-            speedy_match_site_profile__max_age_to_match__gte=user.get_age(),
-            speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
-        )
-        if (from_list is not None):
-            filter_dict["pk__in"] = from_list
-        qs = User.objects.active(
-            **filter_dict
-        ).exclude(
-            pk__in=[user.pk] + blocked_users_ids + blocking_users_ids,
-        ).order_by('-speedy_match_site_profile__last_visit')
-        return qs
-
-    def get_matches(self, user):
-        """
-        Get matches from database.
-
-        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
-        """
-        matches_key = cache_key(type='matches', entity_pk=user.pk)
-        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
-        if (matches_users_ids is not None):
-            matches = self.get_matches_from_list(user=user, from_list=matches_users_ids)
-            matches_order = {u: i for i, u in enumerate(matches_users_ids)}
-            matches = sorted(matches, key=lambda u: matches_order[u.id])
-        else:
-            matches = self._get_matches(user=user)
-            matches_users_ids = [u.id for u in matches]
-            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
-        return matches
-
     def get_matches_from_list(self, user, from_list):
+        """
+        Get matches from database, from a given list of users.
+
+        :param user:
+        :param from_list: A given list of users.
+        :return: matching users.
+        """
         language_code = get_language()
         # Log this function only 0.2% of the time, since it's called very often.
         log_this_function = (random.randint(0, 499) == 0)
@@ -391,7 +409,7 @@ class SiteProfileManager(BaseManager):
         timezone_now = now()
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
-        qs = self._get_active_users_for_matches_queryset(user=user, from_list=from_list)
+        qs = self._get_matching_users_queryset(user=user, from_list=from_list)
         user_list = qs
         matches_list = []
         for other_user in user_list:
@@ -425,5 +443,26 @@ class SiteProfileManager(BaseManager):
                 number_of_matches=len(matches_list),
             ))
         return matches_list
+
+    def get_matches(self, user):
+        """
+        Get matches from database.
+
+        Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
+
+        :param user:
+        :return: Up to 720 matching users.
+        """
+        matches_key = cache_key(type='matches', entity_pk=user.pk)
+        matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
+        if (matches_users_ids is not None):
+            matches = self.get_matches_from_list(user=user, from_list=matches_users_ids)
+            matches_order = {u: i for i, u in enumerate(matches_users_ids)}
+            matches = sorted(matches, key=lambda u: matches_order[u.id])
+        else:
+            matches = self._get_matches(user=user)
+            matches_users_ids = [u.id for u in matches]
+            cache_manager.cache_set(key=matches_key, value=matches_users_ids)
+        return matches
 
 
