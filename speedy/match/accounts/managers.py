@@ -14,6 +14,7 @@ from speedy.core.base import cache_manager
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import User
+from speedy.core.blocks.models import Block
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +35,18 @@ def bust_cache(type, entity_pk, version=None):
     bust_keys = BUST_CACHES[type]
     keys = [cache_key(type=k, entity_pk=entity_pk) for k in bust_keys]
     cache_manager.cache_delete_many(keys=keys, version=version)
+
+
+@receiver(signal=models.signals.post_save, sender=Block)
+def invalidate_matches_on_block(sender, instance: Block, **kwargs):
+    bust_cache(type='matches', entity_pk=instance.blocked.pk)
+    bust_cache(type='matches', entity_pk=instance.blocker.pk)
+
+
+@receiver(signal=models.signals.post_delete, sender=Block)
+def invalidate_matches_on_unblock(sender, instance: Block, **kwargs):
+    bust_cache(type='matches', entity_pk=instance.blocked.pk)
+    bust_cache(type='matches', entity_pk=instance.blocker.pk)
 
 
 @receiver(signal=models.signals.post_save, sender=User)
