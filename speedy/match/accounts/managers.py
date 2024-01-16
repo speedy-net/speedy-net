@@ -460,11 +460,25 @@ class SiteProfileManager(BaseManager):
         ))
         matches_key = cache_key(type='matches', entity_pk=user.pk)
         matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
+        matches_list = []
         if (matches_users_ids is not None):
-            from_cache = "yes"
             matches_list = self.get_matches_from_list(user=user, from_list=matches_users_ids)
             matches_order = {u: i for i, u in enumerate(matches_users_ids)}
             matches_list = sorted(matches_list, key=lambda u: matches_order[u.id])
+            if (not (len(matches_list) == len(matches_users_ids))):
+                # Some users are missing from the list. Call self._get_matches() instead.
+                bust_cache(type='matches', entity_pk=user.pk)
+                matches_users_ids = None
+            else:
+                if (not (matches_users_ids == [u.id for u in matches_list])):
+                    # This is an error. Lists should be identical.
+                    logger.error('SiteProfileManager::get_matches:get inside "if (not (matches_users_ids == [u.id for u in matches_list])):", user={user}, language_code={language_code}, number_of_matches={number_of_matches}'.format(
+                        user=user,
+                        language_code=language_code,
+                        number_of_matches=len(matches_list),
+                    ))
+        if (matches_users_ids is not None):
+            from_cache = "yes"
         else:
             from_cache = "no"
             matches_list = self._get_matches(user=user)
