@@ -7,6 +7,7 @@ from speedy.core.base import cache_manager
 from speedy.core.base.cache_manager import DEFAULT_TIMEOUT
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import Entity, User
+from speedy.match.accounts.managers import bust_cache as matches_bust_cache
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +47,8 @@ class BlockManager(BaseManager):
         bust_cache(type='blocked', entity_pk=blocker.pk, version=2)
         bust_cache(type='blocking', entity_pk=blocked.pk)
         bust_cache(type='blocking', entity_pk=blocked.pk, version=2)
+        matches_bust_cache(type='matches', entity_pk=blocker.pk)
+        matches_bust_cache(type='matches', entity_pk=blocked.pk)
         if ('blocked_entities_ids' in blocker.__dict__):
             del blocker.blocked_entities_ids
         if ('blocking_entities_ids' in blocked.__dict__):
