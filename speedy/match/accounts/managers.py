@@ -453,16 +453,29 @@ class SiteProfileManager(BaseManager):
         :param user:
         :return: Up to 720 matching users.
         """
+        language_code = get_language()
+        logger.debug("SiteProfileManager::get_matches:start:user={user}, language_code={language_code}".format(
+            user=user,
+            language_code=language_code,
+        ))
         matches_key = cache_key(type='matches', entity_pk=user.pk)
         matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=DEFAULT_TIMEOUT)
         if (matches_users_ids is not None):
-            matches = self.get_matches_from_list(user=user, from_list=matches_users_ids)
+            from_cache = "yes"
+            matches_list = self.get_matches_from_list(user=user, from_list=matches_users_ids)
             matches_order = {u: i for i, u in enumerate(matches_users_ids)}
-            matches = sorted(matches, key=lambda u: matches_order[u.id])
+            matches_list = sorted(matches_list, key=lambda u: matches_order[u.id])
         else:
-            matches = self._get_matches(user=user)
-            matches_users_ids = [u.id for u in matches]
+            from_cache = "no"
+            matches_list = self._get_matches(user=user)
+            matches_users_ids = [u.id for u in matches_list]
             cache_manager.cache_set(key=matches_key, value=matches_users_ids)
-        return matches
+        logger.debug("SiteProfileManager::get_matches:end:user={user}, language_code={language_code}, number_of_matches={number_of_matches}, from_cache={from_cache}".format(
+            user=user,
+            language_code=language_code,
+            number_of_matches=len(matches_list),
+            from_cache=from_cache,
+        ))
+        return matches_list
 
 
