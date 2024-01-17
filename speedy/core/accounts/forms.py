@@ -2,6 +2,7 @@ import logging
 
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Submit, Div, HTML, Row, Hidden, Layout
+
 from django import forms
 from django.conf import settings as django_settings
 from django.contrib.auth import forms as django_auth_forms, password_validation

@@ -1,7 +1,7 @@
 import logging
 import hashlib
 import random
-from datetime import timedelta, datetime, date
+from datetime import datetime, date
 from haversine import haversine, Unit
 
 from django.conf import settings as django_settings
