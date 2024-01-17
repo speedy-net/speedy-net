@@ -480,8 +480,15 @@ class SiteProfileManager(BaseManager):
             matches_list = sorted(matches_list, key=lambda u: matches_order[u.id])
             if (not (len(matches_list) == len(matches_users_ids))):
                 # Some users are missing from the list. Call self._get_matches() instead.
+                logger.debug("SiteProfileManager::get_matches:matches are missing from matches_list, calling self._get_matches():user={user}, language_code={language_code}, len(matches_users_ids)={len_matches_users_ids}, len(matches_list)={len_matches_list}".format(
+                    user=user,
+                    language_code=language_code,
+                    len_matches_users_ids=len(matches_users_ids),
+                    len_matches_list=len(matches_list),
+                ))
                 bust_cache(type='matches', entity_pk=user.pk)
                 matches_users_ids = None
+                matches_list = []
             else:
                 if (not (matches_users_ids == [u.id for u in matches_list])):
                     # This is an error. Lists should be identical.
