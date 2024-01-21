@@ -1,7 +1,9 @@
 import time
 
+from django.conf import settings as django_settings
 from django.core.cache import cache
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.utils.translation import get_language
 
 DEFAULT_VALUE = object()
 
@@ -20,6 +22,9 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
 
     wrapped_value = cache.get(key=key, default=DEFAULT_VALUE, version=version)
     if (wrapped_value is DEFAULT_VALUE):
+        return default
+
+    if ((wrapped_value.get('site_id') != django_settings.SITE_ID) or (wrapped_value.get('language') != get_language())):
         return default
 
     if (wrapped_value['expire_time'] is not None) and (sliding_timeout):
@@ -81,6 +86,8 @@ def _wrap(value, timeout):
     wrapped_value = {
         'value': value,
         'expire_time': expire_time,
+        'site_id': django_settings.SITE_ID,
+        'language': django_settings.get_language(),
     }
     return wrapped_value
 
