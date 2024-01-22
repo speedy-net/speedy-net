@@ -87,7 +87,7 @@ def _wrap(value, timeout):
         'value': value,
         'expire_time': expire_time,
         'site_id': django_settings.SITE_ID,
-        'language': django_settings.get_language(),
+        'language': get_language(),
     }
     return wrapped_value
 
