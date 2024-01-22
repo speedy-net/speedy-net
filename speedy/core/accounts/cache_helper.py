@@ -1,3 +1,5 @@
+from django.conf import settings as django_settings
+
 from speedy.core.base import cache_manager
 
 CACHE_TYPES = {
@@ -9,6 +11,7 @@ CACHE_TYPES = {
 }
 
 BUST_CACHES = {
+    'all': list(CACHE_TYPES.keys()),
     'blocked': ['blocked'],
     'blocking': ['blocking'],
     'matches': ['matches'],
@@ -26,7 +29,11 @@ def cache_key(type, entity_pk):
 def bust_cache(type, entity_pk, version=None):
     """
     Bust the cache for a given type, can bust multiple caches.
+
+    If BUST_ALL_CACHES_FOR_A_USER setting is True, do it.
     """
     bust_keys = BUST_CACHES[type]
+    if (django_settings.BUST_ALL_CACHES_FOR_A_USER is True):
+        bust_keys = BUST_CACHES['all']
     keys = [CACHE_TYPES[k] % entity_pk for k in bust_keys]
     cache_manager.cache_delete_many(keys=keys, version=version)
