@@ -10,6 +10,7 @@ from django.dispatch import receiver
 from django.utils.timezone import now
 from django.utils.translation import get_language
 
+from speedy.core.accounts.cache_helper import bust_cache, cache_key
 from speedy.core.base import cache_manager
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
@@ -17,24 +18,6 @@ from speedy.core.accounts.models import User
 from speedy.core.blocks.models import Block
 
 logger = logging.getLogger(__name__)
-
-CACHE_TYPES = {
-    'matches': 'speedy-m-%s',
-}
-
-BUST_CACHES = {
-    'matches': ['matches'],
-}
-
-
-def cache_key(type, entity_pk):
-    return CACHE_TYPES[type] % entity_pk
-
-
-def bust_cache(type, entity_pk, version=None):
-    bust_keys = BUST_CACHES[type]
-    keys = [cache_key(type=k, entity_pk=entity_pk) for k in bust_keys]
-    cache_manager.cache_delete_many(keys=keys, version=version)
 
 
 @receiver(signal=models.signals.post_save, sender=Block)

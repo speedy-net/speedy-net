@@ -4,26 +4,9 @@ from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
 from django.db.models import Q
 
+from speedy.core.accounts.cache_helper import cache_key
 from speedy.core.base import cache_manager
 from speedy.core.base.managers import BaseManager
-
-CACHE_TYPES = {
-    'unread_chats_count': 'speedy-cuc-%s',
-}
-
-BUST_CACHES = {
-    'unread_chats_count': ['unread_chats_count'],
-}
-
-
-def cache_key(type, entity_pk):
-    return CACHE_TYPES[type] % entity_pk
-
-
-def bust_cache(type, entity_pk, version=None):
-    bust_keys = BUST_CACHES[type]
-    keys = [cache_key(type=k, entity_pk=entity_pk) for k in bust_keys]
-    cache_manager.cache_delete_many(keys=keys, version=version)
 
 
 class ChatManager(BaseManager):

@@ -4,37 +4,12 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
 
+from speedy.core.accounts.cache_helper import bust_cache, cache_key
 from speedy.core.base import cache_manager
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import Entity, User
 
 logger = logging.getLogger(__name__)
-
-CACHE_TYPES = {
-    'blocked': 'speedy-bo-%s',
-    'blocking': 'speedy-bd-%s',
-}
-
-BUST_CACHES = {
-    'blocked': ['blocked'],
-    'blocking': ['blocking'],
-}
-
-
-def cache_key(type, entity_pk):
-    """
-    Build the cache key for a particular type of cached value.
-    """
-    return CACHE_TYPES[type] % entity_pk
-
-
-def bust_cache(type, entity_pk, version=None):
-    """
-    Bust the cache for a given type, can bust multiple caches.
-    """
-    bust_keys = BUST_CACHES[type]
-    keys = [CACHE_TYPES[k] % entity_pk for k in bust_keys]
-    cache_manager.cache_delete_many(keys=keys, version=version)
 
 
 class BlockManager(BaseManager):

@@ -7,8 +7,9 @@ from django.core.validators import MaxLengthValidator
 from speedy.core.base.managers import BaseManager
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import RegularUDIDField
+from speedy.core.accounts.cache_helper import bust_cache
 from speedy.core.accounts.models import Entity, User
-from .managers import ChatManager, MessageManager, ReadMarkManager, bust_cache
+from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):

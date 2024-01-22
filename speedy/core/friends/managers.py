@@ -1,15 +1,8 @@
 from django.conf import settings as django_settings
 from friendship.models import Friend
 
+from speedy.core.accounts.cache_helper import cache_key
 from speedy.core.base import cache_manager
-
-CACHE_TYPES = {
-    'received_friendship_requests_count': 'speedy-frrc-%s',
-}
-
-
-def cache_key(type, entity_pk):
-    return CACHE_TYPES[type] % entity_pk
 
 
 class FriendshipRequestManager:

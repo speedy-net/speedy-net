@@ -13,10 +13,11 @@ from django.core.validators import MaxLengthValidator
 from translated_fields import TranslatedField
 
 from speedy.core.base.utils import to_attribute
+from speedy.core.accounts.cache_helper import bust_cache
 from speedy.core.accounts.models import SiteProfileBase, User
 from speedy.core.blocks.models import Block
 from speedy.match.likes.models import UserLike
-from .managers import SiteProfileManager, bust_cache
+from .managers import SiteProfileManager
 
 logger = logging.getLogger(__name__)
 
