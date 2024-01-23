@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
 
-from speedy.core.accounts.cache_helper import bust_cache, cache_key
+from speedy.core.accounts.cache_helper import bust_cache_by_keys, cache_key, get_keys_for_bust_cache
 from speedy.core.base import cache_manager
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import Entity, User
@@ -17,8 +17,9 @@ class BlockManager(BaseManager):
         """
         Update caches after block or unblock.
         """
-        bust_cache(cache_type='blocked', entity_pk=blocker.pk)
-        bust_cache(cache_type='blocking', entity_pk=blocked.pk)
+        keys1 = get_keys_for_bust_cache(cache_type='blocked', entity_pk=blocker.pk)
+        keys2 = get_keys_for_bust_cache(cache_type='blocking', entity_pk=blocked.pk)
+        bust_cache_by_keys(cache_keys=keys1 + keys2)
         if ('blocked_entities_ids' in blocker.__dict__):
             del blocker.blocked_entities_ids
         if ('blocking_entities_ids' in blocked.__dict__):
