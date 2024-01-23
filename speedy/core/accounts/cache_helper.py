@@ -27,7 +27,7 @@ def cache_key(cache_type, entity_pk):
     return CACHE_TYPES[cache_type].format(entity_pk=entity_pk)
 
 
-def bust_cache(cache_type, entity_pk, version=None):
+def bust_cache(cache_type, entity_pk):
     """
     Bust the cache for a given type of cached value, can bust multiple caches.
 
@@ -38,6 +38,6 @@ def bust_cache(cache_type, entity_pk, version=None):
     else:
         bust_keys = BUST_CACHES[cache_type]
     keys = [cache_key(cache_type=k, entity_pk=entity_pk) for k in bust_keys]
-    cache_manager.cache_delete_many(keys=keys, version=version)
+    cache_manager.cache_delete_many(keys=keys)
 
 
