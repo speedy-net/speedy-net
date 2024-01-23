@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 20:21+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Syötä kelvollinen sähköpostiosoite."
 msgid "Email address"
 msgstr "Sähköpostiosoite"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:864
+#: .\__translations\__translations.py:9 .\accounts\models.py:889
 msgid "email address"
 msgstr "sähköpostiosoite"
 
@@ -1934,58 +1934,58 @@ msgstr "Minä ja ystäväni"
 msgid "Anyone"
 msgstr "Kuka tahansa"
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr "Sukunimi (valinnainen)"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr "Sähköpostisi"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr "Uusi salasana"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr "Uusi käyttäjätunnus"
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr "Luo tili"
 
-#: .\accounts\forms.py:165
+#: .\accounts\forms.py:166
 msgid "Update your profile picture"
 msgstr "Päivitä profiilikuva"
 
-#: .\accounts\forms.py:165 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "Profiilikuva vaaditaan."
 
-#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "Sähköpostiosoite tai käyttäjätunnus"
 
-#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Kirjaudu sisään"
 
-#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Unohditko salasanasi?"
 
-#: .\accounts\forms.py:331
+#: .\accounts\forms.py:332
 msgid "Submit"
 msgstr "Lähetä"
 
-#: .\accounts\forms.py:433
+#: .\accounts\forms.py:434
 msgid "Your password"
 msgstr "Your password"
 
-#: .\accounts\forms.py:445
+#: .\accounts\forms.py:446
 msgid "Invalid password."
 msgstr "Väärä salasana."
 
@@ -2009,7 +2009,7 @@ msgstr "kuva"
 msgid "Special username"
 msgstr "Erityinen käyttäjätunnus"
 
-#: .\accounts\models.py:125 .\messages\models.py:117
+#: .\accounts\models.py:125 .\messages\models.py:118
 msgid "entity"
 msgstr "kokonaisuus"
 
@@ -2046,7 +2046,7 @@ msgid "Other"
 msgstr "muu"
 
 #: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
+#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Tuntematon"
 
@@ -2170,7 +2170,7 @@ msgstr "Viimeksi käytetty IP-osoite https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Viimeisin käytetty IP-osoite raaka https://ipapi.com/ tulokset"
 
-#: .\accounts\models.py:508 .\accounts\models.py:848 .\blocks\models.py:15
+#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
 msgid "user"
 msgstr "käyttäjä"
 
@@ -2182,56 +2182,56 @@ msgstr "käyttäjät"
 msgid "Superuser must be equal to staff."
 msgstr "Pääkäyttäjän on oltava yhtäläinen henkilöstöön nähden."
 
-#: .\accounts\models.py:849
+#: .\accounts\models.py:874
 msgid "email"
 msgstr "sähköposti"
 
-#: .\accounts\models.py:850
+#: .\accounts\models.py:875
 msgid "is confirmed"
 msgstr "on vahvistettu"
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:876
 msgid "is primary"
 msgstr "on ensisijainen"
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:877
 msgid "confirmation token"
 msgstr "vahvistustunnus"
 
-#: .\accounts\models.py:853
+#: .\accounts\models.py:878
 msgid "confirmation sent"
 msgstr "vahvistus lähetetty"
 
-#: .\accounts\models.py:854
+#: .\accounts\models.py:879
 msgid "Who can see this email"
 msgstr "Kuka voi nähdä tämän sähköpostin"
 
-#: .\accounts\models.py:865
+#: .\accounts\models.py:890
 msgid "email addresses"
 msgstr "email addresses"
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:957
 msgid "User"
 msgstr "Käyttäjä"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:958
 msgid "last visit"
 msgstr "viimeisin vierailu"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:970
 msgid "Today"
 msgstr "Tänään"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:972
 msgid "Yesterday"
 msgstr "Eilen"
 
-#: .\accounts\models.py:949
+#: .\accounts\models.py:974
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) sitten"
 
-#: .\accounts\models.py:951
+#: .\accounts\models.py:976
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sitten"
@@ -2495,7 +2495,7 @@ msgstr "id sisältää laittomia merkkejä."
 msgid "Changes saved."
 msgstr "Muutokset tallennettu."
 
-#: .\blocks\managers.py:56 .\blocks\models.py:31
+#: .\blocks\managers.py:31 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "Käyttäjät eivät voi estää itseään."
 
@@ -2551,7 +2551,7 @@ msgstr "Väärinkäyttö (käyttäjä)"
 msgid "Abuse (Photo)"
 msgstr "Väärinkäyttö (valokuva)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:101
+#: .\contact_by_form\models.py:21 .\messages\models.py:102
 msgid "sender"
 msgstr "lähettäjä"
 
@@ -2611,63 +2611,63 @@ msgstr "Ystävyyspyyntö hylätty."
 msgid "Messages"
 msgstr "Viestit"
 
-#: .\messages\models.py:16
+#: .\messages\models.py:17
 msgid "site"
 msgstr "sivusto"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:18
 msgid "participant 1"
 msgstr "osallistuja 1"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:19
 msgid "participant 2"
 msgstr "osallistuja 2"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:20
 msgid "participants"
 msgstr "osallistujat"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:21
 msgid "is group chat"
 msgstr "on ryhmäkeskustelu"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:22
 msgid "last message"
 msgstr "viimeinen viesti"
 
-#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
+#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
 msgid "chat"
 msgstr "keskustelu"
 
-#: .\messages\models.py:55
+#: .\messages\models.py:56
 msgid "chats"
 msgstr "keskustelut"
 
-#: .\messages\models.py:64
+#: .\messages\models.py:65
 msgid "None"
 msgstr "Ei mitään"
 
-#: .\messages\models.py:102 .\messages\models.py:107
+#: .\messages\models.py:103 .\messages\models.py:108
 msgid "message"
 msgstr "viesti"
 
-#: .\messages\models.py:108
+#: .\messages\models.py:109
 msgid "messages"
 msgstr "viestit"
 
-#: .\messages\models.py:123
+#: .\messages\models.py:124
 msgid "read mark"
 msgstr "lue merkki"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:125
 msgid "read marks"
 msgstr "lue merkit"
 
-#: .\settings\base.py:183
+#: .\settings\base.py:185
 msgid "English"
 msgstr "englanti"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "heprea"
 

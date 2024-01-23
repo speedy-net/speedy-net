@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 02:18+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,13 +561,13 @@ msgstr "Scrivi una breve descrizione di te stesso/a."
 msgid "Please write where you live."
 msgstr "Scrivi dove vivi."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:113
+#: .\accounts\forms.py:118 .\accounts\models.py:114
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Hai figli? Quanti?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:116
+#: .\accounts\forms.py:121 .\accounts\models.py:117
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -601,115 +601,115 @@ msgstr "È richiesta una corrispondenza con lo stato della relazione."
 msgid "Where do you live?"
 msgstr "Dove vivi?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:123
+#: .\accounts\forms.py:186 .\accounts\models.py:124
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Il genere della corrispondenza"
 
-#: .\accounts\models.py:37 .\accounts\models.py:89
+#: .\accounts\models.py:38 .\accounts\models.py:90
 msgid "No match"
 msgstr "Nessuna corrispondenza"
 
-#: .\accounts\models.py:38 .\accounts\models.py:90
+#: .\accounts\models.py:39 .\accounts\models.py:91
 msgid "One heart"
 msgstr "Un cuore"
 
-#: .\accounts\models.py:39 .\accounts\models.py:91
+#: .\accounts\models.py:40 .\accounts\models.py:92
 msgid "Two hearts"
 msgstr "Due cuori"
 
-#: .\accounts\models.py:40 .\accounts\models.py:92
+#: .\accounts\models.py:41 .\accounts\models.py:93
 msgid "Three hearts"
 msgstr "Tre cuori"
 
-#: .\accounts\models.py:41 .\accounts\models.py:93
+#: .\accounts\models.py:42 .\accounts\models.py:94
 msgid "Four hearts"
 msgstr "Quattro cuori"
 
-#: .\accounts\models.py:42 .\accounts\models.py:94
+#: .\accounts\models.py:43 .\accounts\models.py:95
 msgid "Five hearts"
 msgstr "Cinque cuori"
 
-#: .\accounts\models.py:98
+#: .\accounts\models.py:99
 msgid "User"
 msgstr "utente"
 
-#: .\accounts\models.py:99
+#: .\accounts\models.py:100
 msgid "On new likes"
 msgstr "Sui nuovi Mi Piace"
 
-#: .\accounts\models.py:102
+#: .\accounts\models.py:103
 msgid "Active languages"
 msgstr "Lingue attive"
 
-#: .\accounts\models.py:108
+#: .\accounts\models.py:109
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Altezza"
 
-#: .\accounts\models.py:108
+#: .\accounts\models.py:109
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:110
+#: .\accounts\models.py:111
 msgid "Few words about me"
 msgstr "Scrivi una breve descrizione di te stesso/a."
 
-#: .\accounts\models.py:119
+#: .\accounts\models.py:120
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "La mia corrispondenza ideale"
 
-#: .\accounts\models.py:129
+#: .\accounts\models.py:130
 msgid "Minimal age to match"
 msgstr "Età minima della corrispondenza"
 
-#: .\accounts\models.py:130
+#: .\accounts\models.py:131
 msgid "Maximal age to match"
 msgstr "Età massima della corrispondenza"
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:132
 msgid "Diet match"
 msgstr "Corrispondenza con la dieta"
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:133
 msgid "Smoking status match"
 msgstr "Corrispondenza con lo stato di fumatore"
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:134
 msgid "Relationship status match"
 msgstr "Corrispondenza dello stato della relazione"
 
-#: .\accounts\models.py:136
+#: .\accounts\models.py:137
 msgid "Diet to match"
 msgstr "Dieta della corrispondenza"
 
-#: .\accounts\models.py:144
+#: .\accounts\models.py:145
 msgid "Smoking status to match"
 msgstr "Stato di fumatore della corrispondenza"
 
-#: .\accounts\models.py:152
+#: .\accounts\models.py:153
 msgid "Relationship status to match"
 msgstr "Stato relazione della corrispondenza"
 
-#: .\accounts\models.py:159
+#: .\accounts\models.py:160
 msgid "Activation step"
 msgstr "Fase di attivazione"
 
-#: .\accounts\models.py:162
+#: .\accounts\models.py:163
 msgid "Number of matches on last user's search"
 msgstr "Numero di corrispondenze sulla ricerca dell’ultimo utente"
 
-#: .\accounts\models.py:208
+#: .\accounts\models.py:209
 msgid "Speedy Match Profile"
 msgstr "Profilo Speedy Match"
 
-#: .\accounts\models.py:209 .\profiles\apps.py:8
+#: .\accounts\models.py:210 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Profili Speedy Match"
 
-#: .\accounts\models.py:298 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:299 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Non hai confermato il tuo indirizzo e-mail."
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 20:21+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Voer een geldig e-mailadres in."
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:864
+#: .\__translations\__translations.py:9 .\accounts\models.py:889
 msgid "email address"
 msgstr "e-mailadres"
 
@@ -1949,58 +1949,58 @@ msgstr "Ik en mijn vrienden"
 msgid "Anyone"
 msgstr "Iedereen"
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr "Achternaam (optioneel)"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr "Je e-mail"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr "Nieuw paswoord"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr "Nieuwe gebruikersnaam"
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr "Account aanmaken"
 
-#: .\accounts\forms.py:165
+#: .\accounts\forms.py:166
 msgid "Update your profile picture"
 msgstr "Werk je profielfoto bij"
 
-#: .\accounts\forms.py:165 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "Een profielfoto is verplicht."
 
-#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-mail of gebruikersnaam"
 
-#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Log in"
 
-#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Je wachtwoord vergeten?"
 
-#: .\accounts\forms.py:331
+#: .\accounts\forms.py:332
 msgid "Submit"
 msgstr "Indienen"
 
-#: .\accounts\forms.py:433
+#: .\accounts\forms.py:434
 msgid "Your password"
 msgstr "Je wachtwoord"
 
-#: .\accounts\forms.py:445
+#: .\accounts\forms.py:446
 msgid "Invalid password."
 msgstr "Ongeldig wachtwoord."
 
@@ -2024,7 +2024,7 @@ msgstr "foto"
 msgid "Special username"
 msgstr "Speciale gebruikersnaam"
 
-#: .\accounts\models.py:125 .\messages\models.py:117
+#: .\accounts\models.py:125 .\messages\models.py:118
 msgid "entity"
 msgstr "entiteit"
 
@@ -2061,7 +2061,7 @@ msgid "Other"
 msgstr "Ander"
 
 #: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
+#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Onbekend"
 
@@ -2185,7 +2185,7 @@ msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:508 .\accounts\models.py:848 .\blocks\models.py:15
+#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
 msgid "user"
 msgstr "gebruiker"
 
@@ -2197,56 +2197,56 @@ msgstr "gebruikers"
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:849
+#: .\accounts\models.py:874
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:850
+#: .\accounts\models.py:875
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:876
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:877
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:853
+#: .\accounts\models.py:878
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:854
+#: .\accounts\models.py:879
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:865
+#: .\accounts\models.py:890
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:957
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:958
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:970
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:972
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:949
+#: .\accounts\models.py:974
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:951
+#: .\accounts\models.py:976
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"
@@ -2508,7 +2508,7 @@ msgstr "id bevat illegale tekens."
 msgid "Changes saved."
 msgstr "Wijzigingen opgeslagen."
 
-#: .\blocks\managers.py:56 .\blocks\models.py:31
+#: .\blocks\managers.py:31 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "Gebruikers kunnen zichzelf niet blokkeren."
 
@@ -2564,7 +2564,7 @@ msgstr "Misbruik (gebruiker)"
 msgid "Abuse (Photo)"
 msgstr "Misbruik (foto)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:101
+#: .\contact_by_form\models.py:21 .\messages\models.py:102
 msgid "sender"
 msgstr "afzender"
 
@@ -2624,63 +2624,63 @@ msgstr "Vriendschapsverzoek afgewezen."
 msgid "Messages"
 msgstr "Berichten"
 
-#: .\messages\models.py:16
+#: .\messages\models.py:17
 msgid "site"
 msgstr "site"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:18
 msgid "participant 1"
 msgstr "deelnemer 1"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:19
 msgid "participant 2"
 msgstr "deelnemer 2"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:20
 msgid "participants"
 msgstr "deelnemers"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:21
 msgid "is group chat"
 msgstr "is een groepsschat"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:22
 msgid "last message"
 msgstr "Laatste bericht"
 
-#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
+#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
 msgid "chat"
 msgstr "chatten"
 
-#: .\messages\models.py:55
+#: .\messages\models.py:56
 msgid "chats"
 msgstr "chats"
 
-#: .\messages\models.py:64
+#: .\messages\models.py:65
 msgid "None"
 msgstr "Geen"
 
-#: .\messages\models.py:102 .\messages\models.py:107
+#: .\messages\models.py:103 .\messages\models.py:108
 msgid "message"
 msgstr "bericht"
 
-#: .\messages\models.py:108
+#: .\messages\models.py:109
 msgid "messages"
 msgstr "berichten"
 
-#: .\messages\models.py:123
+#: .\messages\models.py:124
 msgid "read mark"
 msgstr "zie markering"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:125
 msgid "read marks"
 msgstr "zie markeringen"
 
-#: .\settings\base.py:183
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Engels"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebreeuws"
 

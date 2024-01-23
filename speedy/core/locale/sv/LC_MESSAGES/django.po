@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 20:21+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:864
+#: .\__translations\__translations.py:9 .\accounts\models.py:889
 msgid "email address"
 msgstr "e-postadress"
 
@@ -1943,58 +1943,58 @@ msgstr "Jag och mina vänner"
 msgid "Anyone"
 msgstr "Vem som helst"
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr "Efternamn (valfritt)"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr "Din e-postadress"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr "Nytt lösenord"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr "Nytt användarnamn"
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr "Skapa ett konto"
 
-#: .\accounts\forms.py:165
+#: .\accounts\forms.py:166
 msgid "Update your profile picture"
 msgstr "Uppdatera profilbilden"
 
-#: .\accounts\forms.py:165 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "En profilbild är obligatorisk."
 
-#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-post eller användarnamn"
 
-#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Logga in"
 
-#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Glömt lösenordet?"
 
-#: .\accounts\forms.py:331
+#: .\accounts\forms.py:332
 msgid "Submit"
 msgstr "Skicka in"
 
-#: .\accounts\forms.py:433
+#: .\accounts\forms.py:434
 msgid "Your password"
 msgstr "Lösenord"
 
-#: .\accounts\forms.py:445
+#: .\accounts\forms.py:446
 msgid "Invalid password."
 msgstr "Ogiltigt lösenord"
 
@@ -2018,7 +2018,7 @@ msgstr "Foto"
 msgid "Special username"
 msgstr "Särskilt användarnamn"
 
-#: .\accounts\models.py:125 .\messages\models.py:117
+#: .\accounts\models.py:125 .\messages\models.py:118
 msgid "entity"
 msgstr "enhet"
 
@@ -2055,7 +2055,7 @@ msgid "Other"
 msgstr "Annan"
 
 #: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
+#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Okänd"
 
@@ -2179,7 +2179,7 @@ msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:508 .\accounts\models.py:848 .\blocks\models.py:15
+#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
@@ -2191,56 +2191,56 @@ msgstr "användare"
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:849
+#: .\accounts\models.py:874
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:850
+#: .\accounts\models.py:875
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:876
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:877
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:853
+#: .\accounts\models.py:878
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:854
+#: .\accounts\models.py:879
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:865
+#: .\accounts\models.py:890
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:957
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:958
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:970
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:972
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:949
+#: .\accounts\models.py:974
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:951
+#: .\accounts\models.py:976
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2502,7 +2502,7 @@ msgstr "id innehåller olagliga tecken."
 msgid "Changes saved."
 msgstr "Ändringar sparade."
 
-#: .\blocks\managers.py:56 .\blocks\models.py:31
+#: .\blocks\managers.py:31 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "Användare kan inte blockera sig själva."
 
@@ -2558,7 +2558,7 @@ msgstr "Missbruk (användare)"
 msgid "Abuse (Photo)"
 msgstr "Missbruk (foto)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:101
+#: .\contact_by_form\models.py:21 .\messages\models.py:102
 msgid "sender"
 msgstr "avsändare"
 
@@ -2618,63 +2618,63 @@ msgstr "Vänskapsförfrågan avvisad."
 msgid "Messages"
 msgstr "Meddelanden"
 
-#: .\messages\models.py:16
+#: .\messages\models.py:17
 msgid "site"
 msgstr "webbplats"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:18
 msgid "participant 1"
 msgstr "delatagare 1"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:19
 msgid "participant 2"
 msgstr "deltagare 2"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:20
 msgid "participants"
 msgstr "deltagare"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:21
 msgid "is group chat"
 msgstr "är gruppchatt"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:22
 msgid "last message"
 msgstr "sista meddelandet"
 
-#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
+#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
 msgid "chat"
 msgstr "chatt"
 
-#: .\messages\models.py:55
+#: .\messages\models.py:56
 msgid "chats"
 msgstr "chatt"
 
-#: .\messages\models.py:64
+#: .\messages\models.py:65
 msgid "None"
 msgstr "Inga"
 
-#: .\messages\models.py:102 .\messages\models.py:107
+#: .\messages\models.py:103 .\messages\models.py:108
 msgid "message"
 msgstr "meddelande"
 
-#: .\messages\models.py:108
+#: .\messages\models.py:109
 msgid "messages"
 msgstr "meddelanden"
 
-#: .\messages\models.py:123
+#: .\messages\models.py:124
 msgid "read mark"
 msgstr "läs markering"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:125
 msgid "read marks"
 msgstr "läs markeringar"
 
-#: .\settings\base.py:183
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Engelska"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebreiska"
 

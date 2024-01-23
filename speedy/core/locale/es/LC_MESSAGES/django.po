@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 20:21+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,7 +872,7 @@ msgstr "Introduzca una dirección de correo electrónico válida."
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:864
+#: .\__translations\__translations.py:9 .\accounts\models.py:889
 msgid "email address"
 msgstr "dirección de correo electrónico"
 
@@ -1949,58 +1949,58 @@ msgstr "Yo y mis amigos"
 msgid "Anyone"
 msgstr "Cualquiera"
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr "Apellido (opcional)"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr "Tu correo electrónico"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr "Nueva contraseña"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr "Nuevo nombre de usuario"
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr "Crea una cuenta"
 
-#: .\accounts\forms.py:165
+#: .\accounts\forms.py:166
 msgid "Update your profile picture"
 msgstr "Actualiza tu foto de perfil"
 
-#: .\accounts\forms.py:165 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "Se requiere una foto de perfil."
 
-#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "Correo electrónico o nombre de usuario"
 
-#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Inicio de sesión"
 
-#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: .\accounts\forms.py:331
+#: .\accounts\forms.py:332
 msgid "Submit"
 msgstr "Enviar"
 
-#: .\accounts\forms.py:433
+#: .\accounts\forms.py:434
 msgid "Your password"
 msgstr "Tu contraseña"
 
-#: .\accounts\forms.py:445
+#: .\accounts\forms.py:446
 msgid "Invalid password."
 msgstr "Contraseña no válida."
 
@@ -2024,7 +2024,7 @@ msgstr "foto"
 msgid "Special username"
 msgstr "Nombre de usuario especial"
 
-#: .\accounts\models.py:125 .\messages\models.py:117
+#: .\accounts\models.py:125 .\messages\models.py:118
 msgid "entity"
 msgstr "entidad"
 
@@ -2061,7 +2061,7 @@ msgid "Other"
 msgstr "Otro"
 
 #: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
+#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Desconocido"
 
@@ -2185,7 +2185,7 @@ msgstr "Última dirección IP utilizo https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "La última dirección IP utilizó https://ipapi.com/ results sin procesar"
 
-#: .\accounts\models.py:508 .\accounts\models.py:848 .\blocks\models.py:15
+#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
 msgid "user"
 msgstr "usuario"
 
@@ -2197,56 +2197,56 @@ msgstr "usuarios"
 msgid "Superuser must be equal to staff."
 msgstr "El superusuario debe ser igual al personal."
 
-#: .\accounts\models.py:849
+#: .\accounts\models.py:874
 msgid "email"
 msgstr "correo electrónico"
 
-#: .\accounts\models.py:850
+#: .\accounts\models.py:875
 msgid "is confirmed"
 msgstr "esta confirmado"
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:876
 msgid "is primary"
 msgstr "es primario"
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:877
 msgid "confirmation token"
 msgstr "ficha de confirmación"
 
-#: .\accounts\models.py:853
+#: .\accounts\models.py:878
 msgid "confirmation sent"
 msgstr "confirmación enviada"
 
-#: .\accounts\models.py:854
+#: .\accounts\models.py:879
 msgid "Who can see this email"
 msgstr "¿Quién puede ver este correo electrónico?"
 
-#: .\accounts\models.py:865
+#: .\accounts\models.py:890
 msgid "email addresses"
 msgstr "direcciones de correo electrónico"
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:957
 msgid "User"
 msgstr "usuario"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:958
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:970
 msgid "Today"
 msgstr "Hoy"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:972
 msgid "Yesterday"
 msgstr "Ayer"
 
-#: .\accounts\models.py:949
+#: .\accounts\models.py:974
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "El {date} ({timesince_ago})"
 
-#: .\accounts\models.py:951
+#: .\accounts\models.py:976
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "hace {timesince}"
@@ -2512,7 +2512,7 @@ msgstr "id contiene caracteres ilegales."
 msgid "Changes saved."
 msgstr "Cambios guardados."
 
-#: .\blocks\managers.py:56 .\blocks\models.py:31
+#: .\blocks\managers.py:31 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "Los usuarios no pueden bloquearse a sí mismos."
 
@@ -2568,7 +2568,7 @@ msgstr "Abuso (Usuario)"
 msgid "Abuse (Photo)"
 msgstr "Abuso (Foto)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:101
+#: .\contact_by_form\models.py:21 .\messages\models.py:102
 msgid "sender"
 msgstr "remitente"
 
@@ -2628,63 +2628,63 @@ msgstr "Solicitud de amistad rechazada."
 msgid "Messages"
 msgstr "Mensajes"
 
-#: .\messages\models.py:16
+#: .\messages\models.py:17
 msgid "site"
 msgstr "sitio"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:18
 msgid "participant 1"
 msgstr "participante 1"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:19
 msgid "participant 2"
 msgstr "participante 2"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:20
 msgid "participants"
 msgstr "participantes"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:21
 msgid "is group chat"
 msgstr "es chat grupal"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:22
 msgid "last message"
 msgstr "último mensaje"
 
-#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
+#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
 msgid "chat"
 msgstr "chat"
 
-#: .\messages\models.py:55
+#: .\messages\models.py:56
 msgid "chats"
 msgstr "chats"
 
-#: .\messages\models.py:64
+#: .\messages\models.py:65
 msgid "None"
 msgstr "Ninguno"
 
-#: .\messages\models.py:102 .\messages\models.py:107
+#: .\messages\models.py:103 .\messages\models.py:108
 msgid "message"
 msgstr "Mensaje"
 
-#: .\messages\models.py:108
+#: .\messages\models.py:109
 msgid "messages"
 msgstr "Mensajes"
 
-#: .\messages\models.py:123
+#: .\messages\models.py:124
 msgid "read mark"
 msgstr "leer marca"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:125
 msgid "read marks"
 msgstr "leer marcas"
 
-#: .\settings\base.py:183
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Inglés"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebreo"
 

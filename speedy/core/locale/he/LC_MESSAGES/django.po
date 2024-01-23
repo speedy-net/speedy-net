@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 20:21+0200\n"
+"POT-Creation-Date: 2024-01-23 03:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,7 +854,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:864
+#: .\__translations\__translations.py:9 .\accounts\models.py:889
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -1920,58 +1920,58 @@ msgstr "אני והחברים/ות שלי"
 msgid "Anyone"
 msgstr "כל אחד/ת"
 
-#: .\accounts\forms.py:65
+#: .\accounts\forms.py:66
 msgid "Last name (optional)"
 msgstr "שם משפחה (אופציונלי)"
 
-#: .\accounts\forms.py:129
+#: .\accounts\forms.py:130
 msgid "Your email"
 msgstr "הדואר האלקטרוני שלך"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:131
 msgid "New password"
 msgstr "סיסמה חדשה"
 
-#: .\accounts\forms.py:138
+#: .\accounts\forms.py:139
 msgid "New username"
 msgstr "שם משתמש/ת חדש"
 
-#: .\accounts\forms.py:141
+#: .\accounts\forms.py:142
 msgid "Create an account"
 msgstr "צור/י חשבון"
 
-#: .\accounts\forms.py:165
+#: .\accounts\forms.py:166
 msgid "Update your profile picture"
 msgstr "עדכנ/י את תמונת הפרופיל שלך"
 
-#: .\accounts\forms.py:165 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:233
 msgid "A profile picture is required."
 msgstr "נדרשת תמונת פרופיל."
 
-#: .\accounts\forms.py:309 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "דואר אלקטרוני או שם משתמש/ת"
 
-#: .\accounts\forms.py:315 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "כניסה"
 
-#: .\accounts\forms.py:318 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
-#: .\accounts\forms.py:331
+#: .\accounts\forms.py:332
 msgid "Submit"
 msgstr "שלח/י"
 
-#: .\accounts\forms.py:433
+#: .\accounts\forms.py:434
 msgid "Your password"
 msgstr "הסיסמה שלך"
 
-#: .\accounts\forms.py:445
+#: .\accounts\forms.py:446
 msgid "Invalid password."
 msgstr "הסיסמה לא תקינה."
 
@@ -1995,7 +1995,7 @@ msgstr "תמונה"
 msgid "Special username"
 msgstr "שם משתמש/ת מיוחד"
 
-#: .\accounts\models.py:125 .\messages\models.py:117
+#: .\accounts\models.py:125 .\messages\models.py:118
 msgid "entity"
 msgstr "ישות"
 
@@ -2032,7 +2032,7 @@ msgid "Other"
 msgstr "אחר/ת"
 
 #: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
-#: .\messages\models.py:59 .\messages\models.py:60 .\messages\models.py:113
+#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "לא ידוע"
 
@@ -2156,7 +2156,7 @@ msgstr "Last IP address used https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Last IP address used raw https://ipapi.com/ results"
 
-#: .\accounts\models.py:508 .\accounts\models.py:848 .\blocks\models.py:15
+#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -2168,56 +2168,56 @@ msgstr "משתמשים"
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:849
+#: .\accounts\models.py:874
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:850
+#: .\accounts\models.py:875
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:851
+#: .\accounts\models.py:876
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:852
+#: .\accounts\models.py:877
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:853
+#: .\accounts\models.py:878
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:854
+#: .\accounts\models.py:879
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:865
+#: .\accounts\models.py:890
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:957
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:958
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:970
 msgid "Today"
 msgstr "היום"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:972
 msgid "Yesterday"
 msgstr "אתמול"
 
-#: .\accounts\models.py:949
+#: .\accounts\models.py:974
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "בתאריך {date} ({timesince_ago})"
 
-#: .\accounts\models.py:951
+#: .\accounts\models.py:976
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "לפני {timesince}"
@@ -2466,7 +2466,7 @@ msgstr "id מכיל תווים לא חוקיים."
 msgid "Changes saved."
 msgstr "השינויים נשמרו."
 
-#: .\blocks\managers.py:56 .\blocks\models.py:31
+#: .\blocks\managers.py:31 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "משתמשים לא יכולים לחסום את עצמם."
 
@@ -2522,7 +2522,7 @@ msgstr "Abuse (User)"
 msgid "Abuse (Photo)"
 msgstr "Abuse (Photo)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:101
+#: .\contact_by_form\models.py:21 .\messages\models.py:102
 msgid "sender"
 msgstr "שולח/ת"
 
@@ -2582,63 +2582,63 @@ msgstr "בקשת החברות נדחתה."
 msgid "Messages"
 msgstr "הודעות"
 
-#: .\messages\models.py:16
+#: .\messages\models.py:17
 msgid "site"
 msgstr "אתר"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:18
 msgid "participant 1"
 msgstr "משתתפ/ת 1"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:19
 msgid "participant 2"
 msgstr "משתתפ/ת 2"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:20
 msgid "participants"
 msgstr "משתתפים"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:21
 msgid "is group chat"
 msgstr "is group chat"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:22
 msgid "last message"
 msgstr "הודעה אחרונה"
 
-#: .\messages\models.py:54 .\messages\models.py:100 .\messages\models.py:118
+#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
 msgid "chat"
 msgstr "צ'ט"
 
-#: .\messages\models.py:55
+#: .\messages\models.py:56
 msgid "chats"
 msgstr "צ'טים"
 
-#: .\messages\models.py:64
+#: .\messages\models.py:65
 msgid "None"
 msgstr "אין"
 
-#: .\messages\models.py:102 .\messages\models.py:107
+#: .\messages\models.py:103 .\messages\models.py:108
 msgid "message"
 msgstr "הודעה"
 
-#: .\messages\models.py:108
+#: .\messages\models.py:109
 msgid "messages"
 msgstr "הודעות"
 
-#: .\messages\models.py:123
+#: .\messages\models.py:124
 msgid "read mark"
 msgstr "read mark"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:125
 msgid "read marks"
 msgstr "read marks"
 
-#: .\settings\base.py:183
+#: .\settings\base.py:185
 msgid "English"
 msgstr "אנגלית"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "עברית"
 
