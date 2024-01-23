@@ -2,7 +2,7 @@ from django.db import models
 from django.dispatch import receiver
 from friendship.models import Friend, FriendshipRequest
 
-from speedy.core.accounts.cache_helper import bust_cache_by_keys, get_keys_for_bust_cache
+from speedy.core.accounts.cache_helper import bust_cache
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
@@ -23,14 +23,10 @@ def update_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
 
 @receiver(signal=models.signals.post_save, sender=FriendshipRequest)
 def invalidate_received_friendship_requests_count_after_friendship_request_created(sender, instance: FriendshipRequest, **kwargs):
-    keys1 = get_keys_for_bust_cache(cache_type='received_friendship_requests_count', entity_pk=instance.from_user.pk)
-    keys2 = get_keys_for_bust_cache(cache_type='received_friendship_requests_count', entity_pk=instance.to_user.pk)
-    bust_cache_by_keys(cache_keys=keys1 + keys2)
+    bust_cache(cache_type='received_friendship_requests_count', entities_pks=[instance.from_user.pk, instance.to_user.pk])
 
 
 @receiver(signal=models.signals.post_delete, sender=FriendshipRequest)
 def invalidate_received_friendship_requests_count_after_friendship_request_deleted(sender, instance: FriendshipRequest, **kwargs):
-    keys1 = get_keys_for_bust_cache(cache_type='received_friendship_requests_count', entity_pk=instance.from_user.pk)
-    keys2 = get_keys_for_bust_cache(cache_type='received_friendship_requests_count', entity_pk=instance.to_user.pk)
-    bust_cache_by_keys(cache_keys=keys1 + keys2)
+    bust_cache(cache_type='received_friendship_requests_count', entities_pks=[instance.from_user.pk, instance.to_user.pk])
 
