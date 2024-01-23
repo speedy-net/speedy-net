@@ -631,6 +631,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return profile
 
     def refresh_all_profiles(self):
+        """
+        Refresh all profiles.
+
+        :return: None
+        """
         self._profile = self.get_profile()
         if (django_settings.LOGIN_ENABLED):
             from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
@@ -639,6 +644,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
 
     def get_received_friendship_requests(self):
+        """
+        Return a list of received friendship requests.
+
+        :return: A list of received friendship requests.
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -672,6 +682,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             raise NotImplementedError()
 
     def get_sent_friendship_requests(self):
+        """
+        Return a list of sent friendship requests.
+
+        :return: A list of sent friendship requests.
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -705,6 +720,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             raise NotImplementedError()
 
     def get_speedy_net_friends(self):
+        """
+        Return a list of Speedy Net friends.
+
+        :return: A list of Speedy Net friends.
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -725,6 +745,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return friends
 
     def get_friends(self):
+        """
+        Return a list of friends.
+
+        :return: A list of friends.
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
