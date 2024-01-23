@@ -132,8 +132,7 @@ class ReadMark(TimeStampedModel):
 def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kwargs):
     if (instance.last_message is not None):
         other_participants = instance.get_other_participants(entity=instance.last_message.sender)
-        for participant in other_participants:
-            bust_cache(cache_type='unread_chats_count', entity_pk=participant.pk)
+        bust_cache(cache_type='unread_chats_count', entities_pks=[p.pk for p in other_participants])
 
 
 @receiver(signal=models.signals.post_save, sender=ReadMark)

@@ -27,17 +27,23 @@ def cache_key(cache_type, entity_pk):
     return CACHE_TYPES[cache_type].format(entity_pk=entity_pk)
 
 
-def bust_cache(cache_type, entity_pk):
+def bust_cache(cache_type, entity_pk=None, entities_pks=None):
     """
     Bust the cache for a given type of cached value, can bust multiple caches.
 
     If BUST_ALL_CACHES_FOR_A_USER setting is True, do it. In this case, cache_type is ignored.
+
+    :param cache_type:
+    :param entity_pk:    Either entity_pk or entities_pks must be passed
+    :param entities_pks: Either entity_pk or entities_pks must be passed
     """
     if (django_settings.BUST_ALL_CACHES_FOR_A_USER is True):
         bust_keys = BUST_CACHES['all']
     else:
         bust_keys = BUST_CACHES[cache_type]
-    keys = [cache_key(cache_type=k, entity_pk=entity_pk) for k in bust_keys]
+    if (entity_pk is not None):
+        entities_pks = [entity_pk]
+    keys = [cache_key(cache_type=k, entity_pk=entity_pk) for k in bust_keys for entity_pk in entities_pks]
     cache_manager.cache_delete_many(keys=keys)
 
 
