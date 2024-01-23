@@ -59,7 +59,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
             return True, 1
 
         try:
-            mail_admins_key = cache_key(type='mail_admins', subject=subject)
+            mail_admins_key = cache_key(cache_type='mail_admins', subject=subject)
             now = time.time()
             value = {
                 'cooldown_start_time': now,

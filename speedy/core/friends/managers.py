@@ -15,7 +15,7 @@ class FriendshipRequestManager:
 
         :type user: speedy.core.accounts.models.User
         """
-        key = cache_key(type='received_friendship_requests_count', entity_pk=user.pk)
+        key = cache_key(cache_type='received_friendship_requests_count', entity_pk=user.pk)
         cached_value = cache_manager.cache_get(key=key, sliding_timeout=django_settings.CACHE_GET_RECEIVED_FRIENDSHIP_REQUESTS_COUNT_SLIDING_TIMEOUT)
         raw_count = len(Friend.objects.requests(user=user))
         if ((cached_value is not None) and (cached_value['raw_count'] == raw_count)):

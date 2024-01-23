@@ -52,7 +52,7 @@ class ChatManager(BaseManager):
 
     def count_unread_chats(self, entity):
         from .models import ReadMark
-        unread_chats_count_cache_key = cache_key(type='unread_chats_count', entity_pk=entity.pk)
+        unread_chats_count_cache_key = cache_key(cache_type='unread_chats_count', entity_pk=entity.pk)
         unread_chats_count = cache_manager.cache_get(key=unread_chats_count_cache_key, sliding_timeout=django_settings.CACHE_GET_UNREAD_CHATS_COUNT_SLIDING_TIMEOUT)
         if (unread_chats_count is None):
             chat_list = self.chats(entity=entity)
