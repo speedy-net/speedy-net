@@ -22,20 +22,20 @@ logger = logging.getLogger(__name__)
 
 @receiver(signal=models.signals.post_save, sender=Block)
 def invalidate_matches_on_block(sender, instance: Block, **kwargs):
-    bust_cache(type='matches', entity_pk=instance.blocked.pk)
-    bust_cache(type='matches', entity_pk=instance.blocker.pk)
+    bust_cache(cache_type='matches', entity_pk=instance.blocked.pk)
+    bust_cache(cache_type='matches', entity_pk=instance.blocker.pk)
 
 
 @receiver(signal=models.signals.post_delete, sender=Block)
 def invalidate_matches_on_unblock(sender, instance: Block, **kwargs):
-    bust_cache(type='matches', entity_pk=instance.blocked.pk)
-    bust_cache(type='matches', entity_pk=instance.blocker.pk)
+    bust_cache(cache_type='matches', entity_pk=instance.blocked.pk)
+    bust_cache(cache_type='matches', entity_pk=instance.blocker.pk)
 
 
 @receiver(signal=models.signals.post_save, sender=User)
 def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
     if (not (getattr(instance.profile, '_in_update_last_visit', None))):
-        bust_cache(type='matches', entity_pk=instance.pk)
+        bust_cache(cache_type='matches', entity_pk=instance.pk)
 
 
 class SiteProfileManager(BaseManager):
@@ -454,7 +454,7 @@ class SiteProfileManager(BaseManager):
             user=user,
             language_code=language_code,
         ))
-        matches_key = cache_key(type='matches', entity_pk=user.pk)
+        matches_key = cache_key(cache_type='matches', entity_pk=user.pk)
         matches_users_ids = cache_manager.cache_get(key=matches_key, sliding_timeout=django_settings.CACHE_GET_MATCHES_SLIDING_TIMEOUT)
         matches_list = []
         if (matches_users_ids is not None):
@@ -469,7 +469,7 @@ class SiteProfileManager(BaseManager):
                     len_matches_users_ids=len(matches_users_ids),
                     len_matches_list=len(matches_list),
                 ))
-                bust_cache(type='matches', entity_pk=user.pk)
+                bust_cache(cache_type='matches', entity_pk=user.pk)
                 matches_users_ids = None
                 matches_list = []
             else:

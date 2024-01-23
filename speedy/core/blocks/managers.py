@@ -17,10 +17,10 @@ class BlockManager(BaseManager):
         """
         Update caches after block or unblock.
         """
-        bust_cache(type='blocked', entity_pk=blocker.pk)
-        bust_cache(type='blocked', entity_pk=blocker.pk, version=2)
-        bust_cache(type='blocking', entity_pk=blocked.pk)
-        bust_cache(type='blocking', entity_pk=blocked.pk, version=2)
+        bust_cache(cache_type='blocked', entity_pk=blocker.pk)
+        bust_cache(cache_type='blocked', entity_pk=blocker.pk, version=2)
+        bust_cache(cache_type='blocking', entity_pk=blocked.pk)
+        bust_cache(cache_type='blocking', entity_pk=blocked.pk, version=2)
         if ('blocked_entities_ids' in blocker.__dict__):
             del blocker.blocked_entities_ids
         if ('blocking_entities_ids' in blocked.__dict__):
@@ -52,7 +52,7 @@ class BlockManager(BaseManager):
         return self.has_blocked(blocker=entity_1, blocked=entity_2) or self.has_blocked(blocker=entity_2, blocked=entity_1)
 
     def get_blocked_entities_ids(self, blocker):
-        blocked_key = cache_key(type='blocked', entity_pk=blocker.pk)
+        blocked_key = cache_key(cache_type='blocked', entity_pk=blocker.pk)
         try:
             blocked_entities_ids = cache_manager.cache_get(key=blocked_key, version=2, sliding_timeout=django_settings.CACHE_GET_BLOCKED_ENTITIES_IDS_SLIDING_TIMEOUT)
         except Exception as e:
@@ -73,7 +73,7 @@ class BlockManager(BaseManager):
         return blocked_entities_ids
 
     def get_blocking_entities_ids(self, blocked):
-        blocking_key = cache_key(type='blocking', entity_pk=blocked.pk)
+        blocking_key = cache_key(cache_type='blocking', entity_pk=blocked.pk)
         try:
             blocking_entities_ids = cache_manager.cache_get(key=blocking_key, version=2, sliding_timeout=django_settings.CACHE_GET_BLOCKING_ENTITIES_IDS_SLIDING_TIMEOUT)
         except Exception as e:
