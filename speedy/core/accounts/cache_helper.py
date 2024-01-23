@@ -30,10 +30,11 @@ def bust_cache(type, entity_pk, version=None):
     """
     Bust the cache for a given type, can bust multiple caches.
 
-    If BUST_ALL_CACHES_FOR_A_USER setting is True, do it.
+    If BUST_ALL_CACHES_FOR_A_USER setting is True, do it. In this case, the type argument is ignored.
     """
-    bust_keys = BUST_CACHES[type]
     if (django_settings.BUST_ALL_CACHES_FOR_A_USER is True):
         bust_keys = BUST_CACHES['all']
+    else:
+        bust_keys = BUST_CACHES[type]
     keys = [CACHE_TYPES[k] % entity_pk for k in bust_keys]
     cache_manager.cache_delete_many(keys=keys, version=version)
