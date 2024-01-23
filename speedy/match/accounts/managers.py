@@ -20,18 +20,6 @@ from speedy.core.blocks.models import Block
 logger = logging.getLogger(__name__)
 
 
-@receiver(signal=models.signals.post_save, sender=Block)
-def invalidate_matches_on_block(sender, instance: Block, **kwargs):
-    bust_cache(cache_type='matches', entity_pk=instance.blocked.pk)
-    bust_cache(cache_type='matches', entity_pk=instance.blocker.pk)
-
-
-@receiver(signal=models.signals.post_delete, sender=Block)
-def invalidate_matches_on_unblock(sender, instance: Block, **kwargs):
-    bust_cache(cache_type='matches', entity_pk=instance.blocked.pk)
-    bust_cache(cache_type='matches', entity_pk=instance.blocker.pk)
-
-
 @receiver(signal=models.signals.post_save, sender=User)
 def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
     if (not (getattr(instance.profile, '_in_update_last_visit', None))):

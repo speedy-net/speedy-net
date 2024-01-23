@@ -12,8 +12,8 @@ CACHE_TYPES = {
 
 BUST_CACHES = {
     'all': list(CACHE_TYPES.keys()),
-    'blocked': ['blocked'],
-    'blocking': ['blocking'],
+    'blocked': ['blocked', 'matches'],
+    'blocking': ['blocking', 'matches'],
     'received_friendship_requests_count': ['received_friendship_requests_count'],
     'unread_chats_count': ['unread_chats_count'],
     'matches': ['matches'],
