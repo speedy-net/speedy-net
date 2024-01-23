@@ -15,7 +15,6 @@ from speedy.core.base import cache_manager
 from speedy.core.base.utils import get_age_ranges_match, string_is_not_empty
 from speedy.core.base.managers import BaseManager
 from speedy.core.accounts.models import User
-from speedy.core.blocks.models import Block
 
 logger = logging.getLogger(__name__)
 
