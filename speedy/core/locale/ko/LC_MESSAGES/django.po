@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-23 03:00+0200\n"
+"POT-Creation-Date: 2024-01-24 08:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2465,7 +2465,7 @@ msgstr "ID에 잘못된 문자가 있습니다."
 msgid "Changes saved."
 msgstr "변경 내용이 저장되었습니다."
 
-#: .\blocks\managers.py:31 .\blocks\models.py:31
+#: .\blocks\managers.py:30 .\blocks\models.py:31
 msgid "Users cannot block themselves."
 msgstr "사용자는 본인을 차단할 수 없습니다."
 
