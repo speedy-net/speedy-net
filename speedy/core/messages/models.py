@@ -137,7 +137,7 @@ def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kw
 
 @receiver(signal=models.signals.post_save, sender=ReadMark)
 def invalidate_unread_chats_count_after_read_mark(sender, instance: ReadMark, **kwargs):
-    bust_cache(cache_type='unread_chats_count', entity_pk=instance.entity.pk)
+    bust_cache(cache_type='unread_chats_count', entities_pks=[instance.entity.pk])
 
 
 @receiver(signal=models.signals.post_save, sender=Message)

@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 @receiver(signal=models.signals.post_save, sender=User)
 def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
     if (not (getattr(instance.profile, '_in_update_last_visit', None))):
-        bust_cache(cache_type='matches', entity_pk=instance.pk)
+        bust_cache(cache_type='matches', entities_pks=[instance.pk])
 
 
 class SiteProfileManager(BaseManager):
@@ -456,7 +456,7 @@ class SiteProfileManager(BaseManager):
                     len_matches_users_ids=len(matches_users_ids),
                     len_matches_list=len(matches_list),
                 ))
-                bust_cache(cache_type='matches', entity_pk=user.pk)
+                bust_cache(cache_type='matches', entities_pks=[user.pk])
                 matches_users_ids = None
                 matches_list = []
             else:

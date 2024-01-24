@@ -424,6 +424,6 @@ class SiteProfile(SiteProfileBase):
 @receiver(signal=models.signals.post_save, sender=SiteProfile)
 def invalidate_matches_after_update_site_profile(sender, instance: SiteProfile, **kwargs):
     if (not (getattr(instance, '_in_update_last_visit', None))):
-        bust_cache(cache_type='matches', entity_pk=instance.user.pk)
+        bust_cache(cache_type='matches', entities_pks=[instance.user.pk])
 
 

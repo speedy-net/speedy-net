@@ -17,8 +17,8 @@ class BlockManager(BaseManager):
         """
         Update caches after block or unblock.
         """
-        keys1 = get_keys_for_bust_cache(cache_type='blocked', entity_pk=blocker.pk)
-        keys2 = get_keys_for_bust_cache(cache_type='blocking', entity_pk=blocked.pk)
+        keys1 = get_keys_for_bust_cache(cache_type='blocked', entities_pks=[blocker.pk])
+        keys2 = get_keys_for_bust_cache(cache_type='blocking', entities_pks=[blocked.pk])
         bust_cache_by_keys(cache_keys=keys1 + keys2)
         if ('blocked_entities_ids' in blocker.__dict__):
             del blocker.blocked_entities_ids
