@@ -6,14 +6,14 @@ from django.utils import log
 from speedy.core.base import cache_manager
 
 CACHE_TYPES = {
-    'mail_admins': 'speedy-ma-%s',
+    'mail_admins': 'speedy-core-base-log-mail-admins-{subject}',
 }
 
 MAIL_ADMINS_COOLDOWN_PERIOD = 3600  # 1 hour
 
 
-def cache_key(type, subject):
-    return CACHE_TYPES[type] % murmur3_32(data=subject)
+def cache_key(cache_type, subject):
+    return CACHE_TYPES[cache_type].format(subject=murmur3_32(data=subject))
 
 
 class AdminEmailHandler(log.AdminEmailHandler):
