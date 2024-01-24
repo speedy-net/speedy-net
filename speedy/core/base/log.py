@@ -13,6 +13,13 @@ MAIL_ADMINS_COOLDOWN_PERIOD = 3600  # 1 hour
 
 
 def cache_key(cache_type, subject):
+    """
+    Build the cache key for a particular type of cached value.
+
+    :param cache_type: Required. One of the keys of CACHE_TYPES.
+    :param subject: Required. The subject of the log message.
+    :return: A cache key.
+    """
     return CACHE_TYPES[cache_type].format(subject=murmur3_32(data=subject))
 
 
@@ -26,11 +33,11 @@ class AdminEmailHandler(log.AdminEmailHandler):
         If this is a WARNING message, it will be sent by mail only once per hour.
         Some specific messages are never sent by mail.
 
-        :param subject:
-        :param message:
-        :param args:
-        :param kwargs:
-        :return:
+        :param subject: Required. The subject of the log message.
+        :param message: Required. The message of the log message.
+        :param args: Optional. Positional arguments.
+        :param kwargs: Optional. Keyword arguments.
+        :return: None.
         """
         should_send_mail, count = self._should_send_mail(subject=subject)
         if (should_send_mail):
@@ -46,7 +53,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
         If this is a WARNING message, it will be sent by mail only once per hour.
         Some specific messages are never sent by mail.
 
-        :param subject:
+        :param subject: Required. The subject of the log message.
         :return: (should_send_mail (bool), count_last_hour (int, >= 1))
         """
         if (subject == "INFO: Found credentials in shared credentials file: ~/.aws/credentials"):
