@@ -23,6 +23,10 @@ BUST_CACHES = {
 def cache_key(cache_type, entity_pk):
     """
     Build the cache key for a particular type of cached value.
+
+    :param cache_type: Required. One of the keys of CACHE_TYPES.
+    :param entity_pk: Required. The pk of the entity.
+    :return: A cache key.
     """
     return CACHE_TYPES[cache_type].format(entity_pk=entity_pk)
 
@@ -35,7 +39,7 @@ def get_keys_for_bust_cache(cache_type, entities_pks):
 
     :param cache_type: Required. One of the keys of BUST_CACHES.
     :param entities_pks: Required. A list of entity pks.
-    :return: A list of cache keys
+    :return: A list of cache keys.
     """
     if (django_settings.BUST_ALL_CACHES_FOR_A_USER is True):
         bust_keys = BUST_CACHES['all']
@@ -48,7 +52,7 @@ def bust_cache_by_keys(cache_keys):
     """
     Bust the cache for the given cache_keys.
 
-    :param cache_keys:
+    :param cache_keys: Required. A list of cache keys.
     """
     cache_manager.cache_delete_many(keys=cache_keys)
 
