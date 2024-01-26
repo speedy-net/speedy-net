@@ -99,10 +99,12 @@
             {{ message }}
         </div>
     {% endfor %}
-    {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
-        <div class="alert alert-danger">
-            {% translate "You haven't confirmed your email address. Please check your inbox." context user.get_gender %}
-        </div>
+    {% if not admin_user %}
+        {% if request.user.is_authenticated and not request.user.has_confirmed_email %}
+            <div class="alert alert-danger">
+                {% translate "You haven't confirmed your email address. Please check your inbox." context user.get_gender %}
+            </div>
+        {% endif %}
     {% endif %}
 
     {% block full_content %}
