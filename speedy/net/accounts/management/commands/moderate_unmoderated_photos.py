@@ -49,6 +49,14 @@ class Command(BaseCommand):
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                             else:
+                                colors = _image.getcolors(maxcolors=10)
+                                if ((colors is not None) and (len(colors) == 1)):
+                                    # photo_is_valid = False
+                                    # delete_this_photo = True
+                                    logger.error("moderate_unmoderated_photos::image is monochrome. user={user} (registered {registered_days_ago} days ago).".format(
+                                        user=user,
+                                        registered_days_ago=(now() - user.date_created).days,
+                                    ))
                                 photo_is_valid = True
                                 logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
                                     user=user,
