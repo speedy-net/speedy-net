@@ -50,6 +50,11 @@ class Command(BaseCommand):
                                 ))
                             else:
                                 colors = _image.getcolors(maxcolors=10)
+                                logger.debug("moderate_unmoderated_photos::colors={colors}. user={user} (registered {registered_days_ago} days ago).".format(
+                                    colors=colors,
+                                    user=user,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
                                 if ((colors is not None) and (len(colors) == 1)):
                                     # photo_is_valid = False
                                     # delete_this_photo = True
