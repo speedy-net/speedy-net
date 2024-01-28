@@ -49,13 +49,13 @@ class Command(BaseCommand):
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                             else:
-                                colors = _image.getcolors(maxcolors=10)
+                                colors = _image.getcolors(maxcolors=_image.width * _image.height)[:10]  # Get 10 colors instead of None if more than maxcolors
                                 logger.debug("moderate_unmoderated_photos::colors={colors}. user={user} (registered {registered_days_ago} days ago).".format(
                                     colors=colors,
                                     user=user,
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
-                                if ((colors is not None) and (len(colors) == 1)):
+                                if (len(colors) == 1):
                                     # photo_is_valid = False
                                     # delete_this_photo = True
                                     logger.error("moderate_unmoderated_photos::image is one color only. user={user} (registered {registered_days_ago} days ago).".format(
