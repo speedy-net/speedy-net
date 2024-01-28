@@ -127,24 +127,24 @@ class Command(BaseCommand):
                             ))
                     elif (delete_this_photo):
                         # user.speedy_match_profile.not_allowed_to_use_speedy_match = True
-                        user.photo = None
+                        # user.photo = None
                         # user.speedy_net_profile.deactivate()
                         # user.speedy_match_profile.deactivate()
-                        user.save_user_and_profile()
-                        try:
-                            try:
-                                os.remove(image.file.path)
-                            except FileNotFoundError as e:
-                                logger.info('moderate_unmoderated_photos::image={image}, FileNotFoundError Exception={e}'.format(
-                                    image=image,
-                                    e=str(e),
-                                ))
-                            image.delete()
-                        except Exception as e:
-                            logger.error('moderate_unmoderated_photos::image={image}, Exception={e}'.format(
-                                image=image,
-                                e=str(e),
-                            ))
+                        # user.save_user_and_profile()
+                        # try:
+                        #     try:
+                        #         os.remove(image.file.path)
+                        #     except FileNotFoundError as e:
+                        #         logger.info('moderate_unmoderated_photos::image={image}, FileNotFoundError Exception={e}'.format(
+                        #             image=image,
+                        #             e=str(e),
+                        #         ))
+                        #     image.delete()
+                        # except Exception as e:
+                        #     logger.error('moderate_unmoderated_photos::image={image}, Exception={e}'.format(
+                        #         image=image,
+                        #         e=str(e),
+                        #     ))
                         logger.error("moderate_unmoderated_photos::delete this photo. reason={reason}, user={user} (registered {registered_days_ago} days ago).".format(
                             reason=delete_this_photo_reason,
                             user=user,
