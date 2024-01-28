@@ -1,4 +1,6 @@
 import logging
+import os
+
 import boto3
 from datetime import timedelta
 from PIL import Image
@@ -25,6 +27,8 @@ class Command(BaseCommand):
             image = user.photo
             if ((image is not None) and (image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
+                delete_this_photo = False
+                delete_this_photo_reason = None
                 labels_detected = False
                 not_allowed_labels_detected = False
                 labels_detected_list = []
@@ -56,17 +60,19 @@ class Command(BaseCommand):
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                                 if (len(colors) == 1):
-                                    # photo_is_valid = False
-                                    # delete_this_photo = True
+                                    photo_is_valid = False
+                                    delete_this_photo = True
+                                    delete_this_photo_reason = "image is one color only"
                                     logger.error("moderate_unmoderated_photos::image is one color only. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
-                                photo_is_valid = True
-                                logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
-                                    user=user,
-                                    registered_days_ago=(now() - user.date_created).days,
-                                ))
+                                else:
+                                    photo_is_valid = True
+                                    logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
+                                        user=user,
+                                        registered_days_ago=(now() - user.date_created).days,
+                                    ))
                     else:
                         logger.error("moderate_unmoderated_photos::thumbnail failed. user={user} (registered {registered_days_ago} days ago).".format(
                             user=user,
@@ -119,6 +125,31 @@ class Command(BaseCommand):
                                 labels_detected_list=labels_detected_list,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
+                    elif (delete_this_photo):
+                        # user.speedy_match_profile.not_allowed_to_use_speedy_match = True
+                        user.photo = None
+                        # user.speedy_net_profile.deactivate()
+                        # user.speedy_match_profile.deactivate()
+                        user.save_user_and_profile()
+                        try:
+                            try:
+                                os.remove(image.file.path)
+                            except FileNotFoundError as e:
+                                logger.info('moderate_unmoderated_photos::image={image}, FileNotFoundError Exception={e}'.format(
+                                    image=image,
+                                    e=str(e),
+                                ))
+                            image.delete()
+                        except Exception as e:
+                            logger.error('moderate_unmoderated_photos::image={image}, Exception={e}'.format(
+                                image=image,
+                                e=str(e),
+                            ))
+                        logger.error("moderate_unmoderated_photos::delete this photo. reason={reason}, user={user} (registered {registered_days_ago} days ago).".format(
+                            reason=delete_this_photo_reason,
+                            user=user,
+                            registered_days_ago=(now() - user.date_created).days,
+                        ))
                     else:
                         image.visible_on_website = False
                         image.aws_image_moderation_time = now()
