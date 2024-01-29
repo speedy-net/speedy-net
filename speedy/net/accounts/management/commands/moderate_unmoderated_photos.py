@@ -100,16 +100,23 @@ class Command(BaseCommand):
                                 ))
                             else:
                                 colors = _image.getcolors(maxcolors=_image.width * _image.height)  # Get all colors instead of None if more than maxcolors
-                                logger.debug("moderate_unmoderated_photos::colors={colors}. user={user} (registered {registered_days_ago} days ago).".format(
-                                    colors=colors[:10],  # Log 10 colors only
-                                    user=user,
-                                    registered_days_ago=(now() - user.date_created).days,
-                                ))
-                                if ((len(colors) == 1) or (looks_like_one_color(colors, _image))):
-                                    # photo_is_valid = False
-                                    # delete_this_photo = True
-                                    # delete_this_photo_reason = "image is one color only"
-                                    logger.error("moderate_unmoderated_photos::image is one color only. user={user} (registered {registered_days_ago} days ago).".format(
+                                if (colors is not None):
+                                    logger.debug("moderate_unmoderated_photos::colors[:10]={colors}. user={user} (registered {registered_days_ago} days ago).".format(
+                                        colors=colors[:10],  # Log 10 colors only
+                                        user=user,
+                                        registered_days_ago=(now() - user.date_created).days,
+                                    ))
+                                    if ((len(colors) == 1) or (looks_like_one_color(colors, _image))):
+                                        # photo_is_valid = False
+                                        # delete_this_photo = True
+                                        # delete_this_photo_reason = "image is one color only"
+                                        logger.error("moderate_unmoderated_photos::image is one color only. user={user} (registered {registered_days_ago} days ago).".format(
+                                            user=user,
+                                            registered_days_ago=(now() - user.date_created).days,
+                                        ))
+                                else:
+                                    logger.error("moderate_unmoderated_photos::colors={colors}. user={user} (registered {registered_days_ago} days ago).".format(
+                                        colors=colors,  # None
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
