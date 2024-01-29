@@ -106,19 +106,18 @@ class Command(BaseCommand):
                                     registered_days_ago=(now() - user.date_created).days,
                                 ))
                                 if ((len(colors) == 1) or (looks_like_one_color(colors, _image))):
-                                    photo_is_valid = False
-                                    delete_this_photo = True
-                                    delete_this_photo_reason = "image is one color only"
+                                    # photo_is_valid = False
+                                    # delete_this_photo = True
+                                    # delete_this_photo_reason = "image is one color only"
                                     logger.error("moderate_unmoderated_photos::image is one color only. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
-                                else:
-                                    photo_is_valid = True
-                                    logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
-                                        user=user,
-                                        registered_days_ago=(now() - user.date_created).days,
-                                    ))
+                                photo_is_valid = True
+                                logger.debug("moderate_unmoderated_photos::photo is valid. user={user} (registered {registered_days_ago} days ago).".format(
+                                    user=user,
+                                    registered_days_ago=(now() - user.date_created).days,
+                                ))
                     else:
                         logger.error("moderate_unmoderated_photos::thumbnail failed. user={user} (registered {registered_days_ago} days ago).".format(
                             user=user,
