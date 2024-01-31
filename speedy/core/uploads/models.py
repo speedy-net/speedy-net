@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import RegularUDIDField
-from speedy.core.base.utils import generate_regular_udid
 from .utils import uuid_dir
 
 
@@ -39,6 +38,7 @@ class File(TimeStampedModel):
 
 class Image(File):
     visible_on_website = models.BooleanField(verbose_name=_('visible on website'), default=False)
+    speedy_image_moderation_time = models.DateTimeField(verbose_name=_('Speedy image moderation time'), blank=True, null=True)
     aws_image_moderation_time = models.DateTimeField(verbose_name=_('AWS image moderation time'), blank=True, null=True)
     aws_facial_analysis_time = models.DateTimeField(verbose_name=_('AWS facial analysis time'), blank=True, null=True)
     aws_raw_image_moderation_results = models.JSONField(verbose_name=_('AWS raw image moderation results'), blank=True, null=True)

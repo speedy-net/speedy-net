@@ -2,6 +2,7 @@ import logging
 import re
 import secrets
 import string
+import math
 
 from datetime import date
 from dateutil.relativedelta import relativedelta
@@ -10,11 +11,15 @@ from django.conf import settings as django_settings
 from django.utils import translation
 from django.utils.timesince import TIME_STRINGS as timesince_time_strings
 from django.utils.html import avoid_wrapping
+from django.utils.timezone import now
 from django.utils.translation import get_language, pgettext
 
 import translated_fields
 
 logger = logging.getLogger(__name__)
+
+ONE_COLOR_RGB_THRESHOLD = 23
+ONE_COLOR_DELTA_E_THRESHOLD = 19.2
 
 
 def _generate_udid(length):
@@ -29,6 +34,52 @@ def _generate_udid(length):
     digits = string.digits
     digits_without_zero = digits[1:]
     return ''.join(secrets.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
+
+
+def _deltaE_cie76(color1, color2):
+    """
+    Get the color difference between two colors in Lab color space.
+
+    Named after skimage.color.deltaE_cie76.
+    Formula from https://en.wikipedia.org/wiki/Color_difference.
+
+    :param color1:
+    :param color2:
+    :return: The Euclidean distance between color1 and color2.
+    """
+    l1, a1, b1 = color1
+    l2, a2, b2 = color2
+    return math.sqrt((l2 - l1) ** 2 + (a2 - a1) ** 2 + (b2 - b1) ** 2)
+
+
+def _looks_like_one_color(colors, image):
+    """
+    Determine whether colors contains shades of one color that look the same.
+
+    :param colors: The colors.
+    :type colors: list
+    :param image: The image.
+    :type image: PIL.Image.Image
+    :return: True if colors contains shades of one color that look the same, False otherwise.
+    :rtype bool
+    """
+    if (len(colors) == 1):
+        return True
+    else:
+        rgb_image = image if (image.mode == "RGB") else image.convert("RGB")
+        colors = colors if (image.mode == "RGB") else rgb_image.getcolors(maxcolors=image.width * image.height)
+        _, (r1, g1, b1) = colors[0]  # Arbitrary reference color
+        if (all(
+            (abs(r2 - r1) <= ONE_COLOR_RGB_THRESHOLD) and
+            (abs(g2 - g1) <= ONE_COLOR_RGB_THRESHOLD) and
+            (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD)
+            for _, (r2, g2, b2) in colors)
+        ):
+            lab_colors = rgb_image.convert("LAB").getcolors(maxcolors=image.width * image.height)
+            _, reference_pixel = lab_colors[0]  # Arbitrary reference color
+            if (all(_deltaE_cie76(color1=pixel, color2=reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD for _, pixel in lab_colors)):
+                return True
+        return False
 
 
 def generate_small_udid():
@@ -245,31 +296,6 @@ def get_both_genders_context_from_users(user, other_user):
     return get_both_genders_context_from_genders(user_gender=user.get_gender(), other_user_gender=other_user.get_gender())
 
 
-def is_transparent(image):
-    """
-    Check if the image is transparent.
-
-    :param image: The image.
-    :type image: PIL.Image.Image
-    :return: True if the image is transparent, False otherwise.
-    :rtype bool
-    """
-    if ('transparency' in image.info):
-        return True
-
-    elif (image.mode == 'RGBA'):
-        extrema = image.getextrema()
-        if (extrema[3][0] < 255):
-            return True
-
-    elif (image.mode == 'LA'):
-        extrema = image.getextrema()
-        if (extrema[1][0] < 255):
-            return True
-
-    return False
-
-
 def convert_to_set(exclude=None):
     """
     Convert the exclude list to a set. If exclude is None, return an empty set. If exclude is a set, return it as is.
@@ -321,5 +347,71 @@ def timesince(d, now):
     if (get_language() == "he"):
         result = re.sub(pattern=r'(\ {1}ו{1})(\d{1})', repl=lambda m: "-".join(m.groups()), string=result)
     return result
+
+
+def is_animated(image):
+    """
+    Check if the image is animated.
+
+    :param image: The image.
+    :type image: PIL.Image.Image
+    :return: True if the image is animated, False otherwise.
+    :rtype bool
+    """
+    return (getattr(image, "is_animated", False))
+
+
+def is_transparent(image):
+    """
+    Check if the image is transparent.
+
+    :param image: The image.
+    :type image: PIL.Image.Image
+    :return: True if the image is transparent, False otherwise.
+    :rtype bool
+    """
+    if ('transparency' in image.info):
+        return True
+
+    elif (image.mode == 'RGBA'):
+        extrema = image.getextrema()
+        if (extrema[3][0] < 255):
+            return True
+
+    elif (image.mode == 'LA'):
+        extrema = image.getextrema()
+        if (extrema[1][0] < 255):
+            return True
+
+    return False
+
+
+def looks_like_one_color(image, _user):
+    """
+    Check if the image looks like it has only one color.
+
+    :param image: The image.
+    :type image: PIL.Image.Image
+    :param _user: The user.
+    :type _user: speedy.core.accounts.models.User
+    :return: True if the image looks like it has only one color, False otherwise.
+    :rtype bool
+    """
+    colors = image.getcolors(maxcolors=image.width * image.height)  # Get all colors instead of None if more than maxcolors
+    if (colors is None):
+        logger.error("looks_like_one_color::colors={colors}. user={user} (registered {registered_days_ago} days ago).".format(
+            colors=colors,  # None
+            user=_user,
+            registered_days_ago=(now() - _user.date_created).days,
+        ))
+    else:
+        logger.debug("looks_like_one_color::colors[:10]={colors}. user={user} (registered {registered_days_ago} days ago).".format(
+            colors=colors[:10],  # Log 10 colors only
+            user=_user,
+            registered_days_ago=(now() - _user.date_created).days,
+        ))
+        if ((len(colors) == 1) or (_looks_like_one_color(colors=colors, image=image))):
+            return True
+    return False
 
 

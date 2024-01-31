@@ -9,7 +9,7 @@ from django.utils.timezone import now
 from django.template.loader import render_to_string
 
 from speedy.core.accounts.models import User
-from speedy.core.base.utils import is_transparent
+from speedy.core.base.utils import is_animated, is_transparent
 
 logger = logging.getLogger(__name__)
 
@@ -37,13 +37,13 @@ class Command(BaseCommand):
                         ))
                         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
                             with image.file, Image.open(image.file) as _image:
-                                if (getattr(_image, "is_animated", False)):
+                                if (is_animated(image=_image)):
                                     photo_is_valid = False
                                     logger.error("detect_faces_in_undetected_photos::image is animated. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,
                                         registered_days_ago=(now() - user.date_created).days,
                                     ))
-                                elif (is_transparent(_image)):
+                                elif (is_transparent(image=_image)):
                                     photo_is_valid = False
                                     logger.error("detect_faces_in_undetected_photos::image is transparent. user={user} (registered {registered_days_ago} days ago).".format(
                                         user=user,

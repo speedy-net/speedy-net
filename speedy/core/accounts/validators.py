@@ -10,7 +10,7 @@ from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 from django.template.loader import render_to_string
 
-from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default, is_transparent
+from speedy.core.base.utils import normalize_slug, normalize_username, get_age_or_default, is_animated, is_transparent
 
 logger = logging.getLogger(__name__)
 
@@ -252,10 +252,10 @@ def validate_profile_picture_for_user(user, profile_picture, test_new_profile_pi
         ))
         if (not ('speedy-core/images/user.svg' in profile_picture_html)):
             with user.photo.file, Image.open(user.photo.file) as image:
-                if (getattr(image, "is_animated", False)):
+                if (is_animated(image=image)):
                     photo_is_valid = False
                     photo_is_invalid_reason = _("You can't use this format for your profile picture. Only JPEG or PNG formats are accepted.")
-                elif (is_transparent(image)):
+                elif (is_transparent(image=image)):
                     photo_is_valid = False
                     photo_is_invalid_reason = pgettext_lazy(context=user.get_gender(), message="Your profile picture can't be transparent. Please upload a nontransparent image.")
                 else:
