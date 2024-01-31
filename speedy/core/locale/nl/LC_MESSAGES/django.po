@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-24 08:43+0200\n"
+"POT-Creation-Date: 2024-01-31 03:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2495,7 +2495,7 @@ msgstr "Speedy Core Base App"
 msgid "ID"
 msgstr "id"
 
-#: .\base\utils.py:320
+#: .\base\utils.py:346
 msgctxt "timesince"
 msgid ", "
 msgstr ", "
@@ -2908,32 +2908,32 @@ msgstr "Beheerder - Alle gebruikers"
 msgid "No users."
 msgstr "Geen gebruikers."
 
-#: .\templates\base.html:104
+#: .\templates\base.html:105
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr "Je hebt je e-mailadres nog niet bevestigd. Controleer je inbox."
 
-#: .\templates\base.html:156
+#: .\templates\base.html:158
 msgid "Speedy Net Blog"
 msgstr "Speedy Net Blog"
 
-#: .\templates\base.html:158
+#: .\templates\base.html:160
 msgid "Speedy Paz"
 msgstr "Speedy Paz"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:162
 msgid "Speedy Software"
 msgstr "Speedy Software"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:164
 msgid "Speedy Sale"
 msgstr "Speedy Sale"
 
-#: .\templates\base.html:188 .\templates\base.html:189
+#: .\templates\base.html:190 .\templates\base.html:191
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr "Een veganistisch vriendelijke site"
 
-#: .\templates\base.html:205 .\templates\base.html:207
+#: .\templates\base.html:207 .\templates\base.html:209
 msgid "Speedy"
 msgstr "Speedy"
 
@@ -3411,33 +3411,37 @@ msgstr ""
 msgid "Browse..."
 msgstr "Browse..."
 
-#: .\uploads\models.py:14
+#: .\uploads\models.py:13
 msgid "owner"
 msgstr "eigenaar"
 
-#: .\uploads\models.py:15
+#: .\uploads\models.py:14
 msgid "file"
 msgstr "bestand"
 
-#: .\uploads\models.py:16
+#: .\uploads\models.py:15
 msgid "is stored"
 msgstr "is opgeslagen"
 
-#: .\uploads\models.py:17
+#: .\uploads\models.py:16
 msgid "file size"
 msgstr "bestandsgrootte"
 
-#: .\uploads\models.py:24
+#: .\uploads\models.py:23
 msgid "uploaded file"
 msgstr "geüpload bestand"
 
-#: .\uploads\models.py:25
+#: .\uploads\models.py:24
 msgid "uploaded files"
 msgstr "geüploade bestanden"
 
-#: .\uploads\models.py:41
+#: .\uploads\models.py:40
 msgid "visible on website"
 msgstr "zichtbaar op website"
+
+#: .\uploads\models.py:41
+msgid "Speedy image moderation time"
+msgstr "Speedy image moderation time"
 
 #: .\uploads\models.py:42
 msgid "AWS image moderation time"
