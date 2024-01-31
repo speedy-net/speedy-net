@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         users = User.objects.filter(
-            photo__aws_image_moderation_time=None,
+            photo__isnull=False,
+            photo__aws_image_moderation_time__isnull=True,
             photo__date_created__lte=(now() - timedelta(minutes=5)),
         ).distinct(
         ).order_by('photo__date_created')[:36]

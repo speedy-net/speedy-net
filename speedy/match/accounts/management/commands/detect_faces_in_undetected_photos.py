@@ -17,8 +17,9 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         users = User.objects.active(
+            photo__isnull=False,
             photo__visible_on_website=True,
-            photo__aws_facial_analysis_time=None,
+            photo__aws_facial_analysis_time__isnull=True,
             photo__date_created__lte=(now() - timedelta(minutes=5)),
             speedy_match_site_profile__active_languages__len__gt=0,
         ).distinct(

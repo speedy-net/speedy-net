@@ -101,6 +101,7 @@ class SiteProfileManager(BaseManager):
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
         filter_dict = dict(
+            photo__isnull=False,
             photo__visible_on_website=True,
             gender__in=user.speedy_match_profile.gender_to_match,
             diet__in=user.speedy_match_profile.diet_to_match,
