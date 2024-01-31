@@ -10,7 +10,9 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        images = Image.objects.filter(owner=None).order_by('date_created')
+        images = Image.objects.filter(
+            owner__isnull=True,
+        ).order_by('date_created')
         for image in images:
             if (image.owner is None):
                 logger.info('remove_images_with_no_owner::Removing image {id} from ({image_path}).'.format(

@@ -14,7 +14,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         images = Image.objects.filter(
             owner__isnull=False,
-        ).filter(
             owner__user__speedy_match_site_profile__last_visit__lt=now() - timedelta(days=540),
             owner__user__speedy_net_site_profile__last_visit__lt=now() - timedelta(days=540),
         ).order_by('date_created')
