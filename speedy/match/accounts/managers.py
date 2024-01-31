@@ -1,7 +1,7 @@
 import logging
 import hashlib
 import random
-from datetime import datetime, date
+from datetime import timedelta, datetime, date
 from haversine import haversine, Unit
 
 from django.conf import settings as django_settings
@@ -98,6 +98,7 @@ class SiteProfileManager(BaseManager):
         user.speedy_match_profile._set_values_to_match()
         age_ranges = get_age_ranges_match(min_age=user.speedy_match_profile.min_age_to_match, max_age=user.speedy_match_profile.max_age_to_match)
         language_code = get_language()
+        timezone_now = now()
         blocked_users_ids = user.blocked_entities_ids
         blocking_users_ids = user.blocking_entities_ids
         filter_dict = dict(
@@ -117,6 +118,7 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
+            speedy_match_site_profile__last_visit__gte=timezone_now - timedelta(days=720),
         )
         if (from_list is not None):
             filter_dict["pk__in"] = from_list
