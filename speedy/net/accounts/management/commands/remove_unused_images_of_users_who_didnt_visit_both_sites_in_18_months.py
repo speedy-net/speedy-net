@@ -20,7 +20,7 @@ class Command(BaseCommand):
         for image in images:
             if ((not (image.owner is None)) and (image.owner.user.speedy_match_profile.last_visit < now() - timedelta(days=540)) and (image.owner.user.speedy_net_profile.last_visit < now() - timedelta(days=540))):
                 if ((image.owner.user.photo is None) or (not (image.owner.user.photo.pk == image.pk))):
-                    logger.info('remove_unused_images_of_users_who_didnt_visit_both_sites_in_18_months::Removing image {id} from ({image_path}).'.format(
+                    logger.debug('remove_unused_images_of_users_who_didnt_visit_both_sites_in_18_months::Removing image {id} from ({image_path}).'.format(
                         id=image.id,
                         image_path=image.file.path,
                     ))
@@ -28,7 +28,7 @@ class Command(BaseCommand):
                         try:
                             os.remove(image.file.path)
                         except FileNotFoundError as e:
-                            logger.info('remove_unused_images_of_users_who_didnt_visit_both_sites_in_18_months::image={image}, FileNotFoundError Exception={e}'.format(
+                            logger.debug('remove_unused_images_of_users_who_didnt_visit_both_sites_in_18_months::image={image}, FileNotFoundError Exception={e}'.format(
                                 image=image,
                                 e=str(e),
                             ))
