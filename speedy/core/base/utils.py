@@ -43,9 +43,12 @@ def _deltaE_cie76(color1, color2):
     Named after skimage.color.deltaE_cie76.
     Formula from https://en.wikipedia.org/wiki/Color_difference.
 
-    :param color1:
-    :param color2:
+    :param color1: The first color.
+    :type color1: tuple
+    :param color2: The second color.
+    :type color2: tuple
     :return: The Euclidean distance between color1 and color2.
+    :rtype float
     """
     l1, a1, b1 = color1
     l2, a2, b2 = color2
@@ -392,7 +395,7 @@ def looks_like_one_color(image, _user):
 
     :param image: The image.
     :type image: PIL.Image.Image
-    :param _user: The user.
+    :param _user: The user (required for logging only).
     :type _user: speedy.core.accounts.models.User
     :return: True if the image looks like it has only one color, False otherwise.
     :rtype bool
