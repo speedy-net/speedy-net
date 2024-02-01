@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 ONE_COLOR_RGB_THRESHOLD = 23
 ONE_COLOR_DELTA_E_THRESHOLD = 19.2
 ONE_COLOR_PERCENT_THRESHOLD = 0.99999  # 99.999%
+ONE_COLOR_REFERENCE_PIXEL = (0, 0, 0)  # Black
 
 
 def _generate_udid(length):
@@ -122,8 +123,11 @@ def _looks_like_one_color(colors, image):
     else:
         rgb_image = image if (image.mode == "RGB") else image.convert("RGB")
         colors = colors if (image.mode == "RGB") else rgb_image.getcolors(maxcolors=image.width * image.height)
-        colors = sorted(colors, key=operator.itemgetter(0), reverse=True)
-        _, (r1, g1, b1) = colors[0]  # Arbitrary reference color
+        if (ONE_COLOR_REFERENCE_PIXEL is not None):
+            (r1, g1, b1) = ONE_COLOR_REFERENCE_PIXEL
+        else:
+            colors = sorted(colors, key=operator.itemgetter(0), reverse=True)
+            _, (r1, g1, b1) = colors[0]  # Highest count reference color
         lab_reference_pixel = _rgb2lab((r1, g1, b1))
         one_color_count = sum(count for count, (r2, g2, b2) in colors if (
             (abs(r2 - r1) <= ONE_COLOR_RGB_THRESHOLD) and
