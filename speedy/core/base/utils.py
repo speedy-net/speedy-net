@@ -1,4 +1,5 @@
 import logging
+import operator
 import re
 import secrets
 import string
@@ -20,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 ONE_COLOR_RGB_THRESHOLD = 23
 ONE_COLOR_DELTA_E_THRESHOLD = 19.2
+ONE_COLOR_PERCENT_THRESHOLD = 0.99999  # 99.999%
 
 
 def _generate_udid(length):
@@ -120,17 +122,17 @@ def _looks_like_one_color(colors, image):
     else:
         rgb_image = image if (image.mode == "RGB") else image.convert("RGB")
         colors = colors if (image.mode == "RGB") else rgb_image.getcolors(maxcolors=image.width * image.height)
+        colors = sorted(colors, key=operator.itemgetter(0), reverse=True)
         _, (r1, g1, b1) = colors[0]  # Arbitrary reference color
-        if (all(
+        lab_reference_pixel = _rgb2lab((r1, g1, b1))
+        one_color_count = sum(count for count, (r2, g2, b2) in colors if (
             (abs(r2 - r1) <= ONE_COLOR_RGB_THRESHOLD) and
             (abs(g2 - g1) <= ONE_COLOR_RGB_THRESHOLD) and
-            (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD)
-            for _, (r2, g2, b2) in colors)
-        ):
-            lab_colors = [(_, _rgb2lab(pixel)) for _, pixel in colors]
-            _, reference_pixel = lab_colors[0]  # Arbitrary reference color
-            if (all(_deltaE_cie76(color1=pixel, color2=reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD for _, pixel in lab_colors)):
-                return True
+            (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD) and
+            (_deltaE_cie76(color1=_rgb2lab((r2, g2, b2)), color2=lab_reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD)
+        ))
+        if one_color_count >= ONE_COLOR_PERCENT_THRESHOLD * image.width * image.height:
+            return True
         return False
 
 
