@@ -55,6 +55,55 @@ def _deltaE_cie76(color1, color2):
     return math.sqrt((l2 - l1) ** 2 + (a2 - a1) ** 2 + (b2 - b1) ** 2)
 
 
+def _rgb2lab(color):
+    """
+    Convert RGB color to LAB color.
+
+    Implementation from https://stackoverflow.com/questions/13405956/convert-an-image-rgb-lab-with-python/16020102#16020102.
+
+    :param color: The RGB color.
+    :type color: tuple
+    :return: The LAB color.
+    :rtype: tuple
+    """
+    num = 0
+    rgb = [0, 0, 0]
+    for value in color:
+        value = float(value) / 255
+        if value > 0.04045:
+            value = ((value + 0.055) / 1.055) ** 2.4
+        else:
+            value = value / 12.92
+        rgb[num] = value * 100
+        num = num + 1
+    xyz = [0, 0, 0]
+    x = rgb[0] * 0.4124 + rgb[1] * 0.3576 + rgb[2] * 0.1805
+    y = rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722
+    z = rgb[0] * 0.0193 + rgb[1] * 0.1192 + rgb[2] * 0.9505
+    xyz[0] = round(x, 4)
+    xyz[1] = round(y, 4)
+    xyz[2] = round(z, 4)
+    xyz[0] = float(xyz[0]) / 95.047  # ref_X =  95.047   Observer= 2°, Illuminant= D65
+    xyz[1] = float(xyz[1]) / 100.0  # ref_Y = 100.000
+    xyz[2] = float(xyz[2]) / 108.883  # ref_Z = 108.883
+    num = 0
+    for value in xyz:
+        if value > 0.008856:
+            value = value ** (0.3333333333333333)
+        else:
+            value = (7.787 * value) + (16 / 116)
+        xyz[num] = value
+        num = num + 1
+    lab = [0, 0, 0]
+    l = (116 * xyz[1]) - 16
+    a = 500 * (xyz[0] - xyz[1])
+    b = 200 * (xyz[1] - xyz[2])
+    lab[0] = round(l, 4)
+    lab[1] = round(a, 4)
+    lab[2] = round(b, 4)
+    return lab
+
+
 def _looks_like_one_color(colors, image):
     """
     Determine whether colors contains shades of one color that look the same.
@@ -78,7 +127,7 @@ def _looks_like_one_color(colors, image):
             (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD)
             for _, (r2, g2, b2) in colors)
         ):
-            lab_colors = rgb_image.convert("LAB").getcolors(maxcolors=image.width * image.height)
+            lab_colors = [(_, _rgb2lab(pixel)) for _, pixel in colors]
             _, reference_pixel = lab_colors[0]  # Arbitrary reference color
             if (all(_deltaE_cie76(color1=pixel, color2=reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD for _, pixel in lab_colors)):
                 return True
