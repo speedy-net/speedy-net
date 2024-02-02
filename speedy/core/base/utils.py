@@ -106,7 +106,7 @@ def _rgb2lab(color):
     return lab
 
 
-def _looks_like_one_color(colors, image):
+def _looks_like_one_color(colors, image, _user):
     """
     Determine whether colors contains shades of one color that look the same.
 
@@ -114,6 +114,8 @@ def _looks_like_one_color(colors, image):
     :type colors: list
     :param image: The image.
     :type image: PIL.Image.Image
+    :param _user: The user (required for logging only).
+    :type _user: speedy.core.accounts.models.User
     :return: True if colors contains shades of one color that look the same, False otherwise.
     :rtype bool
     """
@@ -130,6 +132,15 @@ def _looks_like_one_color(colors, image):
             (abs(g2 - g1) <= ONE_COLOR_RGB_THRESHOLD) and
             (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD) and
             (_deltaE_cie76(color1=_rgb2lab((r2, g2, b2)), color2=lab_reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD)
+        ))
+        if (image.width * image.height > 0):
+            one_color_percent = one_color_count / (image.width * image.height)
+        else:
+            one_color_percent = "(undefined)"
+        logger.debug("_looks_like_one_color::one_color_percent={one_color_percent}. user={user} (registered {registered_days_ago} days ago).".format(
+            one_color_percent=one_color_percent,
+            user=_user,
+            registered_days_ago=(now() - _user.date_created).days,
         ))
         if one_color_count >= ONE_COLOR_PERCENT_THRESHOLD * image.width * image.height:
             return True
@@ -464,7 +475,7 @@ def looks_like_one_color(image, _user):
             user=_user,
             registered_days_ago=(now() - _user.date_created).days,
         ))
-        if ((len(colors) == 1) or (_looks_like_one_color(colors=colors, image=image))):
+        if ((len(colors) == 1) or (_looks_like_one_color(colors=colors, image=image, _user=_user))):
             return True
     return False
 
