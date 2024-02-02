@@ -103,6 +103,7 @@ class Command(BaseCommand):
                                 user=user,
                                 registered_days_ago=(now() - user.date_created).days,
                             ))
+                        image.speedy_image_moderation_time = now()
                         image.aws_image_moderation_time = now()
                         image.save()
                         if (not_allowed_labels_detected):
@@ -120,6 +121,7 @@ class Command(BaseCommand):
                             ))
                     else:
                         image.visible_on_website = False
+                        image.speedy_image_moderation_time = now()
                         image.aws_image_moderation_time = now()
                         image.save()
                         if (delete_this_photo):
