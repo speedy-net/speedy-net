@@ -38,7 +38,7 @@ def _generate_udid(length):
     return ''.join(secrets.choice(digits if (i > 0) else digits_without_zero) for i in range(length))
 
 
-def _deltaE_cie76(color1, color2):
+def _delta_e_cie76(color1, color2):
     """
     Get the color difference between two colors in Lab color space.
 
@@ -126,12 +126,12 @@ def _looks_like_one_color(colors, image, _user):
         colors = colors if (image.mode == "RGB") else rgb_image.getcolors(maxcolors=image.width * image.height)
         colors = sorted(colors, key=operator.itemgetter(0), reverse=True)
         _, (r1, g1, b1) = colors[0]  # Highest count reference color
-        lab_reference_pixel = _rgb2lab((r1, g1, b1))
+        lab_reference_pixel = _rgb2lab(color=(r1, g1, b1))
         one_color_count = sum(count for count, (r2, g2, b2) in colors if (
             (abs(r2 - r1) <= ONE_COLOR_RGB_THRESHOLD) and
             (abs(g2 - g1) <= ONE_COLOR_RGB_THRESHOLD) and
             (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD) and
-            (_deltaE_cie76(color1=_rgb2lab((r2, g2, b2)), color2=lab_reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD)
+            (_delta_e_cie76(color1=_rgb2lab(color=(r2, g2, b2)), color2=lab_reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD)
         ))
         if (image.width * image.height > 0):
             one_color_percent = one_color_count / (image.width * image.height)
