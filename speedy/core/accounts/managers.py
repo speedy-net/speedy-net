@@ -42,7 +42,7 @@ class UserManager(BaseUserManager):
         return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
 
     def active(self, *args, **kwargs):
-        return self.filter(is_active=True, *args, **kwargs)
+        return self.filter(is_active=True, is_deleted=False, *args, **kwargs)
 
     def _create_user(self, slug, password, **extra_fields):
         """

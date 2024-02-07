@@ -379,7 +379,12 @@ class SiteProfile(SiteProfileBase):
             setattr(self, to_attribute(name='activation_step', language_code=language_code), 2)
         self.user.save_user_and_profile()
 
+    def get_deleted_name(self):
+        return _('Speedy Match User')
+
     def get_name(self):
+        if (self.user.is_deleted):
+            return self.get_deleted_name()
         # Speedy Match name is the user's first name.
         return self.user.get_first_name()
 

@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 03:19+0200\n"
+"POT-Creation-Date: 2024-02-07 10:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -709,6 +709,10 @@ msgstr "Speedy Match Profiilit"
 #: .\accounts\models.py:299 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Vahvista sähköpostiosoitteesi."
+
+#: .\accounts\models.py:383
+msgid "Speedy Match User"
+msgstr "Speedy Match Käyttäjä"
 
 #: .\accounts\utils.py:89
 #, python-brace-format

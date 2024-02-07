@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 20:23+0200\n"
+"POT-Creation-Date: 2024-02-07 10:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:889
+#: .\__translations\__translations.py:9 .\accounts\models.py:896
 msgid "email address"
 msgstr "e-postadress"
 
@@ -902,7 +902,7 @@ msgstr "Vänskapsbegäran"
 msgid "Friend"
 msgstr "Vän"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:483
+#: .\__translations\__translations.py:23 .\accounts\models.py:484
 msgid "Friends"
 msgstr "Vänner"
 
@@ -2159,88 +2159,88 @@ msgstr "relationsstatus"
 msgid "Where do I live?"
 msgstr "Var bor jag?"
 
-#: .\accounts\models.py:357
+#: .\accounts\models.py:358
 msgid "Who can view my birth month and day"
 msgstr "Vem kan se min födelsemånad och dag"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:359
 msgid "Who can view my birth year"
 msgstr "Vem kan se mitt födelseår"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:360
 msgid "On new messages"
 msgstr "Om nya meddelanden"
 
-#: .\accounts\models.py:362
+#: .\accounts\models.py:363
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:364
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:508 .\accounts\models.py:873 .\blocks\models.py:15
+#: .\accounts\models.py:509 .\accounts\models.py:880 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:509
+#: .\accounts\models.py:510
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:536
+#: .\accounts\models.py:537
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:874
+#: .\accounts\models.py:881
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:875
+#: .\accounts\models.py:882
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:876
+#: .\accounts\models.py:883
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:877
+#: .\accounts\models.py:884
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:878
+#: .\accounts\models.py:885
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:879
+#: .\accounts\models.py:886
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:897
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:957
+#: .\accounts\models.py:964
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:958
+#: .\accounts\models.py:965
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:970
+#: .\accounts\models.py:977
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:972
+#: .\accounts\models.py:979
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:974
+#: .\accounts\models.py:981
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:976
+#: .\accounts\models.py:983
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2489,7 +2489,7 @@ msgstr "App för Speedy Core Base"
 msgid "ID"
 msgstr "ID"
 
-#: .\base\utils.py:400
+#: .\base\utils.py:411
 msgctxt "timesince"
 msgid ", "
 msgstr ", "
