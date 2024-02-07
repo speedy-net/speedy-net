@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 03:19+0200\n"
+"POT-Creation-Date: 2024-02-07 10:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "Cuentas Speedy Net"
 
 #: .\accounts\models.py:20
 msgid "User"
-msgstr "usuario"
+msgstr "Usuario"
 
 #: .\accounts\models.py:23
 msgid "Number of friends on last user's visit"
@@ -35,6 +35,10 @@ msgstr "Perfil de Speedy Net"
 #: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
 msgstr "Perfiles de Speedy Net"
+
+#: .\accounts\models.py:85
+msgid "Speedy Net User"
+msgstr "Usuario de Speedy Net"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
