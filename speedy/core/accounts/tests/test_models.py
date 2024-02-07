@@ -1195,6 +1195,26 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
 
+            def test_deleted_user_name(self):
+                user = DefaultUserFactory()
+                user.speedy_net_profile.deactivate()
+                self.assertEqual(first=user.is_active, second=False)
+                self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
+                self.assertNotEqual(first=user.name, second=self._speedy_net_deleted_user_name)
+                self.assertNotEqual(first=user.name, second=self._speedy_match_deleted_user_name)
+                user.is_deleted = True
+                user.photo = None
+                user.save_user_and_profile()
+                user = User.objects.get(pk=user.pk)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.name, second=self._speedy_net_deleted_user_name)
+                    self.assertNotEqual(first=user.name, second=self._speedy_match_deleted_user_name)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.name, second=self._speedy_match_deleted_user_name)
+                    self.assertNotEqual(first=user.name, second=self._speedy_net_deleted_user_name)
+                else:
+                    raise NotImplementedError()
+
 
         @only_on_sites_with_login
         class UserWithLastNameEnglishTestCase(UserTestCaseMixin, SiteTestCase):
