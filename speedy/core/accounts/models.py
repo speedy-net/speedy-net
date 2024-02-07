@@ -352,6 +352,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         field=models.CharField(verbose_name=_('Where do I live?'), max_length=120, blank=True, null=True),
     )
     is_active = models.BooleanField(default=True)
+    is_deleted = models.BooleanField(default=False)  # A user with is_deleted=True is considered a deleted user and can't log in, can't use the website and can't be active in Speedy Net.
     is_staff = models.BooleanField(default=False)
     has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
@@ -610,12 +611,18 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         return False
 
     def get_full_name(self):
+        if (self.is_deleted):
+            return self.profile.get_deleted_name()
         return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
 
     def get_first_name(self):
+        if (self.is_deleted):
+            return self.profile.get_deleted_name()
         return '{}'.format(self.first_name).strip() or self.slug
 
     def get_short_name(self):
+        if (self.is_deleted):
+            return self.profile.get_deleted_name()
         return self.get_first_name()
 
     def activate(self):
@@ -991,18 +998,22 @@ class SiteProfileBase(TimeStampedModel):
         return return_value
 
     def update_last_visit(self):
-        self._in_update_last_visit = True
-        self.last_visit = now()
-        if ("last_visit_str" in self.__dict__):
-            del self.last_visit_str
-        self.user.save_user_and_profile()
-        del self._in_update_last_visit
+        if (not (self.user.is_deleted)):
+            self._in_update_last_visit = True
+            self.last_visit = now()
+            if ("last_visit_str" in self.__dict__):
+                del self.last_visit_str
+            self.user.save_user_and_profile()
+            del self._in_update_last_visit
 
     def activate(self):
         raise NotImplementedError("activate is not implemented.")
 
     def deactivate(self):
         raise NotImplementedError("deactivate is not implemented.")
+
+    def get_deleted_name(self):
+        raise NotImplementedError("get_deleted_name is not implemented.")
 
     def get_name(self):
         raise NotImplementedError("get_name is not implemented.")

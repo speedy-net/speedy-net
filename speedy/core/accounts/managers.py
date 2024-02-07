@@ -42,7 +42,7 @@ class UserManager(BaseUserManager):
         return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
 
     def active(self, *args, **kwargs):
-        return self.filter(is_active=True, *args, **kwargs)
+        return self.filter(is_active=True, is_deleted=False, *args, **kwargs)
 
     def _create_user(self, slug, password, **extra_fields):
         """
@@ -72,5 +72,17 @@ class UserManager(BaseUserManager):
 
         user = self._create_user(slug=slug, password=password, **extra_fields)
         return user
+
+    def mark_a_user_as_deleted(self, user, delete_password):
+        """
+        Permanently mark a user as deleted. This is irreversible. The user will not be able to log in, and will not be able to undelete their account or activate it on Speedy Net. The name of the deleted users will not be displayed on the website and their images and email addresses will be removed.
+
+        :param user: Required. The user to mark as deleted.
+        :type user: speedy.core.accounts.models.User
+        :param delete_password: Required. The password to use to mark the user as deleted.
+        :type delete_password: str
+        :return: None
+        """
+        # ~~~~ TODO: Implement this method.
 
 

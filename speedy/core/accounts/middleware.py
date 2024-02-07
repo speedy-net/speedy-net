@@ -1,6 +1,7 @@
 import logging
 
 from django.conf import settings as django_settings
+from django.contrib.auth import logout as django_auth_logout
 from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sites.models import Site
@@ -20,6 +21,9 @@ class SiteProfileMiddleware(MiddlewareMixin):
                         redirect_this_user = False
                 if (redirect_this_user):
                     return redirect(to='admin:index')
+            if (request.user.is_deleted):
+                django_auth_logout(request=request)
+                return redirect(to='accounts:index')
             update_last_visit = True
             for url in django_settings.IGNORE_LAST_VISIT:
                 if (request.path.startswith(url)):

@@ -31,7 +31,12 @@ class SiteProfile(SiteProfileBase):
         self.is_active = False
         self.user.save_user_and_profile()
 
+    def get_deleted_name(self):
+        return _('Speedy Net User')
+
     def get_name(self):
+        if (self.user.is_deleted):
+            return self.get_deleted_name()
         return self.user.get_full_name()
 
 
