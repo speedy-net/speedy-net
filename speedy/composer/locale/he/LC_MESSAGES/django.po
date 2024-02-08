@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 10:43+0200\n"
+"POT-Creation-Date: 2024-02-09 00:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,20 +21,20 @@ msgid "Speedy Composer Accounts"
 msgstr "Speedy Composer Accounts"
 
 #: .\accounts\models.py:31
+msgid "Speedy Net User"
+msgstr "משתמש/ת ספידי נט"
+
+#: .\accounts\models.py:33
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:41
 msgid "Speedy Composer Profile"
 msgstr "פרופיל ספידי קומפוזר"
 
-#: .\accounts\models.py:40
+#: .\accounts\models.py:42
 msgid "Speedy Composer Profiles"
 msgstr "פרופילים ספידי קומפוזר"
-
-#: .\accounts\models.py:55
-msgid "Speedy Net User"
-msgstr "משתמש/ת ספידי נט"
 
 #: .\compose\models.py:11 .\compose\models.py:32
 msgid "chords template"

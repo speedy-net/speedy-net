@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 10:43+0200\n"
+"POT-Creation-Date: 2024-02-09 00:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,13 +561,13 @@ msgstr "Veuillez vous présenter en quelques mots."
 msgid "Please write where you live."
 msgstr "Veuillez indiquer votre ville de résidence."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:114
+#: .\accounts\forms.py:118 .\accounts\models.py:116
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Avez-vous des enfants ? Combien ?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:117
+#: .\accounts\forms.py:121 .\accounts\models.py:119
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -601,121 +601,121 @@ msgstr "Concordance du statut relationnel est requise."
 msgid "Where do you live?"
 msgstr "Où habitez-vous ?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:124
+#: .\accounts\forms.py:186 .\accounts\models.py:126
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Genre souhaité"
 
-#: .\accounts\models.py:38 .\accounts\models.py:90
+#: .\accounts\models.py:30
+msgid "Speedy Match User"
+msgstr "Utilisateur de Speedy Match"
+
+#: .\accounts\models.py:40 .\accounts\models.py:92
 msgid "No match"
 msgstr "Aucun match"
 
-#: .\accounts\models.py:39 .\accounts\models.py:91
+#: .\accounts\models.py:41 .\accounts\models.py:93
 msgid "One heart"
 msgstr "Un cœur"
 
-#: .\accounts\models.py:40 .\accounts\models.py:92
+#: .\accounts\models.py:42 .\accounts\models.py:94
 msgid "Two hearts"
 msgstr "Deux cœurs"
 
-#: .\accounts\models.py:41 .\accounts\models.py:93
+#: .\accounts\models.py:43 .\accounts\models.py:95
 msgid "Three hearts"
 msgstr "Trois cœurs"
 
-#: .\accounts\models.py:42 .\accounts\models.py:94
+#: .\accounts\models.py:44 .\accounts\models.py:96
 msgid "Four hearts"
 msgstr "Quatre cœurs"
 
-#: .\accounts\models.py:43 .\accounts\models.py:95
+#: .\accounts\models.py:45 .\accounts\models.py:97
 msgid "Five hearts"
 msgstr "Cinq cœurs"
 
-#: .\accounts\models.py:99
+#: .\accounts\models.py:101
 msgid "User"
 msgstr "Utilisateur"
 
-#: .\accounts\models.py:100
+#: .\accounts\models.py:102
 msgid "On new likes"
 msgstr "Sur les nouveaux j’aime"
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:105
 msgid "Active languages"
 msgstr "Langues actives"
 
-#: .\accounts\models.py:109
+#: .\accounts\models.py:111
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Hauteur"
 
-#: .\accounts\models.py:109
+#: .\accounts\models.py:111
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:111
+#: .\accounts\models.py:113
 msgid "Few words about me"
 msgstr "Quelques mots sur moi"
 
-#: .\accounts\models.py:120
+#: .\accounts\models.py:122
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "Mon/Ma partenaire idéal(e)"
 
-#: .\accounts\models.py:130
+#: .\accounts\models.py:132
 msgid "Minimal age to match"
 msgstr "Âge minimum du match"
 
-#: .\accounts\models.py:131
+#: .\accounts\models.py:133
 msgid "Maximal age to match"
 msgstr "Âge maximal du match"
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:134
 msgid "Diet match"
 msgstr "Concordance des régimes"
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:135
 msgid "Smoking status match"
 msgstr "Concordance du statut de fumeur"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:136
 msgid "Relationship status match"
 msgstr "Concordance du statut relationnel"
 
-#: .\accounts\models.py:137
+#: .\accounts\models.py:139
 msgid "Diet to match"
 msgstr "Concordance du régime alimentaire"
 
-#: .\accounts\models.py:145
+#: .\accounts\models.py:147
 msgid "Smoking status to match"
 msgstr "Statut de fumeur devant correspondre"
 
-#: .\accounts\models.py:153
+#: .\accounts\models.py:155
 msgid "Relationship status to match"
 msgstr "Statut relationnel devant correspondre"
 
-#: .\accounts\models.py:160
+#: .\accounts\models.py:162
 msgid "Activation step"
 msgstr "Étape d’activation"
 
-#: .\accounts\models.py:163
+#: .\accounts\models.py:165
 msgid "Number of matches on last user's search"
 msgstr "Nombre de matchs lors de la recherche du dernier utilisateur"
 
-#: .\accounts\models.py:209
+#: .\accounts\models.py:211
 msgid "Speedy Match Profile"
 msgstr "Profil Speedy Match"
 
-#: .\accounts\models.py:210 .\profiles\apps.py:8
+#: .\accounts\models.py:212 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Profils Speedy Match"
 
-#: .\accounts\models.py:299 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:353 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Veuillez confirmer votre adresse e-mail."
-
-#: .\accounts\models.py:383
-msgid "Speedy Match User"
-msgstr "Utilisateur de Speedy Match"
 
 #: .\accounts\utils.py:89
 #, python-brace-format
@@ -765,7 +765,7 @@ msgstr ""
 "Au moins une option de concordance du statut relationnel doit être à cinq "
 "cœurs."
 
-#: .\admin\views.py:182
+#: .\admin\views.py:183
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -864,7 +864,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} autres) sont "
 "entrés sur le site au cours des deux dernières années."
 
-#: .\admin\views.py:282
+#: .\admin\views.py:283
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -905,7 +905,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} membres actifs "
 "inscrits avant le 1er août 2019."
 
-#: .\admin\views.py:304
+#: .\admin\views.py:305
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -914,7 +914,7 @@ msgstr ""
 "Admin : {total_number_of_active_members_registered_in_year} membres actifs "
 "inscrits sur {year}."
 
-#: .\admin\views.py:362
+#: .\admin\views.py:363
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -935,7 +935,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} hommes et "
 "{total_percent_of_other_active_members_in_age_range} autres)."
 
-#: .\admin\views.py:429
+#: .\admin\views.py:430
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -964,7 +964,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} autres) "
 "sont entrés sur le site au cours des huit derniers mois."
 
-#: .\admin\views.py:496
+#: .\admin\views.py:497
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
