@@ -25,6 +25,14 @@ class UserLikeManager(BaseManager):
         for like in self.filter(from_user=from_user, to_user=to_user):
             like.delete()
 
+    def remove_all_likes_from_user(self, from_user):
+        for like in self.filter(from_user=from_user):
+            like.delete()
+
+    def remove_all_likes_to_user(self, to_user):
+        for like in self.filter(to_user=to_user):
+            like.delete()
+
     def get_like_list_to_queryset(self, user):
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
