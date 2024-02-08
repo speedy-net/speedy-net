@@ -82,8 +82,8 @@ class Command(BaseCommand):
                                 for e1 in user.email_addresses.all():
                                     e1.delete()
                                 # Remove user's username and slug, and set them to the user's id. Also set the user's special_username to True (this is required for username==id).
-                                user.username, user.slug, user.special_username = user.id, user.id, False  #### True
-                                user.save_user_and_profile()  #### ~~~~ TODO: should raise exception if special_username is False.
+                                user.username, user.slug, user.special_username = user.id, user.id, True
+                                user.save_user_and_profile()
                                 # Remove all likes from user, but keep the likes to user.
                                 UserLike.objects.remove_all_likes_from_user(from_user=user)
                                 # Remove all friendships of user.
