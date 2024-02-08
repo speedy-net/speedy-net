@@ -2,6 +2,7 @@ import logging
 from datetime import timedelta
 
 from django.core.management import BaseCommand
+from django.db.models import F
 from django.utils.timezone import now
 
 from friendship.models import Friend, FriendshipRequest
@@ -58,7 +59,7 @@ class Command(BaseCommand):
             date_created__lt=(now() - timedelta(days=60)),
             speedy_match_site_profile__last_visit__lt=now() - timedelta(days=60),
             speedy_net_site_profile__last_visit__lt=now() - timedelta(days=60),
-        ).exclude(is_staff=True)
+        ).exclude(is_staff=True).exclude(username=F('id'))
         for user in users:
             if (not (user.is_staff)):
                 if ((user.is_deleted is True) and (user.is_deleted_time is not None)):
