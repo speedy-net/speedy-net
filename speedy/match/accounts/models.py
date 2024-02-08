@@ -213,6 +213,9 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Match'.format(super().__str__())
 
+    def _get_deleted_name(self):
+        return _('Speedy Match User')
+
     def save(self, *args, **kwargs):
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
@@ -379,12 +382,9 @@ class SiteProfile(SiteProfileBase):
             setattr(self, to_attribute(name='activation_step', language_code=language_code), 2)
         self.user.save_user_and_profile()
 
-    def get_deleted_name(self):
-        return _('Speedy Match User')
-
     def get_name(self):
         if (self.user.is_deleted):
-            return self.get_deleted_name()
+            return self._get_deleted_name()
         # Speedy Match name is the user's first name.
         return self.user.get_first_name()
 

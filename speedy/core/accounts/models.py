@@ -619,17 +619,17 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def get_full_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
 
     def get_first_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return '{}'.format(self.first_name).strip() or self.slug
 
     def get_short_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return self.get_first_name()
 
     def activate(self):
@@ -999,6 +999,9 @@ class SiteProfileBase(TimeStampedModel):
         return '<User Profile {} - {}/{}>'.format(self.user.id, self.user.name, self.user.slug)
         # return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
+    def _get_deleted_name(self):
+        raise NotImplementedError("_get_deleted_name is not implemented.")
+
     def save(self, *args, **kwargs):
         return_value = super().save(*args, **kwargs)
         self.user.refresh_all_profiles()
@@ -1018,9 +1021,6 @@ class SiteProfileBase(TimeStampedModel):
 
     def deactivate(self):
         raise NotImplementedError("deactivate is not implemented.")
-
-    def get_deleted_name(self):
-        raise NotImplementedError("get_deleted_name is not implemented.")
 
     def get_name(self):
         raise NotImplementedError("get_name is not implemented.")

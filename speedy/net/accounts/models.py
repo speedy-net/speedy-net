@@ -36,6 +36,9 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Net'.format(super().__str__())
 
+    def _get_deleted_name(self):
+        return _('Speedy Net User')
+
     def save(self, *args, **kwargs):
         self._update_number_of_friends()
         return super().save(*args, **kwargs)
@@ -81,12 +84,9 @@ class SiteProfile(SiteProfileBase):
             self.user.is_active = False
         self.user.save_user_and_profile()
 
-    def get_deleted_name(self):
-        return _('Speedy Net User')
-
     def get_name(self):
         if (self.user.is_deleted):
-            return self.get_deleted_name()
+            return self._get_deleted_name()
         return self.user.get_full_name()
 
     def call_after_verify_email_address(self):

@@ -23,6 +23,9 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Mail Software'.format(super().__str__())
 
+    def _get_deleted_name(self):
+        return _('Speedy Net User')
+
     def activate(self):
         self.is_active = True
         self.user.save_user_and_profile()
@@ -31,12 +34,9 @@ class SiteProfile(SiteProfileBase):
         self.is_active = False
         self.user.save_user_and_profile()
 
-    def get_deleted_name(self):
-        return _('Speedy Net User')
-
     def get_name(self):
         if (self.user.is_deleted):
-            return self.get_deleted_name()
+            return self._get_deleted_name()
         return self.user.get_full_name()
 
 
