@@ -73,6 +73,7 @@ class Command(BaseCommand):
                                 ))
                                 # The following code should already be done by UserManager::mark_a_user_as_deleted, but we do it here again just in case.
                                 assert (user.is_deleted is True)
+                                assert (user.is_deleted_time is not None)
                                 user.set_unusable_password()
                                 user.save()
                                 user.speedy_net_profile.deactivate()
