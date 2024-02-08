@@ -353,7 +353,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)  # A user with is_deleted=True is considered a deleted user and can't log in, can't use the website and can't be active in Speedy Net.
-    is_deleted_time = models.DateTimeField(blank=True, null=True)  # The time is_deleted was set to True.
+    is_deleted_time = models.DateTimeField(blank=True, null=True)  # The time is_deleted was set to True, or None if is_deleted is False.
     is_staff = models.BooleanField(default=False)
     has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
