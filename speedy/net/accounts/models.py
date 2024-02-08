@@ -17,6 +17,8 @@ logger = logging.getLogger(__name__)
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_net_site_profile'
 
+    DELETED_NAME = _('Speedy Net User')
+
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=True)
     number_of_friends = TranslatedField(
@@ -37,11 +39,7 @@ class SiteProfile(SiteProfileBase):
         return '{} @ Speedy Net'.format(super().__str__())
 
     def _get_deleted_name(self):
-        return _('Speedy Net User')
-
-    def save(self, *args, **kwargs):
-        self._update_number_of_friends()
-        return super().save(*args, **kwargs)
+        return self.__class__.DELETED_NAME
 
     def _update_number_of_friends(self):
         previous_number_of_friends = self.number_of_friends
@@ -72,6 +70,10 @@ class SiteProfile(SiteProfileBase):
                     registered_days_ago=(now() - self.user.date_created).days,
                     language_code=language_code,
                 ))
+
+    def save(self, *args, **kwargs):
+        self._update_number_of_friends()
+        return super().save(*args, **kwargs)
 
     def activate(self):
         self.is_active = True

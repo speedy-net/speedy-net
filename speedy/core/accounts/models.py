@@ -907,6 +907,9 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     def __str__(self):
         return self.email
 
+    def _generate_confirmation_token(self):
+        return generate_confirmation_token()
+
     def save(self, *args, **kwargs):
         if (not (self.confirmation_token)):
             self.confirmation_token = self._generate_confirmation_token()
@@ -926,9 +929,6 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     def validate_email_unique(self):
         speedy_core_accounts_validators.validate_email_unique(email=self.email, user_email_address_pk=self.pk)
-
-    def _generate_confirmation_token(self):
-        return generate_confirmation_token()
 
     def mail(self, template_name_prefix, context=None):
         site = Site.objects.get_current()

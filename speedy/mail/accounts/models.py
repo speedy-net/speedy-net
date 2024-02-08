@@ -8,6 +8,8 @@ from speedy.core.accounts.models import SiteProfileBase, User
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_mail_site_profile'
 
+    DELETED_NAME = _('Speedy Net User')
+
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=False)
 
@@ -24,7 +26,7 @@ class SiteProfile(SiteProfileBase):
         return '{} @ Speedy Mail Software'.format(super().__str__())
 
     def _get_deleted_name(self):
-        return _('Speedy Net User')
+        return self.__class__.DELETED_NAME
 
     def activate(self):
         self.is_active = True
