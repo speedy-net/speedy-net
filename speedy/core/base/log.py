@@ -27,26 +27,6 @@ class AdminEmailHandler(log.AdminEmailHandler):
     COUNT_FORMAT = 'Number in the last hour: {}'
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
-    def send_mail(self, subject, message, *args, **kwargs):
-        """
-        Override to send mail only once per hour for WARNING messages.
-        If this is a WARNING message, it will be sent by mail only once per hour.
-        Some specific messages are never sent by mail.
-
-        :param subject: Required. The subject of the log message.
-        :param message: Required. The message of the log message.
-        :param args: Optional. Positional arguments.
-        :param kwargs: Optional. Keyword arguments.
-        :return: None.
-        """
-        should_send_mail, count = self._should_send_mail(subject=subject)
-        if (should_send_mail):
-            if (count > 1):
-                message = '{}\n\n{}'.format(self.COUNT_FORMAT.format(count), message)
-                if ('html_message' in kwargs):
-                    kwargs['html_message'] = kwargs['html_message'].replace('<body>\n', '<body>\n{}\n'.format(self.COUNT_HTML_FORMAT.format(count)))
-            super().send_mail(subject, message, *args, **kwargs)
-
     def _should_send_mail(self, subject):
         """
         Returns whether to send mail or not, and the number of times the subject was logged in the last hour.
@@ -94,5 +74,25 @@ class AdminEmailHandler(log.AdminEmailHandler):
             return should_send_mail, count_last_hour
         except Exception:
             return True, 1
+
+    def send_mail(self, subject, message, *args, **kwargs):
+        """
+        Override to send mail only once per hour for WARNING messages.
+        If this is a WARNING message, it will be sent by mail only once per hour.
+        Some specific messages are never sent by mail.
+
+        :param subject: Required. The subject of the log message.
+        :param message: Required. The message of the log message.
+        :param args: Optional. Positional arguments.
+        :param kwargs: Optional. Keyword arguments.
+        :return: None.
+        """
+        should_send_mail, count = self._should_send_mail(subject=subject)
+        if (should_send_mail):
+            if (count > 1):
+                message = '{}\n\n{}'.format(self.COUNT_FORMAT.format(count), message)
+                if ('html_message' in kwargs):
+                    kwargs['html_message'] = kwargs['html_message'].replace('<body>\n', '<body>\n{}\n'.format(self.COUNT_HTML_FORMAT.format(count)))
+            super().send_mail(subject, message, *args, **kwargs)
 
 
