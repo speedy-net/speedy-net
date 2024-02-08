@@ -4,12 +4,13 @@ from django.utils import formats
 from django.utils.timezone import now
 from django.utils.translation import get_language, gettext_lazy as _
 from django.views import generic
-from django.db.models import Count
+from django.db.models import Count, F
 
-from speedy.core.base.utils import get_age_ranges_match
+from speedy.core.base.utils import get_age_ranges_match, to_attribute
 from speedy.core.admin.mixins import OnlyAdminMixin
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.accounts.models import User
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
@@ -516,6 +517,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             speedy_match_site_profile__active_languages__contains=[language_code],
         )
         annotate_list = list()
+        order_by_list = list()
         if (self.request.GET.get('likes_from_user')):
             annotate_list.append(Count('likes_from_user', distinct=True))
             filter_dict["likes_from_user__count__gte"] = int(self.request.GET.get('likes_from_user'))
@@ -524,7 +526,13 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             filter_dict["likes_to_user__count__gte"] = int(self.request.GET.get('likes_to_user'))
         if ((self.request.GET.get('min_age')) or (self.request.GET.get('max_age'))):
             filter_dict["date_of_birth__range"] = get_age_ranges_match(min_age=int(self.request.GET.get('min_age', SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED)), max_age=int(self.request.GET.get('max_age', SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED)))
-        qs = User.objects.active().annotate(*annotate_list).filter(**filter_dict).order_by('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        if (self.request.GET.get('order_by') == 'number_of_friends'):
+            order_by_list.append(F('{}__{}'.format(SpeedyNetSiteProfile.RELATED_NAME, to_attribute(name='number_of_friends'))).desc(nulls_last=True))
+        order_by_list.append('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
+        qs = User.objects.active()
+        if (len(annotate_list) > 0):
+            qs = qs.annotate(*annotate_list)
+        qs = qs.filter(**filter_dict).order_by(*order_by_list)
         return qs
 
     def get_context_data(self, **kwargs):
