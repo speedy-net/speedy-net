@@ -353,6 +353,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)  # A user with is_deleted=True is considered a deleted user and can't log in, can't use the website and can't be active in Speedy Net.
+    is_deleted_time = models.DateTimeField(blank=True, null=True)
     is_staff = models.BooleanField(default=False)
     has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
@@ -530,6 +531,12 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 registered_days_ago=(now() - self.date_created).days,
                 language_code=language_code,
             ))
+
+    def _mark_as_deleted(self):
+        self.is_deleted = True
+        self.is_deleted_time = now()
+        self.save()
+        self.save_user_and_profile()
 
     def save(self, *args, **kwargs):
         # Superuser must be equal to staff.
