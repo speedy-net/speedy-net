@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 10:43+0200\n"
+"POT-Creation-Date: 2024-02-08 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Syötä kelvollinen sähköpostiosoite."
 msgid "Email address"
 msgstr "Sähköpostiosoite"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:896
+#: .\__translations\__translations.py:9 .\accounts\models.py:903
 msgid "email address"
 msgstr "sähköpostiosoite"
 
@@ -902,7 +902,7 @@ msgstr "Ystäväpyynnöt"
 msgid "Friend"
 msgstr "Ystävä"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:484
+#: .\__translations\__translations.py:23 .\accounts\models.py:485
 msgid "Friends"
 msgstr "Ystävät"
 
@@ -2150,88 +2150,88 @@ msgstr "suhdestatus"
 msgid "Where do I live?"
 msgstr "Missä asun?"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:359
 msgid "Who can view my birth month and day"
 msgstr "Kuka voi nähdä syntymäkuukauteni ja -päiväni"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:360
 msgid "Who can view my birth year"
 msgstr "Kuka voi nähdä syntymävuoteni"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:361
 msgid "On new messages"
 msgstr "Uusista viesteistä"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:364
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Viimeksi käytetty IP-osoite https://ipapi.com/ time"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:365
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Viimeisin käytetty IP-osoite raaka https://ipapi.com/ tulokset"
 
-#: .\accounts\models.py:509 .\accounts\models.py:880 .\blocks\models.py:15
+#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
 msgid "user"
 msgstr "käyttäjä"
 
-#: .\accounts\models.py:510
+#: .\accounts\models.py:511
 msgid "users"
 msgstr "käyttäjät"
 
-#: .\accounts\models.py:537
+#: .\accounts\models.py:544
 msgid "Superuser must be equal to staff."
 msgstr "Pääkäyttäjän on oltava yhtäläinen henkilöstöön nähden."
 
-#: .\accounts\models.py:881
+#: .\accounts\models.py:888
 msgid "email"
 msgstr "sähköposti"
 
-#: .\accounts\models.py:882
+#: .\accounts\models.py:889
 msgid "is confirmed"
 msgstr "on vahvistettu"
 
-#: .\accounts\models.py:883
+#: .\accounts\models.py:890
 msgid "is primary"
 msgstr "on ensisijainen"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:891
 msgid "confirmation token"
 msgstr "vahvistustunnus"
 
-#: .\accounts\models.py:885
+#: .\accounts\models.py:892
 msgid "confirmation sent"
 msgstr "vahvistus lähetetty"
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:893
 msgid "Who can see this email"
 msgstr "Kuka voi nähdä tämän sähköpostin"
 
-#: .\accounts\models.py:897
+#: .\accounts\models.py:904
 msgid "email addresses"
 msgstr "email addresses"
 
-#: .\accounts\models.py:964
+#: .\accounts\models.py:971
 msgid "User"
 msgstr "Käyttäjä"
 
-#: .\accounts\models.py:965
+#: .\accounts\models.py:972
 msgid "last visit"
 msgstr "viimeisin vierailu"
 
-#: .\accounts\models.py:977
+#: .\accounts\models.py:984
 msgid "Today"
 msgstr "Tänään"
 
-#: .\accounts\models.py:979
+#: .\accounts\models.py:986
 msgid "Yesterday"
 msgstr "Eilen"
 
-#: .\accounts\models.py:981
+#: .\accounts\models.py:988
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) sitten"
 
-#: .\accounts\models.py:983
+#: .\accounts\models.py:990
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sitten"

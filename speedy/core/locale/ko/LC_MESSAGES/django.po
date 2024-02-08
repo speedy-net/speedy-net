@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 10:43+0200\n"
+"POT-Creation-Date: 2024-02-08 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "올바른 이메일 주소를 입력하세요."
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:896
+#: .\__translations\__translations.py:9 .\accounts\models.py:903
 msgid "email address"
 msgstr "이메일 주소"
 
@@ -902,7 +902,7 @@ msgstr "친구 요청"
 msgid "Friend"
 msgstr "친구"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:484
+#: .\__translations\__translations.py:23 .\accounts\models.py:485
 msgid "Friends"
 msgstr "친구"
 
@@ -2147,88 +2147,88 @@ msgstr "관계 상태"
 msgid "Where do I live?"
 msgstr "내가 살고 있는 곳은?"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:359
 msgid "Who can view my birth month and day"
 msgstr "내가 태어난 달과 날짜를 볼 수 있는 사람"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:360
 msgid "Who can view my birth year"
 msgstr "내가 태어난 연도를 볼 수 있는 사람"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:361
 msgid "On new messages"
 msgstr "새 메시지에"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:364
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:365
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:509 .\accounts\models.py:880 .\blocks\models.py:15
+#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
 msgid "user"
 msgstr "사용자"
 
-#: .\accounts\models.py:510
+#: .\accounts\models.py:511
 msgid "users"
 msgstr "사용자"
 
-#: .\accounts\models.py:537
+#: .\accounts\models.py:544
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:881
+#: .\accounts\models.py:888
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:882
+#: .\accounts\models.py:889
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:883
+#: .\accounts\models.py:890
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:891
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:885
+#: .\accounts\models.py:892
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:893
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:897
+#: .\accounts\models.py:904
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:964
+#: .\accounts\models.py:971
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:965
+#: .\accounts\models.py:972
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:977
+#: .\accounts\models.py:984
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:979
+#: .\accounts\models.py:986
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:981
+#: .\accounts\models.py:988
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:983
+#: .\accounts\models.py:990
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
