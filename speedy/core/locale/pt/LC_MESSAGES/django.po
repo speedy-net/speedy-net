@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 10:43+0200\n"
+"POT-Creation-Date: 2024-02-08 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,7 +863,7 @@ msgstr "Introduza um endereço de e-mail válido."
 msgid "Email address"
 msgstr "E-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:896
+#: .\__translations\__translations.py:9 .\accounts\models.py:903
 msgid "email address"
 msgstr "e-mail"
 
@@ -905,7 +905,7 @@ msgstr "Solicitação de Amizade"
 msgid "Friend"
 msgstr "Amigo"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:484
+#: .\__translations\__translations.py:23 .\accounts\models.py:485
 msgid "Friends"
 msgstr "Amigos"
 
@@ -2159,89 +2159,89 @@ msgstr "status de relacionamento"
 msgid "Where do I live?"
 msgstr "Onde é minha morada?"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:359
 msgid "Who can view my birth month and day"
 msgstr "Quem pode ver o dia e o mês do meu aniversário"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:360
 msgid "Who can view my birth year"
 msgstr "Quem pode ver o ano do meu nascimento"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:361
 msgid "On new messages"
 msgstr "Em novas mensagens"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:364
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Última direcção IP utilizou o horário de https://ipapi.com/"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:365
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Última direcção IP utilizou os resultados directos de https://ipapi.com/"
 
-#: .\accounts\models.py:509 .\accounts\models.py:880 .\blocks\models.py:15
+#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
 msgid "user"
 msgstr "utilizador"
 
-#: .\accounts\models.py:510
+#: .\accounts\models.py:511
 msgid "users"
 msgstr "utilizadores"
 
-#: .\accounts\models.py:537
+#: .\accounts\models.py:544
 msgid "Superuser must be equal to staff."
 msgstr "Superuser precisa ser igual a funcionário."
 
-#: .\accounts\models.py:881
+#: .\accounts\models.py:888
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:882
+#: .\accounts\models.py:889
 msgid "is confirmed"
 msgstr "está confirmado"
 
-#: .\accounts\models.py:883
+#: .\accounts\models.py:890
 msgid "is primary"
 msgstr "é primário"
 
-#: .\accounts\models.py:884
+#: .\accounts\models.py:891
 msgid "confirmation token"
 msgstr "token de confirmação"
 
-#: .\accounts\models.py:885
+#: .\accounts\models.py:892
 msgid "confirmation sent"
 msgstr "confirmação enviada"
 
-#: .\accounts\models.py:886
+#: .\accounts\models.py:893
 msgid "Who can see this email"
 msgstr "Quem pode ver este e-mail"
 
-#: .\accounts\models.py:897
+#: .\accounts\models.py:904
 msgid "email addresses"
 msgstr "direcções de e-mail"
 
-#: .\accounts\models.py:964
+#: .\accounts\models.py:971
 msgid "User"
 msgstr "utilizador"
 
-#: .\accounts\models.py:965
+#: .\accounts\models.py:972
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:977
+#: .\accounts\models.py:984
 msgid "Today"
 msgstr "Hoje"
 
-#: .\accounts\models.py:979
+#: .\accounts\models.py:986
 msgid "Yesterday"
 msgstr "Ontem"
 
-#: .\accounts\models.py:981
+#: .\accounts\models.py:988
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Em {date} ({timesince_ago})"
 
-#: .\accounts\models.py:983
+#: .\accounts\models.py:990
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "há {timesince}"

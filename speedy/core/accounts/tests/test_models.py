@@ -1202,7 +1202,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
                 self.assertNotEqual(first=user.name, second=self._speedy_net_deleted_user_name)
                 self.assertNotEqual(first=user.name, second=self._speedy_match_deleted_user_name)
-                user.is_deleted = True
+                user._mark_as_deleted()
                 user.photo = None
                 user.save_user_and_profile()
                 user = User.objects.get(pk=user.pk)
