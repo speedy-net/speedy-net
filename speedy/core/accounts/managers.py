@@ -109,7 +109,7 @@ class UserManager(BaseUserManager):
         user.save_user_and_profile()
         for e1 in user.email_addresses.all():
             e1.delete()
-        # All the other stuff will be done by command delete_unconfirmed_accounts, 60 days after the user hasn't visited both sites.
+        # All the other stuff will be done by command delete_unconfirmed_accounts, 60 days after the user has been deleted and 60 days after the user hasn't visited both sites.
 
         logger.warning("UserManager::mark_a_user_as_deleted::{user} marked as deleted. (registered {registered_days_ago} days ago).".format(
             user=user,
