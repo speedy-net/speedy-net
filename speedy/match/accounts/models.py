@@ -27,6 +27,8 @@ class SiteProfile(SiteProfileBase):
 
     RELATED_NAME = 'speedy_match_site_profile'
 
+    DELETED_NAME = _('Speedy Match User')
+
     RANK_0 = 0
     RANK_1 = 1
     RANK_2 = 2
@@ -213,21 +215,8 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Match'.format(super().__str__())
 
-    def save(self, *args, **kwargs):
-        if (hasattr(self, "_rank_dict")):
-            delattr(self, "_rank_dict")
-        self._set_values_to_match()
-        if (self.activation_step < 2):
-            self.activation_step = 2
-        if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
-            self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
-            self._deactivate_language(step=self.activation_step, commit=False)
-        if ((len(self.active_languages) > 0) and (not (self.user.has_confirmed_email))):
-            self._set_active_languages(languages=[])
-        if ((len(self.active_languages) > 0) and (self.not_allowed_to_use_speedy_match)):
-            self._set_active_languages(languages=[])
-        return super().save(*args, **kwargs)
+    def _get_deleted_name(self):
+        return self.__class__.DELETED_NAME
 
     def _set_values_to_match(self):
         from speedy.match.accounts import utils
@@ -262,45 +251,6 @@ class SiteProfile(SiteProfileBase):
         self.activation_step = step
         if (commit):
             self.user.save_user_and_profile()
-
-    def validate_profile_and_activate(self, commit=True):
-        from speedy.match.accounts import utils
-        language_code = get_language()
-        error_messages = []
-        for step in utils.get_steps_range():
-            fields = utils.get_step_fields_to_validate(step=step)
-            for field_name in fields:
-                try:
-                    utils.validate_field(field_name=field_name, user=self.user)
-                except ValidationError as e:
-                    error_messages.append(str(e))
-            if (len(error_messages) > 0):
-                if (commit):
-                    self._deactivate_language(step=step)
-                return step, error_messages
-        # Check if the user is not allowed to use Speedy Match.
-        if (self.not_allowed_to_use_speedy_match):
-            step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1
-            return step, error_messages
-        # Registration form is complete. Check if the user has a confirmed email address.
-        step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
-        if ((self.user.has_confirmed_email) and (step >= self.activation_step)):
-            if (commit):
-                # Profile is valid. Activate in this language.
-                self.activation_step = step
-                languages = self.active_languages
-                if (not (language_code in languages)):
-                    languages.append(language_code)
-                    self._set_active_languages(languages=languages)
-                self.user.save_user_and_profile()
-        else:
-            if (commit):
-                self._deactivate_language(step=self.activation_step)
-            error_messages.append(_("Please confirm your email address."))
-        return step, error_messages
-
-    def call_after_verify_email_address(self):
-        pass
 
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
         """
@@ -351,6 +301,61 @@ class SiteProfile(SiteProfileBase):
                     logger.error('_get_matching_rank::get inside "if (not (other_profile.is_active_and_valid)):", self={self}, other_profile={other_profile}'.format(self=self, other_profile=other_profile))
             return self.__class__.RANK_0
 
+    def save(self, *args, **kwargs):
+        if (hasattr(self, "_rank_dict")):
+            delattr(self, "_rank_dict")
+        self._set_values_to_match()
+        if (self.activation_step < 2):
+            self.activation_step = 2
+        if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
+            self.activation_step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        if ((self.is_active) and (self.activation_step < len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))):
+            self._deactivate_language(step=self.activation_step, commit=False)
+        if ((len(self.active_languages) > 0) and (not (self.user.has_confirmed_email))):
+            self._set_active_languages(languages=[])
+        if ((len(self.active_languages) > 0) and (self.not_allowed_to_use_speedy_match)):
+            self._set_active_languages(languages=[])
+        return super().save(*args, **kwargs)
+
+    def validate_profile_and_activate(self, commit=True):
+        from speedy.match.accounts import utils
+        language_code = get_language()
+        error_messages = []
+        for step in utils.get_steps_range():
+            fields = utils.get_step_fields_to_validate(step=step)
+            for field_name in fields:
+                try:
+                    utils.validate_field(field_name=field_name, user=self.user)
+                except ValidationError as e:
+                    error_messages.append(str(e))
+            if (len(error_messages) > 0):
+                if (commit):
+                    self._deactivate_language(step=step)
+                return step, error_messages
+        # Check if the user is not allowed to use Speedy Match.
+        if (self.not_allowed_to_use_speedy_match):
+            step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS) - 1
+            return step, error_messages
+        # Registration form is complete. Check if the user has a confirmed email address.
+        step = len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)
+        if ((self.user.has_confirmed_email) and (step >= self.activation_step)):
+            if (commit):
+                # Profile is valid. Activate in this language.
+                self.activation_step = step
+                languages = self.active_languages
+                if (not (language_code in languages)):
+                    languages.append(language_code)
+                    self._set_active_languages(languages=languages)
+                self.user.save_user_and_profile()
+        else:
+            if (commit):
+                self._deactivate_language(step=self.activation_step)
+            error_messages.append(_("Please confirm your email address."))
+        return step, error_messages
+
+    def call_after_verify_email_address(self):
+        pass
+
     def get_matching_rank(self, other_profile) -> int:
         """
         Get the matching rank between self and other_profile.
@@ -379,12 +384,9 @@ class SiteProfile(SiteProfileBase):
             setattr(self, to_attribute(name='activation_step', language_code=language_code), 2)
         self.user.save_user_and_profile()
 
-    def get_deleted_name(self):
-        return _('Speedy Match User')
-
     def get_name(self):
         if (self.user.is_deleted):
-            return self.get_deleted_name()
+            return self._get_deleted_name()
         # Speedy Match name is the user's first name.
         return self.user.get_first_name()
 

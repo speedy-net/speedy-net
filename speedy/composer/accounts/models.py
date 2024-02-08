@@ -28,6 +28,8 @@ class SpeedyComposerNode(TimeStampedModel):  # ~~~~ TODO: check which class we w
 class SiteProfile(SiteProfileBase):
     RELATED_NAME = 'speedy_composer_site_profile'
 
+    DELETED_NAME = _('Speedy Net User')
+
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=False)
 
@@ -43,6 +45,9 @@ class SiteProfile(SiteProfileBase):
     def __str__(self):
         return '{} @ Speedy Composer'.format(super().__str__())
 
+    def _get_deleted_name(self):
+        return self.__class__.DELETED_NAME
+
     def activate(self):
         self.is_active = True
         self.user.save_user_and_profile()
@@ -51,12 +56,9 @@ class SiteProfile(SiteProfileBase):
         self.is_active = False
         self.user.save_user_and_profile()
 
-    def get_deleted_name(self):
-        return _('Speedy Net User')
-
     def get_name(self):
         if (self.user.is_deleted):
-            return self.get_deleted_name()
+            return self._get_deleted_name()
         return self.user.get_full_name()
 
 

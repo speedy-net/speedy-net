@@ -353,7 +353,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)  # A user with is_deleted=True is considered a deleted user and can't log in, can't use the website and can't be active in Speedy Net.
-    is_deleted_time = models.DateTimeField(blank=True, null=True)
+    is_deleted_time = models.DateTimeField(blank=True, null=True)  # The time is_deleted was set to True, or None if is_deleted is False.
     is_staff = models.BooleanField(default=False)
     has_confirmed_email = models.BooleanField(default=False)
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
@@ -619,17 +619,17 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     def get_full_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
 
     def get_first_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return '{}'.format(self.first_name).strip() or self.slug
 
     def get_short_name(self):
         if (self.is_deleted):
-            return self.profile.get_deleted_name()
+            return self.profile._get_deleted_name()
         return self.get_first_name()
 
     def activate(self):
@@ -907,6 +907,9 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     def __str__(self):
         return self.email
 
+    def _generate_confirmation_token(self):
+        return generate_confirmation_token()
+
     def save(self, *args, **kwargs):
         if (not (self.confirmation_token)):
             self.confirmation_token = self._generate_confirmation_token()
@@ -926,9 +929,6 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     def validate_email_unique(self):
         speedy_core_accounts_validators.validate_email_unique(email=self.email, user_email_address_pk=self.pk)
-
-    def _generate_confirmation_token(self):
-        return generate_confirmation_token()
 
     def mail(self, template_name_prefix, context=None):
         site = Site.objects.get_current()
@@ -999,6 +999,9 @@ class SiteProfileBase(TimeStampedModel):
         return '<User Profile {} - {}/{}>'.format(self.user.id, self.user.name, self.user.slug)
         # return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
+    def _get_deleted_name(self):
+        raise NotImplementedError("_get_deleted_name is not implemented.")
+
     def save(self, *args, **kwargs):
         return_value = super().save(*args, **kwargs)
         self.user.refresh_all_profiles()
@@ -1018,9 +1021,6 @@ class SiteProfileBase(TimeStampedModel):
 
     def deactivate(self):
         raise NotImplementedError("deactivate is not implemented.")
-
-    def get_deleted_name(self):
-        raise NotImplementedError("get_deleted_name is not implemented.")
 
     def get_name(self):
         raise NotImplementedError("get_name is not implemented.")
