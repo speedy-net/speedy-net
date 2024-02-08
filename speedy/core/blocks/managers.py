@@ -38,6 +38,16 @@ class BlockManager(BaseManager):
             block.delete()
         self._update_caches(blocker=blocker, blocked=blocked)
 
+    def remove_all_blocks_by_entity(self, blocker):
+        for block in self.filter(blocker__pk=blocker.pk):
+            block.delete()
+        self._update_caches(blocker=blocker, blocked=blocker)
+
+    def remove_all_blocks_of_entity(self, blocked):
+        for block in self.filter(blocked__pk=blocked.pk):
+            block.delete()
+        self._update_caches(blocker=blocked, blocked=blocked)
+
     def has_blocked(self, blocker, blocked):
         if ((not (isinstance(blocker, Entity))) or (not (isinstance(blocked, Entity)))):
             return False

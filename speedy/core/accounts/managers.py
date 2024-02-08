@@ -1,7 +1,12 @@
+import logging
+
 from django.db.models import Q
+from django.utils.timezone import now
 
 from speedy.core.base.managers import BaseManager, BaseUserManager
 from speedy.core.base.utils import normalize_username
+
+logger = logging.getLogger(__name__)
 
 
 class EntityManager(BaseManager):
@@ -72,5 +77,43 @@ class UserManager(BaseUserManager):
 
         user = self._create_user(slug=slug, password=password, **extra_fields)
         return user
+
+    def mark_a_user_as_deleted(self, user, delete_password):
+        """
+        Permanently mark a user as deleted. This is irreversible. The user will not be able to log in, and will not be able to undelete their account or activate it on Speedy Net. The name of the deleted users will not be displayed on the website and their images and email addresses will be removed.
+
+        :param user: Required. The user to mark as deleted.
+        :type user: speedy.core.accounts.models.User
+        :param delete_password: Required. The password to use to mark the user as deleted.
+        :type delete_password: str
+        :return: None
+        """
+        if (not (delete_password == "Mark this user as deleted in Speedy Net.")):
+            raise ValueError("The delete password is incorrect.")
+        if (user.is_active):
+            raise ValueError("User must be inactive to be marked as deleted.")
+        if ((user.is_staff) or (user.is_superuser)):
+            raise ValueError("Staff and superusers cannot be marked as deleted.")
+        assert (delete_password == "Mark this user as deleted in Speedy Net.")
+        assert (user.is_active is False)
+        assert (user.is_staff is False)
+        assert (user.is_superuser is False)
+
+        user.set_unusable_password()
+        user.save()
+        user.speedy_net_profile.deactivate()
+        user.speedy_match_profile.deactivate()
+        user._mark_as_deleted()
+        user.photo = None
+        user.save()
+        user.save_user_and_profile()
+        for e1 in user.email_addresses.all():
+            e1.delete()
+        # All the other stuff will be done by command delete_unconfirmed_accounts, 60 days after the user has been deleted and 60 days after the user hasn't visited both sites.
+
+        logger.warning("UserManager::mark_a_user_as_deleted::{user} marked as deleted. (registered {registered_days_ago} days ago).".format(
+            user=user,
+            registered_days_ago=(now() - user.date_created).days,
+        ))
 
 
