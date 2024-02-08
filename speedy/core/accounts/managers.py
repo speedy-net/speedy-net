@@ -38,17 +38,6 @@ class UserManager(BaseUserManager):
         email = email.lower()
         return email
 
-    def get_queryset(self):
-        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
-        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-        return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME, 'photo').distinct()
-
-    def get_by_natural_key(self, username):
-        return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
-
-    def active(self, *args, **kwargs):
-        return self.filter(is_active=True, is_deleted=False, *args, **kwargs)
-
     def _create_user(self, slug, password, **extra_fields):
         """
         Creates and saves a User with the given username and password.
@@ -60,6 +49,17 @@ class UserManager(BaseUserManager):
         user.set_password(raw_password=password)
         user.save(using=self._db)
         return user
+
+    def get_queryset(self):
+        from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
+        return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME, 'photo').distinct()
+
+    def get_by_natural_key(self, username):
+        return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
+
+    def active(self, *args, **kwargs):
+        return self.filter(is_active=True, is_deleted=False, *args, **kwargs)
 
     def create_user(self, slug, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', False)
