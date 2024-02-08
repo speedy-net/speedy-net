@@ -63,7 +63,8 @@ class Command(BaseCommand):
             if (not (user.is_staff)):
                 if ((user.is_deleted is True) and (user.is_deleted_time is not None)):
                     if (not ((user.username == user.id) and (user.slug == user.id))):
-                        if ((user.is_deleted_time < now() - timedelta(days=60)) and (user.date_created < now() - timedelta(days=60)) and (user.speedy_match_profile.last_visit < now() - timedelta(days=60)) and (user.speedy_net_profile.last_visit < now() - timedelta(days=60))):
+                        # if ((user.is_deleted_time < now() - timedelta(days=60)) and (user.date_created < now() - timedelta(days=60)) and (user.speedy_match_profile.last_visit < now() - timedelta(days=60)) and (user.speedy_net_profile.last_visit < now() - timedelta(days=60))):
+                        if ((user.is_deleted_time < now() - timedelta(days=60)) and (user.date_created < now() - timedelta(days=720)) and (user.speedy_match_profile.last_visit < now() - timedelta(days=720)) and (user.speedy_net_profile.last_visit < now() - timedelta(days=720))):
                             try:
                                 logger.warning("Permanently marking user as deleted - {user}. Registered on {date_created} (registered {registered_days_ago} days ago).".format(
                                     user=user,
