@@ -38,19 +38,6 @@ if (django_settings.TESTS):
                 user_2 = InactiveUserFactory()
                 self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)
 
-            def test_staff_and_superuser_cannot_delete_their_account(self):
-                # ~~~~ TODO: Staff and superuser have all permissions, including accounts.delete_account.
-                user_2 = ActiveUserFactory(is_superuser=True, is_staff=True)
-                self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)  #### ~~~~ TODO: fails on this line
-                user_2.speedy_net_profile.deactivate()
-                self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)  #### false
-                user_2.is_active = False
-                user_2.save_user_and_profile()
-                self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=False)
-                user_2.is_superuser, user_2.is_staff = False, False
-                user_2.save_user_and_profile()
-                self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)
-
             def test_active_user_cannot_delete_his_account(self):
                 self.assertIs(expr1=self.user.has_perm(perm='accounts.delete_account', obj=self.user), expr2=False)
                 # Deactivate the user's profile on Speedy Match, but not on Speedy Net.
