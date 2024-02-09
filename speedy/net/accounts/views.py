@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 from django.utils.timezone import now
 from django.utils.translation import get_language, pgettext_lazy, gettext_lazy as _
 from django.views import generic
-from rules.contrib.views import LoginRequiredMixin
+from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.accounts import views as speedy_core_accounts_views
 from speedy.core.accounts.models import User
@@ -57,8 +57,8 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         return redirect(to=success_url)
 
 
-class DeleteAccountView(LoginRequiredMixin, generic.FormView):
-    permission_required = '______'
+class DeleteAccountView(LoginRequiredMixin, PermissionRequiredMixin, generic.FormView):
+    permission_required = 'accounts.delete_account'
     template_name = 'accounts/edit_profile/delete_account.html'
     form_class = DeleteAccountForm
     success_url = '/'
@@ -84,10 +84,10 @@ class DeleteAccountView(LoginRequiredMixin, generic.FormView):
         assert (user.is_superuser is False)
         User.objects.mark_a_user_as_deleted(user=user, delete_password="Mark this user as deleted in Speedy Net.")
         site = Site.objects.get_current()
-        message = pgettext_lazy(context=self.request.user.get_gender(), message='Your___ Speedy Net and Speedy Match accounts have been deleted. Thank you for using {site_name}.').format(site_name=_(site.name))
+        message = pgettext_lazy(context=self.request.user.get_gender(), message='Your Speedy Net and Speedy Match accounts have been deleted. Thank you for using {site_name}.').format(site_name=_(site.name))
         messages.success(request=self.request, message=message)
         language_code = get_language()
-        logger.info('User {user} ___deleted their account on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+        logger.info('User {user} deleted their account on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
             site_name=_(site.name),
             user=user,
             registered_days_ago=(now() - user.date_created).days,
