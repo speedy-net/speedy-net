@@ -56,10 +56,10 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
     }
     # Fields who are not in the SpeedyMatchSiteProfile model.
     profile_picture = forms.ImageField(required=False, widget=speedy_core_accounts_forms.CustomPhotoWidget, label=_('Add profile picture'), error_messages={'required': _("A profile picture is required.")})
-    diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")})
-    smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")})
-    relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")})
-    gender_to_match = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")})
+    diet = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My diet'), error_messages={'required': _("Your diet is required.")}, required=True)
+    smoking_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My smoking status'), error_messages={'required': _("Your smoking status is required.")}, required=True)
+    relationship_status = forms.ChoiceField(widget=forms.RadioSelect(), label=_('My relationship status'), error_messages={'required': _("Your relationship status is required.")}, required=True)
+    gender_to_match = forms.MultipleChoiceField(choices=User.GENDER_CHOICES, widget=forms.CheckboxSelectMultiple, error_messages={'required': _("Gender to match is required.")}, required=True)
 
     class Meta:
         model = SpeedyMatchSiteProfile
@@ -147,7 +147,7 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         # Create the localized city field dynamically.
-        self.fields[to_attribute(name='city')] = forms.CharField(label=_('Where do you live?'), max_length=120, error_messages={'required': _("Please write where you live.")})
+        self.fields[to_attribute(name='city')] = forms.CharField(label=_('Where do you live?'), max_length=120, error_messages={'required': _("Please write where you live.")}, required=True)
         # Delete unneeded fields from the form.
         self.delete_unneeded_fields()
         # Update fields attributes according to the user's gender and language.

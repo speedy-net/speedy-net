@@ -46,8 +46,10 @@
                 </a>
             </li>
             {% block edit_profile_links_6 %}{% endblock %}
+        {% else %}
+            {% block edit_profile_links_7 %}{% endblock %}
         {% endif %}
-        {% block edit_profile_links_7 %}{% endblock %}
+        {% block edit_profile_links_8 %}{% endblock %}
     </ul>
     <br>
     {% block tab_content %}{% endblock %}

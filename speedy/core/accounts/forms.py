@@ -127,8 +127,8 @@ class CustomPhotoWidget(forms.widgets.Widget):
 
 
 class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
-    email = forms.EmailField(label=_('Your email'))
-    new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput)
+    email = forms.EmailField(label=_('Your email'), required=True)
+    new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput, required=True)
 
     class Meta:
         model = User
@@ -431,7 +431,7 @@ class SiteProfileActivationForm(forms.ModelForm):
 
 
 class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
-    password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput)
+    password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput, required=True)
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user')

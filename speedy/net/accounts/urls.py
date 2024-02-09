@@ -8,6 +8,7 @@ urlpatterns = [
     path(route='', view=views.IndexView.as_view(), name='index'),
     path(route='welcome/', view=views.ActivateSiteProfileView.as_view(), name='activate'),
     path(route='edit-profile/notifications/', view=views.speedy_core_accounts_views.EditProfileNotificationsView.as_view(), name='edit_profile_notifications'),
+    path(route='edit-profile/delete-account/', view=views.DeleteAccountView.as_view(), name='delete_account'),
 ] + urlpatterns
 
 
