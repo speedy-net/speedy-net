@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:45+0200\n"
+"POT-Creation-Date: 2024-02-09 17:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "Delete Account"
+msgstr "Supprimer le compte"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "Delete Account"
+msgstr "Supprimer le compte"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "Delete Account"
+msgstr "Supprimer le compte"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent "
+"et irréversible. La suppression de votre compte Speedy Net entraîne "
+"également la suppression de votre compte Speedy Match. Si vous êtes sûr, "
+"tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et "
+"distinction majuscules/minuscules."
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent "
+"et irréversible. La suppression de votre compte Speedy Net entraîne "
+"également la suppression de votre compte Speedy Match. Si vous êtes sûr, "
+"tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et "
+"distinction majuscules/minuscules."
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent "
+"et irréversible. La suppression de votre compte Speedy Net entraîne "
+"également la suppression de votre compte Speedy Match. Si vous êtes sûr, "
+"tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et "
+"distinction majuscules/minuscules."
+
+#: .\__translations\__translations.py:10
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Supprimer définitivement votre compte {site_name}"
+
+#: .\__translations\__translations.py:11
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "Supprimer définitivement votre compte {site_name}"
+
+#: .\__translations\__translations.py:12
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Supprimer définitivement votre compte {site_name}"
+
+#: .\__translations\__translations.py:14
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vos comptes Speedy Net et Speedy Match ont été supprimés. Merci d'avoir "
+"choisi {site_name}."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vos comptes Speedy Net et Speedy Match ont été supprimés. Merci d'avoir "
+"choisi {site_name}."
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vos comptes Speedy Net et Speedy Match ont été supprimés. Merci d'avoir "
+"choisi {site_name}."
+
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
 msgstr "Comptes Speedy Net"
+
+#: .\accounts\forms.py:18
+msgid "Your password"
+msgstr "Votre mot de passe"
+
+#: .\accounts\forms.py:19
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent "
+"et irréversible. La suppression de votre compte Speedy Net entraîne "
+"également la suppression de votre compte Speedy Match. Si vous êtes sûr, "
+"tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et "
+"distinction majuscules/minuscules."
+
+#: .\accounts\forms.py:33
+msgid "Invalid password."
+msgstr "Mot de passe invalide."
+
+#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:88
+#: .\accounts\views.py:82
+msgid "Yes. Delete my account."
+msgstr "Oui. Supprimer mon compte."
 
 #: .\accounts\models.py:20
 msgid "Speedy Net User"
@@ -187,6 +318,10 @@ msgstr ""
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
 msgstr "Utilisateurs bloqués"
+
+#: .\templates\accounts\edit_profile\base.html:17
+msgid "Delete Account"
+msgstr "Supprimer le compte"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
