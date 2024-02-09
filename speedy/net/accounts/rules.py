@@ -11,4 +11,3 @@ if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
     add_perm('accounts.delete_account', is_authenticated & ~has_access_perm & ~is_active & is_self)
 
 
-
