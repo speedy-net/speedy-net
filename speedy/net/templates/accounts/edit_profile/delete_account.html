@@ -1,0 +1,9 @@
+{% extends 'accounts/edit_profile/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block tab_content %}
+    {% crispy form %}
+    <br />
+{% endblock %}

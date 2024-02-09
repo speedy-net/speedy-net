@@ -12,6 +12,7 @@ from django.views import generic
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.accounts import views as speedy_core_accounts_views
+from speedy.core.profiles.views import UserMixin
 from speedy.core.accounts.models import User
 from speedy.net.accounts import utils
 from .forms import DeleteAccountForm
@@ -57,7 +58,7 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         return redirect(to=success_url)
 
 
-class DeleteAccountView(LoginRequiredMixin, PermissionRequiredMixin, generic.FormView):
+class DeleteAccountView(LoginRequiredMixin, UserMixin, PermissionRequiredMixin, generic.FormView):
     permission_required = 'accounts.delete_account'
     template_name = 'accounts/edit_profile/delete_account.html'
     form_class = DeleteAccountForm
