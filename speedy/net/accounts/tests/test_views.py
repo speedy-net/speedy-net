@@ -84,7 +84,6 @@ if (django_settings.TESTS):
                 )
 
             def test_translations(self):
-                print("self.user.get_gender()", self.user.get_gender())################ TODO
                 self.assertEqual(first=_("Yes. Delete my account."), second=self._yes_delete_my_account_text)
                 self.assertEqual(first=pgettext_lazy(context=self.user.get_gender(), message='Delete Account'), second=self._delete_account_text_dict_by_gender[self.user.get_gender()])
                 self.assertEqual(first=pgettext_lazy(context=self.user.get_gender(), message='Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.'), second=self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[self.user.get_gender()])
