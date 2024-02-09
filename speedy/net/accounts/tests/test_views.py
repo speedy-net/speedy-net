@@ -90,6 +90,24 @@ if (django_settings.TESTS):
                 self.assertEqual(first=pgettext_lazy(context=self.user.get_gender(), message='Permanently delete your {site_name} account').format(site_name=self.site_name), second=self._permanently_delete_your_speedy_net_account_text_dict_by_gender[self.user.get_gender()])
                 self.assertEqual(first=pgettext_lazy(context=self.user.get_gender(), message='Your Speedy Net and Speedy Match accounts have been deleted. Thank you for using {site_name}.').format(site_name=self.site_name), second=self._your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender[self.user.get_gender()])
 
+            def test_1(self):
+                raise NotImplementedError()
+
+            def test_2(self):
+                raise NotImplementedError()
+
+            def test_3(self):
+                raise NotImplementedError()
+
+            def test_4(self):
+                raise NotImplementedError()
+
+            def test_5(self):
+                raise NotImplementedError()
+
+            def test_6(self):
+                raise NotImplementedError()
+
 
         @only_on_speedy_net
         class DeleteAccountViewEnglishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
