@@ -39,6 +39,7 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)
 
             def test_staff_and_superuser_cannot_delete_their_account(self):
+                # ~~~~ TODO: Staff and superuser have all permissions, including accounts.delete_account.
                 user_2 = ActiveUserFactory(is_superuser=True, is_staff=True)
                 self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=False)  #### ~~~~ TODO: fails on this line
                 user_2.speedy_net_profile.deactivate()
