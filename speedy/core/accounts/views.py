@@ -18,6 +18,7 @@ from django.views.generic.detail import SingleObjectMixin
 from rules.contrib.views import LoginRequiredMixin, PermissionRequiredMixin
 
 from speedy.core.base.views import FormValidMessageMixin
+from speedy.core.profiles.views import SelfUserMixin
 from speedy.core.base.utils import reflection_import
 from .forms import LoginForm, PasswordResetForm, SetPasswordForm, RegistrationForm, UserEmailAddressForm, ProfileForm, PasswordChangeForm, SiteProfileDeactivationForm, ProfileNotificationsForm, UserEmailAddressPrivacyForm, ProfilePrivacyForm
 from .models import UserEmailAddress
@@ -146,7 +147,8 @@ class IndexView(generic.View):
             return self.registration_view.as_view()(request=request, *args, **kwargs)
 
 
-class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+class EditProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/profile.html'
     success_url = reverse_lazy('accounts:edit_profile')
     form_class = ProfileForm
@@ -162,7 +164,8 @@ class EditProfileView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateV
         return self.request.user
 
 
-class EditProfileNotificationsView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+class EditProfileNotificationsView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/notifications.html'
     success_url = reverse_lazy('accounts:edit_profile_notifications')
     form_class = ProfileNotificationsForm
@@ -171,7 +174,8 @@ class EditProfileNotificationsView(LoginRequiredMixin, FormValidMessageMixin, ge
         return self.request.user
 
 
-class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
+class EditProfileCredentialsView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, generic.FormView):
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/credentials.html'
     success_url = reverse_lazy('accounts:edit_profile_credentials')
     form_class = PasswordChangeForm
@@ -202,7 +206,8 @@ class EditProfileCredentialsView(LoginRequiredMixin, generic.FormView):
         return super().form_valid(form)
 
 
-class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
+class ActivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, generic.UpdateView):
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/activate.html'
     success_url = '/'
 
@@ -228,7 +233,9 @@ class ActivateSiteProfileView(LoginRequiredMixin, generic.UpdateView):
             return redirect(to=self.get_account_activation_url())
 
 
-class DeactivateSiteProfileView(LoginRequiredMixin, generic.FormView):
+class DeactivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, generic.FormView):
+    # A user can deactivate their account also if they are already inactive.
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/deactivate.html'
     form_class = SiteProfileDeactivationForm
     success_url = '/'
@@ -263,8 +270,9 @@ class EditProfileEmailsView(generic.RedirectView):
     pattern_name = 'accounts:edit_profile_credentials'
 
 
-class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.View):
+class VerifyUserEmailAddressView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, SingleObjectMixin, generic.View):
     model = UserEmailAddress
+    permission_required = 'accounts.edit_profile'
     success_url = reverse_lazy('accounts:edit_profile_emails')
 
     def get_success_url(self):
@@ -292,7 +300,8 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SingleObjectMixin, generic.
         return HttpResponseRedirect(redirect_to=self.get_success_url())
 
 
-class AddUserEmailAddressView(LoginRequiredMixin, generic.CreateView):
+class AddUserEmailAddressView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, generic.CreateView):
+    permission_required = 'accounts.edit_profile'
     form_class = UserEmailAddressForm
     template_name = 'accounts/email_address_form.html'
     success_url = reverse_lazy('accounts:edit_profile_emails')
@@ -374,7 +383,8 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
         return HttpResponseRedirect(redirect_to=self.success_url)
 
 
-class EditProfilePrivacyView(LoginRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+class EditProfilePrivacyView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin, FormValidMessageMixin, generic.UpdateView):
+    permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/privacy.html'
     success_url = reverse_lazy('accounts:edit_profile_privacy')
     form_class = ProfilePrivacyForm

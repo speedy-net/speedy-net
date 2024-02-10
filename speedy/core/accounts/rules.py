@@ -86,7 +86,7 @@ if (not (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID)):
 add_perm('accounts.view_profile_username', has_access_perm & is_self)
 add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_perm_for_dob_day_month)
 add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
-add_perm('accounts.edit_profile', has_access_perm & is_self)
+add_perm('accounts.edit_profile', is_self)
 add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
 add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary & ~email_address_is_only_confirmed_email)
 add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)

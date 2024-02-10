@@ -112,11 +112,23 @@ if (django_settings.TESTS):
         def _profile_form_all_the_required_fields_keys(self):
             return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
 
+        def _login_form_all_the_required_fields_keys(self):
+            return [field_name.format(language_code=self.language_code) for field_name in ['username', 'password']]
+
         def _registration_form_all_the_required_fields_are_required_errors_dict(self):
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._registration_form_all_the_required_fields_keys())
 
         def _profile_form_all_the_required_fields_are_required_errors_dict(self):
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._profile_form_all_the_required_fields_keys())
+
+        def _login_form_all_the_required_fields_are_required_errors_dict(self):
+            return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._login_form_all_the_required_fields_keys())
+
+        def _username_is_required_errors_dict(self):
+            return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['username'])
+
+        def _password_is_required_errors_dict(self):
+            return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['password'])
 
         def _date_of_birth_is_required_errors_dict(self):
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['date_of_birth'])

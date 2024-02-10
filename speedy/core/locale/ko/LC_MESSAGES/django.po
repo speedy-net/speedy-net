@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 16:03+0200\n"
+"POT-Creation-Date: 2024-02-10 17:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2357,20 +2357,20 @@ msgid ""
 msgstr ""
 "프로필 사진에 이 형식을 사용할 수 없습니다. JPEG 또는 PNG 형식만 가능합니다."
 
-#: .\accounts\views.py:291
+#: .\accounts\views.py:299
 msgid "Invalid confirmation link."
 msgstr "잘못된 확인 링크."
 
-#: .\accounts\views.py:315 .\accounts\views.py:331
+#: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "확인 메시지를 {email_address}(으)로 보냈습니다"
 
-#: .\accounts\views.py:346
+#: .\accounts\views.py:355
 msgid "The email address was deleted."
 msgstr "이메일 주소가 삭제되었습니다."
 
-#: .\accounts\views.py:362
+#: .\accounts\views.py:371
 msgid "You have made this email address primary."
 msgstr "이 이메일 주소를 기본으로 설정했습니다."
 

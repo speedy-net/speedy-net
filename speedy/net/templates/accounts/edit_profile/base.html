@@ -11,3 +11,11 @@
     </li>
 {% endblock %}
 
+{% block edit_profile_links_7 %}
+    <li class="nav-item">
+        <a class="nav-link {% active_class 'accounts:delete_account' %}" href="{% url 'accounts:delete_account' %}">
+            {% translate 'Delete Account' context request.user.get_gender %}
+        </a>
+    </li>
+{% endblock %}
+
