@@ -858,6 +858,19 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self.last_ip_address_used_ipapi_time = None
                 self.save_user_and_profile()
 
+    def show_profile_picture_on_website(self):
+        """
+        Return True if we should show the user's profile picture on the website, False otherwise.
+
+        :return: True if we should show the user's profile picture on the website, False otherwise.
+        :rtype: bool
+        """
+        if ((not (self.is_deleted)) and (self.is_active) and (self.speedy_net_profile.is_active) and (self.profile.is_active)):
+            if (self.photo is not None):
+                if (self.photo.visible_on_website):
+                    return True
+        return False
+
     def display_ads(self):
         """
         This function determines if the user should see ads or not.
