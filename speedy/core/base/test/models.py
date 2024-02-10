@@ -22,7 +22,7 @@ if (django_settings.TESTS):
         def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
             if (not (test_labels)):
                 # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net"].
-                # Due to problems with templates, "speedy.match" label is not added to speedy.net tests, and "speedy.net" label is not added to speedy.match tests. # ~~~~ TODO: fix this bug and enable these labels, although the tests there are skipped.
+                # Due to problems with templates, "speedy.match" label is not added to speedy.net tests, and "speedy.net" label is not added to speedy.match tests.  # ~~~~ TODO: fix this bug and enable these labels, although the tests there are skipped.
                 test_labels = []
                 for label in django_settings.INSTALLED_APPS:
                     if (label.startswith('speedy.')):

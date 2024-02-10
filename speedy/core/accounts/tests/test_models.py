@@ -258,14 +258,14 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         class EntityEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='fr')
         class EntityFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -273,7 +273,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='fr')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='de')
         class EntityGermanTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -281,7 +281,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='de')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='es')
         class EntitySpanishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -289,7 +289,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='es')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='pt')
         class EntityPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -297,7 +297,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='pt')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='it')
         class EntityItalianTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -305,7 +305,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='it')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='nl')
         class EntityDutchTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -313,7 +313,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='nl')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='sv')
         class EntitySwedishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -321,7 +321,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='sv')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='ko')
         class EntityKoreanTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -329,7 +329,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='ko')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='fi')
         class EntityFinnishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -337,7 +337,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='fi')
 
 
-        # @only_on_sites_with_login # ~~~~ TODO
+        # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='he')
         class EntityHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
