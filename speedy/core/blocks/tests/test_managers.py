@@ -51,8 +51,8 @@ if (django_settings.TESTS):
             def test_user_blocks_themself_throws_an_exception(self):
                 with self.assertRaises(ValidationError) as cm:
                     Block.objects.block(blocker=self.user, blocked=self.user)
-                self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.') ###### TODO
-                self.assertListEqual(list1=list(cm.exception), list2=['Users cannot block themselves.']) ###### TODO
+                self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.')  ###### TODO
+                self.assertListEqual(list1=list(cm.exception), list2=['Users cannot block themselves.'])  ###### TODO
 
             def test_cannot_delete_blocks_with_queryset_delete(self):
                 with self.assertRaises(NotImplementedError) as cm:
