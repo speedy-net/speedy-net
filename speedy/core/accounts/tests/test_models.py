@@ -17,7 +17,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
-        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
         from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
@@ -1005,7 +1005,7 @@ if (django_settings.TESTS):
                 )
 
             def test_user_names_in_both_websites(self):
-                for user in [DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
+                for user in [DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.full_name, second=user.get_full_name())
                     self.assertEqual(first=user.full_name, second='{} {}'.format(user.first_name, user.last_name))
                     self.assertEqual(first=user.short_name, second=user.get_first_name())
@@ -1139,6 +1139,8 @@ if (django_settings.TESTS):
                 user = DefaultUserFactory()
                 self.assertEqual(first=user.main_language_code, second='en')
                 user = InactiveUserFactory()
+                self.assertEqual(first=user.main_language_code, second='en')
+                user = SpeedyNetInactiveUserFactory()
                 self.assertEqual(first=user.main_language_code, second='en')
                 user = ActiveUserFactory()
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):

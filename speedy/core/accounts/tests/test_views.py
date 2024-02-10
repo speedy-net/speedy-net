@@ -1075,14 +1075,15 @@ if (django_settings.TESTS):
                 self.other_user.set_password(raw_password=self._other_user_password)
                 self.other_user.save_user_and_profile()
                 self.other_user_email = UserEmailAddressFactory(user=self.other_user)
-                self.inactive_user = InactiveUserFactory()
+                self.inactive_user_1 = InactiveUserFactory()
+                self.inactive_user_2 = SpeedyNetInactiveUserFactory()
                 self.assertNotEqual(first=self.user_email.email, second=self.other_user_email.email)
                 self.assertNotEqual(first=tests_settings.USER_PASSWORD, second=self._other_user_password)
                 self.assert_models_count(
-                    entity_count=3,
-                    user_count=3,
-                    user_email_address_count=4,
-                    confirmed_email_address_count=2,
+                    entity_count=4,
+                    user_count=4,
+                    user_email_address_count=5,
+                    confirmed_email_address_count=3,
                     unconfirmed_email_address_count=2,
                 )
 
@@ -1170,9 +1171,9 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
                 self.assert_me_url_redirects_to_user_profile_url(user=self.other_user)
 
-            def test_visitor_still_can_login_if_they_are_not_active_user(self):
+            def test_visitor_can_still_login_if_they_are_not_active_user_1(self):
                 data = {
-                    'username': self.inactive_user.slug,
+                    'username': self.inactive_user_1.slug,
                     'password': tests_settings.USER_PASSWORD,
                 }
                 r = self.client.post(path=self.login_url, data=data)
@@ -1183,6 +1184,16 @@ if (django_settings.TESTS):
                 else:
                     # Inactive users are redirected to registration step 2 url ('/registration-step-2/') instead of their user profile url.
                     self.assert_me_url_redirects_to_registration_step_2_url()
+
+            def test_visitor_can_still_login_if_they_are_not_active_user_2(self):
+                data = {
+                    'username': self.inactive_user_2.slug,
+                    'password': tests_settings.USER_PASSWORD,
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
+                # Speedy Net inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
+                self.assert_me_url_redirects_to_welcome_url()
 
             def test_visitor_cannot_login_using_wrong_email(self):
                 data = {

@@ -2,6 +2,8 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
+
         from django.test import override_settings
 
         from speedy.core.base.test import tests_settings
@@ -15,7 +17,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.forms import ProfileNotificationsForm
         from speedy.net.accounts.forms import DeleteAccountForm
 
-        from speedy.core.accounts.test.user_factories import InactiveUserFactory
+        from speedy.core.accounts.test.user_factories import InactiveUserFactory, SpeedyNetInactiveUserFactory
 
 
         @only_on_speedy_net
@@ -30,7 +32,13 @@ if (django_settings.TESTS):
         class DeleteAccountFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = InactiveUserFactory()
+                self.random_choice = random.choice([1, 2])
+                if (self.random_choice == 1):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
 
             def test_correct_password_and_delete_my_account_text(self):
                 data = {

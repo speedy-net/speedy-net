@@ -7,7 +7,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
 
-        from speedy.core.accounts.test.user_factories import InactiveUserFactory, ActiveUserFactory
+        from speedy.core.accounts.test.user_factories import InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
 
         from speedy.core.accounts.tests.test_rules import ViewProfileRulesTestCaseMixin
 
@@ -36,6 +36,10 @@ if (django_settings.TESTS):
 
             def test_inactive_user_can_delete_his_account_2(self):
                 user_2 = InactiveUserFactory()
+                self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)
+
+            def test_inactive_user_can_delete_his_account_3(self):
+                user_2 = SpeedyNetInactiveUserFactory()
                 self.assertIs(expr1=user_2.has_perm(perm='accounts.delete_account', obj=user_2), expr2=True)
 
             def test_active_user_cannot_delete_his_account(self):

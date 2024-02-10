@@ -2,12 +2,13 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
         from datetime import date
 
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
 
-        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
 
         from speedy.core.accounts.models import User
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
@@ -21,7 +22,13 @@ if (django_settings.TESTS):
                 return user
 
             def get_inactive_user_jennifer(self):
-                user = InactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+                random_choice = random.choice([1, 2])
+                if (random_choice == 1):
+                    user = InactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+                elif (random_choice == 2):
+                    user = SpeedyNetInactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+                else:
+                    raise NotImplementedError()
                 user.save_user_and_profile()
                 return user
 
@@ -84,7 +91,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.name, second="Doron Matalon")
 
             def test_user_name_is_the_same_as_get_name_and_get_full_name(self):
-                for user in [self.get_default_user_doron(), self.get_inactive_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
+                for user in [self.get_default_user_doron(), self.get_inactive_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.name, second=user.speedy_net_profile.get_name())
                     self.assertEqual(first=user.name, second=user.get_full_name())
                     self.assertEqual(first=user.name, second='{} {}'.format(user.first_name, user.last_name))

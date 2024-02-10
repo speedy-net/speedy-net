@@ -16,7 +16,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 
         from speedy.core.uploads.test.factories import UserImageFactory
-        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, ActiveUserFactory
+        from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
 
         from speedy.core.base.utils import to_attribute
         from speedy.match.accounts import utils, validators
@@ -879,7 +879,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.name, second="Doron")
 
             def test_user_name_is_the_same_as_get_name_and_get_first_name(self):
-                for user in [self.get_default_user_doron(), self.get_active_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), ActiveUserFactory()]:
+                for user in [self.get_default_user_doron(), self.get_active_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.name, second=user.speedy_match_profile.get_name())
                     self.assertEqual(first=user.name, second=user.get_first_name())
                     self.assertEqual(first=user.name, second='{}'.format(user.first_name))
