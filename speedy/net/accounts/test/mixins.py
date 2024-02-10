@@ -14,6 +14,9 @@ if (django_settings.TESTS):
         def _delete_my_account_text_is_required_errors_dict(self):
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['delete_my_account_text'])
 
+        def _invalid_delete_my_account_text_errors_dict_by_gender(self, gender):
+            return {'delete_my_account_text': [self._invalid_delete_my_account_text_error_message_dict_by_gender[gender]]}
+
         def set_up(self):
             super().set_up()
 
@@ -169,21 +172,26 @@ if (django_settings.TESTS):
                 },
             }
 
+            _invalid_delete_my_account_text_error_message_dict_by_gender = _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender
+
             self._yes_delete_my_account_text = _yes_delete_my_account_text_dict[self.language_code]
 
             self._delete_account_text_dict_by_gender = _delete_account_text_dict_by_gender[self.language_code]
             self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[self.language_code]
             self._permanently_delete_your_speedy_net_account_text_dict_by_gender = _permanently_delete_your_speedy_net_account_text_dict_by_gender[self.language_code]
+            self._invalid_delete_my_account_text_error_message_dict_by_gender = _invalid_delete_my_account_text_error_message_dict_by_gender[self.language_code]
             self._your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender = _your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender[self.language_code]
 
             self.assertSetEqual(set1=set(self._delete_account_text_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._permanently_delete_your_speedy_net_account_text_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+            self.assertSetEqual(set1=set(self._invalid_delete_my_account_text_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
             self.assertEqual(first=len(set(self._delete_account_text_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._permanently_delete_your_speedy_net_account_text_dict_by_gender.keys())), second=3)
+            self.assertEqual(first=len(set(self._invalid_delete_my_account_text_error_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender.keys())), second=3)
 
 

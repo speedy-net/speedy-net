@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 16:03+0200\n"
+"POT-Creation-Date: 2024-02-10 17:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2399,20 +2399,20 @@ msgstr ""
 "Tu não podes utilizar este formato para a tua foto de perfil. Somente os "
 "formatos JPEG ou PNG são aceitos."
 
-#: .\accounts\views.py:291
+#: .\accounts\views.py:299
 msgid "Invalid confirmation link."
 msgstr "Link de confirmação inválido."
 
-#: .\accounts\views.py:315 .\accounts\views.py:331
+#: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Uma mensagem de confirmação foi enviada para {email_address}"
 
-#: .\accounts\views.py:346
+#: .\accounts\views.py:355
 msgid "The email address was deleted."
 msgstr "A direcção de e-mail foi excluída."
 
-#: .\accounts\views.py:362
+#: .\accounts\views.py:371
 msgid "You have made this email address primary."
 msgstr "Configuraste esta caixa de e-mail como principal."
 

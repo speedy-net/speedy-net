@@ -2293,17 +2293,25 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/other-page/')
                 self.assertRedirects(response=r, expected_url=self.redirect_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
 
-            def test_active_user_cannot_open_the_page(self):
+            def test_active_user_gets_redirected(self):
                 self.client.logout()
                 user_2 = ActiveUserFactory()
                 self.client.login(username=user_2.slug, password=tests_settings.USER_PASSWORD)
-                self.assertEqual(first=user_2.is_active, second=False)  ##
-                self.assertEqual(first=user_2.profile.is_active, second=False)  ##
+                self.assertEqual(first=user_2.is_active, second=True)
+                self.assertEqual(first=user_2.profile.is_active, second=True)
                 r = self.client.get(path=self.page_url)
-                self.assertIn(member=r.status_code, container={200, 302})
-                if (r.status_code == 200):
-                    self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
-                raise NotImplementedError()
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                    r = self.client.get(path='/')
+                    self.assertRedirects(response=r, expected_url='/{}/'.format(user_2.slug), status_code=302, target_status_code=200, fetch_redirect_response=False)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertRedirects(response=r, expected_url='/registration-step-10/', status_code=302, target_status_code=302)
+                    r = self.client.get(path='/registration-step-10/')
+                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                    r = self.client.get(path='/')
+                    self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                else:
+                    raise NotImplementedError()
 
             def test_inactive_user_can_open_the_page(self):
                 r = self.client.get(path=self.page_url)
