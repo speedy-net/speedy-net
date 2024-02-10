@@ -285,7 +285,7 @@ if (django_settings.TESTS):
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=True)
                 self.assert_user_is_logged_in(user=self.user, user_is_active=True)
 
-            def test_inactive_user_cannot_delete_his_account_using_wrong_password(self):
+            def test_inactive_user_cannot_delete_his_account_using_incorrect_password(self):
                 self.user.speedy_net_profile.deactivate()
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
                 data = {
@@ -299,7 +299,7 @@ if (django_settings.TESTS):
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
                 self.assert_user_is_logged_in(user=self.user, user_is_active=False)
 
-            def test_inactive_user_cannot_delete_his_account_using_wrong_delete_my_account_text(self):
+            def test_inactive_user_cannot_delete_his_account_using_incorrect_delete_my_account_text(self):
                 self.user.speedy_net_profile.deactivate()
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
                 data = {

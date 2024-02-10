@@ -136,7 +136,7 @@ if (django_settings.TESTS):
                 self.client.login(username='a{}'.format(self.confirmed_email_address.email), password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_user_cannot_login_with_wrong_password(self):
+            def test_user_cannot_login_with_incorrect_password(self):
                 self.client.login(username=self.user.slug, password='{}-'.format(tests_settings.USER_PASSWORD))
                 self.assert_me_url_redirects_to_login_url()
 
@@ -1194,7 +1194,7 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_wrong_password(self):
+            def test_visitor_cannot_login_using_incorrect_password(self):
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug-with-dots',
@@ -2399,7 +2399,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
                 self.assertEqual(first=user.profile.is_active, second=False)
 
-            def test_user_cannot_deactivate_his_account_using_wrong_password(self):
+            def test_user_cannot_deactivate_his_account_using_incorrect_password(self):
                 self.assertEqual(first=self.user.is_active, second=True)
                 self.assertEqual(first=self.user.profile.is_active, second=True)
                 data = {
