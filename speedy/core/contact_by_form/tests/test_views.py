@@ -12,7 +12,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin
 
-        from speedy.core.accounts.test.user_factories import ActiveUserFactory
+        from speedy.core.accounts.test.user_factories import InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
         from speedy.core.uploads.test.factories import FileFactory
 
         from speedy.core.contact_by_form.models import Feedback
@@ -28,7 +28,16 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 if (django_settings.LOGIN_ENABLED):
-                    self.user = ActiveUserFactory()
+                    # Test that both active and inactive users can submit feedback.
+                    self.random_choice = random.choice([1, 2, 3])
+                    if (self.random_choice == 1):
+                        self.user = ActiveUserFactory()
+                    elif (self.random_choice == 2):
+                        self.user = InactiveUserFactory()
+                    elif (self.random_choice == 3):
+                        self.user = SpeedyNetInactiveUserFactory()
+                    else:
+                        raise NotImplementedError()
                 self.set_up_class()
                 self.page_url = self.get_page_url()
 
