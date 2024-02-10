@@ -22,11 +22,12 @@ if (django_settings.TESTS):
                 return user
 
             def get_inactive_user_jennifer(self):
+                user_factory_dict = dict(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 random_choice = random.choice([1, 2])
                 if (random_choice == 1):
-                    user = InactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+                    user = InactiveUserFactory(**user_factory_dict)
                 elif (random_choice == 2):
-                    user = SpeedyNetInactiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
+                    user = SpeedyNetInactiveUserFactory(**user_factory_dict)
                 else:
                     raise NotImplementedError()
                 user.save_user_and_profile()
