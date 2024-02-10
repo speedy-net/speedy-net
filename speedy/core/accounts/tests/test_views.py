@@ -1205,6 +1205,34 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
+            def test_visitor_cannot_login_without_username_and_password(self):
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {}
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._login_form_all_the_required_fields_are_required_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_without_username(self):
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'password': 'wrong password!!',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._username_is_required_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_without_password(self):
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': 'slug-with-dots',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_is_required_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
 
         @only_on_sites_with_login
         class LoginViewEnglishTestCase(LoginViewTestCaseMixin, SiteTestCase):
@@ -1355,12 +1383,22 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
 
-            def test_user_can_save_his_settings(self):
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
+                self.user.speedy_net_profile.deactivate()
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
+
+            def test_active_user_can_save_his_settings(self):
                 r = self.client.post(path=self.page_url, data=self.data)
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
                 user = User.objects.get(pk=self.user.pk)
@@ -1388,6 +1426,18 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.last_name_ko, second={'ko': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ko') else '__'])
                 self.assertEqual(first=user.last_name_fi, second={'fi': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'fi') else '__'])
                 self.assertEqual(first=user.last_name_he, second={'he': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'he') else '__'])
+                for (key, value) in self.data.items():
+                    if (not (key in ['date_of_birth'])):
+                        self.assertEqual(first=getattr(user, key), second=value)
+                self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
+
+            def test_inactive_user_can_save_his_settings(self):
+                self.user.profile.deactivate()
+                r = self.client.post(path=self.page_url, data=self.data)
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.first_name, second=self.first_name)
+                self.assertEqual(first=user.last_name, second=self.last_name)
                 for (key, value) in self.data.items():
                     if (not (key in ['date_of_birth'])):
                         self.assertEqual(first=getattr(user, key), second=value)
@@ -1966,7 +2016,13 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
@@ -2014,7 +2070,13 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
@@ -2044,7 +2106,13 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
@@ -2225,6 +2293,18 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/other-page/')
                 self.assertRedirects(response=r, expected_url=self.redirect_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
 
+            def test_active_user_cannot_open_the_page(self):
+                self.client.logout()
+                user_2 = ActiveUserFactory()
+                self.client.login(username=user_2.slug, password=tests_settings.USER_PASSWORD)
+                self.assertEqual(first=user_2.is_active, second=False)  ##
+                self.assertEqual(first=user_2.profile.is_active, second=False)  ##
+                r = self.client.get(path=self.page_url)
+                self.assertIn(member=r.status_code, container={200, 302})
+                if (r.status_code == 200):
+                    self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
+                raise NotImplementedError()
+
             def test_inactive_user_can_open_the_page(self):
                 r = self.client.get(path=self.page_url)
                 self.assertIn(member=r.status_code, container={200, 302})
@@ -2268,7 +2348,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
             page_url = '/edit-profile/deactivate/'
 
             def set_up(self):
@@ -2288,7 +2368,13 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
@@ -2304,6 +2390,30 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=user.is_active, second={django_settings.SPEEDY_NET_SITE_ID: False, django_settings.SPEEDY_MATCH_SITE_ID: True}[self.site.id])
                 self.assertEqual(first=user.profile.is_active, second=False)
+
+            def test_user_cannot_deactivate_his_account_using_wrong_password(self):
+                self.assertEqual(first=self.user.is_active, second=True)
+                self.assertEqual(first=self.user.profile.is_active, second=True)
+                data = {
+                    'password': 'wrong password!!',
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._invalid_password_errors_dict())
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.profile.is_active, second=True)
+
+            def test_user_cannot_deactivate_his_account_without_password(self):
+                self.assertEqual(first=self.user.is_active, second=True)
+                self.assertEqual(first=self.user.profile.is_active, second=True)
+                data = {}
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_is_required_errors_dict())
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.profile.is_active, second=True)
 
 
         class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -2496,7 +2606,13 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/edit-profile/emails/add/')
                 self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/add/', status_code=302, target_status_code=200)
 
-            def test_user_can_open_the_page(self):
+            def test_active_user_can_open_the_page(self):
+                r = self.client.get(path='/edit-profile/emails/add/')
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                self.user.profile.deactivate()
                 r = self.client.get(path='/edit-profile/emails/add/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')

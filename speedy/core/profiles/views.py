@@ -18,6 +18,18 @@ if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
     from speedy.match.likes.rules import you_like_user, user_likes_you
 
 
+class SelfUserMixin(object):
+    def get_user(self):
+        if (self.request.user.is_authenticated):
+            user = self.request.user
+        else:
+            raise PermissionDenied()
+        return user
+
+    def get_permission_object(self):
+        return self.get_user()
+
+
 class UserMixin(object):
     user_slug_kwarg = 'slug'
 

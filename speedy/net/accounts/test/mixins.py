@@ -5,10 +5,19 @@ if (django_settings.TESTS):
 
 
     class SpeedyNetAccountsLanguageMixin(object):
+        def _delete_account_form_all_the_required_fields_keys(self):
+            return [field_name.format(language_code=self.language_code) for field_name in ['password', 'delete_my_account_text']]
+
+        def _delete_account_form_all_the_required_fields_are_required_errors_dict(self):
+            return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._delete_account_form_all_the_required_fields_keys())
+
+        def _delete_my_account_text_is_required_errors_dict(self):
+            return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['delete_my_account_text'])
+
         def set_up(self):
             super().set_up()
 
-            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Excluir minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'sv': 'Ja. Ta bort mitt konto.', 'ko': '네. 내 계정을 삭제하세요.', 'fi': 'Kyllä. Poista tilini.', 'he': 'כן. מחק את החשבון שלי.'}
+            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Excluir minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'sv': 'Ja. Ta bort mitt konto.', 'ko': '네. 내 계정을 삭제하세요.', 'fi': 'Kyllä. Poista tilini.', 'he': 'כן. מחקו את החשבון שלי.'}
 
             _delete_account_text_dict_by_gender = {
                 'en': {
@@ -80,9 +89,9 @@ if (django_settings.TESTS):
                     **{gender: 'Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match -tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, täsmälleen ja isot kirjaimet huomioon.' for gender in User.ALL_GENDERS},
                 },
                 'he': {
-                    User.GENDER_FEMALE_STRING: "האם את בטוחה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את בטוחה, הקלידי \"כן. מחק את החשבון שלי.\" בשדה זה, בדיוק.",
-                    User.GENDER_MALE_STRING: "האם אתה בטוח שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם אתה בטוח, הקלד \"כן. מחק את החשבון שלי.\" בשדה זה, בדיוק.",
-                    User.GENDER_OTHER_STRING: "האם את/ה בטוח/ה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה, הקלד/י \"כן. מחק את החשבון שלי.\" בשדה זה, בדיוק.",
+                    User.GENDER_FEMALE_STRING: "האם את בטוחה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את בטוחה, הקלידי \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.",
+                    User.GENDER_MALE_STRING: "האם אתה בטוח שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם אתה בטוח, הקלד \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.",
+                    User.GENDER_OTHER_STRING: "האם את/ה בטוח/ה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה, הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.",
                 },
             }
 

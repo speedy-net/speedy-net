@@ -56,12 +56,4 @@ if (django_settings.TESTS):
                 self.user.speedy_net_profile.activate()
                 self.assertIs(expr1=self.user.has_perm(perm='accounts.delete_account', obj=user_2), expr2=False)
 
-            @unittest.skip(reason="This test is under construction.")
-            def test_1(self):
-                raise NotImplementedError()
-
-            @unittest.skip(reason="This test is under construction.")
-            def test_2(self):
-                raise NotImplementedError()
-
 
