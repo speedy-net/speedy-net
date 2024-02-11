@@ -168,9 +168,15 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         :return: True if we should show the entity's profile picture on the website, False otherwise.
         :rtype: bool
         """
-        try:
-            return self.user.show_profile_picture_on_website()
-        except self.__class__.user.RelatedObjectDoesNotExist as e:
+        user = None
+        if (isinstance(self, User)):
+            user = self
+        else:
+            try:
+                user = self.user
+            except self.__class__.user.RelatedObjectDoesNotExist as e:
+                pass
+        if ((user is None) or ((not (user.is_deleted)) and (user.is_active) and (user.speedy_net_profile.is_active) and (user.profile.is_active))):
             if (self.photo is not None):
                 if (self.photo.visible_on_website):
                     return True
@@ -872,19 +878,6 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self.last_ip_address_used_date_updated = now()
                 self.last_ip_address_used_ipapi_time = None
                 self.save_user_and_profile()
-
-    def show_profile_picture_on_website(self):
-        """
-        Return True if we should show the user's profile picture on the website, False otherwise.
-
-        :return: True if we should show the user's profile picture on the website, False otherwise.
-        :rtype: bool
-        """
-        if ((not (self.is_deleted)) and (self.is_active) and (self.speedy_net_profile.is_active) and (self.profile.is_active)):
-            if (self.photo is not None):
-                if (self.photo.visible_on_website):
-                    return True
-        return False
 
     def display_ads(self):
         """
