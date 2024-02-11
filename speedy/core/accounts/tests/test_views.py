@@ -44,6 +44,54 @@ if (django_settings.TESTS):
                 expected_url = '/registration-step-2/'
                 self.assert_me_url_redirects(expected_url=expected_url)
 
+            def assert_me_url_redirects_after_login_by_site_user_and_random_choice(self, user, random_choice):
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    if (random_choice == 1):
+                        self.assertEqual(first=user.is_active, second=True)
+                        self.assertEqual(first=user.profile.is_active, second=True)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                        self.assert_me_url_redirects_to_user_profile_url(user=user)
+                    elif (random_choice == 2):
+                        self.assertEqual(first=user.is_active, second=False)
+                        self.assertEqual(first=user.profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                        self.assert_me_url_redirects_to_welcome_url()
+                    elif (random_choice == 3):
+                        self.assertEqual(first=user.is_active, second=False)
+                        self.assertEqual(first=user.profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                        self.assert_me_url_redirects_to_welcome_url()
+                    else:
+                        raise NotImplementedError()
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    if (random_choice == 1):
+                        self.assertEqual(first=user.is_active, second=True)
+                        self.assertEqual(first=user.profile.is_active, second=True)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                        self.assert_me_url_redirects_to_user_profile_url(user=user)
+                    elif (random_choice == 2):
+                        self.assertEqual(first=user.is_active, second=True)
+                        self.assertEqual(first=user.profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                        self.assert_me_url_redirects_to_registration_step_2_url()
+                    elif (random_choice == 3):
+                        self.assertEqual(first=user.is_active, second=False)
+                        self.assertEqual(first=user.profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
+                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                        self.assert_me_url_redirects_to_welcome_url()
+                    else:
+                        raise NotImplementedError()
+                else:
+                    raise NotImplementedError()
+
+
+
 
         class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
             def set_up(self):
@@ -120,26 +168,33 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=3,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
+            def assert_me_url_redirects_after_login(self, user):
+                if (user == self.user):
+                    random_choice = self.random_choice
+                else:
+                    raise NotImplementedError()
+                self.assert_me_url_redirects_after_login_by_site_user_and_random_choice(user=user, random_choice=random_choice)
+
             def test_user_can_login_with_slug(self):
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
-                self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+                self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_username(self):
                 self.client.login(username=self.user.username, password=tests_settings.USER_PASSWORD)
-                self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+                self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_confirmed_email_address(self):
                 self.client.login(username=self.confirmed_email_address.email, password=tests_settings.USER_PASSWORD)
-                self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+                self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_unconfirmed_email_address(self):
                 self.client.login(username=self.unconfirmed_email_address.email, password=tests_settings.USER_PASSWORD)
-                self.assert_me_url_redirects_to_user_profile_url(user=self.user)
+                self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_cannot_login_with_wrong_slug(self):
                 self.client.login(username='a{}'.format(self.user.slug), password=tests_settings.USER_PASSWORD)
@@ -1128,50 +1183,7 @@ if (django_settings.TESTS):
                     random_choice = self.random_choice_2
                 else:
                     raise NotImplementedError()
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    if (random_choice == 1):
-                        self.assertEqual(first=user.is_active, second=True)
-                        self.assertEqual(first=user.profile.is_active, second=True)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                        self.assert_me_url_redirects_to_user_profile_url(user=user)
-                    elif (random_choice == 2):
-                        self.assertEqual(first=user.is_active, second=False)
-                        self.assertEqual(first=user.profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                        self.assert_me_url_redirects_to_welcome_url()
-                    elif (random_choice == 3):
-                        self.assertEqual(first=user.is_active, second=False)
-                        self.assertEqual(first=user.profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                        self.assert_me_url_redirects_to_welcome_url()
-                    else:
-                        raise NotImplementedError()
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    if (random_choice == 1):
-                        self.assertEqual(first=user.is_active, second=True)
-                        self.assertEqual(first=user.profile.is_active, second=True)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                        self.assert_me_url_redirects_to_user_profile_url(user=user)
-                    elif (random_choice == 2):
-                        self.assertEqual(first=user.is_active, second=True)
-                        self.assertEqual(first=user.profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                        self.assert_me_url_redirects_to_registration_step_2_url()
-                    elif (random_choice == 3):
-                        self.assertEqual(first=user.is_active, second=False)
-                        self.assertEqual(first=user.profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
-                        self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                        self.assert_me_url_redirects_to_welcome_url()
-                    else:
-                        raise NotImplementedError()
-                else:
-                    raise NotImplementedError()
+                self.assert_me_url_redirects_after_login_by_site_user_and_random_choice(user=user, random_choice=random_choice)
                 if (user == self.user):
                     if (random_choice == 1):
                         # Assert expected_url directly once to confirm.
@@ -1466,7 +1478,26 @@ if (django_settings.TESTS):
                     else:
                         raise NotImplementedError()
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                    if (self.random_choice == 1):
+                        self.assertEqual(first=self.user.is_active, second=True)
+                        self.assertEqual(first=self.user.profile.is_active, second=True)
+                        self.assertEqual(first=self.user.speedy_net_profile.is_active, second=True)
+                        self.assertEqual(first=self.user.speedy_match_profile.is_active, second=True)
+                        self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                    elif (self.random_choice == 2):
+                        self.assertEqual(first=self.user.is_active, second=True)
+                        self.assertEqual(first=self.user.profile.is_active, second=False)
+                        self.assertEqual(first=self.user.speedy_net_profile.is_active, second=True)
+                        self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                        self.assertRedirects(response=r, expected_url='/registration-step-2/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                    elif (self.random_choice == 3):
+                        self.assertEqual(first=self.user.is_active, second=False)
+                        self.assertEqual(first=self.user.profile.is_active, second=False)
+                        self.assertEqual(first=self.user.speedy_net_profile.is_active, second=False)
+                        self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                        self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                    else:
+                        raise NotImplementedError()
                 else:
                     raise NotImplementedError()
                 r = self.client.post(path='/logout/')
