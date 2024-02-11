@@ -176,7 +176,13 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
                 user = self.user
             except self.__class__.user.RelatedObjectDoesNotExist as e:
                 pass
-        if ((user is None) or ((not (user.is_deleted)) and (user.is_active) and (user.speedy_net_profile.is_active) and (user.profile.is_active))):
+        check_photo = False
+        if (user is None):
+            check_photo = True
+        else:
+            if ((not (user.is_deleted)) and (user.is_active) and (user.speedy_net_profile.is_active) and (user.profile.is_active)):
+                check_photo = True
+        if (check_photo):
             if (self.photo is not None):
                 if (self.photo.visible_on_website):
                     return True
