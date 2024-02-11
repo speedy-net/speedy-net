@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import logging
+        import random
         from unittest import mock
         from datetime import date, datetime, timedelta
 
@@ -47,12 +48,20 @@ if (django_settings.TESTS):
         class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=1,
-                    confirmed_email_address_count=1,
+                    user_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -97,7 +106,15 @@ if (django_settings.TESTS):
         class LoginTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.assert_models_count(
@@ -1336,7 +1353,15 @@ if (django_settings.TESTS):
         class LogoutViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
                     entity_count=1,
@@ -1365,7 +1390,15 @@ if (django_settings.TESTS):
 
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.original_first_name = self.user.first_name
                 self.original_last_name = self.user.last_name
                 self.data = {
@@ -2011,7 +2044,15 @@ if (django_settings.TESTS):
 
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
@@ -2066,13 +2107,21 @@ if (django_settings.TESTS):
 
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=1,
-                    confirmed_email_address_count=1,
+                    user_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2101,7 +2150,15 @@ if (django_settings.TESTS):
 
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
@@ -2438,7 +2495,15 @@ if (django_settings.TESTS):
         class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.other_user = ActiveUserFactory()
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
@@ -2608,15 +2673,23 @@ if (django_settings.TESTS):
         class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.confirmed_email_address.make_primary()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2640,8 +2713,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 data = {
@@ -2653,8 +2726,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2663,8 +2736,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=3,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
                 data = {
@@ -2676,8 +2749,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=3,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2686,8 +2759,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 data = {
@@ -2711,8 +2784,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=3,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2720,16 +2793,16 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 self.confirmed_email_address.delete()
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=1,
-                    confirmed_email_address_count=1,
+                    user_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 data = {
@@ -2746,8 +2819,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=1,
+                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    confirmed_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2842,7 +2915,15 @@ if (django_settings.TESTS):
         class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -2975,7 +3056,15 @@ if (django_settings.TESTS):
         class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
                 self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
@@ -3237,7 +3326,15 @@ if (django_settings.TESTS):
         class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -3442,7 +3539,15 @@ if (django_settings.TESTS):
         class PasswordResetViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
-                self.user = ActiveUserFactory()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError()
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.email.make_primary()
                 self.assert_models_count(
@@ -3469,6 +3574,41 @@ if (django_settings.TESTS):
                     django_settings.SPEEDY_NET_SITE_ID: self._password_reset_on_speedy_net_subject,
                     django_settings.SPEEDY_MATCH_SITE_ID: self._password_reset_on_speedy_match_subject,
                 }[self.site.id])
+
+            def test_visitor_cannot_reset_password_if_account_is_deleted_and_doesnt_have_usable_password(self):
+                self.user.speedy_net_profile.deactivate()
+                self.user.set_unusable_password()
+                self.user.save()
+                self.user._mark_as_deleted()
+                self.user.save()
+                self.user.save_user_and_profile()
+                self.assertIs(expr1=self.user.is_deleted, expr2=True)
+                self.assertIs(expr1=self.user.is_deleted_time is None, expr2=False)
+                self.assertEqual(first=self.user.is_active, second=False)
+                self.assertEqual(first=self.user.profile.is_active, second=False)
+                self.assertEqual(first=self.user.speedy_net_profile.is_active, second=False)
+                self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                self.assert_models_count(
+                    entity_count=1,
+                    user_count=1,
+                    user_email_address_count=2,
+                    confirmed_email_address_count=2,
+                    unconfirmed_email_address_count=0,
+                )
+                self.assert_user_email_addresses_count(
+                    user=self.user,
+                    user_email_addresses_count=2,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=2,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                self.assertEqual(first=len(mail.outbox), second=0)
+                data = {
+                    'email': self.email.email,
+                }
+                r = self.client.post(path='/reset-password/', data=data)
+                self.assertRedirects(response=r, expected_url='/reset-password/done/', status_code=302, target_status_code=200)
+                self.assertEqual(first=len(mail.outbox), second=0)
 
 
         @only_on_sites_with_login

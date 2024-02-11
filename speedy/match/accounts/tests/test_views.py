@@ -17,14 +17,29 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class IndexViewTestCase(IndexViewTestCaseMixin, SiteTestCase):
-            def set_up(self):
-                super().set_up()
-                self.user = ActiveUserFactory()
-
             def test_user_gets_redirected_to_his_matches(self):
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path='/')
-                self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
+                if (self.random_choice == 1):
+                    self.assertEqual(first=self.user.is_active, second=True)
+                    self.assertEqual(first=self.user.profile.is_active, second=True)
+                    self.assertEqual(first=self.user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=self.user.speedy_match_profile.is_active, second=True)
+                    self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
+                elif (self.random_choice == 2):
+                    self.assertEqual(first=self.user.is_active, second=True)
+                    self.assertEqual(first=self.user.profile.is_active, second=False)
+                    self.assertEqual(first=self.user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                    self.assertRedirects(response=r, expected_url='/registration-step-2/', status_code=302, target_status_code=200)
+                elif (self.random_choice == 3):
+                    self.assertEqual(first=self.user.is_active, second=False)
+                    self.assertEqual(first=self.user.profile.is_active, second=False)
+                    self.assertEqual(first=self.user.speedy_net_profile.is_active, second=False)
+                    self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                    self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200)
+                else:
+                    raise NotImplementedError()
 
 
         @only_on_speedy_match
