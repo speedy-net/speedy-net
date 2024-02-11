@@ -161,6 +161,21 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         if (username_exists):
             raise ValidationError(self._meta.get_field('slug').error_messages['unique'])
 
+    def show_profile_picture_on_website(self):
+        """
+        Return True if we should show the entity's profile picture on the website, False otherwise.
+
+        :return: True if we should show the entity's profile picture on the website, False otherwise.
+        :rtype: bool
+        """
+        try:
+            return self.user.show_profile_picture_on_website()
+        except self.__class__.user.RelatedObjectDoesNotExist as e:
+            if (self.photo is not None):
+                if (self.photo.visible_on_website):
+                    return True
+        return False
+
 
 class NamedEntity(Entity):
     name = models.CharField(verbose_name=_('name'), max_length=255)
