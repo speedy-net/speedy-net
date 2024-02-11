@@ -91,8 +91,6 @@ if (django_settings.TESTS):
                     raise NotImplementedError()
 
 
-
-
         class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
             def set_up(self):
                 super().set_up()
