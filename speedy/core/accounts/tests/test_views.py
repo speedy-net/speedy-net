@@ -49,7 +49,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -108,7 +107,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -1427,7 +1425,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -1484,7 +1481,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -2139,7 +2135,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -2203,7 +2198,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -2247,7 +2241,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -2836,7 +2829,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -3079,7 +3071,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -3221,7 +3212,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -3492,7 +3482,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
@@ -3706,7 +3695,6 @@ if (django_settings.TESTS):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
-                self.random_choice = 3  ########################################
                 if (self.random_choice == 1):
                     self.user = ActiveUserFactory()
                 elif (self.random_choice == 2):
