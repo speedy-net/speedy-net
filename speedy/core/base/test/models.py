@@ -17,7 +17,9 @@ if (django_settings.TESTS):
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
             self.test_all_languages = kwargs.get('test_all_languages', False)
-            self.num = kwargs.get('num', None)
+            self.test_only = kwargs.get('test_only', None)
+            if (self.test_only is not None):
+                assert (self.test_only >= 0)
 
         def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
             if (not (test_labels)):
@@ -44,8 +46,8 @@ if (django_settings.TESTS):
             return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
 
         def test_suite(self, tests=()):
-            if (self.num is not None):
-                tests = tests[:self.num]
+            if (self.test_only is not None):
+                tests = tests[:self.test_only]
             return super().test_suite(tests=tests)
 
         def setup_test_environment(self, **kwargs):

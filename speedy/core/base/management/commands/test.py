@@ -10,9 +10,9 @@ class Command(test.Command):
             help="If run with this argument, test all languages, and don't skip languages.",
         )
         parser.add_argument(
-            "--num",
+            "--test-only",
             action="store",
-            help="If run with this argument, run this number of tests.",
+            help="If run with this argument, run only this number of tests.",
             type=int,
         )
 
