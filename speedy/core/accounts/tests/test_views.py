@@ -166,8 +166,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -1169,8 +1169,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=4,
                     user_count=4,
-                    user_email_address_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
+                    user_email_address_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
                     unconfirmed_email_address_count=2,
                 )
 
@@ -2177,8 +2177,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2283,8 +2283,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2637,8 +2637,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
+                    user_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_1)] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice_2)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2872,8 +2872,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2897,8 +2897,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 data = {
@@ -2910,8 +2910,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -2920,8 +2920,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
                 data = {
@@ -2933,8 +2933,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2943,8 +2943,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 data = {
@@ -2968,8 +2968,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
 
@@ -2977,8 +2977,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 self.confirmed_email_address.delete()
@@ -3003,7 +3003,7 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     confirmed_email_address_count={"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=1,
                 )
@@ -3118,8 +3118,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
 
@@ -3261,15 +3261,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3280,15 +3280,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3298,15 +3298,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3316,15 +3316,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3372,15 +3372,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 6, "2": 5, "3": 6}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 5, "2": 4, "3": 5}[str(self.random_choice)]}[self.site.id],
-                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 4, "2": 3, "3": 4}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 3, "2": 2, "3": 3}[str(self.random_choice)]}[self.site.id],
+                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 5, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 5, "2": 4, "3": 5}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 4, "2": 3, "3": 4}[str(self.random_choice)]}[self.site.id],
+                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 4, "2": 3, "3": 4}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 3, "2": 2, "3": 3}[str(self.random_choice)]}[self.site.id],
+                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
                 r = self.client.post(path=self.confirmed_email_address_url)
@@ -3393,15 +3393,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 5, "2": 4, "3": 5}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 4, "2": 3, "3": 4}[str(self.random_choice)]}[self.site.id],
-                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 3, "2": 2, "3": 3}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 2, "2": 1, "3": 2}[str(self.random_choice)]}[self.site.id],
+                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 4, "2": 3, "3": 4}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 3, "2": 2, "3": 3}[str(self.random_choice)]}[self.site.id],
+                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: {"1": 3, "2": 2, "3": 3}[str(self.random_choice)], django_settings.SPEEDY_MATCH_SITE_ID: {"1": 2, "2": 1, "3": 2}[str(self.random_choice)]}[self.site.id],
+                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3532,15 +3532,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3551,15 +3551,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3569,15 +3569,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
@@ -3587,24 +3587,24 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
             def test_user_can_make_confirmed_email_address_primary(self):
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
                 self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.primary_address)
@@ -3618,15 +3618,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={"1": 5, "2": 4, "3": 5}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 4, "2": 3, "3": 4}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 3, "2": 2, "3": 3}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
                 self.assertEqual(first=self.user.email_addresses.get(is_primary=True), second=self.confirmed_email_address)
@@ -3737,8 +3737,8 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
 
@@ -3775,15 +3775,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
-                    user_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
-                    confirmed_email_address_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=0,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_email_addresses_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={"1": 2, "2": 1, "3": 2}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=1 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=0,
                 )
                 self.assertEqual(first=len(mail.outbox), second=0)
