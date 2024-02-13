@@ -3372,15 +3372,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 5, django_settings.SPEEDY_MATCH_SITE_ID: 4}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_email_address_count=4 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=2 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_email_addresses_count=3 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=2 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
                 r = self.client.post(path=self.confirmed_email_address_url)
@@ -3393,15 +3393,15 @@ if (django_settings.TESTS):
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
-                    user_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 4, django_settings.SPEEDY_MATCH_SITE_ID: 3}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    confirmed_email_address_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_email_address_count=3 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    confirmed_email_address_count=1 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     unconfirmed_email_address_count=2,
                 )
                 self.assert_user_email_addresses_count(
                     user=self.user,
-                    user_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 3, django_settings.SPEEDY_MATCH_SITE_ID: 2}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_email_addresses_count=2 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                    user_confirmed_email_addresses_count=1 + {django_settings.SPEEDY_NET_SITE_ID: 1, django_settings.SPEEDY_MATCH_SITE_ID: 0}[self.site.id] + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
                     user_unconfirmed_email_addresses_count=1,
                 )
 
