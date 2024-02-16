@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 ONE_COLOR_RGB_THRESHOLD = 31.05
 ONE_COLOR_DELTA_E_THRESHOLD = 25.92
-ONE_COLOR_PERCENT_THRESHOLD = 0.99995  # 99.995%
+ONE_COLOR_PERCENT_THRESHOLD = 0.9999  # 99.99%
 
 
 def _generate_udid(length):
