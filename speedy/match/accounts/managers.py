@@ -30,8 +30,8 @@ class SiteProfileManager(BaseManager):
         """
         Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.
 
-        :param user:
-        :param other_user:
+        :param user: The user who is looking for a match.
+        :param other_user: The other user who is being checked for a match.
         :param blocked_users_ids: The IDs of the users who this user blocked.
         :param blocking_users_ids: The IDs of the users who blocked this user.
         :return: The rank of the other user.
@@ -91,7 +91,7 @@ class SiteProfileManager(BaseManager):
         """
         Get matching users queryset.
 
-        :param user:
+        :param user: The user who is looking for matches.
         :param from_list: A given list of users (optional).
         :return: Queryset of matching users.
         """
@@ -135,7 +135,7 @@ class SiteProfileManager(BaseManager):
 
         Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
 
-        :param user:
+        :param user: The user who is looking for matches.
         :return: Up to 720 matching users.
         """
         language_code = get_language()
@@ -380,7 +380,7 @@ class SiteProfileManager(BaseManager):
         """
         Get matches from database, from a given list of users.
 
-        :param user:
+        :param user: The user who is looking for matches.
         :param from_list: A given list of users.
         :return: matching users.
         """
@@ -436,7 +436,7 @@ class SiteProfileManager(BaseManager):
 
         Checks only first 2,400 users who match this user (sorted by last visit to Speedy Match), and return up to 720 users.
 
-        :param user:
+        :param user: The user who is looking for matches.
         :return: Up to 720 matching users.
         """
         language_code = get_language()
