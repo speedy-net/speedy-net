@@ -2,6 +2,10 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import random
+        from time import sleep
+        from dateutil.relativedelta import relativedelta
+
         from django.test import override_settings
 
         from friendship.models import Friend, FriendshipRequest
@@ -871,5 +875,131 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        class FriendListsViewsObjectListTestCaseMixin(object):
+            def set_up(self):
+                super().set_up()
+                self.user_1 = ActiveUserFactory(gender=random.choice([User.GENDER_FEMALE, User.GENDER_MALE]))
+                self.user_2 = ActiveUserFactory()
+                self.user_3 = ActiveUserFactory()
+                self.user_4 = ActiveUserFactory()
+                self.user_5 = ActiveUserFactory()
+                self.user_6 = ActiveUserFactory()
+                self.user_7 = ActiveUserFactory()
+                self.user_8 = ActiveUserFactory()
+                Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_3).accept()
+                Friend.objects.add_friend(from_user=self.user_4, to_user=self.user_1).accept()
+                Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_5)
+                Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_6)
+                Friend.objects.add_friend(from_user=self.user_7, to_user=self.user_1)
+                Friend.objects.add_friend(from_user=self.user_8, to_user=self.user_1)
+                Friend.objects.add_friend(from_user=self.user_2, to_user=self.user_3).accept()
+                Friend.objects.add_friend(from_user=self.user_2, to_user=self.user_5)
+                Friend.objects.add_friend(from_user=self.user_7, to_user=self.user_2)
+                sleep(0.02)
+                self.user_8.profile.update_last_visit()
+                sleep(0.01)
+                self.user_7.profile.update_last_visit()
+                sleep(0.01)
+                self.user_6.profile.update_last_visit()
+                sleep(0.01)
+                self.user_5.profile.update_last_visit()
+                sleep(0.01)
+                self.user_4.profile.update_last_visit()
+                sleep(0.01)
+                self.user_3.profile.update_last_visit()
+                sleep(0.01)
+                self.user_2.profile.update_last_visit()
+                sleep(0.01)
+                self.user_1.profile.update_last_visit()
+                sleep(0.01)
+                self.user_4.speedy_net_profile.last_visit -= relativedelta(days=730)
+                self.user_4.speedy_match_profile.last_visit -= relativedelta(days=730)
+                self.user_6.speedy_net_profile.last_visit -= relativedelta(days=730)
+                self.user_6.speedy_match_profile.last_visit -= relativedelta(days=730)
+                self.user_8.speedy_net_profile.last_visit -= relativedelta(days=730)
+                self.user_8.speedy_match_profile.last_visit -= relativedelta(days=730)
+                self.user_4.save_user_and_profile()
+                self.user_6.save_user_and_profile()
+                self.user_8.save_user_and_profile()
+                self.user_1 = User.objects.get(pk=self.user_1.pk)
+
+            def update_users_gender_to_match_to_gender_other(self):
+                self.user_3.speedy_match_profile.gender_to_match = [User.GENDER_OTHER]
+                self.user_5.speedy_match_profile.gender_to_match = [User.GENDER_OTHER]
+                self.user_7.speedy_match_profile.gender_to_match = [User.GENDER_OTHER]
+                self.user_3.save_user_and_profile()
+                self.user_5.save_user_and_profile()
+                self.user_7.save_user_and_profile()
+                self.user_1 = User.objects.get(pk=self.user_1.pk)
+
+
+        @only_on_sites_with_login
+        class UserFriendListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+            def test_site_user_friend_list_view_object_list(self):
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.all_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.all_friends))
+                self.assertEqual(first=len(users_list), second=2)
+                self.assertEqual(first=users_list, second=[self.user_3, self.user_4])
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_speedy_net_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.all_speedy_net_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.all_speedy_net_friends))
+                self.assertEqual(first=len(users_list), second=2)
+                self.assertEqual(first=users_list, second=[self.user_3, self.user_4])
+                self.assertEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+
+                self.update_users_gender_to_match_to_gender_other()
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.all_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.all_friends))
+                self.assertEqual(first=len(users_list), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+                self.assertEqual(first=users_list, second={django_settings.SPEEDY_NET_SITE_ID: [self.user_3, self.user_4], django_settings.SPEEDY_MATCH_SITE_ID: [self.user_4]}[self.site.id])
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_speedy_net_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.all_speedy_net_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.all_speedy_net_friends))
+                self.assertEqual(first=len(users_list), second=2)
+                self.assertEqual(first=users_list, second=[self.user_3, self.user_4])
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertNotEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+                else:
+                    raise NotImplementedError()
+
+
+        @only_on_sites_with_login
+        class ReceivedFriendshipRequestsListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+            def test_site_received_friendship_requests_list_view_object_list(self):
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.received_friendship_requests]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.received_friendship_requests]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.received_friendship_requests))
+                self.assertEqual(first=len(users_list), second=2)
+                self.assertEqual(first=users_list, second=[self.user_7, self.user_8])
+
+                self.update_users_gender_to_match_to_gender_other()
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.received_friendship_requests]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.received_friendship_requests]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.received_friendship_requests))
+                self.assertEqual(first=len(users_list), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+                self.assertEqual(first=users_list, second={django_settings.SPEEDY_NET_SITE_ID: [self.user_7, self.user_8], django_settings.SPEEDY_MATCH_SITE_ID: [self.user_8]}[self.site.id])
+
+
+        @only_on_sites_with_login
+        class SentFriendshipRequestsListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+            def test_site_sent_friendship_requests_list_view_object_list(self):
+                self.assertIs(expr1=all([(friendship.from_user == self.user_1) for friendship in self.user_1.sent_friendship_requests]), expr2=True)
+                users_list = [friendship.to_user for friendship in self.user_1.sent_friendship_requests]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.sent_friendship_requests))
+                self.assertEqual(first=len(users_list), second=2)
+                self.assertEqual(first=users_list, second=[self.user_5, self.user_6])
+
+                self.update_users_gender_to_match_to_gender_other()
+                self.assertIs(expr1=all([(friendship.from_user == self.user_1) for friendship in self.user_1.sent_friendship_requests]), expr2=True)
+                users_list = [friendship.to_user for friendship in self.user_1.sent_friendship_requests]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.sent_friendship_requests))
+                self.assertEqual(first=len(users_list), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
+                self.assertEqual(first=users_list, second={django_settings.SPEEDY_NET_SITE_ID: [self.user_5, self.user_6], django_settings.SPEEDY_MATCH_SITE_ID: [self.user_6]}[self.site.id])
 
 
