@@ -118,9 +118,11 @@ class SiteProfileManager(BaseManager):
             speedy_match_site_profile__height__range=(self.model.settings.MIN_HEIGHT_TO_MATCH, self.model.settings.MAX_HEIGHT_TO_MATCH),
             speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
             speedy_match_site_profile__active_languages__contains=[language_code],
-            speedy_match_site_profile__last_visit__gte=timezone_now - timedelta(days=720),
         )
-        if (from_list is not None):
+        # If from_list is None, get matching users who visited Speedy Match in the last 2 years (720 days). Otherwise, get matching users from the given list.
+        if (from_list is None):
+            filter_dict["speedy_match_site_profile__last_visit__gte"] = timezone_now - timedelta(days=720)
+        else:
             filter_dict["pk__in"] = from_list
         qs = User.objects.active(
             **filter_dict
