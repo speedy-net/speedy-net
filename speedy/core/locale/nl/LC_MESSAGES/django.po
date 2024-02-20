@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-10 17:23+0200\n"
+"POT-Creation-Date: 2024-02-20 12:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Voer een geldig e-mailadres in."
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:903
+#: .\__translations\__translations.py:9 .\accounts\models.py:930
 msgid "email address"
 msgstr "e-mailadres"
 
@@ -902,7 +902,7 @@ msgstr "Vriendschapsverzoeken"
 msgid "Friend"
 msgstr "Vriend"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:485
+#: .\__translations\__translations.py:23 .\accounts\models.py:512
 msgid "Friends"
 msgstr "Vrienden"
 
@@ -2040,213 +2040,213 @@ msgstr "Slug parseert niet naar gebruikersnaam."
 msgid "Username is required."
 msgstr "Gebruikersnaam is vereist."
 
-#: .\accounts\models.py:166
+#: .\accounts\models.py:193
 msgid "name"
 msgstr "naam"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:208
 msgid "description"
 msgstr "beschrijving"
 
-#: .\accounts\models.py:227
+#: .\accounts\models.py:254
 msgid "Female"
 msgstr "Vrouwelijk"
 
-#: .\accounts\models.py:228
+#: .\accounts\models.py:255
 msgid "Male"
 msgstr "Mannelijk"
 
-#: .\accounts\models.py:229
+#: .\accounts\models.py:256
 msgid "Other"
 msgstr "Ander"
 
-#: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
+#: .\accounts\models.py:268 .\accounts\models.py:283 .\accounts\models.py:304
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: .\accounts\models.py:242
+#: .\accounts\models.py:269
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Veganiste (eet alleen planten en paddenstoelen)"
 
-#: .\accounts\models.py:243
+#: .\accounts\models.py:270
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariër (eet geen vis en vlees)"
 
-#: .\accounts\models.py:244
+#: .\accounts\models.py:271
 msgid "Carnist (eats animals)"
 msgstr "Carnist (eet vlees)"
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:284
 msgid "Not smoking"
 msgstr "Niet roker"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:285
 msgid "Smoking occasionally"
 msgstr "Rookt af en toe"
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:286
 msgid "Smoking"
 msgstr "Roker"
 
-#: .\accounts\models.py:278
+#: .\accounts\models.py:305
 msgid "Single"
 msgstr "Single"
 
-#: .\accounts\models.py:279
+#: .\accounts\models.py:306
 msgid "Divorced"
 msgstr "Gescheiden"
 
-#: .\accounts\models.py:280
+#: .\accounts\models.py:307
 msgid "Widowed"
 msgstr "Weduwnaar"
 
-#: .\accounts\models.py:281
+#: .\accounts\models.py:308
 msgid "In a relationship"
 msgstr "In een relatie"
 
-#: .\accounts\models.py:282
+#: .\accounts\models.py:309
 msgid "In an open relationship"
 msgstr "In een open relatie"
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:310
 msgid "It's complicated"
 msgstr "Het is gecompliceerd"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:311
 msgid "Separated"
 msgstr "Uit elkaar"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:312
 msgid "Engaged"
 msgstr "Verloofd"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:313
 msgid "Married"
 msgstr "Getrouwd"
 
-#: .\accounts\models.py:295
+#: .\accounts\models.py:322
 msgid "Notify me"
 msgstr "Houd mij op de hoogte"
 
-#: .\accounts\models.py:296
+#: .\accounts\models.py:323
 msgid "Don't notify me"
 msgstr "Houd mij niet op de hoogte"
 
-#: .\accounts\models.py:341
+#: .\accounts\models.py:368
 msgid "first name"
 msgstr "Voornaam"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:371
 msgid "last name"
 msgstr "Achternaam"
 
-#: .\accounts\models.py:346
+#: .\accounts\models.py:373
 msgid "I am"
 msgstr "Ik ben"
 
-#: .\accounts\models.py:347
+#: .\accounts\models.py:374
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: .\accounts\models.py:348
+#: .\accounts\models.py:375
 msgid "diet"
 msgstr "dieet"
 
-#: .\accounts\models.py:349
+#: .\accounts\models.py:376
 msgid "smoking status"
 msgstr "rokerstatus"
 
-#: .\accounts\models.py:350
+#: .\accounts\models.py:377
 msgid "relationship status"
 msgstr "relatiestatus"
 
-#: .\accounts\models.py:352
+#: .\accounts\models.py:379
 msgid "Where do I live?"
 msgstr "Waar ik woon?"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:386
 msgid "Who can view my birth month and day"
 msgstr "Wie kan mijn geboortemaand en -dag bekijken"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:387
 msgid "Who can view my birth year"
 msgstr "Wie kan mijn geboortejaar bekijken"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:388
 msgid "On new messages"
 msgstr "Bij nieuwe berichten"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:391
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 
-#: .\accounts\models.py:365
+#: .\accounts\models.py:392
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
+#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
 msgid "user"
 msgstr "gebruiker"
 
-#: .\accounts\models.py:511
+#: .\accounts\models.py:538
 msgid "users"
 msgstr "gebruikers"
 
-#: .\accounts\models.py:544
+#: .\accounts\models.py:571
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:888
+#: .\accounts\models.py:915
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:889
+#: .\accounts\models.py:916
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:917
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:891
+#: .\accounts\models.py:918
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:892
+#: .\accounts\models.py:919
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:893
+#: .\accounts\models.py:920
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:904
+#: .\accounts\models.py:931
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:971
+#: .\accounts\models.py:998
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:972
+#: .\accounts\models.py:999
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1011
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1013
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1015
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:990
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"
@@ -3207,6 +3207,23 @@ msgstr ""
 "Speedy Match deactiveert. Je kunt echter alleen je account bij Speedy Match "
 "deactiveren. In dat geval blijft je Speedy Net-account actief. Je kunt je "
 "account na deactivering op elk gewenst moment reactiveren."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
+"Net account will automatically delete your Speedy Match account as well. To "
+"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account”. Fill the details in the form and "
+"confirm. Please note that a deleted account cannot be recovered. Account "
+"deletion is permanent and irreversible."
+msgstr ""
+"Als je wilt, kun je je account op Speedy Net verwijderen. Als u uw Speedy "
+"Net-account verwijdert, wordt ook automatisch uw Speedy Match-account "
+"verwijderd. Om uw Speedy Net-account te verwijderen, logt u in op Speedy "
+"Net, deactiveert u uw account en klikt u vervolgens op „Account "
+"verwijderen”. Vul de gegevens in het formulier in en bevestig. Houd er "
+"rekening mee dat een verwijderd account niet kan worden hersteld. Het "
+"verwijderen van een account is permanent en onomkeerbaar."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "

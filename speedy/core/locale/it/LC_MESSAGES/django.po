@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-10 17:23+0200\n"
+"POT-Creation-Date: 2024-02-20 12:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,7 +872,7 @@ msgstr "Inserisci un indirizzo email valido."
 msgid "Email address"
 msgstr "Indirizzo e-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:903
+#: .\__translations\__translations.py:9 .\accounts\models.py:930
 msgid "email address"
 msgstr "indirizzo e-mail"
 
@@ -914,7 +914,7 @@ msgstr "Richieste di amicizia"
 msgid "Friend"
 msgstr "Amico"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:485
+#: .\__translations\__translations.py:23 .\accounts\models.py:512
 msgid "Friends"
 msgstr "Amici/Amiche"
 
@@ -2043,214 +2043,214 @@ msgstr "Lo slug non viene analizzato come nome utente."
 msgid "Username is required."
 msgstr "Il nome utente è richiesto."
 
-#: .\accounts\models.py:166
+#: .\accounts\models.py:193
 msgid "name"
 msgstr "nome"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:208
 msgid "description"
 msgstr "descrizione"
 
-#: .\accounts\models.py:227
+#: .\accounts\models.py:254
 msgid "Female"
 msgstr "Donna"
 
-#: .\accounts\models.py:228
+#: .\accounts\models.py:255
 msgid "Male"
 msgstr "Uomo"
 
-#: .\accounts\models.py:229
+#: .\accounts\models.py:256
 msgid "Other"
 msgstr "Altro"
 
-#: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
+#: .\accounts\models.py:268 .\accounts\models.py:283 .\accounts\models.py:304
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: .\accounts\models.py:242
+#: .\accounts\models.py:269
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegano/a (si nutre esclusivamente di piante e funghi)"
 
-#: .\accounts\models.py:243
+#: .\accounts\models.py:270
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariano/a (non mangia né pesce né carne)"
 
-#: .\accounts\models.py:244
+#: .\accounts\models.py:271
 msgid "Carnist (eats animals)"
 msgstr "Carnist (si nutre di animali)"
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:284
 msgid "Not smoking"
 msgstr "Non fumatore/Non fumatrice"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:285
 msgid "Smoking occasionally"
 msgstr "Fumatore/Fumatrice occasionale"
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:286
 msgid "Smoking"
 msgstr "Fumatore/Fumatrice"
 
-#: .\accounts\models.py:278
+#: .\accounts\models.py:305
 msgid "Single"
 msgstr "Celibe/Nubile"
 
-#: .\accounts\models.py:279
+#: .\accounts\models.py:306
 msgid "Divorced"
 msgstr "Divorziato/a"
 
-#: .\accounts\models.py:280
+#: .\accounts\models.py:307
 msgid "Widowed"
 msgstr "Vedovo/a"
 
-#: .\accounts\models.py:281
+#: .\accounts\models.py:308
 msgid "In a relationship"
 msgstr "In una relazione"
 
-#: .\accounts\models.py:282
+#: .\accounts\models.py:309
 msgid "In an open relationship"
 msgstr "In una relazione aperta"
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:310
 msgid "It's complicated"
 msgstr "È complicato"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:311
 msgid "Separated"
 msgstr "Separato/a"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:312
 msgid "Engaged"
 msgstr "Impegnato/a"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:313
 msgid "Married"
 msgstr "Sposato/a"
 
-#: .\accounts\models.py:295
+#: .\accounts\models.py:322
 msgid "Notify me"
 msgstr "Inviami una notifica"
 
-#: .\accounts\models.py:296
+#: .\accounts\models.py:323
 msgid "Don't notify me"
 msgstr "Non inviarmi una notifica"
 
-#: .\accounts\models.py:341
+#: .\accounts\models.py:368
 msgid "first name"
 msgstr "nome"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:371
 msgid "last name"
 msgstr "cognome"
 
-#: .\accounts\models.py:346
+#: .\accounts\models.py:373
 msgid "I am"
 msgstr "Io sono"
 
-#: .\accounts\models.py:347
+#: .\accounts\models.py:374
 msgid "date of birth"
 msgstr "data di nascita"
 
-#: .\accounts\models.py:348
+#: .\accounts\models.py:375
 msgid "diet"
 msgstr "dieta"
 
-#: .\accounts\models.py:349
+#: .\accounts\models.py:376
 msgid "smoking status"
 msgstr "fumo"
 
-#: .\accounts\models.py:350
+#: .\accounts\models.py:377
 msgid "relationship status"
 msgstr "stato della relazione"
 
-#: .\accounts\models.py:352
+#: .\accounts\models.py:379
 msgid "Where do I live?"
 msgstr "Dove vivo?"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:386
 msgid "Who can view my birth month and day"
 msgstr "Chi può visualizzare il mese e il giorno della mia data di nascita"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:387
 msgid "Who can view my birth year"
 msgstr "Chi può visualizzare l’anno della mia data di nascita"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:388
 msgid "On new messages"
 msgstr "Sui nuovi messaggi"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:391
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Orario dell’ultimo indirizzo IP utilizzato https://ipapi.com"
 
-#: .\accounts\models.py:365
+#: .\accounts\models.py:392
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Risultati grezzi dell’ultimo indirizzo IP utilizzato https://ipapi.com/"
 
-#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
+#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
 msgid "user"
 msgstr "utente"
 
-#: .\accounts\models.py:511
+#: .\accounts\models.py:538
 msgid "users"
 msgstr "utenti"
 
-#: .\accounts\models.py:544
+#: .\accounts\models.py:571
 msgid "Superuser must be equal to staff."
 msgstr "Il superutente deve essere uguale allo staff."
 
-#: .\accounts\models.py:888
+#: .\accounts\models.py:915
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:889
+#: .\accounts\models.py:916
 msgid "is confirmed"
 msgstr "è confermato"
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:917
 msgid "is primary"
 msgstr "è principale"
 
-#: .\accounts\models.py:891
+#: .\accounts\models.py:918
 msgid "confirmation token"
 msgstr "token di conferma"
 
-#: .\accounts\models.py:892
+#: .\accounts\models.py:919
 msgid "confirmation sent"
 msgstr "conferma inviata"
 
-#: .\accounts\models.py:893
+#: .\accounts\models.py:920
 msgid "Who can see this email"
 msgstr "Chi può vedere questa e-mail"
 
-#: .\accounts\models.py:904
+#: .\accounts\models.py:931
 msgid "email addresses"
 msgstr "indirizzi e-mail"
 
-#: .\accounts\models.py:971
+#: .\accounts\models.py:998
 msgid "User"
 msgstr "utente"
 
-#: .\accounts\models.py:972
+#: .\accounts\models.py:999
 msgid "last visit"
 msgstr "ultima visita"
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1011
 msgid "Today"
 msgstr "Oggi"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1013
 msgid "Yesterday"
 msgstr "Ieri"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1015
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Il {date} ({timesince_ago})"
 
-#: .\accounts\models.py:990
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} fa"
@@ -3220,6 +3220,22 @@ msgstr ""
 "disattivare solo l’account su Speedy Match, in quel caso l’account su Speedy "
 "Net rimarrà attivo. Puoi riattivare il tuo account dopo averlo disattivato "
 "ogni volta che lo desideri."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
+"Net account will automatically delete your Speedy Match account as well. To "
+"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account”. Fill the details in the form and "
+"confirm. Please note that a deleted account cannot be recovered. Account "
+"deletion is permanent and irreversible."
+msgstr ""
+"Se lo desideri, puoi eliminare il tuo account su Speedy Net. L'eliminazione "
+"del tuo account Speedy Net eliminerà automaticamente anche il tuo account "
+"Speedy Match. Per eliminare il tuo account Speedy Net, accedi a Speedy Net, "
+"disattiva il tuo account, quindi fai clic su «Elimina account». Compila i "
+"dati nel modulo e conferma. Tieni presente che un account eliminato non può "
+"essere recuperato. L'eliminazione dell'account è permanente e irreversibile."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "

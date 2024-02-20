@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-10 17:23+0200\n"
+"POT-Creation-Date: 2024-02-20 12:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:903
+#: .\__translations\__translations.py:9 .\accounts\models.py:930
 msgid "email address"
 msgstr "e-postadress"
 
@@ -902,7 +902,7 @@ msgstr "Vänskapsbegäran"
 msgid "Friend"
 msgstr "Vän"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:485
+#: .\__translations\__translations.py:23 .\accounts\models.py:512
 msgid "Friends"
 msgstr "Vänner"
 
@@ -2034,213 +2034,213 @@ msgstr "Slug tolkas inte som användarnamn."
 msgid "Username is required."
 msgstr "Username är obligatoriskt."
 
-#: .\accounts\models.py:166
+#: .\accounts\models.py:193
 msgid "name"
 msgstr "namn"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:208
 msgid "description"
 msgstr "beskrivning"
 
-#: .\accounts\models.py:227
+#: .\accounts\models.py:254
 msgid "Female"
 msgstr "Kvinna"
 
-#: .\accounts\models.py:228
+#: .\accounts\models.py:255
 msgid "Male"
 msgstr "Man"
 
-#: .\accounts\models.py:229
+#: .\accounts\models.py:256
 msgid "Other"
 msgstr "Annan"
 
-#: .\accounts\models.py:241 .\accounts\models.py:256 .\accounts\models.py:277
+#: .\accounts\models.py:268 .\accounts\models.py:283 .\accounts\models.py:304
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Okänd"
 
-#: .\accounts\models.py:242
+#: .\accounts\models.py:269
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (äter bara växter och svampar)"
 
-#: .\accounts\models.py:243
+#: .\accounts\models.py:270
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarian (äter inte fisk och kött)"
 
-#: .\accounts\models.py:244
+#: .\accounts\models.py:271
 msgid "Carnist (eats animals)"
 msgstr "Carnist (äter djur)"
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:284
 msgid "Not smoking"
 msgstr "Röker inte"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:285
 msgid "Smoking occasionally"
 msgstr "Röker ibland"
 
-#: .\accounts\models.py:259
+#: .\accounts\models.py:286
 msgid "Smoking"
 msgstr "Röker"
 
-#: .\accounts\models.py:278
+#: .\accounts\models.py:305
 msgid "Single"
 msgstr "Singel"
 
-#: .\accounts\models.py:279
+#: .\accounts\models.py:306
 msgid "Divorced"
 msgstr "Frånskild"
 
-#: .\accounts\models.py:280
+#: .\accounts\models.py:307
 msgid "Widowed"
 msgstr "Änkling/änka"
 
-#: .\accounts\models.py:281
+#: .\accounts\models.py:308
 msgid "In a relationship"
 msgstr "I en relation"
 
-#: .\accounts\models.py:282
+#: .\accounts\models.py:309
 msgid "In an open relationship"
 msgstr "I en öppen relation"
 
-#: .\accounts\models.py:283
+#: .\accounts\models.py:310
 msgid "It's complicated"
 msgstr "Det är en komplicerad fråga"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:311
 msgid "Separated"
 msgstr "Frånskild"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:312
 msgid "Engaged"
 msgstr "Förlovad"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:313
 msgid "Married"
 msgstr "Gift"
 
-#: .\accounts\models.py:295
+#: .\accounts\models.py:322
 msgid "Notify me"
 msgstr "Meddela mig"
 
-#: .\accounts\models.py:296
+#: .\accounts\models.py:323
 msgid "Don't notify me"
 msgstr "Meddela mig inte"
 
-#: .\accounts\models.py:341
+#: .\accounts\models.py:368
 msgid "first name"
 msgstr "namn"
 
-#: .\accounts\models.py:344
+#: .\accounts\models.py:371
 msgid "last name"
 msgstr "efternamn"
 
-#: .\accounts\models.py:346
+#: .\accounts\models.py:373
 msgid "I am"
 msgstr "jag är"
 
-#: .\accounts\models.py:347
+#: .\accounts\models.py:374
 msgid "date of birth"
 msgstr "födelsedatum"
 
-#: .\accounts\models.py:348
+#: .\accounts\models.py:375
 msgid "diet"
 msgstr "diet"
 
-#: .\accounts\models.py:349
+#: .\accounts\models.py:376
 msgid "smoking status"
 msgstr "rökstatus"
 
-#: .\accounts\models.py:350
+#: .\accounts\models.py:377
 msgid "relationship status"
 msgstr "relationsstatus"
 
-#: .\accounts\models.py:352
+#: .\accounts\models.py:379
 msgid "Where do I live?"
 msgstr "Var bor jag?"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:386
 msgid "Who can view my birth month and day"
 msgstr "Vem kan se min födelsemånad och dag"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:387
 msgid "Who can view my birth year"
 msgstr "Vem kan se mitt födelseår"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:388
 msgid "On new messages"
 msgstr "Om nya meddelanden"
 
-#: .\accounts\models.py:364
+#: .\accounts\models.py:391
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 
-#: .\accounts\models.py:365
+#: .\accounts\models.py:392
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:510 .\accounts\models.py:887 .\blocks\models.py:15
+#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:511
+#: .\accounts\models.py:538
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:544
+#: .\accounts\models.py:571
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:888
+#: .\accounts\models.py:915
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:889
+#: .\accounts\models.py:916
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:890
+#: .\accounts\models.py:917
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:891
+#: .\accounts\models.py:918
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:892
+#: .\accounts\models.py:919
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:893
+#: .\accounts\models.py:920
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:904
+#: .\accounts\models.py:931
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:971
+#: .\accounts\models.py:998
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:972
+#: .\accounts\models.py:999
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1011
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1013
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1015
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:990
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -3200,6 +3200,22 @@ msgstr ""
 "Match automatiskt. Du kan avaktivera endast ditt konto hos Speedy Match. I "
 "så fall kommer ditt konto hos Speedy Net att förbli aktivt. Du kan "
 "återaktivera kontot efter att du har avaktiverat det när du vill."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
+"Net account will automatically delete your Speedy Match account as well. To "
+"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account”. Fill the details in the form and "
+"confirm. Please note that a deleted account cannot be recovered. Account "
+"deletion is permanent and irreversible."
+msgstr ""
+"Om du vill kan du ta bort ditt konto på Speedy Net. Om du tar bort ditt "
+"Speedy Net-konto raderas också ditt Speedy Match-konto automatiskt. För att "
+"radera ditt Speedy Net-konto, logga in på Speedy Net, inaktivera ditt konto "
+"och klicka sedan på ”Radera konto”. Fyll i uppgifterna i formuläret och "
+"bekräfta. Observera att ett raderat konto inte kan återställas. Radering av "
+"konto är permanent och oåterkallelig."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
