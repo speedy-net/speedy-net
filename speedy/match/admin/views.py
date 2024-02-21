@@ -306,7 +306,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 total_number_of_active_members_registered_in_year=formats.number_format(value=total_number_of_active_members_registered_in_year),
                 year=year,
             )
-        age_interval = 5
+        age_interval = 20
         if (self.request.GET.get('age_interval')):
             age_interval = int(self.request.GET.get('age_interval'))
         total_number_of_active_members_text += "\n"
