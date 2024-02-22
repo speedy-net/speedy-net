@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 19:27+0200\n"
+"POT-Creation-Date: 2024-02-22 20:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -757,7 +757,7 @@ msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 "Minst ett alternativ för matchning av relationsstatus bör vara fem hjärtan."
 
-#: .\admin\views.py:183
+#: .\admin\views.py:231
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -855,7 +855,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} övriga) som "
 "kommit in på webbplatsen under de senaste två åren."
 
-#: .\admin\views.py:283
+#: .\admin\views.py:331
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -896,7 +896,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} aktiva "
 "medlemmar som registrerats före den 1 augusti 2019."
 
-#: .\admin\views.py:305
+#: .\admin\views.py:353
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -905,7 +905,7 @@ msgstr ""
 "Admin: {total_number_of_active_members_registered_in_year} aktiva medlemmar "
 "registrerade under {year}."
 
-#: .\admin\views.py:363
+#: .\admin\views.py:416
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -926,7 +926,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} män, "
 "{total_percent_of_other_active_members_in_age_range} övriga)."
 
-#: .\admin\views.py:430
+#: .\admin\views.py:488
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -957,7 +957,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "övriga) har besökt webbplatsen under de senaste åtta månaderna."
 
-#: .\admin\views.py:497
+#: .\admin\views.py:560
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "

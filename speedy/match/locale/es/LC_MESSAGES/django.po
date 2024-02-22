@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 19:27+0200\n"
+"POT-Creation-Date: 2024-02-22 20:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -761,7 +761,7 @@ msgstr ""
 "Al menos una opción de coincidencia de estado de relación debe ser cinco "
 "corazones."
 
-#: .\admin\views.py:183
+#: .\admin\views.py:231
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -859,7 +859,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} otros) "
 "ingresaron al sitio en los últimos dos años."
 
-#: .\admin\views.py:283
+#: .\admin\views.py:331
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -900,7 +900,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} miembros "
 "activos registrados antes del 1 de agosto de 2019."
 
-#: .\admin\views.py:305
+#: .\admin\views.py:353
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -909,7 +909,7 @@ msgstr ""
 "Admin: {total_number_of_active_members_registered_in_year} miembros activos "
 "registrados en {year}."
 
-#: .\admin\views.py:363
+#: .\admin\views.py:416
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -930,7 +930,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} hombres, "
 "{total_percent_of_other_active_members_in_age_range} otros)."
 
-#: .\admin\views.py:430
+#: .\admin\views.py:488
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -961,7 +961,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "otros) ingresaron al sitio en los últimos ocho meses."
 
-#: .\admin\views.py:497
+#: .\admin\views.py:560
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
