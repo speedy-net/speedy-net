@@ -135,9 +135,9 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
-                self.user_1.date_created -= relativedelta(hours=6, minutes=10)
+                self.user_1.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                 self.user_1.save_user_and_profile()
-                self.user_2.date_created -= relativedelta(hours=6, minutes=10)
+                self.user_2.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                 self.user_2.save_user_and_profile()
                 self.page_url = '/messages/{}/compose/'.format(self.user_2.slug)
                 self.data = {

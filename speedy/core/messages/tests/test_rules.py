@@ -23,15 +23,15 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
-                self.user_1.date_created -= relativedelta(hours=6, minutes=10)
+                self.user_1.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                 self.user_1.save_user_and_profile()
-                self.user_2.date_created -= relativedelta(hours=6, minutes=10)
+                self.user_2.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                 self.user_2.save_user_and_profile()
 
             def _create_users(self, users_count):
                 for i in range(users_count):
                     user = ActiveUserFactory()
-                    user.date_created -= relativedelta(hours=6, minutes=10)
+                    user.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                     user.save_user_and_profile()
                     setattr(self, "user_{}".format(3 + i), user)
 
