@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 
 from .utils import env, APP_DIR, ROOT_DIR
 
-
 SPEEDY_NET_SITE_ID = int(env('SPEEDY_NET_SITE_ID'))
 SPEEDY_MATCH_SITE_ID = int(env('SPEEDY_MATCH_SITE_ID'))
 SPEEDY_COMPOSER_SITE_ID = int(env('SPEEDY_COMPOSER_SITE_ID'))
@@ -229,7 +228,7 @@ THUMBNAIL_DUMMY = True
 
 THUMBNAIL_FORMAT = 'PNG'
 
-THUMBNAIL_CACHE_TIMEOUT = int(60 * 60 * 24 * 90)  # 90 days
+THUMBNAIL_CACHE_TIMEOUT = int(60 * 60 * 24 * 2)  # 48 hours
 
 THUMBNAIL_CLEANUP_DELETE_TIMEOUT = int(60 * 60 * 24 * 92)  # 92 days
 
