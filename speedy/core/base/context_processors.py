@@ -17,7 +17,7 @@ def active_url_name(request):
 
 def settings(request):
     settings_in_templates = {}
-    for attr in ["SITE_ID", "SPEEDY_NET_SITE_ID", "SPEEDY_MATCH_SITE_ID", "SPEEDY_COMPOSER_SITE_ID", "SPEEDY_MAIL_SOFTWARE_SITE_ID", "XD_AUTH_SITES", "LANGUAGES_WITH_ADS"]:
+    for attr in ["SITE_ID", "SPEEDY_NET_SITE_ID", "SPEEDY_MATCH_SITE_ID", "SPEEDY_COMPOSER_SITE_ID", "SPEEDY_MAIL_SOFTWARE_SITE_ID", "XD_AUTH_SITES", "LANGUAGES_WITH_ADS", "THIS_SITE_IS_UNDER_CONSTRUCTION"]:
         if (hasattr(django_settings, attr)):
             settings_in_templates[attr] = getattr(django_settings, attr)
     return {

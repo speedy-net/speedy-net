@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-20 12:27+0200\n"
+"POT-Creation-Date: 2024-02-23 02:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2670,11 +2670,11 @@ msgstr "läs markering"
 msgid "read marks"
 msgstr "läs markeringar"
 
-#: .\settings\base.py:185
+#: .\settings\base.py:186
 msgid "English"
 msgstr "Engelska"
 
-#: .\settings\base.py:186
+#: .\settings\base.py:187
 msgid "Hebrew"
 msgstr "Hebreiska"
 
@@ -2900,33 +2900,37 @@ msgstr "Admin - Alla användare"
 msgid "No users."
 msgstr "Inga användare."
 
-#: .\templates\base.html:105
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "This site is under construction"
+
+#: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "Du har inte bekräftat din e-postadress. Vänligen kontrollera din inkorg."
 
-#: .\templates\base.html:158
+#: .\templates\base.html:163
 msgid "Speedy Net Blog"
 msgstr "Speedy Net Blogg"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:165
 msgid "Speedy Paz"
 msgstr "Speedy Paz"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:167
 msgid "Speedy Software"
 msgstr "Speedy programvara"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:169
 msgid "Speedy Sale"
 msgstr "Speedy försäljning"
 
-#: .\templates\base.html:190 .\templates\base.html:191
+#: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
 msgstr "En veganvänlig webbplats"
 
-#: .\templates\base.html:207 .\templates\base.html:209
+#: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
 msgstr "Speedy"
 
