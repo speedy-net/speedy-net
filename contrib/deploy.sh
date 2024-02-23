@@ -1,8 +1,8 @@
 #!/bin/sh
 
-DIR=/home/ubuntu/speedy-net
-PY=${DIR}/env/bin/python
-PIP=${DIR}/env/bin/pip
+DIR="/home/ubuntu/speedy-net"
+PY="${DIR}/env/bin/python"
+PIP="${DIR}/env/bin/pip"
 SITES="net match composer mail"
 
 cd ${DIR}
