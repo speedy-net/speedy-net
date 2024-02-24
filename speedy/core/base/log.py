@@ -42,7 +42,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
         if (subject.startswith("WARNING (EXTERNAL IP): Not Found: ")):
             return False, 1
 
-        if (not (subject.startswith('WARNING'))):
+        if (not ((subject.startswith('WARNING')) or (subject.startswith('ERROR: get_ip_address_ipapi_info::')))):
             return True, 1
 
         try:
