@@ -232,6 +232,8 @@ THUMBNAIL_CACHE_TIMEOUT = int(60 * 60 * 24 * 2)  # 48 hours
 
 THUMBNAIL_CLEANUP_DELETE_TIMEOUT = int(60 * 60 * 24 * 92)  # 92 days
 
+USE_DISTANCE_BETWEEN_USERS_FROM_IPAPI_RESULTS = False
+
 TEST_RUNNER = 'speedy.core.base.test.models.SiteDiscoverRunner'
 
 FIXTURE_DIRS = [
