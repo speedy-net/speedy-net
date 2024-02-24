@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        if (django_settings.USE_DISTANCE_BETWEEN_USERS_FROM_IPAPI_RESULTS):
+        if (django_settings.GET_IP_ADDRESS_IPAPI_INFO):
             users = User.objects.exclude(
                 last_ip_address_used=None,
             ).filter(
