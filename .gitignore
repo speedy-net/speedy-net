@@ -110,6 +110,9 @@ ENV/
 # Fixtures
 speedy/core/fixtures/default_sites_staging.json
 
+# Rules
+speedy/core/messages/_rules.py
+
 # Commands
 speedy/net/accounts/management/commands/disable_unwanted_users.py
 speedy/net/accounts/management/commands/moderate_unmoderated_photos_1.py
