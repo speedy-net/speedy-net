@@ -10,11 +10,12 @@ from speedy.core.accounts.base_rules import is_self
 from speedy.core.blocks.rules import there_is_block
 from speedy.core.messages.models import Chat
 
+ADDITIONAL_RULES = True
+
 try:
     from ._rules import check_user
 except ImportError:
-    def check_user(user):
-        return True
+    ADDITIONAL_RULES = False
 
 logger = logging.getLogger(__name__)
 
@@ -162,7 +163,8 @@ def can_send_new_message(user):
             language_code=language_code,
         ))
         can_send = False
-    can_send = can_send and (check_user(user=user))
+    if (ADDITIONAL_RULES):
+        can_send = can_send and (check_user(user=user))
     return can_send
 
 
