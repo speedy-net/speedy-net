@@ -1,3 +1,4 @@
+from time import sleep
 from datetime import timedelta, datetime, timezone, date
 
 from django.utils import formats
@@ -354,6 +355,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                 total_number_of_active_members_registered_in_year=formats.number_format(value=total_number_of_active_members_registered_in_year),
                 year=year,
             )
+            sleep(10)
         age_interval = 20
         if (self.request.GET.get('age_interval')):
             age_interval = int(self.request.GET.get('age_interval'))
@@ -425,6 +427,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                     max_age=formats.number_format(value=age + (age_interval - 1)),
                 )
                 total_number_of_active_members_text += '</span>'
+            sleep(10)
         total_number_of_active_members_text += "\n"
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
@@ -497,6 +500,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                     max_age=formats.number_format(value=age + (age_interval - 1)),
                 )
                 total_number_of_active_members_text += '</span>'
+            sleep(10)
         total_number_of_active_members_text += "\n"
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
@@ -569,6 +573,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
                     max_age=formats.number_format(value=age + (age_interval - 1)),
                 )
                 total_number_of_active_members_text += '</span>'
+            sleep(10)
         return total_number_of_active_members_text
 
     def get_queryset(self):
