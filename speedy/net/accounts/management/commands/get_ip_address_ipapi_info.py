@@ -21,7 +21,7 @@ class Command(BaseCommand):
                 last_ip_address_used_ipapi_time=None,
                 last_ip_address_used_date_updated__lte=(now() - timedelta(minutes=4)),
             ).distinct(
-            ).order_by('last_ip_address_used_date_updated')[:120]
+            ).order_by('last_ip_address_used_date_updated')[:20]
             for user in users:
                 if ((user.last_ip_address_used is not None) and (user.last_ip_address_used_ipapi_time is None) and (user.last_ip_address_used_date_updated <= (now() - timedelta(minutes=4)))):
                     try:
