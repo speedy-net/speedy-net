@@ -893,7 +893,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         1. The user is 15 years old or older, and
         2. The user registered more than 21 days ago, and
         3. The number of days since registration is not divisible by 6 with a remainder of 2. (every 6 days, the user should see ads for 5 days, and not see ads for 1 day)
-        :param self:
+        :param self: The user.
+        :type self: User
         :return: True if the user should see ads, False otherwise.
         :rtype: bool
         """
