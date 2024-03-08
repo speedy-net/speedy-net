@@ -9,6 +9,7 @@ class AdminSite(speedy_core_admin_sites.AdminSite):
         urlpatterns = super().get_urls()
         urlpatterns += [
             path(route='matches/', view=views.AdminMatchesListView.as_view(), name='matches_list'),
+            path(route='matches/any/', view=views.AdminMatchesAnyLanguageListView.as_view(), name='matches_list_any_language'),
         ]
         return urlpatterns
 

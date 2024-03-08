@@ -19,164 +19,135 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     # page_size = 96
     page_size = 250
     paginate_by = page_size
+    only_current_language = True
+    any_language = False
+
+    def get_default_filter_dict(self):
+        assert ((self.only_current_language and self.any_language) is False)
+        assert ((self.only_current_language or self.any_language) is True)
+
+        language_code = get_language()
+        filter_dict = dict(
+            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
+            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
+        )
+        if (self.only_current_language):
+            filter_dict["speedy_match_site_profile__active_languages__contains"] = [language_code]
+        elif (self.any_language):
+            filter_dict["speedy_match_site_profile__active_languages__len__gt"] = 0
+        else:
+            raise NotImplementedError()
+        return filter_dict
 
     def get_total_number_of_active_members_text(self):
-        language_code = get_language()
+        default_filter_dict = self.get_default_filter_dict()
         total_number_of_active_members = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
         ).count()
         total_number_of_female_active_members = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             gender=User.GENDER_OTHER,
         ).count()
         total_number_of_active_members_in_the_last_week = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
         ).count()
         total_number_of_female_active_members_in_the_last_week = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members_in_the_last_week = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members_in_the_last_week = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=7),
             gender=User.GENDER_OTHER,
         ).count()
         total_number_of_active_members_in_the_last_month = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
         ).count()
         total_number_of_female_active_members_in_the_last_month = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members_in_the_last_month = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members_in_the_last_month = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=30),
             gender=User.GENDER_OTHER,
         ).count()
         total_number_of_active_members_in_the_last_four_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
         ).count()
         total_number_of_female_active_members_in_the_last_four_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members_in_the_last_four_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members_in_the_last_four_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
             gender=User.GENDER_OTHER,
         ).count()
         total_number_of_active_members_in_the_last_eight_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
         ).count()
         total_number_of_female_active_members_in_the_last_eight_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members_in_the_last_eight_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members_in_the_last_eight_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
             gender=User.GENDER_OTHER,
         ).count()
         total_number_of_active_members_in_the_last_two_years = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
         ).count()
         total_number_of_female_active_members_in_the_last_two_years = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
             gender=User.GENDER_FEMALE,
         ).count()
         total_number_of_male_active_members_in_the_last_two_years = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
             gender=User.GENDER_MALE,
         ).count()
         total_number_of_other_active_members_in_the_last_two_years = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             speedy_match_site_profile__last_visit__gte=now() - timedelta(days=720),
             gender=User.GENDER_OTHER,
         ).count()
@@ -273,57 +244,39 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             total_percent_of_other_active_members_in_the_last_two_years='{}%'.format(formats.number_format(value=total_percent_of_other_active_members_in_the_last_two_years, decimal_pos=1)),
         )
         total_number_of_active_members_registered_in_the_last_week = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__gte=now() - timedelta(days=7),
         ).count()
         total_number_of_active_members_registered_in_the_last_month = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__gte=now() - timedelta(days=30),
         ).count()
         total_number_of_active_members_registered_in_the_last_four_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__gte=now() - timedelta(days=120),
         ).count()
         total_number_of_active_members_registered_more_than_four_months_ago = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__lte=now() - timedelta(days=120),
         ).count()
         total_number_of_active_members_registered_in_the_last_eight_months = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__gte=now() - timedelta(days=240),
         ).count()
         total_number_of_active_members_registered_more_than_eight_months_ago = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__lte=now() - timedelta(days=240),
         ).count()
         total_number_of_active_members_registered_in_the_last_two_years = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__gte=now() - timedelta(days=720),
         ).count()
         total_number_of_active_members_registered_more_than_two_years_ago = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__lte=now() - timedelta(days=720),
         ).count()
         total_number_of_active_members_registered_before_2019_08_01 = User.objects.active(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
+            **default_filter_dict,
             date_created__lte=datetime.strptime('2019-08-01 00:00:00', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
         ).count()
         total_number_of_active_members_text += "\n"
@@ -343,9 +296,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         today = date.today()
         for year in range(2010, today.year + 2):
             total_number_of_active_members_registered_in_year = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 date_created__gte=datetime.strptime('{year}-01-01 00:00:00'.format(year=year), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
                 date_created__lt=datetime.strptime('{year}-01-01 00:00:00'.format(year=year + 1), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc),
             ).count()
@@ -361,29 +312,21 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
             total_number_of_active_members_in_age_range = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 date_of_birth__range=age_ranges,
             ).count()
             total_number_of_female_active_members_in_age_range = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_FEMALE,
             ).count()
             total_number_of_male_active_members_in_age_range = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_MALE,
             ).count()
             total_number_of_other_active_members_in_age_range = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_OTHER,
             ).count()
@@ -429,32 +372,24 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
             total_number_of_active_members_in_age_range_in_the_last_eight_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
                 date_of_birth__range=age_ranges,
             ).count()
             total_number_of_female_active_members_in_age_range_in_the_last_eight_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_FEMALE,
             ).count()
             total_number_of_male_active_members_in_age_range_in_the_last_eight_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_MALE,
             ).count()
             total_number_of_other_active_members_in_age_range_in_the_last_eight_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=240),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_OTHER,
@@ -501,32 +436,24 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         for age in range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 20, age_interval):
             age_ranges = get_age_ranges_match(min_age=age, max_age=age + (age_interval - 1))
             total_number_of_active_members_in_age_range_in_the_last_four_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
                 date_of_birth__range=age_ranges,
             ).count()
             total_number_of_female_active_members_in_age_range_in_the_last_four_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_FEMALE,
             ).count()
             total_number_of_male_active_members_in_age_range_in_the_last_four_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_MALE,
             ).count()
             total_number_of_other_active_members_in_age_range_in_the_last_four_months = User.objects.active(
-                speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-                speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-                speedy_match_site_profile__active_languages__contains=[language_code],
+                **default_filter_dict,
                 speedy_match_site_profile__last_visit__gte=now() - timedelta(days=120),
                 date_of_birth__range=age_ranges,
                 gender=User.GENDER_OTHER,
@@ -573,12 +500,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
 
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
-        language_code = get_language()
-        filter_dict = dict(
-            speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
-            speedy_match_site_profile__not_allowed_to_use_speedy_match=False,
-            speedy_match_site_profile__active_languages__contains=[language_code],
-        )
+        filter_dict = self.get_default_filter_dict()
         annotate_list = list()
         order_by_list = list()
         if (self.request.GET.get('likes_from_user')):
@@ -605,5 +527,10 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             'total_number_of_active_members_text': self.get_total_number_of_active_members_text(),
         })
         return cd
+
+
+class AdminMatchesAnyLanguageListView(AdminMatchesListView):
+    only_current_language = False
+    any_language = True
 
 
