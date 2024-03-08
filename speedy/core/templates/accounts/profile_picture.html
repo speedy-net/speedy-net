@@ -8,7 +8,7 @@
     {% endif %}
     {% if user.show_profile_picture_on_website or bypass_visible or admin_user %}
         {% thumbnail user.photo.file geometry crop='center 20%' as image %}
-            <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}{% if admin_user %}{% if user.show_profile_picture_on_website or bypass_visible %} visible-on-website{% else %} not-visible-on-website{% endif %}{% endif %}" />
+            <img src="{{ image.url }}" alt="{{ user.name }}" width="{{ image.width }}" height="{{ image.height }}" class="img-fluid {{ html_class }}{% if admin_user %}{% if user.photo.visible_on_website or bypass_visible %} visible-on-website{% else %} not-visible-on-website{% endif %}{% endif %}" />
         {% empty %}
             <div class="placeholder-wrapper" style="padding-top: {{ aspect_ratio|unlocalize }}%;">
                 <img src="{% static 'speedy-core/images/user.svg' %}" alt="" width="{{ width }}" height="{{ height }}" class="img-fluid {{ html_class }}" />
