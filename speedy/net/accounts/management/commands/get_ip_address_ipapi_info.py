@@ -47,9 +47,10 @@ class Command(BaseCommand):
                                     country = ip_address_raw_ipapi_results["country_name"]
                                 if ("continent_name" in ip_address_raw_ipapi_results):
                                     continent = ip_address_raw_ipapi_results["continent_name"]
-                                logger.debug("get_ip_address_ipapi_info::info ok, info saved. user={user}, {user_name} is located in {city}, {region}, {country}, {continent}. (registered {registered_days_ago} days ago).".format(
+                                logger.debug("get_ip_address_ipapi_info::info ok, info saved. user={user}, {user_name} (last_ip_address_used={last_ip_address_used}) is located in {city}, {region}, {country}, {continent}. (registered {registered_days_ago} days ago).".format(
                                     user=user,
                                     user_name=user.name,
+                                    last_ip_address_used=user.last_ip_address_used,
                                     city=city,
                                     region=region,
                                     country=country,
