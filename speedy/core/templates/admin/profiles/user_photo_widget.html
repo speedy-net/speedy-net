@@ -13,7 +13,7 @@
                         ({{ user.get_gender_display }})
                         <br />
                         {% if user.photo %}
-                            <span class="direction-ltr">&lrm;({{ user.show_profile_picture_on_website|yesno:'Photo is visible,Photo is not visible' }})&lrm;</span>
+                            <span class="direction-ltr">&lrm;({{ user.photo.visible_on_website|yesno:'Photo is visible,Photo is not visible' }})&lrm;</span>
                             <br />
                             <span class="direction-ltr">&lrm;({{ user.photo.number_of_faces|default_if_none:"_unknown_" }} faces, offset={{ user.speedy_match_profile.profile_picture_months_offset }})&lrm;</span>
                         {% else %}
