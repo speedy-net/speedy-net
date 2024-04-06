@@ -47,6 +47,10 @@ class ReadOnlyModelAdmin2000(ReadOnlyModelAdmin):
     list_per_page = 2000
 
 
+class ReadOnlyModelAdmin2500(ReadOnlyModelAdmin):
+    list_per_page = 2500
+
+
 class ReadOnlyModelAdmin5000(ReadOnlyModelAdmin):
     list_per_page = 5000
 

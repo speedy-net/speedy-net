@@ -2,10 +2,10 @@ from django.conf import settings as django_settings
 
 from translated_fields import TranslatedFieldAdmin
 
-from speedy.core.base.admin import ModelAdmin, ModelAdmin15000, ReadOnlyModelAdmin
+from speedy.core.base.admin import ModelAdmin, ModelAdmin15000, ReadOnlyModelAdmin2500
 
 
-class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+class SiteProfileBaseAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin2500):
     readonly_fields = ('date_created', 'date_updated')
 
     def has_delete_permission(self, request, obj=None):
@@ -21,7 +21,7 @@ if (django_settings.LOGIN_ENABLED):
     SiteProfile = get_site_profile_model()
 
 
-    class EntityAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    class EntityAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin2500):
         readonly_fields = ('date_created', 'date_updated', 'id')
         inlines = [
             MessageInlineAdmin,
@@ -35,7 +35,7 @@ if (django_settings.LOGIN_ENABLED):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
 
-    class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin):
+    class UserAdmin(TranslatedFieldAdmin, ReadOnlyModelAdmin2500):
         readonly_fields = ('date_created', 'date_updated', 'id')
         inlines = [
             MessageInlineAdmin,
@@ -46,7 +46,7 @@ if (django_settings.LOGIN_ENABLED):
             return True
 
 
-    class UserEmailAddressAdmin(ReadOnlyModelAdmin):
+    class UserEmailAddressAdmin(ReadOnlyModelAdmin2500):
         readonly_fields = ('date_created', 'date_updated', 'id')
 
         def has_delete_permission(self, request, obj=None):
