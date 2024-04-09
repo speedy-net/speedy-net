@@ -1,11 +1,11 @@
 # python==3.11
 Django==4.2.11
-asgiref==3.7.2
+asgiref==3.8.1
 boto3==1.34.77
 botocore==1.34.77
-crispy-bootstrap4==2022.1
+crispy-bootstrap4==2024.1
 django-admin-inline-paginator==0.3.0
-django-crispy-forms==2.0
+django-crispy-forms==2.1
 django-environ==0.11.2
 django-friendship==1.9.6
 django-translated-fields==0.12.0
@@ -14,13 +14,13 @@ jmespath==1.0.1
 pillow==10.2.0
 psycopg2==2.9.9
 pymemcache==4.0.0
-python-dateutil==2.8.2
-pytz==2023.3
+python-dateutil==2.9.0.post0
+pytz==2024.1
 rules==3.3
 s3transfer==0.10.1
 six==1.16.0
 -e git+https://github.com/uri-rodberg/sorl-thumbnail.git@9339cc250328f7c5d00212877d920a69bf7e740a#egg=sorl_thumbnail
 sqlparse==0.4.4
-typing_extensions==4.8.0
-tzdata==2023.3
+typing_extensions==4.11.0
+tzdata==2024.1
 urllib3==1.26.18
