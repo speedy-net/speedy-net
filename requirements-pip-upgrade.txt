@@ -10,7 +10,7 @@ django-friendship
 django-translated-fields
 haversine
 jmespath
-Pillow
+pillow
 psycopg2
 pymemcache
 python-dateutil
