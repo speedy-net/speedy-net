@@ -41,7 +41,7 @@ class Command(BaseCommand):
                         ).distinct(
                         ).order_by('last_ip_address_used_date_updated')[:36]
                         for original_user in original_users:
-                            if ((ip_address_original_ipapi_call is True) and (original_user.last_ip_address_used == user.last_ip_address_used) and (original_user.last_ip_address_used_original_ipapi_call is True) and (original_user.last_ip_address_used_ipapi_time is not None) and (original_user.last_ip_address_used_raw_ipapi_results is not None) and (user.last_ip_address_used_ipapi_time <= (now() - timedelta(minutes=4))) and (user.last_ip_address_used_ipapi_time >= (now() - timedelta(days=30)))):
+                            if ((ip_address_original_ipapi_call is True) and (original_user.last_ip_address_used == user.last_ip_address_used) and (original_user.last_ip_address_used_original_ipapi_call is True) and (original_user.last_ip_address_used_ipapi_time is not None) and (original_user.last_ip_address_used_raw_ipapi_results is not None) and (original_user.last_ip_address_used_ipapi_time <= (now() - timedelta(minutes=4))) and (original_user.last_ip_address_used_ipapi_time >= (now() - timedelta(days=30)))):
                                 ip_address_original_ipapi_call = False
                                 ip_address_raw_ipapi_results = original_user.last_ip_address_used_raw_ipapi_results
                         # Otherwise, make the original ipapi call.
