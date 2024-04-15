@@ -388,6 +388,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     notify_on_message = models.SmallIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
     last_ip_address_used = models.GenericIPAddressField(blank=True, null=True)
     last_ip_address_used_date_updated = models.DateTimeField(blank=True, null=True)
+    last_ip_address_used_original_ipapi_call = models.BooleanField(default=False)
     last_ip_address_used_ipapi_time = models.DateTimeField(verbose_name=_('Last IP address used https://ipapi.com/ time'), blank=True, null=True)
     last_ip_address_used_raw_ipapi_results = models.JSONField(verbose_name=_('Last IP address used raw https://ipapi.com/ results'), blank=True, null=True)
 
