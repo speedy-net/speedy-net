@@ -19,11 +19,12 @@ class Command(BaseCommand):
                 last_ip_address_used__isnull=True,
             ).filter(
                 last_ip_address_used_ipapi_time__isnull=True,
+                last_ip_address_used_date_updated__isnull=False,
                 last_ip_address_used_date_updated__lte=(now() - timedelta(minutes=4)),
             ).distinct(
             ).order_by('last_ip_address_used_date_updated')[:36]
             for user in users:
-                if ((user.last_ip_address_used is not None) and (user.last_ip_address_used_ipapi_time is None) and (user.last_ip_address_used_date_updated <= (now() - timedelta(minutes=4)))):
+                if ((user.last_ip_address_used is not None) and (user.last_ip_address_used_ipapi_time is None) and (user.last_ip_address_used_date_updated is not None) and (user.last_ip_address_used_date_updated <= (now() - timedelta(minutes=4)))):
                     # If there are other users with the same last_ip_address_used, and they have already made an original ipapi call in the last 30 days, then use their results.
                     ip_address_original_ipapi_call = True
                     ip_address_raw_ipapi_results = None
