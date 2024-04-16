@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 02:45+0200\n"
+"POT-Creation-Date: 2024-04-16 09:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -827,7 +827,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:930
+#: .\__translations\__translations.py:9 .\accounts\models.py:932
 msgid "email address"
 msgstr ""
 
@@ -867,7 +867,7 @@ msgstr ""
 msgid "Friend"
 msgstr ""
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:512
+#: .\__translations\__translations.py:23 .\accounts\models.py:513
 msgid "Friends"
 msgstr ""
 
@@ -2090,76 +2090,76 @@ msgstr ""
 msgid "On new messages"
 msgstr ""
 
-#: .\accounts\models.py:391
+#: .\accounts\models.py:392
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr ""
 
-#: .\accounts\models.py:392
+#: .\accounts\models.py:393
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 
-#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
+#: .\accounts\models.py:538 .\accounts\models.py:916 .\blocks\models.py:15
 msgid "user"
 msgstr ""
 
-#: .\accounts\models.py:538
+#: .\accounts\models.py:539
 msgid "users"
 msgstr ""
 
-#: .\accounts\models.py:571
+#: .\accounts\models.py:572
 msgid "Superuser must be equal to staff."
 msgstr ""
 
-#: .\accounts\models.py:915
+#: .\accounts\models.py:917
 msgid "email"
 msgstr ""
 
-#: .\accounts\models.py:916
+#: .\accounts\models.py:918
 msgid "is confirmed"
 msgstr ""
 
-#: .\accounts\models.py:917
+#: .\accounts\models.py:919
 msgid "is primary"
 msgstr ""
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:920
 msgid "confirmation token"
 msgstr ""
 
-#: .\accounts\models.py:919
+#: .\accounts\models.py:921
 msgid "confirmation sent"
 msgstr ""
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:922
 msgid "Who can see this email"
 msgstr ""
 
-#: .\accounts\models.py:931
+#: .\accounts\models.py:933
 msgid "email addresses"
 msgstr ""
 
-#: .\accounts\models.py:998
+#: .\accounts\models.py:1000
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:999
+#: .\accounts\models.py:1001
 msgid "last visit"
 msgstr ""
 
-#: .\accounts\models.py:1011
+#: .\accounts\models.py:1013
 msgid "Today"
 msgstr ""
 
-#: .\accounts\models.py:1013
+#: .\accounts\models.py:1015
 msgid "Yesterday"
 msgstr ""
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr ""
 
-#: .\accounts\models.py:1017
+#: .\accounts\models.py:1019
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr ""
@@ -2298,7 +2298,7 @@ msgstr ""
 msgid "You have made this email address primary."
 msgstr ""
 
-#: .\admin\views.py:55
+#: .\admin\views.py:72
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2312,7 +2312,7 @@ msgid ""
 "the last two years."
 msgstr ""
 
-#: .\admin\views.py:101
+#: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2334,7 +2334,7 @@ msgid ""
 "before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:121
+#: .\admin\views.py:138
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2530,11 +2530,11 @@ msgstr ""
 msgid "read marks"
 msgstr ""
 
-#: .\settings\base.py:186
+#: .\settings\base.py:185
 msgid "English"
 msgstr ""
 
-#: .\settings\base.py:187
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr ""
 

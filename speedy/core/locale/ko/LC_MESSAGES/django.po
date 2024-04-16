@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 02:45+0200\n"
+"POT-Creation-Date: 2024-04-16 09:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "올바른 이메일 주소를 입력하세요."
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:930
+#: .\__translations\__translations.py:9 .\accounts\models.py:932
 msgid "email address"
 msgstr "이메일 주소"
 
@@ -902,7 +902,7 @@ msgstr "친구 요청"
 msgid "Friend"
 msgstr "친구"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:512
+#: .\__translations\__translations.py:23 .\accounts\models.py:513
 msgid "Friends"
 msgstr "친구"
 
@@ -2159,76 +2159,76 @@ msgstr "내가 태어난 연도를 볼 수 있는 사람"
 msgid "On new messages"
 msgstr "새 메시지에"
 
-#: .\accounts\models.py:391
+#: .\accounts\models.py:392
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:392
+#: .\accounts\models.py:393
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
+#: .\accounts\models.py:538 .\accounts\models.py:916 .\blocks\models.py:15
 msgid "user"
 msgstr "사용자"
 
-#: .\accounts\models.py:538
+#: .\accounts\models.py:539
 msgid "users"
 msgstr "사용자"
 
-#: .\accounts\models.py:571
+#: .\accounts\models.py:572
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:915
+#: .\accounts\models.py:917
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:916
+#: .\accounts\models.py:918
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:917
+#: .\accounts\models.py:919
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:920
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:919
+#: .\accounts\models.py:921
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:922
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:931
+#: .\accounts\models.py:933
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:998
+#: .\accounts\models.py:1000
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:999
+#: .\accounts\models.py:1001
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:1011
+#: .\accounts\models.py:1013
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:1013
+#: .\accounts\models.py:1015
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:1017
+#: .\accounts\models.py:1019
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
@@ -2374,7 +2374,7 @@ msgstr "이메일 주소가 삭제되었습니다."
 msgid "You have made this email address primary."
 msgstr "이 이메일 주소를 기본으로 설정했습니다."
 
-#: .\admin\views.py:55
+#: .\admin\views.py:72
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2396,7 +2396,7 @@ msgstr ""
 "안에 사이트에 들어왔었으며, {total_number_of_members_in_the_last_two_years}명"
 "의 회원들이 지난 2년 동안에 사이트에 들어왔었습니다."
 
-#: .\admin\views.py:101
+#: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2435,7 +2435,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01}명의 회원들이 2019년 8"
 "월 1일 이전에 등록했습니다."
 
-#: .\admin\views.py:121
+#: .\admin\views.py:138
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2633,11 +2633,11 @@ msgstr "읽은 표시"
 msgid "read marks"
 msgstr "읽은 표시"
 
-#: .\settings\base.py:186
+#: .\settings\base.py:185
 msgid "English"
 msgstr "영어"
 
-#: .\settings\base.py:187
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "히브리어"
 

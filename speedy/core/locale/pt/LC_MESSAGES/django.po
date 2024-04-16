@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 02:45+0200\n"
+"POT-Creation-Date: 2024-04-16 09:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,7 +863,7 @@ msgstr "Introduza um endereço de e-mail válido."
 msgid "Email address"
 msgstr "E-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:930
+#: .\__translations\__translations.py:9 .\accounts\models.py:932
 msgid "email address"
 msgstr "e-mail"
 
@@ -905,7 +905,7 @@ msgstr "Solicitação de Amizade"
 msgid "Friend"
 msgstr "Amigo"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:512
+#: .\__translations\__translations.py:23 .\accounts\models.py:513
 msgid "Friends"
 msgstr "Amigos"
 
@@ -2171,77 +2171,77 @@ msgstr "Quem pode ver o ano do meu nascimento"
 msgid "On new messages"
 msgstr "Em novas mensagens"
 
-#: .\accounts\models.py:391
+#: .\accounts\models.py:392
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Última direcção IP utilizou o horário de https://ipapi.com/"
 
-#: .\accounts\models.py:392
+#: .\accounts\models.py:393
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Última direcção IP utilizou os resultados directos de https://ipapi.com/"
 
-#: .\accounts\models.py:537 .\accounts\models.py:914 .\blocks\models.py:15
+#: .\accounts\models.py:538 .\accounts\models.py:916 .\blocks\models.py:15
 msgid "user"
 msgstr "utilizador"
 
-#: .\accounts\models.py:538
+#: .\accounts\models.py:539
 msgid "users"
 msgstr "utilizadores"
 
-#: .\accounts\models.py:571
+#: .\accounts\models.py:572
 msgid "Superuser must be equal to staff."
 msgstr "Superuser precisa ser igual a funcionário."
 
-#: .\accounts\models.py:915
+#: .\accounts\models.py:917
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:916
+#: .\accounts\models.py:918
 msgid "is confirmed"
 msgstr "está confirmado"
 
-#: .\accounts\models.py:917
+#: .\accounts\models.py:919
 msgid "is primary"
 msgstr "é primário"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:920
 msgid "confirmation token"
 msgstr "token de confirmação"
 
-#: .\accounts\models.py:919
+#: .\accounts\models.py:921
 msgid "confirmation sent"
 msgstr "confirmação enviada"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:922
 msgid "Who can see this email"
 msgstr "Quem pode ver este e-mail"
 
-#: .\accounts\models.py:931
+#: .\accounts\models.py:933
 msgid "email addresses"
 msgstr "direcções de e-mail"
 
-#: .\accounts\models.py:998
+#: .\accounts\models.py:1000
 msgid "User"
 msgstr "utilizador"
 
-#: .\accounts\models.py:999
+#: .\accounts\models.py:1001
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:1011
+#: .\accounts\models.py:1013
 msgid "Today"
 msgstr "Hoje"
 
-#: .\accounts\models.py:1013
+#: .\accounts\models.py:1015
 msgid "Yesterday"
 msgstr "Ontem"
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1017
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Em {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1017
+#: .\accounts\models.py:1019
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "há {timesince}"
@@ -2416,7 +2416,7 @@ msgstr "A direcção de e-mail foi excluída."
 msgid "You have made this email address primary."
 msgstr "Configuraste esta caixa de e-mail como principal."
 
-#: .\admin\views.py:55
+#: .\admin\views.py:72
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2439,7 +2439,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_two_years} membros entraram no sítio "
 "nos últimos dois anos."
 
-#: .\admin\views.py:101
+#: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2478,7 +2478,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} membros registados "
 "antes de 1º de agosto de 2019."
 
-#: .\admin\views.py:121
+#: .\admin\views.py:138
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2676,11 +2676,11 @@ msgstr "marca de leitura"
 msgid "read marks"
 msgstr "marcas de leitura"
 
-#: .\settings\base.py:186
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Inglês"
 
-#: .\settings\base.py:187
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebraico"
 

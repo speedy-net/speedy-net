@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 01:34+0200\n"
+"POT-Creation-Date: 2024-04-16 09:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -733,7 +733,7 @@ msgstr ""
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
 
-#: .\admin\views.py:231
+#: .\admin\views.py:202
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -784,7 +784,7 @@ msgid ""
 "entered the site in the last two years."
 msgstr ""
 
-#: .\admin\views.py:331
+#: .\admin\views.py:284
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -807,14 +807,14 @@ msgid ""
 "registered before 1 August 2019."
 msgstr ""
 
-#: .\admin\views.py:353
+#: .\admin\views.py:304
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
 
-#: .\admin\views.py:416
+#: .\admin\views.py:359
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -827,7 +827,7 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
 
-#: .\admin\views.py:488
+#: .\admin\views.py:423
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -845,7 +845,7 @@ msgid ""
 "others) entered the site in the last eight months."
 msgstr ""
 
-#: .\admin\views.py:560
+#: .\admin\views.py:487
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "

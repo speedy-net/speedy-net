@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 01:34+0200\n"
+"POT-Creation-Date: 2024-04-16 09:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -751,7 +751,7 @@ msgstr "לפחות אפשרות אחת להתאמת הרגלי עישון צרי
 msgid "At least one relationship status match option should be five hearts."
 msgstr "לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות."
 
-#: .\admin\views.py:231
+#: .\admin\views.py:202
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -847,7 +847,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} אחרים/ות) "
 "נכנסו לאתר בשנתיים האחרונות."
 
-#: .\admin\views.py:331
+#: .\admin\views.py:284
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -887,7 +887,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} חברים פעילים "
 "נרשמו לאתר לפני 1 באוגוסט 2019."
 
-#: .\admin\views.py:353
+#: .\admin\views.py:304
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -896,7 +896,7 @@ msgstr ""
 "אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים "
 "נרשמו לאתר בשנת {year}."
 
-#: .\admin\views.py:416
+#: .\admin\views.py:359
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -917,7 +917,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} זכרים, "
 "{total_percent_of_other_active_members_in_age_range} אחרים/ות)."
 
-#: .\admin\views.py:488
+#: .\admin\views.py:423
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -949,7 +949,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "אחרים/ות) שנכנסו לאתר בשמונת החודשים האחרונים."
 
-#: .\admin\views.py:560
+#: .\admin\views.py:487
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
