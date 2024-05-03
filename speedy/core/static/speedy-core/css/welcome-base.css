@@ -45,8 +45,13 @@ a:active {
     background-color: transparent;
 }
 
-td {
-    padding: 0px 40px;
+table {
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-around;
 }
 
 .language-link {
