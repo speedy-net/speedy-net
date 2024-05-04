@@ -93,7 +93,10 @@ img.main-image {
 
     tr {
         display: flex;
-        justify-content: space-around;
+    }
+
+    td {
+        flex: 1;
     }
 }
 
