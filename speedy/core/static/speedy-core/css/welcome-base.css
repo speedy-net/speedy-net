@@ -45,15 +45,6 @@ a:active {
     background-color: transparent;
 }
 
-table {
-    width: 100%;
-}
-
-tr {
-    display: flex;
-    justify-content: space-around;
-}
-
 .language-link {
     font-size: 40px;
 }
@@ -94,5 +85,20 @@ img.main-image {
     a > span:before {
         content: '';
         display: block;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    td {
+        padding: 0px 40px;
     }
 }
