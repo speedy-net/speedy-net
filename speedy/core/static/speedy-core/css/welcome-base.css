@@ -97,6 +97,7 @@ img.main-image {
 
     td {
         flex: 1;
+        text-align: center;
     }
 }
 
