@@ -224,10 +224,10 @@ class SiteProfileManager(BaseManager):
                 if (django_settings.USE_DISTANCE_BETWEEN_USERS_FROM_IPAPI_RESULTS):
                     # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
                     s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "92-92a").encode('utf-8')).hexdigest(), 16) % 6000
-                    if (0 <= s < 480):  # 480/6000
-                        if (0 <= s < 36):  # 36/6000
+                    if (0 <= s < 1920):  # 1920/6000
+                        if (0 <= s < 144):  # 144/6000
                             index = (s % 3) * 2
-                        else:  # 444/6000
+                        else:  # 1776/6000
                             index = (s % 3 + 3) * 2
                         distance_offset = self._get_distance_offset(index=index)
                         if (index == 0):
