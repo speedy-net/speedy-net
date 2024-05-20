@@ -234,7 +234,11 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
             if (not (self.instance.height == user_profile.height)):
                 site = Site.objects.get_current()
                 language_code = get_language()
-                logger.info('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+                if (user_profile.height is None):
+                    logger_level = logger.debug
+                else:
+                    logger_level = logger.info
+                logger_level('User changed height on {site_name}, user={user}, new height={new_height}, old height={old_height} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance.user,
                     new_height=self.instance.height,
