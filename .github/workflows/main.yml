@@ -8,13 +8,12 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          # - 'ubuntu-20.04'
           - 'ubuntu-22.04'
+          - 'ubuntu-24.04'
         python-version:
           - '3.10'
           - '3.11'
           - '3.12'
-          # - 'pypy3.10'
         postgresql-version:
           - '13'
           - '14'
@@ -23,6 +22,30 @@ jobs:
         is-main-or-staging:
           - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
+          - os: 'ubuntu-24.04'
+            python-version: '3.10'
+          - os: 'ubuntu-24.04'
+            python-version: '3.11'
+            postgresql-version: '13'
+          - os: 'ubuntu-24.04'
+            python-version: '3.11'
+            postgresql-version: '14'
+          - os: 'ubuntu-24.04'
+            python-version: '3.11'
+            postgresql-version: '15'
+          - os: 'ubuntu-22.04'
+            python-version: '3.11'
+            postgresql-version: '16'
+          - os: 'ubuntu-24.04'
+            postgresql-version: '13'
+          - os: 'ubuntu-24.04'
+            postgresql-version: '14'
+          - os: 'ubuntu-22.04'
+            python-version: '3.12'
+            postgresql-version: '15'
+          - os: 'ubuntu-22.04'
+            python-version: '3.12'
+            postgresql-version: '16'
           - postgresql-version: '13'
             python-version: '3.10'
           - postgresql-version: '14'
