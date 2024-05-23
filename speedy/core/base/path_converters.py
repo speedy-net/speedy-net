@@ -17,11 +17,11 @@ class DigitsConverter(BaseConverter):
     regex = r'[0-9]+'
 
 
-class SlugConverter(BaseConverter):
+class SpeedySlugConverter(BaseConverter):
     regex = r'[a-zA-Z0-9\-\_\.]+'
 
 
 register_converter(converter=DigitsConverter, type_name='digits')
-register_converter(converter=SlugConverter, type_name='slug')
+register_converter(converter=SpeedySlugConverter, type_name='speedy_slug')
 
 
