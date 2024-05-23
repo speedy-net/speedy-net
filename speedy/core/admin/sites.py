@@ -12,7 +12,7 @@ class AdminSite(django_admin.AdminSite):
         urlpatterns += [
             path(route='users/', view=views.AdminUsersListView.as_view(), name='users_list'),
             path(route='users/with-details/', view=views.AdminUsersWithDetailsListView.as_view(), name='users_with_details_list'),
-            path(route='user/<slug:slug>/', view=views.AdminUserDetailView.as_view(), name='user'),
+            path(route='user/<speedy_slug:slug>/', view=views.AdminUserDetailView.as_view(), name='user'),
         ]
         return urlpatterns
 
