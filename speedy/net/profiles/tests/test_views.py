@@ -14,6 +14,10 @@ if (django_settings.TESTS):
                 r = self.client.get(path='/l-o-o-k_a_t_m-e/')
                 self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301, target_status_code=200)
 
+            def test_find_user_by_username_with_dots(self):
+                r = self.client.get(path='/__l-o-o-k_a_t_m-e.../')
+                self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301, target_status_code=200)
+
             def test_redirect_different_slug_with_extra_slashes_and_dots(self):
                 r = self.client.get(path='///__l-o-o-k_a_t_m-e...///')
                 self.assertRedirects(response=r, expected_url='/__l-o-o-k_a_t_m-e.../', status_code=301, target_status_code=301)
