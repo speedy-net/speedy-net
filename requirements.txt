@@ -1,5 +1,5 @@
 # python==3.11
-Django==5.1a1
+Django @ git+https://github.com/fsbraun/django@1693f3b79fe828a35f91dfc1ad1eab67dc656c23
 asgiref==3.8.1
 boto3==1.34.77
 botocore==1.34.77
