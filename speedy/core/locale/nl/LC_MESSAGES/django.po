@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-05-25 17:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1973,7 +1973,7 @@ msgstr "Account aanmaken"
 msgid "Update your profile picture"
 msgstr "Werk je profielfoto bij"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "Een profielfoto is verplicht."
 
@@ -2365,30 +2365,38 @@ msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 msgstr[1] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Je wachtwoord moet minstens %(min_unique_characters)d unieke tekens bevatten."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "Dit veld mag niet leeg zijn."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "Dit veld kan niet leeg zijn."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "Voer een geldige datum in."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "Deze email is al in gebruik."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Het bestand van deze foto is te groot. De maximaal toegestane "
 "bestandsgrootte is 30 MB."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
