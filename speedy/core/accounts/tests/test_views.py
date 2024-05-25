@@ -545,7 +545,7 @@ if (django_settings.TESTS):
 
             def test_password_too_short(self):
                 data = self.data.copy()
-                data['new_password1'] = '8' * 3
+                data['new_password1'] = 'abcdef'
                 r = self.client.post(path='/', data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict(field_names=self._first_password_field_names))
@@ -559,10 +559,52 @@ if (django_settings.TESTS):
 
             def test_password_too_long(self):
                 data = self.data.copy()
-                data['new_password1'] = '8' * 121
+                data['new_password1'] = 'abcdef' + ('8' * 115)
                 r = self.client.post(path='/', data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '1234' * 2
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_too_short_and_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '8' * 3
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_too_long_and_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '8' * 121
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
                 self.assert_models_count(
                     entity_count=0,
                     user_count=0,
