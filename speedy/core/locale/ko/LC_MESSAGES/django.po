@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-05-25 17:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1955,7 +1955,7 @@ msgstr "계정 생성"
 msgid "Update your profile picture"
 msgstr "프로필 사진을 업데이트하세요"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "프로필 사진이 필요합니다."
 
@@ -2328,29 +2328,37 @@ msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "암호에는 최대 %(max_length)d자만 포함되어야 합니다."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"암호에는 최소 %(min_unique_characters)d자의 고유 문자가 포함되어야 합니다."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "이 필드는 null 값을 사용할 수 없습니다."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "이 필드는 빈 칸으로 둘 수 없습니다."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "올바른 날짜를 입력하세요."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "이 이메일은 이미 사용 중입니다."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "이 사진의 파일 크기가 너무 큽니다. 허용되는 최대 파일 크기는 30MB입니다."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
