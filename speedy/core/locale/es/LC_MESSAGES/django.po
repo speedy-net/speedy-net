@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-05-25 17:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1973,7 +1973,7 @@ msgstr "Crea una cuenta"
 msgid "Update your profile picture"
 msgstr "Actualiza tu foto de perfil"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "Se requiere una foto de perfil."
 
@@ -2370,30 +2370,39 @@ msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Tu contraseña debe contener como máximo %(max_length)d caracter."
 msgstr[1] "Tu contraseña debe contener como máximo %(max_length)d caracteres."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"La contraseña debe contener al menos %(min_unique_characters)d caracteres "
+"únicos."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "Este campo no puede ser nulo."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "Este campo no puede estar vacío."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "Introduzca una fecha válida."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "Este correo electrónico ya está en uso."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "El tamaño del archivo de esta imagen es demasiado grande. El tamaño máximo "
 "de archivo permitido es 30 MB."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
