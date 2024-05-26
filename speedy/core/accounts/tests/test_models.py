@@ -1,4 +1,4 @@
-from django.conf import settings as django_settings
+﻿from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
@@ -936,8 +936,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_user_can_change_password(self):
-                new_password = '8' * 8
+                new_password = 'abc1def2'
                 incorrect_new_password = '7' * 8
+                self.assertEqual(first=len(new_password), second=8)
                 user = DefaultUserFactory()
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 user.set_password(raw_password=new_password)
@@ -946,7 +947,8 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_password_too_short_exception(self):
-                new_password = '8' * 3
+                new_password = 'abcdef'
+                self.assertEqual(first=len(new_password), second=6)
                 user = DefaultUserFactory()
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 with self.assertRaises(ValidationError) as cm:
@@ -956,12 +958,46 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long_exception(self):
-                new_password = '8' * 121
+                new_password = 'abcdef' + ('8' * 115)
+                self.assertEqual(first=len(new_password), second=121)
                 user = DefaultUserFactory()
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 with self.assertRaises(ValidationError) as cm:
                     user.set_password(raw_password=new_password)
                 self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            def test_password_not_enough_unique_characters_exception(self):
+                new_password = '1234' * 2
+                self.assertEqual(first=len(new_password), second=8)
+                user = DefaultUserFactory()
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                with self.assertRaises(ValidationError) as cm:
+                    user.set_password(raw_password=new_password)
+                self.assertListEqual(list1=list(cm.exception), list2=[self._your_password_must_contain_at_least_6_unique_characters_error_message])
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            def test_password_too_short_and_not_enough_unique_characters_exception(self):
+                new_password = '8' * 3
+                self.assertEqual(first=len(new_password), second=3)
+                user = DefaultUserFactory()
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                with self.assertRaises(ValidationError) as cm:
+                    user.set_password(raw_password=new_password)
+                self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_short_error_message, self._your_password_must_contain_at_least_6_unique_characters_error_message])
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            def test_password_too_long_and_not_enough_unique_characters_exception(self):
+                new_password = '8' * 121
+                self.assertEqual(first=len(new_password), second=121)
+                user = DefaultUserFactory()
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                with self.assertRaises(ValidationError) as cm:
+                    user.set_password(raw_password=new_password)
+                self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message, self._your_password_must_contain_at_least_6_unique_characters_error_message])
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
