@@ -15,6 +15,10 @@ if (django_settings.TESTS):
         def get_random_user_password():
             user_password_length = get_random_user_password_length()
             user_password = ''.join(random.choice(string.digits + string.ascii_letters + string.punctuation + ' ') for _i in range(user_password_length))
+            if (len(set(list(user_password))) < User.settings.MIN_PASSWORD_UNIQUE_CHARACTERS):
+                prefix_list = list(string.ascii_lowercase[:User.settings.MIN_PASSWORD_UNIQUE_CHARACTERS])
+                random.shuffle(prefix_list)
+                user_password = ''.join(prefix_list) + user_password[User.settings.MIN_PASSWORD_UNIQUE_CHARACTERS:]
             if (len(user_password) == user_password_length):
                 return user_password
             else:
