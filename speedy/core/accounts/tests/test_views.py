@@ -1293,6 +1293,26 @@ if (django_settings.TESTS):
                 # Speedy Net inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
                 self.assert_me_url_redirects_to_welcome_url()
 
+            def test_visitor_can_login_using_email_if_there_are_two_users_returned(self):
+                # Create another user with the slug as the email address of self.other_user.
+                UserEmailAddressFactory(user=self.other_user, email="mike@example.com")
+                user_factory_dict = dict(slug="mike@example.com")
+                if (self.random_choice_2 == 1):
+                    self.other_user_2 = ActiveUserFactory(**user_factory_dict)
+                elif (self.random_choice_2 == 2):
+                    self.other_user_2 = InactiveUserFactory(**user_factory_dict)
+                elif (self.random_choice_2 == 3):
+                    self.other_user_2 = SpeedyNetInactiveUserFactory(**user_factory_dict)
+                else:
+                    raise NotImplementedError()
+                data = {
+                    'username': "mike@example.com",
+                    'password': self._other_user_password,
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
+                self.assert_me_url_redirects_after_login(user=self.other_user)
+
             def test_visitor_cannot_login_using_wrong_email(self):
                 data = {
                     'username': self.other_user_email.email,
