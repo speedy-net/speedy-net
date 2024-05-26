@@ -38,6 +38,7 @@ if (django_settings.TESTS):
 
             class Meta:
                 model = User
+                skip_postgeneration_save = True
 
             @factory.post_generation
             def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):

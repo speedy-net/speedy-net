@@ -15,6 +15,7 @@ if (django_settings.TESTS):
 
             class Meta:
                 model = Chat
+                skip_postgeneration_save = True
 
             @factory.post_generation
             def group(self: Chat, created, extracted, **kwargs):
