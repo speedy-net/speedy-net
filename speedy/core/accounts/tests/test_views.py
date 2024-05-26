@@ -545,7 +545,8 @@ if (django_settings.TESTS):
 
             def test_password_too_short(self):
                 data = self.data.copy()
-                data['new_password1'] = '8' * 3
+                data['new_password1'] = 'abcdef'
+                self.assertEqual(first=len(data['new_password1']), second=6)
                 r = self.client.post(path='/', data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_errors_dict(field_names=self._first_password_field_names))
@@ -559,10 +560,56 @@ if (django_settings.TESTS):
 
             def test_password_too_long(self):
                 data = self.data.copy()
-                data['new_password1'] = '8' * 121
+                data['new_password1'] = 'abcdef' + ('8' * 115)
+                self.assertEqual(first=len(data['new_password1']), second=121)
                 r = self.client.post(path='/', data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '1234' * 2
+                self.assertEqual(first=len(data['new_password1']), second=8)
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_too_short_and_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '8' * 3
+                self.assertEqual(first=len(data['new_password1']), second=3)
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
+            def test_password_too_long_and_not_enough_unique_characters(self):
+                data = self.data.copy()
+                data['new_password1'] = '8' * 121
+                self.assertEqual(first=len(data['new_password1']), second=121)
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._first_password_field_names))
                 self.assert_models_count(
                     entity_count=0,
                     user_count=0,
@@ -1135,7 +1182,7 @@ if (django_settings.TESTS):
 
         class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
             login_url = '/login/'
-            _other_user_password = '8' * 8
+            _other_user_password = 'abc1def2'
 
             def set_up(self):
                 super().set_up()
@@ -1293,6 +1340,37 @@ if (django_settings.TESTS):
                 # Speedy Net inactive users are redirected to welcome url ('/welcome/') instead of their user profile url.
                 self.assert_me_url_redirects_to_welcome_url()
 
+            def test_visitor_can_login_using_short_password(self):
+                # Using a password that is too short and with too few unique characters.
+                from django.contrib.auth.hashers import make_password
+                # Call make_password() directly because set_password() will raise an exception if the password is too short.
+                self.user.password = make_password(password='123')
+                self.user.save_user_and_profile()
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': self.user.slug,
+                    'password': '123',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
+                self.assert_me_url_redirects_after_login(user=self.user)
+
+            def test_visitor_can_login_using_short_username_and_password(self):
+                # Using a password that is too short and with too few unique characters, and a username that is too short.
+                from django.contrib.auth.hashers import make_password
+                # Call make_password() directly because set_password() will raise an exception if the password is too short.
+                self.other_user.username, self.other_user.slug, self.other_user.special_username = 'aaa', 'aaa', True
+                self.other_user.password = make_password(password='123')
+                self.other_user.save_user_and_profile()
+                self.assertEqual(first=self.other_user.slug, second='aaa')
+                data = {
+                    'username': 'aaa',
+                    'password': '123',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertRedirects(response=r, expected_url='/me/', status_code=302, target_status_code=302)
+                self.assert_me_url_redirects_after_login(user=self.other_user)
+
             def test_visitor_cannot_login_using_wrong_email(self):
                 data = {
                     'username': self.other_user_email.email,
@@ -1303,11 +1381,58 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_incorrect_password(self):
+            def test_visitor_cannot_login_using_incorrect_password_1(self):
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug-with-dots',
                     'password': 'wrong password!!',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_using_incorrect_password_2(self):
+                # Using a password that is too short and with too few unique characters.
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': 'slug-with-dots',
+                    'password': '123',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_using_incorrect_username_and_password_1(self):
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': 'wrong username!!',
+                    'password': 'wrong password!!',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_using_incorrect_username_and_password_2(self):
+                # Using a password that is too short and with too few unique characters.
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': 'wrong username!!',
+                    'password': '123',
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            def test_visitor_cannot_login_using_incorrect_username_and_password_3(self):
+                # Using a password that is too short and with too few unique characters, and a username that is too short.
+                self.assertEqual(first=self.user.slug, second='slug-with-dots')
+                data = {
+                    'username': 'aaa',
+                    'password': '123',
                 }
                 r = self.client.post(path=self.login_url, data=data)
                 self.assertEqual(first=r.status_code, second=200)
@@ -2304,9 +2429,42 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
 
-            def test_user_can_change_password(self):
-                new_password = '8' * 8
+            def test_user_can_change_password_1(self):
+                new_password = 'abc1def2'
                 incorrect_new_password = '1' * 8
+                self.assertEqual(first=len(new_password), second=8)
+                data = {
+                    'old_password': tests_settings.USER_PASSWORD,
+                    'new_password1': new_password,
+                    'new_password2': new_password,
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
+                user = User.objects.get(pk=self.user.pk)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=incorrect_new_password), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
+
+            def test_user_can_change_password_2(self):
+                new_password = 'abcdef' + ('8' * 114)
+                incorrect_new_password = 'abcde8' + ('8' * 114)
+                self.assertEqual(first=len(new_password), second=120)
+                data = {
+                    'old_password': tests_settings.USER_PASSWORD,
+                    'new_password1': new_password,
+                    'new_password2': new_password,
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
+                user = User.objects.get(pk=self.user.pk)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=incorrect_new_password), expr2=False)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
+
+            def test_user_can_change_password_3(self):
+                new_password = 'abcd//' + ('8' * 114)
+                incorrect_new_password = 'abcd/?' + ('8' * 114)
+                self.assertEqual(first=len(new_password), second=120)
                 data = {
                     'old_password': tests_settings.USER_PASSWORD,
                     'new_password1': new_password,
@@ -2321,7 +2479,8 @@ if (django_settings.TESTS):
 
             def test_old_password_incorrect(self):
                 incorrect_old_password = '7' * 8
-                new_password = '8' * 8
+                new_password = 'abc1def2'
+                self.assertEqual(first=len(new_password), second=8)
                 data = {
                     'old_password': incorrect_old_password,
                     'new_password1': new_password,
@@ -2336,7 +2495,8 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=incorrect_old_password), expr2=False)
 
             def test_password_too_short(self):
-                new_password = '8' * 3
+                new_password = 'abcdef'
+                self.assertEqual(first=len(new_password), second=6)
                 data = {
                     'old_password': tests_settings.USER_PASSWORD,
                     'new_password1': new_password,
@@ -2350,7 +2510,8 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long(self):
-                new_password = '8' * 121
+                new_password = 'abcdef' + ('8' * 115)
+                self.assertEqual(first=len(new_password), second=121)
                 data = {
                     'old_password': tests_settings.USER_PASSWORD,
                     'new_password1': new_password,
@@ -2363,9 +2524,54 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
+            def test_password_not_enough_unique_characters(self):
+                new_password = '1234' * 2
+                self.assertEqual(first=len(new_password), second=8)
+                data = {
+                    'old_password': tests_settings.USER_PASSWORD,
+                    'new_password1': new_password,
+                    'new_password2': new_password,
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._both_password_field_names))
+                user = User.objects.get(pk=self.user.pk)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            def test_password_too_short_and_not_enough_unique_characters(self):
+                new_password = '8' * 3
+                self.assertEqual(first=len(new_password), second=3)
+                data = {
+                    'old_password': tests_settings.USER_PASSWORD,
+                    'new_password1': new_password,
+                    'new_password2': new_password,
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_short_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._both_password_field_names))
+                user = User.objects.get(pk=self.user.pk)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            def test_password_too_long_and_not_enough_unique_characters(self):
+                new_password = '8' * 121
+                self.assertEqual(first=len(new_password), second=121)
+                data = {
+                    'old_password': tests_settings.USER_PASSWORD,
+                    'new_password1': new_password,
+                    'new_password2': new_password,
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._password_too_long_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(field_names=self._both_password_field_names))
+                user = User.objects.get(pk=self.user.pk)
+                self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
+                self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
             def test_passwords_dont_match(self):
-                new_password_1 = '8' * 8
-                new_password_2 = '7' * 8
+                new_password_1 = 'abc1def2'
+                new_password_2 = 'abc3def4'
                 data = {
                     'old_password': tests_settings.USER_PASSWORD,
                     'new_password1': new_password_1,
