@@ -35,9 +35,11 @@ if (django_settings.TESTS):
             username = factory.LazyAttribute(lambda o: normalize_username(username=o.slug))
             password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
             _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=tests_settings.USER_PASSWORD)
+            _save = factory.PostGenerationMethodCall(method_name='save')  # Call save after set_password
 
             class Meta:
                 model = User
+                skip_postgeneration_save = True  # Avoid warning in factory-boy>=3.3,<4.0
 
             @factory.post_generation
             def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
