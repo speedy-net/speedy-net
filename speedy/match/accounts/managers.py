@@ -351,7 +351,11 @@ class SiteProfileManager(BaseManager):
                 pass
             else:
                 # This is an error. All users should have ranks more than 0.
-                logger.error('SiteProfileManager::_get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                if (abs(len(user_list) - len(matches_list)) <= 5):
+                    logger_level = logger.debug
+                else:
+                    logger_level = logger.error
+                logger_level('SiteProfileManager::_get_matches:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
                     user=user,
                     language_code=language_code,
                     number_of_users=len(user_list),
@@ -418,7 +422,11 @@ class SiteProfileManager(BaseManager):
                 pass
             else:
                 # This is an error. All users should have ranks more than 0.
-                logger.error('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
+                if (abs(len(user_list) - len(matches_list)) <= 5):
+                    logger_level = logger.debug
+                else:
+                    logger_level = logger.error
+                logger_level('SiteProfileManager::get_matches_from_list:get inside "if (not (len(matches_list) == len(user_list))):", user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}'.format(
                     user=user,
                     language_code=language_code,
                     from_list_len=len(from_list),
