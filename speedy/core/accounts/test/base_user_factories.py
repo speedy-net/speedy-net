@@ -25,6 +25,9 @@ if (django_settings.TESTS):
 
 
         class DefaultUserFactory(factory.django.DjangoModelFactory):
+            """
+            This factory is used to create users who are active on Speedy Net, but inactive on Speedy Match.
+            """
             first_name_en = factory.Faker('first_name')
             last_name_en = factory.Faker('last_name')
             first_name_he = factory.LazyAttribute(lambda o: o.first_name_en)

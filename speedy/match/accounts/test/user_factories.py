@@ -18,10 +18,16 @@ if (django_settings.TESTS):
 
 
         class InactiveUserFactory(DefaultUserFactory):
+            """
+            This factory is used to create users who are active on Speedy Net, but inactive on Speedy Match.
+            """
             pass
 
 
         class ActiveUserFactory(DefaultUserFactory):
+            """
+            This factory is used to create users who are active on Speedy Net and Speedy Match.
+            """
             @factory.post_generation
             def activate_profile(self, created, extracted, **kwargs):
                 from speedy.core.uploads.test.factories import UserImageFactory
@@ -57,6 +63,9 @@ if (django_settings.TESTS):
 
 
         class SpeedyNetInactiveUserFactory(ActiveUserFactory):
+            """
+            This factory is used to create users who were active on Speedy Match, but deactivated their Speedy Net account.
+            """
             @factory.post_generation
             def deactivate_profile(self, created, extracted, **kwargs):
                 self.speedy_net_profile.deactivate()

@@ -9,12 +9,18 @@ if (django_settings.TESTS):
 
 
         class InactiveUserFactory(DefaultUserFactory):
+            """
+            This factory is used to create users who are inactive on Speedy Net and Speedy Match.
+            """
             @factory.post_generation
             def deactivate_profile(self, created, extracted, **kwargs):
                 self.speedy_net_profile.deactivate()
 
 
         class ActiveUserFactory(DefaultUserFactory):
+            """
+            This factory is used to create users who are active on Speedy Net, but inactive on Speedy Match.
+            """
             @factory.post_generation
             def activate_profile(self, created, extracted, **kwargs):
                 email = UserEmailAddressFactory(user=self, is_confirmed=True)
