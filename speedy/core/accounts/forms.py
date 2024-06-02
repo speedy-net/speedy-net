@@ -153,10 +153,11 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
             user.email_addresses.create(email=email, is_confirmed=False, is_primary=True)
             site = Site.objects.get_current()
             language_code = get_language()
-            logger.info('New user on {site_name}, user={user}, email={email}, language_code={language_code}.'.format(
+            logger.info('New user on {site_name}, user={user}, email={email}, date of birth={date_of_birth}, language_code={language_code}.'.format(
                 site_name=_(site.name),
                 user=user,
                 email=email,
+                date_of_birth=user.date_of_birth,
                 language_code=language_code,
             ))
         return user
