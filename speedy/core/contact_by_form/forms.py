@@ -5,10 +5,11 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from django.core.exceptions import ValidationError
 
 from speedy.core.base.forms import ModelFormWithDefaults, FormHelperWithDefaults
+from speedy.core.accounts.forms import AddAttributesToFieldsMixin
 from .models import Feedback
 
 
-class FeedbackForm(ModelFormWithDefaults):
+class FeedbackForm(AddAttributesToFieldsMixin, ModelFormWithDefaults):
     _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net"]
     no_bots = forms.CharField(label=_('Type the number "17"'), required=True)
 

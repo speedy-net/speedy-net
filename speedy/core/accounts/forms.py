@@ -96,8 +96,8 @@ class LocalizedFirstLastNameMixin(object):
 
 
 class AddAttributesToFieldsMixin(object):
-    attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password', 'date_of_birth']
-    ltr_attribute_fields = ['slug', 'username', 'email', 'new_password1', 'new_password2', 'old_password', 'password']
+    attribute_fields = ['slug', 'username', 'email', 'sender_email', 'new_password1', 'new_password2', 'old_password', 'password', 'date_of_birth']
+    ltr_attribute_fields = ['slug', 'username', 'email', 'sender_email', 'new_password1', 'new_password2', 'old_password', 'password']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
