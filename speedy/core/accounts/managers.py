@@ -5,6 +5,7 @@ from django.utils.timezone import now
 
 from speedy.core.base.managers import BaseManager, BaseUserManager
 from speedy.core.base.utils import normalize_username
+from .utils import normalize_email
 
 logger = logging.getLogger(__name__)
 
@@ -57,11 +58,11 @@ class UserManager(BaseUserManager):
 
     def get_by_natural_key(self, username):
         # If we try both the username and the email address, we can't use get() because we can have two users returned in the query.
-        if (len(self.distinct().filter(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))) > 1):
+        if (len(self.distinct().filter(Q(username=normalize_username(username=username)) | Q(email_addresses__email=normalize_email(email=username)))) > 1):
             # If there are more than one user returned in the query, use only the email address (because the username input contains "@").
-            return self.distinct().get(Q(email_addresses__email=username))
+            return self.distinct().get(Q(email_addresses__email=normalize_email(email=username)))
         else:
-            return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=username))
+            return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=normalize_email(email=username)))
 
     def active(self, *args, **kwargs):
         return self.filter(is_active=True, is_deleted=False, *args, **kwargs)

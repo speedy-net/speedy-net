@@ -21,7 +21,7 @@ def normalize_email(email):
     Normalize the email address by lowercasing it.
 
     :param email: The email address.
-    :type email: str
+    :type email: str or None
     :return: The normalized email address.
     :rtype: str
     """

@@ -9,6 +9,27 @@ if (django_settings.TESTS):
 
 
     class NormalizeSlugTestCase(SiteTestCase):
+        def test_normalize_none(self):
+            with self.assertRaises(AttributeError) as cm:
+                normalize_slug(slug=None)
+            self.assertEqual(first=str(cm.exception), second="'NoneType' object has no attribute 'lower'")
+
+        def test_normalize_empty_string(self):
+            self.assertEqual(first=normalize_slug(slug=''), second='')
+
+        def test_normalize_strings(self):
+            self.assertEqual(first=normalize_slug(slug=' '), second='')
+            self.assertEqual(first=normalize_slug(slug='  '), second='')
+            self.assertEqual(first=normalize_slug(slug='   '), second='')
+            self.assertEqual(first=normalize_slug(slug='l'), second='l')
+            self.assertEqual(first=normalize_slug(slug='lll'), second='lll')
+            self.assertEqual(first=normalize_slug(slug='hello'), second='hello')
+            self.assertEqual(first=normalize_slug(slug='HELLO'), second='hello')
+            self.assertEqual(first=normalize_slug(slug=' l '), second='l')
+            self.assertEqual(first=normalize_slug(slug=' lll '), second='lll')
+            self.assertEqual(first=normalize_slug(slug=' hello '), second='hello')
+            self.assertEqual(first=normalize_slug(slug=' HELLO '), second='hello')
+
         def test_convert_to_lowercase(self):
             self.assertEqual(first=normalize_slug(slug='CamelCase'), second='camelcase')
             self.assertEqual(first=normalize_slug(slug='UPPERCASE'), second='uppercase')
@@ -37,6 +58,27 @@ if (django_settings.TESTS):
 
 
     class NormalizeUsernameTestCase(SiteTestCase):
+        def test_normalize_none(self):
+            with self.assertRaises(AttributeError) as cm:
+                normalize_username(username=None)
+            self.assertEqual(first=str(cm.exception), second="'NoneType' object has no attribute 'lower'")
+
+        def test_normalize_empty_string(self):
+            self.assertEqual(first=normalize_username(username=''), second='')
+
+        def test_normalize_strings(self):
+            self.assertEqual(first=normalize_username(username=' '), second='')
+            self.assertEqual(first=normalize_username(username='  '), second='')
+            self.assertEqual(first=normalize_username(username='   '), second='')
+            self.assertEqual(first=normalize_username(username='l'), second='l')
+            self.assertEqual(first=normalize_username(username='lll'), second='lll')
+            self.assertEqual(first=normalize_username(username='hello'), second='hello')
+            self.assertEqual(first=normalize_username(username='HELLO'), second='hello')
+            self.assertEqual(first=normalize_username(username=' l '), second='l')
+            self.assertEqual(first=normalize_username(username=' lll '), second='lll')
+            self.assertEqual(first=normalize_username(username=' hello '), second='hello')
+            self.assertEqual(first=normalize_username(username=' HELLO '), second='hello')
+
         def test_remove_dashes_dots_and_underscores(self):
             self.assertEqual(first=normalize_username(username='this-is-a-slug'), second='thisisaslug')
             self.assertEqual(first=normalize_username(username='.this_is...a_slug--'), second='thisisaslug')
