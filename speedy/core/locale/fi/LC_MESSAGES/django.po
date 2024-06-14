@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-05-25 17:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1958,7 +1958,7 @@ msgstr "Luo tili"
 msgid "Update your profile picture"
 msgstr "Päivitä profiilikuva"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:166 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "Profiilikuva vaaditaan."
 
@@ -2353,30 +2353,39 @@ msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Salasanasi saa sisältää enintään %(max_length)d merkki."
 msgstr[1] "Salasanasi saa sisältää enintään %(max_length)d merkkiä."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Salasanasi tulee sisältää vähintään %(min_unique_characters)d yksilöllistä "
+"merkkiä."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "Tämän kentän arvo ei voi olla \"null\"."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "Tämä kenttä ei voi olla tyhjä."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "Syötä oikea päivämäärä."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "Tämä sähköpostiosoite on jo käytössä."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Tämän kuvan tiedostokoko on liian suuri. Suurin sallittu tiedostokoko on 30 "
 "Mt."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
