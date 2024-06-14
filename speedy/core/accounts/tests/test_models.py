@@ -2,7 +2,6 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
-        import unittest
         from time import sleep
         from datetime import datetime, timedelta
         from dateutil.relativedelta import relativedelta
@@ -967,7 +966,6 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
-            @unittest.expectedFailure
             def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self):
                 too_short_password = '8' * 3
                 hasher = PBKDF2PasswordHasher()

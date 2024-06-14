@@ -7,6 +7,7 @@ from django.conf import settings as django_settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth import password_validation
+from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 from django.urls import reverse
@@ -575,6 +576,20 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
+
+    def check_password(self, raw_password):
+        def setter(raw_password):
+            try:
+                self.set_password(raw_password)
+            except ValidationError:
+                # Patch: Skip password hash upgrade if doesn't pass password validators.
+                pass
+            else:
+                # Password hash upgrades shouldn't be considered password changes.
+                self._password = None
+                self.save(update_fields=["password"])
+
+        return check_password(raw_password, self.password, setter)
 
     def delete(self, *args, **kwargs):
         if ((self.is_staff) or (self.is_superuser)):
