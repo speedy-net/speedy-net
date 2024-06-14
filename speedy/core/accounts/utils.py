@@ -7,7 +7,7 @@ def get_site_profile_model(profile_model=None):
     Get the site profile model.
 
     :param profile_model: The profile model.
-    :type profile_model: str
+    :type profile_model: str or None
     :return: The site profile model.
     :rtype django.db.models.Model
     """
