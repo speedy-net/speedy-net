@@ -72,6 +72,7 @@ class USER_SETTINGS(object):
 
     MIN_PASSWORD_LENGTH = 8
     MAX_PASSWORD_LENGTH = 120
+    MIN_PASSWORD_UNIQUE_CHARACTERS = 6
 
     MAX_NUMBER_OF_FRIENDS_ALLOWED = 800
 
@@ -81,6 +82,9 @@ class USER_SETTINGS(object):
         },
         {
             'NAME': 'speedy.core.accounts.validators.PasswordMaxLengthValidator',
+        },
+        {
+            'NAME': 'speedy.core.accounts.validators.PasswordMinUniqueCharsValidator',
         },
     ]
 
