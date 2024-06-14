@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        import unittest
         from time import sleep
         from datetime import datetime, timedelta
         from dateutil.relativedelta import relativedelta
@@ -9,6 +10,7 @@ if (django_settings.TESTS):
         from django.test import override_settings
         from django.db.utils import DataError, IntegrityError
         from django.core.exceptions import ValidationError
+        from django.contrib.auth.hashers import PBKDF2PasswordHasher
 
         from speedy.core.base.test.utils import get_random_user_password
 
@@ -964,6 +966,15 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=list(cm.exception), list2=[self._password_too_long_error_message])
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
+
+            @unittest.expectedFailure
+            def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self):
+                too_short_password = '8' * 3
+                hasher = PBKDF2PasswordHasher()
+                encoded = hasher.encode(password=too_short_password, salt=hasher.salt(), iterations=140000)
+                user = User(password=encoded)
+                self.assertIs(expr1=user.check_password(raw_password=too_short_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
 
             def test_valid_date_of_birth_list_ok(self):
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
