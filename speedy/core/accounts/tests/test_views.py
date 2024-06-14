@@ -4,6 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import logging
         import random
+        import unittest
         from unittest import mock
         from datetime import date, datetime, timedelta
 
@@ -1317,6 +1318,18 @@ if (django_settings.TESTS):
                 data = {
                     'username': self.other_user_email.email,
                     'password': tests_settings.USER_PASSWORD,
+                }
+                r = self.client.post(path=self.login_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
+                self.assert_me_url_redirects_to_login_url()
+
+            @unittest.expectedFailure
+            def test_visitor_cannot_login_using_non_existent_username_and_invalid_password(self):
+                too_short_password = '8' * 3
+                data = {
+                    'username': 'non-existent-username',
+                    'password': too_short_password,
                 }
                 r = self.client.post(path=self.login_url, data=data)
                 self.assertEqual(first=r.status_code, second=200)
