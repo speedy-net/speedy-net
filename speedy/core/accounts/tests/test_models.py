@@ -596,6 +596,58 @@ if (django_settings.TESTS):
                 self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
                 self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
+            def run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self, iterations):
+                self.assertNotEqual(first=iterations, second=480000)
+                too_short_password = '8' * 3
+                hasher = PBKDF2PasswordHasher()
+                encoded = hasher.encode(password=too_short_password, salt=hasher.salt(), iterations=iterations)
+                user = DefaultUserFactory()
+                user.password = encoded
+                user.save()
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=iterations)
+                self.assertIs(expr1=user.check_password(raw_password=too_short_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=iterations)
+                self.assertIs(expr1=user.check_password(raw_password=too_short_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
+
+            def run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(self, iterations):
+                self.assertNotEqual(first=iterations, second=480000)
+                good_password = '8' * 8
+                hasher = PBKDF2PasswordHasher()
+                encoded = hasher.encode(password=good_password, salt=hasher.salt(), iterations=iterations)
+                user = DefaultUserFactory()
+                user.password = encoded
+                user.save()
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=iterations)
+                self.assertIs(expr1=user.check_password(raw_password=good_password), expr2=True)
+                self.assertIsNot(expr1=user.password, expr2=encoded)
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=480000)
+                encoded = user.password
+                self.assertIs(expr1=user.check_password(raw_password=good_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
+
+            def run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(self, iterations):
+                self.assertNotEqual(first=iterations, second=480000)
+                good_password = '8' * 8
+                hasher = PBKDF2PasswordHasher()
+                encoded = hasher.encode(password=good_password, salt=hasher.salt(), iterations=iterations)
+                user = DefaultUserFactory()
+                user.password = encoded
+                user.save()
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=iterations)
+                self.assertIs(expr1=user.check_password(raw_password=good_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
+                decoded = hasher.decode(encoded=user.password)
+                self.assertEqual(first=decoded["iterations"], second=iterations)
+                self.assertIs(expr1=user.check_password(raw_password=good_password), expr2=True)
+                self.assertIs(expr1=user.password, expr2=encoded)
+
             def test_model_settings(self):
                 self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
                 self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
@@ -966,13 +1018,26 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=True)
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
-            def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self):
-                too_short_password = '8' * 3
-                hasher = PBKDF2PasswordHasher()
-                encoded = hasher.encode(password=too_short_password, salt=hasher.salt(), iterations=140000)
-                user = User(password=encoded)
-                self.assertIs(expr1=user.check_password(raw_password=too_short_password), expr2=True)
-                self.assertIs(expr1=user.password, expr2=encoded)
+            def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_1(self):
+                self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=140000)
+
+            def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_2(self):
+                self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=36000)
+
+            def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_1(self):
+                self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=140000)
+
+            def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_2(self):
+                self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=36000)
+
+            def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_1(self):
+                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=140001)
+
+            def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_2(self):
+                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=150000)
+
+            def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_3(self):
+                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=390000)
 
             def test_valid_date_of_birth_list_ok(self):
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
