@@ -148,6 +148,28 @@ class PasswordMaxLengthValidator:
         ) % {'max_length': self.max_length}
 
 
+class PasswordMinUniqueCharsValidator:
+    """
+    Validate whether the password contains a minimum of unique characters.
+    """
+
+    def __init__(self, min_unique_characters=None):
+        if (min_unique_characters is None):
+            from .models import User
+            min_unique_characters = User.settings.MIN_PASSWORD_UNIQUE_CHARACTERS
+        self.min_unique_characters = min_unique_characters
+
+    def validate(self, password, user=None):
+        if (len(set(list(password))) < self.min_unique_characters):
+            raise ValidationError(
+                _("Your password must contain at least %(min_unique_characters)d unique characters.") % {'min_unique_characters': self.min_unique_characters},
+                code='password_unique_characters_too_little',
+            )
+
+    def get_help_text(self):
+        return _("Your password must contain at least %(min_unique_characters)d unique characters.") % {'min_unique_characters': self.min_unique_characters}
+
+
 def get_username_validators(min_username_length, max_username_length, allow_letters_after_digits):
     return [
         generate_regex_validator(allow_dashes=False, allow_letters_after_digits=allow_letters_after_digits),

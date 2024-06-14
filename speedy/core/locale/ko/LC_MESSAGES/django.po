@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-06-14 11:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "올바른 이메일 주소를 입력하세요."
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:932
+#: .\__translations\__translations.py:9 .\accounts\models.py:947
 msgid "email address"
 msgstr "이메일 주소"
 
@@ -902,7 +902,7 @@ msgstr "친구 요청"
 msgid "Friend"
 msgstr "친구"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:513
+#: .\__translations\__translations.py:23 .\accounts\models.py:514
 msgid "Friends"
 msgstr "친구"
 
@@ -1951,284 +1951,284 @@ msgstr "새 사용자이름"
 msgid "Create an account"
 msgstr "계정 생성"
 
-#: .\accounts\forms.py:166
+#: .\accounts\forms.py:167
 msgid "Update your profile picture"
 msgstr "프로필 사진을 업데이트하세요"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "프로필 사진이 필요합니다."
 
-#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:311 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "전자메일 또는 사용자명"
 
-#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:317 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "로그인"
 
-#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:320 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "암호를 잊으셨습니까?"
 
-#: .\accounts\forms.py:332
+#: .\accounts\forms.py:333
 msgid "Submit"
 msgstr "제출"
 
-#: .\accounts\forms.py:434
+#: .\accounts\forms.py:435
 msgid "Your password"
 msgstr "내 암호"
 
-#: .\accounts\forms.py:446
+#: .\accounts\forms.py:447
 msgid "Invalid password."
 msgstr "잘못된 암호."
 
-#: .\accounts\models.py:85
+#: .\accounts\models.py:86
 msgid "username"
 msgstr "사용자명"
 
-#: .\accounts\models.py:85 .\accounts\models.py:86 .\accounts\validators.py:21
+#: .\accounts\models.py:86 .\accounts\models.py:87 .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "이 사용자명은 이미 사용 중입니다."
 
-#: .\accounts\models.py:86
+#: .\accounts\models.py:87
 msgid "username (slug)"
 msgstr "사용자명 (slug)"
 
-#: .\accounts\models.py:87
+#: .\accounts\models.py:88
 msgid "photo"
 msgstr "사진"
 
-#: .\accounts\models.py:88
+#: .\accounts\models.py:89
 msgid "Special username"
 msgstr "특별한 사용자명"
 
-#: .\accounts\models.py:125 .\messages\models.py:118
+#: .\accounts\models.py:126 .\messages\models.py:118
 msgid "entity"
 msgstr "엔티티"
 
-#: .\accounts\models.py:126
+#: .\accounts\models.py:127
 msgid "entities"
 msgstr "엔티티"
 
-#: .\accounts\models.py:153
+#: .\accounts\models.py:154
 msgid "Slug does not parse to username."
 msgstr "슬러그는 사용자명을 구문분석하지 않습니다"
 
-#: .\accounts\models.py:157
+#: .\accounts\models.py:158
 msgid "Username is required."
 msgstr "사용자명이 필요합니다."
 
-#: .\accounts\models.py:193
+#: .\accounts\models.py:194
 msgid "name"
 msgstr "이름"
 
-#: .\accounts\models.py:208
+#: .\accounts\models.py:209
 msgid "description"
 msgstr "설명"
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:255
 msgid "Female"
 msgstr "여성"
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:256
 msgid "Male"
 msgstr "남성"
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:257
 msgid "Other"
 msgstr "기타"
 
-#: .\accounts\models.py:268 .\accounts\models.py:283 .\accounts\models.py:304
+#: .\accounts\models.py:269 .\accounts\models.py:284 .\accounts\models.py:305
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:270
 msgid "Vegan (eats only plants and fungi)"
 msgstr "비건(야채와 버섯 종류만 먹음)"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:271
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "채식주의자(생선과 육류를 먹지 않음)"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:272
 msgid "Carnist (eats animals)"
 msgstr "육식주의자(육류를 먹음)"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:285
 msgid "Not smoking"
 msgstr "비흡연자"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:286
 msgid "Smoking occasionally"
 msgstr "종종 흡연함"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:287
 msgid "Smoking"
 msgstr "흡연자"
 
-#: .\accounts\models.py:305
+#: .\accounts\models.py:306
 msgid "Single"
 msgstr "독신"
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:307
 msgid "Divorced"
 msgstr "이혼자"
 
-#: .\accounts\models.py:307
+#: .\accounts\models.py:308
 msgid "Widowed"
 msgstr "사별자"
 
-#: .\accounts\models.py:308
+#: .\accounts\models.py:309
 msgid "In a relationship"
 msgstr "만남 중"
 
-#: .\accounts\models.py:309
+#: .\accounts\models.py:310
 msgid "In an open relationship"
 msgstr "개방적 만남 중"
 
-#: .\accounts\models.py:310
+#: .\accounts\models.py:311
 msgid "It's complicated"
 msgstr "복잡함"
 
-#: .\accounts\models.py:311
+#: .\accounts\models.py:312
 msgid "Separated"
 msgstr "별거"
 
-#: .\accounts\models.py:312
+#: .\accounts\models.py:313
 msgid "Engaged"
 msgstr "약혼"
 
-#: .\accounts\models.py:313
+#: .\accounts\models.py:314
 msgid "Married"
 msgstr "기혼"
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:323
 msgid "Notify me"
 msgstr "나에게 알림"
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:324
 msgid "Don't notify me"
 msgstr "나에게 알리지 않음"
 
-#: .\accounts\models.py:368
+#: .\accounts\models.py:369
 msgid "first name"
 msgstr "이름"
 
-#: .\accounts\models.py:371
+#: .\accounts\models.py:372
 msgid "last name"
 msgstr "성"
 
-#: .\accounts\models.py:373
+#: .\accounts\models.py:374
 msgid "I am"
 msgstr "저는"
 
-#: .\accounts\models.py:374
+#: .\accounts\models.py:375
 msgid "date of birth"
 msgstr "출생일"
 
-#: .\accounts\models.py:375
+#: .\accounts\models.py:376
 msgid "diet"
 msgstr "식단"
 
-#: .\accounts\models.py:376
+#: .\accounts\models.py:377
 msgid "smoking status"
 msgstr "흡연 여부"
 
-#: .\accounts\models.py:377
+#: .\accounts\models.py:378
 msgid "relationship status"
 msgstr "관계 상태"
 
-#: .\accounts\models.py:379
+#: .\accounts\models.py:380
 msgid "Where do I live?"
 msgstr "내가 살고 있는 곳은?"
 
-#: .\accounts\models.py:386
+#: .\accounts\models.py:387
 msgid "Who can view my birth month and day"
 msgstr "내가 태어난 달과 날짜를 볼 수 있는 사람"
 
-#: .\accounts\models.py:387
+#: .\accounts\models.py:388
 msgid "Who can view my birth year"
 msgstr "내가 태어난 연도를 볼 수 있는 사람"
 
-#: .\accounts\models.py:388
+#: .\accounts\models.py:389
 msgid "On new messages"
 msgstr "새 메시지에"
 
-#: .\accounts\models.py:392
+#: .\accounts\models.py:393
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:393
+#: .\accounts\models.py:394
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:538 .\accounts\models.py:916 .\blocks\models.py:15
+#: .\accounts\models.py:539 .\accounts\models.py:931 .\blocks\models.py:15
 msgid "user"
 msgstr "사용자"
 
-#: .\accounts\models.py:539
+#: .\accounts\models.py:540
 msgid "users"
 msgstr "사용자"
 
-#: .\accounts\models.py:572
+#: .\accounts\models.py:573
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:917
+#: .\accounts\models.py:932
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:933
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:919
+#: .\accounts\models.py:934
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:935
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:921
+#: .\accounts\models.py:936
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:922
+#: .\accounts\models.py:937
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:948
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:1000
+#: .\accounts\models.py:1015
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:1001
+#: .\accounts\models.py:1016
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:1013
+#: .\accounts\models.py:1028
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1030
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:1017
+#: .\accounts\models.py:1032
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:1019
+#: .\accounts\models.py:1034
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
@@ -2328,29 +2328,37 @@ msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "암호에는 최대 %(max_length)d자만 포함되어야 합니다."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"암호에는 최소 %(min_unique_characters)d자의 고유 문자가 포함되어야 합니다."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "이 필드는 null 값을 사용할 수 없습니다."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "이 필드는 빈 칸으로 둘 수 없습니다."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "올바른 날짜를 입력하세요."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "이 이메일은 이미 사용 중입니다."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "이 사진의 파일 크기가 너무 큽니다. 허용되는 최대 파일 크기는 30MB입니다."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2444,7 +2452,7 @@ msgstr ""
 "관리자: {total_number_of_members_registered_in_year}명의 회원들이 {year}에 등"
 "록했습니다."
 
-#: .\base\apps.py:12
+#: .\base\apps.py:13
 msgid "Speedy Core Base App"
 msgstr "Speedy Core 베이스 앱"
 
@@ -2493,19 +2501,19 @@ msgstr "{}을(를) 차단 해제했습니다."
 msgid "Contact By Form"
 msgstr "양식 별 연락처"
 
-#: .\contact_by_form\forms.py:13
+#: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
 msgstr "숫자 “17” 입력"
 
-#: .\contact_by_form\forms.py:40
+#: .\contact_by_form\forms.py:41
 msgid "Send"
 msgstr "보내기"
 
-#: .\contact_by_form\forms.py:46
+#: .\contact_by_form\forms.py:47
 msgid "Please contact us by email."
 msgstr "이메일로 연락해주세요."
 
-#: .\contact_by_form\forms.py:52
+#: .\contact_by_form\forms.py:53
 msgid "Not 17."
 msgstr "17이 아님."
 
