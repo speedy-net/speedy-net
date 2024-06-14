@@ -580,7 +580,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     def check_password(self, raw_password):
         def setter(raw_password):
             try:
-                self.set_password(raw_password)
+                self.set_password(raw_password=raw_password)
             except ValidationError:
                 # Patch: Skip password hash upgrade if doesn't pass password validators.
                 pass
@@ -589,7 +589,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
                 self._password = None
                 self.save(update_fields=["password"])
 
-        return check_password(raw_password, self.password, setter)
+        return check_password(password=raw_password, encoded=self.password, setter=setter)
 
     def delete(self, *args, **kwargs):
         if ((self.is_staff) or (self.is_superuser)):
