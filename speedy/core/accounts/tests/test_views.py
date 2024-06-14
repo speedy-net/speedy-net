@@ -1424,7 +1424,7 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_incorrect_username_and_password_1(self):
+            def test_visitor_cannot_login_using_incorrect_username_and_password(self):
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'wrong username!!',
@@ -1435,7 +1435,7 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_incorrect_username_and_password_2(self):
+            def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_1(self):
                 # Using a password that is too short and with too few unique characters.
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
@@ -1447,7 +1447,7 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_incorrect_username_and_password_3(self):
+            def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_2(self):
                 # Using a password that is too short and with too few unique characters, and a username that is too short.
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
@@ -1459,7 +1459,8 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._please_enter_a_correct_username_and_password_errors_dict())
                 self.assert_me_url_redirects_to_login_url()
 
-            def test_visitor_cannot_login_using_non_existent_username_and_invalid_password(self):
+            def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_3(self):
+                # Using a password that is too short and with too few unique characters.
                 too_short_password = '8' * 3
                 data = {
                     'username': 'non-existent-username',
