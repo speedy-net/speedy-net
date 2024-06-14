@@ -31,7 +31,7 @@ def _generate_udid(length):
     :param length: The length of the udid.
     :type length: int
     :return: The udid.
-    :rtype str
+    :rtype: str
     """
     digits = string.digits
     digits_without_zero = digits[1:]
@@ -50,7 +50,7 @@ def _delta_e_cie76(color1, color2):
     :param color2: The second color.
     :type color2: tuple
     :return: The Euclidean distance between color1 and color2.
-    :rtype float
+    :rtype: float
     """
     l1, a1, b1 = color1
     l2, a2, b2 = color2
@@ -117,7 +117,7 @@ def _looks_like_one_color(colors, image, _user):
     :param _user: The user (required for logging only).
     :type _user: speedy.core.accounts.models.User
     :return: True if colors contains shades of one color that look the same, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     if (len(colors) == 1):
         return True
@@ -152,7 +152,7 @@ def generate_small_udid():
     Generate a small udid.
 
     :return: The udid.
-    :rtype str
+    :rtype: str
     """
     return _generate_udid(length=django_settings.SMALL_UDID_LENGTH)
 
@@ -162,7 +162,7 @@ def generate_regular_udid():
     Generate a regular udid.
 
     :return: The udid.
-    :rtype str
+    :rtype: str
     """
     return _generate_udid(length=django_settings.REGULAR_UDID_LENGTH)
 
@@ -178,7 +178,7 @@ def normalize_slug(slug):
     :param slug: The slug.
     :type slug: str
     :return: The normalized slug.
-    :rtype str
+    :rtype: str
     """
     slug = slug.lower()
     slug = re.sub(pattern=r'[^a-zA-Z0-9]{1,}', repl='-', string=slug)
@@ -194,7 +194,7 @@ def normalize_username(username):
     :param username: The username.
     :type username: str
     :return: The normalized username.
-    :rtype str
+    :rtype: str
     """
     slug = normalize_slug(slug=username)
     username = re.sub(pattern=r'[-._]', repl='', string=slug)
@@ -208,7 +208,7 @@ def get_age(date_of_birth):
     :param date_of_birth: The date of birth of the user.
     :type date_of_birth: datetime.date
     :return: The age of the user.
-    :rtype int
+    :rtype: int
     """
     today = date.today()
     age = today.year - date_of_birth.year
@@ -226,7 +226,7 @@ def get_age_or_default(date_of_birth, default=-9 * (10 ** 15)):
     :param default: The default value.
     :type default: int
     :return: The age of the user.
-    :rtype int
+    :rtype: int
     """
     try:
         age = get_age(date_of_birth=date_of_birth)
@@ -244,7 +244,7 @@ def get_age_ranges_match(min_age, max_age):
     :param max_age: The maximum age.
     :type max_age: int
     :return: The age ranges match.
-    :rtype tuple
+    :rtype: tuple
     """
     today = date.today()
     max_date = today - relativedelta(years=min_age)
@@ -259,7 +259,7 @@ def reflection_import(name):
     :param name: The name of the class.
     :type name: str
     :return: The class.
-    :rtype type
+    :rtype: type
     """
     components = name.rsplit('.', maxsplit=2)
     mod = __import__(components[0], fromlist=[components[-2]])
@@ -275,7 +275,7 @@ def string_is_not_empty(s):
     :param s: The string.
     :type s: str
     :return: True if the string is not empty, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     if (s in [None, ""]):
         return False
@@ -291,7 +291,7 @@ def string_is_not_none(s):
     :param s: The string.
     :type s: str
     :return: True if the string is not None, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     if (s is None):
         return False
@@ -309,7 +309,7 @@ def to_attribute(name, language_code=None):
     :param language_code: The language code.
     :type language_code: str
     :return: The attribute name.
-    :rtype str
+    :rtype: str
     """
     language_code = language_code or get_language() or django_settings.LANGUAGE_CODE
     return translated_fields.to_attribute(name=name, language_code=language_code)
@@ -322,7 +322,7 @@ def get_all_field_names(base_field_name):
     :param base_field_name: The base field name.
     :type base_field_name: str
     :return: The list of field names.
-    :rtype list
+    :rtype: list
     """
     field_names = []
     this_language_code = translation.get_language()
@@ -368,7 +368,7 @@ def convert_to_set(exclude=None):
     :param exclude: The list of items to exclude.
     :type exclude: list or set
     :return: The set.
-    :rtype set
+    :rtype: set
     """
     if (exclude is None):
         exclude = set()
@@ -386,7 +386,7 @@ def timesince(d, now):
     :param now: The current date.
     :type now: datetime.datetime
     :return: The timesince string.
-    :rtype str
+    :rtype: str
     """
     delta = -relativedelta(d, now)
 
@@ -421,7 +421,7 @@ def is_animated(image):
     :param image: The image.
     :type image: PIL.Image.Image
     :return: True if the image is animated, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     return (getattr(image, "is_animated", False))
 
@@ -433,7 +433,7 @@ def is_transparent(image):
     :param image: The image.
     :type image: PIL.Image.Image
     :return: True if the image is transparent, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     if ('transparency' in image.info):
         return True
@@ -460,7 +460,7 @@ def looks_like_one_color(image, _user):
     :param _user: The user (required for logging only).
     :type _user: speedy.core.accounts.models.User
     :return: True if the image looks like it has only one color, False otherwise.
-    :rtype bool
+    :rtype: bool
     """
     colors = image.getcolors(maxcolors=image.width * image.height)  # Get all colors instead of None if more than maxcolors
     if (colors is None):

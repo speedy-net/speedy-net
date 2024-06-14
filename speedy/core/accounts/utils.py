@@ -9,7 +9,7 @@ def get_site_profile_model(profile_model=None):
     :param profile_model: The profile model.
     :type profile_model: str or None
     :return: The site profile model.
-    :rtype django.db.models.Model
+    :rtype: django.db.models.Model
     """
     if (not (profile_model)):
         profile_model = django_settings.AUTH_SITE_PROFILE_MODEL
@@ -23,7 +23,7 @@ def normalize_email(email):
     :param email: The email address.
     :type email: str
     :return: The normalized email address.
-    :rtype str
+    :rtype: str
     """
     from .models import User
     email = User.objects.normalize_email(email=email)

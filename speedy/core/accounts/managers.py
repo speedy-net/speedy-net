@@ -32,7 +32,7 @@ class UserManager(BaseUserManager):
         :param email: The email address.
         :type email: str
         :return: The normalized email address.
-        :rtype str
+        :rtype: str
         """
         email = super().normalize_email(email=email)
         email = email.lower()
