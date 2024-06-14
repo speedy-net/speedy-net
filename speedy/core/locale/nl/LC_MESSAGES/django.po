@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 09:23+0300\n"
+"POT-Creation-Date: 2024-06-14 11:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Voer een geldig e-mailadres in."
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:932
+#: .\__translations\__translations.py:9 .\accounts\models.py:947
 msgid "email address"
 msgstr "e-mailadres"
 
@@ -902,7 +902,7 @@ msgstr "Vriendschapsverzoeken"
 msgid "Friend"
 msgstr "Vriend"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:513
+#: .\__translations\__translations.py:23 .\accounts\models.py:514
 msgid "Friends"
 msgstr "Vrienden"
 
@@ -1969,284 +1969,284 @@ msgstr "Nieuwe gebruikersnaam"
 msgid "Create an account"
 msgstr "Account aanmaken"
 
-#: .\accounts\forms.py:166
+#: .\accounts\forms.py:167
 msgid "Update your profile picture"
 msgstr "Werk je profielfoto bij"
 
-#: .\accounts\forms.py:166 .\accounts\validators.py:233
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
 msgstr "Een profielfoto is verplicht."
 
-#: .\accounts\forms.py:310 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:311 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-mail of gebruikersnaam"
 
-#: .\accounts\forms.py:316 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:317 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Log in"
 
-#: .\accounts\forms.py:319 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:320 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Je wachtwoord vergeten?"
 
-#: .\accounts\forms.py:332
+#: .\accounts\forms.py:333
 msgid "Submit"
 msgstr "Indienen"
 
-#: .\accounts\forms.py:434
+#: .\accounts\forms.py:435
 msgid "Your password"
 msgstr "Je wachtwoord"
 
-#: .\accounts\forms.py:446
+#: .\accounts\forms.py:447
 msgid "Invalid password."
 msgstr "Ongeldig wachtwoord."
 
-#: .\accounts\models.py:85
+#: .\accounts\models.py:86
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: .\accounts\models.py:85 .\accounts\models.py:86 .\accounts\validators.py:21
+#: .\accounts\models.py:86 .\accounts\models.py:87 .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "Deze gebruikersnaam is al in gebruik."
 
-#: .\accounts\models.py:86
+#: .\accounts\models.py:87
 msgid "username (slug)"
 msgstr "gebruikersnaam (slug)"
 
-#: .\accounts\models.py:87
+#: .\accounts\models.py:88
 msgid "photo"
 msgstr "foto"
 
-#: .\accounts\models.py:88
+#: .\accounts\models.py:89
 msgid "Special username"
 msgstr "Speciale gebruikersnaam"
 
-#: .\accounts\models.py:125 .\messages\models.py:118
+#: .\accounts\models.py:126 .\messages\models.py:118
 msgid "entity"
 msgstr "entiteit"
 
-#: .\accounts\models.py:126
+#: .\accounts\models.py:127
 msgid "entities"
 msgstr "entiteiten"
 
-#: .\accounts\models.py:153
+#: .\accounts\models.py:154
 msgid "Slug does not parse to username."
 msgstr "Slug parseert niet naar gebruikersnaam."
 
-#: .\accounts\models.py:157
+#: .\accounts\models.py:158
 msgid "Username is required."
 msgstr "Gebruikersnaam is vereist."
 
-#: .\accounts\models.py:193
+#: .\accounts\models.py:194
 msgid "name"
 msgstr "naam"
 
-#: .\accounts\models.py:208
+#: .\accounts\models.py:209
 msgid "description"
 msgstr "beschrijving"
 
-#: .\accounts\models.py:254
+#: .\accounts\models.py:255
 msgid "Female"
 msgstr "Vrouwelijk"
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:256
 msgid "Male"
 msgstr "Mannelijk"
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:257
 msgid "Other"
 msgstr "Ander"
 
-#: .\accounts\models.py:268 .\accounts\models.py:283 .\accounts\models.py:304
+#: .\accounts\models.py:269 .\accounts\models.py:284 .\accounts\models.py:305
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: .\accounts\models.py:269
+#: .\accounts\models.py:270
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Veganiste (eet alleen planten en paddenstoelen)"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:271
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariër (eet geen vis en vlees)"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:272
 msgid "Carnist (eats animals)"
 msgstr "Carnist (eet vlees)"
 
-#: .\accounts\models.py:284
+#: .\accounts\models.py:285
 msgid "Not smoking"
 msgstr "Niet roker"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:286
 msgid "Smoking occasionally"
 msgstr "Rookt af en toe"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:287
 msgid "Smoking"
 msgstr "Roker"
 
-#: .\accounts\models.py:305
+#: .\accounts\models.py:306
 msgid "Single"
 msgstr "Single"
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:307
 msgid "Divorced"
 msgstr "Gescheiden"
 
-#: .\accounts\models.py:307
+#: .\accounts\models.py:308
 msgid "Widowed"
 msgstr "Weduwnaar"
 
-#: .\accounts\models.py:308
+#: .\accounts\models.py:309
 msgid "In a relationship"
 msgstr "In een relatie"
 
-#: .\accounts\models.py:309
+#: .\accounts\models.py:310
 msgid "In an open relationship"
 msgstr "In een open relatie"
 
-#: .\accounts\models.py:310
+#: .\accounts\models.py:311
 msgid "It's complicated"
 msgstr "Het is gecompliceerd"
 
-#: .\accounts\models.py:311
+#: .\accounts\models.py:312
 msgid "Separated"
 msgstr "Uit elkaar"
 
-#: .\accounts\models.py:312
+#: .\accounts\models.py:313
 msgid "Engaged"
 msgstr "Verloofd"
 
-#: .\accounts\models.py:313
+#: .\accounts\models.py:314
 msgid "Married"
 msgstr "Getrouwd"
 
-#: .\accounts\models.py:322
+#: .\accounts\models.py:323
 msgid "Notify me"
 msgstr "Houd mij op de hoogte"
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:324
 msgid "Don't notify me"
 msgstr "Houd mij niet op de hoogte"
 
-#: .\accounts\models.py:368
+#: .\accounts\models.py:369
 msgid "first name"
 msgstr "Voornaam"
 
-#: .\accounts\models.py:371
+#: .\accounts\models.py:372
 msgid "last name"
 msgstr "Achternaam"
 
-#: .\accounts\models.py:373
+#: .\accounts\models.py:374
 msgid "I am"
 msgstr "Ik ben"
 
-#: .\accounts\models.py:374
+#: .\accounts\models.py:375
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: .\accounts\models.py:375
+#: .\accounts\models.py:376
 msgid "diet"
 msgstr "dieet"
 
-#: .\accounts\models.py:376
+#: .\accounts\models.py:377
 msgid "smoking status"
 msgstr "rokerstatus"
 
-#: .\accounts\models.py:377
+#: .\accounts\models.py:378
 msgid "relationship status"
 msgstr "relatiestatus"
 
-#: .\accounts\models.py:379
+#: .\accounts\models.py:380
 msgid "Where do I live?"
 msgstr "Waar ik woon?"
 
-#: .\accounts\models.py:386
+#: .\accounts\models.py:387
 msgid "Who can view my birth month and day"
 msgstr "Wie kan mijn geboortemaand en -dag bekijken"
 
-#: .\accounts\models.py:387
+#: .\accounts\models.py:388
 msgid "Who can view my birth year"
 msgstr "Wie kan mijn geboortejaar bekijken"
 
-#: .\accounts\models.py:388
+#: .\accounts\models.py:389
 msgid "On new messages"
 msgstr "Bij nieuwe berichten"
 
-#: .\accounts\models.py:392
+#: .\accounts\models.py:393
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 
-#: .\accounts\models.py:393
+#: .\accounts\models.py:394
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:538 .\accounts\models.py:916 .\blocks\models.py:15
+#: .\accounts\models.py:539 .\accounts\models.py:931 .\blocks\models.py:15
 msgid "user"
 msgstr "gebruiker"
 
-#: .\accounts\models.py:539
+#: .\accounts\models.py:540
 msgid "users"
 msgstr "gebruikers"
 
-#: .\accounts\models.py:572
+#: .\accounts\models.py:573
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:917
+#: .\accounts\models.py:932
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:918
+#: .\accounts\models.py:933
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:919
+#: .\accounts\models.py:934
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:920
+#: .\accounts\models.py:935
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:921
+#: .\accounts\models.py:936
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:922
+#: .\accounts\models.py:937
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:948
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:1000
+#: .\accounts\models.py:1015
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:1001
+#: .\accounts\models.py:1016
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:1013
+#: .\accounts\models.py:1028
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1030
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:1017
+#: .\accounts\models.py:1032
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1019
+#: .\accounts\models.py:1034
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"
@@ -2365,30 +2365,38 @@ msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 msgstr[1] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 
-#: .\accounts\validators.py:190 .\accounts\validators.py:197
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Je wachtwoord moet minstens %(min_unique_characters)d unieke tekens bevatten."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
 msgstr "Dit veld mag niet leeg zijn."
 
-#: .\accounts\validators.py:192
+#: .\accounts\validators.py:214
 msgid "This field cannot be blank."
 msgstr "Dit veld kan niet leeg zijn."
 
-#: .\accounts\validators.py:204 .\accounts\validators.py:211
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
 msgstr "Voer een geldige datum in."
 
-#: .\accounts\validators.py:224
+#: .\accounts\validators.py:246
 msgid "This email is already in use."
 msgstr "Deze email is al in gebruik."
 
-#: .\accounts\validators.py:235
+#: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Het bestand van deze foto is te groot. De maximaal toegestane "
 "bestandsgrootte is 30 MB."
 
-#: .\accounts\validators.py:257 .\accounts\validators.py:276
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2487,7 +2495,7 @@ msgstr ""
 "Beheerder: {total_number_of_members_registered_in_year} zijn in {year} lid "
 "geworden."
 
-#: .\base\apps.py:12
+#: .\base\apps.py:13
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
@@ -2536,19 +2544,19 @@ msgstr "Je hebt {} gedeblokkeerd."
 msgid "Contact By Form"
 msgstr "Neem contact op via formulier"
 
-#: .\contact_by_form\forms.py:13
+#: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
 msgstr "Voer het cijfer \"17\" in"
 
-#: .\contact_by_form\forms.py:40
+#: .\contact_by_form\forms.py:41
 msgid "Send"
 msgstr "Verstuur"
 
-#: .\contact_by_form\forms.py:46
+#: .\contact_by_form\forms.py:47
 msgid "Please contact us by email."
 msgstr "Neem contact met ons op via e-mail."
 
-#: .\contact_by_form\forms.py:52
+#: .\contact_by_form\forms.py:53
 msgid "Not 17."
 msgstr "Niet 17."
 
