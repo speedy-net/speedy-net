@@ -10,7 +10,6 @@ if (django_settings.TESTS):
         from django.test import override_settings
         from django.db.utils import DataError, IntegrityError
         from django.core.exceptions import ValidationError
-        from django.contrib.auth.hashers import PBKDF2PasswordHasher
 
         from speedy.core.base.test.utils import get_random_user_password
 
@@ -599,6 +598,7 @@ if (django_settings.TESTS):
 
             def run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self, iterations):
                 # Using a password that is too short or with too few unique characters.
+                from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=480000)
                 invalid_password = random.choice(['8' * 3, '8' * 10, '10203040', 'abcdef'])
                 hasher = PBKDF2PasswordHasher()
@@ -617,6 +617,7 @@ if (django_settings.TESTS):
 
             def run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(self, iterations):
                 # Using a valid password that will pass all password validators.
+                from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=480000)
                 valid_password = 'abcdef12'
                 hasher = PBKDF2PasswordHasher()
@@ -636,6 +637,7 @@ if (django_settings.TESTS):
 
             def run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(self, iterations):
                 # Using a valid password that will pass all password validators.
+                from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=480000)
                 valid_password = 'abcdef12'
                 hasher = PBKDF2PasswordHasher()
