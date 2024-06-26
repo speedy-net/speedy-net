@@ -387,6 +387,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
     access_dob_day_month = UserAccessField(verbose_name=_('Who can view my birth month and day'), default=UserAccessField.ACCESS_ME)
     access_dob_year = UserAccessField(verbose_name=_('Who can view my birth year'), default=UserAccessField.ACCESS_ME)
     notify_on_message = models.SmallIntegerField(verbose_name=_('On new messages'), choices=NOTIFICATIONS_CHOICES, default=NOTIFICATIONS_ON)
+    number_of_date_of_birth_changes = models.PositiveSmallIntegerField(default=0)  # The number of times the user has changed their date of birth.
+    allowed_to_change_date_of_birth_unlimited_times = models.BooleanField(default=False)  # If True, the user can change their date of birth unlimited times. Otherwise, the user can change their date of birth only up to 6 times. After 7 times, user.speedy_match_profile.not_allowed_to_use_speedy_match will be set to True, and after 12 times, user.set_unusable_password() will be called.
     last_ip_address_used = models.GenericIPAddressField(blank=True, null=True)
     last_ip_address_used_date_updated = models.DateTimeField(blank=True, null=True)
     last_ip_address_used_original_ipapi_call = models.BooleanField(default=False)
@@ -571,6 +573,10 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         # Superuser must be equal to staff.
         if (not (self.is_superuser == self.is_staff)):
             raise ValidationError(_("Superuser must be equal to staff."))
+        if (self.allowed_to_change_date_of_birth_unlimited_times is False):
+            if (self.number_of_date_of_birth_changes >= 12):
+                if (self.has_usable_password()):
+                    self.set_unusable_password()
         return super().save(*args, **kwargs)
 
     def set_password(self, raw_password):

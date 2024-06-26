@@ -1764,14 +1764,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
             def run_test_required_fields(self, data):
-                self.first_name = self.user.first_name
-                self.last_name = self.user.last_name
                 r = self.client.post(path=self.page_url, data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
                 user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.first_name, second=self.first_name)
-                self.assertEqual(first=user.last_name, second=self.last_name)
+                self.assertEqual(first=user.first_name, second=self.original_first_name)
+                self.assertEqual(first=user.last_name, second=self.original_last_name)
                 self.assert_user_first_and_last_name_in_all_languages(user=user)
 
             def test_required_fields_1(self):
@@ -1850,6 +1848,8 @@ if (django_settings.TESTS):
                 self.run_test_user_cannot_change_his_username_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
             def test_valid_date_of_birth_list_ok(self):
+                self.user.allowed_to_change_date_of_birth_unlimited_times = True
+                self.user.save_user_and_profile()
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
                     data = self.data.copy()
                     data['date_of_birth'] = date_of_birth
@@ -1885,9 +1885,66 @@ if (django_settings.TESTS):
                             self.assertEqual(first=getattr(user, key), second=value)
                     self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
 
+            def test_change_date_of_birth_12_times(self):
+                number_of_date_of_birth_changes = 0
+                for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST[:12]:
+                    data = self.data.copy()
+                    data['date_of_birth'] = date_of_birth
+                    r = self.client.post(path=self.page_url, data=data)
+                    number_of_date_of_birth_changes += 1
+                    if (number_of_date_of_birth_changes >= 12):
+                        self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=302, fetch_redirect_response=False, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+                        r = self.client.get(path=self.page_url)
+                        self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
+                    else:
+                        self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+                    user = User.objects.get(pk=self.user.pk)
+                    self.assertEqual(first=user.first_name, second=self.first_name)
+                    self.assertEqual(first=user.last_name, second=self.last_name)
+                    for (key, value) in self.data.items():
+                        if (not (key in ['date_of_birth'])):
+                            self.assertEqual(first=getattr(user, key), second=value)
+                    self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+                    self.assertEqual(first=user.number_of_date_of_birth_changes, second=number_of_date_of_birth_changes)
+                    self.assertIs(expr1=(user.allowed_to_change_date_of_birth_unlimited_times is False), expr2=True)
+                    if ((number_of_date_of_birth_changes >= 1) and (number_of_date_of_birth_changes < 7)):
+                        self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                        self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                    elif ((number_of_date_of_birth_changes >= 7) and (number_of_date_of_birth_changes < 12)):
+                        self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is True), expr2=True)
+                        self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                    elif (number_of_date_of_birth_changes == 12):
+                        self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is True), expr2=True)
+                        self.assertIs(expr1=(user.has_usable_password() is False), expr2=True)
+                    else:
+                        raise NotImplementedError()
+                self.assertIs(expr1=(number_of_date_of_birth_changes == 12), expr2=True)
+
+            def test_change_date_of_birth_unlimited_times(self):
+                self.user.allowed_to_change_date_of_birth_unlimited_times = True
+                self.user.save_user_and_profile()
+                number_of_date_of_birth_changes = 0
+                for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
+                    data = self.data.copy()
+                    data['date_of_birth'] = date_of_birth
+                    r = self.client.post(path=self.page_url, data=data)
+                    number_of_date_of_birth_changes += 1
+                    self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
+                    user = User.objects.get(pk=self.user.pk)
+                    self.assertEqual(first=user.first_name, second=self.first_name)
+                    self.assertEqual(first=user.last_name, second=self.last_name)
+                    for (key, value) in self.data.items():
+                        if (not (key in ['date_of_birth'])):
+                            self.assertEqual(first=getattr(user, key), second=value)
+                    self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+                    self.assertEqual(first=user.number_of_date_of_birth_changes, second=number_of_date_of_birth_changes)
+                    self.assertIs(expr1=(user.allowed_to_change_date_of_birth_unlimited_times is True), expr2=True)
+                    self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                    self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                self.assertIs(expr1=(15 < number_of_date_of_birth_changes < 23), expr2=True)
+
             def test_invalid_date_of_birth_list_fail(self):
                 self.date_of_birth = self.user.date_of_birth
-                self.last_name = self.user.last_name
                 for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
                     data = self.data.copy()
                     data['date_of_birth'] = date_of_birth
@@ -4120,4 +4177,3 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        # ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")

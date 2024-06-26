@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 11:48+0300\n"
+"POT-Creation-Date: 2024-06-27 02:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:947
+#: .\__translations\__translations.py:9 .\accounts\models.py:953
 msgid "email address"
 msgstr "e-postadress"
 
@@ -902,7 +902,7 @@ msgstr "Vänskapsbegäran"
 msgid "Friend"
 msgstr "Vän"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:514
+#: .\__translations\__translations.py:23 .\accounts\models.py:516
 msgid "Friends"
 msgstr "Vänner"
 
@@ -1971,30 +1971,30 @@ msgstr "Uppdatera profilbilden"
 msgid "A profile picture is required."
 msgstr "En profilbild är obligatorisk."
 
-#: .\accounts\forms.py:311 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-post eller användarnamn"
 
-#: .\accounts\forms.py:317 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Logga in"
 
-#: .\accounts\forms.py:320 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Glömt lösenordet?"
 
-#: .\accounts\forms.py:333
+#: .\accounts\forms.py:335
 msgid "Submit"
 msgstr "Skicka in"
 
-#: .\accounts\forms.py:435
+#: .\accounts\forms.py:437
 msgid "Your password"
 msgstr "Lösenord"
 
-#: .\accounts\forms.py:447
+#: .\accounts\forms.py:449
 msgid "Invalid password."
 msgstr "Ogiltigt lösenord"
 
@@ -2171,76 +2171,76 @@ msgstr "Vem kan se mitt födelseår"
 msgid "On new messages"
 msgstr "Om nya meddelanden"
 
-#: .\accounts\models.py:393
+#: .\accounts\models.py:395
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 
-#: .\accounts\models.py:394
+#: .\accounts\models.py:396
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:539 .\accounts\models.py:931 .\blocks\models.py:15
+#: .\accounts\models.py:541 .\accounts\models.py:937 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:540
+#: .\accounts\models.py:542
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:573
+#: .\accounts\models.py:575
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:932
+#: .\accounts\models.py:938
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:933
+#: .\accounts\models.py:939
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:934
+#: .\accounts\models.py:940
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:935
+#: .\accounts\models.py:941
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:936
+#: .\accounts\models.py:942
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:937
+#: .\accounts\models.py:943
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:948
+#: .\accounts\models.py:954
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:1015
+#: .\accounts\models.py:1021
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:1016
+#: .\accounts\models.py:1022
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:1028
+#: .\accounts\models.py:1034
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:1030
+#: .\accounts\models.py:1036
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:1032
+#: .\accounts\models.py:1038
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1034
+#: .\accounts\models.py:1040
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"

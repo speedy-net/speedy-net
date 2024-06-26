@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 11:48+0300\n"
+"POT-Creation-Date: 2024-06-27 02:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -710,7 +710,7 @@ msgstr "Speedy Match-profil"
 msgid "Speedy Match Profiles"
 msgstr "Speedy Match-profiler"
 
-#: .\accounts\models.py:353 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:356 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Bekräfta din e-postadress."
 

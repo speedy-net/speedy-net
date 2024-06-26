@@ -234,14 +234,16 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
                         self.instance.speedy_match_profile.save()
             user = User.objects.get(pk=self.instance.pk)
             if (not (self.instance.date_of_birth == user.date_of_birth)):
+                self.instance.number_of_date_of_birth_changes += 1
                 site = Site.objects.get_current()
                 language_code = get_language()
-                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+                logger.warning('User changed date of birth on {site_name}, user={user}, new date of birth={new_date_of_birth}, old date of birth={old_date_of_birth} (registered {registered_days_ago} days ago), number_of_date_of_birth_changes={number_of_date_of_birth_changes}, language_code={language_code}.'.format(
                     site_name=_(site.name),
                     user=self.instance,
                     new_date_of_birth=self.instance.date_of_birth,
                     old_date_of_birth=user.date_of_birth,
                     registered_days_ago=(now() - self.instance.date_created).days,
+                    number_of_date_of_birth_changes=self.instance.number_of_date_of_birth_changes,
                     language_code=language_code,
                 ))
             if (not (self.instance.gender == user.gender)):

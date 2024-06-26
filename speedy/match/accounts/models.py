@@ -305,6 +305,9 @@ class SiteProfile(SiteProfileBase):
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
         self._set_values_to_match()
+        if (self.user.allowed_to_change_date_of_birth_unlimited_times is False):
+            if (self.user.number_of_date_of_birth_changes >= 7):
+                self.not_allowed_to_use_speedy_match = True
         if (self.activation_step < 2):
             self.activation_step = 2
         if (self.activation_step > len(__class__.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)):
