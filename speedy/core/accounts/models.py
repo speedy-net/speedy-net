@@ -570,6 +570,7 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
         self.save_user_and_profile()
 
     def save(self, *args, **kwargs):
+        _set_unusable_password = False
         # Superuser must be equal to staff.
         if (not (self.is_superuser == self.is_staff)):
             raise ValidationError(_("Superuser must be equal to staff."))
@@ -577,7 +578,11 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
             if (self.number_of_date_of_birth_changes >= 12):
                 if (self.has_usable_password()):
                     self.set_unusable_password()
-        return super().save(*args, **kwargs)
+                    _set_unusable_password = True
+        return_value = super().save(*args, **kwargs)
+        if (_set_unusable_password):
+            self.speedy_net_profile.deactivate()
+        return return_value
 
     def set_password(self, raw_password):
         password_validation.validate_password(password=raw_password)
