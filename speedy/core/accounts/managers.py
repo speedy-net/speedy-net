@@ -62,6 +62,7 @@ class UserManager(BaseUserManager):
             # If there are more than one user returned in the query, use only the email address (because the username input contains "@").
             return self.distinct().get(Q(email_addresses__email=normalize_email(email=username)))
         else:
+            # If no more than one user is returned in the query, use both the username and the email address.
             return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=normalize_email(email=username)))
 
     def active(self, *args, **kwargs):
