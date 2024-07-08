@@ -19,6 +19,12 @@ jobs:
           - '14'
           - '15'
           - '16'
+        languages:
+          - 'test-default-languages'
+          - 'test-only-english'
+          - 'test-all-languages'
+        is-all-languages:
+          - ${{ contains(github.ref, 'all-languages') }}
         is-main-or-staging:
           - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
@@ -56,6 +62,12 @@ jobs:
             is-main-or-staging: false
           - postgresql-version: '16'
             is-main-or-staging: false
+          - languages: 'test-default-languages'
+            is-all-languages: true
+          - languages: 'test-only-english'
+            is-main-or-staging: true
+          - languages: 'test-all-languages'
+            is-all-languages: false
     services:
       postgres:
         image: postgres
@@ -118,4 +130,9 @@ jobs:
           PGHOST: 127.0.0.1
       - run: python --version
       - run: ./run_all_tests_with_all_warnings.sh
+        if: ${{ matrix.languages == 'test-default-languages' }}
+      - run: ./tests_manage_all_sites_with_all_warnings.sh test --test-only-english
+        if: ${{ matrix.languages == 'test-only-english' }}
+      - run: ./tests_manage_all_sites_with_all_warnings.sh test --test-all-languages
+        if: ${{ matrix.languages == 'test-all-languages' }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
