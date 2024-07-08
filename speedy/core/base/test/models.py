@@ -19,7 +19,13 @@ if (django_settings.TESTS):
             self.test_all_languages = kwargs.get('test_all_languages', False)
             self.test_default_languages = kwargs.get('test_default_languages', False)
             self.test_only_english = kwargs.get('test_only_english', False)
+            if ((self.test_all_languages is False) and (self.test_only_english is False)):
+                self.test_default_languages = True
             self.test_only = kwargs.get('test_only', None)
+            assert (self.test_all_languages in {True, False})
+            assert (self.test_default_languages in {True, False})
+            assert (self.test_only_english in {True, False})
+            assert ((1 if self.test_all_languages else 0) + (1 if self.test_default_languages else 0) + (1 if self.test_only_english else 0) == 1)
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
 
