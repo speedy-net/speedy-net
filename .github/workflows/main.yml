@@ -7,9 +7,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - 'ubuntu-22.04'
-          - 'ubuntu-24.04'
+        languages:
+          - 'test-default-languages'
+          - 'test-only-english'
+          - 'test-all-languages'
         python-version:
           - '3.10'
           - '3.11'
@@ -19,10 +20,9 @@ jobs:
           - '14'
           - '15'
           - '16'
-        languages:
-          - 'test-default-languages'
-          - 'test-only-english'
-          - 'test-all-languages'
+        os:
+          - 'ubuntu-22.04'
+          - 'ubuntu-24.04'
         is-all-languages:
           - ${{ contains(github.ref, 'all-languages') }}
         is-main-or-staging:
