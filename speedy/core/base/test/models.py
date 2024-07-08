@@ -25,7 +25,7 @@ if (django_settings.TESTS):
             assert (self.test_all_languages in {True, False})
             assert (self.test_default_languages in {True, False})
             assert (self.test_only_english in {True, False})
-            assert ((1 if self.test_all_languages else 0) + (1 if self.test_default_languages else 0) + (1 if self.test_only_english else 0) == 1)
+            assert (sum([(1 if (value is True) else (0 if (value is False) else 99)) for value in [self.test_all_languages, self.test_default_languages, self.test_only_english]]) == 1)
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
 
