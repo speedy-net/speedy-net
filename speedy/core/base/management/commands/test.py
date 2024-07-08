@@ -4,11 +4,25 @@ from django.core.management.commands import test
 class Command(test.Command):
     def add_arguments(self, parser):
         super().add_arguments(parser=parser)
-        parser.add_argument(
+
+        group = parser.add_argument_group('language options', 'These arguments are mutually exclusive. Default: --test-default-languages')
+        language_group = group.add_mutually_exclusive_group()
+        language_group.add_argument(
             "--test-all-languages",
             action="store_true",
-            help="If run with this argument, test all languages, and don't skip languages.",
+            help="Run tests for all languages, and don't skip languages.",
         )
+        language_group.add_argument(
+            "--test-default-languages",
+            action="store_true",
+            help="Run tests for default languages (English, French, Hebrew + randomly select one more language or none).",
+        )
+        language_group.add_argument(
+            "--test-only-english",
+            action="store_true",
+            help="Run tests for only English.",
+        )
+
         parser.add_argument(
             "--test-only",
             action="store",

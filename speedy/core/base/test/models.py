@@ -17,6 +17,8 @@ if (django_settings.TESTS):
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
             self.test_all_languages = kwargs.get('test_all_languages', False)
+            self.test_default_languages = kwargs.get('test_default_languages', False)
+            self.test_only_english = kwargs.get('test_only_english', False)
             self.test_only = kwargs.get('test_only', None)
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
@@ -53,10 +55,14 @@ if (django_settings.TESTS):
         def setup_test_environment(self, **kwargs):
             super().setup_test_environment(**kwargs)
             django_settings.TEST_ALL_LANGUAGES = self.test_all_languages
+            django_settings.TEST_DEFAULT_LANGUAGES = self.test_default_languages
+            django_settings.TEST_ONLY_ENGLISH = self.test_only_english
 
         def teardown_test_environment(self, **kwargs):
             super().teardown_test_environment(**kwargs)
             del django_settings.TEST_ALL_LANGUAGES
+            del django_settings.TEST_DEFAULT_LANGUAGES
+            del django_settings.TEST_ONLY_ENGLISH
 
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
@@ -140,7 +146,17 @@ if (django_settings.TESTS):
                     pass
                 else:
                     raise NotImplementedError()
+            elif (django_settings.TEST_ONLY_ENGLISH):
+                # Test only english.
+                if (self.language_code in {'en'}):
+                    pass
+                elif (self.language_code in {'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                    self.skipTest(reason="Skipped test - language code skipped.")
+                    return
+                else:
+                    raise NotImplementedError()
             else:
+                # Test default languages.
                 if (self.language_code in {'en', 'fr', 'he'}):
                     # Always run these tests.
                     pass
