@@ -66,6 +66,10 @@ jobs:
             is-all-languages: true
           - languages: 'test-only-english'
             is-main-or-staging: true
+          - languages: 'test-only-english'
+            python-version: '3.10'
+          - languages: 'test-only-english'
+            python-version: '3.12'
           - languages: 'test-all-languages'
             is-all-languages: false
     services:
