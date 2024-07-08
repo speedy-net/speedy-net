@@ -8,9 +8,9 @@ jobs:
       fail-fast: false
       matrix:
         languages:
+          - 'test-all-languages'
           - 'test-default-languages'
           - 'test-only-english'
-          - 'test-all-languages'
         python-version:
           - '3.10'
           - '3.11'
@@ -133,10 +133,10 @@ jobs:
         env:
           PGHOST: 127.0.0.1
       - run: python --version
+      - run: ./tests_manage_all_sites_with_all_warnings.sh test --test-all-languages
+        if: ${{ matrix.languages == 'test-all-languages' }}
       - run: ./run_all_tests_with_all_warnings.sh
         if: ${{ matrix.languages == 'test-default-languages' }}
       - run: ./tests_manage_all_sites_with_all_warnings.sh test --test-only-english
         if: ${{ matrix.languages == 'test-only-english' }}
-      - run: ./tests_manage_all_sites_with_all_warnings.sh test --test-all-languages
-        if: ${{ matrix.languages == 'test-all-languages' }}
       - run: echo "🍏 This job's status is ${{ job.status }}."

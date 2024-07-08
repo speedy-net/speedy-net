@@ -152,16 +152,7 @@ if (django_settings.TESTS):
                     pass
                 else:
                     raise NotImplementedError()
-            elif (django_settings.TEST_ONLY_ENGLISH):
-                # Test only english.
-                if (self.language_code in {'en'}):
-                    pass
-                elif (self.language_code in {'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
-                    self.skipTest(reason="Skipped test - language code skipped.")
-                    return
-                else:
-                    raise NotImplementedError()
-            else:
+            elif (django_settings.TEST_DEFAULT_LANGUAGES):
                 # Test default languages.
                 if (self.language_code in {'en', 'fr', 'he'}):
                     # Always run these tests.
@@ -173,6 +164,17 @@ if (django_settings.TESTS):
                         return
                 else:
                     raise NotImplementedError()
+            elif (django_settings.TEST_ONLY_ENGLISH):
+                # Test only english.
+                if (self.language_code in {'en'}):
+                    pass
+                elif (self.language_code in {'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                    self.skipTest(reason="Skipped test - language code skipped.")
+                    return
+                else:
+                    raise NotImplementedError()
+            else:
+                raise NotImplementedError()
             self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
             self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
             self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
