@@ -19,13 +19,15 @@ if (django_settings.TESTS):
             self.test_all_languages = kwargs.get('test_all_languages', False)
             self.test_default_languages = kwargs.get('test_default_languages', False)
             self.test_only_english = kwargs.get('test_only_english', False)
-            if ((self.test_all_languages is False) and (self.test_only_english is False)):
+            self.test_only_language_code = kwargs.get('test_only_language_code', None)
+            if ((self.test_all_languages is False) and (self.test_only_english is False) and (self.test_only_language_code is None)):
                 self.test_default_languages = True
             self.test_only = kwargs.get('test_only', None)
             assert (self.test_all_languages in {True, False})
             assert (self.test_default_languages in {True, False})
             assert (self.test_only_english in {True, False})
-            assert (sum([(1 if (value is True) else (0 if (value is False) else 99)) for value in [self.test_all_languages, self.test_default_languages, self.test_only_english]]) == 1)
+            assert (self.test_only_language_code in {None, 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'})
+            assert (sum([(1 if (value is True) else (0 if (value is False) else 99)) for value in [self.test_all_languages, self.test_default_languages, self.test_only_english]] + [(1 if (value in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}) else (0 if (value is None) else 99)) for value in [self.test_only_language_code]]) == 1)
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
 
@@ -63,12 +65,14 @@ if (django_settings.TESTS):
             django_settings.TEST_ALL_LANGUAGES = self.test_all_languages
             django_settings.TEST_DEFAULT_LANGUAGES = self.test_default_languages
             django_settings.TEST_ONLY_ENGLISH = self.test_only_english
+            django_settings.TEST_ONLY_LANGUAGE_CODE = self.test_only_language_code
 
         def teardown_test_environment(self, **kwargs):
             super().teardown_test_environment(**kwargs)
             del django_settings.TEST_ALL_LANGUAGES
             del django_settings.TEST_DEFAULT_LANGUAGES
             del django_settings.TEST_ONLY_ENGLISH
+            del django_settings.TEST_ONLY_LANGUAGE_CODE
 
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
@@ -159,18 +163,30 @@ if (django_settings.TESTS):
                     pass
                 elif (self.language_code in {'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
                     # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
-                    if (not (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE)):
+                    if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
+                        pass
+                    else:
                         self.skipTest(reason="Skipped test - language code skipped.")
                         return
                 else:
                     raise NotImplementedError()
             elif (django_settings.TEST_ONLY_ENGLISH):
-                # Test only english.
+                # Test only English.
                 if (self.language_code in {'en'}):
                     pass
                 elif (self.language_code in {'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                     self.skipTest(reason="Skipped test - language code skipped.")
                     return
+                else:
+                    raise NotImplementedError()
+            elif (django_settings.TEST_ONLY_LANGUAGE_CODE is not None):
+                # Test only one language (the given language code).
+                if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                    if (self.language_code == django_settings.TEST_ONLY_LANGUAGE_CODE):
+                        pass
+                    else:
+                        self.skipTest(reason="Skipped test - language code skipped.")
+                        return
                 else:
                     raise NotImplementedError()
             else:

@@ -22,6 +22,13 @@ class Command(test.Command):
             action="store_true",
             help="Run tests for only English.",
         )
+        language_group.add_argument(
+            "--test-only-language-code",
+            action="store",
+            help="Run tests for only one language (the given language code).",
+            type=str,
+        )
+        # Running tests with --test-only-language-code en is equivalent to running tests with --test-only-english.
 
         parser.add_argument(
             "--test-only",
