@@ -150,47 +150,36 @@ if (django_settings.TESTS):
 
         def set_up(self):
             self.language_code = django_settings.LANGUAGE_CODE
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                pass
+            else:
+                raise NotImplementedError()
+            run_this_test = False
             if (django_settings.TEST_ALL_LANGUAGES):
                 # Test all languages, and don't skip languages.
-                if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
-                    pass
-                else:
-                    raise NotImplementedError()
+                run_this_test = True
             elif (django_settings.TEST_DEFAULT_LANGUAGES):
                 # Test default languages.
                 if (self.language_code in {'en', 'fr', 'he'}):
                     # Always run these tests.
-                    pass
-                elif (self.language_code in {'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                    run_this_test = True
+                else:
                     # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
                     if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
-                        pass
-                    else:
-                        self.skipTest(reason="Skipped test - language code skipped.")
-                        return
-                else:
-                    raise NotImplementedError()
+                        run_this_test = True
             elif (django_settings.TEST_ONLY_ENGLISH):
                 # Test only English.
                 if (self.language_code in {'en'}):
-                    pass
-                elif (self.language_code in {'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
-                    self.skipTest(reason="Skipped test - language code skipped.")
-                    return
-                else:
-                    raise NotImplementedError()
+                    run_this_test = True
             elif (django_settings.TEST_ONLY_LANGUAGE_CODE is not None):
                 # Test only one language (the given language code).
-                if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
-                    if (self.language_code == django_settings.TEST_ONLY_LANGUAGE_CODE):
-                        pass
-                    else:
-                        self.skipTest(reason="Skipped test - language code skipped.")
-                        return
-                else:
-                    raise NotImplementedError()
+                if (self.language_code == django_settings.TEST_ONLY_LANGUAGE_CODE):
+                    run_this_test = True
             else:
                 raise NotImplementedError()
+            if (not (run_this_test)):
+                self.skipTest(reason="Skipped test - language code skipped.")
+                return
             self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
             self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
             self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
