@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import itertools
+        import unittest
         from datetime import date
 
         from django.test import override_settings
@@ -839,6 +840,17 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
+
+            @unittest.expectedFailure
+            def test_call_deactivate_race_condition_profile_should_not_become_active(self):
+                user = self.get_active_user_jennifer()
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.speedy_match_profile.deactivate()
+                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
+                user.save_user_and_profile()
+                user.refresh_from_db()
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
             def test_call_speedy_net_deactivate_and_activate_directly_and_assert_no_exception(self):
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_net_profile.deactivate() and user.speedy_net_profile.activate().
