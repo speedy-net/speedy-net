@@ -349,7 +349,7 @@ class SiteProfile(SiteProfileBase):
                 self.activation_step = step
                 languages = self.active_languages
                 if (not (language_code in languages)):
-                    languages.append(language_code)
+                    languages = languages + [language_code]
                     self._set_active_languages(languages=languages)
                 self.user.save_user_and_profile()
         else:
