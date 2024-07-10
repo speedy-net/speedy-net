@@ -9,25 +9,33 @@ class Command(test.Command):
         language_group = group.add_mutually_exclusive_group()
         language_group.add_argument(
             "--test-all-languages",
-            action="store_true",
+            action="store_const",
+            const="test-all-languages",
+            dest="test_languages",
             help="Run tests for all languages, and don't skip languages.",
         )
         language_group.add_argument(
             "--test-default-languages",
-            action="store_true",
+            action="store_const",
+            const="test-default-languages",
+            dest="test_languages",
             help="Run tests for default languages (English, French, Hebrew + randomly select one more language or none).",
         )
         language_group.add_argument(
             "--test-only-english",
-            action="store_true",
+            action="store_const",
+            const="en",
+            dest="test_languages",
             help="Run tests for only English.",
         )
         language_group.add_argument(
             "--test-only-language-code",
             action="store",
+            dest="test_languages",
             help="Run tests for only one language (the given language code).",
             type=str,
         )
+        parser.set_defaults(test_languages="test-default-languages")
         # Running tests with --test-only-language-code en is equivalent to running tests with --test-only-english.
 
         parser.add_argument(

@@ -16,18 +16,9 @@ if (django_settings.TESTS):
         def __init__(self, *args, **kwargs):
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
-            self.test_all_languages = kwargs.get('test_all_languages', False)
-            self.test_default_languages = kwargs.get('test_default_languages', False)
-            self.test_only_english = kwargs.get('test_only_english', False)
-            self.test_only_language_code = kwargs.get('test_only_language_code', None)
-            if ((self.test_all_languages is False) and (self.test_only_english is False) and (self.test_only_language_code is None)):
-                self.test_default_languages = True
+            self.test_languages = kwargs.get('test_languages', None)
             self.test_only = kwargs.get('test_only', None)
-            assert (self.test_all_languages in {True, False})
-            assert (self.test_default_languages in {True, False})
-            assert (self.test_only_english in {True, False})
-            assert (self.test_only_language_code in {None, 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'})
-            assert (sum([(1 if (value is True) else (0 if (value is False) else 99)) for value in [self.test_all_languages, self.test_default_languages, self.test_only_english]] + [(1 if (value in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}) else (0 if (value is None) else 99)) for value in [self.test_only_language_code]]) == 1)
+            assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'})
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
 
@@ -62,17 +53,11 @@ if (django_settings.TESTS):
 
         def setup_test_environment(self, **kwargs):
             super().setup_test_environment(**kwargs)
-            django_settings.TEST_ALL_LANGUAGES = self.test_all_languages
-            django_settings.TEST_DEFAULT_LANGUAGES = self.test_default_languages
-            django_settings.TEST_ONLY_ENGLISH = self.test_only_english
-            django_settings.TEST_ONLY_LANGUAGE_CODE = self.test_only_language_code
+            django_settings.TEST_LANGUAGES = self.test_languages
 
         def teardown_test_environment(self, **kwargs):
             super().teardown_test_environment(**kwargs)
-            del django_settings.TEST_ALL_LANGUAGES
-            del django_settings.TEST_DEFAULT_LANGUAGES
-            del django_settings.TEST_ONLY_ENGLISH
-            del django_settings.TEST_ONLY_LANGUAGE_CODE
+            del django_settings.TEST_LANGUAGES
 
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
@@ -155,10 +140,10 @@ if (django_settings.TESTS):
             else:
                 raise NotImplementedError()
             run_this_test = False
-            if (django_settings.TEST_ALL_LANGUAGES):
+            if (django_settings.TEST_LANGUAGES == "test-all-languages"):
                 # Test all languages, and don't skip languages.
                 run_this_test = True
-            elif (django_settings.TEST_DEFAULT_LANGUAGES):
+            elif (django_settings.TEST_LANGUAGES == "test-default-languages"):
                 # Test default languages.
                 if (self.language_code in {'en', 'fr', 'he'}):
                     # Always run these tests.
@@ -167,13 +152,9 @@ if (django_settings.TESTS):
                     # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
                     if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
                         run_this_test = True
-            elif (django_settings.TEST_ONLY_ENGLISH):
-                # Test only English.
-                if (self.language_code in {'en'}):
-                    run_this_test = True
-            elif (django_settings.TEST_ONLY_LANGUAGE_CODE is not None):
+            elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                 # Test only one language (the given language code).
-                if (self.language_code == django_settings.TEST_ONLY_LANGUAGE_CODE):
+                if (self.language_code == django_settings.TEST_LANGUAGES):
                     run_this_test = True
             else:
                 raise NotImplementedError()
