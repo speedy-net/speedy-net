@@ -452,9 +452,24 @@ if (django_settings.TESTS):
                 self.user_4.photo.visible_on_website = False
                 self.user_4.photo.save()
                 self.user_4.save_user_and_profile()
+                # Don't simulate cache timeout, and check that the matches list changed.
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=3)
                 self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
+                self.assertEqual(first=len(matches_list), second=4)
+                self.assertIs(expr1=self.user_5 in matches_list, expr2=True)
+                self.user_4.photo.visible_on_website = True
+                self.user_4.photo.save()
+                self.user_4.save_user_and_profile()
+                # Don't simulate cache timeout, and check that the matches list is still the same.
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+                self.assertEqual(first=len(matches_list), second=3)
+                self.assertIs(expr1=self.user_4 not in matches_list, expr2=True)
+                self.user_5.save_user_and_profile()  # Simulate cache timeout.
+                matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
+                self.assertEqual(first=len(matches_list), second=4)
+                self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_4)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_5 in matches_list, expr2=True)
