@@ -398,14 +398,16 @@ if (django_settings.TESTS):
             #
             def test_length_of_matches_list(self):
                 # This test takes a long time. Run the full test only on random 5% of the times.
-                if (django_settings.TEST_ONLY_ENGLISH):
-                    # Test only english should be fast. Don't run the full test.
-                    n_range, i_range = 3, 5
-                else:
+                if (django_settings.TEST_LANGUAGES in {'test-all-languages', 'test-default-languages'}):
                     if (random.randint(0, 19) == 0):
                         n_range, i_range = 6, 200
                     else:
                         n_range, i_range = 3, 5
+                elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
+                    # Test only one language should be fast. Don't run the full test.
+                    n_range, i_range = 3, 5
+                else:
+                    raise NotImplementedError()
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_4 in matches_list, expr2=True)
