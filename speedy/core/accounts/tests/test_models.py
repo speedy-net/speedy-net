@@ -3,13 +3,15 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import random
+        import unittest
         from time import sleep
         from datetime import datetime, timedelta
         from dateutil.relativedelta import relativedelta
 
         from django.test import override_settings
-        from django.db.utils import DataError, IntegrityError
+        from django.db.utils import DataError, DatabaseError, IntegrityError
         from django.core.exceptions import ValidationError
+        from django.utils.timezone import now
 
         from speedy.core.base.test.utils import get_random_user_password
 
@@ -1354,6 +1356,55 @@ if (django_settings.TESTS):
                     self.assertNotEqual(first=user.name, second=self._speedy_net_deleted_user_name)
                 else:
                     raise NotImplementedError()
+
+            expectedFailure_for_speedy_net = lambda f: unittest.expectedFailure(f) if django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID else f
+
+            @expectedFailure_for_speedy_net
+            def test_call_deactivate_race_condition_profile_should_not_become_active(self):
+                user = ActiveUserFactory()
+                self.assertEqual(first=user.profile.is_active, second=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.profile.deactivate()
+                self.assertEqual(first=user_instance_2.profile.is_active, second=False)
+                # Race condition: profile should not become active
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.profile.is_active, second=False)
+
+            @expectedFailure_for_speedy_net
+            def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
+                user = ActiveUserFactory()
+                self.assertEqual(first=user.profile.is_active, second=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    image = user_instance_2.photo
+                    image.visible_on_website = False
+                    image.speedy_image_moderation_time = now()
+                    image.aws_image_moderation_time = now()
+                    image.save()
+                    user_instance_2.photo = None
+                user_instance_2.profile.deactivate()
+                user_instance_2.save_user_and_profile()
+                self.assertEqual(first=user_instance_2.profile.is_active, second=False)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user_instance_2.profile.activation_step, second=2)
+                # Race condition: profile should not become active
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.profile.is_active, second=False)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.profile.activation_step, second=2)
+                # Reactivate
+                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    image.visible_on_website = True
+                    user.photo = image
+                    step, error_messages = user.profile.validate_profile_and_activate()
+                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                self.assertEqual(first=user.profile.is_active, second=True)
 
 
         @only_on_sites_with_login

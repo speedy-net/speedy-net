@@ -7,8 +7,6 @@ if (django_settings.TESTS):
 
         from django.test import override_settings
         from django.core.exceptions import ValidationError
-        from django.db import DatabaseError
-        from django.utils.timezone import now
 
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
@@ -841,46 +839,6 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
-
-            def test_call_deactivate_race_condition_profile_should_not_become_active(self):
-                user = self.get_active_user_jennifer()
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                user_instance_2 = User.objects.get(pk=user.pk)
-                user_instance_2.speedy_match_profile.deactivate()
-                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
-                # Race condition: profile should not become active
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-
-            def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
-                user = self.get_active_user_jennifer()
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                user_instance_2 = User.objects.get(pk=user.pk)
-                image = user_instance_2.photo
-                image.visible_on_website = False
-                image.speedy_image_moderation_time = now()
-                image.aws_image_moderation_time = now()
-                image.save()
-                user_instance_2.photo = None
-                user_instance_2.speedy_match_profile.deactivate()
-                user_instance_2.save_user_and_profile()
-                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
-                self.assertEqual(first=user_instance_2.speedy_match_profile.activation_step, second=2)
-                # Race condition: profile should not become active
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                self.assertEqual(first=user.speedy_match_profile.activation_step, second=2)
-                # Reactivate
-                image.visible_on_website = True
-                user.photo = image
-                step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
-                self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
 
             def test_call_speedy_net_deactivate_and_activate_directly_and_assert_no_exception(self):
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_net_profile.deactivate() and user.speedy_net_profile.activate().
