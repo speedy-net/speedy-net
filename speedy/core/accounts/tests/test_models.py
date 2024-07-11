@@ -23,8 +23,9 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
         from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
+        from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
-        from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin
+        from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin, SpeedyMatchAccountsLanguageMixin
 
 
         class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
@@ -556,7 +557,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
@@ -1365,7 +1366,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user_instance_2.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user_instance_2.is_active, second=False)
-                # Race condition: profile should not become active
+                # Race condition: profile should not become active.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
@@ -1379,8 +1380,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.profile.is_active, second=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
+                image = user_instance_2.photo
                 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    image = user_instance_2.photo
                     image.visible_on_website = False
                     image.speedy_image_moderation_time = now()
                     image.aws_image_moderation_time = now()
@@ -1391,9 +1392,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user_instance_2.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user_instance_2.is_active, second=False)
-                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user_instance_2.profile.activation_step, second=2)
-                # Race condition: profile should not become active
+                else:
+                    raise NotImplementedError()
+                # Race condition: profile should not become active.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
@@ -1403,16 +1406,40 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.is_active, second=False)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.profile.activation_step, second=2)
-                # Reactivate
+                else:
+                    raise NotImplementedError()
+                # Reactivate.
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    user.profile.activate()
-                    self.assertEqual(first=user.is_active, second=True)
+                    user_instance_2.profile.activate()
+                    self.assertEqual(first=user_instance_2.is_active, second=True)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     image.visible_on_website = True
-                    user.photo = image
-                    step, error_messages = user.profile.validate_profile_and_activate()
+                    image.save()
+                    # Check that the user cannot be activated without a profile picture.
+                    step, error_messages = user_instance_2.profile.validate_profile_and_activate(commit=False)
+                    self.assertEqual(first=step, second=2)
+                    self.assertListEqual(list1=error_messages, list2=["['{expected_error_message}']".format(expected_error_message=self._a_profile_picture_is_required_error_message).replace("\xa0", "\\xa0")])
+                    # Activate the user with a profile picture.
+                    user_instance_2.photo = image
+                    user_instance_2.save_user_and_profile()
+                    step, error_messages = user_instance_2.profile.validate_profile_and_activate()
                     self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                else:
+                    raise NotImplementedError()
+                self.assertEqual(first=user_instance_2.profile.is_active, second=True)
+                # Race condition: profile should not become inactive.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.profile.is_active, second=True)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertEqual(first=user.is_active, second=True)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.profile.activation_step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+                    self.assertEqual(first=user.profile.activation_step, second=10)
+                else:
+                    raise NotImplementedError()
 
 
         @only_on_sites_with_login
