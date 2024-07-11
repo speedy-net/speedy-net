@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 08:31+0300\n"
+"POT-Creation-Date: 2024-07-11 15:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Syötä kelvollinen sähköpostiosoite."
 msgid "Email address"
 msgstr "Sähköpostiosoite"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:958
+#: .\__translations\__translations.py:9 .\accounts\models.py:996
 msgid "email address"
 msgstr "sähköpostiosoite"
 
@@ -902,7 +902,7 @@ msgstr "Ystäväpyynnöt"
 msgid "Friend"
 msgstr "Ystävä"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:516
+#: .\__translations\__translations.py:23 .\accounts\models.py:554
 msgid "Friends"
 msgstr "Ystävät"
 
@@ -1989,249 +1989,250 @@ msgstr "Your password"
 msgid "Invalid password."
 msgstr "Väärä salasana."
 
-#: .\accounts\models.py:86
+#: .\accounts\models.py:124
 msgid "username"
 msgstr "käyttäjänimi"
 
-#: .\accounts\models.py:86 .\accounts\models.py:87 .\accounts\validators.py:21
+#: .\accounts\models.py:124 .\accounts\models.py:125
+#: .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "Tämä käyttäjänimi on jo varattu."
 
-#: .\accounts\models.py:87
+#: .\accounts\models.py:125
 msgid "username (slug)"
 msgstr "Käyttäjänimi (slug)"
 
-#: .\accounts\models.py:88
+#: .\accounts\models.py:126
 msgid "photo"
 msgstr "kuva"
 
-#: .\accounts\models.py:89
+#: .\accounts\models.py:127
 msgid "Special username"
 msgstr "Erityinen käyttäjätunnus"
 
-#: .\accounts\models.py:126 .\messages\models.py:118
+#: .\accounts\models.py:164 .\messages\models.py:118
 msgid "entity"
 msgstr "kokonaisuus"
 
-#: .\accounts\models.py:127
+#: .\accounts\models.py:165
 msgid "entities"
 msgstr "kokonaisuuksia"
 
-#: .\accounts\models.py:154
+#: .\accounts\models.py:192
 msgid "Slug does not parse to username."
 msgstr "Slug ei jäsenny käyttäjänimeksi."
 
-#: .\accounts\models.py:158
+#: .\accounts\models.py:196
 msgid "Username is required."
 msgstr "Käyttäjätunnus vaaditaan."
 
-#: .\accounts\models.py:194
+#: .\accounts\models.py:232
 msgid "name"
 msgstr "nimi"
 
-#: .\accounts\models.py:209
+#: .\accounts\models.py:247
 msgid "description"
 msgstr "kuvaus"
 
-#: .\accounts\models.py:255
+#: .\accounts\models.py:293
 msgid "Female"
 msgstr "Nainen"
 
-#: .\accounts\models.py:256
+#: .\accounts\models.py:294
 msgid "Male"
 msgstr "Mies"
 
-#: .\accounts\models.py:257
+#: .\accounts\models.py:295
 msgid "Other"
 msgstr "muu"
 
-#: .\accounts\models.py:269 .\accounts\models.py:284 .\accounts\models.py:305
+#: .\accounts\models.py:307 .\accounts\models.py:322 .\accounts\models.py:343
 #: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: .\accounts\models.py:270
+#: .\accounts\models.py:308
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegaani (syö vain kasveja ja sieniä)"
 
-#: .\accounts\models.py:271
+#: .\accounts\models.py:309
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Kasvissyöjä (ei syö kalaa eikä lihaa)"
 
-#: .\accounts\models.py:272
+#: .\accounts\models.py:310
 msgid "Carnist (eats animals)"
 msgstr "Karnisti (syö eläimiä)"
 
-#: .\accounts\models.py:285
+#: .\accounts\models.py:323
 msgid "Not smoking"
 msgstr "Ei tupakoi"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:324
 msgid "Smoking occasionally"
 msgstr "Tupakoi toisinaan"
 
-#: .\accounts\models.py:287
+#: .\accounts\models.py:325
 msgid "Smoking"
 msgstr "Tupakoi"
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:344
 msgid "Single"
 msgstr "Sinkku"
 
-#: .\accounts\models.py:307
+#: .\accounts\models.py:345
 msgid "Divorced"
 msgstr "Eronnut"
 
-#: .\accounts\models.py:308
+#: .\accounts\models.py:346
 msgid "Widowed"
 msgstr "Leski"
 
-#: .\accounts\models.py:309
+#: .\accounts\models.py:347
 msgid "In a relationship"
 msgstr "Suhteessa"
 
-#: .\accounts\models.py:310
+#: .\accounts\models.py:348
 msgid "In an open relationship"
 msgstr "Avoimessa suhteessa"
 
-#: .\accounts\models.py:311
+#: .\accounts\models.py:349
 msgid "It's complicated"
 msgstr "Hankala selittää"
 
-#: .\accounts\models.py:312
+#: .\accounts\models.py:350
 msgid "Separated"
 msgstr "Eronnut"
 
-#: .\accounts\models.py:313
+#: .\accounts\models.py:351
 msgid "Engaged"
 msgstr "Kihloissa"
 
-#: .\accounts\models.py:314
+#: .\accounts\models.py:352
 msgid "Married"
 msgstr "Naimisissa"
 
-#: .\accounts\models.py:323
+#: .\accounts\models.py:361
 msgid "Notify me"
 msgstr "Ilmoita minulle"
 
-#: .\accounts\models.py:324
+#: .\accounts\models.py:362
 msgid "Don't notify me"
 msgstr "Älä ilmoita minulle"
 
-#: .\accounts\models.py:369
+#: .\accounts\models.py:407
 msgid "first name"
 msgstr "etunimi"
 
-#: .\accounts\models.py:372
+#: .\accounts\models.py:410
 msgid "last name"
 msgstr "sukunimi"
 
-#: .\accounts\models.py:374
+#: .\accounts\models.py:412
 msgid "I am"
 msgstr "minä olen"
 
-#: .\accounts\models.py:375
+#: .\accounts\models.py:413
 msgid "date of birth"
 msgstr "Syntymäpäivä"
 
-#: .\accounts\models.py:376
+#: .\accounts\models.py:414
 msgid "diet"
 msgstr "ruokavalio"
 
-#: .\accounts\models.py:377
+#: .\accounts\models.py:415
 msgid "smoking status"
 msgstr "tupakointistatus"
 
-#: .\accounts\models.py:378
+#: .\accounts\models.py:416
 msgid "relationship status"
 msgstr "suhdestatus"
 
-#: .\accounts\models.py:380
+#: .\accounts\models.py:418
 msgid "Where do I live?"
 msgstr "Missä asun?"
 
-#: .\accounts\models.py:387
+#: .\accounts\models.py:425
 msgid "Who can view my birth month and day"
 msgstr "Kuka voi nähdä syntymäkuukauteni ja -päiväni"
 
-#: .\accounts\models.py:388
+#: .\accounts\models.py:426
 msgid "Who can view my birth year"
 msgstr "Kuka voi nähdä syntymävuoteni"
 
-#: .\accounts\models.py:389
+#: .\accounts\models.py:427
 msgid "On new messages"
 msgstr "Uusista viesteistä"
 
-#: .\accounts\models.py:395
+#: .\accounts\models.py:433
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Viimeksi käytetty IP-osoite https://ipapi.com/ time"
 
-#: .\accounts\models.py:396
+#: .\accounts\models.py:434
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Viimeisin käytetty IP-osoite raaka https://ipapi.com/ tulokset"
 
-#: .\accounts\models.py:541 .\accounts\models.py:942 .\blocks\models.py:15
+#: .\accounts\models.py:579 .\accounts\models.py:980 .\blocks\models.py:15
 msgid "user"
 msgstr "käyttäjä"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:580
 msgid "users"
 msgstr "käyttäjät"
 
-#: .\accounts\models.py:576
+#: .\accounts\models.py:614
 msgid "Superuser must be equal to staff."
 msgstr "Pääkäyttäjän on oltava yhtäläinen henkilöstöön nähden."
 
-#: .\accounts\models.py:943
+#: .\accounts\models.py:981
 msgid "email"
 msgstr "sähköposti"
 
-#: .\accounts\models.py:944
+#: .\accounts\models.py:982
 msgid "is confirmed"
 msgstr "on vahvistettu"
 
-#: .\accounts\models.py:945
+#: .\accounts\models.py:983
 msgid "is primary"
 msgstr "on ensisijainen"
 
-#: .\accounts\models.py:946
+#: .\accounts\models.py:984
 msgid "confirmation token"
 msgstr "vahvistustunnus"
 
-#: .\accounts\models.py:947
+#: .\accounts\models.py:985
 msgid "confirmation sent"
 msgstr "vahvistus lähetetty"
 
-#: .\accounts\models.py:948
+#: .\accounts\models.py:986
 msgid "Who can see this email"
 msgstr "Kuka voi nähdä tämän sähköpostin"
 
-#: .\accounts\models.py:959
+#: .\accounts\models.py:997
 msgid "email addresses"
 msgstr "email addresses"
 
-#: .\accounts\models.py:1026
+#: .\accounts\models.py:1064
 msgid "User"
 msgstr "Käyttäjä"
 
-#: .\accounts\models.py:1027
+#: .\accounts\models.py:1065
 msgid "last visit"
 msgstr "viimeisin vierailu"
 
-#: .\accounts\models.py:1039
+#: .\accounts\models.py:1077
 msgid "Today"
 msgstr "Tänään"
 
-#: .\accounts\models.py:1041
+#: .\accounts\models.py:1079
 msgid "Yesterday"
 msgstr "Eilen"
 
-#: .\accounts\models.py:1043
+#: .\accounts\models.py:1081
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) sitten"
 
-#: .\accounts\models.py:1045
+#: .\accounts\models.py:1083
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sitten"

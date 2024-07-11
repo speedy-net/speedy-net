@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 02:03+0300\n"
+"POT-Creation-Date: 2024-07-11 15:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -558,13 +558,13 @@ msgstr "Escribe algunas palabras sobre ti."
 msgid "Please write where you live."
 msgstr "Escribe dónde vives."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:116
+#: .\accounts\forms.py:118 .\accounts\models.py:118
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "¿Tienes hijos? ¿Cuántos?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:119
+#: .\accounts\forms.py:121 .\accounts\models.py:121
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -598,7 +598,7 @@ msgstr "Se requiere coincidencia de estado de relaciones."
 msgid "Where do you live?"
 msgstr "¿Dónde vives?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:126
+#: .\accounts\forms.py:186 .\accounts\models.py:128
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Género para coincidencia"
@@ -607,110 +607,110 @@ msgstr "Género para coincidencia"
 msgid "Speedy Match User"
 msgstr "Usuario de Speedy Match"
 
-#: .\accounts\models.py:40 .\accounts\models.py:92
+#: .\accounts\models.py:40 .\accounts\models.py:94
 msgid "No match"
 msgstr "Sin coincidencia"
 
-#: .\accounts\models.py:41 .\accounts\models.py:93
+#: .\accounts\models.py:41 .\accounts\models.py:95
 msgid "One heart"
 msgstr "Un corazón"
 
-#: .\accounts\models.py:42 .\accounts\models.py:94
+#: .\accounts\models.py:42 .\accounts\models.py:96
 msgid "Two hearts"
 msgstr "Dos corazones"
 
-#: .\accounts\models.py:43 .\accounts\models.py:95
+#: .\accounts\models.py:43 .\accounts\models.py:97
 msgid "Three hearts"
 msgstr "Tres corazones"
 
-#: .\accounts\models.py:44 .\accounts\models.py:96
+#: .\accounts\models.py:44 .\accounts\models.py:98
 msgid "Four hearts"
 msgstr "Cuatro corazones"
 
-#: .\accounts\models.py:45 .\accounts\models.py:97
+#: .\accounts\models.py:45 .\accounts\models.py:99
 msgid "Five hearts"
 msgstr "Cinco corazones"
 
-#: .\accounts\models.py:101
+#: .\accounts\models.py:103
 msgid "User"
 msgstr "Usuario"
 
-#: .\accounts\models.py:102
+#: .\accounts\models.py:104
 msgid "On new likes"
 msgstr "En nuevos me gusta"
 
-#: .\accounts\models.py:105
+#: .\accounts\models.py:107
 msgid "Active languages"
 msgstr "Idiomas activos"
 
-#: .\accounts\models.py:111
+#: .\accounts\models.py:113
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Estatura"
 
-#: .\accounts\models.py:111
+#: .\accounts\models.py:113
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:115
 msgid "Few words about me"
 msgstr "Algunas palabras sobre mí"
 
-#: .\accounts\models.py:122
+#: .\accounts\models.py:124
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "Mi coincidencia ideal"
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:134
 msgid "Minimal age to match"
 msgstr "Edad mínima para coincidencia"
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:135
 msgid "Maximal age to match"
 msgstr "Edad máxima para coincidencia"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:136
 msgid "Diet match"
 msgstr "Coincidencia de dieta"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:137
 msgid "Smoking status match"
 msgstr "Coincidencia de condición de fumador"
 
-#: .\accounts\models.py:136
+#: .\accounts\models.py:138
 msgid "Relationship status match"
 msgstr "Coincidencia de estado de relación"
 
-#: .\accounts\models.py:139
+#: .\accounts\models.py:141
 msgid "Diet to match"
 msgstr "Dieta a coincidir"
 
-#: .\accounts\models.py:147
+#: .\accounts\models.py:149
 msgid "Smoking status to match"
 msgstr "Condición de fumador a coincidir"
 
-#: .\accounts\models.py:155
+#: .\accounts\models.py:157
 msgid "Relationship status to match"
 msgstr "Estado de relación a coincidir"
 
-#: .\accounts\models.py:162
+#: .\accounts\models.py:164
 msgid "Activation step"
 msgstr "Paso de activación"
 
-#: .\accounts\models.py:165
+#: .\accounts\models.py:167
 msgid "Number of matches on last user's search"
 msgstr "Número de coincidencias en la última búsqueda del usuario"
 
-#: .\accounts\models.py:211
+#: .\accounts\models.py:213
 msgid "Speedy Match Profile"
 msgstr "Perfil de Speedy Match"
 
-#: .\accounts\models.py:212 .\profiles\apps.py:8
+#: .\accounts\models.py:214 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Perfiles de Speedy Match"
 
-#: .\accounts\models.py:356 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:360 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Por favor confirma tu dirección de correo electrónico."
 
