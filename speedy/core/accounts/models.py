@@ -365,7 +365,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
 
-    _optimistic_locking_fields = ("is_active", "is_deleted", "is_staff", "is_superuser", "password", "has_confirmed_email", "allowed_to_change_date_of_birth_unlimited_times",)
+    _optimistic_locking_fields = ("username", "slug", "is_active", "is_deleted", "is_staff", "is_superuser", "password", "has_confirmed_email", "allowed_to_change_date_of_birth_unlimited_times",)
 
     @staticmethod
     def diet_choices_with_description(gender):
