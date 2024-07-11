@@ -81,6 +81,44 @@ class CleanAndValidateAllFieldsMixin(object):
             raise ValidationError(errors)
 
 
+class OptimisticLockingModelMixin:
+    _optimistic_locking_fields = ()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._modified = set()
+
+    def __setattr__(self, name, value):
+        if name in self._optimistic_locking_fields and not self._state.adding:
+            if getattr(self, name) != value:
+                self._modified.add(name)
+        super().__setattr__(name, value)
+
+    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+        filtered = base_qs.filter(pk=pk_val)
+
+        # Patch: Include optimistic locking fields in filter if not modified.
+        filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified}
+        if filters:
+            filtered = filtered.filter(**filters)
+        self._modified.clear()
+
+        if not values:
+            return update_fields is not None or filtered.exists()
+        if self._meta.select_on_save and not forced_update:
+            return (
+                    filtered.exists()
+                    and
+                    (filtered._update(values) > 0 or filtered.exists())
+            )
+        return filtered._update(values) > 0
+
+    def save(self, *args, **kwargs):
+        if (not kwargs.get("force_insert")):
+            kwargs["force_update"] = True
+        return super().save(*args, **kwargs)
+
+
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
