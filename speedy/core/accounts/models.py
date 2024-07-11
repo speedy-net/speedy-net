@@ -97,11 +97,12 @@ class OptimisticLockingModelMixin:
     def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
         filtered = base_qs.filter(pk=pk_val)
 
-        # Patch: Include optimistic locking fields in filter if not modified.
-        filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified}
+        # Patch: Include optimistic locking fields in filter of current model (may be parent table) if not modified.
+        field_names = set(f.name for f in base_qs.model._meta.get_fields())
+        filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified and name in field_names}
         if filters:
             filtered = filtered.filter(**filters)
-        self._modified.clear()
+        self._modified.difference_update(field_names)
 
         if not values:
             return update_fields is not None or filtered.exists()
