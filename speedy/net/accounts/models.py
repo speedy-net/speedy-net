@@ -9,12 +9,12 @@ from django.contrib.sites.models import Site
 
 from translated_fields import TranslatedField
 
-from speedy.core.accounts.models import SiteProfileBase, User
+from speedy.core.accounts.models import OptimisticLockingModelMixin, SiteProfileBase, User
 
 logger = logging.getLogger(__name__)
 
 
-class SiteProfile(SiteProfileBase):
+class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
     RELATED_NAME = 'speedy_net_site_profile'
 
     DELETED_NAME = _('Speedy Net User')
@@ -25,6 +25,8 @@ class SiteProfile(SiteProfileBase):
         field=models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=None, blank=True, null=True),
     )
     friends_count = models.PositiveSmallIntegerField(default=0)
+
+    _optimistic_locking_fields = ("is_active",)
 
     @cached_property
     def is_active_and_valid(self):
