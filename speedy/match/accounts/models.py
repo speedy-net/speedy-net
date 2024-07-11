@@ -238,6 +238,8 @@ class SiteProfile(SiteProfileBase):
             self.relationship_status_to_match = list()
 
     def _set_active_languages(self, languages):
+        if self.active_languages != languages:
+            self._active_languages_modified = True
         self.active_languages = sorted(list(set(languages)))
         if ("is_active" in self.__dict__):
             del self.is_active
@@ -251,6 +253,25 @@ class SiteProfile(SiteProfileBase):
         self.activation_step = step
         if (commit):
             self.user.save_user_and_profile()
+
+    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+        filtered = base_qs.filter(pk=pk_val)
+
+        # Patch: If we didn't modify self.active_languages, include it in filter for optimistic locking.
+        if ("_active_languages_modified" in self.__dict__):
+            del self._active_languages_modified
+        else:
+            filtered = filtered.filter(active_languages=self.active_languages)
+
+        if not values:
+            return update_fields is not None or filtered.exists()
+        if self._meta.select_on_save and not forced_update:
+            return (
+                    filtered.exists()
+                    and
+                    (filtered._update(values) > 0 or filtered.exists())
+            )
+        return filtered._update(values) > 0
 
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
         """
@@ -302,6 +323,8 @@ class SiteProfile(SiteProfileBase):
             return self.__class__.RANK_0
 
     def save(self, *args, **kwargs):
+        if ((not kwargs.get("force_insert")) and ("_active_languages_modified" not in self.__dict__)):
+            kwargs["force_update"] = True
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
         self._set_values_to_match()
