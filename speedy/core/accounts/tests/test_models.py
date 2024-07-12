@@ -656,6 +656,52 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=valid_password), expr2=True)
                 self.assertIs(expr1=user.password, expr2=encoded)
 
+            def run_test_call_set_username_and_slug_race_condition_profile_should_not_change(self, test_choice):
+                user = ActiveUserFactory()
+                username = user.username
+                self.assertEqual(first=user.username, second=username)
+                self.assertEqual(first=user.slug, second=username)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                if (test_choice == 1):
+                    user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = "jenniferconnelly1234", "jennifer-connelly-1234", False
+                elif (test_choice == 2):
+                    user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = user_instance_2.id, user_instance_2.id, True
+                else:
+                    raise NotImplementedError()
+                user_instance_2.save()
+                if (test_choice == 1):
+                    self.assertEqual(first=user_instance_2.username, second="jenniferconnelly1234")
+                    self.assertEqual(first=user_instance_2.slug, second="jennifer-connelly-1234")
+                elif (test_choice == 2):
+                    self.assertEqual(first=user_instance_2.username, second=user.id)
+                    self.assertEqual(first=user_instance_2.slug, second=user.id)
+                else:
+                    raise NotImplementedError()
+                # Race condition: username and slug should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
+                user = User.objects.get(pk=user.pk)
+                if (test_choice == 1):
+                    self.assertEqual(first=user.username, second="jenniferconnelly1234")
+                    self.assertEqual(first=user.slug, second="jennifer-connelly-1234")
+                elif (test_choice == 2):
+                    self.assertEqual(first=user.username, second=user.id)
+                    self.assertEqual(first=user.slug, second=user.id)
+                else:
+                    raise NotImplementedError()
+                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.username, second=username)
+                self.assertEqual(first=user_instance_2.slug, second=username)
+                # Race condition: username and slug should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.username, second=username)
+                self.assertEqual(first=user.slug, second=username)
+
             def test_model_settings(self):
                 self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
                 self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
@@ -1440,6 +1486,134 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.profile.activation_step, second=10)
                 else:
                     raise NotImplementedError()
+
+            def test_call_set_is_active_race_condition_profile_should_not_change(self):
+                user = ActiveUserFactory()
+                self.assertEqual(first=user.is_active, second=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.is_active = False
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.is_active, second=False)
+                # Race condition: is_active should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_active, second=False)
+                user_instance_2.is_active = True
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.is_active, second=True)
+                # Race condition: is_active should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+
+            def test_call_set_is_deleted_race_condition_profile_should_not_change(self):
+                user = ActiveUserFactory()
+                self.assertIs(expr1=user.is_deleted, expr2=False)
+                self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2._mark_as_deleted()
+                self.assertIs(expr1=user_instance_2.is_deleted, expr2=True)
+                self.assertIs(expr1=user_instance_2.is_deleted_time is None, expr2=False)
+                # Race condition: is_deleted should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertIs(expr1=user.is_deleted, expr2=True)
+                self.assertIs(expr1=user.is_deleted_time is None, expr2=False)
+                user_instance_2.is_deleted = False
+                user_instance_2.is_deleted_time = None
+                user_instance_2.save()
+                self.assertIs(expr1=user_instance_2.is_deleted, expr2=False)
+                self.assertIs(expr1=user_instance_2.is_deleted_time is None, expr2=True)
+                # Race condition: is_deleted should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertIs(expr1=user.is_deleted, expr2=False)
+                self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
+
+            def test_call_set_username_and_slug_race_condition_profile_should_not_change_1(self):
+                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=1)
+
+            def test_call_set_username_and_slug_race_condition_profile_should_not_change_2(self):
+                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=2)
+
+            def test_call_set_is_staff_and_is_superuser_race_condition_profile_should_not_change(self):
+                user = ActiveUserFactory()
+                self.assertEqual(first=user.is_staff, second=False)
+                self.assertEqual(first=user.is_superuser, second=False)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.is_staff = True
+                user_instance_2.is_superuser = True
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.is_staff, second=True)
+                self.assertEqual(first=user_instance_2.is_superuser, second=True)
+                # Race condition: is_staff and is_superuser should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_staff, second=True)
+                self.assertEqual(first=user.is_superuser, second=True)
+                user_instance_2.is_staff = False
+                user_instance_2.is_superuser = False
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.is_staff, second=False)
+                self.assertEqual(first=user_instance_2.is_superuser, second=False)
+                # Race condition: is_staff and is_superuser should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_staff, second=False)
+                self.assertEqual(first=user.is_superuser, second=False)
+
+            def test_call_set_password_race_condition_profile_should_not_change(self):
+                user = ActiveUserFactory()
+                self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
+                user_instance_2.set_unusable_password()
+                user_instance_2.save()
+                self.assertIs(expr1=(user_instance_2.has_usable_password() is False), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
+                # Race condition: password should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertIs(expr1=(user.has_usable_password() is False), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.set_password(raw_password="aabbccddef12")
+                user_instance_2.save()
+                self.assertIs(expr1=(user_instance_2.has_usable_password() is True), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
+                # Race condition: password should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.set_password(raw_password="abcdef34ab!!")
+                user_instance_2.save()
+                self.assertIs(expr1=(user_instance_2.has_usable_password() is True), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
+                # Race condition: password should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
 
 
         @only_on_sites_with_login

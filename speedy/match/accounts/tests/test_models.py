@@ -7,6 +7,7 @@ if (django_settings.TESTS):
 
         from django.test import override_settings
         from django.core.exceptions import ValidationError
+        from django.db import DatabaseError
 
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
@@ -839,6 +840,51 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
+
+            def test_call_deactivate_race_condition_profile_should_not_become_active_with_not_allowed_to_use_speedy_match(self):
+                user = self.get_active_user_jennifer()
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                user_instance_2.speedy_match_profile.deactivate()
+                self.assertEqual(first=user_instance_2.is_active, second=True)
+                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user_instance_2.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                # Race condition: profile should not become active.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                user_instance_2.speedy_match_profile.not_allowed_to_use_speedy_match = True
+                user_instance_2.speedy_match_profile.save()
+                self.assertEqual(first=user_instance_2.is_active, second=True)
+                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user_instance_2.speedy_match_profile.not_allowed_to_use_speedy_match is True), expr2=True)
+                # Race condition: not_allowed_to_use_speedy_match should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is True), expr2=True)
+                user_instance_2.speedy_match_profile.not_allowed_to_use_speedy_match = False
+                user_instance_2.speedy_match_profile.save()
+                self.assertEqual(first=user_instance_2.is_active, second=True)
+                self.assertEqual(first=user_instance_2.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user_instance_2.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
+                # Race condition: not_allowed_to_use_speedy_match should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
 
             def test_call_speedy_net_deactivate_and_activate_directly_and_assert_no_exception(self):
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_net_profile.deactivate() and user.speedy_net_profile.activate().
