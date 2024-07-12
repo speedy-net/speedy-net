@@ -1578,35 +1578,42 @@ if (django_settings.TESTS):
                 user = ActiveUserFactory()
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
                 user_instance_2.set_unusable_password()
                 user_instance_2.save()
                 self.assertIs(expr1=(user_instance_2.has_usable_password() is False), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
                 # Race condition: password should not change.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertIs(expr1=(user.has_usable_password() is False), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
                 user_instance_2 = User.objects.get(pk=user.pk)
                 user_instance_2.set_password(raw_password="aabbccddef12")
                 user_instance_2.save()
                 self.assertIs(expr1=(user_instance_2.has_usable_password() is True), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
                 # Race condition: password should not change.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
                 user_instance_2 = User.objects.get(pk=user.pk)
                 user_instance_2.set_password(raw_password="abcdef34ab!!")
                 user_instance_2.save()
                 self.assertIs(expr1=(user_instance_2.has_usable_password() is True), expr2=True)
+                self.assertNotEqual(first=user.password, second=user_instance_2.password)
                 # Race condition: password should not change.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
+                self.assertEqual(first=user.password, second=user_instance_2.password)
 
 
         @only_on_sites_with_login
