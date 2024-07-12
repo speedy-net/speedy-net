@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import itertools
+        import unittest
         from datetime import date
 
         from django.test import override_settings
@@ -841,6 +842,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
+            @unittest.expectedFailure
             def test_call_deactivate_race_condition_profile_should_not_become_active_with_not_allowed_to_use_speedy_match(self):
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)

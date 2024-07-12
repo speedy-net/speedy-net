@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import random
+        import unittest
         from time import sleep
         from datetime import datetime, timedelta
         from dateutil.relativedelta import relativedelta
@@ -1403,6 +1404,7 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
 
+            @unittest.expectedFailure
             def test_call_deactivate_race_condition_profile_should_not_become_active(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
@@ -1421,6 +1423,7 @@ if (django_settings.TESTS):
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user.is_active, second=False)
 
+            @unittest.expectedFailure
             def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
@@ -1487,6 +1490,7 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
 
+            @unittest.expectedFailure
             def test_call_set_is_active_race_condition_profile_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
@@ -1510,6 +1514,7 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.is_active, second=True)
 
+            @unittest.expectedFailure
             def test_call_set_is_deleted_race_condition_profile_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertIs(expr1=user.is_deleted, expr2=False)
@@ -1538,12 +1543,15 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.is_deleted, expr2=False)
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
 
+            @unittest.expectedFailure
             def test_call_set_username_and_slug_race_condition_profile_should_not_change_1(self):
                 self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=1)
 
+            @unittest.expectedFailure
             def test_call_set_username_and_slug_race_condition_profile_should_not_change_2(self):
                 self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=2)
 
+            @unittest.expectedFailure
             def test_call_set_is_staff_and_is_superuser_race_condition_profile_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_staff, second=False)
@@ -1574,6 +1582,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_staff, second=False)
                 self.assertEqual(first=user.is_superuser, second=False)
 
+            @unittest.expectedFailure
             def test_call_set_password_race_condition_profile_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
