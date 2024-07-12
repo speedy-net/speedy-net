@@ -656,7 +656,7 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=valid_password), expr2=True)
                 self.assertIs(expr1=user.password, expr2=encoded)
 
-            def run_test_call_set_username_and_slug_race_condition_profile_should_not_change(self, test_choice):
+            def run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(self, test_choice):
                 user = ActiveUserFactory()
                 username = user.username
                 self.assertEqual(first=user.username, second=username)
@@ -1487,7 +1487,7 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
 
-            def test_call_set_is_active_race_condition_profile_should_not_change(self):
+            def test_call_set_is_active_race_condition_user_model_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
@@ -1510,7 +1510,7 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.is_active, second=True)
 
-            def test_call_set_is_deleted_race_condition_profile_should_not_change(self):
+            def test_call_set_is_deleted_race_condition_user_model_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertIs(expr1=user.is_deleted, expr2=False)
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
@@ -1538,13 +1538,13 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.is_deleted, expr2=False)
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
 
-            def test_call_set_username_and_slug_race_condition_profile_should_not_change_1(self):
-                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=1)
+            def test_call_set_username_and_slug_race_condition_user_model_should_not_change_1(self):
+                self.run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(test_choice=1)
 
-            def test_call_set_username_and_slug_race_condition_profile_should_not_change_2(self):
-                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=2)
+            def test_call_set_username_and_slug_race_condition_user_model_should_not_change_2(self):
+                self.run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(test_choice=2)
 
-            def test_call_set_is_staff_and_is_superuser_race_condition_profile_should_not_change(self):
+            def test_call_set_is_staff_and_is_superuser_race_condition_user_model_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_staff, second=False)
                 self.assertEqual(first=user.is_superuser, second=False)
@@ -1574,7 +1574,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_staff, second=False)
                 self.assertEqual(first=user.is_superuser, second=False)
 
-            def test_call_set_password_race_condition_profile_should_not_change(self):
+            def test_call_set_password_race_condition_user_model_should_not_change(self):
                 user = ActiveUserFactory()
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
