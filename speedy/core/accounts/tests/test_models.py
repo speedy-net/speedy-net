@@ -1498,17 +1498,17 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.username, second=username)
                 self.assertEqual(first=user.slug, second=username)
                 user_instance_2 = User.objects.get(pk=user.pk)
-                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = "aaaabbbbcccc1234", "aaaabbbbcccc1234", False
+                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = "aaaabbbbcccc1234", "aaaabbbbcccc-1234", False
                 user_instance_2.save()
                 self.assertEqual(first=user_instance_2.username, second="aaaabbbbcccc1234")
-                self.assertEqual(first=user_instance_2.slug, second="aaaabbbbcccc1234")
+                self.assertEqual(first=user_instance_2.slug, second="aaaabbbbcccc-1234")
                 # Race condition: username and slug should not change.
                 with self.assertRaises(DatabaseError) as cm:
                     user.save_user_and_profile()
                 self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.username, second="aaaabbbbcccc1234")
-                self.assertEqual(first=user.slug, second="aaaabbbbcccc1234")
+                self.assertEqual(first=user.slug, second="aaaabbbbcccc-1234")
                 user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
                 user_instance_2.save()
                 self.assertEqual(first=user_instance_2.username, second=username)
