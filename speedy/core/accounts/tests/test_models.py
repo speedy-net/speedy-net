@@ -656,6 +656,52 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=valid_password), expr2=True)
                 self.assertIs(expr1=user.password, expr2=encoded)
 
+            def run_test_call_set_username_and_slug_race_condition_profile_should_not_change(self, test_choice):
+                user = ActiveUserFactory()
+                username = user.username
+                self.assertEqual(first=user.username, second=username)
+                self.assertEqual(first=user.slug, second=username)
+                user_instance_2 = User.objects.get(pk=user.pk)
+                if (test_choice == 1):
+                    user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = "jenniferconnelly1234", "jennifer-connelly-1234", False
+                elif (test_choice == 2):
+                    user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = user_instance_2.id, user_instance_2.id, True
+                else:
+                    raise NotImplementedError()
+                user_instance_2.save()
+                if (test_choice == 1):
+                    self.assertEqual(first=user_instance_2.username, second="jenniferconnelly1234")
+                    self.assertEqual(first=user_instance_2.slug, second="jennifer-connelly-1234")
+                elif (test_choice == 2):
+                    self.assertEqual(first=user_instance_2.username, second=user.id)
+                    self.assertEqual(first=user_instance_2.slug, second=user.id)
+                else:
+                    raise NotImplementedError()
+                # Race condition: username and slug should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
+                user = User.objects.get(pk=user.pk)
+                if (test_choice == 1):
+                    self.assertEqual(first=user.username, second="jenniferconnelly1234")
+                    self.assertEqual(first=user.slug, second="jennifer-connelly-1234")
+                elif (test_choice == 2):
+                    self.assertEqual(first=user.username, second=user.id)
+                    self.assertEqual(first=user.slug, second=user.id)
+                else:
+                    raise NotImplementedError()
+                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
+                user_instance_2.save()
+                self.assertEqual(first=user_instance_2.username, second=username)
+                self.assertEqual(first=user_instance_2.slug, second=username)
+                # Race condition: username and slug should not change.
+                with self.assertRaises(DatabaseError) as cm:
+                    user.save_user_and_profile()
+                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
+                user = User.objects.get(pk=user.pk)
+                self.assertEqual(first=user.username, second=username)
+                self.assertEqual(first=user.slug, second=username)
+
             def test_model_settings(self):
                 self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
                 self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
@@ -1493,62 +1539,10 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
 
             def test_call_set_username_and_slug_race_condition_profile_should_not_change_1(self):
-                user = ActiveUserFactory()
-                username = user.username
-                self.assertEqual(first=user.username, second=username)
-                self.assertEqual(first=user.slug, second=username)
-                user_instance_2 = User.objects.get(pk=user.pk)
-                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = "aaaabbbbcccc1234", "aaaabbbbcccc-1234", False
-                user_instance_2.save()
-                self.assertEqual(first=user_instance_2.username, second="aaaabbbbcccc1234")
-                self.assertEqual(first=user_instance_2.slug, second="aaaabbbbcccc-1234")
-                # Race condition: username and slug should not change.
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.username, second="aaaabbbbcccc1234")
-                self.assertEqual(first=user.slug, second="aaaabbbbcccc-1234")
-                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
-                user_instance_2.save()
-                self.assertEqual(first=user_instance_2.username, second=username)
-                self.assertEqual(first=user_instance_2.slug, second=username)
-                # Race condition: username and slug should not change.
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.username, second=username)
-                self.assertEqual(first=user.slug, second=username)
+                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=1)
 
             def test_call_set_username_and_slug_race_condition_profile_should_not_change_2(self):
-                user = ActiveUserFactory()
-                username = user.username
-                self.assertEqual(first=user.username, second=username)
-                self.assertEqual(first=user.slug, second=username)
-                user_instance_2 = User.objects.get(pk=user.pk)
-                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = user_instance_2.id, user_instance_2.id, True
-                user_instance_2.save()
-                self.assertEqual(first=user_instance_2.username, second=user.id)
-                self.assertEqual(first=user_instance_2.slug, second=user.id)
-                # Race condition: username and slug should not change.
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.username, second=user.id)
-                self.assertEqual(first=user.slug, second=user.id)
-                user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
-                user_instance_2.save()
-                self.assertEqual(first=user_instance_2.username, second=username)
-                self.assertEqual(first=user_instance_2.slug, second=username)
-                # Race condition: username and slug should not change.
-                with self.assertRaises(DatabaseError) as cm:
-                    user.save_user_and_profile()
-                self.assertIn(member='duplicate key value violates unique constraint "accounts_entity_pkey"', container=str(cm.exception))
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.username, second=username)
-                self.assertEqual(first=user.slug, second=username)
+                self.run_test_call_set_username_and_slug_race_condition_profile_should_not_change(test_choice=2)
 
             def test_call_set_is_staff_and_is_superuser_race_condition_profile_should_not_change(self):
                 user = ActiveUserFactory()
