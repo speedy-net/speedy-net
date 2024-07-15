@@ -8,7 +8,7 @@ if (django_settings.TESTS):
         from dateutil.relativedelta import relativedelta
 
         from django.test import override_settings
-        from django.db.utils import DataError, DatabaseError, IntegrityError
+        from django.db.utils import DataError, IntegrityError
         from django.core.exceptions import ValidationError
         from django.utils.timezone import now
 
@@ -22,7 +22,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
-        from speedy.core.accounts.models import Entity, ReservedUsername, User, UserEmailAddress
+        from speedy.core.accounts.models import ConcurrencyError, Entity, ReservedUsername, User, UserEmailAddress
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
         from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin, SpeedyMatchAccountsLanguageMixin
@@ -1367,9 +1367,9 @@ if (django_settings.TESTS):
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user_instance_2.is_active, second=False)
                 # Race condition: profile should not become active.
-                with self.assertRaises(DatabaseError) as cm:
+                with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                self.assertEqual(first=str(cm.exception), second="Update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
@@ -1397,9 +1397,9 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
                 # Race condition: profile should not become active.
-                with self.assertRaises(DatabaseError) as cm:
+                with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                self.assertEqual(first=str(cm.exception), second="Update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
@@ -1428,9 +1428,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError()
                 self.assertEqual(first=user_instance_2.profile.is_active, second=True)
                 # Race condition: profile should not become inactive.
-                with self.assertRaises(DatabaseError) as cm:
+                with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="Forced update did not affect any rows.")
+                self.assertEqual(first=str(cm.exception), second="Update did not affect any rows.")
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.profile.is_active, second=True)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
