@@ -11,7 +11,7 @@ from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 from django.urls import reverse
-from django.db import models, transaction
+from django.db import DatabaseError, models, transaction
 from django.dispatch import receiver
 from django.utils import formats
 from django.utils.timezone import now
@@ -35,6 +35,10 @@ from .utils import get_site_profile_model, normalize_email
 from . import validators as speedy_core_accounts_validators
 
 logger = logging.getLogger(__name__)
+
+
+class ConcurrencyError(DatabaseError):
+    pass
 
 
 class CleanAndValidateAllFieldsMixin(object):
@@ -95,29 +99,25 @@ class OptimisticLockingModelMixin:
         super().__setattr__(name, value)
 
     def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
-        filtered = base_qs.filter(pk=pk_val)
+        updated = None
 
         # Patch: Include optimistic locking fields in filter of current model (may be parent table) if not modified.
         field_names = set(f.name for f in base_qs.model._meta.get_fields())
         filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified and name in field_names}
         if filters:
-            filtered = filtered.filter(**filters)
+            filtered = base_qs.filter(**filters)
+            updated = super()._do_update(base_qs=filtered, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
+            if ((not updated) and (base_qs.filter(pk=pk_val).exists())):
+                if forced_update:
+                    raise ConcurrencyError("Forced update did not affect any rows.")
+                else:
+                    raise ConcurrencyError("Update did not affect any rows.")
         self._modified.difference_update(field_names)
 
-        if not values:
-            return update_fields is not None or filtered.exists()
-        if self._meta.select_on_save and not forced_update:
-            return (
-                    filtered.exists()
-                    and
-                    (filtered._update(values) > 0 or filtered.exists())
-            )
-        return filtered._update(values) > 0
+        if (updated is None):
+            updated = super()._do_update(base_qs=base_qs, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
 
-    def save(self, *args, **kwargs):
-        if (not kwargs.get("force_insert")):
-            kwargs["force_update"] = True
-        return super().save(*args, **kwargs)
+        return updated
 
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
