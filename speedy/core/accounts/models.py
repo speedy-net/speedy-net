@@ -99,6 +99,8 @@ class OptimisticLockingModelMixin:
         super().__setattr__(name, value)
 
     def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+        updated = None
+
         # Patch: Include optimistic locking fields in filter of current model (may be parent table) if not modified.
         field_names = set(f.name for f in base_qs.model._meta.get_fields())
         filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified and name in field_names}
@@ -110,10 +112,12 @@ class OptimisticLockingModelMixin:
                     raise ConcurrencyError("Forced update did not affect any rows.")
                 else:
                     raise ConcurrencyError("Update did not affect any rows.")
-            return updated
         self._modified.difference_update(field_names)
 
-        return super()._do_update(base_qs=base_qs, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
+        if (updated is None):
+            updated = super()._do_update(base_qs=base_qs, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
+
+        return updated
 
 
 class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
