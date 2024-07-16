@@ -271,7 +271,7 @@ class ReservedUsername(Entity):
         return super().clean_fields(exclude=exclude)
 
 
-class User(PermissionsMixin, Entity, AbstractBaseUser):
+class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUser):
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
     NAME_REQUIRED_LOCALIZABLE_FIELDS = NAME_LOCALIZABLE_FIELDS[:1]
@@ -361,6 +361,8 @@ class User(PermissionsMixin, Entity, AbstractBaseUser):
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
+
+    _optimistic_locking_fields = ("username", "slug", "is_active", "is_deleted", "is_staff", "is_superuser", "password", "has_confirmed_email", "allowed_to_change_date_of_birth_unlimited_times")
 
     @staticmethod
     def diet_choices_with_description(gender):
