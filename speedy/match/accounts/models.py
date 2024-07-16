@@ -46,7 +46,7 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
     )
     RANK_VALID_VALUES = [choice[0] for choice in RANK_CHOICES]
 
-    _optimistic_locking_fields = ("active_languages",)
+    _optimistic_locking_fields = ("active_languages", "not_allowed_to_use_speedy_match")
 
     @staticmethod
     def active_languages_default():
