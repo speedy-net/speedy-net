@@ -1412,6 +1412,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user_instance_2.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user_instance_2.is_active, second=False)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user_instance_2.is_active, second=True)
+                else:
+                    raise NotImplementedError()
                 # Race condition: profile should not become active.
                 with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
@@ -1420,6 +1424,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.profile.is_active, second=False)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=user.is_active, second=False)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.is_active, second=True)
+                else:
+                    raise NotImplementedError()
 
             def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
                 user = ActiveUserFactory()
@@ -1433,13 +1441,19 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError()
                 user_instance_2 = User.objects.get(pk=user.pk)
-                image = user_instance_2.photo
-                if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertIs(expr1=user_instance_2.photo is None, expr2=True)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertIs(expr1=user_instance_2.photo is None, expr2=False)
+                else:
+                    raise NotImplementedError()
+                if (not (user_instance_2.photo is None)):
+                    image = user_instance_2.photo
                     image.visible_on_website = False
                     image.speedy_image_moderation_time = now()
                     image.aws_image_moderation_time = now()
                     image.save()
-                    user_instance_2.photo = None
+                user_instance_2.photo = None
                 user_instance_2.profile.deactivate()
                 user_instance_2.save_user_and_profile()
                 self.assertEqual(first=user_instance_2.profile.is_active, second=False)
