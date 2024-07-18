@@ -1425,6 +1425,13 @@ if (django_settings.TESTS):
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.profile.is_active, second=True)
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    pass
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertEqual(first=user.profile.activation_step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
+                    self.assertEqual(first=user.profile.activation_step, second=10)
+                else:
+                    raise NotImplementedError()
                 user_instance_2 = User.objects.get(pk=user.pk)
                 image = user_instance_2.photo
                 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
