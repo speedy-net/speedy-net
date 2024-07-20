@@ -13,7 +13,9 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=5)), confirmation_sent__lte=1).exclude(confirmation_token='')
-        for email in emails:
+        for e in emails:
+            # Emails might have changed in the database, load them again.
+            email = UserEmailAddress.objects.get(pk=e.pk)
             translation.activate(language='en')
             user = email.user
             if (email.date_created <= now() - timedelta(days=5)):

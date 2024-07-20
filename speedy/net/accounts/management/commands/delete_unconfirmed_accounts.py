@@ -21,7 +21,9 @@ class Command(BaseCommand):
             date_created__lte=(now() - timedelta(days=10)),
             confirmation_sent__gte=2,
         ).exclude(user__is_staff=True)
-        for email in emails:
+        for e in emails:
+            # Emails might have changed in the database, load them again.
+            email = UserEmailAddress.objects.get(pk=e.pk)
             user = email.user
             if (not (user.is_staff)):
                 if (email.date_created <= now() - timedelta(days=10)):
@@ -34,7 +36,9 @@ class Command(BaseCommand):
             date_created__gte=(now() - timedelta(days=18)),
             has_confirmed_email=False,
         ).exclude(is_staff=True)
-        for user in users:
+        for u in users:
+            # Users might have changed in the database, load them again.
+            user = User.objects.get(pk=u.pk)
             if (not (user.is_staff)):
                 if ((user.date_created <= now() - timedelta(days=14)) and (user.date_created >= now() - timedelta(days=18))):
                     user._update_has_confirmed_email_field()
@@ -60,7 +64,9 @@ class Command(BaseCommand):
             speedy_match_site_profile__last_visit__lt=now() - timedelta(days=60),
             speedy_net_site_profile__last_visit__lt=now() - timedelta(days=60),
         ).exclude(is_staff=True).exclude(username=F('id'))
-        for user in users:
+        for u in users:
+            # Users might have changed in the database, load them again.
+            user = User.objects.get(pk=u.pk)
             if (not (user.is_staff)):
                 if ((user.is_deleted is True) and (user.is_deleted_time is not None)):
                     if (not ((user.username == user.id) and (user.slug == user.id))):

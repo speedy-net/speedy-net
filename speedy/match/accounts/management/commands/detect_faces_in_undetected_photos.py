@@ -24,7 +24,9 @@ class Command(BaseCommand):
             speedy_match_site_profile__active_languages__len__gt=0,
         ).distinct(
         ).order_by('photo__date_created')[:36]
-        for user in users:
+        for u in users:
+            # Users might have changed in the database, load them again.
+            user = User.objects.get(pk=u.pk)
             if (len(user.speedy_match_profile.active_languages) > 0):
                 image = user.photo
                 if ((image is not None) and (image.visible_on_website) and (image.aws_facial_analysis_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):

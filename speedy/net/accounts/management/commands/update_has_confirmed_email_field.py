@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         users = User.objects.all()
-        for user in users:
+        for u in users:
             # Users might have changed in the database, load them again.
-            user = User.objects.get(pk=user.pk)
+            user = User.objects.get(pk=u.pk)
             user._update_has_confirmed_email_field()
 
 
