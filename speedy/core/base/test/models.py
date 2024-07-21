@@ -49,7 +49,7 @@ if (django_settings.TESTS):
             if test_result_count:
                 print(f"\n{test_result_count} {slowest_or_fastest} tests:")
             for func_name, timing in test_results:
-                elapsed_time = formats.number_format(value=timing, decimal_pos=3)
+                elapsed_time = formats.number_format(value=timing, decimal_pos=6)
                 print(f"{elapsed_time}s {func_name}")
 
         def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
