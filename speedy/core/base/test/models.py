@@ -37,13 +37,14 @@ if (django_settings.TESTS):
             assert (slowest_or_fastest in {"slowest", "fastest"})
             if (slowest_or_fastest == "slowest"):
                 num_tests = self.NUM_SLOW_TESTS
-                by_time = sorted(self.test_times, key=lambda x: x[1], reverse=True)
+                by_time_sorted_reverse = True
             elif (slowest_or_fastest == "fastest"):
                 num_tests = self.NUM_FAST_TESTS
-                by_time = sorted(self.test_times, key=lambda x: x[1], reverse=False)
+                by_time_sorted_reverse = False
             else:
                 raise NotImplementedError()
 
+            by_time = sorted(self.test_times, key=lambda x: x[1], reverse=by_time_sorted_reverse)
             if by_time is not None:
                 by_time = by_time[:num_tests]
             test_results = by_time
