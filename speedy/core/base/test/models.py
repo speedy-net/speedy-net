@@ -227,10 +227,10 @@ if (django_settings.TESTS):
             pass
 
         def setUp(self):
+            self.start_time()
             return_value = super().setUp()
             self.set_up()
             self.validate_all_values()
-            self.start_time()
             return return_value
 
         def tearDown(self):
