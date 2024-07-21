@@ -33,15 +33,17 @@ if (django_settings.TESTS):
             if (duration is not None):
                 self.test_times.append((test_name, duration))
 
-        def _print_test_times(self, slowest):
-            if slowest:
+        def _print_test_times(self, slowest_or_fastest):
+            assert (slowest_or_fastest in {"slowest", "fastest"})
+            if (slowest_or_fastest == "slowest"):
                 num_tests = self.NUM_SLOW_TESTS
-                slowest_or_fastest = "slowest"
-            else:
+                by_time = sorted(self.test_times, key=lambda x: x[1], reverse=True)
+            elif (slowest_or_fastest == "fastest"):
                 num_tests = self.NUM_FAST_TESTS
-                slowest_or_fastest = "fastest"
+                by_time = sorted(self.test_times, key=lambda x: x[1], reverse=False)
+            else:
+                raise NotImplementedError()
 
-            by_time = sorted(self.test_times, key=lambda x: x[1], reverse=slowest)
             if by_time is not None:
                 by_time = by_time[:num_tests]
             test_results = by_time
@@ -93,8 +95,8 @@ if (django_settings.TESTS):
 
         def suite_result(self, suite, result, **kwargs):
             return_value = super().suite_result(suite=suite, result=result, **kwargs)
-            self._print_test_times(slowest=False)
-            self._print_test_times(slowest=True)
+            self._print_test_times(slowest_or_fastest="fastest")
+            self._print_test_times(slowest_or_fastest="slowest")
             return return_value
 
 
