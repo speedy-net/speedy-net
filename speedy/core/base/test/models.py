@@ -29,7 +29,9 @@ if (django_settings.TESTS):
             self.test_times = []
 
         def _save_test_time(self, test_name, duration_func):
-            self.test_times.append((test_name, duration_func()))
+            duration = duration_func()
+            if (duration is not None):
+                self.test_times.append((test_name, duration))
 
         def _print_test_times(self, slowest):
             if slowest:
@@ -212,6 +214,8 @@ if (django_settings.TESTS):
                 self._stop_time = time.perf_counter()
 
         def get_elapsed_time(self, stop=False):
+            if (not (hasattr(self, '_start_time'))):
+                return None
             if stop:
                 self.stop_time()
             stop_time = getattr(self, '_stop_time', None)
