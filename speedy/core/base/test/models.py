@@ -2,6 +2,7 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     import shutil
+    import time
 
     from django.core.management import call_command
     from django import test as django_test
@@ -168,6 +169,21 @@ if (django_settings.TESTS):
             self.all_other_full_http_hosts = ['https://{language_code}.{domain}/'.format(language_code=language_code, domain=self.site.domain) for language_code in self.all_other_language_codes]
             self.client = self.client_class(HTTP_HOST=self.http_host)
 
+        def start_time(self):
+            self._start_time = time.perf_counter()
+
+        def stop_time(self):
+            if (not (hasattr(self, '_stop_time'))):
+                self._stop_time = time.perf_counter()
+
+        def get_elapsed_time(self, stop=False):
+            if stop:
+                self.stop_time()
+            stop_time = getattr(self, '_stop_time', None)
+            if (stop_time is None):
+                stop_time = time.perf_counter()
+            return stop_time - self._start_time
+
         def tear_down(self):
             pass
 
@@ -175,11 +191,13 @@ if (django_settings.TESTS):
             return_value = super().setUp()
             self.set_up()
             self.validate_all_values()
+            self.start_time()
             return return_value
 
         def tearDown(self):
             return_value = super().tearDown()
             self.tear_down()
+            self.stop_time()
             return return_value
 
         @classmethod
