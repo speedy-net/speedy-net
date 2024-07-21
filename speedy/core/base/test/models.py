@@ -8,12 +8,16 @@ if (django_settings.TESTS):
     from django import test as django_test
     from django.test.runner import DiscoverRunner
     from django.contrib.sites.models import Site
+    from django.utils import formats
     from django.utils.translation import gettext_lazy as _
 
     from speedy.core.base.test import tests_settings
 
 
     class SiteDiscoverRunner(DiscoverRunner):
+        NUM_FAST_TESTS = 3
+        NUM_SLOW_TESTS = 3
+
         def __init__(self, *args, **kwargs):
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
@@ -22,6 +26,29 @@ if (django_settings.TESTS):
             assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'})
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
+            self.test_times = []
+
+        def _save_test_time(self, test_name, duration_func):
+            self.test_times.append((test_name, duration_func()))
+
+        def _print_test_times(self, slowest):
+            if slowest:
+                num_tests = self.NUM_SLOW_TESTS
+                slowest_or_fastest = "slowest"
+            else:
+                num_tests = self.NUM_FAST_TESTS
+                slowest_or_fastest = "fastest"
+
+            by_time = sorted(self.test_times, key=lambda x: x[1], reverse=slowest)
+            if by_time is not None:
+                by_time = by_time[:num_tests]
+            test_results = by_time
+            test_result_count = len(test_results)
+            if test_result_count:
+                print(f"\n{test_result_count} {slowest_or_fastest} tests:")
+            for func_name, timing in test_results:
+                elapsed_time = formats.number_format(value=timing, decimal_pos=3)
+                print(f"{elapsed_time}s {func_name}")
 
         def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
             if (not (test_labels)):
@@ -50,6 +77,8 @@ if (django_settings.TESTS):
         def test_suite(self, tests=()):
             if (self.test_only is not None):
                 tests = tests[:self.test_only]
+            for test in tests:
+                test.addCleanup(self._save_test_time, test.id(), test.get_elapsed_time)
             return super().test_suite(tests=tests)
 
         def setup_test_environment(self, **kwargs):
@@ -59,6 +88,12 @@ if (django_settings.TESTS):
         def teardown_test_environment(self, **kwargs):
             super().teardown_test_environment(**kwargs)
             del django_settings.TEST_LANGUAGES
+
+        def suite_result(self, suite, result, **kwargs):
+            return_value = super().suite_result(suite=suite, result=result, **kwargs)
+            self._print_test_times(slowest=False)
+            self._print_test_times(slowest=True)
+            return return_value
 
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
