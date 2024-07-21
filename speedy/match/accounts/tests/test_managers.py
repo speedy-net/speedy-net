@@ -7,6 +7,8 @@ if (django_settings.TESTS):
         # from datetime import date
         # from dateutil.relativedelta import relativedelta
 
+        from django.utils import formats
+
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
 
@@ -437,7 +439,8 @@ if (django_settings.TESTS):
                     self.assertListEqual(list1=user_count_list, list2=[10, 15, 20])
                     self.assertListEqual(list1=matches_list_length_list, list2=[9, 14, 19])
                     self.assertEqual(first=User.objects.count(), second=20)
-                print("{}::Tested with {} users.".format(self.id(), User.objects.count()))
+                elapsed_time = formats.number_format(value=self.get_elapsed_time(stop=True), decimal_pos=3)
+                print("{}::Tested with {} users. Test took {}s.".format(self.id(), User.objects.count(), elapsed_time))
 
             def test_photo_not_visible_doesnt_match_profile_in_matches_list(self):
                 """
