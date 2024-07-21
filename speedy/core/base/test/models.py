@@ -98,6 +98,7 @@ if (django_settings.TESTS):
             return_value = super().suite_result(suite=suite, result=result, **kwargs)
             self._print_test_times(slowest_or_fastest="fastest")
             self._print_test_times(slowest_or_fastest="slowest")
+            print()
             return return_value
 
 
