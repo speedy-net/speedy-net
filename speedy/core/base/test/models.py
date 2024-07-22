@@ -230,6 +230,12 @@ if (django_settings.TESTS):
         def tear_down(self):
             pass
 
+        def skipTest(self, *args, **kwargs):
+            # Don't print the test duration if the test is skipped.
+            if ("_start_time" in self.__dict__):
+                del self._start_time
+            return super().skipTest(*args, **kwargs)
+
         def setUp(self):
             self.start_time()
             return_value = super().setUp()
