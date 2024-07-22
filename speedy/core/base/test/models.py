@@ -175,8 +175,12 @@ if (django_settings.TESTS):
             self.assertIs(expr1=(15 < len(tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 23), expr2=True)
             self.assertIs(expr1=(25 < len(tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST) < 33), expr2=True)
 
-        def set_up(self):
-            self.language_code = django_settings.LANGUAGE_CODE
+        def run_or_skip_this_test(self):
+            """
+            Skip this test if the language code is not in the list of languages to test.
+
+            :return: None
+            """
             if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                 pass
             else:
@@ -202,7 +206,10 @@ if (django_settings.TESTS):
                 raise NotImplementedError()
             if (not (run_this_test)):
                 self.skipTest(reason="Skipped test - language code skipped.")
-                return
+
+        def set_up(self):
+            self.language_code = django_settings.LANGUAGE_CODE
+            self.run_or_skip_this_test()
             self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
             self.all_other_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES if (not (language_code == self.language_code))]
             self.http_host = "{language_code}.{domain}".format(language_code=self.language_code, domain=self.site.domain)
