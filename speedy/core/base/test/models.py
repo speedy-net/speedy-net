@@ -238,7 +238,13 @@ if (django_settings.TESTS):
             pass
 
         def skipTest(self, *args, **kwargs):
-            # Don't print the test duration if the test is skipped.
+            """
+            Skip this test. Don't print the test duration if the test is skipped.
+
+            :param args: Optional. Positional arguments.
+            :param kwargs: Optional. Keyword arguments.
+            :return: None
+            """
             if ("_start_time" in self.__dict__):
                 del self._start_time
             return super().skipTest(*args, **kwargs)
