@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_admin_inline_paginator',
+    'django_admin_inline_paginator_plus',
     'crispy_forms',
     'crispy_bootstrap4',
     'friendship',

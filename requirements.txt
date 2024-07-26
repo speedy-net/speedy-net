@@ -4,7 +4,7 @@ asgiref==3.8.1
 boto3==1.34.117
 botocore==1.34.117
 crispy-bootstrap4==2024.1
-django-admin-inline-paginator==0.3.0
+django-admin-inline-paginator-plus==0.1.1
 django-crispy-forms==2.1
 django-environ==0.11.2
 django-friendship==1.9.6

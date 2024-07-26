@@ -2,7 +2,7 @@ from django.contrib import admin as django_admin
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 
-from django_admin_inline_paginator.admin import TabularInlinePaginated
+from django_admin_inline_paginator_plus.admin import TabularInlinePaginated
 from friendship.models import Follow, Friend, FriendshipRequest, Block
 
 from speedy.core import admin

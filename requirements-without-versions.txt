@@ -3,7 +3,7 @@ asgiref
 boto3
 botocore
 crispy-bootstrap4
-django-admin-inline-paginator
+django-admin-inline-paginator-plus
 django-crispy-forms
 django-environ
 django-friendship
