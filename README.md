@@ -148,9 +148,9 @@ Install all dependencies using **apt-get**:
     sudo apt update
     sudo apt-get install python3.11 python3-pip python3.11-venv python3.11-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql-14 postgresql-client-14 postgresql-server-dev-14 nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install postgresql-15 postgresql-client-15 postgresql-server-dev-15 nginx uwsgi uwsgi-src postfix memcached
 
-In **/etc/postgresql/14/main/pg_hba.conf** change the lines:
+In **/etc/postgresql/15/main/pg_hba.conf** change the lines:
 
     host    all             all             127.0.0.1/32            scram-sha-256
     host    all             all             ::1/128                 scram-sha-256
