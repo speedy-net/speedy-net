@@ -620,6 +620,14 @@ if (django_settings.TESTS):
                     'date_of_birth': '1900-08-20',
                 }
 
+            def create_one_user(self):
+                user = DefaultUserFactory(slug='zzzzzz', username='zzzzzz')
+                user.save_user_and_profile()
+                self.assertEqual(first=user.username, second='zzzzzz')
+                self.assertEqual(first=user.slug, second='zzzzzz')
+                self.assertEqual(first=len(user.id), second=15)
+                return user
+
             def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
                 user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys()})
                 with self.assertRaises(ValidationError) as cm:
@@ -867,6 +875,48 @@ if (django_settings.TESTS):
                 with self.assertRaises(NotImplementedError) as cm:
                     User.objects.all().exclude(pk=2).delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
+
+            def test_cannot_create_user_with_an_invalid_id_1(self):
+                old_user = self.create_one_user()
+                old_user_id = old_user.id
+                old_user_id_as_list = list(old_user_id)
+                old_user_id_as_list[0] = '0'
+                new_user_id = ''.join(old_user_id_as_list)
+                self.assertEqual(first=new_user_id, second='0{}'.format(old_user_id[1:]))
+                self.assertNotEqual(first=new_user_id, second=old_user_id)
+                with self.assertRaises(ValidationError) as cm:
+                    new_user = DefaultUserFactory(slug='yyyyyy', username='yyyyyy', id=new_user_id)
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
+
+            def test_cannot_create_user_with_an_invalid_id_2(self):
+                old_user = self.create_one_user()
+                old_user_id = old_user.id
+                new_user_id = '{}1'.format(old_user_id)
+                self.assertNotEqual(first=new_user_id, second=old_user_id)
+                with self.assertRaises(ValidationError) as cm:
+                    new_user = DefaultUserFactory(slug='yyyyyy', username='yyyyyy', id=new_user_id)
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(max_length=15, value_length=16))
+
+            def test_cannot_create_user_with_an_invalid_id_3(self):
+                old_user = self.create_one_user()
+                old_user_id = old_user.id
+                old_user_id_as_list = list(old_user_id)
+                old_user_id_as_list[0] = random.choice(['_', 'k', 'K', '!', '@', '#'])
+                new_user_id = ''.join(old_user_id_as_list)
+                self.assertEqual(first=new_user_id, second='{}{}'.format(old_user_id_as_list[0], old_user_id[1:]))
+                self.assertNotEqual(first=new_user_id, second=old_user_id)
+                with self.assertRaises(ValidationError) as cm:
+                    new_user = DefaultUserFactory(slug='yyyyyy', username='yyyyyy', id=new_user_id)
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
+
+            def test_cannot_create_user_with_an_invalid_id_4(self):
+                old_user = self.create_one_user()
+                old_user_id = old_user.id
+                new_user_id = '{}'.format(old_user_id[:14])
+                self.assertNotEqual(first=new_user_id, second=old_user_id)
+                with self.assertRaises(ValidationError) as cm:
+                    new_user = DefaultUserFactory(slug='yyyyyy', username='yyyyyy', id=new_user_id)
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_user_with_reserved_username(self):
                 with self.assertRaises(ValidationError) as cm:
