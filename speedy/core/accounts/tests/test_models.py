@@ -93,7 +93,7 @@ if (django_settings.TESTS):
                     Entity.objects.all().exclude(pk=2).delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
-            def test_cannot_create_entity_with_an_invalid_id(self):
+            def test_cannot_create_entity_with_an_invalid_id_1(self):
                 old_entity = self.create_one_entity()
                 old_entity_id = old_entity.id
                 old_entity_id_as_list = list(old_entity_id)
@@ -110,6 +110,58 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="'0' not found in ['1', '2', '3', '4', '5', '6', '7', '8', '9']")
                 self.assertNotIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
                 for i in range(1, 15):
+                    self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
+                with self.assertRaises(ValidationError) as cm:
+                    new_entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
+
+            def test_cannot_create_entity_with_an_invalid_id_2(self):
+                old_entity = self.create_one_entity()
+                old_entity_id = old_entity.id
+                new_entity_id = '{}1'.format(old_entity_id)
+                self.assertNotEqual(first=new_entity_id, second=old_entity_id)
+                new_entity = Entity(slug='yyyyyy', username='yyyyyy', id=new_entity_id)
+                self.assertEqual(first=new_entity.id, second=new_entity_id)
+                self.assertNotEqual(first=new_entity.id, second=old_entity.id)
+                self.assertEqual(first=len(new_entity.id), second=16)
+                for i in range(1, 16):
+                    self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
+                with self.assertRaises(ValidationError) as cm:
+                    new_entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(max_length=15, value_length=16))
+
+            def test_cannot_create_entity_with_an_invalid_id_3(self):
+                old_entity = self.create_one_entity()
+                old_entity_id = old_entity.id
+                old_entity_id_as_list = list(old_entity_id)
+                old_entity_id_as_list[0] = random.choice(['_', 'k', 'K', '!', '@', '#'])
+                new_entity_id = ''.join(old_entity_id_as_list)
+                self.assertEqual(first=new_entity_id, second='{}{}'.format(old_entity_id_as_list[0], old_entity_id[1:]))
+                self.assertNotEqual(first=new_entity_id, second=old_entity_id)
+                new_entity = Entity(slug='yyyyyy', username='yyyyyy', id=new_entity_id)
+                self.assertEqual(first=new_entity.id, second=new_entity_id)
+                self.assertNotEqual(first=new_entity.id, second=old_entity.id)
+                self.assertEqual(first=len(new_entity.id), second=15)
+                with self.assertRaises(AssertionError) as cm:
+                    self.assertIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
+                self.assertEqual(first=str(cm.exception), second="'{}' not found in ['1', '2', '3', '4', '5', '6', '7', '8', '9']".format(old_entity_id_as_list[0]))
+                self.assertNotIn(member=new_entity.id[0], container=[str(i) for i in range(1, 10)])
+                for i in range(1, 15):
+                    self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
+                with self.assertRaises(ValidationError) as cm:
+                    new_entity.save()
+                self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
+
+            def test_cannot_create_entity_with_an_invalid_id_4(self):
+                old_entity = self.create_one_entity()
+                old_entity_id = old_entity.id
+                new_entity_id = '{}'.format(old_entity_id[:14])
+                self.assertNotEqual(first=new_entity_id, second=old_entity_id)
+                new_entity = Entity(slug='yyyyyy', username='yyyyyy', id=new_entity_id)
+                self.assertEqual(first=new_entity.id, second=new_entity_id)
+                self.assertNotEqual(first=new_entity.id, second=old_entity.id)
+                self.assertEqual(first=len(new_entity.id), second=14)
+                for i in range(1, 14):
                     self.assertIn(member=new_entity.id[i], container=[str(i) for i in range(10)])
                 with self.assertRaises(ValidationError) as cm:
                     new_entity.save()

@@ -145,6 +145,9 @@ if (django_settings.TESTS):
         def _id_contains_illegal_characters_errors_dict(self):
             return {'id': [self._id_contains_illegal_characters_error_message]}
 
+        def _id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(self, max_length, value_length):
+            return {'id': [self._id_contains_illegal_characters_error_message, self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=max_length, value_length=value_length)]}
+
         def _please_enter_a_correct_username_and_password_errors_dict(self):
             return {'__all__': [self._please_enter_a_correct_username_and_password_error_message]}
 
