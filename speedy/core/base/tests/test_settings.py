@@ -17,6 +17,13 @@ if (django_settings.TESTS):
         def test_login_enabled(self):
             self.assertEqual(first=django_settings.LOGIN_ENABLED, second=(django_settings.SITE_ID in django_settings.SITES_WITH_LOGIN))
 
+        def test_languages(self):
+            self.assertListEqual(list1=[language_code for language_code, language_name in django_settings.LANGUAGES], list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
+            self.assertListEqual(list1=self.all_language_codes, list2=[language_code for language_code, language_name in django_settings.LANGUAGES])
+
+        def test_languages_with_ads(self):
+            self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2=set())
+
 
     class TestsSettingsTestCase(SiteTestCase):
         def test_slugs_to_test_list(self):
