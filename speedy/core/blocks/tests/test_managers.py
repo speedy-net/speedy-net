@@ -48,7 +48,7 @@ if (django_settings.TESTS):
             def test_has_blocked_false(self):
                 self.assertIs(expr1=Block.objects.has_blocked(blocker=self.user, blocked=self.other_user), expr2=False)
 
-            def test_user_blocks_themself_throws_an_exception(self):
+            def test_user_blocks_himself_raises_an_exception(self):
                 with self.assertRaises(ValidationError) as cm:
                     Block.objects.block(blocker=self.user, blocked=self.user)
                 self.assertEqual(first=str(cm.exception.message), second='Users cannot block themselves.')  # ~~~~ TODO
