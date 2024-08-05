@@ -93,6 +93,11 @@ if (django_settings.TESTS):
         def teardown_test_environment(self, **kwargs):
             super().teardown_test_environment(**kwargs)
             del django_settings.TEST_LANGUAGES
+            print("Deleting temporary files...")
+            try:
+                shutil.rmtree(django_settings.TESTS_MEDIA_ROOT)
+            except OSError:
+                pass
 
         def suite_result(self, suite, result, **kwargs):
             return_value = super().suite_result(suite=suite, result=result, **kwargs)
@@ -261,15 +266,5 @@ if (django_settings.TESTS):
             self.tear_down()
             self.stop_time()
             return return_value
-
-        @classmethod
-        def tearDownClass(cls):
-            # Canceled print (prints this line many times, this class is used many times).
-            # print("Deleting temporary files...")
-            try:
-                shutil.rmtree(django_settings.TESTS_MEDIA_ROOT)
-            except OSError:
-                pass
-            return super().tearDownClass()
 
 
