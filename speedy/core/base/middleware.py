@@ -1,7 +1,6 @@
 import re
 
 from django.conf import settings as django_settings
-from django.contrib import auth
 from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render
 from django.http import HttpRequest
@@ -122,45 +121,5 @@ class RemoveExtraSlashesMiddleware(object):
             request.path = normalized_path
             return redirect(to=request.get_full_path(), permanent=(not (django_settings.DEBUG)))
         return self.get_response(request=request)
-
-
-class UpdateSessionAuthHashMiddleware(object):
-    """
-    Update session auth hash from Django 3.0.x to 3.1.1.
-    """
-
-    def __init__(self, get_response):
-        self.get_response = get_response
-
-    def __call__(self, request: HttpRequest) -> HttpResponseBase:
-        self.update_session_auth_hash_if_needed(request=request)
-        return self.get_response(request=request)
-
-    @staticmethod
-    def update_session_auth_hash_if_needed(request):
-        try:
-            user_id = auth._get_user_session_key(request)
-            backend_path = request.session[auth.BACKEND_SESSION_KEY]
-        except KeyError:
-            pass
-        else:
-            if backend_path in auth.settings.AUTHENTICATION_BACKENDS:
-                backend = auth.load_backend(backend_path)
-                user = backend.get_user(user_id)
-                # Verify the session.
-                if (hasattr(user, 'get_session_auth_hash')):
-                    session_hash = request.session.get(auth.HASH_SESSION_KEY)
-                    session_hash_verified = (session_hash) and (auth.constant_time_compare(
-                        session_hash,
-                        user.get_session_auth_hash()
-                    ))
-                    if (not (session_hash_verified)):
-                        if (
-                            (session_hash) and
-                            (hasattr(user, '_legacy_get_session_auth_hash')) and
-                            (auth.constant_time_compare(session_hash, user._legacy_get_session_auth_hash()))
-                        ):
-                            # Update the session auth hash.
-                            request.session[auth.HASH_SESSION_KEY] = user.get_session_auth_hash()
 
 
