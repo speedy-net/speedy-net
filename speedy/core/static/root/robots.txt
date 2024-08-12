@@ -7,3 +7,6 @@ Disallow: /login/?*
 User-agent: MJ12bot
 Disallow: /
 
+User-agent: Yandex
+Disallow: /
+
