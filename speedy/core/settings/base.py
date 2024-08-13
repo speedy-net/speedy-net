@@ -31,7 +31,7 @@ THIS_SITE_IS_UNDER_CONSTRUCTION = False
 ALLOWED_HOSTS = ['*']
 
 DISALLOWED_USER_AGENTS = [
-    re.compile(r'//yandex.com/bots'),
+    re.compile(pattern=r'//yandex.com/bots'),
 ]
 
 DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
