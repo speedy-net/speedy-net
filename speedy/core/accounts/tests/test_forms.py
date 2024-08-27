@@ -897,6 +897,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class ProfilePrivacyFormOnlyEnglishTestCase(SiteTestCase):
+            # ~~~~ TODO: This test case does not contain any tests! ~~~~
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
