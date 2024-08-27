@@ -5,11 +5,11 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
 
-        from speedy.core.profiles.tests.test_views import UserMixinTextCaseMixin
+        from speedy.core.profiles.tests.test_views import UserMixinTestCaseMixin
 
 
         @only_on_speedy_match
-        class UserMixinOnlyEnglishTestCase(UserMixinTextCaseMixin, SiteTestCase):
+        class UserMixinOnlyEnglishTestCase(UserMixinTestCaseMixin, SiteTestCase):
             def test_redirect_to_login_user_by_username(self):
                 r = self.client.get(path='/l-o-o-k_a_t_m-e/')
                 self.assertRedirects(response=r, expected_url='/login/?next=/l-o-o-k_a_t_m-e/', status_code=302, target_status_code=200)

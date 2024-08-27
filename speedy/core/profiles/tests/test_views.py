@@ -31,7 +31,7 @@ if (django_settings.TESTS):
                 return self
 
 
-        class UserMixinTextCaseMixin(object):
+        class UserMixinTestCaseMixin(object):
             def set_up(self):
                 super().set_up()
                 self.factory = RequestFactory()
