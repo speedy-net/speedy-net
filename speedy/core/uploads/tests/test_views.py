@@ -18,7 +18,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UploadViewTestCase(SiteTestCase):
+        class UploadViewOnlyEnglishTestCase(SiteTestCase):
             page_url = '/uploads/upload/'
 
             def set_up(self):

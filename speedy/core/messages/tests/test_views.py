@@ -23,7 +23,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ChatListViewTestCase(SiteTestCase):
+        class ChatListViewOnlyEnglishTestCase(SiteTestCase):
             page_url = '/messages/'
 
             def set_up(self):
@@ -52,7 +52,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ChatDetailViewTestCase(SiteTestCase):
+        class ChatDetailViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -87,7 +87,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class SendMessageToChatViewTestCase(SiteTestCase):
+        class SendMessageToChatViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -417,7 +417,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class MarkChatAsReadViewTestCase(SiteTestCase):
+        class MarkChatAsReadViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()

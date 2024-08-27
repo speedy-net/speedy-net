@@ -6,7 +6,7 @@ if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
 
 
-    class HaversineTestCase(SiteTestCase):
+    class HaversineOnlyEnglishTestCase(SiteTestCase):
         def set_up(self):
             super().set_up()
             self.london = (51.5072, -0.1276)

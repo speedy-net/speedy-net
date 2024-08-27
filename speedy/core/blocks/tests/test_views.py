@@ -12,7 +12,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class BlockedUsersListViewTestCase(SiteTestCase):
+        class BlockedUsersListViewOnlyEnglishTestCase(SiteTestCase):
             """
             Test view in Speedy Net. Speedy Match should always return 404.
             """
@@ -50,7 +50,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class BlockViewTestCase(SiteTestCase):
+        class BlockViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -79,7 +79,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UnblockViewTestCase(SiteTestCase):
+        class UnblockViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()

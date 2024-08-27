@@ -7,7 +7,7 @@ if (django_settings.TESTS):
     from speedy.core.base.utils import normalize_slug, normalize_username
 
 
-    class SettingsTestCase(SiteTestCase):
+    class SettingsOnlyEnglishTestCase(SiteTestCase):
         def test_sites_with_login(self):
             self.assertListEqual(list1=django_settings.SITES_WITH_LOGIN, list2=[django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID])
 
@@ -25,7 +25,7 @@ if (django_settings.TESTS):
             self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2=set())
 
 
-    class TestsSettingsTestCase(SiteTestCase):
+    class TestsSettingsOnlyEnglishTestCase(SiteTestCase):
         def test_slugs_to_test_list(self):
             self.assertEqual(first=len(tests_settings.SLUGS_TO_TEST_LIST), second=8)
             username_set, slug_set, username_length_set, slug_length_set = set(), set(), set(), set()

@@ -6,7 +6,7 @@ if (django_settings.TESTS):
     from speedy.core.base.middleware import RemoveExtraSlashesMiddleware
 
 
-    class RemoveExtraSlashesMiddlewareTestCase(SiteTestCase):
+    class RemoveExtraSlashesMiddlewareOnlyEnglishTestCase(SiteTestCase):
         def test_normalize_path(self):
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/'), second='/zzz/')
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/yyy/'), second='/zzz/yyy/')

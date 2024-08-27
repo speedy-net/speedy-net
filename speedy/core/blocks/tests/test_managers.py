@@ -13,7 +13,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class BlockManagerTestCase(SiteTestCase):
+        class BlockManagerOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

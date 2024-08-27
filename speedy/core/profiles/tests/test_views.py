@@ -46,7 +46,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class LoggedInUserTestCase(RedirectMeMixin, SiteTestCase):
+        class LoggedInUserOnlyEnglishTestCase(RedirectMeMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')

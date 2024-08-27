@@ -1378,7 +1378,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class SpeedyMatchSiteProfileMatchTestCase(SpeedyMatchAccountsModelsMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileMatchOnlyEnglishTestCase(SpeedyMatchAccountsModelsMixin, SiteTestCase):
             def get_active_user_doron(self):
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
                 user.diet = User.DIET_VEGETARIAN

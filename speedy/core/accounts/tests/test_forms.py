@@ -896,7 +896,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ProfilePrivacyFormTestCase(SiteTestCase):
+        class ProfilePrivacyFormOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -918,7 +918,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class PasswordResetFormTestCase(SiteTestCase):
+        class PasswordResetFormOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

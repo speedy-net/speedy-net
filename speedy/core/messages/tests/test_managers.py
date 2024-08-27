@@ -14,7 +14,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ChatManagerTestCase(SiteTestCase):
+        class ChatManagerOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 ChatFactory()
@@ -76,7 +76,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class MessageManagerTestCase(SiteTestCase):
+        class MessageManagerOnlyEnglishTestCase(SiteTestCase):
             def test_sending_message_creates_new_chat(self):
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
@@ -116,7 +116,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ReadMarkManagerTestCase(SiteTestCase):
+        class ReadMarkManagerOnlyEnglishTestCase(SiteTestCase):
             def test_mark(self):
                 user = ActiveUserFactory()
                 chat = ChatFactory(ent1=user)

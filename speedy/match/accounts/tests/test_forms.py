@@ -11,7 +11,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ProfileNotificationsFormTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
+        class ProfileNotificationsFormOnlyEnglishTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
             def test_has_correct_fields(self):
                 form = ProfileNotificationsForm(instance=self.user)
                 self.assertListEqual(list1=list(form.fields.keys()), list2=[

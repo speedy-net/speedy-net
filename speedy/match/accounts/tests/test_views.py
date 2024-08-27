@@ -16,7 +16,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class IndexViewTestCase(IndexViewTestCaseMixin, SiteTestCase):
+        class IndexViewOnlyEnglishTestCase(IndexViewTestCaseMixin, SiteTestCase):
             def test_user_gets_redirected_to_his_matches(self):
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path='/')
@@ -43,7 +43,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class EditProfileNotificationsViewTestCase(EditProfileNotificationsViewTestCaseMixin, SiteTestCase):
+        class EditProfileNotificationsViewOnlyEnglishTestCase(EditProfileNotificationsViewTestCaseMixin, SiteTestCase):
             def test_user_can_save_his_settings(self):
                 self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
                 self.assertEqual(first=self.user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
@@ -59,7 +59,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ActivateSiteProfileViewTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
+        class ActivateSiteProfileViewOnlyEnglishTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
             redirect_url = '/registration-step-2/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
@@ -68,7 +68,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ActivateSiteProfileViewTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
+        class ActivateSiteProfileViewOnlyEnglishTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
             redirect_url = '/welcome/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")

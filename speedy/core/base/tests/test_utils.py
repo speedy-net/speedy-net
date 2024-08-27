@@ -8,7 +8,7 @@ if (django_settings.TESTS):
     from speedy.core.base.utils import normalize_slug, normalize_username, timesince
 
 
-    class NormalizeSlugTestCase(SiteTestCase):
+    class NormalizeSlugOnlyEnglishTestCase(SiteTestCase):
         def test_normalize_none(self):
             with self.assertRaises(AttributeError) as cm:
                 normalize_slug(slug=None)
@@ -57,7 +57,7 @@ if (django_settings.TESTS):
             self.assertEqual(first=normalize_slug(slug='under_score_'), second='under-score')
 
 
-    class NormalizeUsernameTestCase(SiteTestCase):
+    class NormalizeUsernameOnlyEnglishTestCase(SiteTestCase):
         def test_normalize_none(self):
             with self.assertRaises(AttributeError) as cm:
                 normalize_username(username=None)
@@ -84,7 +84,7 @@ if (django_settings.TESTS):
             self.assertEqual(first=normalize_username(username='.this_is...a_slug--'), second='thisisaslug')
 
 
-    class TimeSinceTestCase(SiteTestCase):
+    class TimeSinceOnlyEnglishTestCase(SiteTestCase):
         def test_timesince(self):
             today = date.today()
             self.assertEqual(first=timesince(d=today, now=today), second="")

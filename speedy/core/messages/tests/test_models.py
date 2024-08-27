@@ -12,7 +12,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ChatTestCase(SiteTestCase):
+        class ChatOnlyEnglishTestCase(SiteTestCase):
             def get_active_user_doron(self):
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon")
                 user.save_user_and_profile()

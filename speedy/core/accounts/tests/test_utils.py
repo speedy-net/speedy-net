@@ -7,7 +7,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.utils import normalize_email
 
 
-        class NormalizeEmailTestCase(SiteTestCase):
+        class NormalizeEmailOnlyEnglishTestCase(SiteTestCase):
             def test_normalize_none(self):
                 self.assertEqual(first=normalize_email(email=None), second='')
 

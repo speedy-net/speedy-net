@@ -9,7 +9,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class UserMixinTextCase(UserMixinTextCaseMixin, SiteTestCase):
+        class UserMixinOnlyEnglishTestCase(UserMixinTextCaseMixin, SiteTestCase):
             def test_find_user_by_username(self):
                 r = self.client.get(path='/l-o-o-k_a_t_m-e/')
                 self.assertRedirects(response=r, expected_url='/look-at-me/', status_code=301, target_status_code=200)

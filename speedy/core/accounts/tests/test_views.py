@@ -126,7 +126,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class MeViewTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        class MeViewOnlyEnglishTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory(slug='markmark')
@@ -149,7 +149,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class LoginTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        class LoginOnlyEnglishTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -1588,7 +1588,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class LogoutViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        class LogoutViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -2372,7 +2372,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class EditProfilePrivacyViewTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        class EditProfilePrivacyViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
             page_url = '/edit-profile/privacy/'
 
             def set_up(self):
@@ -2838,7 +2838,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class DeactivateSiteProfileViewTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+        class DeactivateSiteProfileViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
             page_url = '/edit-profile/deactivate/'
 
             def set_up(self):

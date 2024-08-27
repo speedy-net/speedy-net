@@ -20,7 +20,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class LikeBlocksTestCase(SiteTestCase):
+        class LikeBlocksOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -74,7 +74,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class LikeGenderTestCase(SiteTestCase):
+        class LikeGenderOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)

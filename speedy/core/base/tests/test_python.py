@@ -5,7 +5,7 @@ if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
 
 
-    class PythonTestCase(SpeedyCoreBaseLanguageMixin, SiteTestCase):
+    class PythonOnlyEnglishTestCase(SpeedyCoreBaseLanguageMixin, SiteTestCase):
         def test_501_digits(self):
             for f in ["-5", "5"]:
                 int(f + "0" * 500)

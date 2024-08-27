@@ -17,7 +17,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class FriendBlocksTestCase(SiteTestCase):
+        class FriendBlocksOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -101,7 +101,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class FriendListsTestCase(SiteTestCase):
+        class FriendListsOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()

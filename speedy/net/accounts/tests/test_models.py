@@ -15,7 +15,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class SpeedyNetSiteProfileTestCase(SiteTestCase):
+        class SpeedyNetSiteProfileOnlyEnglishTestCase(SiteTestCase):
             def get_default_user_doron(self):
                 user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 user.save_user_and_profile()

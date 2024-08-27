@@ -230,7 +230,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class UnlikeViewTestCase(SiteTestCase):
+        class UnlikeViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()

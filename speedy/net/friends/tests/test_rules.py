@@ -11,7 +11,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class ViewFriendListRulesTestCase(ViewFriendListRulesTestCaseMixin, SiteTestCase):
+        class ViewFriendListRulesOnlyEnglishTestCase(ViewFriendListRulesTestCaseMixin, SiteTestCase):
             def test_user_can_view_another_user_friend_list(self):
                 self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user), expr2=True)
 

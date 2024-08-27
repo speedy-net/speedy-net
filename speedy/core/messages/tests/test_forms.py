@@ -12,7 +12,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class MessageFormTestCase(SiteTestCase):
+        class MessageFormOnlyEnglishTestCase(SiteTestCase):
             def test_form_to_chat_save(self):
                 data = {
                     'text': 'Hi!',

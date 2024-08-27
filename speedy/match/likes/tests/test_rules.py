@@ -14,7 +14,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class LikeRulesTestCase(SiteTestCase):
+        class LikeRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -44,7 +44,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class UnlikeRulesTestCase(SiteTestCase):
+        class UnlikeRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -66,7 +66,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ViewLikesRulesTestCase(SiteTestCase):
+        class ViewLikesRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

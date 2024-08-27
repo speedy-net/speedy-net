@@ -13,7 +13,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class ViewProfileRulesTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
+        class ViewProfileRulesOnlyEnglishTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
             def test_doron_and_jennifer_have_access(self):
                 self.assertIs(expr1=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer), expr2=True)
                 self.assertIs(expr1=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron), expr2=True)
@@ -24,7 +24,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class DeleteAccountRulesTestCase(SiteTestCase):
+        class DeleteAccountRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

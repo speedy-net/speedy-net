@@ -49,7 +49,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ReceivedFriendshipRequestsListViewTestCase(SiteTestCase):
+        class ReceivedFriendshipRequestsListViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -73,7 +73,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class SentFriendshipRequestsListViewTestCase(SiteTestCase):
+        class SentFriendshipRequestsListViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -936,7 +936,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserFriendListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+        class UserFriendListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             def test_site_user_friend_list_view_object_list(self):
                 self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_friends]), expr2=True)
                 users_list = [friendship.from_user for friendship in self.user_1.all_friends]
@@ -970,7 +970,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ReceivedFriendshipRequestsListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+        class ReceivedFriendshipRequestsListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             def test_site_received_friendship_requests_list_view_object_list(self):
                 self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.received_friendship_requests]), expr2=True)
                 users_list = [friendship.from_user for friendship in self.user_1.received_friendship_requests]
@@ -987,7 +987,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class SentFriendshipRequestsListViewObjectListTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
+        class SentFriendshipRequestsListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             def test_site_sent_friendship_requests_list_view_object_list(self):
                 self.assertIs(expr1=all([(friendship.from_user == self.user_1) for friendship in self.user_1.sent_friendship_requests]), expr2=True)
                 users_list = [friendship.to_user for friendship in self.user_1.sent_friendship_requests]

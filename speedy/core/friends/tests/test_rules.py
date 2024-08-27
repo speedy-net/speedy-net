@@ -13,7 +13,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RequestRulesTestCase(SiteTestCase):
+        class RequestRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -36,7 +36,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ViewRequestsRulesTestCase(SiteTestCase):
+        class ViewRequestsRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -67,7 +67,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RemoveRulesTestCase(SiteTestCase):
+        class RemoveRulesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

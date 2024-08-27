@@ -11,7 +11,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class UserFriendListViewTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
+        class UserFriendListViewOnlyEnglishTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
             def test_visitor_can_open_the_page(self):
                 self.client.logout()
                 r = self.client.get(path=self.first_user_friends_list_url)

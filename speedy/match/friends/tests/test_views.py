@@ -11,7 +11,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class UserFriendListViewTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
+        class UserFriendListViewOnlyEnglishTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_visitor_can_open_the_page(self):
                 raise NotImplementedError()

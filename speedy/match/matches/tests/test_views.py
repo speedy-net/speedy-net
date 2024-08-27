@@ -34,7 +34,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class EditMatchSettingsViewTestCase(EditViewBaseMixin, SiteTestCase):
+        class EditMatchSettingsViewOnlyEnglishTestCase(EditViewBaseMixin, SiteTestCase):
             def get_page_url(self):
                 return '/matches/settings/about-my-match/'
 
@@ -43,7 +43,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class EditAboutMeViewTestCase(EditViewBaseMixin, SiteTestCase):
+        class EditAboutMeViewOnlyEnglishTestCase(EditViewBaseMixin, SiteTestCase):
             def get_page_url(self):
                 return '/matches/settings/about-me/'
 

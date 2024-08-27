@@ -20,7 +20,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ManagerBlocksTestCase(SiteTestCase):
+        class ManagerBlocksOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -78,7 +78,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ManagerMatchesTestCase(SiteTestCase):
+        class ManagerMatchesOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)

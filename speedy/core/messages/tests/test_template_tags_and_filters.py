@@ -15,7 +15,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class GetOtherParticipantTestCase(SiteTestCase):
+        class GetOtherParticipantOnlyEnglishTestCase(SiteTestCase):
             def test_tag(self):
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
@@ -25,7 +25,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class AnnotateChatsWithReadMarksTestCase(SiteTestCase):
+        class AnnotateChatsWithReadMarksOnlyEnglishTestCase(SiteTestCase):
             def test_tag(self):
                 user_1 = ActiveUserFactory()
                 chats = [
@@ -62,7 +62,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class AnnotateMessagesWithReadMarksTestCase(SiteTestCase):
+        class AnnotateMessagesWithReadMarksOnlyEnglishTestCase(SiteTestCase):
             def test_tag(self):
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
@@ -90,7 +90,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UnreadChatsCountTestCase(SiteTestCase):
+        class UnreadChatsCountOnlyEnglishTestCase(SiteTestCase):
             def test_tag(self):
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
