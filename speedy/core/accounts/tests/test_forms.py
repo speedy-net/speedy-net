@@ -895,20 +895,6 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        @only_on_sites_with_login
-        class ProfilePrivacyFormOnlyEnglishTestCase(SiteTestCase):
-            # ~~~~ TODO: This test case does not contain any tests! ~~~~
-            def set_up(self):
-                super().set_up()
-                self.user = ActiveUserFactory()
-                self.other_user = ActiveUserFactory()
-                self.primary_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-                self.primary_email.make_primary()
-                self.confirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-                self.unconfirmed_email = UserEmailAddressFactory(user=self.user, is_confirmed=False)
-                self.other_user_email = UserEmailAddressFactory(user=self.other_user, is_confirmed=True)
-
-
         class ProfileNotificationsFormTestCaseMixin(object):
             def set_up(self):
                 super().set_up()
