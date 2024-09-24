@@ -15,6 +15,9 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+Speedy Net and Speedy Match are registered trademarks and can't be used
+by other entities without written permission from Uri Rodberg.
+
 == GNU AFFERO GENERAL PUBLIC LICENSE ==
 
 Version 3, 19 November 2007

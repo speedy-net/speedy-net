@@ -321,3 +321,5 @@ To compile all messages (in all languages) after you've done editing all the \*.
 
 (Notice: You need to have GNU gettext installed on your system to run these scripts. If you use Git for Windows, we recommend installing Git version 2.43.0, which includes GNU gettext. Newer versions of Git for Windows don't include GNU gettext and we don't recommend using them.)
 
+Speedy Net and Speedy Match are registered trademarks and can't be used by other entities without written permission from Uri Rodberg.
+
