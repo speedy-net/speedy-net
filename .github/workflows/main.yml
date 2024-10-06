@@ -20,6 +20,7 @@ jobs:
           - '14'
           - '15'
           - '16'
+          - '17'
         os:
           - 'ubuntu-22.04'
           - 'ubuntu-24.04'
@@ -42,6 +43,9 @@ jobs:
           - os: 'ubuntu-22.04'
             python-version: '3.11'
             postgresql-version: '16'
+          - os: 'ubuntu-22.04'
+            python-version: '3.11'
+            postgresql-version: '17'
           - os: 'ubuntu-24.04'
             postgresql-version: '13'
           - os: 'ubuntu-24.04'
@@ -52,6 +56,9 @@ jobs:
           - os: 'ubuntu-22.04'
             python-version: '3.12'
             postgresql-version: '16'
+          - os: 'ubuntu-22.04'
+            python-version: '3.12'
+            postgresql-version: '17'
           - postgresql-version: '13'
             python-version: '3.10'
           - postgresql-version: '14'
@@ -61,6 +68,8 @@ jobs:
           - postgresql-version: '14'
             is-main-or-staging: false
           - postgresql-version: '16'
+            is-main-or-staging: false
+          - postgresql-version: '17'
             is-main-or-staging: false
           - languages: 'test-default-languages'
             is-all-languages: true
@@ -105,7 +114,7 @@ jobs:
       - run: pwd
       - run: lsb_release -a
       - run: |
-          for version in 14 15 16 17 18
+          for version in 14 15 16 17 18 19 20
           do
             sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
             sudo pg_dropcluster $version main || true
