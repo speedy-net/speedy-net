@@ -20,6 +20,7 @@ jobs:
           - '14'
           - '15'
           - '16'
+          - '17'
         os:
           - 'ubuntu-22.04'
           - 'ubuntu-24.04'
@@ -105,7 +106,7 @@ jobs:
       - run: pwd
       - run: lsb_release -a
       - run: |
-          for version in 14 15 16 17 18
+          for version in 14 15 16 17 18 19 20
           do
             sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
             sudo pg_dropcluster $version main || true
