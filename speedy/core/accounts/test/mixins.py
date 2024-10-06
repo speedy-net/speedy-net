@@ -332,9 +332,8 @@ if (django_settings.TESTS):
 
         def _not_null_constraint_error_message_by_column_and_relation(self, column, relation):
             postgresql_version = connection.cursor().connection.server_version
-            if (postgresql_version < 130000):
-                # msg = 'null value in column "{}" violates not-null constraint'
-                raise NotImplementedError("postgresql version must be at least 13.0.")
+            if (postgresql_version < 140000):
+                raise NotImplementedError("postgresql version must be at least 14.0.")
             else:
                 msg = 'null value in column "{}" of relation "{}" violates not-null constraint'
             return msg.format(column, relation)
