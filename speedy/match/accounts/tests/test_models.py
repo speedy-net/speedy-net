@@ -264,20 +264,20 @@ if (django_settings.TESTS):
                     values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.DIET_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.DIET_CHOICES_WITH_DEFAULT]
                     valid_values = User.DIET_VALID_VALUES
-                    self.assertEqual(first=valid_values_to_save, second=[User.DIET_UNKNOWN] + valid_values)
-                    self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[User.DIET_UNKNOWN] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[0] + valid_values)
                 elif (field_name in ['smoking_status']):
                     values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.SMOKING_STATUS_CHOICES_WITH_DEFAULT]
                     valid_values = User.SMOKING_STATUS_VALID_VALUES
-                    self.assertEqual(first=valid_values_to_save, second=[User.SMOKING_STATUS_UNKNOWN] + valid_values)
-                    self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[User.SMOKING_STATUS_UNKNOWN] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[0] + valid_values)
                 elif (field_name in ['relationship_status']):
                     values_to_test = self._empty_values_to_test + self._non_int_string_values_to_test + list(range(-10, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE + 10)) + self._int_big_values_to_test
                     valid_values_to_save = [choice[0] for choice in User.RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT]
                     valid_values = User.RELATIONSHIP_STATUS_VALID_VALUES
-                    self.assertEqual(first=valid_values_to_save, second=[User.RELATIONSHIP_STATUS_UNKNOWN] + valid_values)
-                    self.assertEqual(first=valid_values_to_save, second=[0] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[User.RELATIONSHIP_STATUS_UNKNOWN] + valid_values)
+                    self.assertListEqual(list1=valid_values_to_save, list2=[0] + valid_values)
                 elif (field_name in ['gender_to_match']):
                     range_to_test = [User.GENDER_UNKNOWN] + User.GENDER_VALID_VALUES + [User.GENDER_MAX_VALUE_PLUS_ONE]
                     self.assertListEqual(list1=range_to_test, list2=list(range(User.GENDER_UNKNOWN, User.GENDER_MAX_VALUE_PLUS_ONE + 1)))
