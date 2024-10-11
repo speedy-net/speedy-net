@@ -99,3 +99,23 @@
     {% endif %}
 {% endblock %}
 
+{% comment %}
+{% block navbar_vegan_friendly_logo %}
+    {% if not request.user.is_authenticated %}
+        <div class="navbar-vegan-friendly-logo">
+            <a href="{% if LANGUAGE_CODE == "he" %}https://www.vegan-friendly.co.il/{% else %}https://www.vegan-friendly.com/{% endif %}" title="{% translate "A vegan friendly website" %}">
+                <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo.png" alt="{% translate "A vegan friendly website" %}" title="{% translate "A vegan friendly website" %}" />
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block footer_vegan_friendly_logo %}
+    <div class="col-md-2">
+        <a href="{% if LANGUAGE_CODE == "he" %}https://www.vegan-friendly.co.il/{% else %}https://www.vegan-friendly.com/{% endif %}" title="{% translate "A vegan friendly website" %}">
+            <img class="vegan-friendly-logo-small" src="{% static 'speedy-core/images/' %}vegan-friendly-logo.png" alt="{% translate "A vegan friendly website" %}" title="{% translate "A vegan friendly website" %}" />
+        </a>
+    </div>
+{% endblock %}
+{% endcomment %}
+
