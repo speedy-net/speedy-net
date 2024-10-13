@@ -1,2 +1,4 @@
 factory-boy
 Faker
+lxml[html_clean]
+requests-html

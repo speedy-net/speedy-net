@@ -1,3 +1,5 @@
 # python==3.11
 factory_boy==3.3.1
 Faker==30.1.0
+lxml[html_clean]==5.3.0
+requests-html==0.10.0

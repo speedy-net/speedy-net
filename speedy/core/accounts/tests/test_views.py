@@ -7,12 +7,14 @@ if (django_settings.TESTS):
         from unittest import mock
         from datetime import date, datetime, timedelta
 
-        from django.test import override_settings
+        from django.test import LiveServerTestCase, modify_settings, override_settings
         from django.core import mail
+        from requests_html import HTMLSession
 
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
+        from speedy.core.base.test.threading import SiteLiveServerThread
         from speedy.core.base.test.utils import get_random_user_password
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
 
@@ -1588,7 +1590,10 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class LogoutViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+        @modify_settings(MIDDLEWARE={'remove': 'speedy.core.base.middleware.LocaleDomainMiddleware'})
+        class LogoutViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase, LiveServerTestCase):
+            server_thread_class = SiteLiveServerThread
+
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -1655,6 +1660,12 @@ if (django_settings.TESTS):
                         raise NotImplementedError()
                 else:
                     raise NotImplementedError()
+
+                # Test JS redirection
+                response = HTMLSession().post(url=self.live_server_url + '/logout/', cookies={'sessionid': self.client.cookies['sessionid'].value})
+                rendered_url = response.html.render(script='() => window.location.href')
+                self.assertEqual(first=rendered_url, second=self.live_server_url + '/')
+
                 r = self.client.post(path='/logout/')
                 self.assertEqual(first=r.status_code, second=200)
                 r = self.client.get(path='/')
