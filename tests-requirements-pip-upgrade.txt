@@ -1,4 +1,5 @@
 factory-boy
 Faker
 lxml[html_clean]
+pyppeteer
 requests-html
