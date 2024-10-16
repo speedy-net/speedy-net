@@ -14,6 +14,7 @@ if (django_settings.TESTS):
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         from speedy.core.accounts.models import User
         from speedy.core.blocks.models import Block
+        from speedy.core.friends.managers import FriendManager
 
 
         @only_on_sites_with_login
@@ -30,7 +31,7 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
                 self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
-                self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
+                self.assertEqual(first=FriendManager.get_friends_count(user=user), second=friends)
                 self.assertEqual(first=user.speedy_net_profile.friends_count, second=friends)
 
             def test_set_up(self):
