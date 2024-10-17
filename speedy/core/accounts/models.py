@@ -535,10 +535,6 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             return self._friends
 
     @cached_property
-    def friends_count(self):
-        return len(self.all_friends)
-
-    @cached_property
     def all_speedy_net_friends(self):
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_friends'))):
