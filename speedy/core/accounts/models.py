@@ -536,6 +536,10 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def friends_count(self):
+        """
+        Friends count in Speedy Net or Speedy Match.
+        This is different logic from user.friends.count() and FriendManager.get_friends_count(user).
+        """
         return len(self.all_friends)
 
     @cached_property
