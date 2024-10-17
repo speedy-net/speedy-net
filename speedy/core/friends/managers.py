@@ -20,7 +20,7 @@ class FriendManager:
 
         if (friends_count is None):
             friends_count = Friend.objects.filter(to_user=user).count()
-            friendship_cache.set(key, friends_count)
+            friendship_cache.set(key=key, value=friends_count)
 
         return friends_count
 
