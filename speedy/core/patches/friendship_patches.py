@@ -1,5 +1,8 @@
 def patch():
-    from friendship.models import FriendshipManager, FriendshipRequest, cache, cache_key
+    from friendship.models import BUST_CACHES, CACHE_TYPES, FriendshipManager, FriendshipRequest, cache, cache_key
+
+    CACHE_TYPES.setdefault("friends_count", "speedy-core-friends-count-%s")
+    BUST_CACHES["friends"].append("friends_count") if "friends_count" not in BUST_CACHES["friends"] else None
 
     def requests(self, user):
         """ Return a list of friendship requests """

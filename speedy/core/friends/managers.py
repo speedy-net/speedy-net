@@ -1,11 +1,8 @@
 from django.conf import settings as django_settings
-from friendship.models import BUST_CACHES, CACHE_TYPES, Friend, cache as friendship_cache, cache_key as friendship_cache_key
+from friendship.models import Friend, cache as friendship_cache, cache_key as friendship_cache_key
 
 from speedy.core.accounts.cache_helper import cache_key
 from speedy.core.base import cache_manager
-
-CACHE_TYPES['friends_count'] = 'speedy-core-friends-count-%s'
-BUST_CACHES['friends'].append('friends_count')
 
 
 class FriendManager:
