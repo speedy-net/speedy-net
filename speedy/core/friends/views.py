@@ -115,6 +115,9 @@ class LimitMaxFriendsMixin(object):
 
 
 class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredMixin, generic.View):
+    """
+    Send a friendship request.
+    """
     permission_required = 'friends.request'
 
     def _you_cannot_be_friends_with_yourself_error_message(self, user):
@@ -185,6 +188,9 @@ class FriendshipRequestView(LimitMaxFriendsMixin, UserMixin, PermissionRequiredM
 
 
 class CancelFriendshipRequestView(UserMixin, PermissionRequiredMixin, generic.View):
+    """
+    Cancel a friendship request.
+    """
     permission_required = 'friends.cancel_request'
 
     def post(self, request, *args, **kwargs):
@@ -200,6 +206,9 @@ class CancelFriendshipRequestView(UserMixin, PermissionRequiredMixin, generic.Vi
 
 
 class AcceptRejectFriendshipRequestViewBase(UserMixin, PermissionRequiredMixin, generic.View):
+    """
+    Base view to accept or reject a friendship request.
+    """
     permission_required = 'friends.view_requests'
 
     def get_redirect_url(self):
@@ -224,6 +233,9 @@ class AcceptRejectFriendshipRequestViewBase(UserMixin, PermissionRequiredMixin, 
 
 
 class AcceptFriendshipRequestView(LimitMaxFriendsMixin, AcceptRejectFriendshipRequestViewBase):
+    """
+    Accept a friendship request.
+    """
     action = 'accept'
     message = _('Friendship request accepted.')
 
@@ -239,11 +251,17 @@ class AcceptFriendshipRequestView(LimitMaxFriendsMixin, AcceptRejectFriendshipRe
 
 
 class RejectFriendshipRequestView(AcceptRejectFriendshipRequestViewBase):
+    """
+    Reject a friendship request.
+    """
     action = 'cancel'
     message = _('Friendship request rejected.')
 
 
 class RemoveFriendView(UserMixin, PermissionRequiredMixin, generic.View):
+    """
+    Remove a friend.
+    """
     permission_required = 'friends.remove'
 
     def get(self, request, *args, **kwargs):
