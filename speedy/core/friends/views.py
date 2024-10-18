@@ -25,6 +25,11 @@ class FriendsMixin(PaginationMixin):
 
 
 class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
+    """
+    View a list of friends in the current site.
+    In Speedy Net, only active users.
+    In Speedy Match, only active users who match the current user and is dependent on language.
+    """
     template_name = 'friends/friend_list.html'
     permission_required = 'friends.view_friend_list'
 
