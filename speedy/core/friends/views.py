@@ -20,6 +20,9 @@ from .rules import is_self, friendship_request_sent, friendship_request_received
 
 
 class FriendsMixin(PaginationMixin):
+    """
+    Mixin to paginate friends views.
+    """
     page_size = 24
     paginate_by = page_size
 
