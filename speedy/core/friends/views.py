@@ -48,6 +48,11 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
 
 
 class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
+    """
+    View a list of received friendship requests in the current site.
+    In Speedy Net, only active users.
+    In Speedy Match, only active users who match the current user and is dependent on language.
+    """
     template_name = 'friends/received_requests.html'
     permission_required = 'friends.view_requests'
 
@@ -66,6 +71,11 @@ class ReceivedFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Fri
 
 
 class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, FriendsMixin, generic.TemplateView):
+    """
+    View a list of sent friendship requests in the current site.
+    In Speedy Net, only active users.
+    In Speedy Match, only active users who match the current user and is dependent on language.
+    """
     template_name = 'friends/sent_requests.html'
     permission_required = 'friends.view_requests'
 
@@ -84,6 +94,9 @@ class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Friends
 
 
 class LimitMaxFriendsMixin(object):
+    """
+    Mixin to limit max friends independent of Speedy Net or Speedy Match logic.
+    """
     def check_own_friends(self):
         user_number_of_friends = FriendManager.get_friends_count(user=self.request.user)
         if (user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
