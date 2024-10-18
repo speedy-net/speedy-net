@@ -32,7 +32,7 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
         return redirect(to='friends:list', slug=self.user.slug)
 
     def get_object_list(self):
-        return self.user.all_friends
+        return self.user.site_friends
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)

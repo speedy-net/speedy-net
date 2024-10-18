@@ -118,7 +118,7 @@
                     </tr>
                     <tr>
                         <th>Friends</th>
-                        {% comment %}<td class="direction-ltr">&lrm;{{ user.friends_count }} friends on {{ site_name }}&lrm;{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / &lrm;{{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %}&lrm; &lrm;({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_fr }},{{ user.speedy_net_profile.number_of_friends_de }},{{ user.speedy_net_profile.number_of_friends_es }},{{ user.speedy_net_profile.number_of_friends }})&lrm;</td>{% endcomment %}
+                        {% comment %}<td class="direction-ltr">&lrm;{{ user.site_friends_count }} friends on {{ site_name }}&lrm;{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / &lrm;{{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %}&lrm; &lrm;({{ user.speedy_net_profile.number_of_friends_en }},{{ user.speedy_net_profile.number_of_friends_fr }},{{ user.speedy_net_profile.number_of_friends_de }},{{ user.speedy_net_profile.number_of_friends_es }},{{ user.speedy_net_profile.number_of_friends }})&lrm;</td>{% endcomment %}
                         <td class="direction-ltr">{{ user.speedy_net_profile|number_of_friends_html }}</td>
                     </tr>
                 </table>

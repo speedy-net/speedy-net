@@ -11,7 +11,7 @@ class UserFriendsWidget(Widget):
         Select <count> random friends from the list of user's friends, without repetition.
         If there are less than <count> friends, return all of them in random order.
         """
-        user_friends = self.user.all_friends
+        user_friends = self.user.site_friends
         friends_to_return = min(len(user_friends), count)
         random_friends = random.sample(user_friends, friends_to_return)
         return random_friends

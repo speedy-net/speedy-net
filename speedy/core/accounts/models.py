@@ -528,22 +528,38 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return len(self.sent_friendship_requests)
 
     @cached_property
-    def all_friends(self):
+    def site_friends(self):
+        """
+        Return a list of friends in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
+
+        :return: A list of friends in the current site.
+        """
         if (django_settings.LOGIN_ENABLED):
-            if (not (hasattr(self, '_friends'))):
-                self._friends = self.get_friends()
-            return self._friends
+            if (not (hasattr(self, '_site_friends'))):
+                self._site_friends = self.get_site_friends()
+            return self._site_friends
 
     @cached_property
-    def friends_count(self):
+    def site_friends_count(self):
         """
-        Friends count in Speedy Net or Speedy Match.
+        Return the number of friends in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
         This is different logic from user.friends.count() and FriendManager.get_friends_count(user).
+
+        :return: The number of friends in the current site.
         """
-        return len(self.all_friends)
+        return len(self.site_friends)
 
     @cached_property
-    def all_speedy_net_friends(self):
+    def speedy_net_friends(self):
+        """
+        Return a list of Speedy Net friends.
+
+        :return: A list of Speedy Net friends.
+        """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_friends'))):
                 self._speedy_net_friends = self.get_speedy_net_friends()
@@ -551,7 +567,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def speedy_net_friends_count(self):
-        return len(self.all_speedy_net_friends)
+        """
+        Return the number of Speedy Net friends.
+
+        :return: The number of Speedy Net friends.
+        """
+        return len(self.speedy_net_friends)
 
     @cached_property
     def friends_trans(self):
@@ -857,11 +878,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             ))
         return friends
 
-    def get_friends(self):
+    def get_site_friends(self):
         """
-        Return a list of friends.
+        Return a list of friends in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent of language.
 
-        :return: A list of friends.
+        :return: A list of friends in the current site.
         """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -869,7 +892,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         # Log this function only 0.2% of the time, since it's called very often.
         log_this_function = (random.randint(0, 499) == 0)
         if (log_this_function):
-            logger.debug("User::get_friends:start:user={self}".format(
+            logger.debug("User::get_site_friends:start:user={self}".format(
                 self=self,
             ))
         SiteProfile = get_site_profile_model()
@@ -877,7 +900,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         friends = [friendship for friendship in qs if (friendship.from_user.profile.is_active)]
         if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
             if (log_this_function):
-                logger.debug("User::get_friends:SPEEDY_NET:end:user={self}, number_of_friends={number_of_friends}".format(
+                logger.debug("User::get_site_friends:SPEEDY_NET:end:user={self}, number_of_friends={number_of_friends}".format(
                     self=self,
                     number_of_friends=len(friends),
                 ))
@@ -887,7 +910,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             matches_list = SpeedyMatchSiteProfile.objects.get_matches_from_list(user=self, from_list=from_list)
             friends = [friendship for friendship in friends if (friendship.from_user in matches_list)]
             if (log_this_function):
-                logger.debug("User::get_friends:SPEEDY_MATCH:end:user={self}, number_of_friends={number_of_friends}".format(
+                logger.debug("User::get_site_friends:SPEEDY_MATCH:end:user={self}, number_of_friends={number_of_friends}".format(
                     self=self,
                     number_of_friends=len(friends),
                 ))

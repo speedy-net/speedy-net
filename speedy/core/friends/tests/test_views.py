@@ -938,33 +938,33 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         class UserFriendListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             def test_site_user_friend_list_view_object_list(self):
-                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_friends]), expr2=True)
-                users_list = [friendship.from_user for friendship in self.user_1.all_friends]
-                self.assertEqual(first=len(users_list), second=len(self.user_1.all_friends))
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.site_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.site_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.site_friends))
                 self.assertEqual(first=len(users_list), second=2)
                 self.assertListEqual(list1=users_list, list2=[self.user_3, self.user_4])
-                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_speedy_net_friends]), expr2=True)
-                users_list = [friendship.from_user for friendship in self.user_1.all_speedy_net_friends]
-                self.assertEqual(first=len(users_list), second=len(self.user_1.all_speedy_net_friends))
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.speedy_net_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.speedy_net_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.speedy_net_friends))
                 self.assertEqual(first=len(users_list), second=2)
                 self.assertListEqual(list1=users_list, list2=[self.user_3, self.user_4])
-                self.assertEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+                self.assertEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
 
                 self.update_users_gender_to_match_to_gender_other()
-                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_friends]), expr2=True)
-                users_list = [friendship.from_user for friendship in self.user_1.all_friends]
-                self.assertEqual(first=len(users_list), second=len(self.user_1.all_friends))
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.site_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.site_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.site_friends))
                 self.assertEqual(first=len(users_list), second={django_settings.SPEEDY_NET_SITE_ID: 2, django_settings.SPEEDY_MATCH_SITE_ID: 1}[self.site.id])
                 self.assertListEqual(list1=users_list, list2={django_settings.SPEEDY_NET_SITE_ID: [self.user_3, self.user_4], django_settings.SPEEDY_MATCH_SITE_ID: [self.user_4]}[self.site.id])
-                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.all_speedy_net_friends]), expr2=True)
-                users_list = [friendship.from_user for friendship in self.user_1.all_speedy_net_friends]
-                self.assertEqual(first=len(users_list), second=len(self.user_1.all_speedy_net_friends))
+                self.assertIs(expr1=all([(friendship.to_user == self.user_1) for friendship in self.user_1.speedy_net_friends]), expr2=True)
+                users_list = [friendship.from_user for friendship in self.user_1.speedy_net_friends]
+                self.assertEqual(first=len(users_list), second=len(self.user_1.speedy_net_friends))
                 self.assertEqual(first=len(users_list), second=2)
                 self.assertListEqual(list1=users_list, list2=[self.user_3, self.user_4])
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    self.assertEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+                    self.assertEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.assertNotEqual(first=self.user_1.all_friends, second=self.user_1.all_speedy_net_friends)
+                    self.assertNotEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
                 else:
                     raise NotImplementedError()
 
