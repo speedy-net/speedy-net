@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 15:51+0300\n"
+"POT-Creation-Date: 2024-10-19 07:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:999
+#: .\__translations\__translations.py:9 .\accounts\models.py:1061
 msgid "email address"
 msgstr "e-postadress"
 
@@ -902,7 +902,7 @@ msgstr "Vänskapsbegäran"
 msgid "Friend"
 msgstr "Vän"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:557
+#: .\__translations\__translations.py:23 .\accounts\models.py:612
 msgid "Friends"
 msgstr "Vänner"
 
@@ -2180,68 +2180,68 @@ msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:582 .\accounts\models.py:983 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:583
+#: .\accounts\models.py:638
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:617
+#: .\accounts\models.py:672
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1046
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:985
+#: .\accounts\models.py:1047
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1048
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:987
+#: .\accounts\models.py:1049
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1050
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:989
+#: .\accounts\models.py:1051
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:1000
+#: .\accounts\models.py:1062
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:1067
+#: .\accounts\models.py:1129
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:1068
+#: .\accounts\models.py:1130
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:1080
+#: .\accounts\models.py:1142
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:1082
+#: .\accounts\models.py:1144
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:1084
+#: .\accounts\models.py:1146
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1086
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2603,19 +2603,19 @@ msgstr "återkoppling"
 msgid "feedbacks"
 msgstr "återkoppling"
 
-#: .\friends\views.py:164
+#: .\friends\views.py:189
 msgid "Friendship request sent."
 msgstr "Vänskapsförfrågan skickad."
 
-#: .\friends\views.py:176
+#: .\friends\views.py:204
 msgid "No friendship request."
 msgstr "Ingen begäran om vänskap."
 
-#: .\friends\views.py:209
+#: .\friends\views.py:243
 msgid "Friendship request accepted."
 msgstr "Vänskapsförfrågan accepterad."
 
-#: .\friends\views.py:224
+#: .\friends\views.py:261
 msgid "Friendship request rejected."
 msgstr "Vänskapsförfrågan avvisad."
 

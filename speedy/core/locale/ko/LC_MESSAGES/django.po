@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 15:51+0300\n"
+"POT-Creation-Date: 2024-10-19 07:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "올바른 이메일 주소를 입력하세요."
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:999
+#: .\__translations\__translations.py:9 .\accounts\models.py:1061
 msgid "email address"
 msgstr "이메일 주소"
 
@@ -902,7 +902,7 @@ msgstr "친구 요청"
 msgid "Friend"
 msgstr "친구"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:557
+#: .\__translations\__translations.py:23 .\accounts\models.py:612
 msgid "Friends"
 msgstr "친구"
 
@@ -2168,68 +2168,68 @@ msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:582 .\accounts\models.py:983 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
 msgid "user"
 msgstr "사용자"
 
-#: .\accounts\models.py:583
+#: .\accounts\models.py:638
 msgid "users"
 msgstr "사용자"
 
-#: .\accounts\models.py:617
+#: .\accounts\models.py:672
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1046
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:985
+#: .\accounts\models.py:1047
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1048
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:987
+#: .\accounts\models.py:1049
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1050
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:989
+#: .\accounts\models.py:1051
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:1000
+#: .\accounts\models.py:1062
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:1067
+#: .\accounts\models.py:1129
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:1068
+#: .\accounts\models.py:1130
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:1080
+#: .\accounts\models.py:1142
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:1082
+#: .\accounts\models.py:1144
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:1084
+#: .\accounts\models.py:1146
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:1086
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
@@ -2566,19 +2566,19 @@ msgstr "피드백"
 msgid "feedbacks"
 msgstr "피드백"
 
-#: .\friends\views.py:164
+#: .\friends\views.py:189
 msgid "Friendship request sent."
 msgstr "친구 요청 전송됨."
 
-#: .\friends\views.py:176
+#: .\friends\views.py:204
 msgid "No friendship request."
 msgstr "친구 요청 없음."
 
-#: .\friends\views.py:209
+#: .\friends\views.py:243
 msgid "Friendship request accepted."
 msgstr "친구 요청 수락됨."
 
-#: .\friends\views.py:224
+#: .\friends\views.py:261
 msgid "Friendship request rejected."
 msgstr "친구 요청 거부됨."
 

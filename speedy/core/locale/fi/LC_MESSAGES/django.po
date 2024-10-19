@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 15:51+0300\n"
+"POT-Creation-Date: 2024-10-19 07:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Syötä kelvollinen sähköpostiosoite."
 msgid "Email address"
 msgstr "Sähköpostiosoite"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:999
+#: .\__translations\__translations.py:9 .\accounts\models.py:1061
 msgid "email address"
 msgstr "sähköpostiosoite"
 
@@ -902,7 +902,7 @@ msgstr "Ystäväpyynnöt"
 msgid "Friend"
 msgstr "Ystävä"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:557
+#: .\__translations\__translations.py:23 .\accounts\models.py:612
 msgid "Friends"
 msgstr "Ystävät"
 
@@ -2171,68 +2171,68 @@ msgstr "Viimeksi käytetty IP-osoite https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Viimeisin käytetty IP-osoite raaka https://ipapi.com/ tulokset"
 
-#: .\accounts\models.py:582 .\accounts\models.py:983 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
 msgid "user"
 msgstr "käyttäjä"
 
-#: .\accounts\models.py:583
+#: .\accounts\models.py:638
 msgid "users"
 msgstr "käyttäjät"
 
-#: .\accounts\models.py:617
+#: .\accounts\models.py:672
 msgid "Superuser must be equal to staff."
 msgstr "Pääkäyttäjän on oltava yhtäläinen henkilöstöön nähden."
 
-#: .\accounts\models.py:984
+#: .\accounts\models.py:1046
 msgid "email"
 msgstr "sähköposti"
 
-#: .\accounts\models.py:985
+#: .\accounts\models.py:1047
 msgid "is confirmed"
 msgstr "on vahvistettu"
 
-#: .\accounts\models.py:986
+#: .\accounts\models.py:1048
 msgid "is primary"
 msgstr "on ensisijainen"
 
-#: .\accounts\models.py:987
+#: .\accounts\models.py:1049
 msgid "confirmation token"
 msgstr "vahvistustunnus"
 
-#: .\accounts\models.py:988
+#: .\accounts\models.py:1050
 msgid "confirmation sent"
 msgstr "vahvistus lähetetty"
 
-#: .\accounts\models.py:989
+#: .\accounts\models.py:1051
 msgid "Who can see this email"
 msgstr "Kuka voi nähdä tämän sähköpostin"
 
-#: .\accounts\models.py:1000
+#: .\accounts\models.py:1062
 msgid "email addresses"
 msgstr "email addresses"
 
-#: .\accounts\models.py:1067
+#: .\accounts\models.py:1129
 msgid "User"
 msgstr "Käyttäjä"
 
-#: .\accounts\models.py:1068
+#: .\accounts\models.py:1130
 msgid "last visit"
 msgstr "viimeisin vierailu"
 
-#: .\accounts\models.py:1080
+#: .\accounts\models.py:1142
 msgid "Today"
 msgstr "Tänään"
 
-#: .\accounts\models.py:1082
+#: .\accounts\models.py:1144
 msgid "Yesterday"
 msgstr "Eilen"
 
-#: .\accounts\models.py:1084
+#: .\accounts\models.py:1146
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) sitten"
 
-#: .\accounts\models.py:1086
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sitten"
@@ -2597,19 +2597,19 @@ msgstr "palaute"
 msgid "feedbacks"
 msgstr "palautteet"
 
-#: .\friends\views.py:164
+#: .\friends\views.py:189
 msgid "Friendship request sent."
 msgstr "Ystävyyspyyntö lähetetty."
 
-#: .\friends\views.py:176
+#: .\friends\views.py:204
 msgid "No friendship request."
 msgstr "Ei ystävyyspyyntöä."
 
-#: .\friends\views.py:209
+#: .\friends\views.py:243
 msgid "Friendship request accepted."
 msgstr "Ystävyyspyyntö hyväksytty."
 
-#: .\friends\views.py:224
+#: .\friends\views.py:261
 msgid "Friendship request rejected."
 msgstr "Ystävyyspyyntö hylätty."
 
