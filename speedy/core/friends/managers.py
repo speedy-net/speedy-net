@@ -31,10 +31,13 @@ class FriendshipRequestManager:
     @classmethod
     def get_received_friendship_requests_count(cls, user):
         """
-        Get received friendship requests count in Speedy Net or Speedy Match.
+        Return the number of received friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
         Invalidate based on raw requests count.
 
         :type user: speedy.core.accounts.models.User
+        :return: The number of received friendship requests in the current site.
         """
         key = cache_key(cache_type='received_friendship_requests_count', entity_pk=user.pk)
         cached_value = cache_manager.cache_get(key=key, sliding_timeout=django_settings.CACHE_GET_RECEIVED_FRIENDSHIP_REQUESTS_COUNT_SLIDING_TIMEOUT)

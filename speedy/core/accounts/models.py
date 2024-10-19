@@ -507,6 +507,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def received_friendship_requests(self):
+        """
+        Return a list of received friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
+
+        :return: A list of received friendship requests in the current site.
+        """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_received_friendship_requests'))):
                 self._received_friendship_requests = self.get_received_friendship_requests()
@@ -514,10 +521,24 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def received_friendship_requests_count(self):
+        """
+        Return the number of received friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
+
+        :return: The number of received friendship requests in the current site.
+        """
         return FriendshipRequestManager.get_received_friendship_requests_count(user=self)
 
     @cached_property
     def sent_friendship_requests(self):
+        """
+        Return a list of sent friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
+
+        :return: A list of sent friendship requests in the current site.
+        """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_sent_friendship_requests'))):
                 self._sent_friendship_requests = self.get_sent_friendship_requests()
@@ -525,6 +546,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def sent_friendship_requests_count(self):
+        """
+        Return the number of sent friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
+
+        :return: The number of sent friendship requests in the current site.
+        """
         return len(self.sent_friendship_requests)
 
     @cached_property
@@ -556,9 +584,10 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     @cached_property
     def speedy_net_friends(self):
         """
-        Return a list of Speedy Net friends.
+        Return a list of friends in Speedy Net.
+        In Speedy Net, only active users.
 
-        :return: A list of Speedy Net friends.
+        :return: A list of friends in Speedy Net.
         """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_friends'))):
@@ -568,9 +597,10 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     @cached_property
     def speedy_net_friends_count(self):
         """
-        Return the number of Speedy Net friends.
+        Return the number of friends in Speedy Net.
+        In Speedy Net, only active users.
 
-        :return: The number of Speedy Net friends.
+        :return: The number of friends in Speedy Net.
         """
         return len(self.speedy_net_friends)
 
@@ -779,9 +809,11 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     def get_received_friendship_requests(self):
         """
-        Return a list of received friendship requests.
+        Return a list of received friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
 
-        :return: A list of received friendship requests.
+        :return: A list of received friendship requests in the current site.
         """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -817,9 +849,11 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     def get_sent_friendship_requests(self):
         """
-        Return a list of sent friendship requests.
+        Return a list of sent friendship requests in the current site.
+        In Speedy Net, only active users.
+        In Speedy Match, only active users who match the current user and is dependent on language.
 
-        :return: A list of sent friendship requests.
+        :return: A list of sent friendship requests in the current site.
         """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
@@ -855,9 +889,10 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     def get_speedy_net_friends(self):
         """
-        Return a list of Speedy Net friends.
+        Return a list of friends in Speedy Net.
+        In Speedy Net, only active users.
 
-        :return: A list of Speedy Net friends.
+        :return: A list of friends in Speedy Net.
         """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
