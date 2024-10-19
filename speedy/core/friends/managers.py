@@ -8,9 +8,9 @@ from speedy.core.base import cache_manager
 class FriendManager:
 
     @classmethod
-    def get_friends_count(cls, user):
+    def get_all_friends_count(cls, user):
         """
-        Get friends count independent of Speedy Net or Speedy Match logic.
+        Get all friends count independent of Speedy Net or Speedy Match logic.
         Cache invalidated by django-friendship as registered in BUST_CACHES in speedy.core.patches.friendship_patches.
         Better performance than len(Friend.objects.friends(user=user)). Equivalent to user.friends.count() with cache.
 
