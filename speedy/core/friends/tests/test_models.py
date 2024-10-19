@@ -31,6 +31,7 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
                 self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
+                self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
                 self.assertEqual(first=FriendManager.get_friends_count(user=user), second=friends)
                 self.assertEqual(first=user.speedy_net_profile.friends_count, second=friends)
 
