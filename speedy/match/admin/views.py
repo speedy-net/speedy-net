@@ -511,8 +511,8 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
             filter_dict["likes_to_user__count__gte"] = int(self.request.GET.get('likes_to_user'))
         if ((self.request.GET.get('min_age')) or (self.request.GET.get('max_age'))):
             filter_dict["date_of_birth__range"] = get_age_ranges_match(min_age=int(self.request.GET.get('min_age', SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED)), max_age=int(self.request.GET.get('max_age', SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED)))
-        if (self.request.GET.get('order_by') == 'number_of_friends'):
-            order_by_list.append(F('{}__number_of_friends'.format(SpeedyNetSiteProfile.RELATED_NAME)).desc())
+        if (self.request.GET.get('order_by') == 'speedy_net_friends_count'):
+            order_by_list.append(F('{}__speedy_net_friends_count'.format(SpeedyNetSiteProfile.RELATED_NAME)).desc())
         order_by_list.append('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         qs = User.objects.active()
         if (len(annotate_list) > 0):

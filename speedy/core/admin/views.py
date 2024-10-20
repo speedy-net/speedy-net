@@ -144,8 +144,8 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     def get_queryset(self):
         SiteProfile = get_site_profile_model()
         order_by_list = list()
-        if (self.request.GET.get('order_by') == 'number_of_friends'):
-            order_by_list.append(F('{}__number_of_friends'.format(SpeedyNetSiteProfile.RELATED_NAME)).desc())
+        if (self.request.GET.get('order_by') == 'speedy_net_friends_count'):
+            order_by_list.append(F('{}__speedy_net_friends_count'.format(SpeedyNetSiteProfile.RELATED_NAME)).desc())
         order_by_list.append('-{}__last_visit'.format(SiteProfile.RELATED_NAME))
         qs = User.objects.all().order_by(*order_by_list)
         return qs

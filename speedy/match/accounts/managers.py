@@ -173,7 +173,7 @@ class SiteProfileManager(BaseManager):
             )
             if ((user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.is_active) and (other_user.speedy_match_profile.rank > self.model.RANK_0)):
                 other_user.speedy_match_profile._likes_to_user_count = other_user.speedy_match_profile.likes_to_user_count
-                other_user.speedy_match_profile._friends_count = other_user.speedy_net_profile.friends_count
+                other_user.speedy_match_profile._all_friends_count = other_user.speedy_net_profile.all_friends_count
                 other_user.speedy_match_profile._distance_between_users = None
                 other_user.speedy_match_profile._user_last_visit_days_offset = 0 * 30
                 if ((timezone_now - other_user.speedy_match_profile.last_visit).days >= 180):
@@ -193,7 +193,7 @@ class SiteProfileManager(BaseManager):
                     if (other_user.speedy_match_profile.rank >= self.model.RANK_5):
                         other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
-                        if (other_user.speedy_match_profile._friends_count >= 20):
+                        if (other_user.speedy_match_profile._all_friends_count >= 20):
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                         else:
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30

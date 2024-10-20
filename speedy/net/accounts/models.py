@@ -21,8 +21,8 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=True)
-    number_of_friends = models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=0)
-    friends_count = models.PositiveSmallIntegerField(default=0)
+    speedy_net_friends_count = models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=0)
+    all_friends_count = models.PositiveSmallIntegerField(default=0)
 
     _optimistic_locking_fields = ("is_active",)
 
@@ -41,29 +41,29 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
     def _get_deleted_name(self):
         return self.__class__.DELETED_NAME
 
-    def _update_number_of_friends(self):
-        previous_number_of_friends = self.number_of_friends
-        self.number_of_friends = self.user.speedy_net_friends_count
-        if (not (self.number_of_friends == previous_number_of_friends)):
+    def _update_speedy_net_friends_count(self):
+        previous_speedy_net_friends_count = self.speedy_net_friends_count
+        self.speedy_net_friends_count = self.user.speedy_net_friends_count
+        if (not (self.speedy_net_friends_count == previous_speedy_net_friends_count)):
             speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
             language_code = get_language()
-            logger.debug('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+            logger.debug('SpeedyNetSiteProfile::_update_speedy_net_friends_count::User {user} has {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                 site_name=_(speedy_net_site.name),
                 user=self.user,
-                number_of_friends=self.number_of_friends,
+                number_of_friends=self.speedy_net_friends_count,
                 registered_days_ago=(now() - self.user.date_created).days,
                 language_code=language_code,
             ))
-            if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
-                logger.warning('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+            if (self.speedy_net_friends_count > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
+                logger.warning('SpeedyNetSiteProfile::_update_speedy_net_friends_count::User {user} has more than {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(speedy_net_site.name),
                     user=self.user,
                     number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20,
                     registered_days_ago=(now() - self.user.date_created).days,
                     language_code=language_code,
                 ))
-            if (self.number_of_friends > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
-                logger.error('SpeedyNetSiteProfile::_update_number_of_friends::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+            if (self.speedy_net_friends_count > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+                logger.error('SpeedyNetSiteProfile::_update_speedy_net_friends_count::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
                     site_name=_(speedy_net_site.name),
                     user=self.user,
                     MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED,
@@ -72,7 +72,7 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
                 ))
 
     def save(self, *args, **kwargs):
-        self._update_number_of_friends()
+        self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)
 
     def activate(self):
