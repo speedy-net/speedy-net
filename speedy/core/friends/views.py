@@ -14,7 +14,6 @@ from rules.contrib.views import PermissionRequiredMixin
 from speedy.core.base.utils import get_both_genders_context_from_users
 from speedy.core.base.views import PaginationMixin
 from speedy.core.accounts.models import User
-from speedy.core.friends.managers import FriendManager
 from speedy.core.profiles.views import UserMixin
 from .rules import is_self, friendship_request_sent, friendship_request_received, are_friends
 
@@ -102,7 +101,7 @@ class LimitMaxFriendsMixin(object):
     In Speedy Net, all users, active and not active.
     """
     def check_own_friends(self):
-        user_all_friends_count = FriendManager.get_all_friends_count(user=self.request.user)
+        user_all_friends_count = self.request.user.friends.count()
         if (user_all_friends_count >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(
                 formats.number_format(value=user_all_friends_count),
@@ -110,7 +109,7 @@ class LimitMaxFriendsMixin(object):
             ))
 
     def check_other_user_friends(self, user):
-        other_user_all_friends_count = FriendManager.get_all_friends_count(user=user)
+        other_user_all_friends_count = user.friends.count()
         if (other_user_all_friends_count >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=user), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(
                 formats.number_format(value=other_user_all_friends_count),
