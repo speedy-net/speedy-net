@@ -575,7 +575,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         Return the number of friends in the current site.
         In Speedy Net, only active users.
         In Speedy Match, only active users who match the current user and is dependent on language.
-        This is different logic from user.friends.count() and FriendManager.get_friends_count(user).
+        This is different logic from user.friends.count() and FriendManager.get_all_friends_count(user).
 
         :return: The number of friends in the current site.
         """

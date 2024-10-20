@@ -98,21 +98,22 @@ class SentFriendshipRequestsListView(UserMixin, PermissionRequiredMixin, Friends
 
 class LimitMaxFriendsMixin(object):
     """
-    Mixin to limit max friends independent of Speedy Net or Speedy Match logic.
+    Mixin to limit max friends in Speedy Net.
+    In Speedy Net, all users, active and not active.
     """
     def check_own_friends(self):
-        user_number_of_friends = FriendManager.get_all_friends_count(user=self.request.user)
-        if (user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+        user_all_friends_count = FriendManager.get_all_friends_count(user=self.request.user)
+        if (user_all_friends_count >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=self.request.user.get_gender(), message="You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.").format(
-                formats.number_format(value=user_number_of_friends),
+                formats.number_format(value=user_all_friends_count),
                 formats.number_format(value=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
             ))
 
     def check_other_user_friends(self, user):
-        other_user_number_of_friends = FriendManager.get_all_friends_count(user=user)
-        if (other_user_number_of_friends >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+        other_user_all_friends_count = FriendManager.get_all_friends_count(user=user)
+        if (other_user_all_friends_count >= User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
             raise ValidationError(pgettext_lazy(context=get_both_genders_context_from_users(user=self.request.user, other_user=user), message="This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.").format(
-                formats.number_format(value=other_user_number_of_friends),
+                formats.number_format(value=other_user_all_friends_count),
                 formats.number_format(value=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED),
             ))
 
