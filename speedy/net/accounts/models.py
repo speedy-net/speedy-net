@@ -71,6 +71,28 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
                     language_code=language_code,
                 ))
 
+    def _after_update_all_friends_count(self):
+        if (self.all_friends_count > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20):
+            speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
+            language_code = get_language()
+            logger.warning('SpeedyNetSiteProfile::_after_update_all_friends_count::User {user} has more than {number_of_friends} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+                site_name=_(speedy_net_site.name),
+                user=self.user,
+                number_of_friends=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 20,
+                registered_days_ago=(now() - self.user.date_created).days,
+                language_code=language_code,
+            ))
+        if (self.all_friends_count > User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED):
+            speedy_net_site = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID)
+            language_code = get_language()
+            logger.error('SpeedyNetSiteProfile::_after_update_all_friends_count::User {user} has more than {MAX_NUMBER_OF_FRIENDS_ALLOWED} friends on {site_name} (registered {registered_days_ago} days ago), language_code={language_code}.'.format(
+                site_name=_(speedy_net_site.name),
+                user=self.user,
+                MAX_NUMBER_OF_FRIENDS_ALLOWED=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED,
+                registered_days_ago=(now() - self.user.date_created).days,
+                language_code=language_code,
+            ))
+
     def save(self, *args, **kwargs):
         self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)

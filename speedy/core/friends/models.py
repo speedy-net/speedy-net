@@ -11,6 +11,7 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
     if (created):
         user = instance.to_user
         user.speedy_net_profile.all_friends_count = user.friends.count()
+        user.speedy_net_profile._after_update_all_friends_count()
         user.speedy_net_profile.save()
 
 
@@ -18,6 +19,7 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
 def update_all_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
     user = instance.to_user
     # Do .filter(...).update(...) because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile
+    # We don't need to call user.speedy_net_profile._after_update_all_friends_count() because the friends count is decreasing.
     SpeedyNetSiteProfile.objects.filter(user=user).update(all_friends_count=user.friends.count())
 
 
