@@ -21,8 +21,8 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     is_active = models.BooleanField(default=True)
-    speedy_net_friends_count = models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=0)
-    all_friends_count = models.PositiveSmallIntegerField(default=0)
+    speedy_net_friends_count = models.PositiveSmallIntegerField(verbose_name=_("Number of friends on last user's visit"), default=0)  # The number of friends in Speedy Net. In Speedy Net, only active users.
+    all_friends_count = models.PositiveSmallIntegerField(default=0)  # The number of friends in Speedy Net. In Speedy Net, all users, active and not active.
 
     _optimistic_locking_fields = ("is_active",)
 
