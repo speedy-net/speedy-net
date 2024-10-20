@@ -28,8 +28,3 @@ def number_of_matches_html(speedy_match_profile):
     return attribute_html(profile=speedy_match_profile, attribute_name="number_of_matches", default_value=None)
 
 
-@register.filter
-def number_of_friends_html(speedy_net_profile):
-    return attribute_html(profile=speedy_net_profile, attribute_name="number_of_friends", default_value=None)
-
-
