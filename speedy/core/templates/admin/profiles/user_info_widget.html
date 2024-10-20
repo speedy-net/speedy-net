@@ -103,7 +103,7 @@
                     </tr>
                     <tr>
                         <th class="user-profile-th">Friends</th>
-                        <td class="direction-ltr">&lrm;{{ user.site_friends_count }} friends on {{ site_name }}&lrm;{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / &lrm;{{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %}&lrm; &lrm;({{ user.speedy_net_profile.speedy_net_friends_count }})&lrm;</td>
+                        <td class="direction-ltr">&lrm;{{ user.site_friends_count }} friends on {{ site_name }}&lrm;{% if not settings.SITE_ID == settings.SPEEDY_NET_SITE_ID %} / &lrm;{{ user.speedy_net_friends_count }} friends on Speedy Net{% endif %}&lrm; &lrm;({{ user.speedy_net_profile.all_friends_count }},{{ user.speedy_net_profile.speedy_net_friends_count }})&lrm;</td>
                     </tr>
                     <tr>
                         <th class="user-profile-th">Likes (Speedy Match)</th>
