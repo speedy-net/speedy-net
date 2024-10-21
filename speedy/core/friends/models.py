@@ -17,10 +17,10 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
 @receiver(signal=models.signals.post_delete, sender=Friend)
 def update_all_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
     user = instance.to_user
-    # Check origin because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile
-    if (user != kwargs.get('origin')):
+    # Check origin because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile.
+    if (not (user == kwargs.get('origin'))):
         user.speedy_net_profile.all_friends_count = user.friends.count()
-        # We don't need to call user.speedy_net_profile._after_update_all_friends_count() because the friends count is decreasing.
+        user.speedy_net_profile._after_update_all_friends_count()
         user.speedy_net_profile.save()
 
 
@@ -32,4 +32,5 @@ def invalidate_received_friendship_requests_count_after_friendship_request_creat
 @receiver(signal=models.signals.post_delete, sender=FriendshipRequest)
 def invalidate_received_friendship_requests_count_after_friendship_request_deleted(sender, instance: FriendshipRequest, **kwargs):
     bust_cache(cache_type='received_friendship_requests_count', entities_pks=[instance.from_user.pk, instance.to_user.pk])
+
 
