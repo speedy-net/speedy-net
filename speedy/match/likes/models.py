@@ -52,9 +52,10 @@ def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, 
 
 @receiver(signal=models.signals.post_delete, sender=UserLike)
 def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
-    from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
     user = instance.to_user
-    # Do .filter(...).update(...) because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile
-    SpeedyMatchSiteProfile.objects.filter(user=user).update(likes_to_user_count=user.likes_to_user.count())
+    # Check origin because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile
+    if (user != kwargs.get('origin')):
+        user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+        user.speedy_match_profile.save()
 
 
