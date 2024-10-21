@@ -3,7 +3,6 @@ from django.dispatch import receiver
 from friendship.models import Friend, FriendshipRequest
 
 from speedy.core.accounts.cache_helper import bust_cache
-from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
 
 @receiver(signal=models.signals.post_save, sender=Friend)
@@ -18,9 +17,11 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
 @receiver(signal=models.signals.post_delete, sender=Friend)
 def update_all_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
     user = instance.to_user
-    # Do .filter(...).update(...) because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile
-    # We don't need to call user.speedy_net_profile._after_update_all_friends_count() because the friends count is decreasing.
-    SpeedyNetSiteProfile.objects.filter(user=user).update(all_friends_count=user.friends.count())
+    # Check origin because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile
+    if (user != kwargs.get('origin')):
+        user.speedy_net_profile.all_friends_count = user.friends.count()
+        # We don't need to call user.speedy_net_profile._after_update_all_friends_count() because the friends count is decreasing.
+        user.speedy_net_profile.save()
 
 
 @receiver(signal=models.signals.post_save, sender=FriendshipRequest)
