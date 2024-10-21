@@ -18,10 +18,9 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
 def update_all_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
     user = instance.to_user
     # Check origin because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile.
-    if (not (user == kwargs.get('origin'))):
-        user.speedy_net_profile.all_friends_count = user.friends.count()
-        user.speedy_net_profile._after_update_all_friends_count()
-        user.speedy_net_profile.save()
+    user.speedy_net_profile.all_friends_count = user.friends.count()
+    user.speedy_net_profile._after_update_all_friends_count()
+    user.speedy_net_profile.save()
 
 
 @receiver(signal=models.signals.post_save, sender=FriendshipRequest)

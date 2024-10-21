@@ -54,8 +54,7 @@ def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, 
 def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
     user = instance.to_user
     # Check origin because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile.
-    if (not (user == kwargs.get('origin'))):
-        user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
-        user.speedy_match_profile.save()
+    user.speedy_match_profile.likes_to_user_count = user.likes_to_user.count()
+    user.speedy_match_profile.save()
 
 
