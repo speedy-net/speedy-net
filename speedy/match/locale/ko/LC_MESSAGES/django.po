@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 15:42+0300\n"
+"POT-Creation-Date: 2024-10-23 12:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -707,7 +707,7 @@ msgstr "Speedy Match 프로필"
 msgid "Speedy Match Profiles"
 msgstr "Speedy Match 프로필"
 
-#: .\accounts\models.py:360 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:363 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "이메일 주소를 확인해주세요."
 
@@ -1233,6 +1233,11 @@ msgstr "내 매치 설정"
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
 msgstr "매치 설정"
+
+#: .\templates\base_site.html:105 .\templates\base_site.html:106
+#: .\templates\base_site.html:114 .\templates\base_site.html:115
+msgid "A vegan friendly website"
+msgstr "비건 친화적인 웹사이트"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
