@@ -254,6 +254,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         if (commit):
             self.user.save_user_and_profile()
 
+    def _update_likes_to_user_count(self):
+        self.likes_to_user_count = self.user.likes_to_user.count()
+
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
         """
         Get the matching rank between self and other_profile.
