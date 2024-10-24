@@ -1,4 +1,4 @@
-from friendship.models import Friend
+from friendship.models import Friend, FriendshipRequest
 from rules import predicate, add_perm, is_authenticated
 from django.conf import settings as django_settings
 
@@ -8,12 +8,12 @@ from speedy.core.blocks.rules import there_is_block
 
 @predicate
 def friendship_request_sent(user, other_user):
-    return other_user.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user=user)]
+    return FriendshipRequest.objects.filter(from_user=user, to_user=other_user).exists()
 
 
 @predicate
 def friendship_request_received(user, other_user):
-    return user.id in [fr.to_user_id for fr in Friend.objects.sent_requests(user=other_user)]
+    return FriendshipRequest.objects.filter(from_user=other_user, to_user=user).exists()
 
 
 @predicate

@@ -32,6 +32,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
                 self.assertEqual(first=FriendshipRequest.objects.filter(to_user=user).count(), second=requests)
                 self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
+                self.assertEqual(first=FriendshipRequest.objects.filter(from_user=user).count(), second=sent_requests)
                 self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
                 self.assertEqual(first=Friend.objects.filter(to_user=user).count(), second=friends)
                 self.assertEqual(first=Friend.objects.filter(from_user=user).count(), second=friends)
