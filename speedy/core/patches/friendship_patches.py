@@ -2,7 +2,6 @@ def patch():
     import logging
 
     from friendship.models import BUST_CACHES, CACHE_TYPES, Friend, FriendshipManager, FriendshipRequest, cache, cache_key
-    from pymemcache.exceptions import MemcacheServerError
 
     MAX_NUMBER_OF_FRIENDS_TO_CACHE = 400
     MAX_NUMBER_OF_REQUESTS_TO_CACHE = 4000
@@ -23,8 +22,8 @@ def patch():
             if (len(friends) <= MAX_NUMBER_OF_FRIENDS_TO_CACHE):
                 try:
                     cache.set(key, friends)
-                except MemcacheServerError as e:
-                    logger.warning("friendship_patches::friends::User has {len_friends} friends, user={user}, Exception={e}".format(
+                except Exception as e:
+                    logger.warning("friendship_patches::FriendshipManager::friends::friendship.models.cache.set raised an exception, User has {len_friends} friends, user={user}, Exception={e}".format(
                         len_friends=len(friends),
                         user=user,
                         e=str(e),
@@ -48,8 +47,8 @@ def patch():
             if (len(requests) <= MAX_NUMBER_OF_REQUESTS_TO_CACHE):
                 try:
                     cache.set(key, requests)
-                except MemcacheServerError as e:
-                    logger.warning("friendship_patches::requests::User has {len_requests} requests, user={user}, Exception={e}".format(
+                except Exception as e:
+                    logger.warning("friendship_patches::FriendshipManager::requests::friendship.models.cache.set raised an exception, User has {len_requests} requests, user={user}, Exception={e}".format(
                         len_requests=len(requests),
                         user=user,
                         e=str(e),
@@ -73,8 +72,8 @@ def patch():
             if (len(requests) <= MAX_NUMBER_OF_REQUESTS_TO_CACHE):
                 try:
                     cache.set(key, requests)
-                except MemcacheServerError as e:
-                    logger.warning("friendship_patches::sent_requests::User has {len_requests} sent requests, user={user}, Exception={e}".format(
+                except Exception as e:
+                    logger.warning("friendship_patches::FriendshipManager::sent_requests::friendship.models.cache.set raised an exception, User has {len_requests} sent requests, user={user}, Exception={e}".format(
                         len_requests=len(requests),
                         user=user,
                         e=str(e),
