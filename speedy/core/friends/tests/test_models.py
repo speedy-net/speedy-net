@@ -4,7 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from time import sleep
 
-        from friendship.models import Friend
+        from friendship.models import Friend, FriendshipRequest
 
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
@@ -30,6 +30,7 @@ if (django_settings.TESTS):
             def assert_counters(self, user, requests, sent_requests, friends):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
+                self.assertEqual(first=FriendshipRequest.objects.filter(to_user=user).count(), second=requests)
                 self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
                 self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
                 self.assertEqual(first=Friend.objects.filter(to_user=user).count(), second=friends)

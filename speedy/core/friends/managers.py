@@ -1,5 +1,5 @@
 from django.conf import settings as django_settings
-from friendship.models import Friend, cache as friendship_cache, cache_key as friendship_cache_key
+from friendship.models import Friend, FriendshipRequest, cache as friendship_cache, cache_key as friendship_cache_key
 
 from speedy.core.accounts.cache_helper import cache_key
 from speedy.core.base import cache_manager
@@ -43,7 +43,7 @@ class FriendshipRequestManager:
         """
         key = cache_key(cache_type='received_friendship_requests_count', entity_pk=user.pk)
         cached_value = cache_manager.cache_get(key=key, sliding_timeout=django_settings.CACHE_GET_RECEIVED_FRIENDSHIP_REQUESTS_COUNT_SLIDING_TIMEOUT)
-        raw_count = len(Friend.objects.requests(user=user))
+        raw_count = FriendshipRequest.objects.filter(to_user=user).count()
         if ((cached_value is not None) and (cached_value['raw_count'] == raw_count)):
             count = cached_value['count']
         else:
