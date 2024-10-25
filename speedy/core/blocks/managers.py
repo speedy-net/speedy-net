@@ -65,7 +65,7 @@ class BlockManager(BaseManager):
         try:
             blocked_entities_ids = cache_manager.cache_get(key=blocked_key, sliding_timeout=django_settings.CACHE_GET_BLOCKED_ENTITIES_IDS_SLIDING_TIMEOUT)
         except Exception as e:
-            logger.debug("BlockManager::get_blocked_entities_ids:cache_manager.cache_get raised an exception, blocker={blocker}, Exception={e}".format(
+            logger.warning("BlockManager::get_blocked_entities_ids:cache_manager.cache_get raised an exception, blocker={blocker}, Exception={e}".format(
                 blocker=blocker,
                 e=str(e),
             ))
@@ -75,7 +75,7 @@ class BlockManager(BaseManager):
             try:
                 cache_manager.cache_set(key=blocked_key, value=blocked_entities_ids, timeout=django_settings.CACHE_SET_BLOCKED_ENTITIES_IDS_TIMEOUT)
             except Exception as e:
-                logger.debug("BlockManager::get_blocked_entities_ids:cache_manager.cache_set raised an exception, blocker={blocker}, Exception={e}".format(
+                logger.warning("BlockManager::get_blocked_entities_ids:cache_manager.cache_set raised an exception, blocker={blocker}, Exception={e}".format(
                     blocker=blocker,
                     e=str(e),
                 ))
@@ -86,7 +86,7 @@ class BlockManager(BaseManager):
         try:
             blocking_entities_ids = cache_manager.cache_get(key=blocking_key, sliding_timeout=django_settings.CACHE_GET_BLOCKING_ENTITIES_IDS_SLIDING_TIMEOUT)
         except Exception as e:
-            logger.debug("BlockManager::get_blocking_entities_ids:cache_manager.cache_get raised an exception, blocked={blocked}, Exception={e}".format(
+            logger.warning("BlockManager::get_blocking_entities_ids:cache_manager.cache_get raised an exception, blocked={blocked}, Exception={e}".format(
                 blocked=blocked,
                 e=str(e),
             ))
@@ -96,7 +96,7 @@ class BlockManager(BaseManager):
             try:
                 cache_manager.cache_set(key=blocking_key, value=blocking_entities_ids, timeout=django_settings.CACHE_SET_BLOCKING_ENTITIES_IDS_TIMEOUT)
             except Exception as e:
-                logger.debug("BlockManager::get_blocking_entities_ids:cache_manager.cache_set raised an exception, blocked={blocked}, Exception={e}".format(
+                logger.warning("BlockManager::get_blocking_entities_ids:cache_manager.cache_set raised an exception, blocked={blocked}, Exception={e}".format(
                     blocked=blocked,
                     e=str(e),
                 ))
