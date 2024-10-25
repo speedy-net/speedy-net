@@ -9,6 +9,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
+        from speedy.core.accounts.models import Entity
         from speedy.core.blocks.models import Block
         from speedy.match.likes.models import UserLike
 
@@ -92,6 +93,7 @@ if (django_settings.TESTS):
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
                 self.anon = AnonymousUser()
+                self.entity = Entity()
 
             def test_you_like_user_false(self):
                 self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=False)
@@ -134,5 +136,11 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.anon), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.user), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.user, other_user=self.entity), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.entity), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.entity), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.anon), expr2=False)
 
 
