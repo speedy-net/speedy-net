@@ -22,10 +22,10 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
-                self.anon = AnonymousUser()
+                self.anonymous_user = AnonymousUser()
 
             def test_anonymous_cannot_like(self):
-                self.assertIs(expr1=self.anon.has_perm(perm='likes.like', obj=self.other_user), expr2=False)
+                self.assertIs(expr1=self.anonymous_user.has_perm(perm='likes.like', obj=self.other_user), expr2=False)
 
             def test_user_cannot_like_self(self):
                 self.assertIs(expr1=self.user.has_perm(perm='likes.like', obj=self.user), expr2=False)
@@ -52,10 +52,10 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
-                self.anon = AnonymousUser()
+                self.anonymous_user = AnonymousUser()
 
             def test_anonymous_cannot_unlike(self):
-                self.assertIs(expr1=self.anon.has_perm(perm='likes.unlike', obj=self.other_user), expr2=False)
+                self.assertIs(expr1=self.anonymous_user.has_perm(perm='likes.unlike', obj=self.other_user), expr2=False)
 
             def test_user_cannot_unlike_self(self):
                 self.assertIs(expr1=self.user.has_perm(perm='likes.unlike', obj=self.user), expr2=False)
@@ -74,10 +74,10 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
-                self.anon = AnonymousUser()
+                self.anonymous_user = AnonymousUser()
 
             def test_anonymous_cannot_view_likes(self):
-                self.assertIs(expr1=self.anon.has_perm(perm='likes.view_likes', obj=self.user), expr2=False)
+                self.assertIs(expr1=self.anonymous_user.has_perm(perm='likes.view_likes', obj=self.user), expr2=False)
 
             def test_other_user_cannot_view_likes(self):
                 self.assertIs(expr1=self.other_user.has_perm(perm='likes.view_likes', obj=self.user), expr2=False)
@@ -92,7 +92,7 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
-                self.anon = AnonymousUser()
+                self.anonymous_user = AnonymousUser()
                 self.entity = Entity()
                 self.reserved_username = ReservedUsername()
 
@@ -133,21 +133,21 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.user), expr2=True)
 
             def test_both_are_users_false(self):
-                self.assertIs(expr1=both_are_users(user=self.user, other_user=self.anon), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.anon), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.user), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.user, other_user=self.anonymous_user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.anonymous_user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anonymous_user, other_user=self.user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anonymous_user, other_user=self.other_user), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.user, other_user=self.entity), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.entity), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.user), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.other_user), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.entity), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.anon), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anonymous_user, other_user=self.entity), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.entity, other_user=self.anonymous_user), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.user, other_user=self.reserved_username), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.reserved_username), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.reserved_username, other_user=self.user), expr2=False)
                 self.assertIs(expr1=both_are_users(user=self.reserved_username, other_user=self.other_user), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.reserved_username), expr2=False)
-                self.assertIs(expr1=both_are_users(user=self.reserved_username, other_user=self.anon), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anonymous_user, other_user=self.reserved_username), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.reserved_username, other_user=self.anonymous_user), expr2=False)
 
 
