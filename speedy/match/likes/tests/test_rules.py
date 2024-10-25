@@ -12,7 +12,7 @@ if (django_settings.TESTS):
         from speedy.core.blocks.models import Block
         from speedy.match.likes.models import UserLike
 
-        from speedy.match.likes.rules import you_like_user, user_likes_you
+        from speedy.match.likes.rules import you_like_user, user_likes_you, both_are_users
 
 
         @only_on_speedy_match
@@ -91,6 +91,7 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
+                self.anon = AnonymousUser()
 
             def test_you_like_user_false(self):
                 self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=False)
@@ -123,5 +124,15 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=you_like_user(user=self.other_user, other_user=self.user), expr2=True)
                 self.assertIs(expr1=user_likes_you(user=self.user, other_user=self.other_user), expr2=True)
                 self.assertIs(expr1=user_likes_you(user=self.other_user, other_user=self.user), expr2=True)
+
+            def test_both_are_users_true(self):
+                self.assertIs(expr1=both_are_users(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.user), expr2=True)
+
+            def test_both_are_users_false(self):
+                self.assertIs(expr1=both_are_users(user=self.user, other_user=self.anon), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.other_user, other_user=self.anon), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.user), expr2=False)
+                self.assertIs(expr1=both_are_users(user=self.anon, other_user=self.other_user), expr2=False)
 
 
