@@ -11,6 +11,8 @@ if (django_settings.TESTS):
 
         from speedy.core.blocks.models import Block
 
+        from speedy.core.friends.rules import friendship_request_sent, friendship_request_received, are_friends
+
 
         @only_on_sites_with_login
         class RequestRulesOnlyEnglishTestCase(SiteTestCase):
@@ -86,5 +88,40 @@ if (django_settings.TESTS):
             def test_user_cannot_remove_other_user_if_not_friends(self):
                 Friend.objects.remove_friend(from_user=self.user, to_user=self.other_user)
                 self.assertIs(expr1=self.user.has_perm(perm='friends.remove', obj=self.other_user), expr2=False)
+
+
+        @only_on_sites_with_login
+        class FriendshipRequestRulesOnlyEnglishTestCase(SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.user = ActiveUserFactory()
+                self.other_user = ActiveUserFactory()
+
+            def test_friendship_request_sent_false(self):
+                self.assertIs(expr1=friendship_request_sent(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=friendship_request_sent(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_friendship_request_sent_true(self):
+                Friend.objects.add_friend(from_user=self.user, to_user=self.other_user)
+                self.assertIs(expr1=friendship_request_sent(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=friendship_request_sent(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_friendship_request_received_false(self):
+                self.assertIs(expr1=friendship_request_received(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=friendship_request_received(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_friendship_request_received_true(self):
+                Friend.objects.add_friend(from_user=self.other_user, to_user=self.user)
+                self.assertIs(expr1=friendship_request_received(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=friendship_request_received(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_are_friends_false(self):
+                self.assertIs(expr1=are_friends(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=are_friends(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_are_friends_true(self):
+                Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
+                self.assertIs(expr1=are_friends(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=are_friends(user=self.other_user, other_user=self.user), expr2=True)
 
 

@@ -12,6 +12,8 @@ if (django_settings.TESTS):
         from speedy.core.blocks.models import Block
         from speedy.match.likes.models import UserLike
 
+        from speedy.match.likes.rules import you_like_user, user_likes_you
+
 
         @only_on_speedy_match
         class LikeRulesOnlyEnglishTestCase(SiteTestCase):
@@ -81,5 +83,45 @@ if (django_settings.TESTS):
 
             def test_user_can_view_likes(self):
                 self.assertIs(expr1=self.user.has_perm(perm='likes.view_likes', obj=self.user), expr2=True)
+
+
+        @only_on_speedy_match
+        class UserLikeRulesOnlyEnglishTestCase(SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.user = ActiveUserFactory()
+                self.other_user = ActiveUserFactory()
+
+            def test_you_like_user_false(self):
+                self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=you_like_user(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_you_like_user_true(self):
+                UserLike.objects.add_like(from_user=self.user, to_user=self.other_user)
+                self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=you_like_user(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_user_likes_you_false(self):
+                self.assertIs(expr1=user_likes_you(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=user_likes_you(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_user_likes_you_true(self):
+                UserLike.objects.add_like(from_user=self.other_user, to_user=self.user)
+                self.assertIs(expr1=user_likes_you(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=user_likes_you(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_mutual_likes_false(self):
+                self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=you_like_user(user=self.other_user, other_user=self.user), expr2=False)
+                self.assertIs(expr1=user_likes_you(user=self.user, other_user=self.other_user), expr2=False)
+                self.assertIs(expr1=user_likes_you(user=self.other_user, other_user=self.user), expr2=False)
+
+            def test_mutual_likes_true(self):
+                UserLike.objects.add_like(from_user=self.user, to_user=self.other_user)
+                UserLike.objects.add_like(from_user=self.other_user, to_user=self.user)
+                self.assertIs(expr1=you_like_user(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=you_like_user(user=self.other_user, other_user=self.user), expr2=True)
+                self.assertIs(expr1=user_likes_you(user=self.user, other_user=self.other_user), expr2=True)
+                self.assertIs(expr1=user_likes_you(user=self.other_user, other_user=self.user), expr2=True)
 
 
