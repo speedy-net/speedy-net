@@ -27,12 +27,14 @@ if (django_settings.TESTS):
                 Friend.objects.add_friend(from_user=self.user_1, to_user=ActiveUserFactory())
                 Friend.objects.add_friend(from_user=ActiveUserFactory(), to_user=self.user_1)
 
-            def assert_counters(self, user, requests, sent_requests, friends):
+            def assert_counters(self, user, received_friendship_requests, sent_friendship_requests, friends):
                 user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=len(Friend.objects.requests(user=user)), second=requests)
-                self.assertEqual(first=FriendshipRequest.objects.filter(to_user=user).count(), second=requests)
-                self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_requests)
-                self.assertEqual(first=FriendshipRequest.objects.filter(from_user=user).count(), second=sent_requests)
+                self.assertEqual(first=len(Friend.objects.requests(user=user)), second=received_friendship_requests)
+                self.assertEqual(first=FriendshipRequest.objects.filter(to_user=user).count(), second=received_friendship_requests)
+                self.assertEqual(first=user.friendship_requests_received.count(), second=received_friendship_requests)
+                self.assertEqual(first=len(Friend.objects.sent_requests(user=user)), second=sent_friendship_requests)
+                self.assertEqual(first=FriendshipRequest.objects.filter(from_user=user).count(), second=sent_friendship_requests)
+                self.assertEqual(first=user.friendship_requests_sent.count(), second=sent_friendship_requests)
                 self.assertEqual(first=len(Friend.objects.friends(user=user)), second=friends)
                 self.assertEqual(first=Friend.objects.filter(to_user=user).count(), second=friends)
                 self.assertEqual(first=Friend.objects.filter(from_user=user).count(), second=friends)
@@ -41,70 +43,70 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.all_friends_count, second=friends)
 
             def test_set_up(self):
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
             def test_delete_users(self):
                 for user in User.objects.all().exclude(pk=self.user_1.pk):
                     user.delete()
                 self.user_2 = None
-                self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Friend.objects.add_friend(from_user=self.user_1, to_user=ActiveUserFactory()).accept()
-                self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=1)
+                self.assert_counters(user=self.user_1, received_friendship_requests=0, sent_friendship_requests=0, friends=1)
                 Friend.objects.add_friend(from_user=ActiveUserFactory(), to_user=self.user_1).accept()
-                self.assert_counters(user=self.user_1, requests=0, sent_requests=0, friends=2)
+                self.assert_counters(user=self.user_1, received_friendship_requests=0, sent_friendship_requests=0, friends=2)
 
             def test_if_no_relation_between_users_nothing_get_affected(self):
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
             def test_if_user1_blocked_user2_request_is_removed(self):
                 Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=2, friends=1)
-                self.assert_counters(user=self.user_2, requests=1, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=2, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=1, sent_friendship_requests=0, friends=0)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
             def test_if_user2_blocked_user1_request_is_removed(self):
                 Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=2, friends=1)
-                self.assert_counters(user=self.user_2, requests=1, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=2, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=1, sent_friendship_requests=0, friends=0)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
             def test_if_user1_blocked_user2_friendship_is_removed(self):
                 Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_2).accept()
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=2)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=1)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=2)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=1)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
             def test_if_user2_blocked_user1_friendship_is_removed(self):
                 Friend.objects.add_friend(from_user=self.user_1, to_user=self.user_2).accept()
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=2)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=1)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=2)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=1)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, requests=1, sent_requests=1, friends=1)
-                self.assert_counters(user=self.user_2, requests=0, sent_requests=0, friends=0)
+                self.assert_counters(user=self.user_1, received_friendship_requests=1, sent_friendship_requests=1, friends=1)
+                self.assert_counters(user=self.user_2, received_friendship_requests=0, sent_friendship_requests=0, friends=0)
 
 
         @only_on_sites_with_login

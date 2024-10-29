@@ -32,49 +32,49 @@ if (django_settings.TESTS):
                 UserLike.objects.add_like(from_user=ActiveUserFactory(), to_user=self.user_2)
                 UserLike.objects.add_like(from_user=ActiveUserFactory(), to_user=self.user_2)
 
-            def assert_counters(self, user, from_user_likes, to_user_likes):
+            def assert_counters(self, user, likes_from_user, likes_to_user):
                 user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=len(UserLike.objects.filter(from_user=user)), second=from_user_likes)
-                self.assertEqual(first=UserLike.objects.filter(from_user=user).count(), second=from_user_likes)
-                self.assertEqual(first=user.likes_from_user.count(), second=from_user_likes)
-                self.assertEqual(first=len(UserLike.objects.filter(to_user=user)), second=to_user_likes)
-                self.assertEqual(first=UserLike.objects.filter(to_user=user).count(), second=to_user_likes)
-                self.assertEqual(first=user.likes_to_user.count(), second=to_user_likes)
-                self.assertEqual(first=user.speedy_match_profile.likes_to_user_count, second=to_user_likes)
+                self.assertEqual(first=len(UserLike.objects.filter(from_user=user)), second=likes_from_user)
+                self.assertEqual(first=UserLike.objects.filter(from_user=user).count(), second=likes_from_user)
+                self.assertEqual(first=user.likes_from_user.count(), second=likes_from_user)
+                self.assertEqual(first=len(UserLike.objects.filter(to_user=user)), second=likes_to_user)
+                self.assertEqual(first=UserLike.objects.filter(to_user=user).count(), second=likes_to_user)
+                self.assertEqual(first=user.likes_to_user.count(), second=likes_to_user)
+                self.assertEqual(first=user.speedy_match_profile.likes_to_user_count, second=likes_to_user)
 
             def test_set_up(self):
-                self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=2)
+                self.assert_counters(user=self.user_1, likes_from_user=2, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=2)
 
             def test_if_no_relation_between_users_nothing_get_affected(self):
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=2)
+                self.assert_counters(user=self.user_1, likes_from_user=2, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=2)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=2)
+                self.assert_counters(user=self.user_1, likes_from_user=2, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=2)
 
             def test_if_user1_blocked_user2_like_is_removed(self):
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=3, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=3)
+                self.assert_counters(user=self.user_1, likes_from_user=3, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=3)
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=2)
+                self.assert_counters(user=self.user_1, likes_from_user=2, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=2)
                 Block.objects.unblock(blocker=self.user_1, blocked=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=2, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=2)
+                self.assert_counters(user=self.user_1, likes_from_user=2, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=2)
 
             def test_if_user2_blocked_user1_like_isnt_removed(self):
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
-                self.assert_counters(user=self.user_1, from_user_likes=3, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=3)
+                self.assert_counters(user=self.user_1, likes_from_user=3, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=3)
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, from_user_likes=3, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=3)
+                self.assert_counters(user=self.user_1, likes_from_user=3, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=3)
                 Block.objects.unblock(blocker=self.user_2, blocked=self.user_1)
-                self.assert_counters(user=self.user_1, from_user_likes=3, to_user_likes=1)
-                self.assert_counters(user=self.user_2, from_user_likes=1, to_user_likes=3)
+                self.assert_counters(user=self.user_1, likes_from_user=3, likes_to_user=1)
+                self.assert_counters(user=self.user_2, likes_from_user=1, likes_to_user=3)
 
 
         @only_on_speedy_match
