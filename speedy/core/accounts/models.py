@@ -1020,9 +1020,10 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         This function determines if the user should see ads or not.
 
         The user should see ads if:
-        1. The user is 15 years old or older, and
-        2. The user registered more than 21 days ago, and
-        3. The number of days since registration is not divisible by 6 with a remainder of 2. (every 6 days, the user should see ads for 5 days, and not see ads for 1 day)
+        1. The user is 20 years old or older, and
+        2. The user registered more than 30 days ago, and
+        # 3. The number of days since registration is not divisible by 6 with a remainder of 2. (every 6 days, the user should see ads for 5 days, and not see ads for 1 day)
+
         :param self: The user.
         :type self: User
         :return: True if the user should see ads, False otherwise.
@@ -1030,10 +1031,11 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         """
         _display_ads = False
         timezone_now = now()
-        if (self.get_age() >= 15):
-            if ((timezone_now - self.date_created).days >= 21):
-                if (not (((timezone_now - self.date_created).days % 6) == 2)):
-                    _display_ads = True
+        if (self.get_age() >= 20):
+            if ((timezone_now - self.date_created).days >= 30):
+                _display_ads = True
+                # if (not (((timezone_now - self.date_created).days % 6) == 2)):
+                #     _display_ads = True
         return _display_ads
 
 

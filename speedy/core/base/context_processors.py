@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.utils.translation import get_language, gettext_lazy as _
 from django.conf import settings as django_settings
 from django.contrib.sites.models import Site
@@ -66,6 +68,14 @@ def add_admin_user_prefix(request):
     return {
         'admin_user': admin_user,
         'admin_user_prefix': admin_user_prefix,
+    }
+
+
+def display_ads_today(request):
+    today = date.today()
+    display_ads_today = (today.day % 6 == 0)
+    return {
+        'display_ads_today': display_ads_today,
     }
 
 
