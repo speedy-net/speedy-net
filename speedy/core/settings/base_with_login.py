@@ -2,7 +2,6 @@ from django.utils.translation import gettext_lazy as _
 
 from .base import *
 
-
 LOGIN_ENABLED = True
 
 INSTALLED_APPS += [
@@ -75,6 +74,7 @@ LANGUAGES_TO_ADD = [
 LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]
 
 # LANGUAGES_WITH_ADS = {'en'}
+# LANGUAGES_WITH_ADS = {'en', 'fr', 'es'}
 LANGUAGES_WITH_ADS = set()
 
 
