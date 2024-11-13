@@ -7,7 +7,7 @@ import speedy.core.base.path_converters
 
 app_name = 'speedy.core'
 urlpatterns = [
-    path(route='about/', view=include('speedy.core.about.urls', namespace='about')),
+    path(route='about/', view=include(arg='speedy.core.about.urls', namespace='about')),
 ]
 
 if (django_settings.DEBUG):
@@ -16,7 +16,7 @@ if (django_settings.DEBUG):
     if ('debug_toolbar' in django_settings.INSTALLED_APPS):
         import debug_toolbar
         urlpatterns += [
-            path(route='__debug__/', view=include(debug_toolbar.urls)),
+            path(route='__debug__/', view=include(arg=debug_toolbar.urls)),
         ]
 
 
