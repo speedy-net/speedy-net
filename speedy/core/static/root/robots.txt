@@ -13,3 +13,6 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+User-agent: meta-externalagent
+Disallow: /
+
