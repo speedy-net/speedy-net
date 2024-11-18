@@ -1389,7 +1389,7 @@ if (django_settings.TESTS):
                 user_15 = ActiveUserFactory()
                 user_15.profile.last_visit -= relativedelta(years=1)
                 user_15.save_user_and_profile()
-                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'fr': " (il\xa0y\xa0a\xa01\xa0année)", 'de': "(vor\xa01\xa0Jahr)", 'es': "(hace\xa01\xa0años)", 'pt': "(há\xa01\xa0ano)", 'it': "(1\xa0anno\xa0fa)", 'nl': "(1\xa0jaar\xa0geleden)", 'sv': "(1\xa0år\xa0sedan)", 'ko': "(1년\xa0전에)", 'fi': "(1\xa0vuosi\xa0sitten)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_15.profile.last_visit_str, expr2=True)
+                self.assertIs(expr1={'en': "(1\xa0year\xa0ago)", 'fr': "(il\xa0y\xa0a\xa01\xa0année)", 'de': "(vor\xa01\xa0Jahr)", 'es': "(hace\xa01\xa0años)", 'pt': "(há\xa01\xa0ano)", 'it': "(1\xa0anno\xa0fa)", 'nl': "(1\xa0jaar\xa0geleden)", 'sv': "(1\xa0år\xa0sedan)", 'ko': "(1년\xa0전에)", 'fi': "(1\xa0vuosi\xa0sitten)", 'he': "(לפני\xa0שנה)"}[self.language_code] in user_15.profile.last_visit_str, expr2=True)
                 user_16 = ActiveUserFactory()
                 user_16.profile.last_visit -= relativedelta(years=1, weeks=1)
                 user_16.save_user_and_profile()
