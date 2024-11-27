@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 12:38+0300\n"
+"POT-Creation-Date: 2024-11-27 11:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1231,7 +1231,7 @@ msgid "Matches"
 msgstr "Coincidencias"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
-#: .\templates\likes\like_list.html:20
+#: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
 msgstr "Me gusta"
@@ -1278,7 +1278,7 @@ msgstr "Aún no tienes amigos."
 msgid "Your Friends"
 msgstr "Tus amigos"
 
-#: .\templates\likes\like_list.html:49
+#: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
 msgstr "No tienes Me gusta aquí."
 
@@ -1313,28 +1313,28 @@ msgstr ""
 "Speedy Match hoy para encontrar parejas compatibles, solo te llevará unos "
 "minutos."
 
-#: .\templates\matches\match_list.html:39
+#: .\templates\matches\match_list.html:41
 msgid "Update matches"
 msgstr "Actualizar coincidencias"
 
-#: .\templates\matches\match_list.html:47
+#: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
 msgstr "Dieta"
 
-#: .\templates\matches\match_list.html:58
+#: .\templates\matches\match_list.html:60
 msgid "Age:"
 msgstr "Edad:"
 
-#: .\templates\matches\match_list.html:72
+#: .\templates\matches\match_list.html:74
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: .\templates\matches\match_list.html:79
+#: .\templates\matches\match_list.html:81
 msgid "Add more options"
 msgstr "Agregar más opciones"
 
-#: .\templates\matches\match_list.html:108
+#: .\templates\matches\match_list.html:110
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."

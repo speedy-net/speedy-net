@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 12:31+0300\n"
+"POT-Creation-Date: 2024-11-27 11:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Voer een geldig e-mailadres in."
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1061
+#: .\__translations\__translations.py:9 .\accounts\models.py:1063
 msgid "email address"
 msgstr "e-mailadres"
 
@@ -2186,7 +2186,7 @@ msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
 msgid "user"
 msgstr "gebruiker"
 
@@ -2198,56 +2198,56 @@ msgstr "gebruikers"
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:1046
+#: .\accounts\models.py:1048
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1047
+#: .\accounts\models.py:1049
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1050
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1051
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1053
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:1062
+#: .\accounts\models.py:1064
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:1129
+#: .\accounts\models.py:1131
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:1130
+#: .\accounts\models.py:1132
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:1142
+#: .\accounts\models.py:1144
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1146
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1150
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"
@@ -2629,7 +2629,7 @@ msgstr "Vriendschapsverzoek afgewezen."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:27
+#: .\templates\messages\chat_list.html:29
 msgid "Messages"
 msgstr "Berichten"
 
@@ -2685,47 +2685,47 @@ msgstr "zie markering"
 msgid "read marks"
 msgstr "zie markeringen"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Engels"
 
-#: .\settings\base.py:185
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebreeuws"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:63
 msgid "French"
 msgstr "Frans"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:64
 msgid "German"
 msgstr "Duits"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:65
 msgid "Spanish"
 msgstr "Spaans"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:66
 msgid "Portuguese"
 msgstr "Portugees"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:67
 msgid "Italian"
 msgstr "Italiaans"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:68
 msgid "Dutch"
 msgstr "Nederlands"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:69
 msgid "Swedish"
 msgstr "Zweeds"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:70
 msgid "Korean"
 msgstr "Koreaans"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:71
 msgid "Finnish"
 msgstr "Fins"
 
@@ -3114,11 +3114,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "Je hebt een nieuw bericht ingeschakeld %(site_name)s"
 
-#: .\templates\friends\base.html:33
+#: .\templates\friends\base.html:35
 msgid "Received Requests"
 msgstr "Ontvangen verzoeken"
 
-#: .\templates\friends\base.html:39
+#: .\templates\friends\base.html:41
 msgid "Sent Requests"
 msgstr "Verzonden verzoeken"
 
@@ -3156,15 +3156,15 @@ msgstr "Stuur een bericht naar %(user_name)s"
 msgid "Mark All as Read"
 msgstr "Markeer alles als gelezen"
 
-#: .\templates\messages\chat_list.html:54
+#: .\templates\messages\chat_list.html:56
 msgid "Unread"
 msgstr "Ongelezen"
 
-#: .\templates\messages\chat_list.html:61
+#: .\templates\messages\chat_list.html:63
 msgid "You:"
 msgstr "Jij:"
 
-#: .\templates\messages\chat_list.html:81
+#: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
 msgstr "Je hebt nog geen berichten."
 

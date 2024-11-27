@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 12:31+0300\n"
+"POT-Creation-Date: 2024-11-27 11:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1061
+#: .\__translations\__translations.py:9 .\accounts\models.py:1063
 msgid "email address"
 msgstr "e-postadress"
 
@@ -2180,7 +2180,7 @@ msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
 msgid "user"
 msgstr "användare"
 
@@ -2192,56 +2192,56 @@ msgstr "användare"
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:1046
+#: .\accounts\models.py:1048
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:1047
+#: .\accounts\models.py:1049
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1050
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1051
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1053
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:1062
+#: .\accounts\models.py:1064
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:1129
+#: .\accounts\models.py:1131
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:1130
+#: .\accounts\models.py:1132
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:1142
+#: .\accounts\models.py:1144
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1146
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1150
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2623,7 +2623,7 @@ msgstr "Vänskapsförfrågan avvisad."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:27
+#: .\templates\messages\chat_list.html:29
 msgid "Messages"
 msgstr "Meddelanden"
 
@@ -2679,47 +2679,47 @@ msgstr "läs markering"
 msgid "read marks"
 msgstr "läs markeringar"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Engelska"
 
-#: .\settings\base.py:185
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hebreiska"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:63
 msgid "French"
 msgstr "Franska"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:64
 msgid "German"
 msgstr "Tyska"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:65
 msgid "Spanish"
 msgstr "Spanska"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:66
 msgid "Portuguese"
 msgstr "Portugisiska"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:67
 msgid "Italian"
 msgstr "Italienska"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:68
 msgid "Dutch"
 msgstr "Holländska"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:69
 msgid "Swedish"
 msgstr "Svenska"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:70
 msgid "Korean"
 msgstr "Koreanska"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:71
 msgid "Finnish"
 msgstr "Finska"
 
@@ -3106,11 +3106,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "Du har ett nytt meddelande på %(site_name)s"
 
-#: .\templates\friends\base.html:33
+#: .\templates\friends\base.html:35
 msgid "Received Requests"
 msgstr "Mottagna förfrågningar"
 
-#: .\templates\friends\base.html:39
+#: .\templates\friends\base.html:41
 msgid "Sent Requests"
 msgstr "Skickade förfrågningar"
 
@@ -3148,15 +3148,15 @@ msgstr "Skicka ett meddelande till %(user_name)s"
 msgid "Mark All as Read"
 msgstr "Markera alla som lästa"
 
-#: .\templates\messages\chat_list.html:54
+#: .\templates\messages\chat_list.html:56
 msgid "Unread"
 msgstr "Olästa"
 
-#: .\templates\messages\chat_list.html:61
+#: .\templates\messages\chat_list.html:63
 msgid "You:"
 msgstr "Du:"
 
-#: .\templates\messages\chat_list.html:81
+#: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
 msgstr "Du har inga meddelanden ännu."
 

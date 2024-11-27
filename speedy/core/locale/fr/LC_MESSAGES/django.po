@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 12:38+0300\n"
+"POT-Creation-Date: 2024-11-27 11:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,7 +872,7 @@ msgstr "Saisissez une adresse de courriel valide."
 msgid "Email address"
 msgstr "Adresse e-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1061
+#: .\__translations\__translations.py:9 .\accounts\models.py:1063
 msgid "email address"
 msgstr "adresse e-mail"
 
@@ -2196,7 +2196,7 @@ msgstr "Dernière adresse IP utilisée https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Dernière adresse IP utilisée https://ipapi.com/results"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
 msgid "user"
 msgstr "utilisateur"
 
@@ -2208,56 +2208,56 @@ msgstr "utilisateurs"
 msgid "Superuser must be equal to staff."
 msgstr "Le superutilisateur doit être égal au staff."
 
-#: .\accounts\models.py:1046
+#: .\accounts\models.py:1048
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1047
+#: .\accounts\models.py:1049
 msgid "is confirmed"
 msgstr "confirmé"
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1050
 msgid "is primary"
 msgstr "principal"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1051
 msgid "confirmation token"
 msgstr "jeton de confirmation"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "confirmation sent"
 msgstr "confirmation envoyée"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1053
 msgid "Who can see this email"
 msgstr "Qui peut voir cet e-mail ?"
 
-#: .\accounts\models.py:1062
+#: .\accounts\models.py:1064
 msgid "email addresses"
 msgstr "adresses e-mail"
 
-#: .\accounts\models.py:1129
+#: .\accounts\models.py:1131
 msgid "User"
 msgstr "Utilisateur"
 
-#: .\accounts\models.py:1130
+#: .\accounts\models.py:1132
 msgid "last visit"
 msgstr "dernière visite"
 
-#: .\accounts\models.py:1142
+#: .\accounts\models.py:1144
 msgid "Today"
 msgstr "Aujourd’hui"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1146
 msgid "Yesterday"
 msgstr "Hier"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Sur {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1150
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "il y a {timesince}"
@@ -2648,7 +2648,7 @@ msgstr "Demande d’amitié rejetée."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:27
+#: .\templates\messages\chat_list.html:29
 msgid "Messages"
 msgstr "Messages"
 
@@ -2704,47 +2704,47 @@ msgstr "lire la note"
 msgid "read marks"
 msgstr "lire les notes"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:185
 msgid "English"
 msgstr "Anglais"
 
-#: .\settings\base.py:185
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "Hébreu"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:63
 msgid "French"
 msgstr "Français"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:64
 msgid "German"
 msgstr "Allemand"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:65
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:66
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:67
 msgid "Italian"
 msgstr "Italien"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:68
 msgid "Dutch"
 msgstr "Hollandais"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:69
 msgid "Swedish"
 msgstr "Suédois"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:70
 msgid "Korean"
 msgstr "Coréen"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:71
 msgid "Finnish"
 msgstr "Finlandais"
 
@@ -3137,11 +3137,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "Vous avez un nouveau message sur %(site_name)s"
 
-#: .\templates\friends\base.html:33
+#: .\templates\friends\base.html:35
 msgid "Received Requests"
 msgstr "Demandes reçues"
 
-#: .\templates\friends\base.html:39
+#: .\templates\friends\base.html:41
 msgid "Sent Requests"
 msgstr "Demandes envoyées"
 
@@ -3179,15 +3179,15 @@ msgstr "Envoyer un message à %(user_name)s"
 msgid "Mark All as Read"
 msgstr "Marquer tout comme lu"
 
-#: .\templates\messages\chat_list.html:54
+#: .\templates\messages\chat_list.html:56
 msgid "Unread"
 msgstr "Non lu"
 
-#: .\templates\messages\chat_list.html:61
+#: .\templates\messages\chat_list.html:63
 msgid "You:"
 msgstr "Vous :"
 
-#: .\templates\messages\chat_list.html:81
+#: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
 msgstr "Vous n’avez pas de messages pour l’instant."
 

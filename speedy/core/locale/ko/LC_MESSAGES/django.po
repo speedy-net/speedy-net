@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 12:31+0300\n"
+"POT-Creation-Date: 2024-11-27 11:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "올바른 이메일 주소를 입력하세요."
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1061
+#: .\__translations\__translations.py:9 .\accounts\models.py:1063
 msgid "email address"
 msgstr "이메일 주소"
 
@@ -2168,7 +2168,7 @@ msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1045 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
 msgid "user"
 msgstr "사용자"
 
@@ -2180,56 +2180,56 @@ msgstr "사용자"
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:1046
+#: .\accounts\models.py:1048
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:1047
+#: .\accounts\models.py:1049
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1050
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1051
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1053
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:1062
+#: .\accounts\models.py:1064
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:1129
+#: .\accounts\models.py:1131
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:1130
+#: .\accounts\models.py:1132
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:1142
+#: .\accounts\models.py:1144
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1146
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1148
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1150
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
@@ -2586,7 +2586,7 @@ msgstr "친구 요청 거부됨."
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
-#: .\templates\messages\chat_list.html:27
+#: .\templates\messages\chat_list.html:29
 msgid "Messages"
 msgstr "메시지"
 
@@ -2642,47 +2642,47 @@ msgstr "읽은 표시"
 msgid "read marks"
 msgstr "읽은 표시"
 
-#: .\settings\base.py:184
+#: .\settings\base.py:185
 msgid "English"
 msgstr "영어"
 
-#: .\settings\base.py:185
+#: .\settings\base.py:186
 msgid "Hebrew"
 msgstr "히브리어"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:63
 msgid "French"
 msgstr "프랑스어"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:64
 msgid "German"
 msgstr "독일어"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:65
 msgid "Spanish"
 msgstr "스페인어"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:66
 msgid "Portuguese"
 msgstr "포르투갈어"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:67
 msgid "Italian"
 msgstr "이탈리아어"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:68
 msgid "Dutch"
 msgstr "네덜란드어"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:69
 msgid "Swedish"
 msgstr "스웨덴어"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:70
 msgid "Korean"
 msgstr "한국어"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:71
 msgid "Finnish"
 msgstr "핀란드어"
 
@@ -3067,11 +3067,11 @@ msgstr ""
 msgid "You have a new message on %(site_name)s"
 msgstr "%(site_name)s에 새 메시지가 있습니다"
 
-#: .\templates\friends\base.html:33
+#: .\templates\friends\base.html:35
 msgid "Received Requests"
 msgstr "받은 요청"
 
-#: .\templates\friends\base.html:39
+#: .\templates\friends\base.html:41
 msgid "Sent Requests"
 msgstr "보낸 요청"
 
@@ -3109,15 +3109,15 @@ msgstr "%(user_name)s에 메시지 보내기"
 msgid "Mark All as Read"
 msgstr "모두 읽음으로 표시"
 
-#: .\templates\messages\chat_list.html:54
+#: .\templates\messages\chat_list.html:56
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: .\templates\messages\chat_list.html:61
+#: .\templates\messages\chat_list.html:63
 msgid "You:"
 msgstr "귀하:"
 
-#: .\templates\messages\chat_list.html:81
+#: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
 msgstr "아직 메시지가 없습니다."
 
