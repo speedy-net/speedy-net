@@ -14,7 +14,6 @@ pillow
 psycopg2
 pymemcache
 python-dateutil
-pytz
 rules
 s3transfer
 six
