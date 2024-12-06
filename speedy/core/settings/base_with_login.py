@@ -75,6 +75,6 @@ LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]
 
 # LANGUAGES_WITH_ADS = {'en'}
 # LANGUAGES_WITH_ADS = set()
-LANGUAGES_WITH_ADS = {'en', 'fr', 'es'}
+LANGUAGES_WITH_ADS = {'en', 'fr', 'de', 'es', 'pt'}
 
 
