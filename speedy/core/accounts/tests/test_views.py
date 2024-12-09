@@ -1609,8 +1609,7 @@ if (django_settings.TESTS):
                     unconfirmed_email_address_count=0,
                 )
 
-            def test_user_can_logout(self):
-                r = self.client.get(path='/')
+            def assert_user_is_active_and_redirects(self, r):
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     if (self.random_choice == 1):
                         self.assertEqual(first=self.user.is_active, second=True)
@@ -1655,8 +1654,20 @@ if (django_settings.TESTS):
                         raise NotImplementedError()
                 else:
                     raise NotImplementedError()
+
+            def test_user_can_logout(self):
+                r = self.client.get(path='/')
+                self.assert_user_is_active_and_redirects(r=r)
                 r = self.client.post(path='/logout/')
                 self.assertEqual(first=r.status_code, second=200)
+                r = self.client.get(path='/')
+                self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
+
+            def test_user_cannot_logout_using_get_method(self):
+                r = self.client.get(path='/')
+                self.assert_user_is_active_and_redirects(r=r)
+                r = self.client.get(path='/logout/')
+                self.assertEqual(first=r.status_code, second=405)
                 r = self.client.get(path='/')
                 self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
 
