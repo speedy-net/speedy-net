@@ -71,9 +71,11 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
             'site_name': _(site.name),
         })
         rendered = render_mail(template_name_prefix=template_name_prefix, context=context)
-        logger.debug('send_mail::site={site}, to={to}, template_name_prefix={template_name_prefix}, subject="{subject}", language_code={language_code}.'.format(
+        user = str(context.get('user', "(unknown)"))
+        logger.debug('send_mail::site={site}, to={to}, user={user}, template_name_prefix={template_name_prefix}, subject="{subject}", language_code={language_code}.'.format(
             site=_(site.name),
             to=to,
+            user=user,
             template_name_prefix=template_name_prefix,
             subject=rendered.subject,
             language_code=language_code,
