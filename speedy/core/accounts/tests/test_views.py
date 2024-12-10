@@ -1668,8 +1668,9 @@ if (django_settings.TESTS):
                 self.assert_user_is_active_and_redirects(r=r)
                 r = self.client.get(path='/logout/')
                 self.assertEqual(first=r.status_code, second=405)
-                r = self.client.get(path='/')
-                self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
+                r = self.client.get(path='/', follow=True)
+                self.assertIs(expr1=hasattr(r, 'redirect_chain'), expr2=True)
+                self.assertIs(expr1=r.context['user'].is_authenticated, expr2=True)
 
 
         class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
