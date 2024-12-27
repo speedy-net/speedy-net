@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 11:35+0200\n"
+"POT-Creation-Date: 2024-12-27 17:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Voer een geldig e-mailadres in."
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1063
+#: .\__translations\__translations.py:9 .\accounts\models.py:1058
 msgid "email address"
 msgstr "e-mailadres"
 
@@ -2186,7 +2186,7 @@ msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1042 .\blocks\models.py:15
 msgid "user"
 msgstr "gebruiker"
 
@@ -2198,56 +2198,56 @@ msgstr "gebruikers"
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1043
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1044
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1045
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1046
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:1052
+#: .\accounts\models.py:1047
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:1053
+#: .\accounts\models.py:1048
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:1064
+#: .\accounts\models.py:1059
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:1131
+#: .\accounts\models.py:1126
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:1132
+#: .\accounts\models.py:1127
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1139
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1141
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1143
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1150
+#: .\accounts\models.py:1145
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"

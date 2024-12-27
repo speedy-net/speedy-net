@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 11:35+0200\n"
+"POT-Creation-Date: 2024-12-27 17:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,7 +854,7 @@ msgstr "נא להזין כתובת דואר אלקטרוני חוקית."
 msgid "Email address"
 msgstr "כתובת דואר אלקטרוני"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1063
+#: .\__translations\__translations.py:9 .\accounts\models.py:1058
 msgid "email address"
 msgstr "כתובת דואר אלקטרוני"
 
@@ -2157,7 +2157,7 @@ msgstr "Last IP address used https://ipapi.com/ time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Last IP address used raw https://ipapi.com/ results"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1042 .\blocks\models.py:15
 msgid "user"
 msgstr "משתמש/ת"
 
@@ -2169,56 +2169,56 @@ msgstr "משתמשים"
 msgid "Superuser must be equal to staff."
 msgstr "Superuser must be equal to staff."
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1043
 msgid "email"
 msgstr "דואר אלקטרוני"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1044
 msgid "is confirmed"
 msgstr "מאומת"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1045
 msgid "is primary"
 msgstr "ראשי"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1046
 msgid "confirmation token"
 msgstr "confirmation token"
 
-#: .\accounts\models.py:1052
+#: .\accounts\models.py:1047
 msgid "confirmation sent"
 msgstr "confirmation sent"
 
-#: .\accounts\models.py:1053
+#: .\accounts\models.py:1048
 msgid "Who can see this email"
 msgstr "מי יכול/ה לראות את הדואר האלקטרוני הזה"
 
-#: .\accounts\models.py:1064
+#: .\accounts\models.py:1059
 msgid "email addresses"
 msgstr "כתובות דואר אלקטרוני"
 
-#: .\accounts\models.py:1131
+#: .\accounts\models.py:1126
 msgid "User"
 msgstr "משתמש/ת"
 
-#: .\accounts\models.py:1132
+#: .\accounts\models.py:1127
 msgid "last visit"
 msgstr "ביקור אחרון"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1139
 msgid "Today"
 msgstr "היום"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1141
 msgid "Yesterday"
 msgstr "אתמול"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1143
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "בתאריך {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1150
+#: .\accounts\models.py:1145
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "לפני {timesince}"

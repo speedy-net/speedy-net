@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 11:35+0200\n"
+"POT-Creation-Date: 2024-12-27 17:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,7 +872,7 @@ msgstr "Saisissez une adresse de courriel valide."
 msgid "Email address"
 msgstr "Adresse e-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1063
+#: .\__translations\__translations.py:9 .\accounts\models.py:1058
 msgid "email address"
 msgstr "adresse e-mail"
 
@@ -2196,7 +2196,7 @@ msgstr "Dernière adresse IP utilisée https://ipapi.com/time"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Dernière adresse IP utilisée https://ipapi.com/results"
 
-#: .\accounts\models.py:637 .\accounts\models.py:1047 .\blocks\models.py:15
+#: .\accounts\models.py:637 .\accounts\models.py:1042 .\blocks\models.py:15
 msgid "user"
 msgstr "utilisateur"
 
@@ -2208,56 +2208,56 @@ msgstr "utilisateurs"
 msgid "Superuser must be equal to staff."
 msgstr "Le superutilisateur doit être égal au staff."
 
-#: .\accounts\models.py:1048
+#: .\accounts\models.py:1043
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1049
+#: .\accounts\models.py:1044
 msgid "is confirmed"
 msgstr "confirmé"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1045
 msgid "is primary"
 msgstr "principal"
 
-#: .\accounts\models.py:1051
+#: .\accounts\models.py:1046
 msgid "confirmation token"
 msgstr "jeton de confirmation"
 
-#: .\accounts\models.py:1052
+#: .\accounts\models.py:1047
 msgid "confirmation sent"
 msgstr "confirmation envoyée"
 
-#: .\accounts\models.py:1053
+#: .\accounts\models.py:1048
 msgid "Who can see this email"
 msgstr "Qui peut voir cet e-mail ?"
 
-#: .\accounts\models.py:1064
+#: .\accounts\models.py:1059
 msgid "email addresses"
 msgstr "adresses e-mail"
 
-#: .\accounts\models.py:1131
+#: .\accounts\models.py:1126
 msgid "User"
 msgstr "Utilisateur"
 
-#: .\accounts\models.py:1132
+#: .\accounts\models.py:1127
 msgid "last visit"
 msgstr "dernière visite"
 
-#: .\accounts\models.py:1144
+#: .\accounts\models.py:1139
 msgid "Today"
 msgstr "Aujourd’hui"
 
-#: .\accounts\models.py:1146
+#: .\accounts\models.py:1141
 msgid "Yesterday"
 msgstr "Hier"
 
-#: .\accounts\models.py:1148
+#: .\accounts\models.py:1143
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Sur {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1150
+#: .\accounts\models.py:1145
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "il y a {timesince}"
