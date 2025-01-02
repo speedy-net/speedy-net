@@ -19,7 +19,7 @@ if (django_settings.TESTS):
         @staticmethod
         def valid_date_of_birth_list(max_age_allowed):
             today = date.today()
-            end_of_tests_date = (datetime.now() + relativedelta(hours=3.5)).date()
+            end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             valid_date_of_birth_list = [
                 '1904-02-29',
                 '1980-01-31',
@@ -50,7 +50,7 @@ if (django_settings.TESTS):
         @staticmethod
         def invalid_date_of_birth_list(max_age_allowed):
             today = date.today()
-            end_of_tests_date = (datetime.now() + relativedelta(hours=3.5)).date()
+            end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             invalid_date_of_birth_list = [
                 '1900-02-29',
                 '1901-02-29',
