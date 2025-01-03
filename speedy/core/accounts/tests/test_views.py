@@ -1953,7 +1953,7 @@ if (django_settings.TESTS):
                     self.assertIs(expr1=(user.allowed_to_change_date_of_birth_unlimited_times is True), expr2=True)
                     self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
                     self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
-                self.assertIs(expr1=(15 < number_of_date_of_birth_changes < 23), expr2=True)
+                self.assertIs(expr1=(17 < number_of_date_of_birth_changes < 25), expr2=True)
 
             def test_invalid_date_of_birth_list_fail(self):
                 self.date_of_birth = self.user.date_of_birth
