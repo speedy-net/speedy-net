@@ -198,11 +198,15 @@ if (django_settings.TESTS):
                     errors_dict['slug'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
                 elif (model is User):
                     errors_dict['slug'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+                else:
+                    raise NotImplementedError()
             if (username_fail):
                 if (model is Entity):
                     errors_dict['username'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
                 elif (model is User):
                     errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+                else:
+                    raise NotImplementedError()
             return errors_dict
 
         def _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False):
@@ -213,6 +217,8 @@ if (django_settings.TESTS):
                     errors_dict['username'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
                 elif (model is User):
                     errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
+                else:
+                    raise NotImplementedError()
             return errors_dict
 
         def _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth):
