@@ -1,4 +1,4 @@
-# python==3.11
+# python==3.12
 Django==5.0.10
 asgiref==3.8.1
 boto3==1.35.70
@@ -17,9 +17,11 @@ pymemcache==4.0.0
 python-dateutil==2.9.0.post0
 rules==3.5
 s3transfer==0.10.4
+setuptools==75.7.0
 six==1.16.0
 sorl-thumbnail==12.11.0
 sqlparse==0.5.2
 typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.2.3
+wheel==0.45.1

@@ -16,9 +16,11 @@ pymemcache
 python-dateutil
 rules
 s3transfer
+setuptools
 six
 sorl-thumbnail
 sqlparse
 typing_extensions
 tzdata
 urllib3
+wheel
