@@ -12,12 +12,8 @@ jobs:
           - 'test-default-languages'
           - 'test-only-english'
         python-version:
-          - '3.10'
-          - '3.11'
           - '3.12'
         postgresql-version:
-          - '14'
-          - '15'
           - '16'
           - '17'
         os:
@@ -29,46 +25,17 @@ jobs:
           - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
           - os: 'ubuntu-24.04'
-            python-version: '3.10'
-          - os: 'ubuntu-24.04'
-            python-version: '3.11'
-            postgresql-version: '14'
-          - os: 'ubuntu-24.04'
-            python-version: '3.11'
-            postgresql-version: '15'
-          - os: 'ubuntu-22.04'
-            python-version: '3.11'
-            postgresql-version: '16'
-          - os: 'ubuntu-22.04'
-            python-version: '3.11'
-            postgresql-version: '17'
-          - os: 'ubuntu-24.04'
-            postgresql-version: '14'
-          - os: 'ubuntu-22.04'
-            python-version: '3.12'
-            postgresql-version: '15'
-          - os: 'ubuntu-22.04'
             python-version: '3.12'
             postgresql-version: '16'
           - os: 'ubuntu-22.04'
             python-version: '3.12'
             postgresql-version: '17'
-          - postgresql-version: '14'
-            python-version: '3.10'
-          - postgresql-version: '14'
-            is-main-or-staging: false
-          - postgresql-version: '16'
-            is-main-or-staging: false
           - postgresql-version: '17'
             is-main-or-staging: false
           - languages: 'test-default-languages'
             is-all-languages: true
           - languages: 'test-only-english'
             is-main-or-staging: true
-          - languages: 'test-only-english'
-            python-version: '3.10'
-          - languages: 'test-only-english'
-            python-version: '3.12'
           - languages: 'test-all-languages'
             is-all-languages: false
     services:
@@ -104,7 +71,7 @@ jobs:
       - run: pwd
       - run: lsb_release -a
       - run: |
-          for version in 14 15 16 17 18 19 20
+          for version in 14 16 17 18 19 20
           do
             sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
             sudo pg_dropcluster $version main || true
@@ -115,11 +82,7 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install postgresql-${{ matrix.postgresql-version }} postgresql-client-${{ matrix.postgresql-version }}
           sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                trust/' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          if [[ ${{ matrix.postgresql-version }} == 13 ]]; then
-            sudo sed -i 's|host    all             all             127.0.0.1/32            md5|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          else
-            sudo sed -i 's|host    all             all             127.0.0.1/32            scram-sha-256|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
-          fi
+          sudo sed -i 's|host    all             all             127.0.0.1/32            scram-sha-256|host    all             all             127.0.0.1/32            trust|' /etc/postgresql/${{ matrix.postgresql-version }}/main/pg_hba.conf
           sudo service postgresql start
         if: ${{ matrix.postgresql-version != 'latest' }}
       - run: pg_lsclusters
