@@ -55,9 +55,11 @@ jobs:
             postgresql-version: '17'
           - postgresql-version: '14'
             python-version: '3.10'
+          - postgresql-version: '15'
+            python-version: '3.10'
           - postgresql-version: '14'
             is-main-or-staging: false
-          - postgresql-version: '16'
+          - postgresql-version: '15'
             is-main-or-staging: false
           - postgresql-version: '17'
             is-main-or-staging: false
@@ -68,7 +70,7 @@ jobs:
           - languages: 'test-only-english'
             python-version: '3.10'
           - languages: 'test-only-english'
-            python-version: '3.12'
+            python-version: '3.11'
           - languages: 'test-all-languages'
             is-all-languages: false
     services:
