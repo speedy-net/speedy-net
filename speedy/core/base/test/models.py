@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     import shutil
     import time
+    from collections import defaultdict
 
     from django.core.management import call_command
     from django import test as django_test
@@ -23,9 +24,12 @@ if (django_settings.TESTS):
             super().__init__(*args, **kwargs)
             self.test_languages = kwargs.get('test_languages', None)
             self.test_only = kwargs.get('test_only', None)
+            self.count_tests = kwargs.get('count_tests', None)
             assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'})
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
+            if (self.count_tests is not None):
+                assert (self.count_tests >= 0)
             self.test_times = []
 
         def _save_test_time(self, test_name, duration_func):
@@ -89,6 +93,17 @@ if (django_settings.TESTS):
         def test_suite(self, tests=()):
             if (self.test_only is not None):
                 tests = tests[:self.test_only]
+            if (self.count_tests is not None):
+                count_by_group = defaultdict(int)
+                for test in tests:
+                    parts = test.__module__.split('.') + [tests.__class__.__name__, test._testMethodName]
+                    group = '.'.join(parts[:self.count_tests])
+                    count_by_group[group] += 1
+                print()
+                for (group, count) in count_by_group.items():
+                    print(count, group)
+                print()
+                tests = []
             for test in tests:
                 test.addCleanup(self._save_test_time, test.id(), test.get_elapsed_time)
             return super().test_suite(tests=tests)
