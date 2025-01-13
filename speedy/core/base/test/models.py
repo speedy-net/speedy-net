@@ -29,7 +29,7 @@ if (django_settings.TESTS):
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
             if (self.count_tests is not None):
-                assert (self.count_tests >= 0)
+                assert (self.count_tests > 0)
             self.test_times = []
 
         def _save_test_time(self, test_name, duration_func):
