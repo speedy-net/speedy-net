@@ -94,15 +94,18 @@ if (django_settings.TESTS):
             if (self.test_only is not None):
                 tests = tests[:self.test_only]
             if (self.count_tests is not None):
-                count_by_group = defaultdict(int)
-                for test in tests:
-                    parts = test.id().split('.')
-                    group = '.'.join(parts[:self.count_tests])
-                    count_by_group[group] += 1
-                print()
-                for (group, count) in count_by_group.items():
-                    print(count, group)
-                print()
+                if (len(tests) > 0):
+                    count_by_group = defaultdict(int)
+                    for test in tests:
+                        parts = test.id().split('.')
+                        group = '.'.join(parts[:self.count_tests])
+                        count_by_group[group] += 1
+                    print()
+                    for (group, count) in count_by_group.items():
+                        print(count, group)
+                    print()
+                else:
+                    print()
                 tests = []
             for test in tests:
                 test.addCleanup(self._save_test_time, test.id(), test.get_elapsed_time)
