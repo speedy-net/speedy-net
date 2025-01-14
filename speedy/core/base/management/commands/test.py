@@ -45,4 +45,13 @@ class Command(test.Command):
             type=int,
         )
 
+        parser.add_argument(
+            "--count-tests",
+            action="store",
+            help="If run with this argument, count the tests grouped by test.id() parts of this depth. If passed without a number, defaults to 3.",
+            type=int,
+            nargs="?",
+            const=3,
+        )
+
 
