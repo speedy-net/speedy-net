@@ -96,7 +96,7 @@ if (django_settings.TESTS):
             if (self.count_tests is not None):
                 count_by_group = defaultdict(int)
                 for test in tests:
-                    parts = test.__module__.split('.') + [tests.__class__.__name__, test._testMethodName]
+                    parts = test.__module__.split('.') + [test.__class__.__name__, test._testMethodName]
                     group = '.'.join(parts[:self.count_tests])
                     count_by_group[group] += 1
                 print()
