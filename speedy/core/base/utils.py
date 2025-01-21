@@ -133,16 +133,21 @@ def _looks_like_one_color(colors, image, _user):
             (abs(b2 - b1) <= ONE_COLOR_RGB_THRESHOLD) and
             (_delta_e_cie76(color1=_rgb2lab(color=(r2, g2, b2)), color2=lab_reference_pixel) < ONE_COLOR_DELTA_E_THRESHOLD)
         ))
+        logger_level = logger.debug
         if (image.width * image.height > 0):
             one_color_percent = one_color_count / (image.width * image.height)
+            if (one_color_count >= ONE_COLOR_PERCENT_THRESHOLD * image.width * image.height):
+                pass
+            elif (one_color_percent >= 0.92):
+                logger_level = logger.warning
         else:
             one_color_percent = "(undefined)"
-        logger.debug("_looks_like_one_color::one_color_percent={one_color_percent}. user={user} (registered {registered_days_ago} days ago).".format(
+        logger_level("_looks_like_one_color::one_color_percent={one_color_percent}. user={user} (registered {registered_days_ago} days ago).".format(
             one_color_percent=one_color_percent,
             user=_user,
             registered_days_ago=(now() - _user.date_created).days,
         ))
-        if one_color_count >= ONE_COLOR_PERCENT_THRESHOLD * image.width * image.height:
+        if (one_color_count >= ONE_COLOR_PERCENT_THRESHOLD * image.width * image.height):
             return True
         return False
 
