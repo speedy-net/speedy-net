@@ -4,6 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import string
         from datetime import date
+        from typing import TYPE_CHECKING
 
         import factory
         import factory.fuzzy
@@ -16,6 +17,10 @@ if (django_settings.TESTS):
         from speedy.core.base.utils import normalize_username
         from speedy.core.accounts.models import User
 
+        UserTypeHintMixin = object
+        if TYPE_CHECKING:
+            UserTypeHintMixin = User
+
 
         class DjangoTestCaseWithMixin(SpeedyCoreAccountsModelsMixin, django_test.TestCase):
             pass
@@ -24,7 +29,7 @@ if (django_settings.TESTS):
         _test_case_with_mixin = DjangoTestCaseWithMixin()
 
 
-        class DefaultUserFactory(factory.django.DjangoModelFactory):
+        class DefaultUserFactory(factory.django.DjangoModelFactory, UserTypeHintMixin):
             """
             This factory is used to create users who are active on Speedy Net, but inactive on Speedy Match.
             """
