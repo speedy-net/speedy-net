@@ -804,8 +804,8 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         if (django_settings.LOGIN_ENABLED):
             from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
             from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
-            self._speedy_net_profile = self.get_profile(model=SpeedyNetSiteProfile)
-            self._speedy_match_profile = self.get_profile(model=SpeedyMatchSiteProfile)
+            self._speedy_net_profile: SpeedyNetSiteProfile = self.get_profile(model=SpeedyNetSiteProfile)
+            self._speedy_match_profile: SpeedyMatchSiteProfile = self.get_profile(model=SpeedyMatchSiteProfile)
 
     def get_received_friendship_requests(self):
         """
