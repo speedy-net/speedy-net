@@ -18,7 +18,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import User
 
         UserTypeHintMixin = object
-        if TYPE_CHECKING:
+        if (TYPE_CHECKING):
             UserTypeHintMixin = User
 
 
