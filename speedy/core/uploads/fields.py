@@ -1,8 +1,15 @@
+from typing import TYPE_CHECKING
+
 from django import forms
 from django.db import models
 from django.template.loader import render_to_string
 
 from .models import File
+
+ImageTypeHintMixin = object
+if (TYPE_CHECKING):
+    from speedy.core.uploads.models import Image
+    ImageTypeHintMixin = Image
 
 
 class FileInput(forms.TextInput):
@@ -22,7 +29,7 @@ class FileInput(forms.TextInput):
         })
 
 
-class PhotoField(models.ForeignKey):
+class PhotoField(models.ForeignKey, ImageTypeHintMixin):
     def __init__(self, *args, **kwargs):
         kwargs.update({
             'to': 'uploads.Image',
