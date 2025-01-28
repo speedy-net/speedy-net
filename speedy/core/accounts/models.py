@@ -2,6 +2,7 @@ import logging
 import warnings
 import random
 from datetime import timedelta, date
+from typing import TYPE_CHECKING
 
 from django.conf import settings as django_settings
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -35,6 +36,11 @@ from .utils import get_site_profile_model, normalize_email
 from . import validators as speedy_core_accounts_validators
 
 logger = logging.getLogger(__name__)
+
+if (TYPE_CHECKING):
+    from friendship.models import Friend, FriendshipRequest
+
+    from speedy.core.base.managers import QuerySet
 
 
 class ConcurrencyError(DatabaseError):
@@ -435,6 +441,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     last_ip_address_used_original_ipapi_call = models.BooleanField(default=False)
     last_ip_address_used_ipapi_time = models.DateTimeField(verbose_name=_('Last IP address used https://ipapi.com/ time'), blank=True, null=True)
     last_ip_address_used_raw_ipapi_results = models.JSONField(verbose_name=_('Last IP address used raw https://ipapi.com/ results'), blank=True, null=True)
+
+    # Reverse accessors. Type hint not built-in as per https://youtrack.jetbrains.com/issue/PY-24411
+    email_addresses: 'QuerySet[UserEmailAddress]'
+    friends: 'QuerySet[Friend]'
+    friendship_requests_received: 'QuerySet[FriendshipRequest]'
+    friendship_requests_sent: 'QuerySet[FriendshipRequest]'
 
     objects = UserManager()
 
@@ -1039,7 +1051,8 @@ User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VA
 
 class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     id = RegularUDIDField()
-    user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
+    # Type hint "User" will not be necessary after AUTH_USER_MODEL support in https://youtrack.jetbrains.com/issue/PY-34394
+    user: User = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
     email = models.EmailField(verbose_name=_('email'), unique=True)
     is_confirmed = models.BooleanField(verbose_name=_('is confirmed'), default=False)
     is_primary = models.BooleanField(verbose_name=_('is primary'), default=False)
