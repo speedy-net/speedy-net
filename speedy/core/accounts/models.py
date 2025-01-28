@@ -36,6 +36,9 @@ from .utils import get_site_profile_model, normalize_email
 from . import validators as speedy_core_accounts_validators
 
 if (TYPE_CHECKING):
+    from typing import Union
+
+    from django.db.models.fields.related_descriptors import ReverseOneToOneDescriptor
     from friendship.models import Friend, FriendshipRequest
 
     from speedy.core.base.managers import QuerySet
@@ -132,6 +135,9 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
     slug = models.CharField(verbose_name=_('username (slug)'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
     photo = PhotoField(verbose_name=_('photo'), blank=True, null=True)
     special_username = models.BooleanField(verbose_name=_('Special username'), default=False)
+
+    # Reverse accessor to concrete class
+    user: 'Union[User, ReverseOneToOneDescriptor]'
 
     objects = EntityManager()
 
