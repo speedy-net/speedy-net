@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-20 10:20+0000\n"
+"POT-Creation-Date: 2025-01-28 18:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,23 +147,23 @@ msgstr "Palavra-passe inválida."
 msgid "Yes. Delete my account."
 msgstr "Sim. Excluir minha conta."
 
-#: .\accounts\models.py:20
+#: .\accounts\models.py:18
 msgid "Speedy Net User"
 msgstr "Utilizador do Speedy Net"
 
-#: .\accounts\models.py:22
+#: .\accounts\models.py:20
 msgid "User"
 msgstr "Utilizador"
 
-#: .\accounts\models.py:24
+#: .\accounts\models.py:22
 msgid "Number of friends on last user's visit"
 msgstr "Número de amigos na última visita do utilizador"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:32
 msgid "Speedy Net Profile"
 msgstr "Perfil do Speedy Net"
 
-#: .\accounts\models.py:35
+#: .\accounts\models.py:33
 msgid "Speedy Net Profiles"
 msgstr "Perfis do Speedy Net"
 
