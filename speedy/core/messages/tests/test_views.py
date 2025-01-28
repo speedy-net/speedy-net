@@ -3,6 +3,7 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from time import sleep
+
         from dateutil.relativedelta import relativedelta
 
         from django.test import override_settings

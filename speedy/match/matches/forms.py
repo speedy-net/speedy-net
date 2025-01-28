@@ -1,4 +1,5 @@
 from crispy_forms.layout import Div, Row, HTML, Field
+
 from django.utils.translation import pgettext_lazy
 
 from speedy.core.base.utils import to_attribute

@@ -6,6 +6,7 @@ if (django_settings.TESTS):
     import copy
     import logging.config
     from datetime import date, datetime
+
     from dateutil.relativedelta import relativedelta
 
     from django.core.signals import setting_changed

@@ -4,6 +4,7 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         import random
         from time import sleep
+
         from dateutil.relativedelta import relativedelta
 
         from django.test import override_settings

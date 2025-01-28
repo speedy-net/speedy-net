@@ -7,8 +7,6 @@ from django.utils.timezone import now
 from django.utils.translation import get_language, gettext_lazy as _
 from django.contrib.sites.models import Site
 
-from translated_fields import TranslatedField
-
 from speedy.core.accounts.models import OptimisticLockingModelMixin, SiteProfileBase, User
 
 logger = logging.getLogger(__name__)
