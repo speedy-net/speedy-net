@@ -35,12 +35,12 @@ from .fields import UserAccessField
 from .utils import get_site_profile_model, normalize_email
 from . import validators as speedy_core_accounts_validators
 
-logger = logging.getLogger(__name__)
-
 if (TYPE_CHECKING):
     from friendship.models import Friend, FriendshipRequest
 
     from speedy.core.base.managers import QuerySet
+
+logger = logging.getLogger(__name__)
 
 
 class ConcurrencyError(DatabaseError):
