@@ -73,7 +73,7 @@ def add_admin_user_prefix(request):
 
 def display_ads_today(request):
     today = date.today()
-    display_ads_today = (not ((today.day % 4) == 0))
+    display_ads_today = ((today.day % 5) in {2, 4})
     return {
         'display_ads_today': display_ads_today,
     }
