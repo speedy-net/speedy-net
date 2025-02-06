@@ -1,3 +1,3 @@
 # python==3.12
-factory_boy==3.3.1
-Faker==33.3.1
+factory_boy==3.3.3
+Faker==35.2.0
