@@ -100,6 +100,13 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
                 ))
 
     def save(self, *args, **kwargs):
+        """
+        Save the profile.
+
+        :param args:
+        :param kwargs:
+        :return:
+        """
         self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)
 

@@ -307,6 +307,13 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
             return self.__class__.RANK_0
 
     def save(self, *args, **kwargs):
+        """
+        Save the profile.
+
+        :param args:
+        :param kwargs:
+        :return:
+        """
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
         self._set_values_to_match()

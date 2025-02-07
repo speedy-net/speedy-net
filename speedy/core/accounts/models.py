@@ -678,12 +678,24 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             ))
 
     def _mark_as_deleted(self):
+        """
+        Mark the user as deleted.
+
+        :return: None
+        """
         self.is_deleted = True
         self.is_deleted_time = now()
         self.save()
         self.save_user_and_profile()
 
     def save(self, *args, **kwargs):
+        """
+        Save the user but not profile.
+
+        :param args:
+        :param kwargs:
+        :return:
+        """
         _set_unusable_password = False
         # Superuser must be equal to staff.
         if (not (self.is_superuser == self.is_staff)):
@@ -972,6 +984,11 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             raise NotImplementedError()
 
     def save_user_and_profile(self):
+        """
+        Save the user and profile.
+
+        :return: None
+        """
         with transaction.atomic():
             self.save()
             self.profile.save()
@@ -1177,6 +1194,13 @@ class SiteProfileBase(TimeStampedModel):
         raise NotImplementedError("_get_deleted_name is not implemented.")
 
     def save(self, *args, **kwargs):
+        """
+        Save the profile.
+
+        :param args:
+        :param kwargs:
+        :return:
+        """
         return_value = super().save(*args, **kwargs)
         self.user.refresh_all_profiles()
         return return_value
