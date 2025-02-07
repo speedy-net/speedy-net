@@ -729,6 +729,16 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return check_password(password=raw_password, encoded=self.password, setter=setter)
 
     def delete(self, *args, **kwargs):
+        """
+        Delete the user and all profiles, also delete related objects, where on_delete=models.CASCADE.
+        Raise an exception if there are related objects with on_delete=models.PROTECT - in this case, don't delete the user.
+        Set user=null on related objects where on_delete=models.SET_NULL.
+        Staff and Superuser can't be deleted.
+
+        :param args:
+        :param kwargs:
+        :return:
+        """
         if ((self.is_staff) or (self.is_superuser)):
             warnings.warn('Can’t delete staff user.')
             return False
