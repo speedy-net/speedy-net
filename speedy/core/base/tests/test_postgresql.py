@@ -9,7 +9,7 @@ if (django_settings.TESTS):
     class PostgresqlOnlyEnglishTestCase(SiteTestCase):
         def test_postgresql_version(self):
             postgresql_version = connection.cursor().connection.server_version
-            if (postgresql_version >= 140000):
+            if (postgresql_version >= 160000):
                 pass
             else:
                 raise NotImplementedError("postgresql version must be at least 14.0.")

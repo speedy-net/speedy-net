@@ -45,16 +45,8 @@ jobs:
             python-version: '3.11'
           - postgresql-version: '15'
             python-version: '3.11'
-          - postgresql-version: '14'
-            is-main-or-staging: false
-          - postgresql-version: '15'
-            is-main-or-staging: false
-          - postgresql-version: '17'
-            is-main-or-staging: false
           - languages: 'test-default-languages'
             is-all-languages: true
-          - languages: 'test-only-english'
-            is-main-or-staging: true
           - languages: 'test-only-english'
             python-version: '3.10'
           - languages: 'test-only-english'
