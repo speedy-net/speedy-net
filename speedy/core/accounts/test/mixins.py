@@ -1,8 +1,6 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    from django.db import connection
-
     from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
 
     from speedy.core.base.utils import to_attribute
@@ -337,12 +335,7 @@ if (django_settings.TESTS):
             return {field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=max_length, value_length=value_length)]}
 
         def _not_null_constraint_error_message_by_column_and_relation(self, column, relation):
-            postgresql_version = connection.cursor().connection.server_version
-            if (postgresql_version >= 140000):
-                msg = 'null value in column "{}" of relation "{}" violates not-null constraint'
-            else:
-                raise NotImplementedError("postgresql version must be at least 14.0.")
-            return msg.format(column, relation)
+            return 'null value in column "{}" of relation "{}" violates not-null constraint'.format(column, relation)
 
         def set_up(self):
             super().set_up()
