@@ -42,6 +42,9 @@ class AdminEmailHandler(log.AdminEmailHandler):
         if (subject.startswith("WARNING (EXTERNAL IP): Not Found: ")):
             return False, 1
 
+        if (subject.startswith("WARNING (EXTERNAL IP): Forbidden (Permission denied): ")):
+            return False, 1
+
         if (not ((subject.startswith('WARNING')) or (subject.startswith('ERROR: get_ip_address_ipapi_info::')) or (subject.startswith('ERROR: is_active_and_valid::')))):
             return True, 1
 
