@@ -2,6 +2,8 @@
 Django settings for Speedy Net project.
 """
 
+import re
+
 from django.utils.translation import gettext_lazy as _
 
 from .utils import env, APP_DIR, ROOT_DIR
@@ -27,6 +29,10 @@ DEBUG = False
 THIS_SITE_IS_UNDER_CONSTRUCTION = False
 
 ALLOWED_HOSTS = ['*']
+
+DISALLOWED_USER_AGENTS = [
+    re.compile(pattern=r'Edg/114.0.1823.43'),
+]
 
 DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
 SERVER_EMAIL = 'webmaster+server@speedy.net'
