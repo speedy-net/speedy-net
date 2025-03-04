@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 13:39+0200\n"
+"POT-Creation-Date: 2025-03-04 03:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3389,62 +3389,62 @@ msgstr ""
 msgid "Browse..."
 msgstr "검색..."
 
-#: .\uploads\models.py:13
+#: .\uploads\models.py:14
 msgid "owner"
 msgstr "소유자"
 
-#: .\uploads\models.py:14
+#: .\uploads\models.py:15
 msgid "file"
 msgstr "파일"
 
-#: .\uploads\models.py:15
+#: .\uploads\models.py:16
 msgid "is stored"
 msgstr "이(가) 저장되었습니다"
 
-#: .\uploads\models.py:16
+#: .\uploads\models.py:17
 msgid "file size"
 msgstr "파일 크기"
 
-#: .\uploads\models.py:23
+#: .\uploads\models.py:26
 msgid "uploaded file"
 msgstr "파일 업로드함"
 
-#: .\uploads\models.py:24
+#: .\uploads\models.py:27
 msgid "uploaded files"
 msgstr "파일 업로드함"
 
-#: .\uploads\models.py:40
+#: .\uploads\models.py:43
 msgid "visible on website"
 msgstr "웹사이트에서 볼 수 있음"
 
-#: .\uploads\models.py:41
+#: .\uploads\models.py:44
 msgid "Speedy image moderation time"
 msgstr "Speedy image moderation time"
 
-#: .\uploads\models.py:42
+#: .\uploads\models.py:45
 msgid "AWS image moderation time"
 msgstr "AWS 이미지 보정 시간"
 
-#: .\uploads\models.py:43
+#: .\uploads\models.py:46
 msgid "AWS facial analysis time"
 msgstr "AWS 얼굴 분석 시간"
 
-#: .\uploads\models.py:44
+#: .\uploads\models.py:47
 msgid "AWS raw image moderation results"
 msgstr "AWS 미가공 이미지 조정 결과"
 
-#: .\uploads\models.py:45
+#: .\uploads\models.py:48
 msgid "AWS raw facial analysis results"
 msgstr "AWS 미가공 얼굴 분석 결과"
 
-#: .\uploads\models.py:46
+#: .\uploads\models.py:49
 msgid "number of faces"
 msgstr "얼굴 수"
 
-#: .\uploads\models.py:49
+#: .\uploads\models.py:54
 msgid "uploaded image"
 msgstr "이미지 업로드함"
 
-#: .\uploads\models.py:50
+#: .\uploads\models.py:55
 msgid "uploaded images"
 msgstr "이미지 업로드함"
