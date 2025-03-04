@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 from speedy.core.base.models import TimeStampedModel
 from speedy.core.base.fields import RegularUDIDField
+from .managers import FileManager, ImageManager
 from .utils import uuid_dir
 
 
@@ -14,6 +15,8 @@ class File(TimeStampedModel):
     file = models.FileField(verbose_name=_('file'), upload_to=uuid_dir)
     is_stored = models.BooleanField(verbose_name=_('is stored'), default=False)
     size = models.PositiveIntegerField(verbose_name=_('file size'), default=0)
+
+    objects = FileManager()
 
     @property
     def basename(self):
@@ -44,6 +47,8 @@ class Image(File):
     aws_raw_image_moderation_results = models.JSONField(verbose_name=_('AWS raw image moderation results'), blank=True, null=True)
     aws_raw_facial_analysis_results = models.JSONField(verbose_name=_('AWS raw facial analysis results'), blank=True, null=True)
     number_of_faces = models.PositiveSmallIntegerField(verbose_name=_('number of faces'), blank=True, null=True)
+
+    objects = ImageManager()
 
     class Meta:
         verbose_name = _('uploaded image')

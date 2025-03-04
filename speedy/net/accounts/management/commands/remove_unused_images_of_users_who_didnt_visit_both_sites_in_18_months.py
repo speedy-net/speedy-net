@@ -6,6 +6,8 @@ from django.core.management import BaseCommand
 from django.utils.timezone import now
 
 from speedy.core.uploads.models import Image
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 logger = logging.getLogger(__name__)
 
@@ -13,9 +15,11 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     def handle(self, *args, **options):
         images = Image.objects.filter(
-            owner__isnull=False,
-            owner__user__speedy_match_site_profile__last_visit__lt=now() - timedelta(days=540),
-            owner__user__speedy_net_site_profile__last_visit__lt=now() - timedelta(days=540),
+            **{
+                "owner__isnull": False,
+                "owner__user__{}__last_visit__lt".format(SpeedyMatchSiteProfile.RELATED_NAME): now() - timedelta(days=540),
+                "owner__user__{}__last_visit__lt".format(SpeedyNetSiteProfile.RELATED_NAME): now() - timedelta(days=540),
+            }
         ).order_by('date_created')
         for image in images:
             if ((not (image.owner is None)) and (image.owner.user.speedy_match_profile.last_visit < now() - timedelta(days=540)) and (image.owner.user.speedy_net_profile.last_visit < now() - timedelta(days=540))):

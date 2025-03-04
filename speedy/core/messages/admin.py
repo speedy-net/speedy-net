@@ -1,5 +1,7 @@
 from speedy.core import admin
 from speedy.core.base.admin import ReadOnlyModelAdmin, ReadOnlyModelAdmin2000, ReadOnlyTabularInlinePaginatedModelAdmin
+from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 from .models import Chat, Message
 
 
@@ -10,10 +12,10 @@ class MessageInlineAdmin(ReadOnlyTabularInlinePaginatedModelAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request=request).prefetch_related(
-            'chat__ent1__user__speedy_match_site_profile',
-            'chat__ent1__user__speedy_net_site_profile',
-            'chat__ent2__user__speedy_match_site_profile',
-            'chat__ent2__user__speedy_net_site_profile',
+            'chat__ent1__user__{}'.format(SpeedyMatchSiteProfile.RELATED_NAME),
+            'chat__ent1__user__{}'.format(SpeedyNetSiteProfile.RELATED_NAME),
+            'chat__ent2__user__{}'.format(SpeedyMatchSiteProfile.RELATED_NAME),
+            'chat__ent2__user__{}'.format(SpeedyNetSiteProfile.RELATED_NAME),
             'chat__messages__sender',
             'sender',
         )
