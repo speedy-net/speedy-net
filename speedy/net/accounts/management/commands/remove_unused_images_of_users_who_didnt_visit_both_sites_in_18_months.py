@@ -3,6 +3,7 @@ import os
 from datetime import timedelta
 
 from django.core.management import BaseCommand
+from django.db.models import F, Q
 from django.utils.timezone import now
 
 from speedy.core.uploads.models import Image
@@ -20,6 +21,8 @@ class Command(BaseCommand):
                 "owner__user__{}__last_visit__lt".format(SpeedyMatchSiteProfile.RELATED_NAME): now() - timedelta(days=540),
                 "owner__user__{}__last_visit__lt".format(SpeedyNetSiteProfile.RELATED_NAME): now() - timedelta(days=540),
             }
+        ).filter(
+            (Q(owner__user__photo__isnull=True) | ~Q(owner__user__photo__pk=F('pk')))
         ).order_by('date_created')
         for image in images:
             if ((not (image.owner is None)) and (image.owner.user.speedy_match_profile.last_visit < now() - timedelta(days=540)) and (image.owner.user.speedy_net_profile.last_visit < now() - timedelta(days=540))):
