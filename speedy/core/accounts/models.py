@@ -37,10 +37,8 @@ from . import validators as speedy_core_accounts_validators
 
 if (TYPE_CHECKING):
     from typing import Union
-
     from django.db.models.fields.related_descriptors import ReverseOneToOneDescriptor
     from friendship.models import Friend, FriendshipRequest
-
     from speedy.core.base.managers import QuerySet
 
 logger = logging.getLogger(__name__)
