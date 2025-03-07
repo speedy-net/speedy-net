@@ -1,4 +1,5 @@
 import logging
+from typing import TYPE_CHECKING
 
 import boto3
 from datetime import timedelta
@@ -11,6 +12,9 @@ from django.template.loader import render_to_string
 
 from speedy.core.accounts.models import User
 from speedy.core.base.utils import is_animated, is_transparent, looks_like_one_color
+
+if (TYPE_CHECKING):
+    import speedy.core.uploads.models
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +31,8 @@ class Command(BaseCommand):
             # Users might have changed in the database, load them again.
             user = User.objects.get(pk=u.pk)
             image = user.photo
+            if (TYPE_CHECKING):
+                assert isinstance(image, speedy.core.uploads.models.Image)
             if ((image is not None) and (image.aws_image_moderation_time is None) and (image.date_created <= (now() - timedelta(minutes=5)))):
                 photo_is_valid = False
                 delete_this_photo = False
