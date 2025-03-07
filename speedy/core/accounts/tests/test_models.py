@@ -16,6 +16,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.utils import get_random_user_password
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
@@ -29,7 +30,7 @@ if (django_settings.TESTS):
         from speedy.match.accounts.test.mixins import SpeedyMatchAccountsModelsMixin, SpeedyMatchAccountsLanguageMixin
 
 
-        class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def create_one_entity(self):
                 entity = Entity(slug='zzzzzz', username='zzzzzz')
                 entity.save()
@@ -401,7 +402,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def test_cannot_create_reserved_username_without_a_username(self):
                 reserved_username = ReservedUsername()
                 with self.assertRaises(ValidationError) as cm:
@@ -610,7 +611,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
+        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
@@ -2134,7 +2135,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def test_cannot_create_user_email_address_without_all_the_required_fields(self):
                 user_email_address = UserEmailAddress()
                 with self.assertRaises(ValidationError) as cm:

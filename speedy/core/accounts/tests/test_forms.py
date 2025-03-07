@@ -7,6 +7,7 @@ if (django_settings.TESTS):
         from django.test import override_settings
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings, get_random_user_password
@@ -20,7 +21,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm
 
 
-        class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
@@ -895,7 +896,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class ProfileNotificationsFormTestCaseMixin(object):
+        class ProfileNotificationsFormTestCaseMixin(TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -936,7 +937,7 @@ if (django_settings.TESTS):
                 self.assertSetEqual(set1=self.form.get_users(email='email@example.com'), set2=set())
 
 
-        class DeactivationFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin):
+        class DeactivationFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()

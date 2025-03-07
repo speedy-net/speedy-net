@@ -9,6 +9,7 @@ if (django_settings.TESTS):
         from django.core.exceptions import ValidationError
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
@@ -24,7 +25,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import ConcurrencyError, User
 
 
-        class SpeedyMatchSiteProfileTestCaseMixin(SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin):
+        class SpeedyMatchSiteProfileTestCaseMixin(SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
             _none_list = [None]
             _empty_string_list = [""]
             _empty_values_to_test = _none_list + _empty_string_list

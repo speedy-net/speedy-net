@@ -14,6 +14,7 @@ if (django_settings.TESTS):
         from friendship.models import Friend
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
 
@@ -31,7 +32,7 @@ if (django_settings.TESTS):
                 return self
 
 
-        class UserMixinTestCaseMixin(object):
+        class UserMixinTestCaseMixin(TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.factory = RequestFactory()
@@ -63,7 +64,7 @@ if (django_settings.TESTS):
             # ~~~~ TODO: login and test /me/ and user profiles while logged in.
 
 
-        class UserDetailViewTestCaseMixin(object):
+        class UserDetailViewTestCaseMixin(TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2])

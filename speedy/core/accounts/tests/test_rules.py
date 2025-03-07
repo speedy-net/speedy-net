@@ -2,13 +2,14 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
         from speedy.core.accounts.models import User
         from speedy.core.blocks.models import Block
 
 
-        class ViewProfileRulesTestCaseMixin(object):
+        class ViewProfileRulesTestCaseMixin(TestCaseMixin):
             def get_active_user_doron(self):
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", gender=User.GENDER_FEMALE)
                 user.speedy_match_profile.gender_to_match = [User.GENDER_MALE]

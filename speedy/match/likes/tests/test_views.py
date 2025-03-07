@@ -9,6 +9,7 @@ if (django_settings.TESTS):
         from django.core import mail
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
@@ -21,7 +22,7 @@ if (django_settings.TESTS):
         from speedy.match.likes.models import UserLike
 
 
-        class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin):
+        class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
@@ -266,7 +267,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
 
-        class LikeListViewsTestCaseMixin(SpeedyMatchLikesLanguageMixin):
+        class LikeListViewsTestCaseMixin(SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()

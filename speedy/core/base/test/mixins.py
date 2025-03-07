@@ -2,6 +2,12 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     import sys
+    from typing import TYPE_CHECKING
+
+    TestCaseTypeHintMixin = object
+    if (TYPE_CHECKING):
+        from django import test as django_test
+        TestCaseTypeHintMixin = django_test.TestCase
 
 
     class SpeedyCoreBaseLanguageMixin(object):
@@ -29,5 +35,9 @@ if (django_settings.TESTS):
             # self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
             self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format = _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
             self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format = _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format_dict[self.language_code]
+
+
+    class TestCaseMixin(TestCaseTypeHintMixin):
+        pass
 
 

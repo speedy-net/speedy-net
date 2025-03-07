@@ -8,6 +8,7 @@ if (django_settings.TESTS):
         from django.core import mail
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin
@@ -233,7 +234,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
-        class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
+        class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             def set_up_class(self):
                 self.expected_feedback_type = Feedback.TYPE_FEEDBACK
                 self.expected_report_entity_id = None
@@ -330,7 +331,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
+        class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             def set_up_class(self):
                 self.other_user = ActiveUserFactory()
                 self.expected_feedback_type = Feedback.TYPE_REPORT_ENTITY
@@ -432,7 +433,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin):
+        class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             def set_up_class(self):
                 self.file = FileFactory()
                 self.expected_feedback_type = Feedback.TYPE_REPORT_FILE

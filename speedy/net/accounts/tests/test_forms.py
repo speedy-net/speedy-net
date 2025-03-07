@@ -7,6 +7,7 @@ if (django_settings.TESTS):
         from django.test import override_settings
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
@@ -29,7 +30,7 @@ if (django_settings.TESTS):
                 ])
 
 
-        class DeleteAccountFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin):
+        class DeleteAccountFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2])

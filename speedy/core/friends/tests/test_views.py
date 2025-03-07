@@ -12,6 +12,7 @@ if (django_settings.TESTS):
         from friendship.models import Friend, FriendshipRequest
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.friends.test.mixins import SpeedyCoreFriendsLanguageMixin
@@ -23,7 +24,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import User
 
 
-        class UserFriendListViewTestCaseMixin(object):
+        class UserFriendListViewTestCaseMixin(TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -97,7 +98,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=403)
 
 
-        class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
+        class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -326,7 +327,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class CancelFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
+        class CancelFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -439,7 +440,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AcceptFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
+        class AcceptFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -628,7 +629,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class RejectFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
+        class RejectFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -750,7 +751,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class RemoveFriendViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin):
+        class RemoveFriendViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.first_user = ActiveUserFactory()
@@ -878,7 +879,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class FriendListsViewsObjectListTestCaseMixin(object):
+        class FriendListsViewsObjectListTestCaseMixin(TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory(gender=random.choice([User.GENDER_FEMALE, User.GENDER_MALE]))

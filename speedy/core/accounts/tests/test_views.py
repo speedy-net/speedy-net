@@ -11,6 +11,7 @@ if (django_settings.TESTS):
         from django.core import mail
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_random_user_password
@@ -91,7 +92,7 @@ if (django_settings.TESTS):
                     raise NotImplementedError()
 
 
-        class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
+        class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -211,7 +212,7 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
 
-        class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
@@ -1180,7 +1181,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             login_url = '/login/'
             _other_user_password = 'abcdef12'
 
@@ -1673,7 +1674,7 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=r.context['user'].is_authenticated, expr2=True)
 
 
-        class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             page_url = '/edit-profile/'
 
             def set_up(self):
@@ -2447,7 +2448,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.access_dob_year, second=2)
 
 
-        class EditProfileNotificationsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
+        class EditProfileNotificationsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
             page_url = '/edit-profile/notifications/'
 
             def set_up(self):
@@ -2490,7 +2491,7 @@ if (django_settings.TESTS):
                 raise NotImplementedError()
 
 
-        class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             page_url = '/edit-profile/credentials/'
 
             def set_up(self):
@@ -2774,7 +2775,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin):
+        class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
             page_url = '/welcome/'
             redirect_url = None
 
@@ -2918,7 +2919,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.profile.is_active, second=True)
 
 
-        class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice_1 = random.choice([1, 2, 3])
@@ -3161,7 +3162,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -3403,7 +3404,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -3544,7 +3545,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -3814,7 +3815,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
@@ -4027,7 +4028,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class PasswordResetViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin):
+        class PasswordResetViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])

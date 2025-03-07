@@ -10,6 +10,7 @@ if (django_settings.TESTS):
         from django.core import mail
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
@@ -131,7 +132,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=403)
 
 
-        class SendMessageToUserViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreMessagesLanguageMixin):
+        class SendMessageToUserViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreMessagesLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()

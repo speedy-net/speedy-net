@@ -6,6 +6,7 @@ if (django_settings.TESTS):
         from django.utils.html import escape
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.admin.test.mixins import SpeedyCoreAdminLanguageMixin
@@ -53,7 +54,7 @@ if (django_settings.TESTS):
                 return r
 
 
-        class AdminMainPageViewTestCaseMixin(AdminViewBaseMixin):
+        class AdminMainPageViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             def get_page_url(self):
                 return '/admin/'
 
@@ -155,7 +156,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AdminUsersListViewTestCaseMixin(AdminViewBaseMixin):
+        class AdminUsersListViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             def get_page_url(self):
                 return '/admin/users/'
 
@@ -261,7 +262,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AdminUsersWithDetailsListViewTestCaseMixin(AdminViewBaseMixin):
+        class AdminUsersWithDetailsListViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             def get_page_url(self):
                 return '/admin/users/with-details/'
 
@@ -372,7 +373,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AdminUserDetailViewTestCaseMixin(AdminViewBaseMixin):
+        class AdminUserDetailViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             def get_page_url(self):
                 return '/admin/user/{}/'.format(self.user_1.slug)
 

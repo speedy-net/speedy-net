@@ -6,6 +6,7 @@ if (django_settings.TESTS):
         from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
@@ -86,7 +87,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
 
 
-        class DeleteAccountViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin):
+        class DeleteAccountViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             page_url = '/edit-profile/delete-account/'
 
             def set_up(self):

@@ -7,6 +7,7 @@ if (django_settings.TESTS):
         from django.test import override_settings
         from django.core import mail
 
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
@@ -235,7 +236,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.user_1.speedy_match_profile.get_like_gender(), second="female")
 
 
-        class LikeNotificationsTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin):
+        class LikeNotificationsTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
