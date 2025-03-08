@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
-        class RedirectMeMixin(object):
+        class RedirectMeMixin(TestCaseMixin):
             def assert_me_url_redirects(self, expected_url):
                 r = self.client.get(path='/me/')
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)

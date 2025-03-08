@@ -1,10 +1,11 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from speedy.core.base.test.mixins import TestCaseMixin
     from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
-    class SpeedyMatchAccountsModelsMixin(object):
+    class SpeedyMatchAccountsModelsMixin(TestCaseMixin):
         def assert_step_and_error_messages_ok(self, step, error_messages):
             self.assertEqual(first=step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
             self.assertEqual(first=step, second=10)
@@ -12,7 +13,7 @@ if (django_settings.TESTS):
             self.assertListEqual(list1=error_messages, list2=[])
 
 
-    class SpeedyMatchAccountsLanguageMixin(object):
+    class SpeedyMatchAccountsLanguageMixin(TestCaseMixin):
         def _item_in_the_array_did_not_validate_error_message_by_index(self, index):
             return self._item_in_the_array_did_not_validate_error_message_to_format.format(index=index)
 

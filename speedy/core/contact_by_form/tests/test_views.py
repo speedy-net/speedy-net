@@ -19,7 +19,7 @@ if (django_settings.TESTS):
         from speedy.core.contact_by_form.models import Feedback
 
 
-        class FeedbackViewBaseMixin(object):
+        class FeedbackViewBaseMixin(TestCaseMixin):
             def set_up_class(self):
                 raise NotImplementedError()
 

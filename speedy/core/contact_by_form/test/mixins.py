@@ -1,10 +1,10 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
+    from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin, TestCaseMixin
 
 
-    class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin):
+    class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         def _feedback_form_all_the_required_fields_keys(self, user_is_logged_in):
             if (user_is_logged_in):
                 return ['text']

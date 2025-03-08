@@ -14,7 +14,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
 
-        class AdminViewBaseMixin(SpeedyCoreAdminLanguageMixin):
+        class AdminViewBaseMixin(SpeedyCoreAdminLanguageMixin, TestCaseMixin):
             def get_page_url(self):
                 raise NotImplementedError()
 

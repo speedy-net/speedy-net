@@ -1,10 +1,11 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    from speedy.core.base.test.mixins import TestCaseMixin
     from speedy.core.accounts.models import User
 
 
-    class SpeedyNetAccountsLanguageMixin(object):
+    class SpeedyNetAccountsLanguageMixin(TestCaseMixin):
         def _delete_account_form_all_the_required_fields_keys(self):
             return [field_name.format(language_code=self.language_code) for field_name in ['password', 'delete_my_account_text']]
 

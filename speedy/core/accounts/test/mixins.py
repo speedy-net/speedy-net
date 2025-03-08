@@ -1,13 +1,13 @@
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
-    from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin
+    from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin, TestCaseMixin
 
     from speedy.core.base.utils import to_attribute
     from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
-    class SpeedyCoreAccountsModelsMixin(object):
+    class SpeedyCoreAccountsModelsMixin(TestCaseMixin):
         def assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count):
             self.assertEqual(first=Entity.objects.count(), second=entity_count)
             self.assertEqual(first=User.objects.count(), second=user_count)
@@ -67,7 +67,7 @@ if (django_settings.TESTS):
             self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_sv', 'last_name_ko', 'last_name_fi', 'last_name_he'])
 
 
-    class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin):
+    class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         _first_password_field_names = ['new_password1']
         _both_password_field_names = ['new_password1', 'new_password2']
 
