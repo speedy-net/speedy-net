@@ -10,6 +10,14 @@ from .managers import UserLikeManager
 
 
 class UserLike(TimeStampedModel):
+    """
+    Represents a 'like' from one user to another.
+
+    Attributes:
+        from_user (ForeignKey): The user who likes.
+        to_user (ForeignKey): The user who is liked.
+        date_viewed (DateTimeField): The date when the like was viewed.
+    """
     from_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('from user'), on_delete=models.CASCADE, related_name='likes_from_user')
     to_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('to user'), on_delete=models.CASCADE, related_name='likes_to_user')
     date_viewed = models.DateTimeField(blank=True, null=True, db_index=True)  # May be used later.
@@ -26,7 +34,16 @@ class UserLike(TimeStampedModel):
         return "User {} likes {}".format(self.from_user, self.to_user)
 
     def save(self, *args, **kwargs):
-        # Ensure users can't like themselves.
+        """
+        Saves the UserLike instance.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Raises:
+            ValidationError: If a user tries to like themselves.
+        """
         if (self.from_user == self.to_user):
             raise ValidationError(_("Users cannot like themselves."))
         return super().save(*args, **kwargs)
@@ -34,6 +51,15 @@ class UserLike(TimeStampedModel):
 
 @receiver(signal=models.signals.post_save, sender=UserLike)
 def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
+    """
+    Sends an email notification to the user when they receive a new like.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (UserLike): The instance of the UserLike model.
+        created (bool): Whether this is a new instance.
+        **kwargs: Additional keyword arguments.
+    """
     if (created):
         user = instance.to_user
         if ((user.is_active) and (user.speedy_match_profile.notify_on_like == User.NOTIFICATIONS_ON)):
@@ -44,6 +70,15 @@ def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
 
 @receiver(signal=models.signals.post_save, sender=UserLike)
 def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, **kwargs):
+    """
+    Updates the count of likes received by the user when a new like is created.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (UserLike): The instance of the UserLike model.
+        created (bool): Whether this is a new instance.
+        **kwargs: Additional keyword arguments.
+    """
     if (created):
         user = instance.to_user
         user.speedy_match_profile._update_likes_to_user_count()
@@ -52,6 +87,14 @@ def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, 
 
 @receiver(signal=models.signals.post_delete, sender=UserLike)
 def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
+    """
+    Updates the count of likes received by the user when a like is deleted.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (UserLike): The instance of the UserLike model.
+        **kwargs: Additional keyword arguments.
+    """
     user = instance.to_user
     # Check origin because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile.
     if (not (user == kwargs.get('origin'))):

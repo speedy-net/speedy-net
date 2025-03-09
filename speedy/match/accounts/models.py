@@ -23,6 +23,40 @@ logger = logging.getLogger(__name__)
 
 
 class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
+    """
+    Represents a user's profile on Speedy Match.
+
+    Attributes:
+        LOCALIZABLE_FIELDS (tuple): Fields that can be localized.
+        RELATED_NAME (str): Related name for the profile.
+        DELETED_NAME (str): Name used when the user is deleted.
+        RANK_0 to RANK_5 (int): Rank values for matching.
+        RANK_CHOICES (tuple): Choices for rank values.
+        RANK_VALID_VALUES (list): Valid values for rank.
+        _optimistic_locking_fields (tuple): Fields used for optimistic locking.
+        user (OneToOneField): The user associated with the profile.
+        notify_on_like (SmallIntegerField): Notification setting for new likes.
+        active_languages (ArrayField): Active languages for the profile.
+        height (SmallIntegerField): Height of the user.
+        profile_description (TranslatedField): Description of the user.
+        children (TranslatedField): Information about the user's children.
+        more_children (TranslatedField): Information about the user's desire for more children.
+        match_description (TranslatedField): Description of the ideal match.
+        gender_to_match (ArrayField): Genders to match.
+        min_age_to_match (SmallIntegerField): Minimum age to match.
+        max_age_to_match (SmallIntegerField): Maximum age to match.
+        diet_match (JSONField): Diet preferences for matching.
+        smoking_status_match (JSONField): Smoking status preferences for matching.
+        relationship_status_match (JSONField): Relationship status preferences for matching.
+        diet_to_match (ArrayField): Diets to match.
+        smoking_status_to_match (ArrayField): Smoking statuses to match.
+        relationship_status_to_match (ArrayField): Relationship statuses to match.
+        activation_step (TranslatedField): Activation step of the profile.
+        number_of_matches (TranslatedField): Number of matches on the last search.
+        profile_picture_months_offset (PositiveSmallIntegerField): Offset for profile picture months.
+        not_allowed_to_use_speedy_match (BooleanField): Whether the user is allowed to use Speedy Match.
+        likes_to_user_count (PositiveIntegerField): Count of likes to the user.
+    """
     LOCALIZABLE_FIELDS = ('profile_description', 'children', 'more_children', 'match_description')
 
     RELATED_NAME = 'speedy_match_site_profile'
@@ -50,46 +84,115 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     @staticmethod
     def active_languages_default():
+        """
+        Returns the default value for active languages.
+
+        Returns:
+            list: An empty list.
+        """
         return list()
 
     @staticmethod
     def gender_to_match_default():
+        """
+        Returns the default value for gender to match.
+
+        Returns:
+            list: An empty list.
+        """
         return list()
 
     @staticmethod
     def min_age_to_match_default():
+        """
+        Returns the default minimum age to match.
+
+        Returns:
+            int: The minimum age to match allowed.
+        """
         return __class__.settings.MIN_AGE_TO_MATCH_ALLOWED
 
     @staticmethod
     def max_age_to_match_default():
+        """
+        Returns the default maximum age to match.
+
+        Returns:
+            int: The maximum age to match allowed.
+        """
         return __class__.settings.MAX_AGE_TO_MATCH_ALLOWED
 
     @staticmethod
     def diet_match_default():
+        """
+        Returns the default diet match preferences.
+
+        Returns:
+            dict: A dictionary with diet preferences set to the highest rank.
+        """
         return dict({str(diet): __class__.RANK_5 for diet in User.DIET_VALID_VALUES})
 
     @staticmethod
     def smoking_status_match_default():
+        """
+        Returns the default smoking status match preferences.
+
+        Returns:
+            dict: A dictionary with smoking status preferences set to the highest rank.
+        """
         return dict({str(smoking_status): __class__.RANK_5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES})
 
     @staticmethod
     def relationship_status_match_default():
+        """
+        Returns the default relationship status match preferences.
+
+        Returns:
+            dict: A dictionary with relationship status preferences set to the highest rank.
+        """
         return dict({str(relationship_status): __class__.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
 
     @staticmethod
     def diet_to_match_default():
+        """
+        Returns the default value for diet to match.
+
+        Returns:
+            list: An empty list.
+        """
         return list()
 
     @staticmethod
     def smoking_status_to_match_default():
+        """
+        Returns the default value for smoking status to match.
+
+        Returns:
+            list: An empty list.
+        """
         return list()
 
     @staticmethod
     def relationship_status_to_match_default():
+        """
+        Returns the default value for relationship status to match.
+
+        Returns:
+            list: An empty list.
+        """
         return list()
 
     @staticmethod
     def get_rank_description(rank):
+        """
+        Returns the description for a given rank.
+
+        Args:
+            rank (int): The rank value.
+
+        Returns:
+            str: The description of the rank.
+        """
         rank_descriptions = {
             __class__.RANK_0: _("No match"),
             __class__.RANK_1: _("One heart"),
@@ -174,22 +277,52 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     @classproperty
     def settings(cls):
+        """
+        Returns the settings for the SiteProfile.
+
+        Returns:
+            dict: The settings for the SiteProfile.
+        """
         return django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS
 
     @classproperty
     def HEIGHT_VALID_VALUES(cls):
+        """
+        Returns the valid height values.
+
+        Returns:
+            range: The range of valid height values.
+        """
         return range(cls.settings.MIN_HEIGHT_ALLOWED, cls.settings.MAX_HEIGHT_ALLOWED + 1)
 
     @classproperty
     def AGE_TO_MATCH_VALID_VALUES(cls):
+        """
+        Returns the valid age to match values.
+
+        Returns:
+            range: The range of valid age to match values.
+        """
         return range(cls.settings.MIN_AGE_TO_MATCH_ALLOWED, cls.settings.MAX_AGE_TO_MATCH_ALLOWED + 1)
 
     @cached_property
     def is_active(self):
+        """
+        Checks if the profile is active.
+
+        Returns:
+            bool: True if the profile is active, False otherwise.
+        """
         return ((self.user.is_active) and (get_language() in self.active_languages))
 
     @cached_property
     def is_active_and_valid(self):
+        """
+        Checks if the profile is active and valid.
+
+        Returns:
+            bool: True if the profile is active and valid, False otherwise.
+        """
         if (self.is_active):
             step, error_messages = self.validate_profile_and_activate(commit=False)
             error = False
@@ -215,12 +348,27 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
+        """
+        Returns a string representation of the profile.
+
+        Returns:
+            str: The string representation of the profile.
+        """
         return '{} @ Speedy Match'.format(super().__str__())
 
     def _get_deleted_name(self):
+        """
+        Returns the name used when the user is deleted.
+
+        Returns:
+            str: The deleted name.
+        """
         return self.__class__.DELETED_NAME
 
     def _set_values_to_match(self):
+        """
+        Sets the values for matching preferences.
+        """
         from speedy.match.accounts import utils
         self._set_active_languages(languages=self.active_languages)
         self.gender_to_match = sorted(list(set(self.gender_to_match)))
@@ -240,6 +388,12 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
             self.relationship_status_to_match = list()
 
     def _set_active_languages(self, languages):
+        """
+        Sets the active languages for the profile.
+
+        Args:
+            languages (list): The list of active languages.
+        """
         self.active_languages = sorted(list(set(languages)))
         if ("is_active" in self.__dict__):
             del self.is_active
@@ -247,6 +401,13 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
             del self.is_active_and_valid
 
     def _deactivate_language(self, step, commit=True):
+        """
+        Deactivates the profile in the current language.
+
+        Args:
+            step (int): The step at which the profile is deactivated.
+            commit (bool): Whether to commit the changes.
+        """
         # Profile is invalid. Deactivate in this language.
         language_code = get_language()
         self._set_active_languages(languages=set(self.active_languages) - {language_code})
@@ -255,16 +416,21 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
             self.user.save_user_and_profile()
 
     def _update_likes_to_user_count(self):
+        """
+        Updates the count of likes to the user.
+        """
         self.likes_to_user_count = self.user.likes_to_user.count()
 
     def _get_matching_rank(self, other_profile, second_call=True) -> int:
         """
-        Get the matching rank between self and other_profile.
+        Gets the matching rank between self and other_profile.
 
-        :param self:
-        :param other_profile:
-        :param second_call:
-        :return: The matching rank between self and other_profile.
+        Args:
+            other_profile (SiteProfile): The other profile to match with.
+            second_call (bool): Whether this is the second call to the function.
+
+        Returns:
+            int: The matching rank between self and other_profile.
         """
         self._get_matching_rank_calls = getattr(self, "_get_matching_rank_calls", 0) + 1
         if (self._get_matching_rank_calls >= 5):
@@ -308,11 +474,11 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     def save(self, *args, **kwargs):
         """
-        Save the profile.
+        Saves the profile.
 
-        :param args:
-        :param kwargs:
-        :return:
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
         """
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
@@ -335,6 +501,15 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         return super().save(*args, **kwargs)
 
     def validate_profile_and_activate(self, commit=True):
+        """
+        Validates the profile and activates it if valid.
+
+        Args:
+            commit (bool): Whether to commit the changes.
+
+        Returns:
+            tuple: The step and error messages.
+        """
         from speedy.match.accounts import utils
         language_code = get_language()
         error_messages = []
@@ -371,15 +546,20 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         return step, error_messages
 
     def call_after_verify_email_address(self):
+        """
+        Placeholder function to be called after verifying the email address.
+        """
         pass
 
     def get_matching_rank(self, other_profile) -> int:
         """
-        Get the matching rank between self and other_profile.
+        Gets the matching rank between self and other_profile.
 
-        :param self:
-        :param other_profile:
-        :return: The matching rank between self and other_profile.
+        Args:
+            other_profile (SiteProfile): The other profile to match with.
+
+        Returns:
+            int: The matching rank between self and other_profile.
         """
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
@@ -395,6 +575,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         return rank
 
     def deactivate(self):
+        """
+        Deactivates the profile.
+        """
         self._set_active_languages(languages=[])
         self.activation_step = 2
         for language_code, language_name in django_settings.LANGUAGES:
@@ -402,12 +585,24 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         self.user.save_user_and_profile()
 
     def get_name(self):
+        """
+        Returns the name of the user.
+
+        Returns:
+            str: The name of the user.
+        """
         if (self.user.is_deleted):
             return self._get_deleted_name()
         # Speedy Match name is the user's first name.
         return self.user.get_first_name()
 
     def get_match_gender(self):
+        """
+        Returns the gender to match.
+
+        Returns:
+            str: The gender to match.
+        """
         if (len(self.gender_to_match) == 1):
             match_gender = User.GENDERS_DICT.get(self.gender_to_match[0])
         else:
@@ -416,6 +611,8 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     def get_like_gender(self):
         """
+        Returns the gender for likes.
+
         If there is only one gender to match, and at least 90% of the liked and liking users genders are equal to this gender, return this gender.
 
         Otherwise, return "other".
@@ -423,6 +620,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         (Actually 100% of the liked and liking users genders should be equal to this gender if there was always only one gender to match for this user, but some users change their gender, and therefore we allow up to 10% of the users to change their genders and not to be equal to this gender.)
 
         We don't query the database of liked and liking users if len(self.gender_to_match) is not 1.
+
+        Returns:
+            str: The gender for likes.
         """
         like_gender = None
         if (len(self.gender_to_match) == 1):
@@ -436,17 +636,43 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         return like_gender
 
     def get_diet_match_choices(self):
+        """
+        Returns the diet match choices.
+
+        Returns:
+            list: The diet match choices.
+        """
         return User.diet_choices(gender=self.get_match_gender())
 
     def get_smoking_status_match_choices(self):
+        """
+        Returns the smoking status match choices.
+
+        Returns:
+            list: The smoking status match choices.
+        """
         return User.smoking_status_choices(gender=self.get_match_gender())
 
     def get_relationship_status_match_choices(self):
+        """
+        Returns the relationship status match choices.
+
+        Returns:
+            list: The relationship status match choices.
+        """
         return User.relationship_status_choices(gender=self.get_match_gender())
 
 
 @receiver(signal=models.signals.post_save, sender=SiteProfile)
 def invalidate_matches_after_update_site_profile(sender, instance: SiteProfile, **kwargs):
+    """
+    Signal receiver that invalidates the matches cache after a SiteProfile is updated.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (SiteProfile): The instance of the SiteProfile model.
+        **kwargs: Additional keyword arguments.
+    """
     if (not (getattr(instance, '_in_update_last_visit', None))):
         bust_cache(cache_type='matches', entities_pks=[instance.user.pk])
 

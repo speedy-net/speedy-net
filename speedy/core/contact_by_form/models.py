@@ -9,6 +9,22 @@ from speedy.core.base.models import TimeStampedModel
 
 
 class Feedback(TimeStampedModel):
+    """
+    Represents feedback or reports submitted by users.
+
+    Attributes:
+        TYPE_FEEDBACK (int): Constant for feedback type.
+        TYPE_REPORT_ENTITY (int): Constant for reporting an entity type.
+        TYPE_REPORT_FILE (int): Constant for reporting a file type.
+        TYPE_CHOICES (tuple): Choices for the type field.
+        sender (ForeignKey): The user who sent the feedback.
+        sender_name (CharField): The name of the sender.
+        sender_email (EmailField): The email of the sender.
+        type (SmallIntegerField): The type of feedback.
+        text (TextField): The message content of the feedback.
+        report_entity (ForeignKey): The reported entity (if applicable).
+        report_file (ForeignKey): The reported file (if applicable).
+    """
     TYPE_FEEDBACK = 0
     TYPE_REPORT_ENTITY = 1
     TYPE_REPORT_FILE = 2
@@ -48,6 +64,15 @@ class Feedback(TimeStampedModel):
 
 @receiver(signal=models.signals.post_save, sender=Feedback)
 def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
+    """
+    Signal receiver that sends an email to managers when feedback is created.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (Feedback): The instance of the Feedback model.
+        created (bool): Whether the instance was created.
+        **kwargs: Additional keyword arguments.
+    """
     if (created):
         mail_managers(template_name_prefix='email/contact_by_form/admin_feedback', context={'feedback': instance}, headers={'Reply-To': instance.sender_email or instance.sender.email})
 

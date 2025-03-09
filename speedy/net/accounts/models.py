@@ -13,6 +13,18 @@ logger = logging.getLogger(__name__)
 
 
 class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
+    """
+    Represents a profile for a user on the Speedy Net site.
+
+    Attributes:
+        RELATED_NAME (str): The related name for the user profile.
+        DELETED_NAME (str): The name to display for deleted users.
+        user (OneToOneField): The user associated with this profile.
+        is_active (BooleanField): Indicates if the profile is active.
+        speedy_net_friends_count (PositiveSmallIntegerField): The number of friends on the last user's visit.
+        all_friends_count (PositiveSmallIntegerField): The total number of friends.
+        _optimistic_locking_fields (tuple): Fields used for optimistic locking.
+    """
     RELATED_NAME = 'speedy_net_site_profile'
 
     DELETED_NAME = _('Speedy Net User')
@@ -26,6 +38,12 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     @cached_property
     def is_active_and_valid(self):
+        """
+        Checks if the profile is active and valid.
+
+        Returns:
+            bool: True if the profile is active, False otherwise.
+        """
         return (self.is_active)
 
     class Meta:
@@ -34,12 +52,27 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
+        """
+        Returns a string representation of the profile.
+
+        Returns:
+            str: The string representation of the profile.
+        """
         return '{} @ Speedy Net'.format(super().__str__())
 
     def _get_deleted_name(self):
+        """
+        Returns the name to display for deleted users.
+
+        Returns:
+            str: The name to display for deleted users.
+        """
         return self.__class__.DELETED_NAME
 
     def _update_speedy_net_friends_count(self):
+        """
+        Updates the count of friends on the last user's visit.
+        """
         previous_speedy_net_friends_count = self.speedy_net_friends_count
         self.speedy_net_friends_count = self.user.speedy_net_friends_count
         if (not (self.speedy_net_friends_count == previous_speedy_net_friends_count)):
@@ -70,6 +103,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
                 ))
 
     def _update_all_friends_count(self):
+        """
+        Updates the total count of friends.
+        """
         previous_all_friends_count = self.all_friends_count
         self.all_friends_count = self.user.friends.count()
         if (not (self.all_friends_count == previous_all_friends_count)):
@@ -101,32 +137,47 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     def save(self, *args, **kwargs):
         """
-        Save the profile.
+        Saves the profile.
 
-        :param args:
-        :param kwargs:
-        :return:
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
         """
         self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)
 
     def activate(self):
+        """
+        Activates the profile and the associated user.
+        """
         self.is_active = True
         self.user.is_active = True
         self.user.save_user_and_profile()
 
     def deactivate(self):
+        """
+        Deactivates the profile and the associated user.
+        """
         self.is_active = False
         if (not (self.user.is_superuser)):
             self.user.is_active = False
         self.user.save_user_and_profile()
 
     def get_name(self):
+        """
+        Returns the name of the user.
+
+        Returns:
+            str: The name of the user.
+        """
         if (self.user.is_deleted):
             return self._get_deleted_name()
         return self.user.get_full_name()
 
     def call_after_verify_email_address(self):
+        """
+        Placeholder method to be called after verifying the email address.
+        """
         pass
 
 

@@ -45,10 +45,19 @@ logger = logging.getLogger(__name__)
 
 
 class ConcurrencyError(DatabaseError):
+    """
+    Exception raised for concurrency errors.
+    """
     pass
 
 
 class CleanAndValidateAllFieldsMixin(object):
+    """
+    Mixin class to clean and validate all fields of a model.
+
+    Methods:
+        clean_fields(self, exclude=None): Clean and validate fields of the model.
+    """
     def clean_fields(self, exclude=None):
         """
         Allows to have different slug and username validators for Entity and User.
@@ -271,6 +280,15 @@ class ReservedUsername(Entity):
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
+        """
+        Clean and validate fields of the model.
+
+        Args:
+            exclude (set): Fields to exclude from validation.
+
+        Returns:
+            None
+        """
         exclude = convert_to_set(exclude=exclude)
 
         # ~~~~ TODO: fix models! Exceptions should be 'slug' or 'username' and not '__all__'.
@@ -286,6 +304,58 @@ class ReservedUsername(Entity):
 
 
 class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUser):
+    """
+    User model class.
+
+    Attributes:
+        LOCALIZABLE_FIELDS (tuple): Fields that can be localized.
+        NAME_LOCALIZABLE_FIELDS (tuple): Name fields that can be localized.
+        NAME_REQUIRED_LOCALIZABLE_FIELDS (tuple): Required name fields that can be localized.
+        GENDER_CHOICES (tuple): Choices for gender field.
+        DIET_CHOICES_WITH_DEFAULT (tuple): Choices for diet field with default.
+        SMOKING_STATUS_CHOICES_WITH_DEFAULT (tuple): Choices for smoking status field with default.
+        RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT (tuple): Choices for relationship status field with default.
+        NOTIFICATIONS_CHOICES (tuple): Choices for notifications field.
+        USERNAME_FIELD (str): Field used for username.
+        REQUIRED_FIELDS (list): List of required fields.
+        _optimistic_locking_fields (tuple): Fields used for optimistic locking.
+
+    Methods:
+        diet_choices_with_description(gender): Get diet choices with description.
+        diet_choices(gender): Get diet choices.
+        smoking_status_choices(gender): Get smoking status choices.
+        relationship_status_choices(gender): Get relationship status choices.
+        save(self, *args, **kwargs): Save the user but not profile.
+        set_password(self, raw_password): Set the user's password.
+        check_password(self, raw_password): Check the user's password.
+        delete(self, *args, **kwargs): Delete the user and all profiles.
+        clean_fields(self, exclude=None): Clean and validate fields of the model.
+        clean_all_fields(self, exclude=None): Clean and validate all fields of the model.
+        clean_localizable_field(self, base_field_name): Clean and validate a localizable field.
+        get_absolute_url(self): Get the absolute URL of the user.
+        mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False): Send an email to the user.
+        get_full_name(self): Get the full name of the user.
+        get_first_name(self): Get the first name of the user.
+        get_short_name(self): Get the short name of the user.
+        activate(self): Activate the user.
+        get_profile(self, model=None, profile_model=None): Get the user's profile.
+        refresh_all_profiles(self): Refresh all profiles of the user.
+        get_received_friendship_requests(self): Get received friendship requests.
+        get_sent_friendship_requests(self): Get sent friendship requests.
+        get_speedy_net_friends(self): Get friends in Speedy Net.
+        get_site_friends(self): Get friends in the current site.
+        save_user_and_profile(self): Save the user and profile.
+        get_gender(self): Get the gender of the user.
+        get_diet(self): Get the diet of the user.
+        get_smoking_status(self): Get the smoking status of the user.
+        get_relationship_status(self): Get the relationship status of the user.
+        get_age(self): Get the age of the user.
+        get_diet_choices_with_description(self): Get diet choices with description.
+        get_smoking_status_choices(self): Get smoking status choices.
+        get_relationship_status_choices(self): Get relationship status choices.
+        update_last_ip_address_used(self, request): Update the last IP address used by the user.
+        display_ads(self): Determine if the user should see ads.
+    """
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
     NAME_REQUIRED_LOCALIZABLE_FIELDS = NAME_LOCALIZABLE_FIELDS[:1]
@@ -1081,6 +1151,30 @@ User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VA
 
 
 class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
+    """
+    User email address model class.
+
+    Attributes:
+        user (User): The user associated with the email address.
+        email (str): The email address.
+        is_confirmed (bool): Whether the email address is confirmed.
+        is_primary (bool): Whether the email address is primary.
+        confirmation_token (str): The confirmation token.
+        confirmation_sent (int): The number of times the confirmation email has been sent.
+        access (UserAccessField): The access level of the email address.
+
+    Methods:
+        _generate_confirmation_token(self): Generate a confirmation token.
+        save(self, *args, **kwargs): Save the email address.
+        clean_all_fields(self, exclude=None): Clean and validate all fields of the model.
+        normalize_email(self): Normalize the email address.
+        validate_email(self): Validate the email address.
+        validate_email_unique(self): Validate the uniqueness of the email address.
+        mail(self, template_name_prefix, context=None): Send an email to the email address.
+        send_confirmation_email(self): Send a confirmation email to the email address.
+        verify(self): Verify the email address.
+        make_primary(self): Make the email address primary.
+    """
     id = RegularUDIDField()
     # Type hint "User" will not be necessary after AUTH_USER_MODEL support in https://youtrack.jetbrains.com/issue/PY-34394
     user: User = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE, related_name='email_addresses')
@@ -1165,7 +1259,23 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
 class SiteProfileBase(TimeStampedModel):
     """
-    SiteProfile contains site-specific user django_settings.
+    Base class for site-specific user profiles.
+
+    Attributes:
+        user (User): The user associated with the profile.
+        last_visit (datetime): The last visit time of the user.
+        is_active (bool): Whether the profile is active.
+
+    Methods:
+        is_active_and_valid(self): Check if the profile is active and valid.
+        last_visit_str(self): Get the last visit time as a string.
+        save(self, *args, **kwargs): Save the profile.
+        update_last_visit(self): Update the last visit time of the user.
+        activate(self): Activate the profile.
+        deactivate(self): Deactivate the profile.
+        get_name(self): Get the name of the profile.
+        validate_profile_and_activate(self, commit=True): Validate and activate the profile.
+        call_after_verify_email_address(self): Call after verifying the email address.
     """
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)

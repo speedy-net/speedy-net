@@ -16,6 +16,27 @@ if (django_settings.TESTS):
 
 
     class SiteDiscoverRunner(DiscoverRunner):
+        """
+        Custom test runner that extends Django's DiscoverRunner to add additional functionality.
+
+        Attributes:
+            NUM_FAST_TESTS (int): Number of fastest tests to display.
+            NUM_SLOW_TESTS (int): Number of slowest tests to display.
+            test_languages (str): Languages to test.
+            test_only (int): Number of tests to run.
+            count_tests (int): Number of test groups to count.
+            test_times (list): List of test times.
+
+        Methods:
+            __init__(self, *args, **kwargs): Initialize the test runner.
+            _save_test_time(self, test_name, duration_func): Save the test time.
+            _print_test_times(self, slowest_or_fastest): Print the test times.
+            build_suite(self, test_labels=None, extra_tests=None, **kwargs): Build the test suite.
+            test_suite(self, tests=()): Get the test suite.
+            setup_test_environment(self, **kwargs): Set up the test environment.
+            teardown_test_environment(self, **kwargs): Tear down the test environment.
+            suite_result(self, suite, result, **kwargs): Get the suite result.
+        """
         NUM_FAST_TESTS = 3
         NUM_SLOW_TESTS = 3
 
@@ -133,12 +154,37 @@ if (django_settings.TESTS):
 
 
     class SpeedyCoreDiscoverRunner(SiteDiscoverRunner):
+        """
+        Custom test runner for Speedy Core that extends SiteDiscoverRunner.
+
+        Methods:
+            run_tests(self, *args, **kwargs): Override to prevent running tests on Speedy Core.
+        """
         def run_tests(self, *args, **kwargs):
             # We don't run tests on speedy.core
             pass
 
 
     class SiteTestCase(django_test.TestCase):
+        """
+        Custom test case for site-specific tests.
+
+        Attributes:
+            maxDiff (int): Maximum difference for assert methods.
+
+        Methods:
+            _pre_setup(self): Pre-setup for the test case.
+            validate_all_values(self): Validate all values for the site.
+            run_or_skip_this_test(self): Skip the test if the language code is not in the list of languages to test.
+            set_up(self): Set up the test case.
+            start_time(self): Start the timer for the test.
+            stop_time(self): Stop the timer for the test.
+            get_elapsed_time(self, stop=False): Get the elapsed time for the test.
+            tear_down(self): Tear down the test case.
+            skipTest(self, *args, **kwargs): Skip the test and don't print the test duration.
+            setUp(self): Set up the test case.
+            tearDown(self): Tear down the test case.
+        """
         maxDiff = None
 
         def _pre_setup(self):

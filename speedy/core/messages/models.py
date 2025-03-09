@@ -13,6 +13,18 @@ from .managers import ChatManager, MessageManager, ReadMarkManager
 
 
 class Chat(TimeStampedModel):
+    """
+    Represents a chat between entities.
+
+    Attributes:
+        id (RegularUDIDField): The unique identifier for the chat.
+        site (ForeignKey): The site associated with the chat.
+        ent1 (ForeignKey): The first participant in a private chat.
+        ent2 (ForeignKey): The second participant in a private chat.
+        group (ManyToManyField): The participants in a group chat.
+        is_group (BooleanField): Indicates if the chat is a group chat.
+        last_message (ForeignKey): The last message in the chat.
+    """
     id = RegularUDIDField()
     site = models.ForeignKey(to=Site, verbose_name=_('site'), on_delete=models.PROTECT)
     ent1 = models.ForeignKey(to=Entity, verbose_name=_('participant 1'), on_delete=models.PROTECT, blank=True, null=True, related_name='+')
@@ -66,6 +78,12 @@ class Chat(TimeStampedModel):
         return "<Chat {}: {} ({} {}, {}: {})>".format(self.id, participants, self.messages_count, "message" if (self.messages_count == 1) else "messages", "sender" if (len(senders_list) == 1) else "senders", senders)
 
     def save(self, *args, **kwargs):
+        """
+        Save the Chat instance to the database.
+
+        Raises:
+            AssertionError: If the private chat does not have two distinct participants or if the group chat has participants.
+        """
         if (self.is_private):
             assert self.ent1
             assert self.ent2
@@ -81,6 +99,15 @@ class Chat(TimeStampedModel):
         return super().save(*args, **kwargs)
 
     def get_slug(self, current_user: Entity):
+        """
+        Get the slug for the chat based on the current user.
+
+        Args:
+            current_user (Entity): The current user.
+
+        Returns:
+            str: The slug for the chat.
+        """
         if (self.is_private):
             if (self.ent1_id == current_user.id):
                 return self.ent2.slug
@@ -89,14 +116,41 @@ class Chat(TimeStampedModel):
         return self.id
 
     def get_other_participants(self, entity):
+        """
+        Get the other participants in the chat excluding the given entity.
+
+        Args:
+            entity (Entity): The entity to exclude.
+
+        Returns:
+            list: The other participants in the chat.
+        """
         assert (entity.id in [p.id for p in self.participants])
         return [p for p in self.participants if (not (p.id == entity.id))]
 
     def mark_read(self, entity):
+        """
+        Mark the chat as read for the given entity.
+
+        Args:
+            entity (Entity): The entity marking the chat as read.
+
+        Returns:
+            ReadMark: The created ReadMark instance.
+        """
         return ReadMark.objects.mark(chat=self, entity=entity)
 
 
 class Message(TimeStampedModel):
+    """
+    Represents a message in a chat.
+
+    Attributes:
+        id (RegularUDIDField): The unique identifier for the message.
+        chat (ForeignKey): The chat the message belongs to.
+        sender (ForeignKey): The sender of the message.
+        text (TextField): The content of the message.
+    """
     id = RegularUDIDField()
     chat = models.ForeignKey(to=Chat, verbose_name=_('chat'), on_delete=models.PROTECT, blank=True, null=True, related_name='messages')
     sender = models.ForeignKey(to=Entity, verbose_name=_('sender'), on_delete=models.PROTECT, blank=True, null=True)
@@ -111,10 +165,23 @@ class Message(TimeStampedModel):
         get_latest_by = 'date_created'
 
     def __str__(self):
+        """
+        Return a string representation of the message.
+
+        Returns:
+            str: The string representation of the message.
+        """
         return '{}: {}'.format(self.sender.user if self.sender else str(_("Unknown")), self.text[:140])
 
 
 class ReadMark(TimeStampedModel):
+    """
+    Represents a read mark for a chat by an entity.
+
+    Attributes:
+        entity (ForeignKey): The entity that read the chat.
+        chat (ForeignKey): The chat that was read.
+    """
     entity = models.ForeignKey(to=Entity, verbose_name=_('entity'), on_delete=models.CASCADE, related_name='+')
     chat = models.ForeignKey(to=Chat, verbose_name=_('chat'), on_delete=models.CASCADE, related_name='+')
 
@@ -130,6 +197,14 @@ class ReadMark(TimeStampedModel):
 
 @receiver(signal=models.signals.post_save, sender=Chat)
 def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kwargs):
+    """
+    Signal receiver that invalidates the unread chats count cache after a chat is updated.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (Chat): The instance of the Chat model.
+        **kwargs: Additional keyword arguments.
+    """
     if (instance.last_message is not None):
         other_participants = instance.get_other_participants(entity=instance.last_message.sender)
         bust_cache(cache_type='unread_chats_count', entities_pks=[p.pk for p in other_participants])
@@ -137,11 +212,28 @@ def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kw
 
 @receiver(signal=models.signals.post_save, sender=ReadMark)
 def invalidate_unread_chats_count_after_read_mark(sender, instance: ReadMark, **kwargs):
+    """
+    Signal receiver that invalidates the unread chats count cache after a read mark is created.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (ReadMark): The instance of the ReadMark model.
+        **kwargs: Additional keyword arguments.
+    """
     bust_cache(cache_type='unread_chats_count', entities_pks=[instance.entity.pk])
 
 
 @receiver(signal=models.signals.post_save, sender=Message)
 def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
+    """
+    Signal receiver that sends an email to users when a new message is created.
+
+    Args:
+        sender (type): The model class that sent the signal.
+        instance (Message): The instance of the Message model.
+        created (bool): Whether the instance was created.
+        **kwargs: Additional keyword arguments.
+    """
     if (created):
         other_participants = instance.chat.get_other_participants(entity=instance.sender)
         for entity in other_participants:
