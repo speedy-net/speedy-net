@@ -2,7 +2,19 @@ from django.core.management.commands import test
 
 
 class Command(test.Command):
+    """
+    Custom management command to run tests with additional language options.
+
+    Methods:
+        add_arguments(self, parser): Adds custom arguments to the command parser.
+    """
     def add_arguments(self, parser):
+        """
+        Adds custom arguments to the command parser.
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser instance.
+        """
         super().add_arguments(parser=parser)
 
         group = parser.add_argument_group('language options', 'These arguments are mutually exclusive. Default: --test-default-languages')

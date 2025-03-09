@@ -20,7 +20,30 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    Django management command to moderate unmoderated photos.
+
+    This command processes user photos that have not yet been moderated by AWS Rekognition.
+    It checks for various conditions such as animation, transparency, and single color.
+    If the photo is valid, it uses AWS Rekognition to detect moderation labels.
+    Based on the results, it updates the user's profile and photo visibility.
+
+    Methods:
+        handle(self, *args, **options): Main method to process unmoderated photos.
+    """
     def handle(self, *args, **options):
+        """
+        Main method to process unmoderated photos.
+
+        This method filters users with unmoderated photos and processes each photo.
+        It checks for animation, transparency, and single color.
+        If the photo is valid, it uses AWS Rekognition to detect moderation labels.
+        Based on the results, it updates the user's profile and photo visibility.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         users = User.objects.filter(
             photo__isnull=False,
             photo__aws_image_moderation_time__isnull=True,

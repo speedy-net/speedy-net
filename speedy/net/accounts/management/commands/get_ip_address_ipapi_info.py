@@ -13,7 +13,17 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to fetch IP address information using the ipapi service.
+    """
     def handle(self, *args, **options):
+        """
+        The main entry point for the command. Fetches and updates IP address information for users.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         if (django_settings.GET_IP_ADDRESS_IPAPI_INFO):
             users = User.objects.exclude(
                 last_ip_address_used__isnull=True,

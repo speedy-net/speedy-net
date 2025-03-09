@@ -9,7 +9,27 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to convert existing filenames in the database.
+
+    This command iterates over all files in the database, generates new filenames
+    for them, and renames the files on the filesystem accordingly.
+
+    Methods:
+        handle(*args, **options): Main entry point for the command. Processes all files.
+    """
     def handle(self, *args, **options):
+        """
+        Main entry point for the command. Processes all files.
+
+        This method retrieves all files from the database, generates new filenames,
+        and renames the files on the filesystem. If the renaming is successful, the
+        file record is updated in the database.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         files = File.objects.all().order_by('date_created')
         for file in files:
             old_path = file.file.path

@@ -14,7 +14,27 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to remove unused images of users who didn't visit both sites in 18 months.
+
+    This command filters images whose owners haven't visited both Speedy Match and Speedy Net sites
+    in the last 18 months and deletes them from the filesystem and the database.
+
+    Methods:
+        handle(*args, **options): Executes the command to remove unused images.
+    """
     def handle(self, *args, **options):
+        """
+        Executes the command to remove unused images of users who didn't visit both sites in 18 months.
+
+        This method filters images whose owners haven't visited both Speedy Match and Speedy Net sites
+        in the last 18 months, logs the removal process, deletes the image files from the filesystem,
+        and removes the image records from the database.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         images = Image.objects.filter(
             **{
                 "owner__isnull": False,

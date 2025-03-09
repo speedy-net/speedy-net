@@ -15,7 +15,26 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to delete unconfirmed accounts.
+
+    This command deletes unconfirmed email addresses and user accounts
+    that have not confirmed their email within a specified time frame.
+
+    Methods:
+        handle(*args, **options): Main entry point for the command. Processes all unconfirmed emails and users.
+    """
     def handle(self, *args, **options):
+        """
+        Main entry point for the command. Processes all unconfirmed emails and users.
+
+        This method retrieves unconfirmed email addresses and user accounts from the database,
+        checks their confirmation status and creation date, and deletes them if they meet the criteria.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         emails = UserEmailAddress.objects.filter(
             is_confirmed=False,
             date_created__lte=(now() - timedelta(days=10)),

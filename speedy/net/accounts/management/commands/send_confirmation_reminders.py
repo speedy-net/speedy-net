@@ -11,7 +11,26 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to send confirmation reminders.
+
+    This command filters unconfirmed email addresses that were created more than 5 days ago
+    and sends confirmation reminders to the users.
+
+    Methods:
+        handle(*args, **options): Executes the command to send confirmation reminders.
+    """
     def handle(self, *args, **options):
+        """
+        Executes the command to send confirmation reminders.
+
+        This method filters unconfirmed email addresses that were created more than 5 days ago,
+        logs the reminder process, and sends confirmation emails to the users.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=5)), confirmation_sent__lte=1).exclude(confirmation_token='')
         for e in emails:
             # Emails might have changed in the database, load them again.

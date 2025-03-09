@@ -9,7 +9,27 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """
+    A Django management command to remove images with no owner.
+
+    This command filters images that have no owner and deletes them from the filesystem
+    and the database.
+
+    Methods:
+        handle(*args, **options): Executes the command to remove images with no owner.
+    """
     def handle(self, *args, **options):
+        """
+        Executes the command to remove images with no owner.
+
+        This method filters images that have no owner, logs the removal process,
+        deletes the image files from the filesystem, and removes the image records
+        from the database.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Arbitrary keyword arguments.
+        """
         images = Image.objects.filter(
             owner__isnull=True,
         ).order_by('date_created')
