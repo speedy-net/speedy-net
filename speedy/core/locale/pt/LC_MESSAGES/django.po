@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-07 10:13+0200\n"
+"POT-Creation-Date: 2025-03-09 16:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,7 +863,7 @@ msgstr "Introduza um endereço de e-mail válido."
 msgid "Email address"
 msgstr "E-mail"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1102
+#: .\__translations\__translations.py:9 .\accounts\models.py:1294
 msgid "email address"
 msgstr "e-mail"
 
@@ -905,7 +905,7 @@ msgstr "Solicitação de Amizade"
 msgid "Friend"
 msgstr "Amigo"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:628
+#: .\__translations\__translations.py:23 .\accounts\models.py:796
 msgid "Friends"
 msgstr "Amigos"
 
@@ -1998,251 +1998,251 @@ msgstr "Tua palavra-passe"
 msgid "Invalid password."
 msgstr "Palavra-passe inválida."
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:177
 msgid "username"
 msgstr "nome do utilizador"
 
-#: .\accounts\models.py:132 .\accounts\models.py:133
+#: .\accounts\models.py:177 .\accounts\models.py:178
 #: .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "Este nome de utilizador já foi utilizado."
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:178
 msgid "username (slug)"
 msgstr "nome do utilizador (slug)"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:179
 msgid "photo"
 msgstr "foto"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:180
 msgid "Special username"
 msgstr "Nome de utilizador especial"
 
-#: .\accounts\models.py:175 .\messages\models.py:118
+#: .\accounts\models.py:220 .\messages\models.py:185
 msgid "entity"
 msgstr "entidade"
 
-#: .\accounts\models.py:176
+#: .\accounts\models.py:221
 msgid "entities"
 msgstr "entidades"
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:248
 msgid "Slug does not parse to username."
 msgstr "O slug não pode ser usado como nome de utilizador."
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:252
 msgid "Username is required."
 msgstr "O nome de utilizador é obrigatório."
 
-#: .\accounts\models.py:243
+#: .\accounts\models.py:297
 msgid "name"
 msgstr "nome"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:328
 msgid "description"
 msgstr "descrição"
 
-#: .\accounts\models.py:304
+#: .\accounts\models.py:472
 msgid "Female"
 msgstr "Feminino"
 
-#: .\accounts\models.py:305
+#: .\accounts\models.py:473
 msgid "Male"
 msgstr "Masculino"
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:474
 msgid "Other"
 msgstr "Outro"
 
-#: .\accounts\models.py:318 .\accounts\models.py:333 .\accounts\models.py:354
-#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
+#: .\accounts\models.py:486 .\accounts\models.py:501 .\accounts\models.py:522
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:487
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegano (alimenta-se apenas de plantas e fungos)"
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:488
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariano (não se alimenta de peixe e carne)"
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:489
 msgid "Carnist (eats animals)"
 msgstr "Carnista (se alimenta de animais)"
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:502
 msgid "Not smoking"
 msgstr "Não fumante"
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:503
 msgid "Smoking occasionally"
 msgstr "Fumante ocasional"
 
-#: .\accounts\models.py:336
+#: .\accounts\models.py:504
 msgid "Smoking"
 msgstr "Fumante"
 
-#: .\accounts\models.py:355
+#: .\accounts\models.py:523
 msgid "Single"
 msgstr "Solteiro"
 
-#: .\accounts\models.py:356
+#: .\accounts\models.py:524
 msgid "Divorced"
 msgstr "Divorciado"
 
-#: .\accounts\models.py:357
+#: .\accounts\models.py:525
 msgid "Widowed"
 msgstr "Viúvo"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:526
 msgid "In a relationship"
 msgstr "Em um relacionamento"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:527
 msgid "In an open relationship"
 msgstr "Em um relacionamento aberto"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:528
 msgid "It's complicated"
 msgstr "É complicado"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:529
 msgid "Separated"
 msgstr "Separado"
 
-#: .\accounts\models.py:362
+#: .\accounts\models.py:530
 msgid "Engaged"
 msgstr "Noivado"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:531
 msgid "Married"
 msgstr "Casado"
 
-#: .\accounts\models.py:372
+#: .\accounts\models.py:540
 msgid "Notify me"
 msgstr "Notifique-me"
 
-#: .\accounts\models.py:373
+#: .\accounts\models.py:541
 msgid "Don't notify me"
 msgstr "Não me notifique"
 
-#: .\accounts\models.py:420
+#: .\accounts\models.py:588
 msgid "first name"
 msgstr "nome"
 
-#: .\accounts\models.py:423
+#: .\accounts\models.py:591
 msgid "last name"
 msgstr "sobrenome"
 
-#: .\accounts\models.py:425
+#: .\accounts\models.py:593
 msgid "I am"
 msgstr "Eu sou"
 
-#: .\accounts\models.py:426
+#: .\accounts\models.py:594
 msgid "date of birth"
 msgstr "data de nascimento"
 
-#: .\accounts\models.py:427
+#: .\accounts\models.py:595
 msgid "diet"
 msgstr "dieta"
 
-#: .\accounts\models.py:428
+#: .\accounts\models.py:596
 msgid "smoking status"
 msgstr "status como fumante"
 
-#: .\accounts\models.py:429
+#: .\accounts\models.py:597
 msgid "relationship status"
 msgstr "status de relacionamento"
 
-#: .\accounts\models.py:431
+#: .\accounts\models.py:599
 msgid "Where do I live?"
 msgstr "Onde é minha morada?"
 
-#: .\accounts\models.py:438
+#: .\accounts\models.py:606
 msgid "Who can view my birth month and day"
 msgstr "Quem pode ver o dia e o mês do meu aniversário"
 
-#: .\accounts\models.py:439
+#: .\accounts\models.py:607
 msgid "Who can view my birth year"
 msgstr "Quem pode ver o ano do meu nascimento"
 
-#: .\accounts\models.py:440
+#: .\accounts\models.py:608
 msgid "On new messages"
 msgstr "Em novas mensagens"
 
-#: .\accounts\models.py:446
+#: .\accounts\models.py:614
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Última direcção IP utilizou o horário de https://ipapi.com/"
 
-#: .\accounts\models.py:447
+#: .\accounts\models.py:615
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Última direcção IP utilizou os resultados directos de https://ipapi.com/"
 
-#: .\accounts\models.py:653 .\accounts\models.py:1086 .\blocks\models.py:15
+#: .\accounts\models.py:821 .\accounts\models.py:1278 .\blocks\models.py:22
 msgid "user"
 msgstr "utilizador"
 
-#: .\accounts\models.py:654
+#: .\accounts\models.py:822
 msgid "users"
 msgstr "utilizadores"
 
-#: .\accounts\models.py:700
+#: .\accounts\models.py:868
 msgid "Superuser must be equal to staff."
 msgstr "Superuser precisa ser igual a funcionário."
 
-#: .\accounts\models.py:1087
+#: .\accounts\models.py:1279
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1088
+#: .\accounts\models.py:1280
 msgid "is confirmed"
 msgstr "está confirmado"
 
-#: .\accounts\models.py:1089
+#: .\accounts\models.py:1281
 msgid "is primary"
 msgstr "é primário"
 
-#: .\accounts\models.py:1090
+#: .\accounts\models.py:1282
 msgid "confirmation token"
 msgstr "token de confirmação"
 
-#: .\accounts\models.py:1091
+#: .\accounts\models.py:1283
 msgid "confirmation sent"
 msgstr "confirmação enviada"
 
-#: .\accounts\models.py:1092
+#: .\accounts\models.py:1284
 msgid "Who can see this email"
 msgstr "Quem pode ver este e-mail"
 
-#: .\accounts\models.py:1103
+#: .\accounts\models.py:1295
 msgid "email addresses"
 msgstr "direcções de e-mail"
 
-#: .\accounts\models.py:1170
+#: .\accounts\models.py:1378
 msgid "User"
 msgstr "utilizador"
 
-#: .\accounts\models.py:1171
+#: .\accounts\models.py:1379
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:1183
+#: .\accounts\models.py:1391
 msgid "Today"
 msgstr "Hoje"
 
-#: .\accounts\models.py:1185
+#: .\accounts\models.py:1393
 msgid "Yesterday"
 msgstr "Ontem"
 
-#: .\accounts\models.py:1187
+#: .\accounts\models.py:1395
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Em {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1189
+#: .\accounts\models.py:1397
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "há {timesince}"
@@ -2518,19 +2518,19 @@ msgstr "id contém caracteres ilegais."
 msgid "Changes saved."
 msgstr "Alterações guardadas."
 
-#: .\blocks\managers.py:30 .\blocks\models.py:31
+#: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
 msgstr "Os utilizadores não podem bloquear a si mesmos."
 
-#: .\blocks\models.py:16
+#: .\blocks\models.py:23
 msgid "blocked user"
 msgstr "utilizador bloqueado"
 
-#: .\blocks\models.py:21
+#: .\blocks\models.py:28
 msgid "block"
 msgstr "bloquear"
 
-#: .\blocks\models.py:22
+#: .\blocks\models.py:29
 msgid "user blocks"
 msgstr "bloqueios de utilizador"
 
@@ -2562,51 +2562,51 @@ msgstr "Entre em contacto conosco por e-mail."
 msgid "Not 17."
 msgstr "Não 17."
 
-#: .\contact_by_form\models.py:16
+#: .\contact_by_form\models.py:32
 msgid "Feedback"
 msgstr "Avaliação"
 
-#: .\contact_by_form\models.py:17
+#: .\contact_by_form\models.py:33
 msgid "Abuse (User)"
 msgstr "Abuso (Utilizador)"
 
-#: .\contact_by_form\models.py:18
+#: .\contact_by_form\models.py:34
 msgid "Abuse (Photo)"
 msgstr "Abuso (Foto)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:102
+#: .\contact_by_form\models.py:37 .\messages\models.py:156
 msgid "sender"
 msgstr "remetente"
 
-#: .\contact_by_form\models.py:22
+#: .\contact_by_form\models.py:38
 msgid "your name"
 msgstr "teu nome"
 
-#: .\contact_by_form\models.py:23
+#: .\contact_by_form\models.py:39
 msgid "your email"
 msgstr "Teu e-mail"
 
-#: .\contact_by_form\models.py:24
+#: .\contact_by_form\models.py:40
 msgid "type"
 msgstr "tipo"
 
-#: .\contact_by_form\models.py:25
+#: .\contact_by_form\models.py:41
 msgid "your message"
 msgstr "tua mensagem"
 
-#: .\contact_by_form\models.py:27
+#: .\contact_by_form\models.py:43
 msgid "reported entity"
 msgstr "entidade denunciada"
 
-#: .\contact_by_form\models.py:28
+#: .\contact_by_form\models.py:44
 msgid "reported photo"
 msgstr "foto denunciada"
 
-#: .\contact_by_form\models.py:31
+#: .\contact_by_form\models.py:47
 msgid "feedback"
 msgstr "avaliação"
 
-#: .\contact_by_form\models.py:32
+#: .\contact_by_form\models.py:48
 msgid "feedbacks"
 msgstr "avaliações"
 
@@ -2634,55 +2634,55 @@ msgstr "Solicitação de amizade recusada."
 msgid "Messages"
 msgstr "Mensagens"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:29
 msgid "site"
 msgstr "sítio"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:30
 msgid "participant 1"
 msgstr "participante 1"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:31
 msgid "participant 2"
 msgstr "participante 2"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:32
 msgid "participants"
 msgstr "participantes"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:33
 msgid "is group chat"
 msgstr "é um chat em grupo"
 
-#: .\messages\models.py:22
+#: .\messages\models.py:34
 msgid "last message"
 msgstr "última mensagem"
 
-#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
 msgid "chat"
 msgstr "chat"
 
-#: .\messages\models.py:56
+#: .\messages\models.py:68
 msgid "chats"
 msgstr "chats"
 
-#: .\messages\models.py:65
+#: .\messages\models.py:77
 msgid "None"
 msgstr "Nenhum"
 
-#: .\messages\models.py:103 .\messages\models.py:108
+#: .\messages\models.py:157 .\messages\models.py:162
 msgid "message"
 msgstr "Mensagem"
 
-#: .\messages\models.py:109
+#: .\messages\models.py:163
 msgid "messages"
 msgstr "Mensagens"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:191
 msgid "read mark"
 msgstr "marca de leitura"
 
-#: .\messages\models.py:125
+#: .\messages\models.py:192
 msgid "read marks"
 msgstr "marcas de leitura"
 
@@ -3443,62 +3443,62 @@ msgstr ""
 msgid "Browse..."
 msgstr "Navegar..."
 
-#: .\uploads\models.py:14
+#: .\uploads\models.py:24
 msgid "owner"
 msgstr "proprietário"
 
-#: .\uploads\models.py:15
+#: .\uploads\models.py:25
 msgid "file"
 msgstr "ficheiro"
 
-#: .\uploads\models.py:16
+#: .\uploads\models.py:26
 msgid "is stored"
 msgstr "está guardado"
 
-#: .\uploads\models.py:17
+#: .\uploads\models.py:27
 msgid "file size"
 msgstr "tamanho do ficheiro"
 
-#: .\uploads\models.py:26
+#: .\uploads\models.py:36
 msgid "uploaded file"
 msgstr "ficheiro carregado"
 
-#: .\uploads\models.py:27
+#: .\uploads\models.py:37
 msgid "uploaded files"
 msgstr "ficheiros carregados"
 
-#: .\uploads\models.py:43
+#: .\uploads\models.py:75
 msgid "visible on website"
 msgstr "visível no sítio"
 
-#: .\uploads\models.py:44
+#: .\uploads\models.py:76
 msgid "Speedy image moderation time"
 msgstr "Speedy image moderation time"
 
-#: .\uploads\models.py:45
+#: .\uploads\models.py:77
 msgid "AWS image moderation time"
 msgstr "Tempo de moderação da imagem da AWS"
 
-#: .\uploads\models.py:46
+#: .\uploads\models.py:78
 msgid "AWS facial analysis time"
 msgstr "Tempo de análise facial da AWS"
 
-#: .\uploads\models.py:47
+#: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
 msgstr "Resultados de moderação da imagem básica da AWS"
 
-#: .\uploads\models.py:48
+#: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
 msgstr "Resultados da análise facial básica da AWS"
 
-#: .\uploads\models.py:49
+#: .\uploads\models.py:81
 msgid "number of faces"
 msgstr "números de faces"
 
-#: .\uploads\models.py:54
+#: .\uploads\models.py:86
 msgid "uploaded image"
 msgstr "imagem carregada"
 
-#: .\uploads\models.py:55
+#: .\uploads\models.py:87
 msgid "uploaded images"
 msgstr "imagens carregadas"

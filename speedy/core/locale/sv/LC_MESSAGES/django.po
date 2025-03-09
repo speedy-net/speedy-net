@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-07 10:13+0200\n"
+"POT-Creation-Date: 2025-03-09 16:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,7 +860,7 @@ msgstr "Fyll i en giltig e-postadress."
 msgid "Email address"
 msgstr "E-postadress"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1102
+#: .\__translations\__translations.py:9 .\accounts\models.py:1294
 msgid "email address"
 msgstr "e-postadress"
 
@@ -902,7 +902,7 @@ msgstr "Vänskapsbegäran"
 msgid "Friend"
 msgstr "Vän"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:628
+#: .\__translations\__translations.py:23 .\accounts\models.py:796
 msgid "Friends"
 msgstr "Vänner"
 
@@ -1998,250 +1998,250 @@ msgstr "Lösenord"
 msgid "Invalid password."
 msgstr "Ogiltigt lösenord"
 
-#: .\accounts\models.py:132
+#: .\accounts\models.py:177
 msgid "username"
 msgstr "användarnamn"
 
-#: .\accounts\models.py:132 .\accounts\models.py:133
+#: .\accounts\models.py:177 .\accounts\models.py:178
 #: .\accounts\validators.py:21
 msgid "This username is already taken."
 msgstr "Det här användarnamnet är redan taget."
 
-#: .\accounts\models.py:133
+#: .\accounts\models.py:178
 msgid "username (slug)"
 msgstr "username (slug)"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:179
 msgid "photo"
 msgstr "Foto"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:180
 msgid "Special username"
 msgstr "Särskilt användarnamn"
 
-#: .\accounts\models.py:175 .\messages\models.py:118
+#: .\accounts\models.py:220 .\messages\models.py:185
 msgid "entity"
 msgstr "enhet"
 
-#: .\accounts\models.py:176
+#: .\accounts\models.py:221
 msgid "entities"
 msgstr "enheter"
 
-#: .\accounts\models.py:203
+#: .\accounts\models.py:248
 msgid "Slug does not parse to username."
 msgstr "Slug tolkas inte som användarnamn."
 
-#: .\accounts\models.py:207
+#: .\accounts\models.py:252
 msgid "Username is required."
 msgstr "Username är obligatoriskt."
 
-#: .\accounts\models.py:243
+#: .\accounts\models.py:297
 msgid "name"
 msgstr "namn"
 
-#: .\accounts\models.py:258
+#: .\accounts\models.py:328
 msgid "description"
 msgstr "beskrivning"
 
-#: .\accounts\models.py:304
+#: .\accounts\models.py:472
 msgid "Female"
 msgstr "Kvinna"
 
-#: .\accounts\models.py:305
+#: .\accounts\models.py:473
 msgid "Male"
 msgstr "Man"
 
-#: .\accounts\models.py:306
+#: .\accounts\models.py:474
 msgid "Other"
 msgstr "Annan"
 
-#: .\accounts\models.py:318 .\accounts\models.py:333 .\accounts\models.py:354
-#: .\messages\models.py:60 .\messages\models.py:61 .\messages\models.py:114
+#: .\accounts\models.py:486 .\accounts\models.py:501 .\accounts\models.py:522
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "Okänd"
 
-#: .\accounts\models.py:319
+#: .\accounts\models.py:487
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (äter bara växter och svampar)"
 
-#: .\accounts\models.py:320
+#: .\accounts\models.py:488
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarian (äter inte fisk och kött)"
 
-#: .\accounts\models.py:321
+#: .\accounts\models.py:489
 msgid "Carnist (eats animals)"
 msgstr "Carnist (äter djur)"
 
-#: .\accounts\models.py:334
+#: .\accounts\models.py:502
 msgid "Not smoking"
 msgstr "Röker inte"
 
-#: .\accounts\models.py:335
+#: .\accounts\models.py:503
 msgid "Smoking occasionally"
 msgstr "Röker ibland"
 
-#: .\accounts\models.py:336
+#: .\accounts\models.py:504
 msgid "Smoking"
 msgstr "Röker"
 
-#: .\accounts\models.py:355
+#: .\accounts\models.py:523
 msgid "Single"
 msgstr "Singel"
 
-#: .\accounts\models.py:356
+#: .\accounts\models.py:524
 msgid "Divorced"
 msgstr "Frånskild"
 
-#: .\accounts\models.py:357
+#: .\accounts\models.py:525
 msgid "Widowed"
 msgstr "Änkling/änka"
 
-#: .\accounts\models.py:358
+#: .\accounts\models.py:526
 msgid "In a relationship"
 msgstr "I en relation"
 
-#: .\accounts\models.py:359
+#: .\accounts\models.py:527
 msgid "In an open relationship"
 msgstr "I en öppen relation"
 
-#: .\accounts\models.py:360
+#: .\accounts\models.py:528
 msgid "It's complicated"
 msgstr "Det är en komplicerad fråga"
 
-#: .\accounts\models.py:361
+#: .\accounts\models.py:529
 msgid "Separated"
 msgstr "Frånskild"
 
-#: .\accounts\models.py:362
+#: .\accounts\models.py:530
 msgid "Engaged"
 msgstr "Förlovad"
 
-#: .\accounts\models.py:363
+#: .\accounts\models.py:531
 msgid "Married"
 msgstr "Gift"
 
-#: .\accounts\models.py:372
+#: .\accounts\models.py:540
 msgid "Notify me"
 msgstr "Meddela mig"
 
-#: .\accounts\models.py:373
+#: .\accounts\models.py:541
 msgid "Don't notify me"
 msgstr "Meddela mig inte"
 
-#: .\accounts\models.py:420
+#: .\accounts\models.py:588
 msgid "first name"
 msgstr "namn"
 
-#: .\accounts\models.py:423
+#: .\accounts\models.py:591
 msgid "last name"
 msgstr "efternamn"
 
-#: .\accounts\models.py:425
+#: .\accounts\models.py:593
 msgid "I am"
 msgstr "jag är"
 
-#: .\accounts\models.py:426
+#: .\accounts\models.py:594
 msgid "date of birth"
 msgstr "födelsedatum"
 
-#: .\accounts\models.py:427
+#: .\accounts\models.py:595
 msgid "diet"
 msgstr "diet"
 
-#: .\accounts\models.py:428
+#: .\accounts\models.py:596
 msgid "smoking status"
 msgstr "rökstatus"
 
-#: .\accounts\models.py:429
+#: .\accounts\models.py:597
 msgid "relationship status"
 msgstr "relationsstatus"
 
-#: .\accounts\models.py:431
+#: .\accounts\models.py:599
 msgid "Where do I live?"
 msgstr "Var bor jag?"
 
-#: .\accounts\models.py:438
+#: .\accounts\models.py:606
 msgid "Who can view my birth month and day"
 msgstr "Vem kan se min födelsemånad och dag"
 
-#: .\accounts\models.py:439
+#: .\accounts\models.py:607
 msgid "Who can view my birth year"
 msgstr "Vem kan se mitt födelseår"
 
-#: .\accounts\models.py:440
+#: .\accounts\models.py:608
 msgid "On new messages"
 msgstr "Om nya meddelanden"
 
-#: .\accounts\models.py:446
+#: .\accounts\models.py:614
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Senast använda IP-adress https://ipapi.com/ tid"
 
-#: .\accounts\models.py:447
+#: .\accounts\models.py:615
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Senaste IP-adress som användes rå https://ipapi.com/ resultat"
 
-#: .\accounts\models.py:653 .\accounts\models.py:1086 .\blocks\models.py:15
+#: .\accounts\models.py:821 .\accounts\models.py:1278 .\blocks\models.py:22
 msgid "user"
 msgstr "användare"
 
-#: .\accounts\models.py:654
+#: .\accounts\models.py:822
 msgid "users"
 msgstr "användare"
 
-#: .\accounts\models.py:700
+#: .\accounts\models.py:868
 msgid "Superuser must be equal to staff."
 msgstr "Superanvändare måste vara lika med personal."
 
-#: .\accounts\models.py:1087
+#: .\accounts\models.py:1279
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:1088
+#: .\accounts\models.py:1280
 msgid "is confirmed"
 msgstr "har bekräftats"
 
-#: .\accounts\models.py:1089
+#: .\accounts\models.py:1281
 msgid "is primary"
 msgstr "är primär"
 
-#: .\accounts\models.py:1090
+#: .\accounts\models.py:1282
 msgid "confirmation token"
 msgstr "bekräftelsetoken"
 
-#: .\accounts\models.py:1091
+#: .\accounts\models.py:1283
 msgid "confirmation sent"
 msgstr "bekräftelse skickad"
 
-#: .\accounts\models.py:1092
+#: .\accounts\models.py:1284
 msgid "Who can see this email"
 msgstr "Vem kan se detta e-postmeddelande"
 
-#: .\accounts\models.py:1103
+#: .\accounts\models.py:1295
 msgid "email addresses"
 msgstr "e-postadress"
 
-#: .\accounts\models.py:1170
+#: .\accounts\models.py:1378
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:1171
+#: .\accounts\models.py:1379
 msgid "last visit"
 msgstr "senaste besöket"
 
-#: .\accounts\models.py:1183
+#: .\accounts\models.py:1391
 msgid "Today"
 msgstr "Idag"
 
-#: .\accounts\models.py:1185
+#: .\accounts\models.py:1393
 msgid "Yesterday"
 msgstr "Igår"
 
-#: .\accounts\models.py:1187
+#: .\accounts\models.py:1395
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Den {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1189
+#: .\accounts\models.py:1397
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} sedan"
@@ -2511,19 +2511,19 @@ msgstr "id innehåller olagliga tecken."
 msgid "Changes saved."
 msgstr "Ändringar sparade."
 
-#: .\blocks\managers.py:30 .\blocks\models.py:31
+#: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
 msgstr "Användare kan inte blockera sig själva."
 
-#: .\blocks\models.py:16
+#: .\blocks\models.py:23
 msgid "blocked user"
 msgstr "blockerad användare"
 
-#: .\blocks\models.py:21
+#: .\blocks\models.py:28
 msgid "block"
 msgstr "blockera"
 
-#: .\blocks\models.py:22
+#: .\blocks\models.py:29
 msgid "user blocks"
 msgstr "användarblockeringar"
 
@@ -2555,51 +2555,51 @@ msgstr "Kontakta oss via e-post."
 msgid "Not 17."
 msgstr "Inte 17."
 
-#: .\contact_by_form\models.py:16
+#: .\contact_by_form\models.py:32
 msgid "Feedback"
 msgstr "Återkoppling"
 
-#: .\contact_by_form\models.py:17
+#: .\contact_by_form\models.py:33
 msgid "Abuse (User)"
 msgstr "Missbruk (användare)"
 
-#: .\contact_by_form\models.py:18
+#: .\contact_by_form\models.py:34
 msgid "Abuse (Photo)"
 msgstr "Missbruk (foto)"
 
-#: .\contact_by_form\models.py:21 .\messages\models.py:102
+#: .\contact_by_form\models.py:37 .\messages\models.py:156
 msgid "sender"
 msgstr "avsändare"
 
-#: .\contact_by_form\models.py:22
+#: .\contact_by_form\models.py:38
 msgid "your name"
 msgstr "ditt namn"
 
-#: .\contact_by_form\models.py:23
+#: .\contact_by_form\models.py:39
 msgid "your email"
 msgstr "din e-postadress"
 
-#: .\contact_by_form\models.py:24
+#: .\contact_by_form\models.py:40
 msgid "type"
 msgstr "typ"
 
-#: .\contact_by_form\models.py:25
+#: .\contact_by_form\models.py:41
 msgid "your message"
 msgstr "ditt meddelande"
 
-#: .\contact_by_form\models.py:27
+#: .\contact_by_form\models.py:43
 msgid "reported entity"
 msgstr "rapporterad enhet"
 
-#: .\contact_by_form\models.py:28
+#: .\contact_by_form\models.py:44
 msgid "reported photo"
 msgstr "rapporterat foto"
 
-#: .\contact_by_form\models.py:31
+#: .\contact_by_form\models.py:47
 msgid "feedback"
 msgstr "återkoppling"
 
-#: .\contact_by_form\models.py:32
+#: .\contact_by_form\models.py:48
 msgid "feedbacks"
 msgstr "återkoppling"
 
@@ -2627,55 +2627,55 @@ msgstr "Vänskapsförfrågan avvisad."
 msgid "Messages"
 msgstr "Meddelanden"
 
-#: .\messages\models.py:17
+#: .\messages\models.py:29
 msgid "site"
 msgstr "webbplats"
 
-#: .\messages\models.py:18
+#: .\messages\models.py:30
 msgid "participant 1"
 msgstr "delatagare 1"
 
-#: .\messages\models.py:19
+#: .\messages\models.py:31
 msgid "participant 2"
 msgstr "deltagare 2"
 
-#: .\messages\models.py:20
+#: .\messages\models.py:32
 msgid "participants"
 msgstr "deltagare"
 
-#: .\messages\models.py:21
+#: .\messages\models.py:33
 msgid "is group chat"
 msgstr "är gruppchatt"
 
-#: .\messages\models.py:22
+#: .\messages\models.py:34
 msgid "last message"
 msgstr "sista meddelandet"
 
-#: .\messages\models.py:55 .\messages\models.py:101 .\messages\models.py:119
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
 msgid "chat"
 msgstr "chatt"
 
-#: .\messages\models.py:56
+#: .\messages\models.py:68
 msgid "chats"
 msgstr "chatt"
 
-#: .\messages\models.py:65
+#: .\messages\models.py:77
 msgid "None"
 msgstr "Inga"
 
-#: .\messages\models.py:103 .\messages\models.py:108
+#: .\messages\models.py:157 .\messages\models.py:162
 msgid "message"
 msgstr "meddelande"
 
-#: .\messages\models.py:109
+#: .\messages\models.py:163
 msgid "messages"
 msgstr "meddelanden"
 
-#: .\messages\models.py:124
+#: .\messages\models.py:191
 msgid "read mark"
 msgstr "läs markering"
 
-#: .\messages\models.py:125
+#: .\messages\models.py:192
 msgid "read marks"
 msgstr "läs markeringar"
 
@@ -3432,62 +3432,62 @@ msgstr ""
 msgid "Browse..."
 msgstr "Bläddra..."
 
-#: .\uploads\models.py:14
+#: .\uploads\models.py:24
 msgid "owner"
 msgstr "ägare"
 
-#: .\uploads\models.py:15
+#: .\uploads\models.py:25
 msgid "file"
 msgstr "fil"
 
-#: .\uploads\models.py:16
+#: .\uploads\models.py:26
 msgid "is stored"
 msgstr "är lagrad"
 
-#: .\uploads\models.py:17
+#: .\uploads\models.py:27
 msgid "file size"
 msgstr "filstorlek"
 
-#: .\uploads\models.py:26
+#: .\uploads\models.py:36
 msgid "uploaded file"
 msgstr "uppladdad fil"
 
-#: .\uploads\models.py:27
+#: .\uploads\models.py:37
 msgid "uploaded files"
 msgstr "uppladdade filer"
 
-#: .\uploads\models.py:43
+#: .\uploads\models.py:75
 msgid "visible on website"
 msgstr "synlig på webbplatsen"
 
-#: .\uploads\models.py:44
+#: .\uploads\models.py:76
 msgid "Speedy image moderation time"
 msgstr "Speedy image moderation time"
 
-#: .\uploads\models.py:45
+#: .\uploads\models.py:77
 msgid "AWS image moderation time"
 msgstr "AWS tid för bildmoderering"
 
-#: .\uploads\models.py:46
+#: .\uploads\models.py:78
 msgid "AWS facial analysis time"
 msgstr "AWS tid för ansiktsanalys"
 
-#: .\uploads\models.py:47
+#: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
 msgstr "Resultat av AWS moderering av råbilder"
 
-#: .\uploads\models.py:48
+#: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
 msgstr "AWS råa resultat av ansiktsanalys"
 
-#: .\uploads\models.py:49
+#: .\uploads\models.py:81
 msgid "number of faces"
 msgstr "antal ansikten"
 
-#: .\uploads\models.py:54
+#: .\uploads\models.py:86
 msgid "uploaded image"
 msgstr "uppladdad bild"
 
-#: .\uploads\models.py:55
+#: .\uploads\models.py:87
 msgid "uploaded images"
 msgstr "uppladdade bilder"

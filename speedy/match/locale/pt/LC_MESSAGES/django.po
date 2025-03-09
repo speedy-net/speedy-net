@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-07 03:46+0200\n"
+"POT-Creation-Date: 2025-03-09 16:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -558,13 +558,13 @@ msgstr "Escreva algumas palavras sobre ti."
 msgid "Please write where you live."
 msgstr "Escreva o local da tua morada."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:118
+#: .\accounts\forms.py:118 .\accounts\models.py:221
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Tens filhos? Quantos?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:121
+#: .\accounts\forms.py:121 .\accounts\models.py:224
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -598,119 +598,119 @@ msgstr "A correspondência de status de relacionamento é obrigatória."
 msgid "Where do you live?"
 msgstr "Onde é tua morada?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:128
+#: .\accounts\forms.py:186 .\accounts\models.py:231
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Gênero para correspondência"
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:64
 msgid "Speedy Match User"
 msgstr "Utilizador do Speedy Match"
 
-#: .\accounts\models.py:40 .\accounts\models.py:94
+#: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
 msgstr "Sem correspondências"
 
-#: .\accounts\models.py:41 .\accounts\models.py:95
+#: .\accounts\models.py:75 .\accounts\models.py:198
 msgid "One heart"
 msgstr "Um coração"
 
-#: .\accounts\models.py:42 .\accounts\models.py:96
+#: .\accounts\models.py:76 .\accounts\models.py:199
 msgid "Two hearts"
 msgstr "Dois corações"
 
-#: .\accounts\models.py:43 .\accounts\models.py:97
+#: .\accounts\models.py:77 .\accounts\models.py:200
 msgid "Three hearts"
 msgstr "Três corações"
 
-#: .\accounts\models.py:44 .\accounts\models.py:98
+#: .\accounts\models.py:78 .\accounts\models.py:201
 msgid "Four hearts"
 msgstr "Quatro corações"
 
-#: .\accounts\models.py:45 .\accounts\models.py:99
+#: .\accounts\models.py:79 .\accounts\models.py:202
 msgid "Five hearts"
 msgstr "Cinco corações"
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:206
 msgid "User"
 msgstr "Utilizador"
 
-#: .\accounts\models.py:104
+#: .\accounts\models.py:207
 msgid "On new likes"
 msgstr "Em novas curtidas"
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:210
 msgid "Active languages"
 msgstr "Idiomas activos"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Altura"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:115
+#: .\accounts\models.py:218
 msgid "Few words about me"
 msgstr "Algumas palavras sobre mim"
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:227
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "Minha correspondência ideal"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:237
 msgid "Minimal age to match"
 msgstr "Idade mínima para correspondência"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:238
 msgid "Maximal age to match"
 msgstr "Idade mínima para correspondência"
 
-#: .\accounts\models.py:136
+#: .\accounts\models.py:239
 msgid "Diet match"
 msgstr "Correspondência de dieta"
 
-#: .\accounts\models.py:137
+#: .\accounts\models.py:240
 msgid "Smoking status match"
 msgstr "Correspondência de status como fumante"
 
-#: .\accounts\models.py:138
+#: .\accounts\models.py:241
 msgid "Relationship status match"
 msgstr "Correspondência de status de relacionamento"
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:244
 msgid "Diet to match"
 msgstr "Dieta para correspondência"
 
-#: .\accounts\models.py:149
+#: .\accounts\models.py:252
 msgid "Smoking status to match"
 msgstr "Status como fumante para correspondência"
 
-#: .\accounts\models.py:157
+#: .\accounts\models.py:260
 msgid "Relationship status to match"
 msgstr "Status de relacionamento para correspondência"
 
-#: .\accounts\models.py:164
+#: .\accounts\models.py:267
 msgid "Activation step"
 msgstr "Etapa de activação"
 
-#: .\accounts\models.py:167
+#: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
 msgstr "Número de correspondências na última busca do utilizador"
 
-#: .\accounts\models.py:213
+#: .\accounts\models.py:346
 msgid "Speedy Match Profile"
 msgstr "Perfil do Speedy Match"
 
-#: .\accounts\models.py:214 .\profiles\apps.py:8
+#: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Perfis do Speedy Match"
 
-#: .\accounts\models.py:370 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Confirma teu e-mail."
 
@@ -990,7 +990,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "outros) acessaram o sítio nos últimos quatro meses."
 
-#: .\likes\managers.py:14 .\likes\models.py:31
+#: .\likes\managers.py:14 .\likes\models.py:48
 msgid "Users cannot like themselves."
 msgstr "Os utilizadores não podem bloquear a si mesmos."
 
@@ -1002,19 +1002,19 @@ msgstr "O utilizador já curte outro utilizador."
 msgid "User cannot like a blocked user."
 msgstr "O utilizador não pode curtir um utilizador bloqueado."
 
-#: .\likes\models.py:13
+#: .\likes\models.py:21
 msgid "from user"
 msgstr "do utilizador"
 
-#: .\likes\models.py:14
+#: .\likes\models.py:22
 msgid "to user"
 msgstr "ao utilizador"
 
-#: .\likes\models.py:20
+#: .\likes\models.py:28
 msgid "user like"
 msgstr "curtida do utilizador"
 
-#: .\likes\models.py:21
+#: .\likes\models.py:29
 msgid "user likes"
 msgstr "curtidas do utilizador"
 

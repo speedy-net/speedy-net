@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:10+0200\n"
+"POT-Creation-Date: 2025-03-09 16:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,23 +147,23 @@ msgstr "잘못된 암호."
 msgid "Yes. Delete my account."
 msgstr "네. 내 계정을 삭제하세요."
 
-#: .\accounts\models.py:18
+#: .\accounts\models.py:30
 msgid "Speedy Net User"
 msgstr "Speedy Net 사용자"
 
-#: .\accounts\models.py:20
+#: .\accounts\models.py:32
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:22
+#: .\accounts\models.py:34
 msgid "Number of friends on last user's visit"
 msgstr "최근 사용자 방문에서 친구의 수"
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:50
 msgid "Speedy Net Profile"
 msgstr "Speedy Net 프로필"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
 msgstr "Speedy Net 프로필"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-07 03:46+0200\n"
+"POT-Creation-Date: 2025-03-09 16:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -558,13 +558,13 @@ msgstr "Skriv några ord om dig själv."
 msgid "Please write where you live."
 msgstr "Skriv var du bor."
 
-#: .\accounts\forms.py:118 .\accounts\models.py:118
+#: .\accounts\forms.py:118 .\accounts\models.py:221
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Har du barn? Hur många?"
 
-#: .\accounts\forms.py:121 .\accounts\models.py:121
+#: .\accounts\forms.py:121 .\accounts\models.py:224
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
@@ -598,119 +598,119 @@ msgstr "Matchning av relationsstatus är obligatorisk."
 msgid "Where do you live?"
 msgstr "Var bor du?"
 
-#: .\accounts\forms.py:186 .\accounts\models.py:128
+#: .\accounts\forms.py:186 .\accounts\models.py:231
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Kön att matcha"
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:64
 msgid "Speedy Match User"
 msgstr "Speedy Match Användare"
 
-#: .\accounts\models.py:40 .\accounts\models.py:94
+#: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
 msgstr "Ingen match"
 
-#: .\accounts\models.py:41 .\accounts\models.py:95
+#: .\accounts\models.py:75 .\accounts\models.py:198
 msgid "One heart"
 msgstr "Ett hjärta"
 
-#: .\accounts\models.py:42 .\accounts\models.py:96
+#: .\accounts\models.py:76 .\accounts\models.py:199
 msgid "Two hearts"
 msgstr "Två hjärtan"
 
-#: .\accounts\models.py:43 .\accounts\models.py:97
+#: .\accounts\models.py:77 .\accounts\models.py:200
 msgid "Three hearts"
 msgstr "Tre hjärtan"
 
-#: .\accounts\models.py:44 .\accounts\models.py:98
+#: .\accounts\models.py:78 .\accounts\models.py:201
 msgid "Four hearts"
 msgstr "Fyra hjärtan"
 
-#: .\accounts\models.py:45 .\accounts\models.py:99
+#: .\accounts\models.py:79 .\accounts\models.py:202
 msgid "Five hearts"
 msgstr "Fem hjärtan"
 
-#: .\accounts\models.py:103
+#: .\accounts\models.py:206
 msgid "User"
 msgstr "Användare"
 
-#: .\accounts\models.py:104
+#: .\accounts\models.py:207
 msgid "On new likes"
 msgstr "Om nya gillanden"
 
-#: .\accounts\models.py:107
+#: .\accounts\models.py:210
 msgid "Active languages"
 msgstr "Språk som talas aktivt"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
 msgstr "Längd"
 
-#: .\accounts\models.py:113
+#: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
 msgstr "cm"
 
-#: .\accounts\models.py:115
+#: .\accounts\models.py:218
 msgid "Few words about me"
 msgstr "Några ord om mig"
 
-#: .\accounts\models.py:124
+#: .\accounts\models.py:227
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
 msgstr "Min idealiska matchning"
 
-#: .\accounts\models.py:134
+#: .\accounts\models.py:237
 msgid "Minimal age to match"
 msgstr "Minimal ålder för matchning"
 
-#: .\accounts\models.py:135
+#: .\accounts\models.py:238
 msgid "Maximal age to match"
 msgstr "Maximal ålder för matchning"
 
-#: .\accounts\models.py:136
+#: .\accounts\models.py:239
 msgid "Diet match"
 msgstr "Dietmatchning"
 
-#: .\accounts\models.py:137
+#: .\accounts\models.py:240
 msgid "Smoking status match"
 msgstr "Rökning statusmatch"
 
-#: .\accounts\models.py:138
+#: .\accounts\models.py:241
 msgid "Relationship status match"
 msgstr "Förhållandestatus matchning"
 
-#: .\accounts\models.py:141
+#: .\accounts\models.py:244
 msgid "Diet to match"
 msgstr "Diet för att matcha"
 
-#: .\accounts\models.py:149
+#: .\accounts\models.py:252
 msgid "Smoking status to match"
 msgstr "Rökstatus för att matcha"
 
-#: .\accounts\models.py:157
+#: .\accounts\models.py:260
 msgid "Relationship status to match"
 msgstr "Förhållandestatus för att matcha"
 
-#: .\accounts\models.py:164
+#: .\accounts\models.py:267
 msgid "Activation step"
 msgstr "Steg för aktivering"
 
-#: .\accounts\models.py:167
+#: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
 msgstr "Antal träffar på den senaste användarens sökning"
 
-#: .\accounts\models.py:213
+#: .\accounts\models.py:346
 msgid "Speedy Match Profile"
 msgstr "Speedy Match-profil"
 
-#: .\accounts\models.py:214 .\profiles\apps.py:8
+#: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
 msgstr "Speedy Match-profiler"
 
-#: .\accounts\models.py:370 .\templates\accounts\edit_profile\activate.html:29
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
 msgstr "Bekräfta din e-postadress."
 
@@ -988,7 +988,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "övriga) kom in på webbplatsen under de senaste fyra månaderna."
 
-#: .\likes\managers.py:14 .\likes\models.py:31
+#: .\likes\managers.py:14 .\likes\models.py:48
 msgid "Users cannot like themselves."
 msgstr "Användare kan inte gilla sig själva."
 
@@ -1000,19 +1000,19 @@ msgstr "Användare gillar redan en annan användare."
 msgid "User cannot like a blocked user."
 msgstr "Användare kan inte gilla en blockerad användare."
 
-#: .\likes\models.py:13
+#: .\likes\models.py:21
 msgid "from user"
 msgstr "från användare"
 
-#: .\likes\models.py:14
+#: .\likes\models.py:22
 msgid "to user"
 msgstr "till användare"
 
-#: .\likes\models.py:20
+#: .\likes\models.py:28
 msgid "user like"
 msgstr "användargillande"
 
-#: .\likes\models.py:21
+#: .\likes\models.py:29
 msgid "user likes"
 msgstr "användargillanden"
 
