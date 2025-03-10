@@ -23,6 +23,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Executes the command to remove unused images.
     """
+
     def handle(self, *args, **options):
         """
         Executes the command to remove unused images of users who didn't visit both sites in 18 months.

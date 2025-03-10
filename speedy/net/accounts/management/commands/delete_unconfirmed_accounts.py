@@ -24,6 +24,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Main entry point for the command. Processes all unconfirmed emails and users.
     """
+
     def handle(self, *args, **options):
         """
         Main entry point for the command. Processes all unconfirmed emails and users.

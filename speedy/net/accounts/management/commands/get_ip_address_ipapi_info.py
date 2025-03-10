@@ -16,6 +16,7 @@ class Command(BaseCommand):
     """
     A Django management command to fetch IP address information using the ipapi service.
     """
+
     def handle(self, *args, **options):
         """
         The main entry point for the command. Fetches and updates IP address information for users.

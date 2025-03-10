@@ -31,6 +31,7 @@ class Command(BaseCommand):
     Methods:
         handle(self, *args, **options): Main method to process unmoderated photos.
     """
+
     def handle(self, *args, **options):
         """
         Main method to process unmoderated photos.

@@ -8,6 +8,7 @@ class Command(test.Command):
     Methods:
         add_arguments(self, parser): Adds custom arguments to the command parser.
     """
+
     def add_arguments(self, parser):
         """
         Adds custom arguments to the command parser.

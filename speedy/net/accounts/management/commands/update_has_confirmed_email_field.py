@@ -16,6 +16,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Executes the command to update the has_confirmed_email field.
     """
+
     def handle(self, *args, **options):
         """
         Executes the command to update the has_confirmed_email field for all users.
@@ -32,6 +33,5 @@ class Command(BaseCommand):
             # Users might have changed in the database, load them again.
             user = User.objects.get(pk=u.pk)
             user._update_has_confirmed_email_field()
-
 
 

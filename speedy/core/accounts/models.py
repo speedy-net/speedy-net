@@ -60,6 +60,7 @@ class CleanAndValidateAllFieldsMixin(object):
         clean_all_fields(self, exclude=None): Clean all fields of the model.
         validate_all_fields(self, errors, exclude=None): Validate all fields of the model.
     """
+
     def clean_fields(self, exclude=None):
         """
         Allows to have different slug and username validators for Entity and User.

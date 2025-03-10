@@ -6,14 +6,12 @@ from speedy.composer.accounts.models import SpeedyComposerNode
 
 
 class ChordsTemplate(SpeedyComposerNode):
-
     class Meta:
         verbose_name = _('chords template')
         verbose_name_plural = _('chords templates')
 
 
 class Accompaniment(SpeedyComposerNode):
-
     class Meta:
         verbose_name = _('accompaniment')
         verbose_name_plural = _('accompaniments')

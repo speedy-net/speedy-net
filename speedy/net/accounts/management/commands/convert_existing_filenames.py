@@ -18,6 +18,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Main entry point for the command. Processes all files.
     """
+
     def handle(self, *args, **options):
         """
         Main entry point for the command. Processes all files.

@@ -160,6 +160,7 @@ if (django_settings.TESTS):
         Methods:
             run_tests(self, *args, **kwargs): Override to prevent running tests on Speedy Core.
         """
+
         def run_tests(self, *args, **kwargs):
             # We don't run tests on speedy.core
             pass

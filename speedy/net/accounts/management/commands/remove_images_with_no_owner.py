@@ -18,6 +18,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Executes the command to remove images with no owner.
     """
+
     def handle(self, *args, **options):
         """
         Executes the command to remove images with no owner.

@@ -21,6 +21,7 @@ class Command(BaseCommand):
     Methods:
         handle(self, *args, **options): Main method to process users and detect faces in their photos.
     """
+
     def handle(self, *args, **options):
         """
         Processes users with undetected photos and performs facial analysis.

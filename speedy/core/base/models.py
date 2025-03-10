@@ -11,6 +11,7 @@ class ValidateModelMixin(object):
     Methods:
         save(self, *args, **kwargs): Call `full_clean` before saving the model.
     """
+
     def save(self, *args, **kwargs):
         """
         Call `full_clean` before saving.

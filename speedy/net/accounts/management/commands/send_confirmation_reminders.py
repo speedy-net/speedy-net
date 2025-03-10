@@ -20,6 +20,7 @@ class Command(BaseCommand):
     Methods:
         handle(*args, **options): Executes the command to send confirmation reminders.
     """
+
     def handle(self, *args, **options):
         """
         Executes the command to send confirmation reminders.
