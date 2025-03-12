@@ -11,7 +11,7 @@ django-translated-fields
 haversine
 jmespath
 pillow
-psycopg2
+psycopg
 pymemcache
 python-dateutil
 rules

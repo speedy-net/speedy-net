@@ -150,6 +150,11 @@ Install all dependencies using **apt-get**:
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql-16 postgresql-client-16 nginx uwsgi uwsgi-src postfix memcached
 
+Perform a local installation of psycopg to use the speed-up C module (optional):
+
+    sudo apt-get install libpq-dev
+    pip install psycopg[c]
+
 In **/etc/postgresql/16/main/pg_hba.conf** change the lines:
 
     host    all             all             127.0.0.1/32            scram-sha-256
@@ -227,11 +232,6 @@ Review and edit these config files, restart servers:
 Run migrations and collect static:
 
     contrib/deploy.sh
-
-You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
-
-    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
-    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.10
 
 Run again **contrib/deploy.sh**:
 
