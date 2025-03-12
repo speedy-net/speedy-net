@@ -8,7 +8,7 @@ if (django_settings.TESTS):
 
     class PostgresqlOnlyEnglishTestCase(SiteTestCase):
         def test_postgresql_version(self):
-            postgresql_version = connection.cursor().connection.server_version
+            postgresql_version = connection.cursor().connection.info.server_version
             if (postgresql_version >= 140000):
                 pass
             else:
