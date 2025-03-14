@@ -64,7 +64,7 @@ Next:
 
     python -m pip install --upgrade pip
     pip install --upgrade setuptools wheel
-    pip install --upgrade -r requirements.txt
+    pip install --upgrade -r requirements.txt -r development-requirements.txt
     cp env.ini.example env.ini
 
 You may want to edit [**env.ini**](#envini) to specify database settings, secret keys for third party services or other stuff.
@@ -149,6 +149,7 @@ Install all dependencies using **apt-get**:
     sudo apt-get install python3.12 python3-pip python3.12-venv python3.12-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
     sudo apt-get install postgresql-16 postgresql-client-16 nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install libpq-dev  # psycopg[c] dependency
 
 In **/etc/postgresql/16/main/pg_hba.conf** change the lines:
 
@@ -228,10 +229,10 @@ Run migrations and collect static:
 
     contrib/deploy.sh
 
-You must run the following commands, according to https://stackoverflow.com/a/54253374/57952:
+Perform a local installation of psycopg to use the speed-up C module (optional):
 
-    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg2
-    /home/ubuntu/speedy-net/env/bin/pip install --no-binary :all: psycopg2==2.9.10
+    /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg-binary
+    /home/ubuntu/speedy-net/env/bin/pip install psycopg-c==3.2.5
 
 Run again **contrib/deploy.sh**:
 
