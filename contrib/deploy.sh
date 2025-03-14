@@ -9,9 +9,9 @@ cd ${DIR}
 git pull
 ${PY} -m pip install --upgrade pip
 ${PIP} install --upgrade -r requirements.txt
-${PIP} uninstall django-debug-toolbar # django-debug-toolbar should never be installed in production or staging.
-${PIP} uninstall factory-boy # factory-boy should never be installed in production or staging.
-${PIP} uninstall Faker # Faker should never be installed in production or staging.
+${PIP} uninstall -y django-debug-toolbar # django-debug-toolbar should never be installed in production or staging.
+${PIP} uninstall -y factory-boy # factory-boy should never be installed in production or staging.
+${PIP} uninstall -y Faker # Faker should never be installed in production or staging.
 
 for site in ${SITES}
 do
