@@ -64,7 +64,7 @@ Next:
 
     python -m pip install --upgrade pip
     pip install --upgrade setuptools wheel
-    pip install --upgrade -r requirements.txt
+    pip install --upgrade -r requirements.txt -r development-requirements.txt
     cp env.ini.example env.ini
 
 You may want to edit [**env.ini**](#envini) to specify database settings, secret keys for third party services or other stuff.
@@ -232,7 +232,7 @@ Run migrations and collect static:
 Perform a local installation of psycopg to use the speed-up C module (optional):
 
     /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg-binary
-    /home/ubuntu/speedy-net/env/bin/pip install psycopg[c]==3.2.5
+    /home/ubuntu/speedy-net/env/bin/pip install psycopg-c==3.2.5
 
 Run again **contrib/deploy.sh**:
 

@@ -12,7 +12,6 @@ haversine
 jmespath
 pillow
 psycopg
-psycopg-binary
 pymemcache
 python-dateutil
 rules

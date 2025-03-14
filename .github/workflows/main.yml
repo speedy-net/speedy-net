@@ -89,13 +89,13 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: cp env.ini.tests env.ini
-      - run: pip install --upgrade -r requirements.txt -r tests-requirements.txt
+      - run: pip install --upgrade -r requirements.txt -r production-requirements.txt -r tests-requirements.txt
       - name: Perform a local installation of psycopg to use the speed-up C module
         run: |
           sudo apt-get -y install libpq-dev
           pip uninstall -y psycopg-binary
-          pip install psycopg[c]==3.2.5
-        if: ${{ matrix.postgresql-version == '16' }}
+          # pip install psycopg-c==3.2.5
+        # if: ${{ matrix.postgresql-version == '16' }}
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
