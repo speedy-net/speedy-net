@@ -232,7 +232,7 @@ Run migrations and collect static:
 Perform a local installation of psycopg to use the speed-up C module (optional):
 
     /home/ubuntu/speedy-net/env/bin/pip uninstall psycopg-binary
-    /home/ubuntu/speedy-net/env/bin/pip install --upgrade psycopg-c==3.2.5
+    /home/ubuntu/speedy-net/env/bin/pip install --upgrade psycopg-c==3.2.6
 
 Run again **contrib/deploy.sh**:
 

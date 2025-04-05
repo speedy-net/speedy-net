@@ -94,7 +94,7 @@ jobs:
         run: |
           sudo apt-get -y install libpq-dev
           pip uninstall -y psycopg-binary
-          # pip install --upgrade psycopg-c==3.2.5
+          # pip install --upgrade psycopg-c==3.2.6
         # if: ${{ matrix.postgresql-version == '16' }}
       - run: pip freeze
       - run: pwd
