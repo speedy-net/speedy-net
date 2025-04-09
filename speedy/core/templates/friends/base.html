@@ -8,7 +8,7 @@
 
 {% block google_ads %}
     {% if LANGUAGE_CODE in settings.LANGUAGES_WITH_ADS %}
-        {% if display_ads_today %}
+        {% if display_ads_today_1 %}
             {% if request.user.is_anonymous or request.user.display_ads %}
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6979799050855377" crossorigin="anonymous"></script>
             {% endif %}
