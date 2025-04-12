@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 03:20+0200\n"
+"POT-Creation-Date: 2025-04-12 14:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2642,11 +2642,11 @@ msgstr "읽은 표시"
 msgid "read marks"
 msgstr "읽은 표시"
 
-#: .\settings\base.py:191
+#: .\settings\base.py:192
 msgid "English"
 msgstr "영어"
 
-#: .\settings\base.py:192
+#: .\settings\base.py:193
 msgid "Hebrew"
 msgstr "히브리어"
 
@@ -3094,18 +3094,18 @@ msgstr "%(site_name)s와 함께 하세요!"
 msgid "It's free and anyone can join!"
 msgstr "무료이고 누구나 가입할 수 있습니다!"
 
-#: .\templates\messages\chat_detail.html:25
+#: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "<a href=\"%(link)s\">%(user_name)s</a>와(과) 채팅"
 
-#: .\templates\messages\chat_detail.html:31
+#: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "%(user_name)s에 메시지 보내기"
 
-#: .\templates\messages\chat_detail.html:45
+#: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
 msgstr "모두 읽음으로 표시"
 

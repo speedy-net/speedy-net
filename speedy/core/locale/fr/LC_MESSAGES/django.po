@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 03:20+0200\n"
+"POT-Creation-Date: 2025-04-12 14:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2704,11 +2704,11 @@ msgstr "lire la note"
 msgid "read marks"
 msgstr "lire les notes"
 
-#: .\settings\base.py:191
+#: .\settings\base.py:192
 msgid "English"
 msgstr "Anglais"
 
-#: .\settings\base.py:192
+#: .\settings\base.py:193
 msgid "Hebrew"
 msgstr "Hébreu"
 
@@ -3164,18 +3164,18 @@ msgstr "Rejoignez %(site_name)s !"
 msgid "It's free and anyone can join!"
 msgstr "C’est gratuit et tout le monde peut s’inscrire !"
 
-#: .\templates\messages\chat_detail.html:25
+#: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
 msgstr "Chat avec <a href=\"%(link)s\">%(user_name)s</a>"
 
-#: .\templates\messages\chat_detail.html:31
+#: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
 msgstr "Envoyer un message à %(user_name)s"
 
-#: .\templates\messages\chat_detail.html:45
+#: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
 msgstr "Marquer tout comme lu"
 
