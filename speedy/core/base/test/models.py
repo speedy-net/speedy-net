@@ -31,7 +31,7 @@ if (django_settings.TESTS):
             __init__(self, *args, **kwargs): Initialize the test runner.
             _save_test_time(self, test_name, duration_func): Save the test time.
             _print_test_times(self, slowest_or_fastest): Print the test times.
-            build_suite(self, test_labels=None, extra_tests=None, **kwargs): Build the test suite.
+            build_suite(self, test_labels=None, **kwargs): Build the test suite.
             test_suite(self, tests=()): Get the test suite.
             setup_test_environment(self, **kwargs): Set up the test environment.
             teardown_test_environment(self, **kwargs): Tear down the test environment.
@@ -87,7 +87,7 @@ if (django_settings.TESTS):
                     func_name=func_name,
                 ))
 
-        def build_suite(self, test_labels=None, extra_tests=None, **kwargs):
+        def build_suite(self, test_labels=None, **kwargs):
             if (not (test_labels)):
                 # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net"].
                 # Due to problems with templates, "speedy.match" label is not added to speedy.net tests, and "speedy.net" label is not added to speedy.match tests.  # ~~~~ TODO: fix this bug and enable these labels, although the tests there are skipped.
@@ -109,7 +109,7 @@ if (django_settings.TESTS):
                             if (not (label_to_test in test_labels)):
                                 test_labels.append(label_to_test)
             print(test_labels)
-            return super().build_suite(test_labels=test_labels, extra_tests=extra_tests, **kwargs)
+            return super().build_suite(test_labels=test_labels, **kwargs)
 
         def test_suite(self, tests=()):
             if (self.test_only is not None):
