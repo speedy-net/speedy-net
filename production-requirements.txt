@@ -1,2 +1,2 @@
 # python==3.12
-psycopg-c==3.2.6
+psycopg-c==3.2.9
